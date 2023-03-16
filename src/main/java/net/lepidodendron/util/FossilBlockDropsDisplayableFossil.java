@@ -15,91 +15,91 @@ public class FossilBlockDropsDisplayableFossil {
         switch (dim) {
             case 1:
             default: //Precambrian
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getPrecambrianDisplayableFossilDrops().length);
                     return getPrecambrianDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 2: //Cambrian
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getCambrianDisplayableFossilDrops().length);
                     return getCambrianDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 3: //Ordovician
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getOrdovicianDisplayableFossilDrops().length);
                     return getOrdovicianDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 4: //Silurian
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getSilurianDisplayableFossilDrops().length);
                     return getSilurianDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 5: //Devonian
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getDevonianDisplayableFossilDrops().length);
                     return getDevonianDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 6: //Carboniferous
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getCarboniferousDisplayableFossilDrops().length);
                     return getCarboniferousDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 7: //Permian
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getPermianDisplayableFossilDrops().length);
                     return getPermianDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 8: //Triassic
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getTriassicDisplayableFossilDrops().length);
                     return getTriassicDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 9: //Jurassic
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getJurassicDisplayableFossilDrops().length);
                     return getJurassicDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 10: //Cretaceous
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getCretaceousDisplayableFossilDrops().length);
                     return getCretaceousDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 11: //Paleogene
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getPaleogeneDisplayableFossilDrops().length);
                     return getPaleogeneDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 12: //Neogene
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getNeogeneDisplayableFossilDrops().length);
                     return getNeogeneDisplayableFossilDrops()[ii];
                 }
                 return null;
 
             case 13: //Pleistocene
-                if (new Random().nextInt(16) == 0) {
+                if (new Random().nextInt(10) == 0) {
                     int ii = (new Random()).nextInt(getPleistoceneDisplayableFossilDrops().length);
                     return getPleistoceneDisplayableFossilDrops()[ii];
                 }

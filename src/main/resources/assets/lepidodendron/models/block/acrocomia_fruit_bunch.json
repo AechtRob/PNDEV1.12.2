@@ -1,0 +1,36 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/cube",
+	"textures": {
+		"0": "lepidodendron:blocks/acrocomia_fruit_b",
+		"1": "lepidodendron:blocks/acrocomia_fruit_stem",
+		"2": "lepidodendron:blocks/acrocomia_fruit_t",
+		"particle": "lepidodendron:blocks/acrocomia_fruit_b"
+	},
+	"elements": [
+		{
+			"from": [8.05, -2, 1],
+			"to": [8.05, 14, 17],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [8.05, -8, 1],
+			"to": [8.05, -2, 17],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 6], "texture": "#1"},
+				"west": {"uv": [16, 0, 0, 6], "texture": "#1"}
+			}
+		},
+		{
+			"from": [8.05, -2, -15],
+			"to": [8.05, 14, 1],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"textures": {
+	    "e": "lepidodendron:blocks/acrocomia_0305",
+	    "w": "lepidodendron:blocks/acrocomia_0301",
+	    "wdown": "lepidodendron:blocks/acrocomia_0401",
+		"edown": "lepidodendron:blocks/acrocomia_0405",
+	    "particle": "lepidodendron:blocks/acrocomia_0305"
+	},
+	"ambientocclusion":false,
+	"elements":[
+		{"name":"e",
+		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+		"faces":{
+		"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"edown",
+		"from":[0.0,-16.0,8.0],"to":[16.0,0.0,8.0],"shade":false,
+		"faces":{
+			"south":{"texture":"#edown","uv":[0.0,0.0,16.0,16.0]},
+		"north":{"texture":"#wdown","uv":[0.0,0.0,16.0,16.0]}}}
+		]
+}

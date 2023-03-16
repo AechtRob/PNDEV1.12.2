@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/phoenix_log_end",
+    "up": "lepidodendron:blocks/phoenix_log_end",
+    "north": "lepidodendron:blocks/phoenix_log",
+    "east": "lepidodendron:blocks/phoenix_log",
+    "south": "lepidodendron:blocks/phoenix_log",
+    "west": "lepidodendron:blocks/phoenix_log",
+    "particle": "lepidodendron:blocks/phoenix_log_end"
+  }
+}

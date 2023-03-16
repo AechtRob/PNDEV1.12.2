@@ -11,6 +11,8 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
@@ -121,6 +123,11 @@ public class BlockSkeletonBase  extends Block {
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
+	}
+
+	@Override
+	public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
+		return new ItemStack(Items.AIR, (int) (1)).getItem();
 	}
 
 	@Override

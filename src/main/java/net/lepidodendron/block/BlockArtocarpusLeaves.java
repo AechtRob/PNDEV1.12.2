@@ -83,7 +83,7 @@ public class BlockArtocarpusLeaves extends ElementsLepidodendronMod.ModElement {
 			super.updateTick(worldIn, pos, state, rand);
 
 			//Generate a fruit perhaps:
-			if (rand.nextInt(10) == 0 && state.getValue(CHECK_DECAY) && state.getValue(DECAYABLE) && worldIn.isAirBlock(pos.down())) { //The leaves are natural, not player-placed
+			if (rand.nextInt(10) == 0 && worldIn.isAirBlock(pos.down())) { //The leaves are natural, not player-placed
 				//Make sure that there isn't already fruit nearby:
 				boolean fruit = false;
 				int x = -3;

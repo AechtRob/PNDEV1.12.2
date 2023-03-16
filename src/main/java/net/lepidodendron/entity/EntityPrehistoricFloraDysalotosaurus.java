@@ -4,6 +4,8 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.util.DamageSource;
@@ -18,6 +20,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFloraDryosaurus {
 
@@ -26,6 +29,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public ChainBuffer chainBuffer;
 	private int inPFLove;
 	public ChainBuffer tailBuffer;
+	private int alarmCooldown;
 
 	public EntityPrehistoricFloraDysalotosaurus(World world) {
 		super(world);
@@ -43,6 +47,39 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		}
 	}
 
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			List<EntityPrehistoricFloraDysalotosaurus> Dysalotosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDysalotosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraDysalotosaurus currentDysalotosaurus : Dysalotosaurus) {
+				currentDysalotosaurus.setRevengeTarget(ee);
+				currentDysalotosaurus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	@Override
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple) {
+			return false;
+		}
+		List<EntityPrehistoricFloraDysalotosaurus> Dysalotosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraDysalotosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraDysalotosaurus currentDysalotosaurus : Dysalotosaurus) {
+			if (currentDysalotosaurus.isPFAdult() && this.isPFAdult() && currentDysalotosaurus != this && !currentDysalotosaurus.willGrapple) {
+				this.setGrappleTarget(currentDysalotosaurus);
+				currentDysalotosaurus.willGrapple=true;
+				this.willGrapple = true;
+				currentDysalotosaurus.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
@@ -178,6 +215,18 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:dysalotosaurus_death"));
+	}
+
+	@Override
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurus_alarm"));
+	}
+
+	@Override
+	public SoundEvent getChatterSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurus_chatter"));
 	}
 
 	@Override
