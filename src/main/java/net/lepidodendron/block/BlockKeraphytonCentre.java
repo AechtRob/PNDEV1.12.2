@@ -58,7 +58,7 @@ public class BlockKeraphytonCentre extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 	
-	public static final PropertyInteger VAR = PropertyInteger.create("var", 0,2);
+	public static final PropertyInteger VAR = PropertyInteger.create("var", 0,4);
 	
 	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {

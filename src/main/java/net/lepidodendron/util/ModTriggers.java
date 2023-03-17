@@ -156,6 +156,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DARK_OAK = new CustomTrigger("pf_book_dark_oak");
     public static final CustomTrigger CLICK_DAWN_REDWOOD = new CustomTrigger("pf_book_dawn_redwood");
     public static final CustomTrigger CLICK_DENDROGRAPTUS = new CustomTrigger("pf_book_dendrograptus");
+    public static final CustomTrigger CLICK_SPHENOECIUM = new CustomTrigger("pf_book_sphenoecium");
     public static final CustomTrigger CLICK_DIAPHORODENDRON = new CustomTrigger("pf_book_diaphorodendron");
     public static final CustomTrigger CLICK_DICKSONIA = new CustomTrigger("pf_book_dicksonia");
     public static final CustomTrigger CLICK_DICRANOPHYLLUM = new CustomTrigger("pf_book_dicranophyllum");
@@ -1137,6 +1138,7 @@ public class ModTriggers
             CLICK_DARK_OAK,
             CLICK_DAWN_REDWOOD,
             CLICK_DENDROGRAPTUS,
+            CLICK_SPHENOECIUM,
             CLICK_DIAPHORODENDRON,
             CLICK_DICKSONIA,
             CLICK_DICRANOPHYLLUM,

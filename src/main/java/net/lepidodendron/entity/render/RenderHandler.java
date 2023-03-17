@@ -3835,66 +3835,8 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTaxidermyTable.TileEntityTaxidermyTable.class, new RenderTaxidermyTable());
         
         //Skeleton Slabs:
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMixopterus.TileEntitySkeletonMixopterus.class, new RenderSkeletonMixopterus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCoccosteus.TileEntitySkeletonCoccosteus.class, new RenderSkeletonCoccosteus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonFalcatus.TileEntitySkeletonFalcatus.class, new RenderSkeletonFalcatus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSharkEmbryo.TileEntitySkeletonSharkEmbryo.class, new RenderSkeletonSharkEmbryo());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonTullimonstrum.TileEntitySkeletonTullimonstrum.class, new RenderSkeletonTullimonstrum());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonPulmonoscorpius.TileEntitySkeletonPulmonoscorpius.class, new RenderSkeletonPulmonoscorpius());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonKeichousaurus.TileEntitySkeletonKeichousaurus.class, new RenderSkeletonKeichousaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonArthropleura.TileEntitySkeletonArthropleura.class, new RenderSkeletonArthropleura());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAnomalocaris.TileEntitySkeletonAnomalocaris.class, new RenderSkeletonAnomalocaris());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAkmonistion.TileEntitySkeletonAkmonistion.class, new RenderSkeletonAkmonistion());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMeganeura.TileEntitySkeletonMeganeura.class, new RenderSkeletonMeganeura());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMegarachne.TileEntitySkeletonMegarachne.class, new RenderSkeletonMegarachne());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonLimulid.TileEntitySkeletonLimulid.class, new RenderSkeletonLimulid());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSchinderhannes.TileEntitySkeletonSchinderhannes.class, new RenderSkeletonSchinderhannes());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonWalliserops.TileEntitySkeletonWalliserops.class, new RenderSkeletonWalliserops());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAsaphus.TileEntitySkeletonAsaphus.class, new RenderSkeletonAsaphus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAmpyx.TileEntitySkeletonAmpyx.class, new RenderSkeletonAmpyx());
 
-        //Skeleton Mounts:
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonYinlong.TileEntitySkeletonYinlong.class, new RenderSkeletonYinlong());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonHenodus.TileEntitySkeletonHenodus.class, new RenderSkeletonHenodus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSilesaurus.TileEntitySkeletonSilesaurus.class, new RenderSkeletonSilesaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonLiliensternus.TileEntitySkeletonLiliensternus.class, new RenderSkeletonLiliensternus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonKentrosaurus.TileEntitySkeletonKentrosaurus.class, new RenderSkeletonKentrosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDunkleosteus.TileEntitySkeletonDunkleosteus.class, new RenderSkeletonDunkleosteus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonBungartius.TileEntitySkeletonBungartius.class, new RenderSkeletonBungartius());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMegalosaurus.TileEntitySkeletonMegalosaurus.class, new RenderSkeletonMegalosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonOphiacodon.TileEntitySkeletonOphiacodon.class, new RenderSkeletonOphiacodon());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonScutosaurus.TileEntitySkeletonScutosaurus.class, new RenderSkeletonScutosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonShringasaurus.TileEntitySkeletonShringasaurus.class, new RenderSkeletonShringasaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonErythrosuchus.TileEntitySkeletonErythrosuchus.class, new RenderSkeletonErythrosuchus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonLotosaurus.TileEntitySkeletonLotosaurus.class, new RenderSkeletonLotosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonArizonasaurus.TileEntitySkeletonArizonasaurus.class, new RenderSkeletonArizonasaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonRubidgea.TileEntitySkeletonRubidgea.class, new RenderSkeletonRubidgea());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonEstemmenosuchus.TileEntitySkeletonEstemmenosuchus.class, new RenderSkeletonEstemmenosuchus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonPrionosuchus.TileEntitySkeletonPrionosuchus.class, new RenderSkeletonPrionosuchus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonTiarajudens.TileEntitySkeletonTiarajudens.class, new RenderSkeletonTiarajudens());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCyamodus.TileEntitySkeletonCyamodus.class, new RenderSkeletonCyamodus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonLystrosaurus.TileEntitySkeletonLystrosaurus.class, new RenderSkeletonLystrosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSuminia.TileEntitySkeletonSuminia.class, new RenderSkeletonSuminia());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonPlatyhystrix.TileEntitySkeletonPlatyhystrix.class, new RenderSkeletonPlatyhystrix());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMoschops.TileEntitySkeletonMoschops.class, new RenderSkeletonMoschops());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCaviramus.TileEntitySkeletonCaviramus.class, new RenderSkeletonCaviramus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDiplocaulus.TileEntitySkeletonDiplocaulus.class, new RenderSkeletonDiplocaulus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonTiktaalik.TileEntitySkeletonTiktaalik.class, new RenderSkeletonTiktaalik());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCymbospondylus.TileEntitySkeletonCymbospondylus.class, new RenderSkeletonCymbospondylus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonEffigia.TileEntitySkeletonEffigia.class, new RenderSkeletonEffigia());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCotylorhynchus.TileEntitySkeletonCotylorhynchus.class, new RenderSkeletonCotylorhynchus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonPoposaurus.TileEntitySkeletonPoposaurus.class, new RenderSkeletonPoposaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonThecodontosaurus.TileEntitySkeletonThecodontosaurus.class, new RenderSkeletonThecodontosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonGerrothorax.TileEntitySkeletonGerrothorax.class, new RenderSkeletonGerrothorax());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonTanystropheus.TileEntitySkeletonTanystropheus.class, new RenderSkeletonTanystropheus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonOphthalmosaurus.TileEntitySkeletonOphthalmosaurus.class, new RenderSkeletonOphthalmosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMastodonsaurus.TileEntitySkeletonMastodonsaurus.class, new RenderSkeletonMastodonsaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDimetrodon.TileEntitySkeletonDimetrodon.class, new RenderSkeletonDimetrodon());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDesmatosuchus.TileEntitySkeletonDesmatosuchus.class, new RenderSkeletonDesmatosuchus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDryosaurus.TileEntitySkeletonDryosaurus.class, new RenderSkeletonDryosaurus());
-
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAnteosaurus.TileEntitySkeletonAnteosaurus.class, new RenderSkeletonAnteosaurus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonEdaphosaurus.TileEntitySkeletonEdaphosaurus.class, new RenderSkeletonEdaphosaurus());
 
     }
 }
