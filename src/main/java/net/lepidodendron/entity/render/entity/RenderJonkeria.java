@@ -15,6 +15,8 @@ public class RenderJonkeria extends RenderLiving<EntityPrehistoricFloraJonkeria>
         super(mgr, new ModelJonkeria(), 0.45f);
     }
 
+    public static float getScaler() {return 0.9f;}
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraJonkeria entity) {
         return RenderJonkeria.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderJonkeria extends RenderLiving<EntityPrehistoricFloraJonkeria>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraJonkeria entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
