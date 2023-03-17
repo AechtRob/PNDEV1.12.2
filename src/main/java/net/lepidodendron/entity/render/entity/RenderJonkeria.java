@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderJonkeria extends RenderLiving<EntityPrehistoricFloraJonkeria> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jonkeria.png");
+    public static float getScaler() {return 0.9f;}
 
     public RenderJonkeria(RenderManager mgr) {
         super(mgr, new ModelJonkeria(), 0.45f);
@@ -27,7 +28,7 @@ public class RenderJonkeria extends RenderLiving<EntityPrehistoricFloraJonkeria>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraJonkeria entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
