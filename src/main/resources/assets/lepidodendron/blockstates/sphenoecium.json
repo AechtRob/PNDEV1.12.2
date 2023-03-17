@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sphenoecium_1"},
+      {"model": "lepidodendron:sphenoecium_2"},
+      {"model": "lepidodendron:sphenoecium_1_rot"},
+      {"model": "lepidodendron:sphenoecium_2_rot"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:sphenoecium_1_side"},
+      {"model": "lepidodendron:sphenoecium_2_side"}
+      ],
+      "facing=east": [
+      {"model": "lepidodendron:sphenoecium_1_side", "y": 90},
+      {"model": "lepidodendron:sphenoecium_2_side", "y": 90}
+      ],
+      "facing=south": [
+      {"model": "lepidodendron:sphenoecium_1_side", "y": 180},
+      {"model": "lepidodendron:sphenoecium_2_side", "y": 180}
+      ],
+    "facing=west": [
+      {"model": "lepidodendron:sphenoecium_1_side","y": 270},
+      {"model": "lepidodendron:sphenoecium_2_side","y": 270}
+      ],
+  "facing=up": [
+      {"model": "lepidodendron:sphenoecium_1"},
+      {"model": "lepidodendron:sphenoecium_2" },
+      {"model": "lepidodendron:sphenoecium_1_rot"},
+      {"model": "lepidodendron:sphenoecium_2_rot" }
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:sphenoecium_1", "x": 180},
+      {"model": "lepidodendron:sphenoecium_2", "x": 180},
+      {"model": "lepidodendron:sphenoecium_1_rot", "x": 180},
+      {"model": "lepidodendron:sphenoecium_2_rot", "x": 180}
+    ]
+  }
+}
