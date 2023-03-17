@@ -3654,6 +3654,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPanguraptor.class, new IRenderFactory<EntityPrehistoricFloraPanguraptor>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPanguraptor> createRenderFor(RenderManager manager) {
+                return new RenderPanguraptor(manager);
+            }
+        });
+
 
 
 

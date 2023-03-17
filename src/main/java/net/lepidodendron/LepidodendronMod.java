@@ -1139,7 +1139,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation POSTOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/postosuchus"));
 	public static final ResourceLocation POSTOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/postosuchus_young"));
 	public static final int ENTITY_PROGANOCHELYS = 446;
-	//public static final ResourceLocation PROGANOCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proganochelys"));
+	public static final ResourceLocation PROGANOCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proganochelys"));
+	public static final ResourceLocation PROGANOCHELYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proganochelys_young"));
 	public static final int ENTITY_PSEUDOTHERIUM = 447;
 	public static final ResourceLocation PSEUDOTHERIUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudotherium"));
 	public static final ResourceLocation PSEUDOTHERIUM_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudotherium_jar"));
@@ -1536,8 +1537,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation HUALIANCERATOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hualianceratops_young"));
 
 	public static final int ENTITY_PANGURAPTOR = 631;
-	//public static final ResourceLocation PANGURAPTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panguraptor"));
-	// static final ResourceLocation PANGURAPTOR_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panguraptor_young"));
+	public static final ResourceLocation PANGURAPTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panguraptor"));
+	static final ResourceLocation PANGURAPTOR_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panguraptor_young"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
