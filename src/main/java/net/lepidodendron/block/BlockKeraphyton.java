@@ -75,7 +75,7 @@ public class BlockKeraphyton extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockKeraphyton.block);
 	}
 
-	public static final PropertyInteger VAR = PropertyInteger.create("var", 0,2);
+	public static final PropertyInteger VAR = PropertyInteger.create("var", 0,4);
 
 	public static class BlockCustomFlower extends BlockLeaves {
 		public BlockCustomFlower() {
