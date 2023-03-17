@@ -10684,6 +10684,8 @@ tile.pf_skeleton_mastodonsaurus.name=Mastodonsaurus Displayable Fossil
 tile.pf_skeleton_dimetrodon.name=Dimetrodon Displayable Fossil
 tile.pf_skeleton_desmatosuchus.name=Desmatosuchus Displayable Fossil
 tile.pf_skeleton_dryosaurus.name=Dryosaurus Displayable Fossil
+tile.pf_skeleton_edaphosaurus.name=Edaphosaurus Displayable Fossil
+tile.pf_skeleton_anteosaurus.name=Anteosaurus Displayable Fossil
 
 item.pf_acrocomia_nut.name=Acrocomia Nut
 item.pf_phoenix_seeds.name=Phoenix Seed
