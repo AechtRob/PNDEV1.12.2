@@ -3852,6 +3852,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonWalliserops.TileEntitySkeletonWalliserops.class, new RenderSkeletonWalliserops());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAsaphus.TileEntitySkeletonAsaphus.class, new RenderSkeletonAsaphus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAmpyx.TileEntitySkeletonAmpyx.class, new RenderSkeletonAmpyx());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonYorgia.TileEntitySkeletonYorgia.class, new RenderSkeletonYorgia());
 
         //Skeleton Mounts:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonYinlong.TileEntitySkeletonYinlong.class, new RenderSkeletonYinlong());
