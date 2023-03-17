@@ -10887,3 +10887,12 @@ item.pf_eggs_xuanhuaceratops.name=Xuanhuaceratops Eggs
 item.placeable_living_prehistoric_flora_hualianceratops.name=Placeable Cultured Nodule of Hualianceratops DNA
 item.placeable_living_prehistoric_flora_chaoyangsaurus.name=Placeable Cultured Nodule of Chaoyangsaurus DNA
 item.placeable_living_prehistoric_flora_xuanhuaceratops.name=Placeable Cultured Nodule of Xuanhuaceratops DNA
+
+item.pf_fossil_panguraptor_clean.name=Cleaned Panguraptor Fossil
+item.phial_dna_prehistoric_flora_panguraptor.name=Phial of Panguraptor DNA
+advancements.pf_adv_book_panguraptor.description=Unlock the entry for Panguraptor in the Palaeopedia
+advancements.pf_adv_book_panguraptor.title=Panguraptor
+item.pf_panguraptor_raw.name=Raw Panguraptor
+entity.prehistoric_flora_panguraptor.name=Panguraptor
+item.pf_eggs_panguraptor.name=Panguraptor Eggs
+item.placeable_living_prehistoric_flora_panguraptor.name=Placeable Cultured Nodule of Panguraptor DNA

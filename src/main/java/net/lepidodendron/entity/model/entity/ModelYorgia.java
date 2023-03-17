@@ -28,7 +28,7 @@ public class ModelYorgia extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone.render(f5 * 0.32F);
+        this.bone.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -42,7 +42,7 @@ public class ModelYorgia extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.bone.offsetY = 1.02F;
+        //this.bone.offsetY = 1.02F;
 
         EntityPrehistoricFloraYorgia ee = (EntityPrehistoricFloraYorgia) e;
 
