@@ -54,8 +54,8 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		enablePersistence();
 		minWidth = 0.12F;
 		maxWidth = 0.65F;
-		maxHeight = 1.05F;
-		maxHealthAgeable = 26.0D;
+		maxHeight = 1F;
+		maxHealthAgeable = 20.0D;
 		NOISE_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return 40;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
 
@@ -231,24 +231,24 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:coelophysis_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:panguraptor_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:coelophysis_idle"));
+				.getObject(new ResourceLocation("lepidodendron:panguraptor_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:coelophysis_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:panguraptor_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:coelophysis_death"));
+	            .getObject(new ResourceLocation("lepidodendron:panguraptor_death"));
 	}
 
 	@Override
@@ -326,9 +326,9 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.COELOPHYSIS_LOOT_YOUNG;
+			return LepidodendronMod.PANGURAPTOR_LOOT_YOUNG;
 		}
-		return LepidodendronMod.COELOPHYSIS_LOOT;
+		return LepidodendronMod.PANGURAPTOR_LOOT;
 	}
 
 	//Rendering taxidermy:

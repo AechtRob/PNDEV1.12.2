@@ -15,7 +15,7 @@ public class RenderPanguraptor extends RenderLiving<EntityPrehistoricFloraPangur
         super(mgr, new ModelPanguraptor(), 0.5f);
     }
 
-    public static float getScaler() {return 0.495f; }
+    public static float getScaler() {return 0.495f *0.6F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPanguraptor entity) {

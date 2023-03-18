@@ -3,307 +3,324 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraCoelophysis;
+import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
 public class ModelPanguraptor extends AdvancedModelBaseExtended {
-    public AdvancedModelRendererExtended Hips;
-    public AdvancedModelRendererExtended Bodymiddle;
-    public AdvancedModelRendererExtended Tailbase;
-    public AdvancedModelRendererExtended Leftthigh;
-    public AdvancedModelRendererExtended Rightthigh;
-    public AdvancedModelRendererExtended Bodyfront;
-    public AdvancedModelRendererExtended Backquillsside;
-    public AdvancedModelRendererExtended Backquills;
-    public AdvancedModelRendererExtended Neckbase;
-    public AdvancedModelRendererExtended Leftupperarm;
-    public AdvancedModelRendererExtended Rightupperarm;
-    public AdvancedModelRendererExtended Shoulderquillsside;
-    public AdvancedModelRendererExtended Shoulderquills;
-    public AdvancedModelRendererExtended Neckmiddle;
-    public AdvancedModelRendererExtended Neckend;
-    public AdvancedModelRendererExtended Neckquillsbase;
-    public AdvancedModelRendererExtended Head;
-    public AdvancedModelRendererExtended Neckquillsend;
-    public AdvancedModelRendererExtended Lowerjawbase;
-    public AdvancedModelRendererExtended Upperjawbase;
-    public AdvancedModelRendererExtended Lowerjawmiddle;
-    public AdvancedModelRendererExtended Jawparting;
-    public AdvancedModelRendererExtended Lowerjawfront;
-    public AdvancedModelRendererExtended Leftlowerteeth;
-    public AdvancedModelRendererExtended Rightlowerteeth;
-    public AdvancedModelRendererExtended Upperjawend;
-    public AdvancedModelRendererExtended Headslope;
-    public AdvancedModelRendererExtended Leftupperbackteeth;
-    public AdvancedModelRendererExtended Rightupperbackteeth;
-    public AdvancedModelRendererExtended Snout;
-    public AdvancedModelRendererExtended Leftupperfrontteeth;
-    public AdvancedModelRendererExtended Rightupperfrontteeth;
-    public AdvancedModelRendererExtended Leftlowerarm;
-    public AdvancedModelRendererExtended Lefthand;
-    public AdvancedModelRendererExtended Rightlowerarm;
-    public AdvancedModelRendererExtended Righthand;
-    public AdvancedModelRendererExtended Tailmiddlebase;
-    public AdvancedModelRendererExtended Tailmiddleend;
-    public AdvancedModelRendererExtended Tailend;
-    public AdvancedModelRendererExtended Tailquillsdorsal;
-    public AdvancedModelRendererExtended Tailquillsside;
-    public AdvancedModelRendererExtended Tailquillsdorsalend;
-    public AdvancedModelRendererExtended Tailquillssideend;
-    public AdvancedModelRendererExtended Leftshin;
-    public AdvancedModelRendererExtended Leftankle;
-    public AdvancedModelRendererExtended Leftfoot;
-    public AdvancedModelRendererExtended Rightshin;
-    public AdvancedModelRendererExtended Rightankle;
-    public AdvancedModelRendererExtended Rightfoot;
+    private final AdvancedModelRendererExtended Hips;
+    private final AdvancedModelRendererExtended Body;
+    private final AdvancedModelRendererExtended cube_r1;
+    private final AdvancedModelRendererExtended cube_r2;
+    private final AdvancedModelRendererExtended Chest;
+    private final AdvancedModelRendererExtended cube_r3;
+    private final AdvancedModelRendererExtended cube_r4;
+    private final AdvancedModelRendererExtended Neck;
+    private final AdvancedModelRendererExtended Neck2;
+    private final AdvancedModelRendererExtended Neck3;
+    private final AdvancedModelRendererExtended Head;
+    private final AdvancedModelRendererExtended lips;
+    private final AdvancedModelRendererExtended cube_r5;
+    private final AdvancedModelRendererExtended cube_r6;
+    private final AdvancedModelRendererExtended forehead;
+    private final AdvancedModelRendererExtended forehead2;
+    private final AdvancedModelRendererExtended cube_r7;
+    private final AdvancedModelRendererExtended Jaw;
+    private final AdvancedModelRendererExtended cube_r8;
+    private final AdvancedModelRendererExtended jaw2;
+    private final AdvancedModelRendererExtended cube_r9;
+    private final AdvancedModelRendererExtended cube_r10;
+    private final AdvancedModelRendererExtended ThroatPouch;
+    private final AdvancedModelRendererExtended UpperArmR;
+    private final AdvancedModelRendererExtended LowerArmR;
+    private final AdvancedModelRendererExtended HandR;
+    private final AdvancedModelRendererExtended UpperArmL;
+    private final AdvancedModelRendererExtended LowerArmL;
+    private final AdvancedModelRendererExtended HandL;
+    private final AdvancedModelRendererExtended Tail;
+    private final AdvancedModelRendererExtended Tail2;
+    private final AdvancedModelRendererExtended Tail3;
+    private final AdvancedModelRendererExtended cube_r11;
+    private final AdvancedModelRendererExtended Tail4;
+    private final AdvancedModelRendererExtended cube_r12;
+    private final AdvancedModelRendererExtended UpperLegR;
+    private final AdvancedModelRendererExtended LowerLegR;
+    private final AdvancedModelRendererExtended FootR;
+    private final AdvancedModelRendererExtended ToesR;
+    private final AdvancedModelRendererExtended UpperLegL;
+    private final AdvancedModelRendererExtended LowerLegL;
+    private final AdvancedModelRendererExtended FootL;
+    private final AdvancedModelRendererExtended ToesL;
 
     private ModelAnimator animator;
 
     public ModelPanguraptor() {
-        this.textureWidth = 100;
-        this.textureHeight = 100;
-        this.Tailquillsside = new AdvancedModelRendererExtended(this, 64, 0);
-        this.Tailquillsside.setRotationPoint(0.0F, 0.30000001192092896F, 0.0F);
-        this.Tailquillsside.addBox(-1.5F, 0.0F, 0.0F, 3, 0, 15, 0.0F);
-        this.Snout = new AdvancedModelRendererExtended(this, 33, 80);
-        this.Snout.setRotationPoint(0.0F, -2.700000047683716F, -0.20000000298023224F);
-        this.Snout.addBox(-0.5F, 0.0F, -3.0F, 1, 2, 3, 0.0F);
-        this.setRotateAngle(Snout, 0.31834805156902407F, 0.0F, 0.0F);
-        this.Leftthigh = new AdvancedModelRendererExtended(this, 74, 24);
-        this.Leftthigh.setRotationPoint(2.5F, 1.0F, 0.0F);
-        this.Leftthigh.addBox(-1.0F, -0.5F, -2.0F, 3, 9, 6, 0.0F);
-        this.setRotateAngle(Leftthigh, -0.2972295835988592F, 0.0F, 0.0F);
-        this.Leftupperbackteeth = new AdvancedModelRendererExtended(this, 22, 76);
-        this.Leftupperbackteeth.setRotationPoint(1.25F, 0.550000011920929F, -4.099999904632568F);
-        this.Leftupperbackteeth.addBox(0.0F, 0.0F, 0.0F, 0, 1, 4, 0.0F);
-        this.setRotateAngle(Leftupperbackteeth, 0.08726646259971647F, 0.0F, 0.0F);
-        this.Tailmiddleend = new AdvancedModelRendererExtended(this, 22, 37);
-        this.Tailmiddleend.setRotationPoint(0.0F, -0.4000000059604645F, 12.399999618530273F);
-        this.Tailmiddleend.addBox(-1.0F, -0.5F, 0.0F, 2, 3, 15, 0.0F);
-        this.Shoulderquillsside = new AdvancedModelRendererExtended(this, 40, 56);
-        this.Shoulderquillsside.setRotationPoint(0.0F, 0.800000011920929F, -7.599999904632568F);
-        this.Shoulderquillsside.addBox(-1.5F, -2.0F, 0.0F, 3, 2, 8, 0.0F);
-        this.setRotateAngle(Shoulderquillsside, 0.08482300397719036F, 0.0F, 0.0F);
-        this.Tailmiddlebase = new AdvancedModelRendererExtended(this, 19, 19);
-        this.Tailmiddlebase.setRotationPoint(0.0F, 0.20000000298023224F, 9.0F);
-        this.Tailmiddlebase.addBox(-1.5F, -1.0F, 0.0F, 3, 4, 13, 0.0F);
-        this.setRotateAngle(Tailmiddlebase, 0.1485275233394591F, 0.0F, 0.0F);
-        this.Neckmiddle = new AdvancedModelRendererExtended(this, 0, 5);
-        this.Neckmiddle.setRotationPoint(0.0F, 0.0F, -5.199999809265137F);
-        this.Neckmiddle.addBox(-1.5F, -1.0F, -8.0F, 3, 4, 8, 0.0F);
-        this.setRotateAngle(Neckmiddle, -0.4457571069383183F, 0.0F, 0.0F);
-        this.Leftlowerteeth = new AdvancedModelRendererExtended(this, 22, 79);
-        this.Leftlowerteeth.setRotationPoint(0.8999999761581421F, -0.20000000298023224F, -1.899999976158142F);
-        this.Leftlowerteeth.addBox(0.0F, -1.0F, -5.0F, 0, 1, 5, 0.0F);
-        this.setRotateAngle(Leftlowerteeth, -0.04241150198859518F, 0.134390349074612F, 0.0F);
-        this.Rightthigh = new AdvancedModelRendererExtended(this, 47, 33);
-        this.Rightthigh.setRotationPoint(-2.5F, 1.0F, 0.0F);
-        this.Rightthigh.addBox(-2.0F, -0.5F, -2.0F, 3, 9, 6, 0.0F);
-        this.setRotateAngle(Rightthigh, -0.2972295835988592F, 0.0F, 0.0F);
-        this.Lowerjawmiddle = new AdvancedModelRendererExtended(this, 58, 94);
-        this.Lowerjawmiddle.setRotationPoint(-0.009999999776482582F, 1.0F, -3.9000000953674316F);
-        this.Lowerjawmiddle.addBox(-1.0F, -1.0F, -5.0F, 2, 1, 5, 0.0F);
-        this.setRotateAngle(Lowerjawmiddle, -0.06370451936226872F, 0.0F, 0.0F);
-        this.Rightankle = new AdvancedModelRendererExtended(this, 80, 50);
-        this.Rightankle.setRotationPoint(0.009999999776482582F, 9.0F, 2.5F);
-        this.Rightankle.addBox(-1.0F, 0.0F, -2.5F, 2, 6, 3, 0.0F);
-        this.setRotateAngle(Rightankle, -0.67928211291826F, 0.0F, 0.0F);
-        this.Rightfoot = new AdvancedModelRendererExtended(this, 74, 69);
-        this.Rightfoot.setRotationPoint(0.0F, 6.4F, -1.2F);
-        this.Rightfoot.addBox(-2.5F, -1.0F, -5.0F, 5, 2, 6, 0.0F);
-        this.setRotateAngle(Rightfoot, 0.23352505391684128F, 0.0F, 0.0F);
-        this.Tailquillsdorsalend = new AdvancedModelRendererExtended(this, 50, 0);
-        this.Tailquillsdorsalend.setRotationPoint(0.0F, 0.20000000298023224F, 0.0F);
-        this.Tailquillsdorsalend.addBox(0.0F, -2.5F, 0.0F, 0, 4, 19, 0.0F);
-        this.Tailend = new AdvancedModelRendererExtended(this, 21, 56);
-        this.Tailend.setRotationPoint(0.0F, 0.10000000149011612F, 14.5F);
-        this.Tailend.addBox(-0.5F, -0.5F, 0.0F, 1, 2, 16, 0.0F);
-        this.setRotateAngle(Tailend, -0.10611601718967469F, 0.0F, 0.0F);
-        this.Leftfoot = new AdvancedModelRendererExtended(this, 74, 60);
-        this.Leftfoot.setRotationPoint(0.0F, 6.4F, -1.2F);
-        this.Leftfoot.addBox(-2.5F, -1.0F, -5.0F, 5, 2, 6, 0.0F);
-        this.setRotateAngle(Leftfoot, 0.23352505391684128F, 0.0F, 0.0F);
-        this.Bodyfront = new AdvancedModelRendererExtended(this, 0, 47);
-        this.Bodyfront.setRotationPoint(0.0F, -1.0F, -4.199999809265137F);
-        this.Bodyfront.addBox(-3.0F, -0.5F, -9.0F, 6, 8, 9, 0.0F);
-        this.setRotateAngle(Bodyfront, 0.13613568498450906F, 0.0F, 0.0F);
-        this.Lowerjawbase = new AdvancedModelRendererExtended(this, 46, 91);
-        this.Lowerjawbase.setRotationPoint(0.0F, 2.0F, 0.0F);
-        this.Lowerjawbase.addBox(-2.0F, 0.0F, -4.0F, 4, 1, 4, 0.0F);
-        this.Bodymiddle = new AdvancedModelRendererExtended(this, 0, 65);
-        this.Bodymiddle.setRotationPoint(0.009999999776482582F, -0.10000000149011612F, -4.599999904632568F);
-        this.Bodymiddle.addBox(-2.5F, -1.5F, -5.0F, 5, 9, 5, 0.0F);
-        this.setRotateAngle(Bodymiddle, -0.02844886672428379F, 0.0F, 0.0F);
-        this.Leftupperarm = new AdvancedModelRendererExtended(this, 59, 0);
-        this.Leftupperarm.setRotationPoint(2.75F, 5.0F, -6.5F);
-        this.Leftupperarm.addBox(-0.5F, -1.0F, -1.5F, 2, 5, 3, 0.0F);
-        this.setRotateAngle(Leftupperarm, 0.5307546228683145F, 0.0F, 0.0F);
-        this.Neckend = new AdvancedModelRendererExtended(this, 15, 2);
-        this.Neckend.setRotationPoint(-0.009999999776482582F, 0.0F, -7.5F);
-        this.Neckend.addBox(-1.5F, -1.0F, -6.0F, 3, 4, 6, 0.0F);
-        this.setRotateAngle(Neckend, 0.46705011182842415F, 0.0F, 0.0F);
-        this.Tailquillssideend = new AdvancedModelRendererExtended(this, 53, 0);
-        this.Tailquillssideend.setRotationPoint(0.0F, 0.20000000298023224F, 0.0F);
-        this.Tailquillssideend.addBox(-2.0F, -0.5F, 0.0F, 4, 1, 17, 0.0F);
-        this.setRotateAngle(Tailquillssideend, -0.021293017373673524F, 0.0F, 0.0F);
-        this.Neckquillsbase = new AdvancedModelRendererExtended(this, 65, 52);
-        this.Neckquillsbase.setRotationPoint(0.0F, -0.6000000238418579F, -8.0F);
-        this.Neckquillsbase.addBox(0.0F, -2.0F, 0.0F, 0, 2, 7, 0.0F);
-        this.setRotateAngle(Neckquillsbase, -0.08482300397719036F, 0.0F, 0.0F);
-        this.Upperjawend = new AdvancedModelRendererExtended(this, 22, 86);
-        this.Upperjawend.setRotationPoint(0.0F, 1.0F, -5.0F);
-        this.Upperjawend.addBox(-1.0F, -2.0F, -2.0F, 2, 2, 2, 0.0F);
-        this.setRotateAngle(Upperjawend, -0.12740903872453743F, 0.0F, 0.0F);
-        this.Rightlowerteeth = new AdvancedModelRendererExtended(this, 22, 77);
-        this.Rightlowerteeth.setRotationPoint(-0.8999999761581421F, -0.20000000298023224F, -1.899999976158142F);
-        this.Rightlowerteeth.addBox(0.0F, -1.0F, -5.0F, 0, 1, 5, 0.0F);
-        this.setRotateAngle(Rightlowerteeth, -0.04241150198859518F, -0.134390349074612F, 0.0F);
-        this.Lefthand = new AdvancedModelRendererExtended(this, 45, 7);
-        this.Lefthand.setRotationPoint(0.699999988079071F, 4.199999809265137F, -0.5F);
-        this.Lefthand.addBox(-1.0F, 0.0F, -1.5F, 1, 4, 3, 0.0F);
-        this.setRotateAngle(Lefthand, 0.1485275233394591F, 0.0F, 0.4457571069383183F);
-        this.Jawparting = new AdvancedModelRendererExtended(this, 33, 86);
-        this.Jawparting.setRotationPoint(0.009999999776482582F, 0.20000000298023224F, -3.5F);
-        this.Jawparting.addBox(-1.5F, -3.0F, 0.0F, 3, 3, 3, 0.0F);
-        this.setRotateAngle(Jawparting, -0.23352505591421208F, 0.0F, 0.0F);
-        this.Rightupperbackteeth = new AdvancedModelRendererExtended(this, 22, 74);
-        this.Rightupperbackteeth.setRotationPoint(-1.25F, 0.550000011920929F, -4.099999904632568F);
-        this.Rightupperbackteeth.addBox(0.0F, 0.0F, 0.0F, 0, 1, 4, 0.0F);
-        this.setRotateAngle(Rightupperbackteeth, 0.08726646259971647F, 0.0F, 0.0F);
-        this.Righthand = new AdvancedModelRendererExtended(this, 34, 7);
-        this.Righthand.setRotationPoint(-0.699999988079071F, 4.199999809265137F, -0.5F);
-        this.Righthand.addBox(0.0F, 0.0F, -1.5F, 1, 4, 3, 0.0F);
-        this.setRotateAngle(Righthand, 0.1485275233394591F, 0.0F, -0.4457571069383183F);
-        this.Backquills = new AdvancedModelRendererExtended(this, 50, 18);
-        this.Backquills.setRotationPoint(0.0F, -1.2000000476837158F, -5.0F);
-        this.Backquills.addBox(0.0F, -2.0F, 0.0F, 0, 2, 6, 0.0F);
-        this.setRotateAngle(Backquills, -0.2546435405291338F, 0.0F, 0.0F);
-        this.Rightupperarm = new AdvancedModelRendererExtended(this, 21, 15);
-        this.Rightupperarm.setRotationPoint(-2.75F, 5.0F, -6.5F);
-        this.Rightupperarm.addBox(-1.5F, -1.0F, -1.5F, 2, 5, 3, 0.0F);
-        this.setRotateAngle(Rightupperarm, 0.5747369280080549F, 0.0F, 0.0F);
-        this.Rightupperfrontteeth = new AdvancedModelRendererExtended(this, 29, 73);
-        this.Rightupperfrontteeth.setRotationPoint(-1.0F, -0.5F, 0.5F);
-        this.Rightupperfrontteeth.addBox(0.0F, 0.0F, -3.0F, 0, 1, 3, 0.0F);
-        this.setRotateAngle(Rightupperfrontteeth, -0.04241150198859518F, -0.23352505591421208F, 0.1485275233394591F);
-        this.Leftlowerarm = new AdvancedModelRendererExtended(this, 50, 0);
-        this.Leftlowerarm.setRotationPoint(0.49000000953674316F, 3.5F, 0.4000000059604645F);
-        this.Leftlowerarm.addBox(-1.0F, -0.5F, -1.5F, 2, 5, 2, 0.0F);
-        this.setRotateAngle(Leftlowerarm, -0.9976301977767977F, 0.0F, 0.0F);
-        this.Tailbase = new AdvancedModelRendererExtended(this, 0, 30);
-        this.Tailbase.setRotationPoint(0.0F, -0.4000000059604645F, 4.5F);
-        this.Tailbase.addBox(-2.0F, -1.0F, 0.0F, 4, 6, 10, 0.0F);
-        this.setRotateAngle(Tailbase, 0.04241150198859518F, 0.0F, 0.0F);
-        this.Backquillsside = new AdvancedModelRendererExtended(this, 39, 23);
-        this.Backquillsside.setRotationPoint(0.0F, -0.800000011920929F, -5.0F);
-        this.Backquillsside.addBox(-1.0F, -2.0F, 0.0F, 2, 2, 6, 0.0F);
-        this.setRotateAngle(Backquillsside, -0.1485275233394591F, 0.0F, 0.0F);
-        this.Leftupperfrontteeth = new AdvancedModelRendererExtended(this, 22, 73);
-        this.Leftupperfrontteeth.setRotationPoint(1.0F, -0.5F, 0.5F);
-        this.Leftupperfrontteeth.addBox(0.0F, 0.0F, -3.0F, 0, 1, 3, 0.0F);
-        this.setRotateAngle(Leftupperfrontteeth, -0.04241150198859518F, 0.23352505591421208F, -0.1485275233394591F);
-        this.Leftshin = new AdvancedModelRendererExtended(this, 60, 24);
-        this.Leftshin.setRotationPoint(0.5F, 8.199999809265137F, -0.6000000238418579F);
-        this.Leftshin.addBox(-1.0F, -0.5F, -0.5F, 2, 10, 4, 0.0F);
-        this.setRotateAngle(Leftshin, 0.8066912015770679F, 0.0F, 0.0F);
-        this.Headslope = new AdvancedModelRendererExtended(this, 42, 79);
-        this.Headslope.setRotationPoint(0.0F, -1.850000023841858F, 0.0F);
-        this.Headslope.addBox(-1.0F, 0.0F, -5.0F, 2, 1, 5, 0.0F);
-        this.setRotateAngle(Headslope, 0.017453292519943295F, 0.0F, 0.0F);
-        this.Lowerjawfront = new AdvancedModelRendererExtended(this, 45, 86);
-        this.Lowerjawfront.setRotationPoint(0.0F, -1.0F, -5.0F);
-        this.Lowerjawfront.addBox(-0.5F, 0.0F, -2.0F, 1, 1, 2, 0.0F);
-        this.setRotateAngle(Lowerjawfront, 0.04241150198859518F, 0.0F, 0.0F);
-        this.Neckquillsend = new AdvancedModelRendererExtended(this, 56, 49);
-        this.Neckquillsend.setRotationPoint(0.0F, -1.0F, -6.0F);
-        this.Neckquillsend.addBox(-0.5F, -2.0F, 0.0F, 1, 2, 7, 0.0F);
-        this.setRotateAngle(Neckquillsend, -0.08482300397719036F, 0.0F, 0.0F);
-        this.Rightshin = new AdvancedModelRendererExtended(this, 66, 39);
-        this.Rightshin.setRotationPoint(-0.5F, 8.199999809265137F, -0.6000000238418579F);
-        this.Rightshin.addBox(-1.0F, -0.5F, -0.5F, 2, 10, 4, 0.0F);
-        this.setRotateAngle(Rightshin, 0.8066912015770679F, 0.0F, 0.0F);
-        this.Hips = new AdvancedModelRendererExtended(this, 0, 80);
-        this.Hips.setRotationPoint(0.0F, 1.600000023841858F, 0.0F);
-        this.Hips.addBox(-2.5F, -1.5F, -5.5F, 5, 9, 11, 0.0F);
-        this.setRotateAngle(Hips, -0.06370451936226872F, 0.0F, 0.0F);
-        this.Neckbase = new AdvancedModelRendererExtended(this, 0, 18);
-        this.Neckbase.setRotationPoint(0.0F, 0.699999988079071F, -8.199999809265137F);
-        this.Neckbase.addBox(-2.0F, -1.0F, -6.5F, 4, 4, 7, 0.0F);
-        this.setRotateAngle(Neckbase, -0.33964105645913F, 0.0F, 0.0F);
-        this.Rightlowerarm = new AdvancedModelRendererExtended(this, 39, 0);
-        this.Rightlowerarm.setRotationPoint(-0.49000000953674316F, 3.5F, 0.4000000059604645F);
-        this.Rightlowerarm.addBox(-1.0F, -0.5F, -1.5F, 2, 5, 2, 0.0F);
-        this.setRotateAngle(Rightlowerarm, -0.9976301977767977F, 0.0F, 0.0F);
-        this.Upperjawbase = new AdvancedModelRendererExtended(this, 52, 83);
-        this.Upperjawbase.setRotationPoint(0.0F, 1.100000023841858F, -3.8299999237060547F);
-        this.Upperjawbase.addBox(-1.5F, -1.0F, -5.0F, 3, 2, 5, 0.0F);
-        this.setRotateAngle(Upperjawbase, 0.06370451936226872F, 0.0F, 0.0F);
-        this.Tailquillsdorsal = new AdvancedModelRendererExtended(this, 39, 0);
-        this.Tailquillsdorsal.setRotationPoint(0.009999999776482582F, 0.4000000059604645F, 0.0F);
-        this.Tailquillsdorsal.addBox(0.0F, -1.0F, 0.0F, 0, 1, 15, 0.0F);
-        this.setRotateAngle(Tailquillsdorsal, 0.04241150198859518F, 0.0F, 0.0F);
-        this.Head = new AdvancedModelRendererExtended(this, 33, 93);
-        this.Head.setRotationPoint(0.0F, -0.05000000074505806F, -5.0F);
-        this.Head.addBox(-2.0F, -1.0F, -4.0F, 4, 3, 4, 0.0F);
-        this.setRotateAngle(Head, 0.36093409463874954F, 0.0F, 0.0F);
-        this.Shoulderquills = new AdvancedModelRendererExtended(this, 56, 61);
-        this.Shoulderquills.setRotationPoint(0.0F, 0.699999988079071F, -6.5F);
-        this.Shoulderquills.addBox(-0.5F, -2.0F, 0.0F, 1, 2, 7, 0.0F);
-        this.setRotateAngle(Shoulderquills, 0.169820528229565F, 0.0F, 0.0F);
-        this.Leftankle = new AdvancedModelRendererExtended(this, 80, 40);
-        this.Leftankle.setRotationPoint(-0.009999999776482582F, 9.0F, 2.5F);
-        this.Leftankle.addBox(-1.0F, 0.0F, -2.5F, 2, 6, 3, 0.0F);
-        this.setRotateAngle(Leftankle, -0.67928211291826F, 0.0F, 0.0F);
-        this.Tailmiddleend.addChild(this.Tailquillsside);
-        this.Upperjawend.addChild(this.Snout);
-        this.Hips.addChild(this.Leftthigh);
-        this.Upperjawbase.addChild(this.Leftupperbackteeth);
-        this.Tailmiddlebase.addChild(this.Tailmiddleend);
-        this.Bodyfront.addChild(this.Shoulderquillsside);
-        this.Tailbase.addChild(this.Tailmiddlebase);
-        this.Neckbase.addChild(this.Neckmiddle);
-        this.Lowerjawmiddle.addChild(this.Leftlowerteeth);
-        this.Hips.addChild(this.Rightthigh);
-        this.Lowerjawbase.addChild(this.Lowerjawmiddle);
-        this.Rightshin.addChild(this.Rightankle);
-        this.Rightankle.addChild(this.Rightfoot);
-        this.Tailend.addChild(this.Tailquillsdorsalend);
-        this.Tailmiddleend.addChild(this.Tailend);
-        this.Leftankle.addChild(this.Leftfoot);
-        this.Bodymiddle.addChild(this.Bodyfront);
-        this.Head.addChild(this.Lowerjawbase);
-        this.Hips.addChild(this.Bodymiddle);
-        this.Bodyfront.addChild(this.Leftupperarm);
-        this.Neckmiddle.addChild(this.Neckend);
-        this.Tailend.addChild(this.Tailquillssideend);
-        this.Neckmiddle.addChild(this.Neckquillsbase);
-        this.Upperjawbase.addChild(this.Upperjawend);
-        this.Lowerjawmiddle.addChild(this.Rightlowerteeth);
-        this.Leftlowerarm.addChild(this.Lefthand);
-        this.Lowerjawbase.addChild(this.Jawparting);
-        this.Upperjawbase.addChild(this.Rightupperbackteeth);
-        this.Rightlowerarm.addChild(this.Righthand);
-        this.Bodymiddle.addChild(this.Backquills);
-        this.Bodyfront.addChild(this.Rightupperarm);
-        this.Upperjawend.addChild(this.Rightupperfrontteeth);
-        this.Leftupperarm.addChild(this.Leftlowerarm);
-        this.Hips.addChild(this.Tailbase);
-        this.Bodymiddle.addChild(this.Backquillsside);
-        this.Upperjawend.addChild(this.Leftupperfrontteeth);
-        this.Leftthigh.addChild(this.Leftshin);
-        this.Upperjawbase.addChild(this.Headslope);
-        this.Lowerjawmiddle.addChild(this.Lowerjawfront);
-        this.Neckend.addChild(this.Neckquillsend);
-        this.Rightthigh.addChild(this.Rightshin);
-        this.Bodyfront.addChild(this.Neckbase);
-        this.Rightupperarm.addChild(this.Rightlowerarm);
-        this.Head.addChild(this.Upperjawbase);
-        this.Tailmiddleend.addChild(this.Tailquillsdorsal);
-        this.Neckend.addChild(this.Head);
-        this.Bodyfront.addChild(this.Shoulderquills);
-        this.Leftshin.addChild(this.Leftankle);
+        this.textureWidth = 83;
+        this.textureHeight = 71;
+
+        this.Hips = new AdvancedModelRendererExtended(this);
+        this.Hips.setRotationPoint(0.0F, 3.0F, 0.0F);
+        this.setRotateAngle(Hips, -0.0436F, 0.0F, 0.0F);
+        this.Hips.cubeList.add(new ModelBox(Hips, 36, 0, -2.5F, -2.0F, -4.0F, 5, 9, 10, 0.0F, false));
+
+        this.Body = new AdvancedModelRendererExtended(this);
+        this.Body.setRotationPoint(0.0F, 0.0F, -3.0F);
+        this.Hips.addChild(Body);
+        this.setRotateAngle(Body, -0.0436F, 0.0F, 0.0F);
+        this.Body.cubeList.add(new ModelBox(Body, 24, 52, -2.5F, -2.0F, -6.0F, 5, 9, 6, -0.01F, false));
+
+        this.cube_r1 = new AdvancedModelRendererExtended(this);
+        this.cube_r1.setRotationPoint(0.0F, -4.5F, -7.0F);
+        this.Body.addChild(cube_r1);
+        this.setRotateAngle(cube_r1, -0.3054F, 0.0F, 0.0F);
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 66, 3, -0.5F, 0.0862F, 0.445F, 1, 4, 7, 0.0F, false));
+
+        this.cube_r2 = new AdvancedModelRendererExtended(this);
+        this.cube_r2.setRotationPoint(0.0F, -1.5F, -2.0F);
+        this.Body.addChild(cube_r2);
+        this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
+        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 56, 0, -1.5F, -1.0F, -5.0F, 3, 2, 7, 0.0F, false));
+
+        this.Chest = new AdvancedModelRendererExtended(this);
+        this.Chest.setRotationPoint(0.0F, 0.0F, -6.0F);
+        this.Body.addChild(Chest);
+        this.setRotateAngle(Chest, 0.0436F, 0.0F, 0.0F);
+        this.Chest.cubeList.add(new ModelBox(Chest, 0, 41, -3.0F, -2.0F, -8.0F, 6, 8, 9, 0.0F, false));
+
+        this.cube_r3 = new AdvancedModelRendererExtended(this);
+        this.cube_r3.setRotationPoint(0.0F, -4.0F, -1.0F);
+        this.Chest.addChild(cube_r3);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 69, 25, -1.0F, -0.4087F, -5.2354F, 2, 3, 6, 0.01F, false));
+
+        this.cube_r4 = new AdvancedModelRendererExtended(this);
+        this.cube_r4.setRotationPoint(0.0F, -2.0F, -4.0F);
+        this.Chest.addChild(cube_r4);
+        this.setRotateAngle(cube_r4, 0.1309F, 0.0F, 0.0F);
+        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 59, 21, -2.0F, -1.0F, -2.0F, 4, 2, 6, 0.01F, false));
+
+        this.Neck = new AdvancedModelRendererExtended(this);
+        this.Neck.setRotationPoint(0.0F, 0.3F, -7.0F);
+        this.Chest.addChild(Neck);
+        this.setRotateAngle(Neck, -0.2618F, 0.0F, 0.0F);
+        this.Neck.cubeList.add(new ModelBox(Neck, 57, 40, -2.0F, -2.0F, -7.0F, 4, 4, 7, 0.0F, false));
+        this.Neck.cubeList.add(new ModelBox(Neck, 59, 13, -1.5F, 2.0F, -7.0F, 3, 2, 7, 0.0F, false));
+
+        this.Neck2 = new AdvancedModelRendererExtended(this);
+        this.Neck2.setRotationPoint(0.0F, -0.4F, -5.7F);
+        this.Neck.addChild(Neck2);
+        this.setRotateAngle(Neck2, -0.2618F, 0.0F, 0.0F);
+        this.Neck2.cubeList.add(new ModelBox(Neck2, 0, 58, -1.5F, -1.5F, -7.0F, 3, 4, 7, 0.0F, false));
+        this.Neck2.cubeList.add(new ModelBox(Neck2, 30, 45, -1.0F, 2.5F, -6.0F, 2, 1, 6, 0.01F, false));
+
+        this.Neck3 = new AdvancedModelRendererExtended(this);
+        this.Neck3.setRotationPoint(0.0F, -0.5F, -6.4F);
+        this.Neck2.addChild(Neck3);
+        this.setRotateAngle(Neck3, 0.4363F, 0.0F, 0.0F);
+        this.Neck3.cubeList.add(new ModelBox(Neck3, 17, 0, -1.0F, -1.0F, -6.0F, 2, 4, 6, -0.02F, false));
+
+        this.Head = new AdvancedModelRendererExtended(this);
+        this.Head.setRotationPoint(0.0F, 0.9F, -5.2F);
+        this.Neck3.addChild(Head);
+        this.setRotateAngle(Head, 0.1745F, 0.0F, 0.0F);
+        this.Head.cubeList.add(new ModelBox(Head, 19, 31, -1.5F, -2.0F, -3.0F, 3, 3, 3, 0.0F, false));
+
+        this.lips = new AdvancedModelRendererExtended(this);
+        this.lips.setRotationPoint(0.0F, 1.0F, -3.0F);
+        this.Head.addChild(lips);
+        this.setRotateAngle(lips, -0.0087F, 0.0F, 0.0F);
+        this.lips.cubeList.add(new ModelBox(lips, 0, 30, -1.0F, -2.0F, -4.0F, 2, 2, 4, 0.0F, false));
+        this.lips.cubeList.add(new ModelBox(lips, 17, 0, -0.5F, -1.01F, -5.5F, 1, 1, 2, 0.0F, false));
+
+        this.cube_r5 = new AdvancedModelRendererExtended(this);
+        this.cube_r5.setRotationPoint(0.0F, -1.0F, -5.0F);
+        this.lips.addChild(cube_r5);
+        this.setRotateAngle(cube_r5, -0.0262F, 0.1309F, 0.0F);
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 9, 0.3F, 0.3F, 0.0F, 0, 1, 5, 0.0F, true));
+
+        this.cube_r6 = new AdvancedModelRendererExtended(this);
+        this.cube_r6.setRotationPoint(0.0F, -1.0F, -5.0F);
+        this.lips.addChild(cube_r6);
+        this.setRotateAngle(cube_r6, -0.0262F, -0.1309F, 0.0F);
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 0, 9, -0.3F, 0.3F, 0.0F, 0, 1, 5, 0.0F, false));
+
+        this.forehead = new AdvancedModelRendererExtended(this);
+        this.forehead.setRotationPoint(0.0F, -2.0F, -2.0F);
+        this.Head.addChild(forehead);
+        this.setRotateAngle(forehead, -0.1431F, 0.0F, 0.0F);
+        this.forehead.cubeList.add(new ModelBox(forehead, 25, 10, -1.0F, -0.01F, -2.0F, 2, 2, 2, -0.01F, false));
+
+        this.forehead2 = new AdvancedModelRendererExtended(this);
+        this.forehead2.setRotationPoint(0.0F, 0.0F, -2.0F);
+        this.forehead.addChild(forehead2);
+        this.setRotateAngle(forehead2, 0.48F, 0.0F, 0.0F);
+        this.forehead2.cubeList.add(new ModelBox(forehead2, 27, 0, -0.5F, -0.01F, -2.98F, 1, 2, 3, -0.01F, false));
+
+        this.cube_r7 = new AdvancedModelRendererExtended(this);
+        this.cube_r7.setRotationPoint(0.0F, 0.0F, -3.0F);
+        this.forehead2.addChild(cube_r7);
+        this.setRotateAngle(cube_r7, 0.3054F, 0.0F, 0.0F);
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 0, -0.5F, -0.019F, -2.1F, 1, 1, 1, -0.03F, false));
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 8, 0, -0.5F, -0.01F, -1.95F, 1, 1, 2, -0.02F, false));
+
+        this.Jaw = new AdvancedModelRendererExtended(this);
+        this.Jaw.setRotationPoint(0.0F, 1.0F, 0.0F);
+        this.Head.addChild(Jaw);
+        this.Jaw.cubeList.add(new ModelBox(Jaw, 21, 45, -1.5F, 0.0F, -3.0F, 3, 1, 3, 0.0F, false));
+
+        this.cube_r8 = new AdvancedModelRendererExtended(this);
+        this.cube_r8.setRotationPoint(0.0F, 0.0F, -3.0F);
+        this.Jaw.addChild(cube_r8);
+        this.setRotateAngle(cube_r8, -0.1571F, 0.0F, 0.0F);
+        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 0, 41, -1.0F, -3.0F, 0.5F, 2, 3, 2, -0.01F, false));
+
+        this.jaw2 = new AdvancedModelRendererExtended(this);
+        this.jaw2.setRotationPoint(0.0F, 0.6395F, -3.3986F);
+        this.Jaw.addChild(jaw2);
+        this.setRotateAngle(jaw2, -0.0262F, 0.0F, 0.0F);
+        this.jaw2.cubeList.add(new ModelBox(jaw2, 17, 10, -1.0F, -0.6595F, -3.5814F, 2, 1, 4, -0.01F, false));
+        this.jaw2.cubeList.add(new ModelBox(jaw2, 17, 3, -0.5F, -0.6595F, -5.1014F, 1, 1, 2, -0.02F, false));
+
+        this.cube_r9 = new AdvancedModelRendererExtended(this);
+        this.cube_r9.setRotationPoint(0.0F, -0.6395F, -4.6014F);
+        this.jaw2.addChild(cube_r9);
+        this.setRotateAngle(cube_r9, 0.0436F, 0.1309F, 0.0F);
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 8, 0, 0.29F, -0.3F, 1.0F, 0, 1, 3, 0.0F, true));
+
+        this.cube_r10 = new AdvancedModelRendererExtended(this);
+        this.cube_r10.setRotationPoint(0.0F, -0.6395F, -4.6014F);
+        this.jaw2.addChild(cube_r10);
+        this.setRotateAngle(cube_r10, 0.0436F, -0.1309F, 0.0F);
+        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 8, 0, -0.29F, -0.3F, 1.0F, 0, 1, 3, 0.0F, false));
+
+        this.ThroatPouch = new AdvancedModelRendererExtended(this);
+        this.ThroatPouch.setRotationPoint(0.0F, 3.0F, -2.0F);
+        this.Neck3.addChild(ThroatPouch);
+        this.ThroatPouch.cubeList.add(new ModelBox(ThroatPouch, 29, 23, -1.0F, -2.0F, -3.0F, 2, 2, 3, -0.03F, false));
+
+        this.UpperArmR = new AdvancedModelRendererExtended(this);
+        this.UpperArmR.setRotationPoint(-3.0F, 3.5F, -5.5F);
+        this.Chest.addChild(UpperArmR);
+        this.setRotateAngle(UpperArmR, 0.48F, 0.0F, 0.0F);
+        this.UpperArmR.cubeList.add(new ModelBox(UpperArmR, 19, 23, -1.0F, -1.0F, -1.5F, 2, 5, 3, 0.0F, false));
+
+        this.LowerArmR = new AdvancedModelRendererExtended(this);
+        this.LowerArmR.setRotationPoint(0.0F, 4.0F, 1.0F);
+        this.UpperArmR.addChild(LowerArmR);
+        this.setRotateAngle(LowerArmR, -0.9599F, 0.0F, 0.0F);
+        this.LowerArmR.cubeList.add(new ModelBox(LowerArmR, 40, 23, -1.0F, -0.5F, -2.0F, 2, 6, 2, -0.01F, false));
+
+        this.HandR = new AdvancedModelRendererExtended(this);
+        this.HandR.setRotationPoint(-0.5F, 5.0F, -1.0F);
+        this.LowerArmR.addChild(HandR);
+        this.setRotateAngle(HandR, 0.1135F, 0.0653F, -0.5199F);
+        this.HandR.cubeList.add(new ModelBox(HandR, 36, 0, -0.5F, 0.0F, -1.5F, 1, 5, 3, -0.02F, false));
+
+        this.UpperArmL = new AdvancedModelRendererExtended(this);
+        this.UpperArmL.setRotationPoint(3.0F, 3.5F, -5.5F);
+        this.Chest.addChild(UpperArmL);
+        this.setRotateAngle(UpperArmL, 0.48F, 0.0F, 0.0F);
+        this.UpperArmL.cubeList.add(new ModelBox(UpperArmL, 19, 23, -1.0F, -1.0F, -1.5F, 2, 5, 3, 0.0F, true));
+
+        this.LowerArmL = new AdvancedModelRendererExtended(this);
+        this.LowerArmL.setRotationPoint(0.0F, 4.0F, 1.0F);
+        this.UpperArmL.addChild(LowerArmL);
+        this.setRotateAngle(LowerArmL, -0.9599F, 0.0F, 0.0F);
+        this.LowerArmL.cubeList.add(new ModelBox(LowerArmL, 40, 23, -1.0F, -0.5F, -2.0F, 2, 6, 2, -0.01F, true));
+
+        this.HandL = new AdvancedModelRendererExtended(this);
+        this.HandL.setRotationPoint(0.5F, 5.0F, -1.0F);
+        this.LowerArmL.addChild(HandL);
+        this.setRotateAngle(HandL, 0.1135F, -0.0653F, 0.5199F);
+        this.HandL.cubeList.add(new ModelBox(HandL, 36, 0, -0.5F, 0.0F, -1.5F, 1, 5, 3, -0.02F, true));
+
+        this.Tail = new AdvancedModelRendererExtended(this);
+        this.Tail.setRotationPoint(0.0F, -0.9F, 5.0F);
+        this.Hips.addChild(Tail);
+        this.setRotateAngle(Tail, 0.0436F, 0.0F, 0.0F);
+        this.Tail.cubeList.add(new ModelBox(Tail, 40, 23, -2.0F, -1.0F, 0.0F, 4, 6, 11, 0.0F, false));
+
+        this.Tail2 = new AdvancedModelRendererExtended(this);
+        this.Tail2.setRotationPoint(0.0F, 0.1F, 10.0F);
+        this.Tail.addChild(Tail2);
+        this.setRotateAngle(Tail2, 0.0873F, 0.0F, 0.0F);
+        this.Tail2.cubeList.add(new ModelBox(Tail2, 21, 28, -1.5F, -1.0F, 0.0F, 3, 4, 13, 0.0F, false));
+        this.Tail2.cubeList.add(new ModelBox(Tail2, 40, 40, -1.0F, 3.0F, 0.0F, 2, 1, 13, 0.0F, false));
+
+        this.Tail3 = new AdvancedModelRendererExtended(this);
+        this.Tail3.setRotationPoint(0.0F, 0.1F, 12.0F);
+        this.Tail2.addChild(Tail3);
+        this.setRotateAngle(Tail3, 0.0436F, 0.0F, 0.0F);
+        this.Tail3.cubeList.add(new ModelBox(Tail3, 0, 23, -1.0F, -1.0F, 0.0F, 2, 3, 15, 0.0F, false));
+
+        this.cube_r11 = new AdvancedModelRendererExtended(this);
+        this.cube_r11.setRotationPoint(0.0F, 4.0F, 0.0F);
+        this.Tail3.addChild(cube_r11);
+        this.setRotateAngle(cube_r11, -0.0646F, 0.0F, 0.0F);
+        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 0, 0, -0.5F, -3.0F, 0.0F, 1, 2, 15, 0.0F, false));
+
+        this.Tail4 = new AdvancedModelRendererExtended(this);
+        this.Tail4.setRotationPoint(0.0F, 0.0F, 14.5F);
+        this.Tail3.addChild(Tail4);
+        this.setRotateAngle(Tail4, -0.0873F, 0.0F, 0.0F);
+        this.Tail4.cubeList.add(new ModelBox(Tail4, 18, 5, -0.5F, -1.0F, 0.0F, 1, 2, 16, 0.0F, false));
+
+        this.cube_r12 = new AdvancedModelRendererExtended(this);
+        this.cube_r12.setRotationPoint(0.0F, 1.0F, 0.0F);
+        this.Tail4.addChild(cube_r12);
+        this.setRotateAngle(cube_r12, -0.0436F, 0.0F, 0.0F);
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 0, 0, 0.01F, -1.0F, 0.0F, 0, 4, 17, 0.0F, true));
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 0, 0, -0.01F, -1.0F, 0.0F, 0, 4, 17, 0.0F, false));
+
+        this.UpperLegR = new AdvancedModelRendererExtended(this);
+        this.UpperLegR.setRotationPoint(-2.5F, 1.0F, 1.0F);
+        this.Hips.addChild(UpperLegR);
+        this.setRotateAngle(UpperLegR, -0.2618F, 0.0F, 0.0F);
+        this.UpperLegR.cubeList.add(new ModelBox(UpperLegR, 46, 54, -2.0F, -1.0F, -3.0F, 3, 9, 6, 0.0F, false));
+
+        this.LowerLegR = new AdvancedModelRendererExtended(this);
+        this.LowerLegR.setRotationPoint(-0.5F, 8.0F, -2.0F);
+        this.UpperLegR.addChild(LowerLegR);
+        this.setRotateAngle(LowerLegR, 0.829F, 0.0F, 0.0F);
+        this.LowerLegR.cubeList.add(new ModelBox(LowerLegR, 0, 0, -1.0F, -0.01F, 0.0F, 2, 10, 4, -0.01F, false));
+
+        this.FootR = new AdvancedModelRendererExtended(this);
+        this.FootR.setRotationPoint(0.0F, 10.0F, 3.5F);
+        this.LowerLegR.addChild(FootR);
+        this.setRotateAngle(FootR, -0.829F, 0.0F, 0.0F);
+        this.FootR.cubeList.add(new ModelBox(FootR, 0, 21, -1.0F, -0.03F, -3.0F, 2, 6, 3, -0.02F, false));
+
+        this.ToesR = new AdvancedModelRendererExtended(this);
+        this.ToesR.setRotationPoint(0.0F, 6.0F, -1.0F);
+        this.FootR.addChild(ToesR);
+        this.setRotateAngle(ToesR, 0.3054F, 0.0F, 0.0F);
+        this.ToesR.cubeList.add(new ModelBox(ToesR, 58, 63, -1.5F, -0.9537F, -5.1993F, 3, 2, 6, 0.0F, false));
+
+        this.UpperLegL = new AdvancedModelRendererExtended(this);
+        this.UpperLegL.setRotationPoint(2.5F, 1.0F, 1.0F);
+        this.Hips.addChild(UpperLegL);
+        this.setRotateAngle(UpperLegL, -0.2618F, 0.0F, 0.0F);
+        this.UpperLegL.cubeList.add(new ModelBox(UpperLegL, 46, 54, -1.0F, -1.0F, -3.0F, 3, 9, 6, 0.0F, true));
+
+        this.LowerLegL = new AdvancedModelRendererExtended(this);
+        this.LowerLegL.setRotationPoint(0.5F, 8.0F, -2.0F);
+        this.UpperLegL.addChild(LowerLegL);
+        this.setRotateAngle(LowerLegL, 0.829F, 0.0F, 0.0F);
+        this.LowerLegL.cubeList.add(new ModelBox(LowerLegL, 0, 0, -1.0F, -0.01F, 0.0F, 2, 10, 4, -0.01F, true));
+
+        this.FootL = new AdvancedModelRendererExtended(this);
+        this.FootL.setRotationPoint(0.0F, 10.0F, 3.5F);
+        this.LowerLegL.addChild(FootL);
+        this.setRotateAngle(FootL, -0.829F, 0.0F, 0.0F);
+        this.FootL.cubeList.add(new ModelBox(FootL, 0, 21, -1.0F, -0.03F, -3.0F, 2, 6, 3, -0.02F, true));
+
+        this.ToesL = new AdvancedModelRendererExtended(this);
+        this.ToesL.setRotationPoint(0.0F, 6.0F, -1.0F);
+        this.FootL.addChild(ToesL);
+        this.setRotateAngle(ToesL, 0.3054F, 0.0F, 0.0F);
+        this.ToesL.cubeList.add(new ModelBox(ToesL, 58, 63, -1.5F, -0.9537F, -5.1993F, 3, 2, 6, 0.0F, true));
 
         updateDefaultPose();
         animator = ModelAnimator.create();
@@ -315,57 +332,11 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
         this.Hips.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Neckbase.render(0.01F);
+        this.Neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(Shoulderquillsside, 0.084F, 0.0F, 0.0F);
-        this.setRotateAngle(Leftlowerarm, -1.082F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightfoot, 2.058F, 0.0F, 0.0F);
-        this.setRotateAngle(Tailquillssideend, -0.021F, 0.0F, 0.0F);
-        this.setRotateAngle(Leftthigh, 0.0F, -0.063F, 0.0F);
-        this.setRotateAngle(Hips, -0.127F, (float) Math.toRadians(90), 0.0F);
-        this.setRotateAngle(Jawparting, -0.233F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightlowerarm, -1.061F, 0.0F, 0.0F);
-        this.setRotateAngle(Upperjawend, -0.127F, 0.0F, 0.0F);
-        this.setRotateAngle(Neckquillsbase, -0.084F, 0.0F, 0.0F);
-        this.setRotateAngle(Neckmiddle, -0.127F, 0.084F, 0.0F);
-        this.setRotateAngle(Headslope, 0.017F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightupperbackteeth, 0.087F, 0.0F, 0.0F);
-        this.setRotateAngle(Lefthand, -0.084F, 0.021F, 0.0F);
-        this.setRotateAngle(Tailbase, 0.233F, -0.127F, 0.0F);
-        this.setRotateAngle(Tailend, -0.169F, 0.148F, 0.0F);
-        this.setRotateAngle(Tailmiddlebase, 0.212F, -0.148F, 0.0F);
-        this.setRotateAngle(Snout, 0.318F, 0.0F, 0.0F);
-        this.setRotateAngle(Leftshin, 0.955F, 0.0F, 0.0F);
-        this.setRotateAngle(Backquills, -0.254F, 0.0F, 0.0F);
-        this.setRotateAngle(Neckend, 0.127F, 0.063F, 0.0F);
-        this.setRotateAngle(Shoulderquills, 0.169F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightlowerteeth, -0.042F, -0.134F, 0.0F);
-        this.setRotateAngle(Neckbase, -0.063F, 0.106F, 0.0F);
-        this.setRotateAngle(Leftupperbackteeth, 0.087F, 0.0F, 0.0F);
-        this.setRotateAngle(Righthand, -0.127F, 0.0F, 0.021F);
-        this.setRotateAngle(Lowerjawmiddle, -0.063F, 0.0F, 0.0F);
-        this.setRotateAngle(Tailquillsdorsal, 0.042F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightupperarm, 0.574F, 0.0F, 0.403F);
-        this.setRotateAngle(Head, -0.063F, 0.084F, 0.0F);
-        this.setRotateAngle(Upperjawbase, 0.063F, 0.0F, 0.0F);
-        this.setRotateAngle(Leftfoot, -0.148F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightthigh, -0.912F, 0.191F, 0.042F);
-        this.setRotateAngle(Leftupperarm, 0.084F, 0.0F, -0.360F);
-        this.setRotateAngle(Bodymiddle, 0.042F, 0.021F, 0.0F);
-        this.setRotateAngle(Lowerjawbase, 0.636F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightankle, -1.761F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightshin, 1.528F, 0.0F, 0.0F);
-        this.setRotateAngle(Rightupperfrontteeth, -0.042F, -0.233F, 0.148F);
-        this.setRotateAngle(Leftankle, -0.360F, 0.0F, 0.0F);
-        this.setRotateAngle(Bodyfront, 0.191F, 0.191F, 0.0F);
-        this.setRotateAngle(Backquillsside, -0.148F, 0.0F, 0.0F);
-        this.setRotateAngle(Leftlowerteeth, -0.042F, 0.134F, 0.0F);
-        this.setRotateAngle(Leftupperfrontteeth, -0.042F, 0.233F, -0.148F);
-        this.setRotateAngle(Tailmiddleend, -0.191F, 0.169F, 0.0F);
-        this.setRotateAngle(Neckquillsend, -0.084F, 0.0F, 0.0F);
-        this.setRotateAngle(Lowerjawfront, 0.042F, 0.0F, 0.0F);
+
         this.Hips.offsetY = -0.07F;
         this.Hips.render(0.01F);
         resetToDefaultPose();
@@ -380,30 +351,29 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = -0F;
-        this.Hips.offsetZ = 0.2F;
+        this.Hips.offsetY = 0.02F;
+        //this.Hips.offsetZ = 0.2F;
 
-        EntityPrehistoricFloraCoelophysis Coelophysis = (EntityPrehistoricFloraCoelophysis) e;
-        float masterSpeed = Coelophysis.getTravelSpeed();
+        EntityPrehistoricFloraPanguraptor Panguraptor = (EntityPrehistoricFloraPanguraptor) e;
+        float masterSpeed = Panguraptor.getTravelSpeed();
 
-        this.faceTarget(f3, f4, 10, Neckbase);
-        this.faceTarget(f3, f4, 10, Neckmiddle);
-        this.faceTarget(f3, f4, 10, Neckend);
+        this.faceTarget(f3, f4, 10, Neck);
+        this.faceTarget(f3, f4, 10, Neck2);
+        this.faceTarget(f3, f4, 10, Neck3);
         this.faceTarget(f3, f4, 10, Head);
 
         //float speed = 0.2F;
 
 
-        AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
-        AdvancedModelRenderer[] Neck = {this.Neckbase, this.Neckmiddle, this.Neckend};
-        Coelophysis.tailBuffer.applyChainSwingBuffer(Tail);
+        AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2, this.Tail3, this.Tail4};
+        AdvancedModelRenderer[] Neck = {this.Neck, this.Neck2, this.Neck3};
+        Panguraptor.tailBuffer.applyChainSwingBuffer(Tail);
 
-        AdvancedModelRenderer[] ArmL = {this.Leftupperarm, this.Leftlowerarm};
-        AdvancedModelRenderer[] ArmR = {this.Rightupperarm, this.Rightlowerarm};
+        AdvancedModelRenderer[] ArmL = {this.UpperArmL, this.LowerArmL};
+        AdvancedModelRenderer[] ArmR = {this.UpperArmR, this.LowerArmR};
 
-        //AdvancedModelRenderer[] Whole = {this.neck2, this.neck, this.body, this.body2, this.body3, this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
 
-        if (Coelophysis.getAnimation() == Coelophysis.LAY_ANIMATION) {
+        if (Panguraptor.getAnimation() == Panguraptor.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
             //Other stuff
@@ -411,9 +381,9 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
             return;
         }
         
-        if (!Coelophysis.isReallyInWater()) {
+        if (!Panguraptor.isReallyInWater()) {
 
-            if (f3 == 0.0F || !Coelophysis.getIsMoving()) {
+            if (f3 == 0.0F || !Panguraptor.getIsMoving()) {
                 this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                 this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                 this.chainFlap(Tail, (0.2F*0.6F), 0.10F, 0.2F, f2, 1F);
@@ -422,45 +392,45 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
                 return;
            }
 
-            if (Coelophysis.getIsFast()) { //Running
+            if (Panguraptor.getIsFast()) { //Running
                 float speed = masterSpeed / 2F;
-                this.Hips.offsetY = -0F;
-                this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
-                this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
+                this.Hips.offsetY = 0.05F;
+                this.UpperLegL.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
+                this.UpperLegR.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
                 this.chainWaveExtended(ArmL, speed, 0.10F, 0.5, 8, f2, 1F);
                 this.chainWaveExtended(ArmR, speed, 0.10F, 0.5, 5, f2, 1F);
-                this.walk(Lefthand, speed, 0.10F, true, 5, 0F, f2, 1F);
-                this.walk(Righthand, speed, 0.10F, true, 2, 0F, f2, 1F);
+                this.walk(HandL, speed, 0.10F, true, 5, 0F, f2, 1F);
+                this.walk(HandR, speed, 0.10F, true, 2, 0F, f2, 1F);
 
-                this.walk(Leftthigh, speed, 0.60F, true, 8, 0.55F, f2, 1F);
-                this.walk(Rightthigh, speed, 0.60F, true, 5, 0.55F, f2, 1F);
+                this.walk(UpperLegL, speed, 0.60F, true, 8, 0.55F, f2, 1F);
+                this.walk(UpperLegR, speed, 0.60F, true, 5, 0.55F, f2, 1F);
 
-                this.walk(Leftshin, speed, 0.60F, true, 6.5F, -0.7F, f2, 1F);
-                this.walk(Rightshin, speed, 0.60F, true, 3.5F, -0.7F, f2, 1F);
+                this.walk(LowerLegL, speed, 0.60F, true, 6.5F, -0.7F, f2, 1F);
+                this.walk(LowerLegR, speed, 0.60F, true, 3.5F, -0.7F, f2, 1F);
 
-                this.walk(Leftankle, speed, 0.25F, true, 4, -0.18F, f2, 1F);
-                this.walk(Rightankle, speed, 0.25F, true, 1, -0.18F, f2, 1F);
+                this.walk(FootL, speed, 0.25F, true, 4, -0.18F, f2, 1F);
+                this.walk(FootR, speed, 0.25F, true, 1, -0.18F, f2, 1F);
 
-                this.walk(Leftfoot, speed, 1.2F, true, 7.5F, -0.5F, f2, 1F);
-                this.walk(Rightfoot, speed, 1.2F, true, 4.5F, -0.5F, f2, 1F);
+                this.walk(ToesL, speed, 1.2F, true, 7.5F, -0.5F, f2, 1F);
+                this.walk(ToesR, speed, 1.2F, true, 4.5F, -0.5F, f2, 1F);
 
                 this.bobExtended(Hips, speed * 2F, 1.0F, false, 2.5F, f2, 1F);
 
                 this.flap(Hips, speed, 0.12F, false, 5.0F, 0.06F, f2, 1.0F);
-                this.flap(Bodymiddle, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
-                this.flap(Bodyfront, speed, -0.08F, false, 5.0F, -0.04F, f2, 1.0F);
-                this.flap(Neckbase, speed, 0.08F, false, 5.0F, 0.04F, f2, 1.0F);
+                this.flap(Body, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
+                this.flap(Chest, speed, -0.08F, false, 5.0F, -0.04F, f2, 1.0F);
+                this.flap(this.Neck, speed, 0.08F, false, 5.0F, 0.04F, f2, 1.0F);
 
-                this.flap(Leftthigh, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
-                this.flap(Rightthigh, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
+                this.flap(UpperLegL, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
+                this.flap(UpperLegR, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
 
-                this.walk(Bodymiddle, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
-                this.walk(Bodyfront, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
+                this.walk(Body, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
+                this.walk(Chest, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
 
-                this.walk(Neckbase, speed * 2, -0.25F, false, 2.5F, 0F, f2, 0.8F);
-                this.walk(Neckmiddle, speed * 2, -0.3F, false, 2.5F, 0F, f2, 0.8F);
-                this.walk(Neckend, speed * 2, 0.2F, false, 2.5F, 0F, f2, 0.8F);
+                this.walk(this.Neck, speed * 2, -0.25F, false, 2.5F, 0F, f2, 0.8F);
+                this.walk(Neck2, speed * 2, -0.3F, false, 2.5F, 0F, f2, 0.8F);
+                this.walk(Neck3, speed * 2, 0.2F, false, 2.5F, 0F, f2, 0.8F);
                 this.walk(Head, speed * 2, 0.35F, false, 2.5F, 0F, f2, 0.8F);
 
                 this.chainFlap(Tail, (speed * 0.6F), 0.20F, 0.2F, f2, 1F);
@@ -470,46 +440,46 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
             }
             else { //Walking
                 float speed = masterSpeed / 2.00F;
-                this.Hips.offsetY = -0F;
-                this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
-                this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
+                this.Hips.offsetY = 0.05F;
+                this.UpperLegL.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
+                this.UpperLegR.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 
                 this.chainWaveExtended(ArmL, speed, 0.10F, 0.5, 8, f2, 1F);
                 this.chainWaveExtended(ArmR, speed, 0.10F, 0.5, 5, f2, 1F);
-                this.walk(Lefthand, speed, 0.10F, true, 5, 0F, f2, 1F);
-                this.walk(Righthand, speed, 0.10F, true, 2, 0F, f2, 1F);
+                this.walk(HandL, speed, 0.10F, true, 5, 0F, f2, 1F);
+                this.walk(HandR, speed, 0.10F, true, 2, 0F, f2, 1F);
 
-                this.walk(Leftthigh, speed, 0.40F, true, 8, 0.35F, f2, 1F);
-                this.walk(Rightthigh, speed, 0.40F, true, 5, 0.35F, f2, 1F);
+                this.walk(UpperLegL, speed, 0.40F, true, 8, 0.35F, f2, 1F);
+                this.walk(UpperLegR, speed, 0.40F, true, 5, 0.35F, f2, 1F);
 
-                this.walk(Leftshin, speed, 0.30F, true, 6.5F, 0F, f2, 1F);
-                this.walk(Rightshin, speed, 0.30F, true, 3.5F, 0F, f2, 1F);
+                this.walk(LowerLegL, speed, 0.30F, true, 6.5F, 0F, f2, 1F);
+                this.walk(LowerLegR, speed, 0.30F, true, 3.5F, 0F, f2, 1F);
 
-                this.bobExtended(Leftshin, speed, 1.5F, false, 7.0F, f2, 1F);
-                this.bobExtended(Rightshin, speed, 1.5F, false, 4.0F, f2, 1F);
+                this.bobExtended(LowerLegL, speed, 1.5F, false, 7.0F, f2, 1F);
+                this.bobExtended(LowerLegR, speed, 1.5F, false, 4.0F, f2, 1F);
 
-                this.walk(Leftankle, speed, 0.25F, true, 4, -0.18F, f2, 1F);
-                this.walk(Rightankle, speed, 0.25F, true, 1, -0.18F, f2, 1F);
+                this.walk(FootL, speed, 0.25F, true, 4, -0.18F, f2, 1F);
+                this.walk(FootR, speed, 0.25F, true, 1, -0.18F, f2, 1F);
 
-                this.walk(Leftfoot, speed, 0.5F, true, 5.0F, -0.45F, f2, 1F);
-                this.walk(Rightfoot, speed, 0.5F, true, 2.0F, -0.45F, f2, 1F);
+                this.walk(ToesL, speed, 0.5F, true, 5.0F, -0.45F, f2, 1F);
+                this.walk(ToesR, speed, 0.5F, true, 2.0F, -0.45F, f2, 1F);
 
                 this.bobExtended(Hips, speed * 2F, 1.33F, false, 3.5F, f2, 1F);
 
                 this.flap(Hips, speed, 0.22F, false, 6.0F, 0.06F, f2, 1.0F);
-                this.flap(Bodymiddle, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
-                this.flap(Bodyfront, speed, -0.12F, false, 6.0F, -0.04F, f2, 1.0F);
-                this.flap(Neckbase, speed, 0.12F, false, 6.0F, 0.04F, f2, 1.0F);
+                this.flap(Body, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
+                this.flap(Chest, speed, -0.12F, false, 6.0F, -0.04F, f2, 1.0F);
+                this.flap(this.Neck, speed, 0.12F, false, 6.0F, 0.04F, f2, 1.0F);
 
-                this.flap(Leftthigh, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
-                this.flap(Rightthigh, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
+                this.flap(UpperLegL, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
+                this.flap(UpperLegR, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
 
-                this.walk(Bodymiddle, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
-                this.walk(Bodyfront, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
+                this.walk(Body, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
+                this.walk(Chest, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
 
-                this.walk(Neckbase, speed * 2, -0.25F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
-                this.walk(Neckmiddle, speed * 2, -0.3F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
-                this.walk(Neckend, speed * 2, 0.2F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
+                this.walk(this.Neck, speed * 2, -0.25F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
+                this.walk(Neck2, speed * 2, -0.3F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
+                this.walk(Neck3, speed * 2, 0.2F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
                 this.walk(Head, speed * 2, 0.35F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
 
                 this.chainFlap(Tail, (speed * 0.6F), 0.20F * 0.75F, 0.2F, f2, 1F);
@@ -533,7 +503,7 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraCoelophysis e = (EntityPrehistoricFloraCoelophysis) entity;
+        EntityPrehistoricFloraPanguraptor e = (EntityPrehistoricFloraPanguraptor) entity;
         animator.update(entity);
         this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
@@ -541,167 +511,167 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
         animator.setAnimation(e.DRINK_ANIMATION);
         animator.startKeyframe(10);
         animator.rotate(this.Hips, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(5);
         animator.rotate(this.Hips, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(2);
         animator.rotate(this.Hips, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(5);
         animator.rotate(this.Hips, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(2);
         animator.rotate(this.Hips, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.startKeyframe(15);
-        animator.move(this.Neckbase, (float) Math.toRadians(-30),0,0);
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-30), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.move(this.Neck, (float) Math.toRadians(-30),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-30), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(2);
-        animator.move(this.Neckbase, (float) Math.toRadians(-35),0,0);
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.move(this.Neck, (float) Math.toRadians(-35),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(1);
         animator.startKeyframe(2);
-        animator.move(this.Neckbase, (float) Math.toRadians(-32),0,0);
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-32), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-22), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.move(this.Neck, (float) Math.toRadians(-32),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-32), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-22), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(1);
         animator.setStaticKeyframe(2);
         animator.startKeyframe(2);
-        animator.move(this.Neckbase, (float) Math.toRadians(-35),0,0);
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.move(this.Neck, (float) Math.toRadians(-35),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(1);
         animator.startKeyframe(2);
-        animator.move(this.Neckbase, (float) Math.toRadians(-32),0,0);
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-32), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-22), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.move(this.Neck, (float) Math.toRadians(-32),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-32), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-22), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(1);
         animator.resetKeyframe(10);
 
         animator.setAnimation(e.ATTACK_ANIMATION);
         animator.startKeyframe(5);
-        animator.rotate(this.Neckbase, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(5);
         animator.rotate(this.Hips, (float) Math.toRadians(8), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.resetKeyframe(6);
 
         animator.setAnimation(e.EAT_ANIMATION);
         animator.startKeyframe(5);
-        animator.rotate(this.Neckbase, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(-6), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(5);
         animator.rotate(this.Hips, (float) Math.toRadians(8), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftthigh, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightthigh, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Leftupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Rightupperarm, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegL, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperLegR, (float) Math.toRadians(-8), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmL, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.UpperArmR, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.resetKeyframe(6);
 
         animator.setAnimation(e.NOISE_ANIMATION);
         animator.startKeyframe(5);
-        animator.move(this.Neckbase, (float) Math.toRadians(10),0,0);
-        animator.move(this.Neckmiddle, (float) Math.toRadians(10),0,0);
-        animator.move(this.Neckend, (float) Math.toRadians(-10),0,0);
+        animator.move(this.Neck, (float) Math.toRadians(10),0,0);
+        animator.move(this.Neck2, (float) Math.toRadians(10),0,0);
+        animator.move(this.Neck3, (float) Math.toRadians(-10),0,0);
         animator.rotate(this.Head, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(5);
 
         animator.setAnimation(e.ROAR_ANIMATION);
         animator.startKeyframe(5);
-        animator.rotate(this.Neckbase, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.startKeyframe(10);
-        animator.move(this.Neckbase, (float) Math.toRadians(-10),0,0);
-        animator.rotate(this.Neckmiddle, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neckend, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.move(this.Neck, (float) Math.toRadians(-10),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Head, (float) Math.toRadians(-55), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Lowerjawbase, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(10);
