@@ -344,30 +344,32 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dryosaurus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dryosaurus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dryosaurus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_death"));
 	}
+
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:dryosaurus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_alarm"));
 	}
+
 
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:dryosaurus_chatter"));
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_chatter"));
 	}
 
 	public void playAlarmSound()

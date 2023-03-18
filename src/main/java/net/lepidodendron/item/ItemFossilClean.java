@@ -42,7 +42,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 		ModelBakery.registerItemVariants(block,
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stethacanthus_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_panguraptor_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_panguraptor_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_parameteoraspis_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_tauraspis_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_sclerodus_clean", "inventory"),
@@ -67,7 +67,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_ciurcopterus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_hualianceratops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_chaoyangsaurus_clean", "inventory"),
-				//new ModelResourceLocation("lepidodendron:fossils/fossil_proganochelys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_proganochelys_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dryosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dysalotosaurus_clean", "inventory"),

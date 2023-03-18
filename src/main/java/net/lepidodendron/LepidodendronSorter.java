@@ -3529,5 +3529,8 @@ public static final int zircon_ore = 3524;
 public static final int zosterophyllum = 3525;
 public static final int zosterophyllum_spore = 3526;
 public static final int advancement_placeholder = 3527;
+public static final int eggs_proganochelys = 3528;
+public static final int eggs_panguraptor = 3529;
+public static final int panguraptor_raw = 3530;
 
 }
