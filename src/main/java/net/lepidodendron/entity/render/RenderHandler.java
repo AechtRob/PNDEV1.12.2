@@ -3836,7 +3836,6 @@ public class RenderHandler {
         
         //Skeleton Slabs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSharkEmbryo.TileEntitySkeletonSharkEmbryo.class, new RenderSkeletonSharkEmbryo());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonYorgia.TileEntitySkeletonYorgia.class, new RenderSkeletonYorgia());
 
     }
 }
