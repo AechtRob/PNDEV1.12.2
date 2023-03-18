@@ -117,7 +117,7 @@ public class ItemLepidodendronBoatItem extends ElementsLepidodendronMod.ModEleme
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
 					EntityPNBoat entitybopboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entitybopboat.setBoatType(0);
+					entitybopboat.setBoatType(EntityPNBoat.Type.LEPIDODENDRON.getMetadata());
 					entitybopboat.rotationYaw = playerIn.rotationYaw;
 
 					if (!worldIn.getCollisionBoxes(entitybopboat, entitybopboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())

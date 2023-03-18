@@ -30,11 +30,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:scrubby_pine_boat_item")
+public class ItemPodozamitesBoatItem extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:podozamites_boat_item")
 	public static final Item block = null;
-	public ItemScrubbyPineBoatItem(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.scrubby_pine_boat_item);
+	public ItemPodozamitesBoatItem(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.podozamites_boat_item);
 	}
 
 	@Override
@@ -45,15 +45,15 @@ public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("scrubby_pine:scrubby_pine_boat_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("podozamites:podozamites_boat_item", "inventory"));
 	}
 	public static class ItemCustom extends Item
 	{
 
 		public ItemCustom()
 		{
-			setTranslationKey("pf_scrubby_pine_boat_item");
-			setRegistryName("scrubby_pine_boat_item");
+			setTranslationKey("pf_podozamites_boat_item");
+			setRegistryName("podozamites_boat_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.maxStackSize = 1;
 		}
@@ -117,7 +117,7 @@ public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
 					EntityPNBoat entitybopboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entitybopboat.setBoatType(EntityPNBoat.Type.SCRUBBY_PINE.getMetadata());
+					entitybopboat.setBoatType(EntityPNBoat.Type.PODOZAMITES.getMetadata());
 					entitybopboat.rotationYaw = playerIn.rotationYaw;
 
 					if (!worldIn.getCollisionBoxes(entitybopboat, entitybopboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())
