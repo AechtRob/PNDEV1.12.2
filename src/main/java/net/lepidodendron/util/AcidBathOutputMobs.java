@@ -301,6 +301,8 @@ public class AcidBathOutputMobs {
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraGuiyu.class)).getRegistryName().toString(),
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPolybranchiaspis.class)).getRegistryName().toString(),
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraThanahita.class)).getRegistryName().toString(),
+                //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraMegamastax.class)).getRegistryName().toString(),
+                //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCiurcopterus.class)).getRegistryName().toString(),
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revMobsSilurian);
@@ -452,7 +454,6 @@ public class AcidBathOutputMobs {
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraDicranurus.class)).getRegistryName().toString(),
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPriscomyzon.class)).getRegistryName().toString(),
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAngustidontus.class)).getRegistryName().toString(),
-                //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCiurcopterus.class)).getRegistryName().toString(),
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revMobsDevonian);
@@ -776,7 +777,8 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraXenacanthus.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraYunguisaurus.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraSilesaurus.class)).getRegistryName().toString(),
-                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraGerrothorax.class)).getRegistryName().toString()
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraGerrothorax.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraProganochelys.class)).getRegistryName().toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revMobsTriassic);
         return resLoc;
@@ -834,6 +836,7 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraDysalotosaurus.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraChaoyangsaurus.class)).getRegistryName().toString(),
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraXuanhuaceratops.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPanguraptor.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraHualianceratops.class)).getRegistryName().toString()
 
         };
