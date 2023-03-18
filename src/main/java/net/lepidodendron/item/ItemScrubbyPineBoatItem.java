@@ -45,7 +45,7 @@ public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("scrubby_pine:scrubby_pine_boat_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:scrubby_pine_boat_item", "inventory"));
 	}
 	public static class ItemCustom extends Item
 	{
@@ -116,11 +116,11 @@ public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement
 				{
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
-					EntityPNBoat entitybopboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entitybopboat.setBoatType(EntityPNBoat.Type.SCRUBBY_PINE.getMetadata());
-					entitybopboat.rotationYaw = playerIn.rotationYaw;
+					EntityPNBoat entityPNboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
+					entityPNboat.setBoatType(EntityPNBoat.Type.SCRUBBY_PINE.ordinal());
+					entityPNboat.rotationYaw = playerIn.rotationYaw;
 
-					if (!worldIn.getCollisionBoxes(entitybopboat, entitybopboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())
+					if (!worldIn.getCollisionBoxes(entityPNboat, entityPNboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())
 					{
 						return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 					}
@@ -128,7 +128,7 @@ public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement
 					{
 						if (!worldIn.isRemote)
 						{
-							worldIn.spawnEntity(entitybopboat);
+							worldIn.spawnEntity(entityPNboat);
 						}
 
 						if (!playerIn.capabilities.isCreativeMode)

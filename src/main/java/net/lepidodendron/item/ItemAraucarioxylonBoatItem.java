@@ -45,7 +45,7 @@ public class ItemAraucarioxylonBoatItem extends ElementsLepidodendronMod.ModElem
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("araucarioxylon:araucarioxylon_boat_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:araucarioxylon_boat_item", "inventory"));
 	}
 	public static class ItemCustom extends Item
 	{
@@ -116,11 +116,11 @@ public class ItemAraucarioxylonBoatItem extends ElementsLepidodendronMod.ModElem
 				{
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
-					EntityPNBoat entitybopboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entitybopboat.setBoatType(EntityPNBoat.Type.ARAUCARIOXYLON.getMetadata());
-					entitybopboat.rotationYaw = playerIn.rotationYaw;
+					EntityPNBoat entityPNboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
+					entityPNboat.setBoatType(EntityPNBoat.Type.ARAUCARIOXYLON.ordinal());
+					entityPNboat.rotationYaw = playerIn.rotationYaw;
 
-					if (!worldIn.getCollisionBoxes(entitybopboat, entitybopboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())
+					if (!worldIn.getCollisionBoxes(entityPNboat, entityPNboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())
 					{
 						return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 					}
@@ -128,7 +128,7 @@ public class ItemAraucarioxylonBoatItem extends ElementsLepidodendronMod.ModElem
 					{
 						if (!worldIn.isRemote)
 						{
-							worldIn.spawnEntity(entitybopboat);
+							worldIn.spawnEntity(entityPNboat);
 						}
 
 						if (!playerIn.capabilities.isCreativeMode)
