@@ -2,8 +2,8 @@
   "ambientocclusion": false,
   "textures": {
     "east": "lepidodendron:blocks/empty_texture",
-    "west": "lepidodendron:blocks/keraphyton_3_t_w",
-    "particle": "lepidodendron:blocks/keraphyton_3_t_w"
+    "west": "lepidodendron:blocks/empty_texture",
+    "particle": "lepidodendron:blocks/empty_texture"
   },
   "elements": [
     {

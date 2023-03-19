@@ -636,6 +636,50 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 
+		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.SAPLING)) {
+			List<String> tt = event.getToolTip();
+			if (LepidodendronConfig.showTooltips) {
+				switch (event.getItemStack().getMetadata()) {
+					case 0:
+					default: //Oak
+						tt.add("Type: Flowering tree");
+						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Quaternary");
+						tt.add("Propagation: acorns drop from leaves");
+						break;
+
+					case 1: //Spruce
+						tt.add("Type: Flowering tree");
+						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Quaternary");
+						tt.add("Propagation: cones drop from leaves");
+						break;
+
+					case 2: //Birch
+						tt.add("Type: Flowering tree");
+						tt.add("Periods: Paleogene - Neogene - Quaternary");
+						tt.add("Propagation: fruits drop from leaves");
+						break;
+
+					case 3: //Jungle
+						tt.add("Type: Flowering tree");
+						tt.add("Periods: Paleogene - Neogene - Quaternary");
+						tt.add("Propagation: fruits drop from leaves");
+						break;
+
+					case 4: //Acacia
+						tt.add("Type: Flowering tree");
+						tt.add("Periods: Paleogene - Neogene - Quaternary");
+						tt.add("Propagation: fruits drop from leaves");
+						break;
+
+					case 5: //Dark Oak
+						tt.add("Type: Flowering tree");
+						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Quaternary");
+						tt.add("Propagation: acorns drop from leaves");
+						break;
+				}
+			}
+		}
+
 		if (event.getItemStack().getItem() == Items.SPAWN_EGG) {
 			//Get Entity period:
 			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(event.getItemStack());
