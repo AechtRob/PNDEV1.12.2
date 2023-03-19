@@ -45,6 +45,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	private boolean screaming;
 	private int alarmCooldown;
 	public Animation CHATTER_ANIMATION;
+	public Animation LONG_CHATTER_ANIMATION;
 	public Animation ALARM_ANIMATION;
 
 	public EntityPrehistoricFloraDryosaurus(World world) {
@@ -62,11 +63,12 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			tailBuffer = new ChainBuffer();
 		}
 		CHATTER_ANIMATION = Animation.create(this.getChatterLength());
+		LONG_CHATTER_ANIMATION = Animation.create(this.getChatterLength());
 		ALARM_ANIMATION = Animation.create(this.getPanicLength());
 	}
 
 	public int getChatterLength() {
-		return 20;
+		return 23;
 	}
 
 	public int getPanicLength() {
@@ -75,7 +77,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, CHATTER_ANIMATION, ALARM_ANIMATION};
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, CHATTER_ANIMATION, LONG_CHATTER_ANIMATION, ALARM_ANIMATION};
 	}
 
 	@Override
@@ -135,7 +137,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getRoarLength() {
-		return 20;
+		return 15;
 	}
 
 	@Override
@@ -158,7 +160,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == CHATTER_ANIMATION && (this.willGrapple) && this.getGrappleTarget() != null) {
+		if ((this.getAnimation() == CHATTER_ANIMATION || this.getAnimation() == LONG_CHATTER_ANIMATION) && (this.willGrapple) && this.getGrappleTarget() != null) {
 			return 0.0F; //Is talking to a colleague!
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
@@ -172,7 +174,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int grappleChance() {
-		return 200;
+		return 150;
 	}
 
 	@Override
@@ -193,9 +195,10 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(3.0F + size, 2.0F + size, 3.0F + size);
+		return this.getEntityBoundingBox().grow(1.5F + size, 2.0F + size, 1.5F + size);
 	}
 
+	//TODO find a way to delay the other partner's animation and sound running, maybe with a variable with a randomized integer?
 	@Override
 	public boolean findGrappleTarget() {
 		//System.err.println("finding grapple target");
@@ -226,6 +229,9 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public Animation getGrappleAnimation() {
+		if(rand.nextInt(4) == 0){
+			return this.LONG_CHATTER_ANIMATION;
+		}
 		return this.CHATTER_ANIMATION;
 	}
 
@@ -241,7 +247,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicScreamAI(this, 1.0));
-		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.25));
+		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getChatterLength(), this.getGrappleAnimation(), 0.25));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -371,6 +377,10 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_chatter"));
 	}
+	public SoundEvent getLongChatterSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_long_chatter"));
+	}
 
 	public void playAlarmSound()
 	{
@@ -421,7 +431,11 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	public void launchGrapple() {
 		if (this.getGrappleTarget() != null) {
 			if (!this.world.isRemote) {
-				this.playSound(this.getChatterSound(), this.getSoundVolume(), 1);
+				if(this.getAnimation() == CHATTER_ANIMATION) {
+					this.playSound(this.getChatterSound(), this.getSoundVolume(), 1);
+				} else {
+					this.playSound(this.getLongChatterSound(), this.getSoundVolume(), 1);
+				}
 			}
 
 			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
