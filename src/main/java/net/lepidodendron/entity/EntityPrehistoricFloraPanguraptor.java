@@ -125,7 +125,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.320F;
+		float speedBase = 0.270F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -133,7 +133,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 4.35F;
+			speedBase = speedBase * 3.35F;
 		}
 		return speedBase;
 	}
