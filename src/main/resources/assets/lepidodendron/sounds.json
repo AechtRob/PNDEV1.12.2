@@ -6369,10 +6369,6 @@
   "dryosaurid_chatter": {
     "sounds": [
       {
-        "name": "lepidodendron:dryosaurid_chatter01",
-        "stream": false
-      },
-      {
         "name": "lepidodendron:dryosaurid_chatter02",
         "stream": false
       },
@@ -6386,6 +6382,15 @@
       }
     ]
   },
+  "dryosaurid_long_chatter": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dryosaurid_chatter01",
+        "stream": false
+      }
+    ]
+  },
+
   "dryosaurid_death": {
     "sounds": [
       {

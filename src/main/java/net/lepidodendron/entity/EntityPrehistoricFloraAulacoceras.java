@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraAulacoceras extends EntityPrehistoricFloraNau
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.6;
+		return true;
 	}
 
 	public static String getPeriod() {return "Triassic";}

@@ -1,12 +1,8 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
-import net.lepidodendron.block.BlockPhoenixPlanks;
-import net.lepidodendron.block.BlockScrubbyPinePlanks;
-import net.lepidodendron.block.BlockWoodenPlanks;
-import net.lepidodendron.item.ItemLepidodendronBoatItem;
-import net.lepidodendron.item.ItemPhoenixBoatItem;
-import net.lepidodendron.item.ItemScrubbyPineBoatItem;
+import net.lepidodendron.block.*;
+import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -191,13 +187,118 @@ public class EntityPNBoat extends EntityBoat
     {
         switch (this.getPNBoatType())
         {
+            case AGATHIS: default:
+                return ItemAgathisBoatItem.block;
+            case ALPIA:
+                return ItemAlpiaBoatItem.block;
+            case APPLE:
+                return ItemAppleBoatItem.block;
+            case ARAUCARIA:
+                return ItemAraucariaBoatItem.block;
+            case ARAUCARIOXYLON:
+                return ItemAraucarioxylonBoatItem.block;
+            case ARAUCARITES:
+                return ItemAraucaritesBoatItem.block;
+            case ARCHAEANTHUS:
+                return ItemArchaeanthusBoatItem.block;
+            case ARCHAEOPTERIS:
+                return ItemArchaeopterisBoatItem.block;
+            case ARTHROPITYS:
+                return ItemArthropitysBoatItem.block;
+            case ARTOCARPUS:
+                return ItemArtocarpusBoatItem.block;
+            case BEECH:
+                return ItemBeechBoatItem.block;
+            case BOTHRODENDRON:
+                return ItemBothrodendronBoatItem.block;
+            case BRACHYPHYLLUM:
+                return ItemBrachyphyllumBoatItem.block;
+            case BRISTLECONE:
+                return ItemBristleconeBoatItem.block;
+            case CALAMITES:
+                return ItemCalamitesBoatItem.block;
+            case CEPHALOTAXUS:
+                return ItemCephalotaxusBoatItem.block;
+            case CORDAITES:
+                return ItemCordaitesBoatItem.block;
+            case CUNNINGHAMIA:
+                return ItemCunninghamiaBoatItem.block;
+            case CYPRESS:
+                return ItemCypressBoatItem.block;
+            case CZEKANOWSKIA:
+                return ItemCzekanowskiaBoatItem.block;
+            case DAWN_REDWOOD:
+                return ItemDawnRedwoodBoatItem.block;
+            case DEAD:
+                return ItemDeadBoatItem.block;
+            case DIAPHORODENDRON:
+                return ItemDiaphorodendronBoatItem.block;
+            case DICROIDIUM_F:
+                return ItemDicroidiumFBoatItem.block;
+            case DICROIDIUM_O:
+                return ItemDicroidiumOBoatItem.block;
+            case FURCULA:
+                return ItemFurculaBoatItem.block;
+            case GANGAMOPTERIS:
+                return ItemGangamopterisBoatItem.block;
+            case GINKGO:
+                return ItemGinkgoBoatItem.block;
+            case GINKGOITES:
+                return ItemGinkgoitesBoatItem.block;
+            case GLOSSOPTERIS:
+                return ItemGlossopterisBoatItem.block;
+            case HIRONOIA:
+                return ItemHironoiaBoatItem.block;
+            case HYMENAEA:
+                return ItemHymenaeaBoatItem.block;
             case LEPIDODENDRON:
-            default:
                 return ItemLepidodendronBoatItem.block;
-
+            case LEPIDOPHLOIOS:
+                return ItemLepidophloiosBoatItem.block;
+            case LIRIODENDRON:
+                return ItemLiriodendronBoatItem.block;
+            case MACRONEUROPTERIS:
+                return ItemMacroneuropterisBoatItem.block;
+            case MAGNOLIA:
+                return ItemMagnoliaBoatItem.block;
+            case MAPLE:
+                return ItemMapleBoatItem.block;
+            case NOTHOFAGUS:
+                return ItemNothofagusBoatItem.block;
+            case PENTOXYLALES:
+                return ItemPentoxylalesBoatItem.block;
+            case PHOENICOPSIS:
+                return ItemPhoenicopsisBoatItem.block;
+            case PITYS:
+                return ItemPitysBoatItem.block;
+            case PLANE:
+                return ItemPlaneBoatItem.block;
+            case PODOCARP:
+                return ItemPodocarpBoatItem.block;
+            case PODOZAMITES:
+                return ItemPodozamitesBoatItem.block;
+            case REDWOOD:
+                return ItemRedwoodBoatItem.block;
+            case SCIADOPITYS:
+                return ItemSciadopitysBoatItem.block;
             case SCRUBBY_PINE:
                 return ItemScrubbyPineBoatItem.block;
-
+            case SIGILLARIA:
+                return ItemSigillariaBoatItem.block;
+            case SPHENOBAIERA:
+                return ItemSphenobaieraBoatItem.block;
+            case SYCAMORE:
+                return ItemSycamoreBoatItem.block;
+            case TAXODIUM:
+                return ItemTaxodiumBoatItem.block;
+            case TELEMACHUS:
+                return ItemTelemachusBoatItem.block;
+            case WALCHIA:
+                return ItemWalchiaBoatItem.block;
+            case WOLLEMI:
+                return ItemWollemiBoatItem.block;
+            case YEW:
+                return ItemYewBoatItem.block;
             case PHOENIX:
                 return ItemPhoenixBoatItem.block;
 
@@ -208,13 +309,118 @@ public class EntityPNBoat extends EntityBoat
     {
         switch (this.getPNBoatType())
         {
+            case AGATHIS: default:
+                return BlockAgathisPlanks.block;
+            case ALPIA:
+                return BlockAlpiaPlanks.block;
+            case APPLE:
+                return BlockApplePlanks.block;
+            case ARAUCARIA:
+                return BlockAraucariaPlanks.block;
+            case ARAUCARIOXYLON:
+                return BlockAraucarioxylonPlanks.block;
+            case ARAUCARITES:
+                return BlockAraucaritesPlanks.block;
+            case ARCHAEANTHUS:
+                return BlockArchaeanthusPlanks.block;
+            case ARCHAEOPTERIS:
+                return BlockArchaeopterisPlanks.block;
+            case ARTHROPITYS:
+                return BlockArthropitysPlanks.block;
+            case ARTOCARPUS:
+                return BlockArtocarpusPlanks.block;
+            case BEECH:
+                return BlockBeechPlanks.block;
+            case BOTHRODENDRON:
+                return BlockBothrodendronPlanks.block;
+            case BRACHYPHYLLUM:
+                return BlockBrachyphyllumPlanks.block;
+            case BRISTLECONE:
+                return BlockBristleconePlanks.block;
+            case CALAMITES:
+                return BlockCalamitesPlanks.block;
+            case CEPHALOTAXUS:
+                return BlockCephalotaxusPlanks.block;
+            case CORDAITES:
+                return BlockCordaitesPlanks.block;
+            case CUNNINGHAMIA:
+                return BlockCunninghamiaPlanks.block;
+            case CYPRESS:
+                return BlockCypressPlanks.block;
+            case CZEKANOWSKIA:
+                return BlockCzekanowskiaPlanks.block;
+            case DAWN_REDWOOD:
+                return BlockDawnRedwoodPlanks.block;
+            case DEAD:
+                return BlockDeadPlanks.block;
+            case DIAPHORODENDRON:
+                return BlockDiaphorodendronPlanks.block;
+            case DICROIDIUM_F:
+                return BlockDicroidiumFPlanks.block;
+            case DICROIDIUM_O:
+                return BlockDicroidiumOPlanks.block;
+            case FURCULA:
+                return BlockFurculaPlanks.block;
+            case GANGAMOPTERIS:
+                return BlockGangamopterisPlanks.block;
+            case GINKGO:
+                return BlockGinkgoPlanks.block;
+            case GINKGOITES:
+                return BlockGinkgoitesPlanks.block;
+            case GLOSSOPTERIS:
+                return BlockGlossopterisPlanks.block;
+            case HIRONOIA:
+                return BlockHironoiaPlanks.block;
+            case HYMENAEA:
+                return BlockHymenaeaPlanks.block;
             case LEPIDODENDRON:
-            default:
                 return BlockWoodenPlanks.block;
-
+            case LEPIDOPHLOIOS:
+                return BlockLepidophloiosPlanks.block;
+            case LIRIODENDRON:
+                return BlockLiriodendronPlanks.block;
+            case MACRONEUROPTERIS:
+                return BlockMacroneuropterisPlanks.block;
+            case MAGNOLIA:
+                return BlockMagnoliaPlanks.block;
+            case MAPLE:
+                return BlockMaplePlanks.block;
+            case NOTHOFAGUS:
+                return BlockNothofagusPlanks.block;
+            case PENTOXYLALES:
+                return BlockPentoxylalesPlanks.block;
+            case PHOENICOPSIS:
+                return BlockPhoenicopsisPlanks.block;
+            case PITYS:
+                return BlockPitysPlanks.block;
+            case PLANE:
+                return BlockPlanePlanks.block;
+            case PODOCARP:
+                return BlockPodocarpPlanks.block;
+            case PODOZAMITES:
+                return BlockPodozamitesPlanks.block;
+            case REDWOOD:
+                return BlockRedwoodPlanks.block;
+            case SCIADOPITYS:
+                return BlockSciadopitysPlanks.block;
             case SCRUBBY_PINE:
                 return BlockScrubbyPinePlanks.block;
-
+            case SIGILLARIA:
+                return BlockSigillariaPlanks.block;
+            case SPHENOBAIERA:
+                return BlockSphenobaieraPlanks.block;
+            case SYCAMORE:
+                return BlockSycamorePlanks.block;
+            case TAXODIUM:
+                return BlockTaxodiumPlanks.block;
+            case TELEMACHUS:
+                return BlockTelemachusPlanks.block;
+            case WALCHIA:
+                return BlockWalchiaPlanks.block;
+            case WOLLEMI:
+                return BlockWollemiPlanks.block;
+            case YEW:
+                return BlockYewPlanks.block;
             case PHOENIX:
                 return BlockPhoenixPlanks.block;
 
@@ -988,9 +1194,64 @@ public class EntityPNBoat extends EntityBoat
 
     public static enum Type
     {
-        LEPIDODENDRON(0, "lepidodendron"),
-        SCRUBBY_PINE(1, "scrubby_pine"),
-        PHOENIX(2, "phoenix");
+        AGATHIS(1, "agathis"),
+        ALPIA(2, "alpia"),
+        APPLE(3, "apple"),
+        ARAUCARIA(4, "araucaria"),
+        ARAUCARIOXYLON(5, "araucarioxylon"),
+        ARAUCARITES(6, "araucarites"),
+        ARCHAEANTHUS(7, "archaeanthus"),
+        ARCHAEOPTERIS(8, "archaeopteris"),
+        ARTHROPITYS(9, "arthropitys"),
+        ARTOCARPUS(10, "artocarpus"),
+        BEECH(11, "beech"),
+        BOTHRODENDRON(12, "bothrodendron"),
+        BRACHYPHYLLUM(13, "brachyphyllum"),
+        BRISTLECONE(14, "bristlecone"),
+        CALAMITES(15, "calamites"),
+        CEPHALOTAXUS(16, "cephalotaxus"),
+        CORDAITES(17, "cordaites"),
+        CUNNINGHAMIA(18, "cunninghamia"),
+        CYPRESS(19, "cypress"),
+        CZEKANOWSKIA(20, "czekanowskia"),
+        DAWN_REDWOOD(21, "dawn_redwood"),
+        DEAD(22, "dead"),
+        DIAPHORODENDRON(23, "diaphorodendron"),
+        DICROIDIUM_F(24, "dicroidium_f"),
+        DICROIDIUM_O(25, "dicroidium_o"),
+        FURCULA(26, "furcula"),
+        GANGAMOPTERIS(27, "gangamopteris"),
+        GINKGO(28, "ginkgo"),
+        GINKGOITES(29, "ginkgoites"),
+        GLOSSOPTERIS(30, "glossopteris"),
+        HIRONOIA(31, "hironoia"),
+        HYMENAEA(32, "hymenaea"),
+        LEPIDODENDRON(33, "lepidodendron"),
+        LEPIDOPHLOIOS(34, "lepidophloios"),
+        LIRIODENDRON(35, "liriodendron"),
+        MACRONEUROPTERIS(36, "macroneuropteris"),
+        MAGNOLIA(37, "magnolia"),
+        MAPLE(38, "maple"),
+        NOTHOFAGUS(39, "nothofagus"),
+        PENTOXYLALES(40, "pentoxylales"),
+        PHOENICOPSIS(41, "phoenicopsis"),
+        PITYS(42, "pitys"),
+        PLANE(43, "plane"),
+        PODOCARP(44, "podocarp"),
+        PODOZAMITES(45, "podozamites"),
+        REDWOOD(46, "redwood"),
+        SCIADOPITYS(47, "sciadopitys"),
+        SCRUBBY_PINE(48, "scrubby_pine"),
+        SIGILLARIA(49, "sigillaria"),
+        SPHENOBAIERA(50, "sphenobaiera"),
+        SYCAMORE(51, "sycamore"),
+        TAXODIUM(52, "taxodium"),
+        TELEMACHUS(53, "telemachus"),
+        WALCHIA(54, "walchia"),
+        WOLLEMI(55, "wollemi"),
+        YEW(56, "yew"),
+        PHOENIX(57, "phoenix")
+        ;
 
         private final String name;
         private final int metadata;

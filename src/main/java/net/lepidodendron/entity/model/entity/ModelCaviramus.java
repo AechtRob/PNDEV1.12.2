@@ -372,7 +372,8 @@ public class ModelCaviramus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] tailFull = {this.tail1, this.tail2, this.tail3, this.tail4};
 
         float speed = 0.48F;
-        float fixedY = 1.1F; //The standard offset to centre the mob
+        float fixedY = 0F;
+       // float fixedY = 1.1F; //The standard offset to centre the mob
 
         //Animations:
 

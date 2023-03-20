@@ -355,7 +355,7 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
         //this.Hips.offsetZ = 0.2F;
 
         EntityPrehistoricFloraPanguraptor Panguraptor = (EntityPrehistoricFloraPanguraptor) e;
-        float masterSpeed = Panguraptor.getTravelSpeed();
+        float masterSpeed = Panguraptor.getTravelSpeed() * 1.8F;
 
         this.faceTarget(f3, f4, 10, Neck);
         this.faceTarget(f3, f4, 10, Neck2);

@@ -47,14 +47,14 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraPanguraptor(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.12F;
-		maxWidth = 0.65F;
-		maxHeight = 1F;
+		maxWidth = 0.6F;
+		maxHeight = 0.5F;
 		maxHealthAgeable = 20.0D;
 		NOISE_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -125,7 +125,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.320F;
+		float speedBase = 0.270F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -133,7 +133,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 4.35F;
+			speedBase = speedBase * 4F;
 		}
 		return speedBase;
 	}
