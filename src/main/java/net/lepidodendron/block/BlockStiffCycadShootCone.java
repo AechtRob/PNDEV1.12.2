@@ -16,6 +16,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -208,6 +209,7 @@ public class BlockStiffCycadShootCone extends ElementsLepidodendronMod.ModElemen
 			super.onEntityCollision(world, pos, state, entity);
 			if (entity instanceof EntityPlayer) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
 			if (entity instanceof EntityVillager) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
+			if (entity instanceof EntityMob) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
 		}
 
 		 public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
