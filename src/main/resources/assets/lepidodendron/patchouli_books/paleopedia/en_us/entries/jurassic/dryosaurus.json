@@ -20,12 +20,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Dryosaurus is a genus of Dryomorph Iguanodontian from the Late Jurassic of North America. The animal is estimated to have grown to lengths of 3-4 m; due to the lack of preserved adult specimens, this estimate tends to fluctuate depending on the authors."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
+			"type": "text",
+			"text": "In the past Valdosaurus and Dysalotosaurus were considered to be synonyms of Dryosaurus but, with further research, this hypothesis was widely discredited. Unlike its african cousin Dysalotosaurus, the legs of Dryosaurus were not adapted for running as much as they were for walking, trait that could be due to the more forested environments they lived in, where running wasn't as efficient."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
 			"type": "text",
 			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
+			"type": "text",
+			"text": ""
 		}
 	]
 }
