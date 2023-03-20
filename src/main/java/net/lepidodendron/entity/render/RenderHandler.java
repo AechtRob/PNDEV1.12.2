@@ -3614,6 +3614,12 @@ public class RenderHandler {
                 return new RenderYinlong(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraXuanhuaceratops.class, new IRenderFactory<EntityPrehistoricFloraXuanhuaceratops>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraXuanhuaceratops> createRenderFor(RenderManager manager) {
+                return new RenderXuanhuaceratops(manager);
+            }
+        });
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKentrosaurus.class, new IRenderFactory<EntityPrehistoricFloraKentrosaurus>() {
             @Override

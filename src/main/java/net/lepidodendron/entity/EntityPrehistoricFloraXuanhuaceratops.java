@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraXuanhuaceratops extends EntityPrehistoricFlor
 		minWidth = 0.12F;
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 11.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -73,10 +73,10 @@ public class EntityPrehistoricFloraXuanhuaceratops extends EntityPrehistoricFlor
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraXuanhuaceratops> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraXuanhuaceratops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraXuanhuaceratops currentYinlong : Yinlong) {
-				currentYinlong.setRevengeTarget(ee);
-				currentYinlong.alarmCooldown = rand.nextInt(20);
+			List<EntityPrehistoricFloraXuanhuaceratops> Xuanhuaceratops = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraXuanhuaceratops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraXuanhuaceratops currentXuanhuaceratops : Xuanhuaceratops) {
+				currentXuanhuaceratops.setRevengeTarget(ee);
+				currentXuanhuaceratops.alarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -421,9 +421,9 @@ public class EntityPrehistoricFloraXuanhuaceratops extends EntityPrehistoricFlor
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.YINLONG_LOOT_YOUNG;
+			return LepidodendronMod.XUANHUACERATOPS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.YINLONG_LOOT;
+		return LepidodendronMod.XUANHUACERATOPS_LOOT;
 	}
 
 }
