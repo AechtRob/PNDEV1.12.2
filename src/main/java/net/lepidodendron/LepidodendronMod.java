@@ -1539,6 +1539,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_PANGURAPTOR = 631;
 	public static final ResourceLocation PANGURAPTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panguraptor"));
 	public static final ResourceLocation PANGURAPTOR_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panguraptor_young"));
+	public static final int ENTITY_XUANHUACERATOPS = 632;
+	public static final ResourceLocation XUANHUACERATOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xuanhuaceratops"));
+	public static final ResourceLocation XUANHUACERATOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xuanhuaceratops_young"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
