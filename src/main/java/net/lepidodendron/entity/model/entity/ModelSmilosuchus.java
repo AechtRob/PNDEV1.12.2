@@ -408,7 +408,7 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.23F;
+        //this.body.offsetY = 0.23F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraSmilosuchus Smilosuchus = (EntityPrehistoricFloraSmilosuchus) e;
@@ -551,7 +551,7 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
             }
         }
         else { //in water:
-            this.body.offsetY = 0.8F;
+            this.body.offsetY = 0.8F - 0.23F;
             float speed = masterSpeed / 2.5F;
             //In water:
             this.tail.rotateAngleX = 0;
