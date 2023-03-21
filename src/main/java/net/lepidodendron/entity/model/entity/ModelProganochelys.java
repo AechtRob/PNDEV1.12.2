@@ -368,21 +368,6 @@ public class ModelProganochelys extends AdvancedModelBaseExtended {
                         && entityProganochelys.getAnimation() != entityProganochelys.HIDE_ANIMATION) {
                         this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                        if (entityProganochelys.getAnimation() == entityProganochelys.NO_ANIMATION) {
-                            this.setRotateAngle(frontlegleft1, frontlegleft1.rotateAngleX + (float)Math.toRadians(-3.94817), frontlegleft1.rotateAngleY + (float)Math.toRadians(15.03973), frontlegleft1.rotateAngleZ + (float)Math.toRadians(-39.88622));
-                            this.setRotateAngle(frontlegleft2, frontlegleft2.rotateAngleX + (float)Math.toRadians(37.26601), frontlegleft2.rotateAngleY + (float)Math.toRadians(-15.5544), frontlegleft2.rotateAngleZ + (float)Math.toRadians(1.65994));
-                            this.setRotateAngle(frontlegleft3, frontlegleft3.rotateAngleX + (float)Math.toRadians(-28.13333), frontlegleft3.rotateAngleY + (float)Math.toRadians(-0.93243), frontlegleft3.rotateAngleZ + (float)Math.toRadians(41.44671));
-                            this.setRotateAngle(frontlegright1, frontlegright1.rotateAngleX + (float)Math.toRadians(-3.94817), frontlegright1.rotateAngleY + (float)Math.toRadians(-15.03973), frontlegright1.rotateAngleZ + (float)Math.toRadians(39.88622));
-                            this.setRotateAngle(frontlegright2, frontlegright2.rotateAngleX + (float)Math.toRadians(37.26601), frontlegright2.rotateAngleY + (float)Math.toRadians(15.5544), frontlegright2.rotateAngleZ + (float)Math.toRadians(-1.65994));
-                            this.setRotateAngle(frontlegright3, frontlegright3.rotateAngleX + (float)Math.toRadians(-28.13333), frontlegright3.rotateAngleY + (float)Math.toRadians(0.93243), frontlegright3.rotateAngleZ + (float)Math.toRadians(-41.44671));
-                            this.setRotateAngle(backlegleft1, backlegleft1.rotateAngleX + (float)Math.toRadians(32.70538), backlegleft1.rotateAngleY + (float)Math.toRadians(20.10446), backlegleft1.rotateAngleZ + (float)Math.toRadians(-31.35831));
-                            this.setRotateAngle(backlegleft2, backlegleft2.rotateAngleX + (float)Math.toRadians(18.38), backlegleft2.rotateAngleY + (float)Math.toRadians(-13.98), backlegleft2.rotateAngleZ + (float)Math.toRadians(32.14));
-                            this.setRotateAngle(backlegleft3, backlegleft3.rotateAngleX + (float)Math.toRadians(-52.53039), backlegleft3.rotateAngleY + (float)Math.toRadians(-35.2604), backlegleft3.rotateAngleZ + (float)Math.toRadians(33.85172));
-                            this.setRotateAngle(backlegright1, backlegright1.rotateAngleX + (float)Math.toRadians(32.70538), backlegright1.rotateAngleY + (float)Math.toRadians(-20.10446), backlegright1.rotateAngleZ + (float)Math.toRadians(31.35831));
-                            this.setRotateAngle(backlegright2, backlegright2.rotateAngleX + (float)Math.toRadians(18.38), backlegright2.rotateAngleY + (float)Math.toRadians(13.98), backlegright2.rotateAngleZ + (float)Math.toRadians(-32.14));
-                            this.setRotateAngle(backlegright3, backlegright3.rotateAngleX + (float)Math.toRadians(-52.53039), backlegright3.rotateAngleY + (float)Math.toRadians(35.2604), backlegright3.rotateAngleZ + (float)Math.toRadians(-33.85172));
-                            this.body.offsetY = (float)Math.toRadians(9F);
-                        }
                     }
 
                     this.chainWave(Tail, (0.15F * 0.35F), 0.1F * 0.1F, 0.2F, f2, 1F);

@@ -133,7 +133,7 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.46F;
+			speedBase = speedBase * 1.9F;
 		}
 		return speedBase;
 	}

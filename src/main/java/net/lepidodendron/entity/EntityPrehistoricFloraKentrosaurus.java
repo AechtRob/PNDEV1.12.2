@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 40;
 	}
 
 	@Override
@@ -105,7 +105,8 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
+			|| this.getAnimation() == ATTACK_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -285,12 +286,11 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 34 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
-
 	}
 
 	@Override
