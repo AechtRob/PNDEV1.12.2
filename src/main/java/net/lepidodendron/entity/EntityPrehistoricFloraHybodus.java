@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraHybodus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -49,8 +49,8 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 		//minSize = 0.1F;
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 1.1F;
+		maxWidth = 0.82F;
+		maxHeight = 0.99F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
