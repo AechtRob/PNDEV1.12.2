@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 20;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -72,7 +77,6 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 	}
 
 	public static String getPeriod() {return "Triassic";}
-
 
 	@Override
 	public boolean hasNest() {

@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 40;
 	}
 
 	@Override
@@ -105,7 +105,8 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
+			|| this.getAnimation() == ATTACK_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -240,7 +241,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(18.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -285,23 +286,24 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 16 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
-
 	}
 
 	@Override
 	public void launchAttack() {
 		if (this.getAttackTarget() != null) {
-			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttackTarget().addVelocity(0, 0.1, 0);
-			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
+			if (this.getAttackBoundingBox().intersects(this.getAttackTarget().getEntityBoundingBox())) {
+				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+				this.getAttackTarget().addVelocity(0, 0.1, 0);
+				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+				if (this.getOneHit()) {
+					this.setAttackTarget(null);
+					this.setRevengeTarget(null);
+				}
 			}
 		}
 	}

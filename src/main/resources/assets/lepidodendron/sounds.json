@@ -6457,11 +6457,60 @@
       }
     ]
   },
-
   "panguraptor_death": {
     "sounds": [
       {
         "name": "lepidodendron:panguraptor_death",
+        "stream": false
+      }
+    ]
+  },
+
+
+  "silesaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:silesaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:silesaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:silesaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:silesaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:silesaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "silesaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:silesaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:silesaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:silesaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "silesaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:silesaurus_death",
         "stream": false
       }
     ]

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraCoelophysis;
 import net.lepidodendron.entity.EntityPrehistoricFloraProganochelys;
 import net.lepidodendron.entity.model.entity.ModelProganochelys;
 import net.minecraft.client.renderer.GlStateManager;
@@ -16,7 +15,7 @@ public class RenderProganochelys extends RenderLiving<EntityPrehistoricFloraProg
         super(mgr, new ModelProganochelys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.85f; }
+    public static float getScaler() {return 0.625f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraProganochelys entity) {

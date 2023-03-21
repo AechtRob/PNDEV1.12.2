@@ -179,7 +179,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getTalkInterval() {
-		return 80;
+		return 160;
 	}
 
 	@Override

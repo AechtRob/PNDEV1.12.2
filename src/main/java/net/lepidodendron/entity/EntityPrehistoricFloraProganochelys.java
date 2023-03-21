@@ -1,22 +1,24 @@
 
 package net.lepidodendron.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -25,7 +27,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -37,35 +38,65 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	//public ChainBuffer tailBuffer;
+	public Animation HIDE_ANIMATION;
+	private int inPFLove;
 
 	public EntityPrehistoricFloraProganochelys(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
-		maxHeight = 0.8F;
+		maxHeight = 0.45F;
 		maxHealthAgeable = 25.0D;
-
+		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 	}
 
+	@Override
+	public int getEatLength() {
+		return 40;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION};
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		boolean result;
+		if (ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() == HIDE_ANIMATION) {
+			result = super.attackEntityFrom(ds, i/10F);
+		}
+		else {
+			result = super.attackEntityFrom(ds, i);
+		}
+		if (result && ds.getTrueSource() instanceof EntityLivingBase) {
+			this.setAnimation(HIDE_ANIMATION);
+		}
+		return result;
+	}
+
+	public int hideAnimationLength() {
+		return 155;
+	}
 
 	@Override
 	public int getEggType() {
-		return 1; //medium
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
 
-	@Override
-	public boolean hasNest() {
-		return true;
-	}
+//	@Override
+//	public boolean hasNest() {
+//		return true;
+//	}
 
 	@Override
 	public String getTexture() {
@@ -82,16 +113,27 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 		return true;
 	}
 
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
 	protected float getAISpeedLand() {
 		float speedBase = 0.285F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
+			|| this.getAnimation() == HIDE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.46F;
+			speedBase = speedBase * 1.9F;
 		}
 		return speedBase;
 	}
@@ -103,7 +145,7 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAdultAge() {
-		return 72000;
+		return 48000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -121,20 +163,20 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
+		//tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
+		//tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(3, new LandWanderNestInBlockAI(this));
+		tasks.addTask(4, new LandWanderAvoidWaterAI(this, 1.0D, 60));
+		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(7, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		}
 
-	@Override
-	public boolean panics() {
-		return true;
-	}
+//	@Override
+//	public boolean panics() {
+//		return true;
+//	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
@@ -190,7 +232,6 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
@@ -212,25 +253,20 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
 
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		boolean match = false;
+		if (!match) {
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
+					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
+					&& world.isAirBlock(pos));
 		}
-		return false;
+		return match;
 	}
 
 	@Override
