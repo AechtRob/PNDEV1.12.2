@@ -290,18 +290,24 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			launchAttack();
 		}
 
+		if (this.getAnimation() == ATTACK_ANIMATION) {
+			int l = this.getAnimationTick();
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	@Override
 	public void launchAttack() {
 		if (this.getAttackTarget() != null) {
-			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttackTarget().addVelocity(0, 0.1, 0);
-			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
+			if (this.getAttackBoundingBox().intersects(this.getAttackTarget().getEntityBoundingBox())) {
+				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+				this.getAttackTarget().addVelocity(0, 0.1, 0);
+				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+				if (this.getOneHit()) {
+					this.setAttackTarget(null);
+					this.setRevengeTarget(null);
+				}
 			}
 		}
 	}
