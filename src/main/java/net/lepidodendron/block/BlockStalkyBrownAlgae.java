@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -189,13 +186,18 @@ public class BlockStalkyBrownAlgae extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-		
+		public BlockRenderLayer getRenderLayer() {
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return BlockRenderLayer.CUTOUT;
+			}
+			return BlockRenderLayer.TRANSLUCENT;
+		}
+
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return layer == BlockRenderLayer.CUTOUT_MIPPED;
+			}
 			return layer == BlockRenderLayer.TRANSLUCENT;
 		}
 
