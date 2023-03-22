@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
 		"particle": "lepidodendron:blocks/archaeopteris_leaf_large_3_c",
@@ -46,12 +47,11 @@
 			"to": [9, 16, 9],
 			"shade": false,
 			"faces": {
-				"north": {"uv": [7, 0, 9, 16], "texture": "#missing"},
+				"north": {"uv": [7, 0, 9, 16], "texture": "#east"},
 				"east": {"uv": [7, 0, 9, 16], "texture": "#east"},
-				"south": {"uv": [7, 0, 9, 16], "texture": "#missing"},
-				"west": {"uv": [7, 0, 9, 16], "texture": "#missing"},
-				"up": {"uv": [7, 14, 9, 16], "texture": "#missing"},
-				"down": {"uv": [7, 14, 9, 16], "texture": "#missing", "cullface": "down"}
+				"south": {"uv": [7, 0, 9, 16], "texture": "#east"},
+				"west": {"uv": [7, 0, 9, 16], "texture": "#east"},
+				"up": {"uv": [7, 3, 9, 5], "texture": "#east"}
 			}
 		}
 	]

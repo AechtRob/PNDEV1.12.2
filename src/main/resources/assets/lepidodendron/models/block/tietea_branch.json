@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "block/cube",
 	"textures": {
 		"up": "lepidodendron:blocks/tietea_branch_end",
@@ -10,12 +11,12 @@
 			"from": [6, 0, 6],
 			"to": [10, 16, 10],
 			"faces": {
-				"north": {"uv": [6, 0, 10, 16], "texture": "#missing"},
+				"north": {"uv": [6, 0, 10, 16], "texture": "#east"},
 				"east": {"uv": [6, 0, 10, 16], "texture": "#east"},
-				"south": {"uv": [6, 0, 10, 16], "texture": "#missing"},
-				"west": {"uv": [6, 0, 10, 16], "texture": "#missing"},
+				"south": {"uv": [6, 0, 10, 16], "texture": "#east"},
+				"west": {"uv": [6, 0, 10, 16], "texture": "#east"},
 				"up": {"uv": [6, 12, 10, 16], "texture": "#up"},
-				"down": {"uv": [6, 12, 10, 16], "texture": "#missing", "cullface": "down"}
+				"down": {"uv": [6, 12, 10, 16], "texture": "#up", "cullface": "down"}
 			}
 		}
 	]

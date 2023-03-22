@@ -50,14 +50,19 @@ public class ProcedureWorldGenNypa extends ElementsLepidodendronMod.ModElement {
 		if (((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))) ||
 				(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
 						&& (world.canSeeSky(new BlockPos((int) x, (int) y + 1, (int) z))))) {
-			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			Random rand = new Random();
 			boolean hasStem = rand.nextInt(8) == 0;
+			if (world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial() == Material.WATER) {
+				hasStem = true;
+			}
 			BlockPos pos = new BlockPos(x, y, z);
 			if (hasStem) {
 				pos = pos.up();
 			}
+
+			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+
 			//Check there is space:
 			xx = -1;
 			while (xx <= 1) {
