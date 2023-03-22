@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPholiderpeton extends RenderLiving<EntityPrehistoricFloraPholiderpeton> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pholiderpeton.png");
+    public static float getScaler() {return 0.632f;}
 
     public RenderPholiderpeton(RenderManager mgr) {
         super(mgr, new ModelPholiderpeton(), 0.5f);
@@ -27,7 +28,7 @@ public class RenderPholiderpeton extends RenderLiving<EntityPrehistoricFloraPhol
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPholiderpeton entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.4F;
     }
