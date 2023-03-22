@@ -5928,7 +5928,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
+    public static Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
         Method methodToFind = null;
         try {
             methodToFind = clazz.getMethod(methodname, params);

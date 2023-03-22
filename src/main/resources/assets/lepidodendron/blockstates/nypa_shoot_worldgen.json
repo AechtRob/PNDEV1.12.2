@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "var=false": {"model": "lepidodendron:nypa_shoot"},
+    "var=true": {"model": "lepidodendron:nypa_shoot_var"}
+  }
+}

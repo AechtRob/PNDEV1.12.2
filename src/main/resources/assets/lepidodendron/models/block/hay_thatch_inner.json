@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
 		"particle": "lepidodendron:blocks/hay_thatch",
