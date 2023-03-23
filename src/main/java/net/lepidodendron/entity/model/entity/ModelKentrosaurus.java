@@ -18,15 +18,9 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer Leftleg1;
     private final AdvancedModelRenderer Leftleg2;
     private final AdvancedModelRenderer Leftleg3;
-    private final AdvancedModelRenderer Leftlegspike;
-    private final AdvancedModelRenderer Leftlegspiketip_r1;
-    private final AdvancedModelRenderer Leftlegspikebase_r1;
     private final AdvancedModelRenderer RightLeg1;
     private final AdvancedModelRenderer RightLeg2;
     private final AdvancedModelRenderer RightLeg3;
-    private final AdvancedModelRenderer Rightlegspike;
-    private final AdvancedModelRenderer Rightlegspiketip_r1;
-    private final AdvancedModelRenderer Rightlegspikebase_r1;
     private final AdvancedModelRenderer Bodymiddle;
     private final AdvancedModelRenderer Rightbodymiddlebackplate_r1;
     private final AdvancedModelRenderer Leftbodymiddlebackplate_r1;
@@ -65,6 +59,12 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer Rightcheeklower_r1;
     private final AdvancedModelRenderer Lowerjawfront_r1;
     private final AdvancedModelRenderer Lowerjawmiddle_r1;
+    private final AdvancedModelRenderer Leftlegspike;
+    private final AdvancedModelRenderer Leftlegspiketip_r1;
+    private final AdvancedModelRenderer Leftlegspikebase_r1;
+    private final AdvancedModelRenderer Rightlegspike;
+    private final AdvancedModelRenderer Rightlegspiketip_r1;
+    private final AdvancedModelRenderer Rightlegspikebase_r1;
     private final AdvancedModelRenderer Tail1;
     private final AdvancedModelRenderer Righttailbasespike_r1;
     private final AdvancedModelRenderer Lefttailbasespike_r1;
@@ -84,11 +84,11 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
     private ModelAnimator animator;
 
     public ModelKentrosaurus() {
-        this.textureWidth = 105;
-        this.textureHeight = 105;
+        this.textureWidth = 110;
+        this.textureHeight = 110;
 
         this.root = new AdvancedModelRenderer(this);
-        this.root.setRotationPoint(0.0F, 9.0F, -5.0F);
+        this.root.setRotationPoint(0.0F, 9.0F, 0.0F);
 
 
         this.Hips = new AdvancedModelRenderer(this);
@@ -132,23 +132,6 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Leftleg3, -0.0436F, 0.0F, 0.0F);
         this.Leftleg3.cubeList.add(new ModelBox(Leftleg3, 62, 38, -2.5F, -0.0436F, -4.251F, 5, 2, 6, 0.0F, false));
 
-        this.Leftlegspike = new AdvancedModelRenderer(this);
-        this.Leftlegspike.setRotationPoint(2.0F, -3.25F, 1.0F);
-        this.Leftleg1.addChild(Leftlegspike);
-
-
-        this.Leftlegspiketip_r1 = new AdvancedModelRenderer(this);
-        this.Leftlegspiketip_r1.setRotationPoint(3.1819F, -0.9069F, 3.5014F);
-        this.Leftlegspike.addChild(Leftlegspiketip_r1);
-        this.setRotateAngle(Leftlegspiketip_r1, 0.7257F, -1.2707F, -0.7965F);
-        this.Leftlegspiketip_r1.cubeList.add(new ModelBox(Leftlegspiketip_r1, 0, 33, -0.4009F, -1.0468F, 0.4986F, 5, 1, 1, -0.01F, false));
-
-        this.Leftlegspikebase_r1 = new AdvancedModelRenderer(this);
-        this.Leftlegspikebase_r1.setRotationPoint(0.5F, 0.0F, 0.0F);
-        this.Leftlegspike.addChild(Leftlegspikebase_r1);
-        this.setRotateAngle(Leftlegspikebase_r1, 0.4346F, -1.0861F, -0.4831F);
-        this.Leftlegspikebase_r1.cubeList.add(new ModelBox(Leftlegspikebase_r1, 21, 49, -1.0F, -1.0F, -0.5F, 5, 1, 1, 0.2F, false));
-
         this.RightLeg1 = new AdvancedModelRenderer(this);
         this.RightLeg1.setRotationPoint(-4.25F, 0.75F, 6.75F);
         this.Hips.addChild(RightLeg1);
@@ -166,23 +149,6 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
         this.RightLeg2.addChild(RightLeg3);
         this.setRotateAngle(RightLeg3, -0.0436F, 0.0F, 0.0F);
         this.RightLeg3.cubeList.add(new ModelBox(RightLeg3, 62, 38, -2.5F, -0.0436F, -4.251F, 5, 2, 6, 0.0F, true));
-
-        this.Rightlegspike = new AdvancedModelRenderer(this);
-        this.Rightlegspike.setRotationPoint(-2.0F, -3.25F, 1.0F);
-        this.RightLeg1.addChild(Rightlegspike);
-
-
-        this.Rightlegspiketip_r1 = new AdvancedModelRenderer(this);
-        this.Rightlegspiketip_r1.setRotationPoint(-3.1819F, -0.9069F, 3.5014F);
-        this.Rightlegspike.addChild(Rightlegspiketip_r1);
-        this.setRotateAngle(Rightlegspiketip_r1, 0.7257F, 1.2707F, 0.7965F);
-        this.Rightlegspiketip_r1.cubeList.add(new ModelBox(Rightlegspiketip_r1, 0, 33, -4.5991F, -1.0468F, 0.4986F, 5, 1, 1, -0.01F, true));
-
-        this.Rightlegspikebase_r1 = new AdvancedModelRenderer(this);
-        this.Rightlegspikebase_r1.setRotationPoint(-0.5F, 0.0F, 0.0F);
-        this.Rightlegspike.addChild(Rightlegspikebase_r1);
-        this.setRotateAngle(Rightlegspikebase_r1, 0.4346F, 1.0861F, 0.4831F);
-        this.Rightlegspikebase_r1.cubeList.add(new ModelBox(Rightlegspikebase_r1, 21, 49, -4.0F, -1.0F, -0.5F, 5, 1, 1, 0.2F, true));
 
         this.Bodymiddle = new AdvancedModelRenderer(this);
         this.Bodymiddle.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -418,6 +384,42 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Lowerjawmiddle_r1, -0.0436F, 0.0F, 0.0F);
         this.Lowerjawmiddle_r1.cubeList.add(new ModelBox(Lowerjawmiddle_r1, 62, 46, -1.5F, -1.0F, -2.0F, 2, 1, 2, 0.0F, false));
 
+        this.Leftlegspike = new AdvancedModelRenderer(this);
+        this.Leftlegspike.setRotationPoint(5.25F, 0.704F, -3.4048F);
+        this.Bodyfront.addChild(Leftlegspike);
+        this.setRotateAngle(Leftlegspike, 0.0F, 0.7854F, 0.0F);
+
+
+        this.Leftlegspiketip_r1 = new AdvancedModelRenderer(this);
+        this.Leftlegspiketip_r1.setRotationPoint(3.1819F, -0.9069F, 3.5014F);
+        this.Leftlegspike.addChild(Leftlegspiketip_r1);
+        this.setRotateAngle(Leftlegspiketip_r1, 0.7257F, -1.2707F, -0.7965F);
+        this.Leftlegspiketip_r1.cubeList.add(new ModelBox(Leftlegspiketip_r1, 0, 33, -0.4009F, -1.0468F, 0.4986F, 5, 1, 1, 0.1F, false));
+
+        this.Leftlegspikebase_r1 = new AdvancedModelRenderer(this);
+        this.Leftlegspikebase_r1.setRotationPoint(0.5F, 0.0F, 0.0F);
+        this.Leftlegspike.addChild(Leftlegspikebase_r1);
+        this.setRotateAngle(Leftlegspikebase_r1, 0.4346F, -1.0861F, -0.4831F);
+        this.Leftlegspikebase_r1.cubeList.add(new ModelBox(Leftlegspikebase_r1, 21, 49, -1.0F, -1.0F, -0.5F, 5, 1, 1, 0.3F, false));
+
+        this.Rightlegspike = new AdvancedModelRenderer(this);
+        this.Rightlegspike.setRotationPoint(-5.25F, 0.704F, -3.4048F);
+        this.Bodyfront.addChild(Rightlegspike);
+        this.setRotateAngle(Rightlegspike, 0.0F, -0.7854F, 0.0F);
+
+
+        this.Rightlegspiketip_r1 = new AdvancedModelRenderer(this);
+        this.Rightlegspiketip_r1.setRotationPoint(-3.1819F, -0.9069F, 3.5014F);
+        this.Rightlegspike.addChild(Rightlegspiketip_r1);
+        this.setRotateAngle(Rightlegspiketip_r1, 0.7257F, 1.2707F, 0.7965F);
+        this.Rightlegspiketip_r1.cubeList.add(new ModelBox(Rightlegspiketip_r1, 0, 33, -4.5991F, -1.0468F, 0.4986F, 5, 1, 1, 0.1F, true));
+
+        this.Rightlegspikebase_r1 = new AdvancedModelRenderer(this);
+        this.Rightlegspikebase_r1.setRotationPoint(-0.5F, 0.0F, 0.0F);
+        this.Rightlegspike.addChild(Rightlegspikebase_r1);
+        this.setRotateAngle(Rightlegspikebase_r1, 0.4346F, 1.0861F, 0.4831F);
+        this.Rightlegspikebase_r1.cubeList.add(new ModelBox(Rightlegspikebase_r1, 21, 49, -4.0F, -1.0F, -0.5F, 5, 1, 1, 0.3F, true));
+
         this.Tail1 = new AdvancedModelRenderer(this);
         this.Tail1.setRotationPoint(-0.5F, -6.75F, 9.0F);
         this.Hips.addChild(Tail1);
@@ -507,7 +509,6 @@ public class ModelKentrosaurus extends AdvancedModelBaseExtended {
         this.Tail5.addChild(Lefttailendspike_r1);
         this.setRotateAngle(Lefttailendspike_r1, -0.8923F, 0.5339F, 0.8738F);
         this.Lefttailendspike_r1.cubeList.add(new ModelBox(Lefttailendspike_r1, 94, 55, -0.5F, -11.8722F, -0.6107F, 1, 12, 1, 0.0F, false));
-
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
