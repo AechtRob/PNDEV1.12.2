@@ -3847,8 +3847,6 @@ public class RenderHandler {
         //Taxidermy:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTaxidermyTable.TileEntityTaxidermyTable.class, new RenderTaxidermyTable());
         
-        //Skeleton Slabs:
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSharkEmbryo.TileEntitySkeletonSharkEmbryo.class, new RenderSkeletonSharkEmbryo());
 
     }
 }
