@@ -4,7 +4,7 @@ import net.minecraft.util.IStringSerializable;
 
 public enum EnumBiomeTypeCretaceous implements IStringSerializable {
 
-    Early_Cretaacoue_South_America("early_s_america"),
+    Early_Cretaceous_South_America_Africa("early_s_america_africa"),
     Early_Cretaceous_Lauasia("early_laurasia"),
     Early_Cretaceous_Australia_Antarctica("early_australia_antarctica"),
     Late_Cretaceous_Africa("late_africa"),

@@ -76,7 +76,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
             else {
                 //Grab nearby positions too for clumps:
                 boolean result = false;
-                for (int ii = 0; ii < 12; ++ii) {
+                for (int ii = 0; ii < 16; ++ii) {
                     BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
                     BlockPos down = blockpos.down();
