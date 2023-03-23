@@ -91,8 +91,10 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                         }
                         else {
                             //Something has gone wrong!
+                            entityEggs.setDead();
                             return;
                         }
+                        entityEggs.setDead();
                     }
                     else {
                         //Something has gone wrong!

@@ -1,6 +1,6 @@
 {
-	"ambientocclusion": false,
 	"parent": "block/block",
+	"ambientocclusion": false,
 	"textures": {
 		"particle": "#texture"
 	},
@@ -48,7 +48,6 @@
 			"name": "Centre bar",
 			"from": [7, 8, -2],
 			"to": [9, 10, 18],
-			"color": 2,
 			"faces": {
 				"north": {"uv": [7, 1, 9, 3], "texture": "#texture"},
 				"east": {"uv": [0, 5, 16, 7], "texture": "#texture"},

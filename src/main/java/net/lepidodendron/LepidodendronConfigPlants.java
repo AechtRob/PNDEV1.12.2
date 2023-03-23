@@ -228,6 +228,13 @@ public class LepidodendronConfigPlants {
     public static int minheightMacroneuropteris = 1;
     public static int maxheightMacroneuropteris = 90;
     public static double multiplierMacroneuropteris = 1;
+    public static boolean genNypa = false;
+    public static String[] genNypaBlacklistBiomes = new String[0];
+    public static String[] genNypaOverrideBiomes = new String[0];
+    public static int[] dimNypa = new int[]{0};
+    public static int minheightNypa = 1;
+    public static int maxheightNypa = 90;
+    public static double multiplierNypa = 1;
     public static boolean genGinkgo = false;
     public static String[] genGinkgoBlacklistBiomes = new String[0];
     public static String[] genGinkgoOverrideBiomes = new String[0];
@@ -3156,6 +3163,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Macroneuropteris", "multiplierMacroneuropteris", multiplierMacroneuropteris);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierMacroneuropteris = prop.getDouble();
+        propOrder.add(prop.getName());
+        
+        prop = cfg.get("WorldGen Nypa", "genNypa", genNypa);
+        prop.setComment("Set to true to generate Nypa trees naturally [default: false]");
+        genNypa = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nypa", "genNypaBlacklistBiomes", genNypaBlacklistBiomes);
+        prop.setComment("List of biomes Nypa trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genNypaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nypa", "genNypaOverrideBiomes", genNypaOverrideBiomes);
+        prop.setComment("List of biomes Nypa trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genNypaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Nypa", "dimNypa", dimNypa);
+        prop.setComment("List of dimension IDs Nypa trees can generate in [default: 0]");
+        dimNypa = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nypa", "minheightNypa", minheightNypa);
+        prop.setComment("Minimum height that Nypa trees can generate (1 to 250) [default: 1]");
+        minheightNypa = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nypa", "maxheightNypa", maxheightNypa);
+        prop.setComment("Maximum height that Nypa trees can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightNypa = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nypa", "multiplierNypa", multiplierNypa);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierNypa = prop.getDouble();
         propOrder.add(prop.getName());
         
         prop = cfg.get("WorldGen Archaeanthus", "genArchaeanthus", genArchaeanthus);

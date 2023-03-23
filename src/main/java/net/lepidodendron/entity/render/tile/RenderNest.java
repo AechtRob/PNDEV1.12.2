@@ -128,6 +128,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                             eggType = -1;
                         }
                     }
+                    entityEggs.setDead();
                 }
 
                 if (eggType != -1) {

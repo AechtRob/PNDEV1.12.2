@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:nypa_shoot"
+    },
+    "facing=north,var=false": {
+      "model": "lepidodendron:nypa_shoot_03_side", "y": -90
+    },
+    "facing=east,var=false": {
+      "model": "lepidodendron:nypa_shoot_03_side"
+    },
+    "facing=south,var=false": {
+      "model": "lepidodendron:nypa_shoot_03_side", "y": 90
+    },
+    "facing=west,var=false": {
+      "model": "lepidodendron:nypa_shoot_03_side", "y": 180
+    },
+
+
+    "facing=north,var=true": {
+      "model": "lepidodendron:nypa_shoot_03_side_var", "y": -90
+    },
+    "facing=east,var=true": {
+      "model": "lepidodendron:nypa_shoot_03_side_var"
+    },
+    "facing=south,var=true": {
+      "model": "lepidodendron:nypa_shoot_03_side_var", "y": 90
+    },
+    "facing=west,var=true": {
+      "model": "lepidodendron:nypa_shoot_03_side_var", "y": 180
+    }
+  }
+}

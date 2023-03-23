@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderAphnelepis;
 import net.lepidodendron.entity.render.entity.RenderLeptolepis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -53,7 +52,7 @@ public class EntityPrehistoricFloraLeptolepis extends EntityPrehistoricFloraFish
 
 	@Override
 	public int getShoalDist() {
-		return 3;
+		return 4;
 	}
 
 	@Override

@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSmilosuchus extends RenderLiving<EntityPrehistoricFloraSmilosuchus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/smilosuchus.png");
+    public static float getScaler() {return 0.85F* 0.91F;}
 
     public RenderSmilosuchus(RenderManager mgr) {
         super(mgr, new ModelSmilosuchus(), 0.35f);
@@ -27,7 +28,7 @@ public class RenderSmilosuchus extends RenderLiving<EntityPrehistoricFloraSmilos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSmilosuchus entity, float f) {
-        float scale = entity.getAgeScale() * 0.91F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.55F;
     }

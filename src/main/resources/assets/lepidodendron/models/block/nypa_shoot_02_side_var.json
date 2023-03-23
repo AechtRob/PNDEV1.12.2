@@ -1,0 +1,15 @@
+{
+	"textures": {
+	    "w": "lepidodendron:blocks/nypa_shoot_var2_lmb_1",
+	    "e": "lepidodendron:blocks/nypa_shoot_var2_lmb_4",
+	    "particle": "lepidodendron:blocks/nypa_shoot_var2_lmb_1"
+	},
+	"ambientocclusion":false,
+	"elements":[
+		{"name":"e",
+		"from":[8.0,0.0,8.0],"to":[24.0,16.0,8.0],"shade":false,
+		"faces":{
+		"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}}
+	]
+}

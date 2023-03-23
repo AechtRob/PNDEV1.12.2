@@ -557,7 +557,7 @@ public class LepidodendronFogSubscribers {
 		return 0F;
 	}
 
-	public boolean hasShaders() {
+	public static boolean hasShaders() {
 		//Check if optifine is installed:
 		boolean isShaders = false;
 		if (FMLClientHandler.instance().hasOptifine()) {

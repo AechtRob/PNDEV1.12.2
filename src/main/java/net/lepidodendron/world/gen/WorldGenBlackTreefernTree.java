@@ -77,7 +77,7 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
             else
             {
                 BlockPos down = position.down();
-                if (!BlockTreefernBlackShoot.block.canPlaceBlockAt(worldIn, position)) {
+                if (!BlockTreefernBlackShootPlaceable.block.canPlaceBlockAt(worldIn, position)) {
                     return false;
                 }
                 IBlockState state = worldIn.getBlockState(down);
@@ -95,7 +95,7 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
 					//Grab nearby positions too for clumps:
                     for (int ii = 0; ii < 12; ++ii) {
                         BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-                        if (!BlockTreefernBlackShoot.block.canPlaceBlockAt(worldIn, blockpos)) {
+                        if (!BlockTreefernBlackShootPlaceable.block.canPlaceBlockAt(worldIn, blockpos)) {
                             continue;
                         }
                         down = blockpos.down();

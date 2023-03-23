@@ -1,41 +1,48 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
-    "textures": {
-        "particle": "lepidodendron:blocks/dicroidium_c_e",
-        "e": "lepidodendron:blocks/dicroidium_b_e",
-        "w": "lepidodendron:blocks/dicroidium_b_w",
-        "down": "lepidodendron:blocks/dicroidium_stem_end",
-        "up": "lepidodendron:blocks/dicroidium_stem_end",
-        "north": "lepidodendron:blocks/dicroidium_stem",
-        "south": "lepidodendron:blocks/dicroidium_stem",
-        "west": "lepidodendron:blocks/dicroidium_stem",
-        "east": "lepidodendron:blocks/dicroidium_stem"
-    },
-    
-    "elements": [
-		{"name":"e",
-			"from":[8.0,-8.0,9.0],"to":[24.0,8.0,9.0],"shade":false,
-			"rotation": { "origin": [ 8, 8, 9 ], "axis": "y", "angle": 45, "rescale": false },
-			"faces":{
-			"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
-			"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
-		{"name":"w",
-			"from":[-8.0,-8.0,9.0],"to":[8.0,8.0,9.0],"shade":false,
-			"rotation": { "origin": [ 8, 8, 9 ], "axis": "y", "angle": -45, "rescale": false },
-			"faces":{
-			"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
-			"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"mid",
-			"from": [ 7, 0, 7 ],
-            "to": [ 9, 16, 9 ],
-            "faces": {
-                "down":  { "uv": [ 7, 14, 8, 16 ],  "texture": "#down", "cullface": "down" },
-                "up":    { "uv": [ 7, 14, 8, 16 ], "texture": "#up" },
-                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#north" },
-                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#south" },
-                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#west" },
-                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#east" }
-            }
-        }
-	
-    ]
+	"textures": {
+		"e": "lepidodendron:blocks/dicroidium_b_e",
+		"w": "lepidodendron:blocks/dicroidium_b_w",
+		"up": "lepidodendron:blocks/dicroidium_stem_end",
+		"east": "lepidodendron:blocks/dicroidium_stem",
+		"particle": "lepidodendron:blocks/dicroidium_c_e"
+	},
+	"elements": [
+		{
+			"name": "e",
+			"from": [8, -8, 9],
+			"to": [24, 8, 9],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#w"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#e"}
+			}
+		},
+		{
+			"name": "w",
+			"from": [-8, -8, 9],
+			"to": [8, 8, 9],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#e"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#w"}
+			}
+		},
+		{
+			"name": "mid",
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"north": {"uv": [7, 0, 9, 16], "texture": "#east"},
+				"east": {"uv": [7, 0, 9, 16], "texture": "#east"},
+				"south": {"uv": [7, 0, 9, 16], "texture": "#east"},
+				"west": {"uv": [7, 0, 9, 16], "texture": "#east"},
+				"up": {"uv": [7, 14, 9, 16], "texture": "#up"},
+				"down": {"uv": [7, 14, 9, 16], "texture": "#up", "cullface": "down"}
+			}
+		}
+	]
 }
