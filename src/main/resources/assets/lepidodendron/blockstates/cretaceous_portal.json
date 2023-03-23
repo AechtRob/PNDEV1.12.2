@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:cretaceous_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:cretaceous_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:cretaceous_portal_ns"
+    }
+  }
+}

@@ -8,6 +8,7 @@ import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -92,7 +93,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if ((LepidodendronConfig.dimCarboniferous == dimID
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic)
+			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceous)
 			)
 			dimensionCriteria = true;
 
@@ -184,6 +186,15 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeCretaceous) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 			
@@ -200,7 +211,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (LepidodendronConfig.dimCarboniferous == dimID
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
-				|| dimID == LepidodendronConfig.dimJurassic) {
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceous) {
 			GenChance = 25;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")) {
@@ -225,6 +237,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
+			GenChance = 256;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
 			GenChance = 256;
 		}
 

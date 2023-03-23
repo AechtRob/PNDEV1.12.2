@@ -144,6 +144,7 @@ public class BlockNypaSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
+					$_dependencies.put("saplingspawn", true);
 					ProcedureWorldGenNypa.executeProcedure($_dependencies);
 				}
 	        }
