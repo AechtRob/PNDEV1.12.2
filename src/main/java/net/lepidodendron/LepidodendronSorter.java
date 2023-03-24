@@ -3066,7 +3066,6 @@ public class LepidodendronSorter {
     public static final int siphusauctum = 3062;
     public static final int skaaripteris = 3063;
     public static final int skeemella_raw = 3064;
-    public static final int skeleton_shark_embryo = 3065;
     public static final int skeleton_yorgia = 3066;
     public static final int adobe_slab = 3067;
     public static final int agathis_slab = 3068;

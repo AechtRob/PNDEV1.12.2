@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Mixosaurus is a small sized Triassic ichthyosaur. Previously known from many species, Mixosaurus today is composed only of three valid species hailing from Italy, Switzerland and South China. Long considered a transitional stage between older eel like Ichthyosaurs "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
+			"type": "text",
+			"text": "and the more derived fish like ones, the animal is known from a wealth of fossil material. Despite the large amount of fossils, however, for the longest time no soft tissue impressions of the animal were known, leading to many now outdated reconstructions of it with rhomboid shaped tails and no dorsal fin."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
+			"type": "text",
+			"text": "This changed in 2020 when two specimens (BES SC 1000 & BES SC 1001) were discovered in Besano, which preserved traces of soft tissue and allowed us to finally identify the origin of dorsal fins in Ichthyosaurs as more basal than once thought."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
