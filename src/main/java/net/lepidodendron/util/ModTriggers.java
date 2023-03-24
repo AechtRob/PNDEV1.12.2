@@ -608,6 +608,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MICRODICTYON = new CustomTrigger("pf_book_microdictyon");
     public static final CustomTrigger CLICK_MIMETASTER = new CustomTrigger("pf_book_mimetaster");
     public static final CustomTrigger CLICK_MIXOPTERUS = new CustomTrigger("pf_book_mixopterus");
+    public static final CustomTrigger CLICK_MIXOSAURUS = new CustomTrigger("pf_book_mixosaurus");
     public static final CustomTrigger CLICK_MONOGRAPTUS = new CustomTrigger("pf_book_monograptus");
     public static final CustomTrigger CLICK_MOOREOCERAS = new CustomTrigger("pf_book_mooreoceras");
     public static final CustomTrigger CLICK_MOSCHOPS = new CustomTrigger("pf_book_moschops");
@@ -1662,6 +1663,7 @@ public class ModTriggers
             CLICK_MICRODICTYON,
             CLICK_MIMETASTER,
             CLICK_MIXOPTERUS,
+            CLICK_MIXOSAURUS,
             CLICK_MONOGRAPTUS,
             CLICK_MONTECARIS,
             CLICK_MOOREOCERAS,
