@@ -125,11 +125,6 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
-
-	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
 	}
@@ -144,7 +139,6 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
 	@Override
