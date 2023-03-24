@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_proganochelys",
 			"type": "text",
-			"text": ""
+			"text": "Proganochelys is a genus of early stem-turtle from Germany, Switzerland, Greenland and Thailand dating back to the Late Triassic.  Once considered to be the oldest stem-turtle, Proganochelys would keep this title from its discovery in 1887 up until 2008, when the even older genus Odontochelys was described.  Together, these stem-turtles make the oldest evidence of the evolution of the carapace in modern day turtles."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proganochelys",
+			"type": "text",
+			"text": "While at first appearing quite modern, Proganochelys possessed a series of traits not seen in its modern relatives.  Unique to Proganochelys were a series of extra bony plates running along the sides of the shell, probably used by the animal to protect its legs; alongside these unusual extra plates, the long tail of this animal was armored with spikes and ended in a small club."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proganochelys",
+			"type": "text",
+			"text": "The head of Proganochelys, unlike modern turtles, was unable to retract inside the shell and instead relied on small spikes along its surface to protect it.  Due to the structure of the beak and the presence of tooth-like denticles on the top of its palate, they may have originated from carnivorous ancestors turned herbivorous. The first fossils of Proganochelys were found in Germany in the 1800s and were described by Georg Baur in 1887. "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proganochelys",
