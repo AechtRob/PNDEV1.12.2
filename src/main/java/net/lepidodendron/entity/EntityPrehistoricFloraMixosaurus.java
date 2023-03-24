@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.75;
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "Triassic";}
