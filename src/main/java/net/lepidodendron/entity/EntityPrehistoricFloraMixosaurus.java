@@ -8,11 +8,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -35,7 +32,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraMixosaurus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -43,7 +40,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		//minSize = 0.1F;
 		//maxSize = 1.0F;
 		minWidth = 0.15F;
-		maxWidth = 0.59F;
+		maxWidth = 0.53F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 21.0D;
 	}
@@ -55,16 +52,11 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Aquatic Ichthyosauriform";}
+	//public static String getHabitat() {return "Aquatic Ichthyosauriform";}
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraMixosaurus(this.world);
-	}
-
-	@Override
-	public int airTime() {
-		return 10000;
 	}
 
 	@Override
@@ -96,10 +88,6 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		return AIspeed;
 	}
 
-	public int flapLength() {
-		return 40;
-	}
-
 	@Override
 	public void playLivingSound() {
 		if (!this.isReallyInWater()) {
@@ -107,12 +95,12 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		}
 		if (this.getAnimation() != null) {
 			SoundEvent soundevent = null;
-			if (this.world.isAirBlock(this.getPosition().up())) {
-				soundevent = this.getBlowholeSound();
-			}
-			else {
+			//if (this.world.isAirBlock(this.getPosition().up())) {
+			//	soundevent = this.getBlowholeSound();
+			//}
+			//else {
 				soundevent = this.getAmbientSound();
-			}
+			//}
 			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
 				this.setAnimation(ROAR_ANIMATION);
 				if (soundevent != null)
@@ -136,15 +124,10 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
@@ -185,7 +168,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
