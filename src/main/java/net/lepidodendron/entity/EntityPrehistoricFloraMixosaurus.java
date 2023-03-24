@@ -89,29 +89,6 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
-	public void playLivingSound() {
-		if (!this.isReallyInWater()) {
-			return;
-		}
-		if (this.getAnimation() != null) {
-			SoundEvent soundevent = null;
-			//if (this.world.isAirBlock(this.getPosition().up())) {
-			//	soundevent = this.getBlowholeSound();
-			//}
-			//else {
-				soundevent = this.getAmbientSound();
-			//}
-			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
-				this.setAnimation(ROAR_ANIMATION);
-				if (soundevent != null)
-				{
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
-	}
-
-	@Override
 	protected boolean isSlowAtBottom() {
 		return false;
 	}
@@ -178,20 +155,11 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 				.getObject(new ResourceLocation("lepidodendron:mixosaurus_idle"));
 	}
 
-	public SoundEvent getBlowholeSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mixosaurus_blowhole"));
-	}
-
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		if (this.isReallyInWater()) {
-			return (SoundEvent) SoundEvent.REGISTRY
+		return (SoundEvent) SoundEvent.REGISTRY
 					.getObject(new ResourceLocation("lepidodendron:mixosaurus_hurt"));
-		}
-		else {
-			return this.getBlowholeSound();
-		}
+
 	}
 
 	@Override
