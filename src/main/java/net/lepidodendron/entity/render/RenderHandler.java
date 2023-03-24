@@ -3667,6 +3667,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMixosaurus.class, new IRenderFactory<EntityPrehistoricFloraMixosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMixosaurus> createRenderFor(RenderManager manager) {
+                return new RenderMixosaurus(manager);
+            }
+        });
+
 
 
 
