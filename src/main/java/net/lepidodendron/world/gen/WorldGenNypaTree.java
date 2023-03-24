@@ -28,55 +28,56 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
     
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        int i = rand.nextInt(3) + 5;
+        boolean result = false;
+        for (int ii = 0; ii < 16; ++ii) {
 
-        boolean flag = true;
+            int i = rand.nextInt(3) + 5;
 
-        if (position.getY() >= 1 && position.getY() + i + 1 <= 256)
-        {
-            for (int j = position.getY(); j <= position.getY() + 1 + i; ++j)
+            boolean flag = true;
+
+            if (position.getY() >= 1 && position.getY() + i + 1 <= 256)
             {
-                int k = 1;
-
-                if (j == position.getY())
+                for (int j = position.getY(); j <= position.getY() + 1 + i; ++j)
                 {
-                    k = 0;
-                }
+                    int k = 1;
 
-                if (j >= position.getY() + 1 + i - 2)
-                {
-                    k = 2;
-                }
-
-                BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-
-                for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l)
-                {
-                    for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1)
+                    if (j == position.getY())
                     {
-                        if (j >= 0 && j < worldIn.getHeight())
+                        k = 0;
+                    }
+
+                    if (j >= position.getY() + 1 + i - 2)
+                    {
+                        k = 2;
+                    }
+
+                    BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+
+                    for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l)
+                    {
+                        for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1)
                         {
-                            if (!this.isReplaceable(worldIn, blockpos$mutableblockpos.setPos(l, j, i1)))
+                            if (j >= 0 && j < worldIn.getHeight())
+                            {
+                                if (!this.isReplaceable(worldIn, blockpos$mutableblockpos.setPos(l, j, i1)))
+                                {
+                                    flag = false;
+                                }
+                            }
+                            else
                             {
                                 flag = false;
                             }
                         }
-                        else
-                        {
-                            flag = false;
-                        }
                     }
                 }
-            }
 
-            if (!flag || (position.getY() > worldIn.getSeaLevel()+20))
-            {
-                return false;
-            }
-            else {
+                if (!flag || (position.getY() > worldIn.getSeaLevel()+20))
+                {
+                    result = false;
+                }
+                else {
                 //Grab nearby positions too for clumps:
-                boolean result = false;
-                for (int ii = 0; ii < 16; ++ii) {
                     BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
                     BlockPos down = blockpos.down();
@@ -125,12 +126,8 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                         }
                     }
                 }
-                return result;
             }
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 }
