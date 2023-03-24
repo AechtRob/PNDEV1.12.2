@@ -43,6 +43,7 @@ public class ProcedureWorldGenNypa extends ElementsLepidodendronMod.ModElement {
 		int yy = y;
 		int zz = z;
 		World world = (World) dependencies.get("world");
+		boolean saplingspawn = (boolean) dependencies.get("saplingspawn");
 		int TrunkHeight = 0;
 		double counter = 0;
 		boolean TreeCheck = true;
@@ -131,7 +132,17 @@ public class ProcedureWorldGenNypa extends ElementsLepidodendronMod.ModElement {
 			pos = new BlockPos(x, y, z);
 
 			world.setBlockState(pos, BlockNypaShoot.block.getDefaultState(), 3);
-			world.setBlockState(pos.up(), BlockNypaShoot02.block.getDefaultState(), 3);
+			if (saplingspawn) {
+				world.setBlockState(pos.up(), BlockNypaShoot02.block.getDefaultState(), 3);
+			}
+			else {
+				if (rand.nextInt(3) == 0) {
+					world.setBlockState(pos.up(), BlockNypaShoot02Fruiting.block.getDefaultState(), 3);
+				}
+				else {
+					world.setBlockState(pos.up(), BlockNypaShoot02.block.getDefaultState(), 3);
+				}
+			}
 			world.setBlockState(pos.up(2), BlockNypaShoot03.block.getDefaultState(), 3);
 			world.setBlockState(pos.up(3), BlockNypaShoot04.block.getDefaultState(), 3);
 			world.setBlockState(pos.up(4), BlockNypaShoot05.block.getDefaultState(), 3);

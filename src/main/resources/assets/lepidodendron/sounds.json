@@ -6465,8 +6465,7 @@
       }
     ]
   },
-
-
+  
   "silesaurus_idle": {
     "sounds": [
       {
@@ -6511,6 +6510,67 @@
     "sounds": [
       {
         "name": "lepidodendron:silesaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "kentrosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kentrosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_living08",
+        "stream": false
+      }
+    ]
+  },
+  "kentrosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kentrosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kentrosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "kentrosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kentrosaurus_death",
         "stream": false
       }
     ]

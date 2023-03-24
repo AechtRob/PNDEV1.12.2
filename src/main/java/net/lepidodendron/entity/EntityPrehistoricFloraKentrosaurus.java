@@ -86,6 +86,16 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 24;
+	}
+
+	@Override
+	public int getEatLength() {
+		return 20;
+	}
+
+	@Override
 	public String getTexture() {
 		return this.getTexture();
 	}
@@ -175,7 +185,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getDrinkLength() {
-		return 80;  //grazes, does not drink
+		return 50;  //grazes, does not drink
 	}
 
 	@Override
@@ -194,8 +204,8 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 				&& this.DRINK_ANIMATION.getDuration() > 0
 				&& this.getAnimation() == NO_ANIMATION
 				&& !this.isReallyInWater()
-				&& (//this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
-				this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS
+				&& (this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
+				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS
 				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.PLANTS
 				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.LEAVES)
 				//|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.SAND)
@@ -204,21 +214,25 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			//Which one is water?
 			facing = null;
 			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GRASS
+					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GROUND
 					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.PLANTS
 					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.LEAVES) {
 				facing = EnumFacing.NORTH;
 			}
 			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GRASS
+					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GROUND
 					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.PLANTS
 					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.LEAVES) {
 				facing = EnumFacing.SOUTH;
 			}
 			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GRASS
+					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GROUND
 					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.PLANTS
 					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.LEAVES) {
 				facing = EnumFacing.EAST;
 			}
 			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GRASS
+					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GROUND
 					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.PLANTS
 					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.LEAVES) {
 				facing = EnumFacing.WEST;
