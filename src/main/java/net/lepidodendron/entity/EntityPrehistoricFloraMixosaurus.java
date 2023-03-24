@@ -11,9 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.*;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
@@ -147,30 +145,6 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
-	}
-
-	@Override
-	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mixosaurus_idle"));
-	}
-
-	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY
-					.getObject(new ResourceLocation("lepidodendron:mixosaurus_hurt"));
-
-	}
-
-	@Override
-	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mixosaurus_death"));
-	}
-
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F + (this.getAgeScale());
 	}
 
 	@Override

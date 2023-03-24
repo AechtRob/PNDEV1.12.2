@@ -328,22 +328,21 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
             */
         //Animation values need tweaking
         if(ee.getIsMoving()) {
-            this.chainSwing(fishTail, speed, 0.3F, 0, f2, 1);
+            this.chainSwing(fishTail, speed, 0.6F, 2, f2, 1);
         }else{
-            this.chainSwing(fishTail, speed, 0.1F, 0, f2, 1);
+            this.chainSwing(fishTail, speed, 0.3F, 1, f2, 1);
         }
-        this.swing(Mixosaurus, speed, 0.1F, false, 0, 0, f2, 1);
+        this.swing(Mixosaurus, speed, 0.15F, false, 0, 0, f2, 1);
         //this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.walk(ForelimbsL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.swing(ForelimbsL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.walk(ForelimbsR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.swing(ForelimbsR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.walk(HindlimbsL, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
-        this.swing(HindlimbsL, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
-        this.walk(HindlimbsR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
-        this.swing(HindlimbsR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
+        this.walk(ForelimbsL, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
+        this.swing(ForelimbsL, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
+        this.walk(ForelimbsR, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
+        this.swing(ForelimbsR, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
+        this.walk(HindlimbsL, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
+        this.swing(HindlimbsL, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
+        this.walk(HindlimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
+        this.swing(HindlimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
         //}
-
 
     }
 
