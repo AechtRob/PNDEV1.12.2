@@ -51,7 +51,8 @@ public class EntityPrehistoricFloraCaviramus extends EntityPrehistoricFloraAgeab
 		maxHealthAgeable = 16.0D;
 	}
 
-	public static int flightHeight() {
+	@Override
+	public int flightHeight() {
 		return 25;
 	}
 

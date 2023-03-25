@@ -51,7 +51,8 @@ public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFlora
 		maxHealthAgeable = 18.0D;
 	}
 
-	public static int flightHeight() {
+	@Override
+	public int flightHeight() {
 		return 15;
 	}
 

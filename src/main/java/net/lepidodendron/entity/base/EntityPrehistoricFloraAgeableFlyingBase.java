@@ -61,7 +61,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION};
     }
 
-    public static int flightHeight() {
+    public int flightHeight() {
         return 40; //default
     }
 
@@ -311,7 +311,12 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         BlockPos pos = new BlockPos(flier.posX + dX, 0, flier.posZ + dZ);
         BlockPos ground = flier.world.getHeight(pos);
         int distFromGround = (int) flier.posY - ground.getY();
-        BlockPos newPos = pos.up(distFromGround < flightHeight() ? (int) Math.min(255, flier.posY + flier.rand.nextInt(25) - 8) : (int) flier.posY + flier.rand.nextInt(3) - 1);
+        BlockPos newPos = pos.up(distFromGround < flier.flightHeight() ? (int) Math.min(255, flier.posY + flier.rand.nextInt(25) - 8) : (int) flier.posY - flier.rand.nextInt(3) - 1);
+        if (flier.getIsFlying()) { //Try to make them descend
+            if ((double)flier.getFlyTick() > ((double)flier.flyLength() * 0.9)) {
+                newPos = newPos.down();
+            }
+        }
         if (!isTargetBlocked(flier, new Vec3d(newPos)) && flier.getDistanceSqToCenter(newPos) > 6) {
             return newPos;
         }

@@ -51,7 +51,8 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		maxHealthAgeable = 12.0D;
 	}
 
-	public static int flightHeight() {
+	@Override
+	public int flightHeight() {
 		return 15;
 	}
 
