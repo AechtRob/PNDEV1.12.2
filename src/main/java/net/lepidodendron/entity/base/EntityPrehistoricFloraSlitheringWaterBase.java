@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -61,6 +62,16 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.BOOLEAN);
 
 	private int inPFLove;
+
+	@Override
+	public boolean isRiding() {
+		if (this.getRidingEntity() != null) {
+			if (this.getRidingEntity() instanceof EntityBoat) {
+				return false;
+			}
+		}
+		return super.isRiding();
+	}
 
 	@Nullable
 	@Override
