@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 
 	@Override
 	public int getAdultAge() {
-		return 96000;
+		return 126000;
 	}
 
 	@Override
@@ -153,10 +153,10 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {

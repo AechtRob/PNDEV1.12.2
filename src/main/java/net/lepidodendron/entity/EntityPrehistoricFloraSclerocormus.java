@@ -8,11 +8,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -35,7 +32,7 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraSclerocormus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -84,7 +81,7 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 
 	@Override
 	public int getAdultAge() {
-		return 156000;
+		return 92000;
 	}
 
 	@Override
@@ -113,6 +110,7 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 	public double getMoveAngle2() {
 		return Math.sin(Math.PI * 4	* getMoveFraction());
 	}
+
 	@Override
 	public void playLivingSound() {
 		if (!this.isReallyInWater()) {
@@ -148,16 +146,12 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.1, -5, true));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(0, new EatShellfishItemsAI(this, 1F));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
@@ -165,7 +159,7 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 	{
 		return (
 			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-			|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+			|| (OreDictionary.containsMatch(false, OreDictionary.getOres("itemShellfish"), stack))
 		);
 	}
 
@@ -177,11 +171,6 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 	@Override
 	public String getTexture() {
 		return this.getTexture();
-	}
-
-	@Override
-	public boolean breaksBoat() {
-		return true;
 	}
 
 	@Override

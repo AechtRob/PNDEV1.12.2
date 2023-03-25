@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraParhybodus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 25.0D;
 	}
 
 	@Override
@@ -141,10 +141,10 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -162,7 +162,7 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		//this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
 	@Override

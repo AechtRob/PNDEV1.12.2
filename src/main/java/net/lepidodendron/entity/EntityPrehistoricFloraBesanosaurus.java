@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderBesanosaurus;
-import net.lepidodendron.entity.render.entity.RenderErythrosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
@@ -41,7 +40,7 @@ public class EntityPrehistoricFloraBesanosaurus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraBesanosaurus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -175,10 +174,10 @@ public class EntityPrehistoricFloraBesanosaurus extends EntityPrehistoricFloraAg
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {

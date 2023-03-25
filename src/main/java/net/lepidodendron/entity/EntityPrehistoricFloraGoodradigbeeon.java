@@ -11,7 +11,6 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderGoodradigbeeon;
-import net.lepidodendron.entity.render.entity.RenderRhamphodopsis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -37,7 +36,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFloraAgeableFishBase {
-
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -95,7 +93,7 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 
 	@Override
 	public int getAdultAge() {
-		return 92000;
+		return 48000;
 	}
 
 	@Override

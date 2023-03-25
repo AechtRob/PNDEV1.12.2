@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraAsteracanthus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(maxWidth, maxHeight);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.2;
+		return this.getAgeScale() < 0.35;
 	}
 
 	public static String getPeriod() {return "Jurassic - Cretaceous";}
@@ -126,7 +126,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
@@ -156,10 +156,10 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -177,7 +177,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		//this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
 	@Override
