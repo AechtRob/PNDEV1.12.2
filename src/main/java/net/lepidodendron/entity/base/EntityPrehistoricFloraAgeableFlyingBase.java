@@ -208,6 +208,8 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 }
             }
 
+            System.err.println("this.flyTick " + this.flyTick + " / " + this.flyLength());
+
             //Is it hovering over a nest to lay in?
             if (this.flyTick > 0 && this.getLaying() && this.getAnimation() != this.FLY_ANIMATION && this.getAnimation() != this.UNFLY_ANIMATION) {
                 if (this.isLayableNest(this.getEntityWorld(), this.getPosition())
@@ -313,8 +315,10 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         int distFromGround = (int) flier.posY - ground.getY();
         BlockPos newPos = pos.up(distFromGround < flier.flightHeight() ? (int) Math.min(255, flier.posY + flier.rand.nextInt(25) - 8) : (int) flier.posY - flier.rand.nextInt(3) - 1);
         if (flier.getIsFlying()) { //Try to make them descend
-            if ((double)flier.getFlyTick() > ((double)flier.flyLength() * 0.9)) {
-                newPos = newPos.down();
+            if ((double)flier.getFlyTick() < ((double)flier.flyLength() * 0.05)) {
+                if (isBlockEmptyForAI(flier.world, newPos.down())) {
+                    newPos = newPos.down();
+                }
             }
         }
         if (!isTargetBlocked(flier, new Vec3d(newPos)) && flier.getDistanceSqToCenter(newPos) > 6) {
@@ -345,6 +349,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         double maxDist = Math.max(3, bbLength * bbLength);
         if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
+
                 double xPos = this.getFlyTarget().getX() + 0.5D - posX;
                 double yPos = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;
                 double zPos = this.getFlyTarget().getZ() + 0.5D - posZ;
@@ -411,7 +416,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         float f4;
         if (this.isServerWorld()) {
 
-            if (this.isReallyFlying()) {
+            if (this.isReallyFlying() && this.getFlyTick() > 0) {
 
                 if ((!this.canFloat()) && this.isAboveOrInWater())
                 {
@@ -600,7 +605,9 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
         @Override
         public boolean shouldExecute() {
-            if (!flier.isReallyFlying() || flier.getLaying()) {
+            IBlockState state = flier.world.getBlockState(flier.getPosition().down());
+            if (!flier.isReallyFlying() || flier.getLaying()
+            ) {
                 return false;
             }
 
@@ -610,6 +617,17 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
             if (flier.getEatTarget() != null) {
                 flier.setFlyTarget(flier.getEatTarget().getPosition());
+            }
+
+            if (!(flier.getFlyTick() > 0)) {
+                BlockPos randPos = this.getLandTarget();
+                if (randPos == null) { //Keep flying until we do find a target!
+                    randPos = this.getAirTarget();
+                    flier.setFlyTarget(randPos);
+                }
+                else {
+                    flier.getMoveHelper().setMoveTo(randPos.getX(), randPos.getY(), randPos.getZ(), 1);
+                }
             }
 
             if (flier.getFlyTarget() == null) {
@@ -650,7 +668,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
             if (randPos == null) {
                 randPos = flier.getPosition();
             }
-            int descender = flier.rand.nextInt(9) + 4;
+            int descender = flier.rand.nextInt(4) + 1;
             int i = 0;
             while (i < descender && EntityPrehistoricFloraAgeableFlyingBase.isBlockEmptyForAI(flier.world, randPos.down())) {
                 randPos = randPos.down();
