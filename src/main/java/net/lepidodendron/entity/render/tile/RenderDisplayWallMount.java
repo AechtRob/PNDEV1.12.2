@@ -43,8 +43,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_ACROLEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acrolepis.png");
     private final ModelAcrolepis modelAcrolepis;
 
-    private static final ResourceLocation TEXTURE_AKMONISTION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/akmonistion.png");
-    private final ModelAkmonistion modelAkmonistion;
+    //private static final ResourceLocation TEXTURE_AKMONISTION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/akmonistion.png");
+    //private final ModelAkmonistion modelAkmonistion;
     private static final ResourceLocation TEXTURE_ALBERTONIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/albertonia.png");
     private final ModelAlbertonia modelAlbertonia;
     private static final ResourceLocation TEXTURE_ALLENYPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/allenypterus.png");
@@ -348,7 +348,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     public RenderDisplayWallMount() {
         this.modelAcanthodes = new ModelAcanthodes();
         this.modelAcrolepis = new ModelAcrolepis();
-        this.modelAkmonistion = new ModelAkmonistion();
+        //this.modelAkmonistion = new ModelAkmonistion();
         this.modelAlbertonia = new ModelAlbertonia();
         this.modelAllenypterus = new ModelAllenypterus();
         this.modelAnteosaurus = new ModelAnteosaurus();
@@ -585,8 +585,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 }
                                 if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
                                     itemRender = true;
-                                }
-                                else {
+                                } else {
                                     GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
                                     GlStateManager.scale(1.35, 1.35, 1.35);
                                     this.bindTexture(TEXTURE_ACANTHODES);
@@ -617,8 +616,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 }
                                 if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
                                     itemRender = true;
-                                }
-                                else {
+                                } else {
                                     GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
                                     GlStateManager.scale(1.9, 1.9, 1.9);
                                     this.bindTexture(TEXTURE_ACROLEPIS);
@@ -628,39 +626,40 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             //else if (classEntity == EntityPrehistoricFloraAetheolepis.class) {
                             //    itemRender = !renderAetheolepis(facing, currentRotation, x, y, z);
                             //}
-                            else if (classEntity == EntityPrehistoricFloraAkmonistion.class) {
-                                double offset = 0.06;
-                                double voffset = 0.47;
-                                double hoffset = 0.2;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 - hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(2.1, 2.1, 2.1);
-                                    this.bindTexture(TEXTURE_AKMONISTION);
-                                    modelAkmonistion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraAlbertonia.class) {
+//                            else if (classEntity == EntityPrehistoricFloraAkmonistion.class) {
+//                                double offset = 0.06;
+//                                double voffset = 0.47;
+//                                double hoffset = 0.2;
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5 - hoffset, y + 0.5 + voffset, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(180, 0F, 1F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 1F, 0F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 1F, 0F);
+//                                }
+//                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
+//                                    itemRender = true;
+//                                }
+//                                else {
+//                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
+//                                    GlStateManager.scale(2.1, 2.1, 2.1);
+//                                    this.bindTexture(TEXTURE_AKMONISTION);
+//                                    modelAkmonistion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                                }
+                        //}
+                         else if (classEntity == EntityPrehistoricFloraAlbertonia.class) {
                                 double offset = 0.06;
                                 double voffset = 0.07;
                                 if (facing == EnumFacing.NORTH) {

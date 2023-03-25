@@ -250,4 +250,18 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ResourceLocation TEXTURE_XINPUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus.png");
     public static final ModelXinpusaurus modelXinpusaurus = new ModelXinpusaurus();
 
+    public static final ModelAkmonistion modelAkmonistion = new ModelAkmonistion();
+    public static final ResourceLocation TEXTURE_AKMONISTION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/akmonistion.png");
+    public static final ModelDiplocaulus modelDiplocaulus = new ModelDiplocaulus();
+    public static final ResourceLocation TEXTURE_DIPLOCAULUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diplocaulus.png");
+    public static final ModelLimnoscelis modelLimnoscelis = new ModelLimnoscelis();
+    public static final ResourceLocation TEXTURE_LIMNOSCELIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limnoscelis.png");
+    public static final ModelFalcatus modelFalcatus = new ModelFalcatus();
+    public static final ResourceLocation TEXTURE_FALCATUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/falcatus.png");
+
+
+
+   //public static final Modeltemplate modeltemplate = new Modeltemplate();
+   //public static final ResourceLocation TEXTURE_TEMPLATE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/template.png");
+
 }
