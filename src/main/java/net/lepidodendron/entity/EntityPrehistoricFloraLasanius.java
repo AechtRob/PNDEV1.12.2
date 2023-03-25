@@ -51,6 +51,7 @@ public class EntityPrehistoricFloraLasanius extends EntityPrehistoricFloraFishBa
 
 	public void onEntityUpdate()
 	{
+		super.onEntityUpdate();
 		if (this.getShoalLeader() != null) {
 			if (this.getShoalLeader() instanceof EntityPrehistoricFloraLasanius) {
 				this.setFeedTicks(((EntityPrehistoricFloraLasanius)this.getShoalLeader()).getFeedTicks());
@@ -226,7 +227,7 @@ public class EntityPrehistoricFloraLasanius extends EntityPrehistoricFloraFishBa
 	}
 
 	public boolean isInFeedingPosition() {
-		return	(!this.isDead) &&
+		return
 				super.isInWater()
 						&& (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.SAND
 						|| this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.CORAL
