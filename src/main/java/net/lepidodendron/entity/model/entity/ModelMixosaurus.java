@@ -342,11 +342,11 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
 
         //this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
         this.flap(ForelimbsL, (float) (speed * 0.75), 0.25F, false, -3, 0, f2, 1);
-        this.swing(ForelimbsL, (float) (speed * 0.75), 0.15F, true, -3, 0, f2, 1);
+        this.swing(ForelimbsL, (float) (speed * 0.75), 0.15F, false, -3, 0, f2, 1);
         this.flap(ForelimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
         this.swing(ForelimbsR, (float) (speed * 0.75), 0.15F, true, 3, 0, f2, 1);
         this.flap(HindlimbsL, (float) (speed * 0.75), 0.25F, false, -3, 0, f2, 1);
-        this.swing(HindlimbsL, (float) (speed * 0.75), 0.15F, true, -3, 0, f2, 1);
+        this.swing(HindlimbsL, (float) (speed * 0.75), 0.15F, false, -3, 0, f2, 1);
         this.flap(HindlimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
         this.swing(HindlimbsR, (float) (speed * 0.75), 0.15F, true, 3, 0, f2, 1);
         //}
