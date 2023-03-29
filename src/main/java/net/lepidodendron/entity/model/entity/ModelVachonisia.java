@@ -538,6 +538,7 @@ public class ModelVachonisia extends AdvancedModelBase {
         this.body.render(f5);
     }
     public void renderStaticFloor(float f) {
+        this.body.rotateAngleX = (float) Math.toRadians(22.5);
         this.body.offsetY = -0.2F;
         this.body.offsetZ = -0.1F;
         this.body.offsetX = 0F;
