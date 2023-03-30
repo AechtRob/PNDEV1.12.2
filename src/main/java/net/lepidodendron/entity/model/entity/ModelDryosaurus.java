@@ -648,15 +648,31 @@ public class ModelDryosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Dryosaurus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Chest, (float)Math.toRadians(8), 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, (float)Math.toRadians(45.5), 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, (float)Math.toRadians(40.5), 0.0F, 0.0F);
+        this.setRotateAngle(LegL, -(float)Math.toRadians(-0.5), 0.0F, 0.0F);
+        this.setRotateAngle(LegR, -(float)Math.toRadians(77), 0.0F, 0.0F);
+        this.setRotateAngle(KneeL, -(float)Math.toRadians(-71), 0.0F, 0.0F);
+        this.setRotateAngle(KneeR, -(float)Math.toRadians(-90.5), 0.0F, 0.0F);
+        this.setRotateAngle(TarsalsR, -(float)Math.toRadians(87.5), 0.0F, 0.0F);
+        this.setRotateAngle(TarsalsL, -(float)Math.toRadians(43), 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -(float)Math.toRadians(-53.5), 0.0F, 0.0F);
+        this.setRotateAngle(FootR, -(float)Math.toRadians(-108), 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, (float)Math.toRadians(0), (float)Math.toRadians(7.5), (float)Math.toRadians(0));
+        this.setRotateAngle(Neck2, -(float)Math.toRadians(0), (float)Math.toRadians(12.5), -(float)Math.toRadians(0));
+        this.setRotateAngle(Neck3, -(float)Math.toRadians(5), 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, (float)Math.toRadians(24), 0.0F, 0.0F);
+        this.setRotateAngle(Head, -(float)Math.toRadians(4.0968), (float)Math.toRadians(12.4691), (float)Math.toRadians(0.886));
+        this.setRotateAngle(Tail1, -(float)Math.toRadians(-5), -(float)Math.toRadians(-0), -(float)Math.toRadians(0));
+        this.setRotateAngle(Tail2, -(float)Math.toRadians(-2.5), -(float)Math.toRadians(-0), -(float)Math.toRadians(0));
+        this.setRotateAngle(Tail3, -(float)Math.toRadians(-2.5), -(float)Math.toRadians(-0), -(float)Math.toRadians(0));
+        this.setRotateAngle(Tail4, -(float)Math.toRadians(12.5), -(float)Math.toRadians(-0), -(float)Math.toRadians(0));
+        this.setRotateAngle(Tail5, -(float)Math.toRadians(15), -(float)Math.toRadians(-0), -(float)Math.toRadians(-0));
+        this.Dryosaurus.offsetY = -0.1F;
+        this.Dryosaurus.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

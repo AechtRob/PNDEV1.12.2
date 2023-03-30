@@ -176,11 +176,19 @@ public class EntityPrehistoricFloraVachonisia extends EntityPrehistoricFloraFish
 		return LepidodendronMod.VACHONISIA_LOOT;
 	}
 
+
+
+	//Rendering taxidermy:
+	//--------------------
 	public static double offsetCase() { return 0.46; }
+
+	public static double offsetWall() {
+		return 0.01;
+	}
 	public static double upperfrontverticallinedepth() {
 		return 1.4;
 	}
-	public static double upperbackverticallinedepth() {return 0.8;}
+	public static double upperbackverticallinedepth() {return 0.4F;}
 	public static double upperfrontlineoffset() {
 		return 0.4;
 	}
@@ -188,13 +196,15 @@ public class EntityPrehistoricFloraVachonisia extends EntityPrehistoricFloraFish
 		return -0F;
 	}
 	public static double upperbacklineoffset() {
-		return 0;
+		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular() {
-		return -0;
+		return -0.15F;
 	}
+
+	//this line is being rendered
 	public static double lowerfrontverticallinedepth() {
-		return 0;
+		return 0.45;
 	}
 	public static double lowerbackverticallinedepth() {
 		return 0;

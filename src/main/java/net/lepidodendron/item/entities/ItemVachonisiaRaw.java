@@ -30,7 +30,7 @@ public class ItemVachonisiaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNVachonisia", ItemVachonisiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_vachonisia", ItemVachonisiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemVachonisiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVachonisiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVachonisiaRaw.block);

@@ -260,6 +260,13 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelVachonisia modelVachonisia = new ModelVachonisia();
     public static final ResourceLocation TEXTURE_VACHONISIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vachonisia.png");
 
+    public static final ModelDryosaurus modelDryosaurus = new ModelDryosaurus();
+    public static final ResourceLocation TEXTURE_DRYOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dryosaurus.png");
+    public static final ModelDysaloTaxi modelDysalotosaurus = new ModelDysaloTaxi();
+    public static final ResourceLocation TEXTURE_DYSALOTOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dysalotosaurus.png");
+    public static final ModelStethacanthus modelStethacanthus = new ModelStethacanthus();
+    public static final ResourceLocation TEXTURE_STETHACANTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stethacanthus.png");
+
 
 
    //public static final Modeltemplate modeltemplate = new Modeltemplate();
