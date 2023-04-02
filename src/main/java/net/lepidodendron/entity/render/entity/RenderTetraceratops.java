@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTetraceratops extends RenderLiving<EntityPrehistoricFloraTetraceratops> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tetraceratops.png");
+    public static float getScaler() {return 0.30F;}
 
     public RenderTetraceratops(RenderManager mgr) {
         super(mgr, new ModelTetraceratops(), 0.325f);
@@ -27,7 +28,7 @@ public class RenderTetraceratops extends RenderLiving<EntityPrehistoricFloraTetr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTetraceratops entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.325F;
     }

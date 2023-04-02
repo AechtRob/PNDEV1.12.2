@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderProburnetia extends RenderLiving<EntityPrehistoricFloraProburnetia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proburnetia.png");
+    public static float getScaler() {return 0.390f;}
 
     public RenderProburnetia(RenderManager mgr) {
         super(mgr, new ModelProburnetia(), 0.325f);
@@ -27,7 +28,7 @@ public class RenderProburnetia extends RenderLiving<EntityPrehistoricFloraProbur
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraProburnetia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.325F;
     }

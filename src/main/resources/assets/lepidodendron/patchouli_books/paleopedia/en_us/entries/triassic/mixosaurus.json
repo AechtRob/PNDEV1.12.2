@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mixosaurus",
 			"title": "Mixosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Ichthyosauria$(br)>Mixosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Ichthyosauria$(br)>Mixosauridae"
 		},
 		{
 			"type": "image",

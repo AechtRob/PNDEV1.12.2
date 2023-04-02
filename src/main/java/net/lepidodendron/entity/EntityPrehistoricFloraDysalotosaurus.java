@@ -3,7 +3,11 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.render.entity.RenderDysalotosaurus;
+import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -248,6 +252,59 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 			return LepidodendronMod.DYSALOTOSAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.DYSALOTOSAURUS_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -0.93;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+
+	//these 2 lines are rendered
+	public static double lowerfrontverticallinedepth() {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.32F;
+	}
+	public static double lowerfrontlineoffset() {
+		return 1;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.2F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.05;
+	}
+	public static double lowerbacklineoffsetperpendiular() {return -0.5F;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_DYSALOTOSAURUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelDysalotosaurus;
+	}
+	public static float getScaler() {
+		return RenderDysalotosaurus.getScaler();
 	}
 
 }

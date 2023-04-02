@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_silesaurus",
 			"title": "Silesaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Ornithodira$(br)>Silesauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Flooded Forest$(br2)>Ornithodira$(br)>Silesauridae"
 		},
 		{
 			"type": "image",
