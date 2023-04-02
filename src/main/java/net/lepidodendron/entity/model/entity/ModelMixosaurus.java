@@ -291,6 +291,11 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
 
         //this.Mixosaurus.offsetY = 1F;
         //this.Mixosaurus.offsetZ = 1.0F;
+        if(e.isInWater()) {
+
+            this.Mixosaurus.offsetY = -0.2F;
+
+        }
 
         AdvancedModelRenderer[] fishTail = {this.Body5, this.Tail1};
         AdvancedModelRenderer[] neckHead = {this.Head};
@@ -329,19 +334,21 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
         //Animation values need tweaking
         if(ee.getIsMoving()) {
             this.chainSwing(fishTail, speed, 0.62F, 3, f2, 1);
+            this.swing(Mixosaurus, speed, 0.15F, false, 0, 0, f2, 1);
         }else{
-            this.chainSwing(fishTail, speed, 0.3F, 1.5, f2, 1);
+            this.chainSwing(fishTail, speed*0.5F, 0.3F, 1.5, f2, 1);
+            this.swing(Mixosaurus, speed*0.5F, 0.15F, false, 0, 0, f2, 1);
         }
-        this.swing(Mixosaurus, speed, 0.15F, false, 0, 0, f2, 1);
+
         //this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.walk(ForelimbsL, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
-        this.swing(ForelimbsL, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
-        this.walk(ForelimbsR, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
-        this.swing(ForelimbsR, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
-        this.walk(HindlimbsL, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
-        this.swing(HindlimbsL, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
-        this.walk(HindlimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
-        this.swing(HindlimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
+        this.flap(ForelimbsL, (float) (speed * 0.75), 0.25F, false, -3, 0, f2, 1);
+        this.swing(ForelimbsL, (float) (speed * 0.75), 0.15F, false, -3, 0, f2, 1);
+        this.flap(ForelimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
+        this.swing(ForelimbsR, (float) (speed * 0.75), 0.15F, true, 3, 0, f2, 1);
+        this.flap(HindlimbsL, (float) (speed * 0.75), 0.25F, false, -3, 0, f2, 1);
+        this.swing(HindlimbsL, (float) (speed * 0.75), 0.15F, false, -3, 0, f2, 1);
+        this.flap(HindlimbsR, (float) (speed * 0.75), 0.25F, true, 3, 0, f2, 1);
+        this.swing(HindlimbsR, (float) (speed * 0.75), 0.15F, true, 3, 0, f2, 1);
         //}
 
     }

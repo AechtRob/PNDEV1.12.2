@@ -306,16 +306,17 @@ public class ModelStethacanthus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -(float)Math.toRadians(7.5), 0.0F, 0.0F);
+        this.setRotateAngle(body, -0, (float)Math.toRadians(5), 0.0F);
+        this.setRotateAngle(tail, -0, (float)Math.toRadians(7.5), 0.0F);
+        this.setRotateAngle(tail2, -0, (float)Math.toRadians(12.5), 0.0F);
+        this.setRotateAngle(tail3, -0, (float)Math.toRadians(10), 0.0F);
+        this.setRotateAngle(tail4, -0, (float)Math.toRadians(22.5), 0.0F);
+        this.setRotateAngle(jaw, (float)Math.toRadians(12.5), 0, 0.0F);
+        this.main.offsetY = -0.32F;
+        this.main.render(0.01f);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
