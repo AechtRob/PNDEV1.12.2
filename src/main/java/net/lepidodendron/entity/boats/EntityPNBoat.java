@@ -637,6 +637,11 @@ public class EntityPNBoat extends EntityBoat
         }
         else if (this.checkInWater())
         {
+            if (this.getPNBoatType() == Type.CALAMITES)
+            {
+                //Calamites boats sink!
+                return EntityPNBoat.Status.UNDER_WATER;
+            }
             return EntityPNBoat.Status.IN_WATER;
         }
         else

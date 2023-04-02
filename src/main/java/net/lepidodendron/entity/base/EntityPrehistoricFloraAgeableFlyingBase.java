@@ -208,7 +208,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 }
             }
 
-            System.err.println("this.flyTick " + this.flyTick + " / " + this.flyLength());
+            //System.err.println("this.flyTick " + this.flyTick + " / " + this.flyLength());
 
             //Is it hovering over a nest to lay in?
             if (this.flyTick > 0 && this.getLaying() && this.getAnimation() != this.FLY_ANIMATION && this.getAnimation() != this.UNFLY_ANIMATION) {
