@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 
 	@Override
 	public int getAdultAge() {
-		return 156000;
+		return 126000;
 	}
 
 	@Override
@@ -170,7 +170,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return LepidodendronMod.MIXOSAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.MIXOSAURUS_LOOT;

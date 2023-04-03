@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMixosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraMixosaurus;
 import net.lepidodendron.entity.model.entity.ModelMixosaurus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -11,12 +10,13 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMixosaurus extends RenderLiving<EntityPrehistoricFloraMixosaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixosaurus.png");
-    public static float getScaler() {
-        return 0.6F;
-    }
 
     public RenderMixosaurus(RenderManager mgr) {
         super(mgr, new ModelMixosaurus(), 0.0f);
+    }
+
+    public static float getScaler() {
+        return 0.6F;
     }
 
     @Override

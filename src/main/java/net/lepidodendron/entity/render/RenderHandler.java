@@ -3675,11 +3675,6 @@ public class RenderHandler {
         });
 
 
-
-
-
-        
-
         /* THESE ARE NOT COMING IN THE PLACODERM UPDATE
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParamblypterus.class, new IRenderFactory<EntityPrehistoricFloraParamblypterus>() {
             @Override

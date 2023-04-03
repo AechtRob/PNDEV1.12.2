@@ -256,6 +256,7 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
         this.Jaw.addChild(cube_r20);
         this.setRotateAngle(cube_r20, -0.2772F, -0.0069F, 0.013F);
         this.cube_r20.cubeList.add(new ModelBox(cube_r20, 50, 10, -1.0F, -1.1F, 0.4F, 2, 1, 3, 0.0F, false));
+
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
@@ -265,6 +266,7 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Mixosaurus.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -278,6 +280,7 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;

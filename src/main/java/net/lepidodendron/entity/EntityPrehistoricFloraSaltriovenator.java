@@ -130,6 +130,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
 			speedBase = speedBase / 0.75F;
+			speedBase = 1.15F;
 		}
 		return speedBase;
 	}
