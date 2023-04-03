@@ -130,6 +130,7 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
 			speedBase = speedBase / 0.75F;
+			speedBase = 1.18F;
 		}
 		return speedBase;
 	}
