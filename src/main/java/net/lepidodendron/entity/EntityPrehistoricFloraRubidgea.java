@@ -44,11 +44,7 @@ public class EntityPrehistoricFloraRubidgea extends EntityPrehistoricFloraLandBa
 
 	public EntityPrehistoricFloraRubidgea(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.94F, 1.0F);
 		minWidth = 0.18F;
 		maxWidth = 0.94F;
 		maxHeight = 1.0F;

@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderAnomalocaris;
 import net.lepidodendron.entity.render.entity.RenderVachonisia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -36,10 +35,6 @@ public class EntityPrehistoricFloraVachonisia extends EntityPrehistoricFloraFish
 	public EntityPrehistoricFloraVachonisia(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

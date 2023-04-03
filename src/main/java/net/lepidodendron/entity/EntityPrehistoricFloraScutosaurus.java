@@ -39,11 +39,7 @@ public class EntityPrehistoricFloraScutosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraScutosaurus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.92F, 1.1F);
 		minWidth = 0.18F;
 		maxWidth = 0.92F;
 		maxHeight = 1.1F;

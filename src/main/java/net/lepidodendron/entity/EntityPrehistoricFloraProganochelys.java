@@ -43,12 +43,7 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraProganochelys(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.8F, 0.45F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.45F;

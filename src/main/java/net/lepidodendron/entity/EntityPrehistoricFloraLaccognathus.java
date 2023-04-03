@@ -38,11 +38,7 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSw
 		super(world);
 		//this.moveHelper = new EntityPrehistoricFloraLaccognathus.SwimmingMoveHelperBase();
 		//this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.8F, 0.65F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.65F;

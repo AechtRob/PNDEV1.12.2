@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.EntityPrehistoricFloraPiranhamesodon;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
@@ -38,7 +39,7 @@ public class HuntPlayerAlwaysAI<T extends EntityLivingBase> extends EntityAINear
             return false;
         }
 
-        if (!LepidodendronConfig.attackPlayerAlways) {
+        if ((!LepidodendronConfig.attackPlayerAlways) && (!(this.entity instanceof EntityPrehistoricFloraPiranhamesodon))) {
             //System.err.println(this.entity.getWillAttack());
             return false;
         }
@@ -54,6 +55,11 @@ public class HuntPlayerAlwaysAI<T extends EntityLivingBase> extends EntityAINear
         if (preliminaryTarget && this.targetEntity != null) { //Eurypterids and fish dont attack players on land:
             if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
                 if (!isInWaterforHunting(this.targetEntity)) {
+                    return false;
+                }
+            }
+            if (this.entity instanceof EntityPrehistoricFloraPiranhamesodon) {
+                if (this.targetEntity.getHealth() >= (this.targetEntity.getMaxHealth() * 0.95)) {
                     return false;
                 }
             }

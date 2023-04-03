@@ -42,14 +42,7 @@ public class EntityPrehistoricFloraOxyosteus extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraOxyosteus(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.05F;
-		//maxSize = 1.0F;
+		setSize(0.4F, 0.4F);
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;

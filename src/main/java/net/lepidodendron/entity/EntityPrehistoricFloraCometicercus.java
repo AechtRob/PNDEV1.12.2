@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderClimatius;
 import net.lepidodendron.entity.render.entity.RenderCometicercus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -35,10 +34,6 @@ public class EntityPrehistoricFloraCometicercus extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraCometicercus(World world) {
 		super(world);
 		setSize(0.25F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

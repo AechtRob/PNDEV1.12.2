@@ -103,10 +103,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public EntityPrehistoricFloraSlitheringWaterBase(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
 		this.slitherTickCycle = 20;
-		setNoAI(!true);
 		enablePersistence();
 		this.moveHelper = new EntityPrehistoricFloraSlitheringWaterBase.WanderMoveHelper();
 		this.navigator = new PathNavigateWaterBottomNoJump(this, world);
@@ -117,10 +114,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public EntityPrehistoricFloraSlitheringWaterBase(World world, int slitherTickCycle) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
 		this.slitherTickCycle = slitherTickCycle;
-		setNoAI(!true);
 		enablePersistence();
 		this.moveHelper = new EntityPrehistoricFloraSlitheringWaterBase.WanderMoveHelper();
 		this.navigator = new PathNavigateWaterBottomNoJump(this, world);

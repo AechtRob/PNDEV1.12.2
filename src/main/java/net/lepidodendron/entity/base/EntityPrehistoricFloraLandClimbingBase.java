@@ -45,7 +45,6 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     public EntityPrehistoricFloraLandClimbingBase(World world) {
         super(world);
-        //this.setPathPriority(PathNodeType.WATER, -1.0F);
         this.selectNavigator();
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();

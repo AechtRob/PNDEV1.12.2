@@ -48,10 +48,6 @@ public class EntityPrehistoricFloraPelurgaspis extends EntityPrehistoricFloraFis
 	public EntityPrehistoricFloraPelurgaspis(World world) {
 		super(world);
 		setSize(0.47F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

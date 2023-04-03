@@ -47,12 +47,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraPanguraptor(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.6F, 0.5F);
 		minWidth = 0.12F;
 		maxWidth = 0.6F;
 		maxHeight = 0.5F;

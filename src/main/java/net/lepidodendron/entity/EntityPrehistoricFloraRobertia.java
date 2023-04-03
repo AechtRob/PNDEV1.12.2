@@ -25,11 +25,7 @@ public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiicto
 
 	public EntityPrehistoricFloraRobertia(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.20F, 0.20F);
 		minWidth = 0.10F;
 		maxWidth = 0.20F;
 		maxHeight = 0.20F;

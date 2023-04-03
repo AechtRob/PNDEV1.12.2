@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderDatheosaurus;
 import net.lepidodendron.entity.render.entity.RenderHenodus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
@@ -45,11 +44,7 @@ public class EntityPrehistoricFloraHenodus extends EntityPrehistoricFloraSwimmin
 
 	public EntityPrehistoricFloraHenodus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.8F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.2F;

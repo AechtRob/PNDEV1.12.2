@@ -68,7 +68,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
     public EntityPrehistoricFloraInsectFlyingBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
         this.navigator = new PathNavigateFlyingNoWater(this, world);
         this.getNavigator().getNodeProcessor().setCanSwim(false);

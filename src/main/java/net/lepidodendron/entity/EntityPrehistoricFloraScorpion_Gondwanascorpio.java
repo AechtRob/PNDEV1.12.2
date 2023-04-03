@@ -35,10 +35,7 @@ public class EntityPrehistoricFloraScorpion_Gondwanascorpio extends EntityPrehis
 
 	public EntityPrehistoricFloraScorpion_Gondwanascorpio(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.3F, 0.3F);
 		minWidth = 0.10F;
 		maxWidth = 0.30F;
 		maxHeight = 0.30F;

@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.AgeableFishWander;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderAegirocassis;
-import net.lepidodendron.entity.render.entity.RenderShonisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemEggsAegirocassis;
@@ -39,12 +38,6 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 	public EntityPrehistoricFloraAegirocassis(World world) {
 		super(world);
 		setSize(0.7F, 0.8F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
 		minWidth = 0.2F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;

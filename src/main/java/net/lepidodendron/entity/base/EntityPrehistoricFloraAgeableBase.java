@@ -87,6 +87,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
+        this.enablePersistence();
         this.setScaleForAge(false);
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
@@ -357,13 +358,35 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return null;
     }
 
+    protected void initEntityAI() {
+    }
+
+    @Override
+    public boolean isAIDisabled() {
+        return false;
+    }
+
+    public String getTexture() {
+        return this.getTexture();
+    }
+
+    @Override
+    public EnumCreatureAttribute getCreatureAttribute() {
+        return EnumCreatureAttribute.UNDEFINED;
+    }
+
+    @Override
+    protected boolean canDespawn() {
+        return false;
+    }
+
     @Override
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(AGETICKS, getAdultAge() - 1);
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
-        this.dataManager.register(TICKS, rand.nextInt(24000));
+        this.dataManager.register(TICKS, 0);
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISMOVING, false);
@@ -526,8 +549,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setTickOffset(rand.nextInt(1000));
         this.setIsFast(false);
         this.setWillHunt(false);
-        this.heal(this.getMaxHealth());
-        this.setNoAI(false);
+        //this.heal(this.getMaxHealth());
+        //this.setNoAI(false);
         ShoalingHelper.updateShoalAgeableBase(this);
         return livingdata;
     }

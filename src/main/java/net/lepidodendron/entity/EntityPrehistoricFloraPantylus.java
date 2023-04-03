@@ -46,13 +46,7 @@ public class EntityPrehistoricFloraPantylus extends EntityPrehistoricFloraSwimmi
 
 	public EntityPrehistoricFloraPantylus(World world) {
 		super(world);
-		setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.6F;
-		//maxSize = 1.0F;
+		setSize(0.35F, 0.20F);
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.20F;

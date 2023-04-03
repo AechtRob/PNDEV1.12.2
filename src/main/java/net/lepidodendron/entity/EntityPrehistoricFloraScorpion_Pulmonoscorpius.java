@@ -35,10 +35,7 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 
 	public EntityPrehistoricFloraScorpion_Pulmonoscorpius(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.325F, 0.325F);
 		minWidth = 0.10F;
 		maxWidth = 0.325F;
 		maxHeight = 0.325F;

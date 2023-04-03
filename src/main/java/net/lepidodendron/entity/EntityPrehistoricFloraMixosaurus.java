@@ -30,14 +30,7 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraMixosaurus(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.53F, 0.5F);
 		minWidth = 0.15F;
 		maxWidth = 0.53F;
 		maxHeight = 0.5F;

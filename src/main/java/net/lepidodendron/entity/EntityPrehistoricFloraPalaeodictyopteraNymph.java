@@ -30,12 +30,6 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 	public EntityPrehistoricFloraPalaeodictyopteraNymph(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.8F;
-		//maxSize = 1.0F;
 		minWidth = 0.05F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;

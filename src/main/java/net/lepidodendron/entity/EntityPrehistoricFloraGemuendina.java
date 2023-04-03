@@ -10,7 +10,6 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderGemuendina;
-import net.lepidodendron.entity.render.entity.RenderMussaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
@@ -55,10 +54,6 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraAgea
 	public EntityPrehistoricFloraGemuendina(World world) {
 		super(world);
 		setSize(0.47F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.47F;
 		maxHeight = 0.3F;

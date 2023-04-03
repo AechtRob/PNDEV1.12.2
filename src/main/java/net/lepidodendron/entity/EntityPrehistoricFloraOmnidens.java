@@ -58,11 +58,7 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraOmnidens(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.5F, 0.3F);
 		this.moveHelper = new EntityPrehistoricFloraOmnidens.WanderMoveHelper();
 		this.navigator = new PathNavigateWaterBottom(this, world);
 		minWidth = 0.1F;

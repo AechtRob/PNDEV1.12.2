@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderLungmenshanaspis;
 import net.lepidodendron.entity.render.entity.RenderTapinocephalus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -46,11 +45,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraTapinocephalus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.85F, 1.01F);
 		minWidth = 0.18F;
 		maxWidth = 0.85F;
 		maxHeight = 1.01F;

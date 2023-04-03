@@ -35,13 +35,7 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraKujdanowiaspis(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.35F, 0.22F);
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.22F;

@@ -34,10 +34,6 @@ public class EntityPrehistoricFloraAphnelepis extends EntityPrehistoricFloraFish
 	public EntityPrehistoricFloraAphnelepis(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

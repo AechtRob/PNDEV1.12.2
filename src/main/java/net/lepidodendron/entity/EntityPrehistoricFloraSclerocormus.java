@@ -32,14 +32,7 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraSclerocormus(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.59F, 0.5F);
 		minWidth = 0.15F;
 		maxWidth = 0.59F;
 		maxHeight = 0.5F;

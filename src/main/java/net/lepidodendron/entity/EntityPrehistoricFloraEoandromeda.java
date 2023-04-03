@@ -37,10 +37,6 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
     public EntityPrehistoricFloraEoandromeda(World world) {
         super(world);
         setSize(0.2F, 0.1F);
-        experienceValue = 0;
-        this.isImmuneToFire = false;
-        setNoAI(!true);
-        enablePersistence();
     }
 
     @Override

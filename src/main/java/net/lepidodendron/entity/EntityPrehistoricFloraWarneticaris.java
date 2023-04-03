@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderGooloogongia;
 import net.lepidodendron.entity.render.entity.RenderWarneticaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -35,10 +34,6 @@ public class EntityPrehistoricFloraWarneticaris extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraWarneticaris(World world) {
 		super(world);
 		setSize(0.6F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

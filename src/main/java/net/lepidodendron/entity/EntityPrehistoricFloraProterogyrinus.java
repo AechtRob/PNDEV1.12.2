@@ -47,13 +47,7 @@ public class EntityPrehistoricFloraProterogyrinus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraProterogyrinus(World world) {
 		super(world);
-		setSize(0.62F, 0.7F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.6F;
-		//maxSize = 1.0F;
+		setSize(0.62F, 0.65F);
 		minWidth = 0.1F;
 		maxWidth = 0.62F;
 		maxHeight = 0.65F;

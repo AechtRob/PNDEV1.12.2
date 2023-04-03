@@ -42,11 +42,7 @@ public class EntityPrehistoricFloraStagonolepis extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraStagonolepis(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.05F, 1.01F);
 		minWidth = 0.12F;
 		maxWidth = 1.05F;
 		maxHeight = 1.01F;

@@ -38,10 +38,6 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	public EntityPrehistoricFloraArchoblattinaInsect(World world) {
 		super(world);
 		setSize(0.20F, 0.145F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

@@ -29,10 +29,6 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraAllenypterus(World world) {
 		super(world);
 		setSize(0.3F, 0.15F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

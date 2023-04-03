@@ -43,14 +43,7 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraBungartius(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.05F;
-		//maxSize = 1.0F;
+		setSize(0.8F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;

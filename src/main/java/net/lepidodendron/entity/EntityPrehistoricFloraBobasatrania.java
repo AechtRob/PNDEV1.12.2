@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraBobasatrania extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraBobasatrania(World world) {
 		super(world);
 		setSize(0.5F, 0.8F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(false);
-		enablePersistence();
 	}
 
 	@Override

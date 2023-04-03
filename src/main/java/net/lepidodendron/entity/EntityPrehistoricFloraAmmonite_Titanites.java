@@ -32,12 +32,6 @@ public class EntityPrehistoricFloraAmmonite_Titanites extends EntityPrehistoricF
 	public EntityPrehistoricFloraAmmonite_Titanites(World world) {
 		super(world);
 		setSize(1.0F, 0.99F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 1.0F;
 		maxHeight = 0.99F;

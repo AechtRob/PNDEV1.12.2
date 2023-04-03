@@ -35,10 +35,6 @@ public class EntityPrehistoricFloraLunaspis extends EntityPrehistoricFloraAgeabl
 	public EntityPrehistoricFloraLunaspis(World world) {
 		super(world);
 		setSize(0.6F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
 		maxHeight = 0.25F;

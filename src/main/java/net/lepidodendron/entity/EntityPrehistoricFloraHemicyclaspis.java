@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 	public EntityPrehistoricFloraHemicyclaspis(World world) {
 		super(world);
 		setSize(0.6F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

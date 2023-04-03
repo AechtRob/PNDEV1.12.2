@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 	public EntityPrehistoricFloraFlagellopantopus(World world) {
 		super(world);
 		setSize(0.4F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

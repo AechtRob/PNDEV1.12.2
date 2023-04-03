@@ -42,11 +42,7 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraDeltoptychius.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.4F, 0.45F);
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
 		maxHeight = 0.45F;

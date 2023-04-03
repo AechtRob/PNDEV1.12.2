@@ -36,10 +36,6 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 	public EntityPrehistoricFloraBothriolepis(World world) {
 		super(world);
 		setSize(0.6F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
 		maxHeight = 0.5F;

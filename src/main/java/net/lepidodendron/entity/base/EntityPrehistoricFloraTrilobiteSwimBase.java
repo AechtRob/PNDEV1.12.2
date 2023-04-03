@@ -55,7 +55,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
 
     public EntityPrehistoricFloraTrilobiteSwimBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraTrilobiteSwimBase.SwimmingMoveHelper();
         this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {

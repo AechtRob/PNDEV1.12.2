@@ -45,11 +45,7 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraDesmatosuchus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.10F, 1.05F);
 		minWidth = 0.12F;
 		maxWidth = 1.10F;
 		maxHeight = 1.05F;

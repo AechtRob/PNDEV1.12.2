@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJell
     public EntityPrehistoricFloraJellyfish5(World world) {
         super(world);
         setSize(0.8F, 0.5F);
-        experienceValue = 0;
-        this.isImmuneToFire = false;
-        setNoAI(!true);
-        enablePersistence();
     }
 
     @Override

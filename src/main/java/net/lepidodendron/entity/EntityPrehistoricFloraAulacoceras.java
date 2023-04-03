@@ -32,13 +32,7 @@ public class EntityPrehistoricFloraAulacoceras extends EntityPrehistoricFloraNau
 
 	public EntityPrehistoricFloraAulacoceras(World world) {
 		super(world);
-		//setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.5F, 0.3F);
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;

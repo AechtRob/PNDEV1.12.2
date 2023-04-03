@@ -42,13 +42,7 @@ public class EntityPrehistoricFloraCarcinosoma extends EntityPrehistoricFloraEur
 
 	public EntityPrehistoricFloraCarcinosoma(World world) {
 		super(world);
-		setSize(0.8F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.95F, 0.7F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.7F;

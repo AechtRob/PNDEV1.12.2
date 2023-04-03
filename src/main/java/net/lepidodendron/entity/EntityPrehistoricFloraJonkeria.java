@@ -43,11 +43,7 @@ public class EntityPrehistoricFloraJonkeria extends EntityPrehistoricFloraLandBa
 
 	public EntityPrehistoricFloraJonkeria(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.85F, 2.70F);
 		minWidth = 0.18F;
 		maxWidth = 1.85F;
 		maxHeight = 2.70F;

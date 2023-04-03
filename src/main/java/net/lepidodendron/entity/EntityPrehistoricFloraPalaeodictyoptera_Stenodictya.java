@@ -34,10 +34,6 @@ public class EntityPrehistoricFloraPalaeodictyoptera_Stenodictya extends EntityP
 	public EntityPrehistoricFloraPalaeodictyoptera_Stenodictya(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

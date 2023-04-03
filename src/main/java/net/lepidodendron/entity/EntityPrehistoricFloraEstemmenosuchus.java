@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderAegirocassis;
 import net.lepidodendron.entity.render.entity.RenderEstemmenosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -45,11 +44,7 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraEstemmenosuchus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.2F, 1.3F);
 		minWidth = 0.2F;
 		maxWidth = 1.2F;
 		maxHeight = 1.3F;

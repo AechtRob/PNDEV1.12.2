@@ -41,14 +41,7 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraNotidanoides(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.8F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.4F;

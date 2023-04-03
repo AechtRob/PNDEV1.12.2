@@ -41,12 +41,6 @@ public class EntityPrehistoricFloraXenacanthus extends EntityPrehistoricFloraAge
 	public EntityPrehistoricFloraXenacanthus(World world) {
 		super(world);
 		setSize(0.68F, 0.88F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.68F;
 		maxHeight = 0.88F;

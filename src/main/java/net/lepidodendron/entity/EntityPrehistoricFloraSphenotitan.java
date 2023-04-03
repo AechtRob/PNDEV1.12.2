@@ -45,11 +45,7 @@ public class EntityPrehistoricFloraSphenotitan extends EntityPrehistoricFloraLan
 	
 	public EntityPrehistoricFloraSphenotitan(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.4F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;

@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	public EntityPrehistoricFloraGerarusInsect(World world) {
 		super(world);
 		setSize(0.18F, 0.145F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

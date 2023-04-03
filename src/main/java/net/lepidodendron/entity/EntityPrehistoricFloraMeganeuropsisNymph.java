@@ -29,13 +29,7 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 
 	public EntityPrehistoricFloraMeganeuropsisNymph(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.8F;
-		//maxSize = 1.0F;
+		setSize(0.6F, 0.4F);
 		minWidth = 0.085F;
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;

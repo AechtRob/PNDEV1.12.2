@@ -41,8 +41,7 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraAttercopus(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;

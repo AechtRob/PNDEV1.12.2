@@ -41,14 +41,7 @@ public class EntityPrehistoricFloraFadeniaCarboniferous extends EntityPrehistori
 
 	public EntityPrehistoricFloraFadeniaCarboniferous(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(1.65F, 1.96F);
 		minWidth = 0.2F;
 		maxWidth = 1.65F;
 		maxHeight = 1.96F;

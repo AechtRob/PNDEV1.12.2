@@ -10,7 +10,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderEorhynchochelys;
-import net.lepidodendron.entity.render.entity.RenderEuchambersia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
@@ -45,11 +44,7 @@ public class EntityPrehistoricFloraEorhynchochelys extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraEorhynchochelys(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.8F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.2F;

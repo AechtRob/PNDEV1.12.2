@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderBundenbachiellus;
-import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -34,10 +33,6 @@ public class EntityPrehistoricFloraBundenbachiellus extends EntityPrehistoricFlo
 	public EntityPrehistoricFloraBundenbachiellus(World world) {
 		super(world);
 		setSize(0.25F, 0.15F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

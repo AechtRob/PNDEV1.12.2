@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJe
     public EntityPrehistoricFloraPlectodiscus(World world) {
         super(world);
         setSize(0.125F, 0.075F);
-        experienceValue = 0;
-        this.isImmuneToFire = false;
-        setNoAI(!true);
-        enablePersistence();
     }
 
     public boolean isSurface() {

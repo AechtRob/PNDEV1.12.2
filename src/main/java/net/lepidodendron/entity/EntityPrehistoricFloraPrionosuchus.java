@@ -47,11 +47,7 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraPrionosuchus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.899F, 0.99F);
 		minWidth = 0.125F;
 		maxWidth = 0.899F;
 		maxHeight = 0.99F;

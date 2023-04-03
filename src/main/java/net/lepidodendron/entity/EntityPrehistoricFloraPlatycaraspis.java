@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraPlatycaraspis extends EntityPrehistoricFloraF
 	public EntityPrehistoricFloraPlatycaraspis(World world) {
 		super(world);
 		setSize(0.6F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

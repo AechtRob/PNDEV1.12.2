@@ -45,11 +45,7 @@ public class EntityPrehistoricFloraEoraptor extends EntityPrehistoricFloraLandBa
 
 	public EntityPrehistoricFloraEoraptor(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.55F, 0.62F);
 		minWidth = 0.12F;
 		maxWidth = 0.55F;
 		maxHeight = 0.62F;

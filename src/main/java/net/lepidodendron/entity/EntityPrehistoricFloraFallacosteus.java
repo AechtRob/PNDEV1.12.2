@@ -12,7 +12,6 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderFallacosteus;
-import net.lepidodendron.entity.render.entity.RenderGogonasus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -39,11 +38,7 @@ public class EntityPrehistoricFloraFallacosteus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraFallacosteus(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.3F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;

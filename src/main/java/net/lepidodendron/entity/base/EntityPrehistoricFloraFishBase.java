@@ -53,7 +53,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
 
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         if (this.isSlowAtBottom()) {
             this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
         }

@@ -11,7 +11,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
 import net.lepidodendron.entity.render.entity.RenderAnomalocaris;
-import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -45,13 +44,7 @@ public class EntityPrehistoricFloraAnomalocaris extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraAnomalocaris(World world) {
 		super(world);
-		setSize(0.6F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.4F, 0.25F);
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.25F;

@@ -45,13 +45,7 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraSaivodus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(1.59F, 2.1F);
 		minWidth = 0.1F;
 		maxWidth = 1.59F;
 		maxHeight = 2.1F;

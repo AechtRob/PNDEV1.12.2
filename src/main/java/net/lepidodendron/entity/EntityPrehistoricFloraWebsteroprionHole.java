@@ -49,15 +49,7 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 
 	public EntityPrehistoricFloraWebsteroprionHole(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		setSize(0.99F, 0.99F);
-		//minWidth = 0.2F;
-		//maxWidth = 0.75F;
-		//maxHeight = 0.99F;
-		//maxHealthAgeable = 12D;
 		this.targetSorter = new EntityPrehistoricFloraWebsteroprionHole.PlayerSorter(this);
 	}
 

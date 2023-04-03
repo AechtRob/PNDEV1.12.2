@@ -29,10 +29,6 @@ public class EntityPrehistoricFloraAiniktozoon extends EntityPrehistoricFloraFis
 	public EntityPrehistoricFloraAiniktozoon(World world) {
 		super(world);
 		setSize(0.35F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

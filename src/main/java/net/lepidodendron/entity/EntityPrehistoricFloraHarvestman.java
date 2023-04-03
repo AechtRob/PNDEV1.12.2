@@ -42,14 +42,11 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraHarvestman(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
+		setSize(0.3F, 0.3F);
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4.0D;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

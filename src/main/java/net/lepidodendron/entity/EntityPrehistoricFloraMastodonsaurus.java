@@ -52,11 +52,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraMastodonsaurus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.20F, 1.02F);
 		minWidth = 0.1F;
 		maxWidth = 1.20F;
 		maxHeight = 1.02F;

@@ -30,10 +30,6 @@ public class EntityPrehistoricFloraSquatinactis extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraSquatinactis(World world) {
 		super(world);
 		setSize(0.7F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

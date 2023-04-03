@@ -33,13 +33,7 @@ public class EntityPrehistoricFloraBushizheia extends EntityPrehistoricFloraEury
 
 	public EntityPrehistoricFloraBushizheia(World world) {
 		super(world);
-		setSize(0.25F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.25F, 0.12F);
 		minWidth = 0.1F;
 		maxWidth = 0.25F;
 		maxHeight = 0.12F;

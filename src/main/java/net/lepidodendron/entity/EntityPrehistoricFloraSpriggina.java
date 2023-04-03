@@ -38,10 +38,6 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 	public EntityPrehistoricFloraSpriggina(World world) {
 		super(world);
 		setSize(0.4F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

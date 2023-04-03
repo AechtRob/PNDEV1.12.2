@@ -40,11 +40,7 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraTiarajudens(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.65F, 0.65F);
 		minWidth = 0.18F;
 		maxWidth = 0.65F;
 		maxHeight = 0.65F;

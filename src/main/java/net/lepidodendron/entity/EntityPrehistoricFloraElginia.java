@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderElginia;
-import net.lepidodendron.entity.render.entity.RenderEorhynchochelys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -44,11 +43,7 @@ public class EntityPrehistoricFloraElginia extends EntityPrehistoricFloraLandBas
 
 	public EntityPrehistoricFloraElginia(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.37F, 0.5F);
 		minWidth = 0.12F;
 		maxWidth = 0.37F;
 		maxHeight = 0.5F;

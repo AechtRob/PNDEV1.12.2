@@ -47,11 +47,7 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraMegalosaurus(World world) {
 		super(world);
-		setSize(1.0F, 1.0F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.75F, 2.2F);
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
 		maxHeight = 2.2F;

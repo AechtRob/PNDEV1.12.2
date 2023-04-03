@@ -45,11 +45,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraHolonema.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.8F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;

@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraEbenaqua extends EntityPrehistoricFloraFishBa
 	public EntityPrehistoricFloraEbenaqua(World world) {
 		super(world);
 		setSize(0.3F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

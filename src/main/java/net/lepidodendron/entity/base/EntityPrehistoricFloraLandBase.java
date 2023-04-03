@@ -85,7 +85,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     @Override
     protected void entityInit() {
         super.entityInit();
-        this.dataManager.register(PFDRINKING, rand.nextInt(1000));
+        this.dataManager.register(PFDRINKING, 0);
         this.dataManager.register(DRINKINGFROM, Optional.absent());
         this.setScaleForAge(false);
     }

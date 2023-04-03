@@ -38,10 +38,6 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraProtozygoptera(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	public void onEntityUpdate() {

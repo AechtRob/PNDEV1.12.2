@@ -44,13 +44,7 @@ public class EntityPrehistoricFloraRhizodus extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraRhizodus(World world) {
 		super(world);
-		//setSize(0.95F, 0.95F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.95F, 0.95F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.95F;

@@ -35,10 +35,6 @@ public class EntityPrehistoricFloraCoccosteus extends EntityPrehistoricFloraAgea
 	public EntityPrehistoricFloraCoccosteus(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;

@@ -42,10 +42,6 @@ public class EntityPrehistoricFloraCyamodus extends EntityPrehistoricFloraSwimmi
 	public EntityPrehistoricFloraCyamodus(World world) {
 		super(world);
 		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.2F;

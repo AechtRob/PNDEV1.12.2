@@ -4,7 +4,6 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderDysalotosaurus;
-import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
@@ -37,11 +36,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraDysalotosaurus(World world) {
 		super(world);
-		setSize(0.4F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.7F, 0.8F);
 		minWidth = 0.12F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;

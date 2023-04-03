@@ -10,7 +10,6 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderCtenurella;
 import net.lepidodendron.entity.render.entity.RenderRhamphodopsis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
@@ -38,11 +37,7 @@ public class EntityPrehistoricFloraRhamphodopsis extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraRhamphodopsis(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.2F, 0.2F);
 		minWidth = 0.2F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;

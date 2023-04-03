@@ -58,6 +58,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
 
     public EntityPrehistoricFloraTrilobiteBottomBase(World world) {
         super(world);
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
         this.navigator = new PathNavigateWaterBottom(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {

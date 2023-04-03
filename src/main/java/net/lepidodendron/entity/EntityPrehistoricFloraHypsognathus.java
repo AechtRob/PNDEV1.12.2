@@ -51,11 +51,7 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraHypsognathus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.3F, 0.3F);
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;

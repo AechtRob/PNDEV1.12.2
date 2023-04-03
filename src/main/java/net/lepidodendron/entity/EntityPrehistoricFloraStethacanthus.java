@@ -10,7 +10,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderAnomalocaris;
 import net.lepidodendron.entity.render.entity.RenderStethacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -40,13 +39,7 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraStethacanthus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.7F, 0.8F);
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;

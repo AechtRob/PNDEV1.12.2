@@ -65,7 +65,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.selectNavigator();
         this.getNavigator().getNodeProcessor().setCanSwim(false);
         if (FMLCommonHandler.instance().getSide().isClient()) {

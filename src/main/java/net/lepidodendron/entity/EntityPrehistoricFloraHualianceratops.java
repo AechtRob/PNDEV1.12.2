@@ -46,11 +46,7 @@ public class EntityPrehistoricFloraHualianceratops extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraHualianceratops(World world) {
 		super(world);
-		setSize(0.4F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.375F, 0.5F);
 		minWidth = 0.12F;
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;

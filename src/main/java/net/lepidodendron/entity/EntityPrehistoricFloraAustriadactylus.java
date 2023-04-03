@@ -40,11 +40,7 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraAustriadactylus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.57F, 0.7F);
 		minWidth = 0.12F;
 		maxWidth = 0.57F;
 		maxHeight = 0.7F;

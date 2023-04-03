@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockEggsBarameda;
-import net.lepidodendron.block.BlockEggsRhizodus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
@@ -44,13 +43,7 @@ public class EntityPrehistoricFloraBarameda extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraBarameda(World world) {
 		super(world);
-		//setSize(0.95F, 0.95F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.95F, 0.95F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.95F;

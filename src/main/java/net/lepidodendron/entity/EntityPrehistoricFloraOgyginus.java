@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraOgyginus extends EntityPrehistoricFloraTrilob
 	public EntityPrehistoricFloraOgyginus(World world) {
 		super(world);
 		setSize(0.55F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

@@ -40,11 +40,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 
 	public EntityPrehistoricFloraDiadectes(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.1F, 1.1F);
 		minWidth = 0.2F;
 		maxWidth = 1.1F;
 		maxHeight = 1.1F;

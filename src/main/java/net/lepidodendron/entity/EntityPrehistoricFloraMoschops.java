@@ -43,10 +43,6 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 	public EntityPrehistoricFloraMoschops(World world) {
 		super(world);
 		setSize(0.82F, 1.01F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.18F;
 		maxWidth = 0.82F;
 		maxHeight = 1.01F;

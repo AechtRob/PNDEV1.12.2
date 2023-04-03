@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraDaedalichthys extends EntityPrehistoricFloraF
 	public EntityPrehistoricFloraDaedalichthys(World world) {
 		super(world);
 		setSize(0.22F, 0.19F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

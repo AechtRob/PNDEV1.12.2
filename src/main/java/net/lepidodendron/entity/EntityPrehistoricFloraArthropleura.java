@@ -45,11 +45,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraArthropleura(World world) {
 		super(world);
-		setSize(1.3F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.8F, 0.25F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.25F;

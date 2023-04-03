@@ -39,16 +39,10 @@ public class EntityPrehistoricFloraOphthalmosaurus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraOphthalmosaurus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(1.2F, 0.99F);
 		minWidth = 0.15F;
 		maxWidth = 1.2F;
-		maxHeight = 1F;
+		maxHeight = 0.99F;
 		maxHealthAgeable = 35.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

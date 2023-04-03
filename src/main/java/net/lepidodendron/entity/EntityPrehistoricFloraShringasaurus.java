@@ -45,15 +45,11 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraShringasaurus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.82F, 1.05F);
 		minWidth = 0.18F;
 		maxWidth = 0.82F;
-		maxHeight = 1.01F;
-		maxHealthAgeable = 20.0D;
+		maxHeight = 1.05F;
+		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

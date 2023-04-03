@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraNahecaris extends EntityPrehistoricFloraFishB
 	public EntityPrehistoricFloraNahecaris(World world) {
 		super(world);
 		setSize(0.25F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

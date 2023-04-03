@@ -44,13 +44,7 @@ public class EntityPrehistoricFloraNothosaurus extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraNothosaurus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(1.5F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 0.4F;

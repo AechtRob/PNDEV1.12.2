@@ -47,10 +47,6 @@ public class EntityPrehistoricFloraTartuosteus extends EntityPrehistoricFloraFis
 	public EntityPrehistoricFloraTartuosteus(World world) {
 		super(world);
 		setSize(0.75F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		FEED_ANIMATION = Animation.create(getFeedLength());
 	}
 

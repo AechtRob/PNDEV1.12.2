@@ -41,14 +41,11 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPr
 
 	public EntityPrehistoricFloraTrigonotarbid_Palaeocharinus(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

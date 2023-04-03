@@ -41,11 +41,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 
 	public EntityPrehistoricFloraHyperodapedon(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.64F, 0.45F);
 		minWidth = 0.18F;
 		maxWidth = 0.64F;
 		maxHeight = 0.45F;

@@ -49,11 +49,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraPlateosaurus(World world) {
 		super(world);
-		//setSize(0.82F, 1.01F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.62F, 2.31F);
 		minWidth = 0.18F;
 		maxWidth = 1.62F;
 		maxHeight = 2.31F;

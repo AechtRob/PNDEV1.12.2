@@ -38,14 +38,7 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraLebachacanthus(World world) {
 		super(world);
-		//setSize(maxWidth, maxHeight);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.65F, 0.6F);
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.6F;

@@ -52,7 +52,7 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
 
     public EntityPrehistoricFloraJellyfishBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraJellyfishBase.SwimmingMoveHelper();
         this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
