@@ -213,22 +213,21 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
             //Is it hovering over a nest to lay in?
             if (this.flyTick > 0 && this.getLaying() && this.getAnimation() != this.FLY_ANIMATION && this.getAnimation() != this.UNFLY_ANIMATION) {
                 if (this.isLayableNest(this.getEntityWorld(), this.getPosition())
-                    || this.isLayableNest(this.getEntityWorld(), this.getPosition().down())
-                    || this.isLayableNest(this.getEntityWorld(), this.getPosition().down(2))
-                    || this.isLayableNest(this.getEntityWorld(), this.getPosition().down(3))) {
+                        || this.isLayableNest(this.getEntityWorld(), this.getPosition().down())
+                        || this.isLayableNest(this.getEntityWorld(), this.getPosition().down(2))
+                        || this.isLayableNest(this.getEntityWorld(), this.getPosition().down(3))) {
                     this.flyTick = 0;
                     this.setIsFlying(false);
                     this.setAnimation(UNFLY_ANIMATION);
                     this.walkTick = this.walkLength() + this.UNFLY_ANIMATION.getDuration();
                 }
-
             }
 
             if (this.inPFLove > 0) {
                 this.flyTick = 0;
             }
 
-            if (!this.canFloat() && this.isAboveOrOnGround() && !this.isAboveOrInWater() && (!(this.flyTick > 0)) && this.getIsFlying()) {
+            if (this.isAboveOrOnGround() && !this.isAboveOrInWater() && (!(this.flyTick > 0)) && this.getIsFlying()) {
                 this.setIsFlying(false);
                 this.setAnimation(UNFLY_ANIMATION);
                 this.walkTick = this.walkLength() + this.UNFLY_ANIMATION.getDuration();
@@ -267,7 +266,8 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     @Override
     public void onLivingUpdate() {
-        if (this.isReallyFlying() && this.motionY < 0.0D) {
+        if (this.isReallyFlying() && this.motionY < 0.0D && (!(this.getFlyTick() > 0)))
+        {
             this.motionY *= 0.6D;
         }
 
@@ -380,7 +380,8 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     public boolean isAboveOrOnGround() {
         IBlockState state = this.world.getBlockState(this.getPosition().down());
-        return this.onGround || state.getBlockFaceShape(this.world, this.getPosition().down(), EnumFacing.UP) == BlockFaceShape.SOLID;
+        IBlockState state2 = this.world.getBlockState(this.getPosition().down(2));
+        return this.onGround || state.getBlockFaceShape(this.world, this.getPosition().down(), EnumFacing.UP) == BlockFaceShape.SOLID || state2.getBlockFaceShape(this.world, this.getPosition().down(2), EnumFacing.UP) == BlockFaceShape.SOLID;
     }
 
     @Override
