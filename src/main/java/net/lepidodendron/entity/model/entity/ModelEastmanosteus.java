@@ -424,6 +424,7 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         this.Eastmanosteus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(cube_r1, -1.5708F, -1.4137F, 1.5746F);
         this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
