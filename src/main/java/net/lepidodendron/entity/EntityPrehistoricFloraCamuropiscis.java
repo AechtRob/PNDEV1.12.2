@@ -42,7 +42,8 @@ public class EntityPrehistoricFloraCamuropiscis extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraCamuropiscis(World world) {
 		super(world);
-		setSize(maxWidth, maxHeight);
+		//setSize(maxWidth, maxHeight);
+		setSize(0.9F, 0.9F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);

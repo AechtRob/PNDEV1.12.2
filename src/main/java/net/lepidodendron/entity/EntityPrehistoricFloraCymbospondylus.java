@@ -41,7 +41,8 @@ public class EntityPrehistoricFloraCymbospondylus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraCymbospondylus(World world) {
 		super(world);
-		setSize(maxWidth, maxHeight);
+		//setSize(maxWidth, maxHeight);
+		setSize(0.9F, 0.9F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);

@@ -40,7 +40,8 @@ public class EntityPrehistoricFloraBesanosaurus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraBesanosaurus(World world) {
 		super(world);
-		setSize(maxWidth, maxHeight);
+		//setSize(maxWidth, maxHeight);
+		setSize(0.9F, 0.9F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);

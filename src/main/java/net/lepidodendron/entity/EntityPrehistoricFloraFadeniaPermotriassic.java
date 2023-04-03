@@ -41,7 +41,8 @@ public class EntityPrehistoricFloraFadeniaPermotriassic extends EntityPrehistori
 
 	public EntityPrehistoricFloraFadeniaPermotriassic(World world) {
 		super(world);
-		setSize(maxWidth, maxHeight);
+		//setSize(maxWidth, maxHeight);
+		setSize(0.9F, 0.9F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
