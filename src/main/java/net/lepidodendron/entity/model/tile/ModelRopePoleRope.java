@@ -66,6 +66,7 @@ public class ModelRopePoleRope extends ModelBase {
 	}
 
 	public void renderAll(float f) {
+		//rope.offsetZ = 0.001F;
 		rope.render(f);
 	}
 
