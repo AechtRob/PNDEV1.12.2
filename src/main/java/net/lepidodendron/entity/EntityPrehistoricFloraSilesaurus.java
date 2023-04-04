@@ -7,9 +7,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderSilesaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -365,6 +368,58 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 		return LepidodendronMod.SILESAURUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -0.25;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0;
+	}
+	public static double upperbacklineoffset() {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.1;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.225;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.055;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_SILESAURUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelSilesaurus;
+	}
+	public static float getScaler() {
+		return RenderSilesaurus.getScaler();
+	}
 
 
 }

@@ -521,7 +521,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall() {
-		return -0.93;
+		return -0.24;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 0.8;

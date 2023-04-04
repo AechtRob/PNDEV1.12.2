@@ -269,6 +269,14 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
 
     public static final ModelKentrosaurus modelKentrosaurus = new ModelKentrosaurus();
     public static final ResourceLocation TEXTURE_KENTROSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kentrosaurus.png");
+    public static final ModelSilesaurus modelSilesaurus = new ModelSilesaurus();
+    public static final ResourceLocation TEXTURE_SILESAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/silesaurus.png");
+    public static final ModelPanguraptor modelPanguraptor = new ModelPanguraptor();
+    public static final ResourceLocation TEXTURE_PANGURAPTOR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
+    public static final ModelProganochelys modelProganochelys = new ModelProganochelys();
+    public static final ResourceLocation TEXTURE_PROGANOCHELYS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proganochelys.png");
+
+
 
 
     //public static final Modeltemplate modeltemplate = new Modeltemplate();
