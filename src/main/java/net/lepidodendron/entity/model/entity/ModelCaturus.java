@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCaturus extends AdvancedModelBase {
@@ -207,21 +206,17 @@ public class ModelCaturus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Body.render(f5 * 0.342F);
+        this.Body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+    public void renderStaticWall(float f) {
+        this.Body.offsetY = -0.195F;
+        this.Body.offsetX = -0.066F;
         this.Body.rotateAngleY = (float) Math.toRadians(90);
-        this.Body.offsetX = -0.2F;
-        this.Body.offsetY = -0.17F;
         this.Body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -233,7 +228,7 @@ public class ModelCaturus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Body.offsetY = 1.0F;
+        //this.Body.offsetY = 1.0F;
 
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5};
 
@@ -275,10 +270,10 @@ public class ModelCaturus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Body.rotateAngleZ = (float) Math.toRadians(90);
-            this.Body.offsetY = 0.9F;
-            this.bob(Body, -speed * 1.9F, 2.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * 1.7F, 0.15F, -0.55, f2, 0.4F * still);
+            this.Body.offsetY = -0.27F;
+            this.bob(Body, -speed * 3.2F, 2.5F, false, f2, 1);
+            this.chainWave(fishTail, speed * 2.7F, 0.028F, -0.2, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * 2.7F, 0.15F, -0.55, f2, 0.4F * still);
 
         }
 

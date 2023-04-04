@@ -9,6 +9,9 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderMixosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -170,5 +173,61 @@ public class EntityPrehistoricFloraMixosaurus extends EntityPrehistoricFloraAgea
 		return LepidodendronMod.MIXOSAURUS_LOOT;
 	}
 
-}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.183;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.7;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.35;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.025F;
+	}
 
+	public static double lowerfrontverticallinedepth() {
+		return 1.10F;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.10F;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.285;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.00F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.105;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.01F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_MIXOSAURUS;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelMixosaurus;
+	}
+
+	public static float getScaler() {
+		return RenderMixosaurus.getScaler();
+	}
+
+
+}

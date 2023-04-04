@@ -99,8 +99,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelBunostegos modelBunostegos;
     private static final ResourceLocation TEXTURE_CAROLOWILHELMINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carolowilhelmina.png");
     private final ModelCarolowilhelmina modelCarolowilhelmina;
-    private static final ResourceLocation TEXTURE_CATURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caturus.png");
-    private final ModelCaturus modelCaturus;
+    //private static final ResourceLocation TEXTURE_CATURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caturus.png");
+    //private final ModelCaturus modelCaturus;
     private static final ResourceLocation TEXTURE_CEPHALASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cephalaspis.png");
     private final ModelCephalaspis modelCephalaspis;
     private static final ResourceLocation TEXTURE_CERATODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ceratodus.png");
@@ -375,7 +375,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelBrochoadmones = new ModelBrochoadmones();
         this.modelBunostegos = new ModelBunostegos();
         this.modelCarolowilhelmina = new ModelCarolowilhelmina();
-        this.modelCaturus = new ModelCaturus();
+        //this.modelCaturus = new ModelCaturus();
         this.modelCephalaspis = new ModelCephalaspis();
         this.modelCeratodus = new ModelCeratodus();
         this.modelChinlea = new ModelChinlea();
@@ -1495,38 +1495,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.scale(4.2, 4.2, 4.2);
                                     this.bindTexture(TEXTURE_CAROLOWILHELMINA);
                                     modelCarolowilhelmina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraCaturus.class) {
-                                double offset = -0.03;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(2.6, 2.6, 2.6);
-                                    this.bindTexture(TEXTURE_CATURUS);
-                                    modelCaturus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
                             } else if (classEntity == EntityPrehistoricFloraCephalaspis.class) {
                                 double offset = 0.46;

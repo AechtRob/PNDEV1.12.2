@@ -275,6 +275,10 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ResourceLocation TEXTURE_PANGURAPTOR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
     public static final ModelProganochelys modelProganochelys = new ModelProganochelys();
     public static final ResourceLocation TEXTURE_PROGANOCHELYS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proganochelys.png");
+    public static final ModelMixosaurus modelMixosaurus = new ModelMixosaurus();
+    public static final ResourceLocation TEXTURE_MIXOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixosaurus.png");
+    public static final ModelCaturus modelCaturus = new ModelCaturus();
+    public static final ResourceLocation TEXTURE_CATURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/strobilodus.png");
 
 
 
