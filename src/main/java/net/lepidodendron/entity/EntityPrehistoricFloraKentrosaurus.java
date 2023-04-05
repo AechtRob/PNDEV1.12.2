@@ -135,6 +135,11 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
+		float size = this.getRenderSizeModifier() * getAgeScale() * 1F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	public AxisAlignedBB getAttackBoundingBoxForDamage() {
 		float size = this.getRenderSizeModifier() * getAgeScale() * 2F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
@@ -256,6 +261,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(18.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
 
 	@Override
@@ -309,7 +315,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public void launchAttack() {
 		if (this.getAttackTarget() != null) {
-			if (this.getAttackBoundingBox().intersects(this.getAttackTarget().getEntityBoundingBox())) {
+			if (this.getAttackBoundingBoxForDamage().intersects(this.getAttackTarget().getEntityBoundingBox())) {
 				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 				this.getAttackTarget().addVelocity(0, 0.1, 0);
 				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());

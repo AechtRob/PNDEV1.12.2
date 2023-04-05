@@ -86,8 +86,10 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			EntityLivingBase ee = (EntityLivingBase) e;
 			List<EntityPrehistoricFloraDryosaurus> Dryosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDryosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDryosaurus currentDryosaurus : Dryosaurus) {
-				currentDryosaurus.setRevengeTarget(ee);
-				currentDryosaurus.alarmCooldown = rand.nextInt(20);
+				if (!(currentDryosaurus instanceof EntityPrehistoricFloraDysalotosaurus)) {
+					currentDryosaurus.setRevengeTarget(ee);
+					currentDryosaurus.alarmCooldown = rand.nextInt(20);
+				}
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -206,12 +208,14 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		}
 		List<EntityPrehistoricFloraDryosaurus> Dryosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraDryosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 		for (EntityPrehistoricFloraDryosaurus currentDryosaurus : Dryosaurus) {
-			if (currentDryosaurus.isPFAdult() && this.isPFAdult() && currentDryosaurus != this && !currentDryosaurus.willGrapple) {
-				this.setGrappleTarget(currentDryosaurus);
-				currentDryosaurus.willGrapple=true;
-				this.willGrapple = true;
-				currentDryosaurus.setGrappleTarget(this);
-				return true;
+			if (!(currentDryosaurus instanceof EntityPrehistoricFloraDysalotosaurus)) {
+				if (currentDryosaurus.isPFAdult() && this.isPFAdult() && currentDryosaurus != this && !currentDryosaurus.willGrapple) {
+					this.setGrappleTarget(currentDryosaurus);
+					currentDryosaurus.willGrapple = true;
+					this.willGrapple = true;
+					currentDryosaurus.setGrappleTarget(this);
+					return true;
+				}
 			}
 		}
 		return false;
