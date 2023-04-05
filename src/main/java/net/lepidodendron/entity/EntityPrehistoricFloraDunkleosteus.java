@@ -273,7 +273,7 @@ public class EntityPrehistoricFloraDunkleosteus extends EntityPrehistoricFloraAg
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall() {
-		return -1.4;
+		return -0.8;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 2;

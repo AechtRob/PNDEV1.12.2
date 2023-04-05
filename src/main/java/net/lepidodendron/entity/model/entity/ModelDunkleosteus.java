@@ -243,7 +243,7 @@ public class ModelDunkleosteus extends AdvancedModelBase {
     }
     public void renderStaticWall(float f) {
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(26);
-        this.Head.offsetY = -0.04F;
+        this.Head.offsetY = -0.0255F;
         this.Head.render(0.01F);
         resetToDefaultPose();
     }

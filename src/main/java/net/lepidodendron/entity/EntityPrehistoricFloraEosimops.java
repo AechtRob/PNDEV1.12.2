@@ -54,6 +54,7 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 			List<EntityPrehistoricFloraEosimops> Eosimops = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEosimops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraEosimops currentEosimops : Eosimops) {
 				currentEosimops.setRevengeTarget(ee);
+				currentEosimops.screamAlarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
