@@ -7,9 +7,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderKentrosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -49,7 +52,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		minWidth = 0.12F;
 		maxWidth = 0.9F;
 		maxHeight = 1.3F;
-		maxHealthAgeable = 45.0D;
+		maxHealthAgeable = 50.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -132,6 +135,11 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
+		float size = this.getRenderSizeModifier() * getAgeScale() * 1F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	public AxisAlignedBB getAttackBoundingBoxForDamage() {
 		float size = this.getRenderSizeModifier() * getAgeScale() * 2F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
@@ -251,8 +259,9 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(18.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
 
 	@Override
@@ -306,7 +315,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public void launchAttack() {
 		if (this.getAttackTarget() != null) {
-			if (this.getAttackBoundingBox().intersects(this.getAttackTarget().getEntityBoundingBox())) {
+			if (this.getAttackBoundingBoxForDamage().intersects(this.getAttackTarget().getEntityBoundingBox())) {
 				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 				this.getAttackTarget().addVelocity(0, 0.1, 0);
 				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
@@ -365,6 +374,58 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		return LepidodendronMod.KENTROSAURUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0;
+	}
+	public static double upperbacklineoffset() {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.85;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.3;
+	}
+	public static double lowerbacklineoffset() {
+		return 1.2;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.1;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_KENTROSAURUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelKentrosaurus;
+	}
+	public static float getScaler() {
+		return RenderKentrosaurus.getScaler();
+	}
 
 
 }

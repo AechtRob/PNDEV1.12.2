@@ -92,6 +92,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
                         $_dependencies.put("world", worldIn);
+                        $_dependencies.put("saplingspawn", false);
                         ProcedureWorldGenNypa.executeProcedure($_dependencies);
                         result =  true;
                     } else {
@@ -121,6 +122,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());
                             $_dependencies.put("world", worldIn);
+                            $_dependencies.put("saplingspawn", false);
                             ProcedureWorldGenNypa.executeProcedure($_dependencies);
                             result = true;
                         }

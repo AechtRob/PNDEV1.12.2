@@ -231,7 +231,7 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 	public static double offsetCase() { return 0.46; }
 
 	public static double offsetWall() {
-		return 0.01;
+		return 0.08;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 1.4;

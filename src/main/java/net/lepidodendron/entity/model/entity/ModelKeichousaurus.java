@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraKeichousaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelKeichousaurus extends AdvancedModelBaseExtended {
@@ -234,6 +233,7 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

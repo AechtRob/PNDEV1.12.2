@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private boolean screaming;
-	private int screamAlarmCooldown;
+	public int screamAlarmCooldown;
 
 	public EntityPrehistoricFloraDiictodon(World world) {
 		super(world);
@@ -77,12 +77,21 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm()
+				&& (!(this instanceof EntityPrehistoricFloraRobertia))
+				&& (!(this instanceof EntityPrehistoricFloraEosimops))
+				&& (!(this instanceof EntityPrehistoricFloraProsictodon))) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			List<EntityPrehistoricFloraDiictodon> Diictodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDiictodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDiictodon currentDiictodon : Diictodon) {
-				currentDiictodon.setRevengeTarget(ee);
-				currentDiictodon.screamAlarmCooldown = rand.nextInt(20);
+				if (
+					(!(currentDiictodon instanceof EntityPrehistoricFloraRobertia))
+					&& (!(currentDiictodon instanceof EntityPrehistoricFloraEosimops))
+					&& (!(currentDiictodon instanceof EntityPrehistoricFloraProsictodon))
+				) {
+					currentDiictodon.setRevengeTarget(ee);
+					currentDiictodon.screamAlarmCooldown = rand.nextInt(20);
+				}
 			}
 		}
 		return super.attackEntityFrom(ds, i);

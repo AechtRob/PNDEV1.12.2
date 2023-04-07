@@ -9,7 +9,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderCoelophysis;
+import net.lepidodendron.entity.render.entity.RenderPanguraptor;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -333,10 +333,10 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return -0.23;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth() {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset() {
 		return 0.4;
@@ -354,30 +354,30 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return 0.6;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 0.6;
+		return 0.35;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0.4;
+		return 0.325;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return 0.02F;
+		return 0.00F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0.4;
+		return 0.125;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return 0.04F;
+		return -0.01F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_COELOPHYSIS;
+		return RenderDisplays.TEXTURE_PANGURAPTOR;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelCoelophysis;
+		return RenderDisplays.modelPanguraptor;
 	}
 	public static float getScaler() {
-		return RenderCoelophysis.getScaler();
+		return RenderPanguraptor.getScaler();
 	}
 
 }

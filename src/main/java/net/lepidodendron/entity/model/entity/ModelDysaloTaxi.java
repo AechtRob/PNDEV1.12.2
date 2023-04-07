@@ -2,13 +2,9 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraDryosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraDysalotosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 
 public class ModelDysaloTaxi extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer Dryosaurus;
@@ -647,6 +643,13 @@ public class ModelDysaloTaxi extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Dryosaurus.render(f5);
     }
+
+    public void renderStaticWall(float f) {
+        this.Neck1.rotateAngleX = 0.2F;
+        this.Neck1.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Dryosaurus, -(float)Math.toRadians(22.5), 0.0F, 0.0F);
         this.setRotateAngle(Body, (float)Math.toRadians(10), 0.0F, 0.0F);

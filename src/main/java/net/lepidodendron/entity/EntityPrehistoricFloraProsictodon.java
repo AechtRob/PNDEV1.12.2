@@ -54,6 +54,7 @@ public class EntityPrehistoricFloraProsictodon extends EntityPrehistoricFloraDii
 			List<EntityPrehistoricFloraProsictodon> Prosictodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraProsictodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraProsictodon currentProsictodon : Prosictodon) {
 				currentProsictodon.setRevengeTarget(ee);
+				currentProsictodon.screamAlarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
