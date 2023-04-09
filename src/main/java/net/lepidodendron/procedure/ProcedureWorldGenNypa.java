@@ -62,7 +62,7 @@ public class ProcedureWorldGenNypa extends ElementsLepidodendronMod.ModElement {
 				pos = pos.up();
 			}
 
-			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+
 
 			//Check there is space:
 			xx = -1;
@@ -122,7 +122,12 @@ public class ProcedureWorldGenNypa extends ElementsLepidodendronMod.ModElement {
 			}
 			
 			if (!TreeCheck) return;
+			
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+
+			if (world.getBlockState(new BlockPos((int) x, (int) y - 1, (int) z)).getMaterial().isReplaceable()) {
+				world.setBlockState(new BlockPos((int) x, (int) y - 1, (int) z), BlockNypaLog.block.getDefaultState());
+			}
 
 			if (hasStem) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockNypaLog.block.getDefaultState());

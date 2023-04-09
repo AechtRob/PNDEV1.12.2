@@ -54,6 +54,7 @@ public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiicto
 			List<EntityPrehistoricFloraRobertia> Robertia = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraRobertia.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraRobertia currentRobertia : Robertia) {
 				currentRobertia.setRevengeTarget(ee);
+				currentRobertia.screamAlarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);

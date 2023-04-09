@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderSaltriovenator;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -126,7 +127,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
 			speedBase = speedBase / 0.75F;
-			speedBase = 1.15F;
+			speedBase = 1.05F;
 		}
 		return speedBase;
 	}
@@ -213,6 +214,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
 
 	@Override
@@ -237,6 +239,11 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_death"));
+	}
+
+	@Override
+	protected void playStepSound(BlockPos pos, Block blockIn) {
+		super.playStepSound(pos, blockIn);
 	}
 
 	@Override

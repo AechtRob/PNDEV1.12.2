@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraHybodus;
 import net.lepidodendron.entity.EntityPrehistoricFloraStethacanthus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
@@ -306,6 +305,17 @@ public class ModelStethacanthus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
+    public void renderStaticWall(float f) {
+        this.jaw.rotateAngleX = 0.65f;
+        this.main.offsetY = -0.195F;
+        this.body.scaleChildren = true;
+        this.body.setScale(0,0,0);
+        this.main.render(0.01F);
+        this.body.setScale(1,1,1);
+        resetToDefaultPose();
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, -(float)Math.toRadians(7.5), 0.0F, 0.0F);
         this.setRotateAngle(body, -0, (float)Math.toRadians(5), 0.0F);
@@ -318,6 +328,7 @@ public class ModelStethacanthus extends AdvancedModelBase {
         this.main.render(0.01f);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

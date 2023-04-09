@@ -579,6 +579,8 @@ public class LepidodendronFogSubscribers {
 					}
 				}
 				reader.close();
+				reader = null;
+				strFile = null;
 			} catch (FileNotFoundException e) {
 			} catch (IOException e) {
 			}

@@ -100,7 +100,7 @@ public class WorldGenPangaeanDryLakes extends WorldGenerator
                     {
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
-                            if (i4 >= 4) {
+                            if (i4 >= 2) {
                                 worldIn.setBlockState(position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
@@ -111,7 +111,7 @@ public class WorldGenPangaeanDryLakes extends WorldGenerator
                             else {
                                 worldIn.setBlockState(position.add(l1, i4, i3), this.block.getDefaultState(), 2);
                             }
-                            //worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            //worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 2 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
                             if (
                                 (worldIn.getBlockState(position.add(l1, i4, i3)) == this.block.getDefaultState())
                                 && (worldIn.getBlockState(position.add(l1, i4-1, i3)).getMaterial() != Material.WATER)
