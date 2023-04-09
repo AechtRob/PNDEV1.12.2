@@ -930,7 +930,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.warnCooldown --;
         }
 
-        if (this.getWarnTarget() != null) {
+        if (this.getWarnTarget() != null && !world.isRemote) {
             this.faceEntity(this.getWarnTarget(), 10, 10);
             //this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());

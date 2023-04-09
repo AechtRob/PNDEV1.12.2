@@ -392,7 +392,7 @@ public class ModelAeger extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone.render(f5 * 0.15F);
+        this.bone.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();

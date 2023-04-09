@@ -213,6 +213,7 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, -0.0524F, (float) Math.toRadians(90), 0.0F);
         this.setRotateAngle(bodyfront, 0.0549F, -0.305F, -0.0165F);
