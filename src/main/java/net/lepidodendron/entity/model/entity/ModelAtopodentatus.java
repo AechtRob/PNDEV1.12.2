@@ -322,7 +322,7 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        this.body.offsetY = -0.3F;
+        this.hip.offsetY = -0.3F;
         //this.body.offsetZ = 1.0F;
 
         this.faceTarget(f3, f4, 6, neck);
