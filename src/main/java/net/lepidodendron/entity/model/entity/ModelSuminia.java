@@ -332,7 +332,7 @@ public class ModelSuminia extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.root.offsetY = 1.28F;
+        //this.root.offsetY = 1.28F;
 
         EntityPrehistoricFloraSuminia Suminia = (EntityPrehistoricFloraSuminia) e;
         float masterSpeed = Suminia.getTravelSpeed();
@@ -376,7 +376,7 @@ public class ModelSuminia extends AdvancedModelBaseExtended {
             setRotateAngle(Leftlowerarm, (float)Math.toRadians(-34.05), (float)Math.toRadians(1.22), (float)Math.toRadians(-15.41));
             setRotateAngle(Rightthigh, (float)Math.toRadians(10.88), (float)Math.toRadians(19.12), (float)Math.toRadians(-33.92));
             setRotateAngle(Leftthigh, (float)Math.toRadians(10.88), (float)Math.toRadians(-19.12), (float)Math.toRadians(33.92));
-            this.root.offsetY = 1.40F;
+            //this.root.offsetY = 1.40F;
         }
 
         float speed = masterSpeed / 0.965F;
