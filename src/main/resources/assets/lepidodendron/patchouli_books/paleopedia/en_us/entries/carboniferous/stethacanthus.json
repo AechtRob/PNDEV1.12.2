@@ -2,14 +2,14 @@
 	"name": "Stethacanthus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/stethacanthus_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_stethacanthus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_stethacanthus",
 			"title": "Stethacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Permian$(br2)$(l)Habitat:$() Ocean$(br2)>Chondrichthyes $(br)>Symmoriiformes $(br)>Stethacanthidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)$(l)Habitat:$() Ocean$(br2)>Chondrichthyes $(br)>Symmoriiformes $(br)>Stethacanthidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_stethacanthus",
 			"type": "text",
-			"text": "tethacanthus was a genus of shark-like holocephalian cartilaginous fish, that lived from the Late Devonian to the Late Carboniferous (around 382.7 - 298.9 million years ago). Its remains have been found in Asia, Europe, and North America. "
+			"text": "Stethacanthus was a genus of shark-like holocephalian cartilaginous fish, that lived from the Carboniferous to the Earliest Permian (around 382.7 - 298.9 million years ago). Its remains have been found in Asia, Europe, and North America. Examples from the early part of this date range, in the Devonian, are uncertain and may represent a different genus."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stethacanthus",

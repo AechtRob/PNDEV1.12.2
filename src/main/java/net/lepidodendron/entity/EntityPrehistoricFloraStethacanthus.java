@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "Devonian - Carboniferous";}
+	public static String getPeriod() {return "[Devonian -] Carboniferous  - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
