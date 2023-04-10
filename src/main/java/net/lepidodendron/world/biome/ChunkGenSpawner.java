@@ -56,6 +56,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             spawnDensity = 100.0;
         }
 
+        //Hardcode to try to encourage more spawns
+
         int spawnerCycle = 0;
         int spawnCounter = 0;
         int throttle = 0; //Used as an absolute maximum and for dealing with invalid entries on the list etc.
