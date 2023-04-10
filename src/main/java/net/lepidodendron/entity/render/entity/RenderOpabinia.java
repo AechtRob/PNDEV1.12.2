@@ -12,6 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderOpabinia extends RenderLiving<EntityPrehistoricFloraOpabinia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia.png");
     private static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia_nerf.png");
+    public static float getScaler() {return 0.26F;}
     public RenderOpabinia(RenderManager mgr) {
         super(mgr, new ModelOpabinia(), 0.0f);
     }
@@ -31,7 +32,12 @@ public class RenderOpabinia extends RenderLiving<EntityPrehistoricFloraOpabinia>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOpabinia entity, float f) {
-        GlStateManager.scale(0.75, 0.75, 0.75);
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
     }
 
 }
