@@ -3590,5 +3590,18 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3587;
     public static final int zosterophyllum_spore = 3588;
     public static final int advancement_placeholder = 3589;
+    public static final int myriacantherpestes_raw = 3590;
+    public static final int sclerodus_raw = 3591;
+    public static final int megamastax_raw = 3592;
+    public static final int guiyu_raw = 3593;
+    public static final int insect_eggs_myriacantherpestes = 3594;
+    public static final int polybranchiaspis_raw = 3595;
+    public static final int parameteoraspis_raw = 3596;
+    public static final int athenaegis_raw = 3597;
+    public static final int tauraspis_raw = 3598;
+    public static final int gyrosteus_raw = 3599;
+    public static final int squaloraja_raw = 3600;
+    public static final int phialaspis_raw = 3601;
+    public static final int gyrodus_raw = 3602;
 
 }

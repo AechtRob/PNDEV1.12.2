@@ -988,6 +988,18 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CHAOYANGSAURUS = new CustomTrigger("pf_book_chaoyangsaurus");
     public static final CustomTrigger CLICK_XUANHUACERATOPS = new CustomTrigger("pf_book_xuanhuaceratops");
     public static final CustomTrigger CLICK_PANGURAPTOR = new CustomTrigger("pf_book_panguraptor");
+    public static final CustomTrigger CLICK_MYRIACANTHERPESTES = new CustomTrigger("pf_book_myriacantherpestes");
+    public static final CustomTrigger CLICK_GUIYU = new CustomTrigger("pf_book_guiyu");
+    public static final CustomTrigger CLICK_SCLERODUS = new CustomTrigger("pf_book_sclerodus");
+    public static final CustomTrigger CLICK_MEGAMASTAX = new CustomTrigger("pf_book_megamastax");
+    public static final CustomTrigger CLICK_POLYBRANCHIASPIS = new CustomTrigger("pf_book_polybranchiaspis");
+    public static final CustomTrigger CLICK_TAURASPIS = new CustomTrigger("pf_book_tauraspis");
+    public static final CustomTrigger CLICK_PARAMETEORASPIS = new CustomTrigger("pf_book_parameteoraspis");
+    public static final CustomTrigger CLICK_ATHENAEGIS = new CustomTrigger("pf_book_athenaegis");
+    public static final CustomTrigger CLICK_GYROSTEUS = new CustomTrigger("pf_book_gyrosteus");
+    public static final CustomTrigger CLICK_SQUALORAJA = new CustomTrigger("pf_book_squaloraja");
+    public static final CustomTrigger CLICK_PHIALASPIS = new CustomTrigger("pf_book_phialaspis");
+    public static final CustomTrigger CLICK_GYRODUS = new CustomTrigger("pf_book_gyrodus");
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
 
@@ -1965,7 +1977,19 @@ public class ModTriggers
             CLICK_HUALIANCERATOPS,
             CLICK_CHAOYANGSAURUS,
             CLICK_PANGURAPTOR,
-            CLICK_XUANHUACERATOPS
+            CLICK_XUANHUACERATOPS,
+            CLICK_MYRIACANTHERPESTES,
+            CLICK_GUIYU,
+            CLICK_SCLERODUS,
+            CLICK_MEGAMASTAX,
+            CLICK_POLYBRANCHIASPIS,
+            CLICK_TAURASPIS,
+            CLICK_PARAMETEORASPIS,
+            CLICK_ATHENAEGIS,
+            CLICK_GYROSTEUS,
+            CLICK_SQUALORAJA,
+            CLICK_GYRODUS,
+            CLICK_PHIALASPIS,
 
 
 
