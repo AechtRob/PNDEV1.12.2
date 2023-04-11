@@ -2181,7 +2181,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                             }
                                                             boolean doAgeVar = false;
-                                                            if (nbtStr == "") {
+                                                            if (nbtStr.equalsIgnoreCase("")) {
                                                                 doAgeVar = true;
                                                             }
 
@@ -2204,7 +2204,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     }
                                                                     else if (mobToSpawn.startsWith("fossil:")) {
-                                                                        nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+                                                                        if (nbtStr.equalsIgnoreCase("")) {
+                                                                            nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+                                                                        }
+                                                                        else {
+                                                                            nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
+                                                                        }
                                                                     }
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
