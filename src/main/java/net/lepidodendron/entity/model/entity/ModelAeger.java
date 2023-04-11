@@ -415,7 +415,7 @@ public class ModelAeger extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone.offsetY = 1.25F;
+        //this.bone.offsetY = 1.25F;
 
         AdvancedModelRenderer[] Tail = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6};
 
@@ -502,7 +502,7 @@ public class ModelAeger extends AdvancedModelBase {
             }
 
             if (!e.isInWater()) {
-                this.bone.offsetY = 1.25F;
+                //this.bone.offsetY = 1.25F;
                 this.bone.rotateAngleZ = (float)Math.toRadians(90);
                 this.antennaL3.rotateAngleZ = (float)Math.toRadians(90);
                 this.antennaR3.rotateAngleZ = -(float)Math.toRadians(90);

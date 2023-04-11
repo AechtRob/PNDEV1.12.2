@@ -126,7 +126,7 @@ public class BlockSphenoecium extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 		if (biome instanceof BiomeCambrian) {
-			multiplier = 12;
+			multiplier = 2;
 		}
 
 		int minWaterDepth = 2;

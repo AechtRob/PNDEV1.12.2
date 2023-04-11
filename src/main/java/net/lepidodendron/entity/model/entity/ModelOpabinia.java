@@ -719,7 +719,7 @@ public class ModelOpabinia extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.head.render(f5 * 0.26F);
+        this.head.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -743,7 +743,7 @@ public class ModelOpabinia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.1F;
+        //this.head.offsetY = 1.1F;
 
         AdvancedModelRenderer[] BodyF = {this.segment1, this.segment2, this.segment3, this.segment4, this.segment5, this.segment6, this.segment7, this.segment8, this.segment9, this.segment10, this.segment11, this.segment12, this.segment13, this.segment14, this.segment15};
         AdvancedModelRenderer[] Trunk = {this.nozzle, this.nozzle2, this.nozzle, this.nozzle4, this.nozzle5, this.nozzle6, this.nozzle7};
