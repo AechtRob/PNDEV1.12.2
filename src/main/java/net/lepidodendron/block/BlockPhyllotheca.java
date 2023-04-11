@@ -97,6 +97,8 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 				biomeCriteria = true;
 			}
