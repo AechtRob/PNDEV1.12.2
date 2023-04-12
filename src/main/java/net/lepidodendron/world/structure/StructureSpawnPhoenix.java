@@ -5,8 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenTaxodium;
+import net.lepidodendron.procedure.ProcedureWorldGenPhoenix;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -17,8 +19,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement {
-	public StructureSpawnTaxodium(ElementsLepidodendronMod instance) {
+public class StructureSpawnPhoenix extends ElementsLepidodendronMod.ModElement {
+	public StructureSpawnPhoenix(ElementsLepidodendronMod instance) {
 		super(instance, 48);
 	}
 
@@ -26,43 +28,48 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimTaxodium))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPhoenix))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genTaxodium && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPhoenix && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
-
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genTaxodiumBlacklistBiomes))) {
-			biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-				biomeCriteria = false;
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPhoenixBlacklistBiomes))) {
+			biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genTaxodiumOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPhoenixOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
-			
-		int GenChance = 18500;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierTaxodium;
+
+		int GenChance = 34000;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPhoenix;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
-				GenChance = Math.min(GenChance * 10, 300000);
+				GenChance = Math.min(GenChance * 8, 300000);
 		}
 		
 		if ((random.nextInt(1000000) + 1) <= GenChance) {
-			int count = random.nextInt(3) + 1;
+			int count = random.nextInt(4) + 1;
 			for (int a = 0; a < count; a++) {
 				int i = i2 + random.nextInt(16) + 8;
 				int k = k2 + random.nextInt(16) + 8;
@@ -102,20 +109,12 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 					blockCriteria = true;
 				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.SAND)
 					blockCriteria = true;
-
-				//Allow to spawn IN shallow water:
-				if (((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.WATER)
-						&& (((world.getBlockState(new BlockPos(i, j - 1, k))).getMaterial() == Material.SAND)
-						|| ((world.getBlockState(new BlockPos(i, j - 1, k))).getMaterial() == Material.GROUND))) {
-					blockCriteria = true;
-					j = j - 1;
-				}
-				
+					
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfigPlants.maxheightTaxodium;
-				int minheight = LepidodendronConfigPlants.minheightTaxodium;
+				int maxheight = LepidodendronConfigPlants.maxheightPhoenix;
+				int minheight = LepidodendronConfigPlants.minheightPhoenix;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -124,7 +123,7 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 					continue;
 				if (j > maxheight && maxheight != 0)
 					continue;
-					
+
 				boolean waterCriteria = false;
 				//Is there water nearby?
 				int xct = -3;
@@ -132,7 +131,7 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 				int zct;
 				while ((xct < 4) && (!waterCriteria)) {
 					yct = -2;
-					while ((yct <= 1) && (!waterCriteria)) {
+					while ((yct <= 0) && (!waterCriteria)) {
 						zct = -3;
 						while ((zct < 4) && (!waterCriteria)) {
 							if ((world.getBlockState(new BlockPos(i + xct, j + yct, k + zct))).getMaterial() == Material.WATER) {
@@ -147,19 +146,26 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 				if (!waterCriteria)
 					continue;
 				biomeCriteria = false;
+
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genTaxodiumBlacklistBiomes))) {
-						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-						biomeCriteria = false;
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPhoenixBlacklistBiomes))) {
+					biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
+						biomeCriteria = true;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+						biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
+						biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
+						biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genTaxodiumOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPhoenixOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -179,25 +185,31 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 				int x = spawnTo.getX();
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
-				{
+				if (!world.isBlockLoaded(spawnTo)) {
+					continue;
+				}
+				if (!world.isAreaLoaded(spawnTo, 3)) {
+					continue;
+				}
+
+				
+				if ((world.canSeeSky(spawnTo)) || 
+				(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
+				&& world.canSeeSky(spawnTo.up()))) {
+					world.setBlockToAir(spawnTo);
+					world.setBlockToAir(spawnTo.up());
+				}
 					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
-					if ((world.canSeeSky(spawnTo)) ||
-						(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
-						&& world.canSeeSky(spawnTo.up()))) {
-						world.setBlockToAir(spawnTo);
-						world.setBlockToAir(spawnTo.up());
-					}
-					ProcedureWorldGenTaxodium.executeProcedure($_dependencies);
-				}
-
+					ProcedureWorldGenPhoenix.executeProcedure($_dependencies);
 			}
 		}
 	}
 
+	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
 		public boolean shouldGenerateInDimension(int id, int[] dims) {
 		int[] var2 = dims;

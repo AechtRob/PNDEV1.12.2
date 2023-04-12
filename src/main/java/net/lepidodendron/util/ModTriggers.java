@@ -95,6 +95,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BUMBUDENDRON = new CustomTrigger("pf_book_bumbudendron");
     public static final CustomTrigger CLICK_BUNYA = new CustomTrigger("pf_book_bunya");
     public static final CustomTrigger CLICK_BURIADIA = new CustomTrigger("pf_book_buriadia");
+    public static final CustomTrigger CLICK_PELOURDEA = new CustomTrigger("pf_book_pelourdea");
     public static final CustomTrigger CLICK_BURYKHIA = new CustomTrigger("pf_book_burykhia");
     public static final CustomTrigger CLICK_CALAMITES = new CustomTrigger("pf_book_calamites");
     public static final CustomTrigger CLICK_CALAMOPHYTON = new CustomTrigger("pf_book_calamophyton");
@@ -1093,6 +1094,7 @@ public class ModTriggers
             CLICK_BUMBUDENDRON,
             CLICK_BUNYA,
             CLICK_BURIADIA,
+            CLICK_PELOURDEA,
             CLICK_BURYKHIA,
             CLICK_CALAMITES,
             CLICK_CALAMOPHYTON,

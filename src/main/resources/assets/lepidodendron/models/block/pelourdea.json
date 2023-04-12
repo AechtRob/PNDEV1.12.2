@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/pelourdea_bottom",
+    "particle": "lepidodendron:blocks/pelourdea_bottom"
+  }
+}
