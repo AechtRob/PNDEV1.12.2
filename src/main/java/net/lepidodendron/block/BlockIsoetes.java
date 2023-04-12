@@ -70,7 +70,7 @@ public class BlockIsoetes extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadIsoetes) {
+			if (LepidodendronConfigPlants.spreadIsoetes && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

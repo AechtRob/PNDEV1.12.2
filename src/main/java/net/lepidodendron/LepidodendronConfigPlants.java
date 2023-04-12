@@ -1414,6 +1414,22 @@ public class LepidodendronConfigPlants {
     public static int maxheightBuriadia = 0;
     public static double multiplierBuriadia = 1;
 
+    public static boolean genPelourdea = false;
+    public static String[] genPelourdeaBlacklistBiomes = new String[0];
+    public static String[] genPelourdeaOverrideBiomes = new String[0];
+    public static int[] dimPelourdea = new int[]{0};
+    public static int minheightPelourdea = 1;
+    public static int maxheightPelourdea = 0;
+    public static double multiplierPelourdea = 1;
+
+    public static boolean genPhoenix = false;
+    public static String[] genPhoenixBlacklistBiomes = new String[0];
+    public static String[] genPhoenixOverrideBiomes = new String[0];
+    public static int[] dimPhoenix = new int[]{0};
+    public static int minheightPhoenix = 1;
+    public static int maxheightPhoenix = 0;
+    public static double multiplierPhoenix = 1;
+
     public static boolean genAlethopteris = false;
     public static String[] genAlethopterisBlacklistBiomes = new String[0];
     public static String[] genAlethopterisOverrideBiomes = new String[0];
@@ -8684,6 +8700,62 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Buriadia", "multiplierBuriadia", multiplierBuriadia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierBuriadia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Pelourdea", "genPelourdea", genPelourdea);
+        prop.setComment("Set to true to generate Pelourdea naturally [default: false]");
+        genPelourdea = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "genPelourdeaBlacklistBiomes", genPelourdeaBlacklistBiomes);
+        prop.setComment("List of biomes Pelourdea are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPelourdeaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "genPelourdeaOverrideBiomes", genPelourdeaOverrideBiomes);
+        prop.setComment("List of biomes Pelourdea are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPelourdeaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Pelourdea", "dimPelourdea", dimPelourdea);
+        prop.setComment("List of dimension IDs Pelourdea can generate in [default: 0]");
+        dimPelourdea = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "minheightPelourdea", minheightPelourdea);
+        prop.setComment("Minimum height that Pelourdea can generate (1 to 250) [default: 1]");
+        minheightPelourdea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "maxheightPelourdea", maxheightPelourdea);
+        prop.setComment("Maximum height that Pelourdea can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPelourdea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "multiplierPelourdea", multiplierPelourdea);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPelourdea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Phoenix", "genPhoenix", genPhoenix);
+        prop.setComment("Set to true to generate Phoenix trees naturally [default: false]");
+        genPhoenix = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "genPhoenixBlacklistBiomes", genPhoenixBlacklistBiomes);
+        prop.setComment("List of biomes Phoenix trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPhoenixBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "genPhoenixOverrideBiomes", genPhoenixOverrideBiomes);
+        prop.setComment("List of biomes Phoenix trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPhoenixOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Phoenix", "dimPhoenix", dimPhoenix);
+        prop.setComment("List of dimension IDs Phoenix trees can generate in [default: 0]");
+        dimPhoenix = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "minheightPhoenix", minheightPhoenix);
+        prop.setComment("Minimum height that Phoenix trees can generate (1 to 250) [default: 1]");
+        minheightPhoenix = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "maxheightPhoenix", maxheightPhoenix);
+        prop.setComment("Maximum height that Phoenix trees can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPhoenix = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "multiplierPhoenix", multiplierPhoenix);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPhoenix = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Quadrocladus", "genQuadrocladus", genQuadrocladus);

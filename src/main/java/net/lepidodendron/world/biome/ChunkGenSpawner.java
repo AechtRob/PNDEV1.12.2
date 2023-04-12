@@ -56,6 +56,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             spawnDensity = 100.0;
         }
 
+        //Hardcode to try to encourage more spawns
+
         int spawnerCycle = 0;
         int spawnCounter = 0;
         int throttle = 0; //Used as an absolute maximum and for dealing with invalid entries on the list etc.
@@ -587,7 +589,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                }
 
                //PERMIAN:
-               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_hills")
+               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains_spikes")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")) {
+                   if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsStonyPF);
+                   }
+                   if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsStonyFA);
+                   }
+                   if (LepidodendronConfig.doSpawnsReborn) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsStonyReborn);
+                   }
+               } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_hills")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_lands")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_lands_lush")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")) {
@@ -600,6 +614,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     if (LepidodendronConfig.doSpawnsReborn) {
                         MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsAridLandsReborn);
                     }
+
                 } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_beach")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_beach")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_shore")
@@ -2179,7 +2194,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                             }
                                                             boolean doAgeVar = false;
-                                                            if (nbtStr == "") {
+                                                            if (nbtStr.equalsIgnoreCase("")) {
                                                                 doAgeVar = true;
                                                             }
 
@@ -2202,7 +2217,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     }
                                                                     else if (mobToSpawn.startsWith("fossil:")) {
-                                                                        nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+                                                                        if (nbtStr.equalsIgnoreCase("")) {
+                                                                            nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+                                                                        }
+                                                                        else {
+                                                                            nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
+                                                                        }
                                                                     }
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
