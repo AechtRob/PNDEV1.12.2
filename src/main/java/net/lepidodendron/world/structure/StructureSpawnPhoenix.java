@@ -107,6 +107,8 @@ public class StructureSpawnPhoenix extends ElementsLepidodendronMod.ModElement {
 					blockCriteria = true;
 				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND)
 					blockCriteria = true;
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.SAND)
+					blockCriteria = true;
 					
 				if (!blockCriteria)
 					continue;
