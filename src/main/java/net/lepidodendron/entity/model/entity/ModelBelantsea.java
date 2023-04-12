@@ -150,7 +150,7 @@ public class ModelBelantsea extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodyfront.render(f5 * 0.325F);
+        this.Bodyfront.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -173,7 +173,7 @@ public class ModelBelantsea extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.25F;
+        //this.Bodyfront.offsetY = 1.25F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Bodymiddle, this.Bodyend, this.Tailbase, this.Tailend};
@@ -208,7 +208,7 @@ public class ModelBelantsea extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodyfront.offsetY = 1.45F;
+                //this.Bodyfront.offsetY = 1.45F;
                 this.bob(Bodyfront, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

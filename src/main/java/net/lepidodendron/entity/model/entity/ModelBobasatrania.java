@@ -271,7 +271,7 @@ public class ModelBobasatrania extends AdvancedModelBase {
             this.walk(jaw, (float) (speed * 0.75), 0.2F, true, 0, -0.2F, f2, 1);
             if (!e.isInWater()) {
                 this.Bobasatrania.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bobasatrania.offsetY = 0.95F;
+                //this.Bobasatrania.offsetY = 0.95F;
                 this.bob(Bobasatrania, -speed, 5F, false, f2, 1);
             }
         }
