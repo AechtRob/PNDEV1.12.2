@@ -6,6 +6,7 @@ public enum EnumBiomeTypePermian implements IStringSerializable {
 
     Glossopteris("glossopteris"),
     Arid("arid"),
+    Stony("stony"),
     Desert("desert"),
     Wetlands("wetlands"),
     Lowlands("lowlands"),
