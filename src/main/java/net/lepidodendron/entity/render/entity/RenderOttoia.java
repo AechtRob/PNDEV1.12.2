@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraBelantsea;
 import net.lepidodendron.entity.EntityPrehistoricFloraOttoia;
 import net.lepidodendron.entity.model.entity.ModelOttoia;
 import net.minecraft.client.renderer.GlStateManager;
@@ -20,6 +19,7 @@ public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOttoia entity) {
         return RenderOttoia.TEXTURE;
     }
+
     public static float getScaler() {return 0.185F;}
 
     @Override

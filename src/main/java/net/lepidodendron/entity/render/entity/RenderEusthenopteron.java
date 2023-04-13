@@ -15,6 +15,10 @@ public class RenderEusthenopteron extends RenderLiving<EntityPrehistoricFloraEus
         super(mgr, new ModelEusthenopteron(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.290F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEusthenopteron entity) {
         return RenderEusthenopteron.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderEusthenopteron extends RenderLiving<EntityPrehistoricFloraEus
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEusthenopteron entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.0F;

@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraGemuendina;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -163,6 +162,7 @@ public class ModelGemuendina extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.body.rotateAngleX = (float) Math.toRadians(90);
         this.body.rotateAngleZ = (float) Math.toRadians(90);
@@ -171,6 +171,7 @@ public class ModelGemuendina extends AdvancedModelBase {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, 0.0F, 0.2182F, 0.0F);
         this.setRotateAngle(body3, 0.0F, 0.0436F, 0.0F);
@@ -198,6 +199,7 @@ public class ModelGemuendina extends AdvancedModelBase {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -208,7 +210,7 @@ public class ModelGemuendina extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.05F;
+        //this.body.offsetY = 1.05F;
 
         EntityPrehistoricFloraGemuendina ee = (EntityPrehistoricFloraGemuendina) e;
 
@@ -223,17 +225,17 @@ public class ModelGemuendina extends AdvancedModelBase {
                 speedmodifier = 6F;
             }
             if (ee.getBuried() && (ee.getBuriedTick() <= 0)) {
-                this.body.offsetY = 1.13F;
+                this.body.offsetY = 1.13F - 1.05F;
                 this.body.rotateAngleX = -(float) Math.toRadians(30);
                 swaymodifier = 0;
             }
             else {
-                this.body.offsetY = 1.05F + (0.08F * (float)((double)ee.getBuriedTick()/60D));
+                this.body.offsetY = 1.05F - 1.05F + (0.08F * (float)((double)ee.getBuriedTick()/60D));
                 this.body.rotateAngleX = -(float) Math.toRadians(30 * ((double)ee.getBuriedTick()/60D));
             }
         }
         else {
-            this.body.offsetY = 1.05F;
+            this.body.offsetY = 1.05F - 1.05F;
         }
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
@@ -271,7 +273,7 @@ public class ModelGemuendina extends AdvancedModelBase {
             this.swing(finR, (float) (speed * 0.75), 0.12F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.0F;
+                this.body.offsetY = 1.0F - 1.05F;
                 this.bob(body, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

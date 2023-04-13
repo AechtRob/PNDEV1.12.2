@@ -292,7 +292,7 @@ public class ModelForeyia extends AdvancedModelBase {
             this.swing(body, speed, 0.15F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = -0.30F;
+                this.body.offsetY = -0.30F - 1.18F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }

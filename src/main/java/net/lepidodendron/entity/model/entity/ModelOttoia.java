@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraOttoia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOttoia extends AdvancedModelBase {
@@ -203,7 +202,7 @@ public class ModelOttoia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        float offsetV = 0.76F;
+        float offsetV = 0.76F - 3.05F;
         this.tail.offsetY = offsetV;
         float rotX = (float) Math.toRadians(90);
         this.tail.rotateAngleX = rotX;
@@ -236,7 +235,7 @@ public class ModelOttoia extends AdvancedModelBase {
                 speedmodifier = 6F;
             }
             if (ee.getBuried() && (ee.getBuriedTick() <= 0)) {
-                this.tail.offsetY = offsetV + 0.92F;
+                this.tail.offsetY = offsetV + 0.92F + 3.05F;
                 this.tail.rotateAngleX = rotX - (float) Math.toRadians(98);
                 this.tail.offsetZ = 0;
                 swaymodifier = 0;
@@ -274,7 +273,7 @@ public class ModelOttoia extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-            this.tail.offsetY -= 0.05F;
+            this.tail.offsetY =- 0.05F - 0.76F - 2.0F;
             bobber = 1.2F;
             this.chainWave(fullBody, speed, 0.2F * 0.5F, -2, f2, 1 * 0.5F);
         }
