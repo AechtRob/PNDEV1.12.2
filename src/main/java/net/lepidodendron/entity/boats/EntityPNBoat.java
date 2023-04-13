@@ -303,6 +303,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemPhoenixBoatItem.block;
             case ELATOCLADUS:
                 return ItemElatocladusBoatItem.block;
+            case NEHVIZDYELLA:
+                return ItemNehvizdyellaBoatItem.block;
 
         }
     }
@@ -427,6 +429,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockPhoenixPlanks.block;
             case ELATOCLADUS:
                 return BlockElatocladusPlanks.block;
+            case NEHVIZDYELLA:
+                return BlockNehvizdyellaPlanks.block;
 
         }
     }
@@ -1260,7 +1264,8 @@ public class EntityPNBoat extends EntityBoat
         WOLLEMI(55, "wollemi"),
         YEW(56, "yew"),
         PHOENIX(57, "phoenix"),
-        ELATOCLADUS(58, "elatocladus")
+        ELATOCLADUS(58, "elatocladus"),
+        NEHVIZDYELLA(58, "nehvizdyella")
         ;
 
         private final String name;

@@ -1,0 +1,6 @@
+{
+	"parent": "lepidodendron:block/bench_right",
+	"textures": {
+		"metal": "lepidodendron:blocks/nehvizdyella_planks"
+	}
+}
