@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -244,6 +243,7 @@ public class ModelBobasatrania extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -254,7 +254,7 @@ public class ModelBobasatrania extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Bobasatrania.offsetY = 0.55F;
+        //this.Bobasatrania.offsetY = 0.55F - 0.55F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3,this.Body4,this.Body5};
@@ -271,7 +271,7 @@ public class ModelBobasatrania extends AdvancedModelBase {
             this.walk(jaw, (float) (speed * 0.75), 0.2F, true, 0, -0.2F, f2, 1);
             if (!e.isInWater()) {
                 this.Bobasatrania.rotateAngleZ = (float) Math.toRadians(90);
-                //this.Bobasatrania.offsetY = 0.95F;
+                this.Bobasatrania.offsetY = 0.40F;
                 this.bob(Bobasatrania, -speed, 5F, false, f2, 1);
             }
         }

@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -208,7 +207,7 @@ public class ModelBelantsea extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                //this.Bodyfront.offsetY = 1.45F;
+                this.Bodyfront.offsetY = 0.2F;
                 this.bob(Bodyfront, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }
