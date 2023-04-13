@@ -67,6 +67,7 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_YEW = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_yew.png");
 
     private static final ResourceLocation TEXTURE_PHOENIX = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_phoenix.png");
+    private static final ResourceLocation TEXTURE_ELATOCLADUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_elatocladus.png");
 
     public RenderPNBoat(RenderManager renderManagerIn) {
         super(renderManagerIn);
@@ -191,6 +192,8 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_YEW;
             case PHOENIX:
                 return TEXTURE_PHOENIX;
+            case ELATOCLADUS:
+                return TEXTURE_ELATOCLADUS;
 
         }
     }
