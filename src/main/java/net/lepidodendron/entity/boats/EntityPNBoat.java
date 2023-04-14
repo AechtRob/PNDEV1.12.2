@@ -301,6 +301,10 @@ public class EntityPNBoat extends EntityBoat
                 return ItemYewBoatItem.block;
             case PHOENIX:
                 return ItemPhoenixBoatItem.block;
+            case ELATOCLADUS:
+                return ItemElatocladusBoatItem.block;
+            case NEHVIZDYELLA:
+                return ItemNehvizdyellaBoatItem.block;
 
         }
     }
@@ -423,6 +427,10 @@ public class EntityPNBoat extends EntityBoat
                 return BlockYewPlanks.block;
             case PHOENIX:
                 return BlockPhoenixPlanks.block;
+            case ELATOCLADUS:
+                return BlockElatocladusPlanks.block;
+            case NEHVIZDYELLA:
+                return BlockNehvizdyellaPlanks.block;
 
         }
     }
@@ -1255,7 +1263,9 @@ public class EntityPNBoat extends EntityBoat
         WALCHIA(54, "walchia"),
         WOLLEMI(55, "wollemi"),
         YEW(56, "yew"),
-        PHOENIX(57, "phoenix")
+        PHOENIX(57, "phoenix"),
+        ELATOCLADUS(58, "elatocladus"),
+        NEHVIZDYELLA(58, "nehvizdyella")
         ;
 
         private final String name;

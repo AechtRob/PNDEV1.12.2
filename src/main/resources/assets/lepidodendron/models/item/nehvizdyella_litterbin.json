@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/litterbin",
+ "textures": {
+ "wood": "lepidodendron:blocks/nehvizdyella_planks",
+ "metal": "lepidodendron:blocks/nehvizdyella_planks"
+ }
+}
