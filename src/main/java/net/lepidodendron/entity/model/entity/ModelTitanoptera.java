@@ -153,7 +153,7 @@ public class ModelTitanoptera extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.render(f5 * 0.360f);
+        this.body.render(f5);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
@@ -179,7 +179,7 @@ public class ModelTitanoptera extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.90F;
+        //this.body.offsetY = 0.90F;
 
         float modifier = 1F;
 
