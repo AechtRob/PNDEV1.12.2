@@ -85,7 +85,7 @@ public class ModelVetulicola extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Vetulicola.render(f5 * 0.25F);
+        this.Vetulicola.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -105,7 +105,7 @@ public class ModelVetulicola extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Vetulicola.offsetY = 1.1F;
+        //this.Vetulicola.offsetY = 1.1F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail, this.Tail2, this.Tail3};
@@ -119,7 +119,7 @@ public class ModelVetulicola extends AdvancedModelBase {
             this.swing(Vetulicola, speed, 0.25F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Vetulicola.rotateAngleZ = (float) Math.toRadians(90);
-                this.Vetulicola.offsetY = 1.1F;
+                //this.Vetulicola.offsetY = 1.1F;
                 this.bob(Vetulicola, -speed, 5F, false, f2, 1);
             }
         }
