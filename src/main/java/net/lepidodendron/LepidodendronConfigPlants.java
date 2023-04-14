@@ -848,6 +848,15 @@ public class LepidodendronConfigPlants {
     public static int maxheightIsoetes = 0;
     public static double multiplierIsoetes = 1;
     public static boolean spreadIsoetes = true;
+    
+    public static boolean genPagiophyllum = false;
+    public static String[] genPagiophyllumBlacklistBiomes = new String[0];
+    public static String[] genPagiophyllumOverrideBiomes = new String[0];
+    public static int[] dimPagiophyllum = new int[]{0};
+    public static int minheightPagiophyllum = 1;
+    public static int maxheightPagiophyllum = 0;
+    public static double multiplierPagiophyllum = 1;
+    
     public static boolean genSphenophyllales1 = false;
     public static String[] genSphenophyllales1BlacklistBiomes = new String[0];
     public static String[] genSphenophyllales1OverrideBiomes = new String[0];
@@ -5434,6 +5443,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Nystroemia", "multiplierNystroemia", multiplierNystroemia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierNystroemia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Pagiophyllum", "genPagiophyllum", genPagiophyllum);
+        prop.setComment("Set to true to generate Pagiophyllum naturally [default: false]");
+        genPagiophyllum = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "genPagiophyllumBlacklistBiomes", genPagiophyllumBlacklistBiomes);
+        prop.setComment("List of biomes Pagiophyllum are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPagiophyllumBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "genPagiophyllumOverrideBiomes", genPagiophyllumOverrideBiomes);
+        prop.setComment("List of biomes Pagiophyllum are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPagiophyllumOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Pagiophyllum", "dimPagiophyllum", dimPagiophyllum);
+        prop.setComment("List of dimension IDs Pagiophyllum can generate in [default: 0]");
+        dimPagiophyllum = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "minheightPagiophyllum", minheightPagiophyllum);
+        prop.setComment("Minimum height that Pagiophyllum can generate (1 to 250) [default: 1]");
+        minheightPagiophyllum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "maxheightPagiophyllum", maxheightPagiophyllum);
+        prop.setComment("Maximum height that Pagiophyllum can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPagiophyllum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "multiplierPagiophyllum", multiplierPagiophyllum);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPagiophyllum = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Isoetes", "genIsoetes", genIsoetes);

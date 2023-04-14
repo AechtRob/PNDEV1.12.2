@@ -307,7 +307,7 @@ public class ModelBarameda extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Body.offsetY = -0.1F;
+        //this.Body.offsetY = -0.1F;
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5, this.Tail};
 
         float speed = 0.125F;
@@ -347,7 +347,7 @@ public class ModelBarameda extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             //this.Body.rotateAngleZ = (float) Math.toRadians(90);
-            this.Body.offsetY = 0.2F;
+            this.Body.offsetY = 0.3F;
             this.bob(Body, -speed * 3.8F, 0.25F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
