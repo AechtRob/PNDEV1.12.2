@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderGyrosteus extends RenderLiving<EntityPrehistoricFloraGyrosteus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gyrosteus.png");
     public static float getScaler() {
-        return 1F;
+        return 0.9F;
     }
     public RenderGyrosteus(RenderManager mgr) {
         super(mgr, new ModelGyrosteus(), 0.0f);

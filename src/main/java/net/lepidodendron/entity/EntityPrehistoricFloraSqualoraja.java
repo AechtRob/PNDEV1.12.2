@@ -42,11 +42,11 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraSqualoraja.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(maxWidth, maxHeight);
+		setSize(0.5F, 0.25F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 17.0D;
+		maxHealthAgeable = 15.0D;
 	}
 
 
@@ -86,9 +86,9 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 	@Override
 	protected float getAISpeedFish() {
 		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
-			return 0.2F;
+			return 0.23F;
 		}
-		return 0.442f;
+		return 0.35f;
 	}
 
 	@Override

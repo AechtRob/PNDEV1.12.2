@@ -224,7 +224,7 @@ public class ModelSqualoraja extends AdvancedModelBase {
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
 
         AdvancedModelRenderer[] fishTail = {this.Bodyback, this.Tail, this.Tail2, this.Tail3};
-        float speed = 0.3F;
+        float speed = 0.1F;
         if (!e.isInWater()) { // if not in water
             speed = 0.7F * 0.5F;
         } else if (!ee.getIsMoving()) {

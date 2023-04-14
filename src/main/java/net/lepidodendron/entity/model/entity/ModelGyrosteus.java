@@ -321,10 +321,10 @@ public class ModelGyrosteus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
+        AdvancedModelRenderer[] fishTail = {this.tail2, this.tail3, this.tail4, this.tail5};
         ((EntityPrehistoricFloraGyrosteus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
-        float speed = 0.1F;
+        float speed = 0.15F;
         float still = 1f;
         float inwater = 1f;
         if (f3 == 0.0F) {
@@ -340,17 +340,17 @@ public class ModelGyrosteus extends AdvancedModelBase {
         if (f3 != 0.0F) {this.walk(jaw, (float) (speed * 1.5), 0.2F, true, 0, -0.2F, f2, 1);}
 
         this.chainWave(fishTail, speed * still, 0.02F * still, -3, f2, 0.8F * still);
-        this.chainSwing(fishTail, speed * still, 0.4F * still, -3, f2, 0.6F * still);
+        this.chainSwing(fishTail, speed * still, 0.5F * still, -3, f2, 0.6F * still);
         if (e.isInWater()) {
-            this.swing(main, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(main, speed, 0.15F, true, 0, 0, f2, 1);
         }
         else {
             this.swing(main, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(frontleftfin, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
-        this.swing(frontleftfin, (float) (speed * 0.65), 0.3F * inwater, true, 0, 0, f2, 1 * inwater);
-        this.flap(frontrightfin, (float) (speed * 0.65), -0.3F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
-        this.swing(frontrightfin, (float) (speed * 0.65), -0.3F * inwater, true, 0, 0, f2, 1 * inwater);
+        this.flap(frontleftfin, (float) (speed * 0.65), 0.2F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
+        this.swing(frontleftfin, (float) (speed * 0.65), 0.15F * inwater, true, 0, 0, f2, 1 * inwater);
+        this.flap(frontrightfin, (float) (speed * 0.65), -0.2F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
+        this.swing(frontrightfin, (float) (speed * 0.65), -0.15F * inwater, true, 0, 0, f2, 1 * inwater);
 
         this.flap(backleftfin, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.1F, f2, 1 * inwater);
         this.swing(backleftfin, (float) (speed * 0.65), 0.2F * inwater, true, 0, 0, f2, 1 * inwater);
@@ -359,7 +359,7 @@ public class ModelGyrosteus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             //this.Body.rotateAngleZ = (float) Math.toRadians(90);
-            this.main.offsetY = -0.2F;
+            //this.main.offsetY = -0.2F;
             this.bob(main, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

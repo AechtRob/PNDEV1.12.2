@@ -1101,7 +1101,7 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
             //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
 
             float swingBodySpeed = 0.3F;
-            float degreeBodySwing = 0.025F;
+            float degreeBodySwing = 0.015F;
             this.chainSwing(body1, swingBodySpeed, -degreeBodySwing * 0.66F, -3, f2, 1);
             this.chainSwing(body2, swingBodySpeed, degreeBodySwing * 0.66F, -3, f2, 1);
             this.chainSwing(body3, swingBodySpeed, -degreeBodySwing, -3, f2, 1);
