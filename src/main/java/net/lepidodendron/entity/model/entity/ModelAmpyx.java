@@ -165,7 +165,7 @@ public class ModelAmpyx extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.AmpyxMain.offsetY = 1.2F;
+       // this.AmpyxMain.offsetY = 1.2F;
 
         AdvancedModelRenderer[] legsL = {this.LLeg1, this.LLeg2, this.LLeg3};
         AdvancedModelRenderer[] legsR = {this.RLeg1, this.RLeg2, this.RLeg3};
