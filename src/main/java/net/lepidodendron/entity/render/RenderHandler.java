@@ -3819,6 +3819,36 @@ public class RenderHandler {
                 return new RenderCaryosyntrips(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLepidaster.class, new IRenderFactory<EntityPrehistoricFloraLepidaster>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLepidaster> createRenderFor(RenderManager manager) {
+                return new RenderLepidaster(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVillebrunaster.class, new IRenderFactory<EntityPrehistoricFloraVillebrunaster>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraVillebrunaster> createRenderFor(RenderManager manager) {
+                return new RenderVillebrunaster(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDecacuminaster.class, new IRenderFactory<EntityPrehistoricFloraDecacuminaster>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDecacuminaster> createRenderFor(RenderManager manager) {
+                return new RenderDecacuminaster(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDicranurus.class, new IRenderFactory<EntityPrehistoricFloraDicranurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDicranurus> createRenderFor(RenderManager manager) {
+                return new RenderDicranurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraThanahita.class, new IRenderFactory<EntityPrehistoricFloraThanahita>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraThanahita> createRenderFor(RenderManager manager) {
+                return new RenderThanahita(manager);
+            }
+        });
 
 
 
@@ -3879,6 +3909,9 @@ public class RenderHandler {
 
         //Tile Entities Nautiloid shells etc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockFurcaster.TileEntityCustom.class, new RenderFurcasterItem());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockVillebrunaster.TileEntityCustom.class, new RenderVillebrunasterItem());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockDecacuminaster.TileEntityCustom.class, new RenderDecacuminasterItem());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockLepidaster.TileEntityCustom.class, new RenderLepidasterItem() );
         ClientRegistry.bindTileEntitySpecialRenderer(BlockHelianthaster.TileEntityCustom.class, new RenderHelianthasterItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockArchaeocidaris.TileEntityCustom.class, new RenderArchaeocidarisItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockCidaroida.TileEntityCustom.class, new RenderCidaroidaItem());

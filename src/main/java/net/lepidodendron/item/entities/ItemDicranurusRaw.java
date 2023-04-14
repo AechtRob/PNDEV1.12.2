@@ -15,11 +15,11 @@
 //import net.minecraftforge.oredict.OreDictionary;
 //
 //@ElementsLepidodendronMod.ModElement.Tag
-//public class ItemAngustidontusRaw extends ElementsLepidodendronMod.ModElement {
-//	@GameRegistry.ObjectHolder("lepidodendron:angustidontus_raw")
+//public class ItemDicranurusRaw extends ElementsLepidodendronMod.ModElement {
+//	@GameRegistry.ObjectHolder("lepidodendron:dicranurus_raw")
 //	public static final Item block = null;
-//	public ItemAngustidontusRaw(ElementsLepidodendronMod instance) {
-//		super(instance, LepidodendronSorter.angustidontus_raw);
+//	public ItemDicranurusRaw(ElementsLepidodendronMod instance) {
+//		super(instance, LepidodendronSorter.dicranurus_raw);
 //	}
 //
 //	@Override
@@ -30,23 +30,20 @@
 //	@SideOnly(Side.CLIENT)
 //	@Override
 //	public void registerModels(ModelRegistryEvent event) {
-//		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/angustidontus_raw", "inventory"));
+//		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/dicranurus_raw", "inventory"));
 //	}
-//
-//	@Override
 //	public void init(FMLInitializationEvent event) {
 //		super.init(event);
-//		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_angustidontus", ItemAngustidontusRaw.block);
-//		OreDictionary.registerOre("listAllfishraw", ItemAngustidontusRaw.block);
-//		OreDictionary.registerOre("listAllmeatraw", ItemAngustidontusRaw.block);
-//		OreDictionary.registerOre("foodMeat", ItemAngustidontusRaw.block);
+//		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dicranurus", ItemDicranurusRaw.block);
+//		OreDictionary.registerOre("listAllfishraw", ItemDicranurusRaw.block);
+//		OreDictionary.registerOre("listAllmeatraw", ItemDicranurusRaw.block);
+//		OreDictionary.registerOre("foodMeat", ItemDicranurusRaw.block);
 //	}
-//
 //	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 //		public ItemFoodCustom() {
 //			super(2, 0.1f, false);
-//			setTranslationKey("pf_angustidontus_raw");
-//			setRegistryName("angustidontus_raw");
+//			setTranslationKey("pf_dicranurus_raw");
+//			setRegistryName("dicranurus_raw");
 //			setCreativeTab(TabLepidodendronMobile.tab);
 //			setMaxStackSize(64);
 //		}

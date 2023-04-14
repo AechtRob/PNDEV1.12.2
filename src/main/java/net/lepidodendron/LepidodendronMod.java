@@ -1578,6 +1578,12 @@ public class LepidodendronMod {
 	public static final ResourceLocation CORDATICARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cordaticaris"));
 	public static final int ENTITY_ZENASPIS = 643;
 	public static final ResourceLocation ZENASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/zenaspis"));
+	public static final int ENTITY_VILLEBRUNASTER = 644;
+	public static final ResourceLocation VILLEBRUNASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/villebrunaster"));
+	public static final int ENTITY_LEPIDASTER = 645;
+	public static final ResourceLocation LEPIDASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lepidaster"));
+	public static final int ENTITY_DECACUMINASTER = 646;
+	public static final ResourceLocation DECACUMINASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/decacuminaster"));
 
 
 
