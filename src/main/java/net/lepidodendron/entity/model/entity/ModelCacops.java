@@ -261,7 +261,7 @@ public class ModelCacops extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.root.render(f5 * 0.20f);
+        this.root.render(f5);
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(arm1, 0.0F, 0.6981F, 0.6109F);
@@ -304,7 +304,7 @@ public class ModelCacops extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.root.offsetY = 1.2F;
+        //this.root.offsetY = 1.2F;
 
         EntityPrehistoricFloraCacops Cacops = (EntityPrehistoricFloraCacops) e;
 

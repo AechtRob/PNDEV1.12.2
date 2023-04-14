@@ -27,7 +27,7 @@ public class RenderBarameda extends RenderLiving<EntityPrehistoricFloraBarameda>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBarameda entity, float f) {
-        float scale = entity.getAgeScale()*0.8F;
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

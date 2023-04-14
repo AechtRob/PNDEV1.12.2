@@ -331,26 +331,51 @@ public class ModelCarcinosoma extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.85F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.3F;
-        this.segments.rotateAngleX = (float) Math.toRadians(20);
-        this.metasoma1.rotateAngleX = (float) Math.toRadians(25);
-        this.metasoma2.rotateAngleX = (float) Math.toRadians(25);
-        this.metasoma3.rotateAngleX = (float) Math.toRadians(25);
-        this.metasoma4.rotateAngleX = (float) Math.toRadians(25);
-        this.metasoma5.rotateAngleX = (float) Math.toRadians(25);
-        this.telson.rotateAngleX = (float) Math.toRadians(25);
-        this.tip.rotateAngleX = (float) Math.toRadians(40);
-        this.body.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(carapace4_r1, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(carapace5_r1, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(eyeL_r1, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(eyeR_r1, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(leg1L, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg1R, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg2L, 0.0F, 0.6981F, 0.3491F);
+        this.setRotateAngle(leg2L2, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg2L3, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg2R, 0.0F, -0.6981F, -0.3491F);
+        this.setRotateAngle(leg2R2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg2R3, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg3L, 0.0F, 0.3491F, 0.5236F);
+        this.setRotateAngle(leg3L2, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg3L3, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg3R, 0.0F, -0.3491F, -0.5236F);
+        this.setRotateAngle(leg3R2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg3R3, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg4L, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(leg4L2, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg4L3, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(leg4R, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(leg4R2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg4R3, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(leg5L, 0.0F, -0.5236F, 0.3491F);
+        this.setRotateAngle(leg5L2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(leg5L3, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(leg5R, 0.0F, 0.5236F, -0.3491F);
+        this.setRotateAngle(leg5R2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(leg5R3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(metasoma1, 0.1309F, 0.0873F, 0.0F);
+        this.setRotateAngle(metasoma2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(metasoma3, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(metasoma4, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(metasoma5, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(segments, 0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(spine3_r1, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(telson, 0.2618F, 0.0F, 0.0F);
+        this.body.offsetY = -0.3F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

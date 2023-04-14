@@ -270,7 +270,7 @@ public class ModelSpathicephalus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 0.275f);
+        this.Hips.render(f5);
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Bodyfront, 0.0637F, -0.1745F, 0.0F);
@@ -309,7 +309,7 @@ public class ModelSpathicephalus extends AdvancedModelBase {
         this.setRotateAngle(Upperjaw1, -0.0213F, 0.0F, 0.0F);
         this.setRotateAngle(Upperteeth1, 0.0213F, 0.0F, 0.0F);
         this.Hips.offsetY = 0.02F;
-        this.Hips.render(0.005F);
+        this.Hips.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -322,7 +322,7 @@ public class ModelSpathicephalus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 1.085F; //72
+        //this.Hips.offsetY = 1.085F; //72
 
         EntityPrehistoricFloraSpathicephalus Spathicephalus = (EntityPrehistoricFloraSpathicephalus) e;
 

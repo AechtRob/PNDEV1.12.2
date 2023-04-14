@@ -273,7 +273,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.175F);
+        this.body.render(f5);
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
@@ -312,7 +312,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
         this.body.offsetZ = 0F;
         this.body.offsetX = 0F;
         this.body.offsetY = 0.065F;
-        this.body.render(0.003F);
+        this.body.render(0.01F);
         resetToDefaultPose();
 
     }
@@ -326,7 +326,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.25F; //72
+        //this.body.offsetY = 1.25F; //72
 
         EntityPrehistoricFloraDiploceraspis Diploceraspis = (EntityPrehistoricFloraDiploceraspis) e;
 

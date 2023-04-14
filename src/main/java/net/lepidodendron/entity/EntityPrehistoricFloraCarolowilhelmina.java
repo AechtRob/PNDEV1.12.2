@@ -10,7 +10,11 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderCarolowilhelmina;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -185,6 +189,58 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 			return super.attackEntityFrom(source, (amount * 0.5F));
 		}
 		return super.attackEntityFrom(source, amount);
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 1.3;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.3F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.07;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.4F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.3;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.3;
+	}
+	public static double lowerfrontlineoffset() {
+		return -0.05;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.3F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.4F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_CAROLOWILHELMINA;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelCarolowilhelmina;
+	}
+	public static float getScaler() {
+		return RenderCarolowilhelmina.getScaler();
 	}
 
 }

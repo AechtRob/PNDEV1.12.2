@@ -132,13 +132,9 @@ public class ModelCarolowilhelmina extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.60F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.rotateAngleX = (float) Math.toRadians(-15);
         this.body2.rotateAngleX = (float) Math.toRadians(5);
@@ -147,10 +143,43 @@ public class ModelCarolowilhelmina extends AdvancedModelBase {
         this.tail.rotateAngleX = (float) Math.toRadians(10);
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
         this.body.offsetY = -0.16F;
+        this.body.offsetZ = -0.028F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(tail, 0.0F, 0.3491F, 0.0F);
+        this.body.offsetY = -0.4F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(tail, 0.0F, 0.3491F, 0.0F);
+        this.body.offsetY = 0.05F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -162,7 +191,7 @@ public class ModelCarolowilhelmina extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.65F;
+        //this.body.offsetY = 0.65F;
         //this.Gills.rotateAngleY = f3 / (180F / (float) Math.PI);
         //this.Gills.rotateAngleX = f4 / (180F / (float) Math.PI);
 
@@ -183,7 +212,7 @@ public class ModelCarolowilhelmina extends AdvancedModelBase {
             this.swing(pectoralfinR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.45F;
+                this.body.offsetY = 0.45F-0.65F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }

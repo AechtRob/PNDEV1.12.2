@@ -338,22 +338,22 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 1.4;
+		return 1.6;
 	}
 	public static double upperbackverticallinedepth() {
-		return 0.8;
+		return 1.8;
 	}
 	public static double upperfrontlineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double upperfrontlineoffsetperpendiular() {
 		return -0F;
 	}
 	public static double upperbacklineoffset() {
-		return 0.4;
+		return -0.15;
 	}
 	public static double upperbacklineoffsetperpendiular() {
-		return -0.15F;
+		return -0.7F;
 	}
 	public static double lowerfrontverticallinedepth() {
 		return 2.2;

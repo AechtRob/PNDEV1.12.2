@@ -56,8 +56,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelCaelestiventus modelCaelestiventus;
     private static final ResourceLocation TEXTURE_CAPTORHINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/captorhinus.png");
     private final ModelCaptorhinus modelCaptorhinus;
-    private static final ResourceLocation TEXTURE_CARCINOSOMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma.png");
-    private final ModelCarcinosoma modelCarcinosoma;
     private static final ResourceLocation TEXTURE_CARTORHYNCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cartorhynchus.png");
     private final ModelCartorhynchus modelCartorhynchus;
     private static final ResourceLocation TEXTURE_CASINERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria.png");
@@ -172,7 +170,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelBranchiosaur = new ModelBranchiosaur();
         this.modelCaelestiventus = new ModelCaelestiventus();
         this.modelCaptorhinus = new ModelCaptorhinus();
-        this.modelCarcinosoma = new ModelCarcinosoma();
         this.modelCartorhynchus = new ModelCartorhynchus();
         this.modelCasineria = new ModelCasineria();
         this.modelCaviramus = new ModelCaviramus();
@@ -346,15 +343,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 this.bindTexture(TEXTURE_CAPTORHINUS);
                                 GlStateManager.scale(0.13F, 0.13F, 0.13F);
                                 modelCaptorhinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraCarcinosoma.class) {
-                                double offset = 1.53;
-                                double voffset = 0;
-                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                                GlStateManager.rotate(180, 0F, 0F, 1F);
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                this.bindTexture(TEXTURE_CARCINOSOMA);
-                                GlStateManager.scale(0.51F, 0.51F, 0.51F);
-                                modelCarcinosoma.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraCartorhynchus.class) {
                                 double offset = 0.167;
                                 //double voffset = -0.15;

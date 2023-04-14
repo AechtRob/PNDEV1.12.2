@@ -54,6 +54,10 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelCampbellodus modelCampbellodus = new ModelCampbellodus();
     public static final ResourceLocation TEXTURE_CAMUROPISCIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/camuropiscis.png");
     public static final ModelCamuropiscis modelCamuropiscis = new ModelCamuropiscis();
+    public static final ModelCarcinosoma modelCarcinosoma = new ModelCarcinosoma();
+    public static final ResourceLocation TEXTURE_CARCINOSOMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma.png");
+    public static final ModelCarolowilhelmina modelCarolowilhelmina = new ModelCarolowilhelmina();
+    public static final ResourceLocation TEXTURE_CAROLOWILHELMINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carolowilhelmina.png");
     public static final ResourceLocation TEXTURE_CERATIOCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ceratiocaris.png");
     public static final ModelCeratiocaris modelCeratiocaris = new ModelCeratiocaris();
     public static final ResourceLocation TEXTURE_CLIMATIUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/climatius.png");

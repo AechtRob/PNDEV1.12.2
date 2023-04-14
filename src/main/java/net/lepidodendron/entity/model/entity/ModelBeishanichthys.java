@@ -210,7 +210,7 @@ public class ModelBeishanichthys extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone2.render(f5 * 0.4F);
+        this.bone2.render(f5);
     }
     public void renderStaticWall(float f) {
         this.bone2.rotateAngleY = (float) Math.toRadians(90);
@@ -248,8 +248,8 @@ public class ModelBeishanichthys extends AdvancedModelBase {
         this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.2618F);
         this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.2618F);
         this.bone2.offsetX = -0.005F;
-        this.bone2.offsetY = -0.24F;
-        this.bone2.render(0.005F);
+        this.bone2.offsetY = -0.45F;
+        this.bone2.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -262,7 +262,7 @@ public class ModelBeishanichthys extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone2.offsetY = 0.8F;
+        //this.bone2.offsetY = 0.8F;
         //this.Gills.rotateAngleY = f3 / (180F / (float) Math.PI);
         //this.Gills.rotateAngleX = f4 / (180F / (float) Math.PI);
 
@@ -283,7 +283,7 @@ public class ModelBeishanichthys extends AdvancedModelBase {
             this.swing(pectoralfinR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.bone2.rotateAngleZ = (float) Math.toRadians(90);
-                this.bone2.offsetY = 0.8F;
+                this.bone2.offsetY = 0F;
                 this.bob(bone2, -speed, 5F, false, f2, 1);
             }
         }

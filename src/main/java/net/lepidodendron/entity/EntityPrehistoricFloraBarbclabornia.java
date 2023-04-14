@@ -254,19 +254,19 @@ public class EntityPrehistoricFloraBarbclabornia extends EntityPrehistoricFloraA
 		return 1.4;
 	}
 	public static double upperbackverticallinedepth() {
-		return 0.8;
+		return 1.4;
 	}
 	public static double upperfrontlineoffset() {
-		return 0.4;
+		return 0.22;
 	}
 	public static double upperfrontlineoffsetperpendiular() {
-		return -0F;
+		return 1.4F;
 	}
 	public static double upperbacklineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double upperbacklineoffsetperpendiular() {
-		return -0.15F;
+		return -0.8F;
 	}
 	public static double lowerfrontverticallinedepth() {
 		return 1.1;

@@ -251,7 +251,7 @@ public class ModelBarameda extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Body.render(f5 * 0.9F);
+        this.Body.render(f5);
     }
     public void renderStaticWall(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
@@ -308,7 +308,7 @@ public class ModelBarameda extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Body.offsetY = -0.1F;
+        //this.Body.offsetY = -0.1F;
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5, this.Tail};
 
         float speed = 0.125F;
@@ -348,7 +348,7 @@ public class ModelBarameda extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             //this.Body.rotateAngleZ = (float) Math.toRadians(90);
-            this.Body.offsetY = 0.2F;
+            this.Body.offsetY = 0.3f;
             this.bob(Body, -speed * 3.8F, 0.25F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

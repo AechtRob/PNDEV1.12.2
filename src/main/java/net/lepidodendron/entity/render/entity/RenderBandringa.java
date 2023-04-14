@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBandringa extends RenderLiving<EntityPrehistoricFloraBandringa> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bandringa.png");
-    public static float getScaler() {return 0.6F;}
+    public static float getScaler() {return 0.4F;}
     public RenderBandringa(RenderManager mgr) {
         super(mgr, new ModelBandringa(), 0.0f);
     }
