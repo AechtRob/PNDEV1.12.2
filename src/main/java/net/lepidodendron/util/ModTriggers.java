@@ -1052,6 +1052,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SACCOCOMA = new CustomTrigger("pf_book_saccocoma");
     public static final CustomTrigger CLICK_VAMPYRONASSA = new CustomTrigger("pf_book_vampyronassa");
     public static final CustomTrigger CLICK_PROTEROCTOPUS = new CustomTrigger("pf_book_proteroctopus");
+    public static final CustomTrigger CLICK_THANAHITA = new CustomTrigger("pf_book_thanahita");
+    public static final CustomTrigger CLICK_DICRANURUS = new CustomTrigger("pf_book_dicranurus");
 
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
@@ -2096,6 +2098,8 @@ public class ModTriggers
             CLICK_SACCOCOMA,
             CLICK_VAMPYRONASSA,
             CLICK_PROTEROCTOPUS,
+            CLICK_DICRANURUS,
+            CLICK_THANAHITA
 
 
 
