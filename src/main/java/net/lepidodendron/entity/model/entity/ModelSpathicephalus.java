@@ -272,28 +272,45 @@ public class ModelSpathicephalus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5 * 0.275f);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(23);
-        this.Head.rotateAngleX = (float) Math.toRadians(-20);
-        this.Head.rotateAngleY = (float) Math.toRadians(-25);
-        this.Neck.rotateAngleY = (float) Math.toRadians(-21);
-        this.Bodyfront.rotateAngleY = (float) Math.toRadians(-11);
-        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(-11);
-        this.Hips.rotateAngleY = (float) Math.toRadians(-15);
-        this.Tail1.rotateAngleY = (float) Math.toRadians(15);
-        this.Tail2.rotateAngleY = (float) Math.toRadians(20);
-        this.Tail3.rotateAngleY = (float) Math.toRadians(20);
-        this.Tail4.rotateAngleY = (float) Math.toRadians(10);
-        this.Tail5.rotateAngleY = (float) Math.toRadians(5);
-        this.Hips.offsetZ = -0.3F;
-        this.Hips.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.0637F, -0.1745F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0424F, -0.1309F, 0.0F);
+        this.setRotateAngle(Head, -0.3278F, -0.0436F, 0.0F);
+        this.setRotateAngle(Headslope1, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Headslope2, 0.1911F, 0.0F, 0.0F);
+        this.setRotateAngle(Hips, -0.0637F, 0.0F, 0.0F);
+        this.setRotateAngle(Jawparting, -0.3821F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefteye, -0.2335F, 0.0848F, -0.3821F);
+        this.setRotateAngle(Leftfrontfoot, -0.1698F, -1.6556F, 0.9765F);
+        this.setRotateAngle(Leftgill, 0.0637F, 1.1463F, 0.4245F);
+        this.setRotateAngle(Lefthindfoot, 0.5095F, 0.3821F, 0.2972F);
+        this.setRotateAngle(Leftlowerarm, -1.3162F, -0.5308F, 0.1274F);
+        this.setRotateAngle(Leftshin, 1.401F, 0.1274F, 0.0F);
+        this.setRotateAngle(Leftthigh, -1.8467F, -1.1675F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.9339F, 0.8278F, -0.5732F);
+        this.setRotateAngle(Lowerjaw1, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw2, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerteeth1, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.1086F, -0.1745F, 0.0F);
+        this.setRotateAngle(Righteye, -0.2335F, -0.0848F, 0.3821F);
+        this.setRotateAngle(Rightfrontfoot, -0.1698F, 1.6556F, -0.9765F);
+        this.setRotateAngle(Rightgill, 0.0637F, -1.1463F, -0.4245F);
+        this.setRotateAngle(Righthindfoot, 0.5095F, -0.3821F, -0.2972F);
+        this.setRotateAngle(Rightlowerarm, -1.3162F, 0.5308F, -0.1274F);
+        this.setRotateAngle(Rightshin, 1.401F, -0.1274F, 0.0F);
+        this.setRotateAngle(Rightthigh, -1.8467F, 1.1675F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.9879F, -0.8501F, 0.533F);
+        this.setRotateAngle(Tail1, -0.0637F, 0.1309F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0424F, 0.1745F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0848F, 0.2618F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(Tailfin1, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjaw1, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperteeth1, 0.0213F, 0.0F, 0.0F);
+        this.Hips.offsetY = 0.02F;
+        this.Hips.render(0.005F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

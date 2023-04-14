@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBeishanichthys extends RenderLiving<EntityPrehistoricFloraBeishanichthys> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/beishanichthys.png");
-
+    public static float getScaler() {return 0.8F;}
     public RenderBeishanichthys(RenderManager mgr) {
         super(mgr, new ModelBeishanichthys(), 0.0f);
     }

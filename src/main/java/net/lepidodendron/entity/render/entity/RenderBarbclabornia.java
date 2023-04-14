@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarbclabornia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barbclabornia.png");
-
+    public static float getScaler() {return 0.8F;}
     public RenderBarbclabornia(RenderManager mgr) {
         super(mgr, new ModelBarbclabornia(), 1.0f);
     }

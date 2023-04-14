@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCacops extends RenderLiving<EntityPrehistoricFloraCacops> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cacops.png");
-
+    public static float getScaler() {return 0.2F;}
     public RenderCacops(RenderManager mgr) {
         super(mgr, new ModelCacops(), 0.3f);
     }

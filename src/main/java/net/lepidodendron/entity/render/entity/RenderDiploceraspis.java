@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDiploceraspis extends RenderLiving<EntityPrehistoricFloraDiploceraspis> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diploceraspis.png");
-
+    public static float getScaler() {return 0.6F;}
     public RenderDiploceraspis(RenderManager mgr) {
         super(mgr, new ModelDiploceraspis(), 0.0f);
     }

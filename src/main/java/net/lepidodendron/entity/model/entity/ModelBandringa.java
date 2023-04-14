@@ -166,16 +166,37 @@ public class ModelBandringa extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.4f);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, -0.2618F, 0.2618F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.2618F, -0.2618F);
+        this.setRotateAngle(pelvicfinL, 0.0F, -0.7854F, 0.5236F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.7854F, -0.5236F);
+        this.body.offsetY= -0.45F;
+        this.body.offsetZ= -0.05F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.body.offsetZ = 0.07F;
+        this.body.offsetX = 0F;
+        this.body.offsetY = -0.13F;
+        this.body.rotateAngleX =(float)Math.toRadians(90);
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

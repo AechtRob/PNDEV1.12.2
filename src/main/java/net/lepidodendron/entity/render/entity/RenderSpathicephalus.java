@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSpathicephalus extends RenderLiving<EntityPrehistoricFloraSpathicephalus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spathicephalus.png");
-
+    public static float getScaler() {return 0.6F;}
     public RenderSpathicephalus(RenderManager mgr) {
         super(mgr, new ModelSpathicephalus(), 0.26f);
     }
