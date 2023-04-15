@@ -3674,6 +3674,16 @@ public class LepidodendronSorter {
     public static final int proteroctopus_raw = 3707;
     public static final int eggs_proteroctopus = 3708;
     public static final int psychopyge_raw = 3709;
+    public static final int shell_kosmoceras = 3710;
+    public static final int shell_elephantoceras = 3711;
+    public static final int eggs_kosmoceras = 3712;
+    public static final int eggs_elephantoceras = 3713;
+    public static final int kosmoceras_raw = 3714;
+    public static final int elephantoceras_raw = 3715;
+    public static final int anaethalion_raw = 3716;
+    public static final int elasmodectes_raw = 3717;
+    public static final int quasimodichthys_raw = 3718;
+
 
 
 }

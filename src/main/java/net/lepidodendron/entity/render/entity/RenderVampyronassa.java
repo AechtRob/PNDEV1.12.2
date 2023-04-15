@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderVampyronassa extends RenderLiving<EntityPrehistoricFloraVampyronassa> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa.png");
     public static float getScaler() {
-        return 0.7F * 0.2F;
+        return 0.7F * 0.4F;
     }
     public RenderVampyronassa(RenderManager mgr) {
         super(mgr, new ModelVampyronassa(), 0.0f);
