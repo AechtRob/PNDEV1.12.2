@@ -27,7 +27,7 @@ public class RenderTanystropheus extends RenderLiving<EntityPrehistoricFloraTany
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
-    @Override
+
     protected void preRenderCallback(EntityPrehistoricFloraTanystropheus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);

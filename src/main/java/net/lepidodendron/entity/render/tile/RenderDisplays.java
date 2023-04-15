@@ -126,6 +126,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ResourceLocation TEXTURE_HELICOPRION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helicoprion.png");
     public static final ModelHelicoprion modelHelicoprion = new ModelHelicoprion();
     public static final ResourceLocation TEXTURE_HENODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
+    public static final ModelHybodus modelHybodus = new ModelHybodus();
+    public static final ResourceLocation TEXTURE_HYBODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hybodus.png");
     public static final ModelHenodus modelHenodus = new ModelHenodus();
     public static final ResourceLocation TEXTURE_INOSTRANCEVIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/inostrancevia.png");
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
@@ -199,6 +201,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelPrionosuchus modelPrionosuchus = new ModelPrionosuchus();
     public static final ResourceLocation TEXTURE_PYGOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pygopterus.png");
     public static final ModelPygopterus modelPygopterus = new ModelPygopterus();
+    public static final ResourceLocation TEXTURE_PARHYBODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parhybodus.png");
+    public static final ModelParhybodus modelParhybodus = new ModelParhybodus();
     public static final ResourceLocation TEXTURE_QILINYU = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/qilinyu.png");
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ResourceLocation TEXTURE_REDFIELDIUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/redfieldius.png");
@@ -241,6 +245,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelTurboscinetes modelTurboscinetes = new ModelTurboscinetes();
     public static final ResourceLocation TEXTURE_TYRANNOPHONTES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tyrannophontes.png");
     public static final ModelTyrannophontes modelTyrannophontes = new ModelTyrannophontes();
+    public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
+    public static final ResourceLocation TEXTURE_TANYSTROPHEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tanystropheus.png");
     public static final ResourceLocation TEXTURE_UROSTHENES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urosthenes.png");
     public static final ModelUrosthenes modelUrosthenes = new ModelUrosthenes();
     public static final ResourceLocation TEXTURE_WARNETICARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/warneticaris.png");
@@ -271,6 +277,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ResourceLocation TEXTURE_KENTROSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kentrosaurus.png");
     public static final ModelSilesaurus modelSilesaurus = new ModelSilesaurus();
     public static final ResourceLocation TEXTURE_SILESAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/silesaurus.png");
+    public static final ModelSillosuchus modelSillosuchus = new ModelSillosuchus();
+    public static final ResourceLocation TEXTURE_SILLOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Sillosuchus.png");
     public static final ModelPanguraptor modelPanguraptor = new ModelPanguraptor();
     public static final ResourceLocation TEXTURE_PANGURAPTOR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
     public static final ModelProganochelys modelProganochelys = new ModelProganochelys();
