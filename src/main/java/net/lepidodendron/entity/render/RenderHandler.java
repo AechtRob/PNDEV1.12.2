@@ -3849,6 +3849,30 @@ public class RenderHandler {
                 return new RenderThanahita(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPsychopyge.class, new IRenderFactory<EntityPrehistoricFloraPsychopyge>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPsychopyge> createRenderFor(RenderManager manager) {
+                return new RenderPsychopyge(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSaccocoma.class, new IRenderFactory<EntityPrehistoricFloraSaccocoma>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSaccocoma> createRenderFor(RenderManager manager) {
+                return new RenderSaccocoma(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVampyronassa.class, new IRenderFactory<EntityPrehistoricFloraVampyronassa>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraVampyronassa> createRenderFor(RenderManager manager) {
+                return new RenderVampyronassa(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProteroctopus.class, new IRenderFactory<EntityPrehistoricFloraProteroctopus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProteroctopus> createRenderFor(RenderManager manager) {
+                return new RenderProteroctopus(manager);
+            }
+        });
 
 
 

@@ -1584,6 +1584,17 @@ public class LepidodendronMod {
 	public static final ResourceLocation LEPIDASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lepidaster"));
 	public static final int ENTITY_DECACUMINASTER = 646;
 	public static final ResourceLocation DECACUMINASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/decacuminaster"));
+	public static final int ENTITY_SACCOCOMA = 647;
+	public static final ResourceLocation SACCOCOMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saccocoma"));
+	public static final int ENTITY_VAMPYRONASSA = 648;
+	public static final ResourceLocation VAMPYRONASSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vampyronassa"));
+	public static final ResourceLocation VAMPYRONASSA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vampyronassa_young"));
+	public static final int ENTITY_PROTEROCTOPUS = 649;
+	public static final ResourceLocation PROTEROCTOPUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proteroctopus"));
+	public static final ResourceLocation PROTEROCTOPUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proteroctopus_young"));
+
+	public static final int ENTITY_PSYCHOPYGE = 650;
+	public static final ResourceLocation PSYCHOPYGE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psychopyge"));
 
 
 

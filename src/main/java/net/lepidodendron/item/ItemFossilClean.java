@@ -66,7 +66,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_nerinea_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_leviathania_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_pricyclopyge_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_psychopyge_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_psychopyge_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_carolinites_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_symphysops_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_elephantoceras_clean", "inventory"),

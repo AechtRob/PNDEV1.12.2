@@ -3665,6 +3665,12 @@ public class LepidodendronSorter {
     public static final int lepidaster_item = 3701;
     public static final int thanahita_raw = 3702;
     public static final int decacuminaster_item = 3703;
+    public static final int saccocoma_raw = 3704;
+    public static final int vampyronassa_raw = 3705;
+    public static final int eggs_vampyronassa = 3706;
+    public static final int proteroctopus_raw = 3707;
+    public static final int eggs_proteroctopus = 3708;
+    public static final int psychopyge_raw = 3709;
 
 
 }

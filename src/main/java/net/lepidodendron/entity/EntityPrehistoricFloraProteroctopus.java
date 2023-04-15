@@ -6,11 +6,11 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWander;
-import net.lepidodendron.entity.ai.NautiloidWanderSurface;
+import net.lepidodendron.entity.ai.NautiloidWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemNautiloidEggsBasiloceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
+import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -24,19 +24,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraNautiloidBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraBasiloceras(World world) {
+	public EntityPrehistoricFloraProteroctopus(World world) {
 		super(world);
-		setSize(0.8F, 0.956F);
+		setSize(0.5F, 0.3F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.956F;
-		maxHealthAgeable = 8.0D;
+		maxWidth = 0.5F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Ordovician";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -65,12 +65,12 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 
 	@Override
 	protected float getAISpeedNautiloid() {
-		return 0.07f;
+		return 0.06f;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new NautiloidWanderSurface(this, NO_ANIMATION));
+		tasks.addTask(1, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
@@ -111,7 +111,7 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsBasiloceras.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemNautiloidEggsProteroctopus.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
@@ -123,9 +123,9 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.BASILOCERAS_LOOT_YOUNG;
+			return LepidodendronMod.PROTEROCTOPUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.BASILOCERAS_LOOT;
+		return LepidodendronMod.PROTEROCTOPUS_LOOT;
 	}
 
 }

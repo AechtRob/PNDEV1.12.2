@@ -4,13 +4,9 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWander;
-import net.lepidodendron.entity.ai.NautiloidWanderSurface;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemNautiloidEggsBasiloceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsVampyronassa;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -24,19 +20,34 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraVampyronassa extends EntityPrehistoricFloraNautiloidBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraBasiloceras(World world) {
+	public EntityPrehistoricFloraVampyronassa(World world) {
 		super(world);
-		setSize(0.8F, 0.956F);
-		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.956F;
-		maxHealthAgeable = 8.0D;
+		setSize(0.3F, 0.25F);
+		minWidth = 0.07F;
+		maxWidth = 0.3F;
+		maxHeight = 0.25F;
+		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 6;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -44,9 +55,9 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Jurassic";}
 
-	//public static String getHabitat() {return "Aquatic";}
+	public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {
@@ -65,20 +76,16 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 
 	@Override
 	protected float getAISpeedNautiloid() {
-		return 0.07f;
+		//return 0;
+		return 0.0698f;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new NautiloidWanderSurface(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(2, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
 	}
 
 	@Override
@@ -101,17 +108,12 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
-	@Override
-	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	}
-
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsBasiloceras.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemNautiloidEggsVampyronassa.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
@@ -120,12 +122,17 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 		}
 	}
 
+	@Override
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.BASILOCERAS_LOOT_YOUNG;
+			return LepidodendronMod.VAMPYRONASSA_LOOT_YOUNG;
 		}
-		return LepidodendronMod.BASILOCERAS_LOOT;
+		return LepidodendronMod.VAMPYRONASSA_LOOT;
 	}
 
 }
