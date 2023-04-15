@@ -47,7 +47,7 @@ public class BlockElatocladusDoor extends ElementsLepidodendronMod.ModElement {
 		//		new ModelResourceLocation("lepidodendron:lepidodendron_door", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockCustom.POWERED).build());
 	}
-	
+
 	public static class BlockCustom extends BlockDoor {
 		public BlockCustom() {
 			super(Material.WOOD);
@@ -89,7 +89,7 @@ public class BlockElatocladusDoor extends ElementsLepidodendronMod.ModElement {
    	 	{
         	return I18n.translateToLocal("item.elatocladus_door_item.name");
     	}
-    	
+
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	    {

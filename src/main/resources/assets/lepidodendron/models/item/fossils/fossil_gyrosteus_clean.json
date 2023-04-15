@@ -2,6 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "lepidodendron:items/fossil_clean_background",
-    "layer1": "lepidodendron:items/fossil_belanstea_clean"
+    "layer1": "lepidodendron:items/fossil_gyrosteus_clean"
   }
 }
+

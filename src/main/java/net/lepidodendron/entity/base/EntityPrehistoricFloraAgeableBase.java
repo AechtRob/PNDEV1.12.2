@@ -471,7 +471,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public boolean getCanBreed() {
         return (this.isPFAdult() &&
-                (this.getTicks() > 24000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
+                (this.getTicks() > 6000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
     }
 
     @Nullable

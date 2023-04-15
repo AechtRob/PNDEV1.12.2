@@ -189,7 +189,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        return this.getTicks() > 6000; //If the mob has done not bred for a MC day
     }
 
     public void writeEntityToNBT(NBTTagCompound compound)
