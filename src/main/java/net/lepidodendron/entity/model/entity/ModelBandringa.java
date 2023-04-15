@@ -164,7 +164,7 @@ public class ModelBandringa extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.4f);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -187,7 +187,7 @@ public class ModelBandringa extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.9F;
+        //this.body.offsetY = 0.9F;
 
         EntityPrehistoricFloraBandringa Bandringa = (EntityPrehistoricFloraBandringa) e;
 
@@ -214,7 +214,7 @@ public class ModelBandringa extends AdvancedModelBase {
             this.swing(pectoralfinR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.875F;
+                this.body.offsetY = 0.875F - 0.9F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }
