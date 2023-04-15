@@ -1,6 +1,7 @@
 
 package net.lepidodendron.entity;
 
+import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
@@ -40,7 +41,7 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	//public ChainBuffer tailBuffer;
+	public ChainBuffer tailBuffer;
 	public Animation HIDE_ANIMATION;
 	private int inPFLove;
 
