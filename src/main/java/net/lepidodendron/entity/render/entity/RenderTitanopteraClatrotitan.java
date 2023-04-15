@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTitanopteraClatrotitan;
-import net.lepidodendron.entity.EntityPrehistoricFloraVetulicola;
 import net.lepidodendron.entity.model.entity.ModelTitanoptera;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -27,7 +26,9 @@ public class RenderTitanopteraClatrotitan extends RenderLiving<EntityPrehistoric
     protected void applyRotations(EntityPrehistoricFloraTitanopteraClatrotitan entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
-    protected void preRenderCallback(EntityPrehistoricFloraVetulicola entity, float f) {
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraTitanopteraClatrotitan entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;
