@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTitanopteraClatrotitan extends RenderLiving<EntityPrehistoricFloraTitanopteraClatrotitan> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_clatrotitan.png");
-    public static float getScaler() {return 0.360f;}
+    public static float getScaler() {return 0.180f;}
 
     public RenderTitanopteraClatrotitan(RenderManager mgr) {
         super(mgr, new ModelTitanoptera(), 0.0f);
