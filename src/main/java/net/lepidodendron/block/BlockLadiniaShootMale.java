@@ -87,7 +87,7 @@ public class BlockLadiniaShootMale extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(BlockLadiniaShootMale.block, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(BlockLadiniaShootMalePlaceable.block, (int) (1)));
 		}
 
 		@Override
