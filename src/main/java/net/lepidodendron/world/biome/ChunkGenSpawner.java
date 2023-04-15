@@ -1356,7 +1356,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                     int i18 = 0;
                                                     posCheck = false;
 
-                                                    System.err.println(mobToSpawn + " in ID " + locationID);
+                                                    //System.err.println(mobToSpawn + " in ID " + locationID);
                                                     EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                     EntityLiving entity = (EntityLiving) ee.newInstance(world);
                                                     int offsetter = 0;
