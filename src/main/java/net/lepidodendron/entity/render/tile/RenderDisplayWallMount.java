@@ -89,13 +89,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelBunostegos modelBunostegos;
 
     //private static final ResourceLocation TEXTURE_CATURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caturus.png");
-    //private final ModelCaturus modelCaturus;
-    private static final ResourceLocation TEXTURE_CEPHALASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cephalaspis.png");
-    private final ModelCephalaspis modelCephalaspis;
-    private static final ResourceLocation TEXTURE_CERATODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ceratodus.png");
-    private final ModelCeratodus modelCeratodus;
-    private static final ResourceLocation TEXTURE_CHINLEA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chinlea.png");
-    private final ModelChinlea modelChinlea;
+    //private final ModelCaturus modelCaturus
     private static final ResourceLocation TEXTURE_CLADOSELACHE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cladoselache.png");
     private final ModelCladoselache modelCladoselache;
     private static final ResourceLocation TEXTURE_CLYDAGNATHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clydagnathus.png");
@@ -110,8 +104,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelWeigeltisaurid modelWeigeltisaurid;
     private static final ResourceLocation TEXTURE_COTYLORHYNCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cotylorhynchus.png");
     private final ModelCotylorhynchus modelCotylorhynchus;
-    private static final ResourceLocation TEXTURE_CRASSIGYRINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crassigyrinus.png");
-    private final ModelCrassigyrinus modelCrassigyrinus;
     private static final ResourceLocation TEXTURE_CTENOSPONDYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenospondylus.png");
     private final ModelCtenospondylus modelCtenospondylus;
     private static final ResourceLocation TEXTURE_CYNOGNATHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cynognathus.png");
@@ -165,8 +157,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelHemicyclaspis modelHemicyclaspis;
     private static final ResourceLocation TEXTURE_HERRERASAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/herrerasaurus.png");
     private final ModelHerrerasaurus modelHerrerasaurus;
-    private static final ResourceLocation TEXTURE_HETEROSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterosteus.png");
-    private final ModelHeterosteus modelHeterosteus;
     private static final ResourceLocation TEXTURE_HIBERNASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibernaspis.png");
     private final ModelHibernaspis modelHibernaspis;
     private static final ResourceLocation TEXTURE_HOLONEMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/holonema.png");
@@ -355,9 +345,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelBrochoadmones = new ModelBrochoadmones();
         this.modelBunostegos = new ModelBunostegos();
         //this.modelCaturus = new ModelCaturus();
-        this.modelCephalaspis = new ModelCephalaspis();
-        this.modelCeratodus = new ModelCeratodus();
-        this.modelChinlea = new ModelChinlea();
         this.modelCladoselache = new ModelCladoselache();
         this.modelClydagnathus = new ModelClydagnathus();
         this.modelCobelodus = new ModelCobelodus();
@@ -365,7 +352,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelCoelacanthus = new ModelCoelacanthus();
         this.modelWeigeltisaurid = new ModelWeigeltisaurid();
         this.modelCotylorhynchus = new ModelCotylorhynchus();
-        this.modelCrassigyrinus = new ModelCrassigyrinus();
         this.modelCtenospondylus = new ModelCtenospondylus();
         this.modelCynognathus = new ModelCynognathus();
         this.modelDaedalichthys = new ModelDaedalichthys();
@@ -390,7 +376,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelGyracanthides = new ModelGyracanthides();
         this.modelHemicyclaspis = new ModelHemicyclaspis();
         this.modelHerrerasaurus = new ModelHerrerasaurus();
-        this.modelHeterosteus = new ModelHeterosteus();
         this.modelHibernaspis = new ModelHibernaspis();
         this.modelHolonema = new ModelHolonema();
         this.modelHybodus = new ModelHybodus();
@@ -1276,103 +1261,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     this.bindTexture(TEXTURE_BUNOSTEGOS);
                                     modelBunostegos.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
-                            } else if (classEntity == EntityPrehistoricFloraCephalaspis.class) {
-                                double offset = 0.46;
-                                double voffset = 0.03;
-                                double hoffset = 0.05;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1, 0, 0);
-                                    GlStateManager.scale(1.8, 1.8, 1.8);
-                                    this.bindTexture(TEXTURE_CEPHALASPIS);
-                                    modelCephalaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraCeratodus.class) {
-                                double offset = 0.04;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(4, 4, 4);
-                                    this.bindTexture(TEXTURE_CERATODUS);
-                                    modelCeratodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraChinlea.class) {
-                                double offset = 0.04;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(1.45, 1.45, 1.45);
-                                    this.bindTexture(TEXTURE_CHINLEA);
-                                    modelChinlea.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
                             } else if (classEntity == EntityPrehistoricFloraCladoselache.class) {
                                 double offset = -0.4;
                                 double voffset = 0.55;
@@ -1597,38 +1485,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.scale(6.6, 6.6, 6.6);
                                     this.bindTexture(TEXTURE_COTYLORHYNCHUS);
                                     modelCotylorhynchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraCrassigyrinus.class) {
-                                double offset = 0.03;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(2.8, 2.8, 2.8);
-                                    this.bindTexture(TEXTURE_CRASSIGYRINUS);
-                                    modelCrassigyrinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
                             } else if (classEntity == EntityPrehistoricFloraCtenospondylus.class) {
                                 double offset = -0.22;
@@ -2412,38 +2268,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.scale(4.5, 4.5, 4.5);
                                     this.bindTexture(TEXTURE_HERRERASAURUS);
                                     modelHerrerasaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraHeterosteus.class) {
-                                double offset = -0.27;
-                                double voffset = 0.1;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0, 1, 0);
-                                    GlStateManager.scale(6.5, 6.5, 6.5);
-                                    this.bindTexture(TEXTURE_HETEROSTEUS);
-                                    modelHeterosteus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
                             } else if (classEntity == EntityPrehistoricFloraHibernaspis.class) {
                                 double offset = 0.1;
