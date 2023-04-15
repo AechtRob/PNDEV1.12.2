@@ -5,6 +5,7 @@ import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.LichenGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -77,6 +78,12 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			}
 		}
+		if (biome instanceof BiomePermian) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains_spikes")) {
+				biomeCriteria = true;
+			}
+		}
 
 		else if (dimID == 0) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
@@ -95,6 +102,9 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 		int GenChance = 20;
 		//double GenMultiplier = LepidodendronConfigPlants.multiplierTmesipteris;
 		if (dimID == LepidodendronConfig.dimCarboniferous) {
+			GenChance = 38;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains_spikes")) {
 			GenChance = 38;
 		}
 		//if (GenMultiplier < 0) {GenMultiplier = 0;}

@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:marmolatella_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_marmolatella.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_marmolatella.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_marmolatella"
+		}
+	}
+}
+
+

@@ -133,7 +133,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -226,6 +227,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_riverbank") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")) {
 			GenChance = 156;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")) {
+			GenChance = 192;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
 			GenChance = 256;

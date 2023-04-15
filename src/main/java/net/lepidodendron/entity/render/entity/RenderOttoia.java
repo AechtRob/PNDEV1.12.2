@@ -20,6 +20,8 @@ public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
         return RenderOttoia.TEXTURE;
     }
 
+    public static float getScaler() {return 0.185F;}
+
     @Override
     protected void applyRotations(EntityPrehistoricFloraOttoia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
@@ -43,5 +45,12 @@ public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
             GlStateManager.scale(0.8F, 0.8F, compress);
         }
     }
-
+    protected void preRenderCallback(EntityPrehistoricFloraOttoia entity, float f) {
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
+    }
 }

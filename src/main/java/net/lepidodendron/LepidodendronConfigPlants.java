@@ -256,6 +256,15 @@ public class LepidodendronConfigPlants {
     public static int minheightGinkgoites = 1;
     public static int maxheightGinkgoites = 110;
     public static double multiplierGinkgoites = 1;
+
+    public static boolean genNehvizdyella = false;
+    public static String[] genNehvizdyellaBlacklistBiomes = new String[0];
+    public static String[] genNehvizdyellaOverrideBiomes = new String[0];
+    public static int[] dimNehvizdyella = new int[]{0};
+    public static int minheightNehvizdyella = 1;
+    public static int maxheightNehvizdyella = 110;
+    public static double multiplierNehvizdyella = 1;
+    
     public static boolean genAgathis = false;
     public static String[] genAgathisBlacklistBiomes = new String[0];
     public static String[] genAgathisOverrideBiomes = new String[0];
@@ -839,6 +848,15 @@ public class LepidodendronConfigPlants {
     public static int maxheightIsoetes = 0;
     public static double multiplierIsoetes = 1;
     public static boolean spreadIsoetes = true;
+    
+    public static boolean genPagiophyllum = false;
+    public static String[] genPagiophyllumBlacklistBiomes = new String[0];
+    public static String[] genPagiophyllumOverrideBiomes = new String[0];
+    public static int[] dimPagiophyllum = new int[]{0};
+    public static int minheightPagiophyllum = 1;
+    public static int maxheightPagiophyllum = 0;
+    public static double multiplierPagiophyllum = 1;
+    
     public static boolean genSphenophyllales1 = false;
     public static String[] genSphenophyllales1BlacklistBiomes = new String[0];
     public static String[] genSphenophyllales1OverrideBiomes = new String[0];
@@ -1414,6 +1432,22 @@ public class LepidodendronConfigPlants {
     public static int maxheightBuriadia = 0;
     public static double multiplierBuriadia = 1;
 
+    public static boolean genPelourdea = false;
+    public static String[] genPelourdeaBlacklistBiomes = new String[0];
+    public static String[] genPelourdeaOverrideBiomes = new String[0];
+    public static int[] dimPelourdea = new int[]{0};
+    public static int minheightPelourdea = 1;
+    public static int maxheightPelourdea = 0;
+    public static double multiplierPelourdea = 1;
+
+    public static boolean genPhoenix = false;
+    public static String[] genPhoenixBlacklistBiomes = new String[0];
+    public static String[] genPhoenixOverrideBiomes = new String[0];
+    public static int[] dimPhoenix = new int[]{0};
+    public static int minheightPhoenix = 1;
+    public static int maxheightPhoenix = 0;
+    public static double multiplierPhoenix = 1;
+
     public static boolean genAlethopteris = false;
     public static String[] genAlethopterisBlacklistBiomes = new String[0];
     public static String[] genAlethopterisOverrideBiomes = new String[0];
@@ -1850,6 +1884,14 @@ public class LepidodendronConfigPlants {
     public static int minheightCunninghamia = 1;
     public static int maxheightCunninghamia = 110;
     public static double multiplierCunninghamia = 1;
+
+    public static boolean genElatocladus = false;
+    public static String[] genElatocladusBlacklistBiomes = new String[0];
+    public static String[] genElatocladusOverrideBiomes = new String[0];
+    public static int[] dimElatocladus = new int[]{0};
+    public static int minheightElatocladus = 1;
+    public static int maxheightElatocladus = 110;
+    public static double multiplierElatocladus = 1;
 
     public static boolean genCephalotaxus = false;
     public static String[] genCephalotaxusBlacklistBiomes = new String[0];
@@ -3247,6 +3289,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Ginkgoites", "multiplierGinkgoites", multiplierGinkgoites);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierGinkgoites = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Nehvizdyella", "genNehvizdyella", genNehvizdyella);
+        prop.setComment("Set to true to generate Nehvizdyella trees naturally [default: false]");
+        genNehvizdyella = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nehvizdyella", "genNehvizdyellaBlacklistBiomes", genNehvizdyellaBlacklistBiomes);
+        prop.setComment("List of biomes Nehvizdyella trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genNehvizdyellaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nehvizdyella", "genNehvizdyellaOverrideBiomes", genNehvizdyellaOverrideBiomes);
+        prop.setComment("List of biomes Nehvizdyella trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genNehvizdyellaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Nehvizdyella", "dimNehvizdyella", dimNehvizdyella);
+        prop.setComment("List of dimension IDs Nehvizdyella trees can generate in [default: 0]");
+        dimNehvizdyella = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nehvizdyella", "minheightNehvizdyella", minheightNehvizdyella);
+        prop.setComment("Minimum height that Nehvizdyella trees can generate (1 to 250) [default: 1]");
+        minheightNehvizdyella = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nehvizdyella", "maxheightNehvizdyella", maxheightNehvizdyella);
+        prop.setComment("Maximum height that Nehvizdyella trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightNehvizdyella = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nehvizdyella", "multiplierNehvizdyella", multiplierNehvizdyella);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierNehvizdyella = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Ginkgo", "genGinkgo", genGinkgo);
@@ -5373,6 +5443,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Nystroemia", "multiplierNystroemia", multiplierNystroemia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierNystroemia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Pagiophyllum", "genPagiophyllum", genPagiophyllum);
+        prop.setComment("Set to true to generate Pagiophyllum naturally [default: false]");
+        genPagiophyllum = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "genPagiophyllumBlacklistBiomes", genPagiophyllumBlacklistBiomes);
+        prop.setComment("List of biomes Pagiophyllum are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPagiophyllumBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "genPagiophyllumOverrideBiomes", genPagiophyllumOverrideBiomes);
+        prop.setComment("List of biomes Pagiophyllum are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPagiophyllumOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Pagiophyllum", "dimPagiophyllum", dimPagiophyllum);
+        prop.setComment("List of dimension IDs Pagiophyllum can generate in [default: 0]");
+        dimPagiophyllum = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "minheightPagiophyllum", minheightPagiophyllum);
+        prop.setComment("Minimum height that Pagiophyllum can generate (1 to 250) [default: 1]");
+        minheightPagiophyllum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "maxheightPagiophyllum", maxheightPagiophyllum);
+        prop.setComment("Maximum height that Pagiophyllum can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPagiophyllum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pagiophyllum", "multiplierPagiophyllum", multiplierPagiophyllum);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPagiophyllum = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Isoetes", "genIsoetes", genIsoetes);
@@ -8174,6 +8272,34 @@ public class LepidodendronConfigPlants {
         multiplierCunninghamia = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Elatocladus", "genElatocladus", genElatocladus);
+        prop.setComment("Set to true to generate Elatocladus trees naturally [default: false]");
+        genElatocladus = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Elatocladus", "genElatocladusBlacklistBiomes", genElatocladusBlacklistBiomes);
+        prop.setComment("List of biomes Elatocladus trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genElatocladusBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Elatocladus", "genElatocladusOverrideBiomes", genElatocladusOverrideBiomes);
+        prop.setComment("List of biomes Elatocladus trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genElatocladusOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Elatocladus", "dimElatocladus", dimElatocladus);
+        prop.setComment("List of dimension IDs Elatocladus trees can generate in [default: 0]");
+        dimElatocladus = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Elatocladus", "minheightElatocladus", minheightElatocladus);
+        prop.setComment("Minimum height that Elatocladus trees can generate (1 to 250) [default: 1]");
+        minheightElatocladus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Elatocladus", "maxheightElatocladus", maxheightElatocladus);
+        prop.setComment("Maximum height that Elatocladus trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightElatocladus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Elatocladus", "multiplierElatocladus", multiplierElatocladus);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierElatocladus = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Cephalotaxus", "genCephalotaxus", genCephalotaxus);
         prop.setComment("Set to true to generate Cephalotaxus trees naturally [default: false]");
         genCephalotaxus = prop.getBoolean();
@@ -8684,6 +8810,62 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Buriadia", "multiplierBuriadia", multiplierBuriadia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierBuriadia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Pelourdea", "genPelourdea", genPelourdea);
+        prop.setComment("Set to true to generate Pelourdea naturally [default: false]");
+        genPelourdea = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "genPelourdeaBlacklistBiomes", genPelourdeaBlacklistBiomes);
+        prop.setComment("List of biomes Pelourdea are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPelourdeaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "genPelourdeaOverrideBiomes", genPelourdeaOverrideBiomes);
+        prop.setComment("List of biomes Pelourdea are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPelourdeaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Pelourdea", "dimPelourdea", dimPelourdea);
+        prop.setComment("List of dimension IDs Pelourdea can generate in [default: 0]");
+        dimPelourdea = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "minheightPelourdea", minheightPelourdea);
+        prop.setComment("Minimum height that Pelourdea can generate (1 to 250) [default: 1]");
+        minheightPelourdea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "maxheightPelourdea", maxheightPelourdea);
+        prop.setComment("Maximum height that Pelourdea can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPelourdea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pelourdea", "multiplierPelourdea", multiplierPelourdea);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPelourdea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Phoenix", "genPhoenix", genPhoenix);
+        prop.setComment("Set to true to generate Phoenix trees naturally [default: false]");
+        genPhoenix = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "genPhoenixBlacklistBiomes", genPhoenixBlacklistBiomes);
+        prop.setComment("List of biomes Phoenix trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPhoenixBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "genPhoenixOverrideBiomes", genPhoenixOverrideBiomes);
+        prop.setComment("List of biomes Phoenix trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPhoenixOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Phoenix", "dimPhoenix", dimPhoenix);
+        prop.setComment("List of dimension IDs Phoenix trees can generate in [default: 0]");
+        dimPhoenix = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "minheightPhoenix", minheightPhoenix);
+        prop.setComment("Minimum height that Phoenix trees can generate (1 to 250) [default: 1]");
+        minheightPhoenix = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "maxheightPhoenix", maxheightPhoenix);
+        prop.setComment("Maximum height that Phoenix trees can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPhoenix = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Phoenix", "multiplierPhoenix", multiplierPhoenix);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPhoenix = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Quadrocladus", "genQuadrocladus", genQuadrocladus);

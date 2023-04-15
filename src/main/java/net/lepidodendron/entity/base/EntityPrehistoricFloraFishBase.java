@@ -180,7 +180,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        return this.getTicks() > 6000; //If the mob has done not bred for a MC day
     }
 
     public int getMateable() {

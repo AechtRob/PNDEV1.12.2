@@ -11,7 +11,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAITarget;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityTameable;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -53,15 +52,17 @@ public class EntityHurtByTargetSmallerThanMeAI extends EntityAITarget
         }
 
         if (entitylivingbase != null) {
-            if (this.taskOwner.getEntityBoundingBox().getAverageEdgeLength() * 1.25 <= entitylivingbase.getEntityBoundingBox().getAverageEdgeLength()
-                && (!(entitylivingbase instanceof EntityPlayer)))
+            if (this.taskOwner.getEntityBoundingBox().getAverageEdgeLength() * 1.5 <= entitylivingbase.getEntityBoundingBox().getAverageEdgeLength()
+                //&& (!(entitylivingbase instanceof EntityPlayer))
+            )
                 {
                 return false; //mob is physically too big
             }
             if (this.taskOwner.getMaxHealth() * 1.25 <= entitylivingbase.getMaxHealth()
-                    && (!(entitylivingbase instanceof EntityPlayer)))
+                    //&& (!(entitylivingbase instanceof EntityPlayer))
+            )
             {
-                return false; //mob is conceptually too big
+                return false; //mob is conceptually too strong
             }
         }
 

@@ -15,6 +15,10 @@ public class RenderCladoselache extends RenderLiving<EntityPrehistoricFloraClado
         super(mgr, new ModelCladoselache(), 0.32f);
     }
 
+    public static float getScaler() {
+        return 0.52F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCladoselache entity) {
         return RenderCladoselache.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderCladoselache extends RenderLiving<EntityPrehistoricFloraClado
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCladoselache entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
