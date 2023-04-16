@@ -228,7 +228,11 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 6000; //If the mob has done not bred for a MC day
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
+        return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
