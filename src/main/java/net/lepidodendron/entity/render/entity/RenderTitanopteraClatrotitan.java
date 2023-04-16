@@ -27,6 +27,8 @@ public class RenderTitanopteraClatrotitan extends RenderLiving<EntityPrehistoric
     protected void applyRotations(EntityPrehistoricFloraTitanopteraClatrotitan entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+    
+    @Override
     protected void preRenderCallback(EntityPrehistoricFloraTitanopteraClatrotitan entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
