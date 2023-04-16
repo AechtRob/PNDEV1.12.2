@@ -26,7 +26,7 @@ public class RenderBandringa extends RenderLiving<EntityPrehistoricFloraBandring
     protected void applyRotations(EntityPrehistoricFloraBandringa entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
-    protected void preRenderCallback(EntityPrehistoricFloraVetulicola entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraBandringa entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;

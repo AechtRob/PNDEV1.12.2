@@ -30,7 +30,7 @@ public class RenderPikaia extends RenderLiving<EntityPrehistoricFloraPikaia> {
     protected void applyRotations(EntityPrehistoricFloraPikaia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
-    protected void preRenderCallback(EntityPrehistoricFloraVetulicola entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraPikaia entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;
