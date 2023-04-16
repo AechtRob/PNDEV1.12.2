@@ -1584,6 +1584,29 @@ public class LepidodendronMod {
 	public static final ResourceLocation LEPIDASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lepidaster"));
 	public static final int ENTITY_DECACUMINASTER = 646;
 	public static final ResourceLocation DECACUMINASTER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/decacuminaster"));
+	public static final int ENTITY_SACCOCOMA = 647;
+	public static final ResourceLocation SACCOCOMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saccocoma"));
+	public static final int ENTITY_VAMPYRONASSA = 648;
+	public static final ResourceLocation VAMPYRONASSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vampyronassa"));
+	public static final ResourceLocation VAMPYRONASSA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vampyronassa_young"));
+	public static final int ENTITY_PROTEROCTOPUS = 649;
+	public static final ResourceLocation PROTEROCTOPUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proteroctopus"));
+	public static final ResourceLocation PROTEROCTOPUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proteroctopus_young"));
+
+	public static final int ENTITY_PSYCHOPYGE = 650;
+	public static final ResourceLocation PSYCHOPYGE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psychopyge"));
+	public static final int ENTITY_ANAETHALION = 651;
+	public static final ResourceLocation ANAETHALION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anaethalion"));
+	public static final int ENTITY_QUASIMODICHTHYS = 652;
+	public static final ResourceLocation QUASIMODICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/quasimodichthys"));
+	public static final int ENTITY_ELASMODECTES = 653;
+	public static final ResourceLocation ELASMODECTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/elasmodectes"));
+	public static final int ENTITY_KOSMOCERAS = 654;
+	public static final ResourceLocation KOSMOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kosmoceras"));
+	public static final ResourceLocation KOSMOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kosmoceras_young"));
+	public static final int ENTITY_ELEPHANTOCERAS = 655;
+	public static final ResourceLocation ELEPHANTOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/elephantoceras"));
+	public static final ResourceLocation ELEPHANTOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/elephantoceras_young"));
 
 
 
