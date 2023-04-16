@@ -330,6 +330,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_callibrachion_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_callistophytales_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_vitis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_laurus_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_hedera_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_calvapilosa_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cambroraster_clean", "inventory"),
@@ -959,6 +960,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_swamp_horsetail_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_swartpuntia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sycamore_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_chestnut_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_syllipsimopodi_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_synophalos_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tabulata_1_clean", "inventory"),
@@ -1126,6 +1128,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_whatcheeria_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ancient_moss_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_amentotaxus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_palissya_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_megalosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_keraphyton_clean", "inventory"),

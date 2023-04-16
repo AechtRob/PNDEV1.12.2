@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:laurus_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:laurus_seeds",
+    "count": 1
+  }
+}

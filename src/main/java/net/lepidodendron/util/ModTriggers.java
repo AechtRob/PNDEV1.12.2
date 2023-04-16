@@ -48,6 +48,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ANOMOZAMITES = new CustomTrigger("pf_book_anomozamites");
     public static final CustomTrigger CLICK_ANTARCTICYCAS = new CustomTrigger("pf_book_antarcticycas");
     public static final CustomTrigger CLICK_APPLE = new CustomTrigger("pf_book_apple");
+    public static final CustomTrigger CLICK_LAURUS = new CustomTrigger("pf_book_laurus");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
@@ -338,6 +339,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SWAMP_HORSETAIL = new CustomTrigger("pf_book_swamp_horsetail");
     public static final CustomTrigger CLICK_SWARTPUNTIA = new CustomTrigger("pf_book_swartpuntia");
     public static final CustomTrigger CLICK_SYCAMORE = new CustomTrigger("pf_book_sycamore");
+    public static final CustomTrigger CLICK_CHESTNUT = new CustomTrigger("pf_book_chestnut");
     public static final CustomTrigger CLICK_TAWUIA = new CustomTrigger("pf_book_tawuia");
     public static final CustomTrigger CLICK_TAXODIUM = new CustomTrigger("pf_book_taxodium");
     public static final CustomTrigger CLICK_TELEMACHUS = new CustomTrigger("pf_book_telemachus");
@@ -383,6 +385,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CUNNINGHAMIA = new CustomTrigger("pf_book_cunninghamia");
     public static final CustomTrigger CLICK_HOOP_ARAUCARIA = new CustomTrigger("pf_book_hoop_araucaria");
     public static final CustomTrigger CLICK_AMENOTAXUS = new CustomTrigger("pf_book_amentotaxus");
+    public static final CustomTrigger CLICK_PALISSYA = new CustomTrigger("pf_book_palissya");
     public static final CustomTrigger CLICK_SCRUBBY_PINE = new CustomTrigger("pf_book_scrubby_pine");
 
     public static final CustomTrigger CLICK_KERAPHYTON = new CustomTrigger("pf_book_keraphyton");
@@ -1103,6 +1106,7 @@ public class ModTriggers
             CLICK_ANOMOZAMITES,
             CLICK_ANTARCTICYCAS,
             CLICK_APPLE,
+            CLICK_LAURUS,
             CLICK_ARAUCARIOXYLON,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,
@@ -1393,6 +1397,7 @@ public class ModTriggers
             CLICK_SWAMP_HORSETAIL,
             CLICK_SWARTPUNTIA,
             CLICK_SYCAMORE,
+            CLICK_CHESTNUT,
             CLICK_TAWUIA,
             CLICK_TAXODIUM,
             CLICK_TELEMACHUS,
@@ -1437,6 +1442,7 @@ public class ModTriggers
             CLICK_CUNNINGHAMIA,
             CLICK_HOOP_ARAUCARIA,
             CLICK_AMENOTAXUS,
+            CLICK_PALISSYA,
             CLICK_SCRUBBY_PINE,
             CLICK_KERAPHYTON,
             CLICK_PIETZSCHIA,
