@@ -207,7 +207,7 @@ public class BlockHironoiaSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering shrub");
-				tooltip.add("Periods: late Cretaceous [but similar to Paleogene - Neogene - Quaternary]");
+				tooltip.add("Periods: late Cretaceous");
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

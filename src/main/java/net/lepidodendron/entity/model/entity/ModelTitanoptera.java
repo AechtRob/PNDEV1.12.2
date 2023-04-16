@@ -163,7 +163,7 @@ public class ModelTitanoptera extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.disableCull();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.render(0.005f);
+        this.body.render(0.01f);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();

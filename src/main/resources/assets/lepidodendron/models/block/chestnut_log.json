@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/chestnut_log_end",
+    "up": "lepidodendron:blocks/chestnut_log_end",
+    "north": "lepidodendron:blocks/chestnut_log",
+    "east": "lepidodendron:blocks/chestnut_log",
+    "south": "lepidodendron:blocks/chestnut_log",
+    "west": "lepidodendron:blocks/chestnut_log",
+    "particle": "lepidodendron:blocks/chestnut_log_end"
+  }
+}

@@ -470,8 +470,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean getCanBreed() {
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
         return (this.isPFAdult() &&
-                (this.getTicks() > 24000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
+                (this.getTicks() > breedCooldown || this.getTicks() < 0)); //If the mob has done not bred for a MC day
     }
 
     @Nullable

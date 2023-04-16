@@ -8,6 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EnumDifficulty;
 
 public class AttackAI extends EntityAIBase {
@@ -21,6 +23,11 @@ public class AttackAI extends EntityAIBase {
         this.speed = speed;
         this.memory = memory;
         this.setMutexBits(7);
+    }
+
+    public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+        RayTraceResult movingobjectposition = this.entity.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+        return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
     @Override
@@ -69,7 +76,8 @@ public class AttackAI extends EntityAIBase {
            // }
             this.entity.getNavigator().tryMoveToEntityLiving(target, this.speed);
         }
-        if (this.entity.getAttackBoundingBox().intersects(target.getEntityBoundingBox())) {
+        if (this.entity.getAttackBoundingBox().intersects(target.getEntityBoundingBox())
+            && isDirectPathBetweenPoints(this.entity.getPositionVector(), target.getPositionVector())) {
             this.entity.attackEntityAsMob(target);
             //Apply a slight slowdown to the target:
             if (target instanceof EntityLivingBase) {
