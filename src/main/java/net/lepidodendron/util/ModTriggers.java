@@ -149,6 +149,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CTENIS = new CustomTrigger("pf_book_ctenis");
     public static final CustomTrigger CLICK_CYCADEOIDEA = new CustomTrigger("pf_book_cycadeoidea");
     public static final CustomTrigger CLICK_CYCADOPTERIS = new CustomTrigger("pf_book_cycadopteris");
+    public static final CustomTrigger CLICK_DICHOPTERIS = new CustomTrigger("pf_book_dichopteris");
     public static final CustomTrigger CLICK_CYCAS = new CustomTrigger("pf_book_cycas");
     public static final CustomTrigger CLICK_CYCLODENDRON = new CustomTrigger("pf_book_cyclodendron");
     public static final CustomTrigger CLICK_CYPRESS = new CustomTrigger("pf_book_cypress");
@@ -1207,6 +1208,7 @@ public class ModTriggers
             CLICK_CTENIS,
             CLICK_CYCADEOIDEA,
             CLICK_CYCADOPTERIS,
+            CLICK_DICHOPTERIS,
             CLICK_CYCAS,
             CLICK_CYCLODENDRON,
             CLICK_CYPRESS,

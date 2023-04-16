@@ -682,8 +682,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_quasimodichthys", EntityPrehistoricFloraQuasimodichthys.class, LepidodendronMod.ENTITY_QUASIMODICHTHYS, 48,-4936857,-13422301);
         registerEntity("prehistoric_flora_papilionichthys", EntityPrehistoricFloraQuasimodichthys.class, LepidodendronMod.ENTITY_QUASIMODICHTHYS, 48,-4936857,-13422301);
         registerEntity("prehistoric_flora_rainerichthys", EntityPrehistoricFloraQuasimodichthys.class, LepidodendronMod.ENTITY_QUASIMODICHTHYS, 48,-4936857,-13422301);
-        registerEntity("prehistoric_flora_promexyele", EntityPrehistoricFloraPromexyele.class, LepidodendronMod.ENTITY_PROMEXYELE, 48,-4936857,-13422301);
-        registerEntity("prehistoric_flora_hovasaurus", EntityPrehistoricFloraHovasaurus.class, LepidodendronMod.ENTITY_HOVASAURUS, 48,-4936857,-13422301);
+        //registerEntity("prehistoric_flora_promexyele", EntityPrehistoricFloraPromexyele.class, LepidodendronMod.ENTITY_PROMEXYELE, 48,-4936857,-13422301);
+        //registerEntity("prehistoric_flora_hovasaurus", EntityPrehistoricFloraHovasaurus.class, LepidodendronMod.ENTITY_HOVASAURUS, 48,-4936857,-13422301);
 
 
 

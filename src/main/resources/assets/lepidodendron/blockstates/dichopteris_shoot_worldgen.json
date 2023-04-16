@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dichopteris_shoot", "weight": 2 },
+      {"model": "lepidodendron:dichopteris_shoot_flower"}
+    ]
+  }
+}
