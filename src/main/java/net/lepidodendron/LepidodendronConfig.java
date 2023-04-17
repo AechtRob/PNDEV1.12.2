@@ -59,6 +59,7 @@ public class LepidodendronConfig {
 
     public static int attackHealth = 90;
     public static int adultAge = 75;
+    public static int breedCooldown = 6000;
     public static double spawnerDensity = 1.0;
     public static boolean attackPlayerAlways = false;
     public static boolean doLowRes = false;
@@ -817,6 +818,10 @@ public class LepidodendronConfig {
         prop = cfg.get("Global Mobs", "doMultiplyMobs", doMultiplyMobs);
         prop.setComment("Mobs will try to multiply every 1-2 days even without breeding them [default: false]");
         doMultiplyMobs = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global Mobs", "breedCooldown", breedCooldown);
+        prop.setComment("Number of game ticks after breeding that it takes to be able to breed the same creature again (20 ticks = 1 real-world second). [default: 6000]");
+        breedCooldown = prop.getInt();
         propOrder.add(prop.getName());
 
 

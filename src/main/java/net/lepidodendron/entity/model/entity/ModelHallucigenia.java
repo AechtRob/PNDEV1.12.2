@@ -307,7 +307,7 @@ public class ModelHallucigenia extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.12F);
+        this.body.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -331,7 +331,7 @@ public class ModelHallucigenia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.320F;
+        //this.body.offsetY = 1.320F;
 
         AdvancedModelRenderer[] bodyF = {this.neck, this.head};
         AdvancedModelRenderer[] bodyB = {this.body, this.tail};

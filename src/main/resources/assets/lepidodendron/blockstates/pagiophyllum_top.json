@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:pagiophyllum_inventory"
+    },
+    "var=false": {"model": "lepidodendron:pagiophyllum_top"},
+    "var=true": {"model": "lepidodendron:pagiophyllum_top_var"}
+  }
+}

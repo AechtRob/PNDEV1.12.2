@@ -91,7 +91,7 @@ public class EntityPrehistoricFloraGyrodus extends EntityPrehistoricFloraAgeable
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.15f;
+		float AIspeed = 0.2f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2F;
 		}

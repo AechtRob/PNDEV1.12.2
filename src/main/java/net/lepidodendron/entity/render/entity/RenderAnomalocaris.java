@@ -10,8 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAnomalocaris extends RenderLiving<EntityPrehistoricFloraAnomalocaris> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
+
     public static float getScaler() {
-        return 0.21F;
+        return 0.275F;
     }
 
     public RenderAnomalocaris(RenderManager mgr) {

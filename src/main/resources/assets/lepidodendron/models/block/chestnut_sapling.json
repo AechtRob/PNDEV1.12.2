@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/chestnut_sapling",
+    "particle": "lepidodendron:blocks/chestnut_sapling"
+  }
+}

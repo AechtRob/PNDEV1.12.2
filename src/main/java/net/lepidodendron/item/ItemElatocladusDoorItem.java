@@ -60,14 +60,14 @@ public class ItemElatocladusDoorItem extends ElementsLepidodendronMod.ModElement
 	        {
 	            IBlockState iblockstate = worldIn.getBlockState(pos);
 	            Block block = iblockstate.getBlock();
-	
+
 	            if (!block.isReplaceable(worldIn, pos))
 	            {
 	                pos = pos.offset(facing);
 	            }
-	
+
 	            ItemStack itemstack = player.getHeldItem(hand);
-	
+
 	            if (player.canPlayerEdit(pos, facing, itemstack) && BlockElatocladusDoor.block.canPlaceBlockAt(worldIn, pos))
 	            {
 	                EnumFacing enumfacing = EnumFacing.fromAngle((double)player.rotationYaw);
@@ -86,7 +86,7 @@ public class ItemElatocladusDoorItem extends ElementsLepidodendronMod.ModElement
 	            }
 	        }
 	    }
-	
+
 	    public static void placeDoor(World worldIn, BlockPos pos, EnumFacing facing, Block door, boolean isRightHinge)
 	    {
 	        BlockPos blockpos = pos.offset(facing.rotateY());
@@ -95,7 +95,7 @@ public class ItemElatocladusDoorItem extends ElementsLepidodendronMod.ModElement
 	        int j = (worldIn.getBlockState(blockpos).isNormalCube() ? 1 : 0) + (worldIn.getBlockState(blockpos.up()).isNormalCube() ? 1 : 0);
 	        boolean flag = worldIn.getBlockState(blockpos1).getBlock() == door || worldIn.getBlockState(blockpos1.up()).getBlock() == door;
 	        boolean flag1 = worldIn.getBlockState(blockpos).getBlock() == door || worldIn.getBlockState(blockpos.up()).getBlock() == door;
-	
+
 	        if ((!flag || flag1) && j <= i)
 	        {
 	            if (flag1 && !flag || j < i)
@@ -107,7 +107,7 @@ public class ItemElatocladusDoorItem extends ElementsLepidodendronMod.ModElement
 	        {
 	            isRightHinge = true;
 	        }
-	
+
 	        BlockPos blockpos2 = pos.up();
 	        boolean flag2 = worldIn.isBlockPowered(pos) || worldIn.isBlockPowered(blockpos2);
 	        IBlockState iblockstate = door.getDefaultState().withProperty(BlockDoor.FACING, facing).withProperty(BlockDoor.HINGE, isRightHinge ? BlockDoor.EnumHingePosition.RIGHT : BlockDoor.EnumHingePosition.LEFT).withProperty(BlockDoor.POWERED, Boolean.valueOf(flag2)).withProperty(BlockDoor.OPEN, Boolean.valueOf(flag2));
@@ -117,6 +117,6 @@ public class ItemElatocladusDoorItem extends ElementsLepidodendronMod.ModElement
 	        worldIn.notifyNeighborsOfStateChange(blockpos2, door, false);
 	    }
 
-		
+
 	}
 }

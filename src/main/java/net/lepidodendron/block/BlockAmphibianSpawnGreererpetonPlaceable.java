@@ -50,7 +50,7 @@ public class BlockAmphibianSpawnGreererpetonPlaceable extends ElementsLepidodend
 				new ModelResourceLocation("lepidodendron:amphibian_spawn_greererpeton", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockAmphibianSpawnGreererpetonPlaceable.LEVEL).build());
 	}
-	
+
 	public static class BlockCustom extends BlockMobSpawn  {
 		public BlockCustom() {
 			setTranslationKey("pf_amphibian_spawn_greererpeton");
@@ -69,7 +69,7 @@ public class BlockAmphibianSpawnGreererpetonPlaceable extends ElementsLepidodend
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 		{
 			super.updateTick(worldIn, pos, state, rand);
 			if (!(worldIn.isRemote)) {

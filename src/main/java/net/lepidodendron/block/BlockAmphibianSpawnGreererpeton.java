@@ -77,7 +77,7 @@ public class BlockAmphibianSpawnGreererpeton extends ElementsLepidodendronMod.Mo
 			}
 		}
 	}
-	
+
 	public static class BlockCustom extends BlockMobSpawn  {
 		public BlockCustom() {
 			setTranslationKey("pf_amphibian_spawn_greererpeton_worldgen");
