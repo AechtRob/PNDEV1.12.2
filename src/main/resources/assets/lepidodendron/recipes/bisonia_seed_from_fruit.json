@@ -1,0 +1,14 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bisonia_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:bisonia_seeds",
+    "count": 1
+  }
+}
+

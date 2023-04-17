@@ -309,6 +309,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemLaurusBoatItem.block;
             case CHESTNUT:
                 return ItemChestnutBoatItem.block;
+            case BISONIA:
+                return ItemBisoniaBoatItem.block;
 
         }
     }
@@ -439,6 +441,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockLaurusPlanks.block;
             case CHESTNUT:
                 return BlockChestnutPlanks.block;
+            case BISONIA:
+                return BlockBisoniaPlanks.block;
 
         }
     }
@@ -1275,7 +1279,8 @@ public class EntityPNBoat extends EntityBoat
         ELATOCLADUS(58, "elatocladus"),
         NEHVIZDYELLA(59, "nehvizdyella"),
         LAURUS(60, "laurus"),
-        CHESTNUT(61, "chestnut")
+        CHESTNUT(61, "chestnut"),
+        BISONIA(62, "bisonia")
         ;
 
         private final String name;

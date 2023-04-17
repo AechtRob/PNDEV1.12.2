@@ -49,6 +49,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ANTARCTICYCAS = new CustomTrigger("pf_book_antarcticycas");
     public static final CustomTrigger CLICK_APPLE = new CustomTrigger("pf_book_apple");
     public static final CustomTrigger CLICK_LAURUS = new CustomTrigger("pf_book_laurus");
+    public static final CustomTrigger CLICK_BISONIA = new CustomTrigger("pf_book_bisonia");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
@@ -1109,6 +1110,7 @@ public class ModTriggers
             CLICK_ANTARCTICYCAS,
             CLICK_APPLE,
             CLICK_LAURUS,
+            CLICK_BISONIA,
             CLICK_ARAUCARIOXYLON,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,

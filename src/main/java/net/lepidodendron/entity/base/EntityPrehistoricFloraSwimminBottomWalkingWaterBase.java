@@ -505,7 +505,7 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
 
     }
 
-    
+
     public class WalkMoveHelper extends EntityMoveHelper {
 
         private final EntityPrehistoricFloraSwimminBottomWalkingWaterBase EntityBase = EntityPrehistoricFloraSwimminBottomWalkingWaterBase.this;
