@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPseudotherium extends RenderLiving<EntityPrehistoricFloraPseudotherium> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pseudotherium.png");
-
+    public static float getScaler() {return 0.15f;}
     public RenderPseudotherium(RenderManager mgr) {
         super(mgr, new ModelPseudotherium(), 0.325f);
     }
@@ -27,9 +27,9 @@ public class RenderPseudotherium extends RenderLiving<EntityPrehistoricFloraPseu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPseudotherium entity, float f) {
-        float scale = entity.getAgeScale(); //This is smaller than Pseudotherium
+        float scale = entity.getAgeScale()*getScaler(); //This is smaller than Pseudotherium
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.125F;
+        //this.shadowSize = entity.width * scale * 0.125F;
     }
 
 }

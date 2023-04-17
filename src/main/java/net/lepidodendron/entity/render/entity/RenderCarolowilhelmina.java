@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCarolowilhelmina extends RenderLiving<EntityPrehistoricFloraCarolowilhelmina> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carolowilhelmina.png");
-
+    public static float getScaler() {return 0.60F;}
     public RenderCarolowilhelmina(RenderManager mgr) {
         super(mgr, new ModelCarolowilhelmina(), 0.0f);
     }
@@ -27,7 +27,7 @@ public class RenderCarolowilhelmina extends RenderLiving<EntityPrehistoricFloraC
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCarolowilhelmina entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         //this.shadowSize = entity.width * scale * 0.3f;

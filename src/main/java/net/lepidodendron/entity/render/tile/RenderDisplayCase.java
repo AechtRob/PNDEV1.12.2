@@ -49,8 +49,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelAdelophthalmus modelAdelophthalmus;
     private static final ResourceLocation TEXTURE_ALACARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/alacaris.png");
     private final ModelAlacaris modelAlacaris;
-    private static final ResourceLocation TEXTURE_AMPLECTOBELUA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amplectobelua.png");
-    private final ModelAmplectobelua modelAmplectobelua;
     private static final ResourceLocation TEXTURE_AMPYX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx.png");
     private final ModelAmpyx modelAmpyx;
     private static final ResourceLocation TEXTURE_ANTARCTICARCINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
@@ -303,7 +301,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelAcadoaradoxides = new ModelAcadoaradoxides();
         this.modelAdelophthalmus = new ModelAdelophthalmus();
         this.modelAlacaris = new ModelAlacaris();
-        this.modelAmplectobelua = new ModelAmplectobelua();
         this.modelAmpyx = new ModelAmpyx();
         this.modelAntarcticarcinus = new ModelAntarcticarcinus();
         this.modelArchoblattina = new ModelArchoblattina();
@@ -637,39 +634,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(1.5, 1.5, 1.5);
                                 this.bindTexture(TEXTURE_ALACARIS);
                                 modelAlacaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraAmplectobelua.class) {
-                                double offset = 0.48;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                this.bindTexture(TEXTURE_AMPLECTOBELUA);
-                                modelAmplectobelua.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraAmpyx.class) {
+                           } else if (classEntity == EntityPrehistoricFloraAmpyx.class) {
                                 double offset = 0.19;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);

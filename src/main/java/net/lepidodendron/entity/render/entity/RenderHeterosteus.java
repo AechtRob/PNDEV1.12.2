@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHeterosteus extends RenderLiving<EntityPrehistoricFloraHeterosteus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterosteus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterosteus_baby.png");
-
+    public static float getScaler() {return 1.25F;}
     public RenderHeterosteus(RenderManager mgr) {
         super(mgr, new ModelHeterosteus(), 1.0f);
     }
@@ -33,7 +33,7 @@ public class RenderHeterosteus extends RenderLiving<EntityPrehistoricFloraHetero
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHeterosteus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

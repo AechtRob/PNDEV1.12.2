@@ -15,6 +15,8 @@ public class RenderTeleocrater extends RenderLiving<EntityPrehistoricFloraTeleoc
         super(mgr, new ModelTeleocrater(), 0.3f);
     }
 
+    public static float getScaler() {return 0.565F*0.7F;}
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTeleocrater entity) {
         return RenderTeleocrater.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderTeleocrater extends RenderLiving<EntityPrehistoricFloraTeleoc
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTeleocrater entity, float f) {
-        float scale = entity.getAgeScale() * 0.70F;
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.230F;
     }

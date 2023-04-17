@@ -183,18 +183,41 @@ public class ModelCephalaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.head.render(f5 * 0.29F);
+        this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.head.rotateAngleX = (float) Math.toRadians(90);
+        this.head.rotateAngleZ = (float) Math.toRadians(90);
+        this.head.offsetY = -0.25F;
+        this.head.offsetZ = 0F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.0F, 0.5672F);
+        this.setRotateAngle(cube_r15, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(finL, -0.0873F, 0.1745F, 0.0F);
+        this.setRotateAngle(finR, -0.0873F, -0.1745F, 0.0F);
+        this.setRotateAngle(tailfin, 0.0F, 0.1745F, 0.0F);
+        this.head.offsetY = 0.045F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -206,7 +229,7 @@ public class ModelCephalaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.05F;
+        //this.head.offsetY = 1.05F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body, this.body2, this.body3};
@@ -241,7 +264,7 @@ public class ModelCephalaspis extends AdvancedModelBase {
             this.swing(finR, (float) (speed * 0.75), 0.12F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = 1.0F;
+                this.head.offsetY = 1.0F-1.05F;
                 this.bob(head, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

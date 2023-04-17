@@ -31,7 +31,7 @@ public class RenderCyamodus extends RenderLiving<EntityPrehistoricFloraCyamodus>
     protected void preRenderCallback(EntityPrehistoricFloraCyamodus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        //this.shadowSize = entity.width * scale * 0.35F;
     }
 
 }

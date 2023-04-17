@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarbclabornia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barbclabornia.png");
-
+    public static float getScaler() {return 0.85F;}
     public RenderBarbclabornia(RenderManager mgr) {
         super(mgr, new ModelBarbclabornia(), 1.0f);
     }
@@ -29,7 +29,7 @@ public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarb
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBarbclabornia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.75F;

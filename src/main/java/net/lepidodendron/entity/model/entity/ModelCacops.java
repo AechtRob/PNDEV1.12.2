@@ -261,18 +261,38 @@ public class ModelCacops extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.root.render(f5 * 0.20f);
+        this.root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.root.offsetZ = -0.3F;
-        this.root.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(arm1, 0.0F, 0.6981F, 0.6109F);
+        this.setRotateAngle(arm2, 0.0F, -0.6981F, -0.6109F);
+        this.setRotateAngle(basin, -0.1309F, 0.0873F, 0.0F);
+        this.setRotateAngle(body, -0.0456F, -0.0873F, 0.0F);
+        this.setRotateAngle(chest, 0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(feet1, 0.6374F, 0.1309F, -0.6109F);
+        this.setRotateAngle(feet2, 0.6374F, -0.1309F, 0.6109F);
+        this.setRotateAngle(gums2, -0.3841F, 0.0F, 0.0F);
+        this.setRotateAngle(hand1, 0.0F, -0.6109F, -0.3491F);
+        this.setRotateAngle(hand2, 0.0F, 0.6109F, 0.3491F);
+        this.setRotateAngle(head_r1, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(head_r2, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(head, -0.3946F, -0.1309F, 0.0F);
+        this.setRotateAngle(jaw1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(leg1, 0.0F, -0.2618F, 0.7418F);
+        this.setRotateAngle(leg2, 0.0F, 0.2618F, -0.7418F);
+        this.setRotateAngle(lowerjaw, -0.1121F, 0.0F, 0.0F);
+        this.setRotateAngle(snout2, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1745F, -0.0873F, 0.0F);
+        this.setRotateAngle(tail2, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth1, -0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth1, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 0.3718F, 0.0F, 1.2825F);
+        this.setRotateAngle(upperarm2, 0.3718F, 0.0F, -1.2825F);
+        this.setRotateAngle(upperleg1, -0.1309F, -0.0967F, 1.457F);
+        this.setRotateAngle(upperleg2, -0.1309F, 0.0967F, -1.457F);
+        this.root.offsetY = 0.175F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -284,7 +304,7 @@ public class ModelCacops extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.root.offsetY = 1.2F;
+        //this.root.offsetY = 1.2F;
 
         EntityPrehistoricFloraCacops Cacops = (EntityPrehistoricFloraCacops) e;
 
