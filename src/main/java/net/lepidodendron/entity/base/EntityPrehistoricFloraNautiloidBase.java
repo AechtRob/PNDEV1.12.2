@@ -139,6 +139,7 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
     public boolean isReallyInWater() {
         return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
     }
+
     public boolean isCollidingRim() {
         if (this.isReallyInWater()) {
             //System.err.println("collided");
