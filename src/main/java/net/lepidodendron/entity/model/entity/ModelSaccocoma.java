@@ -1939,7 +1939,7 @@ public class ModelSaccocoma extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        //EntityPrehistoricFloraSaccocoma entitySaccocoma = (EntityPrehistoricFloraSaccocoma) e;
+        EntityPrehistoricFloraSaccocoma entitySaccocoma = (EntityPrehistoricFloraSaccocoma) e;
 
 
         //AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
@@ -1948,6 +1948,9 @@ public class ModelSaccocoma extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 
         //entitySilesaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        if(entitySaccocoma.getAnimation() != entitySaccocoma.ATTACK_ANIMATION) {
+            this.bob(Base, 0.2F, 2.5F, false, f2, 1);
+        }
 
     }
 
