@@ -294,7 +294,7 @@ public class ModelVampyronassa extends AdvancedModelBaseExtended {
         //this.chainWave(head, speed, 0.15F, 0, f2, 1F);
 
         //Left middle:
-        this.chainSwing(centerLeftT, speed, -0.3F, -2, f2, 1F);
+        this.chainSwing(centerLeftT, speed, -0.3F, 2, f2, 1F);
         //Left lower middle:
         this.chainWave(bottomLeftT, speed, 0.3F, -1.5, f2, 1F);
         this.chainSwing(bottomLeftT, speed, -0.3F, -1.5, f2, 1F);

@@ -3726,6 +3726,12 @@ public class LepidodendronSorter {
     public static final int anaethalion_raw = 3716;
     public static final int elasmodectes_raw = 3717;
     public static final int quasimodichthys_raw = 3718;
+    public static final int papilionichthys_raw = 3719;
+    public static final int promexyele_raw = 3720;
+    public static final int rainerichthys_raw = 3721;
+    public static final int hovasaurus_raw = 3722;
+    public static final int eggs_hovasaurus = 3723;
+    public static final int sibyrhynchus_raw = 3724;
 
 
 

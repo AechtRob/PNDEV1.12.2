@@ -25,6 +25,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
     private static final ResourceLocation TEXTURE_LABIDOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
     private final ModelInsectEggs insect_eggs;
+    private static final ResourceLocation TEXTURE_MYRIACANTHERPESTES_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_myriacantherpestes_eggs.png");
     private static final ResourceLocation TEXTURE_EOARTHROPLEURA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_eoarthropleura.png");
     private static final ResourceLocation TEXTURE_PNEUMODESMUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_pneumodesmus.png");
     private static final ResourceLocation TEXTURE_ARCHOBLATTINA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archoblattina_eggs.png");
@@ -39,6 +40,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
     private static final ResourceLocation TEXTURE_TRIGONOTARBID_EGGS_DEVONIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_dev_eggs.png");
     private static final ResourceLocation TEXTURE_TRIGONOTARBID_EGGS_PERMIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_perm_eggs.png");
     private static final ResourceLocation TEXTURE_ATTERCOPUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/attercopus_eggs.png");
+
 
     public RenderRottenLog() {
 
@@ -214,6 +216,14 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TITANOPTERA_EGGS);
+                    this.insect_eggs.renderAll(0.075F);
+                    GlStateManager.popMatrix();
+                }
+
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_myriacantherpestes")) {
+                    GlStateManager.pushMatrix();
+                    GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                    Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_MYRIACANTHERPESTES_EGGS);
                     this.insect_eggs.renderAll(0.075F);
                     GlStateManager.popMatrix();
                 }

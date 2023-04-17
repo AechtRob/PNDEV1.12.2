@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -19,6 +20,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -27,6 +29,8 @@ import javax.annotation.Nullable;
 public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraNautiloidBase {
 
 	public BlockPos currentTarget;
+	@SideOnly(Side.CLIENT)
+	public ChainBuffer tailBuffer;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
@@ -37,6 +41,16 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraN
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(2, 10, 5F, this);
+		}
 	}
 
 	@Override
@@ -44,7 +58,7 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraN
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -65,7 +79,23 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraN
 
 	@Override
 	protected float getAISpeedNautiloid() {
-		return 0.06f;
+		if(this.isAtBottom()) {
+			return 0.03f;
+		} else {
+			return 0.06f;
+		}
+	}
+
+	@Override
+	public boolean isAtBottom() {
+		boolean isAtBottom = false;
+		if (this.getPosition().getY() - 1 > 1) {
+			BlockPos pos = new BlockPos(this.getPosition().getX(), this.getPosition().getY() - 1, this.getPosition().getZ());
+			isAtBottom = ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
+					&& ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
+					&& ((double)this.getPosition().getY() + 0.334D) > this.posY);
+		}
+		return isAtBottom;
 	}
 
 	protected void initEntityAI() {

@@ -109,7 +109,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.37F;
+		float speedBase = 0.33F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
