@@ -3934,10 +3934,6 @@ public class RenderHandler {
                 return new RenderSibyrhynchus(manager);
             }
         });
-
-
-
-        /* THESE ARE NOT COMING IN THE PLACODERM UPDATE
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRutgersella.class, new IRenderFactory<EntityPrehistoricFloraRutgersella>() {
             @Override
             public Render<? super EntityPrehistoricFloraRutgersella> createRenderFor(RenderManager manager) {
@@ -3951,9 +3947,20 @@ public class RenderHandler {
                 return new RenderStahleckeria(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMarmolatella.class, new IRenderFactory<EntityPrehistoricFloraMarmolatella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMarmolatella> createRenderFor(RenderManager manager) {
+                return new RenderMarmolatella(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraViviparus.class, new IRenderFactory<EntityPrehistoricFloraViviparus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraViviparus> createRenderFor(RenderManager manager) {
+                return new RenderViviparus(manager);
+            }
+        });
 
 
-*/
 
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {

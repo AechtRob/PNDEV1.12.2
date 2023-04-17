@@ -9235,6 +9235,42 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraMarmolatella) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MARMOLATELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraViviparus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_VIVIPARUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraStahleckeria) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_STAHLECKERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraRutgersella) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_RUTGERSELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 
 
 

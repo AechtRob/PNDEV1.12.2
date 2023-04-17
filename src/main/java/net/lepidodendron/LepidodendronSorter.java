@@ -3701,19 +3701,14 @@ public class LepidodendronSorter {
     public static final int yohoia_raw = 3697;
     public static final int yunguisaurus_raw = 3698;
     public static final int yunnanozoon_raw = 3699;
-    public static final int zenaspis_raw = 3700;
-    public static final int zircon = 3701;
-    public static final int zircon_block = 3702;
-    public static final int zircon_lens = 3703;
-    public static final int zircon_ore = 3704;
-    public static final int zosterophyllum = 3705;
-    public static final int zosterophyllum_spore = 3706;
-    public static final int advancement_placeholder = 3707;
-
-
-
-
-
+    public static final int zenaspis_raw = 3725;
+    public static final int zircon = 3726;
+    public static final int zircon_block = 3727;
+    public static final int zircon_lens = 3728;
+    public static final int zircon_ore = 3729;
+    public static final int zosterophyllum = 3730;
+    public static final int zosterophyllum_spore = 3731;
+    public static final int advancement_placeholder = 3732;
     public static final int villebrunaster_item = 3700;
     public static final int lepidaster_item = 3701;
     public static final int thanahita_raw = 3702;
@@ -3739,6 +3734,10 @@ public class LepidodendronSorter {
     public static final int hovasaurus_raw = 3722;
     public static final int eggs_hovasaurus = 3723;
     public static final int sibyrhynchus_raw = 3724;
+    public static final int eggs_stahleckeria = 3750;
+    public static final int stahleckeria_raw = 3751;
+    public static final int marmolatella_item = 3752;
+    public static final int viviparus_item = 3753;
 
 
 

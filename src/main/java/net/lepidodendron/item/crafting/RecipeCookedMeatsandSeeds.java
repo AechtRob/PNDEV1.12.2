@@ -71,6 +71,9 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemSpiniplatyceras.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemOdontogriphusRaw.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemCalvapilosaRaw.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemViviparus.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemMarmolatella.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
+
 
 
 		//Insect-Treat - land insects/arthropods
@@ -350,6 +353,8 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemPanguraptorRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemEunotosaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemHovasaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemStahleckeriaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
+
 
 
 
@@ -621,6 +626,8 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemWiwaxiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemXenusionRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemThanahitaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemRutgersellaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
+
 
 		//(blocks too:)
 		GameRegistry.addSmelting(new ItemStack(BlockFurcaster.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);

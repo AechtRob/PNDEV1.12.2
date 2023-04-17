@@ -685,10 +685,10 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_promexyele", EntityPrehistoricFloraPromexyele.class, LepidodendronMod.ENTITY_PROMEXYELE, 48,-10720141,-2518757);
         registerEntity("prehistoric_flora_hovasaurus", EntityPrehistoricFloraHovasaurus.class, LepidodendronMod.ENTITY_HOVASAURUS, 64,-13888250,-3888487);
         registerEntity("prehistoric_flora_sibyrhynchus", EntityPrehistoricFloraSibyrhynchus.class, LepidodendronMod.ENTITY_SIBYRHYNCHUS, 48,-14211284,-7186391);
-        //registerEntity("prehistoric_flora_marmolatella", EntityPrehistoricFloraMarmolatella.class, LepidodendronMod.ENTITY_SIBYRHYNCHUS, 48,-14211284,-7186391);
-        //registerEntity("prehistoric_flora_viviparus", EntityPrehistoricFloraViviparus.class, LepidodendronMod.ENTITY_SIBYRHYNCHUS, 48,-14211284,-7186391);
-        //registerEntity("prehistoric_flora_stahleckeria", EntityPrehistoricFloraStahleckeria.class, LepidodendronMod.ENTITY_SIBYRHYNCHUS, 64,-14211284,-7186391);
-        //registerEntity("prehistoric_flora_dakosaurus", EntityPrehistoricFloraDakosaurus.class, LepidodendronMod.ENTITY_SIBYRHYNCHUS, 128,-14211284,-7186391);
+        registerEntity("prehistoric_flora_marmolatella", EntityPrehistoricFloraMarmolatella.class, LepidodendronMod.ENTITY_MARMOLATELLA, 48,-14211284,-7186391);
+        registerEntity("prehistoric_flora_viviparus", EntityPrehistoricFloraViviparus.class, LepidodendronMod.ENTITY_VIVIPARUS, 48,-14211284,-7186391);
+        registerEntity("prehistoric_flora_stahleckeria", EntityPrehistoricFloraStahleckeria.class, LepidodendronMod.ENTITY_STAHLECKERIA, 64,-14211284,-7186391);
+        //registerEntity("prehistoric_flora_dakosaurus", EntityPrehistoricFloraDakosaurus.class, LepidodendronMod.ENTITY_DAKOSAURUS, 128,-14211284,-7186391);
 
 
 
