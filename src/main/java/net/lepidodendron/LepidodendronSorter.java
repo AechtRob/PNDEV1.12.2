@@ -3759,6 +3759,20 @@ public class LepidodendronSorter {
     public static final int stahleckeria_raw = 3851;
     public static final int marmolatella_item = 3852;
     public static final int viviparus_item = 3853;
+    public static final int eggs_proterosuchus = 3854;
+    public static final int proterosuchus_raw = 3855;
+    public static final int dakosaurus_raw = 3856;
+    public static final int cowielepis_raw = 3857;
+    public static final int eurypterid_eggs_slimonia = 3858;
+    public static final int eurypterid_eggs_ciurcopterus = 3859;
+    public static final int ciurcopterus_raw = 3860;
+    public static final int slimonia_raw = 3861;
+    public static final int metopacanthus_raw = 3862;
+    public static final int cancrinos_raw = 3863;
+    public static final int murex_item = 3864;
+    public static final int leviathania_item = 3865;
+    public static final int harpagodes_item = 3866;
+    public static final int nerinea_item = 3867;
 
 
 

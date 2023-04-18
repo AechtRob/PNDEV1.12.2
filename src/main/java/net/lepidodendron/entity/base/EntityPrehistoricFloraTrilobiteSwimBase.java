@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.base;
 
+import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
@@ -51,6 +52,8 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     public ChainBuffer chainBuffer;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.BOOLEAN);
+
     private int inPFLove;
 
     public EntityPrehistoricFloraTrilobiteSwimBase(World world) {
@@ -63,6 +66,14 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         }
     }
 
+    @Override
+    protected void entityInit() {
+        super.entityInit();
+        this.dataManager.register(MATEABLE, 0);
+        this.dataManager.register(TICKS, 0);
+        this.dataManager.register(ISMOVING, false);
+        //this.setScaleForAge(false); //REMOVED!
+    }
     @Override
     public boolean isRiding() {
         if (this.getRidingEntity() != null) {
@@ -157,12 +168,6 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
 
-    @Override
-    protected void entityInit() {
-        super.entityInit();
-        this.dataManager.register(TICKS, rand.nextInt(24000));
-        this.dataManager.register(MATEABLE, 0);
-    }
 
     public int getMateable() {
         return this.dataManager.get(MATEABLE);
@@ -368,6 +373,13 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         }
 
     }
+    public boolean getIsMoving() {
+        return this.dataManager.get(ISMOVING);
+    }
+
+    public void setIsMoving(boolean isMoving) {
+        this.dataManager.set(ISMOVING, isMoving);
+    }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
         RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
@@ -399,6 +411,12 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
                     f4 += (0.54600006F - f4) * speedModifier / 3.0F;
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
 
                 if (this.collidedHorizontally && this.isCollidingRim())
                 {

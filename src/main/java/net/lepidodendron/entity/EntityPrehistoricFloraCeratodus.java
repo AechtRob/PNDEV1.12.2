@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Palaeogene";}
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Paleogene";}
 
 	public static String getSize() {return "L";}
 	//public static String getHabitat() {return "Aquatic";}

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/duslia_raw"
+    "layer0": "paleopedia:duslia_icon"
   }
 }
