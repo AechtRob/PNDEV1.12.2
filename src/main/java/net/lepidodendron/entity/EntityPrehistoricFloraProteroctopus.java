@@ -2,16 +2,16 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWanderBottomDweller;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.ai.SwimmingBottomWalkingSwimBottomDweller;
+import net.lepidodendron.entity.ai.SwimmingBottomWalkingWalk;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
-import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -26,7 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,11 +46,47 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraN
 		}
 	}
 	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+			launchAttack();
+			if (this.getOneHit()) {
+				this.setAttackTarget(null);
+				this.setRevengeTarget(null);
+			}
+		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(2, 10, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+	}
+
+	@Override
+	public int swimTransitionLength() {
+		return 0;
+	}
+
+	@Override
+	public int unswimTransitionLength() {
+		return 0;
+	}
+
+	@Override
+	public int swimLength() {
+		return 1200;
+	}
+
+	@Override
+	public int walkLength() {
+		return 1200;
 	}
 
 	@Override
@@ -78,30 +114,19 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraN
 	}
 
 	@Override
-	protected float getAISpeedNautiloid() {
-		if(this.isAtBottom()) {
-			return 0.03f;
+	protected double getAISpeedSwim() {
+		if (!this.isReallySwimming()) {
+			return 0.10f;
 		} else {
-			return 0.06f;
+			return 0.075f;
 		}
-	}
-
-	@Override
-	public boolean isAtBottom() {
-		boolean isAtBottom = false;
-		if (this.getPosition().getY() - 1 > 1) {
-			BlockPos pos = new BlockPos(this.getPosition().getX(), this.getPosition().getY() - 1, this.getPosition().getZ());
-			isAtBottom = ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
-					&& ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
-					&& ((double)this.getPosition().getY() + 0.334D) > this.posY);
-		}
-		return isAtBottom;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(1, new SwimmingBottomWalkingSwimBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(2, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
+		tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 

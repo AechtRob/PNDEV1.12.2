@@ -1,19 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraProteroctopus;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraTitanichthys;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.math.BlockPos;
 
 public class ModelProteroctopus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended Body;
@@ -213,6 +208,36 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
         this.setRotateAngle(FinL, 0.0F, 0.0436F, -0.2182F);
         this.FinL.cubeList.add(new ModelBox(FinL, 14, 21, 0.0F, 0.0F, -2.0F, 5, 0, 4, 0.0F, true));
 
+        //Swim pose:
+        this.Body.rotateAngleY = (float) Math.toRadians(180);
+        this.Body.rotateAngleX = (float) Math.toRadians(0);
+        this.setRotateAngle(Arm, -0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Arm2, 0.0436F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm3, 0.1309F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm4, 0.2182F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm5, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Arm6, 0.0436F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arm7, 0.1309F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arm8, 0.2182F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arms, 0, 0, 0);
+        this.setRotateAngle(Arms2, 0, 0, 0);
+        this.setRotateAngle(Armss, 0, 0, 0);
+        this.setRotateAngle(Armss2, 0, 0, 0);
+        this.setRotateAngle(Arms3, 0, 0, 0);
+        this.setRotateAngle(Arms4, 0, 0, 0);
+        this.setRotateAngle(Arms5, 0, 0, 0);
+        this.setRotateAngle(Arms6, 0, 0, 0);
+        this.setRotateAngle(Arms7, 0, 0, 0);
+        this.setRotateAngle(Arms8, 0, 0, 0);
+        this.setRotateAngle(cube_r1, 0.0F, 0.2793F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.2793F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(FinL, 0.0F, -0.0436F, 0.2182F);
+        this.setRotateAngle(FinR, 0.0F, 0.0436F, -0.2182F);
+        this.setRotateAngle(mantle, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
+
         updateDefaultPose();
         animator = ModelAnimator.create();
 
@@ -220,8 +245,10 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         resetToDefaultPose();
     }
@@ -250,54 +277,12 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
         AdvancedModelRendererExtended[] t6 = {this.Arm8, this.Arms8};
         EntityPrehistoricFloraProteroctopus prot = (EntityPrehistoricFloraProteroctopus) e;
 
-
-
-
-
-
-
-
-
         float speed = 0.10F;
         if (!e.isInWater()) {
             speed = 0.5F;
         }
-        boolean isAtBottom = false;
-        if (e.getPosition().getY() - 1 > 1) {
-            BlockPos pos = new BlockPos(e.getPosition().getX(), e.getPosition().getY() - 1, e.getPosition().getZ());
-            isAtBottom = ((e.isInsideOfMaterial(Material.WATER) || e.isInsideOfMaterial(Material.CORAL))
-                    && ((e.world.getBlockState(pos)).getMaterial() != Material.WATER)
-                    && ((double)e.getPosition().getY() + 0.334D) > e.posY);
-        }
-        if(!isAtBottom) {
-            this.Body.rotateAngleY = (float) Math.toRadians(180);
-            this.Body.rotateAngleX = (float) Math.toRadians(0);
-            this.setRotateAngle(Arm, -0.0873F, 0.0436F, 0.0F);
-            this.setRotateAngle(Arm2, 0.0436F, 0.0873F, 0.0F);
-            this.setRotateAngle(Arm3, 0.1309F, 0.0873F, 0.0F);
-            this.setRotateAngle(Arm4, 0.2182F, 0.0873F, 0.0F);
-            this.setRotateAngle(Arm5, -0.0873F, -0.0436F, 0.0F);
-            this.setRotateAngle(Arm6, 0.0436F, -0.0873F, 0.0F);
-            this.setRotateAngle(Arm7, 0.1309F, -0.0873F, 0.0F);
-            this.setRotateAngle(Arm8, 0.2182F, -0.0873F, 0.0F);
-            this.setRotateAngle(Arms, 0, 0, 0);
-            this.setRotateAngle(Arms2, 0, 0, 0);
-            this.setRotateAngle(Armss, 0, 0, 0);
-            this.setRotateAngle(Armss2, 0, 0, 0);
-            this.setRotateAngle(Arms3, 0, 0, 0);
-            this.setRotateAngle(Arms4, 0, 0, 0);
-            this.setRotateAngle(Arms5, 0, 0, 0);
-            this.setRotateAngle(Arms6, 0, 0, 0);
-            this.setRotateAngle(Arms7, 0, 0, 0);
-            this.setRotateAngle(Arms8, 0, 0, 0);
-            this.setRotateAngle(cube_r1, 0.0F, 0.2793F, 0.0F);
-            this.setRotateAngle(cube_r2, 0.0F, -0.2793F, 0.0F);
-            this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
-            this.setRotateAngle(FinL, 0.0F, -0.0436F, 0.2182F);
-            this.setRotateAngle(FinR, 0.0F, 0.0436F, -0.2182F);
-            this.setRotateAngle(mantle, -0.0873F, 0.0F, 0.0F);
-            this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
-            this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
+
+        if (prot.isReallySwimming()) {
 
             prot.tailBuffer.applyChainSwingBuffer(tent1);
             prot.tailBuffer.applyChainSwingBuffer(tent2);
@@ -335,6 +320,20 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
                 this.Body.rotateAngleZ = (float) Math.toRadians(90);
             }
         } else {
+
+        }
+
+    }
+
+    @Override
+    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        this.resetToDefaultPose();
+        EntityPrehistoricFloraProteroctopus ee = (EntityPrehistoricFloraProteroctopus) entitylivingbaseIn;
+            //Swimming pose:
+
+        if (!ee.isReallySwimming()) {
+            //Walk pose:
             this.setRotateAngle(Arm, -0.0436F, 0.48F, 0.1309F);
             this.setRotateAngle(Arm2, 0.2618F, 0.829F, 0.0F);
             this.setRotateAngle(Arm3, 0.5672F, 1.4835F, -0.0873F);
@@ -362,26 +361,10 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
             this.setRotateAngle(mantle, -0.3491F, 0.0F, 0.0F);
             this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
             this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
-        }
-
-    }
-
-    @Override
-    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-        this.resetToDefaultPose();
-        EntityPrehistoricFloraProteroctopus ee = (EntityPrehistoricFloraProteroctopus) entitylivingbaseIn;
-            //Swimming pose:
-
-            if (ee.getIsMoving()) { //static in water
-                if(ee.isAtBottom()) {
-
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-
-                }
+            if (ee.getIsMoving()) {
+                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
-
-
+        }
 
     }
 
@@ -521,7 +504,7 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        //EntityPrehistoricFloraProteroctopus e = (EntityPrehistoricFloraProteroctopus) entity;
+        EntityPrehistoricFloraProteroctopus e = (EntityPrehistoricFloraProteroctopus) entity;
         animator.update(entity);
 
 

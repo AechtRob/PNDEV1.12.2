@@ -26,6 +26,7 @@ public class RenderProteroctopus extends RenderLiving<EntityPrehistoricFloraProt
     protected void applyRotations(EntityPrehistoricFloraProteroctopus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraProteroctopus entity, float f) {
         float scale = this.getScaler();

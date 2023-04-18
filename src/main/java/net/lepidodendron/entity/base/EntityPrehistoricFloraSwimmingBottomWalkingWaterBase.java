@@ -1,11 +1,10 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityMoveHelper;
@@ -28,19 +27,19 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extends EntityPrehistoricFloraAgeableBase {
+public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase extends EntityPrehistoricFloraAgeableBase {
 
-    private int swimTick;
-    private int walkTick;
     public Animation SWIM_ANIMATION;
     public Animation UNSWIM_ANIMATION;
     public Animation EAT_ANIMATION;
     private int inPFLove;
     private int jumpTicks;
 
-    private static final DataParameter<Boolean> SWIMING = EntityDataManager.createKey(EntityPrehistoricFloraSwimminBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> SWIMMING = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> SWIMTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> WALKTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
 
-    public EntityPrehistoricFloraSwimminBottomWalkingWaterBase(World world) {
+    public EntityPrehistoricFloraSwimmingBottomWalkingWaterBase(World world) {
         super(world);
         this.selectNavigator();
         SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
@@ -67,12 +66,34 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
 
     public abstract int walkLength();
 
+    public abstract boolean isSmall();
+
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
+
     public boolean getIsSwimming() {
-        return this.dataManager.get(SWIMING);
+        return this.dataManager.get(SWIMMING);
     }
 
     public void setIsSwimming(boolean isSwimming) {
-        this.dataManager.set(SWIMING, isSwimming);
+        this.dataManager.set(SWIMMING, isSwimming);
+    }
+
+    public int getSwimTick() {
+        return this.dataManager.get(SWIMTICK);
+    }
+
+    public void setSwimTick(int swimTick) {
+        this.dataManager.set(SWIMTICK, swimTick);
+    }
+
+    public int getWalkTick() {
+        return this.dataManager.get(WALKTICK);
+    }
+
+    public void setWalkTick(int swimTick) {
+        this.dataManager.set(WALKTICK, swimTick);
     }
 
     @Override
@@ -118,7 +139,9 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
     @Override
     protected void entityInit() {
         super.entityInit();
-        this.dataManager.register(SWIMING, false);
+        this.dataManager.register(SWIMMING, false);
+        this.dataManager.register(SWIMTICK, 0);
+        this.dataManager.register(WALKTICK, this.rand.nextInt(this.walkLength() + 1));
         this.setScaleForAge(false);
     }
 
@@ -126,39 +149,39 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setIsSwimming(false);
-        this.swimTick = 0;
-        this.walkTick = this.rand.nextInt(this.walkLength() + 1);
+        this.setSwimTick(0);
+        this.setWalkTick(this.rand.nextInt(this.walkLength() + 1));
         return livingdata;
     }
 
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
         compound.setBoolean("pfswimming", this.getIsSwimming());
-        compound.setInteger("pfswimtick", this.swimTick);
-        compound.setInteger("pfwalktick", this.walkTick);
+        compound.setInteger("pfswimtick", this.getSwimTick());
+        compound.setInteger("pfwalktick", this.getWalkTick());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setIsSwimming(compound.getBoolean("pfswimming"));
-        this.swimTick = compound.getInteger("pfswimtick");
-        this.walkTick = compound.getInteger("pfwalktick");
+        this.setSwimTick(compound.getInteger("pfswimtick"));
+        this.setWalkTick(compound.getInteger("pfwalktick"));
     }
 
     @Override
     public void selectNavigator() {
         //Swimming:
         if (this.isReallySwimming()) {
-            if ((!(this.moveHelper instanceof EntityPrehistoricFloraSwimminBottomWalkingWaterBase.SwimmingMoveHelper))
+            if ((!(this.moveHelper instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.SwimmingMoveHelper))
                     || (!(this.navigator instanceof PathNavigateSwimmer))) {
-                this.moveHelper = new EntityPrehistoricFloraSwimminBottomWalkingWaterBase.SwimmingMoveHelper();
+                this.moveHelper = new EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.SwimmingMoveHelper();
                 this.navigator = new PathNavigateSwimmer(this, world);
             }
         }
         //Walking:
         else if ((!(this.moveHelper instanceof WalkMoveHelper))
-                || (!(this.navigator instanceof PathNavigateGroundNoWater))) {
-            this.moveHelper = new EntityPrehistoricFloraSwimminBottomWalkingWaterBase.WalkMoveHelper();
+                || (!(this.navigator instanceof PathNavigateWaterBottom))) {
+            this.moveHelper = new EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.WalkMoveHelper();
             this.navigator = new PathNavigateWaterBottom(this, world);
         }
     }
@@ -178,14 +201,6 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
         return 10F - (i * 9F); //returns a number from 10 to 1
     }
 
-    public int getSwimTick() {
-        return this.swimTick;
-    }
-
-    public int getWalkTick() {
-        return this.walkTick;
-    }
-
     public boolean isReallySwimming() {
         return this.getIsSwimming() && this.getAnimation() != this.SWIM_ANIMATION;
     }
@@ -195,7 +210,7 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
         if (!this.world.isRemote && !this.isReallySwimming()) {
             this.setIsSwimming(true);
             this.setAnimation(SWIM_ANIMATION);
-            this.swimTick = this.swimLength() + this.SWIM_ANIMATION.getDuration();
+            this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
         }
 
         return super.attackEntityFrom(source, amount);
@@ -220,30 +235,33 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
         }
 
         if (!world.isRemote) {
-            if (this.swimTick > 0) {
-                this.swimTick = this.swimTick - this.rand.nextInt(3);
-                if (this.swimTick < 0) {
-                    this.swimTick = 0;
+            if (this.getSwimTick() > 0) {
+                this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
+                if (this.getSwimTick() < 0) {
+                    this.setSwimTick(0);
                 }
             }
-            if (this.walkTick > 0) {
-                this.walkTick = this.walkTick - this.rand.nextInt(3);
-                if (this.walkTick < 0) {
-                    this.walkTick = 0;
+            if (this.getWalkTick() > 0) {
+                this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
+                if (this.getWalkTick() < 0) {
+                    this.setWalkTick(0);
                 }
             }
 
-            if ((!(this.swimTick > 0)) && this.getIsSwimming()) {
+            if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
                 this.setIsSwimming(false);
                 this.setAnimation(UNSWIM_ANIMATION);
-                this.walkTick = this.walkLength() + this.UNSWIM_ANIMATION.getDuration();
+                this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
             }
 
-            if ((!(this.walkTick > 0)) && !this.getIsSwimming()) {
+            if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
                 this.setIsSwimming(true);
                 this.setAnimation(SWIM_ANIMATION);
-                this.swimTick = this.swimLength() + this.SWIM_ANIMATION.getDuration();
+                this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
             }
+
+            System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
+
         }
 
     }
@@ -298,8 +316,9 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
                     } else {
                         this.setIsMoving(false);
                     }
-                    
-                    if (this.collidedHorizontally && this.isCollidingRim()) {
+
+                    if (this.collidedHorizontally && this.isCollidingRim())
+                    {
                         this.motionY = 0.05D;
                     }
 
@@ -310,17 +329,41 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
                     this.motionZ *= 0.9;
                     this.motionZ *= f4;
 
-                    if (this.getEatTarget() != null) { //help to eat items on the bottom:
-                        Entity target = this.getEatTarget();
-                        if (world.getBlockState(target.getPosition()).getMaterial() == Material.WATER
-                                && target.posY < this.posY
-                                && (target.getPosition() == this.getPosition().down() || target.getPosition() == this.getPosition())
+                    int body = (int) Math.floor(this.posY + (this.height/2D) + 0.1);
+                    if (this.getAttackTarget() != null) {
+                        EntityLivingBase target = this.getAttackTarget();
+                        if ((world.getBlockState(target.getPosition()).getMaterial() == Material.WATER
+                                || world.getBlockState(target.getPosition().down()).getMaterial() == Material.WATER)
+                                && target.posY > this.posY
+                                && this.getDistance(target) <= (this.getAttackBoundingBox().getAverageEdgeLength() + target.getEntityBoundingBox().getAverageEdgeLength())
+                                && isDirectPathBetweenPoints(this.getPositionVector(), target.getPositionVector())
+                                && (world.getBlockState(new BlockPos(this.getPosition().getX(), body, this.getPosition().getZ())).getMaterial() == Material.WATER)
                         ) {
-                            this.motionY = -0.125;
+                            this.motionY = 0.125;
+                        }
+                        //Also descend if need to swim further to re-hit the target:
+                        int eyes = (int) Math.floor(this.posY + this.getEyeHeight());
+                        if (this.getDistance(target) > (this.getAttackBoundingBox().getAverageEdgeLength() + target.getEntityBoundingBox().getAverageEdgeLength())
+                                && world.getBlockState(new BlockPos(this.getPosition().getX(), eyes, this.getPosition().getZ())).getMaterial() != Material.WATER
+                                && world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
+                        ) {
+                            this.motionY = -0.075;
                         }
                     }
-                } else {
+                    else { //descend if there is no target
+                        int eyes = (int) Math.floor(this.posY + this.getEyeHeight());
+                        if (world.getBlockState(new BlockPos(this.getPosition().getX(), eyes, this.getPosition().getZ())).getMaterial() != Material.WATER
+                                && (world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER)) {
+                            this.motionY = -0.075;
+                        }
+                    }
+
+                } else { //is not in water:
                     super.travel(strafe, vertical, forward);
+                    //Make fish sink properly if it is somehow "beached" at the top (which should be impossible in theory)
+                    if (world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER) {
+                        this.motionY = -0.075;
+                    }
                 }
             }
             this.prevLimbSwingAmount = this.limbSwingAmount;
@@ -412,6 +455,11 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
 
     @Override
     public void onLivingUpdate() {
+
+        if (!this.world.isRemote) {
+            selectNavigator();
+        }
+
         //IF IS SWIMMING:
         if (this.isReallySwimming()) {
             super.onLivingUpdate();
@@ -508,10 +556,10 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
 
     public class WalkMoveHelper extends EntityMoveHelper {
 
-        private final EntityPrehistoricFloraSwimminBottomWalkingWaterBase EntityBase = EntityPrehistoricFloraSwimminBottomWalkingWaterBase.this;
+        private final EntityPrehistoricFloraSwimmingBottomWalkingWaterBase EntityBase = EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.this;
 
         public WalkMoveHelper() {
-            super(EntityPrehistoricFloraSwimminBottomWalkingWaterBase.this);
+            super(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.this);
         }
 
         public void onUpdateMoveHelper() {
@@ -597,10 +645,10 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
     }
 
     class SwimmingMoveHelper extends EntityMoveHelper {
-        private final EntityPrehistoricFloraSwimminBottomWalkingWaterBase EntityBase = EntityPrehistoricFloraSwimminBottomWalkingWaterBase.this;
+        private final EntityPrehistoricFloraSwimmingBottomWalkingWaterBase EntityBase = EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.this;
 
         public SwimmingMoveHelper() {
-            super(EntityPrehistoricFloraSwimminBottomWalkingWaterBase.this);
+            super(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.this);
         }
 
         @Override
@@ -615,15 +663,14 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
                 distance = MathHelper.sqrt(distance);
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
-                //this.PrehistoricFloraFishBase.rotationYaw = this.limitAngle(this.PrehistoricFloraFishBase.rotationYaw, angle, 30.0F);
-                //this.PrehistoricFloraFishBase.setAIMoveSpeed(0.65F);
 
                 this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
-                this.EntityBase.setAIMoveSpeed(getAIMoveSpeed());
-                //System.err.println("Setting speed!");
+                float speed = (float)getAISpeedSwim();
+                this.EntityBase.setAIMoveSpeed(speed);
 
-                //Testing animations:
-                //this.EntityBase.setAIMoveSpeed(0.0F);
+//                if (this.EntityBase.isAtBottom() && this.EntityBase.isSlowAtBottom()) {
+//                    this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+//                }
 
                 if (this.EntityBase.getEatTarget() != null) {
                     if (this.EntityBase.posY > this.EntityBase.getEatTarget().posY && distance <= 1) {
@@ -647,7 +694,6 @@ public abstract class EntityPrehistoricFloraSwimminBottomWalkingWaterBase extend
                     this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
                 }
             } else {
-                //System.err.println("Exception");
                 this.EntityBase.setAIMoveSpeed(0.0F);
             }
         }
