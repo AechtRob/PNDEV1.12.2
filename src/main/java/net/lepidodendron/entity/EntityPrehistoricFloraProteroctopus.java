@@ -71,12 +71,12 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 
 	@Override
 	public int swimTransitionLength() {
-		return 0;
+		return 20;
 	}
 
 	@Override
 	public int unswimTransitionLength() {
-		return 0;
+		return 20;
 	}
 
 	@Override
@@ -134,16 +134,6 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
-	}
-
-	@Override
-	public boolean isAIDisabled() {
-		return false;
-	}
-
-	@Override
-	public String getTexture() {
-		return this.getTexture();
 	}
 
 	@Override

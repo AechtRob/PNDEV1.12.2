@@ -97,6 +97,16 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     }
 
     @Override
+    public boolean isAIDisabled() {
+        return false;
+    }
+
+    @Override
+    public String getTexture() {
+        return this.getTexture();
+    }
+
+    @Override
     public boolean isInWater() {
         return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
     }

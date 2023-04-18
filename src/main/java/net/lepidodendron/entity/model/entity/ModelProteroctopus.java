@@ -208,7 +208,7 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
         this.setRotateAngle(FinL, 0.0F, 0.0436F, -0.2182F);
         this.FinL.cubeList.add(new ModelBox(FinL, 14, 21, 0.0F, 0.0F, -2.0F, 5, 0, 4, 0.0F, true));
 
-        //Swim pose:
+        //Swim pose is the default:
         this.Body.rotateAngleY = (float) Math.toRadians(180);
         this.Body.rotateAngleX = (float) Math.toRadians(0);
         this.setRotateAngle(Arm, -0.0873F, 0.0436F, 0.0F);
@@ -332,7 +332,7 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraProteroctopus ee = (EntityPrehistoricFloraProteroctopus) entitylivingbaseIn;
             //Swimming pose:
 
-        if (!ee.isReallySwimming()) {
+        if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
             //Walk pose:
             this.setRotateAngle(Arm, -0.0436F, 0.48F, 0.1309F);
             this.setRotateAngle(Arm2, 0.2618F, 0.829F, 0.0F);
@@ -507,6 +507,71 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraProteroctopus e = (EntityPrehistoricFloraProteroctopus) entity;
         animator.update(entity);
 
+        animator.setAnimation(e.SWIM_ANIMATION);
+        animator.startKeyframe(e.swimTransitionLength()); //move to this keyframe over the right length
+        animator.rotate(Arm, ((-0.0873F)-(-0.0436F)), ((0.0436F)-(0.48F)),((0.0F)-(0.1309F)));
+        animator.rotate(Arm2, ((0.0436F)-(0.2618F)), ((0.0873F)-(0.829F)),((0.0F)-(0.0F)));
+        animator.rotate(Arm3, ((0.1309F)-(0.5672F)), ((0.0873F)-(1.4835F)),((0.0F)-(-0.0873F)));
+        animator.rotate(Arm4, ((0.2182F)-(1.8326F)), ((0.0873F)-(-0.0873F)),((0.0F)-(0.2618F)));
+        animator.rotate(Arm5, ((-0.0873F)-(-0.0436F)), ((-0.0436F)-(-0.48F)),((0.0F)-(-0.1309F)));
+        animator.rotate(Arm6, ((0.0436F)-(0.2618F)), ((-0.0873F)-(-0.829F)),((0.0F)-(0.0F)));
+        animator.rotate(Arm7, ((0.1309F)-(0.5672F)), ((-0.0873F)-(-1.4835F)),((0.0F)-(0.0873F)));
+        animator.rotate(Arm8, ((0.2182F)-(1.8326F)), ((-0.0873F)-(0.0873F)),((0.0F)-(-0.2618F)));
+        animator.rotate(Arms, ((0)-(0.0F)), ((0)-(0.6981F)),((0)-(-0.1309F)));
+        animator.rotate(Armss2, ((0)-(0.6109F)), ((0)-(0.6981F)),((0)-(0.7854F)));
+        animator.rotate(Arms3, ((0)-(0.4363F)), ((0)-(0.5236F)),((0)-(0.7854F)));
+        animator.rotate(Arms4, ((0)-(0.6109F)), ((0)-(0.2618F)),((0)-(0.2618F)));
+        animator.rotate(Arms5, ((0)-(0.0F)), ((0)-(-0.6981F)),((0)-(0.1309F)));
+        animator.rotate(Arms6, ((0)-(0.6109F)), ((0)-(-0.6981F)),((0)-(-0.7854F)));
+        animator.rotate(Arms7, ((0)-(0.4363F)), ((0)-(-0.5236F)),((0)-(-0.7854F)));
+        animator.rotate(Arms8, ((0)-(0.6109F)), ((0)-(-0.2618F)),((0)-(-0.2618F)));
+        animator.rotate(Armss, ((0)-(0.1309F)), ((0)-(0.6981F)),((0)-(-0.1309F)));
+        animator.rotate(Arms2, ((0)-(0.1309F)), ((0)-(-0.6981F)),((0)-(0.1309F)));
+        animator.rotate(Body, ((0)-(0.6981F)), (((float)Math.toRadians(180))-(0.0F)),((0)-(0.0F)));
+        animator.rotate(cube_r1, ((0.0F)-(0.0F)), ((0.2793F)-(-0.2793F)),((0.0F)-(0.0F)));
+        animator.rotate(cube_r2, ((0.0F)-(0.0F)), ((-0.2793F)-(0.2793F)),((0.0F)-(0.0F)));
+        animator.rotate(cube_r3, ((0.48F)-(0.48F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(FinL, ((0.0F)-(0.0F)), ((-0.0436F)-(0.0436F)),((0.2182F)-(-0.2182F)));
+        animator.rotate(FinR, ((0.0F)-(0.0F)), ((0.0436F)-(-0.0436F)),((-0.2182F)-(0.2182F)));
+        animator.rotate(mantle, ((-0.0873F)-(-0.3491F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(mantle2, ((-0.3054F)-(-0.3054F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(siphon, ((0.0436F)-(0.0436F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(0);
+        animator.resetKeyframe(0);
+
+        animator.setAnimation(e.UNSWIM_ANIMATION);
+        animator.startKeyframe(e.unswimTransitionLength()); //move to this keyframe over the right length
+        animator.rotate(Arm, -((-0.0873F)-(-0.0436F)), -((0.0436F)-(0.48F)),-((0.0F)-(0.1309F)));
+        animator.rotate(Arm2, -((0.0436F)-(0.2618F)), -((0.0873F)-(0.829F)),-((0.0F)-(0.0F)));
+        animator.rotate(Arm3, -((0.1309F)-(0.5672F)), -((0.0873F)-(1.4835F)),-((0.0F)-(-0.0873F)));
+        animator.rotate(Arm4, -((0.2182F)-(1.8326F)), -((0.0873F)-(-0.0873F)),-((0.0F)-(0.2618F)));
+        animator.rotate(Arm5, -((-0.0873F)-(-0.0436F)), -((-0.0436F)-(-0.48F)),-((0.0F)-(-0.1309F)));
+        animator.rotate(Arm6, -((0.0436F)-(0.2618F)), -((-0.0873F)-(-0.829F)),-((0.0F)-(0.0F)));
+        animator.rotate(Arm7, -((0.1309F)-(0.5672F)), -((-0.0873F)-(-1.4835F)),-((0.0F)-(0.0873F)));
+        animator.rotate(Arm8, -((0.2182F)-(1.8326F)), -((-0.0873F)-(0.0873F)),-((0.0F)-(-0.2618F)));
+        animator.rotate(Arms, -((0)-(0.0F)), -((0)-(0.6981F)),-((0)-(-0.1309F)));
+        animator.rotate(Armss2, -((0)-(0.6109F)), -((0)-(0.6981F)),-((0)-(0.7854F)));
+        animator.rotate(Arms3, -((0)-(0.4363F)), -((0)-(0.5236F)),-((0)-(0.7854F)));
+        animator.rotate(Arms4, -((0)-(0.6109F)), -((0)-(0.2618F)),-((0)-(0.2618F)));
+        animator.rotate(Arms5, -((0)-(0.0F)), -((0)-(-0.6981F)),-((0)-(0.1309F)));
+        animator.rotate(Arms6, -((0)-(0.6109F)), -((0)-(-0.6981F)),-((0)-(-0.7854F)));
+        animator.rotate(Arms7, -((0)-(0.4363F)), -((0)-(-0.5236F)),-((0)-(-0.7854F)));
+        animator.rotate(Arms8, -((0)-(0.6109F)), -((0)-(-0.2618F)),-((0)-(-0.2618F)));
+        animator.rotate(Armss, -((0)-(0.1309F)), -((0)-(0.6981F)),-((0)-(-0.1309F)));
+        animator.rotate(Arms2, -((0)-(0.1309F)), -((0)-(-0.6981F)),-((0)-(0.1309F)));
+        animator.rotate(Body, -((0)-(0.6981F)), -(((float)Math.toRadians(180))-(0.0F)),-((0)-(0.0F)));
+        animator.rotate(cube_r1, -((0.0F)-(0.0F)), -((0.2793F)-(-0.2793F)),-((0.0F)-(0.0F)));
+        animator.rotate(cube_r2, -((0.0F)-(0.0F)), -((-0.2793F)-(0.2793F)),-((0.0F)-(0.0F)));
+        animator.rotate(cube_r3, -((0.48F)-(0.48F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(FinL, -((0.0F)-(0.0F)), -((-0.0436F)-(0.0436F)),-((0.2182F)-(-0.2182F)));
+        animator.rotate(FinR, -((0.0F)-(0.0F)), -((0.0436F)-(-0.0436F)),-((-0.2182F)-(0.2182F)));
+        animator.rotate(mantle, -((-0.0873F)-(-0.3491F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(mantle2, -((-0.3054F)-(-0.3054F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(siphon, -((0.0436F)-(0.0436F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(0);
+        animator.resetKeyframe(0);
 
     }
 
