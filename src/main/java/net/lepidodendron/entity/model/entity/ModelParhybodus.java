@@ -238,7 +238,7 @@ public class ModelParhybodus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hybodus.render(f5* 0.4f);
+        this.Hybodus.render(f5);
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Hybodus, 0.0F, 0.0F, 0.0F);
@@ -260,24 +260,7 @@ public class ModelParhybodus extends AdvancedModelBase {
         this.Hybodus.render(0.01F);
         resetToDefaultPose();
     }
-    public void renderStaticSuspended(float f) {
-        this.setRotateAngle(Hybodus, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.5F, 0.0F);
-        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.2F, 0.4363F, 0.0F);
-        this.setRotateAngle(leftFrontFin, -0.10F, 0.0F, -0.75F);
-        this.setRotateAngle(rightFrontFin, 12.5F, -0.0F, 0.75F);
-        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
-        this.setRotateAngle(leftBackFin, 0.0F, -0.0611F, 0.0F);
-        this.setRotateAngle(rightBackFin, 0.0F, 0.0F, 0.3491F);
-        this.setRotateAngle(tail, 0.0F, 6.3F, 0.1F);
-        this.setRotateAngle(tail2, 0.0F, 6.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.1309F, 6.5F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, -0.3491F);
-        this.Hybodus.offsetY = -0.14F;
-        this.Hybodus.render(0.01F);
-        resetToDefaultPose();
-    }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -330,7 +313,7 @@ public class ModelParhybodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Hybodus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Hybodus.offsetY = 1F;
+            //this.Hybodus.offsetY = 1F;
             this.bob(Hybodus, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

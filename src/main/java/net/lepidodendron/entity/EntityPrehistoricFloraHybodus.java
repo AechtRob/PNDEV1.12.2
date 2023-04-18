@@ -266,16 +266,16 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 1.4;
+		return 0.6;
 	}
 	public static double upperbackverticallinedepth() {
-		return 0.8;
+		return 0.9;
 	}
 	public static double upperfrontlineoffset() {
-		return 0.4;
+		return -0.2;
 	}
 	public static double upperfrontlineoffsetperpendiular() {
-		return -0F;
+		return 0.50F;
 	}
 	public static double upperbacklineoffset() {
 		return 0.0;

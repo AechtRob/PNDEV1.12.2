@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderParhybodus extends RenderLiving<EntityPrehistoricFloraParhybodus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parhybodus.png");
-    public static float getScaler() {return 0.4f;}
+    public static float getScaler() {return 0.3f;}
     public RenderParhybodus(RenderManager mgr) {
         super(mgr, new ModelParhybodus(), 0.0f);
     }
@@ -27,9 +27,9 @@ public class RenderParhybodus extends RenderLiving<EntityPrehistoricFloraParhybo
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraParhybodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        this.shadowSize = entity.width * scale * 0.3F;
     }
 
 }

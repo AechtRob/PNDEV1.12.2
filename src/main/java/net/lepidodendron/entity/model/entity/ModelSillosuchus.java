@@ -311,11 +311,12 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.bodyback.render(f5 * 0.9f);
+        this.bodyback.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.neck2.offsetX = 0f;
-        this.neck2.offsetZ = 0f;
+        this.neck.offsetX = 0.0f;
+        this.neck.offsetY = 0.0f;
+        this.neck.offsetZ = 0.0f;
         resetToDefaultPose();
     }
      public void renderStaticFloor(float f) {
@@ -347,8 +348,8 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
         this.setRotateAngle(head, 0.1F, -0.9F, 0.1F);
         this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
-        this.bodyback.offsetY=-0.38f;
-        this.bodyback.render(0.023F);
+        this.bodyback.offsetY=-0.167f;
+        this.bodyback.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

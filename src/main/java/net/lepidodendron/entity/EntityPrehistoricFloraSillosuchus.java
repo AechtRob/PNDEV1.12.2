@@ -322,7 +322,7 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 	}
 
 	public static double lowerbackverticallinedepth() {
-		return 1.8;
+		return 0.8;
 	}
 
 	public static double lowerfrontlineoffset() {
@@ -330,7 +330,7 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 	}
 
 	public static double lowerfrontlineoffsetperpendiular() {
-		return 1.9F;
+		return 0.9F;
 	}
 
 	public static double lowerbacklineoffset() {
