@@ -261,18 +261,18 @@ public class ModelHybodus extends AdvancedModelBase {
     }
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(Hybodus, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.5F, 0.0F);
-        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.2F, 0.4363F, 0.0F);
-        this.setRotateAngle(leftFrontFin, -0.10F, 0.0F, -0.75F);
-        this.setRotateAngle(rightFrontFin, 12.5F, -0.0F, 0.75F);
-        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
-        this.setRotateAngle(leftBackFin, 0.0F, -0.0611F, 0.0F);
-        this.setRotateAngle(rightBackFin, 0.0F, 0.0F, 0.3491F);
-        this.setRotateAngle(tail, 0.0F, 6.3F, 0.1F);
-        this.setRotateAngle(tail2, 0.0F, 6.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.1309F, 6.5F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFrontFin, 0.2F, 0.0F, -0.8F);
+        this.setRotateAngle(rightFrontFin, 0.2F, 0.0F, 0.8F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBackFin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackFin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
         this.Hybodus.offsetY = 0.0F;
         this.Hybodus.render(0.01F);
         resetToDefaultPose();

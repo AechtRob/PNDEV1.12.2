@@ -442,6 +442,34 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
         this.Mastodonsaurus.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Mastodonsaurus, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.1F, 0.01F, 0.0F);
+        this.setRotateAngle(RArm, 0.8F, -1.0F, 0.0F);
+        this.setRotateAngle(RArm2, 0.5F, -0.1F, -0.3F);
+        this.setRotateAngle(RHand, -0.3F, -0.3F, 0.8F);
+        this.setRotateAngle(RArm3, 0.9F, 0.9F, 0.0F);
+        this.setRotateAngle(RArm4, 0.5F, -0.1F, -0.3F);
+        this.setRotateAngle(RHand2, -0.3F, -0.3F, -0.4F);
+        this.setRotateAngle(Neck, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.7F, 0.1F, 0.0F);
+        this.setRotateAngle(UpperJaw, -0.94F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerJaw, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, -0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(RLeg, 0.5F, 0.9F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.5F, -1.5F, 0.0F);
+        this.setRotateAngle(RFoot, 0.6F, -0.9F, .9F);
+        this.setRotateAngle(RLeg3, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg4, 0.9F, 0.7F, 0.0F);
+        this.setRotateAngle(RFoot2, -0.8F, -0.0F, -0.8F);
+        this.setRotateAngle(Tail, 0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(bone, -0.0F, -0.6F, 0.0F);
+        this.Mastodonsaurus.offsetY = -0.17F;
+        this.Mastodonsaurus.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
