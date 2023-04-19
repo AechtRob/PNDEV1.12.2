@@ -9,9 +9,9 @@ import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
-import net.lepidodendron.entity.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;
@@ -93,6 +93,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    public ItemStack getPropagule() {
+        return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
 
     public int getAlarmCooldown() {
@@ -1025,7 +1029,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         //Drop an egg perhaps:
         if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
             //if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+                ItemStack itemstack = getPropagule();
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.item.entities.ItemUnknownBlob;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -39,6 +40,11 @@ public class EntityPrehistoricFloraDickinsonia extends EntityPrehistoricFloraSli
 	}
 
 	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemUnknownBlob.block, 1);
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -46,11 +52,6 @@ public class EntityPrehistoricFloraDickinsonia extends EntityPrehistoricFloraSli
 	public static String getPeriod() {return "Ediacaran";}
 
 	//public static String getHabitat() {return "Aquatic";}
-
-	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemUnknownEgg.block, (int) (1));
-	}
 
 	@Override
 	public boolean dropsEggs() {

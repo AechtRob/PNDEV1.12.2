@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -42,6 +43,11 @@ public class EntityPrehistoricFloraSaccocoma extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemUnknownPlanula.block, (int) (1));
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -63,8 +69,6 @@ public class EntityPrehistoricFloraSaccocoma extends EntityPrehistoricFloraAgeab
 	public boolean laysEggs() {
 		return false;
 	}
-
-
 
 	@Override
 	public int getAdultAge() {
