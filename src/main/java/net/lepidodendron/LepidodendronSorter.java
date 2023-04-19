@@ -3773,6 +3773,7 @@ public class LepidodendronSorter {
     public static final int leviathania_item = 3865;
     public static final int harpagodes_item = 3866;
     public static final int nerinea_item = 3867;
+    public static final int chain_link_fence = 3868;
 
 
 
