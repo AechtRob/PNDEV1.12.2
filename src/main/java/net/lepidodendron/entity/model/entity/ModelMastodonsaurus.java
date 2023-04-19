@@ -414,18 +414,33 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Mastodonsaurus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Neck.offsetY = -0.001F;
-        this.LowerJaw.rotateAngleX = (float) Math.toRadians(35);
-        this.Head.rotateAngleX = (float) Math.toRadians(-15);
-        this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Mastodonsaurus, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, -0.01F, 0.0F);
+        this.setRotateAngle(RArm, 0.6F, -0.6F, 0.0F);
+        this.setRotateAngle(RArm2, 0.1F, 1.0F, -0.3F);
+        this.setRotateAngle(RHand, -0.3F, 0.0F, -0.4F);
+        this.setRotateAngle(RArm3, 0.6F, 0.5F, 0.0F);
+        this.setRotateAngle(RArm4, 0.0F, -0.8F, -0.0F);
+        this.setRotateAngle(RHand2, -0.3F, -0.5F, 0.5F);
+        this.setRotateAngle(Neck, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperJaw, -0.94F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerJaw, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, -0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(RLeg, 0.0F, 0.8F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.4F, -1.3F, 0.0F);
+        this.setRotateAngle(RFoot, 0.0F, 1.3F, 0.0F);
+        this.setRotateAngle(RLeg3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg4, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(RFoot2, 0.0F, -1.3F, 0.0F);
+        this.setRotateAngle(Tail, 0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(bone, -0.0F, -0.6F, 0.0F);
+        this.Mastodonsaurus.offsetY = -0.17F;
+        this.Mastodonsaurus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
