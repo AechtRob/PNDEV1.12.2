@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemEphedraFruit;
+import net.lepidodendron.item.ItemProtognetumFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -39,11 +39,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockEphedra extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:ephedra")
+public class BlockProtognetum extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:protognetum")
 	public static final Block block = null;
-	public BlockEphedra(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.ephedra);
+	public BlockProtognetum(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.protognetum);
 	}
 
 	@Override
@@ -56,15 +56,15 @@ public class BlockEphedra extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:ephedra", "inventory"));
+				new ModelResourceLocation("lepidodendron:protognetum", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:ephedra", BlockEphedra.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockEphedra.block);
-		OreDictionary.registerOre("plant", BlockEphedra.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:protognetum", BlockProtognetum.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockProtognetum.block);
+		OreDictionary.registerOre("plant", BlockProtognetum.block);
 	}
 
 
@@ -75,8 +75,8 @@ public class BlockEphedra extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_ephedra");
-			setRegistryName("ephedra");
+			setTranslationKey("pf_protognetum");
+			setRegistryName("protognetum");
 		}
 
 		@Override
@@ -112,9 +112,9 @@ public class BlockEphedra extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				drops.add(new ItemStack(ItemEphedraFruit.block, (int) (1)));
+				drops.add(new ItemStack(ItemProtognetumFruit.block, (int) (1)));
 				if (Math.random() > 0.66) {
-					drops.add(new ItemStack(ItemEphedraFruit.block, (int) (1)));
+					drops.add(new ItemStack(ItemProtognetumFruit.block, (int) (1)));
 				}
 			}
 			else {
@@ -140,15 +140,15 @@ public class BlockEphedra extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Gnetophyte plant");
-	        	tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+	        	tooltip.add("Periods: Jurassic - Cretaceous [but similar to Paleogene - Neogene - Pleistocene - present]");
 	        	tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
 		@Override
-	    public Block.EnumOffsetType getOffsetType()
+	    public EnumOffsetType getOffsetType()
 	    {
-	        return Block.EnumOffsetType.XZ;
+	        return EnumOffsetType.XZ;
 	    }
 	}
 	

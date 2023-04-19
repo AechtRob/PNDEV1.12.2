@@ -477,7 +477,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockPelourdea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockElatocladusSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemPagiophyllumItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockPalissya.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockPalissya.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockProtognetum.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsJurassic);
         return resLoc;
@@ -604,6 +605,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLaurusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockChestnutSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBisoniaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockProtognetum.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling"
