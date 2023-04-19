@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraCowielepis extends EntityPrehistoricFloraFish
 
 	public EntityPrehistoricFloraCowielepis(World world) {
 		super(world);
-		setSize(0.28F, 0.23F);
+		setSize(0.2F, 0.2F);
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraCowielepis extends EntityPrehistoricFloraFish
 
 	@Override
 	public int getShoalSize() {
-		return 5;
+		return 7;
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraCowielepis extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Silurian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -164,7 +164,7 @@ public class EntityPrehistoricFloraCowielepis extends EntityPrehistoricFloraFish
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BIRKENIA_LOOT;
+		return LepidodendronMod.COWIELEPIS_LOOT;
 	}
 
 }

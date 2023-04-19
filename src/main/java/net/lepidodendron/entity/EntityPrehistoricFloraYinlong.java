@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 		minWidth = 0.12F;
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 10.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
