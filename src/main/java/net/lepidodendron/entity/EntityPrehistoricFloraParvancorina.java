@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.item.entities.ItemUnknownBlob;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -37,6 +38,11 @@ public class EntityPrehistoricFloraParvancorina extends EntityPrehistoricFloraSl
 	public EntityPrehistoricFloraParvancorina(World world) {
 		super(world, 20);
 		setSize(0.5F, 0.35F);
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemUnknownBlob.block, 1);
 	}
 
 	@Override

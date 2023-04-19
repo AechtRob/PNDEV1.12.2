@@ -19,6 +19,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -56,6 +57,59 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_placeable_living");
 			setRegistryName("placeable_living");
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+					String resourcelocation = (blockNBT.getString("id"));
+					return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();
+				}
+
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+			}
+
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)

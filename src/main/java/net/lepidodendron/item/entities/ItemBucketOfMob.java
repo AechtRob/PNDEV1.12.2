@@ -25,6 +25,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -628,6 +629,21 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("mob_bucket");
 			maxStackSize = 1;
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (isEntityFromItemStack(stack)) {
+				NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
+				ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
+				String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+				return I18n.translateToLocal("item.pf_mob_bucket_full.name").trim()
+						+ ": "
+						+ I18n.translateToLocal("entity." + mobname + ".name").trim();
+			}
+
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)

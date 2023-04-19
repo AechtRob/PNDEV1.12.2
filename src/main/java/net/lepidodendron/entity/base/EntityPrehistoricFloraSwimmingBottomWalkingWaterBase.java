@@ -270,7 +270,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
                 this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
             }
 
-            System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
+            //System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
 
         }
 

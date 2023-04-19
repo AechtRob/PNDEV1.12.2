@@ -19,6 +19,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -107,7 +108,6 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_dapedium", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_deltoptychius", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_diania", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_dickinsonia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_didymograptus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_doryaspis", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_dorypterus", "inventory"),
@@ -119,7 +119,6 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				//new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_elonichthys", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_elrathia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_enoploura", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eoandromeda", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eoredlichia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eosaurichthys", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ericixerxes", "inventory"),
@@ -251,27 +250,8 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_xenusion", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yawunik", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yohoia", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yorgia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yunnanozoon", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_parvancorina", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yilingia", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_cidaroida", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_archaeocidaris", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish1", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish2", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish3", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish4", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish5", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish6", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish7", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeojelly1", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeojelly2", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeojelly3", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeojelly4", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish_precambrian", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_gemmactena", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_batofasciculus", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_plectodiscus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_vachonisia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ampyx", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_arctinurus", "inventory"),
@@ -366,7 +346,6 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_anaethalion","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_viviparus","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_decacuminaster","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_saccocoma","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_hurdia","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_caryosyntrips","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_metopacanthus","inventory"),
@@ -412,6 +391,20 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("eggs_generic");
 			setCreativeTab(null);
 			setMaxStackSize(64);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			String stringEgg = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("creature") : null);
+			if (stringEgg != null) {
+
+				stringEgg = stringEgg.replace(LepidodendronMod.MODID.toString() + ":", "");
+				return I18n.translateToLocal("item.pf_eggs_generic_full.name").trim()
+						+ ": "
+						+ I18n.translateToLocal("entity." + stringEgg + ".name").trim();
+			}
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)
