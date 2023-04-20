@@ -301,7 +301,8 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	@Override
 	public boolean isInWater() {
-		return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
+		return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) ||
+				this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
 	}
 
 	public boolean isAtBottom() {

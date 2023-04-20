@@ -1107,6 +1107,19 @@ public class ModTriggers
     public static final CustomTrigger CLICK_OSTENOCARIS = new CustomTrigger("pf_book_ostenocaris");
     public static final CustomTrigger CLICK_MORROLEPIS = new CustomTrigger("pf_book_morrolepis");
     public static final CustomTrigger CLICK_IOWACYSTIS = new CustomTrigger("pf_book_iowacystis");
+    public static final CustomTrigger CLICK_GEOSAURUS = new CustomTrigger("pf_book_geosaurus");
+    public static final CustomTrigger CLICK_XINJIANGCHELYS = new CustomTrigger("pf_book_xinjiangchelys");
+    public static final CustomTrigger CLICK_EOCARCINUS = new CustomTrigger("pf_book_eocarcinus");
+    public static final CustomTrigger CLICK_EURHINOSAURUS = new CustomTrigger("pf_book_eurhinosaurus");
+    public static final CustomTrigger CLICK_KAYKAY = new CustomTrigger("pf_book_kaykay");
+    public static final CustomTrigger CLICK_THALASSEMYS = new CustomTrigger("pf_book_thalassemys");
+    public static final CustomTrigger CLICK_CLARKEITEUTHIS = new CustomTrigger("pf_book_clarkeiteuthis");
+    public static final CustomTrigger CLICK_ORTHOCORMUS = new CustomTrigger("pf_book_orthocormus");
+    public static final CustomTrigger CLICK_THALASSIODRACON = new CustomTrigger("pf_book_thalassiodracon");
+    public static final CustomTrigger CLICK_MICROCLEIDUS = new CustomTrigger("pf_book_microcleidus");
+    public static final CustomTrigger CLICK_OPHTHALMOTHULE = new CustomTrigger("pf_book_ophthalmothule");
+    public static final CustomTrigger CLICK_CIURCOPTERUS = new CustomTrigger("pf_book_ciurcopterus");
+
 
 
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
@@ -2207,6 +2220,18 @@ public class ModTriggers
             CLICK_CENOCERAS,
             CLICK_OSTENOCARIS,
             CLICK_MORROLEPIS,
+            CLICK_CIURCOPTERUS,
+            CLICK_GEOSAURUS,
+            CLICK_XINJIANGCHELYS,
+            CLICK_EOCARCINUS,
+            CLICK_EURHINOSAURUS,
+            CLICK_KAYKAY,
+            CLICK_THALASSEMYS,
+            CLICK_CLARKEITEUTHIS,
+            CLICK_ORTHOCORMUS,
+            CLICK_THALASSIODRACON,
+            CLICK_MICROCLEIDUS,
+            CLICK_OPHTHALMOTHULE,
 
 
 

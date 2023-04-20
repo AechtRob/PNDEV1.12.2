@@ -4020,6 +4020,38 @@ public class RenderHandler {
                 return new RenderCancrinos(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStrombus.class, new IRenderFactory<EntityPrehistoricFloraStrombus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraStrombus> createRenderFor(RenderManager manager) {
+                return new RenderStrombus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBishanopliosaurus.class, new IRenderFactory<EntityPrehistoricFloraBishanopliosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBishanopliosaurus> createRenderFor(RenderManager manager) {
+                return new RenderBishanopliosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCiurcopterus.class, new IRenderFactory<EntityPrehistoricFloraCiurcopterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCiurcopterus> createRenderFor(RenderManager manager) {
+                return new RenderCiurcopterus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSlimonia.class, new IRenderFactory<EntityPrehistoricFloraSlimonia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSlimonia> createRenderFor(RenderManager manager) {
+                return new RenderSlimonia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPlectronoceras.class, new IRenderFactory<EntityPrehistoricFloraPlectronoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPlectronoceras> createRenderFor(RenderManager manager) {
+                return new RenderPlectronoceras(manager);
+            }
+        });
+
 
 
 

@@ -52,7 +52,9 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     private int jumpTicks;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.BOOLEAN);
     private int inPFLove;
+
     private EntityPrehistoricFloraTrilobiteBottomBase shoalLeader;
     private int alarmCooldown;
 
@@ -184,6 +186,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         super.entityInit();
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(MATEABLE, 0);
+        this.dataManager.register(ISMOVING, false);
     }
 
 
@@ -301,6 +304,14 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     public boolean isPushedByWater()
     {
         return false;
+    }
+
+    public boolean getIsMoving() {
+        return this.dataManager.get(ISMOVING);
+    }
+
+    public void setIsMoving(boolean isMoving) {
+        this.dataManager.set(ISMOVING, isMoving);
     }
 
     @Override
@@ -528,6 +539,13 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
                     f4 += (0.54600006F - f4) * speedModifier / 3.0F;
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
 
                 if (this.isPotionActive(MobEffects.LEVITATION))
                 {

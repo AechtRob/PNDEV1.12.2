@@ -14,7 +14,7 @@ public class RenderDakosaurus extends RenderLiving<EntityPrehistoricFloraDakosau
     public RenderDakosaurus(RenderManager mgr) {
         super(mgr, new ModelDakosaurus(), 0.5f);
     }
-    public static float getScaler() {return 0.65f; }
+    public static float getScaler() {return 0.78f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDakosaurus entity) {

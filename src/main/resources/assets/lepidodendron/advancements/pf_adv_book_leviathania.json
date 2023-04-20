@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:leviathania_raw"
+			"item": "lepidodendron:leviathania_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_leviathania.title"

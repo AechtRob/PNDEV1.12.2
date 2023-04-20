@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:nerinea_raw"
+			"item": "lepidodendron:nerinea_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_nerinea.title"

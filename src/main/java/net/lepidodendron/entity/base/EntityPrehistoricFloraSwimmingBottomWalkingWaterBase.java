@@ -39,6 +39,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     private static final DataParameter<Integer> SWIMTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WALKTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
 
+    //standard constructor, calls the parent class, adds a navigator and creates three animations, eat, swim and unswim
     public EntityPrehistoricFloraSwimmingBottomWalkingWaterBase(World world) {
         super(world);
         this.selectNavigator();
@@ -47,54 +48,65 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
         EAT_ANIMATION = Animation.create(this.getEatLength());
     }
 
+    //an array of all the animations
     @Override
     public Animation[] getAnimations() {
         return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
     }
-
+    //how long is the eat animation
     public int getEatLength() {
         return 10;
     }
 
     protected abstract double getAISpeedSwim();
 
+    //how long is the transition animation length for walking -> swimming
     public abstract int swimTransitionLength();
 
+    //how long is the transition animation length for swimming -> walking
     public abstract int unswimTransitionLength();
 
+    //how long is the animals swimming (in ticks) gets reduced by a random amount each tick
     public abstract int swimLength();
 
+    //how long is the animal walking (in ticks) gets reduced by a random amount each tick
     public abstract int walkLength();
 
+    //if true, then is bucketable, else not bucketable
     public abstract boolean isSmall();
 
+    //message if the animal cant be bucketed
     public String getBucketMessage() {
         return "is too grown up to fit into a bucket";
     }
 
+    //checks if the animal is actually swimming
     public boolean getIsSwimming() {
         return this.dataManager.get(SWIMMING);
     }
 
+    //sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
     public void setIsSwimming(boolean isSwimming) {
         this.dataManager.set(SWIMMING, isSwimming);
     }
 
+    //returns the length, in ticks, of the swim cycle
     public int getSwimTick() {
         return this.dataManager.get(SWIMTICK);
     }
-
+    //sets the length, in ticks, of the swim cycle
     public void setSwimTick(int swimTick) {
         this.dataManager.set(SWIMTICK, swimTick);
     }
-
+    //returns the length, in ticks, of the walk cycle
     public int getWalkTick() {
         return this.dataManager.get(WALKTICK);
     }
-
+    //sets the length, in ticks, of the walk cycle
     public void setWalkTick(int swimTick) {
         this.dataManager.set(WALKTICK, swimTick);
     }
+
 
     @Override
     public boolean isAIDisabled() {
@@ -106,11 +118,13 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
         return this.getTexture();
     }
 
+    //checks if the animal is underwater
     @Override
     public boolean isInWater() {
         return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
     }
 
+    //a more strict check if the animal is underwater
     public boolean isReallyInWater() {
         return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
     }
@@ -134,6 +148,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
         //System.err.println("not colliding rim");
         return false;
     }
+
 
     @Override
     public boolean canBreatheUnderwater() {
@@ -211,6 +226,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
         return 10F - (i * 9F); //returns a number from 10 to 1
     }
 
+    //a stricter check on if the animal is swimming, (It is not doing its transition animation)
     public boolean isReallySwimming() {
         return this.getIsSwimming() && this.getAnimation() != this.SWIM_ANIMATION;
     }

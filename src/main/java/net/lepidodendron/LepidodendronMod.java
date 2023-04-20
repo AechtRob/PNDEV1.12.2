@@ -1646,6 +1646,12 @@ public class LepidodendronMod {
 	public static final int ENTITY_LEVIATHANIA = 670;
 	public static final int ENTITY_HARPAGODES = 671;
 	public static final int ENTITY_NERINEA = 672;
+	public static final int ENTITY_STROMBUS = 673;
+	public static final int ENTITY_BISHANOPLIOSAURUS = 674;
+	public static final ResourceLocation BISHANOPLIOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bishanopliosaurus"));
+	public static final ResourceLocation BISHANOPLIOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bishanopliosaurus_young"));
+	public static final int ENTITY_PLECTRONOCERAS = 675;
+	public static final ResourceLocation PLECTRONOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/plectronoceras"));
 
 
 
