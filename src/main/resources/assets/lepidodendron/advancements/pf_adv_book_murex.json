@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:murex_raw"
+			"item": "lepidodendron:murex_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_murex.title"

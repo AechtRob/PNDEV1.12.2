@@ -340,7 +340,7 @@ public class ModelElasmodectes extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.main.offsetY = 0.15F;
-                this.bob(main, speed*2F, 5F, false, f2, 1);
+                //this.bob(main, speed*2F, 5F, false, f2, 1);
             }
         }
     }

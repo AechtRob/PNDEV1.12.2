@@ -3775,7 +3775,14 @@ public class LepidodendronSorter {
     public static final int leviathania_item = 3865;
     public static final int harpagodes_item = 3866;
     public static final int nerinea_item = 3867;
-    public static final int chain_link_fence = 3868;
+    public static final int chain_link_fence = 3873;
+    public static final int strombus_item = 3868;
+    public static final int bishanopliosaurus_raw = 3869;
+    public static final int rhomaleosaurus_raw = 3870;
+    public static final int eurypterid_eggs_ciurcopterus_worldgen = 3871;
+    public static final int eurypterid_eggs_slimonia_worldgen = 3872;
+    public static final int plectronoceras_raw = 3874;
+
 
 
 

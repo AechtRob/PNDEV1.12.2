@@ -7517,3 +7517,8 @@ tile.pf_zygopteris_sapling.name=Zygopteris Sapling
 tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.
+
+item.pf_bishanopliosaurus_raw.name=Raw Bishanopliosaurus
+advancements.pf_adv_book_bishanopliosaurus.title=Bishanopliosaurus
+advancements.pf_adv_book_bishanopliosaurus.description=Unlock the entry for Bishanopliosaurus in the Palaeopedia
+entity.prehistoric_flora_bishanopliosaurus.name=Bishanopliosaurus
