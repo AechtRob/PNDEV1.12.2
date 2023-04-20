@@ -62,8 +62,8 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 	public boolean getMovingOnLand() {
 		int animCycle = 26;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=0 && tickAnim <= 2)
-				|| (tickAnim >=13 && tickAnim <= 21)) {
+		if ((tickAnim >=0 && tickAnim <= 5)
+				|| (tickAnim >=18 && tickAnim <= 26)) {
 			return true;
 		}
 		else {
