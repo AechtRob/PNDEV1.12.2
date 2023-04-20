@@ -13,7 +13,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntitySquid;
@@ -21,10 +24,6 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -33,7 +32,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -49,8 +47,6 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 	public ChainBuffer tailBuffer;
 	//public static final SoundEvent LIMNOSCELIS_ROAR = create("limnoscelis_roar");
 
-	private static final DataParameter<Boolean> ISMOVINGONLAND = EntityDataManager.createKey(EntityPrehistoricFloraIchthyostega.class, DataSerializers.BOOLEAN);
-
 	public EntityPrehistoricFloraIchthyostega(World world) {
 		super(world);
 		setSize(0.6F, 0.35F);
@@ -63,35 +59,16 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 		}
 	}
 
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(ISMOVINGONLAND, false);
-	}
-
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setMovingOnLand(false);
-		return livingdata;
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound) {
-		super.writeEntityToNBT(compound);
-		compound.setBoolean("pfmovingonland", this.getMovingOnLand());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.setMovingOnLand(compound.getBoolean("pfmovingonland"));
-	}
-
 	public boolean getMovingOnLand() {
-		return this.dataManager.get(ISMOVINGONLAND);
-	}
-
-	public void setMovingOnLand(boolean isMoving) {
-		this.dataManager.set(ISMOVINGONLAND, isMoving);
+		int animCycle = 26;
+		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
+		if ((tickAnim >=0 && tickAnim <= 2)
+				|| (tickAnim >=13 && tickAnim <= 21)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
@@ -100,17 +77,6 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(45, 5, 5F, this);
 		}
-
-		int animCycle = 26;
-		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=0 && tickAnim <= 2)
-				|| (tickAnim >=13 && tickAnim <= 21)) {
-			this.setMovingOnLand(true);
-		}
-		else {
-			this.setMovingOnLand(false);
-		}
-
 	}
 
 	@Override

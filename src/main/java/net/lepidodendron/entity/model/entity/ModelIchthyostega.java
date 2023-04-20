@@ -392,14 +392,6 @@ public class ModelIchthyostega extends AdvancedModelBase {
         double yy = 0;
         double zz = 0;
 
-        if ((tickAnim >=0 && tickAnim <= 5)
-            || (tickAnim >=20 && tickAnim <= 26)) {
-            entity.setMovingOnLand(true);
-        }
-        else {
-            entity.setMovingOnLand(false);
-        }
-
         if (tickAnim >= 0 && tickAnim < 4) {
             xx = -5D + (((tickAnim - 0D) / 4D) * (2.29D-(-5D)));
             yy = 0D + (((tickAnim - 0D) / 4D) * (0D-(0D)));
