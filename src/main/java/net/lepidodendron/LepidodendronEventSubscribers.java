@@ -776,9 +776,12 @@ public class LepidodendronEventSubscribers {
 
 		IBlockState state = event.getState();
 		String resLoc = "";
-		if (state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.LEAVES) {
+		if (state.getMaterial() == Material.PLANTS
+				|| state.getMaterial() == Material.LEAVES
+				|| state.getMaterial() == Material.VINE
+		) {
 			//Terrestrial:
-			for (int ii=0; ii < 5; ii++) {
+			for (int ii=0; ii < 2; ii++) {
 				if (chancerInsects()) {
 					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
 						resLoc = PlantBreakMobsLand.resLocMobs(1);
@@ -819,6 +822,11 @@ public class LepidodendronEventSubscribers {
 					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPleistocene) {
 						resLoc = PlantBreakMobsLand.resLocMobs(13);
 					}
+				}
+
+				if (!(resLoc.equalsIgnoreCase(""))) {
+					//Spawn the mob:
+					spawnMob(worldIn, resLoc, rand, event.getPos());
 				}
 			}
 		}
@@ -923,61 +931,7 @@ public class LepidodendronEventSubscribers {
 
 				if (!(resLoc.equalsIgnoreCase(""))) {
 					//Spawn the mob:
-					String nbtStr = "";
-					EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resLoc));
-					EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
-					if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0) {
-						EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
-						int adultAge = ageableBase.getAdultAge();
-						if (adultAge > 0) {
-							int spawnAge = rand.nextInt(adultAge) + 1;
-							nbtStr = "{AgeTicks:" + spawnAge + "}";
-						}
-					} else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
-						EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
-						int adultAge = ageableBase.getAdultAge();
-						if (adultAge > 0) {
-							int spawnAge = rand.nextInt(adultAge) + 1;
-							nbtStr = "{AgeTicks:" + spawnAge + "}";
-						}
-					} else if (resLoc.startsWith("fossil:")) {
-						if (nbtStr.equalsIgnoreCase("")) {
-							nbtStr = "{Gender:" + rand.nextInt(2) + "}";
-						} else {
-							nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
-						}
-					}
-					if (entity != null) {
-						entity.setDead();
-					}
-					//Spawn it:
-					worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-						@Override
-						public String getName() {
-							return "";
-						}
-
-						@Override
-						public boolean canUseCommand(int permission, String command) {
-							return true;
-						}
-
-						@Override
-						public World getEntityWorld() {
-							return worldIn;
-						}
-
-						@Override
-						public MinecraftServer getServer() {
-							return worldIn.getMinecraftServer();
-						}
-
-						@Override
-						public boolean sendCommandFeedback() {
-							return false;
-						}
-
-					}, "pf_summon " + resLoc + " " + event.getPos().getX() + " " + (event.getPos().getY()) + " " + event.getPos().getZ() + " " + nbtStr);
+					spawnMob(worldIn, resLoc, rand, event.getPos());
 				}
 			}
 		}
@@ -995,6 +949,65 @@ public class LepidodendronEventSubscribers {
 			return false;
 		}
 		return Math.random() <= chance;
+	}
+
+	public void spawnMob(World worldIn, String resLoc, Random rand, BlockPos pos) {
+		//Spawn the mob:
+		String nbtStr = "";
+		EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resLoc));
+		EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
+		if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0) {
+			EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
+			int adultAge = ageableBase.getAdultAge();
+			if (adultAge > 0) {
+				int spawnAge = rand.nextInt(adultAge) + 1;
+				nbtStr = "{AgeTicks:" + spawnAge + "}";
+			}
+		} else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
+			EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
+			int adultAge = ageableBase.getAdultAge();
+			if (adultAge > 0) {
+				int spawnAge = rand.nextInt(adultAge) + 1;
+				nbtStr = "{AgeTicks:" + spawnAge + "}";
+			}
+		} else if (resLoc.startsWith("fossil:")) {
+			if (nbtStr.equalsIgnoreCase("")) {
+				nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+			} else {
+				nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
+			}
+		}
+		if (entity != null) {
+			entity.setDead();
+		}
+		//Spawn it:
+		worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+			@Override
+			public String getName() {
+				return "";
+			}
+
+			@Override
+			public boolean canUseCommand(int permission, String command) {
+				return true;
+			}
+
+			@Override
+			public World getEntityWorld() {
+				return worldIn;
+			}
+
+			@Override
+			public MinecraftServer getServer() {
+				return worldIn.getMinecraftServer();
+			}
+
+			@Override
+			public boolean sendCommandFeedback() {
+				return false;
+			}
+
+		}, "pf_summon " + resLoc + " " + pos.getX() + " " + (pos.getY()) + " " + pos.getZ() + " " + nbtStr);
 	}
 
 }

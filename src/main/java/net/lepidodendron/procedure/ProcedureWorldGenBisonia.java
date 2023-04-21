@@ -32,7 +32,7 @@ public class ProcedureWorldGenBisonia extends ElementsLepidodendronMod.ModElemen
     private static BlockPos basePos = BlockPos.ORIGIN;
     private static int height;
     private static int heightLimit;
-   	private static int heightLimitLimit = 20;
+   	private static int heightLimitLimit = 10;
     private static double heightAttenuation = 0.718D;
     private static double leafDensity = 0.40D;
     private static int leafDistanceLimit = 4;
