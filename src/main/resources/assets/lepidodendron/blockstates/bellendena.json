@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "flowers=false": [
+      {"model": "lepidodendron:bellendena"},
+      {"model": "lepidodendron:bellendena_var"}
+    ],
+    "flowers=true": [
+      {"model": "lepidodendron:bellendena_flowers"},
+      {"model": "lepidodendron:bellendena_flowers_var"}
+    ]
+  }
+}
