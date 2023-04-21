@@ -7,7 +7,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderTitanichthys;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -205,58 +206,55 @@ public class EntityPrehistoricFloraGyrosteus extends EntityPrehistoricFloraAgeab
 		}
 		return LepidodendronMod.GYROSTEUS_LOOT;
 	}
-
-	//Rendering taxidermy:
-	//--------------------
 	public static double offsetWall() {
 		return -1.36;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 3;
+		return 2.0;
 	}
 	public static double upperbackverticallinedepth() {
-		return 2.7;
+		return 2.0;
 	}
 	public static double upperfrontlineoffset() {
-		return 1.3;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular() {
-		return -0.04F;
+		return 0.0F;
 	}
 	public static double upperbacklineoffset() {
-		return 1.3;
+		return 0.2;
 	}
 	public static double upperbacklineoffsetperpendiular() {
-		return -0.8F;
+		return 1.4F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 1.5;
+		return 2.5;
 	}
 	public static double lowerbackverticallinedepth() {
 		return 2.2;
 	}
 	public static double lowerfrontlineoffset() {
-		return 1.2;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0F;
+		return 2.0F;
 	}
 	public static double lowerbacklineoffset() {
-		return 1.4;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0.78F;
+		return -0.5F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_TITANICHTHYS;
+		return RenderDisplays.TEXTURE_GYROSTEUS;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelTitanicthys;
+		return RenderDisplays.modelGyrosteus;
 	}
 	public static float getScaler() {
-		return RenderTitanichthys.getScaler();
+		return RenderGyrosteus.getScaler();
 	}
 }
 

@@ -319,7 +319,7 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 1.4;
+		return 0.8;
 	}
 	public static double upperbackverticallinedepth() {
 		return 0.8;

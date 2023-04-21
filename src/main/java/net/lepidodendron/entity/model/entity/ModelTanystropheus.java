@@ -393,7 +393,6 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body2.render(f5);
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, 0.1047F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0F, -0.0611F, 0.0F);

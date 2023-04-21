@@ -184,10 +184,10 @@ public class EntityPrehistoricFloraSanctacaris extends EntityPrehistoricFloraFis
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 0.4;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 0.4;
+		return 0.38;
 	}
 	public static double lowerfrontlineoffset() {
 		return 0.1;
@@ -199,7 +199,7 @@ public class EntityPrehistoricFloraSanctacaris extends EntityPrehistoricFloraFis
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0.15F;
+		return -0.0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {

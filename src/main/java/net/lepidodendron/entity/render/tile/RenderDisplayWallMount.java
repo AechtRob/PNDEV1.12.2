@@ -85,8 +85,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelBrembodus modelBrembodus;
     private static final ResourceLocation TEXTURE_BROCHOADMONES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brochoadmones_static.png");
     private final ModelBrochoadmones modelBrochoadmones;
-    private static final ResourceLocation TEXTURE_BUNOSTEGOS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
-    private final ModelBunostegos modelBunostegos;
 
     //private static final ResourceLocation TEXTURE_CATURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caturus.png");
     //private final ModelCaturus modelCaturus
@@ -333,7 +331,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelBothriolepis = new ModelBothriolepis();
         this.modelBrembodus = new ModelBrembodus();
         this.modelBrochoadmones = new ModelBrochoadmones();
-        this.modelBunostegos = new ModelBunostegos();
+
         //this.modelCaturus = new ModelCaturus();
         this.modelCladoselache = new ModelCladoselache();
         this.modelClydagnathus = new ModelClydagnathus();

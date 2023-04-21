@@ -298,16 +298,38 @@ public class ModelGyrosteus extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.main.render(f);
     }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(main, -0.4682F, (float) Math.toRadians(90), -0.618F);
 
-        //this.main.render(0.01F);
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(frontleftfin, 0.2F, -0.2F, 0.5F);
+        this.setRotateAngle(frontrightfin, 0.2F, 0.2F, -0.5F);
+        this.setRotateAngle(fronthead, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.13F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.19F, 0.0F);
+        this.main.offsetY = -0.5F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+
+
     }
     public void renderStaticSuspended(float f) {
-        this.setRotateAngle(main, -0.4682F, (float) Math.toRadians(90), -0.618F);
-       // this.main.offsetY = 0.17F;
-       // this.Head.offsetY = -0F;
-       // this.main.render(0.01F);
+        this.setRotateAngle(main, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(frontleftfin, 0.2F, -0.2F, 0.5F);
+        this.setRotateAngle(frontrightfin, 0.2F, 0.2F, -0.5F);
+        this.setRotateAngle(fronthead, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.12F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.12F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.13F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.19F, 0.0F);
+        this.main.offsetY = 0.2F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
