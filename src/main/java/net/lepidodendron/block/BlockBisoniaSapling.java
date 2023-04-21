@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.procedure.ProcedureWorldGenBisonia;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -145,19 +146,142 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 	        }
 	        else
 	        {
-	           	int TreeHeight = 8 + rand.nextInt(17);
-				int TrunkHeight = 6 + rand.nextInt(3);
-				if (TrunkHeight >= TreeHeight) {
-					TrunkHeight = (int)Math.round((double)TreeHeight * 0.5);
-				}
-				int ii = 0;
-				for (ii = 0; ii<TrunkHeight; ii++) {
-					world.setBlockState(pos.up(ii), BlockBisoniaLog.block.getDefaultState().withProperty(BlockBisoniaLog.BlockCustom.FACING, EnumFacing.NORTH));
-				}
-				ProcedureWorldGenBisonia.executeProcedure(world, pos.up(ii), TreeHeight - TrunkHeight);
-				//}
+				growBisonia(world, pos, rand);
 	        }
 	    }
+
+		public static void growBisonia(World world, BlockPos pos, Random rand) {
+			int TreeHeight = 16 + rand.nextInt(8);
+			int TrunkHeight = 6 + rand.nextInt(3);
+			if (TrunkHeight >= TreeHeight) {
+				TrunkHeight = (int)Math.round((double)TreeHeight * 0.5);
+			}
+			int ii = 0;
+			//Trunk up the middle and the crown at the top:
+			for (ii = 0; ii < TrunkHeight; ii++) {
+				ProcedureTreeLog.executeProcedure(pos.getX(), pos.getY() + ii, pos.getZ(), world, BlockBisoniaLog.block, EnumFacing.NORTH);
+			}
+			ProcedureWorldGenBisonia.executeProcedure(world, pos.up(ii), TreeHeight - TrunkHeight);
+			//Also side branch things:
+			boolean north = false;
+			boolean east = false;
+			boolean south = false;
+			boolean west = false;
+			for (ii = 0; ii < 4; ii++) {
+				//Pick a random direction:
+				int dir = rand.nextInt(4);
+				if (dir == 0 && north) {
+					dir = 1;
+				}
+				else if (dir == 1 && east) {
+					dir = 2;
+				}
+				else if (dir == 2 && south) {
+					dir = 3;
+				}
+				else if (dir == 3 && west) {
+					dir = 0;
+				}
+				switch (dir) {
+					case 0: default:
+						int branchHeight = TrunkHeight - rand.nextInt(4);
+						//North
+						if (rand.nextInt(3) == 0) {
+							break;
+						}
+						int ll = rand.nextInt(4) + 2; //branch length
+						int yy = pos.getY() + branchHeight;
+						int xx = pos.getX();
+						int zz = pos.getZ();
+						for (int length = 0; length <= ll; length++) {
+							if (rand.nextInt(3) == 0) {
+								yy ++;
+							}
+							if (rand.nextInt(4) == 0 && length >= 1) {
+								xx = xx + rand.nextInt(3) - 1;
+							}
+							zz --;
+							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.EAST);
+						}
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						north = true;
+						break;
+
+					case 1:
+						//East
+						branchHeight = TrunkHeight - rand.nextInt(4);
+						if (rand.nextInt(3) == 0) {
+							break;
+						}
+						ll = rand.nextInt(4) + 2; //branch length
+						yy = pos.getY() + branchHeight;
+						xx = pos.getX();
+						zz = pos.getZ();
+						for (int length = 0; length <= ll; length++) {
+							if (rand.nextInt(3) == 0) {
+								yy ++;
+							}
+							if (rand.nextInt(4) == 0 && length >= 1) {
+								zz = zz + rand.nextInt(3) - 1;
+							}
+							xx ++;
+							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.UP);
+						}
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						east = true;
+						break;
+
+					case 2:
+						//South
+						branchHeight = TrunkHeight - rand.nextInt(4);
+						if (rand.nextInt(3) == 0) {
+							break;
+						}
+						ll = rand.nextInt(4) + 2; //branch length
+						yy = pos.getY() + branchHeight;
+						xx = pos.getX();
+						zz = pos.getZ();
+						for (int length = 0; length <= ll; length++) {
+							if (rand.nextInt(2) == 0) {
+								yy ++;
+							}
+							if (rand.nextInt(4) == 0 && length >= 1) {
+								xx = xx + rand.nextInt(3) - 1;
+							}
+							zz ++;
+							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.EAST);
+						}
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						south = true;
+						break;
+
+					case 3:
+						//West
+						branchHeight = TrunkHeight - rand.nextInt(4);
+						if (rand.nextInt(3) == 0) {
+							break;
+						}
+						ll = rand.nextInt(4) + 2; //branch length
+						yy = pos.getY() + branchHeight;
+						xx = pos.getX();
+						zz = pos.getZ();
+						for (int length = 0; length <= ll; length++) {
+							if (rand.nextInt(2) == 0) {
+								yy ++;
+							}
+							if (rand.nextInt(4) == 0 && length >= 1) {
+								zz = zz + rand.nextInt(3) - 1;
+							}
+							xx --;
+							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.UP);
+						}
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						west = true;
+						break;
+				}
+
+			}
+		}
 	    
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
