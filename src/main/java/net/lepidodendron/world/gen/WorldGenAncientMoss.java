@@ -185,7 +185,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 						return;
 					}
 				}
-				i = rand.nextInt(8); //Trigonotarbids etc
+				i = rand.nextInt(9); //Trigonotarbids etc
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
 				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
 				if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_gerarus";}
@@ -194,6 +194,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 				if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
 				if (i == 6) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
 				if (i == 7) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_arthropleura";}
+				if (i == 8) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_myriacantherpestes";}
 			}
 
 			if (dimID == LepidodendronConfig.dimPermian) {

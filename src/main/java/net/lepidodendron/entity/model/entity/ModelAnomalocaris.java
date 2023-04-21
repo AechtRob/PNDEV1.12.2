@@ -438,9 +438,10 @@ public class ModelAnomalocaris extends AdvancedModelBase {
     public void renderStaticDisplayCase(float f) {
         this.body.offsetZ = -0.15F;
         this.body.offsetY = -0.13F;
-        this.body.render(0.018f);
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(head, -0.4999F, 0.4789F, 0.5888F);
         this.setRotateAngle(cube_r1, 0.0F, -0.0436F, 0.0F);
@@ -496,7 +497,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
         this.body.offsetX = -0.03F;
         this.body.offsetZ = -0.03F;
         this.body.offsetY = -0.7F;
-        this.body.render(0.018f);
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
 
@@ -592,7 +593,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
             this.chainWave(bodyF, 0.28F, 0.18f, -3, f2, 0.6F);
 
             if (!e.isInWater()) {
-                //this.body.offsetY = 0F;
+                this.body.offsetY = -0.05F;
                 this.bob(body, -speed * 1.5F, 2.5F, false, f2, 1);
             } else {
                 if (f3 == 0.0F) {

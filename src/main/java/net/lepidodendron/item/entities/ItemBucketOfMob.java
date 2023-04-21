@@ -25,6 +25,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -60,6 +61,12 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:brasilodendron_spores", "inventory"));
 
 		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:entities/metopacanthus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/cancrinos_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/murex_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/leviathania_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/harpagodes_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/nerinea_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/megamastax_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/gyrosteus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/squaloraja_bucket", "inventory"),
@@ -68,36 +75,37 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/tamisiocaris_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/cordaticaris_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/sanctacaris_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/marmolatella_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/marmolatella_bucket", "inventory"),
 //				new ModelResourceLocation("lepidodendron:entities/typhloesus_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/papilionichthys_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/promexyele_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/rainerichthys_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/papilionichthys_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/promexyele_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/rainerichthys_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/zenaspis_bucket", "inventory"),
 //				new ModelResourceLocation("lepidodendron:entities/strudops_bucket", "inventory"),
 //				new ModelResourceLocation("lepidodendron:entities/triops_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/psychopyge_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/psychopyge_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/lepidaster_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/villebrunaster_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/elephantoceras_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/elasmodectes_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/kosmoceras_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/quasimodichthys_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/anaethalion_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/viviparus_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/dakosaurus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/elephantoceras_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/elasmodectes_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/kosmoceras_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/quasimodichthys_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/anaethalion_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/viviparus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/dakosaurus_bucket", "inventory"),
 //				new ModelResourceLocation("lepidodendron:entities/slimonia_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/hovasaurus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/hovasaurus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/decacuminaster_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/saccocoma_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/vampyronassa_bucket", "inventory"),
-//				new ModelResourceLocation("lepidodendron:entities/proteroctopus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/saccocoma_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/vampyronassa_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/proteroctopus_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/pentecopterus_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/angelina_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/brongniartella_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/chaohusaurus_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/cothurnocystis_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/elonichthys_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/sibyrhynchus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/greererpeton_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/hoplitaspis_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/micromitra_bucket", "inventory"),
@@ -621,6 +629,21 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("mob_bucket");
 			maxStackSize = 1;
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (isEntityFromItemStack(stack)) {
+				NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
+				ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
+				String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+				return I18n.translateToLocal("item.pf_mob_bucket_full.name").trim()
+						+ ": "
+						+ I18n.translateToLocal("entity." + mobname + ".name").trim();
+			}
+
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)

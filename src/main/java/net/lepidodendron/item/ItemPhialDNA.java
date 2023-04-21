@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -40,6 +41,59 @@ public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_phial_dna");
 			setRegistryName("phial_dna");
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+					String resourcelocation = (blockNBT.getString("id"));
+					return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();
+				}
+
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+			}
+
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)

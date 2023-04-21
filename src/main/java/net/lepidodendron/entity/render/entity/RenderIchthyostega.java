@@ -15,6 +15,10 @@ public class RenderIchthyostega extends RenderLiving<EntityPrehistoricFloraIchth
         super(mgr, new ModelIchthyostega(), 0.4f);
     }
 
+    public static float getScaler() {
+        return 0.45F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraIchthyostega entity) {
         return RenderIchthyostega.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderIchthyostega extends RenderLiving<EntityPrehistoricFloraIchth
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraIchthyostega entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

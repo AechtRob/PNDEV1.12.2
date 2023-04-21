@@ -1,0 +1,13 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:protognetum_inventory"
+    },
+    "normal": [
+      {"model": "lepidodendron:protognetum_1"},
+      {"model": "lepidodendron:protognetum_2"},
+      {"model": "lepidodendron:protognetum_1_var"},
+      {"model": "lepidodendron:protognetum_2_var"}
+    ]
+  }
+}

@@ -9,7 +9,11 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderCyamodus;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -300,6 +304,58 @@ public class EntityPrehistoricFloraCyamodus extends EntityPrehistoricFloraSwimmi
 			return LepidodendronMod.CYAMODUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.CYAMODUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.9;
+	}
+	public static double upperbackverticallinedepth() {
+		return 1;
+	}
+	public static double upperfrontlineoffset() {
+		return -0.02;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.18F;
+	}
+	public static double upperbacklineoffset() {
+		return 0;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.2F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.2;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.15;
+	}
+	public static double lowerfrontlineoffset() {
+		return -0.02;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.05F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.35F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_CYAMODUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelCyamodus;
+	}
+	public static float getScaler() {
+		return RenderCyamodus.getScaler();
 	}
 
 }

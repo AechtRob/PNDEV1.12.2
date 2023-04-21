@@ -7,7 +7,11 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.entity.RenderHeterosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
@@ -320,4 +324,57 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 			}
 		}
 	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.6;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.8F;
+	}
+	public static double lowerbacklineoffset() {
+		return -0.23;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -4F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_HETEROSTEUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelHeterosteus;
+	}
+	public static float getScaler() {
+		return RenderHeterosteus.getScaler();
+	}
+
 }

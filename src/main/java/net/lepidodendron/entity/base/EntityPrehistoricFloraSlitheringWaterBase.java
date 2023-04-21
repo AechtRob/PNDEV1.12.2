@@ -250,7 +250,11 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	}
 
 	public boolean getCanBreed() {
-		return this.getTicks() > 6000; //If the mob has done not bred for a MC day
+		int breedCooldown = LepidodendronConfig.breedCooldown;
+		if (breedCooldown < 1) {
+			breedCooldown = 1;
+		}
+		return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
@@ -297,7 +301,8 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	@Override
 	public boolean isInWater() {
-		return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
+		return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) ||
+				this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
 	}
 
 	public boolean isAtBottom() {

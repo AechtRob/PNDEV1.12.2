@@ -10,6 +10,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.render.entity.RenderAmplectobelua;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -224,6 +228,59 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 			this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			//}
 		}
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.48; }
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.15;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.125;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_AMPLECTOBELUA;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelAmplectobelua;
+	}
+	public static float getScaler() {
+		return RenderAmplectobelua.getScaler();
 	}
 }
 

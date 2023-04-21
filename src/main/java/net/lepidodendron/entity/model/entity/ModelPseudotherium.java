@@ -216,19 +216,38 @@ public class ModelPseudotherium extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body2.render(f5 * 0.15f);
+        this.body2.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body2.offsetZ = -0.3F;
-        this.jaw.rotateAngleX = (float) Math.toRadians(20);
-        this.body2.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(armL, 1.0908F, 0.3491F, 0.0F);
+        this.setRotateAngle(armL2, -1.789F, -0.1309F, 0.2618F);
+        this.setRotateAngle(armR, 1.0908F, -0.3491F, 0.0F);
+        this.setRotateAngle(armR2, -1.789F, 0.1309F, -0.2618F);
+        this.setRotateAngle(body, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.4538F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.4974F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.4538F, 0.0F, 0.0F);
+        this.setRotateAngle(footL, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(footR, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(handL, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(handR, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.5061F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, -1.1781F, -0.4363F, 0.0F);
+        this.setRotateAngle(legL2, 1.9199F, 0.0F, 0.0F);
+        this.setRotateAngle(legR, -1.1781F, 0.4363F, 0.0F);
+        this.setRotateAngle(legR2, 1.9199F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.6109F, 0.1309F, 0.0F);
+        this.setRotateAngle(tail2, 0.3491F, 0.1745F, 0.0F);
+        this.body2.offsetY = 0.31F;
+        this.body2.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -240,7 +259,7 @@ public class ModelPseudotherium extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body2.offsetY = 1.28F;
+        //this.body2.offsetY = 1.28F;
 
         EntityPrehistoricFloraPseudotherium Pseudotherium = (EntityPrehistoricFloraPseudotherium) e;
         float masterSpeed = Pseudotherium.getTravelSpeed();

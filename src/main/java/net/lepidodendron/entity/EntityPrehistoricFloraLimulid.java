@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Palaeogene - Neogene - Pleistocene - Present";}
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - Present";}
 
 	public static String getHabitat() {return "Amphibious";}
 

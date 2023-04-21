@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHallucigenia extends RenderLiving<EntityPrehistoricFloraHallucigenia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hallucigenia.png");
     private static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hallucigenia_nerf.png");
-    public static float getScaler() {return 0.12F;}
+    public static float getScaler() {return 0.7f* 0.12F;}
     public RenderHallucigenia(RenderManager mgr) {
         super(mgr, new ModelHallucigenia(), 0.0f);
     }
@@ -30,7 +30,7 @@ public class RenderHallucigenia extends RenderLiving<EntityPrehistoricFloraHallu
     protected void applyRotations(EntityPrehistoricFloraHallucigenia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
-    protected void preRenderCallback(EntityPrehistoricFloraVetulicola entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraHallucigenia entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;

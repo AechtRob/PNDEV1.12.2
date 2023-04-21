@@ -159,7 +159,7 @@ public class BlockClaytosmunda extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern plant");
-	        tooltip.add("Periods: Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Quaternary");
+	        tooltip.add("Periods: Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

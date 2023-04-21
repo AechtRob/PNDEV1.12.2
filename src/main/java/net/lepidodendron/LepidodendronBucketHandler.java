@@ -44,6 +44,22 @@ public class LepidodendronBucketHandler {
             playerIn.swingArm(event.getHand());
             event.setCanceled(true);
         }
+        else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+            EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
+            if (!ee.isSmall()) {
+                if (event.getWorld().isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(event.getHand());
+            event.setCanceled(true);
+        }
         else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
             EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
             if (!ee.isSmall()) {

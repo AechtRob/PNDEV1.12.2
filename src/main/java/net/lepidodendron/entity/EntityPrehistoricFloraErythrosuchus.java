@@ -45,9 +45,9 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraErythrosuchus(World world) {
 		super(world);
-		setSize(0.99F, 1.25F);
+		setSize(0.9F, 1.25F);
 		minWidth = 0.18F;
-		maxWidth = 0.99F;
+		maxWidth = 0.9F;
 		maxHeight = 1.25F;
 		maxHealthAgeable = 48.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -79,8 +79,19 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 40;
 	}
+
+	@Override
+	public int getEatLength() {
+		return 40;
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 80;
+	}
+
 
 	@Override
 	public String getTexture() {
@@ -98,12 +109,12 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.455F;
+		float speedBase = 0.33F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.27F;
+			speedBase = speedBase * 1.5F;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;

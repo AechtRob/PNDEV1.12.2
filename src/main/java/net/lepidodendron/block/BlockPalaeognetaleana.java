@@ -129,7 +129,7 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Gnetale vine");
-				tooltip.add("Periods: Permian [- Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Quaternary]");
+				tooltip.add("Periods: Permian [- Triassic (?) - Jurassic (?) - Cretaceous (?) - Paleogene (?) - Neogene (?) - Pleistocene (?) - present (?)]]");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

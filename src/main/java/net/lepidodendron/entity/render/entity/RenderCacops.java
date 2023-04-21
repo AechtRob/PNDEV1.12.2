@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCacops extends RenderLiving<EntityPrehistoricFloraCacops> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cacops.png");
-
+    public static float getScaler() {return 0.20f;}
     public RenderCacops(RenderManager mgr) {
         super(mgr, new ModelCacops(), 0.3f);
     }
@@ -27,7 +27,7 @@ public class RenderCacops extends RenderLiving<EntityPrehistoricFloraCacops> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCacops entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

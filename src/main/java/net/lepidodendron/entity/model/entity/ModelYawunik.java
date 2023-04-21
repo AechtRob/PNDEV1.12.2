@@ -455,7 +455,7 @@ public class ModelYawunik extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bodybase.render(f5 * 0.24F);
+        this.bodybase.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -479,7 +479,7 @@ public class ModelYawunik extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bodybase.offsetY = 1.1F;
+        //this.bodybase.offsetY = 1.1F;
 
         AdvancedModelRenderer[] Tail = {this.body3};
 
@@ -535,7 +535,7 @@ public class ModelYawunik extends AdvancedModelBase {
             this.flap(legR12, speedLeg, degreeLeg, false, 5.5F, 0.5F, f2, 0.7F);
 
             if (!e.isInWater()) {
-                this.bodybase.offsetY = 1.2F;
+                this.bodybase.offsetY = 1.2F - 1.1F;
                 this.bob(bodybase, -speed * 1.5F, 3F, false, f2, 1);
             }
             else {

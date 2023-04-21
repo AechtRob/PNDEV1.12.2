@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -40,6 +41,12 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:fossils/fossil_metopacanthus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_cancrinos_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_murex_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_leviathania_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_harpagodes_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_nerinea_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_typhloesus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_elasmodectes_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_kosmoceras_clean", "inventory"),
@@ -58,6 +65,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lepidaster_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_villebrunaster_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tamisiocaris_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_sibyrhynchus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_hupehsuchus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_marmolatella_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_murex_clean", "inventory"),
@@ -66,25 +74,25 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_nerinea_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_leviathania_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_pricyclopyge_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_psychopyge_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_psychopyge_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_carolinites_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_symphysops_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_elephantoceras_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_elephantoceras_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_euspira_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_promexyele_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_papilionichthys_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_rainerichthys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_promexyele_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_papilionichthys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rainerichthys_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_triops_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_strudops_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_orcanopterus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_onychopterella_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_strobilopterus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_cothurnocystis_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_proterosuchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_proterosuchus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_limusaurus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_doswellia_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_teyujagua_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_cowielepis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_cowielepis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_jamoytius_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_praearcturus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_stoermeropterus_clean", "inventory"),
@@ -330,6 +338,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_callibrachion_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_callistophytales_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_vitis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_laurus_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_bisonia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_hedera_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_calvapilosa_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cambroraster_clean", "inventory"),
@@ -416,6 +426,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cyamodus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cycadeoidea_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cycadopteris_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_dichopteris_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cycas_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cyclodendron_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cyclonema_clean", "inventory"),
@@ -501,6 +512,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eosaurichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eosimops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ephedra_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_protognetum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_equisetites_reed_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_equisetites_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eremopteris_clean", "inventory"),
@@ -959,6 +971,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_swamp_horsetail_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_swartpuntia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sycamore_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_chestnut_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_syllipsimopodi_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_synophalos_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tabulata_1_clean", "inventory"),
@@ -1126,6 +1139,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_whatcheeria_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ancient_moss_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_amentotaxus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_palissya_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_megalosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_keraphyton_clean", "inventory"),
@@ -1262,6 +1276,59 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("fossil_clean");
 			maxStackSize = 64;
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+					String resourcelocation = (blockNBT.getString("id"));
+					return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+				}
+
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+			}
+
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)

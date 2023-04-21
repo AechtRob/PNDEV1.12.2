@@ -8,8 +8,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderShringasaurus;
+import net.lepidodendron.entity.render.entity.RenderSmok;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -302,6 +306,58 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 			return LepidodendronMod.SHRINGASAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.SHRINGASAURUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset() {
+		return -0.02;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.85F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_SHRINGASAURUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelShringasaurus;
+	}
+	public static float getScaler() {
+		return RenderShringasaurus.getScaler();
 	}
 
 }

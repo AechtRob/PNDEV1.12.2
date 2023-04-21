@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraChaoyangsaurus extends EntityPrehistoricFlora
 		minWidth = 0.12F;
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 17.0D;
+		maxHealthAgeable = 9.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

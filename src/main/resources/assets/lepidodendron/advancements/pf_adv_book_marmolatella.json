@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:marmolatella_raw"
+			"item": "lepidodendron:marmolatella_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_marmolatella.title"

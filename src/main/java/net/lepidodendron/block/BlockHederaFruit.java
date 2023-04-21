@@ -86,18 +86,18 @@ public class BlockHederaFruit extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
-	    {
-	        if (!LepidodendronConfig.doPropagation && !worldIn.isRemote && stack.getItem() == Items.SHEARS)
-	        {
-	            player.addStat(StatList.getBlockStats(this));
-	            spawnAsEntity(worldIn, pos, new ItemStack(BlockHedera.block, 1, 0));
-	        }
-	        else {
-	        	if (!LepidodendronConfig.doPropagation) {
-	           		super.harvestBlock(worldIn, player, pos, state, te, stack);
-	        	}
-	        }
-	    }
+		{
+			if (!worldIn.isRemote) {
+				if (!LepidodendronConfig.doPropagation && stack.getItem() == Items.SHEARS) {
+					player.addStat(StatList.getBlockStats(this));
+					spawnAsEntity(worldIn, pos, new ItemStack(BlockHedera.block, 1, 0));
+				} else {
+					player.addStat(StatList.getBlockStats(this));
+					spawnAsEntity(worldIn, pos, new ItemStack(ItemHederaFruit.block, 1, 0));
+				}
+			}
+			super.harvestBlock(worldIn, player, pos, state, te, stack);
+		}
 
 	    @Override
 		protected boolean canSilkHarvest()

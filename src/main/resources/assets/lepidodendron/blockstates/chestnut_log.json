@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:chestnut_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:chestnut_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:chestnut_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:chestnut_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:chestnut_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:chestnut_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:chestnut_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

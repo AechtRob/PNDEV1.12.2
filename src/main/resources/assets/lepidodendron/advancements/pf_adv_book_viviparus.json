@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:viviparus_raw"
+			"item": "lepidodendron:viviparus_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_viviparus.title"

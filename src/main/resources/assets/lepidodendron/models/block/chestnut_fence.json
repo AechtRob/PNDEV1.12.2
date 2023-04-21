@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "lepidodendron:blocks/chestnut_planks",
+    "particle": "lepidodendron:blocks/chestnut_planks"
+  }
+}

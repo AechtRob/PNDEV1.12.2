@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraBandringa;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -163,18 +164,39 @@ public class ModelBandringa extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.4f);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, -0.2618F, 0.2618F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.2618F, -0.2618F);
+        this.setRotateAngle(pelvicfinL, 0.0F, -0.7854F, 0.5236F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.7854F, -0.5236F);
+        this.body.offsetY= -0.55F;
+        this.body.offsetZ= -0.07F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.body.offsetZ = 0.07F;
+        this.body.offsetX = 0F;
+        this.body.offsetY = -0.13F;
+        this.body.rotateAngleX =(float)Math.toRadians(90);
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -213,7 +235,7 @@ public class ModelBandringa extends AdvancedModelBase {
             this.swing(pectoralfinR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.875F - 0.9F;
+                this.body.offsetY = 0.875f-0.9F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }

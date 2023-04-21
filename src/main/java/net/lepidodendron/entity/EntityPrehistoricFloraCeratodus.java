@@ -9,6 +9,10 @@ import net.lepidodendron.entity.ai.AmphibianWander;
 import net.lepidodendron.entity.ai.EatFishFoodAIAmphibian;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderCeratodus;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -58,7 +62,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Palaeogene";}
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Paleogene";}
 
 	public static String getSize() {return "L";}
 	//public static String getHabitat() {return "Aquatic";}
@@ -181,6 +185,58 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.CERATODUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1;
+	}
+	public static double lowerfrontlineoffset() {
+		return -0.04;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.25F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.35F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_CERATODUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelCeratodus;
+	}
+	public static float getScaler() {
+		return RenderCeratodus.getScaler();
 	}
 
 }
