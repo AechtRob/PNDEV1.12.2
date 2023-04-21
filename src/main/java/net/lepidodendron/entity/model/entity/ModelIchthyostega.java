@@ -1808,6 +1808,30 @@ public class ModelIchthyostega extends AdvancedModelBase {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0D + (((tickAnim - 0D) / 5D) * (0D-(0D)));
+            yy = 5D + (((tickAnim - 0D) / 5D) * (0D-(5D)));
+            zz = 0D + (((tickAnim - 0D) / 5D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 5D) / 5D) * (-5D-(0D)));
+            zz = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 15) {
+            xx = 0D + (((tickAnim - 10D) / 5D) * (0D-(0D)));
+            yy = -5D + (((tickAnim - 10D) / 5D) * (0D-(-5D)));
+            zz = 0D + (((tickAnim - 10D) / 5D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 15 && tickAnim < 20) {
+            xx = 0D + (((tickAnim - 15D) / 5D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 15D) / 5D) * (5D-(0D)));
+            zz = 0D + (((tickAnim - 15D) / 5D) * (0D-(0D)));
+        }
+        this.setRotateAngle(root, root.rotateAngleX + (float) Math.toRadians(xx), root.rotateAngleY + (float) Math.toRadians(yy), root.rotateAngleZ + (float) Math.toRadians(zz));
+
     }
     
 
