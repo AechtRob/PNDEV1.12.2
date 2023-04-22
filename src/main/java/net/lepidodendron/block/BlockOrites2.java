@@ -4,8 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.item.ItemTelopeaFlower;
-import net.lepidodendron.item.ItemTelopeaSeeds;
+import net.lepidodendron.item.ItemOritesFlower;
+import net.lepidodendron.item.ItemOritesSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -40,16 +40,16 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:telopea5")
+public class BlockOrites2 extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:orites2")
 	public static final Block block = null;
-	public BlockTelopea5(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.telopea);
+	public BlockOrites2(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.orites);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("telopea5"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("orites2"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -57,13 +57,13 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-		//		new ModelResourceLocation("lepidodendron:telopea4", "inventory"));
+		//		new ModelResourceLocation("lepidodendron:orites4", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			//super();
-			setTranslationKey("pf_telopea5");
+			setTranslationKey("pf_orites2");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.2F);
 			setResistance(0.2F);
@@ -82,15 +82,15 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 						&& hand == EnumHand.MAIN_HAND)
 				{
 					//playerIn.swingArm(hand);
-					if (Math.random() > 0.95) {
+					if (!(worldIn.isRemote) && Math.random() > 0.95) {
 						worldIn.destroyBlock(pos, false);
 					}
-					Block.spawnAsEntity(worldIn, pos, new ItemStack(ItemTelopeaFlower.block, 1));
+					Block.spawnAsEntity(worldIn, pos, new ItemStack(ItemOritesFlower.block, 1));
 					stack.damageItem(1, playerIn);
 					return true;
 				}
 
-				if ((!playerIn.capabilities.allowEdit) || (playerIn.getHeldItemMainhand().getItem() != ItemTelopeaFlower.block) || !LepidodendronConfig.doPropagation)
+				if ((!playerIn.capabilities.allowEdit) || (playerIn.getHeldItemMainhand().getItem() != ItemOritesFlower.block) || !LepidodendronConfig.doPropagation)
 				{
 					return true;
 				}
@@ -99,7 +99,7 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 					if (!playerIn.isCreative()) {itemstack.shrink(1);}
 					if (!((hand != playerIn.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
 						if (Math.random() > 0.5) {
-							ItemStack stackSeed = new ItemStack(ItemTelopeaSeeds.block, (int) (1));
+							ItemStack stackSeed = new ItemStack(ItemOritesSeeds.block, (int) (1));
 							stackSeed.setCount(1);
 							ItemHandlerHelper.giveItemToPlayer(playerIn, stackSeed);
 							if (Math.random() > 0.75) {
@@ -140,7 +140,7 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(BlockTelopea.block, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(BlockOrites.block, (int) (1)));
 		}
 
 		@Override
@@ -195,7 +195,7 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockTelopea.block, (int) (1));
+			return new ItemStack(BlockOrites.block, (int) (1));
 		}
 
 		@Override
@@ -214,7 +214,7 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 				return new ItemStack(Items.AIR, (int) (1)).getItem();
 			}
 			else {
-				return Item.getItemFromBlock(BlockTelopea.block);
+				return Item.getItemFromBlock(BlockOrites.block);
 			}
 		}
 
@@ -230,7 +230,7 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 
 	    @Override
         public ItemStack getSilkTouchDrop(IBlockState state)  {
-            return new ItemStack(BlockTelopea.block, (int) (1));
+            return new ItemStack(BlockOrites.block, (int) (1));
         }
 
 	    @Override
@@ -239,13 +239,13 @@ public class BlockTelopea5 extends ElementsLepidodendronMod.ModElement {
 			super.neighborChanged(state, world, pos, neighborBlock, fromPos);
 			
 			Block block = world.getBlockState(pos.down()).getBlock();
-			if ((block != BlockTelopea4.block)) {
+			if ((block != BlockOrites.block)) {
 				world.setBlockToAir(pos);
 				if (Math.random() > 0.66) {
 					if (!LepidodendronConfig.doPropagation) {
 						//Spawn another sapling:
 						if (!world.isRemote) {
-							EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockTelopea.block, (int) (1)));
+							EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockOrites.block, (int) (1)));
 							entityToSpawn.setPickupDelay(10);
 							world.spawnEntity(entityToSpawn);
 						}

@@ -1126,10 +1126,10 @@ public class LepidodendronConfig {
         doPropagation = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "doPropagationVanilla", doPropagationVanilla);
-        prop.setComment("Use modded harvesting and propagation methods instead of vanilla shearing and sapling-drops, etc., for vanilla plants [default: false]");
-        doPropagationVanilla = prop.getBoolean();
-        propOrder.add(prop.getName());
+//        prop = cfg.get("Global World-Gen", "doPropagationVanilla", doPropagationVanilla);
+//        prop.setComment("Use modded harvesting and propagation methods instead of vanilla shearing and sapling-drops, etc., for vanilla plants [default: false]");
+//        doPropagationVanilla = prop.getBoolean();
+//        propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "genAllPlants", genAllPlants);
         prop.setComment("If set to true then all plants from this mod will generate in the overworld, no matter how you set them in their own config section. You can still block them from biomes and dimensions in their individual settings. This setting does not affect algae. [default: false]");

@@ -231,7 +231,7 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 				else {
 					if ((Math.random() > 0.7)) {
 						if ((Math.random() > 0.7)) {
-							if (state.getValue(FLOWERS)) {
+							if (world.getBlockState(pos).getValue(FLOWERS)) {
 								world.setBlockState(pos, BlockBellendenaSeeds.block.getDefaultState(), 3);
 							}
 							else {

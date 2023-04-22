@@ -398,9 +398,10 @@ public class LepidodendronEventSubscribers {
 	}
 
 	@SubscribeEvent //We want to drop the real items or flowers
-	public void onSheared(PlayerInteractEvent.LeftClickBlock event) {
+	public void onSheared(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
-				&& event.getItemStack().getItem() instanceof ItemShears && LepidodendronConfig.doPropagationVanilla
+				&& event.getItemStack().getItem() instanceof ItemShears
+//				&& LepidodendronConfig.doPropagationVanilla
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
@@ -427,6 +428,10 @@ public class LepidodendronEventSubscribers {
 				}
 			} else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.ROSE) { //spawn rose flowers:
 				event.getEntityPlayer().swingArm(event.getHand());
+				if (!(event.getWorld().isRemote) && Math.random() > 0.95) {
+					event.getWorld().destroyBlock(event.getPos(), false);
+					event.getWorld().setBlockToAir(event.getPos().up());
+				}
 				Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemRoseFlower.block, 1));
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
@@ -435,12 +440,20 @@ public class LepidodendronEventSubscribers {
 				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.ROSE) { //spawn rose flowers:
 					event.getEntityPlayer().swingArm(event.getHand());
+					if (!(event.getWorld().isRemote) && Math.random() > 0.95) {
+						event.getWorld().destroyBlock(event.getPos(), false);
+						event.getWorld().setBlockToAir(event.getPos().up());
+					}
 					Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemRoseFlower.block, 1));
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);
 				}
 			} else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.PAEONIA) { //spawn Peony flowers:
 				event.getEntityPlayer().swingArm(event.getHand());
+				if (!(event.getWorld().isRemote) && Math.random() > 0.95) {
+					event.getWorld().destroyBlock(event.getPos(), false);
+					event.getWorld().setBlockToAir(event.getPos().up());
+				}
 				Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemPeonyFlower.block, 1));
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
@@ -449,12 +462,20 @@ public class LepidodendronEventSubscribers {
 				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.PAEONIA) { //spawn Peony flowers:
 					event.getEntityPlayer().swingArm(event.getHand());
+					if (!(event.getWorld().isRemote) && Math.random() > 0.95) {
+						event.getWorld().destroyBlock(event.getPos(), false);
+						event.getWorld().setBlockToAir(event.getPos().up());
+					}
 					Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemPeonyFlower.block, 1));
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);
 				}
 			} else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.SYRINGA) { //spawn lilac flowers:
 				event.getEntityPlayer().swingArm(event.getHand());
+				if (!(event.getWorld().isRemote) && Math.random() > 0.95) {
+					event.getWorld().destroyBlock(event.getPos(), false);
+					event.getWorld().setBlockToAir(event.getPos().up());
+				}
 				Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemLilacFlower.block, 1));
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
@@ -463,6 +484,10 @@ public class LepidodendronEventSubscribers {
 				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.SYRINGA) { //spawn lilac flowers:
 					event.getEntityPlayer().swingArm(event.getHand());
+					if (!(event.getWorld().isRemote) && Math.random() > 0.95) {
+						event.getWorld().destroyBlock(event.getPos(), false);
+						event.getWorld().setBlockToAir(event.getPos().up());
+					}
 					Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemLilacFlower.block, 1));
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);

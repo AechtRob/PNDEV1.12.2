@@ -4,6 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.item.ItemTelopeaFlower;
+import net.lepidodendron.item.ItemTelopeaSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -17,9 +19,11 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -31,6 +35,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 
@@ -66,6 +71,55 @@ public class BlockTelopea4 extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Override
+		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			//right-click block:
+			if (!(worldIn.isRemote)) {
+				ItemStack stack = playerIn.getHeldItem(hand);
+				if ((playerIn.capabilities.allowEdit) && stack.getItem() instanceof ItemShears
+						&& hand == EnumHand.MAIN_HAND)
+				{
+					//playerIn.swingArm(hand);
+					if (Math.random() > 0.95) {
+						worldIn.destroyBlock(pos, false);
+					}
+					Block.spawnAsEntity(worldIn, pos, new ItemStack(ItemTelopeaFlower.block, 1));
+					stack.damageItem(1, playerIn);
+					return true;
+				}
+
+				if ((!playerIn.capabilities.allowEdit) || (playerIn.getHeldItemMainhand().getItem() != ItemTelopeaFlower.block) || !LepidodendronConfig.doPropagation)
+				{
+					return true;
+				}
+				else {
+					ItemStack itemstack = playerIn.getHeldItem(hand);
+					if (!playerIn.isCreative()) {itemstack.shrink(1);}
+					if (!((hand != playerIn.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+						if (Math.random() > 0.5) {
+							ItemStack stackSeed = new ItemStack(ItemTelopeaSeeds.block, (int) (1));
+							stackSeed.setCount(1);
+							ItemHandlerHelper.giveItemToPlayer(playerIn, stackSeed);
+							if (Math.random() > 0.75) {
+								worldIn.destroyBlock(pos, false);
+							}
+							return true;
+						}
+						else {
+							if (Math.random() > 0.75) {
+								worldIn.destroyBlock(pos, false);
+								return true;
+							}
+						}
+					}
+					return true;
+				}
+			}
+			else {
+				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+			}
 		}
 
 		@Override
