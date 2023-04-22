@@ -292,6 +292,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 			{
 				//Update it so that sporing things might stop sporing:
 				worldIn.scheduleUpdate(pos, worldIn.getBlockState(pos).getBlock(), 1);
+
 				return EnumActionResult.SUCCESS;
 			}
 			return EnumActionResult.PASS;

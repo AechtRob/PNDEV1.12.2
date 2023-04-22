@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:anemone_red", "weight": 5 },
+      {"model": "lepidodendron:anemone_lilac", "weight": 5 },
+      {"model": "lepidodendron:anemone_pink", "weight": 5 },
+      {"model": "lepidodendron:anemone_red_var" },
+      {"model": "lepidodendron:anemone_lilac_var" },
+      {"model": "lepidodendron:anemone_pink_var" }
+    ]
+  }
+}
