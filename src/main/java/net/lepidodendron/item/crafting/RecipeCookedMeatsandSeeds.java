@@ -59,6 +59,8 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemSphoocerasRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemIvoitesRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemMuensterellaRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemPlectronocerasRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
+
 
 
 		//Escargots - snails and similar
@@ -77,6 +79,8 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemLeviathania.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemHarpagodes.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemNerinea.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemStrombus.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
+
 
 
 
@@ -222,6 +226,9 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemSanctacarisRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemHurdiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemCaryosyntripsRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemSlimoniaRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCiurcopterusRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+
 
 
 
