@@ -9497,6 +9497,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPlectronoceras) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PLECTRONOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 
 
 

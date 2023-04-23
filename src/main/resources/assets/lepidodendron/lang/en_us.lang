@@ -7527,3 +7527,7 @@ item.pf_bishanopliosaurus_raw.name=Raw Bishanopliosaurus
 advancements.pf_adv_book_bishanopliosaurus.title=Bishanopliosaurus
 advancements.pf_adv_book_bishanopliosaurus.description=Unlock the entry for Bishanopliosaurus in the Palaeopedia
 entity.prehistoric_flora_bishanopliosaurus.name=Bishanopliosaurus
+advancements.pf_adv_book_plectronoceras.description=Unlock the entry for Plectronoceras in the Palaeopedia
+advancements.pf_adv_book_plectronoceras.title=Plectronoceras
+item.pf_plectronoceras_raw.name=Raw Plectronoceras
+entity.prehistoric_flora_plectronoceras.name=Plectronoceras

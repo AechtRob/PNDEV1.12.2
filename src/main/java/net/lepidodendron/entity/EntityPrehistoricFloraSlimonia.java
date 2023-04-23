@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 	public EntityPrehistoricFloraSlimonia(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
+		setSize(0.7F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.5F;
+		maxWidth = 0.7F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -98,7 +98,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale()<0.6F;
 	}
 
 	public static String getPeriod() {return "Silurian";}

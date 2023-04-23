@@ -364,7 +364,42 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_murex","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_leviathania","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_harpagodes","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_nerinea","inventory")
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_nerinea","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_strombus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_helenodora","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_typhloesus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_angelina","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_platypeltoides","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_megistaspis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_tribrachiodemas","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_carolinites","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_symphysops","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_pricyclopyge","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_chasmataspis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_hoplitaspis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_harpacanthus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_harpagofututor","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_hadronector","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ophiopsis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_congophiopsis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_adamanteryon","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_scheenstia","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_plectronoceras","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_pseudorhina","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_phorcynis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_propterus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_oreochima","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_libys","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_coccoderma","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ostenocaris","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_morrolepis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eocarcinus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_kaykay","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_orthocormus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_panacanthocaris","inventory")
+
+
+
 
 
 
