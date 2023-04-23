@@ -13,7 +13,7 @@ public class RenderSlimonia extends RenderLiving<EntityPrehistoricFloraSlimonia>
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/slimonia_baby.png");
 
     public static float getScaler() {
-        return 0.9F;
+        return 0.43F;
     }
     public RenderSlimonia(RenderManager mgr) {
         super(mgr, new ModelSlimonia(), 0.5f);

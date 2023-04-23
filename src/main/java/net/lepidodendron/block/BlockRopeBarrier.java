@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.item.*;
@@ -17,6 +18,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -215,9 +217,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 				if (playerIn.getHeldItem(hand).getItem() == new ItemStack(Blocks.AIR, 1).getItem()
 						|| playerIn.getHeldItem(hand).getItem() == null) {
 					emptyhand = true;
-				}
-
-				else if (playerIn.getHeldItem(hand).getItem() == new ItemStack(ItemRope.block, 1).getItem()) {
+				} else if (playerIn.getHeldItem(hand).getItem() == new ItemStack(ItemRope.block, 1).getItem()) {
 					ropeUsed = true;
 				}
 
@@ -251,14 +251,11 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 					enumUsed = 11;
 				} else if (playerIn.getHeldItem(hand).getItem() == new ItemStack(Blocks.REDSTONE_TORCH, 1).getItem()) {
 					enumUsed = 12;
-				}
-				else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, (int) (1)).getItem()){
+				} else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, (int) (1)).getItem()) {
 					enumUsed = 13;
-				}
-				else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, (int) (1)).getItem()){
+				} else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, (int) (1)).getItem()) {
 					enumUsed = 14;
-				}
-				else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, (int) (1)).getItem()){
+				} else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, (int) (1)).getItem()) {
 					enumUsed = 15;
 				}
 
@@ -337,8 +334,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								}
 							}
 						}
-					}
-					else if (facing == EnumFacing.SOUTH && (!state.getValue(SOUTH)) && worldIn.getBlockState(pos.south()).getBlock() == BlockRopeBarrier.block) {
+					} else if (facing == EnumFacing.SOUTH && (!state.getValue(SOUTH)) && worldIn.getBlockState(pos.south()).getBlock() == BlockRopeBarrier.block) {
 						boolean oldNorthNeighbour = new Object() {
 							public boolean getValue(BlockPos pos1, String tag) {
 								TileEntity tileEntity = worldIn.getTileEntity(pos1);
@@ -360,7 +356,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 									te.getTileData().setBoolean("south", true);
 
 									//Update the neighbour too:
-									IBlockState state2 = worldIn.getBlockState(pos.south()).getActualState(worldIn, pos.south());;
+									IBlockState state2 = worldIn.getBlockState(pos.south()).getActualState(worldIn, pos.south());
+									;
 
 									worldIn.setBlockState(pos.south(), state2.withProperty(NORTH, true));
 									TileEntity te2 = worldIn.getTileEntity(pos.south());
@@ -375,8 +372,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								}
 							}
 						}
-					}
-					else if (facing == EnumFacing.EAST && (!state.getValue(EAST)) && worldIn.getBlockState(pos.east()).getBlock() == BlockRopeBarrier.block) {
+					} else if (facing == EnumFacing.EAST && (!state.getValue(EAST)) && worldIn.getBlockState(pos.east()).getBlock() == BlockRopeBarrier.block) {
 						boolean oldNorthNeighbour = new Object() {
 							public boolean getValue(BlockPos pos1, String tag) {
 								TileEntity tileEntity = worldIn.getTileEntity(pos1);
@@ -398,7 +394,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 									te.getTileData().setBoolean("east", true);
 
 									//Update the neighbour too:
-									IBlockState state2 = worldIn.getBlockState(pos.east()).getActualState(worldIn, pos.east());;
+									IBlockState state2 = worldIn.getBlockState(pos.east()).getActualState(worldIn, pos.east());
+									;
 
 									worldIn.setBlockState(pos.east(), state2.withProperty(WEST, true));
 									TileEntity te2 = worldIn.getTileEntity(pos.east());
@@ -413,8 +410,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								}
 							}
 						}
-					}
-					else if (facing == EnumFacing.WEST && (!state.getValue(WEST)) && worldIn.getBlockState(pos.west()).getBlock() == BlockRopeBarrier.block) {
+					} else if (facing == EnumFacing.WEST && (!state.getValue(WEST)) && worldIn.getBlockState(pos.west()).getBlock() == BlockRopeBarrier.block) {
 						boolean oldNorthNeighbour = new Object() {
 							public boolean getValue(BlockPos pos1, String tag) {
 								TileEntity tileEntity = worldIn.getTileEntity(pos1);
@@ -436,7 +432,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 									te.getTileData().setBoolean("west", true);
 
 									//Update the neighbour too:
-									IBlockState state2 = worldIn.getBlockState(pos.west()).getActualState(worldIn, pos.west());;
+									IBlockState state2 = worldIn.getBlockState(pos.west()).getActualState(worldIn, pos.west());
+									;
 
 									worldIn.setBlockState(pos.west(), state2.withProperty(EAST, true));
 									TileEntity te2 = worldIn.getTileEntity(pos.west());
@@ -467,7 +464,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								te.getTileData().setBoolean("north", false);
 
 								TileEntity te2 = worldIn.getTileEntity(pos.north());
-								IBlockState state2 = worldIn.getBlockState(pos.north()).getActualState(worldIn, pos.north());;
+								IBlockState state2 = worldIn.getBlockState(pos.north()).getActualState(worldIn, pos.north());
+								;
 								if (te2 != null) {
 									if (te2 instanceof TileEntityRopeBarrier) {
 										//Update the neighbour too:
@@ -483,8 +481,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								}
 							}
 						}
-					}
-					else if (facing == EnumFacing.SOUTH && (state.getValue(SOUTH)) && worldIn.getBlockState(pos.south()).getBlock() == BlockRopeBarrier.block) {
+					} else if (facing == EnumFacing.SOUTH && (state.getValue(SOUTH)) && worldIn.getBlockState(pos.south()).getBlock() == BlockRopeBarrier.block) {
 						if (te != null) {
 							if (te instanceof TileEntityRopeBarrier) {
 
@@ -493,7 +490,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								te.getTileData().setInteger("southDye", 16);
 								te.getTileData().setBoolean("south", false);
 
-								IBlockState state2 = worldIn.getBlockState(pos.south()).getActualState(worldIn, pos.south());;
+								IBlockState state2 = worldIn.getBlockState(pos.south()).getActualState(worldIn, pos.south());
+								;
 								TileEntity te2 = worldIn.getTileEntity(pos.south());
 								if (te2 != null) {
 									if (te2 instanceof TileEntityRopeBarrier) {
@@ -510,8 +508,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								}
 							}
 						}
-					}
-					else if (facing == EnumFacing.EAST && (state.getValue(EAST)) && worldIn.getBlockState(pos.east()).getBlock() == BlockRopeBarrier.block) {
+					} else if (facing == EnumFacing.EAST && (state.getValue(EAST)) && worldIn.getBlockState(pos.east()).getBlock() == BlockRopeBarrier.block) {
 						if (te != null) {
 							if (te instanceof TileEntityRopeBarrier) {
 
@@ -520,7 +517,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								te.getTileData().setInteger("eastDye", 16);
 								te.getTileData().setBoolean("east", false);
 
-								IBlockState state2 = worldIn.getBlockState(pos.east()).getActualState(worldIn, pos.east());;
+								IBlockState state2 = worldIn.getBlockState(pos.east()).getActualState(worldIn, pos.east());
+								;
 								TileEntity te2 = worldIn.getTileEntity(pos.east());
 								if (te2 != null) {
 									if (te2 instanceof TileEntityRopeBarrier) {
@@ -537,8 +535,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								}
 							}
 						}
-					}
-					else if (facing == EnumFacing.WEST && (state.getValue(WEST)) && worldIn.getBlockState(pos.west()).getBlock() == BlockRopeBarrier.block) {
+					} else if (facing == EnumFacing.WEST && (state.getValue(WEST)) && worldIn.getBlockState(pos.west()).getBlock() == BlockRopeBarrier.block) {
 						if (te != null) {
 							if (te instanceof TileEntityRopeBarrier) {
 
@@ -547,7 +544,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 								te.getTileData().setInteger("westDye", 16);
 								te.getTileData().setBoolean("west", false);
 
-								IBlockState state2 = worldIn.getBlockState(pos.west()).getActualState(worldIn, pos.west());;
+								IBlockState state2 = worldIn.getBlockState(pos.west()).getActualState(worldIn, pos.west());
+								;
 								TileEntity te2 = worldIn.getTileEntity(pos.west());
 								if (te2 != null) {
 									if (te2 instanceof TileEntityRopeBarrier) {
@@ -842,6 +840,17 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
 		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Place next to each other and attach a rope item to the facing sides. Ropes can be dyed. Barriers can be trimmed. See the Palaeopedia.");
+				super.addInformation(stack, player, tooltip, advanced);
+			}
+
+
+		}
 	}
 
 
@@ -882,6 +891,8 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 		public AxisAlignedBB getRenderBoundingBox() {
 			return new AxisAlignedBB(pos.add(-1, 0, -1), pos.add(2, 1, 2));
 		}
+
+
 	}
 }
 

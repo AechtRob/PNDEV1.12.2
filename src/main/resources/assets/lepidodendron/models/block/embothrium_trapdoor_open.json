@@ -1,0 +1,8 @@
+{
+ "parent": "lepidodendron:block/trapdoor_open",
+ "textures": {
+ "texture": "lepidodendron:blocks/embothrium_trapdoor",
+ "planktexture": "lepidodendron:blocks/embothrium_planks",
+ "particle": "lepidodendron:blocks/embothrium_trapdoor"
+ }
+}
