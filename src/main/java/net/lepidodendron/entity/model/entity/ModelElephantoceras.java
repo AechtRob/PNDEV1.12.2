@@ -255,7 +255,7 @@ public class ModelElephantoceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.Shell1.offsetY = -0.5F;
+        //this.Shell1.offsetY = -0.5F;
         //this.Shell1.rotateAngleY = (float) Math.toRadians(180);
         //this.body.offsetZ = -1F;
 
@@ -295,7 +295,7 @@ public class ModelElephantoceras extends AdvancedModelBaseExtended {
         if (e.isInWater()) {
             float bobSpeed = 0.1F;
             this.bob(Shell1, bobSpeed, 0.8F, false, f2, 2);
-            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.05F, false, 0.5F, f2, 1);
+            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.2F, false, 0.5F, f2, 1);
         }
         else {
             this.Shell1.rotateAngleZ = (float) Math.toRadians(90);

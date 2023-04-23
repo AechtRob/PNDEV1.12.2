@@ -246,6 +246,8 @@ public class ModelSlimonia extends AdvancedModelBase {
         //this.resetToDefaultPose();
        // this.body.offsetY = 0.4F;
         this.body.offsetY = -0.25F;
+        this.body.offsetZ = 0.1F;
+
 
         AdvancedModelRenderer[] fishBody = {this.tergite1, this.tergite2_3, this.tergite4_5, this.tergite6, this.tergite7, this.tergite8, this.tergite9, this.tergite10, this.tergite11, this.tergite12, this.telson};
         AdvancedModelRenderer[] fishTail = {this.tergite12, this.telson};

@@ -7458,3 +7458,7 @@ advancements.pf_adv_book_plectronoceras.description=Unlock the entry for Plectro
 advancements.pf_adv_book_plectronoceras.title=Plectronoceras
 item.pf_plectronoceras_raw.name=Raw Plectronoceras
 entity.prehistoric_flora_plectronoceras.name=Plectronoceras
+advancements.pf_adv_book_cancrinos.description=Unlock the entry for Cancrinos in the Palaeopedia
+advancements.pf_adv_book_cancrinos.title=Cancrinos
+item.pf_cancrinos_raw.name=Raw Cancrinos
+entity.prehistoric_flora_cancrinos.name=Cancrinos

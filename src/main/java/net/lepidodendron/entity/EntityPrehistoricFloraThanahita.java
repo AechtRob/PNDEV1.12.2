@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraThanahita extends EntityPrehistoricFloraTrilo
 		if (this.getAnimation() == LOOK_ANIMATION) {
 			return 0;
 		}
-		return 0.076f;
+		return 0.05f;
 		//return 0;
 	}
 
