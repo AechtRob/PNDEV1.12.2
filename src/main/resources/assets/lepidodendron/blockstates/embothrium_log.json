@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:embothrium_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:embothrium_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:embothrium_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:embothrium_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:embothrium_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:embothrium_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:embothrium_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

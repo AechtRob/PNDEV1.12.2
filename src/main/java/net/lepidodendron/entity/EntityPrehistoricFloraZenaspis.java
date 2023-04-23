@@ -8,6 +8,10 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderZenaspis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -160,4 +164,54 @@ public class EntityPrehistoricFloraZenaspis extends EntityPrehistoricFloraFishBa
 		return LepidodendronMod.ZENASPIS_LOOT;
 	}
 
+	public static double offsetWall() {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 2.0;
+	}
+	public static double upperbackverticallinedepth() {
+		return 2.0;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 1.4F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.25;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 2.0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_ZENASPIS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelZenaspis;
+	}
+	public static float getScaler() {
+		return RenderZenaspis.getScaler();
+	}
 }

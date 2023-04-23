@@ -311,22 +311,60 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.bodyback.render(f5 * 0.9f);
+        this.bodyback.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.neck.rotateAngleX = (float) Math.toRadians(-1.6);
-        this.neck2.rotateAngleX = (float) Math.toRadians(-22.5);
-        this.neck3.rotateAngleX = (float) Math.toRadians(-15);
-        this.head.rotateAngleX = (float) Math.toRadians(-2.5);
-        this.lowerjaw.rotateAngleX = (float) Math.toRadians(32.5);
+    public void renderStaticWall(float f) {
+        this.bodyfront.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(ArmL, 0.6F, -0.0F, 0.0F);
+        this.setRotateAngle(ArmL2, -1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL3, 0.0F, -0.0F, 1.2F);
+        this.setRotateAngle(ArmR, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR2, -1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR3, 0.0F, -0.0F, -1.3F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.4F, -0.0F, 0.1F);
+        this.setRotateAngle(neck3, -0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(head, 0.1F, -0.9F, 0.1F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.bodyfront.offsetY = -0.0F;
+        this.bodyfront.offsetX = -0.0F;
+        this.bodyfront.offsetZ = 0.2F;
         this.bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+     public void renderStaticFloor(float f) {
+        this.setRotateAngle(legL, 18.5F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 19.2F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, 11.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR, 18.8F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, 19.7F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, 10.9F, 0.0F, 0.0F);
+        this.setRotateAngle(legR4, 18.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.12F, -0.1F, -0.1F);
+        this.setRotateAngle(tail3, -0.3F, -0.0F, -0.18F);
+        this.setRotateAngle(tail4, -0.2F, -0.10F, -1.3F);
+        this.setRotateAngle(tail5, -0.4F, -0.5F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyback, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, 0.6F, -0.0F, 0.0F);
+        this.setRotateAngle(ArmL2, -1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL3, 0.0F, -0.0F, 1.2F);
+        this.setRotateAngle(ArmR, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR2, -1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR3, 0.0F, -0.0F, -1.3F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.4F, -0.0F, 0.1F);
+        this.setRotateAngle(neck3, -0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(head, 0.1F, -0.9F, 0.1F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.bodyback.offsetY=-0.165f;
+        this.bodyback.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -338,7 +376,7 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bodyback.offsetY = 0.2F;
+        //this.bodyback.offsetY = 0.2F;
 
         EntityPrehistoricFloraSillosuchus Sillosuchus = (EntityPrehistoricFloraSillosuchus) e;
         float masterSpeed = Sillosuchus.getTravelSpeed();

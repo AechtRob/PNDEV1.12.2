@@ -239,16 +239,26 @@ public class ModelZenaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.rotateAngleY = (float) Math.toRadians(90);
+        public void renderStaticWall(float f) {
+            this.head.rotateAngleY = (float) Math.toRadians(540);
+            this.head.offsetY = -0.2F;
+            this.head.offsetX = 0.0F;
+            this.head.offsetZ = -1.3F;
+            this.setRotateAngle(head, 0.9F, 0.0F, 0.0F);
+            this.head.render(0.01F);
+            resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(headleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tailfin, 0.0F, -0.2F, 0.0F);
+        this.head.offsetY = 0.0F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

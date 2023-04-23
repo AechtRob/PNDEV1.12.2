@@ -11,6 +11,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSillosuchus extends RenderLiving<EntityPrehistoricFloraSillosuchus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sillosuchus.png");
 
+    public static float getScaler() {return 1.0F;}
+
     public RenderSillosuchus(RenderManager mgr) {
         super(mgr, new ModelSillosuchus(), 0.5f);
     }
@@ -27,9 +29,9 @@ public class RenderSillosuchus extends RenderLiving<EntityPrehistoricFloraSillos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSillosuchus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.86F;
+        //this.shadowSize = entity.width * scale * 0.86F;
     }
 
 }

@@ -51,6 +51,14 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LAURUS = new CustomTrigger("pf_book_laurus");
     public static final CustomTrigger CLICK_BISONIA = new CustomTrigger("pf_book_bisonia");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
+    public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
+    public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
+    public static final CustomTrigger CLICK_BUTTERCUP = new CustomTrigger("pf_book_buttercup");
+    public static final CustomTrigger CLICK_TELOPEA = new CustomTrigger("pf_book_telopea");
+    public static final CustomTrigger CLICK_ORITES = new CustomTrigger("pf_book_orites");
+    public static final CustomTrigger CLICK_VOLTZIA = new CustomTrigger("pf_book_voltzia");
+    public static final CustomTrigger CLICK_HYDRANGEA = new CustomTrigger("pf_book_hydrangea");
+    public static final CustomTrigger CLICK_EMBOTHRIUM = new CustomTrigger("pf_book_embothrium");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
     public static final CustomTrigger CLICK_ARCHAEANTHUS = new CustomTrigger("pf_book_archaeanthus");
@@ -1172,6 +1180,14 @@ public class ModTriggers
             CLICK_LAURUS,
             CLICK_BISONIA,
             CLICK_ARAUCARIOXYLON,
+            CLICK_ANEMONE,
+            CLICK_DAISY,
+            CLICK_BUTTERCUP,
+            CLICK_TELOPEA,
+            CLICK_ORITES,
+            CLICK_VOLTZIA,
+            CLICK_HYDRANGEA,
+            CLICK_EMBOTHRIUM,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,
             CLICK_ARCHAEANTHUS,

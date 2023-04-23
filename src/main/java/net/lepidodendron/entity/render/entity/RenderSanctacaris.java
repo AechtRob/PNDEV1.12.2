@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSanctacaris> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris.png");
     public static float getScaler() {
-        return 0.15F;
+        return 0.2F;
     }
 
     public RenderSanctacaris(RenderManager mgr) {
@@ -30,7 +30,7 @@ public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSancta
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSanctacaris entity, float f) {
-        float scale = this.getScaler();
+        float scale = this.getScaler()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.38F;
     }

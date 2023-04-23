@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelBunostegos extends AdvancedModelBaseExtended {
@@ -392,16 +391,28 @@ public class ModelBunostegos extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bunostegos.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.jaw.rotateAngleX = (float) Math.toRadians(23);
-        this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bunostegos, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightleg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightleg5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightleg6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.bunostegos.offsetY = 0.2F;
+        this.bunostegos.render(0.01F);
+
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
