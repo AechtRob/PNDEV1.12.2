@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelBunostegos extends AdvancedModelBaseExtended {
@@ -411,7 +410,7 @@ public class ModelBunostegos extends AdvancedModelBaseExtended {
         this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.lowerbody.rotateAngleY = 0.0F;
+        this.bunostegos.offsetY = 0.2F;
         this.bunostegos.render(0.01F);
 
     }
