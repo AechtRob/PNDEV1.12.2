@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/anemone_red_var",
+    "particle": "lepidodendron:blocks/anemone_red_var"
+  }
+}
