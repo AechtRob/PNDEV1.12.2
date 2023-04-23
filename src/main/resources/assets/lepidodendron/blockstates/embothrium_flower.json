@@ -1,0 +1,25 @@
+{
+ "variants": {
+ "normal": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ],
+ "facing=north": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ],
+ "facing=east": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ],
+ "facing=south": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ],
+ "facing=west": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ],
+ "facing=up": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ],
+ "facing=down": [
+ {"model": "lepidodendron:embothrium_flower"}
+ ]
+ }
+}

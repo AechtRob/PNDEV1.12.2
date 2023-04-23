@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:embothrium_slab_double"
+    }
+  }
+}

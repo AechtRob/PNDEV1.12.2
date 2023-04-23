@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:hydrangea"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_hydrangea.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_hydrangea.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_hydrangea"
+		}
+	}
+}
