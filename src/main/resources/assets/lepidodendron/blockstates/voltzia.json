@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:voltzia_inventory"
+    },
+    "var=false": {"model": "lepidodendron:voltzia"},
+    "var=true": {"model": "lepidodendron:voltzia_var"}
+  }
+}

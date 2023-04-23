@@ -56,6 +56,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BUTTERCUP = new CustomTrigger("pf_book_buttercup");
     public static final CustomTrigger CLICK_TELOPEA = new CustomTrigger("pf_book_telopea");
     public static final CustomTrigger CLICK_ORITES = new CustomTrigger("pf_book_orites");
+    public static final CustomTrigger CLICK_VOLTZIA = new CustomTrigger("pf_book_voltzia");
     public static final CustomTrigger CLICK_HYDRANGEA = new CustomTrigger("pf_book_hydrangea");
     public static final CustomTrigger CLICK_EMBOTHRIUM = new CustomTrigger("pf_book_embothrium");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
@@ -1184,6 +1185,7 @@ public class ModTriggers
             CLICK_BUTTERCUP,
             CLICK_TELOPEA,
             CLICK_ORITES,
+            CLICK_VOLTZIA,
             CLICK_HYDRANGEA,
             CLICK_EMBOTHRIUM,
             CLICK_ARAUCARITES,
