@@ -393,6 +393,19 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body2.render(f5);
     }
+        public void renderStaticWall(float f) {
+            this.neckbase.rotateAngleY = (float) Math.toRadians(0);
+            this.setRotateAngle(neck, -0.2316F, -0.2368F, 0.1128F);
+            this.setRotateAngle(neck2, 0.0005F, 0.0865F, 0.0114F);
+            this.setRotateAngle(neck3, 0.0478F, 0.2148F, 0.0385F);
+            this.setRotateAngle(neck4, 0.1772F, 0.1719F, 0.0306F);
+            this.setRotateAngle(neckbase, 0.218F, 0.001F, -0.0094F);
+            this.neckbase.offsetY = -0.0F;
+            this.neckbase.offsetX = -0.0F;
+            this.neckbase.offsetZ = 0.1F;
+            this.neckbase.render(0.01F);
+            resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, 0.1047F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0F, -0.0611F, 0.0F);

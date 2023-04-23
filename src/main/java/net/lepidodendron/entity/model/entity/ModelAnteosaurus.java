@@ -299,6 +299,18 @@ public class ModelAnteosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
+        public void renderStaticWall(float f) {
+            this.Neck.rotateAngleY = (float) Math.toRadians(0);
+            this.setRotateAngle(Neck, -0.2F, -0.3F, 0.0F);
+            this.setRotateAngle(Head, 0.00F, 0.0F, 0.0F);
+            this.setRotateAngle(Upperjawback, 0.3F, 0.0F, 0.0F);
+            this.setRotateAngle(Lowerjawbase, 0.7F, 0.0F, 0.0F);
+            this.Neck.offsetY = -0.0F;
+            this.Neck.offsetX = -0.0F;
+            this.Neck.offsetZ = 0.1F;
+            this.Neck.render(0.01F);
+            resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Hips, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(Bodymiddle, 0.2F, -0.01F, 0.0F);

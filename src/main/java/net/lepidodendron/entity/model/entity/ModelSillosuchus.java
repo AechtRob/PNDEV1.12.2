@@ -314,13 +314,23 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
         this.bodyback.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.bodyfront.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(ArmL, 0.6F, -0.0F, 0.0F);
+        this.setRotateAngle(ArmL2, -1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL3, 0.0F, -0.0F, 1.2F);
+        this.setRotateAngle(ArmR, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR2, -1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR3, 0.0F, -0.0F, -1.3F);
         this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(neck2, -0.4F, -0.0F, 0.1F);
         this.setRotateAngle(neck3, -0.0F, 0.1F, 0.3F);
         this.setRotateAngle(head, 0.1F, -0.9F, 0.1F);
-        this.neck.offsetX = 0.0f;
-        this.neck.offsetY = 0.0f;
-        this.neck.offsetZ = 0.0f;
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.bodyfront.offsetY = -0.0F;
+        this.bodyfront.offsetX = -0.0F;
+        this.bodyfront.offsetZ = 0.2F;
+        this.bodyfront.render(0.01F);
         resetToDefaultPose();
     }
      public void renderStaticFloor(float f) {

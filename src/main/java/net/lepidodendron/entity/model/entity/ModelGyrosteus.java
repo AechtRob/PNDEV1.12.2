@@ -296,9 +296,13 @@ public class ModelGyrosteus extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.main.render(f);
+        this.head.rotateAngleY = (float) Math.toRadians(0);
+        this.head.offsetY = 0.2F;
+        this.head.offsetX = -0.0F;
+        this.head.offsetZ = -0.25F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, 0.2F, 0.0F, 0.0F);
         this.setRotateAngle(head, 0.0F, 0.15F, 0.0F);
