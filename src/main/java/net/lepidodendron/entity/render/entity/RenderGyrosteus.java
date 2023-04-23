@@ -28,7 +28,7 @@ public class RenderGyrosteus extends RenderLiving<EntityPrehistoricFloraGyrosteu
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraGyrosteus entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;
         }

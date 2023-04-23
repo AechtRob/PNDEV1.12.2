@@ -11,7 +11,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderAnomalocaris;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.entity.RenderTanystropheus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
@@ -314,17 +315,15 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
-	//Rendering taxidermy:
-	//--------------------
-	public static double offsetCase() { return 0.46; }
-
 	public static double offsetWall() {
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 1.4;
+		return 0.8;
 	}
-	public static double upperbackverticallinedepth() {return 0.8;}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
 	public static double upperfrontlineoffset() {
 		return 0.4;
 	}
@@ -338,32 +337,32 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 0;
+		return 0.4;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 0.86;
+		return 0.4;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0;
+		return 0.1;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0F;
+		return 0.30F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0F;
+		return -0.15F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_ANOMALOCARIS;
+		return RenderDisplays.TEXTURE_TANYSTROPHEUS;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelAnomalocaris;
+		return RenderDisplays.modelTanystropheus;
 	}
 	public static float getScaler() {
-		return RenderAnomalocaris.getScaler();
+		return RenderTanystropheus.getScaler();
 	}
 }
