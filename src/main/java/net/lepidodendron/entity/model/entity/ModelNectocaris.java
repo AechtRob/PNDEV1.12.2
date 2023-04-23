@@ -349,7 +349,7 @@ public class ModelNectocaris extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Center.render(f5 * 0.11F);
+        this.Center.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -372,7 +372,7 @@ public class ModelNectocaris extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Center.offsetY = 1.3F;
+        //this.Center.offsetY = 1.3F;
         //this.Center.rotateAngleY = (float)Math.toRadians(180);
 
         AdvancedModelRenderer[] BodyF = {this.head1, this.head2, this.head3, this.head4, this.head5, this.head6};
@@ -417,7 +417,7 @@ public class ModelNectocaris extends AdvancedModelBase {
             this.flap(finR6, 0.5F, degreeFin, false, 2.5F, 0.5F, f2, 0.7F);
 
             if (!e.isInWater()) {
-                this.Center.offsetY = 1.32F;
+                this.Center.offsetY = 1.32F - 1.3F;
                 this.bob(Center, -speed * 1.5F, 1.5F, false, f2, 1);
             } else {
                 if (f3 == 0.0F) {
