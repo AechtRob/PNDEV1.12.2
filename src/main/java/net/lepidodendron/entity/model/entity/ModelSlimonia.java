@@ -298,9 +298,9 @@ public class ModelSlimonia extends AdvancedModelBase {
 
         if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
             //Walk pose:
-            if (ee.getIsMoving()) {
+
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            }
+
         } else {
 
                 animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
