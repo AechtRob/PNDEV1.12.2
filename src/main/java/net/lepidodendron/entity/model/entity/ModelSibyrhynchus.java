@@ -311,16 +311,57 @@ public class ModelSibyrhynchus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Sibyrhynchus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.Sibyrhynchus.offsetY = -0.18F;
+        this.Sibyrhynchus.offsetZ = -0.05F;
+        this.Sibyrhynchus.offsetX = -0.1F;
         this.Sibyrhynchus.rotateAngleY = (float) Math.toRadians(90);
         this.Sibyrhynchus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Sibyrhynchus, 0.0436F, 0.0F, -0.0873F);
+        this.setRotateAngle(PectoralL2, -0.8225F, 0.65F, 0.7319F);
+        this.setRotateAngle(PectoralL, -0.8225F, -0.65F, -0.7319F);
+        this.setRotateAngle(Jaw, -0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.925F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.5847F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.9617F, 0.8326F, -0.8146F);
+        this.setRotateAngle(cube_r3, -0.9617F, -0.8326F, 0.8146F);
+        this.setRotateAngle(cube_r26, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(cube_r25, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r24, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r22, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.6136F, -0.2892F, 0.1982F);
+        this.setRotateAngle(cube_r19, 0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 1.5708F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 1.5708F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.3229F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.6136F, 0.2892F, -0.1982F);
+        this.setRotateAngle(Body5, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body3, 0.0436F, -0.0873F, 0.0F);
+        this.setRotateAngle(Body2, 0.0436F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(AnalL2, 0.0335F, -0.0806F, -0.8304F);
+        this.setRotateAngle(AnalL, 0.0335F, 0.0806F, 0.8304F);
+        this.Sibyrhynchus.offsetZ = -0.1F;
+        this.Sibyrhynchus.offsetY = -0.6F;
+        this.Sibyrhynchus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
