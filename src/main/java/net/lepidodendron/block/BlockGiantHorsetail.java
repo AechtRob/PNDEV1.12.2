@@ -167,6 +167,12 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
 				biomeCriteria = true;
 			}
+			else if (
+				biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")
+			) {
+				biomeCriteria = true;
+			}
 			else {
 				biomeCriteria = false;
 			}
@@ -244,6 +250,10 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 256;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
+			GenChance = 256;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")) {
 			GenChance = 256;
 		}
 
