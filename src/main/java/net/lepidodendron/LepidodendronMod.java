@@ -1652,6 +1652,15 @@ public class LepidodendronMod {
 	public static final ResourceLocation BISHANOPLIOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bishanopliosaurus_young"));
 	public static final int ENTITY_PLECTRONOCERAS = 675;
 	public static final ResourceLocation PLECTRONOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/plectronoceras"));
+	public static final int ENTITY_EUSPIRA = 676;
+	public static final int ENTITY_CAROLINITES = 677;
+	public static final ResourceLocation CAROLINITES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/carolinites"));
+	public static final int ENTITY_PRICYCLOPYGE = 678;
+	public static final ResourceLocation PRICYCLOPYGE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pricyclopyge"));
+	public static final int ENTITY_SYMPHYSOPS = 679;
+	public static final ResourceLocation SYMPHYSOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/symphysops"));
+
+
 
 
 

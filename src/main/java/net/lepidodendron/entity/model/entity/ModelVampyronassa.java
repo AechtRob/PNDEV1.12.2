@@ -326,7 +326,7 @@ public class ModelVampyronassa extends AdvancedModelBaseExtended {
         if (e.isInWater()) {
             float bobSpeed = 0.1F;
             this.bob(body, bobSpeed, 0.8F, false, f2, 2);
-            this.body.offsetZ = this.moveBoxExtended(speed, 0.125F, false, 0, f2, 1);
+            this.body.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 3, f2, 1);
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);

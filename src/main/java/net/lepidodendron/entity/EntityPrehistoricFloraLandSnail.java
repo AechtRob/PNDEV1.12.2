@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
