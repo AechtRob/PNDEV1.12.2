@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/bridge",
+ "textures": {
+ "wood": "lepidodendron:blocks/hirmeriella_planks",
+ "metal": "lepidodendron:blocks/hirmeriella_planks"
+ }
+}

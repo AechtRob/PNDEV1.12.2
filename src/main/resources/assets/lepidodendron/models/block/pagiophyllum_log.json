@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/pagiophyllum_log_end",
+    "up": "lepidodendron:blocks/pagiophyllum_log_end",
+    "north": "lepidodendron:blocks/pagiophyllum_log",
+    "east": "lepidodendron:blocks/pagiophyllum_log",
+    "south": "lepidodendron:blocks/pagiophyllum_log",
+    "west": "lepidodendron:blocks/pagiophyllum_log",
+    "particle": "lepidodendron:blocks/pagiophyllum_log_end"
+  }
+}

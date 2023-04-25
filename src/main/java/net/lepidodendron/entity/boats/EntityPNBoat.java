@@ -313,6 +313,10 @@ public class EntityPNBoat extends EntityBoat
                 return ItemBisoniaBoatItem.block;
             case EMBOTHRIUM:
                 return ItemEmbothriumBoatItem.block;
+            case PAGIOPHYLLUM:
+                return ItemPagiophyllumBoatItem.block;
+            case HIRMERIELLA:
+                return ItemHirmeriellaBoatItem.block;
 
         }
     }
@@ -447,6 +451,10 @@ public class EntityPNBoat extends EntityBoat
                 return BlockBisoniaPlanks.block;
             case EMBOTHRIUM:
                 return BlockEmbothriumPlanks.block;
+            case PAGIOPHYLLUM:
+                return BlockPagiophyllumPlanks.block;
+            case HIRMERIELLA:
+                return BlockHirmeriellaPlanks.block;
 
         }
     }
@@ -1285,7 +1293,9 @@ public class EntityPNBoat extends EntityBoat
         LAURUS(60, "laurus"),
         CHESTNUT(61, "chestnut"),
         BISONIA(62, "bisonia"),
-        EMBOTHRIUM(62, "embothrium")
+        EMBOTHRIUM(63, "embothrium"),
+        PAGIOPHYLLUM(64, "pagiophyllum"),
+        HIRMERIELLA(65, "hirmeriella")
         ;
 
         private final String name;

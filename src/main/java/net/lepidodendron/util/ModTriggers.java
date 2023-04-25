@@ -233,6 +233,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ISOETES = new CustomTrigger("pf_book_isoetes");
     public static final CustomTrigger CLICK_IRANIA = new CustomTrigger("pf_book_irania");
     public static final CustomTrigger CLICK_PAGIOPHYLLUM = new CustomTrigger("pf_book_pagiophyllum");
+    public static final CustomTrigger CLICK_HIRMERIELLA = new CustomTrigger("pf_book_hirmeriella");
     public static final CustomTrigger CLICK_JUNGLE = new CustomTrigger("pf_book_jungle");
     public static final CustomTrigger CLICK_KOMLOPTERIS = new CustomTrigger("pf_book_komlopteris");
     public static final CustomTrigger CLICK_LADINIA = new CustomTrigger("pf_book_ladinia");
@@ -1295,6 +1296,7 @@ public class ModTriggers
             CLICK_CYPRESS,
             CLICK_NEHVIZDYELLA,
             CLICK_PAGIOPHYLLUM,
+            CLICK_HIRMERIELLA,
             CLICK_ELATOCLADUS,
             CLICK_CYSTOID_ARISTOCYSTITES,
             CLICK_CYSTOID_BOLBOPORITES,

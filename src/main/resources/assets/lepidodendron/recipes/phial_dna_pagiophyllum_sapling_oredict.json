@@ -1,0 +1,22 @@
+{
+ "group": "lepidodendron",
+ "type": "forge:ore_shapeless",
+ "ingredients": [
+ {
+ "item": "lepidodendron:bottle_of_dna_solvent"
+ },
+ {
+ "type": "forge:ore_dict",
+ "ore": "plantdnaPNlepidodendron:pagiophyllum_sapling"
+ },
+ {
+ "item": "lepidodendron:phial_empty"
+ }
+ ],
+ "result": {
+ "type": "minecraft:item_nbt",
+ "item": "lepidodendron:phial_dna",
+ "count": 1,
+ "nbt": {"PFPlant":{"id":"lepidodendron:pagiophyllum_sapling"}}
+ }
+}
