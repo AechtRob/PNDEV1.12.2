@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:irania_inventory"
+    },
+    "var=false": {"model": "lepidodendron:irania_base"},
+    "var=true": {"model": "lepidodendron:irania_base"}
+  }
+}

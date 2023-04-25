@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:irania_item"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_irania.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_irania.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_irania"
+		}
+	}
+}

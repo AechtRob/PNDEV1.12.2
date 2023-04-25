@@ -377,7 +377,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockWachtleria.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPelourdea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockElatocladusSapling.block).toString(),
-                ForgeRegistries.ITEMS.getKey(ItemPagiophyllumItem.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemIraniaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPalissya.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockVoltzia.block).toString()
         };
@@ -477,7 +477,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemWaterCloverItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPelourdea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockElatocladusSapling.block).toString(),
-                ForgeRegistries.ITEMS.getKey(ItemPagiophyllumItem.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemIraniaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPalissya.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockProtognetum.block).toString()
         };
@@ -600,7 +600,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockNypaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockElatocladusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNehvizdyellaSapling.block).toString(),
-                ForgeRegistries.ITEMS.getKey(ItemPagiophyllumItem.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemIraniaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockVitis.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHedera.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLaurusSapling.block).toString(),

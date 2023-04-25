@@ -83,10 +83,10 @@ public class ProcedureWorldGenEmbothrium extends ElementsLepidodendronMod.ModEle
     public static void generateFlowers() {
         for (int yy = heightLimit + 2; yy >= 0; yy--) {
             //System.err.println("ylevel: " + (double)(basePos.getY() + yy));
-            int xx = -4;
-            while (xx <= 4) {
-                int zz = -4;
-                while (zz <= 4) {
+            int xx = -3;
+            while (xx <= 3) {
+                int zz = -3;
+                while (zz <= 3) {
                     BlockPos pos = new BlockPos(basePos.getX() + xx, basePos.getY() + yy, basePos.getZ() + zz);
                     if (world.getBlockState(pos).getBlock() == BlockEmbothriumLeaves.block && rand.nextInt(3) != 0
                             && world.getBlockState(pos.up()).getMaterial().isReplaceable()
@@ -205,8 +205,7 @@ public class ProcedureWorldGenEmbothrium extends ElementsLepidodendronMod.ModEle
                         int k1 = d4 > (double)j ? j : (int)d4;
                         BlockPos blockpos2 = new BlockPos(basePos.getX(), k1, basePos.getZ());
 
-                        if (checkBlockLine(blockpos2, blockpos) == -1)
-                        {
+                        if (checkBlockLine(blockpos2, blockpos) == -1) {
                             foliageCoords.add(new ProcedureWorldGenEmbothrium.FoliageCoordinates(blockpos, blockpos2.getY()));
                         }
                     }
@@ -349,8 +348,9 @@ public class ProcedureWorldGenEmbothrium extends ElementsLepidodendronMod.ModEle
 
                     if (state.getBlock().isAir(state, world, blockpos) || state.getBlock().isLeaves(state, world, blockpos))
                     {
-                        //this.setBlockAndNotifyAdequately(world, blockpos, p_181631_3_);
-                        world.setBlockState(blockpos, p_181631_3_, 3);
+                        if (rand.nextInt(6) != 0) {
+                            world.setBlockState(blockpos, p_181631_3_, 3);
+                        }
                     }
                 }
             }
