@@ -145,6 +145,13 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 									doPlacer = true;
 								}
 							}
+							else if (plantBlock instanceof SeedSporeLeavesBase) {
+								SeedSporeLeavesBase blockPlant = (SeedSporeLeavesBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									doPlacer = true;
+								}
+							}
 
 							//If it's a vine:
 							if (plantBlock instanceof BlockVine) {
@@ -223,6 +230,21 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 							}
 							else if (doPlacer && plantBlock instanceof SeedSporeBushBase) {
 								SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									if (result == EnumActionResult.SUCCESS) {
+										return EnumActionResult.SUCCESS;
+									}
+								}
+							}
+							else if (doPlacer && plantBlock instanceof SeedSporeLeavesBase) {
+								SeedSporeLeavesBase blockPlant = (SeedSporeLeavesBase) plantBlock;
 								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
 								if (itemPlant != null) {
 									EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
