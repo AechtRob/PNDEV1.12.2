@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:amborella_flower"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:amborella_flower"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:amborella_flower"}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:amborella_flower"}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:amborella_flower"}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:amborella_flower"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:amborella_flower"}
+    ]
+  }
+}

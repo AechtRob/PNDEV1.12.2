@@ -59,6 +59,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_VOLTZIA = new CustomTrigger("pf_book_voltzia");
     public static final CustomTrigger CLICK_HYDRANGEA = new CustomTrigger("pf_book_hydrangea");
     public static final CustomTrigger CLICK_EMBOTHRIUM = new CustomTrigger("pf_book_embothrium");
+    public static final CustomTrigger CLICK_AMBORELLA = new CustomTrigger("pf_book_amborella");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
     public static final CustomTrigger CLICK_ARCHAEANTHUS = new CustomTrigger("pf_book_archaeanthus");
@@ -111,6 +112,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CALAMOPHYTON = new CustomTrigger("pf_book_calamophyton");
     public static final CustomTrigger CLICK_CALLISTOPHYTALES = new CustomTrigger("pf_book_callistophytales");
     public static final CustomTrigger CLICK_HEDERA = new CustomTrigger("pf_book_hedera");
+    public static final CustomTrigger CLICK_ACTINIDEA = new CustomTrigger("pf_book_actinidea");
     public static final CustomTrigger CLICK_VITIS = new CustomTrigger("pf_book_vitis");
     public static final CustomTrigger CLICK_CASTERICYSTIS = new CustomTrigger("pf_book_castericystis");
     public static final CustomTrigger CLICK_CECROPSIS = new CustomTrigger("pf_book_cecropsis");
@@ -1190,6 +1192,7 @@ public class ModTriggers
             CLICK_VOLTZIA,
             CLICK_HYDRANGEA,
             CLICK_EMBOTHRIUM,
+            CLICK_AMBORELLA,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,
             CLICK_ARCHAEANTHUS,
@@ -1242,6 +1245,7 @@ public class ModTriggers
             CLICK_CALAMOPHYTON,
             CLICK_CALLISTOPHYTALES,
             CLICK_HEDERA,
+            CLICK_ACTINIDEA,
             CLICK_VITIS,
             CLICK_CASTERICYSTIS,
             CLICK_CECROPSIS,

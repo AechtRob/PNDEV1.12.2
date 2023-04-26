@@ -1,9 +1,9 @@
 {
   "group": "lepidodendron",
-  "type": "forge:ore_shapeless",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:pagiophyllum_seed"
+      "item": "lepidodendron:amborella_seeds"
     },
     {
       "type": "forge:ore_dict",
@@ -11,7 +11,7 @@
     }
   ],
   "result": {
-    "item": "lepidodendron:pagiophyllum_sapling",
+    "item": "lepidodendron:amborella_sapling",
     "count": 1
   }
 }

@@ -4193,6 +4193,8 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockLiriodendronFlower.TileEntityCustom.class, new RenderFlowerLiriodendron());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockArchaeanthusFlower.TileEntityCustom.class, new RenderFlowerArchaeanthus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEmbothriumFlower.TileEntityCustom.class, new RenderFlowerEmbothrium());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockAmborellaFlower.TileEntityCustom.class, new RenderFlowerAmborella());
+
 
         //Rotten log and eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsAttercopus.TileEntityCustom.class, new RenderEggsAttercopus());
