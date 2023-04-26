@@ -118,17 +118,17 @@ public class BlockAmborellaFlower extends ElementsLepidodendronMod.ModElement {
 			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
 				case SOUTH :
 				default :
-					return new AxisAlignedBB(0.25D, 0.25D, 0D, 0.75D, 0.75D, 0.5D);
+					return new AxisAlignedBB(0.0D, 0.0D, 0D, 1.0D, 1.0D, 0.25D);
 				case NORTH :
-					return new AxisAlignedBB(0.25D, 0.25D, 1D, 0.75D, 0.75D, 0.5D);
+					return new AxisAlignedBB(0.0D, 0.0D, 1D, 1.0D, 1.0D, 0.75D);
 				case WEST :
-					return new AxisAlignedBB(1D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D);
+					return new AxisAlignedBB(1D, 0.0D, 0.0D, 0.75D, 1.0D, 1.0D);
 				case EAST :
-					return new AxisAlignedBB(0D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D);
+					return new AxisAlignedBB(0D, 0.0D, 0.0D, 0.25D, 1.0D, 1.0D);
 				case UP :
-					return new AxisAlignedBB(0.25D, 0D, 0.75D, 0.75D, 0.5D, 0.25D);
+					return new AxisAlignedBB(0.0D, 0D, 0.0D, 1.0D, 0.25D, 1.0D);
 				case DOWN :
-					return new AxisAlignedBB(0.25D, 1D, 0.75D, 0.75D, 0.5D, 0.25D);
+					return new AxisAlignedBB(0.0D, 1D, 0.0D, 1.0D, 0.75D, 1.0D);
 			}
 		}
 
@@ -198,7 +198,7 @@ public class BlockAmborellaFlower extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.MODEL;
+			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
 		}
 
 		@Override

@@ -73,7 +73,7 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 									canPlace = true;
 								}
 							}
-							if (canPlace && world.rand.nextInt(8) != 0) {
+							if (canPlace && (world.rand.nextInt(8) != 0 || yy == 0)) {
 								ProcedureNonDecayingTreeLeaf.executeProcedure(placePos.getX(), placePos.getY(), placePos.getZ(), world, BlockAmborellaLeaves.block);
 								//Sometimes add a block above, sometimes add a flower above:
 								if (world.rand.nextInt(10) == 0) {

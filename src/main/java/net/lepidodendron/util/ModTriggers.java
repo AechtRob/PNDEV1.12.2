@@ -53,6 +53,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
+    public static final CustomTrigger CLICK_CHLORANTHUS = new CustomTrigger("pf_book_chloranthus");
     public static final CustomTrigger CLICK_BUTTERCUP = new CustomTrigger("pf_book_buttercup");
     public static final CustomTrigger CLICK_TELOPEA = new CustomTrigger("pf_book_telopea");
     public static final CustomTrigger CLICK_ORITES = new CustomTrigger("pf_book_orites");
@@ -60,6 +61,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HYDRANGEA = new CustomTrigger("pf_book_hydrangea");
     public static final CustomTrigger CLICK_EMBOTHRIUM = new CustomTrigger("pf_book_embothrium");
     public static final CustomTrigger CLICK_AMBORELLA = new CustomTrigger("pf_book_amborella");
+    public static final CustomTrigger CLICK_CALYCANTHUS = new CustomTrigger("pf_book_calycanthus");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
     public static final CustomTrigger CLICK_ARCHAEANTHUS = new CustomTrigger("pf_book_archaeanthus");
@@ -263,6 +265,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NAMAPOIKIA = new CustomTrigger("pf_book_namapoikia");
     public static final CustomTrigger CLICK_NATHORSTIANA = new CustomTrigger("pf_book_nathorstiana");
     public static final CustomTrigger CLICK_NELUMBO = new CustomTrigger("pf_book_nelumbo");
+    public static final CustomTrigger CLICK_MICROVICTORIA = new CustomTrigger("pf_book_microvictoria");
     public static final CustomTrigger CLICK_NEMATOPHYTA = new CustomTrigger("pf_book_nematophyta");
     public static final CustomTrigger CLICK_NEMEJCOPTERIS = new CustomTrigger("pf_book_nemejcopteris");
     public static final CustomTrigger CLICK_NEOCALAMITES = new CustomTrigger("pf_book_neocalamites");
@@ -1186,6 +1189,7 @@ public class ModTriggers
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
             CLICK_DAISY,
+            CLICK_CHLORANTHUS,
             CLICK_BUTTERCUP,
             CLICK_TELOPEA,
             CLICK_ORITES,
@@ -1193,6 +1197,7 @@ public class ModTriggers
             CLICK_HYDRANGEA,
             CLICK_EMBOTHRIUM,
             CLICK_AMBORELLA,
+            CLICK_CALYCANTHUS,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,
             CLICK_ARCHAEANTHUS,
@@ -1396,6 +1401,7 @@ public class ModTriggers
             CLICK_NAMAPOIKIA,
             CLICK_NATHORSTIANA,
             CLICK_NELUMBO,
+            CLICK_MICROVICTORIA,
             CLICK_NEMATOPHYTA,
             CLICK_NEMEJCOPTERIS,
             CLICK_NEOCALAMITES,

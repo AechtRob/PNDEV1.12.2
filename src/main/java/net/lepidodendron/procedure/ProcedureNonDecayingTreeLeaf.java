@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -16,8 +17,11 @@ public class ProcedureNonDecayingTreeLeaf extends ElementsLepidodendronMod.ModEl
 		public static void executeProcedure(int x, int y, int z, World world, Block blockLeaf) {
 
 		Block block = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock();
+		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world,
-			new BlockPos((int) x, (int) y, (int) z))) {
+			new BlockPos((int) x, (int) y, (int) z))
+			|| material.isReplaceable()
+		) {
 			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLeaf.getDefaultState(), 3);
 			}
 		try {
