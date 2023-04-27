@@ -3876,5 +3876,11 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 3872;
     public static final int advancement_placeholder = 3873;
 
+    public static final int harpacanthus_raw = 4000;
+    public static final int utatsusaurus_raw = 4001;
+    public static final int typhloesus_raw = 4002;
+    public static final int amphibian_spawn_gephyrostegus = 4003;
+    public static final int amphibian_spawn_gephyrostegus_worldgen = 4004;
+
 
 }

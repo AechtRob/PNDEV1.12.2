@@ -1047,7 +1047,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PROMEXYELE = new CustomTrigger("pf_book_promexyele");
     public static final CustomTrigger CLICK_PAPILIONICHTHYS = new CustomTrigger("pf_book_papilionichthys");
     public static final CustomTrigger CLICK_RAINERICHTHYS = new CustomTrigger("pf_book_rainerichthys");
-    public static final CustomTrigger CLICK_TRIOPS = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_notostracan = new CustomTrigger("pf_book_notostracan");
     public static final CustomTrigger CLICK_STRUDOPS = new CustomTrigger("pf_book_strudops");
     public static final CustomTrigger CLICK_ORCANOPTERUS = new CustomTrigger("pf_book_orcanopterus");
     public static final CustomTrigger CLICK_ONYCHOPTERELLA = new CustomTrigger("pf_book_onychopterella");
@@ -2175,7 +2175,7 @@ public class ModTriggers
             CLICK_PROMEXYELE,
             CLICK_PAPILIONICHTHYS,
             CLICK_RAINERICHTHYS,
-            CLICK_TRIOPS,
+            CLICK_notostracan,
             CLICK_STRUDOPS,
             CLICK_ORCANOPTERUS,
             CLICK_ONYCHOPTERELLA,

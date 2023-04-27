@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 
 	public EntityPrehistoricFloraMaclurina(World world) {
 		super(world);
-		setSize(0.8F, 0.8F);
+		setSize(0.5F, 0.5F);
 	}
 
 	@Override

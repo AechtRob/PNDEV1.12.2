@@ -894,7 +894,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation CASINERIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/casineria_young"));
 	public static final ResourceLocation CASINERIA_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/casineria_jar"));
 	public static final int ENTITY_GEPHYROSTEGUS = 351;
-	//public static final ResourceLocation GEPHYROSTEGUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gephyrostegus"));
+	public static final ResourceLocation GEPHYROSTEGUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gephyrostegus"));
 	public static final int ENTITY_SPINOAEQUALIS = 352;
 	//public static final ResourceLocation SPINOAEQUALIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/spinoaequalis"));
 	public static final int ENTITY_WHATCHEERIA = 353;
@@ -1659,6 +1659,16 @@ public class LepidodendronMod {
 	public static final ResourceLocation PRICYCLOPYGE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pricyclopyge"));
 	public static final int ENTITY_SYMPHYSOPS = 679;
 	public static final ResourceLocation SYMPHYSOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/symphysops"));
+	public static final int ENTITY_HARPACANTHUS = 680;
+	public static final ResourceLocation HARPACANTHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/harpacanthus"));
+	public static final int ENTITY_TYPHLOESUS = 681;
+	public static final ResourceLocation TYPHLOESUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/typhloesus"));
+	public static final int ENTITY_RHOMALEOSAURUS = 682;
+	public static final ResourceLocation RHOMALEOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rhomaleosaurus"));
+	public static final ResourceLocation RHOMALEOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rhomaleosaurus_young"));
+	public static final int ENTITY_UTATSUSAURUS = 683;
+	public static final ResourceLocation UTATSUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/utatsusaurus"));
+	public static final ResourceLocation UTATSUSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/utatsusaurus_young"));
 
 
 

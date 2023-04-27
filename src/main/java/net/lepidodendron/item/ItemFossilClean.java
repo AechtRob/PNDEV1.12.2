@@ -41,6 +41,9 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:fossils/fossil_utatsusaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rhomaleosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_harpacanthus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_plectronoceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_metopacanthus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cancrinos_clean", "inventory"),
@@ -83,7 +86,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_promexyele_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_papilionichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_rainerichthys_clean", "inventory"),
-//				new ModelResourceLocation("lepidodendron:fossils/fossil_triops_clean", "inventory"),
+//				new ModelResourceLocation("lepidodendron:fossils/fossil_notostracan_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_strudops_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_orcanopterus_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_onychopterella_clean", "inventory"),
