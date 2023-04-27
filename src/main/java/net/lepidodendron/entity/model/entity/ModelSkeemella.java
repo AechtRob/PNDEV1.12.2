@@ -67,7 +67,7 @@ public class ModelSkeemella extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Root.render(f5 * 0.15F);
+        this.Root.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -87,7 +87,7 @@ public class ModelSkeemella extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Root.offsetY = 1.1F;
+        //this.Root.offsetY = 1.1F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6, this.Tail7};
@@ -101,7 +101,7 @@ public class ModelSkeemella extends AdvancedModelBase {
             this.swing(Root, speed, 0.25F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Root.rotateAngleZ = (float) Math.toRadians(90);
-                this.Root.offsetY = 1.22F;
+                this.Root.offsetY = 1.22F - 1.1F;
                 this.bob(Root, -speed, 5F, false, f2, 1);
             }
         }
