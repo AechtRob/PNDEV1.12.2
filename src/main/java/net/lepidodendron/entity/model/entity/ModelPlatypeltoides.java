@@ -371,22 +371,22 @@ public class ModelPlatypeltoides extends AdvancedModelBase {
         this.swing(AntennaeLeft, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(AntennaeRight, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
 
-        this.flap(LLeg1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-        this.flap(RLeg1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-        this.flap(LLeg2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg8, 0.5F, -0.5F, true, 7.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg8, 0.5F, 0.5F, true, 7.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg1, 0.5F, -0.3F, true, 0, -0.5F, f2, 0.3F);
+        this.flap(RLeg1, 0.5F, 0.3F, true, 0, 0.5F, f2, 0.3F);
+        this.flap(LLeg2, 0.5F, -0.3F, true, 1.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg2, 0.5F, 0.3F, true, 1.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg3, 0.5F, -0.3F, true, 2.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg3, 0.5F, 0.3F, true, 2.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg4, 0.5F, -0.3F, true, 3.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg4, 0.5F, 0.3F, true, 3.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg5, 0.5F, -0.3F, true, 4.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg5, 0.5F, 0.3F, true, 4.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg6, 0.5F, -0.3F, true, 5.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg6, 0.5F, 0.3F, true, 5.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg7, 0.5F, -0.3F, true, 6.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg7, 0.5F, 0.3F, true, 6.0F, 0.5F, f2, 0.3F);
+        this.flap(LLeg8, 0.5F, -0.3F, true, 7.0F, -0.5F, f2, 0.3F);
+        this.flap(RLeg8, 0.5F, 0.3F, true, 7.0F, 0.5F, f2, 0.3F);
 
     }
 }

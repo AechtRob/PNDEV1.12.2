@@ -123,9 +123,9 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 	@Override
 	protected double getAISpeedSwim() {
 		if (!this.isReallySwimming()) {
-			return 0.10f;
+			return 0.2f;
 		} else {
-			return 0.075f;
+			return 0.13f;
 		}
 	}
 

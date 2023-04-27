@@ -102,7 +102,7 @@ public class EntityPrehistoricFloraRhomaleosaurus extends EntityPrehistoricFlora
 	protected float getAISpeedFish() {
 		float AIspeed = 0.16f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 1.7F;
+			AIspeed = AIspeed * 2.5F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
