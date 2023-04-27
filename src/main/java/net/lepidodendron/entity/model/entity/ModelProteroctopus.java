@@ -250,9 +250,103 @@ public class ModelProteroctopus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Arm, -0.0436F, 0.48F, 0.1309F);
+        this.setRotateAngle(Arm2, 0.2618F, 0.829F, 0.0F);
+        this.setRotateAngle(Arm3, 0.5672F, 1.4835F, -0.0873F);
+        this.setRotateAngle(Arm4, 1.8326F, -0.0873F, 0.2618F);
+        this.setRotateAngle(Arm5, -0.0436F, -0.48F, -0.1309F);
+        this.setRotateAngle(Arm6, 0.2618F, -0.829F, 0.0F);
+        this.setRotateAngle(Arm7, 0.5672F, -1.4835F, 0.0873F);
+        this.setRotateAngle(Arm8, 1.8326F, 0.0873F, -0.2618F);
+        this.setRotateAngle(Arms, 0.0F, 0.6981F, -0.1309F);
+        this.setRotateAngle(Arms2, 0.6109F, 0.6981F, 0.7854F);
+        this.setRotateAngle(Arms3, 0.4363F, 0.5236F, 0.7854F);
+        this.setRotateAngle(Arms4, 0.6109F, 0.2618F, 0.2618F);
+        this.setRotateAngle(Arms5, 0.0F, -0.6981F, 0.1309F);
+        this.setRotateAngle(Arms6, 0.6109F, -0.6981F, -0.7854F);
+        this.setRotateAngle(Arms7, 0.4363F, -0.5236F, -0.7854F);
+        this.setRotateAngle(Arms8, 0.6109F, -0.2618F, -0.2618F);
+        this.setRotateAngle(Armss, 0.1309F, 0.6981F, -0.1309F);
+        this.setRotateAngle(Armss2, 0.1309F, -0.6981F, 0.1309F);
+        this.setRotateAngle(Body, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.2793F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.2793F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(FinL, 0.0F, 0.0436F, -0.2182F);
+        this.setRotateAngle(FinR, 0.0F, -0.0436F, 0.2182F);
+        this.setRotateAngle(mantle, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
+        this.Body.offsetY = 0.15F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Body, 0.1F, 0.5F, 0.4F);
+        this.setRotateAngle(mantle, 0F, 0F, .0F);
+        this.setRotateAngle(Arm, -0.0873F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Arm3, 0.0436F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm4, 0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Arm5, -0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arm6, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Arm7, 0.0436F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arm8, 0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Arms, 0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arms2, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Arms3, -0.0436F, -0.1309F, 0.0F);
+        this.setRotateAngle(Arms4, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Arms5, 0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Arms6, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Arms7, -0.0436F, 0.1309F, 0.0F);
+        this.setRotateAngle(Arms8, -0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Armss, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Armss2, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.2793F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.2793F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(FinL, 0.0F, 0.0436F, -0.2182F);
+        this.setRotateAngle(FinR, 0.0F, -0.0436F, 0.2182F);
+        this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
+        this.Body.offsetY = 0.15F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
 
+        this.setRotateAngle(Arm4, 2.5307F, -0.6981F, 0.1309F);
+        this.setRotateAngle(Arm8, 2.5307F, 0.6981F, -0.1309F);
+        this.setRotateAngle(Arms4, 0.2618F, 0.2618F, 0.0F);
+        this.setRotateAngle(Arms8, 0.2618F, -0.2618F, 0.0F);
+        this.setRotateAngle(Arm, 0.1309F, 0.3927F, 0.1309F);
+        this.setRotateAngle(Arm2, 0.1745F, 0.829F, 0.0F);
+        this.setRotateAngle(Arm3, 0.3927F, 1.7453F, 0.0F);
+        this.setRotateAngle(Arm5, 0.1309F, -0.3927F, -0.1309F);
+        this.setRotateAngle(Arm6, 0.1745F, -0.829F, 0.0F);
+        this.setRotateAngle(Arm7, 0.3927F, -1.7453F, 0.0F);
+        this.setRotateAngle(Arms, -0.3491F, 0.7418F, -0.48F);
+        this.setRotateAngle(Arms2, 0.829F, 0.3927F, 1.2654F);
+        this.setRotateAngle(Arms3, 0.3491F, 0.2618F, 1.2217F);
+        this.setRotateAngle(Arms5, -0.3491F, -0.7418F, 0.48F);
+        this.setRotateAngle(Arms6, 0.829F, -0.3927F, -1.2654F);
+        this.setRotateAngle(Arms7, 0.3491F, -0.2618F, -1.2217F);
+        this.setRotateAngle(Armss, -0.0436F, 0.6981F, -0.1309F);
+        this.setRotateAngle(Armss2, -0.0436F, -0.6981F, 0.1309F);
+        this.setRotateAngle(Body, 1.9199F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.2793F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.2793F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(FinL, 0.0F, 0.0436F, -0.2182F);
+        this.setRotateAngle(FinR, 0.0F, -0.0436F, 0.2182F);
+        this.setRotateAngle(mantle, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
+        this.Body.offsetY = -0.2F;
+        this.Body.offsetZ = -0.025F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

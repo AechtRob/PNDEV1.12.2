@@ -246,6 +246,8 @@ public class ModelSlimonia extends AdvancedModelBase {
         //this.resetToDefaultPose();
        // this.body.offsetY = 0.4F;
         this.body.offsetY = -0.25F;
+        this.body.offsetZ = 0.1F;
+
 
         AdvancedModelRenderer[] fishBody = {this.tergite1, this.tergite2_3, this.tergite4_5, this.tergite6, this.tergite7, this.tergite8, this.tergite9, this.tergite10, this.tergite11, this.tergite12, this.telson};
         AdvancedModelRenderer[] fishTail = {this.tergite12, this.telson};
@@ -283,7 +285,7 @@ public class ModelSlimonia extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.2F;
+               // this.body.offsetY = 0.2F;
                 //this.bob(body, -speed * 1.5F, 2F, false, f2, 1);
                 this.chainSwing(fishBody, speed, 0.01F, -2, f2, 1);
             }
@@ -298,9 +300,9 @@ public class ModelSlimonia extends AdvancedModelBase {
 
         if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
             //Walk pose:
-            if (ee.getIsMoving()) {
+
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            }
+
         } else {
 
                 animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);

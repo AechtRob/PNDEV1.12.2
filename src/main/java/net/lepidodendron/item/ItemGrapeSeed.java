@@ -3,9 +3,9 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockVitis;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -33,7 +33,7 @@ public class ItemGrapeSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(Blocks.VINE.getDefaultState(),1);
+			super(BlockVitis.block.getDefaultState(),1);
 			setTranslationKey("pf_grape_seeds");
 			setRegistryName("grape_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

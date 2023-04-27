@@ -243,7 +243,6 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     }
 
     public void onEntityUpdate() {
-        super.onEntityUpdate();
 
         int i = this.getAir();
         super.onEntityUpdate();

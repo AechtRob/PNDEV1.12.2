@@ -1,0 +1,16 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "0"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:hirmeriella_log"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:hirmeriella_planks",
+ "count": 4
+ }
+}

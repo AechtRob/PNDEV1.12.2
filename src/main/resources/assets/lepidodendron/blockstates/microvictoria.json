@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:microvictoria"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:microvictoria_inventory"
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "triops",
+      "name": "notostracan",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:triops_raw",
+          "name": "lepidodendron:notostracan_raw",
           "weight": 1,
           "functions": [
             {

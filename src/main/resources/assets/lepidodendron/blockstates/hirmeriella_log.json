@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:hirmeriella_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:hirmeriella_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:hirmeriella_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:hirmeriella_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:hirmeriella_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:hirmeriella_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:hirmeriella_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

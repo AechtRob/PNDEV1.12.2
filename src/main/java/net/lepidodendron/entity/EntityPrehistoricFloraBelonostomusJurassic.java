@@ -39,10 +39,10 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 
 	public EntityPrehistoricFloraBelonostomusJurassic(World world) {
 		super(world);
+		setSize(0.45F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.45F;
-		maxHeight = 0.45F;
-		setSize(maxWidth, maxHeight);
+		maxHeight = 0.2F;
 		maxHealthAgeable = 11.0D;
 	}
 

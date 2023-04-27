@@ -1,0 +1,43 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "0 2",
+ "3 5",
+ "678"
+ ],
+ "key": {
+ "0": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "2": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "3": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "5": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "6": {
+ "item": "lepidodendron:hirmeriella_slab",
+ "data": 0
+ },
+ "7": {
+ "item": "lepidodendron:hirmeriella_slab",
+ "data": 0
+ },
+ "8": {
+ "item": "lepidodendron:hirmeriella_slab",
+ "data": 0
+ }
+ },
+ "result": {
+ "item": "lepidodendron:hirmeriella_bridge",
+ "count": 3
+ }
+}
