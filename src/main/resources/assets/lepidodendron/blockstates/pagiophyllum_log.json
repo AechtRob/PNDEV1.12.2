@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:pagiophyllum_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:pagiophyllum_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:pagiophyllum_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:pagiophyllum_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:pagiophyllum_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:pagiophyllum_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:pagiophyllum_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

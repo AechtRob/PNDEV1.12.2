@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemAnemoneSeeds;
+import net.lepidodendron.item.ItemButtercupSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -189,7 +189,7 @@ public class BlockButtercup extends ElementsLepidodendronMod.ModElement {
 				if (!player.isCreative()) {itemstack.shrink(1);}
 				if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
 					if (Math.random() > 0.35) {
-						ItemStack stackSeed = new ItemStack(ItemAnemoneSeeds.block, (int) (1));
+						ItemStack stackSeed = new ItemStack(ItemButtercupSeeds.block, (int) (1));
 						stackSeed.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
 						if (Math.random() > 0.75) {

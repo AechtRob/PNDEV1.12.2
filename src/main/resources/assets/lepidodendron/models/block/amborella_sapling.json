@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/amborella_sapling",
+    "particle": "lepidodendron:blocks/amborella_sapling"
+  }
+}

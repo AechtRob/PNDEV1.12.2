@@ -42,7 +42,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-@Mod(modid = LepidodendronMod.MODID, name = LepidodendronMod.NAME, version = LepidodendronMod.VERSION, dependencies = "required-after:llibrary@[1.7.17,)")
+@Mod(modid = LepidodendronMod.MODID, name = LepidodendronMod.NAME, version = LepidodendronMod.VERSION, dependencies = "required-after:llibrary,patchouli")
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/hirmeriella_log_end",
+    "up": "lepidodendron:blocks/hirmeriella_log_end",
+    "north": "lepidodendron:blocks/hirmeriella_log",
+    "east": "lepidodendron:blocks/hirmeriella_log",
+    "south": "lepidodendron:blocks/hirmeriella_log",
+    "west": "lepidodendron:blocks/hirmeriella_log",
+    "particle": "lepidodendron:blocks/hirmeriella_log_end"
+  }
+}

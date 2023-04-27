@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:calycanthus_flower"}
+    ]
+  }
+}

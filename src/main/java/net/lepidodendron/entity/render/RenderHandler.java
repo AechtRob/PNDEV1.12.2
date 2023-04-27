@@ -4225,6 +4225,12 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockLiriodendronFlower.TileEntityCustom.class, new RenderFlowerLiriodendron());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockArchaeanthusFlower.TileEntityCustom.class, new RenderFlowerArchaeanthus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEmbothriumFlower.TileEntityCustom.class, new RenderFlowerEmbothrium());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockAmborellaFlower.TileEntityCustom.class, new RenderFlowerAmborella());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockCalycanthusFlower.TileEntityCustom.class, new RenderFlowerCalycanthus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockMicrovictoriaBud.TileEntityCustom.class, new RenderFlowerMicrovictoriaBud());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockMicrovictoriaFlower.TileEntityCustom.class, new RenderFlowerMicrovictoria());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockMicrovictoriaFlowerPlaceable.TileEntityCustom.class, new RenderFlowerMicrovictoriaPlaceable());
+
 
         //Rotten log and eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsAttercopus.TileEntityCustom.class, new RenderEggsAttercopus());

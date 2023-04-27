@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockPagiophyllumLand;
+import net.lepidodendron.block.BlockPagiophyllumSapling;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -33,7 +33,7 @@ public class ItemPagiophyllumSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockPagiophyllumLand.block.getDefaultState(), 1);
+			super(BlockPagiophyllumSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_pagiophyllum_seed");
 			setRegistryName("pagiophyllum_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);
