@@ -57,10 +57,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelArandaspis modelArandaspis;
     private static final ResourceLocation TEXTURE_ARCHOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archosaurus.png");
     private final ModelArchosaurus modelArchosaurus;
-
-    private static final ResourceLocation TEXTURE_ARIZONASAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arizonasaurus.png");
-    private final ModelArizonasaurus modelArizonasaurus;
-
     private static final ResourceLocation TEXTURE_ASTRASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/astraspis.png");
     private final ModelAstraspis modelAstraspis;
     private static final ResourceLocation TEXTURE_ATELEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ateleaspis.png");
@@ -318,7 +314,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelAntineosteus = new ModelAntineosteus();
         this.modelArandaspis = new ModelArandaspis();
         this.modelArchosaurus = new ModelArchosaurus();
-        this.modelArizonasaurus = new ModelArizonasaurus();
         this.modelAstraspis = new ModelAstraspis();
         this.modelAteleaspis = new ModelAteleaspis();
         this.modelBatrachotomus = new ModelBatrachotomus();
@@ -759,38 +754,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.scale(1.6, 1.6, 1.6);
                                     this.bindTexture(TEXTURE_ARCHOSAURUS);
                                     modelArchosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraArizonasaurus.class) {
-                                double offset = -0.28;
-                                double voffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(3, 3, 3);
-                                    this.bindTexture(TEXTURE_ARIZONASAURUS);
-                                    modelArizonasaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
                             } else if (classEntity == EntityPrehistoricFloraAteleaspis.class) {
                                 double offset = 0.46;

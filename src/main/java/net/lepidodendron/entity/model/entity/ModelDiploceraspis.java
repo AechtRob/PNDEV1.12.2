@@ -311,7 +311,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
         this.setRotateAngle(upperjaw, 0.1745F, 0.0F, 0.0F);
         this.body.offsetZ = 0F;
         this.body.offsetX = 0F;
-        this.body.offsetY = 0.065F;
+        this.body.offsetY = 0.23F;
         this.body.render(0.01F);
         resetToDefaultPose();
 

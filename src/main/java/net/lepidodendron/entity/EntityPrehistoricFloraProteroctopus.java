@@ -10,6 +10,9 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.SwimmingBottomWalkingSwimBottomDweller;
 import net.lepidodendron.entity.ai.SwimmingBottomWalkingWalk;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
+import net.lepidodendron.entity.render.entity.RenderProteroctopus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -171,6 +174,58 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 			return LepidodendronMod.PROTEROCTOPUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.PROTEROCTOPUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.9;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.02;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_PROTEROCTOPUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelProteroctopus;
+	}
+	public static float getScaler() {
+		return RenderProteroctopus.getScaler();
 	}
 
 }
