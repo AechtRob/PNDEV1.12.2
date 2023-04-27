@@ -717,10 +717,10 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_harpacanthus", EntityPrehistoricFloraHarpacanthus.class, LepidodendronMod.ENTITY_HARPACANTHUS, 48,-9496311,-14281454);
         registerEntity("prehistoric_flora_gephyrostegus", EntityPrehistoricFloraGephyrostegus.class, LepidodendronMod.ENTITY_GEPHYROSTEGUS, 48,-11579332,-11841733);
 
-        registerEntity("prehistoric_flora_congophiopsis", EntityPrehistoricFloraCongophiopsis.class, LepidodendronMod.ENTITY_CONGOPHIOPSIS, 48,-11579332,-11841733);
-        registerEntity("prehistoric_flora_ophiopsis", EntityPrehistoricFloraOphiopsis.class, LepidodendronMod.ENTITY_OPHIOPSIS, 48,-11579332,-11841733);
-        registerEntity("prehistoric_flora_rhenocystis", EntityPrehistoricFloraRhenocystis.class, LepidodendronMod.ENTITY_RHENOCYSTIS, 48,-11579332,-11841733);
-        registerEntity("prehistoric_flora_ciurcopterus", EntityPrehistoricFloraCiurcopterus.class, LepidodendronMod.ENTITY_CIURCOPTERUS, 64,-13289154,-13088915);
+        registerEntity("prehistoric_flora_congophiopsis", EntityPrehistoricFloraCongophiopsis.class, LepidodendronMod.ENTITY_CONGOPHIOPSIS, 48,-2518218,-1649735);
+        registerEntity("prehistoric_flora_ophiopsis", EntityPrehistoricFloraOphiopsis.class, LepidodendronMod.ENTITY_OPHIOPSIS, 48,0,-3094140);
+        registerEntity("prehistoric_flora_rhenocystis", EntityPrehistoricFloraRhenocystis.class, LepidodendronMod.ENTITY_RHENOCYSTIS, 48,-5734998,-3191378);
+        registerEntity("prehistoric_flora_ciurcopterus", EntityPrehistoricFloraCiurcopterus.class, LepidodendronMod.ENTITY_CIURCOPTERUS, 64,-14407893,-13088915);
 
 
 
