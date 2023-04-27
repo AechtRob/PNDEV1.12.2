@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraStahleckeria extends EntityPrehistoricFloraLa
 	public EntityPrehistoricFloraStahleckeria(World world) {
 		super(world);
 		setSize(1.05F, 1.0F);
-		minWidth = 0.12F;
+		minWidth = 0.2F;
 		maxWidth = 1.05F;
 		maxHeight = 1.0F;
 		maxHealthAgeable = 26.0D;

@@ -3828,6 +3828,11 @@ public class LepidodendronSorter {
     public static final int symphysops_raw = 3900;
     public static final int pricyclopyge_raw = 3901;
     public static final int tribrachiodemas_raw = 3902;
+    public static final int harpacanthus_raw = 3903;
+    public static final int utatsusaurus_raw = 3904;
+    public static final int typhloesus_raw = 3905;
+    public static final int amphibian_spawn_gephyrostegus = 3906;
+    public static final int amphibian_spawn_gephyrostegus_worldgen = 3907;
 
 
 

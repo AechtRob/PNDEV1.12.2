@@ -8,9 +8,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderAspidorhynchus;
-import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderCaturus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,29 +32,33 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraBelonostomusJurassic(World world) {
+	public EntityPrehistoricFloraTyphloesus(World world) {
 		super(world);
-		setSize(0.45F, 0.2F);
+		setSize(0.5F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.45F;
+		maxWidth = 0.5F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemUnknownPlanula.block, (int) (1));
+	}
+	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
 	public int getShoalSize() {
-		return 10;
+		return 0;
 	}
 
 	@Override
@@ -66,7 +71,9 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {
+		return "Carboniferous";
+	}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -78,7 +85,7 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 	public boolean dropsEggs() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -91,9 +98,9 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.267f;
+		float AIspeed = 0.15f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.1F;
+			AIspeed = AIspeed * 1.5F;
 		}
 		return AIspeed;
 	}
@@ -114,20 +121,16 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable<>(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		//this.targetTasks.addTask(1, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+		return stack.getItem() == ItemFishFood.block;
 	}
 
 	@Override
@@ -212,9 +215,75 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BELONOSTOMUS_JURASSIC_LOOT;
+		return LepidodendronMod.MEGAMASTAX_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.033;
+	}
+
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+
+	public static double upperbackverticallinedepth() {
+		return 0.7;
+	}
+
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+
+	public static double upperbacklineoffset() {
+		return 0.35;
+	}
+
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.025F;
+	}
+
+	public static double lowerfrontverticallinedepth() {
+		return 1.10F;
+	}
+
+	public static double lowerbackverticallinedepth() {
+		return 1.10F;
+	}
+
+	public static double lowerfrontlineoffset() {
+		return 0.285;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.00F;
+	}
+
+	public static double lowerbacklineoffset() {
+		return 0.105;
+	}
+
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.01F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_CATURUS;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelCaturus;
+	}
+
+	public static float getScaler() {
+		return RenderCaturus.getScaler();
+	}
 
 }
-

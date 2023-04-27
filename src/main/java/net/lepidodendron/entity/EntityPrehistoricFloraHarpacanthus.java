@@ -3,31 +3,25 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
-import net.lepidodendron.item.entities.ItemMaclurina;
-import net.minecraft.block.Block;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.EntityMateAIFishBase;
+import net.lepidodendron.entity.ai.FishWander;
+import net.lepidodendron.entity.ai.ShoalFishBaseAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraHarpacanthus extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -35,9 +29,24 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraMaclurina(World world) {
+	public EntityPrehistoricFloraHarpacanthus(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
+		setSize(0.35F, 0.3F);
+	}
+
+	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 6;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -45,7 +54,7 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -55,13 +64,18 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 	}
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
+	protected float getAISpeedFish() {
+		return 0.175f;
 	}
 
 	@Override
-	protected float getAISpeedTrilobite() {
-		return 0.072f;
+	protected boolean isSlowAtBottom() {
+		return false;
+	}
+
+	@Override
+	public int getAnimationTick() {
+		return getAnimationTick();
 	}
 
 	@Override
@@ -85,9 +99,10 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
-		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
+		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
+		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
 	}
 
 	@Override
@@ -113,14 +128,8 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
@@ -155,24 +164,8 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return null;
-	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (!this.world.isRemote && !this.isDead) {
-			if ("player".equals(source.getDamageType())) {
-				EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemMaclurina.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-				if (this.world instanceof WorldServer)
-				{
-					((WorldServer)this.world).spawnParticle(EnumParticleTypes.BLOCK_DUST, this.posX, this.posY + (double)this.height / 1.5D, this.posZ, 10, (double)(this.width / 4.0F), (double)(this.height / 4.0F), (double)(this.width / 4.0F), 0.05D, Block.getStateId(Blocks.PLANKS.getDefaultState()));
-				}
-				this.setDead();
-			}
-		}
-		return super.attackEntityFrom(source, amount);
+		return LepidodendronMod.HARPACANTHUS_LOOT;
 	}
 
 }
+

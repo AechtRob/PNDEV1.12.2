@@ -372,7 +372,6 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_protozygoptera", EntityPrehistoricFloraProtozygoptera.class, LepidodendronMod.ENTITY_PROTOZYGOPTERA, 48,-13481358,-12613779);
         registerEntity("prehistoric_flora_palaeontinid", EntityPrehistoricFloraPalaeontinid.class, LepidodendronMod.ENTITY_PALAEONTINID, 48,-12962517,-10011888);
         registerEntity("prehistoric_flora_casineria", EntityPrehistoricFloraCasineria.class, LepidodendronMod.ENTITY_CASINERIA, 48,-13619414,-5202626);
-        //registerEntity("prehistoric_flora_gephyrostegus", EntityPrehistoricFloraGephyrostegus.class, LepidodendronMod.ENTITY_GEPHYROSTEGUS, 64,0,0);
         //registerEntity("prehistoric_flora_spinoaequalis", EntityPrehistoricFloraSpinoaequalis.class, LepidodendronMod.ENTITY_SPINOAEQUALIS, 64,0,0);
         registerEntity("prehistoric_flora_whatcheeria", EntityPrehistoricFloraWhatcheeria.class, LepidodendronMod.ENTITY_WHATCHEERIA, 64,-12882651,-8546248);
         registerEntity("prehistoric_flora_meganeura", EntityPrehistoricFloraMeganeura.class, LepidodendronMod.ENTITY_MEGANEURA, 64,-12885454,-7963552);
@@ -712,6 +711,12 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_carolinites", EntityPrehistoricFloraCarolinites.class, LepidodendronMod.ENTITY_CAROLINITES, 48,-9800347,-4474473);
         registerEntity("prehistoric_flora_pricyclopyge", EntityPrehistoricFloraPricyclopyge.class, LepidodendronMod.ENTITY_PRICYCLOPYGE, 48,-1647444,-4108224);
         registerEntity("prehistoric_flora_symphysops", EntityPrehistoricFloraSymphysops.class, LepidodendronMod.ENTITY_SYMPHYSOPS, 48,-4147072,-11953565);
+
+        registerEntity("prehistoric_flora_utatsusaurus", EntityPrehistoricFloraUtatsusaurus.class, LepidodendronMod.ENTITY_UTATSUSAURUS, 64,0,-1);
+        registerEntity("prehistoric_flora_rhomaleosaurus", EntityPrehistoricFloraRhomaleosaurus.class, LepidodendronMod.ENTITY_RHOMALEOSAURUS, 128,-13815755,-1);
+        registerEntity("prehistoric_flora_typhloesus", EntityPrehistoricFloraTyphloesus.class, LepidodendronMod.ENTITY_TYPHLOESUS, 48,-13685177,-3102645);
+        registerEntity("prehistoric_flora_harpacanthus", EntityPrehistoricFloraHarpacanthus.class, LepidodendronMod.ENTITY_HARPACANTHUS, 48,-9496311,-14281454);
+        registerEntity("prehistoric_flora_gephyrostegus", EntityPrehistoricFloraGephyrostegus.class, LepidodendronMod.ENTITY_GEPHYROSTEGUS, 48,-11579332,-11841733);
 
 
 

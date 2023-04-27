@@ -6,17 +6,16 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderAspidorhynchus;
-import net.lepidodendron.entity.render.entity.RenderGyrosteus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -25,50 +24,55 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraRhomaleosaurus extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraBelonostomusJurassic(World world) {
+	public EntityPrehistoricFloraRhomaleosaurus(World world) {
 		super(world);
-		setSize(0.45F, 0.2F);
+		setSize(2F, 0.925F);
 		minWidth = 0.1F;
-		maxWidth = 0.45F;
-		maxHeight = 0.2F;
-		maxHealthAgeable = 11.0D;
+		maxWidth = 2F;
+		maxHeight = 0.925F;
+		maxHealthAgeable = 40.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
 	}
 
 	@Override
-	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(20, 10, 5F, this);
+		}
 	}
 
 	@Override
-	public int getShoalSize() {
-		return 10;
-	}
-
-	@Override
-	public int getShoalDist() {
-		return 3;
+	public void entityInit() {
+		super.entityInit();
 	}
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.25;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
 
-	//public static String getHabitat() {return "Aquatic";}
+	@Override
+	public int airTime() {
+		return 10000;
+	}
 
 	@Override
 	public void playLivingSound() {
@@ -76,7 +80,7 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 	
 	@Override
@@ -85,15 +89,23 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 	}
 
 	@Override
+	public boolean divesToLay() {
+		return true;
+	}
+
+	@Override
 	public int getAdultAge() {
-		return 0;
-	} //Only adults!
+		return 96000;
+	}
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.267f;
+		float AIspeed = 0.16f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.1F;
+			AIspeed = AIspeed * 1.7F;
+		}
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
 		}
 		return AIspeed;
 	}
@@ -103,22 +115,23 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 		return false;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		tasks.addTask(0, new EntityMateAI(this, 1.0D));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.4, 3, true, 0));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
@@ -154,7 +167,7 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -181,14 +194,19 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
-		//System.err.println(this.getAnimationTick());
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
 	}
 
 	@Override
@@ -200,11 +218,6 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 		return false;
 	}
 
-	@Override
-	public float getAgeScale() {
-		return 1;
-	}
-
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
@@ -212,9 +225,15 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BELONOSTOMUS_JURASSIC_LOOT;
+		 		if (!this.isPFAdult()) {
+			return LepidodendronMod.RHOMALEOSAURUS_LOOT_YOUNG;
+		}
+		return LepidodendronMod.RHOMALEOSAURUS_LOOT;
 	}
-
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraRhomaleosaurus(this.world);
+	}
 
 }
 
