@@ -1,50 +1,63 @@
 {
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
-		"lavarock": "lepidodendron:blocks/lava_rock",
-		"frame": "blocks/itemframe_background",
-		"particle": "lepidodendron:blocks/lava_rock"
+		"particle": "lepidodendron:blocks/lava_rock",
+		"lavarock": "lepidodendron:blocks/lava_rock"
 	},
 	"elements": [
 		{
 			"name": "base",
 			"from": [6, 0, 6],
-			"to": [10, 6, 10],
-			"shade":false,
+			"to": [10, 10, 10],
+			"shade": false,
 			"faces": {
-				"north": {"uv": [0, 0, 4, 6], "texture": "#lavarock"},
-				"east": {"uv": [0, 0, 4, 6], "texture": "#lavarock"},
-				"south": {"uv": [0, 0, 4, 6], "texture": "#lavarock"},
-				"west": {"uv": [0, 0, 4, 6], "texture": "#lavarock"},
+				"north": {"uv": [0, 0, 4, 10], "texture": "#lavarock"},
+				"east": {"uv": [0, 0, 4, 10], "texture": "#lavarock"},
+				"south": {"uv": [0, 0, 4, 10], "texture": "#lavarock"},
+				"west": {"uv": [0, 0, 4, 10], "texture": "#lavarock"},
 				"up": {"uv": [0, 0, 4, 4], "texture": "#lavarock"},
 				"down": {"uv": [0, 0, 4, 4], "texture": "#lavarock"}
 			}
 		},
 		{
-			"name": "toplower",
-			"from": [4, 6, 4],
-			"to": [12, 7, 12],
-			"shade":false,
+			"name": "baseupper",
+			"from": [5, 10, 5],
+			"to": [11, 13, 11],
+			"shade": false,
 			"faces": {
-				"north": {"uv": [0, 0, 8, 1], "texture": "#lavarock"},
-				"east": {"uv": [0, 0, 8, 1], "texture": "#lavarock"},
-				"south": {"uv": [0, 0, 8, 1], "texture": "#lavarock"},
-				"west": {"uv": [0, 0, 8, 1], "texture": "#lavarock"},
-				"up": {"uv": [0, 0, 8, 1], "texture": "#lavarock"},
+				"north": {"uv": [0, 0, 6, 3], "texture": "#lavarock"},
+				"east": {"uv": [0, 0, 6, 3], "texture": "#lavarock"},
+				"south": {"uv": [0, 0, 6, 3], "texture": "#lavarock"},
+				"west": {"uv": [0, 0, 6, 3], "texture": "#lavarock"},
+				"up": {"uv": [0, 0, 6, 6], "texture": "#lavarock"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#lavarock"}
+			}
+		},
+		{
+			"name": "toplower",
+			"from": [4, 13, 4],
+			"to": [12, 15, 12],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 8, 2], "texture": "#lavarock"},
+				"east": {"uv": [0, 0, 8, 2], "texture": "#lavarock"},
+				"south": {"uv": [0, 0, 8, 2], "texture": "#lavarock"},
+				"west": {"uv": [0, 0, 8, 2], "texture": "#lavarock"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#lavarock"},
 				"down": {"uv": [0, 0, 8, 8], "texture": "#lavarock"}
 			}
 		},
 		{
 			"name": "topupper",
-			"from": [0, 7, 0],
-			"to": [16, 8, 16],
-			"shade":false,
+			"from": [0, 15, 0],
+			"to": [16, 16, 16],
+			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 0, 16, 1], "texture": "#lavarock"},
 				"east": {"uv": [0, 0, 16, 1], "texture": "#lavarock"},
 				"south": {"uv": [0, 0, 16, 1], "texture": "#lavarock"},
 				"west": {"uv": [0, 0, 16, 1], "texture": "#lavarock"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#frame"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#lavarock"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#lavarock"}
 			}
 		}

@@ -1694,7 +1694,7 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBookSubscribers());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronDimensionalSleeping());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronFogSubscribers());
-		MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
+		//MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronHoeHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBucketHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronGlassBottleSubscribers());
