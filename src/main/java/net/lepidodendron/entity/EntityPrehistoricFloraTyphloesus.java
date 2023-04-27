@@ -111,6 +111,11 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
+	public int getAttackLength() {
+		return 10;
+	}
+
+	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
 			return super.attackEntityFrom(source, (amount * 0.5F));
@@ -215,7 +220,7 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MEGAMASTAX_LOOT;
+		return LepidodendronMod.TYPHLOESUS_LOOT;
 	}
 
 	//Rendering taxidermy:

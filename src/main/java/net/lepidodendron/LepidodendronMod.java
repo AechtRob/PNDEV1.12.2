@@ -934,7 +934,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_MONTECARIS = 369;
 	public static final ResourceLocation MONTECARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/montecaris"));
 	public static final int ENTITY_RHENOCYSTIS = 370;
-	//public static final ResourceLocation RHENOCYSTIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rhenocystis"));
+	public static final ResourceLocation RHENOCYSTIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rhenocystis"));
 	public static final int ENTITY_WILLWERATHIA = 371;
 	public static final ResourceLocation WILLWERATHIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/willwerathia"));
 	public static final int ENTITY_PARMASTEGA = 372;
@@ -1669,6 +1669,10 @@ public class LepidodendronMod {
 	public static final int ENTITY_UTATSUSAURUS = 683;
 	public static final ResourceLocation UTATSUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/utatsusaurus"));
 	public static final ResourceLocation UTATSUSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/utatsusaurus_young"));
+	public static final int ENTITY_OPHIOPSIS = 684;
+	public static final ResourceLocation OPHIOPSIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ophiopsis"));
+	public static final int ENTITY_CONGOPHIOPSIS = 685;
+	public static final ResourceLocation CONGOPHIOPSIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/congophiopsis"));
 
 
 

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCiurcopterus extends RenderLiving<EntityPrehistoricFloraCiurcopterus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ciurcopterus.png");
     public static float getScaler() {
-        return 0.9F;
+        return 0.5F;
     }
     public RenderCiurcopterus(RenderManager mgr) {
         super(mgr, new ModelCiurcopterus(), 0.0f);

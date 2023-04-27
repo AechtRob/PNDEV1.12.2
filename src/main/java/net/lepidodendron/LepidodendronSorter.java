@@ -3887,6 +3887,8 @@ public class LepidodendronSorter {
     public static final int typhloesus_raw = 4002;
     public static final int amphibian_spawn_gephyrostegus = 4003;
     public static final int amphibian_spawn_gephyrostegus_worldgen = 4004;
+    public static final int ophiopsis_raw = 4005;
+    public static final int congophiopsis_raw = 4006;
 
 
 }

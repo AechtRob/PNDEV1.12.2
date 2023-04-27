@@ -285,7 +285,7 @@ public class ModelSlimonia extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.2F;
+               // this.body.offsetY = 0.2F;
                 //this.bob(body, -speed * 1.5F, 2F, false, f2, 1);
                 this.chainSwing(fishBody, speed, 0.01F, -2, f2, 1);
             }
