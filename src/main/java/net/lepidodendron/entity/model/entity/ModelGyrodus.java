@@ -300,7 +300,7 @@ public class ModelGyrodus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.root.offsetY = 0.4F;
+        //this.root.offsetY = 0.4F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Bodyend, this.Tailbase, this.Tailend, this.Tailfin};
@@ -326,6 +326,8 @@ public class ModelGyrodus extends AdvancedModelBase {
              if (!e.isInWater()) {
                 this.root.rotateAngleZ = (float) Math.toRadians(90);
                 this.root.offsetY = 1.1F;
+                 this.root.offsetZ = -0.3F;
+                 this.root.offsetX = 0.3F;
                 this.bob(root, -speed, 5F, false, f2, 1);
             }
         }
