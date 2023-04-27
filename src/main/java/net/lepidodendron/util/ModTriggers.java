@@ -114,6 +114,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CALAMOPHYTON = new CustomTrigger("pf_book_calamophyton");
     public static final CustomTrigger CLICK_CALLISTOPHYTALES = new CustomTrigger("pf_book_callistophytales");
     public static final CustomTrigger CLICK_HEDERA = new CustomTrigger("pf_book_hedera");
+    public static final CustomTrigger CLICK_ARISTOLOCHIA = new CustomTrigger("pf_book_aristolochia");
+    public static final CustomTrigger CLICK_BUCKTHORN = new CustomTrigger("pf_book_buckthorn");
     public static final CustomTrigger CLICK_ACTINIDEA = new CustomTrigger("pf_book_actinidea");
     public static final CustomTrigger CLICK_VITIS = new CustomTrigger("pf_book_vitis");
     public static final CustomTrigger CLICK_CASTERICYSTIS = new CustomTrigger("pf_book_castericystis");
@@ -1250,6 +1252,8 @@ public class ModTriggers
             CLICK_CALAMOPHYTON,
             CLICK_CALLISTOPHYTALES,
             CLICK_HEDERA,
+            CLICK_ARISTOLOCHIA,
+            CLICK_BUCKTHORN,
             CLICK_ACTINIDEA,
             CLICK_VITIS,
             CLICK_CASTERICYSTIS,

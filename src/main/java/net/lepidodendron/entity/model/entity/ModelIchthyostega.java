@@ -296,13 +296,13 @@ public class ModelIchthyostega extends AdvancedModelBase {
         this.setRotateAngle(footL, 0.0436F, -0.1745F, 0.3054F);
         this.footL.cubeList.add(new ModelBox(footL, 55, 47, 0.0F, -0.5F, -2.25F, 4, 1, 4, 0.0F, true));
 
-        this.setRotateAngle(legR, (float)Math.toRadians(7.147), (float)Math.toRadians(30.854), (float)Math.toRadians(0.8007));
-        this.setRotateAngle(legR2, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
-        this.setRotateAngle(footR, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
-
-        this.setRotateAngle(legL, (float)Math.toRadians(4.2736), (float)Math.toRadians(-30.9347), (float)Math.toRadians(3.5947));
-        this.setRotateAngle(legL2, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
-        this.setRotateAngle(footL, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
+//        this.setRotateAngle(legR, (float)Math.toRadians(7.147), (float)Math.toRadians(30.854), (float)Math.toRadians(0.8007));
+//        this.setRotateAngle(legR2, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
+//        this.setRotateAngle(footR, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
+//
+//        this.setRotateAngle(legL, (float)Math.toRadians(4.2736), (float)Math.toRadians(-30.9347), (float)Math.toRadians(3.5947));
+//        this.setRotateAngle(legL2, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
+//        this.setRotateAngle(footL, (float)Math.toRadians(0), (float)Math.toRadians(0), (float)Math.toRadians(0));
 
         updateDefaultPose();
         animator = ModelAnimator.create();
@@ -367,6 +367,12 @@ public class ModelIchthyostega extends AdvancedModelBase {
 
         if (!ee.isReallyInWater()) {
             if (!ee.getIsMoving()) {
+//                this.setRotateAngle(legR2, 0.2182F, 0.5672F, -0.1309F);
+//                this.setRotateAngle(footR, 0.0436F, 0.1745F, -0.3054F);
+//                this.setRotateAngle(legL, 0.6545F, -0.6109F, 0.3927F);
+//                this.setRotateAngle(legL2, 0.2182F, -0.5672F, 0.1309F);
+//                this.setRotateAngle(footL, 0.0436F, -0.1745F, 0.3054F);
+
                 return;
             }
             animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
@@ -374,6 +380,12 @@ public class ModelIchthyostega extends AdvancedModelBase {
         else {
             //Swimming pose:
             if (!ee.getIsMoving()) { //static in water
+//                this.setRotateAngle(legR2, 0.2182F, 0.5672F, -0.1309F);
+//                this.setRotateAngle(footR, 0.0436F, 0.1745F, -0.3054F);
+//                this.setRotateAngle(legL, 0.6545F, -0.6109F, 0.3927F);
+//                this.setRotateAngle(legL2, 0.2182F, -0.5672F, 0.1309F);
+//                this.setRotateAngle(footL, 0.0436F, -0.1745F, 0.3054F);
+//
                 return;
             }
             //moving in water
