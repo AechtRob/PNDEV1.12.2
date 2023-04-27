@@ -2,24 +2,16 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEurypteridEggsHibbertopterus;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemEchinodermEggsEnoploura;
 import net.lepidodendron.item.entities.ItemEchinodermEggsRhenocystis;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -71,6 +63,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 	public ItemStack getPropagule() {
 		return new ItemStack(ItemEchinodermEggsRhenocystis.block, 1);
 	}
+
 	@Override
 	public boolean dropsEggs() {
 		return true;
@@ -93,14 +86,13 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 
 	@Override
 	protected float getAISpeedWalkingAmphibian() {
-		//System.err.println("Speed Hibbert: " + (float) Math.min(1F, (this.getAgeScale() * 2F)) * 0.15F);
-		if(!this.isReallyInWater()){
+		if (!this.isReallyInWater()){
 			return 0;
 		}
 		if (!this.getMovingOnLand() && this.isReallyInWater()) {
 			return 0;
 		}
-		return 0.1F;
+		return 0.2F;
 
 	}
 
