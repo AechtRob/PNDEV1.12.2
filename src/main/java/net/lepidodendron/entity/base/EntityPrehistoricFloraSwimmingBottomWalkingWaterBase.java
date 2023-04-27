@@ -260,29 +260,37 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
         }
 
         if (!world.isRemote) {
-            if (this.getSwimTick() > 0) {
-                this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
-                if (this.getSwimTick() < 0) {
-                    this.setSwimTick(0);
-                }
-            }
-            if (this.getWalkTick() > 0) {
-                this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
-                if (this.getWalkTick() < 0) {
-                    this.setWalkTick(0);
-                }
-            }
 
-            if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
+            if (!this.isReallyInWater()) {
                 this.setIsSwimming(false);
-                this.setAnimation(UNSWIM_ANIMATION);
-                this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
+                this.setWalkTick(1);
             }
+            else {
 
-            if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
-                this.setIsSwimming(true);
-                this.setAnimation(SWIM_ANIMATION);
-                this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+                if (this.getSwimTick() > 0) {
+                    this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
+                    if (this.getSwimTick() < 0) {
+                        this.setSwimTick(0);
+                    }
+                }
+                if (this.getWalkTick() > 0) {
+                    this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
+                    if (this.getWalkTick() < 0) {
+                        this.setWalkTick(0);
+                    }
+                }
+
+                if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
+                    this.setIsSwimming(false);
+                    this.setAnimation(UNSWIM_ANIMATION);
+                    this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
+                }
+
+                if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
+                    this.setIsSwimming(true);
+                    this.setAnimation(SWIM_ANIMATION);
+                    this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+                }
             }
 
             //System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());

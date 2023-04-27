@@ -33,16 +33,16 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
     public EntityPrehistoricFloraWalkingAmphibianBase(World world) {
         super(world);
         if (this.isInWater()) {
-            this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
+            this.moveHelper = new EntityPrehistoricFloraWalkingAmphibianBase.WanderMoveHelper();
             this.navigator = new PathNavigateAmphibian(this, world);
         }
         else {
             if (isNearWater(this, this.getPosition())) {
-                this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
+                this.moveHelper = new EntityPrehistoricFloraWalkingAmphibianBase.WanderMoveHelper();
                 this.navigator = new PathNavigateAmphibian(this, world);
             }
             else {//Find water!
-                this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
+                this.moveHelper = new EntityPrehistoricFloraWalkingAmphibianBase.WanderMoveHelper();
                 this.navigator = new PathNavigateAmphibianFindWater(this, world);
                 this.setPathPriority(PathNodeType.WATER, 10F);
             }
@@ -260,6 +260,13 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
+
                 if (this.isPotionActive(MobEffects.LEVITATION))
                 {
                     this.motionY += (0.05D * (double)(this.getActivePotionEffect(MobEffects.LEVITATION).getAmplifier() + 1) - this.motionY) * 0.2D;
@@ -316,9 +323,8 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
         }
 
         public void onUpdateMoveHelper() {
-            if (this.action == Action.STRAFE) {
-                //float f = (float) this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue();
-                float f = getAISpeedWalkingAmphibian();
+            if (this.action == EntityMoveHelper.Action.STRAFE) {
+                float f = (float) this.EntityBase.getAISpeedWalkingAmphibian();
                 float f1 = (float) this.speed * f;
                 float f2 = this.moveForward;
                 float f3 = this.moveStrafe;
@@ -350,9 +356,9 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
                 this.EntityBase.setAIMoveSpeed(f1);
                 this.EntityBase.setMoveForward(this.moveForward);
                 this.EntityBase.setMoveStrafing(this.moveStrafe);
-                this.action = Action.WAIT;
-            } else if (this.action == Action.MOVE_TO) {
-                this.action = Action.WAIT;
+                this.action = EntityMoveHelper.Action.WAIT;
+            } else if (this.action == EntityMoveHelper.Action.MOVE_TO) {
+                this.action = EntityMoveHelper.Action.WAIT;
                 double d0 = this.posX - this.EntityBase.posX;
                 double d1 = this.posZ - this.EntityBase.posZ;
                 double d2 = this.posY - this.EntityBase.posY;
@@ -366,32 +372,32 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
                 float turn = (EntityBase.getMaxTurnDistancePerTick());
                 float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
                 this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
-                //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
+                //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getAISpeedWalkingAmphibian()));
 
-                //float speed = getAISpeedLand();
-                //this.EntityBase.setAIMoveSpeed((float) (0.4f * this.speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
-                this.EntityBase.setAIMoveSpeed((float) (0.6f * this.speed * getAISpeedWalkingAmphibian()));
+                this.EntityBase.setAIMoveSpeed((float) (0.4f * this.speed * this.EntityBase.getAISpeedWalkingAmphibian()));
 
+                //Testing mode:
+                //this.EntityBase.setAIMoveSpeed(0f);
 
-                //Land:
-                if (!this.EntityBase.isInWater()) {
-                    this.EntityBase.setAIMoveSpeed((float) (0.6f * this.speed * getAISpeedWalkingAmphibian()));
+                if (d2 > (double) this.EntityBase.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.EntityBase.width)) {
+                    if (!this.EntityBase.canJumpOutOfWater()) {
+                        if (this.EntityBase.isInWater()) {
+                            this.EntityBase.getJumpHelper().setJumping();
+                            this.action = EntityMoveHelper.Action.JUMPING;
+                            //System.err.println("Set jump 3");
+                        }
+                    }
+                    else {
+                        this.EntityBase.getJumpHelper().setJumping();
+                        this.action = EntityMoveHelper.Action.JUMPING;
+                        //System.err.println("Set jump 4");
+                    }
                 }
-
-                if (
-                    (this.EntityBase.collidedHorizontally)
-                    && (d2 > (double) this.EntityBase.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.EntityBase.width))
-                    ) {
-                    this.EntityBase.getJumpHelper().setJumping();
-                    this.action = Action.JUMPING;
-                }
-            } else if (this.action == Action.JUMPING) {
-                //float speed = getAISpeedLand();
-                //this.EntityBase.setAIMoveSpeed((float) (speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
-                this.EntityBase.setAIMoveSpeed((float) (this.speed * getAISpeedWalkingAmphibian()));
+            } else if (this.action == EntityMoveHelper.Action.JUMPING) {
+                this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getAISpeedWalkingAmphibian()));
 
                 if (this.EntityBase.onGround) {
-                    this.action = Action.WAIT;
+                    this.action = EntityMoveHelper.Action.WAIT;
                 }
             } else {
                 this.EntityBase.setMoveForward(0.0F);
