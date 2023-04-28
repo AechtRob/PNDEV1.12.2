@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.item.ItemBuckthornBerries;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -20,6 +21,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -31,21 +33,21 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:buckthorn2")
+public class BlockBuckthorn2Berries extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:buckthorn2_berries")
 	public static final Block block = null;
-	public BlockBuckthorn2(ElementsLepidodendronMod instance) {
+	public BlockBuckthorn2Berries(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.buckthorn);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("buckthorn2"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("buckthorn2_berries"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -59,7 +61,7 @@ public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			//super();
-			setTranslationKey("pf_buckthorn2");
+			setTranslationKey("pf_buckthorn2_berries");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.2F);
 			setResistance(0.2F);
@@ -70,17 +72,22 @@ public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-			super.updateTick(worldIn, pos, state, rand);
-			if (worldIn.getBlockState(pos).getBlock() == this) {
-				if (!worldIn.getBlockState(pos).getValue(CHECK_DECAY)) {
-					if (Math.random() > 0.7) {
-						if (Math.random() > 0.7) {
-							worldIn.setBlockState(pos.down(), BlockBuckthornBerries.block.getDefaultState());
-							worldIn.setBlockState(pos, BlockBuckthorn2Berries.block.getDefaultState());
-						}
-					}
+		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			//right-click block:
+			if ((!playerIn.capabilities.allowEdit) || (!playerIn.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
+			{
+				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+			}
+			else {
+				if (!((hand != playerIn.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+					ItemStack stackSeed = new ItemStack(ItemBuckthornBerries.block, (int) (1));
+					stackSeed.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(playerIn, stackSeed);
+					worldIn.setBlockState(pos.down(), BlockBuckthorn.block.getDefaultState());
+					worldIn.setBlockState(pos, BlockBuckthorn2.block.getDefaultState());
+					return true;
 				}
+				return true;
 			}
 		}
 
@@ -201,7 +208,7 @@ public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
 			super.neighborChanged(state, world, pos, neighborBlock, fromPos);
 			
 			Block block = world.getBlockState(pos.down()).getBlock();
-			if ((block != BlockBuckthorn.block)) {
+			if ((block != BlockBuckthornBerries.block)) {
 				world.setBlockToAir(pos);
 				if (Math.random() > 0.66) {
 					if (!LepidodendronConfig.doPropagation) {

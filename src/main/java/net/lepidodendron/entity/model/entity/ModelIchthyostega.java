@@ -367,11 +367,9 @@ public class ModelIchthyostega extends AdvancedModelBase {
 
         if (!ee.isReallyInWater()) {
             if (!ee.getIsMoving()) {
-//                this.setRotateAngle(legR2, 0.2182F, 0.5672F, -0.1309F);
-//                this.setRotateAngle(footR, 0.0436F, 0.1745F, -0.3054F);
-//                this.setRotateAngle(legL, 0.6545F, -0.6109F, 0.3927F);
-//                this.setRotateAngle(legL2, 0.2182F, -0.5672F, 0.1309F);
-//                this.setRotateAngle(footL, 0.0436F, -0.1745F, 0.3054F);
+                //Repose the legs to the start position of the walk cycle anim:
+                this.setRotateAngle(this.legR, this.legR.rotateAngleX + (float) Math.toRadians(7.14704), this.legR.rotateAngleY + (float) Math.toRadians(30.85399), this.legR.rotateAngleZ + (float) Math.toRadians(0.80074));
+                this.setRotateAngle(this.legL, this.legL.rotateAngleX + (float) Math.toRadians(4.2736), this.legL.rotateAngleY - (float) Math.toRadians(30.9347), this.legL.rotateAngleZ + (float) Math.toRadians(3.59468));
 
                 return;
             }
@@ -380,12 +378,9 @@ public class ModelIchthyostega extends AdvancedModelBase {
         else {
             //Swimming pose:
             if (!ee.getIsMoving()) { //static in water
-//                this.setRotateAngle(legR2, 0.2182F, 0.5672F, -0.1309F);
-//                this.setRotateAngle(footR, 0.0436F, 0.1745F, -0.3054F);
-//                this.setRotateAngle(legL, 0.6545F, -0.6109F, 0.3927F);
-//                this.setRotateAngle(legL2, 0.2182F, -0.5672F, 0.1309F);
-//                this.setRotateAngle(footL, 0.0436F, -0.1745F, 0.3054F);
-//
+                //Repose the feet to the start position of the swim cycle anim:
+                //Not needed for this swim - the static pose is fine
+
                 return;
             }
             //moving in water

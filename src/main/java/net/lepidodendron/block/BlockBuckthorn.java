@@ -41,6 +41,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
@@ -83,6 +84,21 @@ public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			super.updateTick(worldIn, pos, state, rand);
+			if (worldIn.getBlockState(pos).getBlock() == this) {
+				if (!worldIn.getBlockState(pos).getValue(CHECK_DECAY)) {
+					if (Math.random() > 0.7) {
+						if (Math.random() > 0.7) {
+							worldIn.setBlockState(pos, BlockBuckthornBerries.block.getDefaultState());
+							worldIn.setBlockState(pos.up(), BlockBuckthorn2Berries.block.getDefaultState());
+						}
+					}
+				}
+			}
 		}
 
 		@Override
