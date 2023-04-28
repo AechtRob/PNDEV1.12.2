@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhenocystis;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -89,7 +88,7 @@ public class ModelRhenocystis extends AdvancedModelBase {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+        //this.resetToDefaultPose();
 
     }
 
@@ -100,9 +99,9 @@ public class ModelRhenocystis extends AdvancedModelBase {
         EntityPrehistoricFloraRhenocystis ee = (EntityPrehistoricFloraRhenocystis) entitylivingbaseIn;
 
         if (ee.isReallyInWater()) {//swimming
-            if (ee.getIsMoving()) {
+            //if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            }
+            //}
         }
         else {
             //land pose:

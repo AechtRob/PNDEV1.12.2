@@ -4,13 +4,13 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.item.ItemBuckthornBerries;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
@@ -21,7 +21,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -33,9 +32,9 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
@@ -58,6 +57,8 @@ public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
 		//		new ModelResourceLocation("lepidodendron:buckthorn4", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+	public static final PropertyBool VAR = PropertyBool.create("var");
+
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			//super();
@@ -72,24 +73,27 @@ public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-			//right-click block:
-			if ((!playerIn.capabilities.allowEdit) || (!playerIn.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-			{
-				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			boolean boolVar = false;
+			if ((double) (pos.getX() + pos.getZ())/3 == (int) (pos.getX() + pos.getZ())/3) {
+				boolVar = true;
 			}
-			else {
-				if (!((hand != playerIn.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					ItemStack stackSeed = new ItemStack(ItemBuckthornBerries.block, (int) (1));
-					stackSeed.setCount(1);
-					ItemHandlerHelper.giveItemToPlayer(playerIn, stackSeed);
-					if (Math.random() > 0.75) {
-						worldIn.destroyBlock(pos, false);
-						return true;
+			return state.withProperty(VAR, boolVar);
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			super.updateTick(worldIn, pos, state, rand);
+			if (worldIn.getBlockState(pos).getBlock() == this) {
+				if (!worldIn.getBlockState(pos).getValue(CHECK_DECAY)) {
+					if (Math.random() > 0.7) {
+						if (Math.random() > 0.7) {
+							worldIn.setBlockState(pos.down(), BlockBuckthornBerries.block.getDefaultState());
+							worldIn.setBlockState(pos, BlockBuckthorn2Berries.block.getDefaultState());
+						}
 					}
-					return true;
 				}
-				return true;
 			}
 		}
 
@@ -116,7 +120,7 @@ public class BlockBuckthorn2 extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE, VAR});
 		}
 
 		public IBlockState getStateFromMeta(int meta) {

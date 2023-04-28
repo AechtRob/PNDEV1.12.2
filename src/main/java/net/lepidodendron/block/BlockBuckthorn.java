@@ -12,6 +12,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -41,6 +42,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
@@ -72,6 +74,8 @@ public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockBuckthorn.block);
 	}
 
+	public static final PropertyBool VAR = PropertyBool.create("var");
+
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			super();
@@ -83,6 +87,31 @@ public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			boolean boolVar = false;
+			if ((double) (pos.getX() + pos.getZ())/3 == (int) (pos.getX() + pos.getZ())/3) {
+				boolVar = true;
+			}
+			return state.withProperty(VAR, boolVar);
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			super.updateTick(worldIn, pos, state, rand);
+			if (worldIn.getBlockState(pos).getBlock() == this) {
+				if (!worldIn.getBlockState(pos).getValue(CHECK_DECAY)) {
+					if (Math.random() > 0.7) {
+						if (Math.random() > 0.7) {
+							worldIn.setBlockState(pos, BlockBuckthornBerries.block.getDefaultState());
+							worldIn.setBlockState(pos.up(), BlockBuckthorn2Berries.block.getDefaultState());
+						}
+					}
+				}
+			}
 		}
 
 		@Override
@@ -128,7 +157,7 @@ public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE, VAR});
 		}
 
 		public IBlockState getStateFromMeta(int meta) {

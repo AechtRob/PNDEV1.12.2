@@ -1,0 +1,11 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:dayvaultia"
+    },
+    "normal": [
+      {"model": "lepidodendron:dayvaultia"},
+      {"model": "lepidodendron:dayvaultia_var"}
+    ]
+  }
+}
