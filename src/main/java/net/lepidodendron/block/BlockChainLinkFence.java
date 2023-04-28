@@ -10,6 +10,9 @@ import net.minecraft.block.BlockPane;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -45,6 +48,10 @@ public class BlockChainLinkFence extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class BlockCustom extends BlockPane {
+
+		public static final PropertyBool UP = PropertyBool.create("up");
+		public static final PropertyBool DOWN = PropertyBool.create("down");
+
 		public BlockCustom() {
 			super(Material.IRON, true);
 			setSoundType(SoundType.METAL);
@@ -53,6 +60,19 @@ public class BlockChainLinkFence extends ElementsLepidodendronMod.ModElement {
 			setResistance(10.0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		protected BlockStateContainer createBlockState()
+		{
+			return new BlockStateContainer(this, new IProperty[] {NORTH, EAST, WEST, SOUTH, UP, DOWN});
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			return super.getActualState(state, worldIn, pos)
+				.withProperty(UP, worldIn.getBlockState(pos.up()).getBlock() == this)
+				.withProperty(DOWN, worldIn.getBlockState(pos.down()).getBlock() == this);
 		}
 
 		@SideOnly(Side.CLIENT)

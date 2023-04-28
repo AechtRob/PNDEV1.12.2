@@ -1,7 +1,6 @@
 {
   "variants": {
-    "normal": [
-      {"model": "lepidodendron:buckthorn_berries"}
-    ]
+    "var=false": {"model": "lepidodendron:buckthorn_berries"},
+    "var=true": {"model": "lepidodendron:buckthorn_berries_var"}
   }
 }

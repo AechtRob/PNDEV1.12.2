@@ -11,6 +11,7 @@ import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
@@ -58,6 +59,8 @@ public class BlockBuckthorn2Berries extends ElementsLepidodendronMod.ModElement 
 		//		new ModelResourceLocation("lepidodendron:buckthorn4", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+	public static final PropertyBool VAR = PropertyBool.create("var");
+
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			//super();
@@ -69,6 +72,16 @@ public class BlockBuckthorn2Berries extends ElementsLepidodendronMod.ModElement 
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			boolean boolVar = false;
+			if ((double) (pos.getX() + pos.getZ())/3 == (int) (pos.getX() + pos.getZ())/3) {
+				boolVar = true;
+			}
+			return state.withProperty(VAR, boolVar);
 		}
 
 		@Override
@@ -114,7 +127,7 @@ public class BlockBuckthorn2Berries extends ElementsLepidodendronMod.ModElement 
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE, VAR});
 		}
 
 		public IBlockState getStateFromMeta(int meta) {

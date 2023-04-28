@@ -1,0 +1,17 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/wire_mesh_fence",
+		"edge": "lepidodendron:blocks/wire_mesh_fence"
+	},
+	"elements": [
+		{
+			"from": [7, 0.001, -0.5],
+			"to": [9, 0.001, 6.5],
+			"faces": {
+				"up": {"uv": [7, 0, 9, 7], "texture": "#edge"},
+				"down": {"uv": [9, 2, 7, 9], "texture": "#edge"}
+			}
+		}
+	]
+}

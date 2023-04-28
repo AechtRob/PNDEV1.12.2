@@ -1,7 +1,6 @@
 {
   "variants": {
-    "normal": [
-      {"model": "lepidodendron:buckthorn2"}
-    ]
+    "var=false": {"model": "lepidodendron:buckthorn2"},
+    "var=true": {"model": "lepidodendron:buckthorn2_var"}
   }
 }

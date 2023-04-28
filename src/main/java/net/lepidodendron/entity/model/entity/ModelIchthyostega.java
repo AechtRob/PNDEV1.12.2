@@ -343,7 +343,11 @@ public class ModelIchthyostega extends AdvancedModelBase {
         this.faceTarget(f3, f4, 12, head);
 
         AdvancedModelRenderer[] Tail = {this.tailbase, this.tail1, this.tail2};
+        AdvancedModelRenderer[] LegsL = {this.legL, this.legL2, this.footL};
+        AdvancedModelRenderer[] LegsR = {this.legR, this.legR2, this.footR};
         Ichthyostega.tailBuffer.applyChainSwingBuffer(Tail);
+        Ichthyostega.tailBuffer.applyChainSwingBuffer(LegsL);
+        Ichthyostega.tailBuffer.applyChainSwingBuffer(LegsR);
 
         if (!Ichthyostega.isReallyInWater()) {
             //Land
