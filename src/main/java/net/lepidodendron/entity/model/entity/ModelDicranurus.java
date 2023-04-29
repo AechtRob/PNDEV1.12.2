@@ -426,14 +426,11 @@ public class ModelDicranurus extends AdvancedModelBase {
         this.Root.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.Root.offsetZ = -0.03F;
-        this.Root.render(0.022f);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.Root.offsetZ = -0.0F;
+        this.Root.offsetY = 0.3F;
+        this.Root.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

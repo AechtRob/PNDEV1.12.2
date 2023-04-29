@@ -721,16 +721,39 @@ public class ModelOpabinia extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.head.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.render(0.012F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(head, 0.0F, -0.5F, 0.0F);
+        this.head.offsetX = 0.0F;
+        this.head.offsetZ = 0.0F;
+        this.head.offsetY = 0.0F;
+        this.head.render(0.01f);
+        resetToDefaultPose();
+    }
+        public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle, -0.01F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle2, -0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle3, -0.03F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle4, -0.04F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle5, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle6, -0.06F, 0.0F, 0.0F);
+        this.setRotateAngle(nozzle7, -0.07F, 0.0F, 0.0F);
+        this.setRotateAngle(jawL, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(jawR, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(segment1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment7, 0.01F, 0.0F, 0.0F);
+        this.setRotateAngle(segment8, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(segment9, 0.03F, 0.0F, 0.0F);
+        this.setRotateAngle(segment10, 0.04F, 0.0F, 0.0F);
+        this.setRotateAngle(segment11, 0.05F, 0.0F, 0.0F);
+        this.head.offsetY = -0.5F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

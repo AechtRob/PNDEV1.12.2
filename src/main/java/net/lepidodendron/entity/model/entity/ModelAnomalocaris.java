@@ -436,8 +436,8 @@ public class ModelAnomalocaris extends AdvancedModelBase {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.15F;
-        this.body.offsetY = -0.13F;
+        this.body.offsetZ = -0.12F;
+        this.body.offsetY = -0.01F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }
