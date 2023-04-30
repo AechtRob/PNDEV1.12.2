@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPlateosaurus extends RenderLiving<EntityPrehistoricFloraPlateosaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plateosaurus.png");
+    public static float getScaler() {return 1.15f * 0.875F;}
 
     public RenderPlateosaurus(RenderManager mgr) {
         super(mgr, new ModelPlateosaurus(), 0.5f);
@@ -28,7 +29,7 @@ public class RenderPlateosaurus extends RenderLiving<EntityPrehistoricFloraPlate
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPlateosaurus entity, float f) {
-        float scale = entity.getAgeScale() * 0.875F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.40F;
     }

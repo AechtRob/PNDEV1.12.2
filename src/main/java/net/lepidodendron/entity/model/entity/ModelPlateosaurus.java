@@ -302,7 +302,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.basin.render(f5 * 1.15f);
+        this.basin.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -330,7 +330,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.basin.offsetY = -0.2F;
+        //this.basin.offsetY = -0.2F;
         this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraPlateosaurus Plateosaurus = (EntityPrehistoricFloraPlateosaurus) e;
@@ -381,7 +381,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
 
             if (Plateosaurus.getIsFast() && Plateosaurus.getAnimation() != Plateosaurus.STAND_ANIMATION) { //Running
                 float speed = masterSpeed / 2.5F;
-                this.basin.offsetY = -0.25F;
+                this.basin.offsetY = -0.25F - 0.2F;
                 this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
                 this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
@@ -426,7 +426,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
             }
             else if (Plateosaurus.getAnimation() != Plateosaurus.STAND_ANIMATION) { //Walking
                 float speed = masterSpeed / 2.00F;
-                this.basin.offsetY = -0.15F;
+                this.basin.offsetY = -0.15F - 0.2F;
                 this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 
