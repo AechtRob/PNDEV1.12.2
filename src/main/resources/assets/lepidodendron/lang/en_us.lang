@@ -2874,6 +2874,7 @@ helper.pf_aquatic.name=Aquatic
 helper.pf_habitat.name=Habitat
 helper.pf_period.name=Period
 helper.pf_terrestrial.name=Terrestrial
+helper.pf_variants_note.name=Note: Click the spawn egg again onto the mob to cycle through its variants
 item.acid_bath_item.name=Acid Bath
 item.agathis_door_item.name=Agathis Door
 item.apple_door_item.name=Apple Door

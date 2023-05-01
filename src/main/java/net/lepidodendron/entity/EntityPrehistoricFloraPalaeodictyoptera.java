@@ -83,8 +83,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		return super.processInteract(player, hand);
 	}
 
-	@Override
-	public boolean hasVariants() {
+	public static boolean hasPNVariants() {
 		return true;
 	}
 

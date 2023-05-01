@@ -80,7 +80,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
-    public boolean hasVariants() {
+    public static boolean hasPNVariants() {
         return false;
     }
 
@@ -520,7 +520,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     }
 
     public void applyVariantToBlockEgg(World world, BlockPos pos) {
-        if (this.hasVariants()) {
+        if (this.hasPNVariants()) {
             if (this instanceof EntityPrehistoricFloraPalaeodictyoptera) {
                 EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) this;
                 TileEntity tileentity = world.getTileEntity(pos);
