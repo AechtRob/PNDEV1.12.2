@@ -10,7 +10,11 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderLunaspis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -185,5 +189,54 @@ public class EntityPrehistoricFloraLunaspis extends EntityPrehistoricFloraAgeabl
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.LUNASPIS_LOOT;
 	}
-
+	public static double offsetWall() {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 2.0;
+	}
+	public static double upperbackverticallinedepth() {
+		return 2.0;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 1.4F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.7;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 2.0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_LUNASPIS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelLunaspis;
+	}
+	public static float getScaler() {
+		return RenderLunaspis.getScaler();
+	}
 }

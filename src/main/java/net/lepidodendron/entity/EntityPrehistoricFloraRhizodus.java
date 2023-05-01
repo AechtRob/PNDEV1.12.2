@@ -11,7 +11,11 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderRhizodus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -260,6 +264,55 @@ public class EntityPrehistoricFloraRhizodus extends EntityPrehistoricFloraAgeabl
 		}
 		return LepidodendronMod.RHIZODUS_LOOT;
 	}
-
+	public static double offsetWall() {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 2.0;
+	}
+	public static double upperbackverticallinedepth() {
+		return 2.0;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return -0.9;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 1.9F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 2.5;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 2.2;
+	}
+	public static double lowerfrontlineoffset() {
+		return -0.7;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 2.0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.9F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_RHIZODUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelRhizodus;
+	}
+	public static float getScaler() {
+		return RenderRhizodus.getScaler();
+	}
 }
 

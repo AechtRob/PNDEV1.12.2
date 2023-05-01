@@ -2013,14 +2013,14 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                                 GlStateManager.scale(0.4, 0.4, 0.4);
                                 this.bindTexture(TEXTURE_HAIKOUICHTHYS);
-                                modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                modelHaikouichthys.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
                                 GlStateManager.pushMatrix();
                                 GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
                                 GlStateManager.enableNormalize();
                                 GlStateManager.enableBlend();
                                 GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
                                 this.bindTexture(TEXTURE_HAIKOUICHTHYS_FIN);
-                                modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                modelHaikouichthys.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
                                 GlStateManager.disableBlend();
                                 GlStateManager.disableNormalize();
                                 GlStateManager.popMatrix();
