@@ -1409,7 +1409,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                                 this.bindTexture(TEXTURE_DALMANITES);
                                 modelDalmanites.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Delitzschala.class) {
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera.class) {
                                 double offset = 0.65;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
