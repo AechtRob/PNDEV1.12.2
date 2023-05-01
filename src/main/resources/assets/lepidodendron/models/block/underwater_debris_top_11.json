@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/underwater_debris_11",
+    "particle": "lepidodendron:blocks/underwater_debris_11"
+  }
+}

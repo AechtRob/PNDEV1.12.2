@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
 		"e": "lepidodendron:blocks/utrechtia_b_e",
