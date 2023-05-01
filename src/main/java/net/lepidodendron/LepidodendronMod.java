@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
+import net.lepidodendron.entity.datafixers.FixerPalaeodictyoptera;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
@@ -17,13 +18,16 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.FixTypes;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.conditions.LootConditionManager;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.ModFixs;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -1710,7 +1714,7 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBookSubscribers());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronDimensionalSleeping());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronFogSubscribers());
-		//MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
+		MinecraftForge.EVENT_BUS.register(new LepidodendronMissingMappingsEventHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronHoeHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBucketHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronGlassBottleSubscribers());
@@ -1719,6 +1723,9 @@ public class LepidodendronMod {
 		LootConditionManager.registerCondition(new EntityInDimensionName.Serializer());
 		LootConditionManager.registerCondition(new EntityInDimensionID.Serializer());
 		LootConditionManager.registerCondition(new EntityInBiomes.Serializer());
+
+		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 59);
+		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyoptera.FixerPalaeodictyoptera);
 	}
 
 	@Mod.EventHandler
