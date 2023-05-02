@@ -36,8 +36,8 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
     private static final ResourceLocation TEXTURE_DYE_16 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rope.png");
 
     private static final ResourceLocation TEXTURE_END_0 = new ResourceLocation("minecraft:textures/blocks/anvil_base.png");
-    private static final ResourceLocation TEXTURE_END_1 = new ResourceLocation("minecraft:textures/blocks/gold_block.png");
-    private static final ResourceLocation TEXTURE_END_2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/iron_bridge.png");
+    private static final ResourceLocation TEXTURE_END_1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/iron_bridge.png");
+    private static final ResourceLocation TEXTURE_END_2 = new ResourceLocation("minecraft:textures/blocks/gold_block.png");
     private static final ResourceLocation TEXTURE_END_3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/zircon_block.png");
     private static final ResourceLocation TEXTURE_END_4 = new ResourceLocation("minecraft:textures/blocks/emerald_block.png");
     private static final ResourceLocation TEXTURE_END_5 = new ResourceLocation("minecraft:textures/blocks/diamond_block.png");

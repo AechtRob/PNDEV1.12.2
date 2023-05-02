@@ -33,7 +33,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
-	
+
 	private static final float[] DELITZSCHALA_SIZE = new float[]{0.5F, 0.3F};
 	private static final float[] DUNBARIA_SIZE = new float[]{0.5F, 0.3F};
 	private static final float[] HOMALONEURA_SIZE = new float[]{0.5F, 0.3F};
