@@ -663,6 +663,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_LYCOCERCUS = new CustomTrigger("pf_book_palaeodictyoptera_lycocercus");
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_STENODICTYA = new CustomTrigger("pf_book_palaeodictyoptera_stenodictya");
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_SINODUNBARIA = new CustomTrigger("pf_book_palaeodictyoptera_sinodunbaria");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_MAZOTHAIROS = new CustomTrigger("pf_book_palaeodictyoptera_mazothairos");
     public static final CustomTrigger CLICK_PALAEOISOPUS = new CustomTrigger("pf_book_palaeoisopus");
     public static final CustomTrigger CLICK_ANCIENT_JELLY = new CustomTrigger("pf_book_ancientjelly");
     public static final CustomTrigger CLICK_PALAEONTINID = new CustomTrigger("pf_book_palaeontinid");
@@ -1880,6 +1881,7 @@ public class ModTriggers
             CLICK_PALAEODICTYOPTERA_LYCOCERCUS,
             CLICK_PALAEODICTYOPTERA_SINODUNBARIA,
             CLICK_PALAEODICTYOPTERA_STENODICTYA,
+            CLICK_PALAEODICTYOPTERA_MAZOTHAIROS,
             CLICK_PALAEOISOPUS,
             CLICK_PALAEONISCUM,
             CLICK_PALAEONTINID,

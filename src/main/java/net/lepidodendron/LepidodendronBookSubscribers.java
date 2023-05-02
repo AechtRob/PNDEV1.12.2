@@ -8094,7 +8094,7 @@ public class LepidodendronBookSubscribers {
 						case MAZOTHAIROS:
 							ModTriggers.CLICK_PALAEODICTYOPTERA_MAZOTHAIROS.trigger((EntityPlayerMP) event.getEntityPlayer());
 							break;
-							
+
 					}
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
