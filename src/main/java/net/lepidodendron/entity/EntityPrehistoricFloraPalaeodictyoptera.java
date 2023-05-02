@@ -1,7 +1,6 @@
 
 package net.lepidodendron.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
@@ -21,25 +20,20 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFloraInsectFlyingBase {
 
-	public BlockPos currentTarget;
-	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
+	
 	private static final float[] DELITZSCHALA_SIZE = new float[]{0.5F, 0.3F};
 	private static final float[] DUNBARIA_SIZE = new float[]{0.5F, 0.3F};
 	private static final float[] HOMALONEURA_SIZE = new float[]{0.5F, 0.3F};
