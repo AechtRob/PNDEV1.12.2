@@ -44,7 +44,7 @@ public class LayerPalaeodictyopteraWing implements LayerRenderer<EntityPrehistor
     {
         if (!entitylivingbaseIn.isInvisible())
         {
-            switch (entitylivingbaseIn.getPNInsectType()) {
+            switch (entitylivingbaseIn.getPNType()) {
                 case DELITZSCHALA: default:
                     this.PalaeodictyopteraRenderer.bindTexture(TEXTURE_DELITZSCHALA);
                     break;
@@ -97,7 +97,7 @@ public class LayerPalaeodictyopteraWing implements LayerRenderer<EntityPrehistor
     }
 
     public ModelBase getEntityModel(EntityPrehistoricFloraPalaeodictyoptera entity) {
-        switch (entity.getPNInsectType()) {
+        switch (entity.getPNType()) {
             case DELITZSCHALA: default:
                 return MODEL_DELITZSCHALA;
 

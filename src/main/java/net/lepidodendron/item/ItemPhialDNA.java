@@ -147,6 +147,7 @@ public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 		public static String getDNAStr(String string) {
 			string = string.replace("lepidodendron:", "");
 			string = string.replace("minecraft:", "");
+			string = string.replace("@", "_");
 			return string;
 		}
 

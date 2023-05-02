@@ -30,7 +30,7 @@ public class ItemWingPalaeodictyoptera_Homaloneura extends ElementsLepidodendron
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_homaloneura", ItemWingPalaeodictyoptera_Homaloneura.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@homaloneura", ItemWingPalaeodictyoptera_Homaloneura.block);
 		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Homaloneura.block);
 	}
 	@Override

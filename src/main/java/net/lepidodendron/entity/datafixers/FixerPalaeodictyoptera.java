@@ -48,7 +48,7 @@ public interface FixerPalaeodictyoptera {
             int variant = getNewVariantID(oldName);
             if (variant != 0) {
                 compound.setString("id", "lepidodendron:prehistoric_flora_palaeodictyoptera");
-                compound.setString("PNInsectType", EntityPrehistoricFloraPalaeodictyoptera.Type.byId(variant).getName());
+                compound.setString("PNType", EntityPrehistoricFloraPalaeodictyoptera.Type.byId(variant).getName());
             }
             //Other nbt:
 

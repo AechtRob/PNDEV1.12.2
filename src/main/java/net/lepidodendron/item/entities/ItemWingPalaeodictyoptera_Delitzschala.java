@@ -35,7 +35,7 @@ public class ItemWingPalaeodictyoptera_Delitzschala extends ElementsLepidodendro
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_delitzschala", ItemWingPalaeodictyoptera_Delitzschala.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@delitzschala", ItemWingPalaeodictyoptera_Delitzschala.block);
 		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Delitzschala.block);
 
 	}

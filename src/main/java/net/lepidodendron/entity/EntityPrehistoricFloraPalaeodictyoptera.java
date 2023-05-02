@@ -71,12 +71,12 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				{
 					player.getHeldItem(hand).shrink(1);
 				}
-				int type = this.getPNInsectType().ordinal();
+				int type = this.getPNType().ordinal();
 				type = type + 1;
 				if (type > Type.values().length) {
 					type = 0;
 				}
-				this.setPNInsectType(Type.byId(type));
+				this.setPNType(Type.byId(type));
 			}
 		}
 
@@ -150,7 +150,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	public ResourceLocation getFreezeLoot() {
-		switch (this.getPNInsectType()) {
+		switch (this.getPNType()) {
 			case DELITZSCHALA: default:
 				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_LOOT_JAR;
 
@@ -181,7 +181,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	public ResourceLocation getStandardLoot() {
-		switch (this.getPNInsectType()) {
+		switch (this.getPNType()) {
 			case DELITZSCHALA: default:
 				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_LOOT;
 
@@ -212,7 +212,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	public float getFlySpeed() {
-		switch (this.getPNInsectType()) {
+		switch (this.getPNType()) {
 			case DELITZSCHALA: default:
 				return 3f;
 
@@ -243,7 +243,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	public float[] getHitBoxSize() {
-		switch (this.getPNInsectType()) {
+		switch (this.getPNType()) {
 			case DELITZSCHALA: default:
 				return DELITZSCHALA_SIZE;
 
@@ -304,7 +304,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setPNInsectType(Type.byId(rand.nextInt(Type.values().length) + 1));
+		this.setPNType(Type.byId(rand.nextInt(Type.values().length) + 1));
 		return livingdata;
 	}
 
@@ -316,29 +316,29 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_palaeodictyoptera_" + this.getPNInsectType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_palaeodictyoptera_" + this.getPNType().getName() + ".name");
 		}
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound) {
 		super.writeEntityToNBT(compound);
-		compound.setString("PNInsectType", this.getPNInsectType().getName());
+		compound.setString("PNType", this.getPNType().getName());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		if (compound.hasKey("PNInsectType", 8))
+		if (compound.hasKey("PNType", 8))
 		{
-			this.setPNInsectType(Type.getTypeFromString(compound.getString("PNInsectType")));
+			this.setPNType(Type.getTypeFromString(compound.getString("PNType")));
 		}
 	}
 
-	public void setPNInsectType(Type insectType)
+	public void setPNType(Type type)
 	{
-		this.dataManager.set(INSECT_TYPE, Integer.valueOf(insectType.ordinal()));
+		this.dataManager.set(INSECT_TYPE, Integer.valueOf(type.ordinal()));
 	}
 
-	public Type getPNInsectType()
+	public Type getPNType()
 	{
 		return Type.byId(((Integer)this.dataManager.get(INSECT_TYPE)).intValue());
 	}

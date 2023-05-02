@@ -36,7 +36,7 @@ public class ItemPalaeodictyopteraLycocercusRaw extends ElementsLepidodendronMod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_lycocercus", ItemPalaeodictyopteraLycocercusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus", ItemPalaeodictyopteraLycocercusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraLycocercusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraLycocercusRaw.block);
 	}

@@ -36,7 +36,7 @@ public class ItemPalaeodictyopteraStenodictyaRaw extends ElementsLepidodendronMo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_stenodictya", ItemPalaeodictyopteraStenodictyaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya", ItemPalaeodictyopteraStenodictyaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraStenodictyaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraStenodictyaRaw.block);
 	}

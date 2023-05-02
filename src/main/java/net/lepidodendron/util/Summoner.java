@@ -1,5 +1,6 @@
 package net.lepidodendron.util;
 
+import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -49,6 +50,14 @@ public class Summoner extends CommandBase
         else
         {
             String s = args[0];
+
+            String variantStr = "";
+            if (s.indexOf("@") >= 0) {
+                variantStr = s.substring(s.indexOf("@") + 1);
+                s = s.substring(0,s.indexOf("@"));
+            }
+
+
             BlockPos blockpos = sender.getPosition();
             Vec3d vec3d = sender.getPositionVector();
             double d0 = vec3d.x;
@@ -112,6 +121,12 @@ public class Summoner extends CommandBase
                     if (!flag && entity instanceof EntityLiving)
                     {
                         ((EntityLiving)entity).onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData)null);
+                    }
+
+                    //Exceptions for variants:
+                    if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) entity;
+                        palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variantStr));
                     }
 
                     //notifyCommandListener(sender, this, "commands.summon.success", new Object[0]);
