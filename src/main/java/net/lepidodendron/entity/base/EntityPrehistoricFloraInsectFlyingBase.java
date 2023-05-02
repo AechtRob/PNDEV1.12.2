@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
+import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -77,6 +78,10 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public static boolean hasPNVariants() {
+        return false;
     }
 
     @Override
@@ -433,7 +438,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
 
         //Lay eggs perhaps:
-        if (!this.laysInBlock()) { //lays into water of something like that:
+        if (!this.laysInBlock()) { //lays into water or something like that:
             if (!world.isRemote && this.laysEggs() && ((this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) || this.getLaying())
             ) {
                 if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition())) {
@@ -441,6 +446,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     IBlockState eggs = getEggBlockState();
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     world.setBlockState(this.getPosition(), eggs);
+                    applyVariantToBlockEgg(world, this.getPosition());
                     this.setLaying(false);
                     this.setTicks(0);
                 } else {
@@ -449,6 +455,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         IBlockState eggs = getEggBlockState();
                         this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                         world.setBlockState(this.getPosition().down(), eggs);
+                        applyVariantToBlockEgg(world, this.getPosition().down());
                         this.setLaying(false);
                         this.setTicks(0);
                     } else {
@@ -457,6 +464,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                             IBlockState eggs = getEggBlockState();
                             this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                             world.setBlockState(this.getPosition().down(2), eggs);
+                            applyVariantToBlockEgg(world, this.getPosition().down(2));
                             this.setLaying(false);
                             this.setTicks(0);
                         }
@@ -508,6 +516,22 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             this.motionX = 0;
             this.motionY = 0;
             this.motionZ = 0;
+        }
+    }
+
+    public void applyVariantToBlockEgg(World world, BlockPos pos) {
+        if (this.hasPNVariants()) {
+            if (this instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+                EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) this;
+                TileEntity tileentity = world.getTileEntity(pos);
+                if (tileentity != null) {
+                    tileentity.getTileData().setString("PNInsectType", palaeodictyoptera.getPNInsectType().getName());
+                }
+            }
+            else {
+                //More variants here:
+
+            }
         }
     }
 

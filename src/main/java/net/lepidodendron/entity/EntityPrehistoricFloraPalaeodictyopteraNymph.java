@@ -182,7 +182,7 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 				BlockPos pos = this.getPosition();
 				int i = rand.nextInt(7);
 				if (i == 0) {
-					entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraPalaeodictyoptera_Delitzschala.class), (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
+					entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraPalaeodictyoptera.class), (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
 				}
 				if (i == 1) {
 					entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.class), (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);

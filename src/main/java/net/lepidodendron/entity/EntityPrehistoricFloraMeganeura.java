@@ -30,7 +30,7 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 	private Animation animation = NO_ANIMATION;
 	public Animation ATTACK_ANIMATION;
 
-	public EntityPrehistoricFloraMeganeura(World world) {
+		public EntityPrehistoricFloraMeganeura(World world) {
 		super(world);
 		setSize(0.55F, 0.42F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
@@ -44,10 +44,6 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 	public static String getPeriod() {
 		return "Carboniferous";
 	}
-
-	//public static String getHabitat() {
-	//	return "Terrestrial";
-	//}
 
 	@Override
 	public IBlockState getEggBlockState() {

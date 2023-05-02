@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
+import net.lepidodendron.entity.datafixers.FixerPalaeodictyoptera;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
@@ -17,13 +18,16 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.FixTypes;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.conditions.LootConditionManager;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.ModFixs;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -162,14 +166,14 @@ public class LepidodendronMod {
 	public static final int ENTITY_ORTHOCERAS = 46;
 	public static final ResourceLocation ORTHOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orthoceras"));
 	public static final ResourceLocation ORTHOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orthoceras_young"));
-	public static final int ENTITY_PALAEODICTYOPTERA_DELITZSCHALA = 47;
-	public static final int ENTITY_PALAEODICTYOPTERA_DUNBARIA = 48;
-	public static final int ENTITY_PALAEODICTYOPTERA_HOMALONEURA = 49;
-	public static final int ENTITY_PALAEODICTYOPTERA_HOMOIOPTERA = 50;
-	public static final int ENTITY_PALAEODICTYOPTERA_LITHOMANTIS = 51;
-	public static final int ENTITY_PALAEODICTYOPTERA_LYCOCERCUS = 52;
-	public static final int ENTITY_PALAEODICTYOPTERA_SINODUNBARIA = 53;
-	public static final int ENTITY_PALAEODICTYOPTERA_STENODICTYA = 54;
+	public static final int ENTITY_PALAEODICTYOPTERA = 47;
+//	public static final int ENTITY_PALAEODICTYOPTERA_DUNBARIA = 48;
+//	public static final int ENTITY_PALAEODICTYOPTERA_HOMALONEURA = 49;
+//	public static final int ENTITY_PALAEODICTYOPTERA_HOMOIOPTERA = 50;
+//	public static final int ENTITY_PALAEODICTYOPTERA_LITHOMANTIS = 51;
+//	public static final int ENTITY_PALAEODICTYOPTERA_LYCOCERCUS = 52;
+//	public static final int ENTITY_PALAEODICTYOPTERA_SINODUNBARIA = 53;
+//	public static final int ENTITY_PALAEODICTYOPTERA_STENODICTYA = 54;
 	public static final ResourceLocation PALAEODICTYOPTERA_DELITZSCHALA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_delitzschala"));
 	public static final ResourceLocation PALAEODICTYOPTERA_DUNBARIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_dunbaria"));
 	public static final ResourceLocation PALAEODICTYOPTERA_HOMALONEURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_homaloneura"));
@@ -178,6 +182,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PALAEODICTYOPTERA_LYCOCERCUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_lycocercus"));
 	public static final ResourceLocation PALAEODICTYOPTERA_SINODUNBARIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_sinodunbaria"));
 	public static final ResourceLocation PALAEODICTYOPTERA_STENODICTYA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_stenodictya"));
+	public static final ResourceLocation PALAEODICTYOPTERA_MAZOTHAIROS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_mazothairos"));
 	public static final ResourceLocation PALAEODICTYOPTERA_DELITZSCHALA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_delitzschala_jar"));
 	public static final ResourceLocation PALAEODICTYOPTERA_DUNBARIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_dunbaria_jar"));
 	public static final ResourceLocation PALAEODICTYOPTERA_HOMALONEURA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_homaloneura_jar"));
@@ -186,6 +191,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PALAEODICTYOPTERA_LYCOCERCUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_lycocercus_jar"));
 	public static final ResourceLocation PALAEODICTYOPTERA_SINODUNBARIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_sinodunbaria_jar"));
 	public static final ResourceLocation PALAEODICTYOPTERA_STENODICTYA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_stenodictya_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_MAZOTHAIROS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_mazothairos_jar"));
 	public static final int ENTITY_JELLYFISH_PRECAMBRIAN = 55;
 	public static final int ENTITY_SCHINDERHANNES = 56;
 	public static final ResourceLocation SCHINDERHANNES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/schinderhannes"));
@@ -1708,7 +1714,7 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBookSubscribers());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronDimensionalSleeping());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronFogSubscribers());
-		//MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
+		MinecraftForge.EVENT_BUS.register(new LepidodendronMissingMappingsEventHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronHoeHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBucketHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronGlassBottleSubscribers());
@@ -1717,6 +1723,9 @@ public class LepidodendronMod {
 		LootConditionManager.registerCondition(new EntityInDimensionName.Serializer());
 		LootConditionManager.registerCondition(new EntityInDimensionID.Serializer());
 		LootConditionManager.registerCondition(new EntityInBiomes.Serializer());
+
+		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 59);
+		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyoptera.FixerPalaeodictyoptera);
 	}
 
 	@Mod.EventHandler

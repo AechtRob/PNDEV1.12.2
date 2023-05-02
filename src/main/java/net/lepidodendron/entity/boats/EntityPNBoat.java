@@ -25,6 +25,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.CPacketSteerBoat;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -1057,6 +1058,18 @@ public class EntityPNBoat extends EntityBoat
     public void applyOrientationToEntity(Entity entityToUpdate)
     {
         this.applyYawToEntity(entityToUpdate);
+    }
+
+    @Override
+    public String getName() {
+        if (this.hasCustomName())
+        {
+            return this.getCustomNameTag();
+        }
+        else
+        {
+            return I18n.translateToLocal("item.pf_" + this.getPNBoatType().getName() + "_boat_item.name");
+        }
     }
 
     @Override
