@@ -220,15 +220,15 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
 			//Item itemdropped = getEggItemStack(world, pos).getItem();
 			//System.err.println("Eggitem: " + itemdropped);
-			EntityItem entityToSpawn = null;
-			ItemStack stack = getEggItemStack(world, pos);
-			if (stack != null) {
-				entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(stack.getItem(), (int) (1)));
-				if (!world.isRemote && entityToSpawn != null) {
-					entityToSpawn.setPickupDelay(10);
-					world.spawnEntity(entityToSpawn);
-				}
-			}
+			//EntityItem entityToSpawn = null;
+			//ItemStack stack = getEggItemStack(world, pos);
+			//if (stack != null) {
+			//	entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(stack.getItem(), (int) (1)));
+			//	if (!world.isRemote && entityToSpawn != null) {
+			//		entityToSpawn.setPickupDelay(10);
+			//		world.spawnEntity(entityToSpawn);
+			//	}
+			//}
 			world.removeTileEntity(pos);
 			super.breakBlock(world, pos, state);
 		}

@@ -36,7 +36,7 @@ public class ItemPalaeodictyopteraDelitzschalaRaw extends ElementsLepidodendronM
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_delitzschala", ItemPalaeodictyopteraDelitzschalaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@delitzschala", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraDelitzschalaRaw.block);
 	}

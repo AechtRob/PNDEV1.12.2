@@ -790,6 +790,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeodictyoptera_lycocercus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeodictyoptera_sinodunbaria_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeodictyoptera_stenodictya_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeodictyoptera_mazothairos_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeognetaleana_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeoisopus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeojelly1_clean", "inventory"),
@@ -1231,6 +1232,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 						ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 						String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
 						mobname = mobname.replace("minecraft:", "");
+						mobname = mobname.replace("@", "_");
 						ModelResourceLocation model = new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + mobname + "_clean", "inventory");
 						List<IResource> list = null;
 						try {

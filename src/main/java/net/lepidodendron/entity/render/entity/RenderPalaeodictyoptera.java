@@ -68,7 +68,7 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPalaeodictyoptera entity) {
-        switch (entity.getPNInsectType()) {
+        switch (entity.getPNType()) {
             case DELITZSCHALA: default:
                 return TEXTURE_DELITZSCHALA;
 
@@ -99,7 +99,7 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
     }
 
     public ModelBase getEntityModel(EntityPrehistoricFloraPalaeodictyoptera entity) {
-        switch (entity.getPNInsectType()) {
+        switch (entity.getPNType()) {
             case DELITZSCHALA: default:
                 return MODEL_DELITZSCHALA;
 
@@ -164,7 +164,7 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPalaeodictyoptera entity, float f) {
         float scaler = 1F;
-        switch (entity.getPNInsectType()) {
+        switch (entity.getPNType()) {
             case DELITZSCHALA: default:
                 scaler = 1F;
                 break;

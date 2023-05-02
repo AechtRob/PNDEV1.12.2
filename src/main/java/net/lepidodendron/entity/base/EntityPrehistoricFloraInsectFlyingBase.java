@@ -525,7 +525,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) this;
                 TileEntity tileentity = world.getTileEntity(pos);
                 if (tileentity != null) {
-                    tileentity.getTileData().setString("PNInsectType", palaeodictyoptera.getPNInsectType().getName());
+                    tileentity.getTileData().setString("PNType", palaeodictyoptera.getPNType().getName());
                 }
             }
             else {
