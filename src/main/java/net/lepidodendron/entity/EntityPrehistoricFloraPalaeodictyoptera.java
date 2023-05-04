@@ -68,12 +68,8 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		{
 			return false;
 		}
-		else if (otherAnimal.getClass() == this.getClass())
-		{
-			if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType()
-				!= this.getPNType()) {
-				return false;
-			}
+		else if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType() != this.getPNType()) {
+			return false;
 		}
 		return this.isInLove() && otherAnimal.isInLove();
 	}
