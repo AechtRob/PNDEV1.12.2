@@ -127,8 +127,6 @@ public class ItemPalaeodictyopteraEggsItem extends ElementsLepidodendronMod.ModE
 						return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 					}
 
-					IBlockState iblockstate = worldIn.getBlockState(blockpos);
-
 					if (isBlockFromItemStack(itemstack)) {
 						raytraceresult = this.rayTrace(worldIn, playerIn, false);
 
