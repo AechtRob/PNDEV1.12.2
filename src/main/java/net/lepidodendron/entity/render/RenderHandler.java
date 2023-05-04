@@ -958,12 +958,12 @@ public class RenderHandler {
                 return new RenderPikaia(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPalaeodictyopteraNymphPerm.class, new IRenderFactory<EntityPrehistoricFloraPalaeodictyopteraNymphPerm>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraPalaeodictyopteraNymphPerm> createRenderFor(RenderManager manager) {
-                return new RenderPalaeodictyopteraNymphPerm(manager);
-            }
-        });
+//        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPalaeodictyopteraNymphPerm.class, new IRenderFactory<EntityPrehistoricFloraPalaeodictyopteraNymphPerm>() {
+//            @Override
+//            public Render<? super EntityPrehistoricFloraPalaeodictyopteraNymphPerm> createRenderFor(RenderManager manager) {
+//                return new RenderPalaeodictyopteraNymphPerm(manager);
+//            }
+//        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHylonomus.class, new IRenderFactory<EntityPrehistoricFloraHylonomus>() {
             @Override
             public Render<? super EntityPrehistoricFloraHylonomus> createRenderFor(RenderManager manager) {

@@ -273,7 +273,7 @@ public class BlockMobSpawn extends Block {
 		return true;
 	}
 
-	//@Override
+	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 	{
 		if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))

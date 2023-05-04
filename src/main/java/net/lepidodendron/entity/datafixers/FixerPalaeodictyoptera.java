@@ -50,9 +50,6 @@ public interface FixerPalaeodictyoptera {
                 compound.setString("id", "lepidodendron:prehistoric_flora_palaeodictyoptera");
                 compound.setString("PNType", EntityPrehistoricFloraPalaeodictyoptera.Type.byId(variant).getName());
             }
-            //Other nbt:
-
-
             return compound;
         }
     };
