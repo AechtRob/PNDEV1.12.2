@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
@@ -54,6 +55,27 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() == this.getClass())
+		{
+			if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType()
+				!= this.getPNType()) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
 	}
 
 	@Override
