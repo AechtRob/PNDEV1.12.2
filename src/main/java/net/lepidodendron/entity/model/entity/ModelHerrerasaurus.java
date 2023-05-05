@@ -262,7 +262,7 @@ public class ModelHerrerasaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.basin.render(f5 * 0.785F);
+        this.basin.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -295,7 +295,7 @@ public class ModelHerrerasaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.basin.offsetY = 0.30F;
+        //this.basin.offsetY = 0.30F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraHerrerasaurus Herrerasaurus = (EntityPrehistoricFloraHerrerasaurus) e;

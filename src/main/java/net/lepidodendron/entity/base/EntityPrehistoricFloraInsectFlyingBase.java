@@ -80,7 +80,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
-    public static boolean hasPNVariants() {
+    public boolean hasPNVariants() {
         return false;
     }
 

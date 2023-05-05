@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraParatarrasius extends EntityPrehistoricFloraF
 
 	public EntityPrehistoricFloraParatarrasius(World world) {
 		super(world);
-		setSize(0.05F, 0.05F);
+		setSize(0.15F, 0.15F);
 	}
 
 	@Override

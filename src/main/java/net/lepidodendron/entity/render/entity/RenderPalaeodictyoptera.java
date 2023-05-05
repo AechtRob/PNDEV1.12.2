@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyoptera;
 import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraLarge;
 import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraMedium;
 import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraSmall;
@@ -35,7 +34,7 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
     private static final ModelBase MODEL_MAZOTHAIROS = new ModelPalaeodictyopteraLarge();
 
     public RenderPalaeodictyoptera(RenderManager mgr) {
-        super(mgr, new ModelPalaeodictyoptera(), 0.0f);
+        super(mgr, new ModelPalaeodictyopteraSmall(), 0.0f);
         this.addLayer(new LayerPalaeodictyopteraWing(this));
     }
 
@@ -166,39 +165,39 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
         float scaler = 1F;
         switch (entity.getPNType()) {
             case DELITZSCHALA: default:
-                scaler = 1F;
+                scaler = 0.115F;
                 break;
 
             case DUNBARIA:
-                scaler = 1F;
+                scaler = 0.127F;
                 break;
 
             case HOMALONEURA:
-                scaler = 1F;
+                scaler = 0.135F;
                 break;
 
             case HOMOIOPTERA:
-                scaler = 1F;
+                scaler = 0.192F;
                 break;
 
             case LITHOMANTIS:
-                scaler = 1F;
+                scaler = 0.143F;
                 break;
 
             case LYCOCERCUS:
-                scaler = 1F;
+                scaler = 0.141F;
                 break;
 
             case SINODUNBARIA:
-                scaler = 1F;
+                scaler = 0.120F;
                 break;
 
             case STENODICTYA:
-                scaler = 1F;
+                scaler = 0.149F;
                 break;
 
             case MAZOTHAIROS:
-                scaler = 0.5F;
+                scaler = 0.225F;
                 break;
 
         }

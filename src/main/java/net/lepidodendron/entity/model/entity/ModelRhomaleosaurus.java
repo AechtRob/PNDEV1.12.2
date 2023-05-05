@@ -525,8 +525,9 @@ public class ModelRhomaleosaurus extends AdvancedModelBaseExtended {
 
             if (ee.getIsFast()) { //Running
                 animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            } else {
+                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
-            animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
 
         }
@@ -1276,11 +1277,7 @@ public class ModelRhomaleosaurus extends AdvancedModelBaseExtended {
         }
         this.setRotateAngle(Lowerjaw, Lowerjaw.rotateAngleX + (float) Math.toRadians(xx), Lowerjaw.rotateAngleY + (float) Math.toRadians(yy), Lowerjaw.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
         this.setRotateAngle(Lefteye, Lefteye.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/160D)*8D)*180))*5), Lefteye.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/160D)*8D)*360))*5), Lefteye.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/160D)*8D)*180))*5));
-
-
         this.setRotateAngle(Righteye, Righteye.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/160D)*8D)*180))*-5), Righteye.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/160D)*8D)*360))*-5), Righteye.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/160D)*8D)*180))*-5));
 
 

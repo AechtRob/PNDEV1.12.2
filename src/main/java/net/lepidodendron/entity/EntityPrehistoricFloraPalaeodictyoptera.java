@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
@@ -20,6 +21,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -34,15 +36,15 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	private static final float[] DELITZSCHALA_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] DUNBARIA_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] HOMALONEURA_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] HOMOIOPTERA_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] LITHOMANTIS_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] LYCOCERCUS_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] SINODUNBARIA_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] STENODICTYA_SIZE = new float[]{0.5F, 0.3F};
-	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.5F, 0.3F};
+	private static final float[] DELITZSCHALA_SIZE = new float[]{0.15F, 0.30F};
+	private static final float[] DUNBARIA_SIZE = new float[]{0.17F, 0.34F};
+	private static final float[] HOMALONEURA_SIZE = new float[]{0.18F, 0.36F};
+	private static final float[] HOMOIOPTERA_SIZE = new float[]{0.26F, 0.52F};
+	private static final float[] LITHOMANTIS_SIZE = new float[]{0.19F, 0.38F};
+	private static final float[] LYCOCERCUS_SIZE = new float[]{0.19F, 0.38F};
+	private static final float[] SINODUNBARIA_SIZE = new float[]{0.16F, 0.32F};
+	private static final float[] STENODICTYA_SIZE = new float[]{0.20F, 0.40F};
+	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.30F, 0.60F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPalaeodictyoptera.class, DataSerializers.VARINT);
 
@@ -53,6 +55,23 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType() != this.getPNType()) {
+			return false;
+		}
+		return this.isInLove() && otherAnimal.isInLove();
 	}
 
 	@Override
@@ -71,13 +90,22 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 					type = 0;
 				}
 				this.setPNType(Type.byId(type));
+
+				float f = this.width;
+				this.width = getHitBoxSize()[0];
+				this.height = getHitBoxSize()[1];
+				if (this.width != f) {
+					double d0 = (double) width / 2.0D;
+					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+				}
 			}
 		}
 
 		return super.processInteract(player, hand);
 	}
 
-	public static boolean hasPNVariants() {
+	@Override
+	public boolean hasPNVariants() {
 		return true;
 	}
 
@@ -344,7 +372,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Carboniferous - Permian";}
+	public static String getPeriod() {return "mid Carboniferous - early Permian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

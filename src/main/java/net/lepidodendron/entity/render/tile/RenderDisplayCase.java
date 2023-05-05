@@ -95,7 +95,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_DALMANITES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dalmanites.png");
     private final ModelDalmanites modelDalmanites;
     private static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/delitzschala.png");
-    private final ModelPalaeodictyoptera modelPalaeodictyoptera;
+    //private final ModelPalaeodictyoptera modelPalaeodictyoptera;
     private static final ResourceLocation TEXTURE_DIANIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania.png");
     private static final ResourceLocation TEXTURE_DIANIA_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania_nerf.png");
     private final ModelDiania modelDiania;
@@ -367,7 +367,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelOpabinia = new ModelOpabinia();
         this.modelOpolanka = new ModelOpolanka();
         this.modelOttoia = new ModelOttoia();
-        this.modelPalaeodictyoptera = new ModelPalaeodictyoptera();
+        //this.modelPalaeodictyoptera = new ModelPalaeodictyoptera();
         this.modelPalaeoisopus = new ModelPalaeoisopus();
         this.modelPalaeontinid = new ModelPalaeontinid();
         this.modelParadoxides = new ModelParadoxides();
@@ -1411,40 +1411,42 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                                 this.bindTexture(TEXTURE_DALMANITES);
                                 modelDalmanites.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_DELITZSCHALA);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraDiania.class) {
+                            }
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_DELITZSCHALA);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+                            else if (classEntity == EntityPrehistoricFloraDiania.class) {
                                 double offset = 0.12;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
@@ -1546,40 +1548,43 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.8F, 0.8F, 0.8F);
                                 this.bindTexture(TEXTURE_DICRANURUS);
                                 modelDicranurus.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_DUNBARIA);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraEllipsocephalus.class) {
+                            } 
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_DUNBARIA);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+
+                            else if (classEntity == EntityPrehistoricFloraEllipsocephalus.class) {
                                 double offset = 0.3;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
@@ -2192,73 +2197,75 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.85F, 0.85F, 0.85F);
                                 this.bindTexture(TEXTURE_HELMETIA);
                                 modelHelmetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Homoioptera.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_HOMOIOPTERA);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Homaloneura.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_HOMALONEURA);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraHungioides.class) {
+                            }
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Homoioptera.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_HOMOIOPTERA);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Homaloneura.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_HOMALONEURA);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+                            else if (classEntity == EntityPrehistoricFloraHungioides.class) {
                                 double offset = 0.75;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
@@ -2695,40 +2702,42 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.48F, 0.48F, 0.48F);
                                 this.bindTexture(TEXTURE_LONCHODOMAS);
                                 this.modelLonchodomas.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Lithomantis.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_LITHOMANTIS);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraLunataspis.class) {
+                            }
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Lithomantis.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_LITHOMANTIS);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+                            else if (classEntity == EntityPrehistoricFloraLunataspis.class) {
                                 double offset = 0.335;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
@@ -2761,40 +2770,42 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.6F, 0.6F, 0.6F);
                                 this.bindTexture(TEXTURE_LUNATASPIS);
                                 modelLunataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Lycocercus.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_LYCOCERCUS);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraLyrarapax.class) {
+                            }
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Lycocercus.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_LYCOCERCUS);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+                            else if (classEntity == EntityPrehistoricFloraLyrarapax.class) {
                                 double offset = 0.46;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
@@ -4151,73 +4162,76 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                                 this.bindTexture(TEXTURE_SIDNEYIA);
                                 modelSidneyia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_SINODUNBARIA);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.class) {
-                                double offset = 0.65;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
-                                this.bindTexture(TEXTURE_STENODICTYA);
-                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraRoachoidSwampInsect.class) {
+                            }
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_SINODUNBARIA);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+//                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.class) {
+//                                double offset = 0.65;
+//                                if (facing == EnumFacing.UP) {
+//                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.DOWN) {
+//                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+//                                }
+//                                if (facing == EnumFacing.NORTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.SOUTH) {
+//                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+//                                }
+//                                if (facing == EnumFacing.WEST) {
+//                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+//                                }
+//                                if (facing == EnumFacing.EAST) {
+//                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+//                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+//                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+//                                }
+//                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+//                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+//                                this.bindTexture(TEXTURE_STENODICTYA);
+//                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+//                            }
+                            else if (classEntity == EntityPrehistoricFloraRoachoidSwampInsect.class) {
                                 double offset = 0.29;
                                 if (facing == EnumFacing.UP) {
                                     GlStateManager.translate(x + 0.5, y + offset, z + 0.5);

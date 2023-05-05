@@ -1139,6 +1139,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MICROCLEIDUS = new CustomTrigger("pf_book_microcleidus");
     public static final CustomTrigger CLICK_OPHTHALMOTHULE = new CustomTrigger("pf_book_ophthalmothule");
     public static final CustomTrigger CLICK_CIURCOPTERUS = new CustomTrigger("pf_book_ciurcopterus");
+    public static final CustomTrigger CLICK_DRAGONFLY = new CustomTrigger("pf_book_dragonfly");
 
 
 
@@ -2272,6 +2273,7 @@ public class ModTriggers
             CLICK_THALASSIODRACON,
             CLICK_MICROCLEIDUS,
             CLICK_OPHTHALMOTHULE,
+            CLICK_DRAGONFLY,
 
 
 

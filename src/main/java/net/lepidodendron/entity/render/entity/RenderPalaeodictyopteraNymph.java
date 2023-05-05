@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyopteraNymph;
 import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraNymph;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -19,5 +20,10 @@ public class RenderPalaeodictyopteraNymph extends RenderLiving<EntityPrehistoric
         return RenderPalaeodictyopteraNymph.TEXTURE;
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraPalaeodictyopteraNymph entity, float f) {
+        float scale = 0.11F;
+        GlStateManager.scale(scale, scale, scale);
+    }
 
 }

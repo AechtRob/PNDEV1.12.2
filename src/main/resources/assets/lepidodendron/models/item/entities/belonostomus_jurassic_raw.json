@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/belonostomus_jurassic_raw"
+    "layer0": "paleopedia:belonostomus_jurassic_icon"
   }
 }
