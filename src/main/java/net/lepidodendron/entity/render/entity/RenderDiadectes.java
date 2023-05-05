@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDiadectes extends RenderLiving<EntityPrehistoricFloraDiadectes> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diadectes.png");
+    public static float getScaler() {return 0.8f;}
 
     public RenderDiadectes(RenderManager mgr) {
         super(mgr, new ModelDiadectes(), 0.4f);
@@ -27,7 +28,7 @@ public class RenderDiadectes extends RenderLiving<EntityPrehistoricFloraDiadecte
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDiadectes entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
