@@ -1,5 +1,6 @@
 package net.lepidodendron.util;
 
+import net.lepidodendron.entity.EntityPrehistoricFloraDragonfly;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -127,6 +128,9 @@ public class Summoner extends CommandBase
                     if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera && !variantStr.equalsIgnoreCase("")) {
                         EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) entity;
                         palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variantStr));
+                    } else if (entity instanceof EntityPrehistoricFloraDragonfly && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraDragonfly dragonfly = (EntityPrehistoricFloraDragonfly) entity;
+                        dragonfly.setPNType(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variantStr));
                     }
 
                     //notifyCommandListener(sender, this, "commands.summon.success", new Object[0]);

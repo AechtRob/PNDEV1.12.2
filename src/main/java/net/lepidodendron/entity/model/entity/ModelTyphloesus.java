@@ -24,12 +24,13 @@ public class ModelTyphloesus extends AdvancedModelBase {
     private final AdvancedModelRenderer tail;
     private final AdvancedModelRenderer cube_r3;
     private final AdvancedModelRenderer cube_r4;
+    private final AdvancedModelRenderer tailfin;
 
     private ModelAnimator animator;
 
     public ModelTyphloesus() {
-        this.textureWidth = 50;
-        this.textureHeight = 40;
+        this.textureWidth = 44;
+        this.textureHeight = 33;
 
         this.head = new AdvancedModelRenderer(this);
         this.head.setRotationPoint(0.5F, 20.975F, -3.75F);
@@ -81,7 +82,6 @@ public class ModelTyphloesus extends AdvancedModelBase {
         this.tail.setRotationPoint(1.0F, -0.275F, 3.625F);
         this.body2.addChild(tail);
         this.tail.cubeList.add(new ModelBox(tail, 12, 24, -2.5F, -1.0F, 0.0F, 3, 2, 4, 0.0F, false));
-        this.tail.cubeList.add(new ModelBox(tail, 0, 20, -1.0F, -4.0F, 2.0F, 0, 4, 5, 0.0F, false));
 
         this.cube_r3 = new AdvancedModelRenderer(this);
         this.cube_r3.setRotationPoint(0.0F, 8.8F, -1.0F);
@@ -94,6 +94,11 @@ public class ModelTyphloesus extends AdvancedModelBase {
         this.tail.addChild(cube_r4);
         this.setRotateAngle(cube_r4, -0.1527F, 0.0F, 0.0F);
         this.cube_r4.cubeList.add(new ModelBox(cube_r4, 26, 12, -2.49F, 0.925F, 1.2F, 3, 1, 4, -0.01F, false));
+
+        this.tailfin = new AdvancedModelRenderer(this);
+        this.tailfin.setRotationPoint(-1.0F, 0.0F, 2.5F);
+        this.tail.addChild(tailfin);
+        this.tailfin.cubeList.add(new ModelBox(tailfin, 0, 20, 0.0F, -4.0F, -0.5F, 0, 4, 5, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -124,7 +129,7 @@ public class ModelTyphloesus extends AdvancedModelBase {
 
        //this.head.offsetY = 1.0F;
 
-        AdvancedModelRenderer[] fishTail = {this.body, this.body2, this.tail};
+        AdvancedModelRenderer[] fishTail = {this.body, this.body2, this.tail, this.tailfin};
 
         float speed = 0.186F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

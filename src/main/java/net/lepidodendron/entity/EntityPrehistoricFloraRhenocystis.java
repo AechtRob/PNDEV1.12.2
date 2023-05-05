@@ -92,7 +92,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 		if (!this.getMovingOnLand() && this.isReallyInWater()) {
 			return 0;
 		}
-		return 0.2F;
+		return 0.1F;
 
 	}
 

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/sanctacaris_raw"
+    "layer0": "paleopedia:sanctacaris_icon"
   }
 }

@@ -434,7 +434,7 @@ public class ModelMetopacanthus extends AdvancedModelBase {
                 this.chainSwing(fishTail, speed*0.8F, 0.25F, -3, f2, 1);
                 this.flap(backleftfin, (speed), 0.2F, true, 0, 0, f2, 1);
                 this.flap(backrightfin, (speed), 0.2F, true, 0, 0, f2, 1);
-                this.walk(jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+                this.walk(jaw, (float) (0.1), 0.2F, true, -2, 0.44F, f2, 1);
 
 
 

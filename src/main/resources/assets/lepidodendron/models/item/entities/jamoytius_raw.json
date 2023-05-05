@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/jamoytius_raw"
+    "layer0": "paleopedia:jamoytius_icon"
   }
 }
