@@ -2,7 +2,6 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.item.*;
@@ -704,16 +703,6 @@ public class LepidodendronEventSubscribers {
 			}
 			try {
 				tt.add(I18n.translateToLocal("helper.pf_habitat.name") + ": " + ee.getMethod("getHabitat", (Class[]) null).invoke(null).toString());
-			} catch (Throwable throwable) {
-				//Do nothing - it's all good
-			}
-			try {
-				if (ee == EntityPrehistoricFloraPalaeodictyoptera.class) {
-					Boolean result = (Boolean) (ee.getMethod("hasPNVariants", (Class[]) null).invoke(null));
-					if (result.booleanValue()) {
-						tt.add(I18n.translateToLocal("helper.pf_variants_note.name"));
-					}
-				}
 			} catch (Throwable throwable) {
 				//Do nothing - it's all good
 			}

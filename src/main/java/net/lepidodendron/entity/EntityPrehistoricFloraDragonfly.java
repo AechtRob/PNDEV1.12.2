@@ -10,18 +10,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -75,35 +71,35 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-			//Cycle the variants:
-			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
-				if (!player.capabilities.isCreativeMode)
-				{
-					player.getHeldItem(hand).shrink(1);
-				}
-				int type = this.getPNType().ordinal();
-				type = type + 1;
-				if (type > Type.values().length) {
-					type = 0;
-				}
-				this.setPNType(Type.byId(type));
-
-				float f = this.width;
-				this.width = getHitBoxSize()[0];
-				this.height = getHitBoxSize()[1];
-				if (this.width != f) {
-					double d0 = (double) width / 2.0D;
-					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-				}
-			}
-		}
-
-		return super.processInteract(player, hand);
-	}
+//	@Override
+//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
+//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
+//			//Cycle the variants:
+//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
+//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
+//				if (!player.capabilities.isCreativeMode)
+//				{
+//					player.getHeldItem(hand).shrink(1);
+//				}
+//				int type = this.getPNType().ordinal();
+//				type = type + 1;
+//				if (type > Type.values().length) {
+//					type = 0;
+//				}
+//				this.setPNType(Type.byId(type));
+//
+//				float f = this.width;
+//				this.width = getHitBoxSize()[0];
+//				this.height = getHitBoxSize()[1];
+//				if (this.width != f) {
+//					double d0 = (double) width / 2.0D;
+//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+//				}
+//			}
+//		}
+//
+//		return super.processInteract(player, hand);
+//	}
 
 	public boolean hasPNVariants() {
 		return true;
