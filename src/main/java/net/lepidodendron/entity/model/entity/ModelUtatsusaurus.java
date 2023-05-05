@@ -309,7 +309,7 @@ public class ModelUtatsusaurus extends AdvancedModelBaseExtended {
             */
         //Animation values need tweaking
         if(ee.getIsMoving()) {
-            this.chainSwing(fishTail, speed, 0.62F, 3, f2, 1);
+            this.chainSwing(fishTail, speed, 0.4F, 3, f2, 1);
             this.swing(base, speed, 0.15F, false, 0, 0, f2, 1);
         }else{
             this.chainSwing(fishTail, speed*0.5F, 0.3F, 1.5, f2, 1);

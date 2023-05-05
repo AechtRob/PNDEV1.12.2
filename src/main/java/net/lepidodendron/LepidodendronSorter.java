@@ -3895,6 +3895,24 @@ public class LepidodendronSorter {
     public static final int amphibian_spawn_gephyrostegus_worldgen = 4004;
     public static final int ophiopsis_raw = 4005;
     public static final int congophiopsis_raw = 4006;
+    public static final int adamanteryon_raw = 4007;
+    public static final int hadronector_raw = 4008;
+    public static final int megateuthis_raw = 4009;
+    public static final int passaloteuthis_raw = 4010;
+    public static final int hupehsuchus_raw = 4011;
+    public static final int scheenstia_raw = 4012;
+    public static final int eggs_megateuthis = 4013;
+    public static final int eggs_passaloteuthis = 4014;
+    public static final int dragonfly_dragonfly1_raw = 4015;
+    public static final int dragonfly_dragonfly2_raw = 4016;
+    public static final int dragonfly_dragonfly3_raw = 4017;
+    public static final int dragonfly_dragonfly4_raw = 4018;
+    public static final int dragonfly_dragonfly5_raw = 4019;
+    public static final int dragonfly_dragonfly6_raw = 4020;
+    public static final int dragonfly_dragonfly7_raw = 4021;
+    public static final int dragonfly_dragonfly8_raw = 4022;
+    public static final int dragonfly_dragonfly9_raw = 4023;
+    public static final int dragonfly_dragonfly10_raw = 4024;
 
 
 }

@@ -290,14 +290,6 @@ public class ModelEryon extends AdvancedModelBase {
                 this.swing(pincerR, 0.18F, 0.23F, true, 1.5f, -0.1f, f2, 1F);
 
                 if (f3 != 0.0F) {
-                    this.flap(legL, speedLeg, -degreeLeg, true, 0, -0.5F, f2, 0.7F);
-                    this.flap(legR, speedLeg, degreeLeg, true, 0, 0.5F, f2, 0.7F);
-                    this.flap(legL2, speedLeg, -degreeLeg, true, 0.5F, -0.5F, f2, 0.7F);
-                    this.flap(legR2, speedLeg, degreeLeg, true, 0.5F, 0.5F, f2, 0.7F);
-                    this.flap(legL3, speedLeg, -degreeLeg, true, 1.0F, -0.5F, f2, 0.7F);
-                    this.flap(legR3, speedLeg, degreeLeg, true, 1.0F, 0.5F, f2, 0.7F);
-                    this.flap(legL4, speedLeg, -degreeLeg, true, 1.5F, -0.5F, f2, 0.7F);
-                    this.flap(legR4, speedLeg, degreeLeg, true, 1.5F, 0.5F, f2, 0.7F);
 
                     this.swing(legL, speedLeg, -degreeLeg, false, 0, -0.5F, f2, 0.7F);
                     this.swing(legR, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);

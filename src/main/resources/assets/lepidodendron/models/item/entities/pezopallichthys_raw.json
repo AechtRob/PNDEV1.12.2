@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/pezopallichthys_raw"
+    "layer0": "paleopedia:pezopallichthys_icon"
   }
 }
