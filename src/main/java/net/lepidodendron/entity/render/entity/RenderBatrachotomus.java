@@ -10,7 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBatrachotomus extends RenderLiving<EntityPrehistoricFloraBatrachotomus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/batrachotomus.png");
-
+    public static float getScaler() {
+        return 1.0F;
+    }
     public RenderBatrachotomus(RenderManager mgr) {
         super(mgr, new ModelBatrachotomus(), 0.6f);
     }
@@ -27,7 +29,7 @@ public class RenderBatrachotomus extends RenderLiving<EntityPrehistoricFloraBatr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBatrachotomus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.6F;
     }

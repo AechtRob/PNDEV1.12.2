@@ -61,8 +61,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelAstraspis modelAstraspis;
     private static final ResourceLocation TEXTURE_ATELEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ateleaspis.png");
     private final ModelAteleaspis modelAteleaspis;
-    private static final ResourceLocation TEXTURE_BATRACHOTOMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/batrachotomus.png");
-    private final ModelBatrachotomus modelBatrachotomus;
     private static final ResourceLocation TEXTURE_BELANTSEA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/belantsea.png");
     private final ModelBelantsea modelBelantsea;
     private static final ResourceLocation TEXTURE_BIRGERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/birgeria.png");
@@ -316,7 +314,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelArchosaurus = new ModelArchosaurus();
         this.modelAstraspis = new ModelAstraspis();
         this.modelAteleaspis = new ModelAteleaspis();
-        this.modelBatrachotomus = new ModelBatrachotomus();
         this.modelBelantsea = new ModelBelantsea();
         this.modelBirgeria = new ModelBirgeria();
         this.modelBirkenia = new ModelBirkenia();
@@ -820,37 +817,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.scale(2, 2, 2);
                                     this.bindTexture(TEXTURE_ASTRASPIS);
                                     modelAstraspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraBatrachotomus.class) {
-                                double offset = -0.68;
-                                double voffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(6.1, 6.1, 6.1);
-                                    this.bindTexture(TEXTURE_BATRACHOTOMUS);
-                                    modelBatrachotomus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
                             } else if (classEntity == EntityPrehistoricFloraBelantsea.class) {
                                 double offset = 0.07;
@@ -1749,20 +1715,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     this.bindTexture(TEXTURE_EUSTHENOPTERON);
                                     modelEusthenopteron.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
-                            }  else if (classEntity == EntityPrehistoricFloraFadeniaCarboniferous.class) {
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    itemRender = !renderFadeniaCarboniferous(facing, currentRotation, x, y, z);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraFadeniaPermotriassic.class) {
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    itemRender = !renderFadeniaPermotriassic(facing, currentRotation, x, y, z);
-                                }
                             } else if (classEntity == EntityPrehistoricFloraFalcatus.class) {
                                 double offset = 0.1;
                                 //double voffset = 0.41;
@@ -2632,41 +2584,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.scale(5.2, 5.2, 5.2);
                                     this.bindTexture(TEXTURE_LOTOSAURUS);
                                     modelLotosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
-                            } else if (classEntity == EntityPrehistoricFloraLunaspis.class) {
-                                double offset = 0.45;
-                                //double voffset = -0.01;
-                                double voffset = 0;
-                                //double hoffset = 0.13;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1, 0, 0);
-                                    GlStateManager.scale(1.9, 1.9, 1.9);
-                                    this.bindTexture(TEXTURE_LUNASPIS);
-                                    modelLunaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
                             } else if (classEntity == EntityPrehistoricFloraLuoxiongichthys.class) {
                                 double offset = 0.04;
@@ -3797,40 +3714,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     this.bindTexture(TEXTURE_REBELLATRIX);
                                     modelRebellatrix.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                                 }
-                            } else if (classEntity == EntityPrehistoricFloraRhizodus.class) {
-                                double offset = -0.7;
-                                //double voffset = 0.06;
-                                double voffset = 0;
-                                //double hoffset = 0.12;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
-                                    itemRender = true;
-                                }
-                                else {
-                                    GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                    GlStateManager.scale(6.5, 6.5, 6.5);
-                                    this.bindTexture(TEXTURE_RHIZODUS);
-                                    modelRhizodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                                }
                             } else if (classEntity == EntityPrehistoricFloraSacabambaspis.class) {
                                 double offset = 0.12;
                                 //double voffset = 0.06;
@@ -4911,35 +4794,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
 
 
 
-    public boolean renderFadeniaCarboniferous(EnumFacing facing, float currentRotation, double x, double y, double z) {
-        if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
-            return false;
-        }
-        double offset = 0.1;
-        double voffset = 0;
-        double hoffset = 0;
-        setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
-        float scalerModel = RenderFadeniaCarboniferous.getScaler();
-        GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
-        this.bindTexture(TEXTURE_FADENIAC);
-        modelFadenia.renderStaticC(Minecraft.getMinecraft().player.ticksExisted);
-        return true;
-    }
 
-    public boolean renderFadeniaPermotriassic(EnumFacing facing, float currentRotation, double x, double y, double z) {
-        if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
-            return false;
-        }
-        double offset = 0.05;
-        double voffset = 0;
-        double hoffset = 0;
-        setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
-        float scalerModel = RenderFadeniaPermotriassic.getScaler();
-        GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
-        this.bindTexture(TEXTURE_FADENIAPT);
-        modelFadenia.renderStaticPT(Minecraft.getMinecraft().player.ticksExisted);
-        return true;
-    }
+
 
 
 /*

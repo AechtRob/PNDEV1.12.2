@@ -173,15 +173,29 @@ public class ModelJamoytius extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.root.offsetY = -0.13F;
-        this.root.offsetX = -0.06F;
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddlefront, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodymiddleback, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodyback, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.1F, 0.0F);
+        this.root.offsetZ = -1.1F;
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = 0.0F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(root, 0.7418F, (float) Math.toRadians(90), 0.0F);
-
+        this.setRotateAngle(Bodyfront, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddlefront, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodymiddleback, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodyback, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, -0.4F, 0.0F);
+        this.root.offsetY = -0.5F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

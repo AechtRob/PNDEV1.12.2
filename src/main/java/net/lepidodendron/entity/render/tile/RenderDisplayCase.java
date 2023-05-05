@@ -101,6 +101,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelDiania modelDiania;
     private static final ResourceLocation TEXTURE_DROTOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drotops.png");
     private final ModelDrotops modelDrotops;
+    private static final ResourceLocation TEXTURE_DICRANURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dicranurus.png");
+    private final ModelDicranurus modelDicranurus;
     private static final ResourceLocation TEXTURE_DUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunbaria.png");
     private static final ResourceLocation TEXTURE_ELLIPSOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ellipsocephalus.png");
     private final ModelEllipsocephalus modelEllipsocephalus;
@@ -322,6 +324,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelDalmanites = new ModelDalmanites();
         this.modelDiania = new ModelDiania();
         this.modelDrotops = new ModelDrotops();
+        this.modelDicranurus = new ModelDicranurus();
         this.modelEllipsocephalus= new ModelEllipsocephalus();
         this.modelElrathia= new ModelElrathia();
         this.modelEnoploura= new ModelEnoploura();
@@ -407,7 +410,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 
         this.modelEryon = new ModelEryon();
     }
-
     @Override
     public void render(BlockDisplayCase.TileEntityDisplayCase entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         BlockPos pos = entity.getPos();
@@ -1513,7 +1515,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.8F, 0.8F, 0.8F);
                                 this.bindTexture(TEXTURE_DROTOPS);
                                 modelDrotops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            }
+                            } else if (classEntity == EntityPrehistoricFloraDicranurus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_DICRANURUS);
+                                modelDicranurus.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
+                            } 
 //                            else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.class) {
 //                                double offset = 0.65;
 //                                if (facing == EnumFacing.UP) {
@@ -1548,6 +1583,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 //                                this.bindTexture(TEXTURE_DUNBARIA);
 //                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
 //                            }
+
                             else if (classEntity == EntityPrehistoricFloraEllipsocephalus.class) {
                                 double offset = 0.3;
                                 if (facing == EnumFacing.UP) {
@@ -1982,14 +2018,14 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                                 GlStateManager.scale(0.4, 0.4, 0.4);
                                 this.bindTexture(TEXTURE_HAIKOUICHTHYS);
-                                modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                modelHaikouichthys.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
                                 GlStateManager.pushMatrix();
                                 GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
                                 GlStateManager.enableNormalize();
                                 GlStateManager.enableBlend();
                                 GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
                                 this.bindTexture(TEXTURE_HAIKOUICHTHYS_FIN);
-                                modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                modelHaikouichthys.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
                                 GlStateManager.disableBlend();
                                 GlStateManager.disableNormalize();
                                 GlStateManager.popMatrix();
@@ -3327,7 +3363,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 } else {
                                     this.bindTexture(TEXTURE_OPABINIA);
                                 }
-                                modelOpabinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                modelOpabinia.renderStaticDisplayCase(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraOpolanka.class) {
                                 double offset = 0.45;
                                 if (facing == EnumFacing.UP) {

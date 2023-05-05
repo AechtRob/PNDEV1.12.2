@@ -10,7 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderRhizodus extends RenderLiving<EntityPrehistoricFloraRhizodus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhizodus.png");
-
+    public static float getScaler() {
+        return 1.0F;
+    }
     public RenderRhizodus(RenderManager mgr) {
         super(mgr, new ModelRhizodus(), 1.0f);
     }
@@ -27,7 +29,7 @@ public class RenderRhizodus extends RenderLiving<EntityPrehistoricFloraRhizodus>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraRhizodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

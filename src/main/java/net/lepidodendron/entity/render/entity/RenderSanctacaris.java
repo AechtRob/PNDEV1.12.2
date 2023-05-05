@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSanctacaris> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris.png");
     public static float getScaler() {
-        return 0.2F;
+        return 0.15F;
     }
 
     public RenderSanctacaris(RenderManager mgr) {
