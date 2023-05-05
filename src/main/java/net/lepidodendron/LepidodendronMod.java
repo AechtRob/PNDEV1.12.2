@@ -3,6 +3,7 @@ package net.lepidodendron;
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.FixerPalaeodictyoptera;
+import net.lepidodendron.entity.datafixers.FixerPalaeodictyopteraNymph;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
@@ -191,6 +192,26 @@ public class LepidodendronMod {
 	public static final ResourceLocation PALAEODICTYOPTERA_SINODUNBARIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_sinodunbaria_jar"));
 	public static final ResourceLocation PALAEODICTYOPTERA_STENODICTYA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_stenodictya_jar"));
 	public static final ResourceLocation PALAEODICTYOPTERA_MAZOTHAIROS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_mazothairos_jar"));
+
+	public static final ResourceLocation PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_delitzschala_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_dunbaria_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_homaloneura_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_homoioptera_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_lithomantis_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_lycocercus_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_sinodunbaria_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_stenodictya_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_mazothairos_nymph"));
+	public static final ResourceLocation PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_delitzschala_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_dunbaria_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_homaloneura_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_homoioptera_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_lithomantis_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_lycocercus_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_sinodunbaria_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_stenodictya_nymph_jar"));
+	public static final ResourceLocation PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeodictyoptera_mazothairos_nymph_jar"));
+
 	public static final int ENTITY_JELLYFISH_PRECAMBRIAN = 55;
 	public static final int ENTITY_SCHINDERHANNES = 56;
 	public static final ResourceLocation SCHINDERHANNES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/schinderhannes"));
@@ -395,7 +416,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PIKAIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pikaia"));
 	public static final int ENTITY_HALLUCIGENIA = 154;
 	public static final ResourceLocation HALLUCIGENIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hallucigenia"));
-	public static final int ENTITY_PALAEODICTYOPTERA_NYMPH_PERM = 155;
+	//public static final int ENTITY_PALAEODICTYOPTERA_NYMPH_PERM = 155;
 	public static final int ENTITY_HYLONOMUS = 156;
 	public static final ResourceLocation HYLONOMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hylonomus"));
 	public static final ResourceLocation HYLONOMUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hylonomus_young"));
@@ -1759,6 +1780,7 @@ public class LepidodendronMod {
 
 		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 59);
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyoptera.FixerPalaeodictyoptera);
+		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyopteraNymph.FixerPalaeodictyopteraNymph);
 	}
 
 	@Mod.EventHandler

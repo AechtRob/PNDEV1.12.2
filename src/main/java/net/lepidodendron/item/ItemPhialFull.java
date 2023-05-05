@@ -10,9 +10,11 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -55,7 +57,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_mixopterus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_pagea", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_perm", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_perm", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_pneumodesmus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_pterygotus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_trigonotarbid_carb", "inventory"),
@@ -208,8 +210,12 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				}
 				String resourcelocation = itemstack.getTagCompound().getString("id_eggs");
 				Block placeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation (resourcelocation));
-				if (placeBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)) {
-					worldIn.setBlockState(pos.offset(facing), placeBlock.getStateForPlacement(worldIn, pos.offset(facing), facing, hitX, hitY, hitZ, 0, (EntityLivingBase) player));
+				if (placeBlock == null || placeBlock == Blocks.AIR) {
+					//This is a placeable item instead:
+					Item placeItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation (resourcelocation));
+
+					ActionResult<ItemStack> result = placeItem.onItemRightClick(worldIn, player, hand);
+
 					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
 					worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 					ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
@@ -219,6 +225,30 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 						ItemHandlerHelper.giveItemToPlayer(player, phial);
 					}
 					return EnumActionResult.SUCCESS;
+
+				}
+				else {
+					if (placeBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)) {
+						worldIn.setBlockState(pos.offset(facing), placeBlock.getStateForPlacement(worldIn, pos.offset(facing), facing, hitX, hitY, hitZ, 0, (EntityLivingBase) player));
+
+						TileEntity tileentity = worldIn.getTileEntity(pos.offset(facing));
+						if (tileentity != null) {
+							String variant = getTypeFromStack(itemstack);
+							if (!variant.equalsIgnoreCase("")) {
+								tileentity.getTileData().setString("PNType", variant);
+							}
+						}
+
+						SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
+						worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
+						if (!player.isCreative()) {
+							phial.setCount(1);
+							itemstack.shrink(1);
+							ItemHandlerHelper.giveItemToPlayer(player, phial);
+						}
+						return EnumActionResult.SUCCESS;
+					}
 				}
 
 			}
@@ -238,6 +268,15 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			string = string.replace("lepidodendron:eurypterid_eggs_", "");
 			string = string.replace("lepidodendron:insect_eggs_", "");
 			return string;
+		}
+
+		public String getTypeFromStack(ItemStack stack) {
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PNType")) {
+					return stack.getTagCompound().getString("PNType");
+				}
+			}
+			return "";
 		}
 
 	}

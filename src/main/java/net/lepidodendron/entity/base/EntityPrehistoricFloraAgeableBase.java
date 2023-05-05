@@ -95,6 +95,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
     }
 
+    public boolean hasPNVariants() {
+        return false;
+    }
+
     public ItemStack getPropagule() {
         return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
