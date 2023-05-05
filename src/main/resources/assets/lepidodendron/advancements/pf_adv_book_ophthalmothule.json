@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:ophthalmothule_raw"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_ophthalmothule.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_ophthalmothule.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_ophthalmothule"
+		}
+	}
+}

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lepidodendron:items/entities/harpagofututor_raw"
-  }
+ "parent": "item/generated",
+ "textures": {
+ "layer0": "paleopedia:harpagofututor_icon"
+ }
 }

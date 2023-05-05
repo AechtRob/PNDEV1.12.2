@@ -2,7 +2,7 @@
 	"display": {
 		"icon": {
 			"item": "lepidodendron:arduafrons_raw"
-		  },
+		 },
 		"title": {
 			"translate": "advancements.pf_adv_book_arduafrons.title"
 		},
@@ -10,7 +10,7 @@
 			"translate": "advancements.pf_adv_book_arduafrons.description"
 		}
 	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
+ "parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
