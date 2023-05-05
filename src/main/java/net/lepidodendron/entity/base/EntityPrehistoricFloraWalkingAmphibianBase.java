@@ -194,7 +194,7 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
 
         if (this.isJumping)
         {
-            if (this.isInWater() && this.jumpTicks == 0)
+            if (this.isInWater() && this.jumpTicks == 0 && this.canJumpOutOfWater())
             {
                 this.jump();
                 this.jumpTicks = 10;

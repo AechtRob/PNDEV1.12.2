@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemEchinodermEggsCothurnocystis;
-import net.lepidodendron.item.entities.ItemEchinodermEggsRhenocystis;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -94,7 +93,6 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 			return 0;
 		}
 		return 0.06F;
-
 	}
 
 	@Override
