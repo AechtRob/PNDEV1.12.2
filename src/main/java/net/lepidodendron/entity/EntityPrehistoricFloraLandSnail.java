@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 
 	@Override
 	protected float getAISpeedLand() {
-		return 0.1f;
+		return 0.07f;
 	}
 
 	@Override

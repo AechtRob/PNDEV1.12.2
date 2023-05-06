@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraLeviathania extends EntityPrehistoricFloraSli
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.07f;
+		return 0.04f;
 	}
 
 	protected void initEntityAI() {

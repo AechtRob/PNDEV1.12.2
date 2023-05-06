@@ -327,6 +327,7 @@ public class ModelDakosaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
         this.Body.offsetY = 0.25F;
+        this.Body.offsetZ = -0.9F;
 
         EntityPrehistoricFloraDakosaurus Dako = (EntityPrehistoricFloraDakosaurus) e;
 

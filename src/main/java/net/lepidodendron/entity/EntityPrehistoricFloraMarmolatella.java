@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraMarmolatella extends EntityPrehistoricFloraSl
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.07f;
+		return 0.04f;
 	}
 
 	protected void initEntityAI() {

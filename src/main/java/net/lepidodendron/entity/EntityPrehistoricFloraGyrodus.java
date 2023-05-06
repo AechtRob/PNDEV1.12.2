@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraGyrodus extends EntityPrehistoricFloraAgeable
 		setSize(0.9F, 0.9F);
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
-		maxHeight = 0.9F;
+		maxHeight = 0.99F;
 		maxHealthAgeable = 18.0D;
 	}
 
