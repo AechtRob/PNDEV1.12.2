@@ -4,7 +4,10 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.EntityMateAIFishBase;
+import net.lepidodendron.entity.ai.FishWanderBottomDweller;
+import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderDollocaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -21,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraOstenocaris extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -29,7 +32,7 @@ public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFish
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraDollocaris(World world) {
+	public EntityPrehistoricFloraOstenocaris(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
 	}
@@ -66,7 +69,7 @@ public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFish
 	@Override
 	protected float getAISpeedFish() {
 		//return 0;
-		return 0.326f * 0.65F;
+		return 0.326f * 0.5F;
 	}
 
 	@Override
@@ -165,7 +168,7 @@ public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFish
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.DOLLOCARIS_LOOT;
+		return LepidodendronMod.OSTENOCARIS_LOOT;
 	}
 
 	//Rendering taxidermy:

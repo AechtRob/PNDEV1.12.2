@@ -4263,6 +4263,24 @@ public class RenderHandler {
                 return new RenderPhorcynis(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLibys.class, new IRenderFactory<EntityPrehistoricFloraLibys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLibys> createRenderFor(RenderManager manager) {
+                return new RenderLibys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOreochima.class, new IRenderFactory<EntityPrehistoricFloraOreochima>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOreochima> createRenderFor(RenderManager manager) {
+                return new RenderOreochima(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOstenocaris.class, new IRenderFactory<EntityPrehistoricFloraOstenocaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOstenocaris> createRenderFor(RenderManager manager) {
+                return new RenderOstenocaris(manager);
+            }
+        });
 
 
 

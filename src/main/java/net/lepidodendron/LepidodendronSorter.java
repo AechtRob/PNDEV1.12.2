@@ -3932,6 +3932,16 @@ public class LepidodendronSorter {
     public static final int eggs_docodon = 4039;
     public static final int eggs_homoeosaurus = 4040;
     public static final int amphibian_spawn_chunerpeton_worldgen = 4041;
+    public static final int oreochima_raw = 4041;
+    public static final int libys_raw = 4042;
+    public static final int ostenocaris_raw = 4043;
+    public static final int morrolepis_raw = 4044;
+    public static final int coccoderma_raw = 4045;
+    public static final int cenoceras_raw = 4046;
+    public static final int eggs_cenoceras = 4047;
+    public static final int spiroceras_raw = 4048;
+    public static final int eggs_spiroceras = 4049;
+    public static final int shell_spiroceras = 4050;
 
 
 

@@ -344,31 +344,59 @@ public class ModelChunerpeton extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] LeftLeg = {this.UpperLegL, this.LowerLegL};
         AdvancedModelRenderer[] RightLeg = {this.UpperLegR, this.LowerLegR};
 
-        if (greer.isReallyInWater()) {
-            this.setRotateAngle(UpperArmL, (float)Math.toRadians(0), -(float)Math.toRadians(47.5), -(float)Math.toRadians(7.5));
-            this.setRotateAngle(UpperArmR, (float)Math.toRadians(0), (float)Math.toRadians(47.5), (float)Math.toRadians(7.5));
-            this.setRotateAngle(LowerArmL, -(float)Math.toRadians(0.3472), -(float)Math.toRadians(20.021), -(float)Math.toRadians(-7.3741));
-            this.setRotateAngle(LowerArmR, -(float)Math.toRadians(0.3472), (float)Math.toRadians(20.021), -(float)Math.toRadians(-7.3741));
-            this.setRotateAngle(UpperLegL, -(float)Math.toRadians(-1.0631), -(float)Math.toRadians(45.0107), -(float)Math.toRadians(6.6325));
-            this.setRotateAngle(UpperLegR, -(float)Math.toRadians(-1.0631), (float)Math.toRadians(45.0107), -(float)Math.toRadians(6.6325));
-            this.setRotateAngle(LowerLegL, -(float)Math.toRadians(1.8636), -(float)Math.toRadians(25.0156), -(float)Math.toRadians(-1.0555));
-            this.setRotateAngle(LowerLegR, -(float)Math.toRadians(1.8636), (float)Math.toRadians(25.0156), -(float)Math.toRadians(-1.0555));
-            this.setRotateAngle(FootL, -(float)Math.toRadians(2.7647), -(float)Math.toRadians(-25.0981), -(float)Math.toRadians(-5.4974));
-            this.setRotateAngle(FootR, -(float)Math.toRadians(2.7647), (float)Math.toRadians(-25.0981), -(float)Math.toRadians(-5.4974));
+        if (greer.isReallyInWater()) { //swim animation
+            if(!greer.isAtBottom()) {
+                this.setRotateAngle(UpperArmL, (float) Math.toRadians(0), -(float) Math.toRadians(47.5), -(float) Math.toRadians(7.5));
+                this.setRotateAngle(UpperArmR, (float) Math.toRadians(0), (float) Math.toRadians(47.5), (float) Math.toRadians(7.5));
+                this.setRotateAngle(LowerArmL, -(float) Math.toRadians(0.3472), -(float) Math.toRadians(20.021), -(float) Math.toRadians(-7.3741));
+                this.setRotateAngle(LowerArmR, -(float) Math.toRadians(0.3472), (float) Math.toRadians(20.021), -(float) Math.toRadians(-7.3741));
+                this.setRotateAngle(UpperLegL, -(float) Math.toRadians(-1.0631), -(float) Math.toRadians(45.0107), -(float) Math.toRadians(6.6325));
+                this.setRotateAngle(UpperLegR, -(float) Math.toRadians(-1.0631), (float) Math.toRadians(45.0107), -(float) Math.toRadians(6.6325));
+                this.setRotateAngle(LowerLegL, -(float) Math.toRadians(1.8636), -(float) Math.toRadians(25.0156), -(float) Math.toRadians(-1.0555));
+                this.setRotateAngle(LowerLegR, -(float) Math.toRadians(1.8636), (float) Math.toRadians(25.0156), -(float) Math.toRadians(-1.0555));
+                this.setRotateAngle(FootL, -(float) Math.toRadians(2.7647), -(float) Math.toRadians(-25.0981), -(float) Math.toRadians(-5.4974));
+                this.setRotateAngle(FootR, -(float) Math.toRadians(2.7647), (float) Math.toRadians(-25.0981), -(float) Math.toRadians(-5.4974));
 
-            if (f3 == 0.0F || !greer.getIsMoving()) {
-                return;
+                if (f3 == 0.0F || !greer.getIsMoving()) {
+                    return;
+                }
+
+                this.chainSwingExtended(LeftArm, speed, -0.2F, 0F, 3.0F, f2, 0.7F);
+                this.chainSwingExtended(RightArm, speed, 0.2F, 0F, 0, f2, 0.7F);
+
+                this.chainSwingExtended(LeftLeg, speed, 0.2F, 0F, 3.0F, f2, 0.7F);
+                this.chainSwingExtended(RightLeg, speed, -0.2F, 0F, 0, f2, 0.7F);
+
+                this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
+                this.chainSwing(Tail, speed * 1.2F, 0.3F, -3, f2, 0.8F);
+                this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
+            } else {//bottom walking
+                speed = speed *0.5F;
+                if (greer.getIsFast()) {
+                    speed = speed * 1.33F;
+                }
+                if (f3 == 0.0F || !greer.getIsMoving()) {
+                    return;
+                }
+                this.chainSwing(Torso, speed, 0.07F, -3, f2, 1);
+
+                //this.chainSwingExtended(LeftArm, speed, 0.6F,0F,3.0F, f2, 0.7F);
+                //this.chainSwingExtended(RightArm, speed, -0.6F,0F,0, f2, 0.7F);
+                this.swing(UpperArmL, speed, 0.6F, false, 3.0f, -0, f2, 0.7F);
+                this.swing(UpperArmR, speed, -0.6F, false, 0f, -0, f2, 0.7F);
+                this.swing(LowerArmL, speed, -0.4F, true, 0f, -0, f2, 0.7F);
+                this.swing(LowerArmR, speed, -0.4F, true, 0f, -0, f2, 0.7F);
+
+
+                this.chainSwingExtended(LeftLeg, speed, 0.4F,0F,3.0F, f2, 0.7F);
+                this.chainSwingExtended(RightLeg, speed , -0.4F,0F,0, f2, 0.7F);
+
+                this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
+                this.chainSwing(Tail, speed * 0.45F, 0.2F, -3, f2, 0.8F);
+                this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
             }
 
-            this.chainSwingExtended(LeftArm, speed, -0.2F,0F,3.0F, f2, 0.7F);
-            this.chainSwingExtended(RightArm, speed, 0.2F,0F,0, f2, 0.7F);
 
-            this.chainSwingExtended(LeftLeg, speed, 0.2F,0F,3.0F, f2, 0.7F);
-            this.chainSwingExtended(RightLeg, speed , -0.2F,0F,0, f2, 0.7F);
-
-            this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(Tail, speed * 1.2F, 0.3F, -3, f2, 0.8F);
-            this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
         }
         else {
             speed = speed *0.5F;

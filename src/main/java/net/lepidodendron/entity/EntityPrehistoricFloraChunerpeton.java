@@ -16,16 +16,17 @@ import net.lepidodendron.entity.render.entity.RenderPederpes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -34,6 +35,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -44,9 +46,13 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
+	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMetoposaurus.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMetoposaurus.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraMetoposaurus.class, DataSerializers.BOOLEAN);
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+
 
 	public EntityPrehistoricFloraChunerpeton(World world) {
 		super(world);
@@ -61,11 +67,24 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
 		}
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(BOTTOM_COOLDOWN, 0);
+		this.dataManager.register(SWIM_COOLDOWN, 0);
+		this.dataManager.register(BOTTOM_FLAG, false);
 	}
 
 	@Override
@@ -147,6 +166,15 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setBottomCooldown(0);
+		this.setSwimCooldown(0);
+		this.setBottomFlag(false);
+		return livingdata;
+	}
+
+	@Override
 	public boolean isAIDisabled() {
 		return false;
 	}
@@ -195,6 +223,45 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("bottomCooldown", this.getBottomCooldown());
+		compound.setInteger("swimCooldown", this.getSwimCooldown());
+		compound.setBoolean("bottomFlag", this.getBottomFlag());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setBottomCooldown(compound.getInteger("bottomCooldown"));
+		this.setSwimCooldown(compound.getInteger("swimCooldown"));
+		this.setBottomFlag(compound.getBoolean("bottomFlag"));
+	}
+
+	public int getBottomCooldown() {
+		return this.dataManager.get(BOTTOM_COOLDOWN);
+	}
+
+	public void setBottomCooldown(int cooldown) {
+		this.dataManager.set(BOTTOM_COOLDOWN, cooldown);
+	}
+
+	public int getSwimCooldown() {
+		return this.dataManager.get(SWIM_COOLDOWN);
+	}
+
+	public void setSwimCooldown(int cooldown) {
+		this.dataManager.set(SWIM_COOLDOWN, cooldown);
+	}
+
+	public boolean getBottomFlag() {
+		return this.dataManager.get(BOTTOM_FLAG);
+	}
+
+	public void setBottomFlag(boolean flag) {
+		this.dataManager.set(BOTTOM_FLAG, flag);
 	}
 
 	@Override

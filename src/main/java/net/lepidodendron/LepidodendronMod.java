@@ -1753,6 +1753,12 @@ public class LepidodendronMod {
 	public static final ResourceLocation HOMOEOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/homoeosaurus"));
 	public static final int ENTITY_CHUNERPETON = 699;
 	public static final ResourceLocation CHUNERPETON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chunerpeton"));
+	public static final int ENTITY_LIBYS = 700;
+	public static final ResourceLocation LIBYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/libys"));
+	public static final int ENTITY_OREOCHIMA = 701;
+	public static final ResourceLocation OREOCHIMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/oreochima"));
+	public static final int ENTITY_OSTENOCARIS = 702;
+	public static final ResourceLocation OSTENOCARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ostenocaris"));
 
 
 	@Mod.EventHandler
