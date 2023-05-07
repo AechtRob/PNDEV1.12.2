@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraHarpagodes extends EntityPrehistoricFloraSlit
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.07f;
+		return 0.03f;
 	}
 
 	protected void initEntityAI() {

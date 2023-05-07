@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 		if (this.isAtBottom()){
 			return 0.07f;
 		} else {
-			return 0.25f;
+			return 0.15f;
 		}
 	}
 

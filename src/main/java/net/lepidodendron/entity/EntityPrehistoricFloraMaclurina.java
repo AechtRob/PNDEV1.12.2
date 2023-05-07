@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.072f;
+		return 0.02f;
 	}
 
 	@Override

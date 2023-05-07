@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:libys_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_libys.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_libys.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_libys"
+		}
+	}
+}

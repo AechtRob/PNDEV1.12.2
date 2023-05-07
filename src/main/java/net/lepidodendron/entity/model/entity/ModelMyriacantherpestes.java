@@ -1092,7 +1092,7 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
             */
 
-            this.bob(this.main, 1.2F, 0.08F, false, f2, 1F);
+            this.bob(this.main, 0.5F, 0.001F, false, f2, 1F);
             this.chainWaveExtended(bodySegments, 1.6F, 0.001F, 0.02F, 0, f2, 1f);
             this.chainWaveExtended(bodySegments2, 1.6F, -0.001F, 0.04F, 3, f2, 1f);
 
@@ -1101,7 +1101,7 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
             //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
 
             float swingBodySpeed = 0.3F;
-            float degreeBodySwing = 0.015F;
+            float degreeBodySwing = 0.001F;
             this.chainSwing(body1, swingBodySpeed, -degreeBodySwing * 0.66F, -3, f2, 1);
             this.chainSwing(body2, swingBodySpeed, degreeBodySwing * 0.66F, -3, f2, 1);
             this.chainSwing(body3, swingBodySpeed, -degreeBodySwing, -3, f2, 1);
