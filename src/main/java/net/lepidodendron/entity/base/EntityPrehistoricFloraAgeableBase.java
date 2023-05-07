@@ -732,6 +732,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     return false;
                 }
             }
+            if (this.isInWater()) {
+                return false;
+            }
         }
 
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {

@@ -277,7 +277,9 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		if (ds == DamageSource.IN_WALL) {
-			return false;
+			if (this.isInWater()) {
+				return false;
+			}
 		}
 		if (this.isEntityInvulnerable(ds))
 		{

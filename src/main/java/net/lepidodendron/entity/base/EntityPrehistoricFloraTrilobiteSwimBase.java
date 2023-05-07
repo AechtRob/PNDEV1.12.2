@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.base;
 
-import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
@@ -286,7 +285,9 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         if (ds == DamageSource.IN_WALL) {
-            return false;
+            if (this.isInWater()) {
+                return false;
+            }
         }
         if (this.isEntityInvulnerable(ds))
         {
