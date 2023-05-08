@@ -54,7 +54,7 @@ public class ItemSpawnEggPalaeodictyopteraDelitzschala extends ElementsLepidoden
 
 		@Override
 		public String getPeriod() {
-			return "early Permian";
+			return "Carboniferous";
 		}
 
 		@Override

@@ -1141,6 +1141,23 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CIURCOPTERUS = new CustomTrigger("pf_book_ciurcopterus");
     public static final CustomTrigger CLICK_DRAGONFLY = new CustomTrigger("pf_book_dragonfly");
 
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_OREGRAMMA = new CustomTrigger("pf_book_kalligrammatid_oregramma");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_MAKARKINIA = new CustomTrigger("pf_book_kalligrammatid_makarkinia");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_ITHIGRAMMA = new CustomTrigger("pf_book_kalligrammatid_ithigramma");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_SOPHOGRAMMA = new CustomTrigger("pf_book_kalligrammatid_sophogramma");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_ABRIGRAMMA = new CustomTrigger("pf_book_kalligrammatid_abrigramma");
+    public static final CustomTrigger CLICK_LACEWING_AETHEOGRAMMA = new CustomTrigger("pf_book_lacewing_aetheogramma");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_MEIONEURITES = new CustomTrigger("pf_book_kalligrammatid_meioneurites");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_LIASSOPSYCHOPS = new CustomTrigger("pf_book_kalligrammatid_liassopsychops");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_KALLIGRAMMA = new CustomTrigger("pf_book_kalligrammatid_kalligramma");
+    public static final CustomTrigger CLICK_LACEWING_LICHENIPOLYSTOECHOTES = new CustomTrigger("pf_book_lacewing_lichenipolystoechotes");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_HUIYINGOGRAMMA = new CustomTrigger("pf_book_kalligrammatid_huiyingogramma");
+    public static final CustomTrigger CLICK_KALLIGRAMMATID_APOCHRYSOGRAMMA = new CustomTrigger("pf_book_kalligrammatid_apochrysogramma");
+    public static final CustomTrigger CLICK_LACEWING_GRAMMOLINGIA = new CustomTrigger("pf_book_lacewing_grammolingia");
+    public static final CustomTrigger CLICK_LACEWING_LACCOSMYLUS = new CustomTrigger("pf_book_lacewing_laccosmylus");
+    public static final CustomTrigger CLICK_LACEWING_CRETAPSYCHOPS = new CustomTrigger("pf_book_lacewing_cretapsychops");
+    public static final CustomTrigger CLICK_LACEWING_BELLINYMPHA = new CustomTrigger("pf_book_lacewing_bellinympha");
+
 
 
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
@@ -2274,6 +2291,22 @@ public class ModTriggers
             CLICK_MICROCLEIDUS,
             CLICK_OPHTHALMOTHULE,
             CLICK_DRAGONFLY,
+            CLICK_KALLIGRAMMATID_OREGRAMMA,
+            CLICK_KALLIGRAMMATID_MAKARKINIA,
+            CLICK_KALLIGRAMMATID_ITHIGRAMMA,
+            CLICK_KALLIGRAMMATID_SOPHOGRAMMA,
+            CLICK_KALLIGRAMMATID_ABRIGRAMMA,
+            CLICK_LACEWING_AETHEOGRAMMA,
+            CLICK_KALLIGRAMMATID_MEIONEURITES,
+            CLICK_KALLIGRAMMATID_LIASSOPSYCHOPS,
+            CLICK_KALLIGRAMMATID_KALLIGRAMMA,
+            CLICK_LACEWING_LICHENIPOLYSTOECHOTES,
+            CLICK_KALLIGRAMMATID_HUIYINGOGRAMMA,
+            CLICK_KALLIGRAMMATID_APOCHRYSOGRAMMA,
+            CLICK_LACEWING_GRAMMOLINGIA,
+            CLICK_LACEWING_LACCOSMYLUS,
+            CLICK_LACEWING_CRETAPSYCHOPS,
+            CLICK_LACEWING_BELLINYMPHA,
 
 
 

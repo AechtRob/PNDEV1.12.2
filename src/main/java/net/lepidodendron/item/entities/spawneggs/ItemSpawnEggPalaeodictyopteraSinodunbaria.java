@@ -54,7 +54,7 @@ public class ItemSpawnEggPalaeodictyopteraSinodunbaria extends ElementsLepidoden
 
 		@Override
 		public String getPeriod() {
-			return "early Permian";
+			return "Carboniferous";
 		}
 
 		@Override

@@ -3942,6 +3942,30 @@ public class LepidodendronSorter {
     public static final int spiroceras_raw = 4048;
     public static final int eggs_spiroceras = 4049;
     public static final int shell_spiroceras = 4050;
+    public static final int kalligrammatid_kalligramma_raw = 4051;
+    public static final int kalligrammatid_huiyingogramma_raw = 4052;
+    public static final int kalligrammatid_apochrysogramma_raw = 4053;
+    public static final int kalligrammatid_meioneurites_raw = 4054;
+    public static final int kalligrammatid_liassopsychops_raw = 4055;
+    public static final int kalligrammatid_abrigramma_raw = 4056;
+    public static final int kalligrammatid_sophogramma_raw = 4057;
+    public static final int kalligrammatid_ithigramma_raw = 4058;
+    public static final int kalligrammatid_oregramma_raw = 4059;
+    public static final int kalligrammatid_makarkinia_raw = 4060;
+    public static final int lacewing_bellinympha_raw = 4061;
+    public static final int lacewing_aetheogramma_raw = 4062;
+    public static final int lacewing_cretapsychops_raw = 4063;
+    public static final int lacewing_lichenipolystoechotes_raw = 4064;
+    public static final int lacewing_laccosmylus_raw = 4065;
+    public static final int lacewing_grammolingia_raw = 4066;
+    public static final int insect_eggs_kalligrammatid = 4067;
+    public static final int insect_eggs_dragonfly = 4068;
+    public static final int insect_eggs_dragonfly_worldgen = 4069;
+    public static final int insect_eggs_lacewing = 4070;
+
+
+
+
 
 
 

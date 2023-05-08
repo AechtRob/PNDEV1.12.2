@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -30,6 +31,8 @@ public class EntityPrehistoricFloraUtatsusaurus extends EntityPrehistoricFloraAg
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	@SideOnly(Side.CLIENT)
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraUtatsusaurus(World world) {
 		super(world);
@@ -38,12 +41,23 @@ public class EntityPrehistoricFloraUtatsusaurus extends EntityPrehistoricFloraAg
 		maxWidth = 0.53F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 21.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
 	}
 
 	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.4;
 	}
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
+		}
+	}
+
 
 	public static String getPeriod() {return "Triassic";}
 

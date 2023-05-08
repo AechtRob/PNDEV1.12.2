@@ -54,7 +54,7 @@ public class ItemSpawnEggPalaeodictyopteraLycocercus extends ElementsLepidodendr
 
 		@Override
 		public String getPeriod() {
-			return "early Permian";
+			return "Carboniferous";
 		}
 
 		@Override

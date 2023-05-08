@@ -1760,6 +1760,44 @@ public class LepidodendronMod {
 	public static final int ENTITY_OSTENOCARIS = 702;
 	public static final ResourceLocation OSTENOCARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ostenocaris"));
 
+	public static final int ENTITY_KALLIGRAMMATID = 703;
+	public static final ResourceLocation KALLIGRAMMATID_KALLIGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_kalligramma"));
+	public static final ResourceLocation KALLIGRAMMATID_APOCHRYSOGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_apochrysogramma"));
+	public static final ResourceLocation KALLIGRAMMATID_HUIYINGOGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_huiyingogramma"));
+	public static final ResourceLocation KALLIGRAMMATID_LIASSOPSYCHOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_liassopsychops"));
+	public static final ResourceLocation KALLIGRAMMATID_MEIONEURITES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_meioneurites"));
+	public static final ResourceLocation KALLIGRAMMATID_ABRIGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_abrigramma"));
+	public static final ResourceLocation KALLIGRAMMATID_ITHIGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_ithigramma"));
+	public static final ResourceLocation KALLIGRAMMATID_MAKARKINIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_makarkinia"));
+	public static final ResourceLocation KALLIGRAMMATID_OREGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_oregramma"));
+	public static final ResourceLocation KALLIGRAMMATID_SOPHOGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_sophogramma"));
+
+	public static final ResourceLocation KALLIGRAMMATID_KALLIGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_kalligramma_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_APOCHRYSOGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_apochrysogramma_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_HUIYINGOGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_huiyingogramma_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_LIASSOPSYCHOPS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_liassopsychops_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_MEIONEURITES_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_meioneurites_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_ABRIGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_abrigramma_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_ITHIGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_ithigramma_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_MAKARKINIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_makarkinia_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_OREGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_oregramma_jar"));
+	public static final ResourceLocation KALLIGRAMMATID_SOPHOGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kalligrammatid_sophogramma_jar"));
+
+	public static final int ENTITY_LACEWING = 704;
+	public static final ResourceLocation LACEWING_AETHEOGRAMMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_aetheogramma"));
+	public static final ResourceLocation LACEWING_BELLINYMPHA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_bellinympha"));
+	public static final ResourceLocation LACEWING_CRETAPSYCHOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_cretapsychops"));
+	public static final ResourceLocation LACEWING_LACCOSMYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_laccosmylus"));
+	public static final ResourceLocation LACEWING_LICHENIPOLYSTOECHOTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_lichenipolystoechotes"));
+	public static final ResourceLocation LACEWING_GRAMMOLINGIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_grammolingia"));
+	
+	public static final ResourceLocation LACEWING_AETHEOGRAMMA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_aetheogramma_jar"));
+	public static final ResourceLocation LACEWING_BELLINYMPHA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_bellinympha_jar"));
+	public static final ResourceLocation LACEWING_CRETAPSYCHOPS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_cretapsychops_jar"));
+	public static final ResourceLocation LACEWING_LACCOSMYLUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_laccosmylus_jar"));
+	public static final ResourceLocation LACEWING_LICHENIPOLYSTOECHOTES_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_lichenipolystoechotes_jar"));
+	public static final ResourceLocation LACEWING_GRAMMOLINGIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lacewing_grammolingia_jar"));
+
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
