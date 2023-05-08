@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 		if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
 			&& this.getTicks() >= 0
 		) {
-			//Swims faster in water so double the animation speed:
+			//Swims faster in water so triple the animation speed:
 			if (this.getIsFast() || this.isReallyInWater()) {
 				return 3;
 			}

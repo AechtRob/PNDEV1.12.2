@@ -227,6 +227,10 @@ public class ModelPhlegethontia extends AdvancedModelBase {
     public void animMove(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraPhlegethontia entity = (EntityPrehistoricFloraPhlegethontia) entitylivingbaseIn;
 
+        if (entity.animSpeedAdder() <= 0) {
+            partialTickTime = 0; //If it's static don't increment partial ticks either
+        }
+
         int animCycle = 80;
         double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
