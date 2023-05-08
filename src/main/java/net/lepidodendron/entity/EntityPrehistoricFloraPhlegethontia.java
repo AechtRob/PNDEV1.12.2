@@ -5,11 +5,10 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnPhlegethontia;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.base.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,7 +16,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -29,24 +27,37 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
-	//public static final SoundEvent Phlegethontia_ROAR = create("Phlegethontia_roar");
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraPhlegethontia(World world) {
 		super(world);
-		setSize(0.45F, 0.5F);
+		setSize(0.52F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.45F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 18.0D;
+		maxWidth = 0.52F;
+		maxHeight = 0.2F;
+		maxHealthAgeable = 8.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	@Override
@@ -56,7 +67,7 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 
 	public static String getPeriod() {return "Carboniferous - Permian";}
 
-	//public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {
@@ -68,10 +79,26 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 		return false;
 	}
 
+	@Override
+	public int animSpeedAdder() {
+		if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
+			&& this.getTicks() >= 0
+		) {
+			//Swims faster in water so triple the animation speed:
+			if (this.getIsFast() || this.isReallyInWater()) {
+				return 3;
+			}
+			else {
+				return 1;
+			}
+		}
+		return 0;
+	}
+
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.085F;
+		float calcSpeed = 0.13F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.52f;
+			calcSpeed= 0.22f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -99,9 +126,9 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 1.0, 20));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.6, 20));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -110,16 +137,16 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(2, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraAmphibamus.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
+		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
 	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-				|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
+						|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 
@@ -142,7 +169,7 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -153,46 +180,21 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
-		if (this.isReallyInWater()) {
-			return null;
-		}
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:phlegethontia_idle"));
 	}
 
-	//@Override
-	//public SoundEvent getAmbientSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
-	//}
-
-
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-		if (this.isReallyInWater()) {
-			return null;
-		}
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:phlegethontia_hurt"));
 	}
 
-	//@Override
-	//public SoundEvent getHurtSound(DamageSource ds) {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
-	//}
-
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
-		if (this.isReallyInWater()) {
-			return null;
-		}
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:phlegethontia_death"));
 	}
-
-	//@Override
-	//public SoundEvent getDeathSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	//}
 
 	@Override
 	protected float getSoundVolume() {
@@ -226,6 +228,10 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
+			if (this.getOneHit()) {
+				this.setAttackTarget(null);
+				this.setRevengeTarget(null);
+			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -233,9 +239,22 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 	}
 
 	@Override
+	public boolean attackEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+
+	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
+	}
+
+	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 				&& (BlockAmphibianSpawnPhlegethontia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
@@ -266,27 +285,12 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 		}
 	}
 
-	@Override
-	public boolean attackEntityAsMob(Entity entity) {
-		if (this.getAnimation() == NO_ANIMATION) {
-			this.setAnimation(ATTACK_ANIMATION);
-			//System.err.println("set attack");
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.PHLEGETHONTIA_LOOT_YOUNG;
 		}
-		return false;
+		return LepidodendronMod.PHLEGETHONTIA_LOOT;
 	}
-
-	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
-		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
-		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
-	}
-
-
-	//@Nullable
-	//protected ResourceLocation getLootTable() {
-	//	 		if (!this.isPFAdult()) {
-	//		return LepidodendronMod.PHLEGETHONTIA_LOOT_YOUNG;
-	//	}
-	//	return LepidodendronMod.PHLEGETHONTIA_LOOT;
-	//}
 
 }

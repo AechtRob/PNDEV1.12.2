@@ -84,6 +84,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean willGrapple;
     private int alarmCooldown;
     private int warnCooldown;
+    public int ticksExistedAnimated;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -93,6 +94,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    @Override
+    public void onUpdate() {
+        if (!this.updateBlocked) {
+            this.ticksExistedAnimated = this.ticksExistedAnimated + this.animSpeedAdder();
+        }
+        super.onUpdate();
+    }
+
+    public int animSpeedAdder() {
+        if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
+            && this.getTicks() >= 0
+        ) {
+            return 1;
+        }
+        return 0;
     }
 
     public boolean hasPNVariants() {
