@@ -82,6 +82,15 @@ public class EntityPrehistoricFloraHomoeosaurus extends EntityPrehistoricFloraLa
 		return true;
 	}
 
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
 
 	protected float getAISpeedLand() {
 		if (this.getTicks() < 0) {

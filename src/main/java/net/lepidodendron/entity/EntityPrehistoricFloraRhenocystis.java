@@ -157,6 +157,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 		return 1.0F;
 	}
 
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
@@ -165,7 +166,25 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 
 	@Override
 	public void onEntityUpdate() {
+		int i = this.getAir();
 		super.onEntityUpdate();
+
+		if ((this.isEntityAlive() && !isReallyInWater()) //Is not in water
+		)
+		{
+			--i;
+			this.setAir(i);
+
+			if (this.getAir() == -20)
+			{
+				this.setAir(200);
+				this.attackEntityFrom(DamageSource.DROWN, 0.5F);
+			}
+		}
+		else
+		{
+			this.setAir(this.airTime());
+		}
 	}
 
 	@Nullable
