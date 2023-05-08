@@ -345,10 +345,10 @@ public class ModelTemnodontosaurus extends AdvancedModelBase {
         //if (f3 != 0.0F) {this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, 0, f2, 1);}
         if (e.isInWater()) {
             if (!ee.getIsFast()) {
-                this.chainSwing(fishTail, speed * still, 0.35F * still, -3, f2, 0.5F * still);
+                this.chainSwing(fishTail, speed * still, 0.25F * still, -3, f2, 0.5F * still);
             }
             else {
-                this.chainSwing(fishTail, speed * still, 0.45F * still, -3, f2, 0.5F * still);
+                this.chainSwing(fishTail, speed * still, 0.35F * still, -3, f2, 0.5F * still);
             }
             this.chainSwing(upperBody, speed * still, 0.15F, 0, f2, 0.5F *still);
             this.flap(frontleftflipper, (float) (speed * 0.65), 0.4F, false, 0.8F, 0, f2, 0.5F);

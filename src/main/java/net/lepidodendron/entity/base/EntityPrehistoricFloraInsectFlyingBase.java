@@ -49,6 +49,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraInsectFlyingBase.class, DataSerializers.VARINT);
 
     private static final DataParameter<Boolean> SITTING = EntityDataManager.createKey(EntityPrehistoricFloraInsectFlyingBase.class, DataSerializers.BOOLEAN);
@@ -135,11 +137,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         this.dataManager.register(SIT_BLOCK_POS, Optional.absent());
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(MATEABLE, 0);
+        this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
     }
 
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
+        this.setTickOffset(rand.nextInt(1000));
         this.setTicks(0);
         this.setMateable(0);
         return livingdata;
@@ -215,6 +219,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         super.readEntityFromNBT(compound);
         this.dataManager.set(SIT_FACE, EnumFacing.byIndex(compound.getByte("SitFace")));
         this.sitCooldown = compound.getInteger("SitCooldown");
+        this.setTickOffset(compound.getInteger("TickOffset"));
         this.sitTickCt = compound.getInteger("SitTickCt");
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
@@ -232,6 +237,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
+        compound.setInteger("TickOffset", this.getTickOffset());
         compound.setBoolean("Sitting", this.isSitting);
         compound.setByte("SitFace", (byte) this.dataManager.get(SIT_FACE).getIndex());
         BlockPos blockpos = this.getAttachmentPos();
@@ -254,6 +260,14 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     //    this.inPFLove = 0;
     //    super.updateAITasks();
     //}
+
+    public int getTickOffset() {
+        return this.dataManager.get(TICKOFFSET);
+    }
+
+    public void setTickOffset(int ticks) {
+        this.dataManager.set(TICKOFFSET, ticks);
+    }
 
     public EnumFacing getAttachmentFacing() {
         return this.dataManager.get(SIT_FACE);

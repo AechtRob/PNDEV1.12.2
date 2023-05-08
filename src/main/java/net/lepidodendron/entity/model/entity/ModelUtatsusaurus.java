@@ -3,6 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraCymbospondylus;
 import net.lepidodendron.entity.EntityPrehistoricFloraMixosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraUtatsusaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -276,6 +277,7 @@ public class ModelUtatsusaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
         AdvancedModelRenderer[] neckHead = {this.neck, this.head};
 
+
         float speed = 0.24F;
         EntityPrehistoricFloraUtatsusaurus ee = (EntityPrehistoricFloraUtatsusaurus) e;
         if (ee.getIsFast()) {
@@ -288,6 +290,7 @@ public class ModelUtatsusaurus extends AdvancedModelBaseExtended {
         if (!e.isInWater()) {
             speed = 0.8F;
         }
+        ((EntityPrehistoricFloraUtatsusaurus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         //this.head.rotateAngleY += f3 / (180F / (float) Math.PI);
         //this.head.rotateAngleX += f4 / (180F / (float) Math.PI);
@@ -308,12 +311,14 @@ public class ModelUtatsusaurus extends AdvancedModelBaseExtended {
             }
             */
         //Animation values need tweaking
-        if(ee.getIsMoving()) {
-            this.chainSwing(fishTail, speed, 0.4F, 3, f2, 1);
-            this.swing(base, speed, 0.15F, false, 0, 0, f2, 1);
-        }else{
-            this.chainSwing(fishTail, speed*0.5F, 0.3F, 1.5, f2, 1);
-            this.swing(base, speed*0.5F, 0.15F, false, 0, 0, f2, 1);
+        if (e.isInWater()) {
+            if (!ee.getIsFast()) {
+                this.chainSwing(fishTail, speed * still, 0.35F * still, -3, f2, 0.5F * still);
+            }
+            else {
+                this.chainSwing(fishTail, speed * still, 0.45F * still, -3, f2, 0.5F * still);
+            }
+            this.chainSwing(neckHead, speed * still, 0.15F, 0, f2, 0.5F *still);
         }
 
         //this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);

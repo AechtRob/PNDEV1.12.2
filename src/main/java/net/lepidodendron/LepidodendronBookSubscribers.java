@@ -9930,6 +9930,100 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraKalligrammatid) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					switch (((EntityPrehistoricFloraKalligrammatid)event.getTarget()).getPNType()) {
+						case ABRIGRAMMA: default:
+							ModTriggers.CLICK_KALLIGRAMMATID_ABRIGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case APOCHRYSOGRAMMA:
+							ModTriggers.CLICK_KALLIGRAMMATID_APOCHRYSOGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case KALLIGRAMMA:
+							ModTriggers.CLICK_KALLIGRAMMATID_KALLIGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case MEIONEURITES:
+							ModTriggers.CLICK_KALLIGRAMMATID_MEIONEURITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case HUIYINGOGRAMMA:
+							ModTriggers.CLICK_KALLIGRAMMATID_HUIYINGOGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case LIASSOPSYCHOPS:
+							ModTriggers.CLICK_KALLIGRAMMATID_LIASSOPSYCHOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case MAKARKINIA:
+							ModTriggers.CLICK_KALLIGRAMMATID_MAKARKINIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case OREGRAMMA:
+							ModTriggers.CLICK_KALLIGRAMMATID_OREGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case ITHIGRAMMA:
+							ModTriggers.CLICK_KALLIGRAMMATID_ITHIGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+						case SOPHOGRAMMA:
+							ModTriggers.CLICK_KALLIGRAMMATID_SOPHOGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+					}
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraLacewing) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					switch (((EntityPrehistoricFloraLacewing)event.getTarget()).getPNType()) {
+						case AETHEOGRAMMA: default:
+							ModTriggers.CLICK_LACEWING_AETHEOGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case CRETAPSYCHOPS:
+							ModTriggers.CLICK_LACEWING_CRETAPSYCHOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case LACCOSMYLUS:
+							ModTriggers.CLICK_LACEWING_LACCOSMYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case LICHENIPOLYSTOECHOTES:
+							ModTriggers.CLICK_LACEWING_LICHENIPOLYSTOECHOTES.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case BELLINYMPHA:
+							ModTriggers.CLICK_LACEWING_BELLINYMPHA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case GRAMMOLINGIA:
+							ModTriggers.CLICK_LACEWING_GRAMMOLINGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+//						case OREGRAMMA:
+//							ModTriggers.CLICK_KALLIGRAMMATID_OREGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+//							break;
+//
+//						case ITHIGRAMMA:
+//							ModTriggers.CLICK_KALLIGRAMMATID_ITHIGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+//							break;
+//						case SOPHOGRAMMA:
+//							ModTriggers.CLICK_KALLIGRAMMATID_SOPHOGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+//							break;
+
+					}
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 
 
 

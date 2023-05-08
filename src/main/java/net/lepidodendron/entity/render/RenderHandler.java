@@ -4281,6 +4281,18 @@ public class RenderHandler {
                 return new RenderOstenocaris(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKalligrammatid.class, new IRenderFactory<EntityPrehistoricFloraKalligrammatid>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKalligrammatid> createRenderFor(RenderManager manager) {
+                return new RenderKalligrammatid(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLacewing.class, new IRenderFactory<EntityPrehistoricFloraLacewing>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLacewing> createRenderFor(RenderManager manager) {
+                return new RenderLacewing(manager);
+            }
+        });
 
 
 
