@@ -15,6 +15,10 @@ public class RenderPhlegethontia extends RenderLiving<EntityPrehistoricFloraPhle
         super(mgr, new ModelPhlegethontia(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.15F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPhlegethontia entity) {
         return RenderPhlegethontia.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderPhlegethontia extends RenderLiving<EntityPrehistoricFloraPhle
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPhlegethontia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.0F;
     }

@@ -54,7 +54,7 @@ public class ItemSpawnEggPalaeodictyopteraMazothairos extends ElementsLepidodend
 
 		@Override
 		public String getPeriod() {
-			return "early Permian";
+			return "Carboniferous";
 		}
 
 		@Override

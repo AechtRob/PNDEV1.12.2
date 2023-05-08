@@ -584,8 +584,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation RAYONNOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rayonnoceras"));
 	public static final ResourceLocation RAYONNOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rayonnoceras_young"));
 	public static final int ENTITY_PHLEGETHONTIA = 221;
-	//public static final ResourceLocation PHLEGETHONTIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phlegethontia"));
-	//public static final ResourceLocation PHLEGETHONTIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phlegethontia_young"));
+	public static final ResourceLocation PHLEGETHONTIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phlegethontia"));
+	public static final ResourceLocation PHLEGETHONTIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phlegethontia_young"));
 	public static final int ENTITY_PHOLIDERPETON = 222;
 	public static final ResourceLocation PHOLIDERPETON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pholiderpeton"));
 	public static final ResourceLocation PHOLIDERPETON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pholiderpeton_young"));
