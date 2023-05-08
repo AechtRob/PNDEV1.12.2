@@ -7,6 +7,8 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
+import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
+import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
@@ -84,6 +86,10 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
     public boolean hasPNVariants() {
         return false;
+    }
+
+    public ItemStack getDroppedEggItemStack() {
+        return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
 
     @Override
@@ -437,7 +443,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         //Drop an egg perhaps:
         if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
             if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+                ItemStack itemstack = getDroppedEggItemStack();
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }
@@ -508,6 +514,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         if (te != null) {
                             te.getTileData().setString("egg", stringEgg);
                         }
+                        applyVariantToBlockEgg(world, this.getPosition());
                         IBlockState state = world.getBlockState(this.getPosition());
                         this.setLaying(false);
                         world.notifyBlockUpdate(this.getPosition(), state, state, 3);
@@ -517,6 +524,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         if (te != null) {
                             te.getTileData().setString("egg", stringEgg);
                         }
+                        applyVariantToBlockEgg(world, this.getPosition().down());
                         IBlockState state = world.getBlockState(this.getPosition().down());
                         this.setLaying(false);
                         world.notifyBlockUpdate(this.getPosition().down(), state, state, 3);
@@ -542,9 +550,21 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     tileentity.getTileData().setString("PNType", palaeodictyoptera.getPNType().getName());
                 }
             }
-            else {
-                //More variants here:
+            else if (this instanceof EntityPrehistoricFloraLacewing) {
+                EntityPrehistoricFloraLacewing lacewing = (EntityPrehistoricFloraLacewing) this;
+                TileEntity tileentity = world.getTileEntity(pos);
+                if (tileentity != null) {
+                    tileentity.getTileData().setString("PNType", lacewing.getPNType().getName());
+                }
+            }
+            else if (this instanceof EntityPrehistoricFloraKalligrammatid) {
+                EntityPrehistoricFloraKalligrammatid kalligrammatid = (EntityPrehistoricFloraKalligrammatid) this;
+                TileEntity tileentity = world.getTileEntity(pos);
+                if (tileentity != null) {
+                    tileentity.getTileData().setString("PNType", kalligrammatid.getPNType().getName());
+                }
 
+                //More variants here:
             }
         }
     }

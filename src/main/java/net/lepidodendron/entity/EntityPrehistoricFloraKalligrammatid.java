@@ -4,8 +4,8 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsPalaeodictyoptera;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.item.ItemKalligrammatidEggsItem;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -388,18 +388,26 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
+	}
+
+	@Override
+	public IBlockState getEggBlockState() {
+		return null;
+	}
+
+	@Override
+	public ItemStack getDroppedEggItemStack() {
+		ItemStack stack = new ItemStack(ItemKalligrammatidEggsItem.block, (int) (1));
+		NBTTagCompound variantNBT = new NBTTagCompound();
+		variantNBT.setString("PNType", this.getPNType().getName());
+		stack.setTagCompound(variantNBT);
+		return stack;
 	}
 
 	@Override
 	public boolean laysEggs() {
-		return true;
-	}
-
-	//TODO block eggs
-	@Override
-	public IBlockState getEggBlockState() {
-		return null; //BlockInsectEggsKalligrammatid.block.getDefaultState();
+		return false;
 	}
 
 	@Override
@@ -481,6 +489,11 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
+	}
+
+	@Override
+	public ResourceLocation FlightSound() {
+		return new ResourceLocation("lepidodendron:lacewing_flight");
 	}
 
 }
