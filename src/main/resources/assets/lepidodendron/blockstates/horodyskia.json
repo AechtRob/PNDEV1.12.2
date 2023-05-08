@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:horodyskia_0"},
+      {"model": "lepidodendron:horodyskia_1"},
+      {"model": "lepidodendron:horodyskia_2"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:horodyskia_0", "x": 90},
+      {"model": "lepidodendron:horodyskia_1", "x": 90},
+      {"model": "lepidodendron:horodyskia_2", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:horodyskia_0", "x": 90, "y": 90},
+      {"model": "lepidodendron:horodyskia_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:horodyskia_2", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:horodyskia_0", "x": 90, "y": 180},
+      {"model": "lepidodendron:horodyskia_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:horodyskia_2", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:horodyskia_0", "x": 90, "y": 270},
+      {"model": "lepidodendron:horodyskia_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:horodyskia_2", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:horodyskia_0"},
+      {"model": "lepidodendron:horodyskia_1"},
+      {"model": "lepidodendron:horodyskia_2"},
+    {"model": "lepidodendron:horodyskia_0", "y": 90},
+    {"model": "lepidodendron:horodyskia_1", "y": 90},
+    {"model": "lepidodendron:horodyskia_2", "y": 90},
+    {"model": "lepidodendron:horodyskia_0", "y": 180},
+    {"model": "lepidodendron:horodyskia_1", "y": 180},
+    {"model": "lepidodendron:horodyskia_2", "y": 180},
+    {"model": "lepidodendron:horodyskia_0", "y": 270},
+    {"model": "lepidodendron:horodyskia_1", "y": 270},
+    {"model": "lepidodendron:horodyskia_2", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:horodyskia_0", "x": 180},
+      {"model": "lepidodendron:horodyskia_1", "x": 180},
+      {"model": "lepidodendron:horodyskia_2", "x": 180},
+      {"model": "lepidodendron:horodyskia_0", "x": 180, "y": 90},
+      {"model": "lepidodendron:horodyskia_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:horodyskia_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:horodyskia_0", "x": 180, "y": 180},
+      {"model": "lepidodendron:horodyskia_1", "x": 180, "y": 180},
+      {"model": "lepidodendron:horodyskia_2", "x": 180, "y": 180},
+      {"model": "lepidodendron:horodyskia_0", "x": 180, "y": 270},
+      {"model": "lepidodendron:horodyskia_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:horodyskia_2", "x": 180, "y": 270}
+    ]
+  }
+}

@@ -108,7 +108,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(3);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(LEVEL, 0));
 		}
 
 		@Override
@@ -285,7 +285,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Unicellular tube-shaped organism");
-				tooltip.add("Periods: Rhyacian - Orosirian - Statherian - Calymmian - Ectasian - Stenian - Tonian - Cryogenian - Ediacaran");}
+				tooltip.add("Periods: Paleoproterozoic - Mesoproterozoic - Neoproterozoic - Ediacaran");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

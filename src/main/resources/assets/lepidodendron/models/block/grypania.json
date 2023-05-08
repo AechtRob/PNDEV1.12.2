@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "lepidodendron:blocks/grypania",
-    "particle": "lepidodendron:items/grypania_inventory"
-  }
-}

@@ -1,12 +1,8 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -30,8 +26,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -45,16 +43,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:tawuia")
+public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:horodyskia")
 	public static final Block block = null;
-	public BlockTawuia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.tawuia);
+	public BlockHorodyskia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.horodyskia);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("tawuia"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("horodyskia"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -64,20 +62,24 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:tawuia", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockTawuia.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:horodyskia", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockHorodyskia.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:tawuia", BlockTawuia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:horodyskia", BlockHorodyskia.block);
 	}
 
+	public static boolean isPrecambrianUpdated() {
+		//Test a new biome to see if it exists :)
+		Biome TEST_BIOME = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:ediacaran_extreme_hills"));
+		return (TEST_BIOME != null);
+	}
 
 	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
-		
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		int weight = LepidodendronConfigPlants.weightEdiacaran;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
@@ -85,55 +87,118 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
-		boolean biomeCriteria = false;
+		int minWaterDepth;
+		int maxWaterDepth;
+		int startHeight;
+
+		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
-			biomeCriteria = true;
-		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
-			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
-				biomeCriteria = true;
+			dimensionCriteria = true;
+		if (dimID == LepidodendronConfig.dimPrecambrian) {
+			if (BlockHorodyskia.isPrecambrianUpdated()) {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
+					dimensionCriteria = true;
+				}
+				else {
+					dimensionCriteria = false;
+				}
 			}
 			else {
-				biomeCriteria = false;
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+					dimensionCriteria = true;
+				}
 			}
 		}
-		int danglerhelper = 0;
-		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-				|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
-			danglerhelper = 40;
-		}
-
-		if ((dimID == LepidodendronConfig.dimOrdovician
-				|| dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimCarboniferous)
-				|| (dimID == LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimPermian)
-				|| (dimID == LepidodendronConfig.dimTriassic)
-				|| (dimID == LepidodendronConfig.dimJurassic)
-				|| (dimID == LepidodendronConfig.dimCretaceous)
-				|| (dimID == LepidodendronConfig.dimPaleogene)
-				|| (dimID == LepidodendronConfig.dimNeogene)
-				|| (dimID == LepidodendronConfig.dimPleistocene) ) {
-			biomeCriteria = false;
-		}
-		if (!biomeCriteria)
+		if (!dimensionCriteria)
 			return;
 
-		int mulitplier = 1;
-		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-				|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
-			mulitplier = 5;
-		}
+		minWaterDepth = 2;
+		maxWaterDepth = 30;
+		startHeight = world.getSeaLevel() - maxWaterDepth;
 
-		for (int i = 0; i < (int) 16 * mulitplier; i++) {
+		for (int i = 0; i < 50; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128) + danglerhelper;
+			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
+			(new WorldGenReed() {
+				@Override
+				public boolean generate(World world, Random random, BlockPos pos) {
+					for (int i = 0; i < 12; ++i) {
+						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
+							boolean waterDepthCheckMax = false;
+							boolean waterDepthCheckMin = true;
+							//find air within the right depth
+							int yy = 1;
+							while (yy <= maxWaterDepth + 1 && !waterDepthCheckMax) {
+								if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.AIR)
+										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
+									yy = maxWaterDepth + 1;
+								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
+										&& (i11 + yy >= world.getSeaLevel())) {
+									waterDepthCheckMax = true;
+								}
+								yy += 1;
+							}
+							//Check that at least enough water is over the position:
+							yy = 1;
+							while (yy <= minWaterDepth && waterDepthCheckMin) {
+								if (world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER) {
+									waterDepthCheckMin = false;
+								}
+								yy += 1;
+							}
+
+							//figure out a position and facing to place this at!
+							//First try regular uprights and then the rotations:
+							EnumFacing enumfacing = EnumFacing.UP;
+							BlockPos pos1 = blockpos1.down();
+							if (waterDepthCheckMin & waterDepthCheckMax) {
+								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
+										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
+										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
+										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
+										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockHorodyskia.BlockCustom.FACING, enumfacing), 2);
+									return true;
+								} else {
+									for (EnumFacing enumfacing1 : BlockHorodyskia.BlockCustom.FACING.getAllowedValues()) {
+										pos1 = blockpos1;
+
+										if (enumfacing1 == EnumFacing.NORTH) {
+											pos1 = blockpos1.add(0, 0, 1);
+										}
+										if (enumfacing1 == EnumFacing.SOUTH) {
+											pos1 = blockpos1.add(0, 0, -1);
+										}
+										if (enumfacing1 == EnumFacing.EAST) {
+											pos1 = blockpos1.add(-1, 0, 0);
+										}
+										if (enumfacing1 == EnumFacing.WEST) {
+											pos1 = blockpos1.add(1, 0, 0);
+										}
+										if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
+												((world.getBlockState(pos1).getMaterial() == Material.SAND)
+														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+														|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
+														|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
+														|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)
+														|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
+														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
+														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
+												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
+											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockHorodyskia.BlockCustom.FACING, enumfacing1), 2);
+											return true;
+										}
+									}
+								}
+							}
+						}
+					}
+					return true;
+				}
+			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
 
@@ -155,7 +220,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
     
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_tawuia");
+			setTranslationKey("pf_horodyskia");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);
@@ -164,6 +229,12 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -181,11 +252,10 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-		
+		public BlockRenderLayer getRenderLayer() {
+			return BlockRenderLayer.CUTOUT;
+		}
+
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
@@ -427,9 +497,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 	    }
 
 	    public boolean isWaterBlock(World world, BlockPos pos) {
-			if (world.getBlockState(pos).getMaterial() == Material.WATER
-				|| world.getBlockState(pos).getMaterial() == Material.PACKED_ICE
-			) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;
@@ -442,8 +510,8 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Undetermined multicellular organism");
-				tooltip.add("Periods: Paleoproterozoic - Mesoproterozoic - Neoproterozoic - Ediacaran");
+				tooltip.add("Type: Undetermined 5-lateral impression fossil");
+				tooltip.add("Periods: Ediacaran");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

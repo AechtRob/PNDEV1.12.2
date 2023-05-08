@@ -29,16 +29,41 @@
       {"model": "lepidodendron:tawuia_4", "x": 90, "y": 270}
     ],
   "facing=up": [
-      	{"model": "lepidodendron:tawuia_1"},
+      {"model": "lepidodendron:tawuia_1"},
       {"model": "lepidodendron:tawuia_2"},
       {"model": "lepidodendron:tawuia_3"},
-      {"model": "lepidodendron:tawuia_4"}
+      {"model": "lepidodendron:tawuia_4"},
+    {"model": "lepidodendron:tawuia_1", "y": 90 },
+    {"model": "lepidodendron:tawuia_2", "y": 90 },
+    {"model": "lepidodendron:tawuia_3", "y": 90 },
+    {"model": "lepidodendron:tawuia_4", "y": 90 },
+    {"model": "lepidodendron:tawuia_1", "y": 180 },
+    {"model": "lepidodendron:tawuia_2", "y": 180 },
+    {"model": "lepidodendron:tawuia_3", "y": 180 },
+    {"model": "lepidodendron:tawuia_4", "y": 180 },
+    {"model": "lepidodendron:tawuia_1", "y": 270 },
+    {"model": "lepidodendron:tawuia_2", "y": 270 },
+    {"model": "lepidodendron:tawuia_3", "y": 270 },
+    {"model": "lepidodendron:tawuia_4", "y": 270 }
     ],
     "facing=down": [
-      	{"model": "lepidodendron:tawuia_1", "x": 180},
-      {"model": "lepidodendron:tawuia_2", "x": 180},
-      {"model": "lepidodendron:tawuia_3", "x": 180},
-      {"model": "lepidodendron:tawuia_4", "x": 180}
+
+      {"model": "lepidodendron:tawuia_1", "x": 180 },
+      {"model": "lepidodendron:tawuia_2", "x": 180 },
+      {"model": "lepidodendron:tawuia_3", "x": 180 },
+      {"model": "lepidodendron:tawuia_4", "x": 180 },
+      {"model": "lepidodendron:tawuia_1", "x": 180, "y": 90 },
+      {"model": "lepidodendron:tawuia_2", "x": 180, "y": 90 },
+      {"model": "lepidodendron:tawuia_3", "x": 180, "y": 90 },
+      {"model": "lepidodendron:tawuia_4", "x": 180, "y": 90 },
+      {"model": "lepidodendron:tawuia_1", "x": 180, "y": 180 },
+      {"model": "lepidodendron:tawuia_2", "x": 180, "y": 180 },
+      {"model": "lepidodendron:tawuia_3", "x": 180, "y": 180 },
+      {"model": "lepidodendron:tawuia_4", "x": 180, "y": 180 },
+      {"model": "lepidodendron:tawuia_1", "x": 180, "y": 270 },
+      {"model": "lepidodendron:tawuia_2", "x": 180, "y": 270 },
+      {"model": "lepidodendron:tawuia_3", "x": 180, "y": 270 },
+      {"model": "lepidodendron:tawuia_4", "x": 180, "y": 270 }
     ]
   }
 }
