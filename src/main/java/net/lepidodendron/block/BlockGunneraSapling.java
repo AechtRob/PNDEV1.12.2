@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenGigantopterid;
+import net.lepidodendron.procedure.ProcedureWorldGenGunnera;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -154,7 +154,7 @@ public class BlockGunneraSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenGigantopterid.executeProcedure($_dependencies);
+					ProcedureWorldGenGunnera.executeProcedure($_dependencies);
 				}
 	        }
 	    }
@@ -172,7 +172,7 @@ public class BlockGunneraSapling extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canPlaceBlockAt(World world, BlockPos pos) {
 			Block block2 = world.getBlockState(pos.down()).getBlock();
-			return (block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this) || block2 == null);
+			return (((world.getBlockState(pos.down())).getMaterial() == Material.SAND && isReplaceable(world, pos)) || block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this) || block2 == null);
 		}
 
 		public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
