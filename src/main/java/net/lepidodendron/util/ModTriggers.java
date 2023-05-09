@@ -1158,6 +1158,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LACEWING_LACCOSMYLUS = new CustomTrigger("pf_book_lacewing_laccosmylus");
     public static final CustomTrigger CLICK_LACEWING_CRETAPSYCHOPS = new CustomTrigger("pf_book_lacewing_cretapsychops");
     public static final CustomTrigger CLICK_LACEWING_BELLINYMPHA = new CustomTrigger("pf_book_lacewing_bellinympha");
+    public static final CustomTrigger CLICK_SCORPIONFLY = new CustomTrigger("pf_book_scorpionfly");
+    public static final CustomTrigger CLICK_PHILLIPSIA = new CustomTrigger("pf_book_phillipsia");
+    public static final CustomTrigger CLICK_ECHINOCHIMAERA = new CustomTrigger("pf_book_echinochimaera");
 
 
 
@@ -2309,6 +2312,9 @@ public class ModTriggers
             CLICK_LACEWING_LACCOSMYLUS,
             CLICK_LACEWING_CRETAPSYCHOPS,
             CLICK_LACEWING_BELLINYMPHA,
+            CLICK_SCORPIONFLY,
+            CLICK_ECHINOCHIMAERA,
+            CLICK_PHILLIPSIA,
 
 
 

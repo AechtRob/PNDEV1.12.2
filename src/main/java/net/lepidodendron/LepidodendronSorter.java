@@ -3963,6 +3963,18 @@ public class LepidodendronSorter {
     public static final int insect_eggs_dragonfly = 4068;
     public static final int insect_eggs_dragonfly_worldgen = 4069;
     public static final int insect_eggs_lacewing = 4070;
+    public static final int kaykay_raw = 4071;
+    public static final int clarkeiteuthis_raw = 4072;
+    public static final int eggs_clarkeiteuthis = 4073;
+    public static final int insect_eggs_scorpionfly = 4074;
+    public static final int scorpionfly_raw = 4075;
+    public static final int geosaurus_raw = 4076;
+    public static final int ceratosaurus_raw = 4077;
+    public static final int echinochimaera_raw = 4078;
+    public static final int kulindadromeus_raw = 4079;
+    public static final int echinochimaera_f_raw = 4080;
+    public static final int eggs_kulindadromeus = 4081;
+    public static final int eggs_ceratosaurus = 4082;
 
 
 
