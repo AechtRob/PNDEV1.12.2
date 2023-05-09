@@ -16,7 +16,7 @@ public class RenderCeratosaurus extends RenderLiving<EntityPrehistoricFloraCerat
     }
 
     public static float getScaler() {
-        return 0.83F;
+        return 0.87F;
     }
 
     @Override
