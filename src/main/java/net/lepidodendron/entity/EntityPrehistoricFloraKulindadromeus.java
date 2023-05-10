@@ -177,6 +177,12 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
 			}
 
+			if (this.getIsHopping() && (this.getIsFast() || this.isReallyInWater())) {
+				setHopping(false);
+				this.setHopCooldown(this.defaultHopCooldown() + rand.nextInt(500));
+				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
+			}
+
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -272,7 +278,27 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.65F;
 		}
+		if (this.getIsHopping()) {
+			if (!this.getMovingOnLand()) {
+				speedBase =  0.03F; //static moment of the hop animation
+			}
+			else {
+				speedBase = speedBase; //The moving part of the hop animation
+			}
+		}
 		return speedBase;
+	}
+
+	public boolean getMovingOnLand() {
+		int animCycle = 26;
+		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
+		if ((tickAnim >=0 && tickAnim <= 5)
+				|| (tickAnim >=18 && tickAnim <= 26)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
