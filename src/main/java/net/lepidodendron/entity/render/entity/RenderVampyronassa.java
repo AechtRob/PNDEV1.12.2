@@ -8,8 +8,11 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
+import java.util.Calendar;
+
 public class RenderVampyronassa extends RenderLiving<EntityPrehistoricFloraVampyronassa> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa.png");
+    private static final ResourceLocation TEXTURE_HALLOWEEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa_halloween.png");
     public static float getScaler() {
         return 0.7F * 0.4F;
     }
@@ -19,6 +22,12 @@ public class RenderVampyronassa extends RenderLiving<EntityPrehistoricFloraVampy
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraVampyronassa entity) {
+        Calendar calendar = Calendar.getInstance();
+        if (calendar.get(2) + 1 == 10 && calendar.get(5) >= 31
+            || calendar.get(2) + 1 == 11 && calendar.get(5) <= 1 )
+        {
+            return RenderVampyronassa.TEXTURE_HALLOWEEN;
+        }
         return RenderVampyronassa.TEXTURE;
     }
 
