@@ -61,6 +61,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HYDRANGEA = new CustomTrigger("pf_book_hydrangea");
     public static final CustomTrigger CLICK_EMBOTHRIUM = new CustomTrigger("pf_book_embothrium");
     public static final CustomTrigger CLICK_AMBORELLA = new CustomTrigger("pf_book_amborella");
+    public static final CustomTrigger CLICK_ILICIUM = new CustomTrigger("pf_book_ilicium");
     public static final CustomTrigger CLICK_CALYCANTHUS = new CustomTrigger("pf_book_calycanthus");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
@@ -260,6 +261,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MACROTAENIOPTERIS = new CustomTrigger("pf_book_macrotaeniopteris");
     public static final CustomTrigger CLICK_MAGNOLIA = new CustomTrigger("pf_book_magnolia");
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
+    public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
     public static final CustomTrigger CLICK_MEDULLOSALES = new CustomTrigger("pf_book_medullosales");
     public static final CustomTrigger CLICK_MIRABILIS = new CustomTrigger("pf_book_mirabilis");
@@ -1223,6 +1225,7 @@ public class ModTriggers
             CLICK_HYDRANGEA,
             CLICK_EMBOTHRIUM,
             CLICK_AMBORELLA,
+            CLICK_ILICIUM,
             CLICK_CALYCANTHUS,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,
@@ -1422,6 +1425,7 @@ public class ModTriggers
             CLICK_MACROTAENIOPTERIS,
             CLICK_MAGNOLIA,
             CLICK_MAPLE,
+            CLICK_GUNNERA,
             CLICK_MARATTIA,
             CLICK_MEDULLOSALES,
             CLICK_MIRABILIS,

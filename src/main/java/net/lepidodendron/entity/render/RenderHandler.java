@@ -4423,6 +4423,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockMicrovictoriaFlower.TileEntityCustom.class, new RenderFlowerMicrovictoria());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockMicrovictoriaFlowerPlaceable.TileEntityCustom.class, new RenderFlowerMicrovictoriaPlaceable());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockAristolochiaFlower.TileEntityCustom.class, new RenderFlowerAristolochia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockIliciumFlower.TileEntityCustom.class, new RenderFlowerIlicium());
 
 
         //Rotten log and eggs:

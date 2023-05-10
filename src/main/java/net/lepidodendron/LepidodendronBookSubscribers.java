@@ -334,6 +334,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ilicium_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ILICIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:calycanthus_sapling"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
@@ -1886,6 +1895,15 @@ public class LepidodendronBookSubscribers {
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_HIRONOIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:gunnera_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GUNNERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
