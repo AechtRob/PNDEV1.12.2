@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
 	"textures": {
 		"0": "lepidodendron:blocks/gunnera_base",
 		"particle": "lepidodendron:blocks/gunnera_base"
@@ -13,8 +13,7 @@
 				"east": {"uv": [5, 0, 11, 9], "texture": "#0"},
 				"south": {"uv": [5, 0, 11, 9], "texture": "#0"},
 				"west": {"uv": [5, 0, 11, 9], "texture": "#0"},
-				"up": {"uv": [5, 5, 11, 11], "texture": "#0"},
-				"down": {"uv": [5, 5, 11, 11], "texture": "#0"}
+				"up": {"uv": [5, 5, 11, 11], "texture": "#0", "cullface":  "up"}
 			}
 		}
 	]
