@@ -16,7 +16,7 @@ public class RenderKulindadromeus extends RenderLiving<EntityPrehistoricFloraKul
     }
 
     public static float getScaler() {
-        return 0.905F;
+        return 0.45F;
     }
 
     @Override

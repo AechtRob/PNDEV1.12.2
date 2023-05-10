@@ -752,9 +752,14 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_scorpionfly", EntityPrehistoricFloraScorpionfly.class, LepidodendronMod.ENTITY_SCORPIONFLY, 48,-4691661,-5799873);
         registerEntity("prehistoric_flora_geosaurus", EntityPrehistoricFloraGeosaurus.class, LepidodendronMod.ENTITY_GEOSAURUS, 84,-11315125,-11579582);
         registerEntity("prehistoric_flora_kaykay", EntityPrehistoricFloraKaykay.class, LepidodendronMod.ENTITY_KAYKAY, 84,-10918790,-592143);
-//        registerEntity("prehistoric_flora_kulindadromeus", EntityPrehistoricFloraKulindadromeus.class, LepidodendronMod.ENTITY_KULINDADROMEUS, 64,-10521775,0);
-        registerEntity("prehistoric_flora_ceratosaurus", EntityPrehistoricFloraCeratosaurus.class, LepidodendronMod.ENTITY_CERATOSAURUS, 164,-10521775,0);
-        registerEntity("prehistoric_flora_echinochimaera", EntityPrehistoricFloraEchinochimaera.class, LepidodendronMod.ENTITY_ECHINOCHIMAERA, 48,-10521775,0);
+//        registerEntity("prehistoric_flora_kulindadromeus", EntityPrehistoricFloraKulindadromeus.class, LepidodendronMod.ENTITY_KULINDADROMEUS, 64,-11519451,-3489498);
+        registerEntity("prehistoric_flora_ceratosaurus", EntityPrehistoricFloraCeratosaurus.class, LepidodendronMod.ENTITY_CERATOSAURUS, 164,-8230583,-13555681);
+        registerEntity("prehistoric_flora_echinochimaera", EntityPrehistoricFloraEchinochimaera.class, LepidodendronMod.ENTITY_ECHINOCHIMAERA, 48,-14009157,-1402816);
+
+        registerEntity("prehistoric_flora_cenoceras", EntityPrehistoricFloraCenoceras.class, LepidodendronMod.ENTITY_CENOCERAS, 64,-4693940,-11718871);
+        registerEntity("prehistoric_flora_spiroceras", EntityPrehistoricFloraSpiroceras.class, LepidodendronMod.ENTITY_SPIROCERAS, 48,-13679826,-1348713);
+        registerEntity("prehistoric_flora_coccoderma", EntityPrehistoricFloraCoccoderma.class, LepidodendronMod.ENTITY_COCCODERMA, 64,-10794657 ,-3166591);
+        registerEntity("prehistoric_flora_morrolepis", EntityPrehistoricFloraMorrolepis.class, LepidodendronMod.ENTITY_MORROLEPIS, 48,-9476772,-3422527);
 
 
 

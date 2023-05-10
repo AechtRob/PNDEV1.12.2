@@ -1819,6 +1819,16 @@ public class LepidodendronMod {
 	public static final int ENTITY_ECHINOCHIMAERA = 711;
 	public static final ResourceLocation ECHINOCHIMAERA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/echinochimaera"));
 	public static final ResourceLocation ECHINOCHIMAERA_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/echinochimaera_f"));
+	public static final int ENTITY_MORROLEPIS = 712;
+	public static final ResourceLocation MORROLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/morrolepis"));
+	public static final int ENTITY_COCCODERMA = 713;
+	public static final ResourceLocation COCCODERMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/coccoderma"));
+	public static final int ENTITY_SPIROCERAS = 714;
+	public static final ResourceLocation SPIROCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/spiroceras"));
+	public static final ResourceLocation SPIROCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/spiroceras_young"));
+	public static final int ENTITY_CENOCERAS = 715;
+	public static final ResourceLocation CENOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cenoceras"));
+	public static final ResourceLocation CENOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cenoceras_young"));
 
 
 	@Mod.EventHandler

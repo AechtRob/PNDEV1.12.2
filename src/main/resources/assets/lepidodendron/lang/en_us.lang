@@ -7661,5 +7661,16 @@ item.pf_spawn_egg_lacewing_lichenipolystoechotes=Spawn Lichenipolystoechotes Lac
 item.pf_spawn_egg_lacewing_cretapsychops=Spawn Cretapsychops Lacewing
 item.pf_spawn_egg_lacewing_aetheogramma=Spawn Aetheogramma Lacewing
 item.pf_eggs_clarkeiteuthis.name=Clarkeiteuthis Eggs
+item.pf_eggs_kulindadromeus.name=Kulindadromeus Eggs
+item.pf_eggs_ceratosaurus.name=Ceratosaurus Eggs
+item.pf_eggs_cenoceras.name=Cenoceras Eggs
+tile.pf_shell_cenoceras.name=Cenoceras Shell
+item.pf_eggs_spiroceras.name=Spiroceras Eggs
+tile.pf_shell_spiroceras.name=Spiroceras Shell
+advancements.pf_adv_book_echinochimaera.description=Unlock the entry for Echinochimaera in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_echinochimaera.title=Echinochimaera
+item.pf_echinochimaera_raw.name=Raw Echinochimaera
+entity.prehistoric_flora_echinochimaera.name=Echinochimaera
+
 
 

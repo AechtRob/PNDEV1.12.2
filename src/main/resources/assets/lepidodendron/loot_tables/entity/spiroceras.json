@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "elephantoceras",
+      "name": "spiroceras",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:elephantoceras_raw",
+          "name": "lepidodendron:spiroceras_raw",
           "weight": 1,
           "functions": [
             {
@@ -21,12 +21,12 @@
       ]
     },
     {
-      "name": "elephantoceras",
+      "name": "spiroceras",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:eggs_elephantoceras",
+          "name": "lepidodendron:eggs_spiroceras",
           "weight": 1,
           "functions": [
             {
@@ -41,12 +41,12 @@
       ]
     },
     {
-      "name": "elephantoceras",
+      "name": "spiroceras",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:shell_elephantoceras",
+          "name": "lepidodendron:shell_spiroceras",
           "weight": 1,
           "functions": [
             {
