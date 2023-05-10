@@ -92,9 +92,9 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.349f;
+		float AIspeed = 0.2f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.5F;
+			AIspeed = AIspeed * 1.5F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

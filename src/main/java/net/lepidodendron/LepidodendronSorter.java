@@ -3975,6 +3975,7 @@ public class LepidodendronSorter {
     public static final int echinochimaera_f_raw = 4080;
     public static final int eggs_kulindadromeus = 4081;
     public static final int eggs_ceratosaurus = 4082;
+    public static final int shell_cenoceras = 4083;
 
 
 

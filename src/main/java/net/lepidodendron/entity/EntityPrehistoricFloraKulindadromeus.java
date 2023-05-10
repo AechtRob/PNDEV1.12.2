@@ -46,6 +46,8 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;
+	private int hopTicks;
+	private int walkTicks;
 
 	public EntityPrehistoricFloraKulindadromeus(World world) {
 		super(world);
@@ -65,6 +67,10 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
 		}
+	}
+
+	public boolean isHopping(){
+		return hopTicks>0;
 	}
 
 	@Override
@@ -337,6 +343,17 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
+		hopTicks--;
+		walkTicks--;
+		if(hopTicks<0){
+			hopTicks=0;
+		}
+		if(walkTicks<0){
+			walkTicks=0;
+		}
+		if(!(hopTicks>0)){
+
+		}
 		if (this.getAnimation() != DRINK_ANIMATION) {
 			this.renderYawOffset = this.rotationYaw;
 		}
