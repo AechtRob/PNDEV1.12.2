@@ -19,6 +19,10 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -46,8 +50,11 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;
-	private int hopTicks;
-	private int walkTicks;
+
+	private static final DataParameter<Boolean> HOPPING = EntityDataManager.createKey(EntityPrehistoricFloraKulindadromeus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Integer> HOPCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraKulindadromeus.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> WANDERCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraKulindadromeus.class, DataSerializers.VARINT);
+
 
 	public EntityPrehistoricFloraKulindadromeus(World world) {
 		super(world);
@@ -61,16 +68,136 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		}
 	}
 
+	//***********************
+	//Hopping managers:
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(HOPPING, false);
+		this.dataManager.register(HOPCOOLDOWN, 0);
+		this.dataManager.register(WANDERCOOLDOWN, 0);
+	}
+
+	public int getWanderCooldown() {
+		return this.dataManager.get(WANDERCOOLDOWN);
+	}
+
+	public void setWanderCooldown(int WanderCooldown) {
+		this.dataManager.set(WANDERCOOLDOWN, WanderCooldown);
+	}
+
+	public int getHopCooldown() {
+		return this.dataManager.get(HOPCOOLDOWN);
+	}
+
+	public void setHopCooldown(int HopCooldown) {
+		this.dataManager.set(HOPCOOLDOWN, HopCooldown);
+	}
+
+	public boolean getIsHopping() {
+		return this.dataManager.get(HOPPING);
+	}
+
+	public void setHopping(boolean hopping) {
+		this.dataManager.set(HOPPING, hopping);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setHopCooldown(compound.getInteger("HopCooldown"));
+		this.setWanderCooldown(compound.getInteger("WanderCooldown"));
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setInteger("HopCooldown", this.getHopCooldown());
+		compound.setInteger("WanderCooldown", this.getWanderCooldown());
+	}
+
+	public int defaultHopCooldown() {
+		return 500;
+	}
+
+	public int defaultWanderCooldown() {
+		return 500;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+		super.onEntityUpdate();
+
+		if (!this.world.isRemote) {
+			if (this.getIsHopping() && this.getWanderCooldown() <= 0) {
+				this.setHopping(false);
+				this.setHopCooldown(this.defaultHopCooldown() + rand.nextInt(500));
+				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
+			} else {
+				if (this.getHopCooldown() >= 0 && !this.getIsHopping()) {
+					this.setHopCooldown(this.getHopCooldown() - 1);
+				}
+				if (this.getWanderCooldown() >= 0 && this.getIsHopping()) {
+					this.setWanderCooldown(this.getWanderCooldown() - 1);
+				}
+			}
+		}
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		if (this.getAnimation() != DRINK_ANIMATION) {
+			this.renderYawOffset = this.rotationYaw;
+		}
+		if (this.getAnimation() == DRINK_ANIMATION) {
+			EnumFacing facing = this.getAdjustedHorizontalFacing();
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+		}
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
+		if (!this.world.isRemote) {
+			if (this.getHopCooldown() <= 0) {
+				setHopping(true);
+				this.setHopCooldown(this.defaultHopCooldown() + rand.nextInt(500));
+				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
+			}
+
+			if (this.getWanderCooldown() <= 0) {
+				setHopping(false);
+				this.setHopCooldown(this.defaultHopCooldown() + rand.nextInt(500));
+				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
+			}
+
+			if (this.getIsHopping() && (this.getIsFast() || this.isReallyInWater() || this.getScreaming())) {
+				setHopping(false);
+				this.setHopCooldown(this.defaultHopCooldown() + rand.nextInt(500));
+				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
+			}
+
+		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	//End of hopping managers
+	//***********************
+
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
 		}
-	}
-
-	public boolean isHopping(){
-		return hopTicks>0;
 	}
 
 	@Override
@@ -151,7 +278,27 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.65F;
 		}
+		if (this.getIsHopping()) {
+			if (!this.getMovingOnLand()) {
+				speedBase =  0.03F; //static moment of the hop animation
+			}
+			else {
+				speedBase = speedBase; //The moving part of the hop animation
+			}
+		}
 		return speedBase;
+	}
+
+	public boolean getMovingOnLand() {
+		int animCycle = 26;
+		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
+		if ((tickAnim >=0 && tickAnim <= 5)
+				|| (tickAnim >=18 && tickAnim <= 26)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
@@ -338,39 +485,6 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
-
-	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		hopTicks--;
-		walkTicks--;
-		if(hopTicks<0){
-			hopTicks=0;
-		}
-		if(walkTicks<0){
-			walkTicks=0;
-		}
-		if(!(hopTicks>0)){
-
-		}
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			launchAttack();
-		}
-
-		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
-
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
-	}
 
 	@Override
 	public void launchAttack() {
@@ -416,17 +530,6 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 			//System.err.println("set attack");
 		}
 		return false;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		if (this.alarmCooldown > 0) {
-			this.alarmCooldown -= 1;
-		}
-		if (this.getScreaming() && alarmCooldown <= 0) {
-			this.playAlarmSound();
-		}
-		super.onEntityUpdate();
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

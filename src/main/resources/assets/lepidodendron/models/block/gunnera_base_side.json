@@ -1,0 +1,20 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/gunnera_base",
+		"particle": "lepidodendron:blocks/gunnera_base"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 0],
+			"to": [11, 6, 4],
+			"faces": {
+				"north": {"uv": [5, 10, 11, 16], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [12, 10, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 10, 4, 16], "texture": "#0"},
+				"up": {"uv": [0, 12, 6, 16], "texture": "#0"},
+				"down": {"uv": [0, 12, 6, 16], "texture": "#0"}
+			}
+		}
+	]
+}

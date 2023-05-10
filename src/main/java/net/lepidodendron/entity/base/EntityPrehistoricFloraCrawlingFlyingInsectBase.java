@@ -560,8 +560,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     }
 
-
-
     public ResourceLocation FlightSound() {
         return new ResourceLocation("lepidodendron:bug_flight");
     }
@@ -602,7 +600,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     {
         return this.laying;
     }
-
 
     @Override
     public SoundEvent getDeathSound() {

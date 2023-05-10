@@ -1,0 +1,28 @@
+{
+    "multipart": [
+        {   "apply": { "model": "lepidodendron:gunnera_base" }
+        },
+        {   "apply": [
+                { "model": "lepidodendron:gunnera_base_flowers_1" },
+                { "model": "lepidodendron:gunnera_base_flowers_2" },
+                { "model": "lepidodendron:gunnera_base_flowers_1", "y": 90 },
+                { "model": "lepidodendron:gunnera_base_flowers_2", "y": 90 }
+            ]
+        },
+        {   "when": { "north": true },
+            "apply": { "model": "lepidodendron:gunnera_base_side" }
+        },
+        {   "when": { "east": true },
+            "apply": { "model": "lepidodendron:gunnera_base_side", "y": 90 }
+        },
+        {   "when": { "south": true },
+            "apply": { "model": "lepidodendron:gunnera_base_side", "y": 180 }
+        },
+        {   "when": { "west": true },
+            "apply": { "model": "lepidodendron:gunnera_base_side", "y": 270 }
+        },
+        {
+            "apply": { "model": "lepidodendron:gunnera_base_top" }
+        }
+    ]
+}
