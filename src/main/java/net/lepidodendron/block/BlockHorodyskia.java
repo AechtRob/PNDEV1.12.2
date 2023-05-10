@@ -510,8 +510,8 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Undetermined 5-lateral impression fossil");
-				tooltip.add("Periods: Ediacaran");
+				tooltip.add("Type: Undetermined organism");
+				tooltip.add("Periods: Mesoproterozoic [- early Neoproterozoic]");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
