@@ -177,7 +177,7 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
 			}
 
-			if (this.getIsHopping() && (this.getIsFast() || this.isReallyInWater())) {
+			if (this.getIsHopping() && (this.getIsFast() || this.isReallyInWater() || this.getScreaming())) {
 				setHopping(false);
 				this.setHopCooldown(this.defaultHopCooldown() + rand.nextInt(500));
 				this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
