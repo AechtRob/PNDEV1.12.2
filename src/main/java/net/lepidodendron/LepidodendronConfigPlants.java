@@ -2007,6 +2007,13 @@ public class LepidodendronConfigPlants {
     public static int minheightEremopteris = 1;
     public static int maxheightEremopteris = 90;
     public static double multiplierEremopteris = 1;
+    public static boolean genHemp = false;
+    public static String[] genHempBlacklistBiomes = new String[0];
+    public static String[] genHempOverrideBiomes = new String[0];
+    public static int[] dimHemp = new int[]{0};
+    public static int minheightHemp = 1;
+    public static int maxheightHemp = 90;
+    public static double multiplierHemp = 1;
     public static boolean genAdoketophyton = false;
     public static String[] genAdoketophytonBlacklistBiomes = new String[0];
     public static String[] genAdoketophytonOverrideBiomes = new String[0];
@@ -8717,6 +8724,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Eremopteris", "multiplierEremopteris", multiplierEremopteris);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierEremopteris = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Hemp", "genHemp", genHemp);
+        prop.setComment("Set to true to generate Hemp naturally [default: false]");
+        genHemp = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hemp", "genHempBlacklistBiomes", genHempBlacklistBiomes);
+        prop.setComment("List of biomes Hemp are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genHempBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hemp", "genHempOverrideBiomes", genHempOverrideBiomes);
+        prop.setComment("List of biomes Hemp are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genHempOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Hemp", "dimHemp", dimHemp);
+        prop.setComment("List of dimension IDs Hemp can generate in [default: 0]");
+        dimHemp = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hemp", "minheightHemp", minheightHemp);
+        prop.setComment("Minimum height that Hemp can generate (1 to 250) [default: 1]");
+        minheightHemp = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hemp", "maxheightHemp", maxheightHemp);
+        prop.setComment("Maximum height that Hemp can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightHemp = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hemp", "multiplierHemp", multiplierHemp);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierHemp = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Adoketophyton", "genAdoketophyton", genAdoketophyton);

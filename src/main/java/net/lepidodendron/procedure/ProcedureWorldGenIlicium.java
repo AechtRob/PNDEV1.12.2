@@ -36,7 +36,8 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		double TreeHeight = 0;
+		int TreeHeight = 0;
+		int TreeRadius = 0;
 		
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
 		if ((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))
@@ -51,14 +52,16 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			//Tree height: 4-9 blocks
-			TreeHeight = 4 + Math.round(Math.random() * 5);
+			TreeHeight = 4 + (int)Math.round(Math.random() * 5);
+			TreeRadius = 1 + (int)Math.round(Math.random() * 3);
 			int yy = 0;
+			int step = 0;
 			while (yy <= TreeHeight) {
-				int xx = - ((int)TreeHeight - yy - 3);
-				while (xx <= ((int)TreeHeight - yy - 3)) {
-					int zz = - ((int)TreeHeight - yy - 3);
-					while (zz <= ((int)TreeHeight - yy - 3)) {
-						if (Math.pow(xx, 2) + Math.pow(zz, 2) <= Math.pow((int)TreeHeight - yy - 3, 2)) {
+				int xx = - (TreeRadius - step);
+				while (xx <= (TreeRadius - step)) {
+					int zz = - (TreeRadius - step);
+					while (zz <= (TreeRadius - step)) {
+						if (Math.pow(xx, 2) + Math.pow(zz, 2) <= Math.pow((TreeRadius - step), 2)) {
 							//Check if we have a support block:
 							BlockPos placePos = new BlockPos(x, y, z).add(xx, yy, zz);
 							if (yy != 0 && world.rand.nextInt(5) == 0) {
@@ -87,22 +90,19 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 								}
 							}
 						}
-						if (world.rand.nextInt(8) != 0) {
-							zz++;
-						}
+						zz++;
 					}
-					if (world.rand.nextInt(8) != 0) {
-						xx++;
-					}
+					xx++;
 				}
 				yy ++;
+				step = step + world.rand.nextInt(2);
 			}
 
 		}
 	}
 
 	public static void addFlower(World world, BlockPos pos) {
-		if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(6) == 0
+		if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(5) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {
 			world.setBlockState(pos.up(), BlockIliciumFlower.block.getDefaultState(), 3);
@@ -115,7 +115,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 			switch (ii) {
 				case 0:
 				default:
-					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(8) == 0
+					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.north()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.north()).getMaterial() != Material.LEAVES) {
 						world.setBlockState(pos.north(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
@@ -127,7 +127,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					break;
 
 				case 1:
-					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(8) == 0
+					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.east()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.east()).getMaterial() != Material.LEAVES) {
 						world.setBlockState(pos.east(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
@@ -139,7 +139,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					break;
 
 				case 2:
-					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(8) == 0
+					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.south()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.south()).getMaterial() != Material.LEAVES) {
 						world.setBlockState(pos.south(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
@@ -151,7 +151,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					break;
 
 				case 3:
-					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(8) == 0
+					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.west()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.west()).getMaterial() != Material.LEAVES) {
 						world.setBlockState(pos.west(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.WEST), 3);

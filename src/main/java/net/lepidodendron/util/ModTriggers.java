@@ -206,6 +206,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EQUISETITES_REED = new CustomTrigger("pf_book_equisetites_reed");
     public static final CustomTrigger CLICK_EQUISETITES = new CustomTrigger("pf_book_equisetites");
     public static final CustomTrigger CLICK_EREMOPTERIS = new CustomTrigger("pf_book_eremopteris");
+    public static final CustomTrigger CLICK_HEMP = new CustomTrigger("pf_book_hemp");
     public static final CustomTrigger CLICK_ESCUMASIA = new CustomTrigger("pf_book_escumasia");
     public static final CustomTrigger CLICK_FACIVERMIS = new CustomTrigger("pf_book_facivermis");
     public static final CustomTrigger CLICK_FERN_EPIPHYTE = new CustomTrigger("pf_book_fern_epiphyte");
@@ -1378,6 +1379,7 @@ public class ModTriggers
             CLICK_EQUISETITES_REED,
             CLICK_EQUISETITES,
             CLICK_EREMOPTERIS,
+            CLICK_HEMP,
             CLICK_ESCUMASIA,
             CLICK_FACIVERMIS,
             CLICK_FERN_EPIPHYTE,
