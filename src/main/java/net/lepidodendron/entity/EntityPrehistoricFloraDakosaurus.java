@@ -72,7 +72,7 @@ public class EntityPrehistoricFloraDakosaurus extends EntityPrehistoricFloraAgea
 		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic - Cretaceous";}
 
 	@Override
 	public int airTime() {

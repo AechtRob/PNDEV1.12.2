@@ -3548,21 +3548,7 @@ public class LepidodendronSorter {
     public static final int wielandiella = 3544;
     public static final int wielandiella_top = 3545;
     public static final int willwerathia_raw = 3546;
-    public static final int wing_clatrotitan = 3547;
     public static final int wingertshellicus_raw = 3548;
-    public static final int wing_gerarus = 3549;
-    public static final int wing_gigatitan = 3550;
-    public static final int wing_meganeura = 3551;
-    public static final int wing_meganeuropsis = 3552;
-    public static final int wing_mesotitan = 3553;
-    public static final int wing_palaeodictyoptera_delitzschala = 3554;
-    public static final int wing_palaeodictyoptera_dunbaria = 3555;
-    public static final int wing_palaeodictyoptera_homaloneura = 3556;
-    public static final int wing_palaeodictyoptera_homoioptera = 3557;
-    public static final int wing_palaeodictyoptera_lithomantis = 3558;
-    public static final int wing_palaeodictyoptera_lycocercus = 3559;
-    public static final int wing_palaeodictyoptera_mazothairos = 3560;
-    public static final int wing_palaeodictyoptera_sinodunbaria = 3561;
     public static final int wing_palaeodictyoptera_stenodictya = 3562;
     public static final int wire_mesh_fence = 3563;
     public static final int wiwaxia_raw = 3564;
@@ -3682,6 +3668,17 @@ public class LepidodendronSorter {
     public static final int eggs_kulindadromeus = 4081;
     public static final int eggs_ceratosaurus = 4082;
     public static final int shell_cenoceras = 4083;
+    public static final int wing_meganeurites = 4084;
+    public static final int meganeurites_raw = 4085;
+    public static final int insect_eggs_meganeurites = 4086;
+    public static final int daohugoucossus_raw = 4087;
+    public static final int insect_eggs_daohugoucossus = 4088;
+    public static final int megasecoptera_sylvohymen_raw = 4089;
+    public static final int insect_eggs_megasecoptera = 4090;
+    public static final int panacanthocaris_raw = 4091;
+    public static final int trachymetopon_raw = 4092;
+    public static final int insect_eggs_meganeurites_worldgen = 4093;
+    public static final int insect_eggs_megasecoptera_worldgen = 4094;
 
 
 

@@ -1829,6 +1829,21 @@ public class LepidodendronMod {
 	public static final int ENTITY_CENOCERAS = 715;
 	public static final ResourceLocation CENOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cenoceras"));
 	public static final ResourceLocation CENOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cenoceras_young"));
+	public static final int ENTITY_MEGANEURITES = 716;
+	public static final ResourceLocation MEGANEURITES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/meganeurites"));
+	public static final ResourceLocation MEGANEURITES_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/meganeurites_jar"));
+	public static final int ENTITY_DAOHUGOUCOSSUS = 717;
+	public static final ResourceLocation DAOHUGOUCOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/daohugoucossus"));
+	public static final int ENTITY_MEGASECOPTERA = 718;
+	public static final ResourceLocation SYLVOHYMEN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megasecoptera_sylvohymen"));
+	public static final ResourceLocation SYLVOHYMEN_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megasecoptera_sylvohymen_jar"));
+	public static final int ENTITY_PANACANTHOCARIS = 719;
+	public static final ResourceLocation PANACANTHOCARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/panacanthocaris"));
+	public static final int ENTITY_TRACHYMETOPON = 720;
+	public static final ResourceLocation TRACHYMETOPON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trachymetopon"));
+	public static final ResourceLocation TRACHYMETOPON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trachymetopon_young"));
+	public static final int ENTITY_MEGANEURITES_NYMPH = 721;
+	public static final int ENTITY_MEGASECOPTERA_NYMPH = 722;
 
 
 	@Mod.EventHandler

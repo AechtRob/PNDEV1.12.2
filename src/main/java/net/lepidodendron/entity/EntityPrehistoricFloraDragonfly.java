@@ -203,37 +203,7 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	}
 
 	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case DRAGONFLY1: default:
-				return LepidodendronMod.DRAGONFLY1_LOOT;
-
-			case DRAGONFLY2:
-				return LepidodendronMod.DRAGONFLY2_LOOT;
-
-			case DRAGONFLY3:
-				return LepidodendronMod.DRAGONFLY3_LOOT;
-
-			case DRAGONFLY4:
-				return LepidodendronMod.DRAGONFLY4_LOOT;
-
-			case DRAGONFLY5:
-				return LepidodendronMod.DRAGONFLY5_LOOT;
-
-			case DRAGONFLY6:
-				return LepidodendronMod.DRAGONFLY6_LOOT;
-
-			case DRAGONFLY7:
-				return LepidodendronMod.DRAGONFLY7_LOOT;
-
-			case DRAGONFLY8:
-				return LepidodendronMod.DRAGONFLY8_LOOT;
-
-			case DRAGONFLY9:
-				return LepidodendronMod.DRAGONFLY9_LOOT;
-
-			case DRAGONFLY10:
-				return LepidodendronMod.DRAGONFLY10_LOOT;
-		}
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 	public float getFlySpeed() {
@@ -479,6 +449,11 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
+	}
+
+	@Override
+	public ResourceLocation FlightSound() {
+		return new ResourceLocation("lepidodendron:dragonfly_flight");
 	}
 
 }

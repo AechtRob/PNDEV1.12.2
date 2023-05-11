@@ -41,6 +41,11 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:fossils/fossil_megasecoptera_sylvohymen_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_daohugoucossus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_meganeurites_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_trachymetopon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_panacanthocaris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_spiroceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cenoceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_coccoderma_clean", "inventory"),

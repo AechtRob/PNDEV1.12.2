@@ -1164,6 +1164,11 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SCORPIONFLY = new CustomTrigger("pf_book_scorpionfly");
     public static final CustomTrigger CLICK_PHILLIPSIA = new CustomTrigger("pf_book_phillipsia");
     public static final CustomTrigger CLICK_ECHINOCHIMAERA = new CustomTrigger("pf_book_echinochimaera");
+    public static final CustomTrigger CLICK_MEGASECOPTERA_SYLVOHYMEN = new CustomTrigger("pf_book_megasecoptera_sylvohymen");
+    public static final CustomTrigger CLICK_DAOHUGOUCOSSUS = new CustomTrigger("pf_book_daohugoucossus");
+    public static final CustomTrigger CLICK_MEGANEURITES = new CustomTrigger("pf_book_meganeurites");
+    public static final CustomTrigger CLICK_TRACHYMETOPON = new CustomTrigger("pf_book_trachymetopon");
+    public static final CustomTrigger CLICK_PANACANTHOCARIS = new CustomTrigger("pf_book_panacanthocaris");
 
 
 
@@ -2321,6 +2326,11 @@ public class ModTriggers
             CLICK_SCORPIONFLY,
             CLICK_ECHINOCHIMAERA,
             CLICK_PHILLIPSIA,
+            CLICK_MEGASECOPTERA_SYLVOHYMEN,
+            CLICK_MEGANEURITES,
+            CLICK_DAOHUGOUCOSSUS,
+            CLICK_PANACANTHOCARIS,
+            CLICK_TRACHYMETOPON,
 
 
 

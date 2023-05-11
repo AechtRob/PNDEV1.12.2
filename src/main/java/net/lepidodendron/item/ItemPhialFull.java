@@ -140,9 +140,17 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_greererpeton", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_slimonia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_ciurcopterus", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_gephyrostegus", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_gephyrostegus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_megasecoptera", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_meganeurites", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_kalligrammatid", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_lacewing", "inventory")
 
-			);
+
+
+
+		);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			if (stack.hasTagCompound()) {
