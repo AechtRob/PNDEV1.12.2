@@ -592,7 +592,12 @@ public class ModelKulindadromeus extends AdvancedModelBaseExtended {
                 if (ee.getIsFast()) { //Running
                     animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 } else { //Walking
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    if (ee.getIsHopping()) {
+                        animHop(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    }
+                    else {
+                        animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    }
                 }
             }
         }
