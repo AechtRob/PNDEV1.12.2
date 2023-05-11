@@ -2252,6 +2252,7 @@ public class ModelKulindadromeus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Rightarm2, Rightarm2.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/20D)*1D)*720+90))*-5), Rightarm2.rotateAngleY + (float) Math.toRadians(0), Rightarm2.rotateAngleZ + (float) Math.toRadians(0));
 
     }
+
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraKulindadromeus entity = (EntityPrehistoricFloraKulindadromeus) entitylivingbaseIn;
 

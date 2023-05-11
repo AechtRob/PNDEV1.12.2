@@ -83,7 +83,8 @@ public class WorldGenAcrocomiaTree extends WorldGenAbstractTree
                     return false;
                 }
                 IBlockState state = worldIn.getBlockState(down);
-                boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
+                boolean isSoil = (state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING)
+                        || state.getMaterial() == Material.SAND);
                 if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     HashMap<String, Object> $_dependencies = new HashMap<>();
@@ -122,7 +123,8 @@ public class WorldGenAcrocomiaTree extends WorldGenAbstractTree
                                 || worldIn.getBlockState(blockpos).getBlock() == BlockAcrocomiaShoot.block) {
                             isClear = false;
                         }
-                        isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
+                        isSoil = (state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING)
+                                || state.getMaterial() == Material.SAND);
                         if (blockpos.getY() >= worldIn.getSeaLevel()-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
