@@ -7,12 +7,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderYinlong;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
@@ -205,10 +202,10 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraKulindadromeus> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraKulindadromeus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraKulindadromeus currentYinlong : Yinlong) {
-				currentYinlong.setRevengeTarget(ee);
-				currentYinlong.alarmCooldown = rand.nextInt(20);
+			List<EntityPrehistoricFloraKulindadromeus> Kulindadromeus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraKulindadromeus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraKulindadromeus currentKulindadromeus : Kulindadromeus) {
+				currentKulindadromeus.setRevengeTarget(ee);
+				currentKulindadromeus.alarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -283,17 +280,16 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 				speedBase =  0.03F; //static moment of the hop animation
 			}
 			else {
-				speedBase = speedBase; //The moving part of the hop animation
+				speedBase = speedBase * 1.4F; //The moving part of the hop animation
 			}
 		}
 		return speedBase;
 	}
 
 	public boolean getMovingOnLand() {
-		int animCycle = 26;
+		int animCycle = 80;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=0 && tickAnim <= 5)
-				|| (tickAnim >=18 && tickAnim <= 26)) {
+		if ((tickAnim >=20 && tickAnim <= 56)) {
 			return true;
 		}
 		else {
@@ -329,7 +325,7 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicScreamAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 60));
 		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(9, new EntityAILookIdle(this));
@@ -530,55 +526,55 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetPlinth() { return 0.16; }
-	public static double offsetWall() { return 0.05; }
-	public static double upperfrontverticallinedepth() {
-		return 0.0;
-	}
-	public static double upperbackverticallinedepth() {
-		return 0.0;
-	}
-	public static double upperfrontlineoffset() {
-		return 0.2;
-	}
-	public static double upperfrontlineoffsetperpendiular() {
-		return 0.0F;
-	}
-	public static double upperbacklineoffset() {
-		return 0.2;
-	}
-	public static double upperbacklineoffsetperpendiular() {
-		return 0.0F;
-	}
-	public static double lowerfrontverticallinedepth() {
-		return 0.3;
-	}
-	public static double lowerbackverticallinedepth() {
-		return 0;
-	}
-	public static double lowerfrontlineoffset() {
-		return 0.2;
-	}
-	public static double lowerfrontlineoffsetperpendiular() {
-		return 0F;
-	}
-	public static double lowerbacklineoffset() {
-		return 0;
-	}
-	public static double lowerbacklineoffsetperpendiular() {
-		return 0.0F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_YINLONG;
-	}
-
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelYinlong;
-	}
-	public static float getScaler() {
-		return RenderYinlong.getScaler();
-	}
+//	public static double offsetPlinth() { return 0.16; }
+//	public static double offsetWall() { return 0.05; }
+//	public static double upperfrontverticallinedepth() {
+//		return 0.0;
+//	}
+//	public static double upperbackverticallinedepth() {
+//		return 0.0;
+//	}
+//	public static double upperfrontlineoffset() {
+//		return 0.2;
+//	}
+//	public static double upperfrontlineoffsetperpendiular() {
+//		return 0.0F;
+//	}
+//	public static double upperbacklineoffset() {
+//		return 0.2;
+//	}
+//	public static double upperbacklineoffsetperpendiular() {
+//		return 0.0F;
+//	}
+//	public static double lowerfrontverticallinedepth() {
+//		return 0.3;
+//	}
+//	public static double lowerbackverticallinedepth() {
+//		return 0;
+//	}
+//	public static double lowerfrontlineoffset() {
+//		return 0.2;
+//	}
+//	public static double lowerfrontlineoffsetperpendiular() {
+//		return 0F;
+//	}
+//	public static double lowerbacklineoffset() {
+//		return 0;
+//	}
+//	public static double lowerbacklineoffsetperpendiular() {
+//		return 0.0F;
+//	}
+//	@SideOnly(Side.CLIENT)
+//	public static ResourceLocation textureDisplay() {
+//		return RenderDisplays.TEXTURE_KULINDADROMEUS;
+//	}
+//
+//	@SideOnly(Side.CLIENT)
+//	public static ModelBase modelDisplay() {
+//		return RenderDisplays.modelKulindadromeus;
+//	}
+//	public static float getScaler() {
+//		return RenderKulindadromeus.getScaler();
+//	}
 
 }
