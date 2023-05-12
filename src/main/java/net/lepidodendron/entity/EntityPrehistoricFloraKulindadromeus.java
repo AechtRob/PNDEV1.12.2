@@ -358,12 +358,12 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 
 	@Override
 	public boolean drinksWater() {
-		return false; //grazes, does not drink
+		return true; //grazes, does not drink
 	}
 
 	@Override
 	public int getDrinkLength() {
-		return 70;  //grazes, does not drink
+		return 40;  //grazes, does not drink
 	}
 
 	@Override
@@ -371,10 +371,9 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		return 400;
 	}
 
+	@Override
 	public boolean isDrinking()
 	{
-		//Is GRAZING!
-		EnumFacing facing = this.getAdjustedHorizontalFacing();
 		boolean test = (this.getPFDrinking() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -382,41 +381,26 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 				&& this.DRINK_ANIMATION.getDuration() > 0
 				&& this.getAnimation() == NO_ANIMATION
 				&& !this.isReallyInWater()
-				&& (this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.PLANTS
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.LEAVES
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.SAND)
+				&&
+				(this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
+						|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
+						|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
+						|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
+				)
 		);
 		if (test) {
 			//Which one is water?
-			facing = null;
-			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.LEAVES
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.SAND) {
+			EnumFacing facing = null;
+			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.LEAVES
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.SAND) {
+			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.LEAVES
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.SAND) {
+			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.LEAVES
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.SAND) {
+			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
@@ -425,7 +409,6 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 			}
 		}
 		return test;
-
 	}
 
 	@Override

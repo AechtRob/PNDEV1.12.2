@@ -3684,6 +3684,17 @@ public class LepidodendronSorter {
     public static final int eggs_kulindadromeus = 4081;
     public static final int eggs_ceratosaurus = 4082;
     public static final int shell_cenoceras = 4083;
+    public static final int wing_meganeurites = 4084;
+    public static final int meganeurites_raw = 4085;
+    public static final int insect_eggs_meganeurites = 4086;
+    public static final int daohugoucossus_raw = 4087;
+    public static final int insect_eggs_daohugoucossus = 4088;
+    public static final int megasecoptera_sylvohymen_raw = 4089;
+    public static final int insect_eggs_megasecoptera = 4090;
+    public static final int panacanthocaris_raw = 4091;
+    public static final int trachymetopon_raw = 4092;
+    public static final int insect_eggs_meganeurites_worldgen = 4093;
+    public static final int insect_eggs_megasecoptera_worldgen = 4094;
 
 
 

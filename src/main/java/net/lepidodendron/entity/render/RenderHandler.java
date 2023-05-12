@@ -4353,6 +4353,36 @@ public class RenderHandler {
                 return new RenderCoccoderma(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegasecoptera.class, new IRenderFactory<EntityPrehistoricFloraMegasecoptera>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMegasecoptera> createRenderFor(RenderManager manager) {
+                return new RenderMegasecoptera(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMeganeurites.class, new IRenderFactory<EntityPrehistoricFloraMeganeurites>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMeganeurites> createRenderFor(RenderManager manager) {
+                return new RenderMeganeurites(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTrachymetopon.class, new IRenderFactory<EntityPrehistoricFloraTrachymetopon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTrachymetopon> createRenderFor(RenderManager manager) {
+                return new RenderTrachymetopon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDaohugoucossus.class, new IRenderFactory<EntityPrehistoricFloraDaohugoucossus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDaohugoucossus> createRenderFor(RenderManager manager) {
+                return new RenderDaohugoucossus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPanacanthocaris.class, new IRenderFactory<EntityPrehistoricFloraPanacanthocaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPanacanthocaris> createRenderFor(RenderManager manager) {
+                return new RenderPanacanthocaris(manager);
+            }
+        });
 
 
 

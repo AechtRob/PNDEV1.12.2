@@ -188,25 +188,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	}
 
 	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case AETHEOGRAMMA: default:
-				return LepidodendronMod.LACEWING_AETHEOGRAMMA_LOOT;
-
-			case CRETAPSYCHOPS:
-				return LepidodendronMod.LACEWING_CRETAPSYCHOPS_LOOT;
-
-			case LACCOSMYLUS:
-				return LepidodendronMod.LACEWING_LACCOSMYLUS_LOOT;
-
-			case LICHENIPOLYSTOECHOTES:
-				return LepidodendronMod.LACEWING_LICHENIPOLYSTOECHOTES_LOOT;
-
-			case BELLINYMPHA:
-				return LepidodendronMod.LACEWING_BELLINYMPHA_LOOT;
-
-			case GRAMMOLINGIA:
-				return LepidodendronMod.LACEWING_GRAMMOLINGIA_LOOT;
-		}
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 	public float getFlySpeed() {
@@ -448,7 +430,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:lacewing_flight");
+		return new ResourceLocation("lepidodendron:kalligrammatid_flight");
 	}
 
 }

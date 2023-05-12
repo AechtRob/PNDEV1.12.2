@@ -73,8 +73,8 @@ public class ModelBishanopliosaurus extends AdvancedModelBaseExtended {
     private ModelAnimator animator;
 
     public ModelBishanopliosaurus() {
-        this.textureWidth = 150;
-        this.textureHeight = 150;
+        this.textureWidth = 115;
+        this.textureHeight = 115;
 
         this.root = new AdvancedModelRenderer(this);
         this.root.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -288,40 +288,40 @@ public class ModelBishanopliosaurus extends AdvancedModelBaseExtended {
         this.Headslope.cubeList.add(new ModelBox(Headslope, 29, 22, -1.5F, 0.0F, -3.0F, 3, 2, 3, 0.0F, false));
 
         this.Leftfrontflipper1 = new AdvancedModelRenderer(this);
-        this.Leftfrontflipper1.setRotationPoint(-5.0F, 3.5F, -6.0F);
+        this.Leftfrontflipper1.setRotationPoint(5.0F, 3.5F, -6.0F);
         this.Bodyfront.addChild(Leftfrontflipper1);
-        this.setRotateAngle(Leftfrontflipper1, -0.1485F, 0.2972F, -0.1698F);
-        this.Leftfrontflipper1.cubeList.add(new ModelBox(Leftfrontflipper1, 53, 65, -7.5F, -1.5F, -1.5F, 8, 3, 6, 0.0F, false));
+        this.setRotateAngle(Leftfrontflipper1, -0.1485F, -0.2972F, 0.1698F);
+        this.Leftfrontflipper1.cubeList.add(new ModelBox(Leftfrontflipper1, 53, 65, -0.5F, -1.5F, -1.5F, 8, 3, 6, 0.0F, true));
 
         this.Leftfrontflipper2 = new AdvancedModelRenderer(this);
-        this.Leftfrontflipper2.setRotationPoint(-6.8F, 0.0F, 0.0F);
+        this.Leftfrontflipper2.setRotationPoint(6.8F, 0.0F, 0.0F);
         this.Leftfrontflipper1.addChild(Leftfrontflipper2);
-        this.setRotateAngle(Leftfrontflipper2, 0.0F, 0.1061F, 0.0F);
-        this.Leftfrontflipper2.cubeList.add(new ModelBox(Leftfrontflipper2, 23, 41, -7.5F, -1.0F, -2.0F, 8, 2, 8, 0.0F, false));
+        this.setRotateAngle(Leftfrontflipper2, 0.0F, -0.1061F, 0.0F);
+        this.Leftfrontflipper2.cubeList.add(new ModelBox(Leftfrontflipper2, 23, 41, -0.5F, -1.0F, -2.0F, 8, 2, 8, 0.0F, true));
 
         this.Leftfrontflipper3 = new AdvancedModelRenderer(this);
-        this.Leftfrontflipper3.setRotationPoint(-7.0F, 0.0F, -0.7F);
+        this.Leftfrontflipper3.setRotationPoint(7.0F, 0.0F, -0.7F);
         this.Leftfrontflipper2.addChild(Leftfrontflipper3);
-        this.setRotateAngle(Leftfrontflipper3, 0.0F, 0.1698F, 0.0F);
-        this.Leftfrontflipper3.cubeList.add(new ModelBox(Leftfrontflipper3, 36, 22, -7.0F, -0.5F, -1.0F, 7, 1, 6, 0.0F, false));
+        this.setRotateAngle(Leftfrontflipper3, 0.0F, -0.1698F, 0.0F);
+        this.Leftfrontflipper3.cubeList.add(new ModelBox(Leftfrontflipper3, 36, 22, 0.0F, -0.5F, -1.0F, 7, 1, 6, 0.0F, true));
 
         this.Rightfrontflipper1 = new AdvancedModelRenderer(this);
-        this.Rightfrontflipper1.setRotationPoint(5.0F, 3.5F, -6.0F);
+        this.Rightfrontflipper1.setRotationPoint(-5.0F, 3.5F, -6.0F);
         this.Bodyfront.addChild(Rightfrontflipper1);
-        this.setRotateAngle(Rightfrontflipper1, -0.1485F, -0.2972F, 0.1698F);
-        this.Rightfrontflipper1.cubeList.add(new ModelBox(Rightfrontflipper1, 76, 71, -0.5F, -1.5F, -1.5F, 8, 3, 6, 0.0F, false));
+        this.setRotateAngle(Rightfrontflipper1, -0.1485F, 0.2972F, -0.1698F);
+        this.Rightfrontflipper1.cubeList.add(new ModelBox(Rightfrontflipper1, 53, 65, -7.5F, -1.5F, -1.5F, 8, 3, 6, 0.0F, false));
 
         this.Rightfrontflipper2 = new AdvancedModelRenderer(this);
-        this.Rightfrontflipper2.setRotationPoint(6.8F, 0.0F, 0.0F);
+        this.Rightfrontflipper2.setRotationPoint(-6.8F, 0.0F, 0.0F);
         this.Rightfrontflipper1.addChild(Rightfrontflipper2);
-        this.setRotateAngle(Rightfrontflipper2, 0.0F, -0.1061F, 0.0F);
-        this.Rightfrontflipper2.cubeList.add(new ModelBox(Rightfrontflipper2, 21, 30, -0.5F, -1.0F, -2.0F, 8, 2, 8, 0.0F, false));
+        this.setRotateAngle(Rightfrontflipper2, 0.0F, 0.1061F, 0.0F);
+        this.Rightfrontflipper2.cubeList.add(new ModelBox(Rightfrontflipper2, 23, 41, -7.5F, -1.0F, -2.0F, 8, 2, 8, 0.0F, false));
 
         this.Rightfrontflipper3 = new AdvancedModelRenderer(this);
-        this.Rightfrontflipper3.setRotationPoint(7.0F, 0.0F, -0.7F);
+        this.Rightfrontflipper3.setRotationPoint(-7.0F, 0.0F, -0.7F);
         this.Rightfrontflipper2.addChild(Rightfrontflipper3);
-        this.setRotateAngle(Rightfrontflipper3, 0.0F, -0.1698F, 0.0F);
-        this.Rightfrontflipper3.cubeList.add(new ModelBox(Rightfrontflipper3, 46, 14, 0.0F, -0.5F, -1.0F, 7, 1, 6, 0.0F, false));
+        this.setRotateAngle(Rightfrontflipper3, 0.0F, 0.1698F, 0.0F);
+        this.Rightfrontflipper3.cubeList.add(new ModelBox(Rightfrontflipper3, 36, 22, -7.0F, -0.5F, -1.0F, 7, 1, 6, 0.0F, false));
 
         this.Tail1 = new AdvancedModelRenderer(this);
         this.Tail1.setRotationPoint(0.0F, -0.4F, 8.0F);
@@ -366,41 +366,40 @@ public class ModelBishanopliosaurus extends AdvancedModelBaseExtended {
         this.Tailflukestart.cubeList.add(new ModelBox(Tailflukestart, 36, 72, -0.5F, 0.0F, 0.0F, 1, 1, 4, 0.0F, false));
 
         this.Lefthindflipper1 = new AdvancedModelRenderer(this);
-        this.Lefthindflipper1.setRotationPoint(-5.0F, 3.0F, 3.0F);
+        this.Lefthindflipper1.setRotationPoint(5.0F, 3.0F, 3.0F);
         this.Hips.addChild(Lefthindflipper1);
-        this.setRotateAngle(Lefthindflipper1, 0.0F, 0.4671F, -0.1274F);
-        this.Lefthindflipper1.cubeList.add(new ModelBox(Lefthindflipper1, 48, 85, -6.5F, -1.5F, -1.0F, 7, 3, 5, 0.0F, false));
+        this.setRotateAngle(Lefthindflipper1, 0.0F, -0.4671F, 0.1274F);
+        this.Lefthindflipper1.cubeList.add(new ModelBox(Lefthindflipper1, 48, 85, -0.5F, -1.5F, -1.0F, 7, 3, 5, 0.0F, true));
 
         this.Lefthindflipper2 = new AdvancedModelRenderer(this);
-        this.Lefthindflipper2.setRotationPoint(-5.8F, 0.0F, 0.0F);
+        this.Lefthindflipper2.setRotationPoint(5.8F, 0.0F, 0.0F);
         this.Lefthindflipper1.addChild(Lefthindflipper2);
-        this.setRotateAngle(Lefthindflipper2, 0.0F, 0.1061F, 0.0F);
-        this.Lefthindflipper2.cubeList.add(new ModelBox(Lefthindflipper2, 19, 62, -7.5F, -1.0F, -1.5F, 8, 2, 7, 0.0F, false));
+        this.setRotateAngle(Lefthindflipper2, 0.0F, -0.1061F, 0.0F);
+        this.Lefthindflipper2.cubeList.add(new ModelBox(Lefthindflipper2, 19, 62, -0.5F, -1.0F, -1.5F, 8, 2, 7, 0.0F, true));
 
         this.Lefthindflipper3 = new AdvancedModelRenderer(this);
-        this.Lefthindflipper3.setRotationPoint(-7.0F, 0.0F, -0.1F);
+        this.Lefthindflipper3.setRotationPoint(7.0F, 0.0F, -0.1F);
         this.Lefthindflipper2.addChild(Lefthindflipper3);
-        this.setRotateAngle(Lefthindflipper3, 0.0F, 0.1698F, 0.0F);
-        this.Lefthindflipper3.cubeList.add(new ModelBox(Lefthindflipper3, 44, 0, -7.0F, -0.5F, -1.0F, 7, 1, 5, 0.0F, false));
+        this.setRotateAngle(Lefthindflipper3, 0.0F, -0.1698F, 0.0F);
+        this.Lefthindflipper3.cubeList.add(new ModelBox(Lefthindflipper3, 44, 0, 0.0F, -0.5F, -1.0F, 7, 1, 5, 0.0F, true));
 
         this.Righthindflipper1 = new AdvancedModelRenderer(this);
-        this.Righthindflipper1.setRotationPoint(5.0F, 3.0F, 3.0F);
+        this.Righthindflipper1.setRotationPoint(-5.0F, 3.0F, 3.0F);
         this.Hips.addChild(Righthindflipper1);
-        this.setRotateAngle(Righthindflipper1, 0.0F, -0.4671F, 0.1274F);
-        this.Righthindflipper1.cubeList.add(new ModelBox(Righthindflipper1, 52, 76, -0.5F, -1.5F, -1.0F, 7, 3, 5, 0.0F, false));
+        this.setRotateAngle(Righthindflipper1, 0.0F, 0.4671F, -0.1274F);
+        this.Righthindflipper1.cubeList.add(new ModelBox(Righthindflipper1, 48, 85, -6.5F, -1.5F, -1.0F, 7, 3, 5, 0.0F, false));
 
         this.Righthindflipper2 = new AdvancedModelRenderer(this);
-        this.Righthindflipper2.setRotationPoint(5.8F, 0.0F, 0.0F);
+        this.Righthindflipper2.setRotationPoint(-5.8F, 0.0F, 0.0F);
         this.Righthindflipper1.addChild(Righthindflipper2);
-        this.setRotateAngle(Righthindflipper2, 0.0F, -0.1061F, 0.0F);
-        this.Righthindflipper2.cubeList.add(new ModelBox(Righthindflipper2, 17, 52, -0.5F, -1.0F, -1.5F, 8, 2, 7, 0.0F, false));
+        this.setRotateAngle(Righthindflipper2, 0.0F, 0.1061F, 0.0F);
+        this.Righthindflipper2.cubeList.add(new ModelBox(Righthindflipper2, 19, 62, -7.5F, -1.0F, -1.5F, 8, 2, 7, 0.0F, false));
 
         this.Righthindflipper3 = new AdvancedModelRenderer(this);
-        this.Righthindflipper3.setRotationPoint(7.0F, 0.0F, -0.1F);
+        this.Righthindflipper3.setRotationPoint(-7.0F, 0.0F, -0.1F);
         this.Righthindflipper2.addChild(Righthindflipper3);
-        this.setRotateAngle(Righthindflipper3, 0.0F, -0.1698F, 0.0F);
-        this.Righthindflipper3.cubeList.add(new ModelBox(Righthindflipper3, 41, 7, 0.0F, -0.5F, -1.0F, 7, 1, 5, 0.0F, false));
-
+        this.setRotateAngle(Righthindflipper3, 0.0F, 0.1698F, 0.0F);
+        this.Righthindflipper3.cubeList.add(new ModelBox(Righthindflipper3, 44, 0, -7.0F, -0.5F, -1.0F, 7, 1, 5, 0.0F, false));
         updateDefaultPose();
         animator = ModelAnimator.create();
     }

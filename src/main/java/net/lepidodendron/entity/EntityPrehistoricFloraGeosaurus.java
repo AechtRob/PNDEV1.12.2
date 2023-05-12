@@ -44,11 +44,11 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraGeosaurus(World world) {
 		super(world);
-		setSize(1.5F, 0.4F);
+		setSize(0.9F, 0.4F);
 		minWidth = 0.1F;
-		maxWidth = 1.5F;
+		maxWidth = 0.9F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 24.0D;
+		maxHealthAgeable = 16.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

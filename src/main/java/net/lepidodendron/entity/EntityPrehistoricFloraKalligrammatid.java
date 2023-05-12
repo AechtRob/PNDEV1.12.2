@@ -204,37 +204,7 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 	}
 
 	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case KALLIGRAMMA: default:
-				return LepidodendronMod.KALLIGRAMMATID_KALLIGRAMMA_LOOT;
-
-			case APOCHRYSOGRAMMA:
-				return LepidodendronMod.KALLIGRAMMATID_APOCHRYSOGRAMMA_LOOT;
-
-			case HUIYINGOGRAMMA:
-				return LepidodendronMod.KALLIGRAMMATID_HUIYINGOGRAMMA_LOOT;
-
-			case LIASSOPSYCHOPS:
-				return LepidodendronMod.KALLIGRAMMATID_LIASSOPSYCHOPS_LOOT;
-
-			case MEIONEURITES:
-				return LepidodendronMod.KALLIGRAMMATID_MEIONEURITES_LOOT;
-
-			case ABRIGRAMMA:
-				return LepidodendronMod.KALLIGRAMMATID_ABRIGRAMMA_LOOT;
-
-			case ITHIGRAMMA:
-				return LepidodendronMod.KALLIGRAMMATID_ITHIGRAMMA_LOOT;
-
-			case OREGRAMMA:
-				return LepidodendronMod.KALLIGRAMMATID_OREGRAMMA_LOOT;
-
-			case MAKARKINIA:
-				return LepidodendronMod.KALLIGRAMMATID_MAKARKINIA_LOOT;
-
-			case SOPHOGRAMMA:
-				return LepidodendronMod.KALLIGRAMMATID_SOPHOGRAMMA_LOOT;
-		}
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 	public float getFlySpeed() {
@@ -493,7 +463,7 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:lacewing_flight");
+		return new ResourceLocation("lepidodendron:kalligrammatid_flight");
 	}
 
 }

@@ -178,35 +178,7 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 	}
 
 	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case DRAGONFLY1: default:
-				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT;
-
-			case DRAGONFLY2:
-				return LepidodendronMod.PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT;
-
-			case DRAGONFLY3:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT;
-
-			case DRAGONFLY4:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT;
-
-			case DRAGONFLY5:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT;
-
-			case DRAGONFLY6:
-				return LepidodendronMod.PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT;
-
-			case DRAGONFLY7:
-				return LepidodendronMod.PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT;
-
-			case DRAGONFLY8:
-				return LepidodendronMod.PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT;
-
-			case DRAGONFLY9:
-			case DRAGONFLY10:
-				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT;
-		}
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 	public float getFlySpeed() {

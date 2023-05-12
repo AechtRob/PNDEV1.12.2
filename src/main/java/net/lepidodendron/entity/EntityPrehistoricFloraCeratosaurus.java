@@ -219,25 +219,25 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:ceratosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:ceratosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:saltriovenator_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:ceratosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:ceratosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_death"));
 	}
 
 	@Override
