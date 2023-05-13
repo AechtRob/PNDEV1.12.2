@@ -4,11 +4,13 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsMegasecoptera;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.minecraft.block.state.IBlockState;
+import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
+import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -18,6 +20,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -28,16 +31,19 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArchoblattinaInsect {
 
+	public BlockPos currentTarget;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	private static final float[] SYLVOHYMEN_SIZE = new float[]{0.15F, 0.30F};
+	private static final float[] CLATROTITAN_SIZE = new float[]{0.3F, 0.21F};
+	private static final float[] GIGATITAN_SIZE = new float[]{0.3F, 0.21F};
+	private static final float[] MESOTITAN_SIZE = new float[]{0.3F, 0.21F};
 
-	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMegasecoptera.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraTitanoptera.class, DataSerializers.VARINT);
 
-	public EntityPrehistoricFloraMegasecoptera(World world) {
+	public EntityPrehistoricFloraTitanoptera(World world) {
 		super(world);
 
 	//*****************************************************
@@ -57,41 +63,11 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() != this.getPNType()) {
+		else if (((EntityPrehistoricFloraTitanoptera)otherAnimal).getPNType() != this.getPNType()) {
 			return false;
 		}
 		return this.isInLove() && otherAnimal.isInLove();
 	}
-
-//	@Override
-//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-//			//Cycle the variants:
-//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeodictyoptera")) {
-//				if (!player.capabilities.isCreativeMode)
-//				{
-//					player.getHeldItem(hand).shrink(1);
-//				}
-//				int type = this.getPNType().ordinal();
-//				type = type + 1;
-//				if (type > Type.values().length) {
-//					type = 0;
-//				}
-//				this.setPNType(Type.byId(type));
-//
-//				float f = this.width;
-//				this.width = getHitBoxSize()[0];
-//				this.height = getHitBoxSize()[1];
-//				if (this.width != f) {
-//					double d0 = (double) width / 2.0D;
-//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-//				}
-//			}
-//		}
-//
-//		return super.processInteract(player, hand);
-//	}
 
 	@Override
 	public boolean hasPNVariants() {
@@ -100,7 +76,9 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 
 	public enum Type
 	{
-		SYLVOHYMEN(1, "sylvohymen")
+		CLATROTITAN(1, "clatrotitan"),
+		GIGATITAN(2, "gigatitan"),
+		MESOTITAN(3, "mesotitan")
 		;
 
 		private final String name;
@@ -154,31 +132,56 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 
 	public ResourceLocation getFreezeLoot() {
 		switch (this.getPNType()) {
-			case SYLVOHYMEN: default:
-				return LepidodendronMod.SYLVOHYMEN_LOOT_JAR;
+			case CLATROTITAN: default:
+				return LepidodendronMod.TITANOPTERA_CLATROTITAN_LOOT_JAR;
+
+			case GIGATITAN:
+				return LepidodendronMod.TITANOPTERA_GIGATITAN_LOOT_JAR;
+
+			case MESOTITAN:
+				return LepidodendronMod.TITANOPTERA_MESOTITAN_LOOT_JAR;
 		}
 	}
 
 	public ResourceLocation getStandardLoot() {
 		switch (this.getPNType()) {
-			case SYLVOHYMEN: default:
-				return LepidodendronMod.SYLVOHYMEN_LOOT;
+			case CLATROTITAN: default:
+				return LepidodendronMod.TITANOPTERA_CLATROTITAN_LOOT;
+
+			case GIGATITAN:
+				return LepidodendronMod.TITANOPTERA_GIGATITAN_LOOT;
+
+			case MESOTITAN:
+				return LepidodendronMod.TITANOPTERA_MESOTITAN_LOOT;
 
 		}
 	}
 
-	public float getFlySpeed() {
-		switch (this.getPNType()) {
-			case SYLVOHYMEN: default:
-				return 3f;
-
-		}
-	}
+//	public float getFlySpeed() {
+//		switch (this.getPNType()) {
+//			case CLATROTITAN: default:
+//				return 3f;
+//
+//			case GIGATITAN:
+//				return 3f;
+//
+//			case MESOTITAN:
+//				return 3f;
+//
+//		}
+//	}
 
 	public float[] getHitBoxSize() {
 		switch (this.getPNType()) {
-			case SYLVOHYMEN: default:
-				return SYLVOHYMEN_SIZE;
+			case CLATROTITAN: default:
+				return CLATROTITAN_SIZE;
+
+			case GIGATITAN:
+				return GIGATITAN_SIZE;
+
+			case MESOTITAN:
+				return MESOTITAN_SIZE;
+
 		}
 	}
 
@@ -230,7 +233,7 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_megasecoptera_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_titanoptera_" + this.getPNType().getName() + ".name");
 		}
 	}
 
@@ -260,108 +263,70 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	//*****************************************************
 
 	@Override
-	public boolean canJar() {
-		return true;
-	}
-
-	public static String getPeriod() {return "mid Carboniferous - early Permian";}
-
-	//public static String getHabitat() {return "Terrestrial";}
-
-	@Override
-	public boolean dropsEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean laysEggs() {
-		return true;
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsMegasecoptera.block.getDefaultState();
-	}
-
-	@Override
-	public int getAnimationTick() {
-		return animationTick;
-	}
-
-	@Override
-	public void setAnimationTick(int tick)
-	{
-		animationTick = tick;
-	}
-
-	@Override
-	public Animation getAnimation()
-	{
-		return this.animation;
-	}
-
-	@Override
-	public void setAnimation(Animation animation)
-	{
-		if (animation == NO_ANIMATION){
-			onAnimationFinish(this.animation);
-			setAnimationTick(0);
-		}
-		this.animation = animation;
-	}
-
-	@Override
-	public Animation[] getAnimations()
-	{
-		return null;
-	}
-
-	protected void onAnimationFinish(Animation animation)
-	{}
-
-	@Override
-	protected float getAISpeedInsect() {
-		if (this.getTicks() < 0) {
-			return 0.0F; //Is laying eggs
-		}
-		return getFlySpeed();
-	}
-
-	@Override
-	public boolean isAIDisabled() {
-		return false;
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:titanoptera_idle"));
 	}
 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(3.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 	}
 
 	@Override
-	public String getTexture() {
-		return this.getTexture();
+	public void playLivingSound()
+	{
+		SoundEvent soundevent = this.getAmbientSound();
+
+		if (soundevent != null && !this.getIsFlying())
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+		}
 	}
 
 	@Override
-	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+	protected void initEntityAI() {
+		this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
+		this.tasks.addTask(2, new EntityPrehistoricFloraCrawlingFlyingInsectBase.AIWanderInsect());
+		this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
+		this.tasks.addTask(4, new EntityAILookIdle(this));
 	}
 
 	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return stack.getItem() == ItemBugRaw.block;
 	}
 
 	@Override
-	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	public int getTalkInterval() {
+		return 40;
 	}
 
 	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
+	public boolean canJar() {
+		return true;
 	}
+
+	@Override
+	public int defaultFlyCooldown() {
+		return 2400;
+	}
+
+	@Override
+	public int defaultWanderCooldown() {
+		return 800;
+	}
+
+	public static String getPeriod() {return "Triassic";}
+
+	//public static String getHabitat() {return "Terrestrial";}
+
+	@Override
+	public String tagEgg () {
+		return "insect_eggs_titanoptera";
+	}
+
 
 }

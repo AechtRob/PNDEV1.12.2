@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import javax.annotation.Nullable;
 
@@ -52,28 +53,6 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 
 	//*****************************************************
 	//Insect variant managers:
-
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-			//Cycle the variants:
-			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeodictyoptera_nymph")) {
-				if (!player.capabilities.isCreativeMode)
-				{
-					player.getHeldItem(hand).shrink(1);
-				}
-				int type = this.getPNType().ordinal();
-				type = type + 1;
-				if (type > EntityPrehistoricFloraPalaeodictyopteraNymph.Type.values().length) {
-					type = 0;
-				}
-				this.setPNType(EntityPrehistoricFloraPalaeodictyopteraNymph.Type.byId(type));
-			}
-		}
-
-		return super.processInteract(player, hand);
-	}
 
 	@Override
 	public boolean hasPNVariants() {
@@ -176,31 +155,31 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 	public ResourceLocation getStandardLoot() {
 		switch (this.getPNType()) {
 			case DELITZSCHALA: default:
-				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case DUNBARIA:
-				return LepidodendronMod.PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case HOMALONEURA:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case HOMOIOPTERA:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case LITHOMANTIS:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case LYCOCERCUS:
-				return LepidodendronMod.PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case SINODUNBARIA:
-				return LepidodendronMod.PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case STENODICTYA:
-				return LepidodendronMod.PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 
 			case MAZOTHAIROS:
-				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT;
+				return LepidodendronMod.BUG_LOOT;
 		}
 	}
 
@@ -280,6 +259,11 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", this.getPNType().getName());
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
 		}

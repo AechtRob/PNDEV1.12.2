@@ -1,7 +1,6 @@
 package net.lepidodendron.util;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraDragonfly;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
+import net.lepidodendron.entity.*;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -128,10 +127,47 @@ public class Summoner extends CommandBase
                     if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera && !variantStr.equalsIgnoreCase("")) {
                         EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) entity;
                         palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variantStr));
-                    } else if (entity instanceof EntityPrehistoricFloraDragonfly && !variantStr.equalsIgnoreCase("")) {
+                    }
+                    else if (entity instanceof EntityPrehistoricFloraPalaeodictyopteraNymph && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraPalaeodictyopteraNymph palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyopteraNymph) entity;
+                        palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyopteraNymph.Type.getTypeFromString(variantStr));
+                    }
+                    else if (entity instanceof EntityPrehistoricFloraDragonfly && !variantStr.equalsIgnoreCase("")) {
                         EntityPrehistoricFloraDragonfly dragonfly = (EntityPrehistoricFloraDragonfly) entity;
                         dragonfly.setPNType(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variantStr));
                     }
+                    else if (entity instanceof EntityPrehistoricFloraDragonflyNymph && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraDragonflyNymph dragonfly = (EntityPrehistoricFloraDragonflyNymph) entity;
+                        dragonfly.setPNType(EntityPrehistoricFloraDragonflyNymph.Type.getTypeFromString(variantStr));
+                    }
+                    else if (entity instanceof EntityPrehistoricFloraMegasecoptera && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraMegasecoptera dragonfly = (EntityPrehistoricFloraMegasecoptera) entity;
+                        dragonfly.setPNType(EntityPrehistoricFloraMegasecoptera.Type.getTypeFromString(variantStr));
+                    }
+                    else if (entity instanceof EntityPrehistoricFloraTitanoptera && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) entity;
+                        titanoptera.setPNType(EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variantStr));
+                    }
+                    else if (entity instanceof EntityPrehistoricFloraTitanopteraNymph && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraTitanopteraNymph titanoptera = (EntityPrehistoricFloraTitanopteraNymph) entity;
+                        titanoptera.setPNType(EntityPrehistoricFloraTitanopteraNymph.Type.getTypeFromString(variantStr));
+                    }
+                    else if (entity instanceof EntityPrehistoricFloraKalligrammatid && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraKalligrammatid kalligrammatid = (EntityPrehistoricFloraKalligrammatid) entity;
+                        kalligrammatid.setPNType(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variantStr));
+                    }
+//                    else if (entity instanceof EntityPrehistoricFloraKalligrammatidNymph && !variantStr.equalsIgnoreCase("")) {
+//                        EntityPrehistoricFloraKalligrammatidNymph kalligrammatid = (EntityPrehistoricFloraKalligrammatidNymph) entity;
+//                        kalligrammatid.setPNType(EntityPrehistoricFloraKalligrammatidNymph.Type.getTypeFromString(variantStr));
+//                    }
+                    else if (entity instanceof EntityPrehistoricFloraLacewing && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraLacewing lacewing = (EntityPrehistoricFloraLacewing) entity;
+                        lacewing.setPNType(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variantStr));
+                    }
+//                    else if (entity instanceof EntityPrehistoricFloraLacewingNymph && !variantStr.equalsIgnoreCase("")) {
+//                        EntityPrehistoricFloraLacewingNymph lacewing = (EntityPrehistoricFloraLacewingNymph) entity;
+//                        lacewing.setPNType(EntityPrehistoricFloraLacewingNymph.Type.getTypeFromString(variantStr));
+//                    }
 
                     //notifyCommandListener(sender, this, "commands.summon.success", new Object[0]);
                 }

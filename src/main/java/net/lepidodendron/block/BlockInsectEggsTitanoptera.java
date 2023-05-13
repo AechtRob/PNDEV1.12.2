@@ -3,19 +3,23 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.entity.EntityPrehistoricFloraTitanopteraNymph;
+import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyopteraNymph;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.item.ItemTitanopteraEggsItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityList;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -35,7 +39,7 @@ public class BlockInsectEggsTitanoptera extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("insect_eggs_titanoptera"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
@@ -46,9 +50,10 @@ public class BlockInsectEggsTitanoptera extends ElementsLepidodendronMod.ModElem
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:insect_eggs_titanoptera", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+		//		new ModelResourceLocation("lepidodendron:insect_eggs_titanoptera", "inventory"));
 	}
+
 	public static class BlockCustom extends BlockInsectEggs {
 		public BlockCustom() {
 			setTranslationKey("pf_insect_eggs_titanoptera");
@@ -85,14 +90,48 @@ public class BlockInsectEggsTitanoptera extends ElementsLepidodendronMod.ModElem
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-		{
-			super.updateTick(worldIn, pos, state, rand);
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			ItemStack stack = new ItemStack(ItemTitanopteraEggsItem.block, (int) (1));
+			NBTTagCompound variantNBT = new NBTTagCompound();
+			TileEntity tileentity = world.getTileEntity(pos);
+			if (tileentity != null) {
+				if (tileentity.getTileData() != null) {
+					if (tileentity.getTileData().hasKey("PNType")) {
+						variantNBT.setString("PNType", tileentity.getTileData().getString("PNType"));
+						stack.setTagCompound(variantNBT);
+						return stack;
+					}
+				}
+			}
+			return new ItemStack(Items.AIR, (int) (1));
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 
 			if (!(worldIn.isRemote)) {
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTitanopteraNymph.class).toString(), "", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
+				if (this.getVariantID(worldIn, pos).equalsIgnoreCase("")) {
+					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraPalaeodictyopteraNymph.class).toString(), "{AgeTicks:1}", pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+				} else {
+					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraPalaeodictyopteraNymph.class).toString() + "@" + this.getVariantID(worldIn, pos), "{AgeTicks:1}", pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+				}
+				//EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraPalaeodictyopteraNymph.class).toString(), "{AgeTicks:1}", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
+				worldIn.destroyBlock(pos, false);
 			}
-			worldIn.destroyBlock(pos, false);
+
+			super.updateTick(worldIn, pos, state, rand);
+		}
+
+		public String getVariantID(World world, BlockPos pos) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			if (tileentity != null) {
+				if (tileentity.getTileData() != null) {
+					if (tileentity.getTileData().hasKey("PNType")) {
+						return tileentity.getTileData().getString("PNType");
+					}
+				}
+			}
+			return "";
 		}
 
 		/*@SideOnly(Side.CLIENT)
@@ -107,6 +146,32 @@ public class BlockInsectEggsTitanoptera extends ElementsLepidodendronMod.ModElem
 	}
 
 	public static class TileEntityCustom extends TileEntity {
+
+		@Override
+		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
+		{
+			return (oldState.getBlock() != newSate.getBlock());
+		}
+
+		@Override
+		public SPacketUpdateTileEntity getUpdatePacket() {
+			return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
+		}
+
+		@Override
+		public NBTTagCompound getUpdateTag() {
+			return this.writeToNBT(new NBTTagCompound());
+		}
+
+		@Override
+		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+			this.readFromNBT(pkt.getNbtCompound());
+		}
+
+		@Override
+		public void handleUpdateTag(NBTTagCompound tag) {
+			this.readFromNBT(tag);
+		}
 
 	}
 }

@@ -8274,36 +8274,28 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 
-			
-			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraClatrotitan) {
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanoptera) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_TITANOPTERA_CLATROTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					switch (((EntityPrehistoricFloraTitanoptera)event.getTarget()).getPNType()) {
+						case CLATROTITAN: default:
+							ModTriggers.CLICK_TITANOPTERA_CLATROTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case GIGATITAN:
+							ModTriggers.CLICK_TITANOPTERA_GIGATITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case MESOTITAN:
+							ModTriggers.CLICK_TITANOPTERA_MESOTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+					}
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
-			
-			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraGigatitan) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_TITANOPTERA_GIGATITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
-			
-			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraMesotitan) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_TITANOPTERA_MESOTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+
 			else if (event.getTarget() instanceof EntityPrehistoricFloraSkeemella) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_SKEEMELLA.trigger((EntityPlayerMP) event.getEntityPlayer());

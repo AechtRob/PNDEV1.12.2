@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockGunneraSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenGunnera;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -25,6 +26,7 @@ public class WorldGenGunnera extends WorldGenerator
         }
         for (int i = 0; i < 6; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
+            blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
 
             if (!needsWater) {
 
@@ -45,7 +47,7 @@ public class WorldGenGunnera extends WorldGenerator
                 int yct;
                 int zct;
                 while ((xct < 3) && (!waterCriteria)) {
-                    yct = -2;
+                    yct = -4;
                     while ((yct <= 0) && (!waterCriteria)) {
                         zct = -2;
                         while ((zct < 3) && (!waterCriteria)) {

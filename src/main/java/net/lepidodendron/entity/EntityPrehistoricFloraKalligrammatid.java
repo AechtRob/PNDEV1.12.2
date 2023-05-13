@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import javax.annotation.Nullable;
 
@@ -289,6 +290,11 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", this.getPNType().getName());
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
 		}

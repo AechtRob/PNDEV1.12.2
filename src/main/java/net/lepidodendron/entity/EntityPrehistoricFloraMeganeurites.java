@@ -5,10 +5,10 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsMeganeura;
 import net.lepidodendron.block.BlockInsectEggsMeganeurites;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -67,6 +68,11 @@ public class EntityPrehistoricFloraMeganeurites extends EntityPrehistoricFloraMe
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", "");
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
 		}

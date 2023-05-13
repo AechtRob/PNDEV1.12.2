@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
@@ -16,6 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -102,6 +104,11 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", "");
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
 		}

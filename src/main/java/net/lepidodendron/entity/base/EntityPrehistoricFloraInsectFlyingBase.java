@@ -7,9 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
-import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
-import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -449,6 +447,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 }
                 String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
                 itemstack.getTagCompound().setString("creature", stringEgg);
+                if (this.hasPNVariants()) {
+                    if (this instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraPalaeodictyoptera) this).getPNType().getName());
+                    }
+                    //Add more variants:
+
+                }
                 EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
                 entityToSpawn.setPickupDelay(10);
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
@@ -562,6 +567,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 TileEntity tileentity = world.getTileEntity(pos);
                 if (tileentity != null) {
                     tileentity.getTileData().setString("PNType", kalligrammatid.getPNType().getName());
+                }
+            }
+            else if (this instanceof EntityPrehistoricFloraMegasecoptera) {
+                EntityPrehistoricFloraMegasecoptera megasecoptera = (EntityPrehistoricFloraMegasecoptera) this;
+                TileEntity tileentity = world.getTileEntity(pos);
+                if (tileentity != null) {
+                    tileentity.getTileData().setString("PNType", megasecoptera.getPNType().getName());
                 }
 
                 //More variants here:

@@ -2,8 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraMeganeura;
-import net.lepidodendron.entity.EntityPrehistoricFloraMegasecoptera;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -156,21 +154,8 @@ public class ModelSylvohymen extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.body.render(f5 * 0.29f);
-        if (entity instanceof EntityPrehistoricFloraMegasecoptera) {
-            this.body.render(f5);
-        }
-        else {
-            this.body.render(f5);
-        }
-        //GlStateManager.scale(0.88F, 0.88F, 0.88F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.body.render(f5);
     }
-
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -183,6 +168,7 @@ public class ModelSylvohymen extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -193,7 +179,7 @@ public class ModelSylvohymen extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.body.offsetY = 1.05F;
+        //this.body.offsetY = 10.05F;
 
         EntityPrehistoricFloraInsectFlyingBase ee = (EntityPrehistoricFloraInsectFlyingBase) e;
         if (ee.flyProgress != 0 && ee.getAttachmentPos() == null) {
@@ -227,14 +213,13 @@ public class ModelSylvohymen extends AdvancedModelBase {
 
         }
 
-        this.walk(antennaL, 0.3F, -0.15F, false,0,0.1F, f2, 1F);
-        this.walk(antennaR, 0.3F, 0.15F, false,0,0.1F, f2, 1F);
+        this.walk(antennaL, 0.3F, -0.85F, false,0,0.1F, f2, 1F);
+        this.walk(antennaR, 0.3F, 0.85F, false,0,0.1F, f2, 1F);
         this.swing(antennaL, 0.3F, -0.25F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaR, 0.3F, 0.25F, false, 0, 0.1F, f2, 0.8F);
 
         this.swing(cerciL, 1.3F, -0.15F, false, 0, -0.08F, f2, 0.8F);
         this.swing(cerciR, 1.3F, 0.15F, false, 0, 0.08F, f2, 0.8F);
-
 
     }
 }

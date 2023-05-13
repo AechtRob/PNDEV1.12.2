@@ -4,6 +4,8 @@ import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.FixerPalaeodictyoptera;
 import net.lepidodendron.entity.datafixers.FixerPalaeodictyopteraNymph;
+import net.lepidodendron.entity.datafixers.FixerTitanoptera;
+import net.lepidodendron.entity.datafixers.FixerTitanopteraNymph;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
@@ -1233,7 +1235,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation EUDIMORPHODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eudimorphodon_young"));
 	public static final int ENTITY_ITALOPHLEBIA = 469;
 	public static final ResourceLocation ITALOPHLEBIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/italophlebia"));
-	public static final int ENTITY_TITANOPTERA_GIGATITAN = 470;
+	public static final int ENTITY_TITANOPTERA = 470;
 	public static final ResourceLocation TITANOPTERA_GIGATITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_gigatitan"));
 
 	public static final ResourceLocation TITANOPTERA_GIGATITAN_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_gigatitan_jar"));
@@ -1255,7 +1257,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation TITANOPTERA_CLATROTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_clatrotitan"));
 	public static final ResourceLocation TITANOPTERA_CLATROTITAN_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_clatrotitan_jar"));
 	public static final int ENTITY_TITANOPTERA_NYMPH = 478;
-	//public static final ResourceLocation TITANOPTERA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_nymph"));
+	public static final ResourceLocation TITANOPTERA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_nymph"));
 	public static final int ENTITY_FADENIA_PERMOTRIASSIC = 479;
 	public static final ResourceLocation FADENIA_PERMOTRIASSIC_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/fadenia_permotriassic"));
 	public static final ResourceLocation FADENIA_PERMOTRIASSIC_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/fadenia_permotriassic_young"));
@@ -1886,6 +1888,8 @@ public class LepidodendronMod {
 		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 59);
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyoptera.FixerPalaeodictyoptera);
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyopteraNymph.FixerPalaeodictyopteraNymph);
+		modfixes.registerFix(FixTypes.ENTITY, FixerTitanoptera.FixerTitanoptera);
+		modfixes.registerFix(FixTypes.ENTITY, FixerTitanopteraNymph.FixerTitanopteraNymph);
 	}
 
 	@Mod.EventHandler

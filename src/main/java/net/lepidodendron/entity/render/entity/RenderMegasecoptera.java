@@ -2,9 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegasecoptera;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraLarge;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraMedium;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraSmall;
 import net.lepidodendron.entity.model.entity.ModelSylvohymen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
