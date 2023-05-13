@@ -10203,18 +10203,52 @@ public class LepidodendronBookSubscribers {
 							ModTriggers.CLICK_MEGASECOPTERA_SYLVOHYMEN.trigger((EntityPlayerMP) event.getEntityPlayer());
 							break;
 
-//						case OREGRAMMA:
-//							ModTriggers.CLICK_KALLIGRAMMATID_OREGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+//						case CORYDALOIDES:
+//							ModTriggers.CLICK_MEGASECOPTERA_CORYDALOIDES.trigger((EntityPlayerMP) event.getEntityPlayer());
 //							break;
 //
-//						case ITHIGRAMMA:
-//							ModTriggers.CLICK_KALLIGRAMMATID_ITHIGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+//						case MISCHOPTERA:
+//							ModTriggers.CLICK_MEGASECOPTERA_MISCHOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 //							break;
-//						case SOPHOGRAMMA:
-//							ModTriggers.CLICK_KALLIGRAMMATID_SOPHOGRAMMA.trigger((EntityPlayerMP) event.getEntityPlayer());
-//							break;
+//
 
 					}
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraThalassiodracon) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_THALASSIODRACON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraMicrocleidus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MICROCLEIDUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraOphthalmothule) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_OPHTHALMOTHULE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraBobosaurus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_BOBOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				deliverStatsEntity(event);

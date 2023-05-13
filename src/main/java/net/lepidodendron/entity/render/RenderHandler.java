@@ -4383,6 +4383,30 @@ public class RenderHandler {
                 return new RenderPanacanthocaris(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraThalassiodracon.class, new IRenderFactory<EntityPrehistoricFloraThalassiodracon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraThalassiodracon> createRenderFor(RenderManager manager) {
+                return new RenderThalassiodracon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMicrocleidus.class, new IRenderFactory<EntityPrehistoricFloraMicrocleidus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMicrocleidus> createRenderFor(RenderManager manager) {
+                return new RenderMicrocleidus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOphthalmothule.class, new IRenderFactory<EntityPrehistoricFloraOphthalmothule>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOphthalmothule> createRenderFor(RenderManager manager) {
+                return new RenderOphthalmothule(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBobosaurus.class, new IRenderFactory<EntityPrehistoricFloraBobosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBobosaurus> createRenderFor(RenderManager manager) {
+                return new RenderBobosaurus(manager);
+            }
+        });
 
 
 
