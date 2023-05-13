@@ -1170,6 +1170,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MEGANEURITES = new CustomTrigger("pf_book_meganeurites");
     public static final CustomTrigger CLICK_TRACHYMETOPON = new CustomTrigger("pf_book_trachymetopon");
     public static final CustomTrigger CLICK_PANACANTHOCARIS = new CustomTrigger("pf_book_panacanthocaris");
+    public static final CustomTrigger CLICK_BOBOSAURUS = new CustomTrigger("pf_book_bobosaurus");
+
 
 
 
@@ -2333,6 +2335,7 @@ public class ModTriggers
             CLICK_DAOHUGOUCOSSUS,
             CLICK_PANACANTHOCARIS,
             CLICK_TRACHYMETOPON,
+            CLICK_BOBOSAURUS,
 
 
 

@@ -3695,6 +3695,10 @@ public class LepidodendronSorter {
     public static final int trachymetopon_raw = 4092;
     public static final int insect_eggs_meganeurites_worldgen = 4093;
     public static final int insect_eggs_megasecoptera_worldgen = 4094;
+    public static final int bobosaurus_raw = 4095;
+    public static final int ophthalmothule_raw = 4096;
+    public static final int thalassiodracon_raw = 4097;
+    public static final int microcleidus_raw = 4098;
 
 
 

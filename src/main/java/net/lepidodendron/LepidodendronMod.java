@@ -1846,6 +1846,18 @@ public class LepidodendronMod {
 	public static final ResourceLocation TRACHYMETOPON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trachymetopon_young"));
 	public static final int ENTITY_MEGANEURITES_NYMPH = 721;
 	public static final int ENTITY_MEGASECOPTERA_NYMPH = 722;
+	public static final int ENTITY_OPHTHALMOTHULE = 723;
+	public static final ResourceLocation OPHTHALMOTHULE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ophthalmothule"));
+	public static final ResourceLocation OPHTHALMOTHULE_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ophthalmothule_young"));
+	public static final int ENTITY_THALASSIODRACON = 724;
+	public static final ResourceLocation THALASSIODRACON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassiodracon"));
+	public static final ResourceLocation THALASSIODRACON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassiodracon_young"));
+	public static final int ENTITY_MICROCLEIDUS = 725;
+	public static final ResourceLocation MICROCLEIDUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/microcleidus"));
+	public static final ResourceLocation MICROCLEIDUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/microcleidus_young"));
+	public static final int ENTITY_BOBOSAURUS = 726;
+	public static final ResourceLocation BOBOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bobosaurus"));
+	public static final ResourceLocation BOBOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bobosaurus_young"));
 
 
 	@Mod.EventHandler

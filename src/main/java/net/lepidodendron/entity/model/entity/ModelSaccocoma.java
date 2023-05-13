@@ -5611,338 +5611,118 @@ public class ModelSaccocoma extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
         this.setRotateAngle(Arm1, Arm1.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*-40), Arm1.rotateAngleY + (float) Math.toRadians(0), Arm1.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms1, Arms1.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Arms1.rotateAngleY + (float) Math.toRadians(0), Arms1.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss1, Armss1.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Armss1.rotateAngleY + (float) Math.toRadians(0), Armss1.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss1, Armsss1.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armsss1.rotateAngleY + (float) Math.toRadians(0), Armsss1.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss1, Armssss1.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armssss1.rotateAngleY + (float) Math.toRadians(0), Armssss1.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm2, Arm2.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*40), Arm2.rotateAngleY + (float) Math.toRadians(0), Arm2.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms2, Arms2.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*40), Arms2.rotateAngleY + (float) Math.toRadians(0), Arms2.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss2, Armss2.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*40), Armss2.rotateAngleY + (float) Math.toRadians(0), Armss2.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss2, Armsss2.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armsss2.rotateAngleY + (float) Math.toRadians(0), Armsss2.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss2, Armssss2.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armssss2.rotateAngleY + (float) Math.toRadians(0), Armssss2.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm3, Arm3.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*-40), Arm3.rotateAngleY + (float) Math.toRadians(0), Arm3.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms3, Arms3.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Arms3.rotateAngleY + (float) Math.toRadians(0), Arms3.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss3, Armss3.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Armss3.rotateAngleY + (float) Math.toRadians(0), Armss3.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss3, Armsss3.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armsss3.rotateAngleY + (float) Math.toRadians(0), Armsss3.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss3, Armssss3.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armssss3.rotateAngleY + (float) Math.toRadians(0), Armssss3.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm4, Arm4.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*40), Arm4.rotateAngleY + (float) Math.toRadians(0), Arm4.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms4, Arms4.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*40), Arms4.rotateAngleY + (float) Math.toRadians(0), Arms4.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss4, Armss4.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*40), Armss4.rotateAngleY + (float) Math.toRadians(0), Armss4.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss4, Armsss4.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armsss4.rotateAngleY + (float) Math.toRadians(0), Armsss4.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss4, Armssss4.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armssss4.rotateAngleY + (float) Math.toRadians(0), Armssss4.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm5, Arm5.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*-40), Arm5.rotateAngleY + (float) Math.toRadians(0), Arm5.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms5, Arms5.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Arms5.rotateAngleY + (float) Math.toRadians(0), Arms5.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss5, Armss5.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Armss5.rotateAngleY + (float) Math.toRadians(0), Armss5.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss5, Armsss5.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armsss5.rotateAngleY + (float) Math.toRadians(0), Armsss5.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss5, Armssss5.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armssss5.rotateAngleY + (float) Math.toRadians(0), Armssss5.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm6, Arm6.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*40), Arm6.rotateAngleY + (float) Math.toRadians(0), Arm6.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms6, Arms6.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*40), Arms6.rotateAngleY + (float) Math.toRadians(0), Arms6.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss6, Armss6.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*40), Armss6.rotateAngleY + (float) Math.toRadians(0), Armss6.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss6, Armsss6.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armsss6.rotateAngleY + (float) Math.toRadians(0), Armsss6.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss6, Armssss6.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armssss6.rotateAngleY + (float) Math.toRadians(0), Armssss6.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm7, Arm7.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*-40), Arm7.rotateAngleY + (float) Math.toRadians(0), Arm7.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms7, Arms7.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Arms7.rotateAngleY + (float) Math.toRadians(0), Arms7.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss7, Armss7.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Armss7.rotateAngleY + (float) Math.toRadians(0), Armss7.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss7, Armsss7.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armsss7.rotateAngleY + (float) Math.toRadians(0), Armsss7.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss7, Armssss7.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armssss7.rotateAngleY + (float) Math.toRadians(0), Armssss7.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm8, Arm8.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*40), Arm8.rotateAngleY + (float) Math.toRadians(0), Arm8.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms8, Arms8.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*40), Arms8.rotateAngleY + (float) Math.toRadians(0), Arms8.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss8, Armss8.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*40), Armss8.rotateAngleY + (float) Math.toRadians(0), Armss8.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss8, Armsss8.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armsss8.rotateAngleY + (float) Math.toRadians(0), Armsss8.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss8, Armssss8.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armssss8.rotateAngleY + (float) Math.toRadians(0), Armssss8.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm9, Arm9.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*-40), Arm9.rotateAngleY + (float) Math.toRadians(0), Arm9.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms9, Arms9.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Arms9.rotateAngleY + (float) Math.toRadians(0), Arms9.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss9, Armss9.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*-40), Armss9.rotateAngleY + (float) Math.toRadians(0), Armss9.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss9, Armsss9.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armsss9.rotateAngleY + (float) Math.toRadians(0), Armsss9.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss9, Armssss9.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-40), Armssss9.rotateAngleY + (float) Math.toRadians(0), Armssss9.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arm10, Arm10.rotateAngleX + (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180))*40), Arm10.rotateAngleY + (float) Math.toRadians(0), Arm10.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Arms10, Arms10.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-60))*40), Arms10.rotateAngleY + (float) Math.toRadians(0), Arms10.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armss10, Armss10.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*40), Armss10.rotateAngleY + (float) Math.toRadians(0), Armss10.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armsss10, Armsss10.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armsss10.rotateAngleY + (float) Math.toRadians(0), Armsss10.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Armssss10, Armssss10.rotateAngleX + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*40), Armssss10.rotateAngleY + (float) Math.toRadians(0), Armssss10.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(Base, Base.rotateAngleX + (float) Math.toRadians(0), Base.rotateAngleY + (float) Math.toRadians(0), Base.rotateAngleZ + (float) Math.toRadians(0));
         this.Base.offsetX = (float) Math.toRadians(0);
         this.Base.offsetY = (float) Math.toRadians((Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*1);
         this.Base.offsetZ = (float) Math.toRadians(0);
-
-
         this.setRotateAngle(Armssbranchl1, Armssbranchl1.rotateAngleX + (float) Math.toRadians(0), Armssbranchl1.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl1.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr1, Armssbranchr1.rotateAngleX + (float) Math.toRadians(0), Armssbranchr1.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr1.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl1, Armsssbranchl1.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl1.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl1.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr1, Armsssbranchr1.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr1.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr1.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl1, Armssssbranchl1.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl1.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl1.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr1, Armssssbranchr1.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr1.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr1.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl2, Armssbranchl2.rotateAngleX + (float) Math.toRadians(0), Armssbranchl2.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl2.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr2, Armssbranchr2.rotateAngleX + (float) Math.toRadians(0), Armssbranchr2.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr2.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl2, Armsssbranchl2.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl2.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl2.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr2, Armsssbranchr2.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr2.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr2.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl2, Armssssbranchl2.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl2.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl2.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr2, Armssssbranchr2.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr2.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr2.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl3, Armssbranchl3.rotateAngleX + (float) Math.toRadians(0), Armssbranchl3.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl3.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr3, Armssbranchr3.rotateAngleX + (float) Math.toRadians(0), Armssbranchr3.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr3.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl3, Armsssbranchl3.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl3.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl3.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr3, Armsssbranchr3.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr3.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr3.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl3, Armssssbranchl3.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl3.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl3.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr3, Armssssbranchr3.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr3.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr3.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl4, Armssbranchl4.rotateAngleX + (float) Math.toRadians(0), Armssbranchl4.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl4.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr4, Armssbranchr4.rotateAngleX + (float) Math.toRadians(0), Armssbranchr4.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr4.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl4, Armsssbranchl4.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl4.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl4.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr4, Armsssbranchr4.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr4.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr4.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl4, Armssssbranchl4.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl4.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl4.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr4, Armssssbranchr4.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr4.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr4.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl5, Armssbranchl5.rotateAngleX + (float) Math.toRadians(0), Armssbranchl5.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl5.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr5, Armssbranchr5.rotateAngleX + (float) Math.toRadians(0), Armssbranchr5.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr5.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl5, Armsssbranchl5.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl5.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl5.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr5, Armsssbranchr5.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr5.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr5.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl5, Armssssbranchl5.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl5.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl5.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr5, Armssssbranchr5.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr5.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr5.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl6, Armssbranchl6.rotateAngleX + (float) Math.toRadians(0), Armssbranchl6.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl6.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr6, Armssbranchr6.rotateAngleX + (float) Math.toRadians(0), Armssbranchr6.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr6.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl6, Armsssbranchl6.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl6.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl6.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr6, Armsssbranchr6.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr6.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr6.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl6, Armssssbranchl6.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl6.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl6.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr6, Armssssbranchr6.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr6.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr6.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl7, Armssbranchl7.rotateAngleX + (float) Math.toRadians(0), Armssbranchl7.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl7.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr7, Armssbranchr7.rotateAngleX + (float) Math.toRadians(0), Armssbranchr7.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr7.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl7, Armsssbranchl7.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl7.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl7.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr7, Armsssbranchr7.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr7.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr7.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl7, Armssssbranchl7.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl7.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl7.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr7, Armssssbranchr7.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr7.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr7.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl8, Armssbranchl8.rotateAngleX + (float) Math.toRadians(0), Armssbranchl8.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl8.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr8, Armssbranchr8.rotateAngleX + (float) Math.toRadians(0), Armssbranchr8.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr8.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl8, Armsssbranchl8.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl8.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl8.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr8, Armsssbranchr8.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr8.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr8.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl8, Armssssbranchl8.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl8.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl8.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr8, Armssssbranchr8.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr8.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr8.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl9, Armssbranchl9.rotateAngleX + (float) Math.toRadians(0), Armssbranchl9.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl9.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr9, Armssbranchr9.rotateAngleX + (float) Math.toRadians(0), Armssbranchr9.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr9.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl9, Armsssbranchl9.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl9.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl9.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr9, Armsssbranchr9.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr9.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr9.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl9, Armssssbranchl9.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl9.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl9.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr9, Armssssbranchr9.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr9.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr9.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
-
-
         this.setRotateAngle(Armssbranchl10, Armssbranchl10.rotateAngleX + (float) Math.toRadians(0), Armssbranchl10.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*-20), Armssbranchl10.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20));
-
-
         this.setRotateAngle(Armssbranchr10, Armssbranchr10.rotateAngleX + (float) Math.toRadians(0), Armssbranchr10.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-90))*20), Armssbranchr10.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20));
-
-
         this.setRotateAngle(Armsssbranchl10, Armsssbranchl10.rotateAngleX + (float) Math.toRadians(0), Armsssbranchl10.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*-20), Armsssbranchl10.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20));
-
-
         this.setRotateAngle(Armsssbranchr10, Armsssbranchr10.rotateAngleX + (float) Math.toRadians(0), Armsssbranchr10.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-120))*20), Armsssbranchr10.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20));
-
-
         this.setRotateAngle(Armssssbranchl10, Armssssbranchl10.rotateAngleX + (float) Math.toRadians(0), Armssssbranchl10.rotateAngleY + (float) Math.toRadians(-20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*-20), Armssssbranchl10.rotateAngleZ + (float) Math.toRadians(-10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*-20));
-
-
         this.setRotateAngle(Armssssbranchr10, Armssssbranchr10.rotateAngleX + (float) Math.toRadians(0), Armssssbranchr10.rotateAngleY + (float) Math.toRadians(20+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-150))*20), Armssssbranchr10.rotateAngleZ + (float) Math.toRadians(10+(Math.sin(Math.PI/180)*((((double)tickAnim/80D)*4D)*180-180))*20));
 
     }

@@ -7887,3 +7887,7 @@ item.pf_phial_eggs_celtedens.name=Phial of Celtedens Eggs
 item.pf_phial_eggs_laidleria.name=Phial of Laidleria Eggs
 item.pf_phial_eggs_marmorerpeton.name=Phial of Marmorerpeton Eggs
 item.pf_phial_eggs_siderops.name=Phial of Siderops Eggs
+advancements.pf_adv_book_bobosaurus.description=Unlock the entry for Bobosaurus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_bobosaurus.title=Bobosaurus
+item.pf_bobosaurus_raw.name=Raw Bobosaurus
+entity.prehistoric_flora_bobosaurus.name=Bobosaurus
