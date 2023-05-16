@@ -1,19 +1,20 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.lepidodendron.entity.EntityPrehistoricFloraYorgia;
 import net.lepidodendron.entity.model.entity.ModelYorgia;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderYorgia extends RenderLiving<EntityPrehistoricFloraYorgia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yorgia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yorgia.png");
+    public static final ModelBase MODEL_BASE = new ModelYorgia();
 
     public RenderYorgia(RenderManager mgr) {
-        super(mgr, new ModelYorgia(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
     public static float getScaler() {
         return 0.32F;

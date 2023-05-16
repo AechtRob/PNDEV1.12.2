@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLepidaster;
 import net.lepidodendron.entity.model.entity.ModelLepidaster;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLepidaster extends RenderLiving<EntityPrehistoricFloraLepidaster> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lepidaster.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lepidaster.png");
+    public static final ModelBase MODEL_BASE = new ModelLepidaster();
+
     public static float getScaler() {
         return 0.7F * 0.18F;
     }
     public RenderLepidaster(RenderManager mgr) {
-        super(mgr, new ModelLepidaster(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

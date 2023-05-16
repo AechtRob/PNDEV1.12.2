@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGyrodus;
 import net.lepidodendron.entity.model.entity.ModelGyrodus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGyrodus extends RenderLiving<EntityPrehistoricFloraGyrodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gyrodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gyrodus.png");
+    public static final ModelBase MODEL_BASE = new ModelGyrodus();
+
     public static float getScaler() {
         return 0.8F;
     }
     public RenderGyrodus(RenderManager mgr) {
-        super(mgr, new ModelGyrodus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

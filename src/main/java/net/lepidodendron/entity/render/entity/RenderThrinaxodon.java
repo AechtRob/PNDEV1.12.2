@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraThrinaxodon;
 import net.lepidodendron.entity.model.entity.ModelThrinaxodon;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderThrinaxodon extends RenderLiving<EntityPrehistoricFloraThrinaxodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinaxodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinaxodon.png");
+    public static final ModelBase MODEL_BASE = new ModelThrinaxodon();
 
     public RenderThrinaxodon(RenderManager mgr) {
-        super(mgr, new ModelThrinaxodon(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

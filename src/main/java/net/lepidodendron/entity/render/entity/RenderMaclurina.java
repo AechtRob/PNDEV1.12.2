@@ -2,21 +2,22 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMaclurina;
-import net.lepidodendron.entity.EntityPrehistoricFloraMarmolatella;
 import net.lepidodendron.entity.model.entity.ModelMaclurina;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMaclurina extends RenderLiving<EntityPrehistoricFloraMaclurina> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/maclurina.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/maclurina.png");
+    public static final ModelBase MODEL_BASE = new ModelMaclurina();
 
     public static float getScaler() {
         return 0.6F;
     }
     public RenderMaclurina(RenderManager mgr) {
-        super(mgr, new ModelMaclurina(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

@@ -12,7 +12,7 @@ public class LayerHaikouichthysFins implements LayerRenderer<EntityPrehistoricFl
 {
     private final RenderHaikouichthys haikouichthysRenderer;
     private final ModelBase haikouichthysModel = new ModelHaikouichthys();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haikouichthys_transparent.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haikouichthys_transparent.png");
 
     public LayerHaikouichthysFins(RenderHaikouichthys haikouichthysRendererIn)
     {

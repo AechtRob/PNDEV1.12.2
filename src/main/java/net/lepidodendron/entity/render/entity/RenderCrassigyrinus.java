@@ -3,17 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCrassigyrinus;
 import net.lepidodendron.entity.model.entity.ModelCrassigyrinus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCrassigyrinus extends RenderLiving<EntityPrehistoricFloraCrassigyrinus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crassigyrinus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crassigyrinus.png");
+    public static final ModelBase MODEL_BASE = new ModelCrassigyrinus();
+
     public static float getScaler() {return 0.465F;}
 
     public RenderCrassigyrinus(RenderManager mgr) {
-        super(mgr, new ModelCrassigyrinus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

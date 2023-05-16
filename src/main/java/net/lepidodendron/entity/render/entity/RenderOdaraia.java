@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOdaraia;
 import net.lepidodendron.entity.model.entity.ModelOdaraia;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOdaraia extends RenderLiving<EntityPrehistoricFloraOdaraia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/odaraia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/odaraia.png");
+    public static final ModelBase MODEL_BASE = new ModelOdaraia();
 
     public RenderOdaraia(RenderManager mgr) {
 
-        super(mgr, new ModelOdaraia(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
         this.addLayer(new LayerOdaraiaShell(this));
     }
 

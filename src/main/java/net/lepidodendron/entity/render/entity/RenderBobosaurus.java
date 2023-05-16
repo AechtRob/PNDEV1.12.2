@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBobosaurus;
 import net.lepidodendron.entity.model.entity.ModelBobosaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBobosaurus extends RenderLiving<EntityPrehistoricFloraBobosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bobosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bobosaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelBobosaurus();
 
     public RenderBobosaurus(RenderManager mgr) {
-        super(mgr, new ModelBobosaurus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
     public static float getScaler() {
         return 0.85f;

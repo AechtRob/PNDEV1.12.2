@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCiurcopterus;
 import net.lepidodendron.entity.model.entity.ModelCiurcopterus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCiurcopterus extends RenderLiving<EntityPrehistoricFloraCiurcopterus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ciurcopterus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ciurcopterus.png");
+    public static final ModelBase MODEL_BASE = new ModelCiurcopterus();
+
     public static float getScaler() {
         return 0.43F;
     }
     public RenderCiurcopterus(RenderManager mgr) {
-        super(mgr, new ModelCiurcopterus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

@@ -3,18 +3,19 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEurypterus;
 import net.lepidodendron.entity.model.entity.ModelEurypterus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEurypterus extends RenderLiving<EntityPrehistoricFloraEurypterus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus_baby.png");
-
+    public static final ModelBase MODEL_BASE = new ModelEurypterus();
 
     public RenderEurypterus(RenderManager mgr) {
-        super(mgr, new ModelEurypterus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

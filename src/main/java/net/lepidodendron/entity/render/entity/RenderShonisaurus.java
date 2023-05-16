@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraShonisaurus;
 import net.lepidodendron.entity.model.entity.ModelShonisaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +12,11 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderShonisaurus extends RenderLiving<EntityPrehistoricFloraShonisaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shonisaurus.png");
-    
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shonisaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelShonisaurus();
+
     public RenderShonisaurus(RenderManager mgr) {
-        super(mgr, new ModelShonisaurus(), 1.5f);
+        super(mgr, MODEL_BASE, 1.5f);
     }
     public static float getScaler() {return 1.24F; }
 

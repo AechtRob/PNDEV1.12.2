@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLebachacanthus;
 import net.lepidodendron.entity.model.entity.ModelLebachacanthus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLebachacanthus extends RenderLiving<EntityPrehistoricFloraLebachacanthus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lebachacanthus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lebachacanthus.png");
+    public static final ModelBase MODEL_BASE = new ModelLebachacanthus();
 
     public RenderLebachacanthus(RenderManager mgr) {
-        super(mgr, new ModelLebachacanthus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

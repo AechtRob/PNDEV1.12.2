@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegamastax;
 import net.lepidodendron.entity.model.entity.ModelMegamastax;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMegamastax extends RenderLiving<EntityPrehistoricFloraMegamastax> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megamastax.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megamastax.png");
+    public static final ModelBase MODEL_BASE = new ModelMegamastax();
+
     public static float getScaler() {
         return 0.7F * 0.695F;
     }
     public RenderMegamastax(RenderManager mgr) {
-        super(mgr, new ModelMegamastax(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

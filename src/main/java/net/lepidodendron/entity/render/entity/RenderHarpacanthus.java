@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHarpacanthus;
 import net.lepidodendron.entity.model.entity.ModelHarpacanthus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHarpacanthus extends RenderLiving<EntityPrehistoricFloraHarpacanthus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harpacanthus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harpacanthus.png");
+    public static final ModelBase MODEL_BASE = new ModelHarpacanthus();
+
     public static float getScaler() {
         return 0.7F * 0.395F;
     }
     public RenderHarpacanthus(RenderManager mgr) {
-        super(mgr, new ModelHarpacanthus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

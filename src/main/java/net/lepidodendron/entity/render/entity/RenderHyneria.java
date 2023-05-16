@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHyneria;
 import net.lepidodendron.entity.model.entity.ModelHyneria;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHyneria extends RenderLiving<EntityPrehistoricFloraHyneria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyneria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyneria.png");
+    public static final ModelBase MODEL_BASE = new ModelHyneria();
 
     public RenderHyneria(RenderManager mgr) {
-        super(mgr, new ModelHyneria(), 1.0f);
+        super(mgr, MODEL_BASE, 1.0f);
     }
 
     @Override

@@ -203,6 +203,13 @@ public class ModelPalaeodictyopteraMedium extends AdvancedModelBase {
         GlStateManager.popMatrix();
     }
 
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.12F;
+        this.body.offsetY = -0.01F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

@@ -1,22 +1,23 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraArduafrons;
 import net.lepidodendron.entity.EntityPrehistoricFloraBalhuticaris;
 import net.lepidodendron.entity.model.entity.ModelBalhuticaris;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBalhuticaris extends RenderLiving<EntityPrehistoricFloraBalhuticaris> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/balhuticaris.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/balhuticaris.png");
+    public static final ModelBase MODEL_BASE = new ModelBalhuticaris();
 
     public static float getScaler() {
         return 0.3F * 0.5F;
     }
     public RenderBalhuticaris(RenderManager mgr) {
-        super(mgr, new ModelBalhuticaris(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

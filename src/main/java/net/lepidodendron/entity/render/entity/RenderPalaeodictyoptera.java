@@ -13,25 +13,25 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFloraPalaeodictyoptera> {
-    private static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_delitzschala.png");
-    private static final ResourceLocation TEXTURE_DUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_dunbaria.png");
-    private static final ResourceLocation TEXTURE_HOMOIOPTERA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_homoioptera.png");
-    private static final ResourceLocation TEXTURE_HOMALONEURA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_homaloneura.png");
-    private static final ResourceLocation TEXTURE_LITHOMANTIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_lithomantis.png");
-    private static final ResourceLocation TEXTURE_LYCOCERCUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_lycocercus.png");
-    private static final ResourceLocation TEXTURE_SINODUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_sinodunbaria.png");
-    private static final ResourceLocation TEXTURE_STENODICTYA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_stenodictya.png");
-    private static final ResourceLocation TEXTURE_MAZOTHAIROS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_mazothairos.png");
+    public static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_delitzschala.png");
+    public static final ResourceLocation TEXTURE_DUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_dunbaria.png");
+    public static final ResourceLocation TEXTURE_HOMOIOPTERA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_homoioptera.png");
+    public static final ResourceLocation TEXTURE_HOMALONEURA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_homaloneura.png");
+    public static final ResourceLocation TEXTURE_LITHOMANTIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_lithomantis.png");
+    public static final ResourceLocation TEXTURE_LYCOCERCUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_lycocercus.png");
+    public static final ResourceLocation TEXTURE_SINODUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_sinodunbaria.png");
+    public static final ResourceLocation TEXTURE_STENODICTYA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_stenodictya.png");
+    public static final ResourceLocation TEXTURE_MAZOTHAIROS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_mazothairos.png");
 
-    private static final ModelBase MODEL_DELITZSCHALA = new ModelPalaeodictyopteraSmall();
-    private static final ModelBase MODEL_DUNBARIA = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_HOMOIOPTERA = new ModelPalaeodictyopteraLarge();
-    private static final ModelBase MODEL_HOMALONEURA = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_LITHOMANTIS = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_LYCOCERCUS = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_SINODUNBARIA = new ModelPalaeodictyopteraSmall();
-    private static final ModelBase MODEL_STENODICTYA = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_MAZOTHAIROS = new ModelPalaeodictyopteraLarge();
+    public static final ModelBase MODEL_DELITZSCHALA = new ModelPalaeodictyopteraSmall();
+    public static final ModelBase MODEL_DUNBARIA = new ModelPalaeodictyopteraMedium();
+    public static final ModelBase MODEL_HOMOIOPTERA = new ModelPalaeodictyopteraLarge();
+    public static final ModelBase MODEL_HOMALONEURA = new ModelPalaeodictyopteraMedium();
+    public static final ModelBase MODEL_LITHOMANTIS = new ModelPalaeodictyopteraMedium();
+    public static final ModelBase MODEL_LYCOCERCUS = new ModelPalaeodictyopteraMedium();
+    public static final ModelBase MODEL_SINODUNBARIA = new ModelPalaeodictyopteraSmall();
+    public static final ModelBase MODEL_STENODICTYA = new ModelPalaeodictyopteraMedium();
+    public static final ModelBase MODEL_MAZOTHAIROS = new ModelPalaeodictyopteraLarge();
 
     public RenderPalaeodictyoptera(RenderManager mgr) {
         super(mgr, new ModelPalaeodictyopteraSmall(), 0.0f);
@@ -160,51 +160,42 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
         }
     }
 
-    @Override
-    protected void preRenderCallback(EntityPrehistoricFloraPalaeodictyoptera entity, float f) {
-        float scaler = 1F;
-        switch (entity.getPNType()) {
-            case DELITZSCHALA: default:
-                scaler = 0.115F;
-                break;
+    public static float getScaler(EntityPrehistoricFloraPalaeodictyoptera.Type variant) {
+        switch (variant) {
+            case DELITZSCHALA:
+            default:
+                return 0.115F;
 
             case DUNBARIA:
-                scaler = 0.127F;
-                break;
+                return 0.127F;
 
             case HOMALONEURA:
-                scaler = 0.135F;
-                break;
+                return 0.135F;
 
             case HOMOIOPTERA:
-                scaler = 0.192F;
-                break;
+                return 0.192F;
 
             case LITHOMANTIS:
-                scaler = 0.143F;
-                break;
+                return 0.143F;
 
             case LYCOCERCUS:
-                scaler = 0.141F;
-                break;
+                return 0.141F;
 
             case SINODUNBARIA:
-                scaler = 0.120F;
-                break;
+                return 0.120F;
 
             case STENODICTYA:
-                scaler = 0.149F;
-                break;
+                return 0.149F;
 
             case MAZOTHAIROS:
-                scaler = 0.225F;
-                break;
-
+                return 0.225F;
         }
-        float scale = 1.0F * scaler;
-//        if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
-//            scale = Math.min() 0.8F * scaler;
-//        }
+    }
+
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraPalaeodictyoptera entity, float f) {
+        float scale = 1.0F * getScaler(entity.getPNType());
         GlStateManager.scale(scale, scale, scale);
     }
 

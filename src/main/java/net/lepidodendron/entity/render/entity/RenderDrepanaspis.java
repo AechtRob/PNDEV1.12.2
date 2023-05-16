@@ -3,15 +3,17 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDrepanaspis;
 import net.lepidodendron.entity.model.entity.ModelDrepanaspis;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDrepanaspis extends RenderLiving<EntityPrehistoricFloraDrepanaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanaspis.png");
+    public static final ModelBase MODEL_BASE = new ModelDrepanaspis();
 
     public RenderDrepanaspis(RenderManager mgr) {
-        super(mgr, new ModelDrepanaspis(), 0.325f);
+        super(mgr, MODEL_BASE, 0.325f);
     }
 
     @Override

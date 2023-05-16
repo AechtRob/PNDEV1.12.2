@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDecacuminaster;
 import net.lepidodendron.entity.model.entity.ModelDecacuminaster;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDecacuminaster extends RenderLiving<EntityPrehistoricFloraDecacuminaster> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/decacuminaster.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/decacuminaster.png");
+    public static final ModelBase MODEL_BASE = new ModelDecacuminaster();
+
     public static float getScaler() {
         return 0.7F * 0.18F;
     }
     public RenderDecacuminaster(RenderManager mgr) {
-        super(mgr, new ModelDecacuminaster(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

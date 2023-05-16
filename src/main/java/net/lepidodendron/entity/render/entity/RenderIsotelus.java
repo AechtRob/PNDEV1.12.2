@@ -1,19 +1,20 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraCheirurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraIsotelus;
 import net.lepidodendron.entity.model.entity.ModelIsotelus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderIsotelus extends RenderLiving<EntityPrehistoricFloraIsotelus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/isotelus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/isotelus.png");
+    public static final ModelBase MODEL_BASE = new ModelIsotelus();
 
     public RenderIsotelus(RenderManager mgr) {
-        super(mgr, new ModelIsotelus(), 0.2f);
+        super(mgr, MODEL_BASE, 0.2f);
     }
 
     @Override

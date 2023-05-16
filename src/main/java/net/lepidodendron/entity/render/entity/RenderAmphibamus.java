@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmphibamus;
 import net.lepidodendron.entity.model.entity.ModelAmphibamus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmphibamus extends RenderLiving<EntityPrehistoricFloraAmphibamus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amphibamus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amphibamus.png");
+    public static final ModelBase MODEL_BASE = new ModelAmphibamus();
 
     public RenderAmphibamus(RenderManager mgr) {
-        super(mgr, new ModelAmphibamus(), 0.25F);
+        super(mgr, MODEL_BASE, 0.25F);
     }
 
     @Override

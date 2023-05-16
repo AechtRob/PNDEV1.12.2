@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCameroceras;
 import net.lepidodendron.entity.model.entity.ModelCameroceras;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCameroceras extends RenderLiving<EntityPrehistoricFloraCameroceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cameroceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cameroceras.png");
+    public static final ModelBase MODEL_BASE = new ModelCameroceras();
 
     public RenderCameroceras(RenderManager mgr) {
-        super(mgr, new ModelCameroceras(), 0.6f);
+        super(mgr, MODEL_BASE, 0.6f);
     }
 
     @Override

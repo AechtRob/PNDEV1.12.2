@@ -3,18 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAegirocassis;
 import net.lepidodendron.entity.model.entity.ModelAegirocassis;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAegirocassis extends RenderLiving<EntityPrehistoricFloraAegirocassis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis_young.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis_baby.png");
+    public static final ModelBase MODEL_BASE = new ModelAegirocassis();
 
     public RenderAegirocassis(RenderManager mgr) {
-        super(mgr, new ModelAegirocassis(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
     public static float getScaler() {return 0.55F; }
 

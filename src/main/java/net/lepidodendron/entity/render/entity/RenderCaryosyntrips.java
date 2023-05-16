@@ -3,19 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaryosyntrips;
 import net.lepidodendron.entity.model.entity.ModelCaryosyntrips;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCaryosyntrips extends RenderLiving<EntityPrehistoricFloraCaryosyntrips> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caryosyntrips.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caryosyntrips.png");
+    public static final ModelBase MODEL_BASE = new ModelCaryosyntrips();
+
     public static float getScaler() {
         return 0.21F;
     }
 
     public RenderCaryosyntrips(RenderManager mgr) {
-        super(mgr, new ModelCaryosyntrips(), 0.2f);
+        super(mgr, MODEL_BASE, 0.2f);
     }
 
     @Override

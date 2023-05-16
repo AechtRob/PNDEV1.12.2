@@ -3,20 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCotylorhynchus;
 import net.lepidodendron.entity.model.entity.ModelCotylorhynchus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCotylorhynchus extends RenderLiving<EntityPrehistoricFloraCotylorhynchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cotylorhynchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cotylorhynchus.png");
+    public static final ModelBase MODEL_BASE = new ModelCotylorhynchus();
 
     public static float getScaler() {
         return 1.041f;
     }
 
     public RenderCotylorhynchus(RenderManager mgr) {
-        super(mgr, new ModelCotylorhynchus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

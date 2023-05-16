@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEndoceras;
 import net.lepidodendron.entity.model.entity.ModelEndoceras;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEndoceras extends RenderLiving<EntityPrehistoricFloraEndoceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/endoceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/endoceras.png");
+    public static final ModelBase MODEL_BASE = new ModelEndoceras();
 
     public RenderEndoceras(RenderManager mgr) {
-        super(mgr, new ModelEndoceras(), 0.6f);
+        super(mgr, MODEL_BASE, 0.6f);
     }
 
     @Override

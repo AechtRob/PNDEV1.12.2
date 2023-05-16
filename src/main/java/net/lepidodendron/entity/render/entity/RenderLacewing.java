@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
 import net.lepidodendron.entity.model.entity.ModelLacewing;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -17,9 +16,10 @@ public class RenderLacewing extends RenderLiving<EntityPrehistoricFloraLacewing>
     private static final ResourceLocation TEXTURE_LICHENIPOLYSTOECHOTES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_lichenipolystoechotes.png");
     private static final ResourceLocation TEXTURE_BELLINYMPHA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_bellinympha.png");
     private static final ResourceLocation TEXTURE_GRAMMOLINGIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_grammolingia.png");
+    public static final ModelBase MODEL_BASE = new ModelLacewing();
 
     public RenderLacewing(RenderManager mgr) {
-        super(mgr, new ModelLacewing(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
 

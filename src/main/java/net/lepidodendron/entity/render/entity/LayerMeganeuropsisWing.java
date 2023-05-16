@@ -12,7 +12,7 @@ public class LayerMeganeuropsisWing implements LayerRenderer<EntityPrehistoricFl
 {
     private final RenderMeganeuropsis meganeuropsisRenderer;
     private final ModelBase meganeuropsisModel = new ModelMeganeuropsis();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeuropsis_wing.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeuropsis_wing.png");
 
     public LayerMeganeuropsisWing(RenderMeganeuropsis meganeuropsisRendererIn)
     {

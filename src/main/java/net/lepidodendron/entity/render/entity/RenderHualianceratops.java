@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHualianceratops;
 import net.lepidodendron.entity.model.entity.ModelHualianceratops;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHualianceratops extends RenderLiving<EntityPrehistoricFloraHualianceratops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hualianceratops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hualianceratops.png");
+    public static final ModelBase MODEL_BASE = new ModelHualianceratops();
 
     public RenderHualianceratops(RenderManager mgr) {
-        super(mgr, new ModelHualianceratops(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     public static float getScaler() {

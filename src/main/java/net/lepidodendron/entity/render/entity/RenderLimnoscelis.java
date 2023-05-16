@@ -3,17 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLimnoscelis;
 import net.lepidodendron.entity.model.entity.ModelLimnoscelis;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLimnoscelis extends RenderLiving<EntityPrehistoricFloraLimnoscelis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limnoscelis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limnoscelis.png");
+    public static final ModelBase MODEL_BASE = new ModelLimnoscelis();
+
     public static float getScaler() {return 0.37f;}
 
     public RenderLimnoscelis(RenderManager mgr) {
-        super(mgr, new ModelLimnoscelis(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

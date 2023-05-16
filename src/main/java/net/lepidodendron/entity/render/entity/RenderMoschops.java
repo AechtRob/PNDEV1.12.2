@@ -3,20 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMoschops;
 import net.lepidodendron.entity.model.entity.ModelMoschops;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMoschops extends RenderLiving<EntityPrehistoricFloraMoschops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/moschops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/moschops.png");
+    public static final ModelBase MODEL_BASE = new ModelMoschops();
 
     public static float getScaler() {
         return 0.8f;
     }
 
     public RenderMoschops(RenderManager mgr) {
-        super(mgr, new ModelMoschops(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

@@ -3,19 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMastodonsaurus;
 import net.lepidodendron.entity.model.entity.ModelMastodonsaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMastodonsaurus extends RenderLiving<EntityPrehistoricFloraMastodonsaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mastodonsaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mastodonsaurus.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mastodonsaurus_young.png");
+    public static final ModelBase MODEL_BASE = new ModelMastodonsaurus();
 
     public static float getScaler() {return 1.375F;}
 
     public RenderMastodonsaurus(RenderManager mgr) {
-        super(mgr, new ModelMastodonsaurus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

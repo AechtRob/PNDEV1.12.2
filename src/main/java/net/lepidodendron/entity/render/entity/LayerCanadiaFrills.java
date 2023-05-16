@@ -12,7 +12,7 @@ public class LayerCanadiaFrills implements LayerRenderer<EntityPrehistoricFloraC
 {
     private final RenderCanadia CanadiaRenderer;
     private final ModelBase CanadiaModel = new ModelCanadia();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/canadia_transparent.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/canadia_transparent.png");
 
     public LayerCanadiaFrills(RenderCanadia CanadiaRendererIn)
     {

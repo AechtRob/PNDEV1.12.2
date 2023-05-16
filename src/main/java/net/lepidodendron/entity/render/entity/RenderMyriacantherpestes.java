@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMyriacantherpestes;
 import net.lepidodendron.entity.model.entity.ModelMyriacantherpestes;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -10,12 +11,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMyriacantherpestes extends RenderLiving<EntityPrehistoricFloraMyriacantherpestes> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/myriacantherpestes.png");
-   
+    public static final ModelBase MODEL_BASE = new ModelMyriacantherpestes();
 
     public static float getScaler() { return 0.335f; }
 
     public RenderMyriacantherpestes(RenderManager mgr) {
-        super(mgr, new ModelMyriacantherpestes(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

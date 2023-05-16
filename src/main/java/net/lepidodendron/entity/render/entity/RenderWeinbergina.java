@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWeinbergina;
 import net.lepidodendron.entity.model.entity.ModelWeinbergina;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderWeinbergina extends RenderLiving<EntityPrehistoricFloraWeinbergina> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weinbergina.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weinbergina.png");
+    public static final ModelBase MODEL_BASE = new ModelWeinbergina();
 
     public RenderWeinbergina(RenderManager mgr) {
-        super(mgr, new ModelWeinbergina(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

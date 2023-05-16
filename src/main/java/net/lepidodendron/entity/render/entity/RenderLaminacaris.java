@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLaminacaris;
 import net.lepidodendron.entity.model.entity.ModelLaminacaris;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLaminacaris extends RenderLiving<EntityPrehistoricFloraLaminacaris> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/laminacaris.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/laminacaris.png");
+    public static final ModelBase MODEL_BASE = new ModelLaminacaris();
 
     public RenderLaminacaris(RenderManager mgr) {
-        super(mgr, new ModelLaminacaris(), 0.2f);
+        super(mgr, MODEL_BASE, 0.2f);
     }
 
     @Override

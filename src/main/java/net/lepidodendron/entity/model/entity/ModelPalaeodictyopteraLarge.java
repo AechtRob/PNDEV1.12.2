@@ -212,6 +212,13 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
         //GlStateManager.popMatrix();
     }
 
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.12F;
+        this.body.offsetY = -0.01F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

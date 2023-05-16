@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraProterosuchus;
 import net.lepidodendron.entity.model.entity.ModelProterosuchus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProterosuchus extends RenderLiving<EntityPrehistoricFloraProterosuchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterosuchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterosuchus.png");
+    public static final ModelBase MODEL_BASE = new ModelProterosuchus();
 
     public RenderProterosuchus(RenderManager mgr) {
-        super(mgr, new ModelProterosuchus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
     public static float getScaler() {return 0.65f; }
 

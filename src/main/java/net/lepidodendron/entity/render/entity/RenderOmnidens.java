@@ -3,18 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOmnidens;
 import net.lepidodendron.entity.model.entity.ModelOmnidens;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOmnidens extends RenderLiving<EntityPrehistoricFloraOmnidens> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens_young.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens_baby.png");
+    public static final ModelBase MODEL_BASE = new ModelOmnidens();
 
     public RenderOmnidens(RenderManager mgr) {
-        super(mgr, new ModelOmnidens(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
     public static float getScaler() {
         return 0.36F;

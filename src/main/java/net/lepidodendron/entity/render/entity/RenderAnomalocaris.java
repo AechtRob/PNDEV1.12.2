@@ -3,20 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnomalocaris;
 import net.lepidodendron.entity.model.entity.ModelAnomalocaris;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAnomalocaris extends RenderLiving<EntityPrehistoricFloraAnomalocaris> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
+    public static final ModelBase MODEL_BASE = new ModelAnomalocaris();
 
     public static float getScaler() {
         return 0.275F;
     }
 
     public RenderAnomalocaris(RenderManager mgr) {
-        super(mgr, new ModelAnomalocaris(), 0.2f);
+        super(mgr, MODEL_BASE, 0.2f);
     }
 
     @Override

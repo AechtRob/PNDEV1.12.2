@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEdestus;
 import net.lepidodendron.entity.model.entity.ModelEdestus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEdestus extends RenderLiving<EntityPrehistoricFloraEdestus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edestus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edestus.png");
+    public static final ModelBase MODEL_BASE = new ModelEdestus();
 
     public RenderEdestus(RenderManager mgr) {
-        super(mgr, new ModelEdestus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

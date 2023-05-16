@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEunotosaurus;
 import net.lepidodendron.entity.model.entity.ModelEunotosaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEunotosaurus extends RenderLiving<EntityPrehistoricFloraEunotosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eunotosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eunotosaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelEunotosaurus();
+
     public static float getScaler() {
         return 0.7F * 0.34F;
     }
     public RenderEunotosaurus(RenderManager mgr) {
-        super(mgr, new ModelEunotosaurus(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

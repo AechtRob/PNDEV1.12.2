@@ -3,19 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCordaticaris;
 import net.lepidodendron.entity.model.entity.ModelCordaticaris;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCordaticaris extends RenderLiving<EntityPrehistoricFloraCordaticaris> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cordaticaris.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cordaticaris.png");
+    public static final ModelBase MODEL_BASE = new ModelCordaticaris();
+
     public static float getScaler() {
         return 0.2F;
     }
 
     public RenderCordaticaris(RenderManager mgr) {
-        super(mgr, new ModelCordaticaris(), 0.2f);
+        super(mgr, MODEL_BASE, 0.2f);
     }
 
     @Override

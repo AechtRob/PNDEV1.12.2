@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGorgonops;
 import net.lepidodendron.entity.model.entity.ModelGorgonops;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGorgonops extends RenderLiving<EntityPrehistoricFloraGorgonops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gorgonops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gorgonops.png");
+    public static final ModelBase MODEL_BASE = new ModelGorgonops();
 
     public RenderGorgonops(RenderManager mgr) {
-        super(mgr, new ModelGorgonops(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

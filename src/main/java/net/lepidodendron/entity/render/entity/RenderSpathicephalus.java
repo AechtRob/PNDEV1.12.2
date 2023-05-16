@@ -3,16 +3,19 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSpathicephalus;
 import net.lepidodendron.entity.model.entity.ModelSpathicephalus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSpathicephalus extends RenderLiving<EntityPrehistoricFloraSpathicephalus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spathicephalus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spathicephalus.png");
+    public static final ModelBase MODEL_BASE = new ModelSpathicephalus();
+
     public static float getScaler() {return 0.275f;}
     public RenderSpathicephalus(RenderManager mgr) {
-        super(mgr, new ModelSpathicephalus(), 0.26f);
+        super(mgr, MODEL_BASE, 0.26f);
     }
 
     @Override

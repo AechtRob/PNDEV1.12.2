@@ -149,6 +149,13 @@ public class ModelPalaeodictyopteraSmall extends AdvancedModelBase {
         updateDefaultPose();
     }
 
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.12F;
+        this.body.offsetY = -0.01F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         GlStateManager.pushMatrix();

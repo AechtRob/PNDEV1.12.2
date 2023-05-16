@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGoodradigbeeon;
 import net.lepidodendron.entity.model.entity.ModelGoodradigbeeon;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGoodradigbeeon extends RenderLiving<EntityPrehistoricFloraGoodradigbeeon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goodradigbeeon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goodradigbeeon.png");
+    public static final ModelBase MODEL_BASE = new ModelGoodradigbeeon();
+
     public static float getScaler() {
         return 0.95F * 0.52F;
     }
     public RenderGoodradigbeeon(RenderManager mgr) {
-        super(mgr, new ModelGoodradigbeeon(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegateuthis;
 import net.lepidodendron.entity.model.entity.ModelMegateuthis;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMegateuthis extends RenderLiving<EntityPrehistoricFloraMegateuthis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megateuthis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megateuthis.png");
+    public static final ModelBase MODEL_BASE = new ModelMegateuthis();
+
     public static float getScaler() {
         return 0.75F;
     }
     public RenderMegateuthis(RenderManager mgr) {
-        super(mgr, new ModelMegateuthis(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

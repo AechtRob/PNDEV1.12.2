@@ -12,7 +12,7 @@ public class LayerOdaraiaShell implements LayerRenderer<EntityPrehistoricFloraOd
 {
     private final RenderOdaraia odaraiaRenderer;
     private final ModelBase odaraiaModel = new ModelOdaraia();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/odaraia_shell.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/odaraia_shell.png");
 
     public LayerOdaraiaShell(RenderOdaraia odaraiaRendererIn)
     {

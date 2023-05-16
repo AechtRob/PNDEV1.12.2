@@ -3,19 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiplocaulus;
 import net.lepidodendron.entity.model.entity.ModelDiplocaulus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDiplocaulus extends RenderLiving<EntityPrehistoricFloraDiplocaulus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diplocaulus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diplocaulus.png");
+    public static final ModelBase MODEL_BASE = new ModelDiplocaulus();
 
     public static float getScaler() {
         return 0.385F;
     }
     public RenderDiplocaulus(RenderManager mgr) {
-        super(mgr, new ModelDiplocaulus(), 0.1f);
+        super(mgr, MODEL_BASE, 0.1f);
     }
 
 

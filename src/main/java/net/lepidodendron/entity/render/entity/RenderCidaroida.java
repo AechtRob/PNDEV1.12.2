@@ -3,25 +3,27 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCidaroida;
 import net.lepidodendron.entity.model.entity.ModelCidaroida;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCidaroida extends RenderLiving<EntityPrehistoricFloraCidaroida> {
-    private static final ResourceLocation TEXTURE1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_1.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_1.png");
     private static final ResourceLocation TEXTURE2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_2.png");
     private static final ResourceLocation TEXTURE3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_3.png");
     private static final ResourceLocation TEXTURE4 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_4.png");
+    public static final ModelBase MODEL_BASE = new ModelCidaroida();
 
     public RenderCidaroida(RenderManager mgr) {
-        super(mgr, new ModelCidaroida(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCidaroida entity) {
         if (entity.getVariant() == 0) {
-            return RenderCidaroida.TEXTURE1;
+            return RenderCidaroida.TEXTURE;
         }
         if (entity.getVariant() == 1) {
             return RenderCidaroida.TEXTURE2;

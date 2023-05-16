@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGlaurung;
 import net.lepidodendron.entity.model.entity.ModelWeigeltisaurid;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -10,11 +11,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderGlaurung extends RenderLiving<EntityPrehistoricFloraGlaurung> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/glaurung.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/glaurung.png");
     private static final ResourceLocation TEXTURE_REX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rex.png");
-    
+    public static final ModelBase MODEL_BASE = new ModelWeigeltisaurid();
+
     public RenderGlaurung(RenderManager mgr) {
-        super(mgr, new ModelWeigeltisaurid(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

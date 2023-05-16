@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLituites;
 import net.lepidodendron.entity.model.entity.ModelLituites;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLituites extends RenderLiving<EntityPrehistoricFloraLituites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lituites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lituites.png");
+    public static final ModelBase MODEL_BASE = new ModelLituites();
 
     public RenderLituites(RenderManager mgr) {
-        super(mgr, new ModelLituites(), 0.1f);
+        super(mgr, MODEL_BASE, 0.1f);
     }
 
     @Override

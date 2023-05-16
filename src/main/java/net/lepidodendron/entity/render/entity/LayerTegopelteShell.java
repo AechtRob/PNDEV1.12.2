@@ -12,7 +12,7 @@ public class LayerTegopelteShell implements LayerRenderer<EntityPrehistoricFlora
 {
     private final RenderTegopelte tegopelteRenderer;
     private final ModelBase tegopelteModel = new ModelTegopelte();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tegopelte_shell.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tegopelte_shell.png");
 
     public LayerTegopelteShell(RenderTegopelte tegopelteRendererIn)
     {

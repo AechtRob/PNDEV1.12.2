@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGuiyu;
 import net.lepidodendron.entity.model.entity.ModelGuiyu;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGuiyu extends RenderLiving<EntityPrehistoricFloraGuiyu> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/guiyu.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/guiyu.png");
+    public static final ModelBase MODEL_BASE = new ModelGuiyu();
+
     public static float getScaler() {
         return 0.6F * 0.295F;
     }
     public RenderGuiyu(RenderManager mgr) {
-        super(mgr, new ModelGuiyu(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaelestiventus;
 import net.lepidodendron.entity.model.entity.ModelCaelestiventus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCaelestiventus extends RenderLiving<EntityPrehistoricFloraCaelestiventus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caelestiventus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caelestiventus.png");
+    public static final ModelBase MODEL_BASE = new ModelCaelestiventus();
 
     public RenderCaelestiventus(RenderManager mgr) {
-        super(mgr, new ModelCaelestiventus(), 0.15f);
+        super(mgr, MODEL_BASE, 0.15f);
     }
 
     @Override

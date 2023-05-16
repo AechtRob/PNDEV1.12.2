@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHurdia;
 import net.lepidodendron.entity.model.entity.ModelHurdia;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHurdia extends RenderLiving<EntityPrehistoricFloraHurdia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hurdia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hurdia.png");
+    public static final ModelBase MODEL_BASE = new ModelHurdia();
+
     public static float getScaler() {
         return 0.7F * 0.2F;
     }
     public RenderHurdia(RenderManager mgr) {
-        super(mgr, new ModelHurdia(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

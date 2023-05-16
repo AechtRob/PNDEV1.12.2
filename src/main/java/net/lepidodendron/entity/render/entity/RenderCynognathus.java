@@ -3,17 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCynognathus;
 import net.lepidodendron.entity.model.entity.ModelCynognathus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCynognathus extends RenderLiving<EntityPrehistoricFloraCynognathus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cynognathus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cynognathus.png");
+    public static final ModelBase MODEL_BASE = new ModelCynognathus();
+
     public static float getScaler() {return 0.595f;}
 
     public RenderCynognathus(RenderManager mgr) {
-        super(mgr, new ModelCynognathus(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     @Override

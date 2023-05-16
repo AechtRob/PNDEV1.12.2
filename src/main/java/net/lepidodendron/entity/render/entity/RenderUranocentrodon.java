@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraUranocentrodon;
 import net.lepidodendron.entity.model.entity.ModelUranocentrodon;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderUranocentrodon extends RenderLiving<EntityPrehistoricFloraUranocentrodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uranocentrodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uranocentrodon.png");
+    public static final ModelBase MODEL_BASE = new ModelUranocentrodon();
 
     public RenderUranocentrodon(RenderManager mgr) {
-        super(mgr, new ModelUranocentrodon(), 0.65F);
+        super(mgr, MODEL_BASE, 0.65F);
     }
 
     @Override

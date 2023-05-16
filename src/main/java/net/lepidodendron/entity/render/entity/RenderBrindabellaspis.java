@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBrindabellaspis;
 import net.lepidodendron.entity.model.entity.ModelBrindabellaspis;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBrindabellaspis extends RenderLiving<EntityPrehistoricFloraBrindabellaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brindabellaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brindabellaspis.png");
+    public static final ModelBase MODEL_BASE = new ModelBrindabellaspis();
+
     public static float getScaler() {
         return 0.7F * 0.63F;
     }
     public RenderBrindabellaspis(RenderManager mgr) {
-        super(mgr, new ModelBrindabellaspis(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

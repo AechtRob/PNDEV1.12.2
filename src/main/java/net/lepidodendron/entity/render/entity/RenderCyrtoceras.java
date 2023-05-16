@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCyrtoceras;
 import net.lepidodendron.entity.model.entity.ModelCyrtoceras;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCyrtoceras extends RenderLiving<EntityPrehistoricFloraCyrtoceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cyrtoceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cyrtoceras.png");
+    public static final ModelBase MODEL_BASE = new ModelCyrtoceras();
 
     public RenderCyrtoceras(RenderManager mgr) {
-        super(mgr, new ModelCyrtoceras(), 0.1f);
+        super(mgr, MODEL_BASE, 0.1f);
     }
 
     @Override

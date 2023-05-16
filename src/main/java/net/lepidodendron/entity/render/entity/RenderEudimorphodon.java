@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEudimorphodon;
 import net.lepidodendron.entity.model.entity.ModelEudimorphodon;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEudimorphodon extends RenderLiving<EntityPrehistoricFloraEudimorphodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eudimorphodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eudimorphodon.png");
+    public static final ModelBase MODEL_BASE = new ModelEudimorphodon();
 
     public RenderEudimorphodon(RenderManager mgr) {
-        super(mgr, new ModelEudimorphodon(), 0.10f);
+        super(mgr, MODEL_BASE, 0.10f);
     }
 
     @Override

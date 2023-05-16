@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAulacephalodon;
 import net.lepidodendron.entity.model.entity.ModelAulacephalodon;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAulacephalodon extends RenderLiving<EntityPrehistoricFloraAulacephalodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aulacephalodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aulacephalodon.png");
+    public static final ModelBase MODEL_BASE = new ModelAulacephalodon();
 
     public RenderAulacephalodon(RenderManager mgr) {
-        super(mgr, new ModelAulacephalodon(), 0.325f);
+        super(mgr, MODEL_BASE, 0.325f);
     }
 
     @Override

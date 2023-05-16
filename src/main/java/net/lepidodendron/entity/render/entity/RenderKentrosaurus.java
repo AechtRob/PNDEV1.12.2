@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKentrosaurus;
 import net.lepidodendron.entity.model.entity.ModelKentrosaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKentrosaurus extends RenderLiving<EntityPrehistoricFloraKentrosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kentrosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kentrosaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelKentrosaurus();
 
     public RenderKentrosaurus(RenderManager mgr) {
-        super(mgr, new ModelKentrosaurus(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     public static float getScaler() {

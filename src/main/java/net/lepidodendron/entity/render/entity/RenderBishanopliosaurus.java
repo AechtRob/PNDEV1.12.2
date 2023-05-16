@@ -3,19 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBishanopliosaurus;
 import net.lepidodendron.entity.model.entity.ModelBishanopliosaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBishanopliosaurus extends RenderLiving<EntityPrehistoricFloraBishanopliosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bishanopliosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bishanopliosaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelBishanopliosaurus();
 
     public static float getScaler() {
         return 0.8F;
     }
     public RenderBishanopliosaurus(RenderManager mgr) {
-        super(mgr, new ModelBishanopliosaurus(), 1.5f);
+        super(mgr, MODEL_BASE, 1.5f);
     }
 
     @Override

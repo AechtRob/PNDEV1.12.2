@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBatrachotomus;
 import net.lepidodendron.entity.model.entity.ModelBatrachotomus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBatrachotomus extends RenderLiving<EntityPrehistoricFloraBatrachotomus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/batrachotomus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/batrachotomus.png");
+    public static final ModelBase MODEL_BASE = new ModelBatrachotomus();
+
     public static float getScaler() {
         return 1.0F;
     }
     public RenderBatrachotomus(RenderManager mgr) {
-        super(mgr, new ModelBatrachotomus(), 0.6f);
+        super(mgr, MODEL_BASE, 0.6f);
     }
 
     @Override

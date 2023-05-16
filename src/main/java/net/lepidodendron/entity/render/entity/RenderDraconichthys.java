@@ -3,18 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDraconichthys;
 import net.lepidodendron.entity.model.entity.ModelDraconichthys;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDraconichthys extends RenderLiving<EntityPrehistoricFloraDraconichthys> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/draconichthys.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/draconichthys.png");
+    public static final ModelBase MODEL_BASE = new ModelDraconichthys();
+
     public static float getScaler() {
         return 0.7F * 0.6F;
     }
     public RenderDraconichthys(RenderManager mgr) {
-        super(mgr, new ModelDraconichthys(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

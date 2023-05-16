@@ -3,19 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEchinochimaera;
 import net.lepidodendron.entity.model.entity.ModelEchinochimaera;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEchinochimaera extends RenderLiving<EntityPrehistoricFloraEchinochimaera> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_male.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_male.png");
     private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_female.png");
+    public static final ModelBase MODEL_BASE = new ModelEchinochimaera();
+
     public static float getScaler() {
         return 0.24F;
     }
     public RenderEchinochimaera(RenderManager mgr) {
-        super(mgr, new ModelEchinochimaera(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

@@ -3,18 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPagea;
 import net.lepidodendron.entity.model.entity.ModelPagea;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPagea extends RenderLiving<EntityPrehistoricFloraPagea> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pagea.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pagea.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pagea_young.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pagea_baby.png");
+    public static final ModelBase MODEL_BASE = new ModelPagea();
 
     public RenderPagea(RenderManager mgr) {
-        super(mgr, new ModelPagea(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     @Override

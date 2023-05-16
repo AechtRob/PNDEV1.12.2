@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMelosaurus;
 import net.lepidodendron.entity.model.entity.ModelMelosaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMelosaurus extends RenderLiving<EntityPrehistoricFloraMelosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/melosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/melosaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelMelosaurus();
 
     public RenderMelosaurus(RenderManager mgr) {
-        super(mgr, new ModelMelosaurus(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     @Override

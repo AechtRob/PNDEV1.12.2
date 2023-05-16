@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHarvestman;
 import net.lepidodendron.entity.model.entity.ModelHarvestman;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHarvestman extends RenderLiving<EntityPrehistoricFloraHarvestman> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harvestman.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harvestman.png");
+    public static final ModelBase MODEL_BASE = new ModelHarvestman();
 
     public RenderHarvestman(RenderManager mgr) {
-        super(mgr, new ModelHarvestman(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

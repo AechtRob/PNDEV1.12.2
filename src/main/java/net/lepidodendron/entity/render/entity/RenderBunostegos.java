@@ -3,17 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBunostegos;
 import net.lepidodendron.entity.model.entity.ModelBunostegos;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBunostegos extends RenderLiving<EntityPrehistoricFloraBunostegos> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
+    public static final ModelBase MODEL_BASE = new ModelBunostegos();
+
     public static float getScaler() {return 0.90f;}
 
     public RenderBunostegos(RenderManager mgr) {
-        super(mgr, new ModelBunostegos(), 0.5F);
+        super(mgr, MODEL_BASE, 0.5F);
     }
 
     @Override

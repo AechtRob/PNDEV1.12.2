@@ -2,18 +2,19 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraForeyia;
-import net.lepidodendron.entity.EntityPrehistoricFloraGemuendina;
 import net.lepidodendron.entity.model.entity.ModelForeyia;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderForeyia extends RenderLiving<EntityPrehistoricFloraForeyia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/foreyia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/foreyia.png");
+    public static final ModelBase MODEL_BASE = new ModelForeyia();
 
     public RenderForeyia(RenderManager mgr) {
-        super(mgr, new ModelForeyia(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
     public static float getScaler() {return 0.2F;}
 

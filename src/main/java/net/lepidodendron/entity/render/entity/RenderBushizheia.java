@@ -3,15 +3,17 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBushizheia;
 import net.lepidodendron.entity.model.entity.ModelBushizheia;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBushizheia extends RenderLiving<EntityPrehistoricFloraBushizheia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bushizheia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bushizheia.png");
+    public static final ModelBase MODEL_BASE = new ModelBushizheia();
 
     public RenderBushizheia(RenderManager mgr) {
-        super(mgr, new ModelBushizheia(), 0.00f);
+        super(mgr, MODEL_BASE, 0.00f);
     }
 
     @Override

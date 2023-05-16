@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraProterogyrinus;
 import net.lepidodendron.entity.model.entity.ModelProterogyrinus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProterogyrinus extends RenderLiving<EntityPrehistoricFloraProterogyrinus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterogyrinus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterogyrinus.png");
+    public static final ModelBase MODEL_BASE = new ModelProterogyrinus();
 
     public RenderProterogyrinus(RenderManager mgr) {
-        super(mgr, new ModelProterogyrinus(), 0.40f);
+        super(mgr, MODEL_BASE, 0.40f);
     }
 
     @Override

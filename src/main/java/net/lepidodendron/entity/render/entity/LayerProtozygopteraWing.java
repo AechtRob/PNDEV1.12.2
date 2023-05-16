@@ -12,7 +12,7 @@ public class LayerProtozygopteraWing implements LayerRenderer<EntityPrehistoricF
 {
     private final RenderProtozygoptera ProtozygopteraRenderer;
     private final ModelBase ProtozygopteraModel = new ModelProtozygoptera();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protozygoptera_wing.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protozygoptera_wing.png");
 
     public LayerProtozygopteraWing(RenderProtozygoptera ProtozygopteraRendererIn)
     {

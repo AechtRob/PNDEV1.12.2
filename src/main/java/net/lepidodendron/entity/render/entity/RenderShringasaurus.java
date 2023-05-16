@@ -3,20 +3,23 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraShringasaurus;
 import net.lepidodendron.entity.model.entity.ModelShringasaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderShringasaurus extends RenderLiving<EntityPrehistoricFloraShringasaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shringasaurus_m.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shringasaurus_m.png");
     private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shringasaurus_f.png");
+    public static final ModelBase MODEL_BASE = new ModelShringasaurus();
+
     public static float getScaler() {
         return 0.617f;
     }
 
     public RenderShringasaurus(RenderManager mgr) {
-        super(mgr, new ModelShringasaurus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

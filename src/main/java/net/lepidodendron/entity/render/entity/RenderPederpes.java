@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPederpes;
 import net.lepidodendron.entity.model.entity.ModelPederpes;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPederpes extends RenderLiving<EntityPrehistoricFloraPederpes> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
+    public static final ModelBase MODEL_BASE = new ModelPederpes();
 
     public RenderPederpes(RenderManager mgr) {
-        super(mgr, new ModelPederpes(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
     public static float getScaler() {
         return 0.3f;

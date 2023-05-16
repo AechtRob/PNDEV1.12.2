@@ -3,17 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAtopodentatus;
 import net.lepidodendron.entity.model.entity.ModelAtopodentatus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAtopodentatus extends RenderLiving<EntityPrehistoricFloraAtopodentatus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/atopodentatus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/atopodentatus.png");
+    public static final ModelBase MODEL_BASE = new ModelAtopodentatus();
+
     public static float getScaler() {return 1.0F* 0.367F;}
 
     public RenderAtopodentatus(RenderManager mgr) {
-        super(mgr, new ModelAtopodentatus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     @Override

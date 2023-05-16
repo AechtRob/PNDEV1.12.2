@@ -3,7 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.render.entity.RenderEosimops;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 		return LepidodendronMod.EOSIMOPS_LOOT;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_EOSIMOPS;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderEosimops.TEXTURE;
 	}
 }

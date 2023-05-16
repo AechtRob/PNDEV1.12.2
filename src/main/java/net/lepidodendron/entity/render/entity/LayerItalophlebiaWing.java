@@ -12,7 +12,7 @@ public class LayerItalophlebiaWing implements LayerRenderer<EntityPrehistoricFlo
 {
     private final RenderItalophlebia ItalophlebiaRenderer;
     private final ModelBase ItalophlebiaModel = new ModelProtozygoptera();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Italophlebia_wing.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Italophlebia_wing.png");
 
     public LayerItalophlebiaWing(RenderItalophlebia ItalophlebiaRendererIn)
     {

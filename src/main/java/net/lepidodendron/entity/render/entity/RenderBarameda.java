@@ -3,16 +3,19 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBarameda;
 import net.lepidodendron.entity.model.entity.ModelBarameda;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBarameda extends RenderLiving<EntityPrehistoricFloraBarameda> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barameda.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barameda.png");
+    public static final ModelBase MODEL_BASE = new ModelBarameda();
+
     public static float getScaler() {return 0.6F;}
     public RenderBarameda(RenderManager mgr) {
-        super(mgr, new ModelBarameda(), 1.0f);
+        super(mgr, MODEL_BASE, 1.0f);
     }
 
     @Override

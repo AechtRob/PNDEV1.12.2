@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTeleocrater;
 import net.lepidodendron.entity.model.entity.ModelTeleocrater;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTeleocrater extends RenderLiving<EntityPrehistoricFloraTeleocrater> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teleocrater.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teleocrater.png");
+    public static final ModelBase MODEL_BASE = new ModelTeleocrater();
 
     public RenderTeleocrater(RenderManager mgr) {
-        super(mgr, new ModelTeleocrater(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     public static float getScaler() {return 0.565F*0.7F;}

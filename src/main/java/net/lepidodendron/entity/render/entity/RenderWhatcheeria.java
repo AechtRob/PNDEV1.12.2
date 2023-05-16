@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWhatcheeria;
 import net.lepidodendron.entity.model.entity.ModelWhatcheeria;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderWhatcheeria extends RenderLiving<EntityPrehistoricFloraWhatcheeria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/whatcheeria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/whatcheeria.png");
+    public static final ModelBase MODEL_BASE = new ModelWhatcheeria();
 
     public RenderWhatcheeria(RenderManager mgr) {
-        super(mgr, new ModelWhatcheeria(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

@@ -12,7 +12,7 @@ public class LayerEoandromedaBody implements LayerRenderer<EntityPrehistoricFlor
 {
     private final RenderEoandromeda eoandromedaRenderer;
     private final ModelBase eoandromedaModel = new ModelEoandromeda();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoandromeda_body.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoandromeda_body.png");
 
     public LayerEoandromedaBody(RenderEoandromeda eoandromedaeRendererIn)
     {

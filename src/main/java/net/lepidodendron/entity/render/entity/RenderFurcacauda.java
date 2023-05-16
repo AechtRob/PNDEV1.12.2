@@ -3,15 +3,17 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraFurcacauda;
 import net.lepidodendron.entity.model.entity.ModelFurcacauda;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderFurcacauda extends RenderLiving<EntityPrehistoricFloraFurcacauda> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/furcacauda.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/furcacauda.png");
+    public static final ModelBase MODEL_BASE = new ModelFurcacauda();
 
     public RenderFurcacauda(RenderManager mgr) {
-        super(mgr, new ModelFurcacauda(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

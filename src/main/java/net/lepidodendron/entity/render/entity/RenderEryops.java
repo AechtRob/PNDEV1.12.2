@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEryops;
 import net.lepidodendron.entity.model.entity.ModelEryops;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEryops extends RenderLiving<EntityPrehistoricFloraEryops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryops.png");
+    public static final ModelBase MODEL_BASE = new ModelEryops();
 
     public RenderEryops(RenderManager mgr) {
-        super(mgr, new ModelEryops(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
     public static float getScaler() {
         return 0.93F;

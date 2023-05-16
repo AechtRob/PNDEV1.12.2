@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraElginia;
 import net.lepidodendron.entity.model.entity.ModelElginia;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderElginia extends RenderLiving<EntityPrehistoricFloraElginia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elginia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elginia.png");
+    public static final ModelBase MODEL_BASE = new ModelElginia();
 
     public RenderElginia(RenderManager mgr) {
-        super(mgr, new ModelElginia(), 0.325f);
+        super(mgr, MODEL_BASE, 0.325f);
     }
     public static float getScaler() {
         return 0.42f;

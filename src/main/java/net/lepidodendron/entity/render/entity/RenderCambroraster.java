@@ -1,22 +1,24 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraBalhuticaris;
 import net.lepidodendron.entity.EntityPrehistoricFloraCambroraster;
 import net.lepidodendron.entity.model.entity.ModelCambroraster;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCambroraster extends RenderLiving<EntityPrehistoricFloraCambroraster> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cambroraster.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cambroraster.png");
+    public static final ModelBase MODEL_BASE = new ModelCambroraster();
+
     public static float getScaler() {
         return 0.65F;
     }
 
     public RenderCambroraster(RenderManager mgr) {
-        super(mgr, new ModelCambroraster(), 0.0f);
+        super(mgr, MODEL_BASE, 0.0f);
     }
 
     @Override

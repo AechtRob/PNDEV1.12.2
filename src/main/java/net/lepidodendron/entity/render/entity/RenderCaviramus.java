@@ -3,20 +3,22 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaviramus;
 import net.lepidodendron.entity.model.entity.ModelCaviramus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCaviramus extends RenderLiving<EntityPrehistoricFloraCaviramus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caviramus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caviramus.png");
+    public static final ModelBase MODEL_BASE = new ModelCaviramus();
 
     public static float getScaler() {
         return 0.260F;
     }
 
     public RenderCaviramus(RenderManager mgr) {
-        super(mgr, new ModelCaviramus(), 0.12f);
+        super(mgr, MODEL_BASE, 0.12f);
     }
 
     @Override

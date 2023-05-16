@@ -3,17 +3,19 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMussaurus;
 import net.lepidodendron.entity.model.entity.ModelMussaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMussaurus extends RenderLiving<EntityPrehistoricFloraMussaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mussaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mussaurus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mussaurus_baby.png");
+    public static final ModelBase MODEL_BASE = new ModelMussaurus();
 
     public RenderMussaurus(RenderManager mgr) {
-        super(mgr, new ModelMussaurus(), 0.5f);
+        super(mgr, MODEL_BASE, 0.5f);
     }
 
     public static float getScaler() {

@@ -3,16 +3,18 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPiatnitzkysaurus;
 import net.lepidodendron.entity.model.entity.ModelPiatnitzkysaurus;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPiatnitzkysaurus extends RenderLiving<EntityPrehistoricFloraPiatnitzkysaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/piatnitzkysaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/piatnitzkysaurus.png");
+    public static final ModelBase MODEL_BASE = new ModelPiatnitzkysaurus();
 
     public RenderPiatnitzkysaurus(RenderManager mgr) {
-        super(mgr, new ModelPiatnitzkysaurus(), 0.3f);
+        super(mgr, MODEL_BASE, 0.3f);
     }
 
     @Override
