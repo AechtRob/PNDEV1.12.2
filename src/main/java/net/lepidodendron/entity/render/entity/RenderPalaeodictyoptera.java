@@ -8,9 +8,12 @@ import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraSmall;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFloraPalaeodictyoptera> {
     public static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_delitzschala.png");
@@ -36,6 +39,133 @@ public class RenderPalaeodictyoptera extends RenderLiving<EntityPrehistoricFlora
     public RenderPalaeodictyoptera(RenderManager mgr) {
         super(mgr, new ModelPalaeodictyopteraSmall(), 0.0f);
         this.addLayer(new LayerPalaeodictyopteraWing(this));
+    }
+
+    @Override
+    public void doRender(EntityPrehistoricFloraPalaeodictyoptera entity, double x, double y, double z, float entityYaw, float partialTicks) {
+
+        GlStateManager.pushMatrix();
+        GlStateManager.disableCull();
+        this.getEntityModel(entity).swingProgress = this.getSwingProgress(entity, partialTicks);
+        boolean shouldSit = entity.isRiding() && (entity.getRidingEntity() != null && entity.getRidingEntity().shouldRiderSit());
+        this.getEntityModel(entity).isRiding = shouldSit;
+        this.getEntityModel(entity).isChild = entity.isChild();
+
+        try
+        {
+            float f = this.interpolateRotation(entity.prevRenderYawOffset, entity.renderYawOffset, partialTicks);
+            float f1 = this.interpolateRotation(entity.prevRotationYawHead, entity.rotationYawHead, partialTicks);
+            float f2 = f1 - f;
+
+            if (shouldSit && entity.getRidingEntity() instanceof EntityLivingBase)
+            {
+                EntityLivingBase entitylivingbase = (EntityLivingBase)entity.getRidingEntity();
+                f = this.interpolateRotation(entitylivingbase.prevRenderYawOffset, entitylivingbase.renderYawOffset, partialTicks);
+                f2 = f1 - f;
+                float f3 = MathHelper.wrapDegrees(f2);
+
+                if (f3 < -85.0F)
+                {
+                    f3 = -85.0F;
+                }
+
+                if (f3 >= 85.0F)
+                {
+                    f3 = 85.0F;
+                }
+
+                f = f1 - f3;
+
+                if (f3 * f3 > 2500.0F)
+                {
+                    f += f3 * 0.2F;
+                }
+
+                f2 = f1 - f;
+            }
+
+            float f7 = entity.prevRotationPitch + (entity.rotationPitch - entity.prevRotationPitch) * partialTicks;
+            this.renderLivingAt(entity, x, y, z);
+            float f8 = this.handleRotationFloat(entity, partialTicks);
+            this.applyRotations(entity, f8, f, partialTicks);
+            float f4 = this.prepareScale(entity, partialTicks);
+            float f5 = 0.0F;
+            float f6 = 0.0F;
+
+            if (!entity.isRiding())
+            {
+                f5 = entity.prevLimbSwingAmount + (entity.limbSwingAmount - entity.prevLimbSwingAmount) * partialTicks;
+                f6 = entity.limbSwing - entity.limbSwingAmount * (1.0F - partialTicks);
+
+                if (entity.isChild())
+                {
+                    f6 *= 3.0F;
+                }
+
+                if (f5 > 1.0F)
+                {
+                    f5 = 1.0F;
+                }
+                f2 = f1 - f; // Forge: Fix MC-1207
+            }
+
+            GlStateManager.enableAlpha();
+            this.getEntityModel(entity).setLivingAnimations(entity, f6, f5, partialTicks);
+            this.getEntityModel(entity).setRotationAngles(f6, f5, f8, f2, f7, f4, entity);
+
+            if (this.renderOutlines)
+            {
+                boolean flag1 = this.setScoreTeamColor(entity);
+                GlStateManager.enableColorMaterial();
+                GlStateManager.enableOutlineMode(this.getTeamColor(entity));
+
+                if (!this.renderMarker)
+                {
+                    this.renderModel(entity, f6, f5, f8, f2, f7, f4);
+                }
+
+                this.renderLayers(entity, f6, f5, partialTicks, f8, f2, f7, f4);
+
+                GlStateManager.disableOutlineMode();
+                GlStateManager.disableColorMaterial();
+
+                if (flag1)
+                {
+                    this.unsetScoreTeamColor();
+                }
+            }
+            else
+            {
+                boolean flag = this.setDoRenderBrightness(entity, partialTicks);
+                this.renderModel(entity, f6, f5, f8, f2, f7, f4);
+
+                if (flag)
+                {
+                    this.unsetBrightness();
+                }
+
+                GlStateManager.depthMask(true);
+
+                this.renderLayers(entity, f6, f5, partialTicks, f8, f2, f7, f4);
+            }
+
+            GlStateManager.disableRescaleNormal();
+        }
+        catch (Exception exception)
+        {
+            System.err.println("Couldn't render Palaeodictyoptera");
+        }
+
+        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
+        GlStateManager.enableTexture2D();
+        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
+        GlStateManager.enableCull();
+        GlStateManager.popMatrix();
+        if (!this.renderOutlines)
+        {
+            this.renderName(entity, x, y, z);
+        }
+
     }
 
     @Override
