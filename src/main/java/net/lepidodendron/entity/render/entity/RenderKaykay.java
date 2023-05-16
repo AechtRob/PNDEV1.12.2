@@ -14,7 +14,7 @@ public class RenderKaykay extends RenderLiving<EntityPrehistoricFloraKaykay> {
     public static final ModelBase MODEL_BASE = new ModelKaykay();
 
     public static float getScaler() {
-        return 0.5F;
+        return 0.38F;
     }
     public RenderKaykay(RenderManager mgr) {
         super(mgr, MODEL_BASE, 0.0f);

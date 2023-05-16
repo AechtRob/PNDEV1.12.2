@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraBobosaurus extends EntityPrehistoricFloraAgea
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.16f;
+		float AIspeed = 0.19f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2.5F;
 		}

@@ -14,7 +14,7 @@ public class RenderPhialaspis extends RenderLiving<EntityPrehistoricFloraPhialas
     public static final ModelBase MODEL_BASE = new ModelPhialaspis();
 
     public static float getScaler() {
-        return 0.7F * 0.25F;
+        return 0.7F * 0.4F;
     }
     public RenderPhialaspis(RenderManager mgr) {
         super(mgr, MODEL_BASE, 0.0f);

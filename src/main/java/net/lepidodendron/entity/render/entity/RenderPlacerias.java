@@ -17,7 +17,7 @@ public class RenderPlacerias extends RenderLiving<EntityPrehistoricFloraPlaceria
     public RenderPlacerias(RenderManager mgr) {
         super(mgr, MODEL_BASE, 0.5f);
     }
-    public static float getScaler() {return 0.7f; }
+    public static float getScaler() {return 0.55f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPlacerias entity) {

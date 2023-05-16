@@ -1021,10 +1021,10 @@ public class ModelThalassiodracon extends AdvancedModelBaseExtended {
 
         //this.body.offsetY = 1.50F;
 
-        this.faceTarget(f3, f4, 5, Neck2);
-        this.faceTarget(f3, f4, 5, Neck4);
-        this.faceTarget(f3, f4, 5, Neck6);
-        this.faceTarget(f3, f4, 5, head);
+        this.faceTarget(f3, f4, 8, Neck2);
+        this.faceTarget(f3, f4, 8, Neck4);
+        this.faceTarget(f3, f4, 8, Neck6);
+        this.faceTarget(f3, f4, 8, head);
 
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
 

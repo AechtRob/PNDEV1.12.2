@@ -14,7 +14,7 @@ public class RenderCowielepis extends RenderLiving<EntityPrehistoricFloraCowiele
     public static final ModelBase MODEL_BASE = new ModelCowielepis();
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.28F;
     }
     public RenderCowielepis(RenderManager mgr) {
         super(mgr, MODEL_BASE, 0.0f);
