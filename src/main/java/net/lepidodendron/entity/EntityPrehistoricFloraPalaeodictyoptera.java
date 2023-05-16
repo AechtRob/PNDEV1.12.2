@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockInsectEggsPalaeodictyoptera;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
 import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -651,31 +652,31 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
 			case DELITZSCHALA:
 			default:
-				return RenderPalaeodictyoptera.MODEL_DELITZSCHALA;
+				return RenderDisplays.modelPalaeodictyopteraSmall;
 
 			case DUNBARIA:
-				return RenderPalaeodictyoptera.MODEL_DUNBARIA;
+				return RenderDisplays.modelPalaeodictyopteraMedium;
 
 			case HOMALONEURA:
-				return RenderPalaeodictyoptera.MODEL_HOMALONEURA;
+				return RenderDisplays.modelPalaeodictyopteraMedium;
 
 			case HOMOIOPTERA:
-				return RenderPalaeodictyoptera.MODEL_HOMOIOPTERA;
+				return RenderDisplays.modelPalaeodictyopteraLarge;
 
 			case LITHOMANTIS:
-				return RenderPalaeodictyoptera.MODEL_LITHOMANTIS;
+				return RenderDisplays.modelPalaeodictyopteraMedium;
 
 			case LYCOCERCUS:
-				return RenderPalaeodictyoptera.MODEL_LYCOCERCUS;
+				return RenderDisplays.modelPalaeodictyopteraMedium;
 
 			case SINODUNBARIA:
-				return RenderPalaeodictyoptera.MODEL_SINODUNBARIA;
+				return RenderDisplays.modelPalaeodictyopteraSmall;
 
 			case STENODICTYA:
-				return RenderPalaeodictyoptera.MODEL_STENODICTYA;
+				return RenderDisplays.modelPalaeodictyopteraMedium;
 
 			case MAZOTHAIROS:
-				return RenderPalaeodictyoptera.MODEL_MAZOTHAIROS;
+				return RenderDisplays.modelPalaeodictyopteraLarge;
 		}
 	}
 

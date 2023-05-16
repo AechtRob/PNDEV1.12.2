@@ -126,6 +126,9 @@ public class RenderDisplays {
     public static final ModelOphthalmosaurus modelOphthalmosaurus = new ModelOphthalmosaurus();
     public static final ModelOrthrozanclus modelOrthrozanclus = new ModelOrthrozanclus();
     public static final ModelOxyosteus modelOxyosteus = new ModelOxyosteus();
+    public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
+    public static final ModelPalaeodictyopteraMedium modelPalaeodictyopteraMedium = new ModelPalaeodictyopteraMedium();
+    public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
     public static final ModelPanguraptor modelPanguraptor = new ModelPanguraptor();
     public static final ModelParamblypterus modelParamblypterus = new ModelParamblypterus();
     public static final ModelParhybodus modelParhybodus = new ModelParhybodus();

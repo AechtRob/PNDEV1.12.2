@@ -2,9 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraLarge;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraMedium;
-import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraSmall;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
@@ -14,15 +11,15 @@ public class LayerPalaeodictyopteraWing implements LayerRenderer<EntityPrehistor
 {
     private final RenderPalaeodictyoptera PalaeodictyopteraRenderer;
 
-    private static final ModelBase MODEL_DELITZSCHALA = new ModelPalaeodictyopteraSmall();
-    private static final ModelBase MODEL_DUNBARIA = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_HOMOIOPTERA = new ModelPalaeodictyopteraLarge();
-    private static final ModelBase MODEL_HOMALONEURA = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_LITHOMANTIS = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_LYCOCERCUS = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_SINODUNBARIA = new ModelPalaeodictyopteraSmall();
-    private static final ModelBase MODEL_STENODICTYA = new ModelPalaeodictyopteraMedium();
-    private static final ModelBase MODEL_MAZOTHAIROS = new ModelPalaeodictyopteraLarge();
+//    private static final ModelBase MODEL_DELITZSCHALA = new ModelPalaeodictyopteraSmall();
+//    private static final ModelBase MODEL_DUNBARIA = new ModelPalaeodictyopteraMedium();
+//    private static final ModelBase MODEL_HOMOIOPTERA = new ModelPalaeodictyopteraLarge();
+//    private static final ModelBase MODEL_HOMALONEURA = new ModelPalaeodictyopteraMedium();
+//    private static final ModelBase MODEL_LITHOMANTIS = new ModelPalaeodictyopteraMedium();
+//    private static final ModelBase MODEL_LYCOCERCUS = new ModelPalaeodictyopteraMedium();
+//    private static final ModelBase MODEL_SINODUNBARIA = new ModelPalaeodictyopteraSmall();
+//    private static final ModelBase MODEL_STENODICTYA = new ModelPalaeodictyopteraMedium();
+//    private static final ModelBase MODEL_MAZOTHAIROS = new ModelPalaeodictyopteraLarge();
 
     public static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_delitzschala_wing.png");
     public static final ResourceLocation TEXTURE_DUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_dunbaria_wing.png");
@@ -99,31 +96,31 @@ public class LayerPalaeodictyopteraWing implements LayerRenderer<EntityPrehistor
     public ModelBase getEntityModel(EntityPrehistoricFloraPalaeodictyoptera entity) {
         switch (entity.getPNType()) {
             case DELITZSCHALA: default:
-                return MODEL_DELITZSCHALA;
+                return RenderPalaeodictyoptera.MODEL_DELITZSCHALA;
 
             case DUNBARIA:
-                return MODEL_DUNBARIA;
+                return RenderPalaeodictyoptera.MODEL_DUNBARIA;
 
             case HOMALONEURA:
-                return MODEL_HOMALONEURA;
+                return RenderPalaeodictyoptera.MODEL_HOMALONEURA;
 
             case HOMOIOPTERA:
-                return MODEL_HOMOIOPTERA;
+                return RenderPalaeodictyoptera.MODEL_HOMOIOPTERA;
 
             case LITHOMANTIS:
-                return MODEL_LITHOMANTIS;
+                return RenderPalaeodictyoptera.MODEL_LITHOMANTIS;
 
             case LYCOCERCUS:
-                return MODEL_LYCOCERCUS;
+                return RenderPalaeodictyoptera.MODEL_LYCOCERCUS;
 
             case SINODUNBARIA:
-                return MODEL_SINODUNBARIA;
+                return RenderPalaeodictyoptera.MODEL_SINODUNBARIA;
 
             case STENODICTYA:
-                return MODEL_STENODICTYA;
+                return RenderPalaeodictyoptera.MODEL_STENODICTYA;
 
             case MAZOTHAIROS:
-                return MODEL_MAZOTHAIROS;
+                return RenderPalaeodictyoptera.MODEL_MAZOTHAIROS;
         }
     }
 
