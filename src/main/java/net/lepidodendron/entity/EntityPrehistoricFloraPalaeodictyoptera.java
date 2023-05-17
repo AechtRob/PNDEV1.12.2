@@ -485,31 +485,31 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
 			case DELITZSCHALA: default:
-				return 0.36;
+				return 0.30;
 				
 			case DUNBARIA:
-				return 0.36;
+				return 0.27;
 
 			case HOMALONEURA:
-				return 0.36;
+				return 0.34;
 
 			case HOMOIOPTERA:
-				return 0.36;
+				return 0.30;
 
 			case LITHOMANTIS:
-				return 0.36;
+				return 0.30;
 
 			case LYCOCERCUS:
-				return 0.36;
+				return 0.31;
 
 			case SINODUNBARIA:
-				return 0.36;
+				return 0.38;
 
 			case STENODICTYA:
-				return 0.36;
+				return 0.41;
 
 			case MAZOTHAIROS:
-				return 0.36;
+				return 0.35;
 		}
 	}
 

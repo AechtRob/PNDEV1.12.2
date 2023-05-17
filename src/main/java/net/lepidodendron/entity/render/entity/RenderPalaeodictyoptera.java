@@ -93,6 +93,37 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
         }
     }
 
+    public static float getOffset(EntityPrehistoricFloraPalaeodictyoptera.Type variant) {
+        switch (variant) {
+            case DELITZSCHALA: default:
+                return 0.07F;
+
+            case DUNBARIA:
+                return 0.07F;
+
+            case HOMALONEURA:
+                return 0.07F;
+
+            case HOMOIOPTERA:
+                return 0.07F;
+
+            case LITHOMANTIS:
+                return 0.07F;
+
+            case LYCOCERCUS:
+                return 0.07F;
+
+            case SINODUNBARIA:
+                return 0.07F;
+
+            case STENODICTYA:
+                return 0.07F;
+
+            case MAZOTHAIROS:
+                return 0.07F; //ok
+        }
+    }
+
     @Override
     protected void applyRotations(EntityPrehistoricFloraPalaeodictyoptera entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
@@ -101,26 +132,26 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.25F, 0.05F, 0.0F);
+                GlStateManager.translate(this.getOffset(entityLiving.getPNType()), 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case WEST:
-                GlStateManager.translate(-0.25F, 0.05F, 0.0F);
+                GlStateManager.translate(-this.getOffset(entityLiving.getPNType()), 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.25F);
+                GlStateManager.translate(0.0F, 0.05F, -this.getOffset(entityLiving.getPNType()));
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.25F);
+                GlStateManager.translate(0.0F, 0.05F, this.getOffset(entityLiving.getPNType()));
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.5F + this.getOffset(entityLiving.getPNType()), 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
@@ -129,34 +160,33 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
         switch (variant) {
             case DELITZSCHALA:
             default:
-                return 0.115F;
+                return 0.205F;
 
             case DUNBARIA:
-                return 0.127F;
+                return 0.185F;
 
             case HOMALONEURA:
-                return 0.135F;
+                return 0.22F;
 
             case HOMOIOPTERA:
-                return 0.192F;
+                return 0.20F;
 
             case LITHOMANTIS:
-                return 0.143F;
+                return 0.20F;
 
             case LYCOCERCUS:
-                return 0.141F;
+                return 0.21F;
 
             case SINODUNBARIA:
-                return 0.120F;
+                return 0.24F;
 
             case STENODICTYA:
-                return 0.149F;
+                return 0.24F;
 
             case MAZOTHAIROS:
-                return 0.225F;
+                return 0.24F;
         }
     }
-
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPalaeodictyoptera entity, float f) {

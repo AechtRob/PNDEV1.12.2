@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPalaeodictyopteraMedium extends AdvancedModelBase {
@@ -195,31 +194,16 @@ public class ModelPalaeodictyopteraMedium extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.body.render(f5);
-        GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.12F;
-        this.body.offsetY = -0.01F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }
 
     public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.offsetZ = -0.1F;
-        this.body.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.body.render(0.01f);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
