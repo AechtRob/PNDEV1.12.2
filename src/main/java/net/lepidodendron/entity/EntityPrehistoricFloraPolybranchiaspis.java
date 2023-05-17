@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
 import net.lepidodendron.entity.render.entity.RenderPolybranchiaspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -206,7 +205,7 @@ public class EntityPrehistoricFloraPolybranchiaspis extends EntityPrehistoricFlo
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_POLYBRANCHIASPIS;
+		return RenderPolybranchiaspis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {

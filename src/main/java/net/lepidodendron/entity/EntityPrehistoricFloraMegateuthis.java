@@ -9,12 +9,10 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
 import net.lepidodendron.entity.render.entity.RenderMegateuthis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMegateuthis;
-import net.lepidodendron.item.entities.ItemNautiloidEggsPassaloteuthis;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
@@ -205,7 +203,7 @@ public class EntityPrehistoricFloraMegateuthis extends EntityPrehistoricFloraNau
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_MEGATEUTHIS;
+		return RenderMegateuthis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {

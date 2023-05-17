@@ -9,7 +9,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnPhlegethontia;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
 import net.lepidodendron.entity.render.entity.RenderPhlegethontia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -339,7 +338,7 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_PHLEGETHONTIA;
+		return RenderPhlegethontia.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
