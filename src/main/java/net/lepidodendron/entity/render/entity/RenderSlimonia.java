@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSlimonia;
 import net.lepidodendron.entity.model.entity.ModelSlimonia;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,13 +11,12 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSlimonia extends RenderLiving<EntityPrehistoricFloraSlimonia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/slimonia.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/slimonia_baby.png");
-    public static final ModelBase MODEL_BASE = new ModelSlimonia();
 
     public static float getScaler() {
         return 0.43F;
     }
     public RenderSlimonia(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelSlimonia(), 0.5f);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package net.lepidodendron;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class LepidodendronMissingMappingsEventHandler {
 
@@ -23,7 +25,11 @@ public class LepidodendronMissingMappingsEventHandler {
                 || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_titanoptera_gigatitan")
                 || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_titanoptera_mesotitan")
             ) {
-                missing.ignore(); //We will use a data fixer instead
+                missing.ignore(); //We will use a data fixer instead for these
+            }
+            if (missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_ascoceras_baby")
+            ) {
+                missing.remap((EntityEntry)ForgeRegistries.ENTITIES.getValue(new ResourceLocation("lepidodendron:prehistoric_flora_ascoceras")));
             }
         }
 

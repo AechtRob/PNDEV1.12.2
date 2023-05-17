@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLysorophus;
 import net.lepidodendron.entity.model.entity.ModelLysorophus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLysorophus extends RenderLiving<EntityPrehistoricFloraLysorophus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lysorophus.png");
-    public static final ModelBase MODEL_BASE = new ModelLysorophus();
 
     public RenderLysorophus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelLysorophus(), 0.0f);
     }
 
     @Override

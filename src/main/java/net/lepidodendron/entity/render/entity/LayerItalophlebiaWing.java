@@ -2,8 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraItalophlebia;
-import net.lepidodendron.entity.model.entity.ModelProtozygoptera;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +9,6 @@ import net.minecraft.util.ResourceLocation;
 public class LayerItalophlebiaWing implements LayerRenderer<EntityPrehistoricFloraItalophlebia>
 {
     private final RenderItalophlebia ItalophlebiaRenderer;
-    private final ModelBase ItalophlebiaModel = new ModelProtozygoptera();
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Italophlebia_wing.png");
 
     public LayerItalophlebiaWing(RenderItalophlebia ItalophlebiaRendererIn)
@@ -30,9 +27,9 @@ public class LayerItalophlebiaWing implements LayerRenderer<EntityPrehistoricFlo
             GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-            this.ItalophlebiaModel.setModelAttributes(this.ItalophlebiaRenderer.getMainModel());
-            this.ItalophlebiaModel.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.ItalophlebiaModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.ItalophlebiaRenderer.getMainModel().setModelAttributes(this.ItalophlebiaRenderer.getMainModel());
+            this.ItalophlebiaRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.ItalophlebiaRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             GlStateManager.disableBlend();
             GlStateManager.disableNormalize();
             GlStateManager.popMatrix();

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCarcinosoma;
 import net.lepidodendron.entity.model.entity.ModelCarcinosoma;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -13,11 +12,10 @@ public class RenderCarcinosoma extends RenderLiving<EntityPrehistoricFloraCarcin
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma_young.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma_baby.png");
-    public static final ModelBase MODEL_BASE = new ModelCarcinosoma();
 
     public static float getScaler() {return 0.85F;}
     public RenderCarcinosoma(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelCarcinosoma(), 0.5f);
     }
 
     @Override

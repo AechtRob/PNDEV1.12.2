@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSaivodus;
 import net.lepidodendron.entity.model.entity.ModelSaivodus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSaivodus extends RenderLiving<EntityPrehistoricFloraSaivodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saivodus.png");
-    public static final ModelBase MODEL_BASE = new ModelSaivodus();
 
     public RenderSaivodus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelSaivodus(), 0.5f);
     }
     public static float getScaler() {
         return 1.8F;

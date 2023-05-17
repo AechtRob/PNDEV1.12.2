@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCidaroida;
 import net.lepidodendron.entity.model.entity.ModelCidaroida;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -14,10 +13,9 @@ public class RenderCidaroida extends RenderLiving<EntityPrehistoricFloraCidaroid
     private static final ResourceLocation TEXTURE2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_2.png");
     private static final ResourceLocation TEXTURE3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_3.png");
     private static final ResourceLocation TEXTURE4 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cidaroid_4.png");
-    public static final ModelBase MODEL_BASE = new ModelCidaroida();
 
     public RenderCidaroida(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelCidaroida(), 0.0f);
     }
 
     @Override

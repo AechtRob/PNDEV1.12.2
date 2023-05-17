@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTorpedaspis;
 import net.lepidodendron.entity.model.entity.ModelTorpedaspis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTorpedaspis extends RenderLiving<EntityPrehistoricFloraTorpedaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/torpedaspis.png");
-    public static final ModelBase MODEL_BASE = new ModelTorpedaspis();
 
     public RenderTorpedaspis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.3f);
+        super(mgr, new ModelTorpedaspis(), 0.3f);
     }
 
     public static float getScaler() {

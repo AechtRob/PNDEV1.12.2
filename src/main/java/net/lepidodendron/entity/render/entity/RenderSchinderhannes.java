@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSchinderhannes;
 import net.lepidodendron.entity.model.entity.ModelSchinderhannes;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,14 +10,13 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSchinderhannes extends RenderLiving<EntityPrehistoricFloraSchinderhannes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schinderhannes.png");
-    public static final ModelBase MODEL_BASE = new ModelSchinderhannes();
 
     public static float getScaler() {
         return 0.18F;
     }
 
     public RenderSchinderhannes(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelSchinderhannes(), 0.0f);
     }
 
     @Override

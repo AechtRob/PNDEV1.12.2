@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTamisiocaris;
 import net.lepidodendron.entity.model.entity.ModelTamisiocaris;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,14 +10,13 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTamisiocaris extends RenderLiving<EntityPrehistoricFloraTamisiocaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tamisiocaris.png");
-    public static final ModelBase MODEL_BASE = new ModelTamisiocaris();
 
     public static float getScaler() {
         return 0.3F;
     }
 
     public RenderTamisiocaris(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.2f);
+        super(mgr, new ModelTamisiocaris(), 0.2f);
     }
 
     @Override

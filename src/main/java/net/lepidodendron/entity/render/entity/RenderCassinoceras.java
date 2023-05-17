@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCassinoceras;
 import net.lepidodendron.entity.model.entity.ModelCassinoceras;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCassinoceras extends RenderLiving<EntityPrehistoricFloraCassinoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cassinoceras.png");
-    public static final ModelBase MODEL_BASE = new ModelCassinoceras();
 
     public RenderCassinoceras(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.1f);
+        super(mgr, new ModelCassinoceras(), 0.1f);
     }
 
     @Override

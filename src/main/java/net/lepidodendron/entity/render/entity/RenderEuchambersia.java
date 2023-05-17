@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEuchambersia;
 import net.lepidodendron.entity.model.entity.ModelEuchambersia;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEuchambersia extends RenderLiving<EntityPrehistoricFloraEuchambersia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
-    public static final ModelBase MODEL_BASE = new ModelEuchambersia();
 
     public RenderEuchambersia(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelEuchambersia(), 0.5f);
     }
 
     public static float getScaler() {

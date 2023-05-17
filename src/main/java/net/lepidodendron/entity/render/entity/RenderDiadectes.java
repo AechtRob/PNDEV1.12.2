@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiadectes;
 import net.lepidodendron.entity.model.entity.ModelDiadectes;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,12 +10,11 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDiadectes extends RenderLiving<EntityPrehistoricFloraDiadectes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diadectes.png");
-    public static final ModelBase MODEL_BASE = new ModelDiadectes();
 
     public static float getScaler() {return 0.8f;}
 
     public RenderDiadectes(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.4f);
+        super(mgr, new ModelDiadectes(), 0.4f);
     }
 
     @Override

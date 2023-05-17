@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Ceratites;
 import net.lepidodendron.entity.model.entity.ModelAmmonite50cm;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Ceratites extends RenderLiving<EntityPrehistoricFloraAmmonite_Ceratites> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_ceratites.png");
-    public static final ModelBase MODEL_BASE = new ModelAmmonite50cm();
 
     public RenderAmmonite_Ceratites(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.2f);
+        super(mgr, new ModelAmmonite50cm(), 0.2f);
     }
 
     @Override

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSanctacaris;
 import net.lepidodendron.entity.model.entity.ModelSanctacaris;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,14 +10,13 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSanctacaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris.png");
-    public static final ModelBase MODEL_BASE = new ModelSanctacaris();
 
     public static float getScaler() {
         return 0.15F;
     }
 
     public RenderSanctacaris(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.2f);
+        super(mgr, new ModelSanctacaris(), 0.2f);
     }
 
     @Override

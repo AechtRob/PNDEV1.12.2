@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBarbclabornia;
 import net.lepidodendron.entity.model.entity.ModelBarbclabornia;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,11 +10,10 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarbclabornia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barbclabornia.png");
-    public static final ModelBase MODEL_BASE = new ModelBarbclabornia();
 
     public static float getScaler() {return 0.85F;}
     public RenderBarbclabornia(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 1.0f);
+        super(mgr, new ModelBarbclabornia(), 1.0f);
     }
 
     @Override

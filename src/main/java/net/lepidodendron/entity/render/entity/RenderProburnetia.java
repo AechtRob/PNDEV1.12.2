@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraProburnetia;
 import net.lepidodendron.entity.model.entity.ModelProburnetia;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,7 +10,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderProburnetia extends RenderLiving<EntityPrehistoricFloraProburnetia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proburnetia.png");
-    public static final ModelBase MODEL_BASE = new ModelProburnetia();
 
     public static float getScaler() {return 0.390f;}
 

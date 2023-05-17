@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAustriadactylus;
 import net.lepidodendron.entity.model.entity.ModelAustriadactylus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAustriadactylus extends RenderLiving<EntityPrehistoricFloraAustriadactylus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/austriadactylus.png");
-    public static final ModelBase MODEL_BASE = new ModelAustriadactylus();
 
     public RenderAustriadactylus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.12f);
+        super(mgr, new ModelAustriadactylus(), 0.12f);
     }
 
     @Override

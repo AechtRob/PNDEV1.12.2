@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDunkleosteus;
 import net.lepidodendron.entity.model.entity.ModelDunkleosteus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,10 +11,9 @@ import net.minecraft.util.ResourceLocation;
 public class RenderDunkleosteus extends RenderLiving<EntityPrehistoricFloraDunkleosteus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunkleosteus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunkleosteus_baby.png");
-    public static final ModelBase MODEL_BASE = new ModelDunkleosteus();
 
     public RenderDunkleosteus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 1.0f);
+        super(mgr, new ModelDunkleosteus(), 1.0f);
     }
     public static float getScaler() {return 1.4F; }
 

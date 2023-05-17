@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
 import net.lepidodendron.entity.model.entity.ModelKalligrammatid;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -20,10 +19,9 @@ public class RenderKalligrammatid extends RenderLiving<EntityPrehistoricFloraKal
     private static final ResourceLocation TEXTURE_OREGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_oregramma.png");
     private static final ResourceLocation TEXTURE_MAKARKINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_makarkinia.png");
     private static final ResourceLocation TEXTURE_SOPHOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_sophogramma.png");
-    public static final ModelBase MODEL_BASE = new ModelKalligrammatid();
 
     public RenderKalligrammatid(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelKalligrammatid(), 0.0f);
     }
 
 

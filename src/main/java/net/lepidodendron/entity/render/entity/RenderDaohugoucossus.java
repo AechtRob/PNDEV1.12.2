@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDaohugoucossus;
 import net.lepidodendron.entity.model.entity.ModelDaohugoucossus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDaohugoucossus extends RenderLiving<EntityPrehistoricFloraDaohugoucossus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Daohugoucossus.png");
-    public static final ModelBase MODEL_BASE = new ModelDaohugoucossus();
 
     public RenderDaohugoucossus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelDaohugoucossus(), 0.0f);
     }
 
     @Override

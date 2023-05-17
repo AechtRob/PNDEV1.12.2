@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEndothiodon;
 import net.lepidodendron.entity.model.entity.ModelEndothiodon;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,14 +10,13 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEndothiodon extends RenderLiving<EntityPrehistoricFloraEndothiodon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/endothiodon.png");
-    public static final ModelBase MODEL_BASE = new ModelEndothiodon();
 
     public static float getScaler() {
         return 0.715F;
     }
 
     public RenderEndothiodon(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelEndothiodon(), 0.5f);
     }
 
     @Override

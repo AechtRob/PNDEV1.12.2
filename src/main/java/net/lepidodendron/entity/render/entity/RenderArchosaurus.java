@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchosaurus;
 import net.lepidodendron.entity.model.entity.ModelArchosaurus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderArchosaurus extends RenderLiving<EntityPrehistoricFloraArchosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archosaurus.png");
-    public static final ModelBase MODEL_BASE = new ModelArchosaurus();
 
     public RenderArchosaurus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.3f);
+        super(mgr, new ModelArchosaurus(), 0.3f);
     }
 
     @Override

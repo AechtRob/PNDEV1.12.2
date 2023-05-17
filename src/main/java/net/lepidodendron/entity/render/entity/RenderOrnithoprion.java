@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrnithoprion;
 import net.lepidodendron.entity.model.entity.ModelOrnithoprion;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderOrnithoprion extends RenderLiving<EntityPrehistoricFloraOrnithoprion> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ornithoprion.png");
-    public static final ModelBase MODEL_BASE = new ModelOrnithoprion();
 
     public RenderOrnithoprion(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelOrnithoprion(), 0.0f);
     }
 
     @Override

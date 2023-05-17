@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDeiroceras;
 import net.lepidodendron.entity.model.entity.ModelDeiroceras;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDeiroceras extends RenderLiving<EntityPrehistoricFloraDeiroceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deiroceras.png");
-    public static final ModelBase MODEL_BASE = new ModelDeiroceras();
 
     public RenderDeiroceras(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.6f);
+        super(mgr, new ModelDeiroceras(), 0.6f);
     }
 
     @Override

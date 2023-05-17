@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraUralichas;
 import net.lepidodendron.entity.model.entity.ModelUralichas;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderUralichas extends RenderLiving<EntityPrehistoricFloraUralichas> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uralichas.png");
-    public static final ModelBase MODEL_BASE = new ModelUralichas();
 
     public RenderUralichas(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.2f);
+        super(mgr, new ModelUralichas(), 0.2f);
     }
 
     @Override

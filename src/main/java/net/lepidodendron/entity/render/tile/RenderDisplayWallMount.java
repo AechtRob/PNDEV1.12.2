@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.ClientProxyLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.entity.*;
@@ -4916,6 +4917,18 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
            double lowerbacklineoffsetperpendiular,
            boolean transparent
     ) {
+
+        //net.minecraft.util.math.Vec3d cameraPos = rendererDispatcher.entity.getPositionVector();
+        float renderLimit = LepidodendronConfig.taxidermyRenderRange;
+        if (renderLimit < 16) {
+            renderLimit = 16;
+        }
+        if (renderLimit > 254) {
+            renderLimit = 254;
+        }
+        if ((Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2)) > Math.pow(renderLimit, 2)) {
+            return false;
+        }
 
         boolean flag1 = true;
         boolean flag2 = true;

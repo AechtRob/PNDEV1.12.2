@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSaltriovenator;
 import net.lepidodendron.entity.model.entity.ModelSaltriovenator;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSaltriovenator extends RenderLiving<EntityPrehistoricFloraSaltriovenator> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saltriovenator.png");
-    public static final ModelBase MODEL_BASE = new ModelSaltriovenator();
 
     public RenderSaltriovenator(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.3f);
+        super(mgr, new ModelSaltriovenator(), 0.3f);
     }
 
     public static float getScaler() {

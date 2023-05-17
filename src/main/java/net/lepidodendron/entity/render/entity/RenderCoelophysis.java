@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCoelophysis;
 import net.lepidodendron.entity.model.entity.ModelCoelophysis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCoelophysis extends RenderLiving<EntityPrehistoricFloraCoelophysis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelophysis.png");
-    public static final ModelBase MODEL_BASE = new ModelCoelophysis();
 
     public RenderCoelophysis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelCoelophysis(), 0.5f);
     }
 
     public static float getScaler() {return 0.495f; }

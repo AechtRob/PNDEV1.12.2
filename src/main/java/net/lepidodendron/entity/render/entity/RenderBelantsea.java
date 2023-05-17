@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBelantsea;
 import net.lepidodendron.entity.model.entity.ModelBelantsea;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBelantsea extends RenderLiving<EntityPrehistoricFloraBelantsea> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/belantsea.png");
-    public static final ModelBase MODEL_BASE = new ModelBelantsea();
 
     public RenderBelantsea(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.05f);
+        super(mgr, new ModelBelantsea(), 0.05f);
     }
 
     @Override

@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRetifacies;
 import net.lepidodendron.entity.model.entity.ModelRetifacies;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderRetifacies extends RenderLiving<EntityPrehistoricFloraRetifacies> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/retifacies.png");
-    public static final ModelBase MODEL_BASE = new ModelRetifacies();
 
     public RenderRetifacies(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.08f);
+        super(mgr, new ModelRetifacies(), 0.08f);
     }
 
     @Override

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.lepidodendron.entity.model.entity.ModelYinlong;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderYinlong extends RenderLiving<EntityPrehistoricFloraYinlong> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yinlong.png");
-    public static final ModelBase MODEL_BASE = new ModelYinlong();
 
     public RenderYinlong(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.3f);
+        super(mgr, new ModelYinlong(), 0.3f);
     }
 
     public static float getScaler() {

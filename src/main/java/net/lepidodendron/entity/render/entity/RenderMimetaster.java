@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMimetaster;
 import net.lepidodendron.entity.model.entity.ModelMimetaster;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -19,10 +18,9 @@ public class RenderMimetaster extends RenderLiving<EntityPrehistoricFloraMimetas
     private static final ResourceLocation TEXTURE_7 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mimetaster_sponge_7_white.png");
     private static final ResourceLocation TEXTURE_8 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mimetaster_sponge_8_darkpink.png");
     private static final ResourceLocation TEXTURE_9 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mimetaster_sponge_9_darkorange.png");
-    public static final ModelBase MODEL_BASE = new ModelMimetaster();
 
     public RenderMimetaster(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelMimetaster(), 0.0f);
     }
 
     @Override

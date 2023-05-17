@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLotosaurus;
 import net.lepidodendron.entity.model.entity.ModelLotosaurus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,12 +10,11 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLotosaurus extends RenderLiving<EntityPrehistoricFloraLotosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lotosaurus.png");
-    public static final ModelBase MODEL_BASE = new ModelLotosaurus();
 
     public static float getScaler() {return 0.500f * 1.8F;}
 
     public RenderLotosaurus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.4f);
+        super(mgr, new ModelLotosaurus(), 0.4f);
     }
 
     @Override

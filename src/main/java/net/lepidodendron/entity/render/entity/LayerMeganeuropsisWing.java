@@ -2,8 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuropsis;
-import net.lepidodendron.entity.model.entity.ModelMeganeuropsis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +9,6 @@ import net.minecraft.util.ResourceLocation;
 public class LayerMeganeuropsisWing implements LayerRenderer<EntityPrehistoricFloraMeganeuropsis>
 {
     private final RenderMeganeuropsis meganeuropsisRenderer;
-    private final ModelBase meganeuropsisModel = new ModelMeganeuropsis();
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeuropsis_wing.png");
 
     public LayerMeganeuropsisWing(RenderMeganeuropsis meganeuropsisRendererIn)
@@ -30,9 +27,9 @@ public class LayerMeganeuropsisWing implements LayerRenderer<EntityPrehistoricFl
             GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-            this.meganeuropsisModel.setModelAttributes(this.meganeuropsisRenderer.getMainModel());
-            this.meganeuropsisModel.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.meganeuropsisModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.meganeuropsisRenderer.getMainModel().setModelAttributes(this.meganeuropsisRenderer.getMainModel());
+            this.meganeuropsisRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.meganeuropsisRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             GlStateManager.disableBlend();
             GlStateManager.disableNormalize();
             GlStateManager.popMatrix();

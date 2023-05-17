@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTetraceratops;
 import net.lepidodendron.entity.model.entity.ModelTetraceratops;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,12 +10,11 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTetraceratops extends RenderLiving<EntityPrehistoricFloraTetraceratops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tetraceratops.png");
-    public static final ModelBase MODEL_BASE = new ModelTetraceratops();
 
     public static float getScaler() {return 0.30F;}
 
     public RenderTetraceratops(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.325f);
+        super(mgr, new ModelTetraceratops(), 0.325f);
     }
 
     @Override

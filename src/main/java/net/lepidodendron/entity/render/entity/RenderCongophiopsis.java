@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCongophiopsis;
 import net.lepidodendron.entity.model.entity.ModelCongophiopsis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCongophiopsis extends RenderLiving<EntityPrehistoricFloraCongophiopsis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/congophiopsis.png");
-    public static final ModelBase MODEL_BASE = new ModelCongophiopsis();
 
     public static float getScaler() {
         return 0.7F * 0.3F;
     }
     public RenderCongophiopsis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelCongophiopsis(), 0.0f);
     }
 
     @Override

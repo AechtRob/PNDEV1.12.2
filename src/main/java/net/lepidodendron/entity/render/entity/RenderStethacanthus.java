@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraStethacanthus;
 import net.lepidodendron.entity.model.entity.ModelStethacanthus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,13 +11,12 @@ import net.minecraft.util.ResourceLocation;
 public class RenderStethacanthus extends RenderLiving<EntityPrehistoricFloraStethacanthus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stethacanthus.png");
     private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stethacanthus_female.png");
-    public static final ModelBase MODEL_BASE = new ModelStethacanthus();
 
     public static float getScaler() {
         return 0.7F;
     }
     public RenderStethacanthus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelStethacanthus(), 0.0f);
     }
 
     @Override

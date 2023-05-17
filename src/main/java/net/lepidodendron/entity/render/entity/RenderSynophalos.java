@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSynophalos;
 import net.lepidodendron.entity.model.entity.ModelSynophalos;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -14,10 +13,9 @@ public class RenderSynophalos extends RenderLiving<EntityPrehistoricFloraSynopha
     public static final ResourceLocation TEXTURE4 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/synophalos_4.png");
     public static final ResourceLocation TEXTURE8 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/synophalos_8.png");
     public static final ResourceLocation TEXTURE16 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/synophalos_16.png");
-    public static final ModelBase MODEL_BASE = new ModelSynophalos();
 
     public RenderSynophalos(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelSynophalos(), 0.0f);
     }
 
     @Override

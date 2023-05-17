@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDragonfly;
 import net.lepidodendron.entity.model.entity.ModelDragonfly;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -20,12 +19,10 @@ public class RenderDragonfly extends RenderLiving<EntityPrehistoricFloraDragonfl
     public static final ResourceLocation TEXTURE_DRAGONFLY8 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dragonfly8.png");
     public static final ResourceLocation TEXTURE_DRAGONFLY9 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dragonfly9.png");
     public static final ResourceLocation TEXTURE_DRAGONFLY10 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dragonfly10.png");
-    public static final ModelBase MODEL_BASE = new ModelDragonfly();
 
     public RenderDragonfly(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelDragonfly(), 0.0f);
     }
-
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDragonfly entity) {

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhizodus;
 import net.lepidodendron.entity.model.entity.ModelRhizodus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderRhizodus extends RenderLiving<EntityPrehistoricFloraRhizodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhizodus.png");
-    public static final ModelBase MODEL_BASE = new ModelRhizodus();
 
     public static float getScaler() {
         return 1.0F;
     }
     public RenderRhizodus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 1.0f);
+        super(mgr, new ModelRhizodus(), 1.0f);
     }
 
     @Override

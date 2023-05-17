@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDorypterus;
 import net.lepidodendron.entity.model.entity.ModelDorypterus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDorypterus extends RenderLiving<EntityPrehistoricFloraDorypterus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dorypterus.png");
-    public static final ModelBase MODEL_BASE = new ModelDorypterus();
 
     public RenderDorypterus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelDorypterus(), 0.0f);
     }
 
     @Override

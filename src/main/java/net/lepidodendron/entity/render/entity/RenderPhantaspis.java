@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhantaspis;
 import net.lepidodendron.entity.model.entity.ModelPhantaspis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPhantaspis extends RenderLiving<EntityPrehistoricFloraPhantaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phantaspis.png");
-    public static final ModelBase MODEL_BASE = new ModelPhantaspis();
 
     public RenderPhantaspis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.00f);
+        super(mgr, new ModelPhantaspis(), 0.00f);
     }
 
     @Override

@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEricixerxes;
 import net.lepidodendron.entity.model.entity.ModelEricixerxes;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEricixerxes extends RenderLiving<EntityPrehistoricFloraEricixerxes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ericixerxes.png");
-    public static final ModelBase MODEL_BASE = new ModelEricixerxes();
 
     public RenderEricixerxes(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelEricixerxes(), 0.0f);
     }
 
     @Override

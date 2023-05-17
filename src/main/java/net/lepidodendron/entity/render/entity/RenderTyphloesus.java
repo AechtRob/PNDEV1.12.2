@@ -2,8 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTyphloesus;
-import net.lepidodendron.entity.model.entity.ModelTyphloesus;
-import net.minecraft.client.model.ModelBase;
+import net.lepidodendron.entity.model.entity.ModelTurrisaspis;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTyphloesus extends RenderLiving<EntityPrehistoricFloraTyphloesus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/typhloesus.png");
-    public static final ModelBase MODEL_BASE = new ModelTyphloesus();
 
     public static float getScaler() {
         return 0.7F * 0.395F;
     }
     public RenderTyphloesus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelTurrisaspis(), 0.0f);
     }
 
     @Override

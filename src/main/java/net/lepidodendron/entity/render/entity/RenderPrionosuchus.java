@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPrionosuchus;
 import net.lepidodendron.entity.model.entity.ModelPrionosuchus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -13,10 +12,9 @@ import net.minecraft.util.text.TextFormatting;
 
 public class RenderPrionosuchus extends RenderLiving<EntityPrehistoricFloraPrionosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prionosuchus.png");
-    public static final ModelBase MODEL_BASE = new ModelPrionosuchus();
 
     public RenderPrionosuchus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.35f);
+        super(mgr, new ModelPrionosuchus(), 0.35f);
     }
     public static float getScaler() {return 1.455f; }
 

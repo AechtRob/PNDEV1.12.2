@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMorrolepis;
 import net.lepidodendron.entity.model.entity.ModelMorrolepis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMorrolepis extends RenderLiving<EntityPrehistoricFloraMorrolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/morrolepis.png");
-    public static final ModelBase MODEL_BASE = new ModelMorrolepis();
 
     public static float getScaler() {
         return 0.7F * 0.28F;
     }
     public RenderMorrolepis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelMorrolepis(), 0.0f);
     }
 
     @Override

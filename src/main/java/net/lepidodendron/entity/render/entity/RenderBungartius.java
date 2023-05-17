@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBungartius;
 import net.lepidodendron.entity.model.entity.ModelBungartius;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBungartius extends RenderLiving<EntityPrehistoricFloraBungartius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bungartius.png");
-    public static final ModelBase MODEL_BASE = new ModelBungartius();
 
     public static float getScaler() {
         return 0.85F;
     }
     public RenderBungartius(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 1.0f);
+        super(mgr, new ModelBungartius(), 1.0f);
     }
 
     @Override

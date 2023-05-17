@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTetragraptus;
 import net.lepidodendron.entity.model.entity.ModelTetragraptus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTetragraptus extends RenderLiving<EntityPrehistoricFloraTetragraptus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tetragraptus.png");
-    public static final ModelBase MODEL_BASE = new ModelTetragraptus();
 
     public RenderTetragraptus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelTetragraptus(), 0.0f);
     }
 
     @Override

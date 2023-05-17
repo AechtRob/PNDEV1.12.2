@@ -2,9 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPricyclopyge;
-import net.lepidodendron.entity.model.entity.ModelPricyclopyge;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
@@ -13,7 +11,6 @@ import net.minecraft.util.ResourceLocation;
 public class LayerPricyclopygeEmissive implements LayerRenderer<EntityPrehistoricFloraPricyclopyge>
 {
     private final RenderPricyclopyge PricyclopygeRenderer;
-    private final ModelBase PricyclopygeModel = new ModelPricyclopyge();
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pricyclopyge_glow.png");
 
     public LayerPricyclopygeEmissive(RenderPricyclopyge PricyclopygeRendererIn)
@@ -46,9 +43,9 @@ public class LayerPricyclopygeEmissive implements LayerRenderer<EntityPrehistori
             OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
-            this.PricyclopygeModel.setModelAttributes(this.PricyclopygeModel);
-            this.PricyclopygeModel.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.PricyclopygeModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.PricyclopygeRenderer.getMainModel().setModelAttributes(this.PricyclopygeRenderer.getMainModel());
+            this.PricyclopygeRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.PricyclopygeRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
             i = entitylivingbaseIn.getBrightnessForRender();
             j = i % 65536;

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGroenlandaspis;
 import net.lepidodendron.entity.model.entity.ModelGroenlandaspis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderGroenlandaspis extends RenderLiving<EntityPrehistoricFloraGroenlandaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/groenlandaspis.png");
-    public static final ModelBase MODEL_BASE = new ModelGroenlandaspis();
 
     public RenderGroenlandaspis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.4f);
+        super(mgr, new ModelGroenlandaspis(), 0.4f);
     }
 
     @Override

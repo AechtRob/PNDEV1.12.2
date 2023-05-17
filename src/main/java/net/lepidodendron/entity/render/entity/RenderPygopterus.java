@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPygopterus;
 import net.lepidodendron.entity.model.entity.ModelPygopterus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPygopterus extends RenderLiving<EntityPrehistoricFloraPygopterus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pygopterus.png");
-    public static final ModelBase MODEL_BASE = new ModelPygopterus();
 
     public RenderPygopterus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelPygopterus(), 0.0f);
     }
     public static float getScaler() {
         return 0.342F;

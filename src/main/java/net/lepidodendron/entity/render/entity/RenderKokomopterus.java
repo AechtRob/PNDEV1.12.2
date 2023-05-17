@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKokomopterus;
 import net.lepidodendron.entity.model.entity.ModelKokomopterus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,10 +11,9 @@ import net.minecraft.util.ResourceLocation;
 public class RenderKokomopterus extends RenderLiving<EntityPrehistoricFloraKokomopterus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kokomopterus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kokomopterus_baby.png");
-    public static final ModelBase MODEL_BASE = new ModelKokomopterus();
 
     public RenderKokomopterus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelKokomopterus(), 0.0f);
     }
 
     @Override

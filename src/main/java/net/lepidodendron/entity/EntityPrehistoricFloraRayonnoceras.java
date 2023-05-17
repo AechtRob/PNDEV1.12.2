@@ -17,6 +17,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -38,6 +39,15 @@ public class EntityPrehistoricFloraRayonnoceras extends EntityPrehistoricFloraNa
 		maxWidth = 1.0F;
 		maxHeight = 0.99F;
 		maxHealthAgeable = 46.0D;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox()
+	{
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(5, 0.1, 5);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override

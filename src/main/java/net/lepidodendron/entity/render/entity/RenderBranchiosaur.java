@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBranchiosaur;
 import net.lepidodendron.entity.model.entity.ModelBranchiosaur;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBranchiosaur extends RenderLiving<EntityPrehistoricFloraBranchiosaur> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/branchiosaur.png");
-    public static final ModelBase MODEL_BASE = new ModelBranchiosaur();
 
     public RenderBranchiosaur(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0F);
+        super(mgr, new ModelBranchiosaur(), 0F);
     }
 
     @Override

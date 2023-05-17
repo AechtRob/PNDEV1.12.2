@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcrolepis;
 import net.lepidodendron.entity.model.entity.ModelAcrolepis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAcrolepis extends RenderLiving<EntityPrehistoricFloraAcrolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acrolepis.png");
-    public static final ModelBase MODEL_BASE = new ModelAcrolepis();
 
     public RenderAcrolepis(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelAcrolepis(), 0.0f);
     }
 
     @Override

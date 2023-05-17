@@ -2,8 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTitanoptera;
-import net.lepidodendron.entity.model.entity.ModelTitanoptera;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
@@ -15,8 +13,6 @@ public class LayerTitanopteraWing implements LayerRenderer<EntityPrehistoricFlor
     public static final ResourceLocation TEXTURE_CLATROTITAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_clatrotitan_wing.png");
     public static final ResourceLocation TEXTURE_GIGATITAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_gigatitan_wing.png");
     public static final ResourceLocation TEXTURE_MESOTITAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_mesotitan_wing.png");
-
-    private static final ModelBase MODEL_TITANOPTERA = new ModelTitanoptera();
 
     public LayerTitanopteraWing(RenderTitanoptera TitanopteraRendererIn)
     {
@@ -49,17 +45,13 @@ public class LayerTitanopteraWing implements LayerRenderer<EntityPrehistoricFlor
             GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-            this.getEntityModel(entitylivingbaseIn).setModelAttributes(this.TitanopteraRenderer.getMainModel());
-            this.getEntityModel(entitylivingbaseIn).setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.getEntityModel(entitylivingbaseIn).render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.TitanopteraRenderer.getMainModel().setModelAttributes(this.TitanopteraRenderer.getMainModel());
+            this.TitanopteraRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.TitanopteraRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             GlStateManager.disableBlend();
             GlStateManager.disableNormalize();
             GlStateManager.popMatrix();
         }
-    }
-
-    public ModelBase getEntityModel(EntityPrehistoricFloraTitanoptera entity) {
-        return MODEL_TITANOPTERA;
     }
 
     @Override

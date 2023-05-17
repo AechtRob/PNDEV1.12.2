@@ -4,7 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraAscoceras_Baby;
+import net.lepidodendron.entity.EntityPrehistoricFloraAscoceras;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -77,7 +77,7 @@ public class ItemNautiloidEggsAscoceras extends ElementsLepidodendronMod.ModElem
 
 					if (iblockstate.getMaterial() == Material.WATER) {
 						if (!(worldIn.isRemote)) {
-							EntityPrehistoricFloraAscoceras_Baby.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraAscoceras_Baby.class).toString(), "{AgeTicks:0}", blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+							EntityPrehistoricFloraAscoceras.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraAscoceras.class).toString(), "{AgeTicks:0}", blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 						}
 						if (!playerIn.capabilities.isCreativeMode) {
 							itemstack.shrink(1);

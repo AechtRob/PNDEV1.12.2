@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockDisplayCase;
 import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
@@ -361,6 +362,18 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                    double offset,
                                    boolean transparent
     ) {
+
+        //net.minecraft.util.math.Vec3d cameraPos = rendererDispatcher.entity.getPositionVector();
+        float renderLimit = LepidodendronConfig.taxidermyRenderRange;
+        if (renderLimit < 16) {
+            renderLimit = 16;
+        }
+        if (renderLimit > 254) {
+            renderLimit = 254;
+        }
+        if ((Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2)) > Math.pow(renderLimit, 2)) {
+            return false;
+        }
 
         boolean flag1 = true;
         boolean flag2 = true;

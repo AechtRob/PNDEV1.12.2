@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSchugurocaris;
 import net.lepidodendron.entity.model.entity.ModelSchugurocaris;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSchugurocaris extends RenderLiving<EntityPrehistoricFloraSchugurocaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schugurocaris.png");
-    public static final ModelBase MODEL_BASE = new ModelSchugurocaris();
 
     public static float getScaler() {
         return 0.7F * 0.4F;
     }
     public RenderSchugurocaris(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelSchugurocaris(), 0.0f);
     }
 
     @Override

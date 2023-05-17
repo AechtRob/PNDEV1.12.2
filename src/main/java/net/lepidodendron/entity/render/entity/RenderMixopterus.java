@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMixopterus;
 import net.lepidodendron.entity.model.entity.ModelMixopterus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,10 +11,9 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMixopterus extends RenderLiving<EntityPrehistoricFloraMixopterus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixopterus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixopterus_baby.png");
-    public static final ModelBase MODEL_BASE = new ModelMixopterus();
 
     public RenderMixopterus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelMixopterus(), 0.0f);
     }
 
     public static float getScaler() {

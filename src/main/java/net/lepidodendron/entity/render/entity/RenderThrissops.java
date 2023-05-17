@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraThrissops;
 import net.lepidodendron.entity.model.entity.ModelThrissops;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderThrissops extends RenderLiving<EntityPrehistoricFloraThrissops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrissops.png");
-    public static final ModelBase MODEL_BASE = new ModelThrissops();
 
     public static float getScaler() {
         return 0.3F*0.8F;
     }
     public RenderThrissops(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelThrissops(), 0.0f);
     }
 
     @Override

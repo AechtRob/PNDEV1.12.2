@@ -3,17 +3,15 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraJanassa;
 import net.lepidodendron.entity.model.entity.ModelJanassa;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderJanassa extends RenderLiving<EntityPrehistoricFloraJanassa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/janassa.png");
-    public static final ModelBase MODEL_BASE = new ModelJanassa();
 
     public RenderJanassa(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelJanassa(), 0.0f);
     }
 
     @Override

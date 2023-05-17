@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeurites;
 import net.lepidodendron.entity.model.entity.ModelMeganeuropsis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,10 +11,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMeganeurites extends RenderLiving<EntityPrehistoricFloraMeganeurites> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeurites.png");
-    public static final ModelBase MODEL_BASE = new ModelMeganeuropsis();
 
     public RenderMeganeurites(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelMeganeuropsis(), 0.0f);
     }
 
 

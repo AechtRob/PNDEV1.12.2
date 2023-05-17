@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHomoeosaurus;
 import net.lepidodendron.entity.model.entity.ModelHomoeosaurus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderHomoeosaurus extends RenderLiving<EntityPrehistoricFloraHomoeosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/homoeosaurus.png");
-    public static final ModelBase MODEL_BASE = new ModelHomoeosaurus();
 
     public static float getScaler() {
         return 0.7F * 0.3F;
     }
     public RenderHomoeosaurus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelHomoeosaurus(), 0.0f);
     }
 
     @Override

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCenoceras;
 import net.lepidodendron.entity.model.entity.ModelCenoceras;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCenoceras extends RenderLiving<EntityPrehistoricFloraCenoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cenoceras.png");
-    public static final ModelBase MODEL_BASE = new ModelCenoceras();
 
     public static float getScaler() {
         return 0.7F * 0.4F;
     }
     public RenderCenoceras(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.0f);
+        super(mgr, new ModelCenoceras(), 0.0f);
     }
 
     @Override

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDatheosaurus;
 import net.lepidodendron.entity.model.entity.ModelDatheosaurus;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDatheosaurus extends RenderLiving<EntityPrehistoricFloraDatheosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/datheosaurus.png");
-    public static final ModelBase MODEL_BASE = new ModelDatheosaurus();
 
     public RenderDatheosaurus(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.25F);
+        super(mgr, new ModelDatheosaurus(), 0.25F);
     }
     public static float getScaler() {
         return 0.558f;

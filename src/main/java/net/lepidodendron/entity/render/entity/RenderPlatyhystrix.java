@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlatyhystrix;
 import net.lepidodendron.entity.model.entity.ModelPlatyhystrix;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPlatyhystrix extends RenderLiving<EntityPrehistoricFloraPlatyhystrix> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platyhystrix.png");
-    public static final ModelBase MODEL_BASE = new ModelPlatyhystrix();
 
     public static float getScaler() {
         return 0.4f;
     }
     public RenderPlatyhystrix(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.3f);
+        super(mgr, new ModelPlatyhystrix(), 0.3f);
     }
 
     @Override

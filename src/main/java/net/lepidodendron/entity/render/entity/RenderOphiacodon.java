@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOphiacodon;
 import net.lepidodendron.entity.model.entity.ModelOphiacodon;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -14,10 +13,9 @@ public class RenderOphiacodon extends RenderLiving<EntityPrehistoricFloraOphiaco
     public static float getScaler() {
         return 0.385f;
     }
-    public static final ModelBase MODEL_BASE = new ModelOphiacodon();
 
     public RenderOphiacodon(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.5f);
+        super(mgr, new ModelOphiacodon(), 0.5f);
     }
 
     @Override

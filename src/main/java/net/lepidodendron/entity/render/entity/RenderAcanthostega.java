@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostega;
 import net.lepidodendron.entity.model.entity.ModelAcanthodes;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAcanthostega extends RenderLiving<EntityPrehistoricFloraAcanthostega> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acanthostega.png");
-    public static final ModelBase MODEL_BASE = new ModelAcanthodes();
 
     public RenderAcanthostega(RenderManager mgr) {
-        super(mgr, MODEL_BASE, 0.4f);
+        super(mgr, new ModelAcanthodes(), 0.4f);
     }
 
     @Override
