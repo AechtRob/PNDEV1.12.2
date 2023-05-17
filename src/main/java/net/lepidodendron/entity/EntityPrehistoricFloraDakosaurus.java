@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderDakosaurus;
 import net.lepidodendron.entity.render.entity.RenderNothosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -279,33 +280,33 @@ public class EntityPrehistoricFloraDakosaurus extends EntityPrehistoricFloraAgea
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 1.4;
+		return 1.2;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 1.4;
+		return 1.2;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0F;
+		return -0.8F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0.8;
+		return -0.41;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return 0.02F;
+		return 1.15F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_NOTHOSAURUS;
+		return RenderDisplays.TEXTURE_DAKOSAURUS;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelNothosaurus;
+		return RenderDisplays.modelDakosaurus;
 	}
 	public static float getScaler() {
-		return RenderNothosaurus.getScaler();
+		return RenderDakosaurus.getScaler();
 	}
 }
 

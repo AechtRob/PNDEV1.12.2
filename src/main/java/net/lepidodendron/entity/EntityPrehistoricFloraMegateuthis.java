@@ -9,9 +9,13 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.entity.RenderMegateuthis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMegateuthis;
 import net.lepidodendron.item.entities.ItemNautiloidEggsPassaloteuthis;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -158,5 +162,58 @@ public class EntityPrehistoricFloraMegateuthis extends EntityPrehistoricFloraNau
 		}
 		return LepidodendronMod.MEGATEUTHIS_LOOT;
 	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.55;
+	}
+	public static double upperbackverticallinedepth() {
+		return 1.5;
+	}
+	public static double upperfrontlineoffset() {
+		return 0;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.88F;
+	}
+	public static double upperbacklineoffset() {
+		return 0;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.1F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.8;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.3;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 1.F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.1F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_MEGATEUTHIS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelMegateuthis;
+	}
+	public static float getScaler() {
+		return RenderMegateuthis.getScaler();
+	}
+
 
 }

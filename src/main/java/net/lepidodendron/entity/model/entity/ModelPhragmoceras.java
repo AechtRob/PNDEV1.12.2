@@ -280,7 +280,7 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        float offsetY = 1.40F;
+        //float offsetY = 1.40F;
 
 
         AdvancedModelRendererExtended[] tentacle1 = {this.arm1, this.armb1};
@@ -335,13 +335,13 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
             this.walk(body, speed, 0.25F, false, 1F, 0F, f2, 1F);
             this.flap(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
             this.walk(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
-            this.body.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1) + offsetY - 0.20F;
+            this.body.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1) + 1.4F - 0.20F;
             this.body.offsetZ = this.moveBoxExtended(speed, -0.03F, false, 0, f2, 1);
 
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = offsetY;
+            this.body.offsetY = 1.20F;
         }
 
     }
