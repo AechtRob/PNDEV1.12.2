@@ -42,10 +42,10 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraOphthalmothule(World world) {
 		super(world);
-		setSize(3F, 1.5F);
+		setSize(2F, 0.9F);
 		minWidth = 0.1F;
-		maxWidth = 3F;
-		maxHeight = 1.5F;
+		maxWidth = 2F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 45.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -103,9 +103,9 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.16f;
+		float AIspeed = 0.1f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.5F;
+			AIspeed = AIspeed * 1.5F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -122,7 +122,7 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAI(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.4, 3, true, 0));
+		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		//this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));

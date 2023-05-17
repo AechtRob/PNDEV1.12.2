@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.3;
+		return this.getAgeScale() < 0.5;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -110,9 +110,9 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 
 	@Override
 	protected float getAISpeedFish() {
-		float calcSpeed = 0.2F;
+		float calcSpeed = 0.15F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.28f;
+			calcSpeed = 0.2f;
 		}
 		if (this.getIsFast()) {
 			calcSpeed = calcSpeed * 1.77F;

@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraThalassiodracon extends EntityPrehistoricFlor
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.16f;
+		float AIspeed = 0.12f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2.5F;
 		}

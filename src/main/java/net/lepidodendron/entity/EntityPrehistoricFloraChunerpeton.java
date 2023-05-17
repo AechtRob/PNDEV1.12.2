@@ -92,7 +92,7 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

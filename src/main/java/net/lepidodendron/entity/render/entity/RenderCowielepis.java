@@ -12,7 +12,7 @@ public class RenderCowielepis extends RenderLiving<EntityPrehistoricFloraCowiele
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cowielepis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.28F;
     }
     public RenderCowielepis(RenderManager mgr) {
         super(mgr, new ModelCowielepis(), 0.0f);
