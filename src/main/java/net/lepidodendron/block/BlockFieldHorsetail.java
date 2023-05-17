@@ -126,7 +126,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -229,7 +229,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 						spread = 100;
 					}
 					if (Math.random() > 0.5) {spread = 1;} //lower the chance
-					if (Math.random() > (1-(spread/100)) && (targetBlock != pos) && (world.isAirBlock(targetBlock)) && (canSurviveAt(world, targetBlock))) {
+					if (world.canSeeSky(targetBlock) && Math.random() > (1-(spread/100)) && (targetBlock != pos) && (world.isAirBlock(targetBlock)) && (canSurviveAt(world, targetBlock))) {
 						world.setBlockState(targetBlock, BlockFieldHorsetail.block.getDefaultState(), 3);	
 					}
 					//Perhaps the original plant also dies back now, but only if there another plant within 2 blocks (else TODO:he colony dies!):
@@ -311,9 +311,9 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail plant");
-	        tooltip.add("Periods: [Carboniferous -] Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-	       	tooltip.add("Note: spreads to surrounding grass and dirt");
-	        tooltip.add("Propagation: spores");}
+	        	tooltip.add("Periods: [Carboniferous -] Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+	       		tooltip.add("Note: spreads to surrounding grass and dirt");
+	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
