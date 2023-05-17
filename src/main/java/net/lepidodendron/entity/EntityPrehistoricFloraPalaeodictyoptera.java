@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
 import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -22,6 +23,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -336,6 +338,43 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setPNType(Type.byId(rand.nextInt(Type.values().length) + 1));
 		return livingdata;
+	}
+
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+			EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) target.entityHit;
+			switch (palaeodictyoptera.getPNType()) {
+				case DELITZSCHALA: default:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraDelitzschala.block, 1);
+
+				case DUNBARIA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraDunbaria.block, 1);
+
+				case HOMALONEURA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomaloneura.block, 1);
+
+				case HOMOIOPTERA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomoioptera.block, 1);
+
+				case LITHOMANTIS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
+
+				case LYCOCERCUS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraLycocercus.block, 1);
+
+				case MAZOTHAIROS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraMazothairos.block, 1);
+
+				case SINODUNBARIA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraSinodunbaria.block, 1);
+
+				case STENODICTYA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraStenodictya.block, 1);
+			}
+		}
+		return ItemStack.EMPTY;
 	}
 
 	@Override

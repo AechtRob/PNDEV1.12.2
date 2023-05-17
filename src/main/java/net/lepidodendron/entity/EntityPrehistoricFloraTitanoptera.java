@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -21,6 +22,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -258,6 +260,26 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	public Type getPNType()
 	{
 		return Type.byId(((Integer)this.dataManager.get(INSECT_TYPE)).intValue());
+	}
+
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+			EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) target.entityHit;
+			switch (titanoptera.getPNType()) {
+				case CLATROTITAN: default:
+					return new ItemStack(ItemSpawnEggTitanopteraClatrotitan.block, 1);
+
+				case GIGATITAN:
+					return new ItemStack(ItemSpawnEggTitanopteraGigatitan.block, 1);
+
+				case MESOTITAN:
+					return new ItemStack(ItemSpawnEggTitanopteraMesotitan.block, 1);
+
+			}
+		}
+		return ItemStack.EMPTY;
 	}
 
 	//*****************************************************
