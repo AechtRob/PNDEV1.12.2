@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBundenbachiellus extends RenderLiving<EntityPrehistoricFloraBundenbachiellus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bundenbachiellus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bundenbachiellus.png");
+
     public static float getScaler() {
         return 0.6F * 0.395F;
     }

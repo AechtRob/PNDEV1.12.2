@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPanguraptor extends RenderLiving<EntityPrehistoricFloraPanguraptor> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
 
     public RenderPanguraptor(RenderManager mgr) {
         super(mgr, new ModelPanguraptor(), 0.5f);

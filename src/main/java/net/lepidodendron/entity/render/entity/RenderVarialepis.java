@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderVarialepis extends RenderLiving<EntityPrehistoricFloraVarialepis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/varialepis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/varialepis.png");
 
     public RenderVarialepis(RenderManager mgr) {
         super(mgr, new ModelVarialepis(), 0.0f);

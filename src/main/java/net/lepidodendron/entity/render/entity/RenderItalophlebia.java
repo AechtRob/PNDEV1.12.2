@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderItalophlebia extends RenderLiving<EntityPrehistoricFloraItalophlebia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/italophlebia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/italophlebia.png");
 
     public RenderItalophlebia(RenderManager mgr) {
         super(mgr, new ModelProtozygoptera(), 0.0f);

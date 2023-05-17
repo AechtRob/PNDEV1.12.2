@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Goniatites extends RenderLiving<EntityPrehistoricFloraAmmonite_Goniatites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_goniatites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_goniatites.png");
 
     public RenderAmmonite_Goniatites(RenderManager mgr) {
         super(mgr, new ModelAmmonite15cm(), 0.1f);

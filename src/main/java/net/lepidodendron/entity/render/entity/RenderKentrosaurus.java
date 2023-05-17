@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKentrosaurus extends RenderLiving<EntityPrehistoricFloraKentrosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kentrosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kentrosaurus.png");
 
     public RenderKentrosaurus(RenderManager mgr) {
         super(mgr, new ModelKentrosaurus(), 0.3f);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCassinoceras extends RenderLiving<EntityPrehistoricFloraCassinoceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cassinoceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cassinoceras.png");
 
     public RenderCassinoceras(RenderManager mgr) {
         super(mgr, new ModelCassinoceras(), 0.1f);

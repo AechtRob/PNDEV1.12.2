@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBrembodus extends RenderLiving<EntityPrehistoricFloraBrembodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brembodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brembodus.png");
 
     public RenderBrembodus(RenderManager mgr) {
         super(mgr, new ModelBrembodus(), 0.0f);

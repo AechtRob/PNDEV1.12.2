@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProburnetia extends RenderLiving<EntityPrehistoricFloraProburnetia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proburnetia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proburnetia.png");
+
     public static float getScaler() {return 0.390f;}
 
     public RenderProburnetia(RenderManager mgr) {

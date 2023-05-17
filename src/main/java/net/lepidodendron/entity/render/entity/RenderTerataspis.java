@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTerataspis extends RenderLiving<EntityPrehistoricFloraTerataspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/terataspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/terataspis.png");
 
     public RenderTerataspis(RenderManager mgr) {
         super(mgr, new ModelTerataspis(), 0.2f);

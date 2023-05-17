@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderXenusion extends RenderLiving<EntityPrehistoricFloraXenusion> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xenusion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xenusion.png");
 
     public RenderXenusion(RenderManager mgr) {
         super(mgr, new ModelXenusion(), 0.0f);

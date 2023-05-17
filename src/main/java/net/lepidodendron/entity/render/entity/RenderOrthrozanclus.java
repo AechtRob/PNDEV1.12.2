@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrthrozanclus;
-import net.lepidodendron.entity.EntityPrehistoricFloraTyrannophontes;
 import net.lepidodendron.entity.model.entity.ModelOrthrozanclus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -10,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOrthrozanclus extends RenderLiving<EntityPrehistoricFloraOrthrozanclus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthrozanclus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthrozanclus.png");
 
     public RenderOrthrozanclus(RenderManager mgr) {
         super(mgr, new ModelOrthrozanclus(), 0.0f);

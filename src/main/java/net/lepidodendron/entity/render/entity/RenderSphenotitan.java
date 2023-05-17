@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSphenotitan extends RenderLiving<EntityPrehistoricFloraSphenotitan> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sphenotitan.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sphenotitan.png");
 
     public RenderSphenotitan(RenderManager mgr) {
         super(mgr, new ModelSphenotitan(), 0.0f);

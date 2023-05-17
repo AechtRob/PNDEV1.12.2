@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderFeroxichthys extends RenderLiving<EntityPrehistoricFloraFeroxichthys> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/feroxichthys.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/feroxichthys.png");
 
     public RenderFeroxichthys(RenderManager mgr) {
         super(mgr, new ModelFeroxichthys(), 0.0f);

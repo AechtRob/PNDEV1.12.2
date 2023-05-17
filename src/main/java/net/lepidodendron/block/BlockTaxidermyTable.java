@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUITaxidermyTable;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.lepidodendron.item.ItemTaxidermyScalpel;
 import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
@@ -306,6 +307,7 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 				//move to output:
 				String id_dna = "";
 				String tag = "";
+				String PNVariant = null;
 				if (isItemValidForSlot(0, this.getStackInSlot(0))) {
 					ItemStack stackProcessing1 = this.getStackInSlot(0);
 					ItemStack stackProcessing2 = this.getStackInSlot(2);
@@ -323,6 +325,9 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 								tag = "PFMob";
 							}
 						}
+						if (stackProcessing1.getItem() instanceof ItemGlassCaseDisplayItem) {
+							PNVariant = ((ItemGlassCaseDisplayItem)stackProcessing1.getItem()).getVariantStr();
+						}
 					}
 
 					stackProcessing1.shrink(1);
@@ -335,10 +340,13 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 					world.playSound(null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 					ItemStack outputStack = new ItemStack(ItemTaxidermyDisplayItem.block, 1);
 
-					NBTTagCompound plantNBT = new NBTTagCompound();
-					plantNBT.setString("id", id_dna);
+					NBTTagCompound parentNBT = new NBTTagCompound();
+					parentNBT.setString("id", id_dna);
 					NBTTagCompound stackNBT = new NBTTagCompound();
-					stackNBT.setTag(tag, plantNBT);
+					stackNBT.setTag(tag, parentNBT);
+					if (PNVariant != null) {
+						stackNBT.setString("PNVariant", PNVariant);
+					}
 					outputStack.setTagCompound(stackNBT);
 
 					this.setInventorySlotContents(1, outputStack);
@@ -502,7 +510,8 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 			if (index == 0) {
 				//System.err.println("Checking for slot 0");
 				if (!(stack.getItem() instanceof ItemPNTaxidermyItem)
-					&& !(Block.getBlockFromItem(stack.getItem()) instanceof BlockPNTaxidermyItem)) {
+					&& !(Block.getBlockFromItem(stack.getItem()) instanceof BlockPNTaxidermyItem)
+					&& !(stack.getItem() instanceof ItemGlassCaseDisplayItem)) {
 					return false;
 				}
 				boolean flag = false;

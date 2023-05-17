@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderUralichas extends RenderLiving<EntityPrehistoricFloraUralichas> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uralichas.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uralichas.png");
 
     public RenderUralichas(RenderManager mgr) {
         super(mgr, new ModelUralichas(), 0.2f);

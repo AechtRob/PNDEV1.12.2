@@ -652,6 +652,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         if (this.isSitting()) {
             ticksSitted++;
+
         }
         if (!world.isRemote && !this.isInWater() && !this.isBeingRidden() && !this.isSitting() && this.getRNG().nextInt(1000) == 1 && (this.getAnimation() == NO_ANIMATION)) {
             this.setSitting(true);
@@ -683,7 +684,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
                 if (rayTrace != null && rayTrace.hitVec != null) {
                     BlockPos sidePos = rayTrace.getBlockPos();
-                    if(world.isSideSolid(sidePos, rayTrace.sideHit)){
+                    if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
                         this.setAttachmentPos(sidePos);
                         this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
                         this.motionX = 0.0D;
@@ -704,6 +705,18 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 this.rotationYawHead = 180.0F;
                 this.prevRotationYawHead = 180.0F;
                 this.moveHelper.action = EntityMoveHelper.Action.WAIT;
+                if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                    this.posZ = this.getPosition().getZ() + (this.width/2F);
+                }
+                if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                    this.posZ = this.getPosition().getZ() + 1 - (this.width/2F);
+                }
+                if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                    this.posX = this.getPosition().getX() + (this.width/2F);
+                }
+                if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                    this.posX = this.getPosition().getX() + 1 - (this.width/2F);
+                }
                 this.motionX = 0.0D;
                 this.motionY = 0.0D;
                 this.motionZ = 0.0D;

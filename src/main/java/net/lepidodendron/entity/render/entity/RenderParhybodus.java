@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderParhybodus extends RenderLiving<EntityPrehistoricFloraParhybodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parhybodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parhybodus.png");
+
     public static float getScaler() {return 0.3f;}
     public RenderParhybodus(RenderManager mgr) {
         super(mgr, new ModelParhybodus(), 0.0f);

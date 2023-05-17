@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderThelodus extends RenderLiving<EntityPrehistoricFloraThelodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thelodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thelodus.png");
 
     public RenderThelodus(RenderManager mgr) {
         super(mgr, new ModelThelodus(), 0.0f);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDvinosaurus extends RenderLiving<EntityPrehistoricFloraDvinosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinosaurus.png");
 
     public RenderDvinosaurus(RenderManager mgr) {
         super(mgr, new ModelDvinosaurus(), 0.3f);

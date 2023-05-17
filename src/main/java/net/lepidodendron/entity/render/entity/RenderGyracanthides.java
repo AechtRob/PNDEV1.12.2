@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGyracanthides extends RenderLiving<EntityPrehistoricFloraGyracanthides> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gyracanthides.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gyracanthides.png");
 
     public RenderGyracanthides(RenderManager mgr) {
         super(mgr, new ModelGyracanthides(), 0.0f);

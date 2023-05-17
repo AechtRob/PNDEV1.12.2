@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSaurosuchus extends RenderLiving<EntityPrehistoricFloraSaurosuchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurosuchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurosuchus.png");
 
     public RenderSaurosuchus(RenderManager mgr) {
         super(mgr, new ModelSaurosuchus(), 0.6f);

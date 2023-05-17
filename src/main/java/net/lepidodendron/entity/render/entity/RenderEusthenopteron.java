@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEusthenopteron extends RenderLiving<EntityPrehistoricFloraEusthenopteron> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eusthenopteron.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eusthenopteron.png");
 
     public RenderEusthenopteron(RenderManager mgr) {
         super(mgr, new ModelEusthenopteron(), 0.0f);

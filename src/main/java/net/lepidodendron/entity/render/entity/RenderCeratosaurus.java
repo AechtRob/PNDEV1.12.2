@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCeratosaurus extends RenderLiving<EntityPrehistoricFloraCeratosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ceratosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ceratosaurus.png");
 
     public RenderCeratosaurus(RenderManager mgr) {
         super(mgr, new ModelCeratosaurus(), 0.3f);

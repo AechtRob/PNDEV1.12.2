@@ -21,6 +21,7 @@ public class LepidodendronConfig {
     public static int waterSandVertical = 0;
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
+    public static int taxidermyRenderRange = 24;
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
@@ -758,6 +759,10 @@ public class LepidodendronConfig {
         waterPangaeanVertical = prop.getInt();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Rendering and Optimisation", "taxidermyRenderRange", taxidermyRenderRange);
+        prop.setComment("Amount of blocks' distance the player can be at before taxidermy does not render on-screen (16 to 254) [default: 24]");
+        taxidermyRenderRange = prop.getInt();
+        propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "showTooltips", showTooltips);
         prop.setComment("Shows useful, searchable tooltips on relevant items [default: true]");
@@ -1091,27 +1096,27 @@ public class LepidodendronConfig {
         doSpawnsReborn = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "renderAnimations", renderAnimations);
+        prop = cfg.get("Rendering and Optimisation", "renderAnimations", renderAnimations);
         prop.setComment("Set to true to animate block-like mobs fully, or to false to render them as static blocks (useful for low performance graphics cards or for conflicts with Optifine). [default: true]");
         renderAnimations = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "renderEdiacaranLighting", renderEdiacaranLighting);
+        prop = cfg.get("Rendering and Optimisation", "renderEdiacaranLighting", renderEdiacaranLighting);
         prop.setComment("Set to false to switch off some of the light and shadowing effects in the Ediacaran dimension (useful for low performance graphics cards or for conflicts with Optifine). [default: true]");
         renderEdiacaranLighting = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "genEdiacaran", genEdiacaran);
+        prop = cfg.get("Rendering and Optimisation", "genEdiacaran", genEdiacaran);
         prop.setComment("Set to a lower value to reduce the amount of animated entities in the Ediacaran Frondose Forest, in case of fps problems with the default (0.01 to 1.0). [default: 1.0]");
         genEdiacaran = prop.getDouble();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "renderCustomSkies", renderCustomSkies);
+        prop = cfg.get("Rendering and Optimisation", "renderCustomSkies", renderCustomSkies);
         prop.setComment("Set to false to switch off custom sky effects in the modded dimensions (useful for low performance graphics cards or for conflicts with shaders). [default: true]");
         renderCustomSkies = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "renderBigMobsProperly", renderBigMobsProperly);
+        prop = cfg.get("Rendering and Optimisation", "renderBigMobsProperly", renderBigMobsProperly);
         prop.setComment("Set to false to switch off extended rendering of mobs when their hitboxes are offscreen (useful for low performance graphics cards). [default: true]");
         renderBigMobsProperly = prop.getBoolean();
         propOrder.add(prop.getName());
@@ -1150,12 +1155,12 @@ public class LepidodendronConfig {
 
 
 
-        prop = cfg.get("Global World-Gen", "renderFog", renderFog);
+        prop = cfg.get("Rendering and Optimisation", "renderFog", renderFog);
         prop.setComment("Set to true to render custom fog effects in the Prehistoric dimensions. [default: true]");
         renderFog = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "fixZirconGlass", fixZirconGlass);
+        prop = cfg.get("Rendering and Optimisation", "fixZirconGlass", fixZirconGlass);
         prop.setComment("Set to false to disable the mod's zircon glass attempting to fix water rendering textures when a water plant is placed against it. [default: true]");
         fixZirconGlass = prop.getBoolean();
         propOrder.add(prop.getName());

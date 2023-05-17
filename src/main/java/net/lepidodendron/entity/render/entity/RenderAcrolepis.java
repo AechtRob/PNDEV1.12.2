@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAcrolepis extends RenderLiving<EntityPrehistoricFloraAcrolepis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acrolepis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acrolepis.png");
 
     public RenderAcrolepis(RenderManager mgr) {
         super(mgr, new ModelAcrolepis(), 0.0f);

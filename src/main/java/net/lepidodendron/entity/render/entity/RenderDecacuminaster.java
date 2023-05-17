@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDecacuminaster extends RenderLiving<EntityPrehistoricFloraDecacuminaster> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/decacuminaster.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/decacuminaster.png");
+
     public static float getScaler() {
         return 0.7F * 0.18F;
     }

@@ -9,9 +9,10 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKaykay extends RenderLiving<EntityPrehistoricFloraKaykay> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kaykay.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kaykay.png");
+
     public static float getScaler() {
-        return 0.5F;
+        return 0.38F;
     }
     public RenderKaykay(RenderManager mgr) {
         super(mgr, new ModelKaykay(), 0.0f);

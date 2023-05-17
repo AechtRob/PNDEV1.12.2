@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPhlegethontia extends RenderLiving<EntityPrehistoricFloraPhlegethontia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phlegethontia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phlegethontia.png");
 
     public RenderPhlegethontia(RenderManager mgr) {
         super(mgr, new ModelPhlegethontia(), 0.0f);

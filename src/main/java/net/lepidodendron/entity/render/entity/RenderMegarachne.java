@@ -9,15 +9,16 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMegarachne extends RenderLiving<EntityPrehistoricFloraMegarachne> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne_baby.png");
+
     public static float getScaler() {
         return  0.55F;
     }
 
 
     public RenderMegarachne(RenderManager mgr) {
-        super(mgr, new ModelMegarachne(), 0.0f);
+        super(mgr,  new ModelMegarachne(), 0.0f);
     }
 
     @Override

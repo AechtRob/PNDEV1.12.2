@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmphibamus extends RenderLiving<EntityPrehistoricFloraAmphibamus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amphibamus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amphibamus.png");
 
     public RenderAmphibamus(RenderManager mgr) {
         super(mgr, new ModelAmphibamus(), 0.25F);

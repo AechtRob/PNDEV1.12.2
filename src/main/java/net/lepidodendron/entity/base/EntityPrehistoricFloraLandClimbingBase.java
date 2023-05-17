@@ -473,10 +473,10 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     this.prevRotationYaw = 270.0F;
                     this.rotationYawHead = 270.0F;
                     this.prevRotationYawHead = 270.0F;
+                    this.motionZ = 0.0D;
                     if (!this.collidedHorizontally) {
                         this.motionX = this.getAIMoveSpeed();
                     }
-                    this.motionZ = 0.0D;
                     break;
 
                 case EAST:
@@ -486,10 +486,10 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     this.prevRotationYaw = 90.0F;
                     this.rotationYawHead = 90.0F;
                     this.prevRotationYawHead = 90.0F;
+                    this.motionZ = 0.0D;
                     if (!this.collidedHorizontally) {
                         this.motionX = -this.getAIMoveSpeed();
                     }
-                    this.motionZ = 0.0D;
                     break;
             }
         }

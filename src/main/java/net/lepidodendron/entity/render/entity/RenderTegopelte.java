@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTegopelte extends RenderLiving<EntityPrehistoricFloraTegopelte> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tegopelte.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tegopelte.png");
 
     public RenderTegopelte(RenderManager mgr) {
         super(mgr, new ModelTegopelte(), 0.0f);

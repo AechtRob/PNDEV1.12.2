@@ -8,8 +8,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderYunnanozoon extends RenderLiving<EntityPrehistoricFloraYunnanozoon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunnanozoon.png");
-     public RenderYunnanozoon(RenderManager mgr) {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunnanozoon.png");
+
+    public RenderYunnanozoon(RenderManager mgr) {
         super(mgr, new ModelYunnanozoon(), 0.0f);
     }
 

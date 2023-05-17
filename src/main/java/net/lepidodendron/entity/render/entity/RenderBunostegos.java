@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBunostegos extends RenderLiving<EntityPrehistoricFloraBunostegos> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
+
     public static float getScaler() {return 0.90f;}
 
     public RenderBunostegos(RenderManager mgr) {

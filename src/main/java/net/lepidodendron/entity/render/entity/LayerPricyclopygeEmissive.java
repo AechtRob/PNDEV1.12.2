@@ -2,16 +2,15 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPricyclopyge;
-import net.lepidodendron.entity.model.entity.ModelPricyclopyge;
-import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
 public class LayerPricyclopygeEmissive implements LayerRenderer<EntityPrehistoricFloraPricyclopyge>
 {
     private final RenderPricyclopyge PricyclopygeRenderer;
-    private final ModelBase PricyclopygeModel = new ModelPricyclopyge();
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pricyclopyge_glow.png");
 
     public LayerPricyclopygeEmissive(RenderPricyclopyge PricyclopygeRendererIn)
@@ -26,15 +25,35 @@ public class LayerPricyclopygeEmissive implements LayerRenderer<EntityPrehistori
         {
             this.PricyclopygeRenderer.bindTexture(TEXTURE);
             GlStateManager.pushMatrix();
-            GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
-            GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
-            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-            this.PricyclopygeModel.setModelAttributes(this.PricyclopygeRenderer.getMainModel());
-            this.PricyclopygeModel.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.PricyclopygeModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            GlStateManager.disableAlpha();
+            GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+            if (entitylivingbaseIn.isInvisible())
+            {
+                GlStateManager.depthMask(false);
+            }
+            else
+            {
+                GlStateManager.depthMask(true);
+            }
+
+            int i = 61680;
+            int j = i % 65536;
+            int k = i / 65536;
+            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+            Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
+            this.PricyclopygeRenderer.getMainModel().setModelAttributes(this.PricyclopygeRenderer.getMainModel());
+            this.PricyclopygeRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.PricyclopygeRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+            i = entitylivingbaseIn.getBrightnessForRender();
+            j = i % 65536;
+            k = i / 65536;
+            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+            this.PricyclopygeRenderer.setLightmap(entitylivingbaseIn);
             GlStateManager.disableBlend();
-            GlStateManager.disableNormalize();
+            GlStateManager.enableAlpha();
             GlStateManager.popMatrix();
         }
     }
@@ -42,6 +61,6 @@ public class LayerPricyclopygeEmissive implements LayerRenderer<EntityPrehistori
     @Override
     public boolean shouldCombineTextures()
     {
-        return true;
+        return false;
     }
 }

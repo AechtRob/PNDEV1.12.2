@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTiktaalik extends RenderLiving<EntityPrehistoricFloraTiktaalik> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tiktaalik.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tiktaalik.png");
 
     public RenderTiktaalik(RenderManager mgr) {
         super(mgr, new ModelTiktaalik(), 0.4f);

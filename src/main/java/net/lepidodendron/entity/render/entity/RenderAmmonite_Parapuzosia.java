@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Parapuzosia extends RenderLiving<EntityPrehistoricFloraAmmonite_Parapuzosia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_parapuzosia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_parapuzosia.png");
 
     public RenderAmmonite_Parapuzosia(RenderManager mgr) {
         super(mgr, new ModelAmmonite200pluscm(), 1.0f);

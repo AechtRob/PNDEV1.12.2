@@ -3085,12 +3085,12 @@ public class RenderHandler {
                 return new RenderCassinoceras(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAscoceras_Baby.class, new IRenderFactory<EntityPrehistoricFloraAscoceras_Baby>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraAscoceras_Baby> createRenderFor(RenderManager manager) {
-                return new RenderAscoceras_Baby(manager);
-            }
-        });
+//        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAscoceras_Baby.class, new IRenderFactory<EntityPrehistoricFloraAscoceras_Baby>() {
+//            @Override
+//            public Render<? super EntityPrehistoricFloraAscoceras_Baby> createRenderFor(RenderManager manager) {
+//                return new RenderAscoceras_Baby(manager);
+//            }
+//        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAscoceras.class, new IRenderFactory<EntityPrehistoricFloraAscoceras>() {
             @Override
             public Render<? super EntityPrehistoricFloraAscoceras> createRenderFor(RenderManager manager) {

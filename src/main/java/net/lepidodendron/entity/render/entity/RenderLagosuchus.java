@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLagosuchus extends RenderLiving<EntityPrehistoricFloraLagosuchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lagosuchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lagosuchus.png");
 
     public RenderLagosuchus(RenderManager mgr) {
         super(mgr, new ModelLagosuchus(), 0.0f);

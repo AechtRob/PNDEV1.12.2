@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHualianceratops extends RenderLiving<EntityPrehistoricFloraHualianceratops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hualianceratops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hualianceratops.png");
 
     public RenderHualianceratops(RenderManager mgr) {
         super(mgr, new ModelHualianceratops(), 0.3f);

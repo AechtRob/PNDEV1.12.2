@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLisowicia extends RenderLiving<EntityPrehistoricFloraLisowicia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lisowicia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lisowicia.png");
+
     public static float getScaler() {return 1.33f* 0.8F;}
 
     public RenderLisowicia(RenderManager mgr) {

@@ -42,10 +42,10 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraOphthalmothule(World world) {
 		super(world);
-		setSize(3F, 1.5F);
+		setSize(2F, 0.9F);
 		minWidth = 0.1F;
-		maxWidth = 3F;
-		maxHeight = 1.5F;
+		maxWidth = 2F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 45.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -103,9 +103,9 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.16f;
+		float AIspeed = 0.1f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.5F;
+			AIspeed = AIspeed * 1.5F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -122,7 +122,7 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAI(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.4, 3, true, 0));
+		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		//this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -237,54 +237,54 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraOphthalmothule(this.world);
 	}
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 2.0;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 2.0;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.9F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return 1.4F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 2.9;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 2.0;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 2.0F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.5F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_RHOMALEOSAURUS;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderRhomaleosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelRhomaleosaurus;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderRhomaleosaurus.getScaler();
 	}
 }

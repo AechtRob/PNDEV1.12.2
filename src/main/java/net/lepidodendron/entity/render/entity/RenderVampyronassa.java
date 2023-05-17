@@ -11,8 +11,9 @@ import net.minecraft.util.ResourceLocation;
 import java.util.Calendar;
 
 public class RenderVampyronassa extends RenderLiving<EntityPrehistoricFloraVampyronassa> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa.png");
-    private static final ResourceLocation TEXTURE_HALLOWEEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa_halloween.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa.png");
+    public static final ResourceLocation TEXTURE_HALLOWEEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa_halloween.png");
+
     public static float getScaler() {
         return 0.7F * 0.4F;
     }

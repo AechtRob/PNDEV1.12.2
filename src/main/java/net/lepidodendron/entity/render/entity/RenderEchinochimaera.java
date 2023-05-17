@@ -9,8 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEchinochimaera extends RenderLiving<EntityPrehistoricFloraEchinochimaera> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_male.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_male.png");
     private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_female.png");
+
     public static float getScaler() {
         return 0.24F;
     }

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOsteolepis extends RenderLiving<EntityPrehistoricFloraOsteolepis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/osteolepis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/osteolepis.png");
 
     public RenderOsteolepis(RenderManager mgr) {
         super(mgr, new ModelOsteolepis(), 0.0f);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderWhatcheeria extends RenderLiving<EntityPrehistoricFloraWhatcheeria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/whatcheeria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/whatcheeria.png");
 
     public RenderWhatcheeria(RenderManager mgr) {
         super(mgr, new ModelWhatcheeria(), 0.0f);

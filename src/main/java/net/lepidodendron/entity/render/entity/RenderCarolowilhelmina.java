@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCarolowilhelmina extends RenderLiving<EntityPrehistoricFloraCarolowilhelmina> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carolowilhelmina.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carolowilhelmina.png");
+
     public static float getScaler() {return 0.60F;}
     public RenderCarolowilhelmina(RenderManager mgr) {
         super(mgr, new ModelCarolowilhelmina(), 0.0f);

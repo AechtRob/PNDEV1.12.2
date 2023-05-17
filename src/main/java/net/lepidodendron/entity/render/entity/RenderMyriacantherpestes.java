@@ -10,7 +10,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMyriacantherpestes extends RenderLiving<EntityPrehistoricFloraMyriacantherpestes> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/myriacantherpestes.png");
-   
 
     public static float getScaler() { return 0.335f; }
 

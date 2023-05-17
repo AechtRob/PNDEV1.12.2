@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPlateosaurus extends RenderLiving<EntityPrehistoricFloraPlateosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plateosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plateosaurus.png");
+
     public static float getScaler() {return 1.15f * 0.875F;}
 
     public RenderPlateosaurus(RenderManager mgr) {

@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostega;
-import net.lepidodendron.entity.EntityPrehistoricFloraSanctacaris;
 import net.lepidodendron.entity.EntityPrehistoricFloraSkeemella;
 import net.lepidodendron.entity.EntityPrehistoricFloraVetulicola;
 import net.lepidodendron.entity.model.entity.ModelSkeemella;
@@ -12,7 +10,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSkeemella extends RenderLiving<EntityPrehistoricFloraSkeemella> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/skeemella.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/skeemella.png");
+
     public static float getScaler() {return 0.15F;}
 
     public RenderSkeemella(RenderManager mgr) {

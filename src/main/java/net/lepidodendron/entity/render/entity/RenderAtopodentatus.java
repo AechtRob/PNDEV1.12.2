@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAtopodentatus extends RenderLiving<EntityPrehistoricFloraAtopodentatus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/atopodentatus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/atopodentatus.png");
+
     public static float getScaler() {return 1.0F* 0.367F;}
 
     public RenderAtopodentatus(RenderManager mgr) {

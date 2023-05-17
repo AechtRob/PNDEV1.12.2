@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMarrella;
-import net.lepidodendron.entity.EntityPrehistoricFloraVetulicola;
 import net.lepidodendron.entity.model.entity.ModelMarrella;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -10,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMarrella extends RenderLiving<EntityPrehistoricFloraMarrella> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/marrella.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/marrella.png");
+
     public static float getScaler() {return 0.18F;}
 
     public RenderMarrella(RenderManager mgr) {

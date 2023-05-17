@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAnteosaurus extends RenderLiving<EntityPrehistoricFloraAnteosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anteosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anteosaurus.png");
 
     public RenderAnteosaurus(RenderManager mgr) {
         super(mgr, new ModelAnteosaurus(), 0.5f);

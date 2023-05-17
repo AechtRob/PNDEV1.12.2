@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderChaoyangsaurus extends RenderLiving<EntityPrehistoricFloraChaoyangsaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chaoyangsaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chaoyangsaurus.png");
 
     public RenderChaoyangsaurus(RenderManager mgr) {
         super(mgr, new ModelChaoyangsaurus(), 0.3f);

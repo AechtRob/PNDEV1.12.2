@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAscendonanus extends RenderLiving<EntityPrehistoricFloraAscendonanus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ascendonanus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ascendonanus.png");
 
     public RenderAscendonanus(RenderManager mgr) {
         super(mgr, new ModelAscendonanus(), 0.0f);

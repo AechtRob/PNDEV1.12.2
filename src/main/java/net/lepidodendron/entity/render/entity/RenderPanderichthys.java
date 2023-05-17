@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPanderichthys extends RenderLiving<EntityPrehistoricFloraPanderichthys> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panderichthys.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panderichthys.png");
 
     public RenderPanderichthys(RenderManager mgr) {
         super(mgr, new ModelPanderichthys(), 0.12f);

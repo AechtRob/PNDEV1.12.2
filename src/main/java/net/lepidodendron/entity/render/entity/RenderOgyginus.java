@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOgyginus extends RenderLiving<EntityPrehistoricFloraOgyginus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ogyginus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ogyginus.png");
 
     public RenderOgyginus(RenderManager mgr) {
         super(mgr, new ModelOgyginus(), 0.05f);

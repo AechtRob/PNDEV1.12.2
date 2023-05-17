@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderUrocordylus extends RenderLiving<EntityPrehistoricFloraUrocordylus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urocordylus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urocordylus.png");
 
     public RenderUrocordylus(RenderManager mgr) {
         super(mgr, new ModelUrocordylus(), 0.0f);

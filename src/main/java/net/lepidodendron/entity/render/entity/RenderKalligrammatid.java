@@ -20,7 +20,6 @@ public class RenderKalligrammatid extends RenderLiving<EntityPrehistoricFloraKal
     private static final ResourceLocation TEXTURE_MAKARKINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_makarkinia.png");
     private static final ResourceLocation TEXTURE_SOPHOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_sophogramma.png");
 
-
     public RenderKalligrammatid(RenderManager mgr) {
         super(mgr, new ModelKalligrammatid(), 0.0f);
     }

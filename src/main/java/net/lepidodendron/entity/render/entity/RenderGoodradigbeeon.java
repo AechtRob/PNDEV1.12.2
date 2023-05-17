@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGoodradigbeeon extends RenderLiving<EntityPrehistoricFloraGoodradigbeeon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goodradigbeeon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goodradigbeeon.png");
+
     public static float getScaler() {
         return 0.95F * 0.52F;
     }

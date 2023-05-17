@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderClarkeiteuthis extends RenderLiving<EntityPrehistoricFloraClarkeiteuthis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clarkeiteuthis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clarkeiteuthis.png");
+
     public static float getScaler() {
         return 0.7F * 0.25F;
     }

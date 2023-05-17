@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderJonkeria extends RenderLiving<EntityPrehistoricFloraJonkeria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jonkeria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jonkeria.png");
 
     public RenderJonkeria(RenderManager mgr) {
         super(mgr, new ModelJonkeria(), 0.45f);

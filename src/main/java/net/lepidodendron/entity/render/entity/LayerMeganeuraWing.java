@@ -2,8 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeura;
-import net.lepidodendron.entity.model.entity.ModelMeganeuropsis;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
@@ -11,8 +9,7 @@ import net.minecraft.util.ResourceLocation;
 public class LayerMeganeuraWing implements LayerRenderer<EntityPrehistoricFloraMeganeura>
 {
     private final RenderMeganeura MeganeuraRenderer;
-    private final ModelBase MeganeuraModel = new ModelMeganeuropsis();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeura_wing.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeura_wing.png");
 
     public LayerMeganeuraWing(RenderMeganeura MeganeuraRendererIn)
     {
@@ -30,9 +27,9 @@ public class LayerMeganeuraWing implements LayerRenderer<EntityPrehistoricFloraM
             GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-            this.MeganeuraModel.setModelAttributes(this.MeganeuraRenderer.getMainModel());
-            this.MeganeuraModel.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.MeganeuraModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.MeganeuraRenderer.getMainModel().setModelAttributes(this.MeganeuraRenderer.getMainModel());
+            this.MeganeuraRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.MeganeuraRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             GlStateManager.disableBlend();
             GlStateManager.disableNormalize();
             GlStateManager.popMatrix();

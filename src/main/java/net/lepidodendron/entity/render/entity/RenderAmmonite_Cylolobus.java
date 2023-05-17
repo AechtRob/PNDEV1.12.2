@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Cylolobus extends RenderLiving<EntityPrehistoricFloraAmmonite_Cylolobus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_cylolobus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_cylolobus.png");
 
     public RenderAmmonite_Cylolobus(RenderManager mgr) {
         super(mgr, new ModelAmmonite50cm(), 0.2f);

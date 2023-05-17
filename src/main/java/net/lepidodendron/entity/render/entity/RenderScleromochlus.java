@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderScleromochlus extends RenderLiving<EntityPrehistoricFloraScleromochlus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scleromochlus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scleromochlus.png");
 
     public RenderScleromochlus(RenderManager mgr) {
         super(mgr, new ModelScleromochlus(), 0.0f);

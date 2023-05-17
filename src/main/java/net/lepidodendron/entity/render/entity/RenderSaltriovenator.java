@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSaltriovenator extends RenderLiving<EntityPrehistoricFloraSaltriovenator> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saltriovenator.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saltriovenator.png");
 
     public RenderSaltriovenator(RenderManager mgr) {
         super(mgr, new ModelSaltriovenator(), 0.3f);

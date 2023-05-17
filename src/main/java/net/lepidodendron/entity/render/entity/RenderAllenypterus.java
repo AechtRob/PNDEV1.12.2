@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAllenypterus extends RenderLiving<EntityPrehistoricFloraAllenypterus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/allenypterus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/allenypterus.png");
 
     public RenderAllenypterus(RenderManager mgr) {
         super(mgr, new ModelAllenypterus(), 0.0f);

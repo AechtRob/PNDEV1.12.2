@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderRetifacies extends RenderLiving<EntityPrehistoricFloraRetifacies> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/retifacies.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/retifacies.png");
 
     public RenderRetifacies(RenderManager mgr) {
         super(mgr, new ModelRetifacies(), 0.08f);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProsictodon extends RenderLiving<EntityPrehistoricFloraProsictodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
 
     public RenderProsictodon(RenderManager mgr) {
         super(mgr, new ModelDiictodon(), 0.5f);

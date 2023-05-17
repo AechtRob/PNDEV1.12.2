@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCrassigyrinus extends RenderLiving<EntityPrehistoricFloraCrassigyrinus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crassigyrinus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crassigyrinus.png");
+
     public static float getScaler() {return 0.465F;}
 
     public RenderCrassigyrinus(RenderManager mgr) {

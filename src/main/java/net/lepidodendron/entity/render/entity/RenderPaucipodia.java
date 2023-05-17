@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPaucipodia extends RenderLiving<EntityPrehistoricFloraPaucipodia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paucipodia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paucipodia.png");
 
     public RenderPaucipodia(RenderManager mgr) {
         super(mgr, new ModelPaucipodia(), 0.0f);

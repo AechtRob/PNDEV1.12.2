@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDysalotosaurus extends RenderLiving<EntityPrehistoricFloraDysalotosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dysalotosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dysalotosaurus.png");
 
     public RenderDysalotosaurus(RenderManager mgr) {
         super(mgr, new ModelDryosaurus(), 0.3f);

@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMeganeurites extends RenderLiving<EntityPrehistoricFloraMeganeurites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeurites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeurites.png");
 
     public RenderMeganeurites(RenderManager mgr) {
         super(mgr, new ModelMeganeuropsis(), 0.0f);

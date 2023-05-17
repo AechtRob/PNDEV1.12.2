@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHibernaspis extends RenderLiving<EntityPrehistoricFloraHibernaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibernaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibernaspis.png");
 
     public RenderHibernaspis(RenderManager mgr) {
         super(mgr, new ModelHibernaspis(), 0.0f);

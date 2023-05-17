@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSaurichthysMarine extends RenderLiving<EntityPrehistoricFloraSaurichthysMarine> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurichthys_marine.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurichthys_marine.png");
 
     public RenderSaurichthysMarine(RenderManager mgr) {
         super(mgr, new ModelSaurichthys(), 0.0f);

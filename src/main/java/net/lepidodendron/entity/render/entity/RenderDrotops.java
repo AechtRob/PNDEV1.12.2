@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDrotops extends RenderLiving<EntityPrehistoricFloraDrotops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drotops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drotops.png");
 
     public RenderDrotops(RenderManager mgr) {
         super(mgr, new ModelDrotops(), 0.0f);

@@ -8,9 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAdelophthalmus extends RenderLiving<EntityPrehistoricFloraAdelophthalmus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/adelophthalmus.png");
-    //private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/adelophthalmus_baby.png");
-
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/adelophthalmus.png");
 
     public RenderAdelophthalmus(RenderManager mgr) {
         super(mgr, new ModelAdelophthalmus(), 0.0f);

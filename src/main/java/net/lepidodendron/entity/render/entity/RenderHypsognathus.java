@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHypsognathus extends RenderLiving<EntityPrehistoricFloraHypsognathus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypsognathus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypsognathus.png");
 
     public RenderHypsognathus(RenderManager mgr) {
         super(mgr, new ModelHypsognathus(), 0.0f);

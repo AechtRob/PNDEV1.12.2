@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSpiniplatyceras extends RenderLiving<EntityPrehistoricFloraSpiniplatyceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spiniplatyceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spiniplatyceras.png");
 
     public RenderSpiniplatyceras(RenderManager mgr) {
         super(mgr, new ModelSpiniplatyceras(), 0.0f);

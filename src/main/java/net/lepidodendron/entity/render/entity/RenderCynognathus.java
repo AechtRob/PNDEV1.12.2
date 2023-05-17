@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCynognathus extends RenderLiving<EntityPrehistoricFloraCynognathus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cynognathus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cynognathus.png");
+
     public static float getScaler() {return 0.595f;}
 
     public RenderCynognathus(RenderManager mgr) {

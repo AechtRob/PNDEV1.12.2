@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Asteroceras extends RenderLiving<EntityPrehistoricFloraAmmonite_Asteroceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_asteroceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_asteroceras.png");
 
     public RenderAmmonite_Asteroceras(RenderManager mgr) {
         super(mgr, new ModelAmmonite50cm(), 0.2f);

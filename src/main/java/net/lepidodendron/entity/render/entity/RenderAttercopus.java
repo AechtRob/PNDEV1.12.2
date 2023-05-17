@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAttercopus extends RenderLiving<EntityPrehistoricFloraAttercopus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_attercopus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_attercopus.png");
 
     public RenderAttercopus(RenderManager mgr) {
         super(mgr, new ModelTrigonotarbid(), 0.0f);

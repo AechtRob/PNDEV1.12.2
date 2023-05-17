@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHelicoprion extends RenderLiving<EntityPrehistoricFloraHelicoprion> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helicoprion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helicoprion.png");
 
     public RenderHelicoprion(RenderManager mgr) {
         super(mgr, new ModelHelicoprion(), 0.5f);

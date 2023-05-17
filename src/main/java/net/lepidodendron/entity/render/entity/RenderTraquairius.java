@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTraquairius extends RenderLiving<EntityPrehistoricFloraTraquairius> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/traquairius.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/traquairius.png");
 
     public RenderTraquairius(RenderManager mgr) {
         super(mgr, new ModelTraquairius(), 0.0f);

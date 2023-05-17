@@ -37,12 +37,12 @@ public class EntityPrehistoricFloraVampyronassa extends EntityPrehistoricFloraNa
 
 	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
 	public int getShoalSize() {
-		return 6;
+		return 0;
 	}
 
 	@Override

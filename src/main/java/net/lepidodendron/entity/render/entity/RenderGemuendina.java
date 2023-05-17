@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGemuendina extends RenderLiving<EntityPrehistoricFloraGemuendina> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gemuendina.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gemuendina.png");
 
     public RenderGemuendina(RenderManager mgr) {
         super(mgr, new ModelGemuendina(), 0.0f);

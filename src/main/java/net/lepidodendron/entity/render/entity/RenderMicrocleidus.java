@@ -9,13 +9,13 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMicrocleidus extends RenderLiving<EntityPrehistoricFloraMicrocleidus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microcleidus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microcleidus.png");
 
     public RenderMicrocleidus(RenderManager mgr) {
         super(mgr, new ModelMicrocleidus(), 0.0f);
     }
     public static float getScaler() {
-        return 0.75f;
+        return 0.85f;
     }
 
     @Override

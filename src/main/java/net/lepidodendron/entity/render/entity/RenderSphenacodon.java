@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSphenacodon extends RenderLiving<EntityPrehistoricFloraSphenacodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sphenacodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sphenacodon.png");
 
     public RenderSphenacodon(RenderManager mgr) {
         super(mgr, new ModelSphenacodon(), 0.5f);

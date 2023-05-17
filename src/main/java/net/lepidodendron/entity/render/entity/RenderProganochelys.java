@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProganochelys extends RenderLiving<EntityPrehistoricFloraProganochelys> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proganochelys.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proganochelys.png");
 
     public RenderProganochelys(RenderManager mgr) {
         super(mgr, new ModelProganochelys(), 0.0f);

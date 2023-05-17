@@ -9,9 +9,10 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCowielepis extends RenderLiving<EntityPrehistoricFloraCowielepis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cowielepis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cowielepis.png");
+
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.28F;
     }
     public RenderCowielepis(RenderManager mgr) {
         super(mgr, new ModelCowielepis(), 0.0f);

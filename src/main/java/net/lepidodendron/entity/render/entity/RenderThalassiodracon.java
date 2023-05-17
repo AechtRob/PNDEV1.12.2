@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderThalassiodracon extends RenderLiving<EntityPrehistoricFloraThalassiodracon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thalassiodracon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thalassiodracon.png");
 
     public RenderThalassiodracon(RenderManager mgr) {
         super(mgr, new ModelThalassiodracon(), 0.0f);

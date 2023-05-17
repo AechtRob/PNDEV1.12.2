@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGnathorhiza extends RenderLiving<EntityPrehistoricFloraGnathorhiza> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gnathorhiza.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gnathorhiza.png");
 
     public RenderGnathorhiza(RenderManager mgr) {
         super(mgr, new ModelGnathorhiza(), 0.0f);

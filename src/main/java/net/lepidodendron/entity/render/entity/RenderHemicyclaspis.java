@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHemicyclaspis extends RenderLiving<EntityPrehistoricFloraHemicyclaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hemicyclaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hemicyclaspis.png");
 
     public RenderHemicyclaspis(RenderManager mgr) {
         super(mgr, new ModelHemicyclaspis(), 0.0f);

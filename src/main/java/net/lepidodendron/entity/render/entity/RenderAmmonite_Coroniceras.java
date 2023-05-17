@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Coroniceras extends RenderLiving<EntityPrehistoricFloraAmmonite_Coroniceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_coroniceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_coroniceras.png");
 
     public RenderAmmonite_Coroniceras(RenderManager mgr) {
         super(mgr, new ModelAmmonite50cm(), 0.2f);

@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		}
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Ordovician";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

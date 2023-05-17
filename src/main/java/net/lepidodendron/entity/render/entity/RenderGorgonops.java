@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGorgonops extends RenderLiving<EntityPrehistoricFloraGorgonops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gorgonops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gorgonops.png");
 
     public RenderGorgonops(RenderManager mgr) {
         super(mgr, new ModelGorgonops(), 0.5f);

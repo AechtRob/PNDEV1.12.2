@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderChunerpeton extends RenderLiving<EntityPrehistoricFloraChunerpeton> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chunerpeton.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chunerpeton.png");
+
     public static float getScaler() {
         return 0.7F * 0.4F;
     }

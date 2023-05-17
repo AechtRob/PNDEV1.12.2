@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBobasatrania;
-import net.lepidodendron.entity.EntityPrehistoricFloraOpabinia;
 import net.lepidodendron.entity.model.entity.ModelBobasatrania;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -10,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBobasatrania extends RenderLiving<EntityPrehistoricFloraBobasatrania> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bobasatrania.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bobasatrania.png");
+
     public static float getScaler() {return 0.65F;}
 
     public RenderBobasatrania(RenderManager mgr) {

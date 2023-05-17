@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderYinlong extends RenderLiving<EntityPrehistoricFloraYinlong> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yinlong.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yinlong.png");
 
     public RenderYinlong(RenderManager mgr) {
         super(mgr, new ModelYinlong(), 0.3f);

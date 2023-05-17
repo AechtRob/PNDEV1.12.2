@@ -10,13 +10,12 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeura> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeura.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeura.png");
 
     public RenderMeganeura(RenderManager mgr) {
         super(mgr, new ModelMeganeuropsis(), 0.0f);
         this.addLayer(new LayerMeganeuraWing(this));
     }
-
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMeganeura entity) {

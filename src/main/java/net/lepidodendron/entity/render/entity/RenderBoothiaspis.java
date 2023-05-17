@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBoothiaspis extends RenderLiving<EntityPrehistoricFloraBoothiaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/boothiaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/boothiaspis.png");
 
     public RenderBoothiaspis(RenderManager mgr) {
         super(mgr, new ModelBoothiaspis(), 0.0f);

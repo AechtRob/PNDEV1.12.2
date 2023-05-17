@@ -9,12 +9,15 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPricyclopyge extends RenderLiving<EntityPrehistoricFloraPricyclopyge> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pricyclopyge.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pricyclopyge.png");
+
     public static float getScaler() {
         return 0.7F * 0.395F;
     }
+
     public RenderPricyclopyge(RenderManager mgr) {
         super(mgr, new ModelPricyclopyge(), 0.0f);
+        this.addLayer(new LayerPricyclopygeEmissive(this));
     }
 
     @Override

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCaturus extends RenderLiving<EntityPrehistoricFloraCaturus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/strobilodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/strobilodus.png");
 
     public RenderCaturus(RenderManager mgr) {
         super(mgr, new ModelCaturus(), 0.0f);

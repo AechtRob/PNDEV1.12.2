@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderVivaxosaurus extends RenderLiving<EntityPrehistoricFloraVivaxosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vivaxosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vivaxosaurus.png");
 
     public RenderVivaxosaurus(RenderManager mgr) {
         super(mgr, new ModelVivaxosaurus(), 0.5f);

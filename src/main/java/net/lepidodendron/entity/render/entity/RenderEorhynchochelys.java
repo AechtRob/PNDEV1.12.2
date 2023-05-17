@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEorhynchochelys extends RenderLiving<EntityPrehistoricFloraEorhynchochelys> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eorhynchochelys.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eorhynchochelys.png");
 
     public RenderEorhynchochelys(RenderManager mgr) {
         super(mgr, new ModelEorhynchochelys(), 0.0f);

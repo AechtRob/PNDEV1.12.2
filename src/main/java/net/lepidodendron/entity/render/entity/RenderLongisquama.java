@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLongisquama extends RenderLiving<EntityPrehistoricFloraLongisquama> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/longisquama.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/longisquama.png");
 
     public RenderLongisquama(RenderManager mgr) {
         super(mgr, new ModelLongisquama(), 0.0f);

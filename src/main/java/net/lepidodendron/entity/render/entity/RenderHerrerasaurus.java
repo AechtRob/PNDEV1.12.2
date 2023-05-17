@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHerrerasaurus extends RenderLiving<EntityPrehistoricFloraHerrerasaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/herrerasaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/herrerasaurus.png");
+
     public static float getScaler() {return 0.785F;}
 
     public RenderHerrerasaurus(RenderManager mgr) {

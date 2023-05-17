@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTrigonotarbid_Permotarbus extends RenderLiving<EntityPrehistoricFloraTrigonotarbid_Permotarbus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_permotarbus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_permotarbus.png");
 
     public RenderTrigonotarbid_Permotarbus(RenderManager mgr) {
         super(mgr, new ModelTrigonotarbid(), 0.0f);

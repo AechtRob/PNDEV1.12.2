@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCobelodus extends RenderLiving<EntityPrehistoricFloraCobelodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cobelodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cobelodus.png");
 
     public RenderCobelodus(RenderManager mgr) {
         super(mgr, new ModelCobelodus(), 0.0f);

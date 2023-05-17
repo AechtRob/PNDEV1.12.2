@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBarameda extends RenderLiving<EntityPrehistoricFloraBarameda> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barameda.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barameda.png");
+
     public static float getScaler() {return 0.6F;}
     public RenderBarameda(RenderManager mgr) {
         super(mgr, new ModelBarameda(), 1.0f);

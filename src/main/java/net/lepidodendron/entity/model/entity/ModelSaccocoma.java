@@ -1948,9 +1948,10 @@ public class ModelSaccocoma extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 
         //entitySilesaurus.tailBuffer.applyChainSwingBuffer(Tail);
-        if(entitySaccocoma.getAnimation() != entitySaccocoma.ATTACK_ANIMATION) {
+        if(entitySaccocoma.getAnimation() != entitySaccocoma.ATTACK_ANIMATION && entitySaccocoma.isReallyInWater()) {
             this.bob(Base, 0.2F, 2.5F, false, f2, 1);
         }
+
 
     }
 

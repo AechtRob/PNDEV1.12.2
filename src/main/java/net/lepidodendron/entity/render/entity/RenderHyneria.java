@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHyneria extends RenderLiving<EntityPrehistoricFloraHyneria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyneria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyneria.png");
 
     public RenderHyneria(RenderManager mgr) {
         super(mgr, new ModelHyneria(), 1.0f);

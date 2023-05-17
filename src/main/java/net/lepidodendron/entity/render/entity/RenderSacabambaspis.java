@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSacabambaspis extends RenderLiving<EntityPrehistoricFloraSacabambaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sacabambaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sacabambaspis.png");
 
     public RenderSacabambaspis(RenderManager mgr) {
         super(mgr, new ModelSacabambaspis(), 0.0f);

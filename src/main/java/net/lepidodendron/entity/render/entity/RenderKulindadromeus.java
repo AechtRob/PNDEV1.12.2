@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKulindadromeus extends RenderLiving<EntityPrehistoricFloraKulindadromeus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kulindadromeus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kulindadromeus.png");
 
     public RenderKulindadromeus(RenderManager mgr) {
         super(mgr, new ModelKulindadromeus(), 0.3f);

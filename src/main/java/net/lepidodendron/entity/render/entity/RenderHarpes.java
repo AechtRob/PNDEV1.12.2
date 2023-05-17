@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHarpes extends RenderLiving<EntityPrehistoricFloraHarpes> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harpes.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harpes.png");
 
     public RenderHarpes(RenderManager mgr) {
         super(mgr, new ModelHarpes(), 0.0f);

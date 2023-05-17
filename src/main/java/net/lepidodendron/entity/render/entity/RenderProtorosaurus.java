@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProtorosaurus extends RenderLiving<EntityPrehistoricFloraProtorosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protorosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protorosaurus.png");
 
     public RenderProtorosaurus(RenderManager mgr) {
         super(mgr, new ModelProtorosaurus(), 0.0f);

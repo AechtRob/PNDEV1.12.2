@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDocodon extends RenderLiving<EntityPrehistoricFloraDocodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/docodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/docodon.png");
+
     public static float getScaler() {return 0.2f;}
     public RenderDocodon(RenderManager mgr) {
         super(mgr, new ModelDocodon(), 0.14f);

@@ -1,17 +1,15 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraArduafrons;
 import net.lepidodendron.entity.EntityPrehistoricFloraAspidorhynchus;
 import net.lepidodendron.entity.model.entity.ModelAspidorhynchus;
-import net.lepidodendron.entity.model.entity.ModelSaurichthys;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAspidorhynchus extends RenderLiving<EntityPrehistoricFloraAspidorhynchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aspidorhynchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aspidorhynchus.png");
 
     public static float getScaler() {
         return 0.7F * 0.595F;

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEdestus extends RenderLiving<EntityPrehistoricFloraEdestus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edestus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edestus.png");
 
     public RenderEdestus(RenderManager mgr) {
         super(mgr, new ModelEdestus(), 0.5f);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderStensioella extends RenderLiving<EntityPrehistoricFloraStensioella> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stensioella.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stensioella.png");
 
     public RenderStensioella(RenderManager mgr) {
         super(mgr, new ModelStensioella(), 0.0f);

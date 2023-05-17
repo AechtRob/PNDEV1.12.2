@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCaptorhinus extends RenderLiving<EntityPrehistoricFloraCaptorhinus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/captorhinus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/captorhinus.png");
     private static final ResourceLocation TEXTURE_NOTAIL = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/captorhinus_notail.png");
 
     public RenderCaptorhinus(RenderManager mgr) {

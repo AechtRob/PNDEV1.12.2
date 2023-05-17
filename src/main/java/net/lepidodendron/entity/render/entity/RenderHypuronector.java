@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHypuronector extends RenderLiving<EntityPrehistoricFloraHypuronector> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypuronector.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypuronector.png");
 
     public RenderHypuronector(RenderManager mgr) {
         super(mgr, new ModelHypuronector(), 0.0f);

@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -36,6 +37,15 @@ public class EntityPrehistoricFloraMooreoceras extends EntityPrehistoricFloraNau
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 10.0D;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox()
+	{
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(5, 0.1, 5);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBranchiosaur extends RenderLiving<EntityPrehistoricFloraBranchiosaur> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/branchiosaur.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/branchiosaur.png");
 
     public RenderBranchiosaur(RenderManager mgr) {
         super(mgr, new ModelBranchiosaur(), 0F);

@@ -8342,7 +8342,8 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraAscoceras
-					|| event.getTarget() instanceof EntityPrehistoricFloraAscoceras_Baby) {
+					//|| event.getTarget() instanceof EntityPrehistoricFloraAscoceras_Baby
+				) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_ASCOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}

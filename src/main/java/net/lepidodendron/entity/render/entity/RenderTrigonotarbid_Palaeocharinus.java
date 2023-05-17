@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTrigonotarbid_Palaeocharinus extends RenderLiving<EntityPrehistoricFloraTrigonotarbid_Palaeocharinus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_palaeocharinus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_palaeocharinus.png");
 
     public RenderTrigonotarbid_Palaeocharinus(RenderManager mgr) {
         super(mgr, new ModelTrigonotarbid(), 0.0f);

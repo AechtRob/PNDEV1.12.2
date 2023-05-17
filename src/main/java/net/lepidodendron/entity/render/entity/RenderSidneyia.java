@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraBobasatrania;
 import net.lepidodendron.entity.EntityPrehistoricFloraSidneyia;
 import net.lepidodendron.entity.model.entity.ModelSidneyia;
 import net.minecraft.client.renderer.GlStateManager;
@@ -10,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSidneyia extends RenderLiving<EntityPrehistoricFloraSidneyia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sidneyia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sidneyia.png");
+
     public static float getScaler() {return 0.225F;}
 
     public RenderSidneyia(RenderManager mgr) {

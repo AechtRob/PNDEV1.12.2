@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGonioceras extends RenderLiving<EntityPrehistoricFloraGonioceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gonioceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gonioceras.png");
 
     public RenderGonioceras(RenderManager mgr) {
         super(mgr, new ModelGonioceras(), 0.6f);

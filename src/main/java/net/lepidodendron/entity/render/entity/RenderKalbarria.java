@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKalbarria extends RenderLiving<EntityPrehistoricFloraKalbarria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalbarria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalbarria.png");
 
     public RenderKalbarria(RenderManager mgr) {
         super(mgr, new ModelKalbarria(), 0.0f);

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderStahleckeria extends RenderLiving<EntityPrehistoricFloraStahleckeria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stahleckeria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stahleckeria.png");
 
     public RenderStahleckeria(RenderManager mgr) {
         super(mgr, new ModelStahleckeria(), 0.5f);

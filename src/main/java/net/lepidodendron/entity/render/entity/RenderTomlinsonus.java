@@ -9,12 +9,13 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTomlinsonus extends RenderLiving<EntityPrehistoricFloraTomlinsonus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tomlinsonus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tomlinsonus.png");
+
     public static float getScaler() {
         return 0.6F * 0.3F;
     }
     public RenderTomlinsonus(RenderManager mgr) {
-        super(mgr, new ModelTomlinsonus(), 0.0f);
+        super(mgr,  new ModelTomlinsonus(), 0.0f);
     }
 
     @Override

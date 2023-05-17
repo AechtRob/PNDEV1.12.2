@@ -9,12 +9,13 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPassaloteuthis extends RenderLiving<EntityPrehistoricFloraPassaloteuthis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/passaloteuthis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/passaloteuthis.png");
+
     public static float getScaler() {
         return 0.7F * 0.3F;
     }
     public RenderPassaloteuthis(RenderManager mgr) {
-        super(mgr, new ModelPassaloteuthis(), 0.0f);
+        super(mgr,  new ModelPassaloteuthis(), 0.0f);
     }
 
     @Override

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderElrathia extends RenderLiving<EntityPrehistoricFloraElrathia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elrathia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elrathia.png");
 
     public RenderElrathia(RenderManager mgr) {
         super(mgr, new ModelElrathia(), 0.0f);

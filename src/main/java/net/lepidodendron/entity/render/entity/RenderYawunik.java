@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraVetulicola;
 import net.lepidodendron.entity.EntityPrehistoricFloraYawunik;
 import net.lepidodendron.entity.model.entity.ModelYawunik;
 import net.minecraft.client.renderer.GlStateManager;
@@ -10,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderYawunik extends RenderLiving<EntityPrehistoricFloraYawunik> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yawunik.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yawunik.png");
+
     public static float getScaler() {return 0.24F;}
 
     public RenderYawunik(RenderManager mgr) {

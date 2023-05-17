@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
 
     public RenderOttoia(RenderManager mgr) {
         super(mgr, new ModelOttoia(), 0.0f);

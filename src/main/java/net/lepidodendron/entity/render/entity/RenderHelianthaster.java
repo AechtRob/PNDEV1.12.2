@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHelianthaster extends RenderLiving<EntityPrehistoricFloraHelianthaster> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helianthaster.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helianthaster.png");
 
     public RenderHelianthaster(RenderManager mgr) {
         super(mgr, new ModelHelianthaster(), 0.0f);

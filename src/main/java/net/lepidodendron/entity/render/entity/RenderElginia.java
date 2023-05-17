@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderElginia extends RenderLiving<EntityPrehistoricFloraElginia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elginia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elginia.png");
 
     public RenderElginia(RenderManager mgr) {
         super(mgr, new ModelElginia(), 0.325f);

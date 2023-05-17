@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTapinocephalus extends RenderLiving<EntityPrehistoricFloraTapinocephalus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tapinocephalus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tapinocephalus.png");
 
     public RenderTapinocephalus(RenderManager mgr) {
         super(mgr, new ModelTapinocephalus(), 0.5f);

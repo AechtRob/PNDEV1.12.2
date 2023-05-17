@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderNothosaurus extends RenderLiving<EntityPrehistoricFloraNothosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nothosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nothosaurus.png");
 
     public RenderNothosaurus(RenderManager mgr) {
         super(mgr, new ModelNothosaurus(), 0.0f);

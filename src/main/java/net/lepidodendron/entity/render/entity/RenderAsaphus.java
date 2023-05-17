@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAsaphus;
-import net.lepidodendron.entity.EntityPrehistoricFloraWalliserops;
 import net.lepidodendron.entity.model.entity.ModelAsaphus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -11,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAsaphus extends RenderLiving<EntityPrehistoricFloraAsaphus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/asaphus.png");
+
     public static float getScaler() {
         return  0.38F;
     }

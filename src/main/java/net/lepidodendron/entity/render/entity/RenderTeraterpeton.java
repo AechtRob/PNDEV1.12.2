@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTeraterpeton extends RenderLiving<EntityPrehistoricFloraTeraterpeton> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teraterpeton.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teraterpeton.png");
 
     public RenderTeraterpeton(RenderManager mgr) {
         super(mgr, new ModelTeraterpeton(), 0.0f);

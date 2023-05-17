@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPanzhousaurus extends RenderLiving<EntityPrehistoricFloraPanzhousaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panzhousaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panzhousaurus.png");
 
     public RenderPanzhousaurus(RenderManager mgr) {
         super(mgr, new ModelPanzhousaurus(), 0.0f);

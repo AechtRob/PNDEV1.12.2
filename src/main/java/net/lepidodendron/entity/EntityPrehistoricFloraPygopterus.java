@@ -216,23 +216,23 @@ public class EntityPrehistoricFloraPygopterus extends EntityPrehistoricFloraAgea
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {return -0.06;}
-	public static double upperfrontverticallinedepth() {return 0.8;}
-	public static double upperbackverticallinedepth() {return 0.8;}
-	public static double upperfrontlineoffset() {return 0.2;}
-	public static double upperfrontlineoffsetperpendiular() {return -0.04F;}
-	public static double upperbacklineoffset() {return 0.2;}
-	public static double upperbacklineoffsetperpendiular() {return -0.04F;}
-	public static double lowerfrontverticallinedepth() {return 0;}
-	public static double lowerbackverticallinedepth() {return 0.7;}
-	public static double lowerfrontlineoffset() {return 0;}
-	public static double lowerfrontlineoffsetperpendiular() {return -0F;}
-	public static double lowerbacklineoffset() {return 0;}
-	public static double lowerbacklineoffsetperpendiular() {return -0F;}
+	public static double offsetWall(@Nullable String variant) {return -0.06;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.8;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.8;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.2;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0.04F;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.2;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return -0.04F;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.7;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0F;}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {return RenderDisplays.TEXTURE_PYGOPTERUS;}
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderPygopterus.TEXTURE;}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {return RenderDisplays.modelPygopterus;}
-	public static float getScaler() {return RenderPygopterus.getScaler();}
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelPygopterus;}
+	public static float getScaler(@Nullable String variant) {return RenderPygopterus.getScaler();}
 }
 

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEstemmenosuchus extends RenderLiving<EntityPrehistoricFloraEstemmenosuchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/estemmenosuchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/estemmenosuchus.png");
 
     public RenderEstemmenosuchus(RenderManager mgr) {
         super(mgr, new ModelEstemmenosuchus(), 0.5f);

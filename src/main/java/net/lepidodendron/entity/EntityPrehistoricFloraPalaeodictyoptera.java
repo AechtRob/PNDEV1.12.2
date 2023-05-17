@@ -6,7 +6,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsPalaeodictyoptera;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
+import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -25,6 +29,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
@@ -473,5 +479,210 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	protected float getSoundVolume() {
 		return 1.0F;
 	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA: default:
+				return 0.30;
+				
+			case DUNBARIA:
+				return 0.27;
+
+			case HOMALONEURA:
+				return 0.34;
+
+			case HOMOIOPTERA:
+				return 0.30;
+
+			case LITHOMANTIS:
+				return 0.30;
+
+			case LYCOCERCUS:
+				return 0.31;
+
+			case SINODUNBARIA:
+				return 0.38;
+
+			case STENODICTYA:
+				return 0.41;
+
+			case MAZOTHAIROS:
+				return 0.35;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA: default:
+				return 0.01;
+
+			case DUNBARIA:
+				return 0.01;
+
+			case HOMALONEURA:
+				return 0.01;
+
+			case HOMOIOPTERA:
+				return 0.01;
+
+			case LITHOMANTIS:
+				return 0.01;
+
+			case LYCOCERCUS:
+				return 0.01;
+
+			case SINODUNBARIA:
+				return 0.01;
+
+			case STENODICTYA:
+				return 0.01;
+
+			case MAZOTHAIROS:
+				return 0.01;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.95;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.06;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA:
+			default:
+				return RenderPalaeodictyoptera.TEXTURE_DELITZSCHALA;
+
+			case DUNBARIA:
+				return RenderPalaeodictyoptera.TEXTURE_DUNBARIA;
+
+			case HOMALONEURA:
+				return RenderPalaeodictyoptera.TEXTURE_HOMALONEURA;
+
+			case HOMOIOPTERA:
+				return RenderPalaeodictyoptera.TEXTURE_HOMOIOPTERA;
+
+			case LITHOMANTIS:
+				return RenderPalaeodictyoptera.TEXTURE_LITHOMANTIS;
+
+			case LYCOCERCUS:
+				return RenderPalaeodictyoptera.TEXTURE_LYCOCERCUS;
+
+			case SINODUNBARIA:
+				return RenderPalaeodictyoptera.TEXTURE_SINODUNBARIA;
+
+			case STENODICTYA:
+				return RenderPalaeodictyoptera.TEXTURE_STENODICTYA;
+
+			case MAZOTHAIROS:
+				return RenderPalaeodictyoptera.TEXTURE_MAZOTHAIROS;
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA:
+			default:
+				return LayerPalaeodictyopteraWing.TEXTURE_DELITZSCHALA;
+
+			case DUNBARIA:
+				return LayerPalaeodictyopteraWing.TEXTURE_DUNBARIA;
+
+			case HOMALONEURA:
+				return LayerPalaeodictyopteraWing.TEXTURE_HOMALONEURA;
+
+			case HOMOIOPTERA:
+				return LayerPalaeodictyopteraWing.TEXTURE_HOMOIOPTERA;
+
+			case LITHOMANTIS:
+				return LayerPalaeodictyopteraWing.TEXTURE_LITHOMANTIS;
+
+			case LYCOCERCUS:
+				return LayerPalaeodictyopteraWing.TEXTURE_LYCOCERCUS;
+
+			case SINODUNBARIA:
+				return LayerPalaeodictyopteraWing.TEXTURE_SINODUNBARIA;
+
+			case STENODICTYA:
+				return LayerPalaeodictyopteraWing.TEXTURE_STENODICTYA;
+
+			case MAZOTHAIROS:
+				return LayerPalaeodictyopteraWing.TEXTURE_MAZOTHAIROS;
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA:
+			default:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
+
+			case DUNBARIA:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case HOMALONEURA:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case HOMOIOPTERA:
+				return RenderDisplays.modelPalaeodictyopteraLarge;
+
+			case LITHOMANTIS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case LYCOCERCUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case SINODUNBARIA:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
+
+			case STENODICTYA:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case MAZOTHAIROS:
+				return RenderDisplays.modelPalaeodictyopteraLarge;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderPalaeodictyoptera.getScaler(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant));
+	}
+
 
 }
