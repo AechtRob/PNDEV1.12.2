@@ -85,9 +85,9 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genUnderwaterDebrisBlacklistBiomes)) {
-			if (!BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 				biomeCriteria = true;
-			if (!BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
