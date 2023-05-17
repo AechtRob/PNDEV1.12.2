@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderOphiopsis;
 import net.lepidodendron.entity.render.entity.RenderThrissops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -193,16 +194,16 @@ public class EntityPrehistoricFloraOphiopsis extends EntityPrehistoricFloraFishB
 		return -0.F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 1.1;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.1;
+		return -0.005;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.04F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.2;
@@ -212,14 +213,14 @@ public class EntityPrehistoricFloraOphiopsis extends EntityPrehistoricFloraFishB
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderThrissops.TEXTURE;
+		return RenderOphiopsis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelThrissops;
+		return RenderDisplays.modelOphiopsis;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderThrissops.getScaler();
+		return RenderOphiopsis.getScaler();
 	}
 
 

@@ -176,16 +176,18 @@ public class ModelPolybranchiaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Polybranchiaspis.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Polybranchiaspis.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Polybranchiaspis.rotateAngleX = (float) Math.toRadians(90);
+        this.Polybranchiaspis.offsetY = -0.14F;
+        this.Polybranchiaspis.offsetX = 0.0F;
+        this.Polybranchiaspis.offsetZ = 0.005F;
         this.Polybranchiaspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.Polybranchiaspis.offsetY = 0.15F;
+        this.Polybranchiaspis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

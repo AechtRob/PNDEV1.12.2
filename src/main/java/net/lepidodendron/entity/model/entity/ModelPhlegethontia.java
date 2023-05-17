@@ -191,6 +191,34 @@ public class ModelPhlegethontia extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body2, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(Head, 0.1086F, -0.3491F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawfront_r1, -0.1485F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawmiddle_r1, -0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Masseter, -0.2335F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, -0.1745F, -0.3054F, 0.0F);
+        this.setRotateAngle(Neck2, -0.1532F, -0.3054F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(Tail2, -0.0424F, 0.4363F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0424F, 0.5236F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(Tail5, -0.0213F, 0.6109F, 0.0F);
+        this.setRotateAngle(Tailend1, -0.0213F, 0.3927F, 0.0F);
+        this.setRotateAngle(Tailend2, 0.0213F, 0.2618F, 0.0F);
+        this.setRotateAngle(Tailend3, 0.0213F, 0.3491F, 0.0F);
+        this.setRotateAngle(Upperjaw, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawfront_r1, -0.0637F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawslope_r1, 0.1911F, 0.0F, 0.0F);
+        this.root.offsetY = 0.32F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

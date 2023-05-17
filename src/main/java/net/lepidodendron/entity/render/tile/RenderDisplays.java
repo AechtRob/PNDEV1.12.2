@@ -49,6 +49,7 @@ public class RenderDisplays {
     public static final ModelCtenurella modelCtenurella = new ModelCtenurella();
     public static final ModelCyamodus modelCyamodus = new ModelCyamodus();
     public static final ModelCymbospondylus modelCymbospondylus = new ModelCymbospondylus();
+    public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
     public static final ModelDapedium modelDapedium = new ModelDapedium();
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
     public static final ModelDeltoptychius modelDeltoptychius = new ModelDeltoptychius();
@@ -87,6 +88,7 @@ public class RenderDisplays {
     public static final ModelGriphognathus modelGriphognathus = new ModelGriphognathus();
     public static final ModelGymnotrachelus modelGymnotrachelus = new ModelGymnotrachelus();
     public static final ModelGyrosteus modelGyrosteus = new ModelGyrosteus();
+    public static final ModelHarpacanthus modelHarpacanthus = new ModelHarpacanthus();
     public static final ModelHaikouichthys modelHaikouichthys = new ModelHaikouichthys();
     public static final ModelHelicoprion modelHelicoprion = new ModelHelicoprion();
     public static final ModelHenodus modelHenodus = new ModelHenodus();
@@ -111,6 +113,7 @@ public class RenderDisplays {
     public static final ModelMaterpiscis modelMaterpiscis = new ModelMaterpiscis();
     public static final ModelMegalograptus modelMegalograptus = new ModelMegalograptus();
     public static final ModelMegalosaurus modelMegalosaurus = new ModelMegalosaurus();
+    public static final ModelMegateuthis modelMegateuthis = new ModelMegateuthis();
     public static final ModelMenaspis modelMenaspis = new ModelMenaspis();
     public static final ModelMicrobrachius modelMicrobrachius = new ModelMicrobrachius();
     public static final ModelMiguashaia modelMiguashaia = new ModelMiguashaia();
@@ -126,6 +129,8 @@ public class RenderDisplays {
     public static final ModelOphthalmosaurus modelOphthalmosaurus = new ModelOphthalmosaurus();
     public static final ModelOrthrozanclus modelOrthrozanclus = new ModelOrthrozanclus();
     public static final ModelOxyosteus modelOxyosteus = new ModelOxyosteus();
+    public static final ModelOpabinia modelOpabinia = new ModelOpabinia();
+    public static final ModelOphiopsis modelOphiopsis = new ModelOphiopsis();
     public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
     public static final ModelPalaeodictyopteraMedium modelPalaeodictyopteraMedium = new ModelPalaeodictyopteraMedium();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
@@ -144,7 +149,13 @@ public class RenderDisplays {
     public static final ModelProganochelys modelProganochelys = new ModelProganochelys();
     public static final ModelProteroctopus modelProteroctopus = new ModelProteroctopus();
     public static final ModelProterosuchus modelProterosuchus = new ModelProterosuchus();
-    public static final ModelPseudotherium modelPseudotherium = new ModelPseudotherium();
+    public static final ModelPseudotherium modelPseudotherium = new ModelPseudotherium();public static final ModelPygopterus modelPygopterus = new ModelPygopterus();
+    public static final ModelParhybodus modelParhybodus = new ModelParhybodus();
+    public static final ModelParamblypterus modelParamblypterus = new ModelParamblypterus();
+    public static final ModelPolybranchiaspis modelPolybranchiaspis = new ModelPolybranchiaspis();
+    public static final ModelPurlovia modelPurlovia = new ModelPurlovia();
+    public static final ModelPhlebolepis modelPhlebolepis = new ModelPhlebolepis();
+    public static final ModelPhlegethontia modelPhlegethontia = new ModelPhlegethontia();
     public static final ModelPurlovia modelPurlovia = new ModelPurlovia();
     public static final ModelPygopterus modelPygopterus = new ModelPygopterus();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
