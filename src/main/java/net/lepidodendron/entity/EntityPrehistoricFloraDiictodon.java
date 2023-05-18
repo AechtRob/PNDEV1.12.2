@@ -173,10 +173,11 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		tasks.addTask(4, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(5, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 20));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1.5));
 	}
 
