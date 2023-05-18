@@ -21,7 +21,7 @@ public class LepidodendronConfig {
     public static int waterSandVertical = 0;
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
-    public static int taxidermyRenderRange = 24;
+    public static int taxidermyRenderRange = 48;
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
@@ -760,7 +760,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Rendering and Optimisation", "taxidermyRenderRange", taxidermyRenderRange);
-        prop.setComment("Amount of blocks' distance the player can be at before taxidermy does not render on-screen (16 to 254) [default: 24]");
+        prop.setComment("Amount of blocks' distance the player can be at before taxidermy does not render on-screen (16 to 254) [default: 48]");
         taxidermyRenderRange = prop.getInt();
         propOrder.add(prop.getName());
 
