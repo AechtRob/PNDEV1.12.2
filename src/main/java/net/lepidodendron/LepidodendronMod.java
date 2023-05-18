@@ -1832,7 +1832,6 @@ public class LepidodendronMod {
 	public static final ResourceLocation CENOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cenoceras"));
 	public static final ResourceLocation CENOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cenoceras_young"));
 	public static final int ENTITY_MEGANEURITES = 716;
-	public static final ResourceLocation MEGANEURITES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/meganeurites"));
 	public static final ResourceLocation MEGANEURITES_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/meganeurites_jar"));
 	public static final int ENTITY_DAOHUGOUCOSSUS = 717;
 	public static final ResourceLocation DAOHUGOUCOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/daohugoucossus"));
@@ -1858,6 +1857,15 @@ public class LepidodendronMod {
 	public static final int ENTITY_BOBOSAURUS = 726;
 	public static final ResourceLocation BOBOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bobosaurus"));
 	public static final ResourceLocation BOBOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bobosaurus_young"));
+
+	public static final int ENTITY_EURHINOSAURUS = 727;
+	public static final ResourceLocation EURHINOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eurhinosaurus"));
+	public static final ResourceLocation EURHINOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eurhinosaurus_young"));
+
+	public static final int ENTITY_EOCARCINUS = 728;
+	public static final ResourceLocation EOCARCINUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eocarcinus"));
+	public static final int ENTITY_ORTHOCORMUS = 729;
+	public static final ResourceLocation ORTHOCORMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orthocormus"));
 
 
 	@Mod.EventHandler

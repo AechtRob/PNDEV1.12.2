@@ -121,7 +121,7 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.25F;
+		float speedBase = 0.15F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -194,7 +194,7 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		//this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
