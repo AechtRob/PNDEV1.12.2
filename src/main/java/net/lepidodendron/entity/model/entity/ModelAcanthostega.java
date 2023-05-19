@@ -9,6 +9,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 
 public class ModelAcanthostega extends AdvancedModelBaseExtended {
     public AdvancedModelRendererExtended chest;
@@ -222,6 +223,12 @@ public class ModelAcanthostega extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.chest.offsetY = 1.3F; //72
+
+        if (e instanceof EntityLiving) {
+            if (((EntityLiving)e).isAIDisabled()) {
+                return;
+            }
+        }
 
         EntityPrehistoricFloraAcanthostega Acanthostega = (EntityPrehistoricFloraAcanthostega) e;
 
