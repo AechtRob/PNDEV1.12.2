@@ -3699,6 +3699,10 @@ public class LepidodendronSorter {
     public static final int ophthalmothule_raw = 4096;
     public static final int thalassiodracon_raw = 4097;
     public static final int microcleidus_raw = 4098;
+    public static final int eocarcinus_raw = 4099;
+    public static final int eurhinosaurus_raw = 4100;
+    public static final int orthocormus_raw = 4101;
+
 
 
 

@@ -441,15 +441,6 @@ public class ModelMixosaurus extends AdvancedModelBaseExtended {
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);
 
-        animator.setAnimation(e.ROAR_ANIMATION);
-        animator.startKeyframe(5);
-        animator.move(this.Head, 0,0,-0.2F);
-        animator.rotate(this.Head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(5);
-        animator.resetKeyframe(2);
-
     }
 }
 

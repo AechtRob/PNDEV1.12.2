@@ -340,7 +340,7 @@ public class ModelDunkleosteus extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.Bodymiddle, this.Bodyend, this.Tailbase, this.Tailend};
         ((EntityPrehistoricFloraDunkleosteus)e).tailBuffer.applyChainSwingBuffer(fishTail);
-
+        this.Bodyfront.offsetY = 0.45F;
         float speed = 0.1F;
         float still = 1f;
         float inwater = 1f;
