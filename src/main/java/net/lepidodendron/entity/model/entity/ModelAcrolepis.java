@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 
 public class ModelAcrolepis extends AdvancedModelBase {
     private final AdvancedModelRenderer Acrolepis;
@@ -320,8 +321,13 @@ public class ModelAcrolepis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-
         this.Acrolepis.offsetY = 1.0F;
+
+        if (e instanceof EntityLiving) {
+            if (((EntityLiving)e).isAIDisabled()) {
+                return;
+            }
+        }
 
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Tail_Begin, this.Tail_middle, this.Tail_end};
 
