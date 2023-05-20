@@ -245,7 +245,7 @@ public class ModelSlimonia extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
        // this.body.offsetY = 0.4F;
-        this.body.offsetY = -0.25F;
+        this.body.offsetY = -0.2F;
         this.body.offsetZ = 0.1F;
 
 

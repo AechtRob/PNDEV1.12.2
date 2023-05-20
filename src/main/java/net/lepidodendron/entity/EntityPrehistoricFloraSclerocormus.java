@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Aquatic Ichthyosauriform";}
+	public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {

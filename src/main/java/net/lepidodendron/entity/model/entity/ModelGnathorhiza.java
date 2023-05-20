@@ -238,7 +238,7 @@ public class ModelGnathorhiza extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodymiddlefront.offsetY = 1.25F;
+        this.Bodymiddlefront.offsetY = 1.4F;
 
         AdvancedModelRenderer[] finPectoralLeft = {this.Leftpectoralfinbase, this.Leftpectoralfinmiddle, this.Leftpectoralfinend};
         AdvancedModelRenderer[] finPectoralRight = {this.Rightpectoralfinbase, this.Rightpectoralfinmiddle, this.Rightpectoralfinend};

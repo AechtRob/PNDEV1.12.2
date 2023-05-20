@@ -337,7 +337,7 @@ public class ModelSclerocormus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.root.offsetY = 1F;
+        this.root.offsetY = 1.02F;
         //this.root.offsetZ = 1.0F;
 
         AdvancedModelRenderer[] fishTail = {this.tail1, this.tail2, this.tail3, this.Tail4, this.Tail5};

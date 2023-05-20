@@ -42,10 +42,10 @@ public class EntityPrehistoricFloraStagonolepis extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraStagonolepis(World world) {
 		super(world);
-		setSize(1.05F, 1.01F);
+		setSize(1.0F, 0.7F);
 		minWidth = 0.12F;
-		maxWidth = 1.05F;
-		maxHeight = 1.01F;
+		maxWidth = 1.0F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 34.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

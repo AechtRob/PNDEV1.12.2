@@ -47,9 +47,9 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraPrionosuchus(World world) {
 		super(world);
-		setSize(0.899F, 0.99F);
+		setSize(0.9F, 0.99F);
 		minWidth = 0.125F;
-		maxWidth = 0.899F;
+		maxWidth = 0.9F;
 		maxHeight = 0.99F;
 		maxHealthAgeable = 42.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
