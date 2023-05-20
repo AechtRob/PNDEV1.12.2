@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTyphloesus;
 import net.lepidodendron.entity.model.entity.ModelTurrisaspis;
+import net.lepidodendron.entity.model.entity.ModelTyphloesus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,7 +16,7 @@ public class RenderTyphloesus extends RenderLiving<EntityPrehistoricFloraTyphloe
         return 0.7F * 0.395F;
     }
     public RenderTyphloesus(RenderManager mgr) {
-        super(mgr, new ModelTurrisaspis(), 0.0f);
+        super(mgr, new ModelTyphloesus(), 0.0f);
     }
 
     @Override
