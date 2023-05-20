@@ -339,13 +339,13 @@ public class ModelParameteoraspis extends AdvancedModelBase {
         if (isAtBottom) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
+            taildegree = 0.25F;
         }
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, taildegree, -3, f2, 1);
-            this.swing(head2, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(head2, speed, 0.15F, true, 0, 0, f2, 1);
             this.flap(FinLeft, (float) (speed * 0.75), 0.12F, true, 0, 0, f2, 1);
             this.swing(FinLeft, (float) (speed * 0.75), 0.12F, true, 0, 0, f2, 1);
             this.flap(FinRight, (float) (speed * 0.75), -0.12F, true, 0, 0, f2, 1);

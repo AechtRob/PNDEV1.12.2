@@ -28,7 +28,7 @@ public class RenderSkeemella extends RenderLiving<EntityPrehistoricFloraSkeemell
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
-    protected void preRenderCallback(EntityPrehistoricFloraVetulicola entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraSkeemella entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;
