@@ -10,6 +10,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererEx
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 
 public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended bone;
@@ -364,6 +365,12 @@ resetToDefaultPose();
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.bone.offsetY = 1.05F; //72
+
+        if (e instanceof EntityLiving) {
+            if (((EntityLiving)e).isAIDisabled()) {
+                return;
+            }
+        }
 
         EntityPrehistoricFloraAcanthostomatops Acanthostomatops = (EntityPrehistoricFloraAcanthostomatops) e;
 

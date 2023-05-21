@@ -5,8 +5,8 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
 public class ModelAcadoaradoxides extends AdvancedModelBase {
@@ -318,6 +318,12 @@ public class ModelAcadoaradoxides extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.head.offsetY = 0.75F;
+
+        if (e instanceof EntityLiving) {
+            if (((EntityLiving)e).isAIDisabled()) {
+                return;
+            }
+        }
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {
