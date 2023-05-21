@@ -3702,6 +3702,19 @@ public class LepidodendronSorter {
     public static final int eocarcinus_raw = 4099;
     public static final int eurhinosaurus_raw = 4100;
     public static final int orthocormus_raw = 4101;
+    public static final int parnaibaia_raw = 4102;
+    public static final int palaeocarcharias_raw = 4103;
+    public static final int protospinax_raw = 4104;
+    public static final int uarbryichthys_raw = 4105;
+    public static final int ammonite_perisphinctes_raw = 4106;
+    public static final int eggs_perisphinctes = 4107;
+    public static final int shell_perisphinctes = 4108;
+    public static final int isanichthys_raw = 4109;
+    public static final int siderops_raw = 4110;
+    public static final int amphibian_spawn_siderops = 4111;
+    public static final int amphibian_spawn_siderops_worldgen = 4112;
+    public static final int mecochirus_raw = 4113;
+    public static final int steurbautichthys_raw = 4114;
 
 
 

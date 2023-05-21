@@ -12,7 +12,7 @@ public class RenderHeterosteus extends RenderLiving<EntityPrehistoricFloraHetero
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterosteus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterosteus_baby.png");
 
-    public static float getScaler() {return 1.25F;}
+    public static float getScaler() {return 1.25F *0.7F;}
     public RenderHeterosteus(RenderManager mgr) {
         super(mgr, new ModelHeterosteus(), 1.0f);
     }
