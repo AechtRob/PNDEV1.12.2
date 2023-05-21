@@ -40,12 +40,12 @@ public class EntityPrehistoricFloraOreochima extends EntityPrehistoricFloraFishB
 
 	@Override
 	public int getShoalSize() {
-		return 10;
+		return 15;
 	}
 
 	@Override
 	public int getShoalDist() {
-		return 3;
+		return 4;
 	}
 
 	@Override
