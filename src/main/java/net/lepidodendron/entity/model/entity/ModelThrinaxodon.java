@@ -217,7 +217,7 @@ public class ModelThrinaxodon extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.chest.offsetY = 1.15F;
+        this.chest.offsetY = 1.17F;
 
         EntityPrehistoricFloraThrinaxodon ThrinaxodonEntity = (EntityPrehistoricFloraThrinaxodon) e;
         float masterSpeed = ThrinaxodonEntity.getTravelSpeed();

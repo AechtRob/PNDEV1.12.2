@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraUrocordylus extends EntityPrehistoricFloraSwi
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Fully Aquatic";}
+	public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public int getTalkInterval() {

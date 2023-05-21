@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraHyneria extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraHyneria(World world) {
 		super(world);
-		setSize(0.95F, 0.9F);
+		setSize(1.3F, 0.9F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.9F;

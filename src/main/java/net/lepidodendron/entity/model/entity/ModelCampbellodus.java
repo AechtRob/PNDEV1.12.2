@@ -248,7 +248,7 @@ public class ModelCampbellodus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.3F;
+        this.Bodyfront.offsetY = 0.6F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Bodyend, this.Tailmiddlebase, this.Tailmiddle, this.Tailend};
