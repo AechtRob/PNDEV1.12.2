@@ -381,12 +381,14 @@ public class ModelIchthyostega extends AdvancedModelBase {
         }
         else {
             //Swimming pose:
-            if (!ee.getIsMoving()) { //static in water
-                //Repose the feet to the start position of the swim cycle anim:
-                //Not needed for this swim - the static pose is fine
 
-                return;
-            }
+//            if (!ee.getIsMoving()) { //static in water
+//                //Repose the feet to the start position of the swim cycle anim:
+//                //Not needed for this swim - the static pose is fine
+//
+//                return;
+//            }
+
             //moving in water
             animSwimming(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             return;
