@@ -1174,7 +1174,14 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TRACHYMETOPON = new CustomTrigger("pf_book_trachymetopon");
     public static final CustomTrigger CLICK_PANACANTHOCARIS = new CustomTrigger("pf_book_panacanthocaris");
     public static final CustomTrigger CLICK_BOBOSAURUS = new CustomTrigger("pf_book_bobosaurus");
-
+    public static final CustomTrigger CLICK_PARNAIBAIA = new CustomTrigger("pf_book_parnaibaia");
+    public static final CustomTrigger CLICK_PALAEOCARCHARIAS = new CustomTrigger("pf_book_palaeocarcharias");
+    public static final CustomTrigger CLICK_PROTOSPINAX = new CustomTrigger("pf_book_protospinax");
+    public static final CustomTrigger CLICK_UARBRYICHTHYS = new CustomTrigger("pf_book_uarbryichthys");
+    public static final CustomTrigger CLICK_SIDEROPS = new CustomTrigger("pf_book_siderops");
+    public static final CustomTrigger CLICK_STEURBAUTICHTHYS = new CustomTrigger("pf_book_steurbautichthys");
+    public static final CustomTrigger CLICK_MECOCHIRUS = new CustomTrigger("pf_book_mecochirus");
+    public static final CustomTrigger CLICK_ISANICHTHYS = new CustomTrigger("pf_book_isanichthys");
 
 
 
@@ -2342,6 +2349,14 @@ public class ModTriggers
             CLICK_PANACANTHOCARIS,
             CLICK_TRACHYMETOPON,
             CLICK_BOBOSAURUS,
+            CLICK_PALAEOCARCHARIAS,
+            CLICK_PROTOSPINAX,
+            CLICK_PARNAIBAIA,
+            CLICK_UARBRYICHTHYS,
+            CLICK_SIDEROPS,
+            CLICK_STEURBAUTICHTHYS,
+            CLICK_MECOCHIRUS,
+            CLICK_ISANICHTHYS,
 
 
 

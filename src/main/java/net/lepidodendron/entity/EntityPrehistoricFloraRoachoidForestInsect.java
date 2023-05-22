@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraRoachoidForestInsect extends EntityPrehistori
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

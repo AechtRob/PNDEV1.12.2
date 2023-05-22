@@ -390,14 +390,19 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_phorcynis","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_propterus","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_oreochima","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_libys","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_coccoderma","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ostenocaris","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_morrolepis","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eocarcinus","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_kaykay","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_orthocormus","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_panacanthocaris","inventory")
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_panacanthocaris","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_steurbautichthys","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_mecochirus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_isanichthys","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_protospinax","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeocarcharias","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_uarbryichthys","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_orthocormus","inventory")
 
 
 

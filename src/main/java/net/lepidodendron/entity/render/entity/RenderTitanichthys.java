@@ -18,7 +18,7 @@ public class RenderTitanichthys extends RenderLiving<EntityPrehistoricFloraTitan
         super(mgr, new ModelTitanicthys(), 1.0f);
     }
     public static float getScaler() {
-        return 1.07F;
+        return 1.07F *0.75F;
     }
 
     @Override

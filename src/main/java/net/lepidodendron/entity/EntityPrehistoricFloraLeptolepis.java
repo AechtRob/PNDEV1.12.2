@@ -43,12 +43,12 @@ public class EntityPrehistoricFloraLeptolepis extends EntityPrehistoricFloraFish
 
 	@Override
 	public int getShoalSize() {
-		return 10;
+		return 30;
 	}
 
 	@Override
 	public int getShoalDist() {
-		return 4;
+		return 2;
 	}
 
 	@Override

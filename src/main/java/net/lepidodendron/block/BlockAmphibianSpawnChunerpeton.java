@@ -5,7 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyInteger;
@@ -56,7 +58,7 @@ public class BlockAmphibianSpawnChunerpeton extends ElementsLepidodendronMod.Mod
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (dimID != LepidodendronConfig.dimCarboniferous) {
+		if (dimID != LepidodendronConfig.dimJurassic) {
 			return;
 		}
 
@@ -68,10 +70,10 @@ public class BlockAmphibianSpawnChunerpeton extends ElementsLepidodendronMod.Mod
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomeCarboniferous) {
-				BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
-				if (biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
-					|| biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
+			if (biome instanceof BiomeJurassic) {
+				BiomeJurassic biomeC = (BiomeJurassic) biome;
+				if (biomeC.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
+					|| biomeC.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
