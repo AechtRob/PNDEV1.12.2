@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/pandan_log",
+		"inside": "lepidodendron:blocks/pandan_log"
+	},
+	"elements": [
+		{
+			"from": [6.01, 6.01, 6],
+			"to": [10.01, 10.01, 8],
+			"faces": {
+				"north": {"uv": [6, 6, 10, 10], "texture": "#inside"},
+				"east": {"uv": [7, 6, 9, 10], "texture": "#inside"},
+				"south": {"uv": [6, 6, 10, 10], "texture": "#inside"},
+				"west": {"uv": [7, 6, 9, 10], "texture": "#inside"},
+				"up": {"uv": [6, 7, 10, 9], "texture": "#inside"},
+				"down": {"uv": [6, 7, 10, 9], "texture": "#inside"}
+			}
+		}
+	]
+}

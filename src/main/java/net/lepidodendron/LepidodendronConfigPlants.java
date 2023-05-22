@@ -1969,6 +1969,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierCobbania = 1;
     public static boolean spreadCobbania = true;
 
+    public static boolean genOrontium = false;
+    public static String[] genOrontiumBlacklistBiomes = new String[0];
+    public static String[] genOrontiumOverrideBiomes = new String[0];
+    public static int[] dimOrontium = new int[]{0};
+    public static int minheightOrontium = 1;
+    public static int maxheightOrontium = 80;
+    public static double multiplierOrontium = 1;
+    public static boolean spreadOrontium = true;
+
     public static boolean genElkinsia = false;
     public static String[] genElkinsiaBlacklistBiomes = new String[0];
     public static String[] genElkinsiaOverrideBiomes = new String[0];
@@ -8551,6 +8560,38 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Selaginella", "radiusSelaginella", radiusSelaginella);
         prop.setComment("Radius Selaginella can spread (0 to 8). Increasing this may cause lag. [default: 1]");
         radiusSelaginella = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Orontium", "genOrontium", genOrontium);
+        prop.setComment("Set to true to generate Orontium naturally [default: false]");
+        genOrontium = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Orontium", "genOrontiumBlacklistBiomes", genOrontiumBlacklistBiomes);
+        prop.setComment("List of biomes Orontium are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genOrontiumBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Orontium", "genOrontiumOverrideBiomes", genOrontiumOverrideBiomes);
+        prop.setComment("List of biomes Orontium are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genOrontiumOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Orontium", "dimOrontium", dimOrontium);
+        prop.setComment("List of dimension IDs Orontium can generate in [default: 0]");
+        dimOrontium = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Orontium", "minheightOrontium", minheightOrontium);
+        prop.setComment("Minimum height that Orontium can generate (1 to 250) [default: 80]");
+        minheightOrontium = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Orontium", "maxheightOrontium", maxheightOrontium);
+        prop.setComment("Maximum height that Orontium can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightOrontium = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Orontium", "multiplierOrontium", multiplierOrontium);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierOrontium = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Orontium", "spreadOrontium", spreadOrontium);
+        prop.setComment("Set to true for Orontium to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadOrontium = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Cobbania", "genCobbania", genCobbania);
