@@ -1370,7 +1370,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
             if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.canGrow <= 0) {
                 this.consumeItemFromStack(player, itemstack);
-                this.canGrow = 3000;
+                this.canGrow = 2400;
                 this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
                 if (world.isRemote) {
                     this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);

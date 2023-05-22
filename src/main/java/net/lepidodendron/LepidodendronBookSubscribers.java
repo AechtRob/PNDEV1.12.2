@@ -973,6 +973,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:orontium_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ORONTIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:columnaris_sapling"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
@@ -2314,6 +2323,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:pandan_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PANDAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nothofagus_sapling"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
@@ -3563,6 +3581,16 @@ public class LepidodendronBookSubscribers {
 				) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_CAYTONIALES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ktalenia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+			) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_KTALENIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);

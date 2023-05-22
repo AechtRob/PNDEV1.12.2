@@ -131,6 +131,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CLAYTOSMUNDA = new CustomTrigger("pf_book_claytosmunda");
     public static final CustomTrigger CLICK_CLOUDINA = new CustomTrigger("pf_book_cloudina");
     public static final CustomTrigger CLICK_COBBANIA = new CustomTrigger("pf_book_cobbania");
+    public static final CustomTrigger CLICK_ORONTIUM = new CustomTrigger("pf_book_orontium");
     public static final CustomTrigger CLICK_COLUMNARIS = new CustomTrigger("pf_book_columnaris");
     public static final CustomTrigger CLICK_CONIOPTERIS = new CustomTrigger("pf_book_coniopteris");
     public static final CustomTrigger CLICK_CONOMEDUSITES = new CustomTrigger("pf_book_conomedusites");
@@ -281,6 +282,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NILSSONIOCLADUS = new CustomTrigger("pf_book_nilssoniocladus");
     public static final CustomTrigger CLICK_NILSSONIOPTERIS = new CustomTrigger("pf_book_nilssoniopteris");
     public static final CustomTrigger CLICK_NOEGGERATHIALES = new CustomTrigger("pf_book_noeggerathiales");
+    public static final CustomTrigger CLICK_PANDAN = new CustomTrigger("pf_book_pandan");
     public static final CustomTrigger CLICK_NOTHOFAGUS = new CustomTrigger("pf_book_nothofagus");
     public static final CustomTrigger CLICK_NYSTROEMIA = new CustomTrigger("pf_book_nystroemia");
     public static final CustomTrigger CLICK_OAK = new CustomTrigger("pf_book_oak");
@@ -418,6 +420,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_KERAPHYTON = new CustomTrigger("pf_book_keraphyton");
     public static final CustomTrigger CLICK_PIETZSCHIA = new CustomTrigger("pf_book_pietzschia");
     public static final CustomTrigger CLICK_FLABELLOPTERIS = new CustomTrigger("pf_book_flabellopteris");
+    public static final CustomTrigger CLICK_KTALENIA = new CustomTrigger("pf_book_ktalenia");
 
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
@@ -1317,6 +1320,7 @@ public class ModTriggers
             CLICK_CLAYTOSMUNDA,
             CLICK_CLOUDINA,
             CLICK_COBBANIA,
+            CLICK_ORONTIUM,
             CLICK_COLUMNARIS,
             CLICK_CONIOPTERIS,
             CLICK_CONOMEDUSITES,
@@ -1467,6 +1471,7 @@ public class ModTriggers
             CLICK_NILSSONIOCLADUS,
             CLICK_NILSSONIOPTERIS,
             CLICK_NOEGGERATHIALES,
+            CLICK_PANDAN,
             CLICK_NOTHOFAGUS,
             CLICK_NYSTROEMIA,
             CLICK_OAK,
@@ -1602,6 +1607,7 @@ public class ModTriggers
             CLICK_KERAPHYTON,
             CLICK_PIETZSCHIA,
             CLICK_FLABELLOPTERIS,
+            CLICK_KTALENIA,
         
             //Grouped ones:
             CLICK_BLASTOID,
