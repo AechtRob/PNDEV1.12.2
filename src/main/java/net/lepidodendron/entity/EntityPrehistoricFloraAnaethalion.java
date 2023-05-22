@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraAnaethalion extends EntityPrehistoricFloraFis
 
 	@Override
 	public int getShoalSize() {
-		return 10;
+		return 30;
 	}
 
 	@Override
