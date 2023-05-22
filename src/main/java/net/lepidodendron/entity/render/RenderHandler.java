@@ -4483,6 +4483,43 @@ public class RenderHandler {
                 return new RenderSiderops(manager);
             }
         });
+        
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMesturus.class, new IRenderFactory<EntityPrehistoricFloraMesturus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMesturus> createRenderFor(RenderManager manager) {
+                return new RenderMesturus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCongopycnodus.class, new IRenderFactory<EntityPrehistoricFloraCongopycnodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCongopycnodus> createRenderFor(RenderManager manager) {
+                return new RenderCongopycnodus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBavariscyllium.class, new IRenderFactory<EntityPrehistoricFloraBavariscyllium>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBavariscyllium> createRenderFor(RenderManager manager) {
+                return new RenderBavariscyllium(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSpathobatis.class, new IRenderFactory<EntityPrehistoricFloraSpathobatis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSpathobatis> createRenderFor(RenderManager manager) {
+                return new RenderSpathobatis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParacestracion.class, new IRenderFactory<EntityPrehistoricFloraParacestracion>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraParacestracion> createRenderFor(RenderManager manager) {
+                return new RenderParacestracion(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIschyodus.class, new IRenderFactory<EntityPrehistoricFloraIschyodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIschyodus> createRenderFor(RenderManager manager) {
+                return new RenderIschyodus(manager);
+            }
+        });
 
 
 

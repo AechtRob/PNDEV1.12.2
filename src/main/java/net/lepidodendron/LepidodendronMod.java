@@ -1887,6 +1887,18 @@ public class LepidodendronMod {
 	public static final int ENTITY_SIDEROPS = 738;
 	public static final ResourceLocation SIDEROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/siderops"));
 	public static final ResourceLocation SIDEROPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/siderops_young"));
+	public static final int ENTITY_CONGOPYCNODUS = 739;
+	public static final ResourceLocation CONGOPYCNODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/congopycnodus"));
+	public static final int ENTITY_MESTURUS = 740;
+	public static final ResourceLocation MESTURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mesturus"));
+	public static final int ENTITY_ISCHYODUS = 741;
+	public static final ResourceLocation ISCHYODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ischyodus"));
+	public static final int ENTITY_SPATHOBATIS = 742;
+	public static final ResourceLocation SPATHOBATIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/spathobatis"));
+	public static final int ENTITY_BAVARISCYLLIUM = 743;
+	public static final ResourceLocation BAVARISCYLLIUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bavariscyllium"));
+	public static final int ENTITY_PARACESTRACION = 744;
+	public static final ResourceLocation PARACESTRACION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paracestracion"));
 
 
 

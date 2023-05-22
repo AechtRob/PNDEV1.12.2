@@ -1179,6 +1179,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_STEURBAUTICHTHYS = new CustomTrigger("pf_book_steurbautichthys");
     public static final CustomTrigger CLICK_MECOCHIRUS = new CustomTrigger("pf_book_mecochirus");
     public static final CustomTrigger CLICK_ISANICHTHYS = new CustomTrigger("pf_book_isanichthys");
+    public static final CustomTrigger CLICK_CONGOPYCNODUS = new CustomTrigger("pf_book_congopycnodus");
+    public static final CustomTrigger CLICK_MESTURUS = new CustomTrigger("pf_book_mesturus");
+    public static final CustomTrigger CLICK_PARACESTRACION = new CustomTrigger("pf_book_paracestracion");
+    public static final CustomTrigger CLICK_SPATHOBATIS = new CustomTrigger("pf_book_spathobatis");
+    public static final CustomTrigger CLICK_BAVARISCYLLIUM = new CustomTrigger("pf_book_bavariscyllium");
+    public static final CustomTrigger CLICK_ISCHYODUS = new CustomTrigger("pf_book_ischyodus");
 
 
 
@@ -2351,6 +2357,12 @@ public class ModTriggers
             CLICK_STEURBAUTICHTHYS,
             CLICK_MECOCHIRUS,
             CLICK_ISANICHTHYS,
+            CLICK_CONGOPYCNODUS,
+            CLICK_MESTURUS,
+            CLICK_PARACESTRACION,
+            CLICK_SPATHOBATIS,
+            CLICK_BAVARISCYLLIUM,
+            CLICK_ISCHYODUS,
 
 
 

@@ -48,6 +48,7 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_generic", "inventory"));
 
 		ModelBakery.registerItemVariants(block,
+
 				new ModelResourceLocation("lepidodendron:entities/eggs_generic_unknown", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_limulid", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_acadoaradoxides", "inventory"),
@@ -402,7 +403,12 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_protospinax","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeocarcharias","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_uarbryichthys","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_orthocormus","inventory")
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_congopycnodus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_mesturus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_paracestracion","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_spathobatis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_bavariscyllium","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ischyodus","inventory")
 
 
 

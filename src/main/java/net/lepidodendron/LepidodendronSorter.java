@@ -3715,6 +3715,12 @@ public class LepidodendronSorter {
     public static final int amphibian_spawn_siderops_worldgen = 4112;
     public static final int mecochirus_raw = 4113;
     public static final int steurbautichthys_raw = 4114;
+    public static final int mesturus_raw = 4115;
+    public static final int congopycnodus_raw = 4116;
+    public static final int spathobatis_raw = 4117;
+    public static final int paracestracion_raw = 4118;
+    public static final int bavariscyllium_raw = 4119;
+    public static final int ischyodus_raw = 4120;
 
 
 

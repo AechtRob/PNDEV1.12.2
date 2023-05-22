@@ -691,6 +691,12 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemProtospinaxRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
 		GameRegistry.addSmelting(new ItemStack(ItemIsanichthysRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
 		GameRegistry.addSmelting(new ItemStack(ItemSteurbautichthysRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(ItemSpathobatisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(ItemBavariscylliumRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(ItemCongopycnodusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(ItemMesturusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(ItemParacestracionRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(ItemIschyodusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.7F);
 
 
 

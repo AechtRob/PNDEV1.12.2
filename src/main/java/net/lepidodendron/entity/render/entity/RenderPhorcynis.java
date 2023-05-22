@@ -12,7 +12,7 @@ public class RenderPhorcynis extends RenderLiving<EntityPrehistoricFloraPhorcyni
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phorcynis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.38F;
+        return 0.7F * 0.43F;
     }
     public RenderPhorcynis(RenderManager mgr) {
         super(mgr, new ModelPhorcynis(), 0.0f);
