@@ -3734,6 +3734,12 @@ public class LepidodendronSorter {
     public static final int paracestracion_raw = 4118;
     public static final int bavariscyllium_raw = 4119;
     public static final int ischyodus_raw = 4120;
+    public static final int ligulella_raw = 4121;
+    public static final int haplophrentis_raw = 4122;
+    public static final int phillipsia_raw = 4123;
+    public static final int kleptothule_raw = 4124;
+    public static final int paradapedium_raw = 4125;
+    public static final int rhinopteraspis_raw = 4126;
 
 
 

@@ -4521,6 +4521,43 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPhillipsia.class, new IRenderFactory<EntityPrehistoricFloraPhillipsia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPhillipsia> createRenderFor(RenderManager manager) {
+                return new RenderPhillipsia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhinopteraspis.class, new IRenderFactory<EntityPrehistoricFloraRhinopteraspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhinopteraspis> createRenderFor(RenderManager manager) {
+                return new RenderRhinopteraspis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKleptothule.class, new IRenderFactory<EntityPrehistoricFloraKleptothule>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKleptothule> createRenderFor(RenderManager manager) {
+                return new RenderKleptothule(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHaplophrentis.class, new IRenderFactory<EntityPrehistoricFloraHaplophrentis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHaplophrentis> createRenderFor(RenderManager manager) {
+                return new RenderHaplophrentis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParadapedium.class, new IRenderFactory<EntityPrehistoricFloraParadapedium>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraParadapedium> createRenderFor(RenderManager manager) {
+                return new RenderParadapedium(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLigulella.class, new IRenderFactory<EntityPrehistoricFloraLigulella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLigulella> createRenderFor(RenderManager manager) {
+                return new RenderLigulella(manager);
+            }
+        });
+
 
 
 

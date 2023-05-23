@@ -7,7 +7,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemEchinodermEggsCothurnocystis;
+import net.lepidodendron.item.entities.ItemEchinodermEggsRhenocystis;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -20,19 +20,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFloraWalkingAmphibianBase {
+public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraWalkingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraCothurnocystis(World world) {
+	public EntityPrehistoricFloraHaplophrentis(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 1.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override
@@ -41,9 +41,9 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 	}
 
 	public boolean getMovingOnLand() {
-		int animCycle = 120;
+		int animCycle = 28;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=20 && tickAnim <= 40) || (tickAnim >=80 && tickAnim <= 100)) {
+		if ((tickAnim >=0 && tickAnim < 20)) {
 			return true;
 		}
 		else {
@@ -51,19 +51,23 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		}
 	}
 
-	public static String getPeriod() {return "Ordovician";}
+	public static String getPeriod() {return "Cambrian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public void playLivingSound() {
+		if (this.getAnimation() != null) {
+			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+				this.setAnimation(ROAR_ANIMATION);
+			}
+		}
 	}
 
 	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemEchinodermEggsCothurnocystis.block, 1);
+	public int getRoarLength() {
+		return 50;
 	}
-
 	@Override
 	public boolean dropsEggs() {
 		return true;
@@ -89,10 +93,14 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		if (!this.isReallyInWater()){
 			return 0;
 		}
+		if(this.getAnimation() == this.ROAR_ANIMATION){
+			return 0;
+		}
 		if (!this.getMovingOnLand() && this.isReallyInWater()) {
 			return 0;
 		}
-		return 0.06F;
+		return 0.1F;
+
 	}
 
 	@Override
@@ -156,6 +164,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		return 1.0F;
 	}
 
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
@@ -187,7 +196,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.COTHURNOCYSTIS_LOOT;
+		return LepidodendronMod.HAPLOPHRENTIS_LOOT;
 	}
 
 }
