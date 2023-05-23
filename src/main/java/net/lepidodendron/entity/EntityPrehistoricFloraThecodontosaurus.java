@@ -219,7 +219,6 @@ public class EntityPrehistoricFloraThecodontosaurus extends EntityPrehistoricFlo
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {

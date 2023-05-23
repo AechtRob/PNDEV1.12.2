@@ -2,12 +2,12 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemEchinodermEggsRhenocystis;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -68,6 +68,7 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	public int getRoarLength() {
 		return 50;
 	}
+
 	@Override
 	public boolean dropsEggs() {
 		return true;
@@ -93,7 +94,7 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 		if (!this.isReallyInWater()){
 			return 0;
 		}
-		if(this.getAnimation() == this.ROAR_ANIMATION){
+		if (this.getAnimation() == this.ROAR_ANIMATION){
 			return 0;
 		}
 		if (!this.getMovingOnLand() && this.isReallyInWater()) {
@@ -164,11 +165,12 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 		return 1.0F;
 	}
 
-
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	@Override
