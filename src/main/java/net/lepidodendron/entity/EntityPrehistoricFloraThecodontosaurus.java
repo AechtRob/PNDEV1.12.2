@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraThecodontosaurus extends EntityPrehistoricFlo
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+
+//		if (world.isRemote) {
+//			System.err.println(Math.sin((float)this.getTicks() / 100F));
+//		}
+
 	}
 
 	@Override
