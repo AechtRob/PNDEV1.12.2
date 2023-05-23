@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override

@@ -7898,3 +7898,12 @@ advancements.pf_adv_book_bobosaurus.description=Unlock the entry for Bobosaurus 
 advancements.pf_adv_book_bobosaurus.title=Bobosaurus
 item.pf_bobosaurus_raw.name=Raw Bobosaurus
 entity.prehistoric_flora_bobosaurus.name=Bobosaurus
+advancements.pf_adv_book_phillipsia.description=Unlock the entry for Phillipsia in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_phillipsia.title=Phillipsia
+item.pf_phillipsia_raw.name=Raw Phillipsia
+entity.prehistoric_flora_phillipsia.name=Phillipsia
+advancements.pf_adv_book_metopacanthus.description=Unlock the entry for Metopacanthus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_metopacanthus.title=Metopacanthus
+item.pf_metopacanthus_raw.name=Raw Metopacanthus
+entity.prehistoric_flora_metopacanthus.name=Metopacanthus
+

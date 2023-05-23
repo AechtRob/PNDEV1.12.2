@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 2.0D;
+		maxHealthAgeable = 1.0D;
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/chunerpeton_raw"
+    "layer0": "paleopedia:chunerpeton_icon"
   }
 }
