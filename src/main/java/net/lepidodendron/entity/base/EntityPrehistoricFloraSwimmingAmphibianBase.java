@@ -75,6 +75,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
             this.navigator = new PathNavigateSwimmer(this, world);
             this.isWaterNavigator = true;
             this.isSeekingWater = false;
+            this.navigator.clearPath();
             //System.err.println("Navigator changed to " + this.navigator);
         }
         else {
@@ -83,6 +84,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 this.navigator = new PathNavigateAmphibian(this, world);
                 this.isWaterNavigator = false;
                 this.isSeekingWater = false;
+                this.navigator.clearPath();
                 //System.err.println("Navigator changed to " + this.navigator);
             }
             else {//Find water!
@@ -92,6 +94,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                     this.setPathPriority(PathNodeType.WATER, 10F);
                     this.isWaterNavigator = false;
                     this.isSeekingWater = true;
+                    this.navigator.clearPath();
                     //System.err.println("Navigator changed to " + this.navigator);
                 }
             }
