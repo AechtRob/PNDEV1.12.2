@@ -329,7 +329,7 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
         this.setRotateAngle(feet1, -0.4363F, 0.0F, 0.0F);
         this.setRotateAngle(tail1, -0.5918F, 0.0F, 0.0F);
         this.setRotateAngle(tail2, -0.3643F, 0.0F, 0.0F);
-        this.root.offsetY = -0.057F;
+        this.root.offsetY = -0.09F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

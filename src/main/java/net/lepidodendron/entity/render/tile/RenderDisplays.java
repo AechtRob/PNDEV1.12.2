@@ -101,6 +101,7 @@ public class RenderDisplays {
     public static final ModelKaibabvenator modelKaibabvenator = new ModelKaibabvenator();
     public static final ModelKentrosaurus modelKentrosaurus = new ModelKentrosaurus();
     public static final ModelKujdanowiaspis modelKujdanowiaspis = new ModelKujdanowiaspis();
+    public static final ModelKaykay modelKaykay = new ModelKaykay();
     public static final ModelLasanius modelLasanius = new ModelLasanius();
     public static final ModelLepidotes modelLepidotes = new ModelLepidotes();
     public static final ModelLeptolepis modelLeptolepis = new ModelLeptolepis();
@@ -178,6 +179,7 @@ public class RenderDisplays {
     public static final ModelSqualoraja modelSqualoraja = new ModelSqualoraja();
     public static final ModelStethacanthus modelStethacanthus = new ModelStethacanthus();
     public static final ModelSuminia modelSuminia = new ModelSuminia();
+    public static final ModelStahleckeria modelStahleckeria = new ModelStahleckeria();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
     public static final ModelTapinocephalus modelTapinocephalus = new ModelTapinocephalus();
     public static final ModelTegeolepis modelTegeolepis = new ModelTegeolepis();

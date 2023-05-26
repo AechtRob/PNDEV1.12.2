@@ -238,10 +238,35 @@ public class ModelStahleckeria extends AdvancedModelBaseExtended {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.07F;
+        this.neck.offsetX = -0.0F;
+        this.neck.offsetZ = -0.25F;
+        this.neck.rotateAngleY = (float) Math.toRadians(0);
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
-    public void renderStaticFloor(float f) {
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armL, -0.3F, 0.2F, -0.5F);
+        this.setRotateAngle(armL2, -1.3F, 0.0F, 0.5F);
+        this.setRotateAngle(armL3, 1.3F, -0.05F, 0.0F);
+        this.setRotateAngle(armR, -0.3F, -0.2F, 0.5F);
+        this.setRotateAngle(armR2, -1.3F, 0.05F, -0.5F);
+        this.setRotateAngle(armR3, 1.3F, 0.05F, 0.0F);
+        this.setRotateAngle(legR, 0.6F, -0.0F, 0.7F);
+        this.setRotateAngle(legR2, 1.0F, 0.1F, -0.7F);
+        this.setRotateAngle(legR3, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.6F, -0.0F, -0.7F);
+        this.setRotateAngle(legL2, 1.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legL3, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.05F;
+        this.body.offsetZ = 0.1F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
