@@ -201,6 +201,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
                     || (!(this.navigator instanceof PathNavigateSwimmer))) {
                 this.moveHelper = new EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.SwimmingMoveHelper();
                 this.navigator = new PathNavigateSwimmer(this, world);
+                this.navigator.clearPath();
             }
         }
         //Walking:
@@ -208,6 +209,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
                 || (!(this.navigator instanceof PathNavigateWaterBottom))) {
             this.moveHelper = new EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.WalkMoveHelper();
             this.navigator = new PathNavigateWaterBottom(this, world);
+            this.navigator.clearPath();
         }
     }
 
