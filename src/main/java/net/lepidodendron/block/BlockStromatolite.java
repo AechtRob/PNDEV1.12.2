@@ -246,6 +246,11 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean isFullBlock(IBlockState state) {
+			return true;
+		}
+
+		@Override
 		@SideOnly(Side.CLIENT)
 		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
 		{
