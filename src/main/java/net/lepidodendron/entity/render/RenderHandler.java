@@ -4558,6 +4558,44 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCeltedens.class, new IRenderFactory<EntityPrehistoricFloraCeltedens>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCeltedens> createRenderFor(RenderManager manager) {
+                return new RenderCeltedens(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMarmorerpeton.class, new IRenderFactory<EntityPrehistoricFloraMarmorerpeton>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMarmorerpeton> createRenderFor(RenderManager manager) {
+                return new RenderMarmorerpeton(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVadasaurus.class, new IRenderFactory<EntityPrehistoricFloraVadasaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraVadasaurus> createRenderFor(RenderManager manager) {
+                return new RenderVadasaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTritylodon.class, new IRenderFactory<EntityPrehistoricFloraTritylodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTritylodon> createRenderFor(RenderManager manager) {
+                return new RenderTritylodon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHaldanodon.class, new IRenderFactory<EntityPrehistoricFloraHaldanodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHaldanodon> createRenderFor(RenderManager manager) {
+                return new RenderHaldanodon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKayentatherium.class, new IRenderFactory<EntityPrehistoricFloraKayentatherium>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKayentatherium> createRenderFor(RenderManager manager) {
+                return new RenderKayentatherium(manager);
+            }
+        });
+
+
 
 
 

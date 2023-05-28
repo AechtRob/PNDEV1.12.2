@@ -1193,6 +1193,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HAPLOPHRENTIS = new CustomTrigger("pf_book_haplophrentis");
     public static final CustomTrigger CLICK_KLEPTOTHULE = new CustomTrigger("pf_book_kleptothule");
     public static final CustomTrigger CLICK_RHINOPTERASPIS = new CustomTrigger("pf_book_rhinopteraspis");
+    public static final CustomTrigger CLICK_KAYENTATHERIUM = new CustomTrigger("pf_book_kayentatherium");
+    public static final CustomTrigger CLICK_TRITYLODON = new CustomTrigger("pf_book_tritylodon");
+    public static final CustomTrigger CLICK_HALDANODON = new CustomTrigger("pf_book_haldanodon");
+    public static final CustomTrigger CLICK_MARMORERPETON = new CustomTrigger("pf_book_marmorerpeton");
+    public static final CustomTrigger CLICK_CELTEDENS = new CustomTrigger("pf_book_celtedens");
+    public static final CustomTrigger CLICK_VADASAURUS = new CustomTrigger("pf_book_vadasaurus");
 
 
 
@@ -2379,6 +2385,12 @@ public class ModTriggers
             CLICK_HAPLOPHRENTIS,
             CLICK_KLEPTOTHULE,
             CLICK_RHINOPTERASPIS,
+            CLICK_KAYENTATHERIUM,
+            CLICK_TRITYLODON,
+            CLICK_HALDANODON,
+            CLICK_MARMORERPETON,
+            CLICK_CELTEDENS,
+            CLICK_VADASAURUS
 
 
 

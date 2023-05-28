@@ -1911,7 +1911,18 @@ public class LepidodendronMod {
 	public static final ResourceLocation PHILLIPSIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phillipsia"));
 	public static final int ENTITY_KLEPTOTHULE = 750;
 	public static final ResourceLocation KLEPTOTHULE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kleptothule"));
-
+	public static final int ENTITY_KAYENTATHERIUM = 751;
+	public static final ResourceLocation KAYENTATHERIUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kayentatherium"));
+	public static final int ENTITY_HALDANODON = 752;
+	public static final ResourceLocation HALDANODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/haldanodon"));
+	public static final int ENTITY_TRITYLODON = 753;
+	public static final ResourceLocation TRITYLODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tritylodon"));
+	public static final int ENTITY_MARMORERPETON = 754;
+	public static final ResourceLocation MARMORERPETON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/marmorerpeton"));
+	public static final int ENTITY_CELTEDENS = 755;
+	public static final ResourceLocation CELTEDENS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/celtedens"));
+	public static final int ENTITY_VADASAURUS = 756;
+	public static final ResourceLocation VADASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vadasaurus"));
 
 
 	@Mod.EventHandler

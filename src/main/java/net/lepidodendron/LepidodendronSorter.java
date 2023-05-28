@@ -3740,6 +3740,20 @@ public class LepidodendronSorter {
     public static final int kleptothule_raw = 4124;
     public static final int paradapedium_raw = 4125;
     public static final int rhinopteraspis_raw = 4126;
+    public static final int haldanodon_raw = 4127;
+    public static final int kayentatherium_raw = 4128;
+    public static final int tritylodon_raw = 4129;
+    public static final int celtedens_raw = 4130;
+    public static final int vadasaurus_raw = 4131;
+    public static final int marmorerpeton_raw = 4132;
+    public static final int eggs_vadasaurus = 4133;
+    public static final int amphibian_spawn_marmorerpeton = 4134;
+    public static final int amphibian_spawn_marmorerpeton_worldgen = 4135;
+    public static final int eggs_celtedens = 4136;
+    public static final int eggs_castorocauda = 4137;
+    public static final int eggs_tritylodon = 4138;
+    public static final int eggs_haldanodon = 4139;
+    public static final int eggs_kayentatherium = 4140;
 
 
 
