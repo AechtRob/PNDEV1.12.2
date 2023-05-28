@@ -22,10 +22,12 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -256,8 +258,29 @@ public class EntityPrehistoricFloraHaldanodon extends EntityPrehistoricFloraSwim
 		return false;
 	}
 
+	public boolean homesToNest() {
+		return true;
+	}
+
 	@Override
 	public void onLivingUpdate() {
+
+		if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
+			if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+				if (!world.isRemote && this.getPosition().getY() > 8) {
+					BlockPos pos = this.buildBurrow(this.world, this.getPosition(), this.hasLargeBurrow());
+					this.world.setBlockState(pos, BlockNest.block.getDefaultState());
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().setString("creature", getEntityId(this));
+					}
+					this.setNestLocation(pos);
+					SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+					this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				}
+			}
+		}
+
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
 

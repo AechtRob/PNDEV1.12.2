@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
@@ -2168,7 +2169,26 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     }
                                                                 }
-                                                            } else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
+                                                            }
+                                                            else if (entity instanceof EntityPrehistoricFloraHaldanodon) {
+                                                                EntityPrehistoricFloraHaldanodon EntityPrehistoricFloraHaldanodon = (EntityPrehistoricFloraHaldanodon) entity;
+                                                                if (EntityPrehistoricFloraHaldanodon.hasNest() && (EntityPrehistoricFloraHaldanodon.homesToNest() && worldGen)) {
+                                                                    //Spawn a nest and burrow for it:
+                                                                    //Buildburrow:
+                                                                    BlockPos pos1 = EntityPrehistoricFloraHaldanodon.buildBurrow(world, spawnPos, ((EntityPrehistoricFloraHaldanodon) entity).hasLargeBurrow());
+                                                                    if (rand.nextInt(3) == 0) {
+                                                                        spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
+                                                                    }
+                                                                    world.setBlockState(pos1, BlockNest.block.getDefaultState());
+                                                                    TileEntity te = world.getTileEntity(pos1);
+                                                                    if (te != null) {
+                                                                        if (te instanceof BlockNest.TileEntityNest) {
+                                                                            te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
                                                                 if (Math.random() > 0.8) { // 1:5 chance of nest coming too
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                     if (EntityLandBase.hasNest()) {

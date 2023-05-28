@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -1401,6 +1402,20 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     if (this.getNestLocation() == null) {
                         //Can we make a nest in this exact spot?
                         if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
+                            if (this.getPosition().getY() > 8) {
+                                this.setAnimation(MAKE_NEST_ANIMATION);
+                                player.swingArm(hand);
+                                this.consumeItemFromStack(player, itemstack);
+                                if (world.isRemote) {
+                                    this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
+                                }
+                                if (newNest) {
+                                    this.setNestLocation(null);
+                                }
+                                return true;
+                            }
+                        }
+                        else if (this instanceof EntityPrehistoricFloraHaldanodon) { //Burrowing creatures:
                             if (this.getPosition().getY() > 8) {
                                 this.setAnimation(MAKE_NEST_ANIMATION);
                                 player.swingArm(hand);
