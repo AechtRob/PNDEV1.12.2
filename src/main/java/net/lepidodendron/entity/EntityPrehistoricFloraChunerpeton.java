@@ -46,9 +46,9 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
-	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMetoposaurus.class, DataSerializers.VARINT);
-	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMetoposaurus.class, DataSerializers.VARINT);
-	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraMetoposaurus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraChunerpeton.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraChunerpeton.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraChunerpeton.class, DataSerializers.BOOLEAN);
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
@@ -66,10 +66,7 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 		}
 	}
 
-	@Override
-	public boolean canJumpOutOfWater() {
-		return false;
-	}
+
 
 	@Override
 	public void onUpdate() {
@@ -140,7 +137,7 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.025, 20));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 1, 20));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

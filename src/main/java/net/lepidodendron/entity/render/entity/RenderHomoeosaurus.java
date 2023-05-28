@@ -12,7 +12,7 @@ public class RenderHomoeosaurus extends RenderLiving<EntityPrehistoricFloraHomoe
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/homoeosaurus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.3F;
+        return 0.7F * 0.2F;
     }
     public RenderHomoeosaurus(RenderManager mgr) {
         super(mgr, new ModelHomoeosaurus(), 0.0f);

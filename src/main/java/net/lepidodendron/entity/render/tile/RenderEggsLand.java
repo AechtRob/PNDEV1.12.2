@@ -31,6 +31,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
     public static final ResourceLocation TEXTURE_CASINERIA_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
     public static final ResourceLocation TEXTURE_LABIDOSAURUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
     public static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
+    public static final ResourceLocation TEXTURE_CELTEDENS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens_eggs.png");
 
     public RenderEggsLand() {
         this.small_egg = new ModelEggSmall();
@@ -78,6 +79,10 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                 }
                 else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
                     TEXTURE_EGG = TEXTURE_WEIGELTISAURUS_EGG;
+                    eggType = 10; //rotten wood
+                }
+                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
+                    TEXTURE_EGG = TEXTURE_CELTEDENS_EGG;
                     eggType = 10; //rotten wood
                 }
                 else {

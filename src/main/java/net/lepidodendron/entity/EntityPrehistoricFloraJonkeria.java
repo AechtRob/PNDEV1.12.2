@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraJonkeria extends EntityPrehistoricFloraLandBa
 		minWidth = 0.18F;
 		maxWidth = 1.85F;
 		maxHeight = 2.70F;
-		maxHealthAgeable = 64.0D;
+		maxHealthAgeable = 48.0D;
 		NOISE_ANIMATION = Animation.create(20);
 	}
 

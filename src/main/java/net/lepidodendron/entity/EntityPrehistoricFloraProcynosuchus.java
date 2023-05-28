@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 5.0D;
 	}
 
 	@Override
