@@ -362,7 +362,7 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 		return -0.23;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -4F;
+		return -3F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

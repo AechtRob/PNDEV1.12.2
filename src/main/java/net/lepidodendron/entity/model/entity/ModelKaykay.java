@@ -305,13 +305,38 @@ public class ModelKaykay extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.Kaykay.offsetY = -0.195F;
-        this.Kaykay.offsetX = -0.066F;
+        this.setRotateAngle(Kaykay, 0.25F, 0.0F, 0.0F);
+        this.Kaykay.offsetY = -0.1F;
+        this.Kaykay.offsetX = -0.2F;
+        this.Kaykay.offsetZ = -0.5F;
         this.Kaykay.rotateAngleY = (float) Math.toRadians(90);
         this.Kaykay.render(0.01F);
         resetToDefaultPose();
     }
-
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Kaykay, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.09F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.05F, 0.13F, 0.0F);
+        this.setRotateAngle(Body3, 0.05F, -0.15F, 0.0F);
+        this.setRotateAngle(Body4, 0.08F, -0.1F, -0.1F);
+        this.setRotateAngle(body5, 0.0F, -0.15F, -0.15F);
+        this.Kaykay.offsetY = -0.4F;
+        this.Kaykay.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Kaykay, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.Kaykay.offsetY = 0.09F;
+        this.Kaykay.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

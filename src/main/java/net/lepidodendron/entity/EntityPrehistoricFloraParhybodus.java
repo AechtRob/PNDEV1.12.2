@@ -13,6 +13,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderHybodus;
+import net.lepidodendron.entity.render.entity.RenderParhybodus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -291,14 +292,14 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderHybodus.TEXTURE;
+		return RenderParhybodus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelParhybodus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderHybodus.getScaler();
+		return RenderParhybodus.getScaler();
 	}
 }
 
