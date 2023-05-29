@@ -227,39 +227,21 @@ public class ModelGuiyu extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Guiyu.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
         this.Guiyu.offsetY = -0.13F;
         this.Guiyu.offsetX = -0.06F;
         this.Guiyu.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(Guiyu, 0.7418F, (float) Math.toRadians(90), 0.0F);
-        this.setRotateAngle(cube_r1, -0.5585F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, -0.8552F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r3, 1.2741F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.9599F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r5, 0.9774F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r6, -0.1833F, 0.0F, 0.0F);
-        this.setRotateAngle(Jaw, 0.48F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r7, 0.5934F, 0.0F, 0.0F);
-        this.setRotateAngle(PectoralL, 0.0F, 0.6545F, 0.0F);
-        this.setRotateAngle(cube_r8, 0.0F, 0.5236F, 0.0F);
-        this.setRotateAngle(PectoralR, 0.0F, -0.5672F, 0.0F);
-        this.setRotateAngle(cube_r9, 0.0F, -0.5236F, 0.0F);
-        this.setRotateAngle(cube_r10, 0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r11, -0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(Body3, 0.0F, -0.1745F, 0.0F);
-        this.setRotateAngle(cube_r12, 0.5585F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r13, -0.5934F, 0.0F, 0.0F);
-        this.setRotateAngle(Body4, 0.0F, -0.1309F, 0.0F);
-        this.setRotateAngle(cube_r14, 1.1694F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r15, -1.2217F, 0.0F, 0.0F);
-        this.setRotateAngle(Body5, 0.0F, -0.3054F, 0.0F);
-        //this.body.offsetX = -0.09F;
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
         this.Guiyu.offsetY = -0.13F;
-        this.Guiyu.offsetZ = -0.04F;
-        this.Guiyu.offsetX = -0.06F;
+        this.Guiyu.offsetZ = -0.0F;
+        this.Guiyu.offsetX = -0.0F;
         this.Guiyu.render(0.01F);
         resetToDefaultPose();
     }

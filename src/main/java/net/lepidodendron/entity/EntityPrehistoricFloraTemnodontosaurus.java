@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderCymbospondylus;
+import net.lepidodendron.entity.render.entity.RenderTemnodontosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -287,45 +288,43 @@ public class EntityPrehistoricFloraTemnodontosaurus extends EntityPrehistoricFlo
 		return 2;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 4;
+		return 0.2;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.1F;
+		return 4.0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return -0.2;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.99F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2;
+		return 2.5;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2;
+		return 3.4;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 4;
+		return -1.9;
 	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.1F;
-	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 4.99F;}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return -0.38;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.8F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCymbospondylus.TEXTURE;
+		return RenderTemnodontosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCymbospondylus;
+		return RenderDisplays.modelTemnodontosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderCymbospondylus.getScaler();
+		return RenderTemnodontosaurus.getScaler();
 	}
 }
 

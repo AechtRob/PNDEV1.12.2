@@ -10,9 +10,13 @@ import net.lepidodendron.block.BlockEurypteridEggsCiurcopterus;
 import net.lepidodendron.block.BlockEurypteridEggsPterygotus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.render.entity.RenderCiurcopterus;
+import net.lepidodendron.entity.render.entity.RenderGyrodus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -206,5 +210,52 @@ public class EntityPrehistoricFloraCiurcopterus extends EntityPrehistoricFloraSw
 		}
 		return LepidodendronMod.CIURCOPTERUS_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return -0.7;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 2;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 2;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 4.0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return -0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.99F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -1.9;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 4.99F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.38;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.8F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCiurcopterus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCiurcopterus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCiurcopterus.getScaler();
+	}
 }

@@ -276,17 +276,33 @@ public class ModelGyrodus extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.root.offsetY = -0.13F;
-        this.root.offsetX = -0.06F;
+        this.root.offsetZ = -0.16F;
+        this.root.offsetY = -0.1F;
+        this.root.offsetX = -0.0F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        //this.body.offsetX = -0.09F;
-        this.root.offsetY = -0.13F;
-        this.root.offsetZ = -0.04F;
-        this.root.offsetX = -0.06F;
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailfin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.root.offsetY = -0.4F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailfin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.root.offsetY = -0.0F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

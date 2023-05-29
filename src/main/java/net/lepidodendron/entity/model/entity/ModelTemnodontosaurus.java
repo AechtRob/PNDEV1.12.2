@@ -296,16 +296,45 @@ public class ModelTemnodontosaurus extends AdvancedModelBase {
         this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.head.offsetY = -0.019F;
-        this.jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.head.rotateAngleX = (float) Math.toRadians(0);
-        this.head.render(0.01F);
+        this.neck.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(neck, -0.0F, 0.0F, -0.25F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.neck.offsetY = 0.08F;
+        this.neck.offsetX = -0.0F;
+        this.neck.offsetZ = 0.1F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(body, -0.05F, 0.1F, 0.03F);
+        this.setRotateAngle(body2, -0.05F, 0.12F, 0.04F);
+        this.setRotateAngle(body3, -0.05F, 0.13F, 0.05F);
+        this.setRotateAngle(body4, 0.0F, -0.14F, 0.06F);
+        this.setRotateAngle(tail, 0.05F, -0.15F, 0.07F);
+        this.setRotateAngle(tail2, 0.15F, -0.16F, 0.0F);
+        this.setRotateAngle(tail3, 0.17F, -0.17F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.main.offsetY = -0.5F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.03F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.04F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.22F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.main.offsetY = 0.09F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {

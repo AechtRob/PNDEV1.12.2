@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderMixosaurus;
+import net.lepidodendron.entity.render.entity.RenderUtatsusaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
@@ -193,54 +194,53 @@ public class EntityPrehistoricFloraUtatsusaurus extends EntityPrehistoricFloraAg
 		return 0.183;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.9;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.7;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.9F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.35;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.025F;
+		return -0.4F;
 	}
-
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 0.9F;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 1.0F;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.285;
+		return -0.1;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.00F;
+		return 1.0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.105;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.01F;
+		return -0.52F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderMixosaurus.TEXTURE;
+		return RenderUtatsusaurus.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelMixosaurus;
+		return RenderDisplays.modelUtatsusaurus;
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderMixosaurus.getScaler();
+		return RenderUtatsusaurus.getScaler();
 	}
 
 

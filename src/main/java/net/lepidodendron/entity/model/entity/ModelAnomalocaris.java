@@ -496,7 +496,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
         this.setRotateAngle(eyeR, 0.0F, 0.1745F, 0.2618F);
         this.body.offsetX = -0.03F;
         this.body.offsetZ = -0.03F;
-        this.body.offsetY = -0.7F;
+        this.body.offsetY = -0.45F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }

@@ -397,6 +397,30 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Ciurcopterus.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.Ciurcopterus.rotateAngleY = (float) Math.toRadians(360);
+        this.setRotateAngle(Body, 1.5F, 0.0F, -0.25F);
+        this.Ciurcopterus.offsetY = -0.2F;
+        this.Ciurcopterus.offsetX = 0.02F;
+        this.Ciurcopterus.offsetZ = -0.29F;
+        this.Ciurcopterus.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA2, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA3, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA4, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA5, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA6, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Telson, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(cheliceraR, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(cheliceraL, 0.0F, -0.2F, 0.0F);
+        this.Ciurcopterus.offsetY = -0.05F;
+        this.Ciurcopterus.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -544,7 +544,7 @@ public class ModelCrotalocephalus extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Crotalocephalus.offsetY = 1.02F;
+                this.Crotalocephalus.offsetY = 0.0F;
                 this.bob(Crotalocephalus, -speed, 0.21F, false, f2, 1);
                 this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
                 this.chainSwing(fishTail, speed, tailVdegree, -3, f2, 1);

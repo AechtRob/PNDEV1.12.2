@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderGuiyu;
 import net.lepidodendron.entity.render.entity.RenderRhadinacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -194,9 +195,7 @@ public class EntityPrehistoricFloraGuiyu extends EntityPrehistoricFloraFishBase 
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.F;
 	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.8F;
-	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.45F;}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
@@ -214,14 +213,14 @@ public class EntityPrehistoricFloraGuiyu extends EntityPrehistoricFloraFishBase 
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderRhadinacanthus.TEXTURE;
+		return RenderGuiyu.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelRhadinacanthus;
+		return RenderDisplays.modelGuiyu;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderRhadinacanthus.getScaler();
+		return RenderGuiyu.getScaler();
 	}
 
 }
