@@ -28,7 +28,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -75,15 +74,16 @@ public class BlockPachypterisTop extends ElementsLepidodendronMod.ModElement {
         return BlockRenderLayer.CUTOUT;
     }
 
+
+		@Nullable
 		@Override
-		@javax.annotation.Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-			return PACHYPTERIS_TOP_AABB;
+			return NULL_AABB;
 		}
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return false;
+			return true;
 		}
 		
 		@Override
@@ -95,12 +95,6 @@ public class BlockPachypterisTop extends ElementsLepidodendronMod.ModElement {
 		public boolean isFullCube(IBlockState state) {
 			return false;
 		}
-
-		@Override
-		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
-	    {
-	    	addCollisionBoxToList(pos, entityBox, collidingBoxes, PACHYPTERIS_TOP_AABB);
-	    }
 
 	    @Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {

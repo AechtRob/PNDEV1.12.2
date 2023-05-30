@@ -24,6 +24,8 @@ public class LepidodendronMissingMappingsEventHandler {
                 || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_titanoptera_clatrotitan")
                 || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_titanoptera_gigatitan")
                 || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_titanoptera_mesotitan")
+                || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_promissum")
+                || missing.key.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_clydagnathus")
             ) {
                 missing.ignore(); //We will use a data fixer instead for these
             }

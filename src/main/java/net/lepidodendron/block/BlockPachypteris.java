@@ -182,6 +182,17 @@ public class BlockPachypteris extends ElementsLepidodendronMod.ModElement {
 			return new AxisAlignedBB(0.0D, 0D, 0D, 1D, 2D, 1D);
 		}
 
+		@Nullable
+		@Override
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+			return NULL_AABB;
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
 		@Override
 	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
 	    	if (isWaterBlock(world, pos.up()) && isWaterBlock(world, pos) && isWaterBlock(world, pos.up(2))

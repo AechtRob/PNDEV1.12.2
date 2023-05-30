@@ -25,6 +25,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -71,15 +72,16 @@ public class BlockPachypterisStem extends ElementsLepidodendronMod.ModElement {
         return BlockRenderLayer.CUTOUT;
     }
 
+
+		@Nullable
 		@Override
-		@javax.annotation.Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-			return PACHYPTERIS_STEM_AABB;
+			return NULL_AABB;
 		}
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return false;
+			return true;
 		}
 
 		@Override
