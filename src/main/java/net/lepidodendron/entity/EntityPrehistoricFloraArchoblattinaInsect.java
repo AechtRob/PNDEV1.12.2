@@ -156,6 +156,16 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	{}
 
 	@Override
+	public int defaultFlyCooldown() {
+		return 200;
+	}
+
+	@Override
+	public int defaultWanderCooldown() {
+		return 2500;
+	}
+
+	@Override
 	protected float getAISpeedInsect() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

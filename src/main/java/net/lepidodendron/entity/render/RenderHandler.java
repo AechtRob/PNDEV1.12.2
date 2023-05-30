@@ -4595,6 +4595,24 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraShaihuludia.class, new IRenderFactory<EntityPrehistoricFloraShaihuludia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraShaihuludia> createRenderFor(RenderManager manager) {
+                return new RenderShaihuludia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraUrsactis.class, new IRenderFactory<EntityPrehistoricFloraUrsactis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraUrsactis> createRenderFor(RenderManager manager) {
+                return new RenderUrsactis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKootenayscolex.class, new IRenderFactory<EntityPrehistoricFloraKootenayscolex>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKootenayscolex> createRenderFor(RenderManager manager) {
+                return new RenderKootenayscolex(manager);
+            }
+        });
 
 
 

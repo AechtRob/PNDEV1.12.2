@@ -43,12 +43,12 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 
 	@Override
 	public int defaultFlyCooldown() {
-		return 1500;
+		return 500;
 	}
 
 	@Override
 	public int defaultWanderCooldown() {
-		return 1500;
+		return 2500;
 	}
 
 	public static String getPeriod() {return "Carboniferous";}

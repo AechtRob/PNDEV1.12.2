@@ -7904,4 +7904,8 @@ advancements.pf_adv_book_metopacanthus.title=Metopacanthus
 item.pf_metopacanthus_raw.name=Raw Metopacanthus
 entity.prehistoric_flora_metopacanthus.name=Metopacanthus
 item.pf_eggs_celtedens.name=Celtedens Eggs
+advancements.pf_adv_book_ursactis.description=Unlock the entry for Ursactis in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_ursactis.title=Ursactis
+item.pf_ursactis_raw.name=Raw Ursactis
+entity.prehistoric_flora_ursactis.name=Ursactis
 

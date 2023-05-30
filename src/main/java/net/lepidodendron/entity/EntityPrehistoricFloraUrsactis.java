@@ -21,7 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraUrsactis extends EntityPrehistoricFloraTrilobiteBottomBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -29,9 +29,9 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraPhillipsia(World world) {
+	public EntityPrehistoricFloraUrsactis(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.4F, 0.2F);
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian";}
+	public static String getPeriod() {return "Cambrian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.11f;
+		return 0.04f;
 	}
 
 	@Override
@@ -108,7 +108,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
@@ -144,7 +144,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.PHILLIPSIA_LOOT;
+		return LepidodendronMod.URSACTIS_LOOT;
 	}
 
 }

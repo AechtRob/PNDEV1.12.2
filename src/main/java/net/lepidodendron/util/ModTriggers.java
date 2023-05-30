@@ -1199,6 +1199,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MARMORERPETON = new CustomTrigger("pf_book_marmorerpeton");
     public static final CustomTrigger CLICK_CELTEDENS = new CustomTrigger("pf_book_celtedens");
     public static final CustomTrigger CLICK_VADASAURUS = new CustomTrigger("pf_book_vadasaurus");
+    public static final CustomTrigger CLICK_SHAIHULUDIA = new CustomTrigger("pf_book_shaihuludia");
+    public static final CustomTrigger CLICK_URSACTIS = new CustomTrigger("pf_book_ursactis");
+    public static final CustomTrigger CLICK_KOOTENAYSCOLEX = new CustomTrigger("pf_book_kootenayscolex");
 
 
 
@@ -2390,7 +2393,10 @@ public class ModTriggers
             CLICK_HALDANODON,
             CLICK_MARMORERPETON,
             CLICK_CELTEDENS,
-            CLICK_VADASAURUS
+            CLICK_VADASAURUS,
+            CLICK_SHAIHULUDIA,
+            CLICK_URSACTIS,
+            CLICK_KOOTENAYSCOLEX
 
 
 

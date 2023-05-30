@@ -4,16 +4,15 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.EntityMateAIFishBase;
+import net.lepidodendron.entity.ai.FishWander;
+import net.lepidodendron.entity.ai.ShoalFishBaseAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -21,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraShaihuludia extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -29,9 +28,24 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraPhillipsia(World world) {
+	public EntityPrehistoricFloraShaihuludia(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.5F, 0.25F);
+	}
+
+	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 6;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -39,7 +53,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian";}
+	public static String getPeriod() {return "Cambrian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -49,13 +63,18 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	}
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
+	protected float getAISpeedFish() {
+		return 0.2f;
 	}
 
 	@Override
-	protected float getAISpeedTrilobite() {
-		return 0.11f;
+	protected boolean isSlowAtBottom() {
+		return false;
+	}
+
+	@Override
+	public int getAnimationTick() {
+		return getAnimationTick();
 	}
 
 	@Override
@@ -79,10 +98,10 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
-		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
+		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
+		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
 	}
 
 	@Override
@@ -108,23 +127,23 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
-	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+	public net.minecraft.util.SoundEvent getAmbientSound() {
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
-	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	public net.minecraft.util.SoundEvent getDeathSound() {
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
@@ -144,7 +163,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.PHILLIPSIA_LOOT;
+		return LepidodendronMod.SHAIHULUDIA_LOOT;
 	}
 
 }

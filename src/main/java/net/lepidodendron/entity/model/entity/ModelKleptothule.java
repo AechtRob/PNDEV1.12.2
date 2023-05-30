@@ -677,8 +677,8 @@ public class ModelKleptothule extends AdvancedModelBase {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 //this.Kleptothule.offsetY = 1.02F;
                 this.bob(Kleptothule, -speed, 0.21F, false, f2, 1);
-                this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
-                this.chainSwing(fishTail, speed, tailVdegree, -3, f2, 1);
+                this.chainWave(fishTail, speed, tailHdegree*0.2F, -3, f2, 1);
+                this.chainSwing(fishTail, speed, tailVdegree*0.2F, -3, f2, 1);
             }
         }
     }

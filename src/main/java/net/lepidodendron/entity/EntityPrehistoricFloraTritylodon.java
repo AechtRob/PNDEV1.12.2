@@ -31,6 +31,10 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraMorg
 	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
 
+	@Override
+	public boolean hasLargeBurrow() {
+		return true;
+	}
 	protected float getAISpeedLand() {
 		float speedBase = 0.26F;
 		if (this.getTicks() < 0) {

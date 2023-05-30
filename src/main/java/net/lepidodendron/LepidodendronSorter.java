@@ -3754,6 +3754,9 @@ public class LepidodendronSorter {
     public static final int eggs_tritylodon = 4138;
     public static final int eggs_haldanodon = 4139;
     public static final int eggs_kayentatherium = 4140;
+    public static final int ursactis_raw = 4141;
+    public static final int kootenayscolex_raw = 4142;
+    public static final int shaihuludia_raw = 4143;
 
 
 

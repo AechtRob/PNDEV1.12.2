@@ -1923,6 +1923,12 @@ public class LepidodendronMod {
 	public static final ResourceLocation CELTEDENS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/celtedens"));
 	public static final int ENTITY_VADASAURUS = 756;
 	public static final ResourceLocation VADASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vadasaurus"));
+	public static final int ENTITY_KOOTENAYSCOLEX = 757;
+	public static final ResourceLocation KOOTENAYSCOLEX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kootenayscolex"));
+	public static final int ENTITY_URSACTIS = 758;
+	public static final ResourceLocation URSACTIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ursactis"));
+	public static final int ENTITY_SHAIHULUDIA = 759;
+	public static final ResourceLocation SHAIHULUDIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shaihuludia"));
 
 
 	@Mod.EventHandler
