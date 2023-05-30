@@ -2,10 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
-import net.lepidodendron.entity.datafixers.FixerPalaeodictyoptera;
-import net.lepidodendron.entity.datafixers.FixerPalaeodictyopteraNymph;
-import net.lepidodendron.entity.datafixers.FixerTitanoptera;
-import net.lepidodendron.entity.datafixers.FixerTitanopteraNymph;
+import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
@@ -1973,6 +1970,7 @@ public class LepidodendronMod {
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyopteraNymph.FixerPalaeodictyopteraNymph);
 		modfixes.registerFix(FixTypes.ENTITY, FixerTitanoptera.FixerTitanoptera);
 		modfixes.registerFix(FixTypes.ENTITY, FixerTitanopteraNymph.FixerTitanopteraNymph);
+		modfixes.registerFix(FixTypes.ENTITY, FixerConodont.FixerConodont);
 	}
 
 	@Mod.EventHandler
