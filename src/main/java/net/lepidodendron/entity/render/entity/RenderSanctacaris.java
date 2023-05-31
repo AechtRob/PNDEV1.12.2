@@ -12,7 +12,7 @@ public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSancta
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.45F;
     }
 
     public RenderSanctacaris(RenderManager mgr) {
