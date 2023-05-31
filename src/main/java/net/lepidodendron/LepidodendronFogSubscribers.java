@@ -41,6 +41,40 @@ import java.io.IOException;
 
 public class LepidodendronFogSubscribers {
 
+    private static int fogX, fogZ;
+
+    private static boolean fogInit;
+    private static boolean fogDensityInit;
+    private static Vec3d fogRGBMultiplier;
+    private static float fogDensity;
+    private static boolean biomeScan;
+
+	
+	public boolean biomeCheck(World world, BlockPos center)
+    {
+		Biome player = world.getBiome(center);
+		Biome north = world.getBiome(center.add(0, 0, -16));
+		Biome south = world.getBiome(center.add(0, 0, 16));
+		Biome east = world.getBiome(center.add(16, 0, 0));
+		Biome west = world.getBiome(center.add(-16, 0, 0));
+		Biome northwest = world.getBiome(center.add(-16, 0, -16));
+		Biome southwest = world.getBiome(center.add(-16, 0, 16));
+		Biome northeast = world.getBiome(center.add(16, 0, -16));
+		Biome southeast = world.getBiome(center.add(16, 0, 16));
+		if(player.equals(north) && north.equals(south) &&
+		south.equals(east) && east.equals(west) &&
+		west.equals(northwest) && northwest.equals(northeast) &&
+		northeast.equals(southwest) && southwest.equals(southeast)
+		)
+		{
+			biomeScan = true;
+			return biomeScan;
+		}
+		biomeScan = false;
+		return biomeScan;
+    }
+
+	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void fogEvent(EntityViewRenderEvent.RenderFogEvent event) {
@@ -90,42 +124,21 @@ public class LepidodendronFogSubscribers {
 			float f1 = event.getFarPlaneDistance();
 			float near;
 			float far;
+			float density = this.getFogDensity(player, state, vec3d);
+			float biomeFog = this.getBiomeFogDensity(player.world, player.getPosition(), (float) event.getRenderPartialTicks());
+			float foggy = biomeFog + (density * 5000F);
+			float fog = (float) (0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f));
 
-			int[] ranges = ForgeModContainer.blendRanges;
-			GameSettings settings = Minecraft.getMinecraft().gameSettings;
-			int distance = 0;
-			if (ranges.length > 0) {
-				//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length - 1)];
-				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
-			}
-
-			int divider = 0;
-			float fog = 0;
-			for (int x = -distance; x <= distance; ++x) {
-				for (int z = -distance; z <= distance; ++z) {
-					BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
-					if (player.getEntityWorld().isBlockLoaded(pos, false)) {
-						Biome biome = player.world.getBiome(pos);
-						float density = this.getFogDensity(player, state, vec3d);
-						float biomeFog = getBiomeFactor(biome); //==0?
-						float foggy = biomeFog + (density * 5000F);
-						fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
-						divider++;
-					}
-				}
-			}
-
-			near = (fog / (float) divider);
+			near = fog;//(fog / (float) divider);
 			far = f1;
 
-			float density = this.getFogDensity(player, state, vec3d);
-			GlStateManager.setFogDensity(density);
-			if (density != 0) {
+			float density2 = this.getFogDensity(player, state, vec3d);
+			GlStateManager.setFogDensity(density2);
+			if (density2 != 0) {
 				GlStateManager.setFogStart(near * 0.05F);
 			}
 			//GlStateManager.setFogEnd(Math.max(far, 240) * 0.5F);
 			GlStateManager.setFogEnd(far);
-
 		}
 	}
 
@@ -176,40 +189,24 @@ public class LepidodendronFogSubscribers {
 					if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
 
-							GameSettings settings = Minecraft.getMinecraft().gameSettings;
-							int[] ranges = ForgeModContainer.blendRanges;
-							int distance = 0;
-							if (ranges.length > 0)
-							{
-								//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
-								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
-							}
-							int divider = 0;
-							for (int x = -distance; x <= distance; ++x)
-							{
-								for (int z = -distance; z <= distance; ++z)
-								{
-									BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
-									if (world.isBlockLoaded(pos, false)) {
-										Biome biome = player.world.getBiome(pos);
-										Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
-										red += fogColor.x;
-										green += fogColor.y;
-										blue += fogColor.z;
-										divider++;
-									}
+							if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
+								if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
+									Vec3d fogColor = getFogBlendColour(world, player.getPosition(), (float) event.getRenderPartialTicks());//getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
+									red = (float) fogColor.x;
+									green = (float) fogColor.y;
+									blue = (float) fogColor.z;
+
+									float rain = world.getRainStrength((float) event.getRenderPartialTicks());
+									float thunder = world.getThunderStrength((float) event.getRenderPartialTicks());
+
+									red *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
+									green *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
+									blue *= (1.0F - rain * 0.4F)*(1.0F - thunder * 0.5F);
+									event.setRed(red);
+									event.setGreen(green);
+									event.setBlue(blue);
 								}
 							}
-
-							float rain = world.getRainStrength((float) event.getRenderPartialTicks());
-							float thunder = world.getThunderStrength((float) event.getRenderPartialTicks());
-
-							red *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
-							green *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
-							blue *= (1.0F - rain * 0.4F)*(1.0F - thunder * 0.5F);
-							event.setRed(red/divider);
-							event.setGreen(green/divider);
-							event.setBlue(blue/divider);
 						}
 					}
 				}
@@ -217,6 +214,85 @@ public class LepidodendronFogSubscribers {
 		}
 	}
 
+	public float getBiomeFogDensity(World world, BlockPos center, float partialTicks)
+    {
+        if (center.getX() == fogX && center.getZ() == fogZ && fogDensityInit && this.biomeCheck(world, center))
+        {
+            return fogDensity;
+        }
+        GameSettings settings = Minecraft.getMinecraft().gameSettings;
+        int[] ranges = ForgeModContainer.blendRanges;
+        int distance = 0;
+        if (settings.fancyGraphics && ranges.length > 0)
+        {
+            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
+        }
+
+        float fog = 0;
+        int divider = 0;
+        for (int x = -distance; x <= distance; ++x)
+        {
+            for (int z = -distance; z <= distance; ++z)
+            {
+                BlockPos pos = center.add(x, 0, z);
+                Biome biome = world.getBiome(pos);
+				float density = getBiomeFactor(biome);
+				
+				fog += density;
+                divider++;
+            }
+        }
+
+        fogX = center.getX();
+        fogZ = center.getZ();
+        fogDensity = fog/divider;
+        return fogDensity;
+    }
+
+	public Vec3d getFogBlendColour(World world, BlockPos center, float partialTicks)
+    {		
+        if (center.getX() == fogX && center.getZ() == fogZ && fogInit && this.biomeCheck(world, center))
+        {
+            return fogRGBMultiplier;
+        }
+        fogInit = true;
+
+        GameSettings settings = Minecraft.getMinecraft().gameSettings;
+        int[] ranges = ForgeModContainer.blendRanges;
+        int distance = 0;
+        if (settings.fancyGraphics && ranges.length > 0)
+        {
+            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
+        }
+
+        float red = 0;
+        float green = 0;
+        float blue = 0;
+
+        int divider = 0;
+        for (int x = -distance; x <= distance; ++x)
+        {
+            for (int z = -distance; z <= distance; ++z)
+            {
+                BlockPos pos = center.add(x, 0, z);
+                Biome biome = world.getBiome(pos);
+				Vec3d fogColor = getBiomeFogColors(world, biome, (float) partialTicks);
+				
+				red += fogColor.x;
+				green += fogColor.y;
+				blue += fogColor.z;
+                divider++;
+            }
+        }
+
+        Vec3d fog = new Vec3d(red / divider,green / divider,blue / divider);
+        fogX = center.getX();
+        fogZ = center.getZ();
+        fogRGBMultiplier=fog;
+        return fogRGBMultiplier;
+    }
+
+	
 	private Vec3d getBiomeFogColors(World world, Biome biome, float partialTicks) {
 		Vec3d worldFog = world.getFogColor(partialTicks);
 
@@ -251,6 +327,17 @@ public class LepidodendronFogSubscribers {
 			r = 192D/255D;
 			g = 192D/255D;
 			b = 192D/255D;
+			r *= f2 * 0.94F + 0.06F;
+			g *= f2 * 0.94F + 0.06F;
+			b *= f2 * 0.91F + 0.09F;
+			Vec3d fog = new Vec3d(r, g, b);
+			//System.out.println("Fog: "+fog.x);
+			return fog;
+		}
+		else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")) {
+			r = 212D/255D;
+			g = 190D/255D;
+			b = 167D/255D;
 			r *= f2 * 0.94F + 0.06F;
 			g *= f2 * 0.94F + 0.06F;
 			b *= f2 * 0.91F + 0.09F;
@@ -381,6 +468,10 @@ public class LepidodendronFogSubscribers {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
 			return 150;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim")) {
+			return 120;
+		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
 			return 150;
 		}
@@ -452,6 +543,7 @@ public class LepidodendronFogSubscribers {
 
 			int fogBottom = 78;
 			int fogTop = 98;
+
 			float backgroundFog = 0.0000F;
 			float backgroundFog2 = 0.0010F;
 			float fullFogAddition = 0.0985F;
@@ -477,7 +569,9 @@ public class LepidodendronFogSubscribers {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
-							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
+							}
+
+							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
 									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
@@ -486,7 +580,29 @@ public class LepidodendronFogSubscribers {
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));
-							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
+							}
+
+							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim")) && playerEyes <= (double) player.world.getSeaLevel() - 1) {
+								int tt = world.getSeaLevel();
+								int mm = 31;
+								int bb = 25;
+								float foggy = 0;
+								if (playerEyes >= mm) {
+									foggy = (float)((mm - playerEyes) + (tt - mm))/(tt - mm);
+									foggy = 1 - (float)Math.cos(foggy * ((float)Math.PI/2F));
+									//System.err.println("foggy: " + foggy);
+								}
+								else if (playerEyes < mm && playerEyes >= bb) {
+									foggy = (float)(1 - ((mm - playerEyes) / (mm - bb)));
+								}
+								//System.err.println("backgroundFog: " + backgroundFog);
+								//System.err.println("sea: " + world.getSeaLevel());
+								fog = backgroundFog + (fullFogAddition * foggy * 0.93F);
+								//System.err.println("fog: " + fog);
+							}
+
+							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
 									&& biome instanceof BiomePermian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomePermian biomePermian = (BiomePermian) biome;
 								if ((biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
@@ -495,7 +611,9 @@ public class LepidodendronFogSubscribers {
 										&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
 									fog = backgroundFog2 * 10F;
 								}
-							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+							}
+
+							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
 									&& biome instanceof BiomeCarboniferous && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 								if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
@@ -540,12 +658,15 @@ public class LepidodendronFogSubscribers {
 									float d = player.world.rainingStrength;
 									fog1 = fog1 * d;
 								}
-							} else if (playerEyes < player.world.getSeaLevel() - 4) {
+							} else if (playerEyes < player.world.getSeaLevel() - 4
+								&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim"))) {
 								fog1 = backgroundFog2 * 2F; //needs gradient with height
 								fog = backgroundFog2 * 2F; //needs gradient with height
 							} else {
 								fog1 = backgroundFog;
 							}
+
+							//System.err.println("fog " + fog + " fog1 " + fog1);
 
 							return (float) Math.max((double) fog, (double) fog1);
 
@@ -557,7 +678,7 @@ public class LepidodendronFogSubscribers {
 		return 0F;
 	}
 
-	public boolean hasShaders() {
+	public static boolean hasShaders() {
 		//Check if optifine is installed:
 		boolean isShaders = false;
 		if (FMLClientHandler.instance().hasOptifine()) {
@@ -579,6 +700,8 @@ public class LepidodendronFogSubscribers {
 					}
 				}
 				reader.close();
+				reader = null;
+				strFile = null;
 			} catch (FileNotFoundException e) {
 			} catch (IOException e) {
 			}
