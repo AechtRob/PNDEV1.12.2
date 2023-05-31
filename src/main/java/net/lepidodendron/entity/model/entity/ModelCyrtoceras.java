@@ -235,7 +235,7 @@ public class ModelCyrtoceras extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.2F);
+        this.body.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -249,7 +249,7 @@ public class ModelCyrtoceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.body.offsetY = 1.2F;
+        //this.body.offsetY = 1.2F;
         float zOffset = 0.3F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.leg1, this.cube_r2};
@@ -296,7 +296,7 @@ public class ModelCyrtoceras extends AdvancedModelBaseExtended {
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.15F;
+            this.body.offsetY = 1.15F - 1.2F;
             this.body.offsetZ = zOffset;
         }
 
