@@ -532,6 +532,18 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 							counter = counter + 1;
 							if (counter >= TrunkHeight) {
 								PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
+								if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
+									world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+								}
+								if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
+									world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+								}
+								if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
+									world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+								}
+								if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
+									world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+								}
 							}
 							Upplaced = true;
 							PlaceSegment(facing, counter, TrunkHeight, world, pos.up());
@@ -552,6 +564,18 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 								counter = counter + 1;
 								if (counter >= TrunkHeight) {
 									PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
+									if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
+										world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+									}
+									if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
+										world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+									}
+									if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
+										world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+									}
+									if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
+										world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+									}
 								}
 								Upplaced = true;
 								PlaceSegment(facing, counter, TrunkHeight, world, pos.up());
@@ -572,6 +596,18 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 									counter = counter + 1;
 									if (counter >= TrunkHeight) {
 										PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
+										if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
+											world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+										}
+										if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
+											world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+										}
+										if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
+											world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+										}
+										if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
+											world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+										}
 									}
 									Upplaced = true;
 									PlaceSegment(facing, counter, TrunkHeight, world, pos.up());
@@ -591,6 +627,18 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 									counter = counter + 1;
 									if (counter >= TrunkHeight) {
 										PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
+										if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
+											world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+										}
+										if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
+											world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+										}
+										if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
+											world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+										}
+										if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
+											world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+										}
 									}
 									Upplaced = true;
 									PlaceSegment(facing, counter, TrunkHeight, world, pos.up());
@@ -861,6 +909,18 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 						//Just top off then with a stick and force the next addition to be a rosette at the top:
 						PlaceBlock(pos, world, BlockRattanStem.block, facing);
 						PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
+						if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
+							world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+						}
+						if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
+							world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+						}
+						if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
+							world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+						}
+						if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
+							world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+						}
 						counter = TrunkHeight;
 						PlaceSegment(facing, counter, TrunkHeight, world, pos.up());
 					}

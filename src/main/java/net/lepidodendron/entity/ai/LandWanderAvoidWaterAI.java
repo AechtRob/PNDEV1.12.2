@@ -13,26 +13,30 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     protected double y;
     protected double z;
     protected final double speed;
+    protected boolean avoidPredators;
     protected int executionChance; //an integer fom 1 upwards, where 1 means not still
     protected int executionChanceInWater;
     protected boolean mustUpdate;
 
+
+
     public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn)
     {
-        this(creatureIn, speedIn, 120, 1);
+        this(creatureIn, speedIn, 120, 1, false);
     }
 
     public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill)
     {
-        this(creatureIn, speedIn, chanceStill, 1);
+        this(creatureIn, speedIn, chanceStill, 1, false);
     }
 
-    public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill, int chanceStillInWater)
+    public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill, int chanceStillInWater, boolean avoidPredators)
     {
         this.entity = creatureIn;
         this.speed = speedIn;
         this.executionChance = chanceStill;
         this.executionChanceInWater = chanceStillInWater;
+        this.avoidPredators = avoidPredators;
         this.setMutexBits(1);
     }
 

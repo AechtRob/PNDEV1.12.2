@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -177,6 +178,27 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_phial");
 			setRegistryName("phial");
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (isBlockFromItemStack(stack)) {
+				String resourcelocation = stack.getTagCompound().getString("id_eggs");
+				String variant = getTypeFromStack(stack);
+				if (!variant.equalsIgnoreCase("")) {
+					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStr(ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation)) + "_" + variant +".name").trim();
+
+				}
+				else {
+					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStr(ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation)) + ".name").trim();
+				}
+			}
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)
