@@ -13,7 +13,11 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.render.entity.RenderGyrodus;
+import net.lepidodendron.entity.render.entity.RenderSlimonia;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -52,6 +56,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
@@ -98,10 +103,12 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale()<0.6F;
+		return this.getAgeScale() < 0.6F;
 	}
 
-	public static String getPeriod() {return "Silurian";}
+	public static String getPeriod() {
+		return "Silurian";
+	}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -109,7 +116,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 	public boolean dropsEggs() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -136,14 +143,13 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 		tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
-		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
+	public boolean isBreedingItem(ItemStack stack) {
 		return (
 				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
 				//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
@@ -175,7 +181,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 				|| BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 				&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition())
 				|| BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition().down()))
-		){
+		) {
 			//if (Math.random() > 0.5) {
 			this.setTicks(-50); //Flag this as stationary for egg-laying
 			//}
@@ -207,4 +213,65 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 		return LepidodendronMod.SLIMONIA_LOOT;
 	}
 
+	public static double offsetWall(@Nullable String variant) {
+		return -0.7;
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.5F;
+	}
+
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.5F;}
+
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderSlimonia.TEXTURE;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelSlimonia;
+	}
+
+	public static float getScaler(@Nullable String variant) {return RenderSlimonia.getScaler();}
 }

@@ -216,15 +216,23 @@ public class ModelAnaethalion extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Anaethalion.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
         this.Anaethalion.offsetY = -0.13F;
         this.Anaethalion.offsetX = -0.06F;
+        this.Anaethalion.offsetZ = -0.87F;
         this.Anaethalion.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body1, 0.0F, 0.01F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.03F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.04F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.05F, 0.0F);
+        this.Anaethalion.offsetY = -0.2F;
+        this.Anaethalion.render(0.01F);
         resetToDefaultPose();
-    }
+}
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

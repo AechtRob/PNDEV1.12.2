@@ -234,6 +234,31 @@ public class ModelSlimonia extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
+
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(body, -1.45F, 3.1F, -0.5F);
+        this.body.offsetZ = -0.33F;
+        this.body.offsetY = -0.34F;
+        this.body.offsetX = -0.07F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(tergite1, -0.07F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite2_3, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite4_5, 0.04F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite6, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite7, 0.06F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite8, 0.07F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite11, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tergite12, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.05F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

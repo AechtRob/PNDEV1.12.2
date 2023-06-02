@@ -7,7 +7,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderElasmodectes;
+import net.lepidodendron.entity.render.entity.RenderGyrodus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -302,5 +306,53 @@ public class EntityPrehistoricFloraElasmodectes extends EntityPrehistoricFloraAg
 				this.EntityBase.setAIMoveSpeed(0.0F);
 			}
 		}
+	}
+	public static double offsetWall(@Nullable String variant) {
+		return -0.7;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.5F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.2F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderElasmodectes.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelElasmodectes;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderElasmodectes.getScaler();
 	}
 }

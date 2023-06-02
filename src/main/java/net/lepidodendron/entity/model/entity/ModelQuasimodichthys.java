@@ -210,13 +210,19 @@ public class ModelQuasimodichthys extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.main.offsetY = -0.13F;
+        this.main.offsetZ = -0.4F;
+        this.main.offsetY = -0.19F;
         this.main.offsetX = -0.06F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.1F, 0.0F);
+        this.main.offsetY = -0.3F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

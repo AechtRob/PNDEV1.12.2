@@ -179,16 +179,20 @@ public class ModelAthenaegis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetY = -0.13F;
+        this.main.offsetX = -0.06F;
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.5F, 0.0F);
+        this.main.offsetY = -0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

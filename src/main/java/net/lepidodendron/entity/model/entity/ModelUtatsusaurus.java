@@ -241,20 +241,43 @@ public class ModelUtatsusaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
-
+        this.chest.offsetY = -0.0F;
+        this.chest.offsetX = -0.0F;
+        this.chest.offsetZ = 0.25F;
+        this.chest.rotateAngleY = (float) Math.toRadians(0);
+        this.chest.render(0.01F);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(base, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(hip, 0.0F, 0.09F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(neck, -0.2F, 0.0F, -0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, -0.0F);
+        this.base.offsetY = -0.3F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
-
-
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hip, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetY = -0.1F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
-
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;
