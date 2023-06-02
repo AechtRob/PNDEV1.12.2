@@ -2,13 +2,18 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraArandaspis;
+import net.lepidodendron.entity.EntityPrehistoricFloraMorrolepis;
 import net.lepidodendron.entity.model.entity.ModelArandaspis;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderArandaspis extends RenderLiving<EntityPrehistoricFloraArandaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arandaspis.png");
+    public static float getScaler() {
+        return 0.25F;
+    }
 
     public RenderArandaspis(RenderManager mgr) {
         super(mgr, new ModelArandaspis(), 0.0f);
@@ -22,6 +27,14 @@ public class RenderArandaspis extends RenderLiving<EntityPrehistoricFloraArandas
     @Override
     protected void applyRotations(EntityPrehistoricFloraArandaspis entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+    }
+    protected void preRenderCallback(EntityPrehistoricFloraArandaspis entity, float f) {
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
     }
 
 }

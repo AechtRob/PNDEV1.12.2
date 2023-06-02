@@ -239,7 +239,7 @@ public class ModelLituites extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.21F);
+        this.body.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -253,7 +253,7 @@ public class ModelLituites extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.body.offsetY = 1.1F;
+        //this.body.offsetY = 1.1F;
         this.body.rotateAngleY = (float) Math.toRadians(180);
         float offsetZ = 0.2F;
 
@@ -310,7 +310,7 @@ public class ModelLituites extends AdvancedModelBaseExtended {
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.15F;
+            this.body.offsetY = 1.15F - 1.1F;
             this.body.offsetZ = offsetZ;
         }
 
