@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraCeltedens extends EntityPrehistoricFloraLandB
 		return false;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic - Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

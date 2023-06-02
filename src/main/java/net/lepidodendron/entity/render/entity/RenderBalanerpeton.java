@@ -15,6 +15,10 @@ public class RenderBalanerpeton extends RenderLiving<EntityPrehistoricFloraBalan
         super(mgr, new ModelBalanerpeton(), 0.25F);
     }
 
+    public static float getScaler() {
+        return 0.26f;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBalanerpeton entity) {
         return RenderBalanerpeton.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderBalanerpeton extends RenderLiving<EntityPrehistoricFloraBalan
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBalanerpeton entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.2F;
     }

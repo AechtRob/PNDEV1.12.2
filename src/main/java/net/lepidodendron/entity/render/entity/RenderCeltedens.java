@@ -12,7 +12,7 @@ public class RenderCeltedens extends RenderLiving<EntityPrehistoricFloraCelteden
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens.png");
 
     public static float getScaler() {
-        return 0.7F * 0.25F;
+        return 0.7F * 0.18F;
     }
     public RenderCeltedens(RenderManager mgr) {
         super(mgr, new ModelCeltedens(), 0.0f);

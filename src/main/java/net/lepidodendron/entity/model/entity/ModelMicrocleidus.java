@@ -1136,11 +1136,11 @@ public class ModelMicrocleidus extends AdvancedModelBaseExtended {
 
         //this.body.offsetY = 1.50F;
 
-        this.faceTarget(f3, f4, 5, Neck1);
-        this.faceTarget(f3, f4, 5, Neck3);
-        this.faceTarget(f3, f4, 5, Neck4);
-        this.faceTarget(f3, f4, 5, Neck5);
-        this.faceTarget(f3, f4, 5, head);
+        this.faceTarget(f3, f4, 1, Neck1);
+        this.faceTarget(f3, f4, 1, Neck3);
+        this.faceTarget(f3, f4, 1, Neck4);
+        this.faceTarget(f3, f4, 1, Neck5);
+        this.faceTarget(f3, f4, 1, head);
 
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
 

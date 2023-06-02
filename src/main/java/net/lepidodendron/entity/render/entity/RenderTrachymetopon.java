@@ -12,7 +12,7 @@ public class RenderTrachymetopon extends RenderLiving<EntityPrehistoricFloraTrac
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trachymetopon.png");
 
     public static float getScaler() {
-        return 1;
+        return 0.9F;
     }
     public RenderTrachymetopon(RenderManager mgr) {
         super(mgr, new ModelTrachymetopon(), 0.0f);
