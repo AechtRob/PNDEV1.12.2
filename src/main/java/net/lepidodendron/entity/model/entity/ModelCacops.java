@@ -838,14 +838,14 @@ public class ModelCacops extends AdvancedModelBaseExtended {
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraCacops e = (EntityPrehistoricFloraCacops) entity;
         animator.update(entity);
-        this.resetToDefaultPose();
+        //this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
 
         animator.setAnimation(e.ATTACK_ANIMATION);
         animator.startKeyframe(5);
         animator.move(this.Head, 0,0,-0.2F);
         animator.rotate(this.Head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.upperjaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.lowerjaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.resetKeyframe(2);
@@ -854,7 +854,7 @@ public class ModelCacops extends AdvancedModelBaseExtended {
         animator.startKeyframe(10);
         animator.move(this.Head, 0,0,-0.2F);
         animator.rotate(this.Head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.upperjaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.lowerjaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.resetKeyframe(10);
