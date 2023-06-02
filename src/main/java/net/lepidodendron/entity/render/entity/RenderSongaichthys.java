@@ -12,7 +12,7 @@ public class RenderSongaichthys extends RenderLiving<EntityPrehistoricFloraSonga
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/songaichthys.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.25F;
     }
     public RenderSongaichthys(RenderManager mgr) {
         super(mgr, new ModelSongaichthys(), 0.0f);

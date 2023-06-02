@@ -50,10 +50,10 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 	public EntityPrehistoricFloraCacops(World world) {
 		super(world);
 		setSize(0.35F, 0.20F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 0.35F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override

@@ -10667,6 +10667,52 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 
+			else if (event.getTarget() instanceof EntityPrehistoricFloraSokkaejaecystis) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SOKKAEJAECYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraCastorocauda) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CASTOROCAUDA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPiatnitzkysaurus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PIATNITZKYSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraGasosaurus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GASOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTanyrhinichthys) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TANYRHINICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+
 
 
 

@@ -12,7 +12,7 @@ public class RenderArchocyrtus extends RenderLiving<EntityPrehistoricFloraArchoc
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archocyrtus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.4F;
+        return 0.7F * 0.3F;
     }
     public RenderArchocyrtus(RenderManager mgr) {
         super(mgr, new ModelArchocyrtus(), 0.0f);

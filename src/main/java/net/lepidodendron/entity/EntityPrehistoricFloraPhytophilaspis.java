@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -18,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -86,6 +88,13 @@ public class EntityPrehistoricFloraPhytophilaspis extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean isBreedingItem(ItemStack stack) {
+		return (
+				(OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack))
+				//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+		);
+	}
+		@Override
 	public boolean isAIDisabled() {
 		return false;
 	}

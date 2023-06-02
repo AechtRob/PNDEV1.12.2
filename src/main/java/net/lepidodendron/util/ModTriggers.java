@@ -1214,6 +1214,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HINDEODUS = new CustomTrigger("pf_book_hindeodus");
     public static final CustomTrigger CLICK_CLARKINA = new CustomTrigger("pf_book_clarkina");
     public static final CustomTrigger CLICK_MISIKELLA = new CustomTrigger("pf_book_misikella");
+    public static final CustomTrigger CLICK_SOKKAEJAECYSTIS = new CustomTrigger("pf_book_sokkaejaecystis");
+    public static final CustomTrigger CLICK_PIATNITZKYSAURUS = new CustomTrigger("pf_book_piatnitzkysaurus");
+    public static final CustomTrigger CLICK_GASOSAURUS = new CustomTrigger("pf_book_gasosaurus");
+    public static final CustomTrigger CLICK_TANYRHINICHTHYS = new CustomTrigger("pf_book_tanyrhinichthys");
 
 
 
@@ -2420,7 +2424,11 @@ public class ModTriggers
             CLICK_IOWAGNATHUS,
             CLICK_HINDEODUS,
             CLICK_CLARKINA,
-            CLICK_MISIKELLA
+            CLICK_MISIKELLA,
+            CLICK_SOKKAEJAECYSTIS,
+            CLICK_PIATNITZKYSAURUS,
+            CLICK_GASOSAURUS,
+            CLICK_TANYRHINICHTHYS,
 
 
 

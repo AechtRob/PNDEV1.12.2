@@ -7961,3 +7961,9 @@ item.pf_spawn_egg_misikella=Spawn Misikella
 item.pf_spawn_egg_iowagnathus=Spawn Iowagnathus
 item.pf_spawn_egg_ozarkodina=Spawn Ozarkodina
 
+advancements.pf_adv_book_gasosaurus.description=Unlock the entry for Gasosaurus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_gasosaurus.title=Gasosaurus
+item.pf_gasosaurus_raw.name=Raw Gasosaurus
+entity.prehistoric_flora_gasosaurus.name=Gasosaurus
+item.pf_eggs_gasosaurus.name=Gasosaurus Eggs
+

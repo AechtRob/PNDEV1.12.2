@@ -12,7 +12,7 @@ public class RenderSaurostomus extends RenderLiving<EntityPrehistoricFloraSauros
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurostomus.png");
 
     public static float getScaler() {
-        return 0.45F;
+        return 0.55F;
     }
     public RenderSaurostomus(RenderManager mgr) {
         super(mgr, new ModelSaurostomus(), 0.0f);

@@ -194,7 +194,7 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraUrsactis.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraKootenayscolex.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraConodont.class)).getRegistryName().toString() + "@" + EntityPrehistoricFloraConodont.Type.PROCONODONTUS.getName(),
-
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraSokkaejaecystis.class)).getRegistryName().toString(),
 
 
 
@@ -607,7 +607,7 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPhillipsia.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraConodont.class)).getRegistryName().toString() + "@" + EntityPrehistoricFloraConodont.Type.CLYDAGNATHUS.getName(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraConodont.class)).getRegistryName().toString() + "@" + EntityPrehistoricFloraConodont.Type.HINDEODUS.getName(),
-
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraTanyrhinichthys.class)).getRegistryName().toString(),
 
 
 
@@ -1027,6 +1027,9 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCeltedens.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraVadasaurus.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraConodont.class)).getRegistryName().toString() + "@" + EntityPrehistoricFloraConodont.Type.MISIKELLA.getName(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPiatnitzkysaurus.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraGasosaurus.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCastorocauda.class)).getRegistryName().toString(),
 
 
 

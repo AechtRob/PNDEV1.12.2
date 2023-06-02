@@ -61,7 +61,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:brasilodendron_spores", "inventory"));
 
 		ModelBakery.registerItemVariants(block,
-
+				new ModelResourceLocation("lepidodendron:entities/tanyrhinichthys_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/sokkaejaecystis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/macrosemius_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/saurostomus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/songaichthys_bucket", "inventory"),
