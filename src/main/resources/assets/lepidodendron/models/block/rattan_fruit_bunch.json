@@ -1,0 +1,26 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/rattan_fruit",
+		"particle": "lepidodendron:blocks/rattan_fruit"
+	},
+	"elements": [
+		{
+			"from": [8, 1, -8],
+			"to": [8, 17, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 0, -3],
+			"to": [12, 10, -3],
+			"faces": {
+				"north": {"uv": [15, 6, 8, 16], "texture": "#0"},
+				"south": {"uv": [8, 6, 15, 16], "texture": "#0"}
+			}
+		}
+	]
+}
