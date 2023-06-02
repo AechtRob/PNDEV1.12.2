@@ -547,8 +547,8 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
         if (!this.world.isRemote) {
             if (this.isInWater() && !this.getIsFlying()) {
-                this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
-                this.setFlyCooldown(this.defaultFlyCooldown() + rand.nextInt(500));
+                this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(100));
+                this.setFlyCooldown(this.defaultFlyCooldown() + rand.nextInt(100));
                 setFlying(true);
             }
 
