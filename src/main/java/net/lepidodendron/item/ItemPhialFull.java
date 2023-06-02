@@ -189,13 +189,13 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				if (!variant.equalsIgnoreCase("")) {
 					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
 							+ ": "
-							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStrForName(ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation)) + "_" + variant +".name").trim();
+							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStr(resourcelocation) + "_" + variant + ".name").trim();
 
 				}
 				else {
 					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
 							+ ": "
-							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStrForName(ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation)) + ".name").trim();
+							+ I18n.translateToLocal("tile." + getEggStrForName(resourcelocation) + ".name").trim();
 				}
 			}
 			return super.getItemStackDisplayName(stack);
@@ -305,10 +305,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public static String getEggStrForName(String string) {
-			string = string.replace("eggs_", "");
-			string = string.replace("amphibian_spawn_", "");
-			string = string.replace("eurypterid_eggs_", "");
-			string = string.replace("insect_eggs_", "");
+			string = string.replace("lepidodendron:", "pf_");
 			return string;
 		}
 
