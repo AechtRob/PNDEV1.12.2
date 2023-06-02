@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.datafixers;
 
+import net.lepidodendron.entity.EntityPrehistoricFloraConodont;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.datafix.IFixableData;
@@ -30,7 +31,7 @@ public interface FixerConodont {
             int variant = getNewVariantID(oldName);
             if (variant != 0) {
                 compound.setString("id", "lepidodendron:prehistoric_flora_conodont");
-                compound.setString("PNType", EntityPrehistoricFloraPalaeodictyoptera.Type.byId(variant).getName());
+                compound.setString("PNType", EntityPrehistoricFloraConodont.Type.byId(variant).getName());
             }
             return compound;
         }

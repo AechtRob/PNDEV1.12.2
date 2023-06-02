@@ -38,14 +38,14 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	private static final float[] IOWAGNATHUS_SIZE = new float[]{0.15F, 0.30F};
-	private static final float[] PROCONODONTUS_SIZE = new float[]{0.17F, 0.34F};
-	private static final float[] CLARKINA_SIZE = new float[]{0.18F, 0.36F};
-	private static final float[] OZARKODINIA_SIZE = new float[]{0.26F, 0.52F};
-	private static final float[] MISIKELLA_SIZE = new float[]{0.19F, 0.38F};
-	private static final float[] HINDEODUS_SIZE = new float[]{0.19F, 0.38F};
-	private static final float[] PROMISSUM_SIZE = new float[]{0.19F, 0.38F};
-	private static final float[] CLYDAGNATHUS_SIZE = new float[]{0.19F, 0.38F};
+	private static final float[] IOWAGNATHUS_SIZE = new float[]{0.8F, 0.2F};
+	private static final float[] PROCONODONTUS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] CLARKINA_SIZE = new float[]{0.3F, 0.2F};
+	private static final float[] OZARKODINIA_SIZE = new float[]{0.4F, 0.2F};
+	private static final float[] MISIKELLA_SIZE = new float[]{0.4F, 0.2F};
+	private static final float[] HINDEODUS_SIZE = new float[]{0.4F, 0.2F};
+	private static final float[] PROMISSUM_SIZE = new float[]{0.4F, 0.2F};
+	private static final float[] CLYDAGNATHUS_SIZE = new float[]{0.4F, 0.2F};
 
 
 	private static final DataParameter<Integer> CONODONT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraConodont.class, DataSerializers.VARINT);
@@ -75,28 +75,28 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	public ResourceLocation getStandardLoot() {
 		switch (this.getPNType()) {
 			case IOWAGNATHUS: default:
-				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_LOOT;
+				return LepidodendronMod.IOWAGNATHUS_LOOT;
 
 			case PROCONODONTUS:
-				return LepidodendronMod.PALAEODICTYOPTERA_DUNBARIA_LOOT;
+				return LepidodendronMod.PROCONODONTUS_LOOT;
 
 			case CLARKINA:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMALONEURA_LOOT;
+				return LepidodendronMod.CLARKINA_LOOT;
 
 			case OZARKODINA:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMOIOPTERA_LOOT;
+				return LepidodendronMod.OZARKODINA_LOOT;
 
 			case MISIKELLA:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_LOOT;
+				return LepidodendronMod.MISIKELLA_LOOT;
 
 			case HINDEODUS:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_LOOT;
+				return LepidodendronMod.HINDEODUS_LOOT;
 
 			case PROMISSUM:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_LOOT;
+				return LepidodendronMod.PROMISSUM_LOOT;
 
 			case CLYDAGNATHUS:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_LOOT;
+				return LepidodendronMod.CLYDAGNATHUS_LOOT;
 
 		}
 	}
@@ -212,28 +212,28 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	protected float getAISpeedFish() {
 		switch (this.getPNType()) {
 			case IOWAGNATHUS: default:
-				return 3f;
+				return 0.2f;
 
 			case PROCONODONTUS:
-				return 3f;
+				return 0.2f;
 
 			case CLARKINA:
-				return 3f;
+				return 0.2f;
 
 			case OZARKODINA:
-				return 3f;
+				return 0.2f;
 
 			case MISIKELLA:
-				return 3f;
+				return 0.2f;
 
 			case HINDEODUS:
-				return 3f;
+				return 0.2f;
 
 			case PROMISSUM:
-				return 3f;
+				return 0.2f;
 
 			case CLYDAGNATHUS:
-				return 3f;
+				return 0.2f;
 		}
 	}
 
@@ -363,28 +363,28 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			EntityPrehistoricFloraConodont cono = (EntityPrehistoricFloraConodont) target.entityHit;
 			switch (cono.getPNType()) {
 				case IOWAGNATHUS: default:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraDelitzschala.block, 1);
+					return new ItemStack(ItemSpawnEggConodontIowagnathus.block, 1);
 
 				case PROCONODONTUS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraDunbaria.block, 1);
+					return new ItemStack(ItemSpawnEggConodontProconodontus.block, 1);
 
 				case CLARKINA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomaloneura.block, 1);
+					return new ItemStack(ItemSpawnEggConodontClarkina.block, 1);
 
 				case OZARKODINA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomoioptera.block, 1);
+					return new ItemStack(ItemSpawnEggConodontOzarkodina.block, 1);
 
 				case MISIKELLA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
+					return new ItemStack(ItemSpawnEggConodontMisikella.block, 1);
 
 				case HINDEODUS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
+					return new ItemStack(ItemSpawnEggConodontHindeodus.block, 1);
 
 				case PROMISSUM:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
+					return new ItemStack(ItemSpawnEggConodontPromissum.block, 1);
 
 				case CLYDAGNATHUS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
+					return new ItemStack(ItemSpawnEggConodontClydagnathus.block, 1);
 			}
 		}
 		return ItemStack.EMPTY;
@@ -398,7 +398,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_conodont_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_" + this.getPNType().getName() + ".name");
 		}
 	}
 

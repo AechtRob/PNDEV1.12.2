@@ -2,7 +2,7 @@
 	"display": {
 		"icon": {
 			"item": "lepidodendron:proconodontus_raw"
-		 },
+		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_proconodontus.title"
 		},
@@ -10,7 +10,7 @@
 			"translate": "advancements.pf_adv_book_proconodontus.description"
 		}
 	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
+    "parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {

@@ -1927,6 +1927,26 @@ public class LepidodendronMod {
 	public static final int ENTITY_SHAIHULUDIA = 759;
 	public static final ResourceLocation SHAIHULUDIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shaihuludia"));
 
+	public static final int ENTITY_CONODONT = 760;
+	public static final ResourceLocation PROCONODONTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proconodontus"));
+	public static final ResourceLocation OZARKODINA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ozarkodina"));
+	public static final ResourceLocation IOWAGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/iowagnathus"));
+	public static final ResourceLocation HINDEODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hindeodus"));
+	public static final ResourceLocation CLARKINA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/clarkina"));
+	public static final ResourceLocation MISIKELLA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/misikella"));
+
+	public static final int ENTITY_MACROSEMIUS = 761;
+	public static final ResourceLocation MACROSEMIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/macrosemius"));
+	public static final int ENTITY_SAUROSTOMUS = 762;
+	public static final ResourceLocation SAUROSTOMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saurostomus"));
+	public static final int ENTITY_SONGAICHTHYS = 763;
+	public static final ResourceLocation SONGAICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/songaichthys"));
+	public static final int ENTITY_ARCHOCYRTUS = 764;
+	public static final ResourceLocation ARCHOCYRTUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archocyrtus_jar"));
+	public static final int ENTITY_PHYTOPHILASPIS = 765;
+	public static final ResourceLocation PHYTOPHILASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phytophilaspis"));
+
+
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

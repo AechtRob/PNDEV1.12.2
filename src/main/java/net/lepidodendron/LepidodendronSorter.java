@@ -3757,6 +3757,19 @@ public class LepidodendronSorter {
     public static final int ursactis_raw = 4141;
     public static final int kootenayscolex_raw = 4142;
     public static final int shaihuludia_raw = 4143;
+    public static final int macrosemius_raw = 4144;
+    public static final int songaichthys_raw = 4145;
+    public static final int saurostomus_raw = 4146;
+    public static final int archocyrtus_raw = 4147;
+    public static final int phytophilaspis_raw = 4148;
+    public static final int proconodontus_raw = 4149;
+    public static final int hindeodus_raw = 4150;
+    public static final int clarkina_raw = 4151;
+    public static final int misikella_raw = 4152;
+    public static final int iowagnathus_raw = 4153;
+    public static final int ozarkodina_raw = 4154;
+
+    public static final int insect_eggs_archocyrtus = 4155;
 
 
 

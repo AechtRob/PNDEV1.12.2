@@ -417,7 +417,20 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_rhinopteraspis","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_shaihuludia","inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ursactis","inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_kootenayscolex","inventory")
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_kootenayscolex","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_nipponomaria", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_land_snail", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_spiniplatyceras", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_macrosemius","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_saurostomus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_songaichthys","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_phytophilaspis","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_proconodontus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ozarkodina","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_iowagnathus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_hindeodus","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_clarkina","inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_misikella","inventory")
 
 
 

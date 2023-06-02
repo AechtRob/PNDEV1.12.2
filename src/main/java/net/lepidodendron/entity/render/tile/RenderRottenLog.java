@@ -42,6 +42,8 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
     private static final ResourceLocation TEXTURE_ATTERCOPUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/attercopus_eggs.png");
     private static final ResourceLocation TEXTURE_CELTEDENS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens_eggs.png");
 
+    private static final ResourceLocation TEXTURE_ARCHOCYRTUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoarthropleura_eggs.png");
+
 
     public RenderRottenLog() {
 
@@ -233,6 +235,14 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_CELTEDENS_EGGS);
+                    this.insect_eggs.renderAll(0.075F);
+                    GlStateManager.popMatrix();
+                }
+
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_archocyrtus")) {
+                    GlStateManager.pushMatrix();
+                    GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                    Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_ARCHOCYRTUS_EGGS);
                     this.insect_eggs.renderAll(0.075F);
                     GlStateManager.popMatrix();
                 }

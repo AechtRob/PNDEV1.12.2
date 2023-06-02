@@ -1203,6 +1203,17 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SHAIHULUDIA = new CustomTrigger("pf_book_shaihuludia");
     public static final CustomTrigger CLICK_URSACTIS = new CustomTrigger("pf_book_ursactis");
     public static final CustomTrigger CLICK_KOOTENAYSCOLEX = new CustomTrigger("pf_book_kootenayscolex");
+    public static final CustomTrigger CLICK_MACROSEMIUS = new CustomTrigger("pf_book_macrosemius");
+    public static final CustomTrigger CLICK_SAUROSTOMUS = new CustomTrigger("pf_book_saurostomus");
+    public static final CustomTrigger CLICK_SONGAICHTHYS = new CustomTrigger("pf_book_songaichthys");
+    public static final CustomTrigger CLICK_PHYTOPHILASPIS = new CustomTrigger("pf_book_phytophilaspis");
+    public static final CustomTrigger CLICK_ARCHOCYRTUS = new CustomTrigger("pf_book_archocyrtus");
+    public static final CustomTrigger CLICK_PROCONODONTUS = new CustomTrigger("pf_book_proconodontus");
+    public static final CustomTrigger CLICK_OZARKODINA = new CustomTrigger("pf_book_ozarkodina");
+    public static final CustomTrigger CLICK_IOWAGNATHUS = new CustomTrigger("pf_book_iowagnathus");
+    public static final CustomTrigger CLICK_HINDEODUS = new CustomTrigger("pf_book_hindeodus");
+    public static final CustomTrigger CLICK_CLARKINA = new CustomTrigger("pf_book_clarkina");
+    public static final CustomTrigger CLICK_MISIKELLA = new CustomTrigger("pf_book_misikella");
 
 
 
@@ -2398,7 +2409,18 @@ public class ModTriggers
             CLICK_VADASAURUS,
             CLICK_SHAIHULUDIA,
             CLICK_URSACTIS,
-            CLICK_KOOTENAYSCOLEX
+            CLICK_KOOTENAYSCOLEX,
+            CLICK_MACROSEMIUS,
+            CLICK_SAUROSTOMUS,
+            CLICK_SONGAICHTHYS,
+            CLICK_PHYTOPHILASPIS,
+            CLICK_ARCHOCYRTUS,
+            CLICK_PROCONODONTUS,
+            CLICK_OZARKODINA,
+            CLICK_IOWAGNATHUS,
+            CLICK_HINDEODUS,
+            CLICK_CLARKINA,
+            CLICK_MISIKELLA
 
 
 
