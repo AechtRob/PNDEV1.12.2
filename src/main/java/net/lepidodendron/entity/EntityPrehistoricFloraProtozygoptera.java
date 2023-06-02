@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 				this.hoverCooldown--;
 			}
 			if (this.hoverCooldown == 0 && this.hoverTick == 0) {
-				this.hoverTick = this.rand.nextInt(300);
+				this.hoverTick = 100 + this.rand.nextInt(200);
 				this.hoverCooldown = 300 + this.rand.nextInt(300);
 			}
 
