@@ -2,13 +2,18 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSacabambaspis;
+import net.lepidodendron.entity.EntityPrehistoricFloraTurboscinetes;
 import net.lepidodendron.entity.model.entity.ModelSacabambaspis;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSacabambaspis extends RenderLiving<EntityPrehistoricFloraSacabambaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sacabambaspis.png");
+    public static float getScaler() {
+        return 0.25F;
+    }
 
     public RenderSacabambaspis(RenderManager mgr) {
         super(mgr, new ModelSacabambaspis(), 0.0f);
@@ -23,5 +28,12 @@ public class RenderSacabambaspis extends RenderLiving<EntityPrehistoricFloraSaca
     protected void applyRotations(EntityPrehistoricFloraSacabambaspis entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
-
+    protected void preRenderCallback(EntityPrehistoricFloraSacabambaspis entity, float f) {
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
+    }
 }
