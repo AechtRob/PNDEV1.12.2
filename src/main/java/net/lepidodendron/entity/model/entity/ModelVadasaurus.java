@@ -266,7 +266,7 @@ public class ModelVadasaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] tail = {this.Tail, this.Tail2, this.Tail3};
         AdvancedModelRenderer[] Torso = {this.Body, this.Neck, this.Head};
-        greer.tailBuffer.applyChainSwingBuffer(Tail);
+        greer.tailBuffer.applyChainSwingBuffer(tail);
 
         AdvancedModelRenderer[] LeftArm = {this.UpperArmL, this.LowerArmL};
         AdvancedModelRenderer[] RightArm = {this.UpperArmR, this.LowerArmR};
@@ -315,8 +315,8 @@ public class ModelVadasaurus extends AdvancedModelBaseExtended {
             this.chainSwingExtended(LeftLeg, speed, 0.2F,0F,3.0F, f2, 0.7F);
             this.chainSwingExtended(RightLeg, speed , -0.2F,0F,0, f2, 0.7F);
 
-            this.chainWave(tail, speed, 0.15F, -3, f2, 1);
-            this.chainSwing(tail, speed * 1.2F, 0.3F, -3, f2, 0.8F);
+            this.chainWave(tail, speed* 2.2F, 0.15F, -3, f2, 1);
+            this.chainSwing(tail, speed * 2.2F, 0.3F, -3, f2, 0.8F);
             this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
             this.chainWave(Torso, speed*1.5F, 0.15F, -3, f2, 1);
 

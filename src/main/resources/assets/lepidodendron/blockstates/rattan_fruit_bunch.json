@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:rattan_fruit_bunch"
+    },
+    "facing=north": {
+      "model": "lepidodendron:rattan_fruit_bunch",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "lepidodendron:rattan_fruit_bunch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "lepidodendron:rattan_fruit_bunch"
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:rattan_fruit_bunch",
+      "y": 90
+    },
+  "facing=up": {
+      "model": "lepidodendron:rattan_fruit_bunch",
+      "x": 90
+  },
+    "facing=down": {
+      "model": "lepidodendron:rattan_fruit_bunch",
+      "x": 270
+    }
+  }
+}

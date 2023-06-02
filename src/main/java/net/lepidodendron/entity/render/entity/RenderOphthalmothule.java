@@ -15,7 +15,7 @@ public class RenderOphthalmothule extends RenderLiving<EntityPrehistoricFloraOph
         super(mgr, new ModelOphthalmothule(), 0.0f);
     }
     public static float getScaler() {
-        return 1f;
+        return 0.75f;
     }
 
     @Override

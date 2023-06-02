@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/propterus_raw"
+    "layer0": "paleopedia:propterus_icon"
   }
 }

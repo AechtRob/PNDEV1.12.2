@@ -3754,9 +3754,36 @@ public class LepidodendronSorter {
     public static final int eggs_tritylodon = 4138;
     public static final int eggs_haldanodon = 4139;
     public static final int eggs_kayentatherium = 4140;
+    public static final int ursactis_raw = 4141;
+    public static final int kootenayscolex_raw = 4142;
+    public static final int shaihuludia_raw = 4143;
+    public static final int macrosemius_raw = 4144;
+    public static final int songaichthys_raw = 4145;
+    public static final int saurostomus_raw = 4146;
+    public static final int archocyrtus_raw = 4147;
+    public static final int phytophilaspis_raw = 4148;
+    public static final int proconodontus_raw = 4149;
+    public static final int hindeodus_raw = 4150;
+    public static final int clarkina_raw = 4151;
+    public static final int misikella_raw = 4152;
+    public static final int iowagnathus_raw = 4153;
+    public static final int ozarkodina_raw = 4154;
+
+    public static final int insect_eggs_archocyrtus = 4155;
 
 
 
+
+
+    public static final int rattan_shoot = 5000;
+    public static final int rattan_shoot_worldgen = 5001;
+    public static final int rattan_stem = 5002;
+    public static final int rattan_stem_ne = 5003;
+    public static final int rattan_stem_nw = 5004;
+    public static final int rattan_stem_se = 5005;
+    public static final int rattan_stem_sw = 5006;
+    public static final int rattan_sapling = 5007;
+    public static final int rattan_fruit_bunch = 5008;
 
 
 

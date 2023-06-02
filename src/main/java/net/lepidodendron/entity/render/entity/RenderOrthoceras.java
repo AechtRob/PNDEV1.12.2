@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderOrthoceras extends RenderLiving<EntityPrehistoricFloraOrthoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthoceras.png");
+    public static float getScaler() {return 0.325F;}
 
     public RenderOrthoceras(RenderManager mgr) {
         super(mgr, new ModelOrthoceras(), 0.6f);
@@ -27,7 +28,7 @@ public class RenderOrthoceras extends RenderLiving<EntityPrehistoricFloraOrthoce
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOrthoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

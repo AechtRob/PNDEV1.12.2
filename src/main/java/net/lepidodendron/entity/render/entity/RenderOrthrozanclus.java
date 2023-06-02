@@ -15,7 +15,7 @@ public class RenderOrthrozanclus extends RenderLiving<EntityPrehistoricFloraOrth
         super(mgr, new ModelOrthrozanclus(), 0.0f);
     }
     public static float getScaler() {
-        return 0.165F;
+        return 0.23F;
     }
 
     @Override

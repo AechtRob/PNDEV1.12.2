@@ -15,6 +15,11 @@ public class RenderAmphibamus extends RenderLiving<EntityPrehistoricFloraAmphiba
         super(mgr, new ModelAmphibamus(), 0.25F);
     }
 
+    public static float getScaler() {
+        return 0.3f;
+    }
+
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAmphibamus entity) {
         return RenderAmphibamus.TEXTURE;
@@ -27,7 +32,7 @@ public class RenderAmphibamus extends RenderLiving<EntityPrehistoricFloraAmphiba
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmphibamus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.2F;
     }

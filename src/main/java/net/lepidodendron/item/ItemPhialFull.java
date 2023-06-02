@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -148,7 +149,10 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_lacewing", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_chunerpeton", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_siderops", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_marmorerpeton", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_marmorerpeton", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_archocyrtus", "inventory")
+
+
 
 
 
@@ -177,6 +181,27 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_phial");
 			setRegistryName("phial");
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (isBlockFromItemStack(stack)) {
+				String resourcelocation = stack.getTagCompound().getString("id_eggs");
+				String variant = getTypeFromStack(stack);
+				if (!variant.equalsIgnoreCase("")) {
+					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStr(resourcelocation) + "_" + variant + ".name").trim();
+
+				}
+				else {
+					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("tile." + getEggStrForName(resourcelocation) + ".name").trim();
+				}
+			}
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)
@@ -279,6 +304,11 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			string = string.replace("lepidodendron:amphibian_spawn_", "");
 			string = string.replace("lepidodendron:eurypterid_eggs_", "");
 			string = string.replace("lepidodendron:insect_eggs_", "");
+			return string;
+		}
+
+		public static String getEggStrForName(String string) {
+			string = string.replace("lepidodendron:", "pf_");
 			return string;
 		}
 

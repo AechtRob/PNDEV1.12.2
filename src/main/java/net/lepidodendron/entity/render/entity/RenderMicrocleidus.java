@@ -15,7 +15,7 @@ public class RenderMicrocleidus extends RenderLiving<EntityPrehistoricFloraMicro
         super(mgr, new ModelMicrocleidus(), 0.0f);
     }
     public static float getScaler() {
-        return 0.85f;
+        return 0.75f;
     }
 
     @Override

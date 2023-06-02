@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 
 	public EntityPrehistoricFloraAmphibamus(World world) {
 		super(world);
-		setSize(0.6F, 0.35F);
+		setSize(0.4F, 0.35F);
 		minWidth = 0.1F;
-		maxWidth = 0.6F;
+		maxWidth = 0.4F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

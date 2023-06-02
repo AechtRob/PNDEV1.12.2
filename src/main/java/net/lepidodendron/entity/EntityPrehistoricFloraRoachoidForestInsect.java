@@ -38,6 +38,16 @@ public class EntityPrehistoricFloraRoachoidForestInsect extends EntityPrehistori
 		return true;
 	}
 
+	@Override
+	public int defaultFlyCooldown() {
+		return 200;
+	}
+
+	@Override
+	public int defaultWanderCooldown() {
+		return 2500;
+	}
+
 	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial";}

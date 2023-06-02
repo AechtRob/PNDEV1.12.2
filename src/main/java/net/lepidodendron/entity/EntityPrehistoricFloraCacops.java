@@ -77,14 +77,14 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.115F;
+		float calcSpeed = 0.1F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.115f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.4F;
+		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.28F;
 	}
 
 	@Override

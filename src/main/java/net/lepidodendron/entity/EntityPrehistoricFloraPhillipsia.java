@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 
 	public EntityPrehistoricFloraPhillipsia(World world) {
 		super(world);
-		setSize(0.2F, 0.15F);
+		setSize(0.3F, 0.3F);
 	}
 
 	@Override
