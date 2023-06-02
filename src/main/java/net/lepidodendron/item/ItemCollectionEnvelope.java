@@ -145,6 +145,13 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 									doPlacer = true;
 								}
 							}
+							else if (plantBlock instanceof SeedSporeLeavesBase) {
+								SeedSporeLeavesBase blockPlant = (SeedSporeLeavesBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									doPlacer = true;
+								}
+							}
 
 							//If it's a vine:
 							if (plantBlock instanceof BlockVine) {
@@ -236,6 +243,21 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 									}
 								}
 							}
+							else if (doPlacer && plantBlock instanceof SeedSporeLeavesBase) {
+								SeedSporeLeavesBase blockPlant = (SeedSporeLeavesBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									if (result == EnumActionResult.SUCCESS) {
+										return EnumActionResult.SUCCESS;
+									}
+								}
+							}
 							//Or just do the block standards:
 							else if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(offsetY))
 									&& plantBlock.canPlaceBlockAt(worldIn, pos.up(offsetY))
@@ -292,6 +314,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 			{
 				//Update it so that sporing things might stop sporing:
 				worldIn.scheduleUpdate(pos, worldIn.getBlockState(pos).getBlock(), 1);
+
 				return EnumActionResult.SUCCESS;
 			}
 			return EnumActionResult.PASS;

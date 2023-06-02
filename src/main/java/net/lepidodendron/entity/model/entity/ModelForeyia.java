@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -268,7 +267,7 @@ public class ModelForeyia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.18F;
+        //this.body.offsetY = 1.18F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4};
@@ -293,7 +292,7 @@ public class ModelForeyia extends AdvancedModelBase {
             this.swing(body, speed, 0.15F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.16F;
+                this.body.offsetY = -0.30F - 1.18F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }

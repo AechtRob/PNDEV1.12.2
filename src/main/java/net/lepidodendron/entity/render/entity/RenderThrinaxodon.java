@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderThrinaxodon extends RenderLiving<EntityPrehistoricFloraThrinaxodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinaxodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinaxodon.png");
 
     public RenderThrinaxodon(RenderManager mgr) {
         super(mgr, new ModelThrinaxodon(), 0.5f);

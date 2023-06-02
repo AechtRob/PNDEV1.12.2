@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMcnamaraspis extends RenderLiving<EntityPrehistoricFloraMcnamaraspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mcnamaraspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mcnamaraspis.png");
 
     public RenderMcnamaraspis(RenderManager mgr) {
         super(mgr, new ModelMcnamaraspis(), 0.0f);

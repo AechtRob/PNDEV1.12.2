@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPlectodiscus extends RenderLiving<EntityPrehistoricFloraPlectodiscus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plectodiscus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plectodiscus.png");
 
     public RenderPlectodiscus(RenderManager mgr) {
         super(mgr, new ModelPlectodiscus(), 0.0f);

@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelShonisaurus extends AdvancedModelBase {
@@ -517,6 +516,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.neck2.offsetY = -0.001F;
         this.jaw1.rotateAngleX = (float) Math.toRadians(25);
@@ -524,6 +524,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
         this.neck2.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(root, 0.2618F, (float) Math.toRadians(90), 0.0F);
         this.setRotateAngle(tailbase1, -0.0456F, 0.0F, 0.0F);
@@ -588,6 +589,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(root, 0.2618F, (float) Math.toRadians(90), 0.0F);
         this.setRotateAngle(tailbase1, -0.0456F, 0.0F, 0.0F);

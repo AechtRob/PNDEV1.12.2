@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderStagonolepis extends RenderLiving<EntityPrehistoricFloraStagonolepis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stagonolepis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stagonolepis.png");
 
     public RenderStagonolepis(RenderManager mgr) {
         super(mgr, new ModelStagonolepis(), 0.0f);

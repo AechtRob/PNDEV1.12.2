@@ -132,7 +132,7 @@ public class ItemSlimyAlgaeItem extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine and Freshwater Algae");
-				tooltip.add("Periods: Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Quaternary");
+				tooltip.add("Periods: Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
 				tooltip.add("Propagation: water");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
@@ -147,9 +147,9 @@ public class ItemSlimyAlgaeItem extends ElementsLepidodendronMod.ModElement {
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.CLAY)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GLASS)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GOURD)
-			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.WOOD)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.IRON)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.ROCK)
+			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.WOOD)
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GRASS)
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.SAND))
     	{

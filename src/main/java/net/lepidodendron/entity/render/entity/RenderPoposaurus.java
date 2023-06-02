@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderPoposaurus extends RenderLiving<EntityPrehistoricFloraPoposaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poposaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poposaurus.png");
     private static final ResourceLocation TEXTURE_POPO = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poposaurus_popo.png");
 
     public RenderPoposaurus(RenderManager mgr) {

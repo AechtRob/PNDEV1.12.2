@@ -66,12 +66,12 @@ public class VillagerPalaeontologist {
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockFurcaster.block, 1), new EntityVillager.PriceInfo(1, 2)));
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockHelianthaster.block, 1), new EntityVillager.PriceInfo(1, 2)));
 
-        //Temporary trades:
-        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedPrototaxites.block, 1), new EntityVillager.PriceInfo(2, 2)));
-        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedArchaeopterisSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
-        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedCalamitesSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
-        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedGlossopterisSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
-        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedDicroidiumFSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
+//        //Temporary trades:
+//        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedPrototaxites.block, 1), new EntityVillager.PriceInfo(2, 2)));
+//        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedArchaeopterisSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
+//        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedCalamitesSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
+//        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedGlossopterisSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
+//        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedDicroidiumFSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
 
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockBalticAmberOre.block), new EntityVillager.PriceInfo(6, 6)));
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockDominicanAmberOre.block), new EntityVillager.PriceInfo(6, 6)));

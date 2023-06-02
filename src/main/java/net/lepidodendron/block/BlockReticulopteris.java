@@ -111,7 +111,22 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		if (LepidodendronConfig.dimCarboniferous == dimID)
 			biomeCriteria = true;
-
+		if (
+			LepidodendronConfig.dimPermian == dimID
+			|| LepidodendronConfig.dimPrecambrian == dimID
+			|| LepidodendronConfig.dimCambrian == dimID
+			|| LepidodendronConfig.dimOrdovician == dimID
+			|| LepidodendronConfig.dimSilurian == dimID
+			|| LepidodendronConfig.dimDevonian == dimID
+			|| LepidodendronConfig.dimTriassic == dimID
+			|| LepidodendronConfig.dimJurassic == dimID
+			|| LepidodendronConfig.dimCretaceous == dimID
+			|| LepidodendronConfig.dimPaleogene == dimID
+			|| LepidodendronConfig.dimNeogene== dimID
+			|| LepidodendronConfig.dimPleistocene == dimID
+		) {
+			biomeCriteria = false;
+		}
 
 		boolean heightCheck = false;
 

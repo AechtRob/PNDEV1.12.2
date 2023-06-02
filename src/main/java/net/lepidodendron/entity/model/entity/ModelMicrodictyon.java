@@ -406,6 +406,7 @@ public class ModelMicrodictyon extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.body.offsetY = 1.32F;
+        this.body.offsetZ = -0.1F;
 
         AdvancedModelRenderer[] bodyF = {this.segment3, this.segment2, this.segment1, this.head};
         AdvancedModelRenderer[] bodyB = {this.segment5, this.segment6, this.segment7, this.segment8, this.segment9};

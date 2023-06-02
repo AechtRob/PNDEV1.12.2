@@ -10,7 +10,10 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderCarolowilhelmina;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -35,10 +38,6 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 	public EntityPrehistoricFloraCarolowilhelmina(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
@@ -189,6 +188,58 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 			return super.attackEntityFrom(source, (amount * 0.5F));
 		}
 		return super.attackEntityFrom(source, amount);
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1.3;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.3F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.07;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.4F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.3;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.3;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.05;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.3F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.4F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCarolowilhelmina.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCarolowilhelmina;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCarolowilhelmina.getScaler();
 	}
 
 }

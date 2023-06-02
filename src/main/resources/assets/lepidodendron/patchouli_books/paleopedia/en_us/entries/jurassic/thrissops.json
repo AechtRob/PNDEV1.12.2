@@ -1,0 +1,41 @@
+{
+	"name": "Thrissops",
+	"read_by_default": true,
+	"icon": "lepidodendron:thrissops_raw",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_thrissops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thrissops",
+			"title": "Thrissops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Actinopterygii$(br)>Ichthyodectiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/thrissops.png"],
+			"title": "T. formosus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrissops",
+			"type": "text",
+			"text": "Thrissops was a species of Ichthyodectiform fish from the Late Jurassic and Early Cretaceous of Europe and Africa. The animal was around 60 cm long in adulthood and fed on smaller fishes and animals. Its long body was adapted for high speed motions and quick changes in direction, as seen from the deeply lunate tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrissops",
+			"type": "text",
+			"text": "Ichthyodectiformes were the same group of animals that potentially originated from animals such as Leptolepis and would later develop into larger and much better known animals like the 4 meter long Xiphactinus. Although Ichthyodectiformes is extinct today, relatives of this ancient group still exist in the form of the Osteoglossomorpha, the clade containing animals such as the modern day Arowana."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrissops",
+			"type": "text",
+			"text": "Particularly stunning about Thrissops is the preservation of the patterning in some of their fossils, which demonstrated these animals had a spotted pattern going down its body, the density of the spots was higher on the front area of its body compared to the back of it."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrissops",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:daisy"},
+      {"model": "lepidodendron:daisy_var"},
+      {"model": "lepidodendron:daisy", "y": 90 },
+      {"model": "lepidodendron:daisy_var", "y": 90 },
+      {"model": "lepidodendron:daisy", "y": 180 },
+      {"model": "lepidodendron:daisy_var", "y": 180 },
+      {"model": "lepidodendron:daisy", "y": 270 },
+      {"model": "lepidodendron:daisy_var", "y": 270 }
+    ]
+  }
+}

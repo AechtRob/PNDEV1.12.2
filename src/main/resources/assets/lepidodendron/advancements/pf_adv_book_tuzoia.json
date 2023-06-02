@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:tuzoia_raw"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_tuzoia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_tuzoia.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_tuzoia"
+		}
+	}
+}

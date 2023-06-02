@@ -45,12 +45,6 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 	public EntityPrehistoricFloraHelicoprion(World world) {
 		super(world);
 		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
@@ -177,6 +171,7 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	@Override
@@ -270,54 +265,54 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return -1.4;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 2.5;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 2.5;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 1;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.17F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 2.5;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.8F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 2;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 2;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 1;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.2F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 2.5;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.7F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_HELICOPRION;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderHelicoprion.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelHelicoprion;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderHelicoprion.getScaler();
 	}
 }

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPalaeontinid extends RenderLiving<EntityPrehistoricFloraPalaeontinid> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid.png");
 
     public RenderPalaeontinid(RenderManager mgr) {
         super(mgr, new ModelPalaeontinid(), 0.0f);

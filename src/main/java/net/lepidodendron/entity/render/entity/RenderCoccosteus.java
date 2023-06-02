@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCoccosteus extends RenderLiving<EntityPrehistoricFloraCoccosteus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coccosteus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coccosteus.png");
 
     public RenderCoccosteus(RenderManager mgr) {
         super(mgr, new ModelCoccosteus(), 0.0f);
@@ -20,6 +20,9 @@ public class RenderCoccosteus extends RenderLiving<EntityPrehistoricFloraCoccost
         return RenderCoccosteus.TEXTURE;
     }
 
+    public static float getScaler() {
+        return  0.135F;
+    }
     @Override
     protected void applyRotations(EntityPrehistoricFloraCoccosteus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
@@ -27,7 +30,7 @@ public class RenderCoccosteus extends RenderLiving<EntityPrehistoricFloraCoccost
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCoccosteus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         //this.shadowSize = entity.width * scale * 0.3f;

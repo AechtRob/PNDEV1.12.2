@@ -9,6 +9,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderAnteosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -43,11 +46,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraAnteosaurus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.1F, 1.3F);
 		minWidth = 0.18F;
 		maxWidth = 1.1F;
 		maxHeight = 1.3F;
@@ -161,10 +160,11 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.85));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -279,7 +279,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		}
 
 		if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
-			this.faceEntity(this.getGrappleTarget(), 100F, 100F);
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
 			if (!this.world.isRemote && this.getAnimationTick() == 110) {
 				this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 						.getObject(this.ThreatSound()), this.getSoundVolume(), 1);
@@ -371,5 +371,54 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		}
 		return LepidodendronMod.ANTEOSAURUS_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.45F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.49F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderAnteosaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelAnteosaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderAnteosaurus.getScaler();
+	}
 }

@@ -9,7 +9,11 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderVancleavea extends RenderLiving<EntityPrehistoricFloraVancleavea> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vancleavea.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vancleavea.png");
+
+    public static float getScaler() {
+        return 1.00F * 0.56F;
+    }
 
     public RenderVancleavea(RenderManager mgr) {
         super(mgr, new ModelVancleavea(), 0.5f);
@@ -27,7 +31,7 @@ public class RenderVancleavea extends RenderLiving<EntityPrehistoricFloraVanclea
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraVancleavea entity, float f) {
-        float scale = entity.getAgeScale() * 0.56F;
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.91F;
     }

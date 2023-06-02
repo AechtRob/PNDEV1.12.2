@@ -9,10 +9,14 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderIchthyostega extends RenderLiving<EntityPrehistoricFloraIchthyostega> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ichthyostega.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ichthyostega.png");
 
     public RenderIchthyostega(RenderManager mgr) {
         super(mgr, new ModelIchthyostega(), 0.4f);
+    }
+
+    public static float getScaler() {
+        return 0.45F;
     }
 
     @Override
@@ -27,7 +31,7 @@ public class RenderIchthyostega extends RenderLiving<EntityPrehistoricFloraIchth
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraIchthyostega entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

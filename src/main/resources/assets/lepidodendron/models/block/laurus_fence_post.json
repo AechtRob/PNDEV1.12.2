@@ -1,0 +1,7 @@
+{
+ "parent": "block/fence_post",
+ "textures": {
+ "texture": "lepidodendron:blocks/laurus_planks",
+ "particle": "lepidodendron:blocks/laurus_planks"
+ }
+}

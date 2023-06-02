@@ -36,7 +36,7 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
     //private static double heightAttenuation = 0.618D;
     private static double heightAttenuation = 0.818D;
     //private static double leafDensity = 1.0D;
-    private static double leafDensity = 0.25D;
+    private static double leafDensity = 0.40D;
     private static int leafDistanceLimit = 4;
     private static List<ProcedureWorldGenPlane.FoliageCoordinates> foliageCoords;
     //private static double branchSlope = 0.381D;

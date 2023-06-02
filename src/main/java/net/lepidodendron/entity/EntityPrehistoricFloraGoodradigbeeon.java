@@ -11,7 +11,6 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderGoodradigbeeon;
-import net.lepidodendron.entity.render.entity.RenderRhamphodopsis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -38,7 +37,6 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFloraAgeableFishBase {
 
-
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
@@ -49,11 +47,7 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraGoodradigbeeon.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.6F, 0.35F);
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
 		maxHeight = 0.35F;
@@ -95,7 +89,7 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 
 	@Override
 	public int getAdultAge() {
-		return 92000;
+		return 48000;
 	}
 
 	@Override
@@ -308,50 +302,50 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return 0.03;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.2;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double lowerfrontverticallinedepth() {return 0.04;}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.04;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_GOODRADIGBEEON;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderGoodradigbeeon.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {return RenderDisplays.modelGoodradigbeeon;}
-	public static float getScaler() {
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelGoodradigbeeon;}
+	public static float getScaler(@Nullable String variant) {
 		return RenderGoodradigbeeon.getScaler();
 	}
 }

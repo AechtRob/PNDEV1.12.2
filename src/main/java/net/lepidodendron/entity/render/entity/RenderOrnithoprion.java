@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOrnithoprion extends RenderLiving<EntityPrehistoricFloraOrnithoprion> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ornithoprion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ornithoprion.png");
 
     public RenderOrnithoprion(RenderManager mgr) {
         super(mgr, new ModelOrnithoprion(), 0.0f);

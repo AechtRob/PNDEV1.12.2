@@ -10,9 +10,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderWeigeltisaurus extends RenderLiving<EntityPrehistoricFloraWeigeltisaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus.png");
     private static final ResourceLocation TEXTURE_REX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rex.png");
-    
+
     public RenderWeigeltisaurus(RenderManager mgr) {
         super(mgr, new ModelWeigeltisaurid(), 0.0f);
     }

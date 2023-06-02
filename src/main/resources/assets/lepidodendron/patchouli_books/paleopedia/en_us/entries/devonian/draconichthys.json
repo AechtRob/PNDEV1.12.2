@@ -1,0 +1,41 @@
+{
+	"name": "Draconichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/draconichthys_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_draconichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_draconichthys",
+			"title": "Draconichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Selenosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/draconichthys.png"],
+			"title": "D. elegans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_draconichthys",
+			"type": "text",
+			"text": "Draconichthys elegans was a species of arthrodire placoderm that lived during the Late Devonian (some 383 - 372 million years ago) in what is now the Anti-Atlas Mountains of Morocco. During this time, this part of the world was a shallow, algae-rich sea. Draconichthys could be distinguished from its "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_draconichthys",
+			"type": "text",
+			"text": "closest relatives by its large, pronged gnathal plates (i.e. the bony plates placoderms had instead of true teeth). The sharp, tooth-like appearance of these prongs suggests that this animal was a predator, that used them to hold captured prey still and prevent it from wriggling free."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_draconichthys",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_draconichthys",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

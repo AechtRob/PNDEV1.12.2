@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSaivodus extends RenderLiving<EntityPrehistoricFloraSaivodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saivodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saivodus.png");
 
     public RenderSaivodus(RenderManager mgr) {
         super(mgr, new ModelSaivodus(), 0.5f);

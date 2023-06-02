@@ -14,12 +14,8 @@ import net.lepidodendron.entity.ai.EntityHurtByTargetSmallerThanMeAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.ai.HuntSmallerThanMeAIInsect;
 import net.lepidodendron.entity.base.*;
-import net.lepidodendron.entity.render.entity.RenderEryon;
-import net.lepidodendron.entity.render.entity.RenderMeganeuropsis;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -49,6 +45,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -70,10 +67,6 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 	public EntityPrehistoricFloraMeganeuropsis(World world) {
 		super(world);
 		setSize(0.55F, 0.42F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
 	}
 
@@ -447,6 +440,11 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", "");
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
 		}

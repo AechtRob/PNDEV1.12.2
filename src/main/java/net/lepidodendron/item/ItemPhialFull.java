@@ -10,11 +10,14 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -55,7 +58,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_mixopterus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_pagea", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_perm", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_perm", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_pneumodesmus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_pterygotus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_trigonotarbid_carb", "inventory"),
@@ -132,9 +135,30 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_barameda", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_metoposaurus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_parmastega", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_notidanoides", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_notidanoides", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_asteracanthus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_myriacantherpestes", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_greererpeton", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_slimonia", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_ciurcopterus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_gephyrostegus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_megasecoptera", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_meganeurites", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_kalligrammatid", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_lacewing", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_chunerpeton", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_siderops", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_marmorerpeton", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_archocyrtus", "inventory")
 
-			);
+
+
+
+
+
+
+		);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			if (stack.hasTagCompound()) {
@@ -157,6 +181,27 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_phial");
 			setRegistryName("phial");
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (isBlockFromItemStack(stack)) {
+				String resourcelocation = stack.getTagCompound().getString("id_eggs");
+				String variant = getTypeFromStack(stack);
+				if (!variant.equalsIgnoreCase("")) {
+					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStr(resourcelocation) + "_" + variant + ".name").trim();
+
+				}
+				else {
+					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("tile." + getEggStrForName(resourcelocation) + ".name").trim();
+				}
+			}
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)
@@ -202,8 +247,12 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				}
 				String resourcelocation = itemstack.getTagCompound().getString("id_eggs");
 				Block placeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation (resourcelocation));
-				if (placeBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)) {
-					worldIn.setBlockState(pos.offset(facing), placeBlock.getStateForPlacement(worldIn, pos.offset(facing), facing, hitX, hitY, hitZ, 0, (EntityLivingBase) player));
+				if (placeBlock == null || placeBlock == Blocks.AIR) {
+					//This is a placeable item instead:
+					Item placeItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation (resourcelocation));
+
+					ActionResult<ItemStack> result = placeItem.onItemRightClick(worldIn, player, hand);
+
 					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
 					worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 					ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
@@ -213,6 +262,30 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 						ItemHandlerHelper.giveItemToPlayer(player, phial);
 					}
 					return EnumActionResult.SUCCESS;
+
+				}
+				else {
+					if (placeBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)) {
+						worldIn.setBlockState(pos.offset(facing), placeBlock.getStateForPlacement(worldIn, pos.offset(facing), facing, hitX, hitY, hitZ, 0, (EntityLivingBase) player));
+
+						TileEntity tileentity = worldIn.getTileEntity(pos.offset(facing));
+						if (tileentity != null) {
+							String variant = getTypeFromStack(itemstack);
+							if (!variant.equalsIgnoreCase("")) {
+								tileentity.getTileData().setString("PNType", variant);
+							}
+						}
+
+						SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
+						worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
+						if (!player.isCreative()) {
+							phial.setCount(1);
+							itemstack.shrink(1);
+							ItemHandlerHelper.giveItemToPlayer(player, phial);
+						}
+						return EnumActionResult.SUCCESS;
+					}
 				}
 
 			}
@@ -232,6 +305,20 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			string = string.replace("lepidodendron:eurypterid_eggs_", "");
 			string = string.replace("lepidodendron:insect_eggs_", "");
 			return string;
+		}
+
+		public static String getEggStrForName(String string) {
+			string = string.replace("lepidodendron:", "pf_");
+			return string;
+		}
+
+		public String getTypeFromStack(ItemStack stack) {
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PNType")) {
+					return stack.getTagCompound().getString("PNType");
+				}
+			}
+			return "";
 		}
 
 	}

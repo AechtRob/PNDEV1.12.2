@@ -9,10 +9,11 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCarcinosoma extends RenderLiving<EntityPrehistoricFloraCarcinosoma> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma_young.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma_baby.png");
 
+    public static float getScaler() {return 0.85F;}
     public RenderCarcinosoma(RenderManager mgr) {
         super(mgr, new ModelCarcinosoma(), 0.5f);
     }
@@ -37,7 +38,7 @@ public class RenderCarcinosoma extends RenderLiving<EntityPrehistoricFloraCarcin
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCarcinosoma entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHenodus extends RenderLiving<EntityPrehistoricFloraHenodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
 
     public RenderHenodus(RenderManager mgr) {
         super(mgr, new ModelHenodus(), 0.5f);

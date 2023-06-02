@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLandSnail extends RenderLiving<EntityPrehistoricFloraLandSnail> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/snail_land.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/snail_land.png");
 
     public RenderLandSnail(RenderManager mgr) {
         super(mgr, new ModelLandSnail(), 0.0f);

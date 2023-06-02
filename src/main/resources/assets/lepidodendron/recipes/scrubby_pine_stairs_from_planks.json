@@ -1,0 +1,33 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "0  ",
+ "34 ",
+ "678"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:scrubby_pine_planks"
+ },
+ "3": {
+ "item": "lepidodendron:scrubby_pine_planks"
+ },
+ "4": {
+ "item": "lepidodendron:scrubby_pine_planks"
+ },
+ "6": {
+ "item": "lepidodendron:scrubby_pine_planks"
+ },
+ "7": {
+ "item": "lepidodendron:scrubby_pine_planks"
+ },
+ "8": {
+ "item": "lepidodendron:scrubby_pine_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:scrubby_pine_stairs",
+ "count": 4
+ }
+}

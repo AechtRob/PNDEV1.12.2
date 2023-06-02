@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -52,7 +53,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
 
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         if (this.isSlowAtBottom()) {
             this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
         }
@@ -63,6 +64,16 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     public boolean canShoal() {
@@ -77,8 +88,12 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         return 0;
     }
 
-    public final EntityLivingBase[] canShoalWith() {
-        return new EntityLivingBase[]{this};
+    public Class[] canShoalWith() {
+        return new Class[]{this.getClass()};
+    }
+
+    public int getShoalInterval() {
+        return 100;
     }
 
     public int getAlarmCooldown() {return this.alarmCooldown;}
@@ -165,7 +180,11 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
+        return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
 
     public int getMateable() {
@@ -203,6 +222,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setTicks(0);
         this.setMateable(0);
+        ShoalingHelper.updateShoalFishBase(this);
         return livingdata;
     }
 
@@ -254,7 +274,9 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         if (ds == DamageSource.IN_WALL) {
-            return false;
+            if (this.isReallyInWater() || this.isInWater()) {
+                return false;
+            }
         }
         if (this.isEntityInvulnerable(ds))
         {
@@ -393,8 +415,12 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
             this.alarmCooldown -= 1;
         }
 
-        if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
-            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
+        double factor = LepidodendronConfig.doShoalingFlockingFactor;
+        if (factor > 100) {
+            factor = 100;
+        }
+        if (factor > 0) {
+            if (((double) ii / Math.round((float)this.getShoalInterval() / factor)) == Math.round((double) ii / Math.round((float)this.getShoalInterval() / factor))) {
                 ShoalingHelper.updateShoalFishBase(this);
             }
         }

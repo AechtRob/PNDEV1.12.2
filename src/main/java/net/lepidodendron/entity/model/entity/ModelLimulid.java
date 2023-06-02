@@ -270,7 +270,7 @@ public class ModelLimulid extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.carapace.render(f5 * 0.55F);
+        this.carapace.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -295,7 +295,7 @@ public class ModelLimulid extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.carapace.offsetY = 0.65F;
+        //this.carapace.offsetY = 0.65F;
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {

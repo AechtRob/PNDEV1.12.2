@@ -9,7 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHyperodapedon extends RenderLiving<EntityPrehistoricFloraHyperodapedon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyperodapedon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyperodapedon.png");
+
+    public static float getScaler() {return 0.8f;}
 
     public RenderHyperodapedon(RenderManager mgr) {
         super(mgr, new ModelHyperodapedon(), 0.0f);
@@ -27,7 +29,7 @@ public class RenderHyperodapedon extends RenderLiving<EntityPrehistoricFloraHype
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHyperodapedon entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

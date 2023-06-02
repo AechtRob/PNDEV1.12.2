@@ -39,11 +39,7 @@ public class EntityPrehistoricFloraVivaxosaurus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraVivaxosaurus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.6F, 0.6F);
 		minWidth = 0.12F;
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
@@ -126,10 +122,11 @@ public class EntityPrehistoricFloraVivaxosaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

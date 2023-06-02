@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderParvancorina extends RenderLiving<EntityPrehistoricFloraParvancorina> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parvancorina.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parvancorina.png");
 
     public RenderParvancorina(RenderManager mgr) {
         super(mgr, new ModelParvancorina(), 0.0f);

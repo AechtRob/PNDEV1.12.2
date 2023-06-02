@@ -43,11 +43,7 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraOphiacodon(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.62F, 0.63F);
 		minWidth = 0.1F;
 		maxWidth = 0.62F;
 		maxHeight = 0.63F;

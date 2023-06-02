@@ -9,10 +9,14 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAnteosaurus extends RenderLiving<EntityPrehistoricFloraAnteosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anteosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anteosaurus.png");
 
     public RenderAnteosaurus(RenderManager mgr) {
         super(mgr, new ModelAnteosaurus(), 0.5f);
+    }
+
+    public static float getScaler(){
+         return 1.08f;
     }
 
     @Override
@@ -27,7 +31,7 @@ public class RenderAnteosaurus extends RenderLiving<EntityPrehistoricFloraAnteos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAnteosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.85F;
     }

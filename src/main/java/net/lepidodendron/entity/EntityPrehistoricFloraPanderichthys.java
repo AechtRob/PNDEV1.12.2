@@ -43,10 +43,6 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 	public EntityPrehistoricFloraPanderichthys(World world) {
 		super(world);
 		setSize(0.55F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.55F;
 		maxHeight = 0.40F;

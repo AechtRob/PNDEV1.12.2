@@ -8,6 +8,7 @@ import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -92,7 +93,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if ((LepidodendronConfig.dimCarboniferous == dimID
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic)
+			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceous)
 			)
 			dimensionCriteria = true;
 
@@ -131,7 +133,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -164,6 +167,12 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
 				biomeCriteria = true;
 			}
+			else if (
+				biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")
+			) {
+				biomeCriteria = true;
+			}
 			else {
 				biomeCriteria = false;
 			}
@@ -177,6 +186,15 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
                 || biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceous) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -200,7 +218,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (LepidodendronConfig.dimCarboniferous == dimID
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
-				|| dimID == LepidodendronConfig.dimJurassic) {
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceous) {
 			GenChance = 25;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")) {
@@ -215,6 +234,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_riverbank") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")) {
 			GenChance = 156;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")) {
+			GenChance = 192;
+		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
 			GenChance = 256;
 		}
@@ -225,6 +247,13 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
+			GenChance = 256;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
+			GenChance = 256;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")) {
 			GenChance = 256;
 		}
 
@@ -453,7 +482,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        tooltip.add("Periods: Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Quaternary");
+	        tooltip.add("Periods: Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

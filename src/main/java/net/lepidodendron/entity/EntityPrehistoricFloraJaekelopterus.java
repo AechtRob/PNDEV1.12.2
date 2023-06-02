@@ -43,12 +43,6 @@ public class EntityPrehistoricFloraJaekelopterus extends EntityPrehistoricFloraE
 	public EntityPrehistoricFloraJaekelopterus(World world) {
 		super(world);
 		setSize(0.8F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;

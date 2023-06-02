@@ -9,6 +9,9 @@ import net.lepidodendron.entity.ai.AmphibianWander;
 import net.lepidodendron.entity.ai.EatFishFoodAIAmphibian;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderCeratodus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -32,14 +35,10 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 	public EntityPrehistoricFloraCeratodus(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
 		minWidth = 0.1F;
-		maxWidth = 0.50F;
-		maxHeight = 0.30F;
+		maxWidth = 0.5F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -62,7 +61,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Paleogene";}
 
 	public static String getSize() {return "L";}
 	//public static String getHabitat() {return "Aquatic";}
@@ -185,6 +184,58 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.CERATODUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.04;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.25F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.35F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCeratodus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCeratodus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCeratodus.getScaler();
 	}
 
 }

@@ -45,13 +45,7 @@ public class EntityPrehistoricFloraKaibabvenator extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraKaibabvenator(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.99F, 0.89F);
 		minWidth = 0.1F;
 		maxWidth = 0.99F;
 		maxHeight = 0.89F;
@@ -183,6 +177,7 @@ public class EntityPrehistoricFloraKaibabvenator extends EntityPrehistoricFloraA
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.4D);
 	}
 
 	@Override
@@ -281,54 +276,54 @@ public class EntityPrehistoricFloraKaibabvenator extends EntityPrehistoricFloraA
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return 0.04;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.3;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 1.2;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.05F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.35F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 1.4;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 1.4;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 1;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.05F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.35F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_KAIBABVENATOR;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderKaibabvenator.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelKaibabvenator;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderKaibabvenator.getScaler();
 	}
 }

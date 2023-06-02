@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "colour=0": {
+      "model": "lepidodendron:hydrangea_white"
+    },
+    "colour=1": {
+      "model": "lepidodendron:hydrangea_pink"
+    },
+    "colour=2": {
+      "model": "lepidodendron:hydrangea_blue"
+    }
+  }
+}

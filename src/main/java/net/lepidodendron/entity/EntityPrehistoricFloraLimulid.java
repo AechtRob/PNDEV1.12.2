@@ -30,13 +30,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 
 	public EntityPrehistoricFloraLimulid(World world) {
 		super(world);
-		//setSize(1F, 0.99F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.4F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;
@@ -52,7 +46,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Palaeogene - Neogene - Pleistocene - Present";}
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - Present";}
 
 	public static String getHabitat() {return "Amphibious";}
 

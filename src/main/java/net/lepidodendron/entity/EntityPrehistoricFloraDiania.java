@@ -41,10 +41,6 @@ public class EntityPrehistoricFloraDiania extends EntityPrehistoricFloraTrilobit
 	public EntityPrehistoricFloraDiania(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		LOOK_ANIMATION = Animation.create(285);
 	}
 

@@ -9,8 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPurlovia extends RenderLiving<EntityPrehistoricFloraPurlovia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/purlovia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/purlovia.png");
 
+    public static float getScaler() {return 0.44f;}
     public RenderPurlovia(RenderManager mgr) {
         super(mgr, new ModelPurlovia(), 0.225F);
     }
@@ -27,7 +28,7 @@ public class RenderPurlovia extends RenderLiving<EntityPrehistoricFloraPurlovia>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPurlovia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.225F;
     }

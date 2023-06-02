@@ -42,13 +42,7 @@ public class EntityPrehistoricFloraLaminacaris extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraLaminacaris(World world) {
 		super(world);
-		setSize(0.6F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.52F, 0.28F);
 		minWidth = 0.1F;
 		maxWidth = 0.52F;
 		maxHeight = 0.28F;

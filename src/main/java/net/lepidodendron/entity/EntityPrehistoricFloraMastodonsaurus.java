@@ -11,8 +11,11 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderMastodonsaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
@@ -52,11 +55,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraMastodonsaurus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.20F, 1.02F);
 		minWidth = 0.1F;
 		maxWidth = 1.20F;
 		maxHeight = 1.02F;
@@ -176,7 +175,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
         if (this.getIsFast() && this.isReallyInWater()) {
             calcSpeed = calcSpeed * 1.52F;
         }
-		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+		if (this.isAtBottom() && (!this.getIsFast()) && (!this.isInLove()) && this.getEatTarget() == null) {
 			return 0;
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
@@ -197,7 +196,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		return this.getEntityBoundingBox().grow(1.5F + size, 1.5F + size, 1.5F + size);
 	}
 
 	protected void initEntityAI() {
@@ -251,6 +250,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	@Override
@@ -330,6 +330,10 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 
 		}
 
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -400,5 +404,54 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 		}
 		return LepidodendronMod.MASTODONSAURUS_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.1;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.30F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderMastodonsaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelMastodonsaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderMastodonsaurus.getScaler();
+	}
 }

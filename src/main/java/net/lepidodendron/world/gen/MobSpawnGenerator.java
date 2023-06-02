@@ -5,11 +5,13 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 public class MobSpawnGenerator extends WorldGenerator
@@ -33,7 +35,11 @@ public class MobSpawnGenerator extends WorldGenerator
     	return true;
 	}
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, int waterDepthMin, int waterDepthMax)
+	public boolean generate(World worldIn, Random rand, BlockPos position, int waterDepthMin, int waterDepthMax) {
+		return generate(worldIn, rand, position, waterDepthMin, waterDepthMax, null);
+	}
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, int waterDepthMin, int waterDepthMax, @Nullable String variant)
     {
 		for (int i = 0; i < 5; ++i)
 		{
@@ -81,6 +87,9 @@ public class MobSpawnGenerator extends WorldGenerator
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
 						worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+						if (variant != null) {
+							applyVariant(worldIn, new BlockPos(j, k, l), variant);
+						}
 						return true;
 					} else {
 						for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
@@ -106,6 +115,9 @@ public class MobSpawnGenerator extends WorldGenerator
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
 								worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
+								if (variant != null) {
+									applyVariant(worldIn, new BlockPos(j, k, l), variant);
+								}
 								return true;
 							}
 						}
@@ -114,5 +126,12 @@ public class MobSpawnGenerator extends WorldGenerator
 			}
 		}
 		return true;
+	}
+
+	public static void applyVariant(World world, BlockPos pos, String variant) {
+		TileEntity tileentity = world.getTileEntity(pos);
+		if (tileentity != null) {
+			tileentity.getTileData().setString("PNType", variant);
 		}
+	}
 }

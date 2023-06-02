@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:leviathania_item"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_leviathania.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_leviathania.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_leviathania"
+		}
+	}
+}

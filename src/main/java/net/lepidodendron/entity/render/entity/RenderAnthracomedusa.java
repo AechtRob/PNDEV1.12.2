@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAnthracomedusa extends RenderLiving<EntityPrehistoricFloraAnthracomedusa> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anthracomedusa.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anthracomedusa.png");
 
     public RenderAnthracomedusa(RenderManager mgr) {
         super(mgr, new ModelAnthracomedusa(), 0.0f);

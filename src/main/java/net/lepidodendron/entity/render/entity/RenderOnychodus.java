@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOnychodus extends RenderLiving<EntityPrehistoricFloraOnychodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/onychodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/onychodus.png");
 
     public RenderOnychodus(RenderManager mgr) {
         super(mgr, new ModelOnychodus(), 0.6f);

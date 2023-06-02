@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDvinia extends RenderLiving<EntityPrehistoricFloraDvinia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinia.png");
 
     public RenderDvinia(RenderManager mgr) {
         super(mgr, new ModelDvinia(), 0.5f);

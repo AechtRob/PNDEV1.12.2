@@ -12,7 +12,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderHybodus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,16 +44,10 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraHybodus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.82F, 0.99F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 1.1F;
+		maxWidth = 0.82F;
+		maxHeight = 0.99F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -95,7 +92,7 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 
 	@Override
 	public int getAdultAge() {
-		return 96000;
+		return 126000;
 	}
 
 	@Override
@@ -153,10 +150,10 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -265,6 +262,55 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 		}
 		return LepidodendronMod.HYBODUS_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.50F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.50F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderHybodus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelHybodus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderHybodus.getScaler();
+	}
 }
 

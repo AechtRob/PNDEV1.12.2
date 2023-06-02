@@ -215,19 +215,44 @@ public class ModelChinlea extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.head.render(f5 * 0.29F);
+        this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetY = -0.19F;
+        this.head.offsetZ = -0.03F;
+        this.head.offsetY = -0.15F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(body2, -0.0873F, -0.1745F, 0.0F);
+        this.setRotateAngle(body3, -0.1309F, 0.1745F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -2.618F, 0.0F, 0.0F);
+        this.setRotateAngle(gillL, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(gillR, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(head, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, -0.6981F, 0.2618F, -0.2618F);
+        this.setRotateAngle(pectoralfinR, -0.6981F, -0.2618F, 0.2618F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.3491F);
+        this.head.offsetY = -0.6F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -240,7 +265,7 @@ public class ModelChinlea extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.head.offsetY = 1.0F;
+        this.head.offsetY = 0F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.body6};
 
@@ -281,7 +306,7 @@ public class ModelChinlea extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.head.rotateAngleZ = (float) Math.toRadians(90);
-            this.head.offsetY = 1.05F;
+            //this.head.offsetY = 1.05F;
             this.bob(head, -speed * 1.9F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.28F, -0.55, f2, 0.4F * still);

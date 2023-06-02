@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:buttercup"},
+      {"model": "lepidodendron:buttercup_var"},
+      {"model": "lepidodendron:buttercup", "y": 90 },
+      {"model": "lepidodendron:buttercup_var", "y": 90 },
+      {"model": "lepidodendron:buttercup", "y": 180 },
+      {"model": "lepidodendron:buttercup_var", "y": 180 },
+      {"model": "lepidodendron:buttercup", "y": 270 },
+      {"model": "lepidodendron:buttercup_var", "y": 270 }
+    ]
+  }
+}

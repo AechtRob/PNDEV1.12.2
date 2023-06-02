@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:nehvizdyella_sapling" },
+        "stage=1": { "model": "lepidodendron:nehvizdyella_sapling" }
+    }
+}
+

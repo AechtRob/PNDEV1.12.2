@@ -35,10 +35,6 @@ public class EntityPrehistoricFloraTorpedaspis extends EntityPrehistoricFloraAge
 	public EntityPrehistoricFloraTorpedaspis(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;

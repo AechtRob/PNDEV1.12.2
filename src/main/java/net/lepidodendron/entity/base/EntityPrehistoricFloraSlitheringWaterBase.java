@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -62,6 +63,16 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	private int inPFLove;
 
+	@Override
+	public boolean isRiding() {
+		if (this.getRidingEntity() != null) {
+			if (this.getRidingEntity() instanceof EntityBoat) {
+				return false;
+			}
+		}
+		return super.isRiding();
+	}
+
 	@Nullable
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
@@ -92,10 +103,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public EntityPrehistoricFloraSlitheringWaterBase(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
 		this.slitherTickCycle = 20;
-		setNoAI(!true);
 		enablePersistence();
 		this.moveHelper = new EntityPrehistoricFloraSlitheringWaterBase.WanderMoveHelper();
 		this.navigator = new PathNavigateWaterBottomNoJump(this, world);
@@ -106,10 +114,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public EntityPrehistoricFloraSlitheringWaterBase(World world, int slitherTickCycle) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
 		this.slitherTickCycle = slitherTickCycle;
-		setNoAI(!true);
 		enablePersistence();
 		this.moveHelper = new EntityPrehistoricFloraSlitheringWaterBase.WanderMoveHelper();
 		this.navigator = new PathNavigateWaterBottomNoJump(this, world);
@@ -245,7 +250,11 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	}
 
 	public boolean getCanBreed() {
-		return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+		int breedCooldown = LepidodendronConfig.breedCooldown;
+		if (breedCooldown < 1) {
+			breedCooldown = 1;
+		}
+		return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
@@ -268,7 +277,9 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		if (ds == DamageSource.IN_WALL) {
-			return false;
+			if (this.isInWater()) {
+				return false;
+			}
 		}
 		if (this.isEntityInvulnerable(ds))
 		{
@@ -292,7 +303,8 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	@Override
 	public boolean isInWater() {
-		return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
+		return super.isInWater() || (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) ||
+				this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
 	}
 
 	public boolean isAtBottom() {

@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/microvictoria_c",
+"w":"lepidodendron:blocks/microvictoria_c",
+"ee":"lepidodendron:blocks/microvictoria_e",
+"ww":"lepidodendron:blocks/microvictoria_w"
+}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lepidodendron:blocks/blue_crust_coral_var1"
+  }
+}

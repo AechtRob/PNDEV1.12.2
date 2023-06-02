@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEggsSaivodus;
+import net.lepidodendron.block.BlockEggsCobelodus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
@@ -40,13 +40,7 @@ public class EntityPrehistoricFloraCobelodus extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraCobelodus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.7F, 0.7F);
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.7F;
@@ -141,10 +135,10 @@ public class EntityPrehistoricFloraCobelodus extends EntityPrehistoricFloraAgeab
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -204,10 +198,10 @@ public class EntityPrehistoricFloraCobelodus extends EntityPrehistoricFloraAgeab
 
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockEggsSaivodus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockEggsSaivodus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockEggsSaivodus.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockEggsSaivodus.block.canPlaceBlockAt(world, this.getPosition().down()))
+				&& (BlockEggsCobelodus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockEggsCobelodus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockEggsCobelodus.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockEggsCobelodus.block.canPlaceBlockAt(world, this.getPosition().down()))
 		){
 			//if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
@@ -217,13 +211,13 @@ public class EntityPrehistoricFloraCobelodus extends EntityPrehistoricFloraAgeab
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			////System.err.println("Test2");
-			IBlockState eggs = BlockEggsSaivodus.block.getDefaultState();
-			if (BlockEggsSaivodus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsSaivodus.block.canPlaceBlockAt(world, this.getPosition())) {
+			IBlockState eggs = BlockEggsCobelodus.block.getDefaultState();
+			if (BlockEggsCobelodus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsCobelodus.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			}
-			if (BlockEggsSaivodus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsSaivodus.block.canPlaceBlockAt(world, this.getPosition().down())) {
+			if (BlockEggsCobelodus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsCobelodus.block.canPlaceBlockAt(world, this.getPosition().down())) {
 				world.setBlockState(this.getPosition().down(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);

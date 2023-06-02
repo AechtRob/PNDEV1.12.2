@@ -11,12 +11,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.entity.RenderGymnotrachelus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -45,12 +43,6 @@ public class EntityPrehistoricFloraGymnotrachelus extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraGymnotrachelus(World world) {
 		super(world);
 		setSize(0.5F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.05F;
-		//maxSize = 1.0F;
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
@@ -131,14 +123,14 @@ public class EntityPrehistoricFloraGymnotrachelus extends EntityPrehistoricFlora
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
@@ -177,7 +169,7 @@ public class EntityPrehistoricFloraGymnotrachelus extends EntityPrehistoricFlora
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(42.0D);
+		//this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(42.0D);
 	}
 
 	@Override
@@ -213,10 +205,10 @@ public class EntityPrehistoricFloraGymnotrachelus extends EntityPrehistoricFlora
 
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {
@@ -261,56 +253,54 @@ public class EntityPrehistoricFloraGymnotrachelus extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
-		return 0.01;
+	public static double offsetWall(@Nullable String variant) {
+		return -0.02;
 	}
-	public static double upperfrontverticallinedepth() {
-		return 1.4;
-	}
-	public static double upperbackverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffset() {
-		return 0.4;
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.16;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.16;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double upperbacklineoffset() {
-		return 0.4;
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.2;
 	}
-	public static double upperbacklineoffsetperpendiular() {
-		return -0.15F;
-	}
-	public static double lowerfrontverticallinedepth() {
-		return 1.3;
-	}
-	public static double lowerbackverticallinedepth() {
-		return 1.3;
-	}
-	public static double lowerfrontlineoffset() {
-		return 0.4;
-	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double lowerbacklineoffset() {
-		return 0.4;
-	}
-	public static double lowerbacklineoffsetperpendiular() {
-		return -0.15F;
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderGymnotrachelus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelGymnotrachelus;
 	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelEastmanosteus;
-	}
-	public static float getScaler() {
-		return RenderEastmanosteus.getScaler();
-	}
+	public static float getScaler(@Nullable String variant) {return RenderGymnotrachelus.getScaler();}
 
 }
 

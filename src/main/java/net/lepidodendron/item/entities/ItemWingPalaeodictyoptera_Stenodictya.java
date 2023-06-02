@@ -30,7 +30,7 @@ public class ItemWingPalaeodictyoptera_Stenodictya extends ElementsLepidodendron
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_stenodictya", ItemWingPalaeodictyoptera_Stenodictya.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya", ItemWingPalaeodictyoptera_Stenodictya.block);
 		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Stenodictya.block);
 	}
 	@Override

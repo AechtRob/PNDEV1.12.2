@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHolonema extends RenderLiving<EntityPrehistoricFloraHolonema> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/holonema.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/holonema.png");
 
     public RenderHolonema(RenderManager mgr) {
         super(mgr, new ModelHolonema(), 0.0f);

@@ -33,10 +33,6 @@ public class EntityPrehistoricFloraGroenlandaspis extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraGroenlandaspis(World world) {
 		super(world);
 		setSize(0.55F, 0.40F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.55F;
 		maxHeight = 0.40F;

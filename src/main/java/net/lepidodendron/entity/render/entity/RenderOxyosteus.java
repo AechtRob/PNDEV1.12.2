@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOxyosteus extends RenderLiving<EntityPrehistoricFloraOxyosteus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/oxyosteus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/oxyosteus.png");
+
     public static float getScaler() {
         return 0.7F * 0.38F;
     }

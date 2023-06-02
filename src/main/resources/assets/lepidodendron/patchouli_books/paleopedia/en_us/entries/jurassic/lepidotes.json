@@ -1,0 +1,41 @@
+{
+	"name": "Lepidotes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/lepidotes_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_lepidotes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lepidotes",
+			"title": "Lepidotes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() N/A $(br2)>Actinopterygii$(br)>Lepisosteiformes$(br)>Lepidotidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/lepidotes.png"],
+			"title": "L. gigas",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidotes",
+			"type": "text",
+			"text": "Native to the oceans of Europe during the Jurassic, Lepidotes was one of the more well-known Mesozoic fish. Long used as a wastebasket taxon, recently many species within this genus have been classed as new genera, both freshwater and marine, pretty much worldwide,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidotes",
+			"type": "text",
+			"text": "and ranging from the Early Jurassic all the way to the Late Cretaceous. Lepidotes itself, however, is now considered an exclusively Jurassic marine genus. Of note is that like the (unrelated) modern carp, the mouth of this fish could be stretched into a sort of \"tube\" for suction feeding. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidotes",
+			"type": "text",
+			"text": "Unlike carp however, the inside of the mouth was lined with a small number of thin grasping teeth near the front, and many globular teeth further back suited for crushing. Fossilized Lepidotes stomach contents from the Early Jurassic of Germany suggest that at least part of its diet consisted of relatively soft-bodied crustaceans."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidotes",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

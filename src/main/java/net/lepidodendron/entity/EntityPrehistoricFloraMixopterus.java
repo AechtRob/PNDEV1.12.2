@@ -42,12 +42,6 @@ public class EntityPrehistoricFloraMixopterus extends EntityPrehistoricFloraEury
 	public EntityPrehistoricFloraMixopterus(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;

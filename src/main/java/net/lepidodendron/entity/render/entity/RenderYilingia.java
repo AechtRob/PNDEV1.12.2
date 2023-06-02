@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderYilingia extends RenderLiving<EntityPrehistoricFloraYilingia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yilingia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yilingia.png");
 
     public RenderYilingia(RenderManager mgr) {
         super(mgr, new ModelYilingia(), 0.0f);

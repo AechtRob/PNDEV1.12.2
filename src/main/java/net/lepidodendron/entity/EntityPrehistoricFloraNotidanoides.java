@@ -17,8 +17,6 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -43,13 +41,7 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraNotidanoides(World world) {
 		super(world);
-		setSize(0.9F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.8F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.4F;
@@ -114,14 +106,14 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
@@ -144,10 +136,10 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 		return this.getTexture();
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -165,7 +157,7 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		//this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
 	@Override
@@ -257,54 +249,54 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return 0.6;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.2;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 1.3;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_NOTIDANOIDES;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderNotidanoides.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelNotidanoides;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderNotidanoides.getScaler();
 	}
 

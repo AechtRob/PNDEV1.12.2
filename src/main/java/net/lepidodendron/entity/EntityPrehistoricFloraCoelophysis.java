@@ -47,11 +47,7 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraCoelophysis(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.65F, 1.05F);
 		minWidth = 0.12F;
 		maxWidth = 0.65F;
 		maxHeight = 1.05F;
@@ -188,12 +184,14 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
@@ -270,7 +268,7 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -333,54 +331,54 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return -0.23;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.4;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.6;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0.6;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.02F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.04F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_COELOPHYSIS;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCoelophysis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelCoelophysis;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderCoelophysis.getScaler();
 	}
 

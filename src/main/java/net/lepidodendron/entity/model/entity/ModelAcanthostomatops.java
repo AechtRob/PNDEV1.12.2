@@ -10,6 +10,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererEx
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 
 public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended bone;
@@ -309,17 +310,49 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.bone.render(f5 * 0.283F);
+        this.bone.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.bone.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0436F, 0.0F, -0.0436F);
+        this.setRotateAngle(cube_r11, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0262F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, -0.48F, -0.2182F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.8727F, -0.2182F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.6109F, -0.2182F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.6109F, 0.2182F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.8727F, 0.2182F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.48F, 0.2182F);
+        this.setRotateAngle(head, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(legL2, 0.0F, 1.2217F, 0.0F);
+        this.setRotateAngle(legL3, 0.0F, 0.6109F, 0.5236F);
+        this.setRotateAngle(legL4, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(legL5, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(legL6, 0.0F, 1.0472F, 0.5236F);
+        this.setRotateAngle(legR, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(legR2, 0.0F, -1.2217F, 0.0F);
+        this.setRotateAngle(legR3, 0.0F, -0.6109F, -0.5236F);
+        this.setRotateAngle(legR4, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(legR5, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(legR6, 0.0F, -1.0472F, -0.5236F);
+        this.setRotateAngle(legspineL, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(legspineL2, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(legspineR, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(legspineR2, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(tail, -0.0873F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail2, 0.0436F, -0.4363F, 0.0F);
+        this.setRotateAngle(tail3, 0.0872F, -0.2599F, -0.0451F);
+        this.setRotateAngle(upperjaw, -0.3927F, 0.0F, 0.0F);
+        this.bone.rotateAngleY=(float)Math.toRadians(90);
+        this.bone.offsetY=0.055F;
+        this.bone.render(0.01F);
+
+resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -331,7 +364,13 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone.offsetY = 1.05F; //72
+        //this.bone.offsetY = 1.05F; //72
+
+        if (e instanceof EntityLiving) {
+            if (((EntityLiving)e).isAIDisabled()) {
+                return;
+            }
+        }
 
         EntityPrehistoricFloraAcanthostomatops Acanthostomatops = (EntityPrehistoricFloraAcanthostomatops) e;
 

@@ -1,0 +1,32 @@
+{
+	"name": "Redfieldius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/redfieldius_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_redfieldius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_redfieldius",
+			"title": "Redfieldius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Redfieldiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/redfieldius.png"],
+			"title": "R. gracilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_redfieldius",
+			"type": "text",
+			"text": "Redfieldius is genus of redfieldiiforme ray-finned fish from the early Jurassic. While redfieldiiforms were common in late Triassic (Daedalichthys for example), Redfieldius was the last member of the group. It had a similar appearance to other redfiedlfiiformes, and some Triassic genera like Cionichthys were once described as Redfieldius."
+		},
+		
+		{
+			"advancement": "lepidodendron:pf_adv_book_redfieldius",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

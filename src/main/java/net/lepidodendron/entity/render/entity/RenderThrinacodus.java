@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderThrinacodus extends RenderLiving<EntityPrehistoricFloraThrinacodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinacodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinacodus.png");
 
     public RenderThrinacodus(RenderManager mgr) {
         super(mgr, new ModelThrinacodus(), 0.0f);

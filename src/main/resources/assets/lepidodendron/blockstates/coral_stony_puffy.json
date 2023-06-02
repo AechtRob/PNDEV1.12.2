@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:coral_stony_puffy"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:coral_stony_puffy", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:coral_stony_puffy", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:coral_stony_puffy", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:coral_stony_puffy", "x": 90, "y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:coral_stony_puffy"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:coral_stony_puffy", "x": 180}
+    ]
+  }
+}

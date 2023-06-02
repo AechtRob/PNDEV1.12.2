@@ -1,5 +1,5 @@
 {
-	"name": "Archoblattina",
+	"name": "Progonoblattina",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/archoblattina_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
@@ -7,20 +7,20 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_archoblattina",
-			"title": "Archoblattina",
+			"title": "Progonoblattina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arthropoda$(br)>Insecta$(br)>Blattoptera$(br)>Archoblattinidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arthropoda$(br)>Insecta$(br)>Blattodea$(br)>Archimylacridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/archoblattina.png"],
-			"title": "Archoblattina beecheri",
+			"title": "P. helvetica",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_archoblattina",
 			"type": "text",
-			"text": "Archoblattina is a prehistoric roach from the Carboniferous. It had a flattened body with heavily veined wings and they probably laid their eggs into moss, soil or other crevices."
+			"text": "Progonoblattina is a prehistoric roach from the Carboniferous. It had a flattened body with heavily veined wings and they probably laid their eggs into moss, soil or other crevices."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_archoblattina",

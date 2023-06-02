@@ -1,0 +1,41 @@
+{
+	"name": "Mixosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/mixosaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_mixosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mixosaurus",
+			"title": "Mixosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Ichthyosauria$(br)>Mixosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/mixosaurus.png"],
+			"title": "M. cornalianus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
+			"type": "text",
+			"text": "Mixosaurus is a small sized Triassic ichthyosaur. Previously known from many species, Mixosaurus today is composed only of three valid species hailing from Italy, Switzerland and South China. Long considered a transitional stage between older eel like Ichthyosaurs "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
+			"type": "text",
+			"text": "and the more derived fish like ones, the animal is known from a wealth of fossil material. Despite the large amount of fossils, however, for the longest time no soft tissue impressions of the animal were known, leading to many now outdated reconstructions of it with rhomboid shaped tails and no dorsal fin."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
+			"type": "text",
+			"text": "This changed in 2020 when two specimens (BES SC 1000 & BES SC 1001) were discovered in Besano, which preserved traces of soft tissue and allowed us to finally identify the origin of dorsal fins in Ichthyosaurs as more basal than once thought."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

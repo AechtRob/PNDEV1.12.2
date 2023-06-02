@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
@@ -62,6 +63,16 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+    }
+
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     // @Nullable

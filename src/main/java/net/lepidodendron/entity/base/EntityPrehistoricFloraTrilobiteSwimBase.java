@@ -15,6 +15,7 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -50,16 +51,36 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     public ChainBuffer chainBuffer;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.BOOLEAN);
+
     private int inPFLove;
 
     public EntityPrehistoricFloraTrilobiteSwimBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraTrilobiteSwimBase.SwimmingMoveHelper();
         this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    protected void entityInit() {
+        super.entityInit();
+        this.dataManager.register(MATEABLE, 0);
+        this.dataManager.register(TICKS, 0);
+        this.dataManager.register(ISMOVING, false);
+        //this.setScaleForAge(false); //REMOVED!
+    }
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     @Override
@@ -146,12 +167,6 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
 
-    @Override
-    protected void entityInit() {
-        super.entityInit();
-        this.dataManager.register(TICKS, rand.nextInt(24000));
-        this.dataManager.register(MATEABLE, 0);
-    }
 
     public int getMateable() {
         return this.dataManager.get(MATEABLE);
@@ -178,7 +193,11 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
+        return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
 
     public void writeEntityToNBT(NBTTagCompound compound)
@@ -266,7 +285,9 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         if (ds == DamageSource.IN_WALL) {
-            return false;
+            if (this.isInWater()) {
+                return false;
+            }
         }
         if (this.isEntityInvulnerable(ds))
         {
@@ -353,6 +374,13 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         }
 
     }
+    public boolean getIsMoving() {
+        return this.dataManager.get(ISMOVING);
+    }
+
+    public void setIsMoving(boolean isMoving) {
+        this.dataManager.set(ISMOVING, isMoving);
+    }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
         RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
@@ -384,6 +412,12 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
                     f4 += (0.54600006F - f4) * speedModifier / 3.0F;
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
 
                 if (this.collidedHorizontally && this.isCollidingRim())
                 {

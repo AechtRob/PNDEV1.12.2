@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_lunaspis",
 			"title": "Lunaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Placodermi$(br)>Petalichthyida$(br)>Macropetalichthyidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Petalichthyida$(br)>Macropetalichthyidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/lunaspis.png"],
-			"title": "Lunaspis broili",
+			"title": "L. broili",
 			"text": ""
 		},
 		{

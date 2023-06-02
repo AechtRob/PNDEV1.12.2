@@ -9,7 +9,10 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EatFishItemsAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderEntelognathus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -44,15 +47,11 @@ public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFlora
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraEntelognathus.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.3F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 
@@ -151,7 +150,7 @@ public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFlora
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -298,5 +297,59 @@ public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFlora
 				this.EntityBase.setAIMoveSpeed(0.0F);
 			}
 		}
+	}
+
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.08;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.06;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderEntelognathus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelEntelognathus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderEntelognathus.getScaler();
 	}
 }

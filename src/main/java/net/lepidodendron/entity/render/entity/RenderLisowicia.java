@@ -9,7 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLisowicia extends RenderLiving<EntityPrehistoricFloraLisowicia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lisowicia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lisowicia.png");
+
+    public static float getScaler() {return 1.33f* 0.8F;}
 
     public RenderLisowicia(RenderManager mgr) {
         super(mgr, new ModelLisowicia(), 0.5f);
@@ -27,7 +29,7 @@ public class RenderLisowicia extends RenderLiving<EntityPrehistoricFloraLisowici
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLisowicia entity, float f) {
-        float scale = entity.getAgeScale() * 0.8F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 1.0F;
     }

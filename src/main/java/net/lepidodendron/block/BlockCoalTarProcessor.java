@@ -114,7 +114,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up()) && isReplaceable(worldIn, pos.up(2));
+			return super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up()) && super.canPlaceBlockAt(worldIn, pos.up(2));
 		}
 
 		@Override
@@ -670,9 +670,14 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
-			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
-				return true;
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockCoalTarProcessor.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
+					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
 			}
 			return super.hasCapability(capability, facing);
 		}

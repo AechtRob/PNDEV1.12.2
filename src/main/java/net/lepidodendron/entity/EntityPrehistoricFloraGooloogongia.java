@@ -8,10 +8,8 @@ import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EatFishItemsAI;
 import net.lepidodendron.entity.ai.EntityMateAI;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderGooloogongia;
-import net.lepidodendron.entity.render.entity.RenderTegeolepis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -49,11 +47,7 @@ public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAg
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraGooloogongia.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1F, 1F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.5F, 0.5F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
@@ -306,50 +300,50 @@ public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAg
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return 0.41;
 	}
-	public static double upperfrontverticallinedepth() {return 1.4;}
-	public static double upperbackverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 1.4;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.1;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.03F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_GOOLOOGONGIA;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderGooloogongia.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelGooloogongia;
 	}
-	public static float getScaler() {return RenderGooloogongia.getScaler();}
+	public static float getScaler(@Nullable String variant) {return RenderGooloogongia.getScaler();}
 }

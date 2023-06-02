@@ -479,19 +479,85 @@ public class ModelAmplectobelua extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.29F);
+        this.body.render(f5);
     }
 
-    public void renderStatic(float f) {
+    public void renderStaticDisplayCase(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
-        this.body.offsetZ = -0.15F;
-        this.body.render(0.017F);
+        this.body.offsetZ = -0.1F;
+        this.body.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(appendageL, 0.5236F, -0.1745F, 0.0F);
+        this.setRotateAngle(appendageL2, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(appendageL3, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(appendageR, 0.5236F, 0.1745F, 0.0F);
+        this.setRotateAngle(appendageR2, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(appendageR3, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(eyeL, 0.0F, -0.1745F, -0.2618F);
+        this.setRotateAngle(eyeR, 0.0F, 0.1745F, 0.2618F);
+        this.setRotateAngle(finL1, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(finL10, 0.0F, 0.0F, 0.2618F);
+        this.setRotateAngle(finL2, 0.0F, 0.0F, -0.0873F);
+        this.setRotateAngle(finL3, 0.0F, 0.0F, -0.0436F);
+        this.setRotateAngle(finL5, 0.0F, 0.0F, 0.0436F);
+        this.setRotateAngle(finL6, 0.0F, 0.0F, 0.0873F);
+        this.setRotateAngle(finL7, 0.0F, 0.0F, 0.1309F);
+        this.setRotateAngle(finL8, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(finL9, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(finR1, 0.0F, 0.0F, 0.1309F);
+        this.setRotateAngle(finR10, 0.0F, 0.0F, -0.2618F);
+        this.setRotateAngle(finR2, 0.0F, 0.0F, 0.0873F);
+        this.setRotateAngle(finR5, 0.0F, 0.0F, -0.0436F);
+        this.setRotateAngle(finR6, 0.0F, 0.0F, -0.0873F);
+        this.setRotateAngle(finR7, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(finR8, 0.0F, 0.0F, -0.1745F);
+        this.setRotateAngle(finR9, 0.0F, 0.0F, -0.2182F);
+        this.setRotateAngle(GLS_L, 0.0F, -0.5672F, -0.5236F);
+        this.setRotateAngle(GLS_L2, 0.0F, -0.5672F, -0.6109F);
+        this.setRotateAngle(GLS_L3, 0.0F, -0.5672F, -0.6981F);
+        this.setRotateAngle(GLS_R, 0.0F, 0.5672F, 0.5236F);
+        this.setRotateAngle(GLS_R2, 0.0F, 0.5672F, 0.6109F);
+        this.setRotateAngle(GLS_R3, 0.0F, 0.5672F, 0.6981F);
+        this.setRotateAngle(head, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tailL1, 0.0F, -0.5236F, -0.1745F);
+        this.setRotateAngle(tailL2, 0.0F, -0.5236F, -0.2618F);
+        this.setRotateAngle(tailL3, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(tailR1, 0.0F, 0.5236F, 0.1745F);
+        this.setRotateAngle(tailR2, 0.0F, 0.5236F, 0.2618F);
+        this.setRotateAngle(tailR3, 0.0F, -0.1745F, 0.0F);
+        this.body.rotateAngleY=(float)Math.toRadians(90);
+        this.body.offsetY=-0.6F;
+        this.body.offsetX=-0.1F;
+        this.body.offsetZ=0F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -504,7 +570,7 @@ public class ModelAmplectobelua extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.9F;
+        //this.body.offsetY = 0.9F;
 
         float speed = 0.4F;
         if (!e.isInWater()) {
@@ -573,7 +639,7 @@ public class ModelAmplectobelua extends AdvancedModelBase {
             this.chainWave(bodyF, 0.28F, 0.15f, -3, f2, 0.55F);
 
             if (!e.isInWater()) {
-                this.body.offsetY = 1.05F;
+                this.body.offsetY = 0.15F;
                 this.bob(body, -speed * 1.5F, 2.5F, false, f2, 1);
             }
             else {

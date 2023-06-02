@@ -1,0 +1,6 @@
+{
+	"parent": "lepidodendron:block/bench_right",
+	"textures": {
+		"metal": "blocks/redstone_block"
+	}
+}

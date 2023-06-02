@@ -32,14 +32,10 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 	public EntityPrehistoricFloraGnathorhiza(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
 		minWidth = 0.1F;
 		maxWidth = 0.50F;
 		maxHeight = 0.30F;
 		maxHealthAgeable = 4.0D;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

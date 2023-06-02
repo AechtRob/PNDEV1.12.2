@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCrotalocephalus extends RenderLiving<EntityPrehistoricFloraCrotalocephalus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crotalocephalus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crotalocephalus.png");
+    public static float getScaler() {return 0.3F;}
 
     public RenderCrotalocephalus(RenderManager mgr) {
         super(mgr, new ModelCrotalocephalus(), 0.00f);
@@ -27,8 +28,12 @@ public class RenderCrotalocephalus extends RenderLiving<EntityPrehistoricFloraCr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCrotalocephalus entity, float f) {
-        float scale = 0.5F;
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
         GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
     }
 
 

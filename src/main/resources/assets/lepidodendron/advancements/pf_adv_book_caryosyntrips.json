@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:caryosyntrips_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_caryosyntrips.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_caryosyntrips.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_caryosyntrips"
+		}
+	}
+}
+
+

@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeura> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeura.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeura.png");
 
     public RenderMeganeura(RenderManager mgr) {
         super(mgr, new ModelMeganeuropsis(), 0.0f);
@@ -20,6 +20,10 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMeganeura entity) {
         return RenderMeganeura.TEXTURE;
+    }
+
+    public static float getScaler() {
+        return 1* 0.29f * 0.88F;
     }
 
     @Override
@@ -56,7 +60,7 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMeganeura entity, float f) {
-        float scale = 1.0F;
+        float scale = this.getScaler();
         if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
             scale = 0.6F;
         }

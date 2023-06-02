@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderKaibabvenator extends RenderLiving<EntityPrehistoricFloraKaibabvenator> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kaibabvenator.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kaibabvenator.png");
 
     public RenderKaibabvenator(RenderManager mgr) {
         super(mgr, new ModelKaibabvenator(), 0.5f);

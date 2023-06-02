@@ -187,6 +187,14 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
                     f4 += (0.54600006F - f4) * speedModifier / 3.0F;
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
+
                 this.motionX *= f4;
                 this.motionX *= 0.9;
                 this.motionY *= 0.9;
@@ -356,7 +364,7 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
 
                 if (d2 > (double) this.EntityBase.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.EntityBase.width)) {
                     if (!this.EntityBase.canJumpOutOfWater()) {
-                        if (!(this.EntityBase.isInWater())) {
+                        if (this.EntityBase.isInWater()) {
                             this.EntityBase.getJumpHelper().setJumping();
                             this.action = EntityMoveHelper.Action.JUMPING;
                             //System.err.println("Set jump 3");

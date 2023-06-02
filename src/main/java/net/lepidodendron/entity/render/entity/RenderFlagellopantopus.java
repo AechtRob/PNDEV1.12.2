@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderFlagellopantopus extends RenderLiving<EntityPrehistoricFloraFlagellopantopus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/flagellopantopus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/flagellopantopus.png");
 
     public RenderFlagellopantopus(RenderManager mgr) {
         super(mgr, new ModelFlagellopantopus(), 0.0f);

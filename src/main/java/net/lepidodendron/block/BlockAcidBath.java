@@ -798,22 +798,25 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.world.getBlockState(this.getPos()).getValue(BlockAcidBath.BlockCustom.FACING);
-			boolean faceCheck = false;
-			if (blockFacing == EnumFacing.NORTH) {
-				faceCheck = (facing == EnumFacing.SOUTH);
-			}
-			else if (blockFacing == EnumFacing.SOUTH) {
-				faceCheck = (facing == EnumFacing.NORTH);
-			}
-			else if (blockFacing == EnumFacing.EAST) {
-				faceCheck = (facing == EnumFacing.WEST);
-			}
-			else if (blockFacing == EnumFacing.WEST) {
-				faceCheck = (facing == EnumFacing.EAST);
-			}
-			if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY && faceCheck) {
-				return true;
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockAcidBath.block) {
+					EnumFacing blockFacing = this.world.getBlockState(this.getPos()).getValue(BlockAcidBath.BlockCustom.FACING);
+
+					boolean faceCheck = false;
+					if (blockFacing == EnumFacing.NORTH) {
+						faceCheck = (facing == EnumFacing.SOUTH);
+					} else if (blockFacing == EnumFacing.SOUTH) {
+						faceCheck = (facing == EnumFacing.NORTH);
+					} else if (blockFacing == EnumFacing.EAST) {
+						faceCheck = (facing == EnumFacing.WEST);
+					} else if (blockFacing == EnumFacing.WEST) {
+						faceCheck = (facing == EnumFacing.EAST);
+					}
+					if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY && faceCheck) {
+						return true;
+					}
+				}
 			}
 			return super.hasCapability(capability, facing);
 		}

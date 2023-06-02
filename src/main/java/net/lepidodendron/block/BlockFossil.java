@@ -38,13 +38,13 @@ import java.util.Random;
 		Random rand = new Random();
 		if (!worldIn.isRemote && stack.getItem() == ItemFossilHammer.block) {
 			spawnAsEntity(worldIn, pos, getFossilDrop());
+			spawnAsEntity(worldIn, pos, getFossilDrop());
+			player.addStat(StatList.getBlockStats(this));
 			//fortune modifier:
 			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.FORTUNE, stack);
-			int ii = rand.nextInt(levelEnchantment + 2) * 2;
-			spawnAsEntity(worldIn, pos, getFossilDrop());
+			int ii = rand.nextInt(levelEnchantment + 1) * 2;
 			for (int i = 0; i < ii; ++i) {
 				if (rand.nextInt(3) == 0) {
-					player.addStat(StatList.getBlockStats(this));
 					spawnAsEntity(worldIn, pos, getFossilDrop());
 				}
 			}

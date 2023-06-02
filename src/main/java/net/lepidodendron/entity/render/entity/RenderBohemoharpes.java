@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBohemoharpes extends RenderLiving<EntityPrehistoricFloraBohemoharpes> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bohemoharpes.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bohemoharpes.png");
 
     public RenderBohemoharpes(RenderManager mgr) {
         super(mgr, new ModelBohemoharpes(), 0.0f);

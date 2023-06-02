@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:peridotite_slab_smooth"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:peridotite_slab_smooth_top"
+    }
+  }
+}

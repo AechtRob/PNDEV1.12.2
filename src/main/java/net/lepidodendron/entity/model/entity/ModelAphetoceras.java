@@ -282,7 +282,7 @@ public class ModelAphetoceras extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.shellbase.render(f5 * 0.2F);
+        this.shellbase.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -296,7 +296,7 @@ public class ModelAphetoceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.shellbase.offsetY = 1.2F;
+        //this.shellbase.offsetY = 1.2F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.tentacle1a, this.tentacle1b};
         AdvancedModelRendererExtended[] tentacle2 = {this.tentacle2a, this.tentacle2b};
@@ -343,7 +343,7 @@ public class ModelAphetoceras extends AdvancedModelBaseExtended {
         }
         else {
             this.shellbase.rotateAngleZ = (float) Math.toRadians(90);
-            this.shellbase.offsetY = 1.45F;
+            this.shellbase.offsetY = 1.45F - 1.2F;
         }
 
     }

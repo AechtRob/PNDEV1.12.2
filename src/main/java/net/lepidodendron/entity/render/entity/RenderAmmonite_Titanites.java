@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Titanites extends RenderLiving<EntityPrehistoricFloraAmmonite_Titanites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_titanites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_titanites.png");
 
     public RenderAmmonite_Titanites(RenderManager mgr) {
         super(mgr, new ModelAmmonite150cm(), 0.8f);

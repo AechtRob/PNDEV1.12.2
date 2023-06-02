@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPelurgaspis extends RenderLiving<EntityPrehistoricFloraPelurgaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pelurgaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pelurgaspis.png");
 
     public RenderPelurgaspis(RenderManager mgr) {
         super(mgr, new ModelPelurgaspis(), 0.0f);

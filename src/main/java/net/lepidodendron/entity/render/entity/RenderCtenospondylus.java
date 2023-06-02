@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCtenospondylus extends RenderLiving<EntityPrehistoricFloraCtenospondylus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenospondylus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenospondylus.png");
 
     public RenderCtenospondylus(RenderManager mgr) {
         super(mgr, new ModelCtenospondylus(), 0.5f);

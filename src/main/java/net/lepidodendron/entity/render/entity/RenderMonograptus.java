@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMonograptus extends RenderLiving<EntityPrehistoricFloraMonograptus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/monograptus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/monograptus.png");
 
     public RenderMonograptus(RenderManager mgr) {
         super(mgr, new ModelMonograptus(), 0.0f);

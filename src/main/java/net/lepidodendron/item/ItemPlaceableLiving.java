@@ -19,6 +19,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -56,6 +57,59 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_placeable_living");
 			setRegistryName("placeable_living");
 			setCreativeTab(null);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+					String resourcelocation = (blockNBT.getString("id"));
+					return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+							+ ": "
+							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();
+				}
+
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					String resourcelocation = (blockNBT.getString("id"));
+					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else if (!(I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name")
+							.equalsIgnoreCase("item.pf_" + getDNAStr(resourcelocation) + ".name"))) {
+						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("item.pf_" + getDNAStr(resourcelocation) + ".name").trim();
+					} else {
+						return super.getItemStackDisplayName(stack);
+					}
+				}
+
+			}
+
+			return super.getItemStackDisplayName(stack);
 		}
 
 		public String getTranslationKey(ItemStack stack)
@@ -110,6 +164,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 		public static String getDNAStr(String string) {
 			string = string.replace("lepidodendron:", "");
 			string = string.replace("minecraft:", "");
+			string = string.replace("@", "_");
 			return string;
 		}
 
@@ -189,10 +244,26 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			Class classOut = null;
 			NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 			String stringDNA = (blockNBT.getString("id"));
+			if (stringDNA.indexOf("@") >= 0) {
+				stringDNA = stringDNA.substring(0, stringDNA.indexOf("@"));
+			}
 			if (stringDNA != null) {
 				classOut = findEntity(stringDNA);
 			}
 			return classOut;
+		}
+
+		@Nullable
+		public String getVariantID(ItemStack stack) {
+			if (!stack.getTagCompound().hasKey("PFMob")) {
+				return "";
+			}
+			NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+			String stringDNA = (blockNBT.getString("id"));
+			if (stringDNA.indexOf("@") >= 0) {
+				return stringDNA.substring(stringDNA.indexOf("@") + 1);
+			}
+			return "";
 		}
 
 		@Nullable
@@ -258,11 +329,21 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							}
 
 							if (iblockstate.getMaterial() == Material.WATER) {
-								EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+								if (this.getVariantID(itemstack).equalsIgnoreCase("")) {
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+								}
+								else {
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+								}
 							}
 							else {
 								blockpos = blockpos.offset(raytraceresult.sideHit);
-								EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+								if (this.getVariantID(itemstack).equalsIgnoreCase("")) {
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+								}
+								else {
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr,blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+								}
 							}
 						}
 						if (!playerIn.capabilities.isCreativeMode) {
@@ -313,9 +394,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							//	itemstack.shrink(1);
 							//}
 							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
-								if (!playerIn.isCreative()) {
-									itemstack.shrink(1);
-								}
+								//if (!playerIn.isCreative()) {
+									//itemstack.shrink(1);
+								//}
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 							}
 							else {

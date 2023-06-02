@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLonchidion extends RenderLiving<EntityPrehistoricFloraLonchidion> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchidion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchidion.png");
 
     public RenderLonchidion(RenderManager mgr) {
         super(mgr, new ModelLonchidion(), 0.0f);

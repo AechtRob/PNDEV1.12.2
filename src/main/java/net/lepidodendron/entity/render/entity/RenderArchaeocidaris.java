@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderArchaeocidaris extends RenderLiving<EntityPrehistoricFloraArchaeocidaris> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archaeocidaris.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archaeocidaris.png");
 
     public RenderArchaeocidaris(RenderManager mgr) {
         super(mgr, new ModelArchaeocidaris(), 0.0f);

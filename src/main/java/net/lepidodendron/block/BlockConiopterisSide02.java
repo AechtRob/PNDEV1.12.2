@@ -90,7 +90,7 @@ public class BlockConiopterisSide02 extends ElementsLepidodendronMod.ModElement 
 		@Nullable
 		@Override
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-			return new AxisAlignedBB(0.0D, 0D, 0D, 0.0D, 0D, 0.0D);
+			return NULL_AABB;
 		}
 
 		@Override

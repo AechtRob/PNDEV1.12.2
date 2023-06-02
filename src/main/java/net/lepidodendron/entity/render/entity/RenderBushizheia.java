@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBushizheia extends RenderLiving<EntityPrehistoricFloraBushizheia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bushizheia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bushizheia.png");
 
     public RenderBushizheia(RenderManager mgr) {
         super(mgr, new ModelBushizheia(), 0.00f);

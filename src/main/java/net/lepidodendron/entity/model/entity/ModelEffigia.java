@@ -298,7 +298,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.355f);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -330,7 +330,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.95F;
+        //this.body.offsetY = 0.95F;
 
         EntityPrehistoricFloraEffigia Effigia = (EntityPrehistoricFloraEffigia) e;
         float masterSpeed = Effigia.getTravelSpeed();
@@ -373,7 +373,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
 
             if (Effigia.getIsFast()) { //Running
                 float speed = masterSpeed / 1.1F;
-                //this.body.offsetY = 0.75F;
+                this.body.offsetY = -0.2F;
                 this.legL.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
                 this.legR.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
@@ -419,7 +419,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
             }
             else { //Walking
                 float speed = masterSpeed / 1.45F;
-                this.body.offsetY = 1.05F;
+                this.body.offsetY = 0.10F;
                 this.legL.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.legR.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 

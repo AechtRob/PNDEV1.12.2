@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
 
     public RenderOttoia(RenderManager mgr) {
         super(mgr, new ModelOttoia(), 0.0f);
@@ -19,6 +19,8 @@ public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOttoia entity) {
         return RenderOttoia.TEXTURE;
     }
+
+    public static float getScaler() {return 0.185F;}
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraOttoia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
@@ -43,5 +45,12 @@ public class RenderOttoia extends RenderLiving<EntityPrehistoricFloraOttoia> {
             GlStateManager.scale(0.8F, 0.8F, compress);
         }
     }
-
+    protected void preRenderCallback(EntityPrehistoricFloraOttoia entity, float f) {
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
+    }
 }

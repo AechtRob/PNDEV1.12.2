@@ -48,10 +48,6 @@ public class EntityPrehistoricFloraUrocordylus extends EntityPrehistoricFloraSwi
 	public EntityPrehistoricFloraUrocordylus(World world) {
 		super(world);
 		setSize(0.2F, 0.1F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.1F;
@@ -81,7 +77,7 @@ public class EntityPrehistoricFloraUrocordylus extends EntityPrehistoricFloraSwi
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Fully Aquatic";}
+	public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public int getTalkInterval() {

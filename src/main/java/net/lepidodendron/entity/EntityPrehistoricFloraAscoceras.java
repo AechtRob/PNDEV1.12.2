@@ -10,12 +10,8 @@ import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsAscoceras;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -35,17 +31,15 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 
 	public EntityPrehistoricFloraAscoceras(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.3F, 0.25F);
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 3.0D;
+	}
+
+	public boolean isBaby() {
+		return (this.getAgeTicks() < 32000);
 	}
 
 	@Override
@@ -123,26 +117,6 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 			}
 			this.setTicks(0);
 		}
-
-		//If this is somehow a baby, then make it a baby!
-		Entity entity = null;
-		if (this.getAgeTicks() < 32000)
-		{
-			if (!(world.isRemote)) {
-				entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraAscoceras_Baby.class), (double) this.posX, (double) this.posY, (double) this.posZ);
-				if (entity != null) {
-					entity.setLocationAndAngles(this.posX, (double) this.posY, (double) this.posZ, this.rotationYaw, this.rotationPitch);
-					entity.setPositionAndRotation(this.posX, (double) this.posY, (double) this.posZ, this.rotationYaw, this.rotationPitch);
-					entity.ticksExisted = this.ticksExisted;
-					EntityPrehistoricFloraAscoceras ee = (EntityPrehistoricFloraAscoceras) entity;
-					ee.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(this.getMaxHealth());
-					ee.setHealth(this.getHealth());
-					ee.setAgeTicks(this.getAgeTicks());
-					ee.setScaleForAge(false);
-					this.setDead();
-				}
-			}
-		}
 	}
 
 	@Override
@@ -152,6 +126,9 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (this.isBaby()) {
+			return LepidodendronMod.ASCOCERAS_LOOT_YOUNG;
+		}
 		return LepidodendronMod.ASCOCERAS_LOOT;
 	}
 

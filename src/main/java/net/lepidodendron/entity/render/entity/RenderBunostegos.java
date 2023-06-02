@@ -9,7 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBunostegos extends RenderLiving<EntityPrehistoricFloraBunostegos> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
+
+    public static float getScaler() {return 0.90f;}
 
     public RenderBunostegos(RenderManager mgr) {
         super(mgr, new ModelBunostegos(), 0.5F);
@@ -27,7 +29,7 @@ public class RenderBunostegos extends RenderLiving<EntityPrehistoricFloraBunoste
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBunostegos entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.50F;
     }

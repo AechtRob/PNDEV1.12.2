@@ -1,0 +1,31 @@
+{
+	"name": "Ceratiocaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ceratiocaris_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_ceratiocaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ceratiocaris",
+			"title": "Ceratiocaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Ocean, Lagoon, Bryozoan Reef$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ceratiocaris.png"],
+			"title": "C. solenoides",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratiocaris",
+			"type": "text",
+			"text": "Ceratiocaris is widespread taxa of phyllocarid crustacean which ranges from the Ordovician to the Devonian. Phyllocarids like Ceratiocaris were common creatures in marine or brackish environments. The front of its body is surrounded by a shell, and the end of the body has a telson and two spines."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratiocaris",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

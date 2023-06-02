@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraFish
 	public EntityPrehistoricFloraAcanthodes(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -57,7 +53,7 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian - Carboniferous - Permian";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getSize() {return "S";}
 

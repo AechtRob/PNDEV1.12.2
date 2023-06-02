@@ -11,6 +11,8 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EnumDifficulty;
 
 import javax.annotation.Nullable;
@@ -48,6 +50,11 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
         this.setMutexBits(1);
     }
 
+    public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+        RayTraceResult movingobjectposition = this.entity.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+        return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
+    }
+
     public boolean shouldExecute()
     {
         if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
@@ -55,6 +62,15 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
             if ((!ageableBase.isPFAdult()) || ageableBase.getWarnTarget() != null || ageableBase.getAttackTarget() != null || ageableBase.getEatTarget() != null) {
                 return false;
             }
+
+            if (ageableBase.getWarnTarget() != null) {
+                if (!isDirectPathBetweenPoints(ageableBase.getPositionVector(), ageableBase.getWarnTarget().getPositionVector())) {
+                    ageableBase.setWarnTarget(null);
+                    ageableBase.setWarnCooldown(0);
+                    return false;
+                }
+            }
+
             List<T> list = this.entity.world.<T>getEntitiesWithinAABB(this.classToWarn, this.entity.getEntityBoundingBox().grow((double)this.warnDistance, 3.0D, (double)this.warnDistance), Predicates.and(EntitySelectors.CAN_AI_TARGET, this.canBeSeenSelector, this.warnTargetSelector));
 
             if (list.isEmpty())
@@ -65,6 +81,11 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
             }
             else
             {
+                if (ageableBase.getWarnTarget() != null) {
+                    ageableBase.faceEntity(ageableBase.getWarnTarget(), 10, 10);
+                    ageableBase.getLookHelper().setLookPositionWithEntity(ageableBase.getWarnTarget(), 10.0F, (float)ageableBase.getVerticalFaceSpeed());
+                    return false;
+                }
                 this.closestLivingEntity = list.get(0);
                 if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && this.closestLivingEntity  instanceof EntityPlayer) {
                     return false;
@@ -72,8 +93,12 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                 if (this.closestLivingEntity instanceof EntityLivingBase) {
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());
-                    ageableBase.faceEntity(this.closestLivingEntity, 20, 20);
-                    ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
+                    ageableBase.faceEntity(this.closestLivingEntity, 10, 10);
+                    //ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
+
+                    ageableBase.getLookHelper().setLookPositionWithEntity(this.closestLivingEntity, 10.0F, (float)ageableBase.getVerticalFaceSpeed());
+                    //ageableBase.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
+
                     if (ageableBase instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         SoundEvent soundevent = ((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).getRoarSound();
                         if (soundevent != null) {

@@ -31,11 +31,7 @@ public class EntityPrehistoricFloraParatarrasius extends EntityPrehistoricFloraF
 
 	public EntityPrehistoricFloraParatarrasius(World world) {
 		super(world);
-		setSize(0.05F, 0.05F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.15F, 0.15F);
 	}
 
 	@Override

@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderBrindabellaspis;
 import net.lepidodendron.entity.render.entity.RenderClimatius;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -35,10 +34,6 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 	public EntityPrehistoricFloraClimatius(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -61,7 +56,7 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 		return true;
 	}
 
-	public static String getPeriod() {return "Silurian - Devonian";}
+	public static String getPeriod() {return "Devonian";}
 
 	//public static String getSize() {return "S";}
 
@@ -177,52 +172,52 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return -0.01;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.2;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double lowerfrontverticallinedepth() {return 0.85;}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.85;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_CLIMATIUS;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderClimatius.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelClimatius;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderClimatius.getScaler();
 	}
 

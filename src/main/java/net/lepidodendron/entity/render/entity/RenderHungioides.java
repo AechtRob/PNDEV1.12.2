@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderHungioides extends RenderLiving<EntityPrehistoricFloraHungioides> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hungioides.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hungioides.png");
 
     public RenderHungioides(RenderManager mgr) {
         super(mgr, new ModelHungioides(), 0.2f);

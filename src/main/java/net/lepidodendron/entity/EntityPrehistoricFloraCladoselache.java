@@ -43,13 +43,7 @@ public class EntityPrehistoricFloraCladoselache extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraCladoselache(World world) {
 		super(world);
-		//setSize(0.85F, 0.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.62F, 0.68F);
 		minWidth = 0.1F;
 		maxWidth = 0.62F;
 		maxHeight = 0.68F;

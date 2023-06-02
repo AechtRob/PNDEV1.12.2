@@ -210,20 +210,47 @@ public class ModelBeishanichthys extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone2.render(f5 * 0.4F);
+        this.bone2.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.bone2.rotateAngleY = (float) Math.toRadians(90);
-        this.bone2.offsetX = -2F;
-        this.bone2.offsetY = -9F;
-        this.bone2.render(0.48F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.bone2.offsetX = -0.05F;
+        this.bone2.offsetY = -0.2F;
+        this.bone2.offsetZ = -0.02F;
+        this.bone2.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(pectoralfinR, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.2618F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.2618F);
+        this.bone2.offsetX = -0.005F;
+        this.bone2.offsetY = -0.45F;
+        this.bone2.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -235,7 +262,7 @@ public class ModelBeishanichthys extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone2.offsetY = 0.8F;
+        //this.bone2.offsetY = 0.8F;
         //this.Gills.rotateAngleY = f3 / (180F / (float) Math.PI);
         //this.Gills.rotateAngleX = f4 / (180F / (float) Math.PI);
 
@@ -256,7 +283,7 @@ public class ModelBeishanichthys extends AdvancedModelBase {
             this.swing(pectoralfinR, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.bone2.rotateAngleZ = (float) Math.toRadians(90);
-                this.bone2.offsetY = 0.8F;
+                this.bone2.offsetY = 0F;
                 this.bob(bone2, -speed, 5F, false, f2, 1);
             }
         }

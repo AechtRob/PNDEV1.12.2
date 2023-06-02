@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:phlegethontia_icon"
+    "layer0": "lepidodendron:items/entities/phlegethontia_raw"
   }
 }

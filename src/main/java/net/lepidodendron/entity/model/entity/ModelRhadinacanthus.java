@@ -272,18 +272,29 @@ public class ModelRhadinacanthus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Rhadinacanthus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Rhadinacanthus.rotateAngleY = (float) Math.toRadians(90);
         this.Rhadinacanthus.offsetX = -0.09F;
-        this.Rhadinacanthus.offsetY = -0.09F;
+        this.Rhadinacanthus.offsetY = -0.21F;
         this.Rhadinacanthus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Jaw, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(PectoralR, 0.0F, 0.0F, -0.4363F);
+        this.setRotateAngle(Body2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Anal2L, 0.0F, 0.0F, 0.7418F);
+        this.setRotateAngle(Anal2R, 0.0F, 0.0F, -0.7418F);
+        this.setRotateAngle(Body3, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3054F, 0.0F);
+        this.Rhadinacanthus.rotateAngleY = (float) Math.toRadians(90);
+        this.Rhadinacanthus.offsetX = -0.02F;
+        this.Rhadinacanthus.offsetY = -0.4F;
+        this.Rhadinacanthus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

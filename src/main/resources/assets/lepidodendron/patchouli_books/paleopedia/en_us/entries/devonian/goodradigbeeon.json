@@ -1,0 +1,31 @@
+{
+	"name": "Goodradigbeeon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/goodradigbeeon_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_goodradigbeeon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_goodradigbeeon",
+			"title": "Goodradigbeeon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Arthrodira$(br)>Buchanosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/goodradigbeeon.png"],
+			"title": "G. australianum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_goodradigbeeon",
+			"type": "text",
+			"text": "Goodradigbeeon is a buchanosteid arthrodiran placoderm described from the Devonian strata in Australia. Like other members in family, it had a flat skull, and it was probably a benthic fish, waiting for prey to swim by."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_goodradigbeeon",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

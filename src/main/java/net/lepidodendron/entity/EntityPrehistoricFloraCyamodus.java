@@ -9,7 +9,10 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderCyamodus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -42,10 +45,6 @@ public class EntityPrehistoricFloraCyamodus extends EntityPrehistoricFloraSwimmi
 	public EntityPrehistoricFloraCyamodus(World world) {
 		super(world);
 		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.2F;
@@ -304,6 +303,58 @@ public class EntityPrehistoricFloraCyamodus extends EntityPrehistoricFloraSwimmi
 			return LepidodendronMod.CYAMODUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.CYAMODUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return -0.02;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.18F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.2F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.15;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.02;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.05F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.35F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCyamodus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCyamodus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCyamodus.getScaler();
 	}
 
 }

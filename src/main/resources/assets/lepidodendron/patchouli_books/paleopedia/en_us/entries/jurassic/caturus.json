@@ -1,0 +1,41 @@
+{
+	"name": "Strobilodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/caturus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_caturus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caturus",
+			"title": "Strobilodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Amiiformes$(br)>Caturidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/caturus.png"],
+			"title": "S. giganteus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "Strobilodus giganteus is species of actinopterygian from Jurassic, from Solnhofen Limestone in Germany. Although genus Strobilodus is given in 1851, it was mostly treated as species of widespread fish genus Caturus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "However, in 2023 this species was excluded from caturidae and got back the genus name Strobilodus. It was large predatory fish, reaching around a meter, and had bunch of sharp teeth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "Although large species described from Owadow-Brzezinki Quarry in Poland was also identified as Caturus giganteus, it was fragmentary so hard to identify."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

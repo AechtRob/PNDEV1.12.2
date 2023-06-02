@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLyrarapax extends RenderLiving<EntityPrehistoricFloraLyrarapax> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lyrarapax.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lyrarapax.png");
 
     public RenderLyrarapax(RenderManager mgr) {
         super(mgr, new ModelLyrarapax(), 0.0f);

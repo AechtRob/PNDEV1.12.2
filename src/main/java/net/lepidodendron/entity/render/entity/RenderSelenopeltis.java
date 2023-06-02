@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSelenopeltis extends RenderLiving<EntityPrehistoricFloraSelenopeltis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Selenopeltis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Selenopeltis.png");
 
     public RenderSelenopeltis(RenderManager mgr) {
         super(mgr, new ModelSelenopeltis(), 0.08f);

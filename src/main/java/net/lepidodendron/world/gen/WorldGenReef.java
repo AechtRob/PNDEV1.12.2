@@ -50,6 +50,7 @@ public class WorldGenReef extends WorldGenerator
                             || (worldIn.getBlockState(pos.down()).getMaterial() == Material.CORAL)
                             || (worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND))
                             && BlockCoral.block.canPlaceBlockAt(worldIn, pos)
+                            && worldIn.getBlockState(pos).getMaterial() == Material.WATER
                             && ((Math.pow(Math.abs(xct),2)) + (Math.pow(Math.abs(zct),2)) <= (Math.pow(Math.abs(layerRadius),2)))) {
                             if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
                                 worldIn.setBlockState(pos, state.getBlock().getDefaultState());

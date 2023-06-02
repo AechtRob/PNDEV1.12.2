@@ -7,8 +7,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderSillosuchus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -40,11 +43,7 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraSillosuchus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.525F, 2.4F);
 		minWidth = 0.05F;
 		maxWidth = 1.525F;
 		maxHeight = 2.4F;
@@ -77,7 +76,9 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 		return 20;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {
+		return "Triassic";
+	}
 
 	//public static String getHabitat() {return "Terrestrial Pseudosuchian";}
 
@@ -136,8 +137,7 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public float getEyeHeight()
-	{
+	public float getEyeHeight() {
 		return Math.max(super.getEyeHeight(), this.height * 0.95F);
 	}
 
@@ -148,10 +148,11 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 
@@ -163,13 +164,12 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
+	public boolean isBreedingItem(ItemStack stack) {
 		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
+				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
 		);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -186,24 +186,25 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:sillosuchus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:sillosuchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:sillosuchus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:sillosuchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:sillosuchus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:sillosuchus_death"));
 	}
 
 	@Override
@@ -215,7 +216,7 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
+
 
 	@Override
 	public void onLivingUpdate() {
@@ -225,7 +226,7 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -286,4 +287,70 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 		return LepidodendronMod.SILLOSUCHUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -9F;
+	}
+
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.9;
+	}
+
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.6;
+	}
+
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.9F;
+	}
+
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -1.5F;
+	}
+
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderSillosuchus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelSillosuchus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderSillosuchus.getScaler();
+	}
 }

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pandan_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:pandan_shoot_inventory"
+    }
+  }
+}

@@ -11,8 +11,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderShonisaurus extends RenderLiving<EntityPrehistoricFloraShonisaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shonisaurus.png");
-    
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shonisaurus.png");
+
     public RenderShonisaurus(RenderManager mgr) {
         super(mgr, new ModelShonisaurus(), 1.5f);
     }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:acrocomia_shoot"
+    },
+    "facing=north": {
+      "model": "lepidodendron:acrocomia_shoot_side_02", "y": -90
+    },
+    "facing=east": {
+      "model": "lepidodendron:acrocomia_shoot_side_02"
+    },
+    "facing=south": {
+      "model": "lepidodendron:acrocomia_shoot_side_02", "y": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:acrocomia_shoot_side_02", "y": 180
+    }
+  }
+}

@@ -11,8 +11,11 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderSpathicephalus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -50,13 +53,7 @@ public class EntityPrehistoricFloraSpathicephalus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraSpathicephalus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.4F, 0.45F);
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.45F;
@@ -457,6 +454,58 @@ public class EntityPrehistoricFloraSpathicephalus extends EntityPrehistoricFlora
 		}
 		this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
 		this.limbSwing += this.limbSwingAmount;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderSpathicephalus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelSpathicephalus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderSpathicephalus.getScaler();
 	}
 
 }

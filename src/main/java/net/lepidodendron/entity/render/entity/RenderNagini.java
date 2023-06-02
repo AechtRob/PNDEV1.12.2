@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderNagini extends RenderLiving<EntityPrehistoricFloraNagini> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nagini.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nagini.png");
 
     public RenderNagini(RenderManager mgr) {
         super(mgr, new ModelNagini(), 0.0f);

@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import net.lepidodendron.LepidodendronFogSubscribers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
@@ -79,13 +80,18 @@ public class BlockMobSpawn extends Block {
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public BlockRenderLayer getRenderLayer()
-{
-	return BlockRenderLayer.CUTOUT;
-}
+	public BlockRenderLayer getRenderLayer() {
+		if (LepidodendronFogSubscribers.hasShaders()) {
+			return BlockRenderLayer.CUTOUT;
+		}
+		return BlockRenderLayer.TRANSLUCENT;
+	}
 
 	@Override
 	public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+		if (LepidodendronFogSubscribers.hasShaders()) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
+		}
 		return layer == BlockRenderLayer.TRANSLUCENT;
 	}
 
@@ -267,7 +273,7 @@ public class BlockMobSpawn extends Block {
 		return true;
 	}
 
-	//@Override
+	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 	{
 		if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))

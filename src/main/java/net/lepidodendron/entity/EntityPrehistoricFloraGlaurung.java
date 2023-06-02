@@ -30,14 +30,11 @@ public class EntityPrehistoricFloraGlaurung extends EntityPrehistoricFloraWeigel
 
 	public EntityPrehistoricFloraGlaurung(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
+		setSize(0.3F, 0.3F);
 		minWidth = 0.10F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

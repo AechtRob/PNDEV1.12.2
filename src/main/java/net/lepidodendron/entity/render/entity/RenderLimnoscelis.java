@@ -9,7 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLimnoscelis extends RenderLiving<EntityPrehistoricFloraLimnoscelis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limnoscelis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limnoscelis.png");
+
+    public static float getScaler() {return 0.37f;}
 
     public RenderLimnoscelis(RenderManager mgr) {
         super(mgr, new ModelLimnoscelis(), 0.5f);
@@ -27,7 +29,7 @@ public class RenderLimnoscelis extends RenderLiving<EntityPrehistoricFloraLimnos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLimnoscelis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

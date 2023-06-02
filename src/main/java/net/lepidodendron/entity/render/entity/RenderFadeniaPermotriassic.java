@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderFadeniaPermotriassic extends RenderLiving<EntityPrehistoricFloraFadeniaPermotriassic> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fadenia_permotriassic.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fadenia_permotriassic.png");
 
     public RenderFadeniaPermotriassic(RenderManager mgr) {
         super(mgr, new ModelFadenia(), 0.5f);

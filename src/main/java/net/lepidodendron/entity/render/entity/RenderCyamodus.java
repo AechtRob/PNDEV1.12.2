@@ -9,7 +9,11 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCyamodus extends RenderLiving<EntityPrehistoricFloraCyamodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cyamodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cyamodus.png");
+
+    public static float getScaler() {
+        return 0.42f;
+    }
 
     public RenderCyamodus(RenderManager mgr) {
         super(mgr, new ModelCyamodus(), 0.0f);
@@ -26,9 +30,9 @@ public class RenderCyamodus extends RenderLiving<EntityPrehistoricFloraCyamodus>
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCyamodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        //this.shadowSize = entity.width * scale * 0.35F;
     }
 
 }

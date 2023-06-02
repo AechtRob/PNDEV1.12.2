@@ -8,6 +8,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderCaturus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -36,10 +39,6 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 	public EntityPrehistoricFloraCaturus(World world) {
 		super(world);
 		setSize(0.5F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
@@ -47,13 +46,32 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 5;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
+	public static String getPeriod() {
+		return "Jurassic";
+	}
 
-	public static String getSize() {return "M";}
+	public static String getSize() {
+		return "M";
+	}
 	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
@@ -64,7 +82,7 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 	public boolean dropsEggs() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -103,15 +121,14 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
+	public boolean isBreedingItem(ItemStack stack) {
 		return (
 				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+				//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 
@@ -200,5 +217,72 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 		return LepidodendronMod.CATURUS_LOOT;
 	}
 
-}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.033;
+	}
 
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.7;
+	}
+
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.35;
+	}
+
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.025F;
+	}
+
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.10F;
+	}
+
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.10F;
+	}
+
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.285;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.00F;
+	}
+
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.105;
+	}
+
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.01F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCaturus.TEXTURE;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCaturus;
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderCaturus.getScaler();
+	}
+
+}

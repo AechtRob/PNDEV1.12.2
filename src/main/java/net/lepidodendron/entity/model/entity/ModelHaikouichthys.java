@@ -110,18 +110,18 @@ public class ModelHaikouichthys extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone2.render(f5 * 0.0575F);
+        this.bone2.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.bone2.rotateAngleY = (float) Math.toRadians(90);
-        this.bone2.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        public void renderStaticDisplayCase(float f) {
+            this.setRotateAngle(bone2, 0.0F, 0.0F, 1.5F);
+            this.setRotateAngle(bone4, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(bone5, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(bone6, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(bone7, 0.0F, 0.0F, 0.0F);
+            this.bone2.offsetX = 0.0F;
+            this.bone2.offsetY = -0.1F;
+            this.bone2.render(0.01F);
+            resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -133,7 +133,7 @@ public class ModelHaikouichthys extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone2.offsetY = 1.25F;
+        //this.bone2.offsetY = 1.25F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.bone3, this.bone4, this.bone5, this.bone6, this.bone7};
@@ -149,7 +149,7 @@ public class ModelHaikouichthys extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.bone2.rotateAngleZ = (float) Math.toRadians(90);
-                this.bone2.offsetY = 1.30F;
+                this.bone2.offsetY = 1.30F - 1.25F;
                 this.bob(bone2, -speed, 2F, false, f2, 1);
             }
         }

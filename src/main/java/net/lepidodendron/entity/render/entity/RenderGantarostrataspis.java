@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGantarostrataspis extends RenderLiving<EntityPrehistoricFloraGantarostrataspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gantarostrataspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gantarostrataspis.png");
 
     public RenderGantarostrataspis(RenderManager mgr) {
         super(mgr, new ModelGantarostrataspis(), 0.0f);

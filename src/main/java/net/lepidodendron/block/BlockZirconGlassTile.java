@@ -4,12 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.BlockGlass;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -27,6 +25,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -52,6 +51,8 @@ public class BlockZirconGlassTile extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:zircon_glass_tile", "inventory"));
 	}
 
+	public static final PropertyBool WATER = PropertyBool.create("water");
+
 	public static class BlockCustom extends BlockGlass {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
@@ -66,6 +67,15 @@ public class BlockZirconGlassTile extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.TRANSLUCENT;
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			Block block1 = worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite())).getBlock();
+			boolean water = (worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite())).getMaterial() == Material.WATER && !(block1 instanceof BlockLiquid) && !(block1 instanceof BlockFluidBase));
+
+			return state.withProperty(WATER, water);
 		}
 
 		@Override
@@ -96,7 +106,7 @@ public class BlockZirconGlassTile extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, WATER});
 		}
 
 		@Override

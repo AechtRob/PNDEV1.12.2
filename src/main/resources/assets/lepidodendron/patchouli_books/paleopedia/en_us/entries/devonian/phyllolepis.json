@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phyllolepis",
 			"title": "Phyllolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Floodplain, Forest$(br2)>Placodermi$(br)>Arthrodira$(br)>Phyllolepididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Floodplain, Forest$(br2)>Arthrodira$(br)>Phyllolepididae"
 		},
 		{
 			"type": "image",

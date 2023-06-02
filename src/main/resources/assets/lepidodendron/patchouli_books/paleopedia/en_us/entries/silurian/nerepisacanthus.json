@@ -1,0 +1,31 @@
+{
+	"name": "Nerepisacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/nerepisacanthus_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_nerepisacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nerepisacanthus",
+			"title": "Nerepisacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Freshwaters$(br2)>Acanthodii$(br)>Ischnacanthiformes$(br)>Acritolepidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/nerepisacanthus.png"],
+			"title": "N. denisoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nerepisacanthus",
+			"type": "text",
+			"text": "Nerepisacanthus is an acanthodian from the Silurian period. Most Silurian acanthodian fossils are known from isolated spines, scales or jaws, however, Nerepisacanthus is known from a well-preserved complete specimen. Known from two formations from Canada, it probably lived in freshwater to brackish water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nerepisacanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

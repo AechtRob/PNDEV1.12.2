@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraHarpes extends EntityPrehistoricFloraTrilobit
 	public EntityPrehistoricFloraHarpes(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -43,7 +39,7 @@ public class EntityPrehistoricFloraHarpes extends EntityPrehistoricFloraTrilobit
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician - Devonian";}
+	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

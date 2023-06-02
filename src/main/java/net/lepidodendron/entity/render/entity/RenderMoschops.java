@@ -9,7 +9,11 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMoschops extends RenderLiving<EntityPrehistoricFloraMoschops> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/moschops.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/moschops.png");
+
+    public static float getScaler() {
+        return 0.8f;
+    }
 
     public RenderMoschops(RenderManager mgr) {
         super(mgr, new ModelMoschops(), 0.5f);
@@ -27,7 +31,7 @@ public class RenderMoschops extends RenderLiving<EntityPrehistoricFloraMoschops>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMoschops entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.50F;
     }

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sabal_shoot"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:sabal_shoot_inventory"
+    }
+  }
+}

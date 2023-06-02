@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPiatnitzkysaurus extends RenderLiving<EntityPrehistoricFloraPiatnitzkysaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/piatnitzkysaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/piatnitzkysaurus.png");
 
     public RenderPiatnitzkysaurus(RenderManager mgr) {
         super(mgr, new ModelPiatnitzkysaurus(), 0.3f);

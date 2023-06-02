@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -34,6 +35,16 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     public static String getHabitat() {
@@ -128,6 +139,7 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
     public boolean isReallyInWater() {
         return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
     }
+
     public boolean isCollidingRim() {
         if (this.isReallyInWater()) {
             //System.err.println("collided");
@@ -211,6 +223,12 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
                 if (this.collidedHorizontally && this.isCollidingRim())
                 {
                     this.motionY = 0.05D;

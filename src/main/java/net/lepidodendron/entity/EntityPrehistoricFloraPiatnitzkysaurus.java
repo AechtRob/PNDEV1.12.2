@@ -36,11 +36,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraPiatnitzkysaurus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.975F, 1.85F);
 		minWidth = 0.05F;
 		maxWidth = 0.975F;
 		maxHeight = 1.85F;
@@ -127,10 +123,11 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(8, new EntityLookIdleAI(this));
+		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 	}
 
@@ -197,7 +194,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();

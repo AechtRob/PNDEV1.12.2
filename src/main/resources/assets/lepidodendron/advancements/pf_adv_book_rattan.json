@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:rattan_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_rattan.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_rattan.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_rattan"
+		}
+	}
+}

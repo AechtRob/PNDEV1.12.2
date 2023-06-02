@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:peridotite" },
+      { "model": "lepidodendron:peridotite_mirrored" },
+      { "model": "lepidodendron:peridotite", "y": 180 },
+      { "model": "lepidodendron:peridotite_mirrored", "y": 180 }
+    ]
+  }
+}

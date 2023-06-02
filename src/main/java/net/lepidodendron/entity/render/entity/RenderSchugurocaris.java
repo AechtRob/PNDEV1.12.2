@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSchugurocaris extends RenderLiving<EntityPrehistoricFloraSchugurocaris> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schugurocaris.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schugurocaris.png");
+
     public static float getScaler() {
         return 0.7F * 0.4F;
     }

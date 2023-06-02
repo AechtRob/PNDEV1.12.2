@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
@@ -65,13 +66,17 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.selectNavigator();
         this.getNavigator().getNodeProcessor().setCanSwim(false);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public boolean hasPNVariants() {
+        return false;
     }
 
     public static String getHabitat() {
@@ -228,7 +233,11 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
+        return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
@@ -372,9 +381,11 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         //System.err.println("updateEntity");
         super.onEntityUpdate();
         if (!this.world.isRemote) {
-            if (this.onGround && this.getIsFlying() && this.getWanderCooldown() <= 0) {
+            if (
+                    //this.onGround &&
+                    this.getIsFlying() && this.getWanderCooldown() <= 0) {
                 this.setFlying(false);
-                this.setFlyCooldown(rand.nextInt(500));
+                this.setFlyCooldown(this.defaultFlyCooldown() + rand.nextInt(500));
                 this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
             } else {
                 if (this.getFlyCooldown() >= 0 && !this.getIsFlying()) {
@@ -413,6 +424,13 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
                 }
                 String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
                 itemstack.getTagCompound().setString("creature", stringEgg);
+                if (this.hasPNVariants()) {
+                    if (this instanceof EntityPrehistoricFloraTitanoptera) {
+                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraTitanoptera) this).getPNType().getName());
+                    }
+                    //Add more variants:
+
+                }
                 EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
                 entityToSpawn.setPickupDelay(10);
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
@@ -455,6 +473,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
                         te.getTileData().setString("egg", stringEgg);
                     }
                     IBlockState state = world.getBlockState(this.getPosition());
+                    applyVariantToBlockEgg(world, this.getPosition());
                     this.setLaying(false);
                     world.notifyBlockUpdate(this.getPosition(), state, state, 3);
                 } else if (this.testLay(world, this.getPosition().down())) {
@@ -464,11 +483,28 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
                         te.getTileData().setString("egg", stringEgg);
                     }
                     IBlockState state = world.getBlockState(this.getPosition().down());
+                    applyVariantToBlockEgg(world, this.getPosition().down());
                     this.setLaying(false);
                     world.notifyBlockUpdate(this.getPosition().down(), state, state, 3);
                 }
                 this.setTicks(0);
             }
+        }
+    }
+
+
+
+    public void applyVariantToBlockEgg(World world, BlockPos pos) {
+        if (this.hasPNVariants()) {
+            if (this instanceof EntityPrehistoricFloraTitanoptera) {
+                EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) this;
+                TileEntity tileentity = world.getTileEntity(pos);
+                if (tileentity != null) {
+                    tileentity.getTileData().setString("PNType", titanoptera.getPNType().getName());
+                }
+            }
+
+                //More variants here:
         }
     }
 
@@ -513,8 +549,8 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
         if (!this.world.isRemote) {
             if (this.isInWater() && !this.getIsFlying()) {
-                this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(500));
-                this.setFlyCooldown(this.defaultFlyCooldown() + rand.nextInt(500));
+                this.setWanderCooldown(this.defaultWanderCooldown() + rand.nextInt(100));
+                this.setFlyCooldown(this.defaultFlyCooldown() + rand.nextInt(100));
                 setFlying(true);
             }
 
@@ -556,8 +592,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     }
 
-
-
     public ResourceLocation FlightSound() {
         return new ResourceLocation("lepidodendron:bug_flight");
     }
@@ -598,7 +632,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     {
         return this.laying;
     }
-
 
     @Override
     public SoundEvent getDeathSound() {

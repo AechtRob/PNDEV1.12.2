@@ -33,12 +33,6 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 	public EntityPrehistoricFloraAmmonite_Asteroceras(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.5F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
@@ -46,11 +40,26 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 	}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 6;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	public static String getSize() {return "S";}
 

@@ -1,28 +1,88 @@
 {
 	"variants": {
 		"facing=north": [
-			{"model": "lepidodendron:grypania", "y": 180},
-			{"model": "lepidodendron:grypania_var", "y": 180}
+			{"model": "lepidodendron:grypania_01", "x": -90, "y": 180},
+			{"model": "lepidodendron:grypania_02", "x": -90, "y": 180},
+			{"model": "lepidodendron:grypania_03", "x": -90, "y": 180},
+			{"model": "lepidodendron:grypania_04", "x": -90, "y": 180},
+			{"model": "lepidodendron:grypania_05", "x": -90, "y": 180},
+			{"model": "lepidodendron:grypania_06", "x": -90, "y": 180}
 		],
 		"facing=south": [
-			{"model": "lepidodendron:grypania"},
-			{"model": "lepidodendron:grypania_var"}
+			{"model": "lepidodendron:grypania_01", "x": -90 },
+			{"model": "lepidodendron:grypania_02", "x": -90 },
+			{"model": "lepidodendron:grypania_03", "x": -90 },
+			{"model": "lepidodendron:grypania_04", "x": -90 },
+			{"model": "lepidodendron:grypania_05", "x": -90 },
+			{"model": "lepidodendron:grypania_06", "x": -90 }
 		],
 		"facing=west": [
-			{"model": "lepidodendron:grypania", "y": -270},
-			{"model": "lepidodendron:grypania_var", "y": -270}
+			{"model": "lepidodendron:grypania_01", "x": -90, "y": -270},
+			{"model": "lepidodendron:grypania_02", "x": -90, "y": -270},
+			{"model": "lepidodendron:grypania_03", "x": -90, "y": -270},
+			{"model": "lepidodendron:grypania_04", "x": -90, "y": -270},
+			{"model": "lepidodendron:grypania_05", "x": -90, "y": -270},
+			{"model": "lepidodendron:grypania_06", "x": -90, "y": -270}
 		],
 		"facing=east": [
-			{"model": "lepidodendron:grypania", "y": -90},
-			{"model": "lepidodendron:grypania_var", "y": -90}
+			{"model": "lepidodendron:grypania_01", "x": -90, "y": -90},
+			{"model": "lepidodendron:grypania_02", "x": -90, "y": -90},
+			{"model": "lepidodendron:grypania_03", "x": -90, "y": -90},
+			{"model": "lepidodendron:grypania_04", "x": -90, "y": -90},
+			{"model": "lepidodendron:grypania_05", "x": -90, "y": -90},
+			{"model": "lepidodendron:grypania_06", "x": -90, "y": -90}
 		],
 		"facing=up": [
-			{"model": "lepidodendron:grypania"},
-			{"model": "lepidodendron:grypania_var"}
+			{"model": "lepidodendron:grypania_01" },
+			{"model": "lepidodendron:grypania_02" },
+			{"model": "lepidodendron:grypania_03" },
+			{"model": "lepidodendron:grypania_04" },
+			{"model": "lepidodendron:grypania_05" },
+			{"model": "lepidodendron:grypania_06" },
+			{"model": "lepidodendron:grypania_01", "y": 90 },
+			{"model": "lepidodendron:grypania_02", "y": 90  },
+			{"model": "lepidodendron:grypania_03", "y": 90  },
+			{"model": "lepidodendron:grypania_04", "y": 90  },
+			{"model": "lepidodendron:grypania_05", "y": 90  },
+			{"model": "lepidodendron:grypania_06", "y": 90  },
+			{"model": "lepidodendron:grypania_01", "y": 180 },
+			{"model": "lepidodendron:grypania_02", "y": 180  },
+			{"model": "lepidodendron:grypania_03", "y": 180  },
+			{"model": "lepidodendron:grypania_04", "y": 180  },
+			{"model": "lepidodendron:grypania_05", "y": 180  },
+			{"model": "lepidodendron:grypania_06", "y": 180  },
+			{"model": "lepidodendron:grypania_01", "y": 270 },
+			{"model": "lepidodendron:grypania_02", "y": 270  },
+			{"model": "lepidodendron:grypania_03", "y": 270  },
+			{"model": "lepidodendron:grypania_04", "y": 270  },
+			{"model": "lepidodendron:grypania_05", "y": 270  },
+			{"model": "lepidodendron:grypania_06", "y": 270  }
 		],
 		"facing=down": [
-			{"model": "lepidodendron:grypania", "x": 180},
-			{"model": "lepidodendron:grypania_var", "x": 180}
+			{"model": "lepidodendron:grypania_01", "x": 180 },
+			{"model": "lepidodendron:grypania_02", "x": 180 },
+			{"model": "lepidodendron:grypania_03", "x": 180 },
+			{"model": "lepidodendron:grypania_04", "x": 180 },
+			{"model": "lepidodendron:grypania_05", "x": 180 },
+			{"model": "lepidodendron:grypania_06", "x": 180 },
+			{"model": "lepidodendron:grypania_01", "x": 180, "y": 90 },
+			{"model": "lepidodendron:grypania_02", "x": 180, "y": 90  },
+			{"model": "lepidodendron:grypania_03", "x": 180, "y": 90  },
+			{"model": "lepidodendron:grypania_04", "x": 180, "y": 90  },
+			{"model": "lepidodendron:grypania_05", "x": 180, "y": 90  },
+			{"model": "lepidodendron:grypania_06", "x": 180, "y": 90  },
+			{"model": "lepidodendron:grypania_01", "x": 180, "y": 180 },
+			{"model": "lepidodendron:grypania_02", "x": 180, "y": 180  },
+			{"model": "lepidodendron:grypania_03", "x": 180, "y": 180  },
+			{"model": "lepidodendron:grypania_04", "x": 180, "y": 180  },
+			{"model": "lepidodendron:grypania_05", "x": 180, "y": 180  },
+			{"model": "lepidodendron:grypania_06", "x": 180, "y": 180  },
+			{"model": "lepidodendron:grypania_01", "x": 180, "y": 270 },
+			{"model": "lepidodendron:grypania_02", "x": 180, "y": 270  },
+			{"model": "lepidodendron:grypania_03", "x": 180, "y": 270  },
+			{"model": "lepidodendron:grypania_04", "x": 180, "y": 270  },
+			{"model": "lepidodendron:grypania_05", "x": 180, "y": 270  },
+			{"model": "lepidodendron:grypania_06", "x": 180, "y": 270  }
 		]
 	}
 }

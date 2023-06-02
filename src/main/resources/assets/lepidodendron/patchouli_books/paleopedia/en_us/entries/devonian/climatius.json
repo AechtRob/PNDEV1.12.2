@@ -1,0 +1,31 @@
+{
+	"name": "Climatius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/climatius_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_climatius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_climatius",
+			"title": "Climatius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean, Brackish, Meadow$(br2)>Acanthodii$(br)>Climatiiformes$(br)>Climatiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/climatius.png"],
+			"title": "C. reticulatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_climatius",
+			"type": "text",
+			"text": "Climatius is climatiid acanthodian from the Devonian. It had pairs of spines on its belly. While some are accompanied by fins, others are just spines. Climatiids including Climatius are one of the earliest acanthodians. Due to most fossils being isolated spines, it was thought to have been from the Silurian. However, currently, its only valid species is from the Devonian"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_climatius",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

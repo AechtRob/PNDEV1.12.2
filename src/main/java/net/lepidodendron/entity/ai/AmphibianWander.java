@@ -19,8 +19,8 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
     protected double waterPreference;
     protected int executionChance;
     protected boolean mustUpdate;
+    protected int maxDepth;
     protected EntityPrehistoricFloraSwimmingAmphibianBase PrehistoricFloraAmphibianBase;
-
 
     public AmphibianWander(EntityPrehistoricFloraSwimmingAmphibianBase PrehistoricFloraAmphibianBase, Animation animation, double waterPreference, int executionchance)
     {
@@ -30,6 +30,18 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         this.animation = animation;
         this.waterPreference = waterPreference;
         this.executionChance = executionchance;
+        this.maxDepth = 0;
+    }
+
+    public AmphibianWander(EntityPrehistoricFloraSwimmingAmphibianBase PrehistoricFloraAmphibianBase, Animation animation, double waterPreference, int executionchance, int maxDepth)
+    {
+        super(PrehistoricFloraAmphibianBase);
+        setMutexBits(1);
+        this.PrehistoricFloraAmphibianBase = PrehistoricFloraAmphibianBase;
+        this.animation = animation;
+        this.waterPreference = waterPreference;
+        this.executionChance = executionchance;
+        this.maxDepth = maxDepth;
     }
 
     @Override
@@ -154,6 +166,10 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                         }
                     }
 
+                    if (this.maxDepth > 0 && this.PrehistoricFloraAmphibianBase.world.getBlockState(randPos.up(maxDepth)).getMaterial() == Material.WATER) {
+                        break; //This pos is not suitable
+                    }
+
                     //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
                     if (this.PrehistoricFloraAmphibianBase.world.getBlockState(randPos).getMaterial() == Material.WATER && this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5))) {
                         if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
@@ -166,6 +182,9 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
             else {
                 for (int i = 0; i < 64; i++) {
                     BlockPos randPos = this.PrehistoricFloraAmphibianBase.getPosition().add(rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2));
+                    if (this.maxDepth > 0 && this.PrehistoricFloraAmphibianBase.world.getBlockState(randPos.up(maxDepth)).getMaterial() == Material.WATER) {
+                        break; //This pos is not suitable
+                    }
                     boolean visibility = true;
                     if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
                         visibility = this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5));
@@ -192,6 +211,9 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
             for (int i = 0; i < 64; i++) {
                 BlockPos randPos = this.PrehistoricFloraAmphibianBase.getPosition().add(rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2));
+                if (this.maxDepth > 0 && this.PrehistoricFloraAmphibianBase.world.getBlockState(randPos.up(maxDepth)).getMaterial() == Material.WATER) {
+                    break; //This pos is not suitable
+                }
                 boolean visibility = true;
                 if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
                     visibility = this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5));

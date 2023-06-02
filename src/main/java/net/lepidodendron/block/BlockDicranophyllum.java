@@ -110,6 +110,7 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded"))
 			|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands"))
+			|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains"))
 		)
 			biomeCriteria = true;
 		if (!biomeCriteria)

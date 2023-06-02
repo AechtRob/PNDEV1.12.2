@@ -391,7 +391,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Poposaurus.offsetY = 0.30F;
+        this.Poposaurus.offsetY = 0.1F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraPoposaurus PoposaurusEntity = (EntityPrehistoricFloraPoposaurus) e;
@@ -405,7 +405,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] TailFull = {this.Tail, this.Tail2, this.Tail3, this.Tail4};
         AdvancedModelRenderer[] NeckFull = {this.Neck, this.Neck2, this.Head};
-        PoposaurusEntity.tailBuffer.applyChainSwingBuffer(Tail);
+        PoposaurusEntity.tailBuffer.applyChainSwingBuffer(TailFull);
 
         AdvancedModelRenderer[] LArm = {this.LArm, this.LArm2};
         AdvancedModelRenderer[] RArm = {this.RArm, this.RArm2};

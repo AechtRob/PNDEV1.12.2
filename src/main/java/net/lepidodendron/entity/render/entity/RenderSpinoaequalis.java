@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSpinoaequalis extends RenderLiving<EntityPrehistoricFloraSpinoaequalis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spinoaequalis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spinoaequalis.png");
 
     public RenderSpinoaequalis(RenderManager mgr) {
         super(mgr, new ModelSpinoaequalis(), 0.0f);

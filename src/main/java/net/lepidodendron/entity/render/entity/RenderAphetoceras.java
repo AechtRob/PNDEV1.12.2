@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAphetoceras extends RenderLiving<EntityPrehistoricFloraAphetoceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aphetoceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aphetoceras.png");
+    public static float getScaler() {return 0.2F;}
 
     public RenderAphetoceras(RenderManager mgr) {
         super(mgr, new ModelAphetoceras(), 0.1f);
@@ -27,7 +28,7 @@ public class RenderAphetoceras extends RenderLiving<EntityPrehistoricFloraApheto
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAphetoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale * 0.55, scale * 0.55, scale * 0.55);
         this.shadowSize = entity.width * scale * 0.45F;
     }

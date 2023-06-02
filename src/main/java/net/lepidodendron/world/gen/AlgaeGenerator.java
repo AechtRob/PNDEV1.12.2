@@ -46,6 +46,7 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean anemones = (this.algae == BlockAnemone1.block || this.algae == BlockAnemone2.block || this.algae == BlockAnemone3.block || this.algae == BlockAnemone4.block || this.algae == BlockAnemone5.block || this.algae == BlockAnemone6.block || this.algae == BlockAnemone7.block || this.algae == BlockAnemone8.block || this.algae == BlockAnemone9.block);
 		boolean cystoids = (this.algae == BlockCystoidAristocystites.block || this.algae == BlockCystoidBolboporites.block || this.algae == BlockCystoidEchinosphaerites.block || this.algae == BlockCystoidPseudocrinites.block);
 		boolean ediacaran = (this.algae == BlockTawuia.block);
+		boolean corals = (this.algae == BlockCoralBamboo.block);
 		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
 		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
 		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
@@ -148,6 +149,18 @@ public class AlgaeGenerator extends WorldGenerator
 					) {
 						int yy = 1;
 						while (yy <= 4 && waterDepthCheckMin) {
+							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
+								waterDepthCheckMin = false;
+							}
+							yy += 1;
+						}
+					}
+
+
+					if (this.algae == BlockCoralBamboo.block
+					) {
+						int yy = 1;
+						while (yy <= 18 && waterDepthCheckMin) {
 							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
 								waterDepthCheckMin = false;
 							}

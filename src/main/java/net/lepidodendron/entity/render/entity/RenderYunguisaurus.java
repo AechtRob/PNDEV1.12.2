@@ -9,8 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderYunguisaurus extends RenderLiving<EntityPrehistoricFloraYunguisaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunguisaurus.png");
-    
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunguisaurus.png");
+
     public RenderYunguisaurus(RenderManager mgr) {
         super(mgr, new ModelYunguisaurus(), 1.5f);
     }

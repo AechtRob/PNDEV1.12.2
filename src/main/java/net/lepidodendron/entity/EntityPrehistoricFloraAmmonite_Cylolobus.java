@@ -33,12 +33,6 @@ public class EntityPrehistoricFloraAmmonite_Cylolobus extends EntityPrehistoricF
 	public EntityPrehistoricFloraAmmonite_Cylolobus(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.5F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;

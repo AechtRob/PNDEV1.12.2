@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderBlourugia extends RenderLiving<EntityPrehistoricFloraBlourugia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/blourugia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/blourugia.png");
 
     public RenderBlourugia(RenderManager mgr) {
         super(mgr, new ModelBlourugia(), 0.0f);

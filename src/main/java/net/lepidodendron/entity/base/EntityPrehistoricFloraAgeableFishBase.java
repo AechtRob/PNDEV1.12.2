@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -31,6 +32,16 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     public static String getHabitat() {
@@ -173,6 +184,16 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         return 10F - (i * 9F); //returns a number from 10 to 1
     }
 
+    @Override
+    public boolean attackEntityFrom(DamageSource ds, float i) {
+        if (ds == DamageSource.IN_WALL) {
+            if (this.isReallyInWater() || this.isInWater()) {
+                return false;
+            }
+        }
+        return super.attackEntityFrom(ds, i);
+    }
+
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
         RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
@@ -197,6 +218,12 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
                 if (this.collidedHorizontally && this.isCollidingRim())
                 {
                     this.motionY = 0.05D;

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLysorophus extends RenderLiving<EntityPrehistoricFloraLysorophus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lysorophus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lysorophus.png");
 
     public RenderLysorophus(RenderManager mgr) {
         super(mgr, new ModelLysorophus(), 0.0f);

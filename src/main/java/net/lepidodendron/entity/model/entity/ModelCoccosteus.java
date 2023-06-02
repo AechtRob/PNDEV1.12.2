@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -170,7 +169,7 @@ public class ModelCoccosteus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Body1.render(f5 * 0.135F);
+        this.Body1.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -193,7 +192,7 @@ public class ModelCoccosteus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Body1.offsetY = 1.3F;
+        //this.Body1.offsetY = 1.3F;
         //has a neck joint for looking up and down
         //this.Head1.rotateAngleY = f3 / (180F / (float) Math.PI);
         this.Head1.rotateAngleX = f4 / (180F / (float) Math.PI);
@@ -220,7 +219,8 @@ public class ModelCoccosteus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Body1.rotateAngleZ = (float) Math.toRadians(90);
-                this.Body1.offsetY = 1.45F;
+                //this.Body1.offsetY = 1.45F;
+                this.Body1.offsetY = 0.15F;
                 this.bob(Body1, -speed, 5F, false, f2, 1);
             }
         }

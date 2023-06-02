@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLituites extends RenderLiving<EntityPrehistoricFloraLituites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lituites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lituites.png");
+    public static float getScaler() {return 0.21F;}
 
     public RenderLituites(RenderManager mgr) {
         super(mgr, new ModelLituites(), 0.1f);
@@ -27,7 +28,7 @@ public class RenderLituites extends RenderLiving<EntityPrehistoricFloraLituites>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLituites entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

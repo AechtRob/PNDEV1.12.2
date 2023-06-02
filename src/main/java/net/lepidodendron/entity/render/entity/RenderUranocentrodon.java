@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderUranocentrodon extends RenderLiving<EntityPrehistoricFloraUranocentrodon> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uranocentrodon.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uranocentrodon.png");
 
     public RenderUranocentrodon(RenderManager mgr) {
         super(mgr, new ModelUranocentrodon(), 0.65F);

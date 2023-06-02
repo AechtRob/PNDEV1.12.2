@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_bothriolepis",
 			"title": "Bothriolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian.$(br2)$(l)Habitat:$() Ocean, Reef, Floodpain, Brackish, Forest$(br2)>Placodermi$(br)>Antiarchi$(br)>Bothriolepididae"
+			"text": "$(l)Temporal Range:$() Devonian.$(br2)$(l)Habitat:$() Ocean, Reef, Floodpain, Brackish, Forest$(br2)>Antiarchi$(br)>Bothriolepididae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/bothriolepis.png"],
-			"title": "Bothriolepis rex",
+			"title": "B. rex",
 			"text": ""
 		},
 		{

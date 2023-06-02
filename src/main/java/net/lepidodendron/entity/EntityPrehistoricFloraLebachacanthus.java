@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEggsKaibabvenator;
+import net.lepidodendron.block.BlockEggsLebachacanthus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
@@ -14,8 +14,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -40,13 +38,7 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraLebachacanthus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.65F, 0.6F);
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.6F;
@@ -111,14 +103,14 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.5));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.5));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.5));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.5));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.5));
 	}
 
@@ -169,10 +161,10 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public SoundEvent getDeathSound() {
@@ -203,10 +195,10 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockEggsKaibabvenator.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockEggsKaibabvenator.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockEggsKaibabvenator.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockEggsKaibabvenator.block.canPlaceBlockAt(world, this.getPosition().down()))
+				&& (BlockEggsLebachacanthus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockEggsLebachacanthus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockEggsLebachacanthus.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockEggsLebachacanthus.block.canPlaceBlockAt(world, this.getPosition().down()))
 		){
 			//if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
@@ -216,13 +208,13 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
-			IBlockState eggs = BlockEggsKaibabvenator.block.getDefaultState();
-			if (BlockEggsKaibabvenator.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsKaibabvenator.block.canPlaceBlockAt(world, this.getPosition())) {
+			IBlockState eggs = BlockEggsLebachacanthus.block.getDefaultState();
+			if (BlockEggsLebachacanthus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsLebachacanthus.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			}
-			if (BlockEggsKaibabvenator.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsKaibabvenator.block.canPlaceBlockAt(world, this.getPosition().down())) {
+			if (BlockEggsLebachacanthus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsLebachacanthus.block.canPlaceBlockAt(world, this.getPosition().down())) {
 				world.setBlockState(this.getPosition().down(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);

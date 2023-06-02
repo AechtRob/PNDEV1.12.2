@@ -1,0 +1,31 @@
+{
+	"name": "Cometicercus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/cometicercus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_cometicercus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cometicercus",
+			"title": "Cometicercus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cometicercus.png"],
+			"title": "C. talimaaae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cometicercus",
+			"type": "text",
+			"text": "Cometicercus is a genus of Devonian furcacaudiform thelodont, described from Mackenzie Mountains where other genera of furcacaudiform fish are known from. Known from only one specimen that preserved body lacking the head and tail tip, it was a relatively small-sized furcacaudiform. Cometicercus’ tail was much longer than those of other furcacaudids, which is where it gets its name, meaning “Comet Tail”."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cometicercus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

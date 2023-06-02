@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockLiquid;
@@ -44,7 +45,6 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     public EntityPrehistoricFloraLandClimbingBase(World world) {
         super(world);
-        //this.setPathPriority(PathNodeType.WATER, -1.0F);
         this.selectNavigator();
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
@@ -64,14 +64,23 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     }
 
     public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
-        if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
+        if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block
+            ||  this.world.getBlockState(this.getPosition()).getBlock() == BlockCageSmall.block) {
             return false;
         }
         IBlockState state = world.getBlockState(pos);
+        if (state.getMaterial() == Material.WATER
+            || state.getMaterial() == Material.LAVA
+            || state.getMaterial() == Material.AIR
+            || state.getMaterial() == Material.GLASS
+            || state.getMaterial() == Material.ICE
+            || state.getMaterial() == Material.PACKED_ICE
+            || state.getMaterial() == Material.BARRIER) {
+            return false;
+        }
         if (
-            (state.getMaterial() == Material.WOOD || state.getMaterial() == Material.LEAVES)
-            && (state.getBlockFaceShape(world, pos, facing) == BlockFaceShape.SOLID || state.getBlock().isFullCube(state))
-            )
+            state.getBlockFaceShape(world, pos, facing) == BlockFaceShape.SOLID
+            || state.getBlock().isFullCube(state))
         {
             return true;
         }
@@ -464,10 +473,10 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     this.prevRotationYaw = 270.0F;
                     this.rotationYawHead = 270.0F;
                     this.prevRotationYawHead = 270.0F;
+                    this.motionZ = 0.0D;
                     if (!this.collidedHorizontally) {
                         this.motionX = this.getAIMoveSpeed();
                     }
-                    this.motionZ = 0.0D;
                     break;
 
                 case EAST:
@@ -477,10 +486,10 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     this.prevRotationYaw = 90.0F;
                     this.rotationYawHead = 90.0F;
                     this.prevRotationYawHead = 90.0F;
+                    this.motionZ = 0.0D;
                     if (!this.collidedHorizontally) {
                         this.motionX = -this.getAIMoveSpeed();
                     }
-                    this.motionZ = 0.0D;
                     break;
             }
         }

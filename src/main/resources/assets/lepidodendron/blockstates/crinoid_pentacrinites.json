@@ -1,0 +1,212 @@
+{
+  "variants": {
+    "age=0,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=1,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=2,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=3,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=4,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=5,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=6,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=7,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=8,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=9,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=10,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=11,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=12,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=13,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=14,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+    "age=15,base=false,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_stem"},
+      {"model": "lepidodendron:crinoid_pentacrinites_stem_var"}
+    ],
+  "age=0,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=1,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=2,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=3,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=4,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=5,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=6,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=7,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=8,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=9,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=10,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=11,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=12,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=13,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=14,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+    "age=15,base=true,topshoot=true": {
+      "model": "lepidodendron:crinoid_pentacrinites"
+    },
+  "age=0,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=1,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=2,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=3,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=4,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=5,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=6,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=7,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=8,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=9,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=10,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=11,base=false,topshoot=true": [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=12,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=13,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=14,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+    "age=15,base=false,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_pentacrinites"}
+    ],
+"age=0,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=1,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=2,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=3,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=4,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=5,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=6,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=7,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=8,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=9,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=10,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=11,base=true,topshoot=false": [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=12,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=13,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=14,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ],
+    "age=15,base=true,topshoot=false":  [
+      {"model": "lepidodendron:crinoid_pentacrinites_base"}
+    ]
+  }
+}

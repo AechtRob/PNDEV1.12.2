@@ -47,13 +47,7 @@ public class EntityPrehistoricFloraWhatcheeria extends EntityPrehistoricFloraSwi
 
 	public EntityPrehistoricFloraWhatcheeria(World world) {
 		super(world);
-		setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.6F;
-		//maxSize = 1.0F;
+		setSize(0.5F, 0.20F);
 		minWidth = 0.12F;
 		maxWidth = 0.5F;
 		maxHeight = 0.20F;

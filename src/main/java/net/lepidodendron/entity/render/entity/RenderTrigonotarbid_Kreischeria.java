@@ -9,10 +9,14 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTrigonotarbid_Kreischeria extends RenderLiving<EntityPrehistoricFloraTrigonotarbid_Kreischeria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_2.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_kreischeria.png");
 
     public RenderTrigonotarbid_Kreischeria(RenderManager mgr) {
         super(mgr, new ModelTrigonotarbid(), 0.0f);
+    }
+
+    public static float getScaler() {
+        return 0.175F;
     }
 
     @Override
@@ -29,19 +33,10 @@ public class RenderTrigonotarbid_Kreischeria extends RenderLiving<EntityPrehisto
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
-                break;
             case WEST:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
-                break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
-                break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
+                GlStateManager.translate(0.0F, 0.1F, -0.05F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case UP:
@@ -49,6 +44,12 @@ public class RenderTrigonotarbid_Kreischeria extends RenderLiving<EntityPrehisto
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
 
+    }
+
+    protected void preRenderCallback(EntityPrehistoricFloraTrigonotarbid_Kreischeria entity, float f) {
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0;
     }
 
 }

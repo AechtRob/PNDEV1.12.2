@@ -197,7 +197,7 @@ public class BlockCunninghamiaSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: Jurassic - Cretaceous - Paleogene - Neogene - Quaternary");
+				tooltip.add("Periods: Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 				tooltip.add("Propagation: fruit/cone");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

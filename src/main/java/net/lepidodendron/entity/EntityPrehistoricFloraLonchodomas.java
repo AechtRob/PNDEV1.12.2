@@ -33,10 +33,6 @@ public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTri
 	public EntityPrehistoricFloraLonchodomas(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

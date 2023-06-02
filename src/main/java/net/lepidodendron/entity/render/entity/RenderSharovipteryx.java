@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSharovipteryx extends RenderLiving<EntityPrehistoricFloraSharovipteryx> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sharovipteryx.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sharovipteryx.png");
 
     public RenderSharovipteryx(RenderManager mgr) {
         super(mgr, new ModelSharovipteryx(), 0.0f);

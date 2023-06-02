@@ -253,14 +253,11 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Base.render(f5 * 0.615F);
+        this.Base.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Body2.offsetY = 0.04F;
+        this.Body2.offsetZ = 0.095F;
         this.Head.rotateAngleX = (float)Math.toRadians(2.5);
         this.Neck2.rotateAngleX = (float)Math.toRadians(-12.5);
         this.Neck.rotateAngleX = (float)Math.toRadians(-5);
@@ -270,9 +267,42 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
         this.LeftArm.rotateAngleX = (float)Math.toRadians(35);
         this.LeftArm2.rotateAngleX = (float)Math.toRadians(-105);
         this.Body2.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Base, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.2059F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.1798F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.0873F, -0.0873F, 0.0436F);
+        this.setRotateAngle(Jaw, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftArm, 1.2266F, -0.1903F, -0.0769F);
+        this.setRotateAngle(LeftArm2, -1.7017F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftArmHand, 0.0F, 0.0F, -0.4363F);
+        this.setRotateAngle(Lfoot, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Lleg, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Lleg2, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.2618F, -0.0873F, 0.0436F);
+        this.setRotateAngle(RFoot, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(RightArm, 1.2266F, 0.1903F, 0.0769F);
+        this.setRotateAngle(RightArm2, -1.7017F, 0.0F, 0.0F);
+        this.setRotateAngle(RightArmHand, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(RLeg, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0436F, 0.2182F, 0.0F);
+        this.setRotateAngle(Tail3, -0.0873F, 0.2182F, 0.0F);
+        this.setRotateAngle(Tail4, -0.1309F, 0.3054F, 0.0F);
+        this.Base.offsetY = -0.1F;
+        this.Base.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -284,7 +314,7 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Base.offsetY = 0.60F;
+        this.Base.offsetY = 0.03F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraArizonasaurus Arizonasaurus = (EntityPrehistoricFloraArizonasaurus) e;

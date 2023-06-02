@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPalaeoisopus extends RenderLiving<EntityPrehistoricFloraPalaeoisopus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoisopus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoisopus.png");
 
     public RenderPalaeoisopus(RenderManager mgr) {
         super(mgr, new ModelPalaeoisopus(), 0.0f);

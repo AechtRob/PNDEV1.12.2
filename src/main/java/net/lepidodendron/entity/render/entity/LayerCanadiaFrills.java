@@ -2,8 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCanadia;
-import net.lepidodendron.entity.model.entity.ModelCanadia;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
@@ -11,8 +9,7 @@ import net.minecraft.util.ResourceLocation;
 public class LayerCanadiaFrills implements LayerRenderer<EntityPrehistoricFloraCanadia>
 {
     private final RenderCanadia CanadiaRenderer;
-    private final ModelBase CanadiaModel = new ModelCanadia();
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/canadia_transparent.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/canadia_transparent.png");
 
     public LayerCanadiaFrills(RenderCanadia CanadiaRendererIn)
     {
@@ -30,9 +27,9 @@ public class LayerCanadiaFrills implements LayerRenderer<EntityPrehistoricFloraC
             GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-            this.CanadiaModel.setModelAttributes(this.CanadiaRenderer.getMainModel());
-            this.CanadiaModel.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
-            this.CanadiaModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.CanadiaRenderer.getMainModel().setModelAttributes(this.CanadiaRenderer.getMainModel());
+            this.CanadiaRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.CanadiaRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             GlStateManager.disableBlend();
             GlStateManager.disableNormalize();
             GlStateManager.popMatrix();

@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraClydagnathus extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraClydagnathus(World world) {
 		super(world);
 		setSize(0.4F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

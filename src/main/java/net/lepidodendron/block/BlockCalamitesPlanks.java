@@ -21,6 +21,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -85,7 +86,12 @@ public class BlockCalamitesPlanks extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("NOTE: Used to build the portal to the Carboniferous dimension");
+				if (!Loader.isModLoaded("pncarboniferous")) {
+					tooltip.add("NOTE: Used to build the portal to the Carboniferous dimension but you do not have that dimension mod installed");
+				}
+				else {
+					tooltip.add("NOTE: Used to build the portal to the Carboniferous dimension");
+				}
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

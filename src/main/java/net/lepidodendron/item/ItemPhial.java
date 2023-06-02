@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -102,8 +103,14 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				if (blockTarget instanceof BlockMobSpawn
 					|| blockTarget instanceof BlockInsectEggs) {
 					RayTraceResult raytraceresult = this.rayTrace(worldIn, player, true);
+					Item itemTarget = blockTarget.getPickBlock(iblockstate, raytraceresult, worldIn, target, player).getItem();
 					blockTarget = Block.getBlockFromItem(blockTarget.getPickBlock(iblockstate, raytraceresult, worldIn, target, player).getItem());
-					strPhial = blockTarget.getRegistryName().toString();
+					if (blockTarget != Blocks.AIR) {
+						strPhial = blockTarget.getRegistryName().toString();
+					}
+					else {
+						strPhial = itemTarget.getRegistryName().toString();
+					}
 					collected = true;
 					removed = true;
 				}
@@ -136,9 +143,6 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				}
 
 				if (collected) {
-					if (removed) {
-						worldIn.setBlockToAir(target);
-					}
 
 					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_FILL;
 					worldIn.playSound(player, target, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -147,7 +151,20 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound stackNBT = new NBTTagCompound();
 					phial.setTagCompound(stackNBT);
 					phial.getTagCompound().setString("id_eggs", strPhial);
+
+					TileEntity tileentity = worldIn.getTileEntity(target);
+					if (tileentity != null) {
+						if (tileentity.getTileData() != null) {
+							if (tileentity.getTileData().hasKey("PNType")) {
+								phial.getTagCompound().setString("PNType", tileentity.getTileData().getString("PNType"));
+							}
+						}
+					}
+
 					ItemHandlerHelper.giveItemToPlayer(player, phial);
+					if (removed) {
+						worldIn.setBlockToAir(target);
+					}
 					return true;
 				}
 			}

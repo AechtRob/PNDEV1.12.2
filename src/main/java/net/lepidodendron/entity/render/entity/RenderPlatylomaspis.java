@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPlatylomaspis extends RenderLiving<EntityPrehistoricFloraPlatylomaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platylomaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platylomaspis.png");
 
     public RenderPlatylomaspis(RenderManager mgr) {
         super(mgr, new ModelPlatylomaspis(), 0.0f);

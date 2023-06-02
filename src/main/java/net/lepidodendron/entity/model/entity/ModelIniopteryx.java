@@ -221,7 +221,7 @@ public class ModelIniopteryx extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.1F;
+        this.Bodyfront.offsetY = 1.2F;
 
         AdvancedModelRenderer[] finLeft = {this.Leftpectoralfinbase, this.Leftpectoralfin};
         AdvancedModelRenderer[] finRight = {this.Rightpectoralfinbase, this.Rightpectoralfin};

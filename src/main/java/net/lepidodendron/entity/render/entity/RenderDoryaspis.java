@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDoryaspis extends RenderLiving<EntityPrehistoricFloraDoryaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/doryaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/doryaspis.png");
 
     public RenderDoryaspis(RenderManager mgr) {
         super(mgr, new ModelDoryaspis(), 0.0f);

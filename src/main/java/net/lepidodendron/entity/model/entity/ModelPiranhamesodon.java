@@ -415,18 +415,26 @@ public class ModelPiranhamesodon extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Piranhamesodon.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Piranhamesodon.rotateAngleY = (float) Math.toRadians(90);
-        this.Piranhamesodon.offsetX = -0.14F;
-        this.Piranhamesodon.offsetY = -0.19F;
+        this.Piranhamesodon.offsetX = -0.05F;
+        this.Piranhamesodon.offsetY = -0.17F;
         this.Piranhamesodon.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.48F, 0.0F);
+        this.Piranhamesodon.rotateAngleY = (float) Math.toRadians(90);
+        this.Piranhamesodon.offsetX = -0.03F;
+        this.Piranhamesodon.offsetZ = -0.015F;
+        this.Piranhamesodon.offsetY = -0.6F;
+        this.Piranhamesodon.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

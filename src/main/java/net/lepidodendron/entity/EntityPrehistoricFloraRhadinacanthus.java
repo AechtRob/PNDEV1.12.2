@@ -9,6 +9,9 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderRhadinacanthus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -32,10 +35,6 @@ public class EntityPrehistoricFloraRhadinacanthus extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraRhadinacanthus(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -58,7 +57,7 @@ public class EntityPrehistoricFloraRhadinacanthus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "[late Silurian -] Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -170,6 +169,59 @@ public class EntityPrehistoricFloraRhadinacanthus extends EntityPrehistoricFlora
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.RHADINACANTHUS_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.8F;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderRhadinacanthus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelRhadinacanthus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderRhadinacanthus.getScaler();
 	}
 
 }

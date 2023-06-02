@@ -17,6 +17,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -33,17 +34,20 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 
 	public EntityPrehistoricFloraOrthoceras(World world) {
 		super(world);
-		setSize(1.0F, 0.99F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.6F, 0.59F);
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.59F;
 		maxHealthAgeable = 16.0D;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox()
+	{
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(5, 0.1, 5);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override
@@ -51,7 +55,7 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "Ordovician - Silurian";}
+	public static String getPeriod() {return "Ordovician - [Silurian]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

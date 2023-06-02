@@ -41,13 +41,7 @@ public class EntityPrehistoricFloraFadeniaCarboniferous extends EntityPrehistori
 
 	public EntityPrehistoricFloraFadeniaCarboniferous(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(1.65F, 1.96F);
 		minWidth = 0.2F;
 		maxWidth = 1.65F;
 		maxHeight = 1.96F;
@@ -175,6 +169,7 @@ public class EntityPrehistoricFloraFadeniaCarboniferous extends EntityPrehistori
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.3D);
 	}
 
 	@Override

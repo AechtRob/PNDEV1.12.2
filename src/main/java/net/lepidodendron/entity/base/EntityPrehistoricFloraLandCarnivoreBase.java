@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -20,8 +19,6 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
     public int roarSoundTime;
     public Animation NOISE_ANIMATION; //Additional roaring
     public Animation HURT_ANIMATION;
-    private int inPFLove;
-    private BlockPos drinkingFrom;
 
     public EntityPrehistoricFloraLandCarnivoreBase(World world) {
         super(world);

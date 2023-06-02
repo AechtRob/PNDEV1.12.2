@@ -8,6 +8,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderPiranhamesodon;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -36,11 +39,7 @@ public class EntityPrehistoricFloraPiranhamesodon extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraPiranhamesodon(World world) {
 		super(world);
-		setSize(0.5F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.55F, 0.55F);
 		minWidth = 0.1F;
 		maxWidth = 0.55F;
 		maxHeight = 0.55F;
@@ -54,12 +53,17 @@ public class EntityPrehistoricFloraPiranhamesodon extends EntityPrehistoricFlora
 
 	@Override
 	public int getShoalSize() {
-		return 5;
+		return 0;
 	}
 
 	@Override
 	public int getShoalDist() {
 		return 3;
+	}
+
+	@Override
+	public Class[] canShoalWith() {
+		return new Class[]{EntityPrehistoricFloraTurboscinetes.class};
 	}
 
 	@Override
@@ -115,14 +119,13 @@ public class EntityPrehistoricFloraPiranhamesodon extends EntityPrehistoricFlora
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-
-
 	}
 
 	@Override
@@ -217,6 +220,60 @@ public class EntityPrehistoricFloraPiranhamesodon extends EntityPrehistoricFlora
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.PIRANHAMESODON_LOOT;
+	}
+
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.03;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderPiranhamesodon.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelPiranhamesodon;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderPiranhamesodon.getScaler();
 	}
 
 }

@@ -1,0 +1,31 @@
+{
+	"name": "Rhadinacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/rhadinacanthus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_rhadinacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhadinacanthus",
+			"title": "Rhadinacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rhadinacanthus.png"],
+			"title": "R. longispinus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhadinacanthus",
+			"type": "text",
+			"text": "Rhadinacanthus is a genus of diplacanthiform acanthodian from the Devonian. It had a relatively deep and short body and lived in freshwater environments. Some specimens were once classified as Diplacanthus"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhadinacanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

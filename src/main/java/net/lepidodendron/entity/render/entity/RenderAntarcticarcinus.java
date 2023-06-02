@@ -9,8 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAntarcticarcinus extends RenderLiving<EntityPrehistoricFloraAntarcticarcinus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
-
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
 
     public RenderAntarcticarcinus(RenderManager mgr) {
         super(mgr, new ModelAntarcticarcinus(), 0.0f);

@@ -103,7 +103,18 @@ public class WorldGenCausticMudLake extends WorldGenerator
                     {
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
-                            worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            if (i4 >= 4) {
+                                worldIn.setBlockState(position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
+                                Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
+                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
+                                    //fix for floating plants and half-plants:
+                                    worldIn.setBlockToAir(position.add(l1, i4, i3).up());
+                                }
+                            }
+                            else {
+                                worldIn.setBlockState(position.add(l1, i4, i3), this.block.getDefaultState(), 2);
+                            }
+                            //worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
                         }
                     }
                 }

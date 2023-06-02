@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:rhinopteraspis_raw"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_rhinopteraspis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_rhinopteraspis.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_rhinopteraspis"
+		}
+	}
+}

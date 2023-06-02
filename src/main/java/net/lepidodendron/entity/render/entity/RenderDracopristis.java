@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDracopristis extends RenderLiving<EntityPrehistoricFloraDracopristis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dracopristis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dracopristis.png");
 
     public RenderDracopristis(RenderManager mgr) {
         super(mgr, new ModelDracopristis(), 0.5f);

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOpolanka extends RenderLiving<EntityPrehistoricFloraOpolanka> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opolanka.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opolanka.png");
 
     public RenderOpolanka(RenderManager mgr) {
         super(mgr, new ModelOpolanka(), 0.0f);

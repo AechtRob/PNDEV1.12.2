@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:phoenix_fruit_bunch"
+    },
+    "facing=north": {
+      "model": "lepidodendron:phoenix_fruit_bunch",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:phoenix_fruit_bunch",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:phoenix_fruit_bunch",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:phoenix_fruit_bunch",
+      "x": 90,
+      "y": 270
+    },
+  "facing=up": {
+      "model": "lepidodendron:phoenix_fruit_bunch"
+    },
+    "facing=down": {
+      "model": "lepidodendron:phoenix_fruit_bunch",
+      "x": 180
+    }
+  }
+}

@@ -50,18 +50,24 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 	public EntityPrehistoricFloraIchthyostega(World world) {
 		super(world);
 		setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.3F;
-		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.35F;
 		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	public boolean getMovingOnLand() {
+		int animCycle = 26;
+		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
+		if ((tickAnim >=0 && tickAnim <= 5)
+				|| (tickAnim >=18 && tickAnim <= 26)) {
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 
@@ -96,6 +102,12 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 		float calcSpeed = 0.15F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.28f;
+		}
+		if (!this.getMovingOnLand() && !this.isReallyInWater()) {
+			return 0.03F;
+		}
+		if (!this.getIsMoving() && !this.isReallyInWater()) {
+			return 0.05F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

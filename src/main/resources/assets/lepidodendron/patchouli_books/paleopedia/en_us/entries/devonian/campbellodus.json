@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_campbellodus",
 			"title": "Campbellodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Placodermi$(br)>Ptychodontida$(br)>Ptychodontidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Ptychodontida$(br)>Ptychodontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/campbellodus.png"],
-			"title": "Campbellodus decipiens",
+			"title": "C. decipiens",
 			"text": ""
 		},
 		{

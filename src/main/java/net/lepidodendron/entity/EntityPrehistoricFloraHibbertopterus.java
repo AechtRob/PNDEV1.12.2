@@ -34,13 +34,7 @@ public class EntityPrehistoricFloraHibbertopterus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraHibbertopterus(World world) {
 		super(world);
-		//setSize(1F, 0.99F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(1F, 0.99F);
 		minWidth = 0.1F;
 		maxWidth = 1.0F;
 		maxHeight = 0.99F;

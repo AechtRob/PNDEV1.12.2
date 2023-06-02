@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderListracanthus extends RenderLiving<EntityPrehistoricFloraListracanthus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/listracanthus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/listracanthus.png");
 
     public RenderListracanthus(RenderManager mgr) {
         super(mgr, new ModelListracanthus(), 1.0f);

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPalaeojelly1 extends RenderLiving<EntityPrehistoricFloraJellyfish_Palaeo1> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeojelly1.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeojelly1.png");
 
     public RenderPalaeojelly1(RenderManager mgr) {
         super(mgr, new ModelPalaeoJelly1(), 0.0f);

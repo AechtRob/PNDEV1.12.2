@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCheirurus extends RenderLiving<EntityPrehistoricFloraCheirurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cheirurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cheirurus.png");
 
     public RenderCheirurus(RenderManager mgr) {
         super(mgr, new ModelCheirurus(), 0.0f);

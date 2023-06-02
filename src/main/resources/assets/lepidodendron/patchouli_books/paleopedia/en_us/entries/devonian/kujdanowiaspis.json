@@ -1,0 +1,31 @@
+{
+	"name": "Kujdanowiaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/kujdanowiaspis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_kujdanowiaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kujdanowiaspis",
+			"title": "Kujdanowiaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Arthrodira$(br)>Actinolepidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/kujdanowiaspis.png"],
+			"title": "K. buczacziensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kujdanowiaspis",
+			"type": "text",
+			"text": "Kujdanowiaspis is antinolepid arthrodiran placoderm known from the Early Devonian of Europe. It had medium to large-sized spines on side, and sharply humped back. As an early form of arthrodiran placodrm, it had a relatively flat body and it was probably benthic."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kujdanowiaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

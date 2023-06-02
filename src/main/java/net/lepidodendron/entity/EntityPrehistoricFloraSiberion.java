@@ -41,10 +41,6 @@ public class EntityPrehistoricFloraSiberion extends EntityPrehistoricFloraTrilob
 	public EntityPrehistoricFloraSiberion(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -124,7 +120,7 @@ public class EntityPrehistoricFloraSiberion extends EntityPrehistoricFloraTrilob
 		if (this.getAnimation() == LOOK_ANIMATION) {
 			return 0;
 		}
-		return 0.0945f;
+		return 0.06f;
 		//return 0;
 	}
 

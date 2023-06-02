@@ -464,7 +464,7 @@ public class ModelCrotalocephalus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Crotalocephalus.render(f5 * 0.3F);
+        this.Crotalocephalus.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -488,7 +488,7 @@ public class ModelCrotalocephalus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Crotalocephalus.offsetY = 1.0F;
+        //this.Crotalocephalus.offsetY = 1.0F;
 
         AdvancedModelRenderer[] fishTail = {this.ThoracicSegment6, this.ThoracicSegment7, this.ThoracicSegment8, this.ThoracicSegment9, this.ThoracicSegment2, this.ThoracicSegment3};
 
@@ -544,7 +544,7 @@ public class ModelCrotalocephalus extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Crotalocephalus.offsetY = 1.02F;
+                this.Crotalocephalus.offsetY = 0.0F;
                 this.bob(Crotalocephalus, -speed, 0.21F, false, f2, 1);
                 this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
                 this.chainSwing(fishTail, speed, tailVdegree, -3, f2, 1);

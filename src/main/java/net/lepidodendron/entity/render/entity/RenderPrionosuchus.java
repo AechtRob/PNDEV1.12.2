@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderPrionosuchus extends RenderLiving<EntityPrehistoricFloraPrionosuchus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prionosuchus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prionosuchus.png");
 
     public RenderPrionosuchus(RenderManager mgr) {
         super(mgr, new ModelPrionosuchus(), 0.35f);

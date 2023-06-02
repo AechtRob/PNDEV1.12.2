@@ -1,6 +1,9 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
 import net.minecraft.block.Block;
@@ -10,10 +13,14 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -74,6 +81,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
             this.navigator = new PathNavigateSwimmer(this, world);
             this.isWaterNavigator = true;
             this.isSeekingWater = false;
+            this.navigator.clearPath();
             //System.err.println("Navigator changed to " + this.navigator);
         }
         else {
@@ -82,6 +90,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 this.navigator = new PathNavigateAmphibian(this, world);
                 this.isWaterNavigator = false;
                 this.isSeekingWater = false;
+                this.navigator.clearPath();
                 //System.err.println("Navigator changed to " + this.navigator);
             }
             else {//Find water!
@@ -91,6 +100,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                     this.setPathPriority(PathNodeType.WATER, 10F);
                     this.isWaterNavigator = false;
                     this.isSeekingWater = true;
+                    this.navigator.clearPath();
                     //System.err.println("Navigator changed to " + this.navigator);
                 }
             }
@@ -166,6 +176,16 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
     }
 
     @Override
+    public boolean attackEntityFrom(DamageSource ds, float i) {
+        if (ds == DamageSource.IN_WALL) {
+            if (this.isReallyInWater()) {
+                return false;
+            }
+        }
+        return super.attackEntityFrom(ds, i);
+    }
+
+    @Override
     public boolean canBreatheUnderwater() {
         return true;
     }
@@ -235,6 +255,38 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
 
     @Override
     public void onLivingUpdate() {
+
+//        //burrowing amphibious animals (currently only Haldanodon)
+//        if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
+//            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+//                if (this instanceof EntityPrehistoricFloraHaldanodon) { //Burrowing creatures:
+//                    EntityPrehistoricFloraHaldanodon burrower = (EntityPrehistoricFloraHaldanodon) this;
+//                    if (!world.isRemote && this.getPosition().getY() > 8) {
+//                        BlockPos pos = burrower.buildBurrow(this.world, this.getPosition(), burrower.hasLargeBurrow());
+//                        this.world.setBlockState(pos, BlockNest.block.getDefaultState());
+//                        TileEntity te = world.getTileEntity(pos);
+//                        if (te != null) {
+//                            te.getTileData().setString("creature", getEntityId(this));
+//                        }
+//                        this.setNestLocation(pos);
+//                        SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+//                        this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+//                    }
+//                }
+////                else {
+////                    if (!world.isRemote) {
+////                        this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
+////                        TileEntity te = world.getTileEntity(this.getPosition());
+////                        if (te != null) {
+////                            te.getTileData().setString("creature", getEntityId(this));
+////                        }
+////                        this.setNestLocation(this.getPosition());
+////                    }
+////                    SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+////                    this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+////                }
+//              }
+//        }
 
         if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
@@ -546,7 +598,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 float speed = getAISpeedSwimmingAmphibian();
                 this.EntityBase.setAIMoveSpeed(speed);
 
-                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase()) {
+                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase() && (!this.EntityBase.getIsFast())) {
                     this.EntityBase.setAIMoveSpeed(speed * 0.25F);
                 }
 

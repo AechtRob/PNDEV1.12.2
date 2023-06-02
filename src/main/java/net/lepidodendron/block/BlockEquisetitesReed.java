@@ -94,7 +94,10 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeTriassic) {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje_edge")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -133,7 +136,9 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			GenChance = 35;
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje_edge")) {
 			GenChance = 64;
 		}
 

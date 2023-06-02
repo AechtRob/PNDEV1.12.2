@@ -128,7 +128,7 @@ public class ItemCobbaniaItem extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering water plant");
-				tooltip.add("Periods: mid-Cretaceous - Paleogene");
+				tooltip.add("Periods: mid-Cretaceous - Paleogene (?)");
 				tooltip.add("Note: placed at water surface of water up to 5 blocks deep; spreads if there is light.");
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);

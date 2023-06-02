@@ -9,7 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAtopodentatus extends RenderLiving<EntityPrehistoricFloraAtopodentatus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/atopodentatus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/atopodentatus.png");
+
+    public static float getScaler() {return 1.0F* 0.367F;}
 
     public RenderAtopodentatus(RenderManager mgr) {
         super(mgr, new ModelAtopodentatus(), 0.5f);
@@ -27,7 +29,7 @@ public class RenderAtopodentatus extends RenderLiving<EntityPrehistoricFloraAtop
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAtopodentatus entity, float f) {
-        float scale = entity.getAgeScale() * 0.367F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.58F;
     }

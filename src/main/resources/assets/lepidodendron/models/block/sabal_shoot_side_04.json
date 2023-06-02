@@ -1,0 +1,16 @@
+{
+	"textures": {
+	 "e": "lepidodendron:blocks/sabal_0005",
+	 "w": "lepidodendron:blocks/sabal_0001",
+	 "particle": "lepidodendron:blocks/sabal_0005"
+	},
+	"ambientocclusion":false,
+	"elements":[
+
+		{"name":"e",
+		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+		"faces":{
+			"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}}
+		]
+}

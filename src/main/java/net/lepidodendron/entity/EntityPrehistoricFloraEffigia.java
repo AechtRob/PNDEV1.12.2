@@ -40,11 +40,7 @@ public class EntityPrehistoricFloraEffigia extends EntityPrehistoricFloraLandBas
 
 	public EntityPrehistoricFloraEffigia(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.525F, 0.65F);
 		minWidth = 0.05F;
 		maxWidth = 0.525F;
 		maxHeight = 0.65F;
@@ -143,10 +139,11 @@ public class EntityPrehistoricFloraEffigia extends EntityPrehistoricFloraLandBas
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 	}
 
@@ -218,7 +215,7 @@ public class EntityPrehistoricFloraEffigia extends EntityPrehistoricFloraLandBas
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();

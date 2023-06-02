@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraAnomalocaris;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -437,11 +436,12 @@ public class ModelAnomalocaris extends AdvancedModelBase {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.15F;
-        this.body.offsetY = -0.13F;
-        this.body.render(0.018f);
+        this.body.offsetZ = -0.12F;
+        this.body.offsetY = -0.01F;
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(head, -0.4999F, 0.4789F, 0.5888F);
         this.setRotateAngle(cube_r1, 0.0F, -0.0436F, 0.0F);
@@ -496,8 +496,8 @@ public class ModelAnomalocaris extends AdvancedModelBase {
         this.setRotateAngle(eyeR, 0.0F, 0.1745F, 0.2618F);
         this.body.offsetX = -0.03F;
         this.body.offsetZ = -0.03F;
-        this.body.offsetY = -0.7F;
-        this.body.render(0.018f);
+        this.body.offsetY = -0.45F;
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
 
@@ -511,7 +511,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0F;
+        //this.body.offsetY = 0F;
 
         float speed = 0.4F;
         if (!e.isInWater()) {
@@ -593,7 +593,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
             this.chainWave(bodyF, 0.28F, 0.18f, -3, f2, 0.6F);
 
             if (!e.isInWater()) {
-                this.body.offsetY = 0F;
+                this.body.offsetY = -0.05F;
                 this.bob(body, -speed * 1.5F, 2.5F, false, f2, 1);
             } else {
                 if (f3 == 0.0F) {

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKimberella extends RenderLiving<EntityPrehistoricFloraKimberella> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Kimberella.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Kimberella.png");
 
     public RenderKimberella(RenderManager mgr) {
         super(mgr, new ModelKimberella(), 0.0f);

@@ -1,0 +1,17 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/nypa_roots",
+		"particle": "lepidodendron:blocks/nypa_roots"
+	},
+	"elements": [
+		{
+			"from": [8, 0, -16],
+			"to": [8, 16, 0],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#texture"}
+			}
+		}
+	]
+}

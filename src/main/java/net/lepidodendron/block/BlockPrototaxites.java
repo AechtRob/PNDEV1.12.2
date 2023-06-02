@@ -336,6 +336,10 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
+			if ((worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID))
+			{
+				return false;
+			}
 
 	    	return true;
 	    	 

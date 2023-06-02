@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPalaeodictyopteraDelitzschalaRaw extends ElementsLepidodendronMod.ModElement {
@@ -24,7 +27,7 @@ public class ItemPalaeodictyopteraDelitzschalaRaw extends ElementsLepidodendronM
 
 	@Override
 	public void initElements() {
-		elements.items.add(() -> new ItemFoodCustom());
+		elements.items.add(() -> new ItemCustom());
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -36,18 +39,30 @@ public class ItemPalaeodictyopteraDelitzschalaRaw extends ElementsLepidodendronM
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_delitzschala", ItemPalaeodictyopteraDelitzschalaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@delitzschala", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraDelitzschalaRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
-		public ItemFoodCustom() {
-			super(2, 0.1f, false);
+	public static class ItemCustom extends ItemGlassCaseDisplayItem {
+		public ItemCustom() {
+			super();
 			setTranslationKey("pf_palaeodictyoptera_delitzschala_raw");
 			setRegistryName("palaeodictyoptera_delitzschala_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+		}
+
+		@Nullable
+		@Override
+		public String getVariantStr() {
+			return "delitzschala";
 		}
 	}
 }

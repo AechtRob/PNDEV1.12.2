@@ -53,10 +53,6 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 		this.moveHelper = new EntityPrehistoricFloraGerrothorax.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
 		setSize(0.5F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.2F;

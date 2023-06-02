@@ -30,13 +30,7 @@ public class EntityPrehistoricFloraAustrolimulus extends EntityPrehistoricFloraW
 
 	public EntityPrehistoricFloraAustrolimulus(World world) {
 		super(world);
-		//setSize(1F, 0.99F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.2F, 0.1F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.1F;

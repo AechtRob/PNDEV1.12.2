@@ -1,0 +1,46 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "crossu": "lepidodendron:blocks/underwater_debris_22_top",
+    "crossd": "lepidodendron:blocks/underwater_debris_22_base",
+    "particle": "lepidodendron:blocks/underwater_debris_22_base"
+  },
+  "elements": [
+    {   "from": [ 0.8, 0, 8 ],
+      "to": [ 15.2, 16, 8 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "shade": false,
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossd" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossd" }
+      }
+    },
+    {   "from": [ 8, 0, 0.8 ],
+      "to": [ 8, 16, 15.2 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "shade": false,
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossd" },
+        "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossd" }
+      }
+    },
+    {   "from": [ 0.8, 16, 8 ],
+      "to": [ 15.2, 32, 8 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "shade": false,
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossu" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossu" }
+      }
+    },
+    {   "from": [ 8, 16, 0.8 ],
+      "to": [ 8, 32, 15.2 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "shade": false,
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossu" },
+        "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#crossu" }
+      }
+    }
+  ]
+}

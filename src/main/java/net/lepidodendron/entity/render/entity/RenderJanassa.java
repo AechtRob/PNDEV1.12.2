@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderJanassa extends RenderLiving<EntityPrehistoricFloraJanassa> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/janassa.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/janassa.png");
 
     public RenderJanassa(RenderManager mgr) {
         super(mgr, new ModelJanassa(), 0.0f);

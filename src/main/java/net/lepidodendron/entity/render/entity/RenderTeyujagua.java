@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTeyujagua extends RenderLiving<EntityPrehistoricFloraTeyujagua> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teyujagua.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teyujagua.png");
 
     public RenderTeyujagua(RenderManager mgr) {
         super(mgr, new ModelTeyujagua(), 0.0f);

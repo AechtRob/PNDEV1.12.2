@@ -9,10 +9,14 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPhlegethontia extends RenderLiving<EntityPrehistoricFloraPhlegethontia> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phlegethontia.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phlegethontia.png");
 
     public RenderPhlegethontia(RenderManager mgr) {
         super(mgr, new ModelPhlegethontia(), 0.0f);
+    }
+
+    public static float getScaler() {
+        return 0.15F;
     }
 
     @Override
@@ -27,7 +31,7 @@ public class RenderPhlegethontia extends RenderLiving<EntityPrehistoricFloraPhle
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPhlegethontia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.0F;
     }

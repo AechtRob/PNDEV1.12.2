@@ -11,7 +11,10 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderCrassigyrinus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -46,11 +49,7 @@ public class EntityPrehistoricFloraCrassigyrinus extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraCrassigyrinus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.65F, 0.40F);
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.40F;
@@ -288,6 +287,58 @@ public class EntityPrehistoricFloraCrassigyrinus extends EntityPrehistoricFloraS
 			return LepidodendronMod.CRASSIGYRINUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.CRASSIGYRINUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.1;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.1;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.04;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.25F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.35F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCrassigyrinus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCrassigyrinus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCrassigyrinus.getScaler();
 	}
 
 }

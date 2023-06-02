@@ -5,22 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.enchantments.Enchantments;
-import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -85,81 +74,82 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 			return 1F;
 		}
 
-		@Override
-		public EnumActionResult onItemUse(EntityPlayer entity, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY,
-				float hitZ) {
-			BlockPos pos1 = pos.offset(facing);
-			ItemStack itemstack = entity.getHeldItem(hand);
-
-			if (!functioningWand(itemstack)) {
-				return EnumActionResult.FAIL;
-			}
-			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, itemstack);
-			//System.err.println(levelEnchantment);
-			if (levelEnchantment > 0) {
-				if (!entity.canPlayerEdit(pos1, facing, itemstack)) {
-					return EnumActionResult.FAIL;
-				}
-				if (facing != EnumFacing.DOWN) {
-					if (itemStackRejuvenate(world, pos.offset(facing), entity)) {
-						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
-							itemstack.damageItem(1, entity);
-						}
-						entity.swingArm(EnumHand.MAIN_HAND);
-						return EnumActionResult.SUCCESS;
-					}
-				}
-			}
-			return EnumActionResult.FAIL;
-		}
-
-		public boolean itemStackRejuvenate(World world, BlockPos pos, EntityPlayer player) {
-			boolean rejuvenated = false;
-			//System.err.println("Testing ");
-			if ((player.getHeldItemMainhand().getItem() == new ItemStack(ItemBoneWand.block, (int) (1)).getItem())) {
-				//Are there dropped items here to convert?
-				//System.err.println("Testing if items exist at " );
-				List<EntityItem> Entities = world.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos));
-				for (EntityItem currentEntity : Entities) {
-					if (rejuvenated) {
-						return true;
-					}
-					//System.err.println("currentEntity " + currentEntity);
-					//System.err.println("currentItem " + currentEntity.getItem().getItem());
-					if (currentEntity.getItem().getItem() instanceof ItemPetrified) { //The dropped item is a stack containing petrifieds
-						//System.err.println("Item is petrified");
-						ItemStack wandstack = player.getHeldItem(EnumHand.MAIN_HAND);
-						ItemStack itemstack = currentEntity.getItem();
-						int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, wandstack);
-						//System.err.println(levelEnchantment);
-						if (levelEnchantment > 0) {
-							//if (!itemstack.isEmpty()) {
-							Item item = itemstack.getItem();
-							ItemPetrified itemPetrified = (ItemPetrified) item;
-							//Create a real plant from this dropped on the ground in the same place:
-							if (itemPetrified.getPlantStack() != null) {
-								if (!world.isRemote) {
-									EntityItem entityToSpawn = new EntityItem(world, currentEntity.posX, currentEntity.posY, currentEntity.posZ, new ItemStack(itemPetrified.getPlantStack().getItem(), (int) (1)));
-									entityToSpawn.setPickupDelay(10);
-									world.spawnEntity(entityToSpawn);
-									itemstack.shrink(1);
-									world.addWeatherEffect(new EntityLightningBolt(world, (int) currentEntity.getPosition().getX(), (int) currentEntity.getPosition().getY(), (int) currentEntity.getPosition().getZ(), true));
-									if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
-										wandstack.damageItem(1, player);
-									}
-									ModTriggers.REJUVENATE.trigger((EntityPlayerMP) player);
-								}
-								rejuvenated = true;
-							}
-						}
-					}
-				}
-			}
-			if (rejuvenated) {
-				return true;
-			}
-			return false;
-		}
+//		@Override
+//		public EnumActionResult onItemUse(EntityPlayer entity, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY,
+//				float hitZ) {
+//			BlockPos pos1 = pos.offset(facing);
+//			ItemStack itemstack = entity.getHeldItem(hand);
+//
+//			if (!functioningWand(itemstack)) {
+//				return EnumActionResult.FAIL;
+//			}
+//			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, itemstack);
+//
+//
+//			if (levelEnchantment > 0) {
+//				if (!entity.canPlayerEdit(pos1, facing, itemstack)) {
+//					return EnumActionResult.FAIL;
+//				}
+//				if (facing != EnumFacing.DOWN) {
+//					if (itemStackRejuvenate(world, pos.offset(facing), entity)) {
+//						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
+//							itemstack.damageItem(1, entity);
+//						}
+//						entity.swingArm(EnumHand.MAIN_HAND);
+//						return EnumActionResult.SUCCESS;
+//					}
+//				}
+//			}
+//			return EnumActionResult.FAIL;
+//		}
+//
+//		public boolean itemStackRejuvenate(World world, BlockPos pos, EntityPlayer player) {
+//			boolean rejuvenated = false;
+//			//System.err.println("Testing ");
+//			if ((player.getHeldItemMainhand().getItem() == new ItemStack(ItemBoneWand.block, (int) (1)).getItem())) {
+//				//Are there dropped items here to convert?
+//				//System.err.println("Testing if items exist at " );
+//				List<EntityItem> Entities = world.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos));
+//				for (EntityItem currentEntity : Entities) {
+//					if (rejuvenated) {
+//						return true;
+//					}
+//					//System.err.println("currentEntity " + currentEntity);
+//					//System.err.println("currentItem " + currentEntity.getItem().getItem());
+//					if (currentEntity.getItem().getItem() instanceof ItemPetrified) { //The dropped item is a stack containing petrifieds
+//						//System.err.println("Item is petrified");
+//						ItemStack wandstack = player.getHeldItem(EnumHand.MAIN_HAND);
+//						ItemStack itemstack = currentEntity.getItem();
+//						int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, wandstack);
+//						//System.err.println(levelEnchantment);
+//						if (levelEnchantment > 0) {
+//							//if (!itemstack.isEmpty()) {
+//							Item item = itemstack.getItem();
+//							ItemPetrified itemPetrified = (ItemPetrified) item;
+//							//Create a real plant from this dropped on the ground in the same place:
+//							if (itemPetrified.getPlantStack() != null) {
+//								if (!world.isRemote) {
+//									EntityItem entityToSpawn = new EntityItem(world, currentEntity.posX, currentEntity.posY, currentEntity.posZ, new ItemStack(itemPetrified.getPlantStack().getItem(), (int) (1)));
+//									entityToSpawn.setPickupDelay(10);
+//									world.spawnEntity(entityToSpawn);
+//									itemstack.shrink(1);
+//									world.addWeatherEffect(new EntityLightningBolt(world, (int) currentEntity.getPosition().getX(), (int) currentEntity.getPosition().getY(), (int) currentEntity.getPosition().getZ(), true));
+//									if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
+//										wandstack.damageItem(1, player);
+//									}
+//									ModTriggers.REJUVENATE.trigger((EntityPlayerMP) player);
+//								}
+//								rejuvenated = true;
+//							}
+//						}
+//					}
+//				}
+//			}
+//			if (rejuvenated) {
+//				return true;
+//			}
+//			return false;
+//		}
 
 		@Override
 		public boolean isRepairable() {

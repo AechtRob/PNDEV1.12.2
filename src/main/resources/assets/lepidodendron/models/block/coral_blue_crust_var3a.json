@@ -1,0 +1,17 @@
+{
+    "parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/blue_crust_coral_var3",
+        "plant": "lepidodendron:blocks/blue_crust_coral_var3"
+    },
+    "elements": [
+        {   "from": [ 0, 0.05, 0 ],
+            "to": [ 16, 0.05, 16 ],
+            "shade": false,
+            "faces": {
+                "up": { "uv": [ 16, 0, 0, 16 ], "texture": "#plant" },
+                "down": { "uv": [ 16, 0, 0, 16 ], "texture": "#plant" }
+            }
+        }
+    ]
+}

@@ -117,7 +117,7 @@ public class ItemScrubbyPineBoatItem extends ElementsLepidodendronMod.ModElement
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
 					EntityPNBoat entityPNboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entityPNboat.setBoatType(1);
+					entityPNboat.setBoatType(EntityPNBoat.Type.SCRUBBY_PINE.ordinal());
 					entityPNboat.rotationYaw = playerIn.rotationYaw;
 
 					if (!worldIn.getCollisionBoxes(entityPNboat, entityPNboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())

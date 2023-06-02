@@ -47,7 +47,9 @@ public class CharniaGenerator extends WorldGenerator
 		if (ii == 3) {
 			this.state = charniaIn.getDefaultState().withProperty(FACING, EnumFacing.WEST);
 		}
-        //this.state = charniaIn.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
+		if (this.charnia == BlockGrypania.block) {
+			this.state = charniaIn.getDefaultState().withProperty(FACING, EnumFacing.UP);
+		}
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position)

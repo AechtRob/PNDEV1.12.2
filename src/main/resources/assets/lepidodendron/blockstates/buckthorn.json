@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:buckthorn_inventory"
+    },
+    "var=false": {"model": "lepidodendron:buckthorn"},
+    "var=true": {"model": "lepidodendron:buckthorn_var"}
+  }
+}

@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraSemionotus extends EntityPrehistoricFloraFish
 	public EntityPrehistoricFloraSemionotus(World world) {
 		super(world);
 		setSize(0.28F, 0.23F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -58,7 +54,7 @@ public class EntityPrehistoricFloraSemionotus extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "late Triassic - early Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

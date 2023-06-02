@@ -190,18 +190,34 @@ public class ModelTeleocrater extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.565F);
+        this.body.render(f5 );
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.7F;
-        this.body.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(armL, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(armL2, -1.1781F, 0.0F, 0.0F);
+        this.setRotateAngle(armL3, 0.9599F, 0.0F, 0.0F);
+        this.setRotateAngle(armR, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(armR2, -1.1781F, 0.0F, 0.0F);
+        this.setRotateAngle(armR3, 0.9599F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.1309F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.3054F, -0.0436F, -0.0436F);
+        this.setRotateAngle(jaw, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, -1.4835F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 1.8762F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(legR, -1.4835F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, 1.8762F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.2182F, -0.0873F, -0.0436F);
+        this.setRotateAngle(neck2, 0.1309F, -0.1745F, -0.0436F);
+        this.setRotateAngle(tail, -0.1745F, 0.1309F, 0.0F);
+        this.setRotateAngle(tail2, 0.2356F, 0.2182F, 0.0873F);
+        this.setRotateAngle(tail3, 0.0436F, 0.3054F, 0.0436F);
+        this.body.offsetY = 0.01F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -213,7 +229,7 @@ public class ModelTeleocrater extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.63F;
+        //this.body.offsetY = 0.63F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraTeleocrater Teleocrater = (EntityPrehistoricFloraTeleocrater) e;

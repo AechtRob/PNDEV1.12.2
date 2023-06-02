@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 	public EntityPrehistoricFloraHemicyclaspis(World world) {
 		super(world);
 		setSize(0.6F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -42,7 +38,7 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian - [Devonian]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

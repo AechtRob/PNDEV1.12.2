@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderRoachoidSwamp extends RenderLiving<EntityPrehistoricFloraRoachoidSwampInsect> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_swamp.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_swamp.png");
 
     public RenderRoachoidSwamp(RenderManager mgr) {
         super(mgr, new ModelRoachoid(), 0.0f);

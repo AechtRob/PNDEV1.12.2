@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderProfallotaspis extends RenderLiving<EntityPrehistoricFloraProfallotaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/profallotaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/profallotaspis.png");
 
     public RenderProfallotaspis(RenderManager mgr) {
         super(mgr, new ModelProfallotaspis(), 0.00f);

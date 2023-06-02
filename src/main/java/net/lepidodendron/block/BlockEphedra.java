@@ -140,8 +140,8 @@ public class BlockEphedra extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Gnetophyte plant");
-	        tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Quaternary");
-	        tooltip.add("Propagation: fruit/cone");}
+	        	tooltip.add("Periods: Cretaceous (?) - Paleogene (?) - Neogene - Pleistocene [- present]");
+	        	tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

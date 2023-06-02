@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLungmenshanaspis;
-import net.lepidodendron.entity.EntityPrehistoricFloraUrosthenes;
 import net.lepidodendron.entity.model.entity.ModelLungmenshanaspis;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -10,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLungmenshanaspis extends RenderLiving<EntityPrehistoricFloraLungmenshanaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lungmenshanaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lungmenshanaspis.png");
 
     public RenderLungmenshanaspis(RenderManager mgr) {
         super(mgr, new ModelLungmenshanaspis(), 0.0f);

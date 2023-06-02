@@ -1,0 +1,56 @@
+{
+    "multipart": [
+        {
+          "apply": [
+            {"model": "lepidodendron:underwater_debris_bottom_01" },
+            {"model": "lepidodendron:underwater_debris_bottom_02" },
+            {"model": "lepidodendron:underwater_debris_bottom_03" },
+            {"model": "lepidodendron:underwater_debris_bottom_04" },
+            {"model": "lepidodendron:underwater_debris_bottom_05" },
+            {"model": "lepidodendron:underwater_debris_bottom_06" },
+            {"model": "lepidodendron:underwater_debris_bottom_07" },
+            {"model": "lepidodendron:underwater_debris_bottom_08" },
+            {"model": "lepidodendron:underwater_debris_bottom_09" },
+            {"model": "lepidodendron:underwater_debris_bottom_10" },
+            {"model": "lepidodendron:underwater_debris_bottom_11" },
+            {"model": "lepidodendron:underwater_debris_bottom_12" },
+            {"model": "lepidodendron:underwater_debris_bottom_13" },
+            {"model": "lepidodendron:underwater_debris_bottom_14" },
+            {"model": "lepidodendron:underwater_debris_bottom_15" },
+            {"model": "lepidodendron:underwater_debris_bottom_16" },
+            {"model": "lepidodendron:underwater_debris_bottom_17" },
+            {"model": "lepidodendron:underwater_debris_bottom_18" },
+            {"model": "lepidodendron:underwater_debris_bottom_19" },
+            {"model": "lepidodendron:underwater_debris_bottom_20" }
+          ]
+        },
+      {
+          "apply": [
+            {"model": "lepidodendron:underwater_debris_top_01" },
+            {"model": "lepidodendron:underwater_debris_top_02" },
+            {"model": "lepidodendron:underwater_debris_top_03" },
+            {"model": "lepidodendron:underwater_debris_top_04" },
+            {"model": "lepidodendron:underwater_debris_top_05" },
+            {"model": "lepidodendron:underwater_debris_top_06" },
+            {"model": "lepidodendron:underwater_debris_top_07" },
+            {"model": "lepidodendron:underwater_debris_top_08" },
+            {"model": "lepidodendron:underwater_debris_top_09" },
+            {"model": "lepidodendron:underwater_debris_top_10" },
+            {"model": "lepidodendron:underwater_debris_top_11" },
+            {"model": "lepidodendron:underwater_debris_top_12" },
+            {"model": "lepidodendron:underwater_debris_top_13" },
+            {"model": "lepidodendron:underwater_debris_top_14" },
+            {"model": "lepidodendron:underwater_debris_top_15" },
+            {"model": "lepidodendron:underwater_debris_top_16" },
+            {"model": "lepidodendron:underwater_debris_top_17" },
+            {"model": "lepidodendron:underwater_debris_top_18" },
+            {"model": "lepidodendron:underwater_debris_top_19" },
+            {"model": "lepidodendron:underwater_debris_top_20" },
+            {"model": "lepidodendron:underwater_debris_top_21" },
+            {"model": "lepidodendron:underwater_debris_top_22" },
+            {"model": "lepidodendron:underwater_debris_top_23" },
+            {"model": "lepidodendron:underwater_debris_top_24" }
+          ]
+        }
+    ]
+}

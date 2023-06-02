@@ -9,8 +9,11 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEunotosaurus extends RenderLiving<EntityPrehistoricFloraEunotosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eunotosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eunotosaurus.png");
 
+    public static float getScaler() {
+        return 0.7F * 0.34F;
+    }
     public RenderEunotosaurus(RenderManager mgr) {
         super(mgr, new ModelEunotosaurus(), 0.0f);
     }
@@ -24,12 +27,14 @@ public class RenderEunotosaurus extends RenderLiving<EntityPrehistoricFloraEunot
     protected void applyRotations(EntityPrehistoricFloraEunotosaurus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
-
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEunotosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.20F;
+        this.shadowSize = 0;
     }
 
 }

@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_antineosteus",
 			"title": "Antineosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef $(br2)>Placodermi$(br)>Brachythoraci$(br)>Homosteiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef $(br2)>Brachythoraci$(br)>Homosteiidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/antineosteus.png"],
-			"title": "Antineosteus rufus",
+			"title": "A. rufus",
 			"text": ""
 		},
 		{

@@ -248,21 +248,32 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public double oligoAngle;
 		public double fogDensity;
 
+		@Nullable
 		public BlockPos getCentrifugePos() {
-			return pos.offset(world.getBlockState(this.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+			EnumFacing facing = world.getBlockState(this.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING);
+			if (facing != EnumFacing.DOWN && facing != EnumFacing.UP) {
+				return pos.down().offset(facing.rotateY());
+			}
+			return null;
 		}
 
 		public boolean canStartProcess() {
 
 			if (LepidodendronConfig.machinesRF) {
-				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
-				if (tileEntity != null) {
-					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
-						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
-						if (!centrifuge.hasEnergy(minEnergyNeeded)) {
-							return false;
+				BlockPos centrifugePos = getCentrifugePos();
+				if (centrifugePos != null) {
+					TileEntity tileEntity = world.getTileEntity(centrifugePos);
+					if (tileEntity != null) {
+						if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+							BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+							if (!centrifuge.hasEnergy(minEnergyNeeded)) {
+								return false;
+							}
 						}
 					}
+				}
+				else {
+					return false;
 				}
 			}
 

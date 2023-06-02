@@ -52,11 +52,7 @@ public class EntityPrehistoricFloraMetoposaurus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraMetoposaurus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.22F, 0.98F);
 		minWidth = 0.1F;
 		maxWidth = 1.22F;
 		maxHeight = 0.98F;

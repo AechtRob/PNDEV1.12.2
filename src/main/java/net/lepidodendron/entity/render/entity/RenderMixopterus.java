@@ -9,12 +9,15 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMixopterus extends RenderLiving<EntityPrehistoricFloraMixopterus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixopterus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixopterus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mixopterus_baby.png");
-
 
     public RenderMixopterus(RenderManager mgr) {
         super(mgr, new ModelMixopterus(), 0.0f);
+    }
+
+    public static float getScaler() {
+        return 0.3F;
     }
 
     @Override
@@ -33,7 +36,7 @@ public class RenderMixopterus extends RenderLiving<EntityPrehistoricFloraMixopte
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMixopterus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

@@ -8,7 +8,10 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderKujdanowiaspis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -32,13 +35,7 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraKujdanowiaspis(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.1F;
-		//maxSize = 1.0F;
+		setSize(0.35F, 0.22F);
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.22F;
@@ -166,5 +163,56 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.KUJDANOWIASPIS_LOOT;
 	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.02;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.15;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderKujdanowiaspis.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelKujdanowiaspis;
+	}
+	public static float getScaler(@Nullable String variant) {return RenderKujdanowiaspis.getScaler();}
 
 }

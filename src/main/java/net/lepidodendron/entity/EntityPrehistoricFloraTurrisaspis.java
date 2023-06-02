@@ -33,10 +33,6 @@ public class EntityPrehistoricFloraTurrisaspis extends EntityPrehistoricFloraAge
 	public EntityPrehistoricFloraTurrisaspis(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.2F;

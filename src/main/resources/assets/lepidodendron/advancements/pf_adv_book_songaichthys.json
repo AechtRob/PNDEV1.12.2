@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:songaichthys_raw"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_songaichthys.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_songaichthys.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_songaichthys"
+		}
+	}
+}

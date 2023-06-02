@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
+import net.lepidodendron.entity.ai.NautiloidWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsBasiloceras;
@@ -31,13 +32,7 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 
 	public EntityPrehistoricFloraBasiloceras(World world) {
 		super(world);
-		//setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.8F, 0.956F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.956F;
@@ -75,7 +70,7 @@ public class EntityPrehistoricFloraBasiloceras extends EntityPrehistoricFloraNau
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
+		tasks.addTask(1, new NautiloidWanderSurface(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}

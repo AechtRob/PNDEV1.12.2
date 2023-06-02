@@ -44,11 +44,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraScleromochlus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.3F, 0.3F);
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
@@ -288,7 +284,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();

@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderTartuosteus extends RenderLiving<EntityPrehistoricFloraTartuosteus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tartuosteus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tartuosteus.png");
 
     public RenderTartuosteus(RenderManager mgr) {
         super(mgr, new ModelTartuosteus(), 0.05f);

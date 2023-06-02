@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPomatrum extends RenderLiving<EntityPrehistoricFloraPomatrum> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pomatrum.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pomatrum.png");
 
     public RenderPomatrum(RenderManager mgr) {
         super(mgr, new ModelPomatrum(), 0.0f);

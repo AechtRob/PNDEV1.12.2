@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEdaphosaurus extends RenderLiving<EntityPrehistoricFloraEdaphosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edaphosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edaphosaurus.png");
 
     public RenderEdaphosaurus(RenderManager mgr) {
         super(mgr, new ModelEdaphosaurus(), 0.5f);

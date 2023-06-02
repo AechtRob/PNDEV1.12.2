@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:protognetum"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_protognetum.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_protognetum.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_protognetum"
+		}
+	}
+}

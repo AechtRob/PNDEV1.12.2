@@ -13,6 +13,7 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -51,12 +52,22 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
 
     public EntityPrehistoricFloraJellyfishBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraJellyfishBase.SwimmingMoveHelper();
         this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     public boolean isSurface() {
@@ -162,7 +173,11 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
+        return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
 
     public void writeEntityToNBT(NBTTagCompound compound)
@@ -184,7 +199,9 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         if (ds == DamageSource.IN_WALL) {
-            return false;
+            if (this.isInWater()) {
+                return false;
+            }
         }
         if (this.isEntityInvulnerable(ds))
         {

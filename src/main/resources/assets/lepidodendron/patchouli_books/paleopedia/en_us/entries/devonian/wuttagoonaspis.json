@@ -1,0 +1,31 @@
+{
+	"name": "Wuttagoonaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/wuttagoonaspis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_wuttagoonaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wuttagoonaspis",
+			"title": "Wuttagoonaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish$(br2)>Arthrodira$(br)>Wuttagoonaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/wuttagoonaspis.png"],
+			"title": "W. fletcheri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",
+			"type": "text",
+			"text": "Wuttagoonaspis is arthrodiran known from Devonian Georgina Basin of central Australia. It is large placoderm with skull length about 21 cm, it had a pair of short spines on its armor. It probably had a benthic ecology, living in lacustrine environment."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

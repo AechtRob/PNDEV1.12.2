@@ -1,0 +1,41 @@
+{
+	"name": "Asteroceras",
+	"read_by_default": true,
+	"icon": "lepidodendron:shell_asteroceras",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_ammonite_asteroceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ammonite_asteroceras",
+			"title": "Asteroceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Arietitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/asteroceras.png"],
+			"title": "Asteroceras sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
+			"type": "text",
+			"text": "Asteroceras is widespread genus of Jurassic ammonite. The genus Asteroceras was first described by Alpheus Hyatt in 1867, from the Greek astron \"star\" and keras \"horn\". Asteroceras was a fast swimming marine predator that inhabited mostly shallow waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
+			"type": "text",
+			"text": "Among the most populous in the Asteroceratids, this ammonite could grow to relatively large sizes, with some of the largest specimens measuring up to 40 cm in shell diameter. The shell was slightly elongated when seen from the top and the whorls became visibly larger quite quickly as they developed, while ornamentation remained bare along its entire length, if not for the quite prominent ribs running along its sides and bottom,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
+			"type": "text",
+			"text": " although this ornamentation varied visibly depending on the developmental stage of the animal. In certain areas, this ammonite is such a common fossil find as to have given the name to the formation its found in, as its the case in the Obtususton-Formation in Germany, taking the name from the species name of Asteroceras obtusum."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+		}
+	]
+}

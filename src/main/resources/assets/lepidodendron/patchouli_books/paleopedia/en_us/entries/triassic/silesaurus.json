@@ -1,0 +1,31 @@
+{
+	"name": "Silesaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/silesaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_silesaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_silesaurus",
+			"title": "Silesaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Flooded Forest$(br2)>Ornithodira$(br)>Silesauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/silesaurus.png"],
+			"title": "S. opolensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silesaurus",
+			"type": "text",
+			"text": "Silesaurus opolensis was a species of silesaurid dinosauriform (though not a true dinosaur) that lived during the Late Triassic (around 224 - 209 million years ago). Its remains have been found in the Keuper Claystone of Krasiejów, Poland. This lightly built, likely fast-moving animal was initially thought to have been herbivorous, but later research on coprolites attributed to this animal suggest that it may actually have been an insectivore. In these coprolites, a new beetle named Triamyxa coprolithica, was discovered and described."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silesaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

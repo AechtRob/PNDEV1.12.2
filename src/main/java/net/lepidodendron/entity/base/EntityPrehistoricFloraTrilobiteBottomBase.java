@@ -14,6 +14,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -51,17 +52,32 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     private int jumpTicks;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
+
     private int inPFLove;
+
     private EntityPrehistoricFloraTrilobiteBottomBase shoalLeader;
     private int alarmCooldown;
 
     public EntityPrehistoricFloraTrilobiteBottomBase(World world) {
         super(world);
+        this.enablePersistence();
         this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
         this.navigator = new PathNavigateWaterBottom(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public boolean isRiding() {
+        if (this.getRidingEntity() != null) {
+            if (this.getRidingEntity() instanceof EntityBoat) {
+                return false;
+            }
+        }
+        return super.isRiding();
     }
 
     public boolean canShoal() {
@@ -76,8 +92,12 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         return 0;
     }
 
-    public final EntityLivingBase[] canShoalWith() {
-        return new EntityLivingBase[]{this};
+    public Class[] canShoalWith() {
+        return new Class[]{this.getClass()};
+    }
+
+    public int getShoalInterval() {
+        return 100;
     }
 
     public int getAlarmCooldown() {return this.alarmCooldown;}
@@ -168,9 +188,18 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         super.entityInit();
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(MATEABLE, 0);
+        this.dataManager.register(ISMOVING, false);
+        this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
     }
 
 
+    public int getTickOffset() {
+        return this.dataManager.get(TICKOFFSET);
+    }
+
+    public void setTickOffset(int ticks) {
+        this.dataManager.set(TICKOFFSET, ticks);
+    }
     public int getMateable() {
         return this.dataManager.get(MATEABLE);
     }
@@ -201,11 +230,18 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setTicks(0);
         this.setMateable(0);
+        this.setTickOffset(rand.nextInt(1000));
+        ShoalingHelper.updateShoalTrilobiteBottomBase(this);
+
         return livingdata;
     }
 
     public boolean getCanBreed() {
-        return this.getTicks() > 24000; //If the mob has done not bred for a MC day
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
+        return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
 
     public void writeEntityToNBT(NBTTagCompound compound)
@@ -214,6 +250,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         compound.setInteger("Ticks", this.getTicks());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("mateable", this.getMateable());
+        compound.setInteger("TickOffset", this.getTickOffset());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
@@ -221,12 +258,15 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         this.setTicks(compound.getInteger("Ticks"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.setMateable(compound.getInteger("mateable"));
+        this.setTickOffset(compound.getInteger("TickOffset"));
     }
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         if (ds == DamageSource.IN_WALL) {
-            return false;
+            if (this.isInWater()) {
+                return false;
+            }
         }
         if (this.isEntityInvulnerable(ds))
         {
@@ -280,6 +320,14 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     public boolean isPushedByWater()
     {
         return false;
+    }
+
+    public boolean getIsMoving() {
+        return this.dataManager.get(ISMOVING);
+    }
+
+    public void setIsMoving(boolean isMoving) {
+        this.dataManager.set(ISMOVING, isMoving);
     }
 
     @Override
@@ -452,8 +500,12 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
             this.alarmCooldown -= 1;
         }
 
-        if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
-            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
+        double factor = LepidodendronConfig.doShoalingFlockingFactor;
+        if (factor > 100) {
+            factor = 100;
+        }
+        if (factor > 0) {
+            if (((double) ii / Math.round((float)this.getShoalInterval() / factor)) == Math.round((double) ii / Math.round((float)this.getShoalInterval() / factor))) {
                 ShoalingHelper.updateShoalTrilobiteBottomBase(this);
             }
         }
@@ -503,6 +555,13 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
                     f4 += (0.54600006F - f4) * speedModifier / 3.0F;
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
+                if (this.motionX != 0 || this.motionZ != 0) {
+                    this.setIsMoving(true);
+                }
+                else {
+                    this.setIsMoving(false);
+                }
 
                 if (this.isPotionActive(MobEffects.LEVITATION))
                 {

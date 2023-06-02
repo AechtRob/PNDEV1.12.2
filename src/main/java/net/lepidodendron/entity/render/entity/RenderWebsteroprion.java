@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderWebsteroprion extends RenderLiving<EntityPrehistoricFloraWebsteroprion> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/websteroprion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/websteroprion.png");
 
     public RenderWebsteroprion(RenderManager mgr) {
         super(mgr, new ModelWebsteroprion(), 0.1f);

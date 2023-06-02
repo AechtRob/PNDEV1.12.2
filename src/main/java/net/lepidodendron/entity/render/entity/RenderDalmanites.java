@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDalmanites extends RenderLiving<EntityPrehistoricFloraDalmanites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dalmanites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dalmanites.png");
 
     public RenderDalmanites(RenderManager mgr) {
         super(mgr, new ModelDalmanites(), 0.0f);

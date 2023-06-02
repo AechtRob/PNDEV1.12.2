@@ -41,13 +41,7 @@ public class EntityPrehistoricFloraCartorhynchus extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraCartorhynchus(World world) {
 		super(world);
-		setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.3F;
-		//maxSize = 1.0F;
+		setSize(0.6F, 0.385F);
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.385F;

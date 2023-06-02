@@ -1,0 +1,41 @@
+{
+	"name": "Gooloogongia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/gooloogongia_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_gooloogongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gooloogongia",
+			"title": "Gooloogongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Floodplain$(br2)>Sarcopterygii$(br)>Rhizodontida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gooloogongia.png"],
+			"title": "G. loomesi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
+			"type": "text",
+			"text": "Gooloogongia loomesi was a species of rhizodont lobe-finned fish that lived during the Late Devonian (around 376.1 - 360.7 million years ago) in what is now the Mandagery Sandstone Formation of Canowindra township, Australia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
+			"type": "text",
+			"text": " It is named after the town of Gooloogong in New South Wales, and its species name honours Bruce Loomes, the foreman of the 1993 excavation that uncovered this fish. Like many other lobe-finned fish, Gooloogongia had two rows of teeth in its jaws, with the outer row consisting of smaller teeth,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
+			"type": "text",
+			"text": " with the inner row being larger fangs. The teeth were sharp and needle-like, but the many armoured placoderms living in the region at the time were probably not on this fish's menu, as its teeth likely wouldn't have been able to pierce their bony armour plating."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

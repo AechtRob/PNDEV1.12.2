@@ -46,15 +46,11 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private boolean screaming;
-	private int screamAlarmCooldown;
+	public int screamAlarmCooldown;
 
 	public EntityPrehistoricFloraDiictodon(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.30F, 0.25F);
 		minWidth = 0.10F;
 		maxWidth = 0.30F;
 		maxHeight = 0.25F;
@@ -81,12 +77,21 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm()
+				&& (!(this instanceof EntityPrehistoricFloraRobertia))
+				&& (!(this instanceof EntityPrehistoricFloraEosimops))
+				&& (!(this instanceof EntityPrehistoricFloraProsictodon))) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			List<EntityPrehistoricFloraDiictodon> Diictodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDiictodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDiictodon currentDiictodon : Diictodon) {
-				currentDiictodon.setRevengeTarget(ee);
-				currentDiictodon.screamAlarmCooldown = rand.nextInt(20);
+				if (
+					(!(currentDiictodon instanceof EntityPrehistoricFloraRobertia))
+					&& (!(currentDiictodon instanceof EntityPrehistoricFloraEosimops))
+					&& (!(currentDiictodon instanceof EntityPrehistoricFloraProsictodon))
+				) {
+					currentDiictodon.setRevengeTarget(ee);
+					currentDiictodon.screamAlarmCooldown = rand.nextInt(20);
+				}
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -168,10 +173,11 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		tasks.addTask(4, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(5, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 20));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1.5));
 	}
 
@@ -688,53 +694,53 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetPlinth() { return 0.16; }
-	public static double offsetWall() { return 0.05; }
-	public static double upperfrontverticallinedepth() {
+	public static double offsetWall(@Nullable String variant) { return 0.05; }
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.5;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.2;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.1;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_DIICTODON;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderDiictodon.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelDiictodon;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderDiictodon.getScaler();
 	}
 }

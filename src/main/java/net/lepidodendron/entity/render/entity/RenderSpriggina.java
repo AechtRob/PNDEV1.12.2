@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSpriggina extends RenderLiving<EntityPrehistoricFloraSpriggina> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spriggina.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spriggina.png");
 
     public RenderSpriggina(RenderManager mgr) {
         super(mgr, new ModelSpriggina(), 0.0f);

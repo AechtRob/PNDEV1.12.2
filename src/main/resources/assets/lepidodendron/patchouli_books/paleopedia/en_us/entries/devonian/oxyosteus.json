@@ -1,0 +1,31 @@
+{
+	"name": "Oxyosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/oxyosteus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_oxyosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_oxyosteus",
+			"title": "Oxyosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Brachydeiridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/oxyosteus.png"],
+			"title": "O. rostratus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_oxyosteus",
+			"type": "text",
+			"text": "Oxyosteus is a genus of Devonian placoderm from Europe. It had an elonged snout, O. rostratus had a curved snout while O. magnus had thin, spine-like snout. Its body width is extremely compressed compared to other placoderms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_oxyosteus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

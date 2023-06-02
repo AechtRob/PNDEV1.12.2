@@ -12,7 +12,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderCacops;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -46,13 +49,7 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 
 	public EntityPrehistoricFloraCacops(World world) {
 		super(world);
-		setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.6F;
-		//maxSize = 1.0F;
+		setSize(0.35F, 0.20F);
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.20F;
@@ -80,14 +77,14 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.115F;
+		float calcSpeed = 0.1F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.115f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.4F;
+		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.28F;
 	}
 
 	@Override
@@ -275,6 +272,58 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 			return LepidodendronMod.CACOPS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.CACOPS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.02;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.85F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCacops.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCacops;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCacops.getScaler();
 	}
 
 }

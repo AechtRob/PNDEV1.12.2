@@ -37,11 +37,7 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 
 	public EntityPrehistoricFloraMaclurina(World world) {
 		super(world);
-		setSize(0.8F, 0.8F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.5F, 0.5F);
 	}
 
 	@Override
@@ -65,7 +61,7 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.072f;
+		return 0.02f;
 	}
 
 	@Override

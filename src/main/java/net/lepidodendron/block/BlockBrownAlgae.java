@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -211,13 +208,18 @@ public class BlockBrownAlgae extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-		
+		public BlockRenderLayer getRenderLayer() {
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return BlockRenderLayer.CUTOUT;
+			}
+			return BlockRenderLayer.TRANSLUCENT;
+		}
+
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return layer == BlockRenderLayer.CUTOUT_MIPPED;
+			}
 			return layer == BlockRenderLayer.TRANSLUCENT;
 		}
 
@@ -471,7 +473,7 @@ public class BlockBrownAlgae extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 			tooltip.add("Type: Marine Algae");
-	        tooltip.add("Periods: Jurassic - Cretaceous - Paleogene - Neogene - Quaternary");
+	        tooltip.add("Periods: Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
 	        tooltip.add("Propagation: water");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

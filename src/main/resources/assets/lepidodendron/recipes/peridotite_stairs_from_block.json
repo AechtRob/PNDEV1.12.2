@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:peridotite"
+    },
+    "3": {
+      "item": "lepidodendron:peridotite"
+    },
+    "4": {
+      "item": "lepidodendron:peridotite"
+    },
+    "6": {
+      "item": "lepidodendron:peridotite"
+    },
+    "7": {
+      "item": "lepidodendron:peridotite"
+    },
+    "8": {
+      "item": "lepidodendron:peridotite"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:peridotite_stairs",
+    "count": 4
+  }
+}

@@ -1,0 +1,41 @@
+{
+	"name": "Stethacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/stethacanthus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_stethacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stethacanthus",
+			"title": "Stethacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)$(l)Habitat:$() Ocean$(br2)>Chondrichthyes $(br)>Symmoriiformes $(br)>Stethacanthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/stethacanthus.png"],
+			"title": "S. altonensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stethacanthus",
+			"type": "text",
+			"text": "Stethacanthus was a genus of shark-like holocephalian cartilaginous fish, that lived from the Carboniferous to the Earliest Permian (around 382.7 - 298.9 million years ago). Its remains have been found in Asia, Europe, and North America. Examples from the early part of this date range, in the Devonian, are uncertain and may represent a different genus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stethacanthus",
+			"type": "text",
+			"text": "The fossils are most commonly found at the Bear Gulch Limestone in Montana, which may have been a breeding ground for this seemingly migratory animal. Much like its relative Akmonistion, Stethacanthus had a rather unusually shaped first dorsal fin, superficially resembling an anvil or an ironing board. Small spikes or large denticles adorned the top of the dorsal fin,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stethacanthus",
+			"type": "text",
+			"text": "as well as part of the forehead. It's worth noting that these structures were only present in males, suggesting they served some purpose relating to courtship, perhaps either as display or as an aid in mating. The relatively small body fins and teeth of Stethacanthus suggest that it may have been a bottom-dweller."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stethacanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

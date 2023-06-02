@@ -1,0 +1,31 @@
+{
+	"name": "Microbrachius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/microbrachius_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_microbrachius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_microbrachius",
+			"title": "Microbrachius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest, Wattieza Forest$(br2)>Antiarchi$(br)>Microbrachiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/microbrachius.png"],
+			"title": "M. dicki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microbrachius",
+			"type": "text",
+			"text": "Microbrachius is a small antiarch placoderm from the Devonian. As its genus name suggests, it had short \"arm\"-like fins. Importantly, some fossils preserving male clasper (mating organ) are known. That means at least some placoderms had internal fertilization system. Its morphology shows that its mating behavior was probably side by side and \"arms\" may have been used to hold each other while mating. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microbrachius",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

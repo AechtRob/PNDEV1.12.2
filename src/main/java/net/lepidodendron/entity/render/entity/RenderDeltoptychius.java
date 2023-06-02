@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDeltoptychius extends RenderLiving<EntityPrehistoricFloraDeltoptychius> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deltoptychius.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deltoptychius.png");
 
     public RenderDeltoptychius(RenderManager mgr) {
         super(mgr, new ModelDeltoptychius(), 0.0f);

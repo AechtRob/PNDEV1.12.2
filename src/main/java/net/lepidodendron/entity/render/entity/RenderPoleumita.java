@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPoleumita extends RenderLiving<EntityPrehistoricFloraPoleumita> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poleumita.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poleumita.png");
 
     public RenderPoleumita(RenderManager mgr) {
         super(mgr, new ModelPoleumita(), 0.0f);

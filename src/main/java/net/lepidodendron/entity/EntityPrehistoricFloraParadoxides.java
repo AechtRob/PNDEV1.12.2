@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraParadoxides extends EntityPrehistoricFloraTri
 	public EntityPrehistoricFloraParadoxides(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

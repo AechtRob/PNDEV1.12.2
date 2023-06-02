@@ -231,5 +231,10 @@ public class BlockNautiloidShellRayonnoceras extends ElementsLepidodendronMod.Mo
 			this.readFromNBT(tag);
 		}
 
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return INFINITE_EXTENT_AABB;
+		}
+
 	}
 }

@@ -3,7 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.render.entity.RenderEosimops;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
@@ -25,11 +25,7 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 
 	public EntityPrehistoricFloraEosimops(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.25F, 0.30F);
 		minWidth = 0.10F;
 		maxWidth = 0.25F;
 		maxHeight = 0.30F;
@@ -58,6 +54,7 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 			List<EntityPrehistoricFloraEosimops> Eosimops = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEosimops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraEosimops currentEosimops : Eosimops) {
 				currentEosimops.setRevengeTarget(ee);
+				currentEosimops.screamAlarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -82,7 +79,7 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 		return LepidodendronMod.EOSIMOPS_LOOT;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_EOSIMOPS;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderEosimops.TEXTURE;
 	}
 }

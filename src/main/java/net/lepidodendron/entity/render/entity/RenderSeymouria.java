@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSeymouria extends RenderLiving<EntityPrehistoricFloraSeymouria> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/seymouria.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/seymouria.png");
 
     public RenderSeymouria(RenderManager mgr) {
         super(mgr, new ModelSeymouria(), 0.0f);

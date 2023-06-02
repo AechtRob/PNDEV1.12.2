@@ -242,12 +242,14 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.head.rotateAngleX = (float) Math.toRadians(24);
         this.lowerjaw1.rotateAngleX = (float) Math.toRadians(46);
         this.neck.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.1745F, (float) Math.toRadians(90), 0.0F);
         this.setRotateAngle(bodyfront, -0.1658F, 0.0F, 0.0F);
@@ -287,6 +289,7 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

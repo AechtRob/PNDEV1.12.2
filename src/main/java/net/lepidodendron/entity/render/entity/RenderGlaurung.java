@@ -10,9 +10,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderGlaurung extends RenderLiving<EntityPrehistoricFloraGlaurung> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/glaurung.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/glaurung.png");
     private static final ResourceLocation TEXTURE_REX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rex.png");
-    
+
     public RenderGlaurung(RenderManager mgr) {
         super(mgr, new ModelWeigeltisaurid(), 0.0f);
     }

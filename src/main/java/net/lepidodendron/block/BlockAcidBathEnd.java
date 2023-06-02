@@ -361,7 +361,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
 									powerBlockStorage.extractEnergy(energyTransferIn, false);
 									this.receiveEnergy(energyTransferIn, false);
-									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+									//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 								}
 							}
 						}
@@ -419,9 +419,14 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
-			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
-				return true;
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockAcidBathEnd.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
+					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
 			}
 			return super.hasCapability(capability, facing);
 		}

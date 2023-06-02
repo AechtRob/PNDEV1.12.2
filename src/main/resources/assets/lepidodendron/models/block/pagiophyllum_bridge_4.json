@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/bridge",
+ "textures": {
+ "wood": "lepidodendron:blocks/pagiophyllum_planks",
+ "metal": "blocks/emerald_block"
+ }
+}

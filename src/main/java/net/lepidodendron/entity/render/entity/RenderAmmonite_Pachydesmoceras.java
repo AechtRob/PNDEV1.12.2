@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmmonite_Pachydesmoceras extends RenderLiving<EntityPrehistoricFloraAmmonite_Pachydesmoceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_pachydesmoceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_pachydesmoceras.png");
 
     public RenderAmmonite_Pachydesmoceras(RenderManager mgr) {
         super(mgr, new ModelAmmonite100cm(), 0.65f);

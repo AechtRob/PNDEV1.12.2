@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderIvoites extends RenderLiving<EntityPrehistoricFloraIvoites> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ivoites.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ivoites.png");
 
     public RenderIvoites(RenderManager mgr) {
         super(mgr, new ModelIvoites(), 0.1f);

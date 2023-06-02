@@ -392,7 +392,7 @@ public class ModelEstemmenosuchus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Lowerjawfront, -0.1911135497644277F, 0.0F, 0.0F);
         this.setRotateAngle(Neck, -0.1485275233394591F, -0.31834805156902407F, -0.1485275233394591F);
         this.setRotateAngle(Uppermiddleteeth, -0.10611601718967469F, 0.0F, 0.0F);
-        this.Hips.offsetY = -0.16F;
+        this.Hips.offsetY = -0.155F;
         this.Hips.offsetX = 0.16F;
         this.Hips.offsetZ = -0.13F;
         this.Hips.render(0.01F);

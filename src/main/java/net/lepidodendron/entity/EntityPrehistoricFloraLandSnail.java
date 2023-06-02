@@ -44,10 +44,6 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	public EntityPrehistoricFloraLandSnail(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
@@ -60,13 +56,13 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	}
 
 
-	public static String getPeriod() {return "Carboniferous - Present";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - Present";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -86,7 +82,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 
 	@Override
 	protected float getAISpeedLand() {
-		return 0.1f;
+		return 0.07f;
 	}
 
 	@Override

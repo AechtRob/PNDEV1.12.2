@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderOrodus extends RenderLiving<EntityPrehistoricFloraOrodus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orodus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orodus.png");
 
     public RenderOrodus(RenderManager mgr) {
         super(mgr, new ModelOrodus(), 0.0f);

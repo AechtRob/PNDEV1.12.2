@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPederpes extends RenderLiving<EntityPrehistoricFloraPederpes> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
 
     public RenderPederpes(RenderManager mgr) {
         super(mgr, new ModelPederpes(), 0.3f);

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGabreyaspis extends RenderLiving<EntityPrehistoricFloraGabreyaspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gabreyaspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gabreyaspis.png");
 
     public RenderGabreyaspis(RenderManager mgr) {
         super(mgr, new ModelGabreyaspis(), 0.0f);

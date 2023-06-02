@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemPhyllothecaItem;
 import net.lepidodendron.item.ItemPolyspermophyllumFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -151,7 +150,7 @@ public class BlockPolyspermophyllum extends ElementsLepidodendronMod.ModElement 
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

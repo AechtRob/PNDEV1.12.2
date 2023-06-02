@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLunataspis extends RenderLiving<EntityPrehistoricFloraLunataspis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Lunataspis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Lunataspis.png");
 
     public RenderLunataspis(RenderManager mgr) {
         super(mgr, new ModelLunataspis(), 0.0f);

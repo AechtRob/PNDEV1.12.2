@@ -130,7 +130,10 @@ public class AcidBathOutputJunk {
                 //new ItemStack(Items.IRON_NUGGET, 1),
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockHoldfast.block, 1),
-                new ItemStack(BlockMeteorite.block, 1)
+                new ItemStack(BlockMeteorite.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
@@ -156,7 +159,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockHoldfast.block, 1),
                 new ItemStack(ItemSulphur.block, 1),
-                new ItemStack(Blocks.SAND, 1, 0)
+                new ItemStack(Blocks.SAND, 1, 0),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
@@ -180,7 +186,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockHoldfast.block, 1),
-                new ItemStack(Blocks.SAND, 1, 0)
+                new ItemStack(Blocks.SAND, 1, 0),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
        };
         return itemStack;
     }
@@ -205,7 +214,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockHoldfast.block, 1),
                 new ItemStack(Blocks.SAND, 1, 0),
-                new ItemStack(BlockCoarseSiltyDirt.block, 1, 0)
+                new ItemStack(BlockCoarseSiltyDirt.block, 1, 0),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
          };
         return itemStack;
     }
@@ -238,7 +250,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockCoarseSiltyDirt.block, 1, 0),
                 new ItemStack(Blocks.DIRT, 1, 1),
                 new ItemStack(ItemSalt.block, 1),
-                new ItemStack(BlockSandWhite.block, 1)
+                new ItemStack(BlockSandWhite.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
        };
         return itemStack;
     }
@@ -269,7 +284,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.COAL, 1, 1),
                 new ItemStack(BlockHoldfast.block, 1),
                 new ItemStack(BlockCoarseSandyDirt.block, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(ItemAnthracite.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
@@ -303,7 +321,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockDriedMud.block, 1),
                 new ItemStack(BlockLavaRock.block, 1),
                 new ItemStack(BlockScorchedEarth.block, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(ItemAnthracite.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
                };
         return itemStack;
     }
@@ -341,7 +362,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockLavaRock.block, 1),
                 new ItemStack(BlockDriedMud.block, 1),
                 new ItemStack(BlockScorchedEarth.block, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(ItemAnthracite.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
@@ -378,7 +402,10 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockSandBlack.block, 1),
                 new ItemStack(BlockLavaRock.block, 1),
                 new ItemStack(ItemSulphur.block, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(ItemAnthracite.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
@@ -404,8 +431,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(Items.COAL, 1, 0),
                 new ItemStack(Items.CLAY_BALL, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
@@ -431,8 +457,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(Items.COAL, 1, 0),
                 new ItemStack(Items.CLAY_BALL, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
@@ -458,8 +483,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(Items.COAL, 1, 0),
                 new ItemStack(Items.CLAY_BALL, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
@@ -487,8 +511,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.CLAY_BALL, 1),
                 new ItemStack(Items.FLINT, 1),
                 new ItemStack(Items.FLINT, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }

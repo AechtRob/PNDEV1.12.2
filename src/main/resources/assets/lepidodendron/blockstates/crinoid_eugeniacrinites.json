@@ -1,0 +1,132 @@
+{
+  "variants": {
+    "age=0,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=1,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=2,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=3,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=4,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=5,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=6,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=7,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=8,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=9,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=10,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=11,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=12,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=13,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=14,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+    "age=15,topshoot=false": {
+      "model": "lepidodendron:crinoid_eugeniacrinites"
+    },
+  "age=0,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=1,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=2,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=3,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=4,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=5,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=6,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=7,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=8,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=9,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=10,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=11,topshoot=true": [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=12,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=13,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=14,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ],
+    "age=15,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_var"},
+      {"model": "lepidodendron:crinoid_eugeniacrinites_top_static"}
+    ]
+  }
+}

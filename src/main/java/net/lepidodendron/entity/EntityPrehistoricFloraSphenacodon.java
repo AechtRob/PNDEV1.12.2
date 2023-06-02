@@ -41,11 +41,7 @@ public class EntityPrehistoricFloraSphenacodon extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraSphenacodon(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.56F, 0.80F);
 		minWidth = 0.10F;
 		maxWidth = 0.56F;
 		maxHeight = 0.80F;

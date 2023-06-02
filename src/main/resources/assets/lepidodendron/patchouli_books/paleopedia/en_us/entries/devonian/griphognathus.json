@@ -1,0 +1,32 @@
+{
+	"name": "Griphognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/griphognathus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_griphognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_griphognathus",
+			"title": "Griphognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Dipnoi$(br)>Holodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/griphognathus.png"],
+			"title": "G. whitei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_griphognathus",
+			"type": "text",
+			"text": "Griphognathus was a genus of early lungfish that lived during the Late Devonian. Its remains have been found in Europe and Australia. The most striking feature of this specialized animal was the elongated snout, which was lined with denticles (tiny tooth-like scales) for rasping against the roof of the mouth."
+		},
+
+		{
+			"advancement": "lepidodendron:pf_adv_book_griphognathus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

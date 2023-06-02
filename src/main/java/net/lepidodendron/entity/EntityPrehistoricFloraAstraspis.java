@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraAstraspis extends EntityPrehistoricFloraFishB
 	public EntityPrehistoricFloraAstraspis(World world) {
 		super(world);
 		setSize(0.28F, 0.23F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

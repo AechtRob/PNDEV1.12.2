@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:peridotite_slab_double"
+    }
+  }
+}

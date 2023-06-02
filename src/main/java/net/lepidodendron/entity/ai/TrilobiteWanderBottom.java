@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.EntityPrehistoricFloraPlectronoceras;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.pathfinding.Path;
@@ -12,6 +13,7 @@ import java.util.Random;
 public class TrilobiteWanderBottom extends AnimationAINoAnimation<EntityPrehistoricFloraTrilobiteBottomBase> {
 
     protected Animation animation;
+
     protected EntityPrehistoricFloraTrilobiteBottomBase PrehistoricFloraTrilobiteBase;
 
     public TrilobiteWanderBottom(EntityPrehistoricFloraTrilobiteBottomBase PrehistoricFloraTrilobiteBase, Animation animation)
@@ -20,7 +22,10 @@ public class TrilobiteWanderBottom extends AnimationAINoAnimation<EntityPrehisto
         setMutexBits(1);
         this.PrehistoricFloraTrilobiteBase = PrehistoricFloraTrilobiteBase;
         this.animation = animation;
+
     }
+
+
 
     @Override
     public Animation getAnimation()
@@ -49,6 +54,13 @@ public class TrilobiteWanderBottom extends AnimationAINoAnimation<EntityPrehisto
         if (!this.PrehistoricFloraTrilobiteBase.isInWater()) {
             //System.err.println("Not in water");
             return false;
+        }
+        if(this.PrehistoricFloraTrilobiteBase instanceof EntityPrehistoricFloraPlectronoceras){
+            EntityPrehistoricFloraPlectronoceras e = (EntityPrehistoricFloraPlectronoceras)this.PrehistoricFloraTrilobiteBase;
+
+            if(e.jumpCooldown > 0 && this.PrehistoricFloraTrilobiteBase.getNavigator().noPath()){
+                return false;
+            }
         }
         if (this.PrehistoricFloraTrilobiteBase.getRNG().nextFloat() < 0.5F) {
             Path path = this.PrehistoricFloraTrilobiteBase.getNavigator().getPath();

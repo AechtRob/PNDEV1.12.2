@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderClevosaurus extends RenderLiving<EntityPrehistoricFloraClevosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clevosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clevosaurus.png");
 
     public RenderClevosaurus(RenderManager mgr) {
         super(mgr, new ModelClevosaurus(), 0.0f);

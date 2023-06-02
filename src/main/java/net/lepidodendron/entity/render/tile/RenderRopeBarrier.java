@@ -36,8 +36,8 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
     private static final ResourceLocation TEXTURE_DYE_16 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rope.png");
 
     private static final ResourceLocation TEXTURE_END_0 = new ResourceLocation("minecraft:textures/blocks/anvil_base.png");
-    private static final ResourceLocation TEXTURE_END_1 = new ResourceLocation("minecraft:textures/blocks/gold_block.png");
-    private static final ResourceLocation TEXTURE_END_2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/iron_bridge.png");
+    private static final ResourceLocation TEXTURE_END_1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/iron_bridge.png");
+    private static final ResourceLocation TEXTURE_END_2 = new ResourceLocation("minecraft:textures/blocks/gold_block.png");
     private static final ResourceLocation TEXTURE_END_3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/zircon_block.png");
     private static final ResourceLocation TEXTURE_END_4 = new ResourceLocation("minecraft:textures/blocks/emerald_block.png");
     private static final ResourceLocation TEXTURE_END_5 = new ResourceLocation("minecraft:textures/blocks/diamond_block.png");
@@ -248,21 +248,31 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
                 float rotation = 90; //North
 
                 GlStateManager.pushMatrix();
-                GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.translate(x + 0.5F + 0.0001, y + yPos + 0.0001, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DYE);
+                GlStateManager.enableAlpha();
                 this.rope.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
 
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_END);
+                GlStateManager.enableAlpha();
                 this.rope_end.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
 
@@ -352,21 +362,31 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
                 float rotation = 270; //North
 
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DYE);
+                GlStateManager.enableAlpha();
                 this.rope.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
 
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_END);
+                GlStateManager.enableAlpha();
                 this.rope_end.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
 
@@ -456,21 +476,31 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
                 float rotation = 180; //East
 
                 GlStateManager.pushMatrix();
-                GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.translate(x + 0.5F, y + yPos + 0.0001, z + 0.5F + 0.0001);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DYE);
+                GlStateManager.enableAlpha();
                 this.rope.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
 
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_END);
+                GlStateManager.enableAlpha();
                 this.rope_end.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
 
@@ -561,21 +591,31 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
                 float rotation = 0; //West
 
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DYE);
+                GlStateManager.enableAlpha();
                 this.rope.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
 
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + yPos, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(rotation, 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(scaler, scaler, scaler);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_END);
+                GlStateManager.enableAlpha();
                 this.rope_end.renderAll(renderscale);
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
         }

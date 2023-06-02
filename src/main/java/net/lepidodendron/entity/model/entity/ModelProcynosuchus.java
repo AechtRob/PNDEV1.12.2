@@ -208,7 +208,7 @@ public class ModelProcynosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.chest.offsetY = 0.95F;
+        this.chest.offsetY = 0.975F;
 
         EntityPrehistoricFloraProcynosuchus Procynosuchus = (EntityPrehistoricFloraProcynosuchus) e;
         float masterSpeed = Procynosuchus.getTravelSpeed();

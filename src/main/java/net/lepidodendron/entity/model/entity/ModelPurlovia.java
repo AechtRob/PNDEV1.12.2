@@ -201,18 +201,34 @@ public class ModelPurlovia extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.PurloviaBase.render(f5 * 0.44f);
+        this.PurloviaBase.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.PurloviaBase.offsetZ = -0.3F;
-        this.PurloviaBase.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.1309F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(cube_r3, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.4747F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftForelimb, 1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftForelimb2, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftLeg, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftLeg2, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(PurloviaBase, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(RightForelimb, 1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(RightForelimb2, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(RightLeg, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(RightLeg2, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2182F, 0.0F, 0.0F);
+        this.PurloviaBase.offsetY = -0.05F;
+        this.PurloviaBase.offsetZ = -0.1F;
+        this.PurloviaBase.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -224,7 +240,7 @@ public class ModelPurlovia extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.PurloviaBase.offsetY = 0.83F;
+        //this.PurloviaBase.offsetY = 0.83F;
 
         EntityPrehistoricFloraPurlovia PurloviaEntity = (EntityPrehistoricFloraPurlovia) e;
         float masterSpeed = PurloviaEntity.getTravelSpeed();

@@ -157,6 +157,13 @@ public class ModelAcanthodes extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.Bodyfront.offsetY = 1.1F;
+
+        if (e instanceof EntityLiving) {
+            if (((EntityLiving)e).isAIDisabled()) {
+                return;
+            }
+        }
+
         //this.Gills.rotateAngleY = f3 / (180F / (float) Math.PI);
         //this.Gills.rotateAngleX = f4 / (180F / (float) Math.PI);
 
@@ -167,7 +174,7 @@ public class ModelAcanthodes extends AdvancedModelBase {
             speed = 0.7F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
+            this.chainWave(fishTail, speed * 2, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.5F, -3, f2, 1);
             this.swing(Bodyfront, speed, 0.3F, true, 0, 0, f2, 1);
             this.walk(Lowerjaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);

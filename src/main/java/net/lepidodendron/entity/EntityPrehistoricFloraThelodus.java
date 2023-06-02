@@ -31,10 +31,6 @@ public class EntityPrehistoricFloraThelodus extends EntityPrehistoricFloraFishBa
 	public EntityPrehistoricFloraThelodus(World world) {
 		super(world);
 		setSize(0.8F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override

@@ -1,0 +1,30 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    " 4 ",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:nugget_iron"
+    },
+    "2": {
+      "item": "minecraft:nugget_iron"
+    },
+    "4": {
+      "item": "minecraft:nugget_iron"
+    },
+    "6": {
+      "item": "minecraft:nugget_iron"
+    },
+    "8": {
+      "item": "minecraft:nugget_iron"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:chain_link_fence",
+    "count": 4
+  }
+}

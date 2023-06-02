@@ -391,26 +391,74 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body2.render(f5 * 0.25f);
+        this.body2.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.neckbase.offsetZ = -0.3F;
-        this.head.rotateAngleX = (float)Math.toRadians(3);
-        this.head.rotateAngleY = (float)Math.toRadians(22.2);
-        this.neck.rotateAngleY = (float)Math.toRadians(-9.9);
-        this.neck2.rotateAngleY = (float)Math.toRadians(-17.4);
-        this.neck3.rotateAngleY = (float)Math.toRadians(-9.9);
-        this.neck4.rotateAngleY = (float)Math.toRadians(12.3);
-        this.lowerjaw.rotateAngleX = (float)Math.toRadians(37.5);
-        this.neckbase.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        public void renderStaticWall(float f) {
+            this.neckbase.rotateAngleY = (float) Math.toRadians(0);
+            this.setRotateAngle(neck, -0.2316F, -0.2368F, 0.1128F);
+            this.setRotateAngle(neck2, 0.0005F, 0.0865F, 0.0114F);
+            this.setRotateAngle(neck3, 0.0478F, 0.2148F, 0.0385F);
+            this.setRotateAngle(neck4, 0.1772F, 0.1719F, 0.0306F);
+            this.setRotateAngle(neckbase, 0.218F, 0.001F, -0.0094F);
+            this.neckbase.offsetY = -0.0F;
+            this.neckbase.offsetX = -0.0F;
+            this.neckbase.offsetZ = 0.1F;
+            this.neckbase.render(0.01F);
+            resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(cube_r1, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.0611F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, 0.0611F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.6109F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.6109F, -0.4363F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -0.0611F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, 0.0F, 0.3491F);
+        this.setRotateAngle(cube_r18, 0.0F, -0.0436F, 0.3491F);
+        this.setRotateAngle(cube_r19, 0.0F, 0.0436F, -0.3491F);
+        this.setRotateAngle(cube_r2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(cube_r21, 0.0F, 0.0611F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.6109F, -0.4363F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.6109F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(forelegL, 1.1781F, 0.0F, -0.4363F);
+        this.setRotateAngle(forelegL2, -0.48F, 0.5236F, 0.1745F);
+        this.setRotateAngle(forelegL3, 1.4835F, -0.2182F, -0.2182F);
+        this.setRotateAngle(forelegR, 0.2618F, 0.0F, 0.4363F);
+        this.setRotateAngle(forelegR2, -1.2654F, -0.5236F, -0.1745F);
+        this.setRotateAngle(forelegR3, 0.9492F, 0.2458F, 0.1666F);
+        this.setRotateAngle(head, -0.0928F, 0.3477F, -0.0317F);
+        this.setRotateAngle(hindlegL, -1.0873F, 0.116F, -0.9865F);
+        this.setRotateAngle(hindlegL2, 1.4835F, -0.5672F, 0.0F);
+        this.setRotateAngle(hindlegL3, -0.279F, -0.012F, 0.5253F);
+        this.setRotateAngle(hindlegL6, -0.4538F, 0.0F, -0.5672F);
+        this.setRotateAngle(hindlegR, -0.8727F, 0.0F, 1.0472F);
+        this.setRotateAngle(hindlegR2, 2.0944F, 0.5672F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.2316F, -0.2368F, 0.1128F);
+        this.setRotateAngle(neck2, 0.0005F, 0.0865F, 0.0114F);
+        this.setRotateAngle(neck3, 0.0478F, 0.2148F, 0.0385F);
+        this.setRotateAngle(neck4, 0.1772F, 0.1719F, 0.0306F);
+        this.setRotateAngle(neckbase, 0.218F, 0.001F, -0.0094F);
+        this.setRotateAngle(tail, -0.1752F, -0.0859F, 0.0152F);
+        this.setRotateAngle(tail2, -0.0894F, 0.2173F, -0.0193F);
+        this.setRotateAngle(tail3, 0.0903F, 0.2608F, 0.0233F);
+        this.setRotateAngle(tail4, 0.1355F, -0.2595F, -0.035F);
+        this.setRotateAngle(tail5, 0.2187F, -0.6429F, -0.1325F);
+        this.setRotateAngle(upperjaw, -0.0436F, 0.0F, 0.0F);
+      this.body2.offsetY=-0.05f;
+        this.body2.render(0.01F);
+       resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
@@ -438,7 +486,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
-        this.body2.offsetY = 1.13F;
+        //this.body2.offsetY = 1.13F;
         float offsetZ = -0.25F;
         offsetZ = 0F;
 

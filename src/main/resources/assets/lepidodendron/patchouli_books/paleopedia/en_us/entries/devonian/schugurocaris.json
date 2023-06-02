@@ -1,0 +1,31 @@
+{
+	"name": "Schugurocaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/schugurocaris_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_schugurocaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_schugurocaris",
+			"title": "Schugurocaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/schugurocaris.png"],
+			"title": "S. wami",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_schugurocaris",
+			"type": "text",
+			"text": "Schugurocaris is a phyllocarid crustacean known from the Devonian. The species known from the Gogo Formation had a relatively thin and long body, and long tail spine shows it reached nearly 40 cm. It was one of the most common phyllocarids in the Gogo Formation."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_schugurocaris",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

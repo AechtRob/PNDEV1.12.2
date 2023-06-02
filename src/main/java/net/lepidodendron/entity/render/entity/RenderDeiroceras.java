@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDeiroceras extends RenderLiving<EntityPrehistoricFloraDeiroceras> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deiroceras.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deiroceras.png");
 
     public RenderDeiroceras(RenderManager mgr) {
         super(mgr, new ModelDeiroceras(), 0.6f);

@@ -32,10 +32,6 @@ public class EntityPrehistoricFloraPlatysomus extends EntityPrehistoricFloraFish
 	public EntityPrehistoricFloraPlatysomus(World world) {
 		super(world);
 		setSize(0.3F, 0.25F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -58,7 +54,7 @@ public class EntityPrehistoricFloraPlatysomus extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

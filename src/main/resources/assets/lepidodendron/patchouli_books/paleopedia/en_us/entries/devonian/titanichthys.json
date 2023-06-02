@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_titanichthys",
 			"title": "Titanichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Placodermi$(br)>Arthrodira$(br)>Dinichthyloidea"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Dinichthyloidea"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/titanichthys.png"],
-			"title": "Titanichthys agassizi",
+			"title": "T. agassizi",
 			"text": ""
 		},
 		{

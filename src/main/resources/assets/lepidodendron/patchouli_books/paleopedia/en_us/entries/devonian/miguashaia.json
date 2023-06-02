@@ -1,0 +1,31 @@
+{
+	"name": "Miguashaia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/miguashaia_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_miguashaia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_miguashaia",
+			"title": "Miguashaia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish Water$(br2)>Sarcopterygii$(br)>Miguashaiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/miguashaia.png"],
+			"title": "M. bureaui",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miguashaia",
+			"type": "text",
+			"text": "Miguashaia is a Devonian lobe-finned fish, and a primitive coelacanth. Considering fin shape, it was probably a bottom feeder like some small sharks. Even through size and habitat are different, endoskeletal ossification was probably similar to that of living coelacanth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miguashaia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -360,7 +360,7 @@ public class ModelStagonolepis extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Desmatosuchus.offsetY = 0.40F;
+        //this.Stagonolepis.offsetY = 0.0F;
         //float ZOffsetter = 0.60F;
 
         EntityPrehistoricFloraStagonolepis entityStagonolepis = (EntityPrehistoricFloraStagonolepis) e;

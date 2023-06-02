@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMeganeuropsis extends RenderLiving<EntityPrehistoricFloraMeganeuropsis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeuropsis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeuropsis.png");
 
     public RenderMeganeuropsis(RenderManager mgr) {
         super(mgr, new ModelMeganeuropsis(), 0.0f);
@@ -21,7 +21,9 @@ public class RenderMeganeuropsis extends RenderLiving<EntityPrehistoricFloraMega
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMeganeuropsis entity) {
         return RenderMeganeuropsis.TEXTURE;
     }
-
+    public static float getScaler() {
+        return 1* 0.29f;
+    }
     @Override
     protected void applyRotations(EntityPrehistoricFloraMeganeuropsis entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
@@ -56,7 +58,7 @@ public class RenderMeganeuropsis extends RenderLiving<EntityPrehistoricFloraMega
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMeganeuropsis entity, float f) {
-        float scale = 1.0F;
+        float scale = this.getScaler();
         if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
             scale = 0.6F;
         }

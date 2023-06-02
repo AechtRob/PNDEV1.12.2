@@ -7,7 +7,10 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.render.entity.RenderHeterosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
@@ -40,11 +43,7 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraHeterosteus.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.5F, 2.0F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(1.85F, 0.5F);
 		minWidth = 0.2F;
 		maxWidth = 1.85F;
 		maxHeight = 0.5F;
@@ -168,6 +167,7 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	@Override
@@ -323,4 +323,57 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 			}
 		}
 	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.8F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.23;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -3F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderHeterosteus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelHeterosteus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderHeterosteus.getScaler();
+	}
+
 }

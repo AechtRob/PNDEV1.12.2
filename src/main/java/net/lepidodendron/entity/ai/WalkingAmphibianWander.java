@@ -19,6 +19,7 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
     protected double waterPreference;
     protected int executionChance;
     protected boolean mustUpdate;
+    protected int maxDepth;
     protected EntityPrehistoricFloraWalkingAmphibianBase PrehistoricFloraWalkingAmphibianBase;
 
     public WalkingAmphibianWander(EntityPrehistoricFloraWalkingAmphibianBase PrehistoricFloraWalkingAmphibianBase, Animation animation, double waterPreference, int executionchance)
@@ -29,6 +30,18 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
         this.animation = animation;
         this.waterPreference = waterPreference;
         this.executionChance = executionchance;
+        this.maxDepth = 0;
+    }
+
+    public WalkingAmphibianWander(EntityPrehistoricFloraWalkingAmphibianBase PrehistoricFloraWalkingAmphibianBase, Animation animation, double waterPreference, int executionchance, int maxDepth)
+    {
+        super(PrehistoricFloraWalkingAmphibianBase);
+        setMutexBits(1);
+        this.PrehistoricFloraWalkingAmphibianBase = PrehistoricFloraWalkingAmphibianBase;
+        this.animation = animation;
+        this.waterPreference = waterPreference;
+        this.executionChance = executionchance;
+        this.maxDepth = maxDepth;
     }
 
     @Override
@@ -137,6 +150,9 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
                     randPos = randPosVar;
                 }
 
+                if (this.maxDepth > 0 && this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(randPos.up(maxDepth)).getMaterial() == Material.WATER) {
+                    break; //This pos is not suitable
+                }
                 //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
                 if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(randPos).getMaterial() == Material.WATER) {
                     //System.err.println("Target :" + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());

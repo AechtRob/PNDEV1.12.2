@@ -17,21 +17,21 @@ public class ModelCowralepis extends AdvancedModelBase {
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer rside;
     private final AdvancedModelRenderer rside2;
-    private final AdvancedModelRenderer RPectoral;
     private final AdvancedModelRenderer rside3;
     private final AdvancedModelRenderer lside;
     private final AdvancedModelRenderer lside2;
-    private final AdvancedModelRenderer LPectoral;
     private final AdvancedModelRenderer lside3;
     private final AdvancedModelRenderer forehead;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer Jaw;
     private final AdvancedModelRenderer cube_r2;
     private final AdvancedModelRenderer cube_r3;
+    private final AdvancedModelRenderer LPectoral;
+    private final AdvancedModelRenderer LPectoral2;
     private final AdvancedModelRenderer Body;
-    private final AdvancedModelRenderer Body2;
-    private final AdvancedModelRenderer RPelvic;
     private final AdvancedModelRenderer LPelvic;
+    private final AdvancedModelRenderer RPelvic;
+    private final AdvancedModelRenderer Body2;
     private final AdvancedModelRenderer Tail;
     private final AdvancedModelRenderer Tail2;
     private final AdvancedModelRenderer Tail3;
@@ -42,7 +42,7 @@ public class ModelCowralepis extends AdvancedModelBase {
 
     public ModelCowralepis() {
         this.textureWidth = 56;
-        this.textureHeight = 56;
+        this.textureHeight = 48;
 
         this.Root = new AdvancedModelRenderer(this);
         this.Root.setRotationPoint(0.0F, 22.75F, -2.75F);
@@ -66,14 +66,6 @@ public class ModelCowralepis extends AdvancedModelBase {
         this.setRotateAngle(rside2, 0.0F, 0.48F, 0.0F);
         this.rside2.cubeList.add(new ModelBox(rside2, 0, 27, 0.0F, -0.99F, 0.0F, 2, 1, 7, 0.0F, false));
 
-        this.RPectoral = new AdvancedModelRenderer(this);
-        this.RPectoral.setRotationPoint(0.5F, 0.0F, 6.75F);
-        this.rside2.addChild(RPectoral);
-        this.setRotateAngle(RPectoral, 0.0F, 0.6981F, -0.0873F);
-        this.RPectoral.cubeList.add(new ModelBox(RPectoral, 0, 21, -8.0F, 0.0F, -1.0F, 9, 0, 5, 0.0F, false));
-        this.RPectoral.cubeList.add(new ModelBox(RPectoral, -4, 51, -8.0F, 0.05F, -1.0F, 9, 0, 5, 0.0F, false));
-        this.RPectoral.cubeList.add(new ModelBox(RPectoral, 20, 32, -2.0F, -0.5F, -1.0F, 3, 1, 2, 0.0F, false));
-
         this.rside3 = new AdvancedModelRenderer(this);
         this.rside3.setRotationPoint(0.0F, -0.5F, 3.0F);
         this.rside2.addChild(rside3);
@@ -91,14 +83,6 @@ public class ModelCowralepis extends AdvancedModelBase {
         this.lside.addChild(lside2);
         this.setRotateAngle(lside2, 0.0F, -0.48F, 0.0F);
         this.lside2.cubeList.add(new ModelBox(lside2, 0, 27, -2.0F, -0.99F, 0.0F, 2, 1, 7, 0.0F, true));
-
-        this.LPectoral = new AdvancedModelRenderer(this);
-        this.LPectoral.setRotationPoint(-0.5F, 0.0F, 6.75F);
-        this.lside2.addChild(LPectoral);
-        this.setRotateAngle(LPectoral, 0.0F, -0.6981F, 0.0873F);
-        this.LPectoral.cubeList.add(new ModelBox(LPectoral, 0, 21, -1.0F, 0.0F, -1.0F, 9, 0, 5, 0.0F, true));
-        this.LPectoral.cubeList.add(new ModelBox(LPectoral, -4, 51, -1.0F, 0.05F, -1.0F, 9, 0, 5, 0.0F, true));
-        this.LPectoral.cubeList.add(new ModelBox(LPectoral, 20, 32, -1.0F, -0.5F, -1.0F, 3, 1, 2, 0.0F, true));
 
         this.lside3 = new AdvancedModelRenderer(this);
         this.lside3.setRotationPoint(0.0F, -0.5F, 3.0F);
@@ -141,54 +125,68 @@ public class ModelCowralepis extends AdvancedModelBase {
         this.cube_r3.cubeList.add(new ModelBox(cube_r3, 22, 16, 0.0F, -0.04F, -2.225F, 2, 1, 1, -0.01F, false));
         this.cube_r3.cubeList.add(new ModelBox(cube_r3, 32, 40, 0.0F, -0.04F, -2.0F, 2, 1, 2, 0.0F, false));
 
+        this.LPectoral = new AdvancedModelRenderer(this);
+        this.LPectoral.setRotationPoint(3.5F, 1.0F, -2.25F);
+        this.Head.addChild(LPectoral);
+        this.setRotateAngle(LPectoral, 0.0F, -0.5236F, 0.0F);
+        this.LPectoral.cubeList.add(new ModelBox(LPectoral, 45, 28, 0.0F, 0.0F, 0.0F, 3, 0, 3, 0.0F, false));
+        this.LPectoral.cubeList.add(new ModelBox(LPectoral, 45, 28, 0.0F, 0.01F, 0.0F, 3, 0, 3, 0.0F, false));
+
+        this.LPectoral2 = new AdvancedModelRenderer(this);
+        this.LPectoral2.setRotationPoint(-3.5F, 0.75F, -2.25F);
+        this.Head.addChild(LPectoral2);
+        this.setRotateAngle(LPectoral2, 0.0F, 0.5236F, 0.0F);
+        this.LPectoral2.cubeList.add(new ModelBox(LPectoral2, 45, 28, -3.0F, 0.0F, 0.0F, 3, 0, 3, 0.0F, true));
+        this.LPectoral2.cubeList.add(new ModelBox(LPectoral2, 45, 28, -3.0F, 0.01F, 0.0F, 3, 0, 3, 0.0F, true));
+
         this.Body = new AdvancedModelRenderer(this);
         this.Body.setRotationPoint(0.5F, 0.0F, 0.0F);
         this.Root.addChild(Body);
-        this.Body.cubeList.add(new ModelBox(Body, 21, 0, -3.5F, -0.75F, 0.0F, 6, 2, 6, 0.0F, false));
-
-        this.Body2 = new AdvancedModelRenderer(this);
-        this.Body2.setRotationPoint(-1.0F, 1.25F, 5.0F);
-        this.Body.addChild(Body2);
-        this.Body2.cubeList.add(new ModelBox(Body2, 24, 24, -2.0F, -1.99F, 0.0F, 5, 2, 5, -0.02F, false));
-
-        this.RPelvic = new AdvancedModelRenderer(this);
-        this.RPelvic.setRotationPoint(-2.0F, -0.25F, 1.75F);
-        this.Body2.addChild(RPelvic);
-        this.setRotateAngle(RPelvic, -0.0503F, 0.5214F, -0.1007F);
-        this.RPelvic.cubeList.add(new ModelBox(RPelvic, 14, 41, -3.0F, 0.0F, 0.0F, 3, 0, 3, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 22, 1, -3.0F, -0.75F, 0.0F, 5, 2, 5, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 0, 12, -0.5F, -2.72F, 2.0F, 0, 2, 3, 0.0F, false));
 
         this.LPelvic = new AdvancedModelRenderer(this);
-        this.LPelvic.setRotationPoint(3.0F, -0.25F, 1.75F);
-        this.Body2.addChild(LPelvic);
+        this.LPelvic.setRotationPoint(2.0F, 1.0F, 1.75F);
+        this.Body.addChild(LPelvic);
         this.setRotateAngle(LPelvic, -0.0503F, -0.5214F, 0.1007F);
         this.LPelvic.cubeList.add(new ModelBox(LPelvic, 14, 41, 0.0F, 0.0F, 0.0F, 3, 0, 3, 0.0F, true));
+        this.LPelvic.cubeList.add(new ModelBox(LPelvic, 11, 30, 0.0F, 0.001F, 0.0F, 3, 0, 3, 0.0F, false));
+
+        this.RPelvic = new AdvancedModelRenderer(this);
+        this.RPelvic.setRotationPoint(-3.0F, 1.0F, 1.75F);
+        this.Body.addChild(RPelvic);
+        this.setRotateAngle(RPelvic, -0.0503F, 0.5214F, -0.1007F);
+        this.RPelvic.cubeList.add(new ModelBox(RPelvic, 11, 30, -3.0F, 0.001F, 0.0F, 3, 0, 3, 0.0F, true));
+        this.RPelvic.cubeList.add(new ModelBox(RPelvic, 14, 41, -3.0F, 0.0F, 0.0F, 3, 0, 3, 0.0F, false));
+
+        this.Body2 = new AdvancedModelRenderer(this);
+        this.Body2.setRotationPoint(-0.5F, 1.25F, 4.0F);
+        this.Body.addChild(Body2);
+        this.Body2.cubeList.add(new ModelBox(Body2, 25, 25, -2.0F, -2.0F, 0.0F, 4, 2, 4, -0.02F, false));
 
         this.Tail = new AdvancedModelRenderer(this);
-        this.Tail.setRotationPoint(0.5F, -1.25F, 4.0F);
+        this.Tail.setRotationPoint(0.0F, -1.25F, 3.0F);
         this.Body2.addChild(Tail);
-        this.setRotateAngle(Tail, 0.0873F, 0.0F, 0.0F);
-        this.Tail.cubeList.add(new ModelBox(Tail, 27, 32, -2.0F, -0.75F, 0.0F, 4, 2, 5, -0.03F, false));
-        this.Tail.cubeList.add(new ModelBox(Tail, 0, 12, 0.0F, -2.72F, 2.0F, 0, 2, 3, 0.0F, false));
+        this.Tail.cubeList.add(new ModelBox(Tail, 28, 33, -1.5F, -0.75F, 0.0F, 3, 2, 4, -0.03F, false));
 
         this.Tail2 = new AdvancedModelRenderer(this);
-        this.Tail2.setRotationPoint(0.0F, 0.25F, 4.0F);
+        this.Tail2.setRotationPoint(0.0F, 0.25F, 3.0F);
         this.Tail.addChild(Tail2);
-        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
-        this.Tail2.cubeList.add(new ModelBox(Tail2, 0, 36, -1.5F, -1.0F, 0.0F, 3, 2, 5, -0.04F, false));
+        this.Tail2.cubeList.add(new ModelBox(Tail2, 1, 37, -1.0F, -1.0F, 0.0F, 2, 2, 4, -0.04F, false));
 
         this.Tail3 = new AdvancedModelRenderer(this);
-        this.Tail3.setRotationPoint(0.0F, 0.0F, 4.0F);
+        this.Tail3.setRotationPoint(0.0F, 0.0F, 3.5F);
         this.Tail2.addChild(Tail3);
-        this.setRotateAngle(Tail3, 0.3054F, 0.0F, 0.0F);
-        this.Tail3.cubeList.add(new ModelBox(Tail3, 22, 40, -1.0F, -1.0F, 0.0F, 2, 2, 5, -0.05F, false));
-        this.Tail3.cubeList.add(new ModelBox(Tail3, 41, 27, 0.0F, 0.96F, 0.0F, 0, 3, 5, 0.01F, false));
+        this.Tail3.cubeList.add(new ModelBox(Tail3, 22, 40, -0.5F, -1.0F, 0.0F, 1, 2, 5, -0.05F, false));
+        this.Tail3.cubeList.add(new ModelBox(Tail3, 41, 27, 0.0F, -1.5F, 0.0F, 0, 3, 3, 0.01F, false));
+        this.Tail3.cubeList.add(new ModelBox(Tail3, 52, 37, -0.001F, -2.0F, 3.0F, 0, 4, 2, 0.0F, false));
 
         this.Tail4 = new AdvancedModelRenderer(this);
         this.Tail4.setRotationPoint(0.0F, 0.1F, 4.5F);
         this.Tail3.addChild(Tail4);
-        this.setRotateAngle(Tail4, -0.1309F, 0.0F, 0.0F);
-        this.Tail4.cubeList.add(new ModelBox(Tail4, 37, 40, -0.5F, -1.0F, 0.0F, 1, 1, 5, 0.0F, false));
-        this.Tail4.cubeList.add(new ModelBox(Tail4, 12, 29, 0.0F, -1.0F, 0.0F, 0, 5, 7, 0.0F, false));
+        this.Tail4.cubeList.add(new ModelBox(Tail4, 37, 40, -0.5F, -0.5F, 0.0F, 1, 1, 5, -0.06F, false));
+        this.Tail4.cubeList.add(new ModelBox(Tail4, 12, 30, 0.0F, -2.1F, 0.0F, 0, 4, 6, 0.0F, false));
+        this.Tail4.cubeList.add(new ModelBox(Tail4, 0, 26, 0.0F, -0.5F, 6.0F, 0, 1, 1, 0.0F, false));
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
@@ -197,19 +195,38 @@ public class ModelCowralepis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Root.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Root.rotateAngleX = (float) Math.toRadians(90);
+        this.Root.rotateAngleZ = (float) Math.toRadians(90);
         this.Root.offsetX = -0.1F;
-        this.Root.offsetY = -0F;
+        this.Root.offsetY = -0.23F;
         this.Root.offsetZ = 0.02F;
         this.Root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(rside, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(rside2, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(rside3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(lside, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(lside2, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(LPectoral, 0.0F, -0.1745F, 0.0873F);
+        this.setRotateAngle(lside3, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(forehead, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(RPelvic, -0.0503F, 0.5214F, -0.1007F);
+        this.setRotateAngle(LPelvic, -0.0503F, -0.5214F, 0.1007F);
+        this.setRotateAngle(Tail, 0.0915F, -0.3042F, -0.0275F);
+        this.setRotateAngle(Tail2, 0.1548F, -0.5618F, -0.083F);
+        this.setRotateAngle(Tail3, 0.3237F, -0.3323F, -0.109F);
+        this.setRotateAngle(Tail4, -0.1509F, 0.5187F, -0.0752F);
+        this.Root.rotateAngleY = (float) Math.toRadians(90);
+        this.Root.offsetX = -0.1F;
+        this.Root.offsetY = -0.05F;
+        this.Root.offsetZ = 0.03F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -276,8 +293,6 @@ public class ModelCowralepis extends AdvancedModelBase {
             }
             this.flap(LPectoral, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, -3F, 0, f2, 1 * inwater);
             this.swing(LPectoral, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, -3F, 0, f2, 1 * inwater);
-            this.flap(RPectoral, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, 0F, 0, f2, 1 * inwater);
-            this.swing(RPectoral, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, 0, 0, f2, 1 * inwater);
 
             this.flap(LPelvic, (float) (speed * 0.45 * (bottomModifier * 2.5F)), 0.15F * inwater, true, -0.1F, 0.1F, f2, 1 * inwater);
             this.swing(LPelvic, (float) (speed * 0.45 * (bottomModifier * 2.5F)), 0.1F * inwater, true, 0, 0, f2, 1 * inwater);

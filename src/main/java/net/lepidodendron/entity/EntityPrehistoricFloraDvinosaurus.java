@@ -47,11 +47,7 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 
 	public EntityPrehistoricFloraDvinosaurus(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.65F, 0.40F);
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.40F;

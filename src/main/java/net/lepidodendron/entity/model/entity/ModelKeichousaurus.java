@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraKeichousaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelKeichousaurus extends AdvancedModelBaseExtended {
@@ -213,7 +212,7 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Keichousaurus.render(f5 * 0.25f);
+        this.Keichousaurus.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -234,6 +233,7 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -244,7 +244,7 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Keichousaurus.offsetY = 1.1F;
+        //this.Keichousaurus.offsetY = 1.1F;
 
         EntityPrehistoricFloraKeichousaurus Keichousaurus = (EntityPrehistoricFloraKeichousaurus) e;
 

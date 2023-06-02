@@ -214,19 +214,43 @@ public class ModelCeratodus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodymiddlefront.render(f5 * 0.6F);
+        this.Bodymiddlefront.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Bodymiddlefront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodymiddlefront.offsetY = -0.04F;
+        this.Bodymiddlefront.offsetZ = -0.033F;
         this.Bodymiddlefront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyback, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddleback, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Dorsalfinbase, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinend, 0.0201F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinend2, -0.0375F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinmiddle, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinmiddle2, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(Eyes, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Headbase, -0.2806F, 0.0F, 0.0F);
+        this.setRotateAngle(Headslope, 0.1721F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftpectoralfinbase2, -0.2546F, 1.1463F, -0.2972F);
+        this.setRotateAngle(Leftpelvicfinbase, -0.5032F, 1.2816F, -0.4077F);
+        this.setRotateAngle(Lowerjawbase, -0.0162F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawfront, 0.622F, 0.0F, 0.0F);
+        this.setRotateAngle(Mouth, -0.5308F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightpectoralfinbase, -0.2546F, -1.1463F, 0.2972F);
+        this.setRotateAngle(Rightpelvicfinbase, -0.5032F, -1.2816F, 0.4077F);
+        this.setRotateAngle(Snout, 0.1061F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Upperjawpiece, -0.3821F, 0.0F, 0.0F);
+        this.Bodymiddlefront.offsetY = -0.15F;
+        this.Bodymiddlefront.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -238,7 +262,7 @@ public class ModelCeratodus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodymiddlefront.offsetY = 1.2F;
+        this.Bodymiddlefront.offsetY = 1F;
 
         AdvancedModelRenderer[] finPectoralLeft = {this.Leftpectoralfinbase2};
         AdvancedModelRenderer[] finPectoralRight = {this.Rightpectoralfinbase};
@@ -254,7 +278,7 @@ public class ModelCeratodus extends AdvancedModelBase {
         if (!((EntityPrehistoricFloraCeratodus) e).isReallyInWater()) {
             outOfWater = 1.45f;
             this.Bodymiddlefront.bob(speed, 0.35F, false, f2, 1F);
-            this.Bodymiddlefront.offsetY = 1.30F;
+            this.Bodymiddlefront.offsetY = 1.1F;
         }
 
         boolean isAtBottom = false;

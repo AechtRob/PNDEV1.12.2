@@ -7,9 +7,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderEndothiodon;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -39,15 +42,10 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private BlockPos drinkingFrom;
 
 	public EntityPrehistoricFloraEndothiodon(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.68F, 0.925F);
 		minWidth = 0.12F;
 		maxWidth = 0.68F;
 		maxHeight = 0.925F;
@@ -97,7 +95,7 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 1.35F;
 		}
 		return speedBase;
 	}
@@ -130,10 +128,11 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -214,8 +213,8 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.drinkingFrom = this.getPosition().offset(facing);
-				this.faceBlock(this.drinkingFrom, 1000, 1000);
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
 		return test;
@@ -273,15 +272,11 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -346,6 +341,58 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 			return LepidodendronMod.ENDOTHIODON_LOOT_YOUNG;
 		}
 		return LepidodendronMod.ENDOTHIODON_LOOT;
+	}
+
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {return -0.1;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderEndothiodon.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelEndothiodon;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderEndothiodon.getScaler();
 	}
 
 }

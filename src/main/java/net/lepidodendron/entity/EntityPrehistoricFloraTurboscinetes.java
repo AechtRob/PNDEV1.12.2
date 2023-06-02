@@ -2,43 +2,44 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.ai.ShoalFishBaseAI;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderArduafrons;
+import net.lepidodendron.entity.ai.AgeableFishWander;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
+import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderTurboscinetes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int animationTick;
-	private Animation animation = NO_ANIMATION;
 
 	public EntityPrehistoricFloraTurboscinetes(World world) {
 		super(world);
-		setSize(0.28F, 0.28F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.2F, 0.2F);
+		minWidth = 0.1F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraF
 
 	@Override
 	public int getShoalSize() {
-		return 8;
+		return 20;
 	}
 
 	@Override
@@ -61,18 +62,42 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraF
 		return true;
 	}
 
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return stack.getItem() == ItemFishFood.block;
+	}
+
 	public static String getPeriod() {return "Jurassic";}
 
-	//public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic Lobe-Finned Fish (Coelacanth)";}
+
+	@Override
+	public void playLivingSound() {
+	}
 
 	@Override
 	public boolean dropsEggs() {
 		return true;
 	}
+	
+	@Override
+	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 0;
+	}
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.21f;
+		float AIspeed = 0.206f;
+		if (this.getIsFast()) {
+			AIspeed = AIspeed * 2.2F;
+		}
+		return AIspeed;
 	}
 
 	@Override
@@ -80,37 +105,12 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraF
 		return false;
 	}
 
-	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
-	}
-
-	@Override
-	public void setAnimationTick(int tick) {
-		animationTick = tick;
-	}
-
-	@Override
-	public Animation getAnimation() {
-		return null;
-	}
-
-	@Override
-	public void setAnimation(Animation animation) {
-		this.animation = animation;
-	}
-
-	@Override
-	public Animation[] getAnimations() {
-		return null;
-	}
-
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
-	}
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		}
 
 	@Override
 	public boolean isAIDisabled() {
@@ -135,7 +135,8 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraF
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -159,14 +160,9 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraF
 		return 1.0F;
 	}
 
-	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
-	}
-
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
+	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
 	@Nullable
@@ -174,59 +170,57 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraF
 		return LepidodendronMod.TURBOSCINETES_LOOT;
 	}
 
-
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
-		return 0.05;
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
 	}
-	public static double upperfrontverticallinedepth() {
-		return 0.8;
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
 	}
-	public static double upperbackverticallinedepth() {
-		return 0.8;
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1.4;
 	}
-	public static double upperfrontlineoffset() {
-		return 0.2;
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
-		return -0.04F;
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
 	}
-	public static double upperbacklineoffset() {
-		return 0.2;
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
 	}
-	public static double upperbacklineoffsetperpendiular() {
-		return -0.04F;
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.F;
 	}
-	public static double lowerfrontverticallinedepth() {
-		return 0.39;
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffset() {
-		return 0.03;
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
-		return -0.04F;
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
 	}
-	public static double lowerbacklineoffset() {
-		return 0;
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
-		return 0F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_ARDUAFRONS;
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelArduafrons;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderTurboscinetes.TEXTURE;
 	}
-	public static float getScaler() {
-		return RenderArduafrons.getScaler();
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelTurboscinetes;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderTurboscinetes.getScaler();
 	}
 
 }
-

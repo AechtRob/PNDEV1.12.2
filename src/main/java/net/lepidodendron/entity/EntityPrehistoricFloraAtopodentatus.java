@@ -9,7 +9,10 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderAtopodentatus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -41,13 +44,7 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraAtopodentatus(World world) {
 		super(world);
-		setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.3F;
-		//maxSize = 1.0F;
+		setSize(0.85F, 0.45F);
 		minWidth = 0.1F;
 		maxWidth = 0.85F;
 		maxHeight = 0.45F;
@@ -333,6 +330,56 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 			return LepidodendronMod.ATOPODENTATUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.ATOPODENTATUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.6;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return -0.15;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.7F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 2.2;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.45;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.075;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.3F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.075;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.45F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderAtopodentatus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelAtopodentatus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderAtopodentatus.getScaler();
 	}
 
 }

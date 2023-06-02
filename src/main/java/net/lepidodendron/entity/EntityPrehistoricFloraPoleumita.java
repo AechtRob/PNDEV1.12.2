@@ -38,10 +38,6 @@ public class EntityPrehistoricFloraPoleumita extends EntityPrehistoricFloraTrilo
 	public EntityPrehistoricFloraPoleumita(World world) {
 		super(world);
 		setSize(0.5F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -71,7 +67,7 @@ public class EntityPrehistoricFloraPoleumita extends EntityPrehistoricFloraTrilo
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.078f;
+		return 0.02f;
 	}
 
 	@Override

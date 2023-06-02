@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_gemuendina",
 			"title": "Gemuendina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Placodermi$(br)>Rhenanida$(br)>Asterosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Rhenanida$(br)>Asterosteidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/gemuendina.png"],
-			"title": "Gemuendina stuertzi",
+			"title": "G. stuertzi",
 			"text": ""
 		},
 		{

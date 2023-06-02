@@ -6,10 +6,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWanderSurface;
-import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
+import net.lepidodendron.entity.ai.NautiloidWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.render.entity.RenderMuensterella;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMuensterella;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -31,13 +33,7 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 
 	public EntityPrehistoricFloraMuensterella(World world) {
 		super(world);
-		//setSize(0.5F, 0.3F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.3F, 0.25F);
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
@@ -91,7 +87,7 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(2, new NautiloidWanderSurface(this, NO_ANIMATION));
+		tasks.addTask(2, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
@@ -141,6 +137,59 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 			return LepidodendronMod.MUENSTERELLA_LOOT_YOUNG;
 		}
 		return LepidodendronMod.MUENSTERELLA_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.3; }
+
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.8;}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6F;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderMuensterella.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelMuensterella;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderMuensterella.getScaler();
 	}
 
 }

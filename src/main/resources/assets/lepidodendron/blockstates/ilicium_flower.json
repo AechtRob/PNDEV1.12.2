@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:ilicium_flower"}
+    ]
+  }
+}

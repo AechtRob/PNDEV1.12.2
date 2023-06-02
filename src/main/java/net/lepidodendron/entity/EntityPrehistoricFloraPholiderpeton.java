@@ -44,11 +44,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraPholiderpeton(World world) {
 		super(world);
-		setSize(0.55F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.799F, 0.71F);
 		minWidth = 0.125F;
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;

@@ -1,12 +1,12 @@
 {
 	"name": "Inoceramus",
 	"read_by_default": true,
-	"icon": "lepidodendron:bivalve_inoceramus",
+	"icon": "paleopedia:textures/inoceramus_icon.png",
 	"category": "lepidodendron:jurassic_static",
-	"turnin": "lepidodendron:pf_adv_book_inoceramus",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_inoceramus",
+			"trigger": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"title": "Inoceramus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Inoceramidae"
@@ -18,22 +18,22 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_inoceramus",
+			"advancement": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"type": "text",
 			"text": "Inoceramus is a genus of mollusk bivalve from that lived between the lower Jurassic up to the latest Cretaceous, found in disparate locations around the world. The genus is widespread and contains a large number of species; the abundance of its remains and the specific horizons they appear in make this mollusk an excellent guide fossil for dating sediments."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_inoceramus",
+			"advancement": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"type": "text",
 			"text": "Inoceramus' shell was subrectangular and oval, with valves longer than wider the left one of which more convex than the right one. These shells had large, asymmetrical and powerful adductor muscles which would allow for it to open and close, one of which visibly larger than the other."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_inoceramus",
+			"advancement": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"type": "text",
 			"text": "While usually Inoceramus shells don't grow over 10 cm in diameter, some of them could grow much larger and, in the case of its close cousin Platyceramus, they could grow as large as 3 m in diameter. Seen the shape and potential sizes of these shells, it's likely they were benthic organisms that would tie themselves to the seafloor thanks to their byssus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_inoceramus",
+			"advancement": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

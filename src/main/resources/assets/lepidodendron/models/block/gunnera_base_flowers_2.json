@@ -1,0 +1,27 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"1": "lepidodendron:blocks/gunnera_cone",
+		"particle": "lepidodendron:blocks/gunnera_base"
+	},
+	"elements": [
+		{
+			"from": [11, 6, 8.2],
+			"to": [27, 22, 8.2],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [12, 14, 8]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [-11.1, 9, 7.6],
+			"to": [4.9, 25, 7.6],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [4, 14, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#1"}
+			}
+		}
+	]
+}

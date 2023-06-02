@@ -9,9 +9,10 @@ import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
-import net.lepidodendron.entity.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;
@@ -84,14 +85,41 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean willGrapple;
     private int alarmCooldown;
     private int warnCooldown;
+    public int ticksExistedAnimated;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
+        this.enablePersistence();
         this.setScaleForAge(false);
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    @Override
+    public void onUpdate() {
+        if (!this.updateBlocked) {
+            this.ticksExistedAnimated = this.ticksExistedAnimated + this.animSpeedAdder();
+        }
+        super.onUpdate();
+    }
+
+    public int animSpeedAdder() {
+        if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
+            && this.getTicks() >= 0
+        ) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public boolean hasPNVariants() {
+        return false;
+    }
+
+    public ItemStack getPropagule() {
+        return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
 
     public int getAlarmCooldown() {
@@ -122,8 +150,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return 0;
     }
 
-    public final EntityLivingBase[] canShoalWith() {
-        return new EntityLivingBase[]{this};
+    public Class[] canShoalWith() {
+        return new Class[]{this.getClass()};
+    }
+
+    public int getShoalInterval() {
+        return 100;
     }
 
     @SideOnly(Side.CLIENT)
@@ -353,13 +385,35 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return null;
     }
 
+    protected void initEntityAI() {
+    }
+
+    @Override
+    public boolean isAIDisabled() {
+        return false;
+    }
+
+    public String getTexture() {
+        return this.getTexture();
+    }
+
+    @Override
+    public EnumCreatureAttribute getCreatureAttribute() {
+        return EnumCreatureAttribute.UNDEFINED;
+    }
+
+    @Override
+    protected boolean canDespawn() {
+        return false;
+    }
+
     @Override
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(AGETICKS, getAdultAge() - 1);
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
-        this.dataManager.register(TICKS, rand.nextInt(24000));
+        this.dataManager.register(TICKS, 0);
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISMOVING, false);
@@ -443,8 +497,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean getCanBreed() {
+        int breedCooldown = LepidodendronConfig.breedCooldown;
+        if (breedCooldown < 1) {
+            breedCooldown = 1;
+        }
         return (this.isPFAdult() &&
-                (this.getTicks() > 24000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
+                (this.getTicks() > breedCooldown || this.getTicks() < 0)); //If the mob has done not bred for a MC day
     }
 
     @Nullable
@@ -522,8 +580,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setTickOffset(rand.nextInt(1000));
         this.setIsFast(false);
         this.setWillHunt(false);
-        this.heal(this.getMaxHealth());
-        this.setNoAI(false);
+        //this.heal(this.getMaxHealth());
+        //this.setNoAI(false);
+        ShoalingHelper.updateShoalAgeableBase(this);
         return livingdata;
     }
 
@@ -692,6 +751,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     return false;
                 }
             }
+            if (this.isInWater()) {
+                return false;
+            }
         }
 
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {
@@ -801,18 +863,22 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         //Grapple with mates?
-        if (rand.nextInt(500) == 0) {
+        if (rand.nextInt(this.grappleChance()) == 0) {
             //Are there any nearby to grapple with?
             this.findGrappleTarget();
         }
 
         if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == 5 && this.getGrappleTarget() != null) {
-            this.faceEntity(this.getGrappleTarget(), 100F, 100F);
+            this.faceEntity(this.getGrappleTarget(), 10, 10);
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);
             }
         }
+    }
+
+    public int grappleChance() {
+        return 500;
     }
 
     public Animation getGrappleAnimation() {
@@ -898,9 +964,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.warnCooldown --;
         }
 
-        if (this.getWarnTarget() != null) {
-            this.faceEntity(this.getWarnTarget(), 20, 20);
-            this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
+        if (this.getWarnTarget() != null && !world.isRemote) {
+            this.faceEntity(this.getWarnTarget(), 10, 10);
+            //this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
+            this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
+            //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 this.setAttackTarget(this.getWarnTarget());
                 this.setIsFast(true);
@@ -911,8 +979,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
-            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
-                ShoalingHelper.updateShoalAgeableBase(this);
+            double factor = LepidodendronConfig.doShoalingFlockingFactor;
+            if (factor > 100) {
+                factor = 100;
+            }
+            if (factor > 0) {
+                if (((double) ii / Math.round((float)this.getShoalInterval() / factor)) == Math.round((double) ii / Math.round((float)this.getShoalInterval() / factor))) {
+                    ShoalingHelper.updateShoalAgeableBase(this);
+                }
             }
         }
 
@@ -981,7 +1055,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         //Drop an egg perhaps:
         if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
             //if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+                ItemStack itemstack = getPropagule();
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }
@@ -1297,7 +1371,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
             if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.canGrow <= 0) {
                 this.consumeItemFromStack(player, itemstack);
-                this.canGrow = 3000;
+                this.canGrow = 2400;
                 this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
                 if (world.isRemote) {
                     this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
@@ -1330,6 +1404,21 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
                             if (this.getPosition().getY() > 8) {
                                 this.setAnimation(MAKE_NEST_ANIMATION);
+                                player.swingArm(hand);
+                                this.consumeItemFromStack(player, itemstack);
+                                if (world.isRemote) {
+                                    this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
+                                }
+                                if (newNest) {
+                                    this.setNestLocation(null);
+                                }
+                                return true;
+                            }
+                        }
+                        else if (this instanceof EntityPrehistoricFloraHaldanodon) { //Burrowing creatures:
+                            if (this.getPosition().getY() > 8) {
+                                this.setAnimation(MAKE_NEST_ANIMATION);
+                                player.swingArm(hand);
                                 this.consumeItemFromStack(player, itemstack);
                                 if (world.isRemote) {
                                     this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
@@ -1342,6 +1431,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         }
                         else if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
                             this.setAnimation(MAKE_NEST_ANIMATION);
+                            player.swingArm(hand);
                             this.consumeItemFromStack(player, itemstack);
                             if (world.isRemote) {
                                 this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);

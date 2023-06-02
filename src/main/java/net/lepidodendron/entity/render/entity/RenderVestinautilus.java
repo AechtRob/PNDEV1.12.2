@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderVestinautilus extends RenderLiving<EntityPrehistoricFloraVestinautilus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vestinautilus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vestinautilus.png");
 
     public RenderVestinautilus(RenderManager mgr) {
         super(mgr, new ModelVestinautilus(), 0.1f);

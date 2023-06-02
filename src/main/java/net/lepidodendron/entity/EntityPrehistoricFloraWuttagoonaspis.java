@@ -10,7 +10,10 @@ import net.lepidodendron.entity.ai.EatFishItemsAI;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderWuttagoonaspis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -45,11 +48,7 @@ public class EntityPrehistoricFloraWuttagoonaspis extends EntityPrehistoricFlora
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraWuttagoonaspis.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.5F, 0.5F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
@@ -302,5 +301,58 @@ public class EntityPrehistoricFloraWuttagoonaspis extends EntityPrehistoricFlora
 				this.EntityBase.setAIMoveSpeed(0.0F);
 			}
 		}
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.03;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.09;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.09;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderWuttagoonaspis.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelWuttagoonaspis;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderWuttagoonaspis.getScaler();
 	}
 }

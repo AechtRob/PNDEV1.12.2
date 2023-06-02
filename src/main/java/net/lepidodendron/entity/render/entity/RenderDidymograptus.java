@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDidymograptus extends RenderLiving<EntityPrehistoricFloraDidymograptus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/didymograptus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/didymograptus.png");
 
     public RenderDidymograptus(RenderManager mgr) {
         super(mgr, new ModelDidymograptus(), 0.0f);

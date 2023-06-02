@@ -310,13 +310,39 @@ public class ModelEndothiodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.endothiodon.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.Neck.render(0.01F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.jaw.rotateAngleX = (float) Math.toRadians(20);
+        this.neck1.offsetY = -0.04F;
+        this.neck1.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bodyback, -0.0873F, 0.3927F, 0.0F);
+        this.setRotateAngle(tail1, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(legBL1, -0.1745F, -0.3491F, -0.1745F);
+        this.setRotateAngle(legBL2, 0.6981F, 0.0873F, 0.1309F);
+        this.setRotateAngle(legBL3, -0.3927F, 0.0436F, 0.0436F);
+        this.setRotateAngle(legBL4, -0.1745F, 0.3491F, 0.1745F);
+        this.setRotateAngle(legBL5, 0.6981F, -0.0873F, -0.1309F);
+        this.setRotateAngle(legBL6, -0.3927F, -0.0436F, -0.0436F);
+        this.setRotateAngle(bodyfront, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(neck1, -0.3054F, -0.2182F, 0.0F);
+        this.setRotateAngle(neck2, 0.0873F, -0.2618F, 0.0F);
+        this.setRotateAngle(head, 0.3927F, -0.0436F, -0.2182F);
+        this.setRotateAngle(jaw, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(legRL1, 0.9163F, 0.5236F, 0.0F);
+        this.setRotateAngle(legRL2, -1.4835F, -0.4363F, 0.5672F);
+        this.setRotateAngle(legRL3, 0.4363F, 0.0F, 0.0436F);
+        this.setRotateAngle(legRL4, 0.9163F, -0.5236F, 0.0F);
+        this.setRotateAngle(legRL5, -1.4835F, 0.4363F, -0.5672F);
+        this.setRotateAngle(legRL6, 0.4363F, 0.0F, -0.0436F);
+        this.endothiodon.rotateAngleY = (float) Math.toRadians(90);
+        this.endothiodon.offsetY = -0.12F;
+        this.endothiodon.offsetX = -0.08F;
+        this.endothiodon.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -364,7 +390,7 @@ public class ModelEndothiodon extends AdvancedModelBaseExtended {
         //float speed = masterSpeed / 2.625F;
         float speed = masterSpeed / 1.225F;
         if (Endothiodon.getIsFast()) {
-            speed = speed * 2;
+            speed = speed * 1.725F;
         }
 
         this.legRL1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.8), false, 1, f2, 1.5F);;

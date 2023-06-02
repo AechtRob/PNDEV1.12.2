@@ -11,11 +11,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.entity.RenderBungartius;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
@@ -44,13 +43,7 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraBungartius(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.05F;
-		//maxSize = 1.0F;
+		setSize(0.8F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;
@@ -59,7 +52,7 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.7;
+		return this.getAgeScale() < 0.3;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -131,14 +124,14 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
@@ -177,7 +170,7 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(42.0D);
+		//this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(42.0D);
 	}
 
 	@Override
@@ -213,10 +206,10 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 
 	}
 
-	@Override
-	public boolean breaksBoat() {
-		return true;
-	}
+//	@Override
+//	public boolean breaksBoat() {
+//		return true;
+//	}
 
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {
@@ -261,55 +254,55 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.4;
 	}
-	public static double upperbackverticallinedepth() {
-		return 0.8;
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1.4;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperbacklineoffsetperpendiular() {
-		return -0.15F;
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.F;
 	}
-	public static double lowerfrontverticallinedepth() {
-		return 1.3;
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.6;
 	}
-	public static double lowerbackverticallinedepth() {
-		return 1.3;
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.6;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
-		return -0F;
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.05F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderBungartius.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelEastmanosteus;
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelBungartius;
 	}
-	public static float getScaler() {
-		return RenderEastmanosteus.getScaler();
+	public static float getScaler(@Nullable String variant) {
+		return RenderBungartius.getScaler();
 	}
 
 }

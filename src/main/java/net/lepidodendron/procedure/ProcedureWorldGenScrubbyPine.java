@@ -34,10 +34,6 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 			System.err.println("Failed to load dependency world for procedure WorldGenScrubbyPine!");
 			return;
 		}
-		if (dependencies.get("SaplingSpawn") == null) {
-			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenScrubbyPineLarge!");
-			return;
-		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
@@ -45,7 +41,6 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 		int yy = (int) dependencies.get("y");
 		int zz = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		double TrunkHeight = 0;
 		double counter = 0;
 		double counterext = 0;
@@ -115,22 +110,22 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 			if (Math.random() > 0.85) {
 				//North
 				ProcedureTreeLog.executeProcedure(x, yy, z - 1, world, BlockScrubbyPineLog.block, EnumFacing.WEST);
-				ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, BlockScrubbyPineLeaves.block, 1, 0.4);
+				ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 			}
 			if (Math.random() > 0.85) {
 				//South
 				ProcedureTreeLog.executeProcedure(x, yy, z + 1, world, BlockScrubbyPineLog.block, EnumFacing.WEST);
-				ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, BlockScrubbyPineLeaves.block, 1, 0.4);
+				ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 			}
 			if (Math.random() > 0.85) {
 				//East
 				ProcedureTreeLog.executeProcedure(x + 1, yy, z, world, BlockScrubbyPineLog.block, EnumFacing.UP);
-				ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.4);
+				ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 			}
 			if (Math.random() > 0.85) {
 				//West
 				ProcedureTreeLog.executeProcedure(x - 1, yy, z, world, BlockScrubbyPineLog.block, EnumFacing.UP);
-				ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.4);
+				ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 			}
 
 			yy = y + (int)counter - 3;
@@ -150,13 +145,13 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 				if (Math.random() > 0.66) {
 					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 					ProcedureTreeLog.executeProcedure(x, yy, z - 1, world, BlockScrubbyPineLog.block, EnumFacing.EAST);
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+					ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 					ProcedureTreeLog.executeProcedure(x, yy, z - 2, world, BlockScrubbyPineLog.block, EnumFacing.EAST);
-					upright = rand.nextInt(3);
+					upright = rand.nextInt(2);
 					yyy = 1;
 					while (yyy <= upright) {
 						ProcedureTreeLog.executeProcedure(x, yy + yyy, z - 2, world, BlockScrubbyPineLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x, yy + yyy, z - 2, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+						ProcedureLeavesAroundLog.executeProcedure(x, yy + yyy, z - 2, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 						yyy = yyy + 1;
 					}
 					branch = true;
@@ -166,13 +161,13 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 				if (Math.random() > 0.66) {
 					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 					ProcedureTreeLog.executeProcedure(x, yy, z + 1, world, BlockScrubbyPineLog.block, EnumFacing.EAST);
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+					ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 					ProcedureTreeLog.executeProcedure(x, yy, z + 2, world, BlockScrubbyPineLog.block, EnumFacing.EAST);
-					upright = rand.nextInt(3);
+					upright = rand.nextInt(2);
 					yyy = 1;
 					while (yyy <= upright) {
 						ProcedureTreeLog.executeProcedure(x, yy + yyy, z + 2, world, BlockScrubbyPineLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x, yy + yyy, z + 2, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+						ProcedureLeavesAroundLog.executeProcedure(x, yy + yyy, z + 2, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 						yyy = yyy + 1;
 					}
 					branch = true;
@@ -182,13 +177,13 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 				if (Math.random() > 0.66) {
 					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 					ProcedureTreeLog.executeProcedure(x + 1, yy, z, world, BlockScrubbyPineLog.block, EnumFacing.UP);
-					ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+					ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 					ProcedureTreeLog.executeProcedure(x + 2, yy, z, world, BlockScrubbyPineLog.block, EnumFacing.UP);
-					upright = rand.nextInt(3);
+					upright = rand.nextInt(2);
 					yyy = 1;
 					while (yyy <= upright) {
 						ProcedureTreeLog.executeProcedure(x + 2, yy + yyy, z, world, BlockScrubbyPineLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x + 2, yy + yyy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+						ProcedureLeavesAroundLog.executeProcedure(x + 2, yy + yyy, z, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 						yyy = yyy + 1;
 					}
 					branch = true;
@@ -198,13 +193,13 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 				if (Math.random() > 0.66) {
 					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
 					ProcedureTreeLog.executeProcedure(x - 1, yy, z, world, BlockScrubbyPineLog.block, EnumFacing.UP);
-					ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+					ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 					ProcedureTreeLog.executeProcedure(x - 2, yy, z, world, BlockScrubbyPineLog.block, EnumFacing.UP);
-					upright = rand.nextInt(3);
+					upright = rand.nextInt(2);
 					yyy = 1;
 					while (yyy <= upright) {
 						ProcedureTreeLog.executeProcedure(x - 2, yy + yyy, z, world, BlockScrubbyPineLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x - 2, yy + yyy, z, world, BlockScrubbyPineLeaves.block, 1, 0.3);
+						ProcedureLeavesAroundLog.executeProcedure(x - 2, yy + yyy, z, world, BlockScrubbyPineLeaves.block, 1, 0.2);
 						yyy = yyy + 1;
 					}
 					branch = true;

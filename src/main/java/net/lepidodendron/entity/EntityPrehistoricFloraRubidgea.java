@@ -8,8 +8,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderRubidgea;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -41,11 +44,7 @@ public class EntityPrehistoricFloraRubidgea extends EntityPrehistoricFloraLandBa
 
 	public EntityPrehistoricFloraRubidgea(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
+		setSize(0.94F, 1.0F);
 		minWidth = 0.18F;
 		maxWidth = 0.94F;
 		maxHeight = 1.0F;
@@ -95,7 +94,7 @@ public class EntityPrehistoricFloraRubidgea extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
+			speedBase = speedBase * 1.87F;
 		}
 		return speedBase;
 	}
@@ -133,10 +132,11 @@ public class EntityPrehistoricFloraRubidgea extends EntityPrehistoricFloraLandBa
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(8, new EntityAILookIdle(this));
+		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -264,6 +264,60 @@ public class EntityPrehistoricFloraRubidgea extends EntityPrehistoricFloraLandBa
 			
 		}
 		return LepidodendronMod.RUBIDGEA_LOOT;
+	}
+
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.4;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderRubidgea.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelRubidgea;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderRubidgea.getScaler();
 	}
 
 

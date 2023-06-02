@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderEricixerxes extends RenderLiving<EntityPrehistoricFloraEricixerxes> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ericixerxes.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ericixerxes.png");
 
     public RenderEricixerxes(RenderManager mgr) {
         super(mgr, new ModelEricixerxes(), 0.0f);

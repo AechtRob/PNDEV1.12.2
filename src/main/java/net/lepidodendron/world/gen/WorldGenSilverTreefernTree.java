@@ -80,7 +80,7 @@ public class WorldGenSilverTreefernTree extends WorldGenAbstractTree
             {
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
-                if (!BlockTreefernSilverShoot.block.canPlaceBlockAt(worldIn, position)) {
+                if (!BlockTreefernSilverShootPlaceable.block.canPlaceBlockAt(worldIn, position)) {
                     return false;
                 }
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
@@ -97,7 +97,7 @@ public class WorldGenSilverTreefernTree extends WorldGenAbstractTree
 					//Grab nearby positions too for clumps:
                     for (int ii = 0; ii < 12; ++ii) {
                         BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-                        if (!BlockTreefernSilverShoot.block.canPlaceBlockAt(worldIn, blockpos)) {
+                        if (!BlockTreefernSilverShootPlaceable.block.canPlaceBlockAt(worldIn, blockpos)) {
                             continue;
                         }
                         down = blockpos.down();

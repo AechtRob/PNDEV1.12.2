@@ -74,7 +74,7 @@ public class ModelMaclurina extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //this.body.render(f5 * 0.2F);
-        body.render(f5 * 0.91F);
+        body.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -87,7 +87,7 @@ public class ModelMaclurina extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.122F;
+        //this.body.offsetY = 0.122F;
 
         this.swing(tentacleL, 0.22F, 0.15F, false, 0, 0.15F, f2, 0.8F);
         this.swing(tentacleL2, 0.22F, 0.15F, true, 0, 0.15F, f2, 0.8F);

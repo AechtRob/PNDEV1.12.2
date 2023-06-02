@@ -195,7 +195,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				entity.inventory.clearMatchingItems(new ItemStack(Items.BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("resin"), 1000));
+				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_resin"), 1000));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(entity, _setstack);
 				//New fill level:

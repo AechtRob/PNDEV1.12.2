@@ -12,8 +12,11 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.render.entity.RenderCarcinosoma;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -42,13 +45,7 @@ public class EntityPrehistoricFloraCarcinosoma extends EntityPrehistoricFloraEur
 
 	public EntityPrehistoricFloraCarcinosoma(World world) {
 		super(world);
-		setSize(0.8F, 0.6F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
-		//minSize = 0.2F;
-		//maxSize = 1.0F;
+		setSize(0.95F, 0.7F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.7F;
@@ -282,6 +279,58 @@ public class EntityPrehistoricFloraCarcinosoma extends EntityPrehistoricFloraEur
 			return LepidodendronMod.CARCINOSOMA_LOOT_YOUNG;
 		}
 		return LepidodendronMod.CARCINOSOMA_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.5F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCarcinosoma.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCarcinosoma;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCarcinosoma.getScaler();
 	}
 
 }

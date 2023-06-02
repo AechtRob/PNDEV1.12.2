@@ -1,0 +1,17 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+ {
+ "item": "lepidodendron:bisonia_seeds"
+ },
+ {
+ "type": "forge:ore_dict",
+ "ore": "dirt"
+ }
+ ],
+ "result": {
+ "item": "lepidodendron:bisonia_sapling",
+ "count": 1
+ }
+}

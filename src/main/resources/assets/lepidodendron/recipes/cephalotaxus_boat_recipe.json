@@ -1,0 +1,30 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "   ",
+ "3 5",
+ "678"
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:cephalotaxus_planks"
+ },
+ "5": {
+ "item": "lepidodendron:cephalotaxus_planks"
+ },
+ "6": {
+ "item": "lepidodendron:cephalotaxus_planks"
+ },
+ "7": {
+ "item": "lepidodendron:cephalotaxus_planks"
+ },
+ "8": {
+ "item": "lepidodendron:cephalotaxus_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:cephalotaxus_boat_item",
+ "count": 1
+ }
+}

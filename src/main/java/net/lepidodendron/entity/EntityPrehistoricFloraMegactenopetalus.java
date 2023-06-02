@@ -42,10 +42,6 @@ public class EntityPrehistoricFloraMegactenopetalus extends EntityPrehistoricFlo
 	public EntityPrehistoricFloraMegactenopetalus(World world) {
 		super(world);
 		setSize(0.5F, 0.8F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.8F;

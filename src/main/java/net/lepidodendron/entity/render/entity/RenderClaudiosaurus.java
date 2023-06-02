@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderClaudiosaurus extends RenderLiving<EntityPrehistoricFloraClaudiosaurus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/claudiosaurus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/claudiosaurus.png");
 
     public RenderClaudiosaurus(RenderManager mgr) {
         super(mgr, new ModelClaudiosaurus(), 0.5f);

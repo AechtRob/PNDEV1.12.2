@@ -9,11 +9,15 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDiplocaulus extends RenderLiving<EntityPrehistoricFloraDiplocaulus> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diplocaulus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diplocaulus.png");
 
+    public static float getScaler() {
+        return 0.385F;
+    }
     public RenderDiplocaulus(RenderManager mgr) {
         super(mgr, new ModelDiplocaulus(), 0.1f);
     }
+
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDiplocaulus entity) {
@@ -27,7 +31,7 @@ public class RenderDiplocaulus extends RenderLiving<EntityPrehistoricFloraDiploc
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDiplocaulus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

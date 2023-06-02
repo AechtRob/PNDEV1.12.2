@@ -416,7 +416,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 
 			if (this.isProcessing && this.processTick < this.processTickTime && (this.hasEnergy(minEnergyNeeded))) {
 				this.processTick++;
-				this.drainEnergy(10);
+				//this.drainEnergy(10);
 				if (this.processTick <= this.trayLiftTickTime) {
 					this.trayheight++;
 				} else if (this.processTick >= (this.processTickTime - this.trayLiftTickTime)) {
@@ -427,6 +427,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					}
 					//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 				}
+				this.drainEnergy(10);
 				updated = true;
 			}
 
@@ -526,36 +527,36 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			if (tileEntity != null) {
 				if (tileEntity instanceof BlockAcidBath.TileEntityAcidBath) {
 					te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
-					if (te.getStackInSlot(0).isEmpty()) {
+					if (te.getStackInSlot(0).isEmpty() && (!this.getStackInSlot(1).isEmpty())) {
 						setInventorySlotContents(1, ItemStack.EMPTY);
 						updated = true;
 					}
-					if (te.getStackInSlot(1).isEmpty()) {
+					if (te.getStackInSlot(1).isEmpty() && (!this.getStackInSlot(2).isEmpty())) {
 						setInventorySlotContents(2, ItemStack.EMPTY);
 						updated = true;
 					}
-					if (te.getStackInSlot(2).isEmpty()) {
+					if (te.getStackInSlot(2).isEmpty() && (!this.getStackInSlot(3).isEmpty())) {
 						setInventorySlotContents(3, ItemStack.EMPTY);
 						updated = true;
 					}
-					if (te.getStackInSlot(3).isEmpty()) {
+					if (te.getStackInSlot(3).isEmpty() && (!this.getStackInSlot(4).isEmpty())) {
 						setInventorySlotContents(4, ItemStack.EMPTY);
 						updated = true;
 					}
 
-					if (getStackInSlot(1).isEmpty()) {
+					if (getStackInSlot(1).isEmpty() && (!te.getStackInSlot(0).isEmpty())) {
 						te.setInventorySlotContents(0, ItemStack.EMPTY);
 						updated = true;
 					}
-					if (getStackInSlot(2).isEmpty()) {
+					if (getStackInSlot(2).isEmpty() && (!te.getStackInSlot(1).isEmpty())) {
 						te.setInventorySlotContents(1, ItemStack.EMPTY);
 						updated = true;
 					}
-					if (getStackInSlot(3).isEmpty()) {
+					if (getStackInSlot(3).isEmpty() && (!te.getStackInSlot(2).isEmpty())) {
 						te.setInventorySlotContents(2, ItemStack.EMPTY);
 						updated = true;
 					}
-					if (getStackInSlot(4).isEmpty()) {
+					if (getStackInSlot(4).isEmpty() && (!te.getStackInSlot(3).isEmpty())) {
 						te.setInventorySlotContents(3, ItemStack.EMPTY);
 						updated = true;
 					}

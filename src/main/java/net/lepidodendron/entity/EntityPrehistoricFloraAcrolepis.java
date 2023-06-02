@@ -36,10 +36,6 @@ public class EntityPrehistoricFloraAcrolepis extends EntityPrehistoricFloraAgeab
 	public EntityPrehistoricFloraAcrolepis(World world) {
 		super(world);
 		setSize(0.5F, 0.4F);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
-		setNoAI(!true);
-		enablePersistence();
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
@@ -51,7 +47,7 @@ public class EntityPrehistoricFloraAcrolepis extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian - [Triassic]";}
 
 	public static String getSize() {return "M";}
 

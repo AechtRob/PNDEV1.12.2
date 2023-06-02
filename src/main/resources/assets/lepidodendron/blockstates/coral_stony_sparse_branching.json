@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching"},
+        {"model": "lepidodendron:coral_stony_sparse_branching_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching_side"},
+        {"model": "lepidodendron:coral_stony_sparse_branching_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching_side", "y": 90},
+      {"model": "lepidodendron:coral_stony_sparse_branching_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching_side", "y": 180},
+      {"model": "lepidodendron:coral_stony_sparse_branching_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching_side", "y": 270},
+      {"model": "lepidodendron:coral_stony_sparse_branching_side_var", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching"},
+        {"model": "lepidodendron:coral_stony_sparse_branching_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:coral_stony_sparse_branching", "x": 180},
+        {"model": "lepidodendron:coral_stony_sparse_branching_var", "x": 180}
+    ]
+  }
+}

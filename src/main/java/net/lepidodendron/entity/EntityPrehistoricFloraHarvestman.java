@@ -11,14 +11,13 @@ import net.lepidodendron.entity.ai.LandWanderAvoidWaterClimbingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -29,6 +28,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -44,14 +44,11 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraHarvestman(World world) {
 		super(world);
-		experienceValue = 0;
-		this.isImmuneToFire = false;
+		setSize(0.3F, 0.3F);
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4.0D;
-		setNoAI(!true);
-		enablePersistence();
 	}
 
 	@Override
@@ -62,22 +59,6 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 	@Override
 	public String getEggNBT() {
 		return LepidodendronMod.MODID + ":insect_eggs_harvestman";
-	}
-
-	@Override
-	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
-		if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
-			return false;
-		}
-		IBlockState state = world.getBlockState(pos);
-		if (
-			(state.getMaterial() != Material.GLASS && state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA && state.getMaterial() != Material.AIR)
-				&& (state.getBlockFaceShape(world, pos, facing) == BlockFaceShape.SOLID || state.getBlock().isFullCube(state))
-		)
-		{
-			return true;
-		}
-		return false;
 	}
 
 	@Override
@@ -251,6 +232,11 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", "");
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
 		}

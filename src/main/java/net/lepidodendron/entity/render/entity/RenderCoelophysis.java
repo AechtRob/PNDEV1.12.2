@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCoelophysis extends RenderLiving<EntityPrehistoricFloraCoelophysis> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelophysis.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelophysis.png");
 
     public RenderCoelophysis(RenderManager mgr) {
         super(mgr, new ModelCoelophysis(), 0.5f);
