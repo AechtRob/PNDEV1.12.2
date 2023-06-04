@@ -287,30 +287,30 @@ public class ModelAmmonite_Perisphinctes extends AdvancedModelBaseExtended {
         }
 
         //Left:
-        this.chainWave(tentacle8, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle8, speed, 0.2F, -2, f2, 1F);
         //Left lower middle:
-        this.chainWave(tentacle7, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle7, speed, -0.2F, -2, f2, 1F);
         //Left lower bottom:
-        this.chainWave(tentacle6, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle6, speed, 0.2F, -2, f2, 1F);
         //Left upper middle:
-        this.chainWave(tentacle9, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle9, speed, 0.2F, -2, f2, 1F);
         //Left upper top:
-        this.chainWave(tentacle10, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle10, speed, 0.2F, -2, f2, 1F);
 
         //Right:
-        this.chainWave(tentacle3, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle3, speed, 0.2F, -2, f2, 1F);
         //Right lower middle:
-        this.chainWave(tentacle2, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle2, speed, -0.2F, -2, f2, 1F);
         //Right lower bottom:
-        this.chainWave(tentacle1, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle1, speed, 0.2F, -2, f2, 1F);
         //Right upper middle:
-        this.chainWave(tentacle4, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle4, speed, 0.2F, -2, f2, 1F);
         //Right upper top:
-        this.chainWave(tentacle5, speed, 0.3F, -2, f2, 1F);
+        this.chainWave(tentacle5, speed, 0.2F, -2, f2, 1F);
 
         if (e.isInWater()) {
             this.bob(Shell1, 0.1F, 2.0F, false, f2, 2);
-            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 3, f2, 1);
+            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 0, f2, 1);
         }
         else {
             this.Shell1.rotateAngleZ = (float) Math.toRadians(90);

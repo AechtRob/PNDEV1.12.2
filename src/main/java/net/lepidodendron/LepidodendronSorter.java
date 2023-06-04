@@ -3786,6 +3786,7 @@ public class LepidodendronSorter {
     public static final int triops1_raw = 4169;
     public static final int triops2_raw = 4170;
     public static final int triops3_raw = 4171;
+    public static final int bivalve_inoceramus_gigantocapulus = 4172;
 
 
 

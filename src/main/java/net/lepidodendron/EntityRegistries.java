@@ -822,11 +822,11 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_piatnitzkysaurus", EntityPrehistoricFloraPiatnitzkysaurus.class, LepidodendronMod.ENTITY_PIATNITZKYSAURUS, 156,-11644608,-12960721);
         registerEntity("prehistoric_flora_gasosaurus", EntityPrehistoricFloraGasosaurus.class, LepidodendronMod.ENTITY_GASOSAURUS, 156,-10652884,-14341605);
 
-        registerEntity("prehistoric_flora_laidleria", EntityPrehistoricFloraLaidleria.class, LepidodendronMod.ENTITY_LAIDLERIA, 64,-10652884,-14341605);
+        registerEntity("prehistoric_flora_laidleria", EntityPrehistoricFloraLaidleria.class, LepidodendronMod.ENTITY_LAIDLERIA, 64,-3964582,-3424071);
         //registerEntity("prehistoric_flora_archaboilus", EntityPrehistoricFloraArchaboilus.class, LepidodendronMod.ENTITY_ARCHABOILUS, 48,-10652884,-14341605);
         //registerEntity("prehistoric_flora_pycnophlebia", EntityPrehistoricFloraPycnophlebia.class, LepidodendronMod.ENTITY_PYCNOPHLEBIA, 48,-10652884,-14341605);
         registerEntity("prehistoric_flora_notostracan", EntityPrehistoricFloraNotostracan.class, LepidodendronMod.ENTITY_NOTOSTRACAN, 48,-10652884,-14341605);
-        registerEntity("prehistoric_flora_ammonite_perisphinctes", EntityPrehistoricFloraAmmonite_Perisphinctes.class, LepidodendronMod.ENTITY_AMMONITE_PERISPHINCTES, 64,-10652884,-14341605);
+        registerEntity("prehistoric_flora_ammonite_perisphinctes", EntityPrehistoricFloraAmmonite_Perisphinctes.class, LepidodendronMod.ENTITY_AMMONITE_PERISPHINCTES, 64,-10652884,-2437690);
 
 
 

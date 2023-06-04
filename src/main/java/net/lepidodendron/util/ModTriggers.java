@@ -90,6 +90,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BIVALVE_GREEN = new CustomTrigger("pf_book_bivalve_green");
     public static final CustomTrigger CLICK_BIVALVE_GREY = new CustomTrigger("pf_book_bivalve_grey");
     public static final CustomTrigger CLICK_BIVALVE_INOCERAMUS = new CustomTrigger("pf_book_bivalve_inoceramus");
+    public static final CustomTrigger CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS = new CustomTrigger("pf_book_bivalve_inoceramus_gigantocapulus");
     public static final CustomTrigger CLICK_BIVALVE_LITHIOTIS = new CustomTrigger("pf_book_bivalve_lithiotis");
     public static final CustomTrigger CLICK_BIVALVE_MEGALODON = new CustomTrigger("pf_book_bivalve_megalodon");
     public static final CustomTrigger CLICK_BIVALVE_TALL = new CustomTrigger("pf_book_bivalve_tall");
@@ -2439,6 +2440,7 @@ public class ModTriggers
             CLICK_TRIOPS1,
             CLICK_TRIOPS2,
             CLICK_TRIOPS3,
+            CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS,
 
 
 
