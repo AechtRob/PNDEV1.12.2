@@ -157,12 +157,12 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	public int defaultFlyCooldown() {
-		return 200;
+		return 2500;
 	}
 
 	@Override
 	public int defaultWanderCooldown() {
-		return 2500;
+		return 0;
 	}
 
 	@Override

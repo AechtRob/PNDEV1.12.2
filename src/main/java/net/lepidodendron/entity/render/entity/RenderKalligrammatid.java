@@ -98,43 +98,43 @@ public class RenderKalligrammatid extends RenderLiving<EntityPrehistoricFloraKal
         float scaler = 1F;
         switch (entity.getPNType()) {
             case KALLIGRAMMA: default:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case APOCHRYSOGRAMMA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case HUIYINGOGRAMMA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case LIASSOPSYCHOPS:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case MEIONEURITES:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case ABRIGRAMMA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case ITHIGRAMMA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case OREGRAMMA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case MAKARKINIA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
             case SOPHOGRAMMA:
-                scaler = 0.2F;
+                scaler = 0.3F;
                 break;
 
         }

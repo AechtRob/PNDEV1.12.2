@@ -15,6 +15,10 @@ public class RenderPiatnitzkysaurus extends RenderLiving<EntityPrehistoricFloraP
         super(mgr, new ModelPiatnitzkysaurus(), 0.3f);
     }
 
+    public static float getScaler() {
+        return 0.7F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPiatnitzkysaurus entity) {
         return RenderPiatnitzkysaurus.TEXTURE;
@@ -27,12 +31,9 @@ public class RenderPiatnitzkysaurus extends RenderLiving<EntityPrehistoricFloraP
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPiatnitzkysaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
-
-
+        this.shadowSize = entity.width * scale * 0.35F;
     }
-
 
 }

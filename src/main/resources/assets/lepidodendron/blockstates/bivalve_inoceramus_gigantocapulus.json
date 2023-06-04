@@ -1,0 +1,44 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus"},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90, "y": 90},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90, "y": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90, "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90, "y": 270},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus"},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus"},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "y": 90},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "y": 90},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "y": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "y": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "y": 270},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180, "y": 270},
+      {"model": "lepidodendron:bivalve_inoceramus_gigantocapulus", "x": 180, "y": 270}
+    ]
+  }
+}

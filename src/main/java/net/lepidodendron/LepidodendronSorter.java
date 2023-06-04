@@ -3770,6 +3770,24 @@ public class LepidodendronSorter {
     public static final int ozarkodina_raw = 4154;
 
     public static final int insect_eggs_archocyrtus = 4155;
+    public static final int tanyrhinichthys_raw = 4156;
+    public static final int eggs_piatnitzkysaurus = 4157;
+    public static final int eggs_gasosaurus = 4158;
+    public static final int gasosaurus_raw = 4159;
+    public static final int sokkaejaecystis_raw = 4160;
+    public static final int eggs_sokkaejaecystis = 4161;
+    public static final int castorocauda_raw = 4162;
+    public static final int amphibian_spawn_laidleria = 4163;
+    public static final int amphibian_spawn_laidleria_worldgen = 4164;
+    public static final int laidleria_raw = 4165;
+    public static final int pycnophlebia_raw = 4166;
+    public static final int archaboilus_raw = 4167;
+    public static final int strudops_raw = 4168;
+    public static final int triops1_raw = 4169;
+    public static final int triops2_raw = 4170;
+    public static final int triops3_raw = 4171;
+    public static final int bivalve_inoceramus_gigantocapulus = 4172;
+
 
 
 
