@@ -1218,6 +1218,11 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PIATNITZKYSAURUS = new CustomTrigger("pf_book_piatnitzkysaurus");
     public static final CustomTrigger CLICK_GASOSAURUS = new CustomTrigger("pf_book_gasosaurus");
     public static final CustomTrigger CLICK_TANYRHINICHTHYS = new CustomTrigger("pf_book_tanyrhinichthys");
+    public static final CustomTrigger CLICK_AMMONITE_PERISPHINCTES = new CustomTrigger("pf_book_perisphinctes");
+    public static final CustomTrigger CLICK_LAIDLERIA = new CustomTrigger("pf_book_laidleria");
+    public static final CustomTrigger CLICK_TRIOPS1 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_TRIOPS2 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_TRIOPS3 = new CustomTrigger("pf_book_triops");
 
 
 
@@ -2429,6 +2434,11 @@ public class ModTriggers
             CLICK_PIATNITZKYSAURUS,
             CLICK_GASOSAURUS,
             CLICK_TANYRHINICHTHYS,
+            CLICK_AMMONITE_PERISPHINCTES,
+            CLICK_LAIDLERIA,
+            CLICK_TRIOPS1,
+            CLICK_TRIOPS2,
+            CLICK_TRIOPS3,
 
 
 

@@ -10712,6 +10712,51 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraAmmonite_Perisphinctes) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_AMMONITE_PERISPHINCTES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraLaidleria) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LAIDLERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraNotostracan) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					switch (((EntityPrehistoricFloraNotostracan)event.getTarget()).getPNType()) {
+						case STRUDOPS: default:
+							ModTriggers.CLICK_STRUDOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case TRIOPS1:
+							ModTriggers.CLICK_TRIOPS1.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case TRIOPS2:
+							ModTriggers.CLICK_TRIOPS2.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+						case TRIOPS3:
+							ModTriggers.CLICK_TRIOPS3.trigger((EntityPlayerMP) event.getEntityPlayer());
+							break;
+
+
+					}
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 
 
 

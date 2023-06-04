@@ -1956,7 +1956,18 @@ public class LepidodendronMod {
 	public static final int ENTITY_TANYRHINICHTHYS = 769;
 	public static final ResourceLocation TANYRHINICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanyrhinichthys"));
 
-
+	public static final int ENTITY_NOTOSTRACAN = 770;
+	public static final ResourceLocation STRUDOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/strudops"));
+	public static final ResourceLocation TRIOPS1_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/triops1"));
+	public static final ResourceLocation TRIOPS2_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/triops2"));
+	public static final ResourceLocation TRIOPS3_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/triops3"));
+	public static final int ENTITY_ARCHABOILUS = 771;
+	public static final ResourceLocation ARCHABOILUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaboilus_jar"));
+	public static final int ENTITY_PYCNOPHLEBIA = 772;
+	public static final ResourceLocation PYCNOPHLEBIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pycnophlebia_jar"));
+	public static final int ENTITY_LAIDLERIA = 773;
+	public static final ResourceLocation LAIDLERIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/laidleria"));
+	public static final ResourceLocation LAIDLERIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/laidleria_young"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

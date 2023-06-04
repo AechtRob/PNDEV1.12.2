@@ -16,7 +16,7 @@ public class RenderPiatnitzkysaurus extends RenderLiving<EntityPrehistoricFloraP
     }
 
     public static float getScaler() {
-        return 0.6F;
+        return 0.7F;
     }
 
     @Override

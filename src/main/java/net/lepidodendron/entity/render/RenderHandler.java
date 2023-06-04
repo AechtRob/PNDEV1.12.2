@@ -4673,6 +4673,24 @@ public class RenderHandler {
                 return new RenderSokkaejaecystis(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNotostracan.class, new IRenderFactory<EntityPrehistoricFloraNotostracan>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNotostracan> createRenderFor(RenderManager manager) {
+                return new RenderNotostracan(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLaidleria.class, new IRenderFactory<EntityPrehistoricFloraLaidleria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLaidleria> createRenderFor(RenderManager manager) {
+                return new RenderLaidleria(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAmmonite_Perisphinctes.class, new IRenderFactory<EntityPrehistoricFloraAmmonite_Perisphinctes>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAmmonite_Perisphinctes> createRenderFor(RenderManager manager) {
+                return new RenderAmmonite_Perisphinctes(manager);
+            }
+        });
 
 
 
