@@ -342,7 +342,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_notostracan" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_notostracan_" + this.getPNType().getName() + ".name");
 		}
 	}
 

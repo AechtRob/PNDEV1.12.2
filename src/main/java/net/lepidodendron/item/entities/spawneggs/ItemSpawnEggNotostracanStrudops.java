@@ -3,7 +3,7 @@ package net.lepidodendron.item.entities.spawneggs;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.entity.EntityPrehistoricFloraConodont;
+import net.lepidodendron.entity.EntityPrehistoricFloraNotostracan;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -49,7 +49,7 @@ public class ItemSpawnEggNotostracanStrudops extends ElementsLepidodendronMod.Mo
 			setRegistryName("spawn_egg_notostracan_strudops");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
-			this.variant = "notostracan_strudops";
+			this.variant = "strudops";
 		}
 
 		@Override
@@ -77,7 +77,7 @@ public class ItemSpawnEggNotostracanStrudops extends ElementsLepidodendronMod.Mo
 				if (net.minecraftforge.event.ForgeEventFactory.doSpecialSpawn(entityliving, worldIn, (float) x, (float) y, (float) z, null)) return null;
 				entityliving.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
 				worldIn.spawnEntity(entity);
-				((EntityPrehistoricFloraConodont)entityliving).setPNType(EntityPrehistoricFloraConodont.Type.getTypeFromString(this.variant));
+				((EntityPrehistoricFloraNotostracan)entityliving).setPNType(EntityPrehistoricFloraNotostracan.Type.getTypeFromString(this.variant));
 				entityliving.playLivingSound();
 			}
 			return entity;
