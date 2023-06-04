@@ -48,16 +48,16 @@ public class RenderNotostracan extends RenderLiving<EntityPrehistoricFloraNotost
         switch (variant) {
             case STRUDOPS:
             default:
-                return 0.18F;
+                return 0.22F;
 
             case TRIOPS1:
-                return 0.15F;
+                return 0.29F;
 
             case TRIOPS2:
-                return 0.16F;
+                return 0.2F;
 
             case TRIOPS3:
-                return 0.19F;
+                return 0.23F;
         }
     }
 

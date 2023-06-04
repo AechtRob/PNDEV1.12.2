@@ -157,7 +157,7 @@ public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHa
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new LandWanderNestAI(this));
-		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.1, 90, 8));
+		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.6, 90, 8));
 		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
