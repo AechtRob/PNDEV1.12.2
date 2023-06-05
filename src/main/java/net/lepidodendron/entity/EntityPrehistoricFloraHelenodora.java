@@ -10,10 +10,14 @@ import net.lepidodendron.block.BlockSelaginella;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderHelenodora;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.ItemLandSnail;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
@@ -56,7 +60,9 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {
+		return "Carboniferous";
+	}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
@@ -64,7 +70,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	public boolean dropsEggs() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -113,8 +119,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
+	public boolean isBreedingItem(ItemStack stack) {
 		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemMoss"), stack));
 	}
 
@@ -166,12 +171,12 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		//Eat moss!
 		BlockPos pos = this.getPosition();
 		if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
-			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockSelaginella.block))
+				&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
+				|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
+				|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
+				|| (this.world.getBlockState(pos).getBlock() == BlockSelaginella.block))
 		) {
-			this.world.destroyBlock(pos,false);
+			this.world.destroyBlock(pos, false);
 			this.setHealth(this.getHealth() + 0.5F);
 		}
 
@@ -184,6 +189,73 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	protected ResourceLocation getLootTable() {
 		return null;
 	}
+
+	public static double offsetWall(@Nullable String variant) {
+		return -1.36;
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 2.0;
+	}
+
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 2.0;
+	}
+
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 1.4F;
+	}
+
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 2.5;
+	}
+
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 2.2;
+	}
+
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 2.0F;
+	}
+
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderHelenodora.TEXTURE;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelHelenodora;
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderHelenodora.getScaler();
+	}
+
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {

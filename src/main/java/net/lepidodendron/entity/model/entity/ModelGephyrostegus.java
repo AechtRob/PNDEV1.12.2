@@ -303,16 +303,38 @@ public class ModelGephyrostegus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.gephyrostegus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.gephyrostegus.offsetZ = -0.71F;
-        this.gephyrostegus.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticWall(float f) {
+        this.upperbody.rotateAngleY = (float) Math.toRadians(0);
+        this.upperbody.offsetY = 0.2F;
+        this.upperbody.offsetX = -0.0F;
+        this.upperbody.offsetZ = -0.25F;
+        this.upperbody.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(frontleftLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.0F, 0.0F);
+        this.gephyrostegus.offsetY = -0.5F;
+        this.gephyrostegus.render(0.01F);
+        resetToDefaultPose();
+
+
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -89,7 +89,13 @@ public class ModelLeviathania extends AdvancedModelBase {
         //this.body.render(f5 * 0.2F);
         snail.render(f5);
     }
-
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(lefteyestalk, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righteyestalk, 0.0F, 0.15F, 0.0F);
+        this.snail.offsetY = -0.5F;
+        this.snail.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

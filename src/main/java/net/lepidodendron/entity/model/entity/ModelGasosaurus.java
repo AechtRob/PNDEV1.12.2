@@ -3137,17 +3137,8 @@ public class ModelGasosaurus extends AdvancedModelBaseExtended {
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraGasosaurus e = (EntityPrehistoricFloraGasosaurus) entity;
-        animator.update(entity);
 
-        animator.setAnimation(e.HURT_ANIMATION);
-        animator.startKeyframe(10);
-        animator.rotate(this.neck1, (float) Math.toRadians(-10),0,0);
-        animator.rotate(this.neck2, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.neck3, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.head, (float) Math.toRadians(-55), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(10);
-        animator.resetKeyframe(10);
+
+
     }
 }
