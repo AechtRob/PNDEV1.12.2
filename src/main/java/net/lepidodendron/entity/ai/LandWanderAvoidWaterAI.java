@@ -103,7 +103,11 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        return !this.entity.getNavigator().noPath();
+        boolean closeEnough = this.entity.getDistance(this.x, this.y, this.z) < this.entity.width / 2D;
+        if (this.entity.width <= 1) {
+            closeEnough = false;
+        }
+        return closeEnough || !this.entity.getNavigator().noPath();
     }
 
     public void startExecuting()
