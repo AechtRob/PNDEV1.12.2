@@ -293,7 +293,47 @@ public class ModelMegamastax extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.Root.offsetY = -0.195F;
         this.Root.offsetX = -0.066F;
+        this.Root.offsetZ = -0.015F;
         this.Root.rotateAngleY = (float) Math.toRadians(90);
+        this.Root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.0873F, -0.1309F, 0.0F);
+        this.setRotateAngle(Body2, 0.0436F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body3, 0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.023F, -0.173F, 0.1329F);
+        this.setRotateAngle(cube_r4, -0.023F, 0.173F, -0.1329F);
+        this.setRotateAngle(cube_r5, 0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.1012F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.0324F, 0.1341F, 0.0822F);
+        this.setRotateAngle(cube_r9, -0.0324F, -0.1341F, -0.0822F);
+        this.setRotateAngle(forehead, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(forehead2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw2, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(lips, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(LPectoral, -0.0377F, -0.2972F, 0.6872F);
+        this.setRotateAngle(LPelvic, -0.0043F, -0.6699F, 0.798F);
+        this.setRotateAngle(RPectoral, -0.0377F, 0.2972F, -0.6872F);
+        this.setRotateAngle(RPelvic, -0.0043F, 0.6699F, -0.798F);
+        this.setRotateAngle(Tail, 0.0436F, -0.1309F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0436F, -0.1745F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0436F, -0.1745F, 0.0F);
+        this.Root.offsetY = -0.42F;
         this.Root.render(0.01F);
         resetToDefaultPose();
     }

@@ -26,6 +26,7 @@ public class RenderDisplays {
     public static final ModelBatrachotomus modelBatrachotomus = new ModelBatrachotomus();
     public static final ModelBeishanichthys modelBeishanichthys = new ModelBeishanichthys();
     public static final ModelBesanosaurus modelBesanosaurus = new ModelBesanosaurus();
+    public static final ModelBishanopliosaurus modelBishanopliosaurus = new ModelBishanopliosaurus();
     public static final ModelBrindabellaspis modelBrindabellaspis = new ModelBrindabellaspis();
     public static final ModelBundenbachiellus modelBundenbachiellus = new ModelBundenbachiellus();
     public static final ModelBungartius modelBungartius = new ModelBungartius();
@@ -121,6 +122,7 @@ public class RenderDisplays {
     public static final ModelMaterpiscis modelMaterpiscis = new ModelMaterpiscis();
     public static final ModelMegalograptus modelMegalograptus = new ModelMegalograptus();
     public static final ModelMegalosaurus modelMegalosaurus = new ModelMegalosaurus();
+    public static final ModelMegamastax modelMegamastax = new ModelMegamastax();
     public static final ModelMegateuthis modelMegateuthis = new ModelMegateuthis();
     public static final ModelMenaspis modelMenaspis = new ModelMenaspis();
     public static final ModelMicrobrachius modelMicrobrachius = new ModelMicrobrachius();
@@ -143,8 +145,10 @@ public class RenderDisplays {
     public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
     public static final ModelPanguraptor modelPanguraptor = new ModelPanguraptor();
     public static final ModelParamblypterus modelParamblypterus = new ModelParamblypterus();
+    public static final ModelParameteoraspis modelParameteoraspis = new ModelParameteoraspis();
     public static final ModelParhybodus modelParhybodus = new ModelParhybodus();
     public static final ModelPederpes modelPederpes = new ModelPederpes();
+    public static final ModelPhialaspis modelPhialaspis = new ModelPhialaspis();
     public static final ModelPhlebolepis modelPhlebolepis = new ModelPhlebolepis();
     public static final ModelPhlegethontia modelPhlegethontia = new ModelPhlegethontia();
     public static final ModelPhyllolepis modelPhyllolepis = new ModelPhyllolepis();
@@ -192,6 +196,7 @@ public class RenderDisplays {
     public static final ModelSlimonia modelSlimonia = new ModelSlimonia();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
     public static final ModelTapinocephalus modelTapinocephalus = new ModelTapinocephalus();
+    public static final ModelTauraspis modelTauraspis = new ModelTauraspis();
     public static final ModelTegeolepis modelTegeolepis = new ModelTegeolepis();
     public static final ModelTeleocrater modelTeleocrater = new ModelTeleocrater();
     public static final ModelThanahita modelThanahita = new ModelThanahita();

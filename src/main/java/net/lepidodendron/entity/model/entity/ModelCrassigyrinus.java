@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCrassigyrinus extends AdvancedModelBaseExtended {
@@ -263,7 +262,7 @@ public class ModelCrassigyrinus extends AdvancedModelBaseExtended {
     }
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetZ = -0.032F;
+        this.body.offsetZ = -0.082F;
         this.body.offsetY = -0.2F;
         this.body.render(0.01F);
         resetToDefaultPose();

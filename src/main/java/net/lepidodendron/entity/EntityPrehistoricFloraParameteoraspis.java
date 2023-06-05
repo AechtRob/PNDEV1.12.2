@@ -4,10 +4,13 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EatFishItemsAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderWuttagoonaspis;
+import net.lepidodendron.entity.render.entity.RenderParameteoraspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -343,13 +346,13 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderWuttagoonaspis.TEXTURE;
+		return RenderParameteoraspis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelWuttagoonaspis;
+		return RenderDisplays.modelParameteoraspis;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderWuttagoonaspis.getScaler();
+		return RenderParameteoraspis.getScaler();
 	}
 }
