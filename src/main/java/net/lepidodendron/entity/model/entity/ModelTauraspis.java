@@ -245,16 +245,44 @@ public class ModelTauraspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Tauraspis.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Tauraspis.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Tauraspis.rotateAngleX = (float) Math.toRadians(90);
+        this.Tauraspis.offsetY = -0.2F;
+        this.Tauraspis.offsetX = -0.0F;
         this.Tauraspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.Tauraspis.offsetY = 0.15F;
+        this.setRotateAngle(body, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.2161F, -0.0936F, 0.0939F);
+        this.setRotateAngle(cube_r11, 0.1989F, -0.0215F, 0.1644F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.2487F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.9468F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.9468F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.2408F, -0.8429F, -0.3178F);
+        this.setRotateAngle(cube_r16, 0.0F, -1.3395F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, 1.2523F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.2336F, 0.0953F, -0.0922F);
+        this.setRotateAngle(cube_r19, 0.2161F, 0.0936F, -0.0939F);
+        this.setRotateAngle(cube_r2, 0.0F, 1.5708F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.1989F, 0.0215F, -0.1644F);
+        this.setRotateAngle(cube_r21, -0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.2487F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.9468F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.9468F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.2408F, 0.8429F, 0.3178F);
+        this.setRotateAngle(cube_r7, 0.0F, 1.3395F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -1.2523F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.2336F, -0.0953F, 0.0922F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(tail2, 0.0436F, 0.3054F, 0.0F);
+        this.setRotateAngle(tail3, 0.0436F, 0.3491F, 0.0F);
+        this.setRotateAngle(tail4, 0.0436F, 0.2618F, 0.0F);
+        this.Tauraspis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

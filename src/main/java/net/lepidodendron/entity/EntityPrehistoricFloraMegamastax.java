@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderCaturus;
+import net.lepidodendron.entity.render.entity.RenderMegamastax;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -249,11 +249,11 @@ public class EntityPrehistoricFloraMegamastax extends EntityPrehistoricFloraAgea
 	}
 
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 0F;
 	}
 
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.285;
+		return 0.025;
 	}
 
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
@@ -270,16 +270,16 @@ public class EntityPrehistoricFloraMegamastax extends EntityPrehistoricFloraAgea
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCaturus.TEXTURE;
+		return RenderMegamastax.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCaturus;
+		return RenderDisplays.modelMegamastax;
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderCaturus.getScaler();
+		return RenderMegamastax.getScaler();
 	}
 
 }

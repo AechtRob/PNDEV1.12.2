@@ -201,16 +201,40 @@ public class ModelPhialaspis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.Body.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.Body.offsetY = -0.13F;
-        this.Body.offsetX = -0.06F;
+        this.Body.rotateAngleX = (float) Math.toRadians(90);
+        this.Body.offsetY = -0.2F;
+        this.Body.offsetX = 0.0F;
+        this.Body.offsetZ = 0.015F;
         this.Body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(Body, 0.7418F, (float) Math.toRadians(90), 0.0F);
-
+        this.setRotateAngle(beak, -0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, -0.1745F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body3, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body4, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body5, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 1.0036F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.672F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, -1.0036F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, -0.672F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.1658F, 0.0F, 0.0F);
+        this.Body.offsetY = -0.4F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
