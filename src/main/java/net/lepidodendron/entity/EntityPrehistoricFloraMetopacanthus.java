@@ -9,7 +9,11 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EatFishItemsAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderGyrosteus;
+import net.lepidodendron.entity.render.entity.RenderMetopacanthus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -304,5 +308,55 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 				this.EntityBase.setAIMoveSpeed(0.0F);
 			}
 		}
+	}
+	public static double offsetWall(@Nullable String variant) {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 2.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 2.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 1.4F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.5;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.1;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.5F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderMetopacanthus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelMetopacanthus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderMetopacanthus.getScaler();
 	}
 }
