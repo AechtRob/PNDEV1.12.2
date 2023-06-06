@@ -7969,3 +7969,13 @@ advancements.pf_adv_book_bivalve_inoceramus_gigantocapulus.description=Unlock th
 advancements.pf_adv_book_bivalve_inoceramus_gigantocapulus.title=Gigantocapulus
 tile.pf_bivalve_inoceramus_gigantocapulus.name=Gigantocapulus
 
+advancements.pf_adv_book_europasaurus.description=Unlock the entry for Europasaurus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_europasaurus.title=Europasaurus
+item.pf_europasaurus_raw.name=Raw Europasaurus
+entity.prehistoric_flora_europasaurus.name=Europasaurus
+item.pf_eggs_europasaurus.name=Europasaurus Eggs
+
+tile.pf_insect_eggs_archaboilus.name=Archaboilus Eggs
+tile.pf_insect_eggs_pycnophlebia.name=Pycnophlebia Eggs
+item.pf_phial_eggs_pycnophlebia.name=Phial of Pycnophlebia Eggs
+item.pf_phial_eggs_archaboilus.name=Phial of Archaboilus Eggs

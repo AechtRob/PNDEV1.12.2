@@ -147,6 +147,9 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemMeganeuritesRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemSylvohymenRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemArchocyrtusRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemArchaboilusRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemPycnophlebiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
+
 
 
 
@@ -435,6 +438,8 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemGasosaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemCastorocaudaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemPiatnitzkysaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemEuropasaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
+
 
 
 
@@ -484,6 +489,9 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemSideropsRaw.block, (int) (1)), new ItemStack(ItemPalaeoFillet.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemMarmorerpetonRaw.block, (int) (1)), new ItemStack(ItemPalaeoFillet.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemCeltedensRaw.block, (int) (1)), new ItemStack(ItemPalaeoFillet.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemJeholotritonRaw.block, (int) (1)), new ItemStack(ItemPalaeoFillet.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemStanocephalosaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFillet.block, (int) (1)), 0.35F);
+
 
 
 

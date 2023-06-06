@@ -1224,6 +1224,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TRIOPS1 = new CustomTrigger("pf_book_triops");
     public static final CustomTrigger CLICK_TRIOPS2 = new CustomTrigger("pf_book_triops");
     public static final CustomTrigger CLICK_TRIOPS3 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_PYCNOPHLEBIA = new CustomTrigger("pf_book_pycnophlebia");
+    public static final CustomTrigger CLICK_ARCHABOILUS = new CustomTrigger("pf_book_archaboilus");
+    public static final CustomTrigger CLICK_EUROPASAURUS = new CustomTrigger("pf_book_europasaurus");
+    public static final CustomTrigger CLICK_JEHOLOTRITON = new CustomTrigger("pf_book_jeholotriton");
 
 
 
@@ -2441,6 +2445,10 @@ public class ModTriggers
             CLICK_TRIOPS2,
             CLICK_TRIOPS3,
             CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS,
+            CLICK_PYCNOPHLEBIA,
+            CLICK_ARCHABOILUS,
+            CLICK_EUROPASAURUS,
+            CLICK_JEHOLOTRITON,
 
 
 

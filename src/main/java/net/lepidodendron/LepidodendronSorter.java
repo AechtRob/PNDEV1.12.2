@@ -3787,6 +3787,15 @@ public class LepidodendronSorter {
     public static final int triops2_raw = 4170;
     public static final int triops3_raw = 4171;
     public static final int bivalve_inoceramus_gigantocapulus = 4172;
+    public static final int eggs_europasaurus = 4173;
+    public static final int europasaurus_raw = 4174;
+    public static final int amphibian_spawn_jeholotriton = 4175;
+    public static final int amphibian_spawn_jeholotriton_worldgen = 4176;
+    public static final int jeholotriton_raw = 4177;
+    public static final int insect_eggs_archaboilus = 4178;
+    public static final int insect_eggs_pycnophlebia = 4179;
+    public static final int amphibian_spawn_stanocephalosaurus = 4180;
+    public static final int amphibian_spawn_stanocephalosaurus_worldgen = 4181;
 
 
 
