@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraStanocephalosaurus extends EntityPrehistoricF
 
 	public EntityPrehistoricFloraStanocephalosaurus(World world) {
 		super(world);
-		setSize(0.7F, 0.3F);
+		setSize(0.8F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
 		maxHeight = 0.3F;
@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraStanocephalosaurus extends EntityPrehistoricF
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(45, 5, 5F, this);
 		}
 	}
 

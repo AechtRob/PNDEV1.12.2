@@ -283,7 +283,7 @@ public class ModelStanocephalosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
-        //this.root.offsetY = 1.2F;
+        this.body3.offsetZ = -0.5F;
         //this.faceTarget(f3, f4, 5, neck);
         EntityPrehistoricFloraStanocephalosaurus stano = (EntityPrehistoricFloraStanocephalosaurus) e;
         this.faceTarget(f3, f4, 6, head);
