@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.330F;
+		float speedBase = 0.28F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
