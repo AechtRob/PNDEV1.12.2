@@ -86,9 +86,15 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     protected Vec3d getPosition()
     {
         Vec3d vecRnd = RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
-        if (this.entity.isReallyInWater())
+        Vec3d vec3d = null;
+        if (this.entity.isSwimmingInWater())
         {
-            Vec3d vec3d = RandomPositionGenerator.getLandPos(this.entity, 15, 7);
+            for (int i = 0; i < 16; i++) {
+                vec3d = RandomPositionGenerator.getLandPos(this.entity, 15, 7);
+                if (vec3d != null) {
+                    break;
+                }
+            }
             return vec3d == null ? vecRnd : vec3d;
         }
         else
