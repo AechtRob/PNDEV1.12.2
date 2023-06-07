@@ -191,7 +191,8 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 			multiplier = 2;
 		}
 		if ((dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimJurassic)
+			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceous)
 		) {
 			multiplier = 3;
 		}

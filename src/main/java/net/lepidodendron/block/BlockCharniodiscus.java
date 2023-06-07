@@ -336,5 +336,15 @@ public class BlockCharniodiscus extends ElementsLepidodendronMod.ModElement {
 
 	public static class TileEntityCustom extends TileEntity {
 
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 2, 1));
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public double getMaxRenderDistanceSquared() {
+			return 2304;
+		}
 	}
 }
