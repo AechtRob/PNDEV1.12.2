@@ -83,7 +83,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
-		if (dimID == LepidodendronConfig.dimJurassic
+		if (dimID == LepidodendronConfig.dimCretaceous
 		) {
 			dimensionCriteria = true;
 		}
@@ -97,6 +97,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceous
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -190,7 +191,8 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 			multiplier = 2;
 		}
 		if ((dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimJurassic)
+			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceous)
 		) {
 			multiplier = 3;
 		}
@@ -325,8 +327,8 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine bivalve");
-				tooltip.add("Periods: Jurassic - Cretaceous");}
+				tooltip.add("Type: Marine Limpet");
+				tooltip.add("Period: Cretaceous");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

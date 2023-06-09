@@ -13,30 +13,26 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     protected double y;
     protected double z;
     protected final double speed;
-    protected boolean avoidPredators;
     protected int executionChance; //an integer fom 1 upwards, where 1 means not still
     protected int executionChanceInWater;
     protected boolean mustUpdate;
 
-
-
     public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn)
     {
-        this(creatureIn, speedIn, 120, 1, false);
+        this(creatureIn, speedIn, 120, 1);
     }
 
     public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill)
     {
-        this(creatureIn, speedIn, chanceStill, 1, false);
+        this(creatureIn, speedIn, chanceStill, 1);
     }
 
-    public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill, int chanceStillInWater, boolean avoidPredators)
+    public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill, int chanceStillInWater)
     {
         this.entity = creatureIn;
         this.speed = speedIn;
         this.executionChance = chanceStill;
         this.executionChanceInWater = chanceStillInWater;
-        this.avoidPredators = avoidPredators;
         this.setMutexBits(1);
     }
 
@@ -90,9 +86,15 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     protected Vec3d getPosition()
     {
         Vec3d vecRnd = RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
-        if (this.entity.isReallyInWater())
+        Vec3d vec3d = null;
+        if (this.entity.isSwimmingInWater())
         {
-            Vec3d vec3d = RandomPositionGenerator.getLandPos(this.entity, 15, 7);
+            for (int i = 0; i < 16; i++) {
+                vec3d = RandomPositionGenerator.getLandPos(this.entity, 15, 7);
+                if (vec3d != null) {
+                    break;
+                }
+            }
             return vec3d == null ? vecRnd : vec3d;
         }
         else
@@ -103,11 +105,7 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        boolean closeEnough = this.entity.getDistance(this.x, this.y, this.z) < this.entity.width / 2D;
-        if (this.entity.width <= 1) {
-            closeEnough = false;
-        }
-        return closeEnough || !this.entity.getNavigator().noPath();
+        return !this.entity.getNavigator().noPath();
     }
 
     public void startExecuting()

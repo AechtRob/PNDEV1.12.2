@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.pathfinding.PathNavigateClimber;
@@ -76,6 +77,10 @@ public class LandEntitySwimmingAI extends EntityAIBase
             Vec3d vec3d = RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
             if (vec3d != null) {
                 blockpos1 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
+                //Get the top layer if this is water:
+                if (this.entity.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+                    blockpos1 = new BlockPos(blockpos1.getX(), this.entity.getPosition().getY(), blockpos1.getZ());
+                }
                 if (!(blockpos1.getY() < 1 || blockpos1.getY() >= 254)) {
                     return blockpos1;
                 }

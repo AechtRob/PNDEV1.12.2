@@ -2503,16 +2503,6 @@ public class ModelProganochelys extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraProganochelys e = (EntityPrehistoricFloraProganochelys) entity;
         animator.update(entity);
 
-//        animator.setAnimation(e.EAT_ANIMATION); //10 ticks
-//        animator.startKeyframe(4);
-//        animator.rotate(this.upperbody2, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.upperbody, (float) Math.toRadians(7.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.neck, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.endKeyframe();
-//        animator.setStaticKeyframe(3);
-//        animator.resetKeyframe(3);
 
     }
 }

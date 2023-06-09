@@ -179,7 +179,10 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
-		
+
+		if (!biomeCriteria) {
+			return;
+		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

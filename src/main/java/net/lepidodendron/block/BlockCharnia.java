@@ -342,5 +342,10 @@ public class BlockCharnia extends ElementsLepidodendronMod.ModElement {
 			return new AxisAlignedBB(pos, pos.add(1, 2, 1));
 		}
 
+		@SideOnly(Side.CLIENT)
+		@Override
+		public double getMaxRenderDistanceSquared() {
+			return 2304;
+		}
 	}
 }

@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.render.tile;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockFunisia;
 import net.lepidodendron.entity.model.tile.ModelFunisia;
@@ -31,17 +30,15 @@ public class RenderFunisia extends TileEntitySpecialRenderer<BlockFunisia.TileEn
         this.bindTexture(TEXTURE);
         ModelFunisia modelFunisia = this.modelFunisia;
         GlStateManager.pushMatrix();
-        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
-            GlStateManager.disableLighting();
-        }
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.color(1.0F, 1.0F, 1.0F, alpha);
         GlStateManager.translate(x + 0.5, y + 1.03, z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.scale(0.43,0.43,0.43);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         modelFunisia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
-        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
-            GlStateManager.enableLighting();
-        }
+        GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
     }
 }
