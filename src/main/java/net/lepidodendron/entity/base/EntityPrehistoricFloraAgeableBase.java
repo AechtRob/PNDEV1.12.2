@@ -754,6 +754,33 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.isInWater()) {
                 return false;
             }
+
+            boolean isReallySuffocating = false;
+            BlockPos.PooledMutableBlockPos blockpos$pooledmutableblockpos = BlockPos.PooledMutableBlockPos.retain();
+
+            for (int ii = 0; ii < 8; ++ii)
+            {
+                int j = MathHelper.floor(this.posY + (double)(((float)((ii >> 0) % 2) - 0.5F) * this.height * 0.8F));
+                int k = MathHelper.floor(this.posX + (double)(((float)((ii >> 1) % 2) - 0.5F) * this.width * 0.8F));
+                int l = MathHelper.floor(this.posZ + (double)(((float)((ii >> 2) % 2) - 0.5F) * this.width * 0.8F));
+
+                if (blockpos$pooledmutableblockpos.getX() != k || blockpos$pooledmutableblockpos.getY() != j || blockpos$pooledmutableblockpos.getZ() != l)
+                {
+                    blockpos$pooledmutableblockpos.setPos(k, j, l);
+
+                    if (this.world.getBlockState(blockpos$pooledmutableblockpos).causesSuffocation())
+                    {
+                        blockpos$pooledmutableblockpos.release();
+                        isReallySuffocating = true;
+                    }
+                }
+            }
+
+            blockpos$pooledmutableblockpos.release();
+            if (!isReallySuffocating) {
+                return false;
+            }
+
         }
 
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {
