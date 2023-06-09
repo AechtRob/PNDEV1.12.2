@@ -1229,6 +1229,17 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EUROPASAURUS = new CustomTrigger("pf_book_europasaurus");
     public static final CustomTrigger CLICK_JEHOLOTRITON = new CustomTrigger("pf_book_jeholotriton");
 
+    public static final CustomTrigger CLICK_GLYPTOPS = new CustomTrigger("pf_book_glyptops");
+    public static final CustomTrigger CLICK_KAYENTACHELYS = new CustomTrigger("pf_book_kayentachelys");
+    public static final CustomTrigger CLICK_HUAYANGOSAURUS = new CustomTrigger("pf_book_huayangosaurus");
+    public static final CustomTrigger CLICK_GIGANTSPINOSAURUS = new CustomTrigger("pf_book_gigantspinosaurus");
+    public static final CustomTrigger CLICK_STEGOSAURUS = new CustomTrigger("pf_book_stegosaurus");
+    public static final CustomTrigger CLICK_TUOJIANGOSAURUS = new CustomTrigger("pf_book_tuojiangosaurus");
+    public static final CustomTrigger CLICK_YUXISAURUS = new CustomTrigger("pf_book_yuxisaurus");
+    public static final CustomTrigger CLICK_DIANDONGOSUCHUS = new CustomTrigger("pf_book_diandongosuchus");
+    public static final CustomTrigger CLICK_TANYCOLAGREUS = new CustomTrigger("pf_book_tanycolagreus");
+    public static final CustomTrigger CLICK_CRYOLOPHOSAURUS = new CustomTrigger("pf_book_cryolophosaurus");
+
 
 
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
@@ -2449,6 +2460,17 @@ public class ModTriggers
             CLICK_ARCHABOILUS,
             CLICK_EUROPASAURUS,
             CLICK_JEHOLOTRITON,
+            CLICK_GLYPTOPS,
+            CLICK_KAYENTACHELYS,
+            CLICK_HUAYANGOSAURUS,
+            CLICK_GIGANTSPINOSAURUS,
+            CLICK_STEGOSAURUS,
+            CLICK_TUOJIANGOSAURUS,
+            CLICK_YUXISAURUS,
+            CLICK_DIANDONGOSUCHUS,
+            CLICK_PLATYSUCHUS,
+            CLICK_TANYCOLAGREUS,
+            CLICK_CRYOLOPHOSAURUS,
 
 
 

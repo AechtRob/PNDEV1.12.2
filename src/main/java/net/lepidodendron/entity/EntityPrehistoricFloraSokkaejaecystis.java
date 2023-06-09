@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraSokkaejaecystis extends EntityPrehistoricFlor
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.19f;
+		return 0.04f;
 	}
 
 	@Override

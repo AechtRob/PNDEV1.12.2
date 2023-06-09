@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraStanocephalosaurus extends EntityPrehistoricF
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(45, 5, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(20, 5, 10F, this);
 		}
 	}
 
@@ -90,14 +90,14 @@ public class EntityPrehistoricFloraStanocephalosaurus extends EntityPrehistoricF
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.1F;
+		float calcSpeed = 0.12F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.185f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return Math.min(1F, (this.getAgeScale() * 1.8F)) * calcSpeed;
+		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
 
 	@Override

@@ -51,30 +51,14 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		return 0;
 	}
 
+	@Override
+	protected float getAISpeedLand() {
+		return 0.18F;
+	}
+
 	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial";}
-
-	@Override
-	protected void collideWithEntity(Entity entityIn) {
-		super.collideWithEntity(entityIn);
-		if (entityIn instanceof EntityPlayer) {
-			entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-		}
-	}
-
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand)
-	{
-		ItemStack itemstack = player.getHeldItem(hand);
-
-		if (itemstack.isEmpty())
-		{
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-		}
-
-		return super.processInteract(player, hand);
-	}
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {

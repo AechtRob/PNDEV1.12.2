@@ -366,13 +366,13 @@ public class ModelSokkaejaecystis extends AdvancedModelBase {
                 //this.bob(main, -speed, 5F, false, f2, 1);
             }
             //this.main.offsetY = -0.15F;
-            this.chainWave(fishTail, speed * 5, 0.1F, -3, f2, 1);
-            this.chainSwing(fishTail, speed*5, 0.2F, -3, f2, 1);
+            this.chainWave(fishTail, speed*0.2F, 0.1F, -3, f2, 1);
+            this.chainSwing(fishTail, speed*0.2F, 0.7F, -3, f2, 1);
            // this.chainSwing(appendage, speed/5, 0.4F, 0, f2, 1);
 
 
 
-            this.swing(main, speed, 0.06F, true, 0, 0, f2, 1);
+            this.swing(main, speed*0.2F, 0.06F, true, 0, 0, f2, 1);
 
         }
     }

@@ -491,8 +491,19 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     public void onLivingUpdate() {
 
-        if (!this.world.isRemote) {
-            selectNavigator();
+        if (!world.isRemote) {
+            if (this.getAttackTarget() != null) {
+                if (this.getAttackTarget().isDead) {
+                    this.setAttackTarget(null);
+                }
+            }
+            if (this.getEatTarget() != null) {
+                if (this.getEatTarget().isDead) {
+                    this.setEatTarget(null);
+                }
+            }
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null);
+
         }
 
         //IF IS SWIMMING:
@@ -584,6 +595,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
             if (this.getMateable() < 0) {
                 this.setMateable(this.getMateable() + 1);
             }
+
         }
 
     }
