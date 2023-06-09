@@ -77,7 +77,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private Animation currentAnimation;
     private EntityPrehistoricFloraAgeableBase shoalLeader;
     private int inPFLove;
-    private int canGrow;
+    public int canGrow;
     private boolean laying;
     private EntityItem eatTarget;
     private EntityLivingBase warnTarget;
