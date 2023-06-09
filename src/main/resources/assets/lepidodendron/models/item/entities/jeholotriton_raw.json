@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/jeholotriton_raw"
+    "layer0": "paleopedia:jeholotriton_icon"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:eurypterid_eggs_strobilopterus", "x": 180}
+    ]
+  }
+}

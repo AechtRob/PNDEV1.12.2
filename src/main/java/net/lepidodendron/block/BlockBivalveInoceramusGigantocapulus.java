@@ -327,8 +327,8 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine bivalve");
-				tooltip.add("Periods: Jurassic - Cretaceous");}
+				tooltip.add("Type: Marine Limpet");
+				tooltip.add("Period: Cretaceous");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

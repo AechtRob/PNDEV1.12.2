@@ -216,7 +216,7 @@ public class ModelFalcatus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                //this.body.offsetY = 1.4F;
+                this.body.offsetY = 1.4F;
                 this.body.offsetZ = -0.2F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }

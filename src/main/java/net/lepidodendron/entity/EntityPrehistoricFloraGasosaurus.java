@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraGasosaurus(World world) {
 		super(world);
-		setSize(1.75F, 2.2F);
+		setSize(1.75F, 1.2F);
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
-		maxHeight = 2.2F;
-		maxHealthAgeable = 48.0D;
+		maxHeight = 1.2F;
+		maxHealthAgeable = 36.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

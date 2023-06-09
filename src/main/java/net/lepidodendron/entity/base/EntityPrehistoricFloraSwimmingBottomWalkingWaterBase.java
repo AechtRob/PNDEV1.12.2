@@ -492,7 +492,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     public void onLivingUpdate() {
 
         if (!this.world.isRemote) {
-            selectNavigator();
+            this.selectNavigator();
         }
 
         //IF IS SWIMMING:
@@ -577,13 +577,40 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
             this.collideWithNearbyEntities();
             this.world.profiler.endSection();
 
+            
+            if (!world.isRemote) {
+                if (this.getAttackTarget() != null) {
+                    if (this.getAttackTarget().isDead) {
+                        this.setAttackTarget(null);
+                    }
+                }
+                if (this.getEatTarget() != null) {
+                    if (this.getEatTarget().isDead) {
+                        this.setEatTarget(null);
+                    }
+                }
+                this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+
+            }
+            
+            if (!this.isPFAdult())
+            {
+                this.inPFLove = 0;
+            }
+            
             if (this.inPFLove > 0) {
                 --this.inPFLove;
+            }
+
+            if (this.canGrow > 0)
+            {
+                --this.canGrow;
             }
 
             if (this.getMateable() < 0) {
                 this.setMateable(this.getMateable() + 1);
             }
+
         }
 
     }
