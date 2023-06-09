@@ -47,10 +47,10 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraPiatnitzkysaurus(World world) {
 		super(world);
-		setSize(1.75F, 1.5F);
+		setSize(1.2F, 1.3F);
 		minWidth = 0.20F;
-		maxWidth = 1.75F;
-		maxHeight = 1.5F;
+		maxWidth = 1.2F;
+		maxHeight = 1.3F;
 		maxHealthAgeable = 48.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -126,7 +126,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
 			speedBase = speedBase / 0.75F;
-			speedBase = 1.18F;
+			speedBase = 1.05F;
 		}
 		return speedBase;
 	}
