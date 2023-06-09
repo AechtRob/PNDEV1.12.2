@@ -32,7 +32,7 @@ public class LepidodendronConfig {
 
     public static boolean genFossil = true;
     public static boolean genStone = true;
-    public static double genEdiacaran = 1.0D;
+    public static double genEdiacaran = 0.66D;
     public static double junkFossil = 12.5;
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
@@ -40,7 +40,6 @@ public class LepidodendronConfig {
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
     public static boolean renderAnimations = true;
-    public static boolean renderEdiacaranLighting = true;
     public static boolean renderCustomSkies = true;
     public static boolean renderBigMobsProperly = true;
     public static boolean blockSkeletonHorse = true;
@@ -1102,13 +1101,8 @@ public class LepidodendronConfig {
         renderAnimations = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Rendering and Optimisation", "renderEdiacaranLighting", renderEdiacaranLighting);
-        prop.setComment("Set to false to switch off some of the light and shadowing effects in the Ediacaran dimension (useful for low performance graphics cards or for conflicts with Optifine). [default: true]");
-        renderEdiacaranLighting = prop.getBoolean();
-        propOrder.add(prop.getName());
-
         prop = cfg.get("Rendering and Optimisation", "genEdiacaran", genEdiacaran);
-        prop.setComment("Set to a lower value to reduce the amount of animated entities in the Ediacaran Frondose Forest, in case of fps problems with the default (0.01 to 1.0). [default: 1.0]");
+        prop.setComment("Adjust the amount of entities in the Ediacaran Frondose Forest, in case of fps problems (0.01 to 1.0). [default: 0.66]");
         genEdiacaran = prop.getDouble();
         propOrder.add(prop.getName());
 
