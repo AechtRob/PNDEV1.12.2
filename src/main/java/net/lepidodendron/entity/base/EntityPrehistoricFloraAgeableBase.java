@@ -839,7 +839,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setEatTarget(null);
                 }
             }
-            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null);
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
 
         }
 
