@@ -1,12 +1,15 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
+import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
@@ -14,7 +17,9 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -23,6 +28,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.CPacketSteerBoat;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
@@ -45,6 +51,7 @@ public class EntityPNBoat extends EntityBoat
     private float momentum;
     private float outOfControlTicks;
     private float deltaRotation;
+    private float deltaPitch;
     private int lerpSteps;
     private double lerpX;
     private double lerpY;
@@ -55,6 +62,8 @@ public class EntityPNBoat extends EntityBoat
     private boolean rightInputDown;
     private boolean forwardInputDown;
     private boolean backInputDown;
+    private boolean downInputDown;
+    private boolean upInputDown;
     private double waterLevel;
     private float boatGlide;
     private EntityPNBoat.Status status;
@@ -79,6 +88,15 @@ public class EntityPNBoat extends EntityBoat
         this.prevPosX = x;
         this.prevPosY = y;
         this.prevPosZ = z;
+    }
+
+    @Override
+    public boolean shouldDismountInWater(Entity rider)
+    {
+        if (this.getPNBoatType() == Type.GLASS) {
+            return false;
+        }
+        return super.shouldDismountInWater(rider);
     }
 
     @Override
@@ -318,6 +336,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemPagiophyllumBoatItem.block;
             case HIRMERIELLA:
                 return ItemHirmeriellaBoatItem.block;
+            case GLASS:
+                return ItemGlassBoatItem.block;
 
         }
     }
@@ -456,6 +476,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockPagiophyllumPlanks.block;
             case HIRMERIELLA:
                 return BlockHirmeriellaPlanks.block;
+            case GLASS:
+                return Blocks.AIR;
 
         }
     }
@@ -506,7 +528,8 @@ public class EntityPNBoat extends EntityBoat
         this.previousStatus = this.status;
         this.status = this.getBoatStatus();
 
-        if (this.status != EntityPNBoat.Status.UNDER_WATER && this.status != EntityPNBoat.Status.UNDER_FLOWING_WATER)
+        if ((this.status != EntityPNBoat.Status.UNDER_WATER && this.status != EntityPNBoat.Status.UNDER_FLOWING_WATER)
+            || this.getPNBoatType() == Type.GLASS)
         {
             this.outOfControlTicks = 0.0F;
         }
@@ -533,7 +556,15 @@ public class EntityPNBoat extends EntityBoat
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;
         this.prevPosZ = this.posZ;
-        super.onUpdate();
+
+        //super.onUpdate();
+        if (!this.world.isRemote)
+        {
+            this.setFlag(6, this.isGlowing());
+        }
+        super.onEntityUpdate();
+
+
         this.tickLerp();
 
         if (this.canPassengerSteer())
@@ -567,6 +598,10 @@ public class EntityPNBoat extends EntityBoat
                 if (!this.isSilent() && (double)(this.paddlePositions[i] % ((float)Math.PI * 2F)) <= (Math.PI / 4D) && ((double)this.paddlePositions[i] + 0.39269909262657166D) % (Math.PI * 2D) >= (Math.PI / 4D))
                 {
                     SoundEvent soundevent = this.getPaddleSound();
+                    if (this.getPNBoatType() != Type.GLASS) {
+                        //Insert the new boat noise here:
+
+                    }
 
                     if (soundevent != null)
                     {
@@ -598,7 +633,7 @@ public class EntityPNBoat extends EntityBoat
 
                 if (!entity.isPassenger(this))
                 {
-                    if (flag && this.getPassengers().size() < 2 && !entity.isRiding() && entity.width < this.width && entity instanceof EntityLivingBase && !(entity instanceof EntityWaterMob) && !(entity instanceof EntityPlayer))
+                    if (this.getPNBoatType() != Type.GLASS && flag && this.getPassengers().size() < 2 && !entity.isRiding() && entity.width < this.width && entity instanceof EntityLivingBase && !(entity instanceof EntityWaterMob) && !(entity instanceof EntityPlayer))
                     {
                         entity.startRiding(this);
                     }
@@ -917,9 +952,15 @@ public class EntityPNBoat extends EntityBoat
         }
         else
         {
-            if (this.status == EntityPNBoat.Status.IN_WATER)
-            {
+            if ((this.status == EntityPNBoat.Status.IN_WATER)
+                | ((this.status == Status.IN_WATER
+                    || this.status == Status.UNDER_FLOWING_WATER
+                    || this.status == Status.UNDER_WATER) && this.getPNBoatType() == Type.GLASS)
+            ) {
                 d2 = (this.waterLevel - this.getEntityBoundingBox().minY) / (double)this.height;
+                //if (this.getPNBoatType() == Type.GLASS) {
+                //    d2 = 0.0;
+                //}
                 this.momentum = 0.9F;
             }
             else if (this.status == EntityPNBoat.Status.UNDER_FLOWING_WATER)
@@ -957,6 +998,9 @@ public class EntityPNBoat extends EntityBoat
                 this.motionY += d2 * 0.06153846016296973D;
                 double d4 = 0.75D;
                 this.motionY *= 0.75D;
+                if (this.getPNBoatType() == Type.GLASS) {
+                    this.motionY = 0;
+                }
             }
         }
     }
@@ -966,6 +1010,7 @@ public class EntityPNBoat extends EntityBoat
         if (this.isBeingRidden())
         {
             float f = 0.0F;
+            float f1 = 0.0F;
 
             if (this.leftInputDown)
             {
@@ -977,12 +1022,28 @@ public class EntityPNBoat extends EntityBoat
                 ++this.deltaRotation;
             }
 
+            if (this.downInputDown)
+            {
+                this.deltaPitch += -1.0F;
+            }
+
+            if (this.upInputDown)
+            {
+                ++this.deltaPitch;
+            }
+
             if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown)
             {
                 f += 0.005F;
             }
 
+//            if (this.downInputDown != this.upInputDown)
+//            {
+//                f1 += 0.005F;
+//            }
+
             this.rotationYaw += this.deltaRotation;
+            this.rotationPitch += this.deltaPitch;
 
             if (this.forwardInputDown)
             {
@@ -994,8 +1055,29 @@ public class EntityPNBoat extends EntityBoat
                 f -= 0.005F;
             }
 
+            if (this.upInputDown &&
+                (this.status == Status.IN_WATER
+                || this.status == Status.UNDER_WATER
+                || this.status == Status.UNDER_FLOWING_WATER)
+            ) {
+                f1 += 0.045F;
+            }
+
+            if (this.downInputDown && (!this.onGround) &&
+                (this.status == Status.IN_WATER
+                || this.status == Status.UNDER_WATER
+                || this.status == Status.UNDER_FLOWING_WATER)
+            ) {
+                f1 -= 0.06F;
+            }
+
             this.motionX += (double)(MathHelper.sin(-this.rotationYaw * 0.017453292F) * f);
             this.motionZ += (double)(MathHelper.cos(this.rotationYaw * 0.017453292F) * f);
+
+            if (this.getPNBoatType() == Type.GLASS) {
+                this.motionY += (double) (f1);
+            }
+
             this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
         }
     }
@@ -1038,6 +1120,20 @@ public class EntityPNBoat extends EntityBoat
                 int j = passenger.getEntityId() % 2 == 0 ? 90 : 270;
                 passenger.setRenderYawOffset(((EntityAnimal)passenger).renderYawOffset + (float)j);
                 passenger.setRotationYawHead(passenger.getRotationYawHead() + (float)j);
+            }
+
+            if (passenger instanceof EntityPlayer && this.getPNBoatType() == Type.GLASS) {
+                EntityPlayer player = (EntityPlayer) passenger;
+                IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 1);
+                if (state.getMaterial() == Material.WATER) {
+                    player.setAir(300);
+                }
+                else {
+                    player.removePotionEffect(MobEffects.NIGHT_VISION);
+                }
+                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                }
             }
         }
     }
@@ -1231,6 +1327,15 @@ public class EntityPNBoat extends EntityBoat
         this.rightInputDown = p_184442_2_;
         this.forwardInputDown = p_184442_3_;
         this.backInputDown = p_184442_4_;
+
+        if (this.getControllingPassenger() instanceof EntityPlayerSP) {
+            this.downInputDown = ClientProxyLepidodendronMod.keyBoatDown.isKeyDown();
+            this.upInputDown = ((EntityPlayerSP)this.getControllingPassenger()).movementInput.jump;
+            if (this.downInputDown && this.upInputDown) {
+                this.downInputDown = false;
+                this.upInputDown = false;
+            }
+        }
     }
 
     public static enum Status
@@ -1308,7 +1413,8 @@ public class EntityPNBoat extends EntityBoat
         BISONIA(62, "bisonia"),
         EMBOTHRIUM(63, "embothrium"),
         PAGIOPHYLLUM(64, "pagiophyllum"),
-        HIRMERIELLA(65, "hirmeriella")
+        HIRMERIELLA(65, "hirmeriella"),
+        GLASS(66,"glass")
         ;
 
         private final String name;

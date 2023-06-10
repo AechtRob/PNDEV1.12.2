@@ -1,0 +1,39 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ " 1 ",
+ "3 5",
+ "678"
+ ],
+ "key": {
+  "1": {
+   "type": "forge:ore_dict",
+   "ore": "plankWood"
+  },
+ "3": {
+  "type": "forge:ore_dict",
+  "ore": "plankWood"
+ },
+ "5": {
+  "type": "forge:ore_dict",
+  "ore": "plankWood"
+ },
+ "6": {
+  "type": "forge:ore_dict",
+  "ore": "plankWood"
+ },
+ "7": {
+  "type": "forge:ore_dict",
+  "ore": "paneGlass"
+ },
+ "8": {
+  "type": "forge:ore_dict",
+  "ore": "plankWood"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:glass_boat_item",
+ "count": 1
+ }
+}
