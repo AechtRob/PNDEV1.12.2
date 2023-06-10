@@ -3,33 +3,36 @@
  "type": "minecraft:crafting_shaped",
  "pattern": [
  " 1 ",
- "3 5",
+ "345",
  "678"
  ],
  "key": {
   "1": {
    "type": "forge:ore_dict",
-   "ore": "plankWood"
+   "ore": "blockIron"
   },
  "3": {
   "type": "forge:ore_dict",
-  "ore": "plankWood"
+  "ore": "blockGlass"
  },
+  "3": {
+   "item": "lepidodendron:redstone_component"
+  },
  "5": {
   "type": "forge:ore_dict",
-  "ore": "plankWood"
+  "ore": "blockGlass"
  },
  "6": {
   "type": "forge:ore_dict",
-  "ore": "plankWood"
+  "ore": "blockIron"
  },
  "7": {
   "type": "forge:ore_dict",
-  "ore": "paneGlass"
+  "ore": "blockIron"
  },
  "8": {
   "type": "forge:ore_dict",
-  "ore": "plankWood"
+  "ore": "blockIron"
  }
  },
  "result": {

@@ -17,7 +17,6 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -476,8 +475,6 @@ public class EntityPNBoat extends EntityBoat
                 return BlockPagiophyllumPlanks.block;
             case HIRMERIELLA:
                 return BlockHirmeriellaPlanks.block;
-            case GLASS:
-                return Blocks.AIR;
 
         }
     }
@@ -1228,7 +1225,12 @@ public class EntityPNBoat extends EntityBoat
                         {
                             for (int i = 0; i < 3; ++i)
                             {
-                                this.entityDropItem(new ItemStack(this.getItemPlanks(), 1), 0.0F);
+                                if (this.getPNBoatType() == Type.GLASS) {
+                                    this.entityDropItem(new ItemStack(ItemGlassBoatItem.block, 1), 0.0F);
+                                }
+                                else {
+                                    this.entityDropItem(new ItemStack(this.getItemPlanks(), 1), 0.0F);
+                                }
                             }
 
                             for (int j = 0; j < 2; ++j)
