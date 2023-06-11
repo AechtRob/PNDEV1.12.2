@@ -3,12 +3,11 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.minecraft.client.model.IMultipassModel;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelSubmarine extends AdvancedModelBase implements IMultipassModel {
+public class ModelSubmarine extends AdvancedModelBase {
 
     private final AdvancedModelRenderer submarine;
     private final AdvancedModelRenderer Cockpitmetal;
@@ -37,17 +36,12 @@ public class ModelSubmarine extends AdvancedModelBase implements IMultipassModel
     private final AdvancedModelRenderer leftTurbine2;
     private final AdvancedModelRenderer rightTurbine2;
     private final AdvancedModelRenderer leftWing;
-    public ModelRenderer nowaterCockpit;
 
     private ModelAnimator animator;
 
     public ModelSubmarine() {
         this.textureWidth = 380;
-        this.textureHeight = 380;
-
-        this.nowaterCockpit = new AdvancedModelRenderer(this);
-        this.nowaterCockpit.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.nowaterCockpit.cubeList.add(new ModelBox(nowaterCockpit, 0, 274, -19.0F, -43.0F, -7.0F, 36, 36, 36, 0.0F, false));
+        this.textureHeight = 320;
 
         this.submarine = new AdvancedModelRenderer(this);
         this.submarine.setRotationPoint(0.0F, 24.0F, 0.0F);
@@ -261,22 +255,6 @@ public class ModelSubmarine extends AdvancedModelBase implements IMultipassModel
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
         AdvancedModelRenderer.rotateAngleZ = z;
-    }
-
-    public void renderMultipass(Entity entityIn, float partialTicks, float p_187054_3_, float p_187054_4_, float p_187054_5_, float p_187054_6_, float scale)
-    {
-        //GlStateManager.rotate(90.0F, 0.0F, 1.0F, 0.0F);
-        //GlStateManager.colorMask(false, false, false, false);
-        //this.nowaterCockpit.render(scale);
-        //GlStateManager.colorMask(true, true, true, true);
-
-        //GlStateManager.colorMask(false, false, false, false);
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.color(1.0F, 1.0F, 1.0F, 0.2F);
-        //this.nowaterCockpit.render(scale);
-        //GlStateManager.disableBlend();
-        //GlStateManager.colorMask(true, true, true, true);
     }
 
 }

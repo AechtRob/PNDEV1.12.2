@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.boats.EntitySubmarine;
 import net.lepidodendron.entity.model.entity.ModelSubmarine;
-import net.minecraft.client.model.IMultipassModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
@@ -77,23 +76,6 @@ public class RenderSubmarine extends Render<EntitySubmarine> {
     public void setupTranslation(double x, double y, double z)
     {
         GlStateManager.translate((float)x, (float)y + 0.375F, (float)z);
-    }
-
-
-
-    public boolean isMultipass()
-    {
-        return true;
-    }
-
-    public void renderMultipass(EntitySubmarine entityIn, double x, double y, double z, float entityYaw, float partialTicks)
-    {
-        GlStateManager.pushMatrix();
-        this.setupTranslation(x, y, z);
-        this.setupRotation(entityIn, entityYaw, partialTicks);
-        this.bindEntityTexture(entityIn);
-        ((IMultipassModel)this.modelBoat).renderMultipass(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
-        GlStateManager.popMatrix();
     }
 
 }
