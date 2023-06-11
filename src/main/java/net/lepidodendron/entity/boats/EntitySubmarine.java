@@ -142,7 +142,7 @@ public class EntitySubmarine extends EntityBoat
     @Override
     public double getMountedYOffset()
     {
-        return -0.5D;
+        return 0.5D;
     }
 
     @Override

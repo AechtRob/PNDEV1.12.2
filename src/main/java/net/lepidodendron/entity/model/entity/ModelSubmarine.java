@@ -247,7 +247,7 @@ public class ModelSubmarine extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //GlStateManager.rotate(90.0F, 0.0F, 1.0F, 0.0F);
         this.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        this.submarine.offsetZ = -0.45F;
+        this.submarine.offsetZ = -0.40F;
         this.submarine.offsetY = -1.2F;
         this.submarine.render(f5);
     }
