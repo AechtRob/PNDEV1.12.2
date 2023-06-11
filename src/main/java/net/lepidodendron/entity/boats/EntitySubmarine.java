@@ -1,21 +1,19 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
-import net.lepidodendron.block.*;
-import net.lepidodendron.item.*;
-import net.minecraft.block.Block;
+import net.lepidodendron.ClientProxyLepidodendronMod;
+import net.lepidodendron.item.ItemSubmarineBoatItem;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -23,6 +21,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.CPacketSteerBoat;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
@@ -34,13 +33,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPNBoat extends EntityBoat
+public class EntitySubmarine extends EntityBoat
 {
-    private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(EntityPNBoat.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(EntityPNBoat.class, DataSerializers.VARINT);
-    private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(EntityPNBoat.class, DataSerializers.FLOAT);
-    private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.<Integer>createKey(EntityPNBoat.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(EntityPNBoat.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(EntityPNBoat.class, DataSerializers.BOOLEAN)};
+    private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(EntitySubmarine.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(EntitySubmarine.class, DataSerializers.VARINT);
+    private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(EntitySubmarine.class, DataSerializers.FLOAT);
+    private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(EntitySubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(EntitySubmarine.class, DataSerializers.BOOLEAN)};
     private final float[] paddlePositions;
     private float momentum;
     private float outOfControlTicks;
@@ -56,21 +54,23 @@ public class EntityPNBoat extends EntityBoat
     private boolean rightInputDown;
     private boolean forwardInputDown;
     private boolean backInputDown;
+    private boolean downInputDown;
+    private boolean upInputDown;
     private double waterLevel;
     private float boatGlide;
-    private EntityPNBoat.Status status;
-    private EntityPNBoat.Status previousStatus;
+    private EntitySubmarine.Status status;
+    private EntitySubmarine.Status previousStatus;
     private double lastYd;
 
-    public EntityPNBoat(World worldIn)
+    public EntitySubmarine(World worldIn)
     {
         super(worldIn);
         this.paddlePositions = new float[2];
         this.preventEntitySpawning = true;
-        this.setSize(1.375F, 0.5625F);
+        this.setSize(3.0F, 3.0F);
     }
 
-    public EntityPNBoat(World worldIn, double x, double y, double z)
+    public EntitySubmarine(World worldIn, double x, double y, double z)
     {
         this(worldIn);
         this.setPosition(x, y, z);
@@ -80,6 +80,24 @@ public class EntityPNBoat extends EntityBoat
         this.prevPosX = x;
         this.prevPosY = y;
         this.prevPosZ = z;
+    }
+
+
+
+    @Override
+    protected void writeEntityToNBT(NBTTagCompound compound)
+    {
+    }
+
+    @Override
+    protected void readEntityFromNBT(NBTTagCompound compound)
+    {
+    }
+
+    @Override
+    public boolean shouldDismountInWater(Entity rider)
+    {
+        return false;
     }
 
     @Override
@@ -94,7 +112,6 @@ public class EntityPNBoat extends EntityBoat
         this.dataManager.register(TIME_SINCE_HIT, Integer.valueOf(0));
         this.dataManager.register(FORWARD_DIRECTION, Integer.valueOf(1));
         this.dataManager.register(DAMAGE_TAKEN, Float.valueOf(0.0F));
-        this.dataManager.register(BOAT_TYPE, Integer.valueOf(0));
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -125,7 +142,7 @@ public class EntityPNBoat extends EntityBoat
     @Override
     public double getMountedYOffset()
     {
-        return -0.1D;
+        return -0.5D;
     }
 
     @Override
@@ -149,7 +166,7 @@ public class EntityPNBoat extends EntityBoat
                 this.markVelocityChanged();
                 boolean flag = source.getTrueSource() instanceof EntityPlayer && ((EntityPlayer)source.getTrueSource()).capabilities.isCreativeMode;
 
-                if (flag || this.getDamageTaken() > 40.0F)
+                if (flag || this.getDamageTaken() > 60.0F)
                 {
                     if (!flag && this.world.getGameRules().getBoolean("doEntityDrops"))
                     {
@@ -187,278 +204,7 @@ public class EntityPNBoat extends EntityBoat
     @Override
     public Item getItemBoat()
     {
-        switch (this.getPNBoatType())
-        {
-            case AGATHIS: default:
-                return ItemAgathisBoatItem.block;
-            case ALPIA:
-                return ItemAlpiaBoatItem.block;
-            case APPLE:
-                return ItemAppleBoatItem.block;
-            case ARAUCARIA:
-                return ItemAraucariaBoatItem.block;
-            case ARAUCARIOXYLON:
-                return ItemAraucarioxylonBoatItem.block;
-            case ARAUCARITES:
-                return ItemAraucaritesBoatItem.block;
-            case ARCHAEANTHUS:
-                return ItemArchaeanthusBoatItem.block;
-            case ARCHAEOPTERIS:
-                return ItemArchaeopterisBoatItem.block;
-            case ARTHROPITYS:
-                return ItemArthropitysBoatItem.block;
-            case ARTOCARPUS:
-                return ItemArtocarpusBoatItem.block;
-            case BEECH:
-                return ItemBeechBoatItem.block;
-            case BOTHRODENDRON:
-                return ItemBothrodendronBoatItem.block;
-            case BRACHYPHYLLUM:
-                return ItemBrachyphyllumBoatItem.block;
-            case BRISTLECONE:
-                return ItemBristleconeBoatItem.block;
-            case CALAMITES:
-                return ItemCalamitesBoatItem.block;
-            case CEPHALOTAXUS:
-                return ItemCephalotaxusBoatItem.block;
-            case CORDAITES:
-                return ItemCordaitesBoatItem.block;
-            case CUNNINGHAMIA:
-                return ItemCunninghamiaBoatItem.block;
-            case CYPRESS:
-                return ItemCypressBoatItem.block;
-            case CZEKANOWSKIA:
-                return ItemCzekanowskiaBoatItem.block;
-            case DAWN_REDWOOD:
-                return ItemDawnRedwoodBoatItem.block;
-            case DEAD:
-                return ItemDeadBoatItem.block;
-            case DIAPHORODENDRON:
-                return ItemDiaphorodendronBoatItem.block;
-            case DICROIDIUM_F:
-                return ItemDicroidiumFBoatItem.block;
-            case DICROIDIUM_O:
-                return ItemDicroidiumOBoatItem.block;
-            case FURCULA:
-                return ItemFurculaBoatItem.block;
-            case GANGAMOPTERIS:
-                return ItemGangamopterisBoatItem.block;
-            case GINKGO:
-                return ItemGinkgoBoatItem.block;
-            case GINKGOITES:
-                return ItemGinkgoitesBoatItem.block;
-            case GLOSSOPTERIS:
-                return ItemGlossopterisBoatItem.block;
-            case HIRONOIA:
-                return ItemHironoiaBoatItem.block;
-            case HYMENAEA:
-                return ItemHymenaeaBoatItem.block;
-            case LEPIDODENDRON:
-                return ItemLepidodendronBoatItem.block;
-            case LEPIDOPHLOIOS:
-                return ItemLepidophloiosBoatItem.block;
-            case LIRIODENDRON:
-                return ItemLiriodendronBoatItem.block;
-            case MACRONEUROPTERIS:
-                return ItemMacroneuropterisBoatItem.block;
-            case MAGNOLIA:
-                return ItemMagnoliaBoatItem.block;
-            case MAPLE:
-                return ItemMapleBoatItem.block;
-            case NOTHOFAGUS:
-                return ItemNothofagusBoatItem.block;
-            case PENTOXYLALES:
-                return ItemPentoxylalesBoatItem.block;
-            case PHOENICOPSIS:
-                return ItemPhoenicopsisBoatItem.block;
-            case PITYS:
-                return ItemPitysBoatItem.block;
-            case PLANE:
-                return ItemPlaneBoatItem.block;
-            case PODOCARP:
-                return ItemPodocarpBoatItem.block;
-            case PODOZAMITES:
-                return ItemPodozamitesBoatItem.block;
-            case REDWOOD:
-                return ItemRedwoodBoatItem.block;
-            case SCIADOPITYS:
-                return ItemSciadopitysBoatItem.block;
-            case SCRUBBY_PINE:
-                return ItemScrubbyPineBoatItem.block;
-            case SIGILLARIA:
-                return ItemSigillariaBoatItem.block;
-            case SPHENOBAIERA:
-                return ItemSphenobaieraBoatItem.block;
-            case SYCAMORE:
-                return ItemSycamoreBoatItem.block;
-            case TAXODIUM:
-                return ItemTaxodiumBoatItem.block;
-            case TELEMACHUS:
-                return ItemTelemachusBoatItem.block;
-            case WALCHIA:
-                return ItemWalchiaBoatItem.block;
-            case WOLLEMI:
-                return ItemWollemiBoatItem.block;
-            case YEW:
-                return ItemYewBoatItem.block;
-            case PHOENIX:
-                return ItemPhoenixBoatItem.block;
-            case ELATOCLADUS:
-                return ItemElatocladusBoatItem.block;
-            case NEHVIZDYELLA:
-                return ItemNehvizdyellaBoatItem.block;
-            case LAURUS:
-                return ItemLaurusBoatItem.block;
-            case CHESTNUT:
-                return ItemChestnutBoatItem.block;
-            case BISONIA:
-                return ItemBisoniaBoatItem.block;
-            case EMBOTHRIUM:
-                return ItemEmbothriumBoatItem.block;
-            case PAGIOPHYLLUM:
-                return ItemPagiophyllumBoatItem.block;
-            case HIRMERIELLA:
-                return ItemHirmeriellaBoatItem.block;
-
-        }
-    }
-
-    public Block getItemPlanks()
-    {
-        switch (this.getPNBoatType())
-        {
-            case AGATHIS: default:
-                return BlockAgathisPlanks.block;
-            case ALPIA:
-                return BlockAlpiaPlanks.block;
-            case APPLE:
-                return BlockApplePlanks.block;
-            case ARAUCARIA:
-                return BlockAraucariaPlanks.block;
-            case ARAUCARIOXYLON:
-                return BlockAraucarioxylonPlanks.block;
-            case ARAUCARITES:
-                return BlockAraucaritesPlanks.block;
-            case ARCHAEANTHUS:
-                return BlockArchaeanthusPlanks.block;
-            case ARCHAEOPTERIS:
-                return BlockArchaeopterisPlanks.block;
-            case ARTHROPITYS:
-                return BlockArthropitysPlanks.block;
-            case ARTOCARPUS:
-                return BlockArtocarpusPlanks.block;
-            case BEECH:
-                return BlockBeechPlanks.block;
-            case BOTHRODENDRON:
-                return BlockBothrodendronPlanks.block;
-            case BRACHYPHYLLUM:
-                return BlockBrachyphyllumPlanks.block;
-            case BRISTLECONE:
-                return BlockBristleconePlanks.block;
-            case CALAMITES:
-                return BlockCalamitesPlanks.block;
-            case CEPHALOTAXUS:
-                return BlockCephalotaxusPlanks.block;
-            case CORDAITES:
-                return BlockCordaitesPlanks.block;
-            case CUNNINGHAMIA:
-                return BlockCunninghamiaPlanks.block;
-            case CYPRESS:
-                return BlockCypressPlanks.block;
-            case CZEKANOWSKIA:
-                return BlockCzekanowskiaPlanks.block;
-            case DAWN_REDWOOD:
-                return BlockDawnRedwoodPlanks.block;
-            case DEAD:
-                return BlockDeadPlanks.block;
-            case DIAPHORODENDRON:
-                return BlockDiaphorodendronPlanks.block;
-            case DICROIDIUM_F:
-                return BlockDicroidiumFPlanks.block;
-            case DICROIDIUM_O:
-                return BlockDicroidiumOPlanks.block;
-            case FURCULA:
-                return BlockFurculaPlanks.block;
-            case GANGAMOPTERIS:
-                return BlockGangamopterisPlanks.block;
-            case GINKGO:
-                return BlockGinkgoPlanks.block;
-            case GINKGOITES:
-                return BlockGinkgoitesPlanks.block;
-            case GLOSSOPTERIS:
-                return BlockGlossopterisPlanks.block;
-            case HIRONOIA:
-                return BlockHironoiaPlanks.block;
-            case HYMENAEA:
-                return BlockHymenaeaPlanks.block;
-            case LEPIDODENDRON:
-                return BlockWoodenPlanks.block;
-            case LEPIDOPHLOIOS:
-                return BlockLepidophloiosPlanks.block;
-            case LIRIODENDRON:
-                return BlockLiriodendronPlanks.block;
-            case MACRONEUROPTERIS:
-                return BlockMacroneuropterisPlanks.block;
-            case MAGNOLIA:
-                return BlockMagnoliaPlanks.block;
-            case MAPLE:
-                return BlockMaplePlanks.block;
-            case NOTHOFAGUS:
-                return BlockNothofagusPlanks.block;
-            case PENTOXYLALES:
-                return BlockPentoxylalesPlanks.block;
-            case PHOENICOPSIS:
-                return BlockPhoenicopsisPlanks.block;
-            case PITYS:
-                return BlockPitysPlanks.block;
-            case PLANE:
-                return BlockPlanePlanks.block;
-            case PODOCARP:
-                return BlockPodocarpPlanks.block;
-            case PODOZAMITES:
-                return BlockPodozamitesPlanks.block;
-            case REDWOOD:
-                return BlockRedwoodPlanks.block;
-            case SCIADOPITYS:
-                return BlockSciadopitysPlanks.block;
-            case SCRUBBY_PINE:
-                return BlockScrubbyPinePlanks.block;
-            case SIGILLARIA:
-                return BlockSigillariaPlanks.block;
-            case SPHENOBAIERA:
-                return BlockSphenobaieraPlanks.block;
-            case SYCAMORE:
-                return BlockSycamorePlanks.block;
-            case TAXODIUM:
-                return BlockTaxodiumPlanks.block;
-            case TELEMACHUS:
-                return BlockTelemachusPlanks.block;
-            case WALCHIA:
-                return BlockWalchiaPlanks.block;
-            case WOLLEMI:
-                return BlockWollemiPlanks.block;
-            case YEW:
-                return BlockYewPlanks.block;
-            case PHOENIX:
-                return BlockPhoenixPlanks.block;
-            case ELATOCLADUS:
-                return BlockElatocladusPlanks.block;
-            case NEHVIZDYELLA:
-                return BlockNehvizdyellaPlanks.block;
-            case LAURUS:
-                return BlockLaurusPlanks.block;
-            case CHESTNUT:
-                return BlockChestnutPlanks.block;
-            case BISONIA:
-                return BlockBisoniaPlanks.block;
-            case EMBOTHRIUM:
-                return BlockEmbothriumPlanks.block;
-            case PAGIOPHYLLUM:
-                return BlockPagiophyllumPlanks.block;
-            case HIRMERIELLA:
-                return BlockHirmeriellaPlanks.block;
-
-        }
+        return ItemSubmarineBoatItem.block;
     }
 
     @Override
@@ -508,14 +254,7 @@ public class EntityPNBoat extends EntityBoat
         this.previousStatus = this.status;
         this.status = this.getBoatStatus();
 
-        if (this.status != EntityPNBoat.Status.UNDER_WATER && this.status != EntityPNBoat.Status.UNDER_FLOWING_WATER)
-        {
-            this.outOfControlTicks = 0.0F;
-        }
-        else
-        {
-            ++this.outOfControlTicks;
-        }
+        this.outOfControlTicks = 0.0F;
 
         if (!this.world.isRemote && this.outOfControlTicks >= 60.0F)
         {
@@ -574,9 +313,10 @@ public class EntityPNBoat extends EntityBoat
         {
             if (this.getPaddleState(i))
             {
-                if (!this.isSilent() && (double)(this.paddlePositions[i] % ((float)Math.PI * 2F)) <= (Math.PI / 4D) && ((double)this.paddlePositions[i] + 0.39269909262657166D) % (Math.PI * 2D) >= (Math.PI / 4D))
+                if (!this.isSilent() && (double)(this.paddlePositions[i] % ((float)Math.PI * 2F)) <= (Math.PI / 8D) && ((double)this.paddlePositions[i] + 0.39269909262657166D) % (Math.PI * 2D) >= (Math.PI / 8D))
                 {
                     SoundEvent soundevent = this.getPaddleSound();
+
                     if (soundevent != null)
                     {
                         Vec3d vec3d = this.getLook(1.0F);
@@ -607,14 +347,7 @@ public class EntityPNBoat extends EntityBoat
 
                 if (!entity.isPassenger(this))
                 {
-                    if (flag && this.getPassengers().size() < 2 && !entity.isRiding() && entity.width < this.width && entity instanceof EntityLivingBase && !(entity instanceof EntityWaterMob) && !(entity instanceof EntityPlayer))
-                    {
-                        entity.startRiding(this);
-                    }
-                    else
-                    {
-                        this.applyEntityCollision(entity);
-                    }
+                    this.applyEntityCollision(entity);
                 }
             }
         }
@@ -627,11 +360,13 @@ public class EntityPNBoat extends EntityBoat
         switch (this.getBoatStatus())
         {
             case IN_WATER:
+                return (SoundEvent) SoundEvent.REGISTRY
+                    .getObject(new ResourceLocation("lepidodendron:submarine"));
             case UNDER_WATER:
             case UNDER_FLOWING_WATER:
-                return SoundEvents.ENTITY_BOAT_PADDLE_WATER;
+                return (SoundEvent) SoundEvent.REGISTRY
+                    .getObject(new ResourceLocation("lepidodendron:submarine_underwater"));
             case ON_LAND:
-                return SoundEvents.ENTITY_BOAT_PADDLE_LAND;
             case IN_AIR:
             default:
                 return null;
@@ -668,9 +403,9 @@ public class EntityPNBoat extends EntityBoat
         return this.getPaddleState(side) ? (float)MathHelper.clampedLerp((double)this.paddlePositions[side] - 0.39269909262657166D, (double)this.paddlePositions[side], (double)limbSwing) : 0.0F;
     }
 
-    private EntityPNBoat.Status getBoatStatus()
+    private EntitySubmarine.Status getBoatStatus()
     {
-        EntityPNBoat.Status EntityBoatLepidodendron$status = this.getUnderwaterStatus();
+        EntitySubmarine.Status EntityBoatLepidodendron$status = this.getUnderwaterStatus();
 
         if (EntityBoatLepidodendron$status != null)
         {
@@ -679,12 +414,7 @@ public class EntityPNBoat extends EntityBoat
         }
         else if (this.checkInWater())
         {
-            if (this.getPNBoatType() == Type.CALAMITES)
-            {
-                //Calamites boats sink!
-                return EntityPNBoat.Status.UNDER_WATER;
-            }
-            return EntityPNBoat.Status.IN_WATER;
+            return EntitySubmarine.Status.IN_WATER;
         }
         else
         {
@@ -693,11 +423,11 @@ public class EntityPNBoat extends EntityBoat
             if (f > 0.0F)
             {
                 this.boatGlide = f;
-                return EntityPNBoat.Status.ON_LAND;
+                return EntitySubmarine.Status.ON_LAND;
             }
             else
             {
-                return EntityPNBoat.Status.IN_AIR;
+                return EntitySubmarine.Status.IN_AIR;
             }
         }
     }
@@ -863,7 +593,7 @@ public class EntityPNBoat extends EntityBoat
     }
 
     @Nullable
-    private EntityPNBoat.Status getUnderwaterStatus()
+    private EntitySubmarine.Status getUnderwaterStatus()
     {
         AxisAlignedBB axisalignedbb = this.getEntityBoundingBox();
         double d0 = axisalignedbb.maxY + 0.001D;
@@ -891,7 +621,7 @@ public class EntityPNBoat extends EntityBoat
                         {
                             if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() != 0)
                             {
-                                EntityPNBoat.Status EntityBoatLepidodendron$status = EntityPNBoat.Status.UNDER_FLOWING_WATER;
+                                EntitySubmarine.Status EntityBoatLepidodendron$status = EntitySubmarine.Status.UNDER_FLOWING_WATER;
                                 return EntityBoatLepidodendron$status;
                             }
 
@@ -906,7 +636,7 @@ public class EntityPNBoat extends EntityBoat
             blockpos$pooledmutableblockpos.release();
         }
 
-        return flag ? EntityPNBoat.Status.UNDER_WATER : null;
+        return flag ? EntitySubmarine.Status.UNDER_WATER : null;
     }
 
     private void updateMotion()
@@ -916,36 +646,38 @@ public class EntityPNBoat extends EntityBoat
         double d2 = 0.0D;
         this.momentum = 0.05F;
 
-        if (this.previousStatus == EntityPNBoat.Status.IN_AIR && this.status != EntityPNBoat.Status.IN_AIR && this.status != EntityPNBoat.Status.ON_LAND)
+        if (this.previousStatus == EntitySubmarine.Status.IN_AIR && this.status != EntitySubmarine.Status.IN_AIR && this.status != EntitySubmarine.Status.ON_LAND)
         {
             this.waterLevel = this.getEntityBoundingBox().minY + (double)this.height;
             this.setPosition(this.posX, (double)(this.getWaterLevelAbove() - this.height) + 0.101D, this.posZ);
             this.motionY = 0.0D;
             this.lastYd = 0.0D;
-            this.status = EntityPNBoat.Status.IN_WATER;
+            this.status = EntitySubmarine.Status.IN_WATER;
         }
         else
         {
-            if (this.status == EntityPNBoat.Status.IN_WATER
+            if ((this.status == Status.IN_WATER
+                || this.status == Status.UNDER_FLOWING_WATER
+                || this.status == Status.UNDER_WATER)
             ) {
                 d2 = (this.waterLevel - this.getEntityBoundingBox().minY) / (double)this.height;
                 this.momentum = 0.9F;
             }
-            else if (this.status == EntityPNBoat.Status.UNDER_FLOWING_WATER)
+            else if (this.status == EntitySubmarine.Status.UNDER_FLOWING_WATER)
             {
                 d1 = -7.0E-4D;
                 this.momentum = 0.9F;
             }
-            else if (this.status == EntityPNBoat.Status.UNDER_WATER)
+            else if (this.status == EntitySubmarine.Status.UNDER_WATER)
             {
                 d2 = 0.009999999776482582D;
                 this.momentum = 0.45F;
             }
-            else if (this.status == EntityPNBoat.Status.IN_AIR)
+            else if (this.status == EntitySubmarine.Status.IN_AIR)
             {
                 this.momentum = 0.9F;
             }
-            else if (this.status == EntityPNBoat.Status.ON_LAND)
+            else if (this.status == EntitySubmarine.Status.ON_LAND)
             {
                 this.momentum = this.boatGlide;
 
@@ -966,6 +698,7 @@ public class EntityPNBoat extends EntityBoat
                 this.motionY += d2 * 0.06153846016296973D;
                 double d4 = 0.75D;
                 this.motionY *= 0.75D;
+                this.motionY = 0;
             }
         }
     }
@@ -987,6 +720,16 @@ public class EntityPNBoat extends EntityBoat
                 ++this.deltaRotation;
             }
 
+            if (this.downInputDown)
+            {
+                this.deltaPitch += -1.0F;
+            }
+
+            if (this.upInputDown)
+            {
+                ++this.deltaPitch;
+            }
+
             if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown)
             {
                 f += 0.005F;
@@ -1004,6 +747,25 @@ public class EntityPNBoat extends EntityBoat
             {
                 f -= 0.005F;
             }
+
+            if (this.upInputDown &&
+                (this.status == Status.IN_WATER
+                || this.status == Status.UNDER_WATER
+                || this.status == Status.UNDER_FLOWING_WATER)
+            ) {
+                f1 += 0.0666F;
+            }
+
+            if (this.downInputDown && (!this.onGround) &&
+                (this.status == Status.IN_WATER
+                || this.status == Status.UNDER_WATER
+                || this.status == Status.UNDER_FLOWING_WATER)
+            ) {
+                f1 -= 0.1F;
+            }
+
+            this.motionY += (double) (f1);
+            f = f * 0.666F;
 
             this.motionX += (double)(MathHelper.sin(-this.rotationYaw * 0.017453292F) * f);
             this.motionZ += (double)(MathHelper.cos(this.rotationYaw * 0.017453292F) * f);
@@ -1051,8 +813,24 @@ public class EntityPNBoat extends EntityBoat
                 passenger.setRenderYawOffset(((EntityAnimal)passenger).renderYawOffset + (float)j);
                 passenger.setRotationYawHead(passenger.getRotationYawHead() + (float)j);
             }
+
+            if (passenger instanceof EntityPlayer) {
+                EntityPlayer player = (EntityPlayer) passenger;
+                IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 1);
+                if (state.getMaterial() == Material.WATER) {
+                    player.setAir(300);
+                }
+                else {
+                    player.removePotionEffect(MobEffects.NIGHT_VISION);
+                }
+                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                }
+            }
         }
     }
+
+
 
     @Override
     protected void applyYawToEntity(Entity entityToUpdate)
@@ -1080,22 +858,7 @@ public class EntityPNBoat extends EntityBoat
         }
         else
         {
-            return I18n.translateToLocal("item.pf_" + this.getPNBoatType().getName() + "_boat_item.name");
-        }
-    }
-
-    @Override
-    protected void writeEntityToNBT(NBTTagCompound compound)
-    {
-        compound.setString("Type", this.getPNBoatType().getName());
-    }
-
-    @Override
-    protected void readEntityFromNBT(NBTTagCompound compound)
-    {
-        if (compound.hasKey("Type", 8))
-        {
-            this.setBoatType(EntityPNBoat.Type.getTypeFromString(compound.getString("Type")));
+            return I18n.translateToLocal("item.pf_submarine_boat_item.name");
         }
     }
 
@@ -1128,7 +891,7 @@ public class EntityPNBoat extends EntityBoat
             {
                 if (this.fallDistance > 3.0F)
                 {
-                    if (this.status != EntityPNBoat.Status.ON_LAND)
+                    if (this.status != EntitySubmarine.Status.ON_LAND)
                     {
                         this.fallDistance = 0.0F;
                         return;
@@ -1144,12 +907,7 @@ public class EntityPNBoat extends EntityBoat
                         {
                             for (int i = 0; i < 3; ++i)
                             {
-                                this.entityDropItem(new ItemStack(this.getItemPlanks(), 1), 0.0F);
-                            }
-
-                            for (int j = 0; j < 2; ++j)
-                            {
-                                this.dropItemWithOffset(Items.STICK, 1, 0.0F);
+                                this.entityDropItem(new ItemStack(ItemSubmarineBoatItem.block, 1), 0.0F);
                             }
                         }
                     }
@@ -1206,21 +964,6 @@ public class EntityPNBoat extends EntityBoat
         return ((Integer)this.dataManager.get(FORWARD_DIRECTION)).intValue();
     }
 
-    public void setBoatType(EntityPNBoat.Type boatType)
-    {
-        this.dataManager.set(BOAT_TYPE, Integer.valueOf(boatType.ordinal()));
-    }
-
-    public void setBoatType(int boatType)
-    {
-        this.dataManager.set(BOAT_TYPE, Integer.valueOf(boatType));
-    }
-
-    public EntityPNBoat.Type getPNBoatType()
-    {
-        return EntityPNBoat.Type.byId(((Integer)this.dataManager.get(BOAT_TYPE)).intValue());
-    }
-
     @Override
     protected boolean canFitPassenger(Entity passenger)
     {
@@ -1243,6 +986,22 @@ public class EntityPNBoat extends EntityBoat
         this.rightInputDown = p_184442_2_;
         this.forwardInputDown = p_184442_3_;
         this.backInputDown = p_184442_4_;
+
+        if (this.getBoatStatus() == Status.IN_AIR || this.getBoatStatus() == Status.ON_LAND) {
+            this.leftInputDown = false;
+            this.rightInputDown = false;
+            this.forwardInputDown = false;
+            this.backInputDown = false;
+        }
+
+        if (this.getControllingPassenger() instanceof EntityPlayerSP) {
+            this.downInputDown = ClientProxyLepidodendronMod.keyBoatDown.isKeyDown();
+            this.upInputDown = ((EntityPlayerSP)this.getControllingPassenger()).movementInput.jump;
+            if (this.downInputDown && this.upInputDown) {
+                this.downInputDown = false;
+                this.upInputDown = false;
+            }
+        }
     }
 
     public static enum Status
@@ -1252,123 +1011,6 @@ public class EntityPNBoat extends EntityBoat
         UNDER_FLOWING_WATER,
         ON_LAND,
         IN_AIR;
-    }
-
-    public static enum Type
-    {
-        AGATHIS(1, "agathis"),
-        ALPIA(2, "alpia"),
-        APPLE(3, "apple"),
-        ARAUCARIA(4, "araucaria"),
-        ARAUCARIOXYLON(5, "araucarioxylon"),
-        ARAUCARITES(6, "araucarites"),
-        ARCHAEANTHUS(7, "archaeanthus"),
-        ARCHAEOPTERIS(8, "archaeopteris"),
-        ARTHROPITYS(9, "arthropitys"),
-        ARTOCARPUS(10, "artocarpus"),
-        BEECH(11, "beech"),
-        BOTHRODENDRON(12, "bothrodendron"),
-        BRACHYPHYLLUM(13, "brachyphyllum"),
-        BRISTLECONE(14, "bristlecone"),
-        CALAMITES(15, "calamites"),
-        CEPHALOTAXUS(16, "cephalotaxus"),
-        CORDAITES(17, "cordaites"),
-        CUNNINGHAMIA(18, "cunninghamia"),
-        CYPRESS(19, "cypress"),
-        CZEKANOWSKIA(20, "czekanowskia"),
-        DAWN_REDWOOD(21, "dawn_redwood"),
-        DEAD(22, "dead"),
-        DIAPHORODENDRON(23, "diaphorodendron"),
-        DICROIDIUM_F(24, "dicroidium_f"),
-        DICROIDIUM_O(25, "dicroidium_o"),
-        FURCULA(26, "furcula"),
-        GANGAMOPTERIS(27, "gangamopteris"),
-        GINKGO(28, "ginkgo"),
-        GINKGOITES(29, "ginkgoites"),
-        GLOSSOPTERIS(30, "glossopteris"),
-        HIRONOIA(31, "hironoia"),
-        HYMENAEA(32, "hymenaea"),
-        LEPIDODENDRON(33, "lepidodendron"),
-        LEPIDOPHLOIOS(34, "lepidophloios"),
-        LIRIODENDRON(35, "liriodendron"),
-        MACRONEUROPTERIS(36, "macroneuropteris"),
-        MAGNOLIA(37, "magnolia"),
-        MAPLE(38, "maple"),
-        NOTHOFAGUS(39, "nothofagus"),
-        PENTOXYLALES(40, "pentoxylales"),
-        PHOENICOPSIS(41, "phoenicopsis"),
-        PITYS(42, "pitys"),
-        PLANE(43, "plane"),
-        PODOCARP(44, "podocarp"),
-        PODOZAMITES(45, "podozamites"),
-        REDWOOD(46, "redwood"),
-        SCIADOPITYS(47, "sciadopitys"),
-        SCRUBBY_PINE(48, "scrubby_pine"),
-        SIGILLARIA(49, "sigillaria"),
-        SPHENOBAIERA(50, "sphenobaiera"),
-        SYCAMORE(51, "sycamore"),
-        TAXODIUM(52, "taxodium"),
-        TELEMACHUS(53, "telemachus"),
-        WALCHIA(54, "walchia"),
-        WOLLEMI(55, "wollemi"),
-        YEW(56, "yew"),
-        PHOENIX(57, "phoenix"),
-        ELATOCLADUS(58, "elatocladus"),
-        NEHVIZDYELLA(59, "nehvizdyella"),
-        LAURUS(60, "laurus"),
-        CHESTNUT(61, "chestnut"),
-        BISONIA(62, "bisonia"),
-        EMBOTHRIUM(63, "embothrium"),
-        PAGIOPHYLLUM(64, "pagiophyllum"),
-        HIRMERIELLA(65, "hirmeriella")
-        ;
-
-        private final String name;
-        private final int metadata;
-
-        private Type(int metadataIn, String nameIn)
-        {
-            this.name = nameIn;
-            this.metadata = metadataIn;
-        }
-
-        public String getName()
-        {
-            return this.name;
-        }
-
-        public int getMetadata()
-        {
-            return this.metadata;
-        }
-
-        public String toString()
-        {
-            return this.name;
-        }
-
-        public static EntityPNBoat.Type byId(int id)
-        {
-            if (id < 0 || id >= values().length)
-            {
-                id = 0;
-            }
-
-            return values()[id];
-        }
-
-        public static EntityPNBoat.Type getTypeFromString(String nameIn)
-        {
-            for (int i = 0; i < values().length; ++i)
-            {
-                if (values()[i].getName().equals(nameIn))
-                {
-                    return values()[i];
-                }
-            }
-
-            return values()[0];
-        }
     }
 
     // Forge: Fix MC-119811 by instantly completing lerp on board

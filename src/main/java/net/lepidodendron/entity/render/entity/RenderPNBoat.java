@@ -217,9 +217,6 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_PAGIOPHYLLUM;
             case HIRMERIELLA:
                 return TEXTURE_HIRMERIELLA;
-            case GLASS:
-                return TEXTURE_GLASS;
-
         }
     }
 }

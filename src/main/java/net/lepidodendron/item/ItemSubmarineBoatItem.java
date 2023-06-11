@@ -4,7 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.entity.boats.EntityPNBoat;
+import net.lepidodendron.entity.boats.EntitySubmarine;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -30,11 +30,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemGlassBoatItem extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:glass_boat_item")
+public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:submarine_boat_item")
 	public static final Item block = null;
-	public ItemGlassBoatItem(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.glass_boat_item);
+	public ItemSubmarineBoatItem(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.submarine_boat_item);
 	}
 
 	@Override
@@ -45,15 +45,15 @@ public class ItemGlassBoatItem extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:glass_boat_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:submarine_boat_item", "inventory"));
 	}
 	public static class ItemCustom extends Item
 	{
 
 		public ItemCustom()
 		{
-			setTranslationKey("pf_glass_boat_item");
-			setRegistryName("glass_boat_item");
+			setTranslationKey("pf_submarine_boat_item");
+			setRegistryName("submarine_boat_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.maxStackSize = 1;
 		}
@@ -116,11 +116,10 @@ public class ItemGlassBoatItem extends ElementsLepidodendronMod.ModElement {
 				{
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
-					EntityPNBoat entityPNboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entityPNboat.setBoatType(EntityPNBoat.Type.GLASS.ordinal());
-					entityPNboat.rotationYaw = playerIn.rotationYaw;
+					EntitySubmarine entityPNsubmarine = new EntitySubmarine(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
+					entityPNsubmarine.rotationYaw = playerIn.rotationYaw;
 
-					if (!worldIn.getCollisionBoxes(entityPNboat, entityPNboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())
+					if (!worldIn.getCollisionBoxes(entityPNsubmarine, entityPNsubmarine.getEntityBoundingBox().grow(-0.1D)).isEmpty())
 					{
 						return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 					}
@@ -128,7 +127,7 @@ public class ItemGlassBoatItem extends ElementsLepidodendronMod.ModElement {
 					{
 						if (!worldIn.isRemote)
 						{
-							worldIn.spawnEntity(entityPNboat);
+							worldIn.spawnEntity(entityPNsubmarine);
 						}
 
 						if (!playerIn.capabilities.isCreativeMode)

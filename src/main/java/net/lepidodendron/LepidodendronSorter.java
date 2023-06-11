@@ -3853,7 +3853,7 @@ public class LepidodendronSorter {
     public static final int rattan_stem_sw = 5006;
     public static final int rattan_sapling = 5007;
     public static final int rattan_fruit_bunch = 5008;
-    public static final int glass_boat_item = 5009;
+    public static final int submarine_boat_item = 5009;
 
 
 
