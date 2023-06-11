@@ -12,7 +12,7 @@ public class RenderMacrosemius extends RenderLiving<EntityPrehistoricFloraMacros
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/macrosemius.png");
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.3F;
     }
     public RenderMacrosemius(RenderManager mgr) {
         super(mgr, new ModelMacrosemius(), 0.0f);
