@@ -4867,6 +4867,7 @@ itemGroup.tablepidodendronmobile=P'storic Nature Mobile Creatures
 itemGroup.tablepidodendronplants=P'storic Nature Plants and Algae
 itemGroup.tablepidodendronstatic=P'storic Nature Static Creatures
 key.lepidodendron.seetaxidermy=Hold to view floor taxidermy or fossil hitbox
+key.lepidodendron.boatdown=Steer the Submersible Boat downwards
 tile.pf_acacia_bench.name=Acacia Bench
 tile.pf_acacia_bridge.name=Acacia Bridge
 tile.pf_acacia_litterbin.name=Acacia Litter Bin

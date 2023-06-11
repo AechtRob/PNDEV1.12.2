@@ -647,9 +647,9 @@ public class LepidodendronEventSubscribers {
 						break;
 
 					case 1: //Spruce
-						tt.add("Type: Flowering tree");
+						tt.add("Type: Coniferous tree");
 						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene - present");
-						tt.add("Propagation: cones drop from leaves");
+						tt.add("Propagation: fruit/cone");
 						break;
 
 					case 2: //Birch

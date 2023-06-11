@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockPseudovoltzia;
+import net.lepidodendron.block.BlockAmentotaxus;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -33,7 +33,7 @@ public class ItemAmentotaxusSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockPseudovoltzia.block.getDefaultState(), 1);
+			super(BlockAmentotaxus.block.getDefaultState(), 1);
 			setTranslationKey("pf_amentotaxus_seed");
 			setRegistryName("amentotaxus_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);
