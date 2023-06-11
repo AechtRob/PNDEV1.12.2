@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
+import net.lepidodendron.entity.boats.EntitySubmarine;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
@@ -24,11 +25,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -55,6 +58,17 @@ public class LepidodendronEventSubscribers {
 		}
 		if ((event.getEntity() instanceof EntityPlayerMP)) {
 			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+		}
+	}
+
+	@SubscribeEvent //Some instructions for use of rideables
+	public void playerMounted(EntityMountEvent event) {
+		Entity entity = event.getEntityMounting();
+		if (entity instanceof EntityPlayer && event.getWorldObj().isRemote) {
+			EntityPlayer player = (EntityPlayer) entity;
+			if (event.getEntityBeingMounted() instanceof EntitySubmarine) {
+				player.sendMessage(new TextComponentString("Additional Submarine controls: up = jump; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName()));
+			}
 		}
 	}
 
