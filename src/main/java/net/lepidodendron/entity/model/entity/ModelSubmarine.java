@@ -264,10 +264,6 @@ public class ModelSubmarine extends AdvancedModelBase {
         this.leftWing.cubeList.add(new ModelBox(leftWing, 145, 70, 11.5492F, 9.0272F, -49.2445F, 10, 8, 4, 0.0F, false));
         this.leftWing.cubeList.add(new ModelBox(leftWing, 113, 143, 11.5492F, 9.0272F, -25.2445F, 10, 8, 4, 0.0F, false));
         this.leftWing.cubeList.add(new ModelBox(leftWing, 0, 101, 22.5492F, -5.9728F, -76.2445F, 5, 15, 77, 0.0F, false));
-        this.leftWing.cubeList.add(new ModelBox(leftWing, 0, 215, 27.6492F, -1.9728F, -33.2445F, 0, 7, 25, 0.0F, false));
-        this.leftWing.cubeList.add(new ModelBox(leftWing, 25, 215, -44.5508F, -1.9728F, -33.2445F, 0, 7, 25, 0.0F, true));
-        this.leftWing.cubeList.add(new ModelBox(leftWing, 17, 224, 27.6492F, -1.9728F, -43.2445F, 0, 7, 8, 0.0F, false));
-        this.leftWing.cubeList.add(new ModelBox(leftWing, 17, 224, -44.6508F, -1.9728F, -43.2445F, 0, 7, 8, 0.0F, true));
 
         this.cube_r18 = new AdvancedModelRenderer(this);
         this.cube_r18.setRotationPoint(-31.4508F, 13.0272F, -3.2445F);
@@ -308,7 +304,7 @@ public class ModelSubmarine extends AdvancedModelBase {
         this.rightWing.cubeList.add(new ModelBox(rightWing, 8, 274, 29.4508F, 10.0272F, -5.2445F, 8, 4, 3, 0.0F, false));
         this.rightWing.cubeList.add(new ModelBox(rightWing, 145, 70, -21.5492F, 9.0272F, -49.2445F, 10, 8, 4, 0.0F, true));
         this.rightWing.cubeList.add(new ModelBox(rightWing, 113, 143, -21.5492F, 9.0272F, -25.2445F, 10, 8, 4, 0.0F, true));
-        this.rightWing.cubeList.add(new ModelBox(rightWing, 0, 101, -27.5492F, -5.9728F, -76.2445F, 5, 15, 77, 0.0F, true));
+        this.rightWing.cubeList.add(new ModelBox(rightWing, 0, 101, -27.5492F, -5.9728F, -76.2445F, 5, 15, 77, 0.0F, false));
 
         this.rightTurbine = new AdvancedModelRenderer(this);
         this.rightTurbine.setRotationPoint(-10.5492F, -10.9728F, -2.2445F);

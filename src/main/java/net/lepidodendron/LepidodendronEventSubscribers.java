@@ -67,7 +67,7 @@ public class LepidodendronEventSubscribers {
 		if (entity instanceof EntityPlayer && event.getWorldObj().isRemote) {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (event.getEntityBeingMounted() instanceof EntitySubmarine) {
-				player.sendMessage(new TextComponentString("Additional Submarine controls: up = jump; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName()));
+				player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
 			}
 		}
 	}

@@ -56,6 +56,8 @@ public class EntitySubmarine extends EntityBoat
     private boolean backInputDown;
     private boolean downInputDown;
     private boolean upInputDown;
+    private boolean leftStrafeInputDown;
+    private boolean rightStrafeInputDown;
     private double waterLevel;
     private float boatGlide;
     private EntitySubmarine.Status status;
@@ -709,6 +711,7 @@ public class EntitySubmarine extends EntityBoat
         {
             float f = 0.0F;
             float f1 = 0.0F;
+            float f2 = 0.0F;
 
             if (this.leftInputDown)
             {
@@ -764,13 +767,29 @@ public class EntitySubmarine extends EntityBoat
                 f1 -= 0.1F;
             }
 
+            if (this.rightStrafeInputDown && f == 0.0 &&
+                    (this.status == Status.IN_WATER
+                            || this.status == Status.UNDER_WATER
+                            || this.status == Status.UNDER_FLOWING_WATER)
+            ) {
+                f2 += 0.125F;
+            }
+
+            if (this.leftStrafeInputDown && f == 0.0 &&
+                    (this.status == Status.IN_WATER
+                            || this.status == Status.UNDER_WATER
+                            || this.status == Status.UNDER_FLOWING_WATER)
+            ) {
+                f2 -= 0.125F;
+            }
+
             this.motionY += (double) (f1);
             f = f * 0.666F;
 
-            this.motionX += (double)(MathHelper.sin(-this.rotationYaw * 0.017453292F) * f);
-            this.motionZ += (double)(MathHelper.cos(this.rotationYaw * 0.017453292F) * f);
+            this.motionX += (double)(MathHelper.sin(-this.rotationYaw * 0.017453292F) * f) - (double)(MathHelper.cos(-this.rotationYaw * 0.017453292F) * f2);
+            this.motionZ += (double)(MathHelper.cos(this.rotationYaw * 0.017453292F) * f) - (double)(MathHelper.sin(this.rotationYaw * 0.017453292F) * f2);
 
-            this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
+            this.setPaddleState(this.rightInputDown || this.rightStrafeInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown || this.leftStrafeInputDown && !this.rightInputDown || this.forwardInputDown);
         }
     }
 
@@ -996,10 +1015,17 @@ public class EntitySubmarine extends EntityBoat
 
         if (this.getControllingPassenger() instanceof EntityPlayerSP) {
             this.downInputDown = ClientProxyLepidodendronMod.keyBoatDown.isKeyDown();
-            this.upInputDown = ((EntityPlayerSP)this.getControllingPassenger()).movementInput.jump;
+            this.upInputDown = ClientProxyLepidodendronMod.keyBoatUp.isKeyDown();
             if (this.downInputDown && this.upInputDown) {
                 this.downInputDown = false;
                 this.upInputDown = false;
+            }
+
+            this.leftStrafeInputDown = ClientProxyLepidodendronMod.keyBoatStrafeLeft.isKeyDown();
+            this.rightStrafeInputDown = ClientProxyLepidodendronMod.keyBoatStrafeRight.isKeyDown();
+            if (this.leftStrafeInputDown && this.rightStrafeInputDown) {
+                this.leftStrafeInputDown = false;
+                this.rightStrafeInputDown = false;
             }
         }
     }
