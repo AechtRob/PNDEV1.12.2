@@ -6832,5 +6832,25 @@
         "stream": false
       }
     ]
+  },
+
+
+  "submarine": {
+    "sounds": [
+      {
+        "name": "lepidodendron:submarine",
+        "stream": false
+      }
+    ]
+  },
+  "submarine_underwater": {
+    "sounds": [
+      {
+        "name": "lepidodendron:submarine_underwater",
+        "stream": false
+      }
+    ]
   }
+
+
 }

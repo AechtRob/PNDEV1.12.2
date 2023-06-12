@@ -24,7 +24,9 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 
 	public static KeyBinding keyB = new KeyBinding("key.lepidodendron.seetaxidermy", Keyboard.KEY_F10, "key.categories.misc");
 	public static KeyBinding keyBoatDown = new KeyBinding("key.lepidodendron.boatdown", Keyboard.KEY_DOWN, "key.categories.misc");
-
+	public static KeyBinding keyBoatUp = new KeyBinding("key.lepidodendron.boatup", Keyboard.KEY_UP, "key.categories.misc");
+	public static KeyBinding keyBoatStrafeLeft = new KeyBinding("key.lepidodendron.boatleft", Keyboard.KEY_LEFT, "key.categories.misc");
+	public static KeyBinding keyBoatStrafeRight = new KeyBinding("key.lepidodendron.boatright", Keyboard.KEY_RIGHT, "key.categories.misc");
 
 	@Override
 	public void init(FMLInitializationEvent event) {

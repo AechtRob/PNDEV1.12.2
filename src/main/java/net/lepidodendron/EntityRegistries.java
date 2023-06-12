@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
+import net.lepidodendron.entity.boats.EntitySubmarine;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -851,6 +852,7 @@ public class EntityRegistries {
 
 
         registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
+        registerEntityNoEgg("prehistoric_flora_submarine", EntitySubmarine.class, LepidodendronMod.ENTITY_SUBMARINE, 80);
 
         //registerEntity("prehistoric_flora_", EntityPrehistoricFlora.class, LepidodendronMod.ENTITY_, 64,0,0); TEMPLATE
 

@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
+import net.lepidodendron.entity.boats.EntitySubmarine;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
@@ -4757,6 +4758,12 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPNBoat> createRenderFor(RenderManager manager) {
                 return new RenderPNBoat(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntitySubmarine.class, new IRenderFactory<EntitySubmarine>() {
+            @Override
+            public Render<? super EntitySubmarine> createRenderFor(RenderManager manager) {
+                return new RenderSubmarine(manager);
             }
         });
 
