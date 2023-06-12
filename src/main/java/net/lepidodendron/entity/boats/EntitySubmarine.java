@@ -2,6 +2,7 @@ package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.ClientProxyLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -840,9 +841,11 @@ public class EntitySubmarine extends EntityBoat
                     player.setAir(300);
                 }
                 else {
-                    player.removePotionEffect(MobEffects.NIGHT_VISION);
+                    if (LepidodendronConfig.submarineNightvision) {
+                        player.removePotionEffect(MobEffects.NIGHT_VISION);
+                    }
                 }
-                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER) {
+                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER && LepidodendronConfig.submarineNightvision) {
                     player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
                 }
             }
