@@ -161,6 +161,9 @@ public class EntitySubmarine extends EntityBoat
             {
                 return false;
             }
+            else if (this.isPassenger(source.getTrueSource())) {
+                return false;
+            }
             else
             {
                 this.setForwardDirection(-this.getForwardDirection());
@@ -773,7 +776,7 @@ public class EntitySubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 += 0.075F;
+                f2 += 0.035F;
             }
 
             if (this.leftStrafeInputDown && f == 0.0 &&
@@ -781,7 +784,7 @@ public class EntitySubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 -= 0.075F;
+                f2 -= 0.035F;
             }
 
             this.motionY += (double) (f1);
