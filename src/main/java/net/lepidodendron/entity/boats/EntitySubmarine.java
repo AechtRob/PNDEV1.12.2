@@ -772,7 +772,7 @@ public class EntitySubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 += 0.125F;
+                f2 += 0.075F;
             }
 
             if (this.leftStrafeInputDown && f == 0.0 &&
@@ -780,7 +780,7 @@ public class EntitySubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 -= 0.125F;
+                f2 -= 0.075F;
             }
 
             this.motionY += (double) (f1);
