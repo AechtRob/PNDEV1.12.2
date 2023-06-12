@@ -70,6 +70,13 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_ELATOCLADUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_elatocladus.png");
     private static final ResourceLocation TEXTURE_NEHVIZDYELLA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_nehvizdyella.png");
     private static final ResourceLocation TEXTURE_LAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_laurus.png");
+    private static final ResourceLocation TEXTURE_CHESTNUT = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_chestnut.png");
+    private static final ResourceLocation TEXTURE_BISONIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_bisonia.png");
+    private static final ResourceLocation TEXTURE_EMBOTHRIUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_embothrium.png");
+    private static final ResourceLocation TEXTURE_PAGIOPHYLLUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_pagiophyllum.png");
+    private static final ResourceLocation TEXTURE_HIRMERIELLA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_hirmeriella.png");
+    private static final ResourceLocation TEXTURE_GLASS = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_glass.png");
+
 
     public RenderPNBoat(RenderManager renderManagerIn) {
         super(renderManagerIn);
@@ -200,7 +207,16 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_NEHVIZDYELLA;
             case LAURUS:
                 return TEXTURE_LAURUS;
-
+            case CHESTNUT:
+                return TEXTURE_CHESTNUT;
+            case BISONIA:
+                return TEXTURE_BISONIA;
+            case EMBOTHRIUM:
+                return TEXTURE_EMBOTHRIUM;
+            case PAGIOPHYLLUM:
+                return TEXTURE_PAGIOPHYLLUM;
+            case HIRMERIELLA:
+                return TEXTURE_HIRMERIELLA;
         }
     }
 }

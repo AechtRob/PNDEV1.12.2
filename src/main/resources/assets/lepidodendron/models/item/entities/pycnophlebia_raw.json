@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/pycnophlebia_raw"
+    "layer0": "paleopedia:pycnophlebia_icon"
   }
 }

@@ -39,7 +39,7 @@ public class EatFishItemsAI extends EntityAIBase {
         }
         this.targetItem = this.getNearestItem(16);
         //if (this.targetItem == null) {
-        //    this.entity.setIsFast(false);
+            //this.entity.setIsFast(false);
         //}
         return this.targetItem != null;
     }

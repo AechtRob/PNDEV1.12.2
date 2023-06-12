@@ -308,17 +308,13 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 				if (biome instanceof BiomeJurassic) {
 					BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 					if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest) {
-						stringEgg = LepidodendronMod.MODID + ":insect_eggs_archocyrtus";
-					}
-					else if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-							||	biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River ) {
 						i = rand.nextInt(6);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
-						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
-						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
-						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
-						if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
-						if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_archocyrtus";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_archocyrtus";}
+						if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_archaboilus";}
+						if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_pycnophlebia";}
 					}
 				}
 			}

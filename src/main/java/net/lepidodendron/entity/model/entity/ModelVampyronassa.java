@@ -251,16 +251,22 @@ public class ModelVampyronassa extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.body.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        public void renderStaticWall(float f) {
+            this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+            this.body.offsetY = -0.25F;
+            this.body.offsetX = 0.0F;
+            this.body.offsetZ = -0.8F;
+            this.body.rotateAngleY = (float) Math.toRadians(0);
+            this.body.render(0.01F);
+            resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.0F, 0.0F);
+        this.body.offsetY = -0.18F;
+        this.body.offsetZ = 0.05F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

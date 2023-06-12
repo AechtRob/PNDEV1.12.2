@@ -184,19 +184,19 @@ public class EntityPrehistoricFloraProterosuchus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:proterosuchus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:archosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:proterosuchus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:archosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:proterosuchus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:archosaurus_death"));
 	}
 
 	@Override

@@ -223,7 +223,7 @@ public class ModelCowralepis extends AdvancedModelBase {
         this.setRotateAngle(Tail4, -0.1509F, 0.5187F, -0.0752F);
         this.Root.rotateAngleY = (float) Math.toRadians(90);
         this.Root.offsetX = -0.1F;
-        this.Root.offsetY = -0.05F;
+        this.Root.offsetY = 0.1F;
         this.Root.offsetZ = 0.03F;
         this.Root.render(0.01F);
         resetToDefaultPose();

@@ -45,6 +45,7 @@ public class EntityPNBoat extends EntityBoat
     private float momentum;
     private float outOfControlTicks;
     private float deltaRotation;
+    private float deltaPitch;
     private int lerpSteps;
     private double lerpX;
     private double lerpY;
@@ -503,6 +504,7 @@ public class EntityPNBoat extends EntityBoat
     @Override
     public void onUpdate()
     {
+
         this.previousStatus = this.status;
         this.status = this.getBoatStatus();
 
@@ -533,7 +535,15 @@ public class EntityPNBoat extends EntityBoat
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;
         this.prevPosZ = this.posZ;
-        super.onUpdate();
+
+        //super.onUpdate();
+        if (!this.world.isRemote)
+        {
+            this.setFlag(6, this.isGlowing());
+        }
+        super.onEntityUpdate();
+
+
         this.tickLerp();
 
         if (this.canPassengerSteer())
@@ -567,7 +577,6 @@ public class EntityPNBoat extends EntityBoat
                 if (!this.isSilent() && (double)(this.paddlePositions[i] % ((float)Math.PI * 2F)) <= (Math.PI / 4D) && ((double)this.paddlePositions[i] + 0.39269909262657166D) % (Math.PI * 2D) >= (Math.PI / 4D))
                 {
                     SoundEvent soundevent = this.getPaddleSound();
-
                     if (soundevent != null)
                     {
                         Vec3d vec3d = this.getLook(1.0F);
@@ -917,8 +926,8 @@ public class EntityPNBoat extends EntityBoat
         }
         else
         {
-            if (this.status == EntityPNBoat.Status.IN_WATER)
-            {
+            if (this.status == EntityPNBoat.Status.IN_WATER
+            ) {
                 d2 = (this.waterLevel - this.getEntityBoundingBox().minY) / (double)this.height;
                 this.momentum = 0.9F;
             }
@@ -966,6 +975,7 @@ public class EntityPNBoat extends EntityBoat
         if (this.isBeingRidden())
         {
             float f = 0.0F;
+            float f1 = 0.0F;
 
             if (this.leftInputDown)
             {
@@ -983,6 +993,7 @@ public class EntityPNBoat extends EntityBoat
             }
 
             this.rotationYaw += this.deltaRotation;
+            this.rotationPitch += this.deltaPitch;
 
             if (this.forwardInputDown)
             {
@@ -996,6 +1007,7 @@ public class EntityPNBoat extends EntityBoat
 
             this.motionX += (double)(MathHelper.sin(-this.rotationYaw * 0.017453292F) * f);
             this.motionZ += (double)(MathHelper.cos(this.rotationYaw * 0.017453292F) * f);
+
             this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
         }
     }

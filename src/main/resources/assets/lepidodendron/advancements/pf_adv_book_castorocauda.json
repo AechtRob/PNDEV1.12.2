@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:castorocauda_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_castorocauda.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_castorocauda.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_castorocauda"
+		}
+	}
+}
+
+

@@ -52,6 +52,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
 
     private int inPFLove;
 
@@ -71,7 +72,16 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(TICKS, 0);
         this.dataManager.register(ISMOVING, false);
+        this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
         //this.setScaleForAge(false); //REMOVED!
+    }
+
+    public int getTickOffset() {
+        return this.dataManager.get(TICKOFFSET);
+    }
+
+    public void setTickOffset(int ticks) {
+        this.dataManager.set(TICKOFFSET, ticks);
     }
     @Override
     public boolean isRiding() {
@@ -188,6 +198,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setTicks(0);
+        this.setTickOffset(rand.nextInt(1000));
         this.setMateable(0);
         return livingdata;
     }
@@ -206,6 +217,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         compound.setInteger("Ticks", this.getTicks());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("mateable", this.getMateable());
+        compound.setInteger("TickOffset", this.getTickOffset());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
@@ -213,6 +225,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         this.setTicks(compound.getInteger("Ticks"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.setMateable(compound.getInteger("mateable"));
+        this.setTickOffset(compound.getInteger("TickOffset"));
     }
 
     @Override

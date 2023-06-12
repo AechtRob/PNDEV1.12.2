@@ -44,6 +44,17 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
         this.maxDepth = maxDepth;
     }
 
+    public boolean isTooDeep(BlockPos pos) {
+        int i = 0;
+        while (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(pos.down(i)).getMaterial() == Material.WATER) {
+            i ++;
+        }
+        if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(pos.down(i).up(this.maxDepth)).getMaterial() == Material.WATER) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public Animation getAnimation()
     {
@@ -86,7 +97,7 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
                 else {
                     if (Math.random() > this.waterPreference) {
 
-                        if (!this.mustUpdate && !this.PrehistoricFloraWalkingAmphibianBase.isReallyInWater() && this.executionChance > 0)
+                        if (!this.mustUpdate && (!this.PrehistoricFloraWalkingAmphibianBase.isReallyInWater()) && this.executionChance > 0)
                         {
                             if (this.PrehistoricFloraWalkingAmphibianBase.getIdleTime() >= 100)
                             {
@@ -150,7 +161,7 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
                     randPos = randPosVar;
                 }
 
-                if (this.maxDepth > 0 && this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(randPos.up(maxDepth)).getMaterial() == Material.WATER) {
+                if (this.maxDepth > 0 & isTooDeep(randPos)) {
                     break; //This pos is not suitable
                 }
                 //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());

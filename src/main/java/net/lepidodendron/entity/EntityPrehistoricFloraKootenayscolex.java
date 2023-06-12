@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraKootenayscolex extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraKootenayscolex(World world) {
 		super(world);
-		setSize(0.5F, 0.25F);
+		setSize(0.33F, 0.2F);
 	}
 
 	@Override

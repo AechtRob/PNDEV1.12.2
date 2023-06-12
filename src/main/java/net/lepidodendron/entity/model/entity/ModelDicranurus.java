@@ -425,10 +425,10 @@ public class ModelDicranurus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Root.render(f5);
     }
-
+    public void renderStatic(float f) {
+        this.Root.render(0.01f);
+    }
     public void renderStaticDisplayCase(float f) {
-        this.Root.offsetZ = -0.0F;
-        this.Root.offsetY = 0.3F;
         this.Root.render(0.01f);
         resetToDefaultPose();
     }

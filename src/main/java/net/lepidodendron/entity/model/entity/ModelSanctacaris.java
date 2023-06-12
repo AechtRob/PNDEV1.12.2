@@ -788,7 +788,7 @@ public class ModelSanctacaris extends AdvancedModelBase {
         this.setRotateAngle(jawL4, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(jawL5, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tail, 0.5F, 0.0F, 0.0F);
-        this.Head.offsetY=-0.09f;
+        this.Head.offsetY=-0.15f;
         this.Head.render(0.01F);
         resetToDefaultPose();
     }

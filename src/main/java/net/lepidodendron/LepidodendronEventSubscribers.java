@@ -2,19 +2,16 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.boats.EntitySubmarine;
 import net.lepidodendron.item.*;
-import net.lepidodendron.util.*;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -25,30 +22,27 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -64,6 +58,17 @@ public class LepidodendronEventSubscribers {
 		}
 		if ((event.getEntity() instanceof EntityPlayerMP)) {
 			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+		}
+	}
+
+	@SubscribeEvent //Some instructions for use of rideables
+	public void playerMounted(EntityMountEvent event) {
+		Entity entity = event.getEntityMounting();
+		if (entity instanceof EntityPlayer && event.getWorldObj().isRemote) {
+			EntityPlayer player = (EntityPlayer) entity;
+			if (event.getEntityBeingMounted() instanceof EntitySubmarine) {
+				player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+			}
 		}
 	}
 
@@ -656,9 +661,9 @@ public class LepidodendronEventSubscribers {
 						break;
 
 					case 1: //Spruce
-						tt.add("Type: Flowering tree");
+						tt.add("Type: Coniferous tree");
 						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene - present");
-						tt.add("Propagation: cones drop from leaves");
+						tt.add("Propagation: fruit/cone");
 						break;
 
 					case 2: //Birch
@@ -750,263 +755,263 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //Release insects and arthropods on breaking plants
-	public void onBlockBreak(BlockEvent.BreakEvent event) {
-		Random rand = event.getWorld().rand;
-		World worldIn = event.getWorld();
-		if (worldIn.isRemote) {
-			return;
-		}
-		if (worldIn.provider.getDimension() != LepidodendronConfig.dimPrecambrian
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimCambrian
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimOrdovician
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimSilurian
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimDevonian
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimCarboniferous
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimPermian
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimTriassic
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimJurassic
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimCretaceous
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimPaleogene
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimNeogene
-			&& worldIn.provider.getDimension() != LepidodendronConfig.dimPleistocene) {
-			return;
-		}
-
-		IBlockState state = event.getState();
-		String resLoc = "";
-		if (state.getMaterial() == Material.PLANTS
-				|| state.getMaterial() == Material.LEAVES
-				|| state.getMaterial() == Material.VINE
-		) {
-			//Terrestrial:
-			for (int ii=0; ii < 2; ii++) {
-				if (chancerInsects()) {
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
-						resLoc = PlantBreakMobsLand.resLocMobs(1);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCambrian) {
-						resLoc = PlantBreakMobsLand.resLocMobs(2);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimOrdovician) {
-						resLoc = PlantBreakMobsLand.resLocMobs(3);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimSilurian) {
-						resLoc = PlantBreakMobsLand.resLocMobs(4);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimDevonian) {
-						resLoc = PlantBreakMobsLand.resLocMobs(5);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
-						resLoc = PlantBreakMobsLand.resLocMobs(6);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPermian) {
-						resLoc = PlantBreakMobsLand.resLocMobs(7);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimTriassic) {
-						resLoc = PlantBreakMobsLand.resLocMobs(8);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimJurassic) {
-						resLoc = PlantBreakMobsLand.resLocMobs(9);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCretaceous) {
-						resLoc = PlantBreakMobsLand.resLocMobs(10);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPaleogene) {
-						resLoc = PlantBreakMobsLand.resLocMobs(11);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimNeogene) {
-						resLoc = PlantBreakMobsLand.resLocMobs(12);
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPleistocene) {
-						resLoc = PlantBreakMobsLand.resLocMobs(13);
-					}
-				}
-
-				if (!(resLoc.equalsIgnoreCase(""))) {
-					//Spawn the mob:
-					spawnMob(worldIn, resLoc, rand, event.getPos());
-				}
-			}
-		}
-		if (state.getMaterial() == Material.WATER
-				&& (!(state.getBlock() instanceof BlockFluidBase))
-				&& (!(state.getBlock() instanceof BlockLiquid))) {
-			//Aquatic:
-			for (int ii = 0; ii < 2; ii++) {
-				if (chancerInsects()) {
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(1);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(1);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCambrian) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(2);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(2);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimOrdovician) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(3);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(3);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimSilurian) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(4);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(4);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimDevonian) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(5);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(5);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(6);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(6);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPermian) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(7);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(7);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimTriassic) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(8);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(8);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimJurassic) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(9);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(9);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCretaceous) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(10);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(10);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPaleogene) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(11);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(11);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimNeogene) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(12);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(12);
-						}
-					}
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPleistocene) {
-						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
-							resLoc = PlantBreakMobsSea.resLocMobs(13);
-						} else {
-							resLoc = PlantBreakMobsWater.resLocMobs(13);
-						}
-					}
-				}
-
-				if (!(resLoc.equalsIgnoreCase(""))) {
-					//Spawn the mob:
-					spawnMob(worldIn, resLoc, rand, event.getPos());
-				}
-			}
-		}
-	}
-
-	public boolean chancerInsects() {
-		double chance = LepidodendronConfig.genInsectsFromPlants;
-		if (chance < 0) {
-			chance = 0;
-		}
-		if (chance > 1) {
-			chance = 1;
-		}
-		if (chance == 0) {
-			return false;
-		}
-		return Math.random() <= chance;
-	}
-
-	public void spawnMob(World worldIn, String resLoc, Random rand, BlockPos pos) {
-		//Spawn the mob:
-		String nbtStr = "";
-		EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resLoc));
-		EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
-		if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0) {
-			EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
-			int adultAge = ageableBase.getAdultAge();
-			if (adultAge > 0) {
-				int spawnAge = rand.nextInt(adultAge) + 1;
-				nbtStr = "{AgeTicks:" + spawnAge + "}";
-			}
-		} else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
-			EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
-			int adultAge = ageableBase.getAdultAge();
-			if (adultAge > 0) {
-				int spawnAge = rand.nextInt(adultAge) + 1;
-				nbtStr = "{AgeTicks:" + spawnAge + "}";
-			}
-		} else if (resLoc.startsWith("fossil:")) {
-			if (nbtStr.equalsIgnoreCase("")) {
-				nbtStr = "{Gender:" + rand.nextInt(2) + "}";
-			} else {
-				nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
-			}
-		}
-		if (entity != null) {
-			entity.setDead();
-		}
-		//Spawn it:
-		worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-			@Override
-			public String getName() {
-				return "";
-			}
-
-			@Override
-			public boolean canUseCommand(int permission, String command) {
-				return true;
-			}
-
-			@Override
-			public World getEntityWorld() {
-				return worldIn;
-			}
-
-			@Override
-			public MinecraftServer getServer() {
-				return worldIn.getMinecraftServer();
-			}
-
-			@Override
-			public boolean sendCommandFeedback() {
-				return false;
-			}
-
-		}, "pf_summon " + resLoc + " " + pos.getX() + " " + (pos.getY()) + " " + pos.getZ() + " " + nbtStr);
-	}
+//	@SubscribeEvent //Release insects and arthropods on breaking plants
+//	public void onBlockBreak(BlockEvent.BreakEvent event) {
+//		Random rand = event.getWorld().rand;
+//		World worldIn = event.getWorld();
+//		if (worldIn.isRemote) {
+//			return;
+//		}
+//		if (worldIn.provider.getDimension() != LepidodendronConfig.dimPrecambrian
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimCambrian
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimOrdovician
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimSilurian
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimDevonian
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimCarboniferous
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimPermian
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimTriassic
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimJurassic
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimCretaceous
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimPaleogene
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimNeogene
+//			&& worldIn.provider.getDimension() != LepidodendronConfig.dimPleistocene) {
+//			return;
+//		}
+//
+//		IBlockState state = event.getState();
+//		String resLoc = "";
+//		if (state.getMaterial() == Material.PLANTS
+//				|| state.getMaterial() == Material.LEAVES
+//				|| state.getMaterial() == Material.VINE
+//		) {
+//			//Terrestrial:
+//			for (int ii=0; ii < 2; ii++) {
+//				if (chancerInsects()) {
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(1);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCambrian) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(2);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimOrdovician) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(3);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimSilurian) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(4);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimDevonian) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(5);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(6);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPermian) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(7);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimTriassic) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(8);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimJurassic) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(9);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCretaceous) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(10);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPaleogene) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(11);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimNeogene) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(12);
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPleistocene) {
+//						resLoc = PlantBreakMobsLand.resLocMobs(13);
+//					}
+//				}
+//
+//				if (!(resLoc.equalsIgnoreCase(""))) {
+//					//Spawn the mob:
+//					spawnMob(worldIn, resLoc, rand, event.getPos());
+//				}
+//			}
+//		}
+//		if (state.getMaterial() == Material.WATER
+//				&& (!(state.getBlock() instanceof BlockFluidBase))
+//				&& (!(state.getBlock() instanceof BlockLiquid))) {
+//			//Aquatic:
+//			for (int ii = 0; ii < 2; ii++) {
+//				if (chancerInsects()) {
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(1);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(1);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCambrian) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(2);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(2);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimOrdovician) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(3);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(3);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimSilurian) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(4);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(4);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimDevonian) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(5);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(5);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(6);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(6);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPermian) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(7);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(7);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimTriassic) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(8);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(8);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimJurassic) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(9);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(9);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCretaceous) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(10);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(10);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPaleogene) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(11);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(11);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimNeogene) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(12);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(12);
+//						}
+//					}
+//					if (worldIn.provider.getDimension() == LepidodendronConfig.dimPleistocene) {
+//						if (BiomeDictionary.hasType(worldIn.getBiome(event.getPos()), BiomeDictionary.Type.OCEAN)) {
+//							resLoc = PlantBreakMobsSea.resLocMobs(13);
+//						} else {
+//							resLoc = PlantBreakMobsWater.resLocMobs(13);
+//						}
+//					}
+//				}
+//
+//				if (!(resLoc.equalsIgnoreCase(""))) {
+//					//Spawn the mob:
+//					spawnMob(worldIn, resLoc, rand, event.getPos());
+//				}
+//			}
+//		}
+//	}
+//
+//	public boolean chancerInsects() {
+//		double chance = LepidodendronConfig.genInsectsFromPlants;
+//		if (chance < 0) {
+//			chance = 0;
+//		}
+//		if (chance > 1) {
+//			chance = 1;
+//		}
+//		if (chance == 0) {
+//			return false;
+//		}
+//		return Math.random() <= chance;
+//	}
+//
+//	public void spawnMob(World worldIn, String resLoc, Random rand, BlockPos pos) {
+//		//Spawn the mob:
+//		String nbtStr = "";
+//		EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resLoc));
+//		EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
+//		if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0) {
+//			EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
+//			int adultAge = ageableBase.getAdultAge();
+//			if (adultAge > 0) {
+//				int spawnAge = rand.nextInt(adultAge) + 1;
+//				nbtStr = "{AgeTicks:" + spawnAge + "}";
+//			}
+//		} else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
+//			EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
+//			int adultAge = ageableBase.getAdultAge();
+//			if (adultAge > 0) {
+//				int spawnAge = rand.nextInt(adultAge) + 1;
+//				nbtStr = "{AgeTicks:" + spawnAge + "}";
+//			}
+//		} else if (resLoc.startsWith("fossil:")) {
+//			if (nbtStr.equalsIgnoreCase("")) {
+//				nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+//			} else {
+//				nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
+//			}
+//		}
+//		if (entity != null) {
+//			entity.setDead();
+//		}
+//		//Spawn it:
+//		worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+//			@Override
+//			public String getName() {
+//				return "";
+//			}
+//
+//			@Override
+//			public boolean canUseCommand(int permission, String command) {
+//				return true;
+//			}
+//
+//			@Override
+//			public World getEntityWorld() {
+//				return worldIn;
+//			}
+//
+//			@Override
+//			public MinecraftServer getServer() {
+//				return worldIn.getMinecraftServer();
+//			}
+//
+//			@Override
+//			public boolean sendCommandFeedback() {
+//				return false;
+//			}
+//
+//		}, "pf_summon " + resLoc + " " + pos.getX() + " " + (pos.getY()) + " " + pos.getZ() + " " + nbtStr);
+//	}
 
 }

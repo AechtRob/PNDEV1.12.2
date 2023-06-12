@@ -508,10 +508,10 @@ public class LepidodendronFogSubscribers {
 
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if ((biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-					|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris)
-					&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-					&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
+			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
+					|| (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris
+					&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
+					&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse"))) {
 				return 150;
 			}
 		}
@@ -605,10 +605,10 @@ public class LepidodendronFogSubscribers {
 							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
 									&& biome instanceof BiomePermian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomePermian biomePermian = (BiomePermian) biome;
-								if ((biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-										|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris)
-										&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-										&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
+								if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
+										|| (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris
+										&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
+										&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse"))) {
 									fog = backgroundFog2 * 10F;
 								}
 							}

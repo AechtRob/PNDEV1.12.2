@@ -90,6 +90,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BIVALVE_GREEN = new CustomTrigger("pf_book_bivalve_green");
     public static final CustomTrigger CLICK_BIVALVE_GREY = new CustomTrigger("pf_book_bivalve_grey");
     public static final CustomTrigger CLICK_BIVALVE_INOCERAMUS = new CustomTrigger("pf_book_bivalve_inoceramus");
+    public static final CustomTrigger CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS = new CustomTrigger("pf_book_bivalve_inoceramus_gigantocapulus");
     public static final CustomTrigger CLICK_BIVALVE_LITHIOTIS = new CustomTrigger("pf_book_bivalve_lithiotis");
     public static final CustomTrigger CLICK_BIVALVE_MEGALODON = new CustomTrigger("pf_book_bivalve_megalodon");
     public static final CustomTrigger CLICK_BIVALVE_TALL = new CustomTrigger("pf_book_bivalve_tall");
@@ -1214,6 +1215,30 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HINDEODUS = new CustomTrigger("pf_book_hindeodus");
     public static final CustomTrigger CLICK_CLARKINA = new CustomTrigger("pf_book_clarkina");
     public static final CustomTrigger CLICK_MISIKELLA = new CustomTrigger("pf_book_misikella");
+    public static final CustomTrigger CLICK_SOKKAEJAECYSTIS = new CustomTrigger("pf_book_sokkaejaecystis");
+    public static final CustomTrigger CLICK_PIATNITZKYSAURUS = new CustomTrigger("pf_book_piatnitzkysaurus");
+    public static final CustomTrigger CLICK_GASOSAURUS = new CustomTrigger("pf_book_gasosaurus");
+    public static final CustomTrigger CLICK_TANYRHINICHTHYS = new CustomTrigger("pf_book_tanyrhinichthys");
+    public static final CustomTrigger CLICK_AMMONITE_PERISPHINCTES = new CustomTrigger("pf_book_perisphinctes");
+    public static final CustomTrigger CLICK_LAIDLERIA = new CustomTrigger("pf_book_laidleria");
+    public static final CustomTrigger CLICK_TRIOPS1 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_TRIOPS2 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_TRIOPS3 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_PYCNOPHLEBIA = new CustomTrigger("pf_book_pycnophlebia");
+    public static final CustomTrigger CLICK_ARCHABOILUS = new CustomTrigger("pf_book_archaboilus");
+    public static final CustomTrigger CLICK_EUROPASAURUS = new CustomTrigger("pf_book_europasaurus");
+    public static final CustomTrigger CLICK_JEHOLOTRITON = new CustomTrigger("pf_book_jeholotriton");
+
+    public static final CustomTrigger CLICK_GLYPTOPS = new CustomTrigger("pf_book_glyptops");
+    public static final CustomTrigger CLICK_KAYENTACHELYS = new CustomTrigger("pf_book_kayentachelys");
+    public static final CustomTrigger CLICK_HUAYANGOSAURUS = new CustomTrigger("pf_book_huayangosaurus");
+    public static final CustomTrigger CLICK_GIGANTSPINOSAURUS = new CustomTrigger("pf_book_gigantspinosaurus");
+    public static final CustomTrigger CLICK_STEGOSAURUS = new CustomTrigger("pf_book_stegosaurus");
+    public static final CustomTrigger CLICK_TUOJIANGOSAURUS = new CustomTrigger("pf_book_tuojiangosaurus");
+    public static final CustomTrigger CLICK_YUXISAURUS = new CustomTrigger("pf_book_yuxisaurus");
+    public static final CustomTrigger CLICK_DIANDONGOSUCHUS = new CustomTrigger("pf_book_diandongosuchus");
+    public static final CustomTrigger CLICK_TANYCOLAGREUS = new CustomTrigger("pf_book_tanycolagreus");
+    public static final CustomTrigger CLICK_CRYOLOPHOSAURUS = new CustomTrigger("pf_book_cryolophosaurus");
 
 
 
@@ -2420,7 +2445,32 @@ public class ModTriggers
             CLICK_IOWAGNATHUS,
             CLICK_HINDEODUS,
             CLICK_CLARKINA,
-            CLICK_MISIKELLA
+            CLICK_MISIKELLA,
+            CLICK_SOKKAEJAECYSTIS,
+            CLICK_PIATNITZKYSAURUS,
+            CLICK_GASOSAURUS,
+            CLICK_TANYRHINICHTHYS,
+            CLICK_AMMONITE_PERISPHINCTES,
+            CLICK_LAIDLERIA,
+            CLICK_TRIOPS1,
+            CLICK_TRIOPS2,
+            CLICK_TRIOPS3,
+            CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS,
+            CLICK_PYCNOPHLEBIA,
+            CLICK_ARCHABOILUS,
+            CLICK_EUROPASAURUS,
+            CLICK_JEHOLOTRITON,
+            CLICK_GLYPTOPS,
+            CLICK_KAYENTACHELYS,
+            CLICK_HUAYANGOSAURUS,
+            CLICK_GIGANTSPINOSAURUS,
+            CLICK_STEGOSAURUS,
+            CLICK_TUOJIANGOSAURUS,
+            CLICK_YUXISAURUS,
+            CLICK_DIANDONGOSUCHUS,
+            CLICK_PLATYSUCHUS,
+            CLICK_TANYCOLAGREUS,
+            CLICK_CRYOLOPHOSAURUS,
 
 
 

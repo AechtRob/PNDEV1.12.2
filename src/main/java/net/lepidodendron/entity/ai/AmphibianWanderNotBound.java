@@ -88,7 +88,7 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
 
                 double chooser = this.waterPreference;
                 if (Math.random() > chooser) { //Equal chance of land or water, but sometimes stay still if it's not doing the water thing
-                    if (!this.mustUpdate)
+                    if (!this.mustUpdate && (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) && this.executionChance > 0)
                     {
                         if (this.PrehistoricFloraAmphibianBase.getIdleTime() >= 100)
                         {
@@ -140,12 +140,23 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
+    public boolean isTooDeep(BlockPos pos) {
+        int i = 0;
+        while (this.PrehistoricFloraAmphibianBase.world.getBlockState(pos.down(i)).getMaterial() == Material.WATER) {
+            i ++;
+        }
+        if (this.PrehistoricFloraAmphibianBase.world.getBlockState(pos.down(i).up(this.maxDepth)).getMaterial() == Material.WATER) {
+            return true;
+        }
+        return false;
+    }
+
     public BlockPos findWaterTarget(int dist) {
         Random rand = this.PrehistoricFloraAmphibianBase.getRNG();
         if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
             for (int i = 0; i < 64; i++) {
                 BlockPos randPos = this.PrehistoricFloraAmphibianBase.getPosition().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2));
-                if (this.maxDepth > 0 && this.PrehistoricFloraAmphibianBase.world.getBlockState(randPos.up(maxDepth)).getMaterial() == Material.WATER) {
+                if (this.maxDepth > 0 && isTooDeep(randPos)) {
                     break; //This pos is not suitable
                 }
                 boolean visibility = true;

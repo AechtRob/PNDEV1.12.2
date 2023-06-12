@@ -317,8 +317,6 @@ public class ModelGyrosteus extends AdvancedModelBase {
         this.main.offsetY = -0.5F;
         this.main.render(0.01F);
         resetToDefaultPose();
-
-
     }
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(main, 0.3F, 0.0F, 0.0F);

@@ -260,16 +260,19 @@ public class ModelHelenodora extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body5.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body5.offsetZ = -0.1F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(body3, 0.2F, -0.2F, 0.5F);
+        this.setRotateAngle(body4, 0.2F, 0.2F, -0.5F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, -0.13F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, -0.15F, 0.0F);
+        this.body5.offsetY = -0.5F;
         this.body5.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
