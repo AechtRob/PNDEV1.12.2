@@ -241,7 +241,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		protected boolean isProcessing;
 		public int processTick;
 		public boolean hatchShut;
-		private int processTickTime = 600; //30 seconds to process
+		public static int processTickTime = 600; //30 seconds to process
 		private int minEnergyNeeded = 500;
 
 		public double oligoExtend;
@@ -716,6 +716,10 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+		public int getProcessTick() {
+			return this.processTick;
 		}
 
 	}
