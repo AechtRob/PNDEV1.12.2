@@ -199,14 +199,6 @@ public class ModelCancrinos extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStaticWall(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(0);
-        this.body.offsetY = 0.0F;
-        this.body.offsetX = -0.0F;
-        this.body.offsetZ = -0.0F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);

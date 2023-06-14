@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderBobosaurus;
 import net.lepidodendron.entity.render.entity.RenderRhomaleosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -241,13 +242,13 @@ public class EntityPrehistoricFloraBobosaurus extends EntityPrehistoricFloraAgea
 		return -1.36;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 2.3;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 2.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.1;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.9F;
@@ -259,16 +260,16 @@ public class EntityPrehistoricFloraBobosaurus extends EntityPrehistoricFloraAgea
 		return 1.4F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.9;
+		return 1.7;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 1.7;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 2.0F;
+		return 0.7F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
@@ -278,14 +279,12 @@ public class EntityPrehistoricFloraBobosaurus extends EntityPrehistoricFloraAgea
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderRhomaleosaurus.TEXTURE;
+		return RenderBobosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelRhomaleosaurus;
+		return RenderDisplays.modelBobosaurus;
 	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderRhomaleosaurus.getScaler();
-	}
+	public static float getScaler(@Nullable String variant) {return RenderBobosaurus.getScaler();}
 }
 
