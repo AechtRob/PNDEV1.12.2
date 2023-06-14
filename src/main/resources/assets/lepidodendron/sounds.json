@@ -6850,7 +6850,63 @@
         "stream": false
       }
     ]
+  },
+
+
+  "criocephalosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:criocephalosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "criocephalosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:criocephalosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:criocephalosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "criocephalosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:criocephalosaurus_death",
+        "stream": false
+      }
+    ]
   }
-
-
 }
