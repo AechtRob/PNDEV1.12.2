@@ -31,6 +31,7 @@ public class RenderDisplays {
     public static final ModelBundenbachiellus modelBundenbachiellus = new ModelBundenbachiellus();
     public static final ModelBungartius modelBungartius = new ModelBungartius();
     public static final ModelBunostegos modelBunostegos = new ModelBunostegos();
+    public static final ModelBobosaurus modelBobosaurus = new ModelBobosaurus();
     public static final ModelCacops modelCacops = new ModelCacops();
     public static final ModelCampbellodus modelCampbellodus = new ModelCampbellodus();
     public static final ModelCamuropiscis modelCamuropiscis = new ModelCamuropiscis();
@@ -86,6 +87,7 @@ public class RenderDisplays {
     public static final ModelEuchambersia modelEuchambersia = new ModelEuchambersia();
     public static final ModelEugaleaspis modelEugaleaspis = new ModelEugaleaspis();
     public static final ModelElasmodectes modelElasmodectes = new ModelElasmodectes();
+    public static final ModelEuropasaurus modelEuropasaurus = new ModelEuropasaurus();
     public static final ModelFallacosteus modelFallacosteus = new ModelFallacosteus();
     public static final ModelForeyia modelForeyia = new ModelForeyia();
     public static final ModelFurca modelFurca = new ModelFurca();
@@ -224,6 +226,7 @@ public class RenderDisplays {
     public static final ModelXinpusaurus modelXinpusaurus = new ModelXinpusaurus();
     public static final ModelXuanhuaceratops modelXuanhuaceratops = new ModelXuanhuaceratops();
     public static final ModelYinlong modelYinlong = new ModelYinlong();
+    public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
 
 }
