@@ -23,6 +23,7 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
@@ -316,6 +317,18 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean nestBlockMatch(World world, BlockPos pos) {
+        if (this.isNestMound()) {
+            boolean match = false;
+            if (!match) {
+                match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+                        || world.getBlockState(pos.down()).getMaterial() == Material.GRASS
+                        || world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+                        || (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+                        && world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
+                        && world.isAirBlock(pos));
+            }
+            return match;
+        }
         return false;
     }
 

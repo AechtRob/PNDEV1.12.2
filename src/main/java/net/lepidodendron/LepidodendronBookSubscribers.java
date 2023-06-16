@@ -3850,14 +3850,28 @@ public class LepidodendronBookSubscribers {
 		}
 		if (event.getTarget() instanceof EntityPrehistoricFloraLandBase) {
 			if (((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()) {
-				nestPos = ((EntityPrehistoricFloraLandBase) event.getTarget()).getNestLocation();
-				if (nestPos != null
-						&& ((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
-						&& !((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
-					nestString = " has nest at " + nestPos.getX() + " " + nestPos.getY() + " " + nestPos.getZ();
-				} else {
-					nestString = " with no known nest";
+				if (((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
+					nestString = " lays eggs into mounds in blocks";
 				}
+				else if (((EntityPrehistoricFloraLandBase) event.getTarget()).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestPos = ((EntityPrehistoricFloraLandBase) event.getTarget()).getNestLocation();
+					if (nestPos != null
+							&& ((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
+							&& !((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
+						nestString = " has nest at " + nestPos.getX() + " " + nestPos.getY() + " " + nestPos.getZ();
+					} else {
+						nestString = " with no known nest";
+					}
+				}
+			}
+			else if (((EntityPrehistoricFloraLandBase) event.getTarget()).laysEggs()) {
+				nestString = " lays eggs into mosses, selaginella and rotten wood";
+			}
+			else {
+				nestString = " lays eggs in water";
 			}
 		}
 

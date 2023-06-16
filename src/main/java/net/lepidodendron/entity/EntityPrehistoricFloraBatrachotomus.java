@@ -11,14 +11,12 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderBatrachotomus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -78,20 +76,6 @@ public class EntityPrehistoricFloraBatrachotomus extends EntityPrehistoricFloraL
 	@Override
 	public boolean isNestMound() {
 		return true;
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
-					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
-						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
-					&& world.isAirBlock(pos));
-		}
-		return match;
 	}
 
 	public boolean testLay(World world, BlockPos pos) {

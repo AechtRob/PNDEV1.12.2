@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
+import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.entity.RenderGephyrostegus;
 import net.lepidodendron.entity.render.entity.RenderGyrosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -266,43 +267,43 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 		return LepidodendronMod.GEPHYROSTEGUS_LOOT;
 	}
 	public static double offsetWall(@Nullable String variant) {
-		return -1.36;
+		return -0.45;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
+		return 0.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 1.4F;
+		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 2.5;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2.2;
+		return 0.85;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.15;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 2.0F;
+		return -1.9;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.15;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.5F;
+		return 1.8;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

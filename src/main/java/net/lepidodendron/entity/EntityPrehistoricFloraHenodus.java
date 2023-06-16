@@ -19,7 +19,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -273,17 +272,6 @@ public class EntityPrehistoricFloraHenodus extends EntityPrehistoricFloraSwimmin
 		return (
 				nestBlockMatch(world, pos)
 		);
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
-					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
-					&& world.isAirBlock(pos));
-		}
-		return match;
 	}
 
 	@Override

@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderProganochelys;
+import net.lepidodendron.entity.render.entity.RenderYuxisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -21,10 +22,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -366,17 +364,6 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
-					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
-					&& world.isAirBlock(pos));
-		}
-		return match;
-	}
-
-	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
 			this.setAnimation(ATTACK_ANIMATION);
@@ -441,16 +428,16 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderProganochelys.TEXTURE;
+		return RenderYuxisaurus.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelProganochelys;
+		return RenderDisplays.modelYuxisaurus;
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderProganochelys.getScaler();
+		return RenderYuxisaurus.getScaler();
 	}
 
 

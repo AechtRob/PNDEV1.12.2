@@ -33,6 +33,9 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 
 		ClientRegistry.registerKeyBinding(keyB);
 		ClientRegistry.registerKeyBinding(keyBoatDown);
+		ClientRegistry.registerKeyBinding(keyBoatUp);
+		ClientRegistry.registerKeyBinding(keyBoatStrafeLeft);
+		ClientRegistry.registerKeyBinding(keyBoatStrafeRight);
 
 		//Bind the biome water colour to the glass block so its water-repair thing picks up the right colour:
 		BlockColors blockColors = Minecraft.getMinecraft().getBlockColors();

@@ -4907,7 +4907,10 @@ public class RenderHandler {
 
         //Taxidermy:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTaxidermyTable.TileEntityTaxidermyTable.class, new RenderTaxidermyTable());
-        
+
+        //Misc:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockRibCage.TileEntityCustom.class, new RenderRibCage());
+
 
     }
 }

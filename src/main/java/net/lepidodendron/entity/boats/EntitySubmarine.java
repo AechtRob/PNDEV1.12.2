@@ -2,6 +2,7 @@ package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.ClientProxyLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -144,7 +145,7 @@ public class EntitySubmarine extends EntityBoat
     @Override
     public double getMountedYOffset()
     {
-        return 0.5D;
+        return 0.0D;
     }
 
     @Override
@@ -158,6 +159,9 @@ public class EntitySubmarine extends EntityBoat
         {
             if (source instanceof EntityDamageSourceIndirect && source.getTrueSource() != null && this.isPassenger(source.getTrueSource()))
             {
+                return false;
+            }
+            else if (this.isPassenger(source.getTrueSource())) {
                 return false;
             }
             else
@@ -772,7 +776,7 @@ public class EntitySubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 += 0.075F;
+                f2 += 0.035F;
             }
 
             if (this.leftStrafeInputDown && f == 0.0 &&
@@ -780,7 +784,7 @@ public class EntitySubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 -= 0.075F;
+                f2 -= 0.035F;
             }
 
             this.motionY += (double) (f1);
@@ -840,9 +844,11 @@ public class EntitySubmarine extends EntityBoat
                     player.setAir(300);
                 }
                 else {
-                    player.removePotionEffect(MobEffects.NIGHT_VISION);
+                    if (LepidodendronConfig.submarineNightvision) {
+                        player.removePotionEffect(MobEffects.NIGHT_VISION);
+                    }
                 }
-                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER) {
+                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER && LepidodendronConfig.submarineNightvision) {
                     player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
                 }
             }

@@ -187,4 +187,5 @@ public class EntityPrehistoricFloraDicranurus extends EntityPrehistoricFloraTril
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelDicranurus;}
 
 	public static float getScaler(@Nullable String variant) {return RenderDicranurus.getScaler();}
+
 }
