@@ -92,13 +92,13 @@ public class RenderConodont extends RenderLivingBaseVariantModels<EntityPrehisto
                 return 0.18F;
 
             case CLYDAGNATHUS:
-                return 0.15F;
+                return 0.17F;
 
             case PROCONODONTUS:
                 return 0.12F;
 
             case OZARKODINA:
-                return 0.20F;
+                return 0.16F;
 
             case IOWAGNATHUS:
                 return 0.24F;
