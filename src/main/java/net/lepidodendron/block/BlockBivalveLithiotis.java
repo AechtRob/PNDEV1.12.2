@@ -87,6 +87,9 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = true;
 		}
+		else {
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

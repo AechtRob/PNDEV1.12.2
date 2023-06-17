@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderEstemmenosuchus;
+import net.lepidodendron.entity.render.entity.RenderCriocephalosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -18,6 +18,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -36,19 +37,19 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraCriocephalosaurus extends EntityPrehistoricFloraLandBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraEstemmenosuchus(World world) {
+	public EntityPrehistoricFloraCriocephalosaurus(World world) {
 		super(world);
-		setSize(1.2F, 1.3F);
-		minWidth = 0.2F;
-		maxWidth = 1.2F;
-		maxHeight = 1.3F;
-		maxHealthAgeable = 38.0D;
+		setSize(0.85F, 1.01F);
+		minWidth = 0.18F;
+		maxWidth = 0.85F;
+		maxHeight = 1.01F;
+		maxHealthAgeable = 21.0D;
 	}
 
 	@Override
@@ -86,30 +87,27 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.3275F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == ROAR_ANIMATION && (this.willGrapple) && this.getGrappleTarget() != null) {
-			return 0.0F; //Is roaring at a colleague!
-		}
-		if (this.getIsFast()) {
-			speedBase = speedBase * 1.86F;
-		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
+		}
+		if (this.getIsFast()) {
+			speedBase = speedBase * 1.66F;
 		}
 		return speedBase;
 	}
 
 	@Override
 	public int getTalkInterval() {
-		return 100;
+		return 80;
 	}
 
 	@Override
 	public int getAdultAge() {
-		return 84000;
+		return 64000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -118,24 +116,24 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public AxisAlignedBB getGrappleBoundingBox() {
-		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
+	public float getEyeHeight()
+	{
+		return Math.max(super.getEyeHeight(), this.height * 1.05F);
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F, 8));
-		tasks.addTask(8, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.15));
-		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 100));
+		tasks.addTask(7, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F, 25));
+		tasks.addTask(8, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.75));
+		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(11, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(12, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -143,7 +141,7 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 
 	@Override
 	public int grappleChance() {
-		return 2500; //Higher = less chance to headbut as this upsets herding
+		return 4000; //Higher = less chance to headbut as this upsets herding
 	}
 
 	@Override
@@ -166,13 +164,13 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 		if (this.willGrapple) {
 			return false;
 		}
-		List<EntityPrehistoricFloraEstemmenosuchus> Estemmenosuchus = world.getEntitiesWithinAABB(EntityPrehistoricFloraEstemmenosuchus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-		for (EntityPrehistoricFloraEstemmenosuchus currentEstemmenosuchus : Estemmenosuchus) {
-			if (currentEstemmenosuchus.isPFAdult() && this.isPFAdult() && currentEstemmenosuchus != this && !currentEstemmenosuchus.willGrapple) {
-				this.setGrappleTarget(currentEstemmenosuchus);
-				currentEstemmenosuchus.willGrapple=true;
+		List<EntityPrehistoricFloraCriocephalosaurus> Criocephalosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraCriocephalosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraCriocephalosaurus currentCriocephalosaurus : Criocephalosaurus) {
+			if (currentCriocephalosaurus.isPFAdult() && this.isPFAdult() && currentCriocephalosaurus != this && !currentCriocephalosaurus.willGrapple) {
+				this.setGrappleTarget(currentCriocephalosaurus);
+				currentCriocephalosaurus.willGrapple=true;
 				this.willGrapple = true;
-				currentEstemmenosuchus.setGrappleTarget(this);
+				currentCriocephalosaurus.setGrappleTarget(this);
 				return true;
 			}
 		}
@@ -188,15 +186,8 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 		return false;
 	}
 
-	@Override
 	public Animation getGrappleAnimation() {
-		return this.ROAR_ANIMATION;
-	}
-
-	@Override
-	public float getEyeHeight()
-	{
-		return Math.max(super.getEyeHeight(), this.height * 1.15F);
+		return this.ATTACK_ANIMATION;
 	}
 	
 	@Override
@@ -213,54 +204,26 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-	}
-
-	@Override
-	public void playLivingSound() {
-		if (this.getAttackTarget() == null) {
-			SoundEvent soundevent = this.getAmbientSound();
-
-			if (soundevent != null) {
-				this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-			}
-		}
-		else {
-			SoundEvent soundevent = this.getRoarSound();
-
-			if (soundevent != null) {
-				this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-			}
-			if (this.getAnimation() != null) {
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(ROAR_ANIMATION);
-				}
-			}
-		}
-	}
-
-	public SoundEvent getRoarSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:estemmenosuchus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:estemmenosuchus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:criocephalosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:estemmenosuchus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:criocephalosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:estemmenosuchus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:criocephalosaurus_death"));
 	}
 
 	@Override
@@ -280,11 +243,7 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 		this.renderYawOffset = this.rotationYaw;
 
 		if ((!this.willGrapple) && this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			launchAttack();
-			if (this.getOneHit()) {
-			    this.setAttackTarget(null);
-			    this.setRevengeTarget(null);
-            }
+			this.launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -292,11 +251,39 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public void launchAttack() {
+		if (this.getAttackTarget() != null) {
+			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+			this.getAttackTarget().addVelocity(0, 0.1, 0);
+			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+			if (this.getOneHit()) {
+				this.setAttackTarget(null);
+				this.setRevengeTarget(null);
+			}
+		}
+	}
+
+	public ResourceLocation HeadbutSound() {
+		return new ResourceLocation("lepidodendron:tapinocephalus_headbut");
+	}
+
+	@Override
 	public void launchGrapple() {
 		if (this.getGrappleTarget() != null) {
 			if (!this.world.isRemote) {
-				this.playSound(this.getRoarSound(), this.getSoundVolume(), 1);
+				this.playSound((SoundEvent) SoundEvent.REGISTRY
+						.getObject(this.HeadbutSound()), this.getSoundVolume(), 1);
 			}
+			double d1 = this.posX - this.getGrappleTarget().posX;
+			double d0;
+
+			for (d0 = this.posZ -  this.getGrappleTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
+			{
+				d1 = (Math.random() - Math.random()) * 0.01D;
+			}
+			this.getGrappleTarget().knockBack(this, 0.4F, d1, d0);
+
+			this.getGrappleTarget().addVelocity(0, 0.065, 0);
 
 			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
 				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
@@ -350,61 +337,62 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.ESTEMMENOSUCHUS_LOOT_YOUNG;
+			return LepidodendronMod.CRIOCEPHALOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.ESTEMMENOSUCHUS_LOOT;
+		return LepidodendronMod.CRIOCEPHALOSAURUS_LOOT;
 	}
 
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return -0.73;
+		return -0.7;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 1.4;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.4;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.2;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.5;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.5;
 	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderEstemmenosuchus.TEXTURE;
+		return RenderCriocephalosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelEstemmenosuchus;
+		return RenderDisplays.modelCriocephalosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderEstemmenosuchus.getScaler();
+		return RenderCriocephalosaurus.getScaler();
 	}
+
 }

@@ -174,11 +174,12 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new GrappleAI(this, 1.0D, false, this.getLookLength(), this.getGrappleAnimation(), 0.225));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
+		tasks.addTask(5, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(7, new GrappleAI(this, 1.0D, false, this.getLookLength(), this.getGrappleAnimation(), 0.225));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraCrawlingFlyingInsectBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

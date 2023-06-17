@@ -46,12 +46,12 @@ public class EntityPrehistoricFloraAulacoceras extends EntityPrehistoricFloraNau
 
 	@Override
 	public int getShoalSize() {
-		return 10;
+		return 5;
 	}
 
 	@Override
 	public int getShoalDist() {
-		return 3;
+		return 5;
 	}
 
 	@Override

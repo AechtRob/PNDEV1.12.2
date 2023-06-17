@@ -2031,6 +2031,10 @@ public class LepidodendronMod {
 
 	public static final int ENTITY_SUBMARINE = 793;
 
+	public static final int ENTITY_CRIOCEPHALOSAURUS = 794;
+	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus"));
+	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus_young"));
+
 
 
 

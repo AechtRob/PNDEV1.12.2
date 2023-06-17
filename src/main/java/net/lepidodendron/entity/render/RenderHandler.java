@@ -1536,6 +1536,12 @@ public class RenderHandler {
                 return new RenderTapinocephalus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCriocephalosaurus.class, new IRenderFactory<EntityPrehistoricFloraCriocephalosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCriocephalosaurus> createRenderFor(RenderManager manager) {
+                return new RenderCriocephalosaurus(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnteosaurus.class, new IRenderFactory<EntityPrehistoricFloraAnteosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraAnteosaurus> createRenderFor(RenderManager manager) {

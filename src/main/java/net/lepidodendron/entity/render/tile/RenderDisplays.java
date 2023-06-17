@@ -50,6 +50,7 @@ public class RenderDisplays {
     public static final ModelConcavicaris modelConcavicaris = new ModelConcavicaris();
     public static final ModelCowralepis modelCowralepis = new ModelCowralepis();
     public static final ModelCrassigyrinus modelCrassigyrinus = new ModelCrassigyrinus();
+    public static final ModelCriocephalosaurus modelCriocephalosaurus = new ModelCriocephalosaurus();
     public static final ModelCtenurella modelCtenurella = new ModelCtenurella();
     public static final ModelCyamodus modelCyamodus = new ModelCyamodus();
     public static final ModelCymbospondylus modelCymbospondylus = new ModelCymbospondylus();

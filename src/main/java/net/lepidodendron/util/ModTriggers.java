@@ -753,6 +753,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SUMINIA = new CustomTrigger("pf_book_suminia");
     public static final CustomTrigger CLICK_SYNOPHALOS = new CustomTrigger("pf_book_synophalos");
     public static final CustomTrigger CLICK_TAPINOCEPHALUS = new CustomTrigger("pf_book_tapinocephalus");
+    public static final CustomTrigger CLICK_CRIOCEPHALOSAURUS = new CustomTrigger("pf_book_criocephalosaurus");
     public static final CustomTrigger CLICK_TARTUOSTEUS = new CustomTrigger("pf_book_tartuosteus");
     public static final CustomTrigger CLICK_TEGOPELTE = new CustomTrigger("pf_book_tegopelte");
     public static final CustomTrigger CLICK_TEMPEROCERAS = new CustomTrigger("pf_book_temperoceras");
@@ -2102,6 +2103,7 @@ public class ModTriggers
             CLICK_SYNOPHALOS,
             CLICK_TANYSTROPHEUS,
             CLICK_TAPINOCEPHALUS,
+            CLICK_CRIOCEPHALOSAURUS,
             CLICK_TARTUOSTEUS,
             CLICK_TEGOPELTE,
             CLICK_TELEOCRATER,
