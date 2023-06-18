@@ -114,7 +114,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.5F;
+			speedBase = speedBase * 1.9F;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;

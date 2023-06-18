@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.lepidodendron.entity.EntityPrehistoricFloraPantylus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.Block;
@@ -55,7 +56,7 @@ public class BlockAmphibianSpawnPantylusPlaceable extends ElementsLepidodendronM
 		public BlockCustom() {
 			setTranslationKey("pf_amphibian_spawn_pantylus");
 			this.setTickRandomly(true);
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMobile.tab);
 		}
 
 		@Override

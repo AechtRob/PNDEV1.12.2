@@ -15,7 +15,7 @@ public class RenderCriocephalosaurus extends RenderLiving<EntityPrehistoricFlora
         super(mgr, new ModelCriocephalosaurus(), 0.5f);
     }
     public static float getScaler() {
-        return 0.87f;
+        return 0.81f;
     }
 
     @Override

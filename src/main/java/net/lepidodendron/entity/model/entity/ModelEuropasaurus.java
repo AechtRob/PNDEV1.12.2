@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEuropasaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraEuropasaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -345,9 +344,30 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
 
         EntityPrehistoricFloraEuropasaurus europa = (EntityPrehistoricFloraEuropasaurus) e;
 
+        this.faceTarget(f3, f4, 6, Neck1);
+        this.faceTarget(f3, f4, 6, Neck2);
+        this.faceTarget(f3, f4, 6, Neck3);
+        this.faceTarget(f3, f4, 4, Neck4);
+        this.faceTarget(f3, f4, 4, Head);
 
-        this.faceTarget(f3, f4, 5, Neck4);
-        this.faceTarget(f3, f4, 5, Head);
+        boolean isBaby = europa.getJuvenile();
+
+        if (isBaby) {
+            this.Neck4.scaleChildren = true;
+            this.Neck5.scaleChildren = true;
+            this.Head.scaleChildren = true;
+            this.Neck4.setScale(1.175F, 1.175F, 1.175F);
+            this.Neck5.setScale(1.175F, 1.175F, 1.175F);
+            this.Head.setScale(1.175F, 1.175F, 1.175F);
+        }
+        else {
+            this.Neck4.scaleChildren = true;
+            this.Neck5.scaleChildren = true;
+            this.Head.scaleChildren = true;
+            this.Neck4.setScale(1F, 1, 1F);
+            this.Neck5.setScale(1F, 1, 1F);
+            this.Head.setScale(1F, 1, 1F);
+        }
 
         AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5};
         AdvancedModelRenderer[] Neck = {this.Neck1, this.Neck2, this.Neck3, this.Head};
@@ -435,6 +455,16 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
+        else if (ee.getAnimation() == ee.LEAF_GRAZE_ANIMATION) { //The noise anim
+            animLeafGrazeUpwards(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+
+    }
+
+    public void animLeafGrazeUpwards(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        EntityPrehistoricFloraEuropasaurus entity = (EntityPrehistoricFloraEuropasaurus) entitylivingbaseIn;
+        int animCycle = 160;
+        double tickAnim = animTick + partialTickTime;
 
     }
 

@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -11,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -23,6 +23,10 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -41,10 +45,12 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLandBase {
+	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
+	public Animation LEAF_GRAZE_ANIMATION;
+
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraEuropasaurus(World world) {
@@ -57,6 +63,47 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		LEAF_GRAZE_ANIMATION = Animation.create(this.getLeafGrazeLength());
+	}
+
+	public int getLeafGrazeHeight() {
+		return 8;
+	}
+
+	public int getLeafGrazeLength() {
+		return 0;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{LEAF_GRAZE_ANIMATION, DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(JUVENILE, false);
+		this.setScaleForAge(false);
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setBoolean("juvenile", this.getJuvenile());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setJuvenile(compound.getBoolean("juvenile"));
+	}
+
+	public void setJuvenile(boolean val)
+	{
+		this.dataManager.set(JUVENILE, val);
+	}
+
+	public boolean getJuvenile() {
+		return this.dataManager.get(JUVENILE);
 	}
 
 	@Override
@@ -116,7 +163,8 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION) {
+			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
+			|| this.getAnimation() == LEAF_GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -187,12 +235,12 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public boolean drinksWater() {
-		return false; //grazes, does not drink
+		return true;
 	}
 
 	@Override
 	public int getDrinkLength() {
-		return 160;  //grazes, does not drink
+		return 160;
 	}
 
 	@Override
@@ -202,56 +250,10 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 
 	public boolean isDrinking()
 	{
-		//TODO needs to change so can each leaves from trees
-		//Is GRAZING!
-		EnumFacing facing = this.getAdjustedHorizontalFacing();
-		boolean test = (this.getPFDrinking() <= 0
-				&& !world.isRemote
-				&& !this.getIsFast()
-				&& !this.getIsMoving()
-				&& this.DRINK_ANIMATION.getDuration() > 0
-				&& this.getAnimation() == NO_ANIMATION
-				&& !this.isReallyInWater()
-				&& (this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.PLANTS
-				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.LEAVES)
-				//|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.SAND)
-		);
-		if (test) {
-			//Which one is water?
-			facing = null;
-			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.LEAVES) {
-				facing = EnumFacing.NORTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.LEAVES) {
-				facing = EnumFacing.SOUTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.LEAVES) {
-				facing = EnumFacing.EAST;
-			}
-			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GRASS
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GROUND
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.PLANTS
-					|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.LEAVES) {
-				facing = EnumFacing.WEST;
-			}
-			if (facing != null) {
-				this.setDrinkingFrom(this.getPosition().offset(facing));
-				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-			}
+		if (getJuvenile()) {
+			return false;
 		}
-		return test;
-
+		return super.isDrinking();
 	}
 
 	@Override
@@ -301,7 +303,22 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() != DRINK_ANIMATION) {
+		if (!world.isRemote) {
+			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
+			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
+			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
+			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+				if (!this.getJuvenile()) {
+					this.setJuvenile(true);
+				}
+			}
+			else if (this.getJuvenile()) {
+				this.setJuvenile(false);
+			}
+		}
+
+		if (this.getAnimation() != DRINK_ANIMATION
+			&& this.getAnimation() != LEAF_GRAZE_ANIMATION) {
 			this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
@@ -312,6 +329,23 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 16 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
+
+//		if (this.getAnimation() == NO_ANIMATION && rand.nextInt(400) == 0 && (!getJuvenile())) {
+//			//Can we graze upwards?
+//			if (this.world.getBlockState(this.getPosition().up(this.getLeafGrazeHeight())).getMaterial() == Material.LEAVES) {
+//				boolean clear = true;
+//				for (int i = 0; i <= getLeafGrazeHeight(); i++) {
+//					Material material = world.getBlockState(this.getPosition().up(i)).getMaterial();
+//					if (material != Material.AIR && material != Material.LEAVES && material != Material.PLANTS) {
+//						clear = false;
+//						break;
+//					}
+//				}
+//				if (clear) {
+//					this.setAnimation(LEAF_GRAZE_ANIMATION);
+//				}
+//			}
+//		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}

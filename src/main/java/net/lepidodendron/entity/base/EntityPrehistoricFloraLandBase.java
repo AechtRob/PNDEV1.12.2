@@ -179,7 +179,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     || this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS)
             );
             if (test) {
-                //Which one is water?
+                //Which one is grazeable?
                 facing = null;
                 if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GROUND
                     || this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GRASS) {

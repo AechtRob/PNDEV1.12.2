@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.lepidodendron.entity.EntityPrehistoricFloraSiderops;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.Block;
@@ -55,7 +56,7 @@ public class BlockAmphibianSpawnSideropsPlaceable extends ElementsLepidodendronM
 		public BlockCustom() {
 			setTranslationKey("pf_amphibian_spawn_siderops");
 			this.setTickRandomly(true);
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMobile.tab);
 		}
 
 		@Override
