@@ -4914,6 +4914,9 @@ public class RenderHandler {
         //Taxidermy:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTaxidermyTable.TileEntityTaxidermyTable.class, new RenderTaxidermyTable());
 
+        //Traps:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockTrapAir.TileEntityTrapAir.class, new RenderTrapAir());
+
         //Misc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRibCage.TileEntityCustom.class, new RenderRibCage());
 

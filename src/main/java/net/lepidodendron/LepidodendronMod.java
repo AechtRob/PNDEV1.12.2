@@ -2035,6 +2035,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus"));
 	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus_young"));
 
+	public static final int GUI_TRAP_AIR_ID = 795;
+	public static final int GUI_TRAP_LAND_ID = 796;
+	public static final int GUI_TRAP_WATER_ID = 797;
 
 
 
