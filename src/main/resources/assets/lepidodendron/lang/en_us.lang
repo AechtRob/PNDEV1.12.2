@@ -7901,6 +7901,7 @@ item.pf_eggs_huayangosaurus.name=Huayangosaurus Eggs
 item.pf_eggs_tuojiangosaurus.name=Tuojiangosaurus Eggs
 item.pf_phial_eggs_weevil.name=Phial of Weevil Eggs
 tile.pf_insect_eggs_weevil.name=Weevil Eggs
+tile.pf_trap_air.name=Airborne Creature Trap
 item.pf_phial_eggs_jeholotriton.name=Phial of Jeholotriton Eggs
 item.pf_phial_eggs_laidleria.name=Phial of Laidleria Eggs
 item.pf_phial_eggs_marmorerpeton.name=Phial of Marmorerpeton Eggs
