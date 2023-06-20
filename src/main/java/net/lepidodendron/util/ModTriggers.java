@@ -1240,6 +1240,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIANDONGOSUCHUS = new CustomTrigger("pf_book_diandongosuchus");
     public static final CustomTrigger CLICK_TANYCOLAGREUS = new CustomTrigger("pf_book_tanycolagreus");
     public static final CustomTrigger CLICK_CRYOLOPHOSAURUS = new CustomTrigger("pf_book_cryolophosaurus");
+    public static final CustomTrigger CLICK_CERVIFURCA = new CustomTrigger("pf_book_cervifurca");
+    public static final CustomTrigger CLICK_OLENELLUS = new CustomTrigger("pf_book_olenellus");
+
+
 
 
 
@@ -2473,6 +2477,8 @@ public class ModTriggers
             CLICK_PLATYSUCHUS,
             CLICK_TANYCOLAGREUS,
             CLICK_CRYOLOPHOSAURUS,
+            CLICK_OLENELLUS,
+            CLICK_CERVIFURCA,
 
 
 

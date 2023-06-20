@@ -109,6 +109,8 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 		return i;
 	}
 
+
+
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);

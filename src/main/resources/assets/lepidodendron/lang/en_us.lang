@@ -8010,3 +8010,7 @@ advancements.pf_adv_book_olenellus.description=Unlock the entry for Olenellus in
 advancements.pf_adv_book_olenellus.title=Olenellus
 item.pf_olenellus_raw.name=Raw Olenellus
 entity.prehistoric_flora_olenellus.name=Olenellus
+advancements.pf_adv_book_cervifurca.description=Unlock the entry for Cervifurca in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_cervifurca.title=Cervifurca
+item.pf_cervifurca_raw.name=Raw Cervifurca
+entity.prehistoric_flora_cervifurca.name=Cervifurca
