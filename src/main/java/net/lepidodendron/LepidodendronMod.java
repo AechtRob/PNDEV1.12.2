@@ -2037,6 +2037,9 @@ public class LepidodendronMod {
 
 	public static final int ENTITY_OLENELLUS = 795;
 	public static final ResourceLocation OLENELLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/olenellus"));
+	public static final int GUI_TRAP_LAND_ID = 796;
+	public static final int GUI_TRAP_WATER_ID = 797;
+	public static final int GUI_TRAP_AIR_ID = 798;
 
 
 

@@ -85,7 +85,10 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 			setMaxStackSize(16);
 		}
 
-		public boolean isTargetInList(EntityLivingBase target) {
+		public static boolean isTargetInList(EntityLivingBase target) {
+			if (target == null) {
+				return false;
+			}
 			if (target instanceof EntityPrehistoricFloraAgeableBase) {
 				EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) target;
 				if (e.canJar()) {
