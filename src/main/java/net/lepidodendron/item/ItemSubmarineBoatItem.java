@@ -4,7 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.entity.boats.EntitySubmarine;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -116,7 +116,7 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 				{
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
-					EntitySubmarine entityPNsubmarine = new EntitySubmarine(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
+					PrehistoricFloraSubmarine entityPNsubmarine = new PrehistoricFloraSubmarine(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
 					entityPNsubmarine.rotationYaw = playerIn.rotationYaw;
 
 					if (!worldIn.getCollisionBoxes(entityPNsubmarine, entityPNsubmarine.getEntityBoundingBox().grow(-0.1D)).isEmpty())

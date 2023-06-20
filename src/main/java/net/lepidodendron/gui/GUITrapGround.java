@@ -2,7 +2,7 @@ package net.lepidodendron.gui;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockTrapAir;
+import net.lepidodendron.block.BlockTrapGround;
 import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -14,7 +14,10 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryBasic;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -36,10 +39,10 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
-    public static int GUIID = LepidodendronMod.GUI_TRAP_AIR_ID;
+public class GUITrapGround extends ElementsLepidodendronMod.ModElement {
+    public static int GUIID = LepidodendronMod.GUI_TRAP_GROUND_ID;
     public static HashMap guistate = new HashMap();
-    public GUITrapAir(ElementsLepidodendronMod instance) {
+    public GUITrapGround(ElementsLepidodendronMod instance) {
         super(instance, 1);
     }
     private static final Class[] params = new Class[1];
@@ -50,14 +53,14 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
         elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
     }
 
-    public static class GUILepidodendronTrapAir extends Container implements Supplier<Map<Integer, Slot>> {
+    public static class GUILepidodendronTrapGround extends Container implements Supplier<Map<Integer, Slot>> {
         private IInventory internal;
         private World world;
         private EntityPlayer entity;
         private int x, y, z;
         private Map<Integer, Slot> customSlots = new HashMap<>();
 
-        public GUILepidodendronTrapAir(World world, int x, int y, int z, EntityPlayer player) {
+        public GUILepidodendronTrapGround(World world, int x, int y, int z, EntityPlayer player) {
             this.world = world;
             this.entity = player;
             this.x = x;
@@ -73,8 +76,8 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
             this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 80, 81) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    if (ent instanceof BlockTrapAir.TileEntityTrapAir) {
-                        BlockTrapAir.TileEntityTrapAir te = (BlockTrapAir.TileEntityTrapAir) ent;
+                    if (ent instanceof BlockTrapGround.TileEntityTrapGround) {
+                        BlockTrapGround.TileEntityTrapGround te = (BlockTrapGround.TileEntityTrapGround) ent;
                         return te.isItemValidForSlot(0, stack);
                     }
                     return false;
@@ -256,7 +259,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
         private int x, y, z;
         private EntityPlayer entity;
         public GuiWindow(World world, int x, int y, int z, EntityPlayer entity) {
-            super(new GUILepidodendronTrapAir(world, x, y, z, entity));
+            super(new GUILepidodendronTrapGround(world, x, y, z, entity));
             this.world = world;
             this.x = x;
             this.y = y;
@@ -311,7 +314,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
                     getScaler = 100;
                 }
 
-                this.drawEntityOnScreen(k + (this.xSize/2) , l + (int)(this.ySize * 0.190 ), (int)Math.max(getScaler,50), 0, 0, this.getEntity());
+                this.drawEntityOnScreen(k + (int)(this.xSize * 0.5) , l + (int)(this.ySize * 0.21 ), (int)Math.max(getScaler,50), 0, 0, this.getEntity());
             }
         }
 
@@ -361,9 +364,9 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
         private EntityLivingBase getEntity() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockTrapAir.TileEntityTrapAir) {
-                    BlockTrapAir.TileEntityTrapAir te = (BlockTrapAir.TileEntityTrapAir) tileEntity;
-                    return te.getTrapped(world, new BlockPos(x, y + 1, z));
+                if (tileEntity instanceof BlockTrapGround.TileEntityTrapGround) {
+                    BlockTrapGround.TileEntityTrapGround te = (BlockTrapGround.TileEntityTrapGround) tileEntity;
+                    return te.getTrapped(world, new BlockPos(x, y, z));
                 }
             }
             return null;
@@ -381,7 +384,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Airborne Creature Trap", 30, 7 - 16, 4210752);
+            this.fontRenderer.drawString("Ground Creature Trap", 31, 7 - 16, 4210752);
             if (this.getEntity() != null) {
                 this.fontRenderer.drawString("Power the block", 50, 18 + 40 - 19, 4210752);
                 this.fontRenderer.drawString("to release the trapped", 31,
@@ -389,7 +392,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
                 this.fontRenderer.drawString(this.getEntity().getName().toString(),
                         (int)(this.xSize - (this.getEntity().getName().toString().length() * 5.25))/2,
                         38 + 40 - 19, 4210752);
-                this.fontRenderer.drawString("or click with a jar to collect it", 12,
+                this.fontRenderer.drawString("or click with a cage to collect it", 9,
                         48 + 40 - 19, 4210752);
             }
             else {

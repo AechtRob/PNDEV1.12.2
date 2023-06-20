@@ -2,12 +2,11 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronBucketHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
-import net.lepidodendron.gui.GUITrapAir;
-import net.lepidodendron.item.ItemGlassJarItem;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.gui.GUITrapWater;
 import net.lepidodendron.world.biome.TrapSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -16,13 +15,16 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -47,45 +49,47 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:trap_air")
+public class BlockTrapWater extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:trap_water")
 	public static final Block block = null;
 
-	public BlockTrapAir(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.trap_air);
+	public BlockTrapWater(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.trap_water);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("trap_air"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("trap_water"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityTrapAir.class, "lepidodendron:tileentitytrap_air");
+		GameRegistry.registerTileEntity(TileEntityTrapWater.class, "lepidodendron:tileentitytrap_water");
 	}
+
+	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:trap_air", "inventory"));
+				new ModelResourceLocation("lepidodendron:trap_water", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockTrapWater.LEVEL).build());
 	}
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.IRON);
-			setTranslationKey("pf_trap_air");
+			super(Material.WATER);
+			setTranslationKey("pf_trap_water");
 			setSoundType(SoundType.METAL);
 			setHardness(1F);
 			setResistance(1F);
@@ -93,7 +97,85 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setTickRandomly(true);
 			setCreativeTab(TabLepidodendronBuilding.tab);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Override
+		public boolean causesSuffocation(IBlockState state) {
+			return false;
+		}
+
+		protected static final AxisAlignedBB AABBN1 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D, 1.0D + 0.5D, 1.0D, 0.1875D);
+		protected static final AxisAlignedBB AABBS1 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.8125D + 0.5, 1.0D + 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBE1 = new AxisAlignedBB(0.8125D + 0.5D, 0.0D, 0.0D, 1.0D + 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBW1 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D, 0.1875D - 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBU1 = new AxisAlignedBB(0.0D - 0.5D, 0.9370D, 0.0D, 1.0D + 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBD1 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D, 1.0D + 0.5D, 0.0625D, 1.0D + 0.5D);
+
+		protected static final AxisAlignedBB AABBN2 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D - 0.5D, 1.0D, 1.0D, 0.1875D - 0.5D);
+		protected static final AxisAlignedBB AABBS2 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.8125D + 0.5D, 1.0D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBE2 = new AxisAlignedBB(0.8125D, 0.0D, 0.0D - 0.5D, 1.0D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBW2 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D - 0.5D, 0.1875D - 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBU2 = new AxisAlignedBB(0.0D - 0.5D, 0.9370D, 0.0D - 0.5D, 1.0D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBD2 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D - 0.5D, 1.0D, 0.0625D, 1.0D + 0.5D);
+
+		protected static final AxisAlignedBB AABBN3 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D - 0.5D, 1.0D + 0.5D, 1.0D, 0.1875D - 0.5D);
+		protected static final AxisAlignedBB AABBS3 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.8125D, 1.0D + 0.5D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBE3 = new AxisAlignedBB(0.8125D + 0.5D, 0.0D, 0.0D - 0.5D, 1.0D + 0.5D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBW3 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D - 0.5D, 0.1875D - 0.5D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBU3 = new AxisAlignedBB(0.0D - 0.5D, 0.9370D, 0.0D - 0.5D, 1.0D + 0.5D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBD3 = new AxisAlignedBB(0.0D - 0.5D, 0.0D, 0.0D - 0.5D, 1.0D + 0.5D, 0.0625D, 1.0D);
+
+		protected static final AxisAlignedBB AABBN4 = new AxisAlignedBB(0.0D, 0.0D, 0.0D - 0.5D, 1.0D + 0.5D, 1.0D, 0.1875D - 0.5D);
+		protected static final AxisAlignedBB AABBS4 = new AxisAlignedBB(0.0D, 0.0D, 0.8125D + 0.5D, 1.0D + 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBE4 = new AxisAlignedBB(0.8125D + 0.5D, 0.0D, 0.0D - 0.5D, 1.0D + 0.5D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBW4 = new AxisAlignedBB(0.0D, 0.0D, 0.0D - 0.5D, 0.1875D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBU4 = new AxisAlignedBB(0.0D, 0.9370D, 0.0D - 0.5D, 1.0D, 1.0D, 1.0D + 0.5D);
+		protected static final AxisAlignedBB AABBD4 = new AxisAlignedBB(0.0D, 0.0D, 0.0D - 0.5D, 1.0D, 0.0625D, 1.0D + 0.5D);
+
+		@Override
+		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+			EnumFacing facing = worldIn.getBlockState(pos).getValue(FACING);
+			if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
+				facing = EnumFacing.NORTH;
+			}
+			switch (facing) {
+				case NORTH: default:
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBU1);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBD1);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBN1);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBS1);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBE1);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBW1);
+					return;
+
+				case EAST:
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBU2);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBD2);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBN2);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBS2);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBE2);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBW2);
+					return;
+
+				case SOUTH:
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBU3);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBD3);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBN3);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBS3);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBE3);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBW3);
+					return;
+
+				case WEST:
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBU4);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBD4);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBN4);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBS4);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBE4);
+					addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBW4);
+					return;
+			}
 		}
 
 		@Override
@@ -104,11 +186,11 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new BlockTrapAir.TileEntityTrapAir();
+			return new BlockTrapWater.TileEntityTrapWater();
 		}
 
-		public BlockTrapAir.TileEntityTrapAir createNewTileEntity(World worldIn, int meta) {
-			return new BlockTrapAir.TileEntityTrapAir();
+		public BlockTrapWater.TileEntityTrapWater createNewTileEntity(World worldIn, int meta) {
+			return new BlockTrapWater.TileEntityTrapWater();
 		}
 
 		@Override
@@ -122,61 +204,75 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
 			TileEntity tileentity = world.getTileEntity(pos);
 			if (tileentity != null) {
-				if (tileentity instanceof BlockTrapAir.TileEntityTrapAir) {
-					InventoryHelper.dropInventoryItems(world, pos, (BlockTrapAir.TileEntityTrapAir) tileentity);
+				if (tileentity instanceof BlockTrapWater.TileEntityTrapWater) {
+					InventoryHelper.dropInventoryItems(world, pos, (BlockTrapWater.TileEntityTrapWater) tileentity);
 				}
 				world.removeTileEntity(pos);
 			}
 			super.breakBlock(world, pos, state);
 		}
 
-		public static boolean itemInteractionForEntityJar(ItemStack stack, EntityPlayer playerIn, EntityLivingBase target, EnumHand hand) {
-			//If we are holding an empty jar we can click on an entity:
-			if (stack.hasTagCompound()) {
+		public static boolean itemInteractionForEntityBucket(ItemStack stack, EntityPlayer playerIn, EntityLivingBase target, EnumHand hand) {
+			//If we are holding an empty bucket we can click on an entity:
+			if (stack.getItem() != Items.WATER_BUCKET) {
 				return false;
 			}
+			return LepidodendronBucketHandler.bucketMob(playerIn.getEntityWorld(), playerIn, target, stack, hand);
 
-			if (ItemGlassJarItem.ItemCustom.isTargetInList(target)) { //catch the mob
-				stack.shrink(1);
-				//Pick up this entity with the Jar:
-				ItemHandlerHelper.giveItemToPlayer(playerIn, BlockGlassJar.BlockCustom.createJarWithEntity(target));
-				if ((playerIn instanceof EntityPlayerMP)) {
-					ModTriggers.USE_JAR.trigger((EntityPlayerMP) playerIn);
-				}
-				return true;
-			}
-			return false;
 		}
 
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
 
-			if (entity.getHeldItem(hand).getItem() == ItemGlassJarItem.block && this.hasTrapped(world, pos)) {
-				if (!entity.getHeldItem(hand).hasTagCompound()) {
-					EntityLivingBase entityTrapped = null;
-
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null) {
-						if (tileEntity instanceof BlockTrapAir.TileEntityTrapAir) {
-							BlockTrapAir.TileEntityTrapAir te = (BlockTrapAir.TileEntityTrapAir) tileEntity;
-							entityTrapped = te.getTrapped(world, pos.up());
-							if (!world.isRemote) {
-								this.itemInteractionForEntityJar(entity.getHeldItem(hand), entity, entityTrapped, hand);
-							}
+			if (entity.getHeldItem(hand).getItem() == Items.WATER_BUCKET && this.hasTrapped(world, pos)) {
+				EntityLivingBase entityTrapped = null;
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockTrapWater.TileEntityTrapWater) {
+						BlockTrapWater.TileEntityTrapWater te = (BlockTrapWater.TileEntityTrapWater) tileEntity;
+						entityTrapped = te.getTrapped(world, pos);
+						if (this.itemInteractionForEntityBucket(entity.getHeldItem(hand), entity, entityTrapped, hand)) {
 							return true;
 						}
 					}
 				}
+
 			}
 			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
 			if (entity instanceof EntityPlayer) {
-				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUITrapAir.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
+				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUITrapWater.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
 			}
 			return true;
 		}
 
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(-0.5D, 0D, -0.5D, 1.5D, 1D, 1.5D);
+		}
+
+		public static AxisAlignedBB trappedBB(World world, BlockPos pos) {
+			EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+			if (facing == EnumFacing.UP || facing== EnumFacing.DOWN) {
+				facing = EnumFacing.NORTH;
+			}
+			switch (facing) {
+				case NORTH: default:
+					return new AxisAlignedBB(pos.getX() - 0.5D, pos.getY(), pos.getZ(), pos.getX() + 1.5D, pos.getY() + 1, pos.getZ() + 1.5);
+
+				case EAST:
+					return new AxisAlignedBB(pos.getX() - 0.5D, pos.getY(), pos.getZ() - 0.5D, pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1.5);
+
+				case SOUTH:
+					return new AxisAlignedBB(pos.getX() - 0.5D, pos.getY(), pos.getZ() - 0.5D, pos.getX() + 1.5D, pos.getY() + 1, pos.getZ() + 1);
+
+				case WEST:
+					return new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ() - 0.5D, pos.getX() + 1.5, pos.getY() + 1, pos.getZ() + 1.5);
+
+			}
+		}
+
 		public static void releaseTrapped(World world, BlockPos pos) {
-			List<EntityLivingBase> list = world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
+			List<EntityLivingBase> list = world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, trappedBB(world, pos));
 			if (list.isEmpty()) {
 				return;
 			}
@@ -192,22 +288,11 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public static boolean hasTrapped(World world, BlockPos pos) {
-			List<EntityLivingBase> list = world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos.up()));
+			List<EntityLivingBase> list = world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, trappedBB(world, pos));
 			if (!list.isEmpty()) {
 				return true;
 			}
 			return false;
-		}
-
-		@Override
-		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return (super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up()));
-		}
-
-		@Override
-		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-			worldIn.setBlockState(pos.up(), BlockTrapAirTop.block.getDefaultState());
-			super.onBlockAdded(worldIn, pos, state);
 		}
 
 		public void makeTrapped(World world, BlockPos pos) {
@@ -215,13 +300,13 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 			TileEntity tileEntity = world.getTileEntity(pos);
-			if (tileEntity instanceof TileEntityTrapAir) {
-				TileEntityTrapAir te = (TileEntityTrapAir) tileEntity;
+			if (tileEntity instanceof TileEntityTrapWater) {
+				TileEntityTrapWater te = (TileEntityTrapWater) tileEntity;
 				ItemStack stack = te.getStackInSlot(0);
 				if (stack == ItemStack.EMPTY) {
 					return;
 				}
-				TrapSpawner.executeProcedure(world, pos.up(), world.rand, stack, 1);
+				TrapSpawner.executeProcedure(world, pos, world.rand, stack, 3);
 			}
 		}
 
@@ -230,16 +315,11 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 			if (!world.isRemote)
 			{
-				if (world.getBlockState(pos.up()).getBlock() != BlockTrapAirTop.block) {
-					world.destroyBlock(pos, true);
-					return;
-				}
-
 				boolean flag = world.isBlockPowered(pos);
 
 				if (flag || neighborBlock.getDefaultState().canProvidePower())
 				{
-					this.releaseTrapped(world, pos.up());
+					this.releaseTrapped(world, pos);
 				}
 			}
 
@@ -252,6 +332,28 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				makeTrapped(worldIn, pos);
 			}
 			super.randomTick(worldIn, pos, state, random);
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			if (!canPlaceBlockAt(worldIn, pos)) {
+				worldIn.destroyBlock(pos, true);
+			}
+		}
+
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+		{
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
+				return super.canPlaceBlockAt(worldIn, pos);
+			}
+			return false;
+		}
+
+		public boolean isWaterBlock(World world, BlockPos pos) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+				return true;
+			}
+			return false;
 		}
 
 		@Override
@@ -290,7 +392,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{LEVEL, FACING});
 		}
 
 		@Override
@@ -315,7 +417,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
-			if (face == EnumFacing.DOWN) {
+			if (face == EnumFacing.UP || face == EnumFacing.DOWN) {
 				return BlockFaceShape.SOLID;
 			}
 			return BlockFaceShape.UNDEFINED;
@@ -342,7 +444,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityTrapAir extends TileEntityLockableLoot implements ISidedInventory {
+	public static class TileEntityTrapWater extends TileEntityLockableLoot implements ISidedInventory {
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 		
 		public boolean isEmpty()
@@ -370,18 +472,18 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public String getName() {
-			return "container.trap_air";
+			return "container.trap_water";
 		}
 
 		@Override
 		public String getGuiID()
 		{
-			return "lepidodendron:gui_trap_air";
+			return "lepidodendron:gui_trap_water";
 		}
 
 		@Override
 		public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-			return new GUITrapAir.GUILepidodendronTrapAir(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
+			return new GUITrapWater.GUILepidodendronTrapWater(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
 		}
 
 		@Override
@@ -503,7 +605,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 		@Nullable
 		public EntityLivingBase getTrapped(World world, BlockPos pos) {
-			List<EntityLivingBase> list = world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
+			List<EntityLivingBase> list = world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, BlockTrapWater.BlockCustom.trappedBB(world, pos));
 			EntityLivingBase entityanimal = null;
 			for (EntityLivingBase entityanimal1 : list)
 			{
@@ -514,7 +616,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return new AxisAlignedBB(pos, pos.add(1, 3, 1));
+			return new AxisAlignedBB(pos.getX() - 2, pos.getY(), pos.getZ() - 2, pos.getX() + 3, pos.getY() + 2, pos.getZ() + 3);
 		}
 
 
