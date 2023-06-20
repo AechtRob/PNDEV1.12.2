@@ -116,7 +116,7 @@ public class Summoner extends CommandBase
                 else
                 {
                     //System.err.println("Rand: " + ((world.rand.nextFloat() - 0.5F)/10F));
-                    entity.setLocationAndAngles(d0 + ((world.rand.nextFloat() - 0.5F)/10F), d1, d2 + ((world.rand.nextFloat() - 0.5F)/10F), entity.rotationYaw, entity.rotationPitch);
+                    entity.setLocationAndAngles(d0 + ((world.rand.nextFloat() - 0.5F)/10F), d1 + 0.25, d2 + ((world.rand.nextFloat() - 0.5F)/10F), entity.rotationYaw, entity.rotationPitch);
 
                     if (!flag && entity instanceof EntityLiving)
                     {

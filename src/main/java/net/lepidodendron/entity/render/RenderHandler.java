@@ -4,7 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
-import net.lepidodendron.entity.boats.EntitySubmarine;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
@@ -4766,10 +4766,16 @@ public class RenderHandler {
                 return new RenderPNBoat(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntitySubmarine.class, new IRenderFactory<EntitySubmarine>() {
+        RenderingRegistry.registerEntityRenderingHandler(PrehistoricFloraSubmarine.class, new IRenderFactory<PrehistoricFloraSubmarine>() {
             @Override
-            public Render<? super EntitySubmarine> createRenderFor(RenderManager manager) {
+            public Render<? super PrehistoricFloraSubmarine> createRenderFor(RenderManager manager) {
                 return new RenderSubmarine(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBuoy.class, new IRenderFactory<EntityPrehistoricFloraBuoy>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBuoy> createRenderFor(RenderManager manager) {
+                return new RenderBuoy(manager);
             }
         });
 
@@ -4916,6 +4922,8 @@ public class RenderHandler {
 
         //Traps:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTrapAir.TileEntityTrapAir.class, new RenderTrapAir());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockTrapGround.TileEntityTrapGround.class, new RenderTrapGround());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockTrapWater.TileEntityTrapWater.class, new RenderTrapWater());
 
         //Misc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRibCage.TileEntityCustom.class, new RenderRibCage());

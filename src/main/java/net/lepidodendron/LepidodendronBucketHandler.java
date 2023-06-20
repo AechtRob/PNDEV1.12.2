@@ -11,12 +11,178 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagDouble;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.items.ItemHandlerHelper;
 
 public class LepidodendronBucketHandler {
+
+    public static boolean bucketMob(World world, EntityPlayer playerIn, Entity entityIn, ItemStack stackIn, EnumHand handIn) {
+        if (entityIn instanceof EntityPrehistoricFloraAgeableFishBase) {
+            EntityPrehistoricFloraAgeableFishBase ee = (EntityPrehistoricFloraAgeableFishBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+            EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
+            EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraEurypteridBase) {
+            EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
+            EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
+            EntityPrehistoricFloraJellyfishBase ee = (EntityPrehistoricFloraJellyfishBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraNautiloidBase) {
+            EntityPrehistoricFloraNautiloidBase ee = (EntityPrehistoricFloraNautiloidBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+            EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+            EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+            EntityPrehistoricFloraTrilobiteSwimBase ee = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
+            if (!ee.isSmall()) {
+                if (world.isRemote) {
+                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
+                }
+                return false;
+            }
+            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
+            stackFullBucket.setCount(1);
+            stackIn.shrink(1);
+            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
+            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
+            playerIn.swingArm(handIn);
+            return true;
+        }
+        return false;
+    }
 
     @SubscribeEvent
     public void onUseBucket(PlayerInteractEvent.EntityInteract event) {
@@ -27,170 +193,14 @@ public class LepidodendronBucketHandler {
         }
         EntityPlayer playerIn = event.getEntityPlayer();
         Entity entityIn = event.getTarget();
-
-        if (entityIn instanceof EntityPrehistoricFloraAgeableFishBase) {
-            EntityPrehistoricFloraAgeableFishBase ee = (EntityPrehistoricFloraAgeableFishBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
-            EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
-            EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraEurypteridBase) {
-            EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
-            EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
-            EntityPrehistoricFloraJellyfishBase ee = (EntityPrehistoricFloraJellyfishBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraNautiloidBase) {
-            EntityPrehistoricFloraNautiloidBase ee = (EntityPrehistoricFloraNautiloidBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
-            EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
-            EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
-            event.setCanceled(true);
-        }
-        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
-            EntityPrehistoricFloraTrilobiteSwimBase ee = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
-            if (!ee.isSmall()) {
-                if (event.getWorld().isRemote) {
-                    playerIn.sendMessage(new TextComponentString(ee.getName() + " " + ee.getBucketMessage()));
-                }
-                return;
-            }
-            ItemStack stackFullBucket = new ItemStack(ItemBucketOfMob.block, (int) (1));
-            stackFullBucket.setCount(1);
-            stackIn.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(playerIn, createBucketWithEntity(entityIn));
-            playerIn.playSound(SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
-            playerIn.swingArm(event.getHand());
+        World worldIn = event.getWorld();
+        EnumHand handIn = event.getHand();
+        if (bucketMob(worldIn, playerIn, entityIn, stackIn, handIn)) {
             event.setCanceled(true);
         }
     }
 
-    public ItemStack createBucketWithEntity(Entity entity) {
+    public static ItemStack createBucketWithEntity(Entity entity) {
 
         Entity checkEntity = entity;
 

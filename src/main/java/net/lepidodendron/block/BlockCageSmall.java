@@ -252,7 +252,7 @@ public class BlockCageSmall extends ElementsLepidodendronMod.ModElement {
 			addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBD);
 		}
 
-		public ItemStack createCageWithEntity(Entity entity) {
+		public static ItemStack createCageWithEntity(Entity entity) {
 
 			Entity checkEntity = entity;
 
