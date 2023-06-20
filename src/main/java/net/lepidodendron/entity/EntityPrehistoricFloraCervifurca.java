@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraCervifurca extends EntityPrehistoricFloraFish
 
 	@Override
 	public int getShoalSize() {
-		return 5;
+		return 2;
 	}
 
 	@Override
