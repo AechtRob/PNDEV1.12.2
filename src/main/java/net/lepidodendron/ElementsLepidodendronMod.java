@@ -970,6 +970,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 		sounds.put(new ResourceLocation("lepidodendron", "submarine_underwater"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "submarine_underwater")));
 
+		sounds.put(new ResourceLocation("lepidodendron", "buoy_bell"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "buoy_bell")));
+
 	}
 
 
