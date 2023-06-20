@@ -8005,3 +8005,7 @@ item.pf_diandongosuchus_raw.name=Raw Diandongosuchus
 entity.prehistoric_flora_stegosaurus.name=Stegosaurus
 entity.prehistoric_flora_yuxisaurus.name=Yuxisaurus
 entity.prehistoric_flora_diandongosuchus.name=Diandongosuchus
+advancements.pf_adv_book_olenellus.description=Unlock the entry for Olenellus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_olenellus.title=Olenellus
+item.pf_olenellus_raw.name=Raw Olenellus
+entity.prehistoric_flora_olenellus.name=Olenellus

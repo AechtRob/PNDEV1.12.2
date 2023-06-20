@@ -2035,7 +2035,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus"));
 	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus_young"));
 
-
+	public static final int ENTITY_OLENELLUS = 795;
+	public static final ResourceLocation OLENELLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/olenellus"));
 
 
 
