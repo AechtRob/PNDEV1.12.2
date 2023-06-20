@@ -26,19 +26,19 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class TrapAirSpawner extends ElementsLepidodendronMod.ModElement {
-    public TrapAirSpawner(ElementsLepidodendronMod instance) {
+public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
+    public TrapSpawner(ElementsLepidodendronMod instance) {
         super(instance, 42);
     }
 
-    public static void executeProcedure(World world, BlockPos pos, Random rand, ItemStack stack) {
+    public static void executeProcedure(World world, BlockPos pos, Random rand, ItemStack stack, int type) {
 
         //Get mob list and pick a mob for this biome:
         boolean TriassicCanyons = false;
         String[] MobString = new String[0];
 
         Biome biome = world.getBiome(pos);
-        MobString = EntityLists.mobString(biome, 1); //type 1 = air spawns
+        MobString = EntityLists.mobString(biome, type);
 
         if (!(MobString.length >= 1)) {
             return;

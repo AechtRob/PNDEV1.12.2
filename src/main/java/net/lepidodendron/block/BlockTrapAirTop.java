@@ -174,7 +174,10 @@ public class BlockTrapAirTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
-			return BlockFaceShape.SOLID;
+			if (face != EnumFacing.UP) {
+				return BlockFaceShape.SOLID;
+			}
+			return BlockFaceShape.UNDEFINED;
 		}
 
 		@Override

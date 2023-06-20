@@ -2,7 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
-import net.lepidodendron.entity.boats.EntitySubmarine;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -856,9 +856,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_criocephalosaurus", EntityPrehistoricFloraCriocephalosaurus.class, LepidodendronMod.ENTITY_CRIOCEPHALOSAURUS, 64,-3627679,-6583436);
 
         registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
-        registerEntityNoEgg("prehistoric_flora_submarine", EntitySubmarine.class, LepidodendronMod.ENTITY_SUBMARINE, 80);
-
-        //registerEntity("prehistoric_flora_", EntityPrehistoricFlora.class, LepidodendronMod.ENTITY_, 64,0,0); TEMPLATE
+        registerEntityNoEgg("prehistoric_flora_submarine", PrehistoricFloraSubmarine.class, LepidodendronMod.ENTITY_SUBMARINE, 80);
+        registerEntity("prehistoric_flora_buoy", EntityPrehistoricFloraBuoy.class, LepidodendronMod.ENTITY_BUOY, 256, 0, 0);
+        registerEntityNoEgg("prehistoric_flora_buoy_knot", EntityPrehistoricFloraBuoyRopeEnd.class, LepidodendronMod.ENTITY_BUOY_KNOT, 80);
 
     }
 

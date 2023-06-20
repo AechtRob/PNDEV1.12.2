@@ -2037,11 +2037,14 @@ public class LepidodendronMod {
 
 	public static final int ENTITY_OLENELLUS = 795;
 	public static final ResourceLocation OLENELLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/olenellus"));
-	public static final int GUI_TRAP_LAND_ID = 796;
-	public static final int GUI_TRAP_WATER_ID = 797;
-	public static final int GUI_TRAP_AIR_ID = 798;
 
-	public static final int ENTITY_CERVIFURCA = 799;
+	public static final int GUI_TRAP_AIR_ID = 796;
+	public static final int GUI_TRAP_GROUND_ID = 797;
+	public static final int GUI_TRAP_WATER_ID = 798;
+	public static final int ENTITY_BUOY = 799;
+	public static final int ENTITY_BUOY_KNOT = 800;
+
+	public static final int ENTITY_CERVIFURCA = 801;
 	public static final ResourceLocation CERVIFURCA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cervifurca"));
 
 

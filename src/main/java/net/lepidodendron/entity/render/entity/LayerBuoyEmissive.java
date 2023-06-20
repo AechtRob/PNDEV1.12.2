@@ -1,33 +1,34 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
+import net.lepidodendron.entity.EntityPrehistoricFloraBuoy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class LayerSubmarineEmissive implements LayerRendererBoat<PrehistoricFloraSubmarine>
+public class LayerBuoyEmissive implements LayerRenderer<EntityPrehistoricFloraBuoy>
 {
-    private final RenderSubmarine SubmarineRenderer;
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_submarine_glow.png");
+    private final RenderBuoy BuoyRenderer;
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/buoy_glow.png");
 
-    public LayerSubmarineEmissive(RenderSubmarine SubmarineRendererIn)
+    public LayerBuoyEmissive(RenderBuoy BuoyRendererIn)
     {
-        this.SubmarineRenderer = SubmarineRendererIn;
+        this.BuoyRenderer = BuoyRendererIn;
     }
 
     @Override
-    public void doRenderLayer(PrehistoricFloraSubmarine submarineIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
+    public void doRenderLayer(EntityPrehistoricFloraBuoy entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
     {
-        if (!submarineIn.isInvisible())
+        if (!entitylivingbaseIn.isInvisible())
         {
-            this.SubmarineRenderer.bindTexture(TEXTURE);
+            this.BuoyRenderer.bindTexture(TEXTURE);
             GlStateManager.pushMatrix();
             GlStateManager.enableBlend();
             GlStateManager.disableAlpha();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
-            if (submarineIn.isInvisible())
+            if (entitylivingbaseIn.isInvisible())
             {
                 GlStateManager.depthMask(false);
             }
@@ -42,15 +43,15 @@ public class LayerSubmarineEmissive implements LayerRendererBoat<PrehistoricFlor
             OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
-            this.SubmarineRenderer.modelBoat.setModelAttributes(this.SubmarineRenderer.modelBoat);
-            this.SubmarineRenderer.modelBoat.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, submarineIn);
-            this.SubmarineRenderer.modelBoat.render(submarineIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.BuoyRenderer.getMainModel().setModelAttributes(this.BuoyRenderer.getMainModel());
+            this.BuoyRenderer.getMainModel().setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entitylivingbaseIn);
+            this.BuoyRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
-            i = submarineIn.getBrightnessForRender();
+            i = entitylivingbaseIn.getBrightnessForRender();
             j = i % 65536;
             k = i / 65536;
             OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-            this.SubmarineRenderer.setLightmap(submarineIn);
+            this.BuoyRenderer.setLightmap(entitylivingbaseIn);
             GlStateManager.disableBlend();
             GlStateManager.enableAlpha();
             GlStateManager.popMatrix();

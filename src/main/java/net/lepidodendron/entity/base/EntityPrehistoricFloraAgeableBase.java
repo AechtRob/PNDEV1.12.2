@@ -5,14 +5,13 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockCageSmall;
-import net.lepidodendron.block.BlockMobSpawn;
-import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;
@@ -1038,8 +1037,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         int i = this.getAgeTicks();
-        //Do not grow entities which are in cages:
-        if (this.isEntityAlive() && world.getBlockState(this.getPosition()).getBlock() != BlockCageSmall.block && !this.world.isRemote)
+        //Do not grow entities which are in cages, etc:
+        Block blockIn = world.getBlockState(this.getPosition()).getBlock();
+        if (this.isEntityAlive()
+                && blockIn != BlockCageSmall.block
+                && blockIn != BlockGlassJar.block
+                && blockIn != BlockTrapAirTop.block
+                && blockIn != BlockTrapGround.block
+                && blockIn != BlockTrapWater.block
+                && !this.world.isRemote)
         {
             ++i;
             //throttle at limit:

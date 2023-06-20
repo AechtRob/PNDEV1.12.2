@@ -2,7 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.boats.EntitySubmarine;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.model.entity.ModelSubmarine;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GLAllocation;
@@ -21,13 +21,13 @@ import java.nio.FloatBuffer;
 import java.util.List;
 
 @SideOnly(Side.CLIENT)
-public class RenderSubmarine extends Render<EntitySubmarine> {
+public class RenderSubmarine extends Render<PrehistoricFloraSubmarine> {
 
     private static final ResourceLocation TEXTURE_SUBMARINE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_submarine.png");
     protected ModelBase modelBoat = new ModelSubmarine();
     private static final DynamicTexture TEXTURE_BRIGHTNESS = new DynamicTexture(16, 16);
     protected FloatBuffer brightnessBuffer = GLAllocation.createDirectFloatBuffer(4);
-    protected List<LayerRendererBoat<EntitySubmarine>> layerRenderers = Lists.<LayerRendererBoat<EntitySubmarine>>newArrayList();
+    protected List<LayerRendererBoat<PrehistoricFloraSubmarine>> layerRenderers = Lists.<LayerRendererBoat<PrehistoricFloraSubmarine>>newArrayList();
 
     public RenderSubmarine(RenderManager renderManagerIn) {
         super(renderManagerIn);
@@ -37,16 +37,16 @@ public class RenderSubmarine extends Render<EntitySubmarine> {
 
     public <V extends EntityBoat, U extends LayerRendererBoat<V>> boolean addLayer(U layer)
     {
-        return this.layerRenderers.add((LayerRendererBoat<EntitySubmarine>)layer);
+        return this.layerRenderers.add((LayerRendererBoat<PrehistoricFloraSubmarine>)layer);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntitySubmarine entity)
+    protected ResourceLocation getEntityTexture(PrehistoricFloraSubmarine entity)
     {
         return TEXTURE_SUBMARINE;
     }
 
-    public void doRender(EntitySubmarine entity, double x, double y, double z, float entityYaw, float partialTicks)
+    public void doRender(PrehistoricFloraSubmarine entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         GlStateManager.pushMatrix();
         this.setupTranslation(x, y, z);
@@ -76,9 +76,9 @@ public class RenderSubmarine extends Render<EntitySubmarine> {
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 
-    protected void renderLayers(EntitySubmarine submarineIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scaleIn)
+    protected void renderLayers(PrehistoricFloraSubmarine submarineIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scaleIn)
     {
-        for (LayerRendererBoat<EntitySubmarine> layerrenderer : this.layerRenderers)
+        for (LayerRendererBoat<PrehistoricFloraSubmarine> layerrenderer : this.layerRenderers)
         {
             boolean flag = this.setBrightness(submarineIn, partialTicks, layerrenderer.shouldCombineTextures());
             layerrenderer.doRenderLayer(submarineIn, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scaleIn);
@@ -90,7 +90,7 @@ public class RenderSubmarine extends Render<EntitySubmarine> {
         }
     }
 
-    public void setLightmap(EntitySubmarine submarineIn)
+    public void setLightmap(PrehistoricFloraSubmarine submarineIn)
     {
         int i = submarineIn.getBrightnessForRender();
         int j = i % 65536;
@@ -98,12 +98,12 @@ public class RenderSubmarine extends Render<EntitySubmarine> {
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
     }
 
-    protected int getColorMultiplier(EntitySubmarine submarineIn, float lightBrightness, float partialTickTime)
+    protected int getColorMultiplier(PrehistoricFloraSubmarine submarineIn, float lightBrightness, float partialTickTime)
     {
         return 0;
     }
 
-    protected boolean setBrightness(EntitySubmarine submarineIn, float partialTicks, boolean combineTextures)
+    protected boolean setBrightness(PrehistoricFloraSubmarine submarineIn, float partialTicks, boolean combineTextures)
     {
         float f = submarineIn.getBrightness();
         int i = this.getColorMultiplier(submarineIn, f, partialTicks);
@@ -226,7 +226,7 @@ public class RenderSubmarine extends Render<EntitySubmarine> {
         GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
     }
 
-    public void setupRotation(EntitySubmarine entityIn, float entityYaw, float partialTicks)
+    public void setupRotation(PrehistoricFloraSubmarine entityIn, float entityYaw, float partialTicks)
     {
         GlStateManager.rotate(180.0F - entityYaw, 0.0F, 1.0F, 0.0F);
         float f = (float)entityIn.getTimeSinceHit() - partialTicks;

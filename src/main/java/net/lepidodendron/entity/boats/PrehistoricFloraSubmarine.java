@@ -34,12 +34,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntitySubmarine extends EntityBoat
+public class PrehistoricFloraSubmarine extends EntityBoat
 {
-    private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(EntitySubmarine.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(EntitySubmarine.class, DataSerializers.VARINT);
-    private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(EntitySubmarine.class, DataSerializers.FLOAT);
-    private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(EntitySubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(EntitySubmarine.class, DataSerializers.BOOLEAN)};
+    private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
+    private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(PrehistoricFloraSubmarine.class, DataSerializers.FLOAT);
+    private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
     private final float[] paddlePositions;
     private float momentum;
     private float outOfControlTicks;
@@ -61,11 +61,11 @@ public class EntitySubmarine extends EntityBoat
     private boolean rightStrafeInputDown;
     private double waterLevel;
     private float boatGlide;
-    private EntitySubmarine.Status status;
-    private EntitySubmarine.Status previousStatus;
+    private PrehistoricFloraSubmarine.Status status;
+    private PrehistoricFloraSubmarine.Status previousStatus;
     private double lastYd;
 
-    public EntitySubmarine(World worldIn)
+    public PrehistoricFloraSubmarine(World worldIn)
     {
         super(worldIn);
         this.paddlePositions = new float[2];
@@ -73,7 +73,7 @@ public class EntitySubmarine extends EntityBoat
         this.setSize(3.0F, 3.0F);
     }
 
-    public EntitySubmarine(World worldIn, double x, double y, double z)
+    public PrehistoricFloraSubmarine(World worldIn, double x, double y, double z)
     {
         this(worldIn);
         this.setPosition(x, y, z);
@@ -409,9 +409,9 @@ public class EntitySubmarine extends EntityBoat
         return this.getPaddleState(side) ? (float)MathHelper.clampedLerp((double)this.paddlePositions[side] - 0.39269909262657166D, (double)this.paddlePositions[side], (double)limbSwing) : 0.0F;
     }
 
-    private EntitySubmarine.Status getBoatStatus()
+    private PrehistoricFloraSubmarine.Status getBoatStatus()
     {
-        EntitySubmarine.Status EntityBoatLepidodendron$status = this.getUnderwaterStatus();
+        PrehistoricFloraSubmarine.Status EntityBoatLepidodendron$status = this.getUnderwaterStatus();
 
         if (EntityBoatLepidodendron$status != null)
         {
@@ -420,7 +420,7 @@ public class EntitySubmarine extends EntityBoat
         }
         else if (this.checkInWater())
         {
-            return EntitySubmarine.Status.IN_WATER;
+            return PrehistoricFloraSubmarine.Status.IN_WATER;
         }
         else
         {
@@ -429,11 +429,11 @@ public class EntitySubmarine extends EntityBoat
             if (f > 0.0F)
             {
                 this.boatGlide = f;
-                return EntitySubmarine.Status.ON_LAND;
+                return PrehistoricFloraSubmarine.Status.ON_LAND;
             }
             else
             {
-                return EntitySubmarine.Status.IN_AIR;
+                return PrehistoricFloraSubmarine.Status.IN_AIR;
             }
         }
     }
@@ -599,7 +599,7 @@ public class EntitySubmarine extends EntityBoat
     }
 
     @Nullable
-    private EntitySubmarine.Status getUnderwaterStatus()
+    private PrehistoricFloraSubmarine.Status getUnderwaterStatus()
     {
         AxisAlignedBB axisalignedbb = this.getEntityBoundingBox();
         double d0 = axisalignedbb.maxY + 0.001D;
@@ -627,7 +627,7 @@ public class EntitySubmarine extends EntityBoat
                         {
                             if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() != 0)
                             {
-                                EntitySubmarine.Status EntityBoatLepidodendron$status = EntitySubmarine.Status.UNDER_FLOWING_WATER;
+                                PrehistoricFloraSubmarine.Status EntityBoatLepidodendron$status = PrehistoricFloraSubmarine.Status.UNDER_FLOWING_WATER;
                                 return EntityBoatLepidodendron$status;
                             }
 
@@ -642,7 +642,7 @@ public class EntitySubmarine extends EntityBoat
             blockpos$pooledmutableblockpos.release();
         }
 
-        return flag ? EntitySubmarine.Status.UNDER_WATER : null;
+        return flag ? PrehistoricFloraSubmarine.Status.UNDER_WATER : null;
     }
 
     private void updateMotion()
@@ -652,13 +652,13 @@ public class EntitySubmarine extends EntityBoat
         double d2 = 0.0D;
         this.momentum = 0.05F;
 
-        if (this.previousStatus == EntitySubmarine.Status.IN_AIR && this.status != EntitySubmarine.Status.IN_AIR && this.status != EntitySubmarine.Status.ON_LAND)
+        if (this.previousStatus == PrehistoricFloraSubmarine.Status.IN_AIR && this.status != PrehistoricFloraSubmarine.Status.IN_AIR && this.status != PrehistoricFloraSubmarine.Status.ON_LAND)
         {
             this.waterLevel = this.getEntityBoundingBox().minY + (double)this.height;
             this.setPosition(this.posX, (double)(this.getWaterLevelAbove() - this.height) + 0.101D, this.posZ);
             this.motionY = 0.0D;
             this.lastYd = 0.0D;
-            this.status = EntitySubmarine.Status.IN_WATER;
+            this.status = PrehistoricFloraSubmarine.Status.IN_WATER;
         }
         else
         {
@@ -669,21 +669,21 @@ public class EntitySubmarine extends EntityBoat
                 d2 = (this.waterLevel - this.getEntityBoundingBox().minY) / (double)this.height;
                 this.momentum = 0.9F;
             }
-            else if (this.status == EntitySubmarine.Status.UNDER_FLOWING_WATER)
+            else if (this.status == PrehistoricFloraSubmarine.Status.UNDER_FLOWING_WATER)
             {
                 d1 = -7.0E-4D;
                 this.momentum = 0.9F;
             }
-            else if (this.status == EntitySubmarine.Status.UNDER_WATER)
+            else if (this.status == PrehistoricFloraSubmarine.Status.UNDER_WATER)
             {
                 d2 = 0.009999999776482582D;
                 this.momentum = 0.45F;
             }
-            else if (this.status == EntitySubmarine.Status.IN_AIR)
+            else if (this.status == PrehistoricFloraSubmarine.Status.IN_AIR)
             {
                 this.momentum = 0.9F;
             }
-            else if (this.status == EntitySubmarine.Status.ON_LAND)
+            else if (this.status == PrehistoricFloraSubmarine.Status.ON_LAND)
             {
                 this.momentum = this.boatGlide;
 
@@ -916,7 +916,7 @@ public class EntitySubmarine extends EntityBoat
             {
                 if (this.fallDistance > 3.0F)
                 {
-                    if (this.status != EntitySubmarine.Status.ON_LAND)
+                    if (this.status != PrehistoricFloraSubmarine.Status.ON_LAND)
                     {
                         this.fallDistance = 0.0F;
                         return;
