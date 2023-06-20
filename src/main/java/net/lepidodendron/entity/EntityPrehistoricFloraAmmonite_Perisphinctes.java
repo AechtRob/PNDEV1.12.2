@@ -31,9 +31,9 @@ public class EntityPrehistoricFloraAmmonite_Perisphinctes extends EntityPrehisto
 
 	public EntityPrehistoricFloraAmmonite_Perisphinctes(World world) {
 		super(world);
-		setSize(0.3F, 0.4F);
+		setSize(0.5F, 0.4F);
 		minWidth = 0.1F;
-		maxWidth = 0.3F;
+		maxWidth = 0.5F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 6F;
 	}

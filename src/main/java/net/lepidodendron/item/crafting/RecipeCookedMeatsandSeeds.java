@@ -281,6 +281,7 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemHoplitaspisRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemOrcanopterusRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemOnychopterellaRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemOlenellusRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 
 
 
@@ -763,6 +764,7 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemClarkinaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemMisikellaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemTanyrhinichthysRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCervifurcaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
 
 
 

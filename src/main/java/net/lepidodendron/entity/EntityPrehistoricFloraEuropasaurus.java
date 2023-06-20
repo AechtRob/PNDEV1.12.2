@@ -233,6 +233,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	}
 
 
+	//TODO override to allow targeting water for drinking, currently targets grass
 	@Override
 	public boolean drinksWater() {
 		return true;

@@ -1,0 +1,39 @@
+package net.lepidodendron.entity.render.entity;
+
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.EntityPrehistoricFloraTanycolagreus;
+import net.lepidodendron.entity.model.entity.ModelTanycolagreus;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.util.ResourceLocation;
+
+public class RenderTanycolagreus extends RenderLiving<EntityPrehistoricFloraTanycolagreus> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tanycolagreus.png");
+
+    public RenderTanycolagreus(RenderManager mgr) {
+        super(mgr, new ModelTanycolagreus(), 0.3f);
+    }
+
+    public static float getScaler() {
+        return 0.48F;
+    }
+
+    @Override
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraTanycolagreus entity) {
+        return RenderTanycolagreus.TEXTURE;
+    }
+
+    @Override
+    protected void applyRotations(EntityPrehistoricFloraTanycolagreus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+        super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+    }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraTanycolagreus entity, float f) {
+        float scale = entity.getAgeScale() * this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.35F;
+    }
+
+}

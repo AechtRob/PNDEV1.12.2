@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraCryolophosaurus(World world) {
 		super(world);
-		setSize(1.75F, 1.2F);
+		setSize(1.5F, 1.5F);
 		minWidth = 0.20F;
-		maxWidth = 1.75F;
-		maxHeight = 1.2F;
-		maxHealthAgeable = 36.0D;
+		maxWidth = 1.5F;
+		maxHeight = 1.5F;
+		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -82,12 +82,12 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 80;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 60;
 	} //Roar
 
 	@Override
@@ -220,25 +220,25 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:cryolophosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_death"));
 	}
 
 	@Override

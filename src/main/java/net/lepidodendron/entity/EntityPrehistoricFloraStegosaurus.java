@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -48,11 +49,11 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraStegosaurus(World world) {
 		super(world);
-		setSize(0.9F, 1.3F);
-		minWidth = 0.12F;
-		maxWidth = 0.9F;
-		maxHeight = 1.3F;
-		maxHealthAgeable = 50.0D;
+		setSize(2F, 2.5F);
+		minWidth = 0.3F;
+		maxWidth = 2F;
+		maxHeight = 2.5F;
+		maxHealthAgeable = 65.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -86,12 +87,12 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getRoarLength() {
-		return 24;
+		return 44;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 70;
 	}
 
 	@Override
@@ -110,7 +111,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.330F;
+		float speedBase = 0.250F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -191,7 +192,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getDrinkLength() {
-		return 50;  //grazes, does not drink
+		return 80;  //grazes, does not drink
 	}
 
 	@Override
@@ -261,7 +262,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(28.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -269,19 +270,19 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kentrosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kentrosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kentrosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_death"));
 	}
 
 	@Override
@@ -327,6 +328,15 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 				}
 			}
 		}
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(6.0, 9.00, 6.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 
