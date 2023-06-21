@@ -164,7 +164,9 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.9F;
+			speedBase = speedBase * 2.47F;
+			speedBase = speedBase / 0.85F;
+			speedBase = 0.6F;
 		}
 		return speedBase;
 	}
