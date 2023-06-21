@@ -305,39 +305,42 @@ public class ModelGephyrostegus extends AdvancedModelBase {
     }
     public void renderStaticWall(float f) {
         this.body.rotateAngleX = (float) Math.toRadians(20);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontleftLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontrightLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(upperbody, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftLeg, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightLeg, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightLeg3, 0.55F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftLeg3, 0.55F, 0.0F, 0.0F);
         this.body.offsetY = 0.0F;
         this.body.offsetX = 0.0F;
-        this.body.offsetZ = 0.0F;
+        this.body.offsetZ = -0.35F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontrightLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontrightLeg2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontleftLeg3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontleftLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontleftLeg2, 0.F, 0.0F, 0.0F);
-        this.setRotateAngle(frontleftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(upperbody, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(frontrightLeg, 0.15F, 0.4F, -0.4F);
+        this.setRotateAngle(frontrightLeg2, -0.25F, 0.0F, 0.4F);
+        this.setRotateAngle(frontrightLeg3, -0.1F, 0.0F, -0.05F);
+        this.setRotateAngle(frontleftLeg, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(frontleftLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftLeg3, 0.15F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backrightleg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backrightleg2, -0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backleftleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(backleftleg, 0.0F, -0.3F, 0.0F);
         this.setRotateAngle(backleftleg2, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(backleftleg3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.gephyrostegus.offsetY = -0.14F;
+        this.setRotateAngle(tail, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, -0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.15F, -0.2F, 0.0F);
+        this.gephyrostegus.offsetY = 0.15F;
         this.gephyrostegus.render(0.01F);
         resetToDefaultPose();
     }

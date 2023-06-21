@@ -280,7 +280,6 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-
     public void renderStaticWall(float f) {
         this.Neck1.rotateAngleX = (float) Math.toRadians(20);
         this.setRotateAngle(Neck1, -0.5F, 0.0F, 0.0F);

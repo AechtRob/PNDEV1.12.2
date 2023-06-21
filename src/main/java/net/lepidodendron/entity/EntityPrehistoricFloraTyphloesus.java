@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderCaturus;
+import net.lepidodendron.entity.render.entity.RenderTyphloesus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
@@ -252,41 +253,41 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 	}
 
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 0.4F;
 	}
 
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 0.0F;
 	}
 
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.285;
+		return 0.0;
 	}
 
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.00F;
+		return 0.0F;
 	}
 
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.105;
+		return 0.0;
 	}
 
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.01F;
+		return 0.2F;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCaturus.TEXTURE;
+		return RenderTyphloesus.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCaturus;
+		return RenderDisplays.modelTyphloesus;
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderCaturus.getScaler();
+		return RenderTyphloesus.getScaler();
 	}
 
 }
