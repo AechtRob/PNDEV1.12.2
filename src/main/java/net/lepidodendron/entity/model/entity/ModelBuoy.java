@@ -92,7 +92,6 @@ public class ModelBuoy extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        bone.offsetY = -0.6F;
         bone.render(f5);
     }
 
@@ -107,9 +106,16 @@ public class ModelBuoy extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.walk(bone, 0.05F, 0.15F, false, 0, 0.075F, f2, 1F);
-        this.flap(bone, 0.05F, -0.15F, false, 2F, -0.075F, f2, 1F);
-        this.swing(bone, 0.1F, 0.1F, false, 0, -0.05F, f2, 1F);
-        this.bob(bone, 0.1F, 1.15F, false, f2, 1F);
+        if (e.isInWater()) {
+            bone.offsetY = -0.6F;
+            this.walk(bone, 0.05F, 0.15F, false, 0, 0.075F, f2, 1F);
+            this.flap(bone, 0.05F, -0.15F, false, 2F, -0.075F, f2, 1F);
+            this.swing(bone, 0.1F, 0.1F, false, 0, -0.05F, f2, 1F);
+            this.bob(bone, 0.1F, 1.15F, false, f2, 1F);
+        }
+        else {
+            this.bone.rotateAngleX = (float)Math.toRadians(66);
+            bone.offsetY = -0.75F;
+        }
     }
 }

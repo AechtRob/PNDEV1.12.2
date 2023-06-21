@@ -1,7 +1,6 @@
 package net.lepidodendron;
 
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.EntityPrehistoricFloraBuoyRopeEnd;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.item.*;
@@ -13,7 +12,6 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -26,7 +24,6 @@ import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
@@ -381,32 +378,6 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //We want to drop the real items or flowers
 	public void onSheared(PlayerInteractEvent.RightClickBlock event) {
-		//First, deal with adding a leash to the fish trap:
-		if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTrapWater.block
-				&& event.getItemStack().getItem() == Items.LEAD
-				&& event.getHand() == EnumHand.MAIN_HAND
-				) {
-			TileEntity tileEntity = event.getWorld().getTileEntity(event.getPos());
-			if (tileEntity instanceof BlockTrapWater.TileEntityTrapWater) {
-				EntityPrehistoricFloraBuoyRopeEnd entityleashknot = EntityPrehistoricFloraBuoyRopeEnd.getKnotForPosition(event.getWorld(), event.getPos());
-				boolean flag = false;
-				double d0 = 7.0D;
-				int i = event.getPos().getX();
-				int j = event.getPos().getY();
-				int k = event.getPos().getZ();
-
-				for (EntityLiving entityliving : event.getWorld().getEntitiesWithinAABB(EntityLiving.class, new AxisAlignedBB((double) i - 7.0D, (double) j - 7.0D, (double) k - 7.0D, (double) i + 7.0D, (double) j + 48.0D, (double) k + 7.0D))) {
-					if (entityliving.getLeashed() && entityliving.getLeashHolder() == event.getEntityPlayer()) {
-						if (entityleashknot == null) {
-							entityleashknot = EntityPrehistoricFloraBuoyRopeEnd.createKnot(event.getWorld(), event.getPos());
-						}
-						entityliving.setLeashHolder(entityleashknot, true);
-						event.setCanceled(true);
-					}
-				}
-			}
-		}
-
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
 				&& event.getItemStack().getItem() instanceof ItemShears
 //				&& LepidodendronConfig.doPropagationVanilla

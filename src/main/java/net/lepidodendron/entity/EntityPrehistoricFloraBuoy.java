@@ -7,7 +7,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.item.ItemBuoyItem;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,7 +17,6 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -247,6 +245,22 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
     }
 
     @Override
+    public void playLivingSound()
+    {
+        SoundEvent soundevent = this.getAmbientSound();
+
+        if (soundevent != null && this.isInWater())
+        {
+            this.playSound(soundevent, this.getSoundVolume(), 1F);
+        }
+    }
+
+    @Override
+    public int getTalkInterval() {
+        return 360;
+    }
+
+    @Override
     public SoundEvent getAmbientSound() {
         return (SoundEvent) SoundEvent.REGISTRY
                 .getObject(new ResourceLocation("lepidodendron:buoy_bell"));
@@ -280,22 +294,7 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
 
     @Override
     public float getEyeHeight() {
-        return this.height * 0.2F;
+        return this.height * 0.3F;
     }
-
-    @Override
-    public float getDistance(Entity entityIn)
-    {
-        float f = (float)(this.posX - entityIn.posX);
-        float f1 = (float)(this.posY - entityIn.posY);
-        float f2 = (float)(this.posZ - entityIn.posZ);
-        if (entityIn instanceof EntityPrehistoricFloraBuoyRopeEnd) {
-            return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2) - 64;
-        }
-        return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2);
-    }
-
-
-
 
 }

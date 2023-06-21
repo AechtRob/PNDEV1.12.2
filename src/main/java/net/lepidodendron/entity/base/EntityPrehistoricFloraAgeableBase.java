@@ -782,8 +782,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
                     if (this.world.getBlockState(blockpos$pooledmutableblockpos).causesSuffocation())
                     {
-                        blockpos$pooledmutableblockpos.release();
+                        //blockpos$pooledmutableblockpos.release();
                         isReallySuffocating = true;
+                        break;
                     }
                 }
             }
