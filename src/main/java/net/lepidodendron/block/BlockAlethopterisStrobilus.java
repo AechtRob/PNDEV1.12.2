@@ -300,5 +300,10 @@ public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElem
 			this.readFromNBT(tag);
 		}
 
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 1, 1));
+		}
+
 	}
 }

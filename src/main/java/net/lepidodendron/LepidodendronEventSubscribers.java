@@ -385,7 +385,7 @@ public class LepidodendronEventSubscribers {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTrapWater.block
 				&& event.getItemStack().getItem() == Items.LEAD
 				&& event.getHand() == EnumHand.MAIN_HAND
-				&& !event.getWorld().isRemote) {
+				) {
 			TileEntity tileEntity = event.getWorld().getTileEntity(event.getPos());
 			if (tileEntity instanceof BlockTrapWater.TileEntityTrapWater) {
 				EntityPrehistoricFloraBuoyRopeEnd entityleashknot = EntityPrehistoricFloraBuoyRopeEnd.getKnotForPosition(event.getWorld(), event.getPos());
@@ -395,12 +395,13 @@ public class LepidodendronEventSubscribers {
 				int j = event.getPos().getY();
 				int k = event.getPos().getZ();
 
-				for (EntityLiving entityliving : event.getWorld().getEntitiesWithinAABB(EntityLiving.class, new AxisAlignedBB((double) i - 7.0D, (double) j - 48.0D, (double) k - 7.0D, (double) i + 7.0D, (double) j + 48.0D, (double) k + 7.0D))) {
+				for (EntityLiving entityliving : event.getWorld().getEntitiesWithinAABB(EntityLiving.class, new AxisAlignedBB((double) i - 7.0D, (double) j - 7.0D, (double) k - 7.0D, (double) i + 7.0D, (double) j + 48.0D, (double) k + 7.0D))) {
 					if (entityliving.getLeashed() && entityliving.getLeashHolder() == event.getEntityPlayer()) {
 						if (entityleashknot == null) {
 							entityleashknot = EntityPrehistoricFloraBuoyRopeEnd.createKnot(event.getWorld(), event.getPos());
 						}
 						entityliving.setLeashHolder(entityleashknot, true);
+						event.setCanceled(true);
 					}
 				}
 			}
