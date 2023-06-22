@@ -289,5 +289,10 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 			this.readFromNBT(tag);
 		}
 
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 1, 1));
+		}
+
 	}
 }

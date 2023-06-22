@@ -31,7 +31,7 @@ public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSancta
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSanctacaris entity, float f) {
-        float scale = this.getScaler()*getScaler();
+        float scale = this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.38F;
     }

@@ -107,13 +107,22 @@ public class ModelTyphloesus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-    
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.head.rotateAngleX = (float) Math.toRadians(90);
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = 0.0F;
+        this.head.offsetZ = 0.03F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.08F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.10F, 0.0F);
+        this.head.offsetY = -0.14F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
     
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

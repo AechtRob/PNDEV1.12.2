@@ -6908,5 +6908,15 @@
         "stream": false
       }
     ]
+  },
+
+  "buoy_bell": {
+    "sounds": [
+      {
+        "name": "lepidodendron:buoy_bell",
+        "stream": false
+      }
+    ]
   }
+
 }

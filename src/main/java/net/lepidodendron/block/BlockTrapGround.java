@@ -362,9 +362,7 @@ public class BlockTrapGround extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
-			if (random.nextInt(3) == 0) {
-				makeTrapped(worldIn, pos);
-			}
+			makeTrapped(worldIn, pos);
 			super.randomTick(worldIn, pos, state, random);
 		}
 

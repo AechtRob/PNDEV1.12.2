@@ -4,24 +4,26 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.item.ItemBuoyItem;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishBase {
+    private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraBuoy.class, DataSerializers.VARINT);
+    private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(EntityPrehistoricFloraBuoy.class, DataSerializers.FLOAT);
 
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
@@ -31,7 +33,20 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
 
     public EntityPrehistoricFloraBuoy(World world) {
         super(world);
-        setSize(2.0F, 2.0F);
+        setSize(1.5F, 2.0F);
+    }
+
+    public EntityPrehistoricFloraBuoy(World worldIn, double x, double y, double z)
+    {
+        this(worldIn);
+        this.setPosition(x, y, z);
+    }
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(TIME_SINCE_HIT, Integer.valueOf(0));
+        this.dataManager.register(DAMAGE_TAKEN, Float.valueOf(0.0F));
     }
 
     @Override
@@ -55,9 +70,64 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
     }
 
     @Override
-    public boolean attackEntityFrom(DamageSource ds, float i) {
-        return false;
+    public boolean attackEntityFrom(DamageSource source, float amount)
+    {
+        if (this.isEntityInvulnerable(source))
+        {
+            return false;
+        }
+        else if (!this.world.isRemote && !this.isDead)
+        {
+            if (source instanceof EntityDamageSourceIndirect && source.getTrueSource() != null && this.isPassenger(source.getTrueSource()))
+            {
+                return false;
+            }
+            else
+            {
+                this.setTimeSinceHit(10);
+                this.setDamageTaken(this.getDamageTaken() + amount * 10.0F);
+                this.markVelocityChanged();
+                boolean flag = source.getTrueSource() instanceof EntityPlayer && ((EntityPlayer)source.getTrueSource()).capabilities.isCreativeMode;
+
+                if (flag || this.getDamageTaken() > 40.0F)
+                {
+                    if (!flag && this.world.getGameRules().getBoolean("doEntityDrops"))
+                    {
+                        this.dropItemWithOffset(ItemBuoyItem.block, 1, 0.0F);
+                    }
+
+                    this.setDead();
+                }
+
+                return true;
+            }
+        }
+        else
+        {
+            return true;
+        }
     }
+
+    public void setDamageTaken(float damageTaken)
+    {
+        this.dataManager.set(DAMAGE_TAKEN, Float.valueOf(damageTaken));
+    }
+
+    public float getDamageTaken()
+    {
+        return ((Float)this.dataManager.get(DAMAGE_TAKEN)).floatValue();
+    }
+
+    public void setTimeSinceHit(int timeSinceHit)
+    {
+        this.dataManager.set(TIME_SINCE_HIT, Integer.valueOf(timeSinceHit));
+    }
+
+    public int getTimeSinceHit()
+    {
+        return ((Integer)this.dataManager.get(TIME_SINCE_HIT)).intValue();
+    }
+
 
     @Override
     public void onEntityUpdate() {
@@ -175,8 +245,25 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
     }
 
     @Override
-    public net.minecraft.util.SoundEvent getAmbientSound() {
-        return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+    public void playLivingSound()
+    {
+        SoundEvent soundevent = this.getAmbientSound();
+
+        if (soundevent != null && this.isInWater())
+        {
+            this.playSound(soundevent, this.getSoundVolume(), 1F);
+        }
+    }
+
+    @Override
+    public int getTalkInterval() {
+        return 360;
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return (SoundEvent) SoundEvent.REGISTRY
+                .getObject(new ResourceLocation("lepidodendron:buoy_bell"));
     }
 
     @Override
@@ -202,26 +289,12 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
 
     @Override
     protected Item getDropItem() {
-        //return new ItemStack(ItemBuoy.block, (int) (1)).getItem();
-        return null;
+        return new ItemStack(ItemBuoyItem.block, (int) (1)).getItem();
     }
 
     @Override
     public float getEyeHeight() {
-        return this.height * 0.2F;
+        return this.height * 0.3F;
     }
-
-    @Override
-    public float getDistance(Entity entityIn)
-    {
-        float f = (float)(this.posX - entityIn.posX);
-        float f1 = (float)(this.posY - entityIn.posY);
-        float f2 = (float)(this.posZ - entityIn.posZ);
-        if (entityIn instanceof EntityPrehistoricFloraBuoyRopeEnd) {
-            return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2) - 64;
-        }
-        return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2);
-    }
-
 
 }
