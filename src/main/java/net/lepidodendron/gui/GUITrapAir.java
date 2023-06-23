@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockTrapAir;
 import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.world.biome.TrapSpawner;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -33,6 +34,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.function.Supplier;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -395,6 +397,18 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
             else {
                 this.fontRenderer.drawString("Bait the trap below", 40, 28 + 37 - 15, 4210752);
                 this.fontRenderer.drawString("to catch something:", 40, 28 + 47 - 15, 4210752);
+                ItemStack itemstack = ItemStack.EMPTY;
+                Slot slot = (Slot) this.inventorySlots.getSlot(0);
+                String baitStr = "";
+                if (slot != null) {
+                    if (slot.getHasStack()) {
+                        itemstack = slot.getStack();
+                    }
+                    baitStr = TrapSpawner.testBait(world, new BlockPos(x, y, z), new Random(), itemstack, 1);
+                }
+                this.fontRenderer.drawString(baitStr,
+                        (int)(this.xSize - (baitStr.length() * 4.5))/2,
+                        28 + 57 - 15, 4210752);
             }
             this.fontRenderer.drawString("Inventory", 8, 72 + 40 - 20, 4210752);
         }
