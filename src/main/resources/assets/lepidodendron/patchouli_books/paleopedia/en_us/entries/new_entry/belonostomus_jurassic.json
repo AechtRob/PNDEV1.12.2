@@ -1,0 +1,31 @@
+{
+	"name": "Belonostomus kochii",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/belonostomus_jurassic_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+			"title": "Belonostomus kochii",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/belonostomus_jurassic.png"],
+			"title": "B. kochii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
