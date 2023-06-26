@@ -1,0 +1,31 @@
+{
+	"name": "Cryolophosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/cryolophosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cryolophosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"title": "Cryolophosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Neotheropoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cryolophosaurus.png"],
+			"title": "C. ellioti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

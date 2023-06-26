@@ -135,7 +135,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
 				biomeCriteria = true;
 			}
 			else {

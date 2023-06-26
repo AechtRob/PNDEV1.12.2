@@ -116,7 +116,7 @@ public class BlockCoralStonyPipeStack extends ElementsLepidodendronMod.ModElemen
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks) {
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand) {
 				biomeCriteria = true;
 			}
 			else {

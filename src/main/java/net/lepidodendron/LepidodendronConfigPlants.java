@@ -1289,6 +1289,7 @@ public class LepidodendronConfigPlants {
     public static String[] genNilssoniocladusOverrideBiomes = new String[0];
     public static int[] dimNilssoniocladus = new int[]{0};
     public static boolean genLygodiumBushyAraucaria = false;
+    public static boolean genLygodiumPodozamites = false;
     public static String[] genLygodiumBlacklistBiomes = new String[0];
     public static String[] genLygodiumOverrideBiomes = new String[0];
     public static int[] dimLygodium = new int[]{0};
@@ -7082,6 +7083,10 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lygodium", "genLygodiumBushyAraucaria", genLygodiumBushyAraucaria);
         prop.setComment("Set to true to generate Lygodium naturally on Bushy Araucaria trees [default: false]");
         genLygodiumBushyAraucaria = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lygodium", "genLygodiumPodozamites", genLygodiumPodozamites);
+        prop.setComment("Set to true to generate Lygodium naturally on Podozamites trees [default: false]");
+        genLygodiumPodozamites = prop.getBoolean();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Lygodium", "genLygodiumBlacklistBiomes", genLygodiumBlacklistBiomes);
         prop.setComment("List of biomes Lygodium are blacklisted from, in the format: modid:biomeid [default: empty]");

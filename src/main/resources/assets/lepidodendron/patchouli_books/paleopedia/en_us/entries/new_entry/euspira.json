@@ -1,0 +1,31 @@
+{
+	"name": "Euspira",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "Euspira",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Gastropoda $(br)>Littorinimorpha $(br)>Naticidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/.png"],
+			"title": "Euspira sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Algae$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

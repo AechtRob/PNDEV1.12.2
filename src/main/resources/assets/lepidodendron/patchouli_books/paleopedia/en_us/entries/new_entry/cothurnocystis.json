@@ -1,0 +1,32 @@
+{
+	"name": "Cothurnocystis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/cothurnocystis_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_cothurnocystis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cothurnocystis",
+			"title": "Cothurnocystis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Stylophora$(br)>Cornuta$(br)>Cothurnocystidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cothurnocystis.png"],
+			"title": "C. elizae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cothurnocystis",
+			"type": "text",
+			"text": "Cothurnocystis is a stylophorine echinoderm from the Ordovician period. Its shape is very weird, and it did not resemble any modern echinoderm species. It had a flattened body and a small tail. On its body was a small opening and these animals lacked any sort of symmetry."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cothurnocystis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

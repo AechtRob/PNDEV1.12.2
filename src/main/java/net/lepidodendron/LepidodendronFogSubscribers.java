@@ -448,8 +448,11 @@ public class LepidodendronFogSubscribers {
 		}
 		if (biome instanceof BiomeJurassic) {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
 				return 150;
+			}
+			if (biomeJurassic.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
+				return 175;
 			}
 		}
 
@@ -553,7 +556,8 @@ public class LepidodendronFogSubscribers {
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
 									&& biome instanceof BiomeJurassic && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
+								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous
+									|| biomeJurassic.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
 									fog = backgroundFog2 * 5F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
@@ -708,7 +712,7 @@ public class LepidodendronFogSubscribers {
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
 									&& biome instanceof BiomeJurassic && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
+								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
 									fog = backgroundFog * 4F;
 								}
 							}

@@ -1,0 +1,31 @@
+{
+	"name": "Ciurcopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "Ciurcopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Eurypterida $(br)>Pterygotidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/.png"],
+			"title": "C. ventricosus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

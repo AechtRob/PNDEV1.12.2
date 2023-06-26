@@ -1,0 +1,31 @@
+{
+	"name": "Kayentatherium",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "Kayentatherium",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Cynodontia $(br)>Tritylodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/.png"],
+			"title": "K. wellesi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Burrow$(br)$(l)Method of Obtaining:$() Find Egg in Burrow"
+		}
+	]
+}

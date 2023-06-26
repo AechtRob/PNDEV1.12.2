@@ -299,7 +299,9 @@ public class ProcedureWorldGenBushyAraucariaNoCheck extends ElementsLepidodendro
 				SpawnLygodium = false;
 			if ((world.provider.getDimension() == LepidodendronConfig.dimJurassic)
 			){
-				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_floodplain_forested")) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_floodplain_forested")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")) {
 					SpawnLygodium = true;
 				}
 				else {
