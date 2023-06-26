@@ -3,6 +3,8 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -153,6 +155,11 @@ public class AlgaeGenerator extends WorldGenerator
 								waterDepthCheckMin = false;
 							}
 							yy += 1;
+						}
+						if (worldIn.getBiome(new BlockPos(j, 0, l)) instanceof BiomeJurassic) {
+							if (((BiomeJurassic)((BiomeJurassic) worldIn.getBiome(new BlockPos(j, 0, l)))).getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
+								waterDepthCheckMin = true;
+							}
 						}
 					}
 

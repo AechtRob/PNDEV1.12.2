@@ -141,7 +141,8 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
 				biomeCriteria = true;
 			}

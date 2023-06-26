@@ -147,7 +147,8 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
 				biomeCriteria = false;
 			}
 			else {
