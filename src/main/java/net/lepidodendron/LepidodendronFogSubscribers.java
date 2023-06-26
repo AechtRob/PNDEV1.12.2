@@ -96,7 +96,7 @@ public class LepidodendronFogSubscribers {
 			int distance = 0;
 			if (ranges.length > 0) {
 				//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length - 1)];
-				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
 			}
 
 			int divider = 0;
@@ -182,7 +182,7 @@ public class LepidodendronFogSubscribers {
 							if (ranges.length > 0)
 							{
 								//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
-								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
 							}
 							int divider = 0;
 							for (int x = -distance; x <= distance; ++x)
