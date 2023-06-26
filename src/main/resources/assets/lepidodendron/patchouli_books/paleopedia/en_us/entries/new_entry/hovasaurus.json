@@ -1,0 +1,31 @@
+{
+	"name": "Hovasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "Hovasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Tangasauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/.png"],
+			"title": "H. boulei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Mound$(br)$(l)Method of Obtaining:$() Find Eggs in Mound"
+		}
+	]
+}

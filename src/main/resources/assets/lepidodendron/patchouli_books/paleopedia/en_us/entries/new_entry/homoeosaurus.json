@@ -1,0 +1,31 @@
+{
+	"name": "Homoeosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "Homoeosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Rhynchocephalia $(br)>Sphenodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/.png"],
+			"title": "H. maximilliani",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Mound$(br)$(l)Method of Obtaining:$() Find Egg in Mound"
+		}
+	]
+}

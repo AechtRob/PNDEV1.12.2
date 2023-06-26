@@ -1,0 +1,32 @@
+{
+	"name": "Stanocephalosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/stanocephalosaurus_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_stanocephalosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stanocephalosaurus",
+			"title": "Stanocephalosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Mastodonsauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/stanocephalosaurus.png"],
+			"title": "S. birdi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stanocephalosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stanocephalosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}
+

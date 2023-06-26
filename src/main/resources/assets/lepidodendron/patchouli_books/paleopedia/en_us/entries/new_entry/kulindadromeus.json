@@ -1,0 +1,31 @@
+{
+	"name": "Kulindadromeus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/kulindadromeus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_kulindadromeus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kulindadromeus",
+			"title": "Kulindadromeus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/kulindadromeus.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kulindadromeus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kulindadromeus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "Marmolatella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "Marmolatella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Jurassic$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Gastropoda $(br)>Cycloneritida $(br)>Delphinulopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/.png"],
+			"title": "Marmolatella sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Punch"
+		}
+	]
+}
