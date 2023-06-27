@@ -111,7 +111,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.250F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -120,7 +120,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.8F;
+			speedBase = speedBase * 1.9F;
 		}
 		return speedBase;
 	}

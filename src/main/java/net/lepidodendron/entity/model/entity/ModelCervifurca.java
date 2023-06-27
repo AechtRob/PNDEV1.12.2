@@ -305,16 +305,14 @@ public class ModelCervifurca extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.root.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.root.rotateAngleY = (float) Math.toRadians(180);
+        this.setRotateAngle(root, -1.5F, 3.15F, 0.0F);
+        this.root.offsetY = -0.35F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = -0.19F;
         this.root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
