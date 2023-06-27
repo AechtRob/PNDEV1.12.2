@@ -6,15 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.*;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
-import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurian;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -56,16 +49,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:white_sponge")
+public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:glass_sponge")
 	public static final Block block = null;
-	public BlockWhiteSponge(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.white_sponge);
+	public BlockGlassSponge(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.glass_sponge);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("white_sponge"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("glass_sponge"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -75,22 +68,22 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:white_sponge", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockWhiteSponge.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:glass_sponge", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockGlassSponge.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:white_sponge", BlockWhiteSponge.block);
-		OreDictionary.registerOre("sponge", BlockWhiteSponge.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:glass_sponge", BlockGlassSponge.block);
+		OreDictionary.registerOre("sponge", BlockGlassSponge.block);
 	}
 
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 		
-		int weight = LepidodendronConfigPlants.weightWhiteSponge;
+		int weight = LepidodendronConfigPlants.weightGlassSponge;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -99,7 +92,7 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 		
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genWhiteSpongeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -107,142 +100,44 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genWhiteSpongeOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeOverrideBiomes))
 			biomeCriteria = true;
 
-		if (dimID == LepidodendronConfig.dimPrecambrian){
+		if (dimID == LepidodendronConfig.dimPrecambrian
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimOrdovician
+				|| dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic){
 			biomeCriteria = false;
 		}
-
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
-			) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeOrdovician) {
-			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
-			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
-			) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeSilurian) {
-			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
-			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral
-			) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomePermian)
-		{
-			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeCarboniferous)
-		{
-			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeDevonian)
-		{
-			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeTriassic)
-		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef")) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
 		}
-
+		
 		if (!biomeCriteria)
 			return;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimCarboniferous)
-				|| (dimID == LepidodendronConfig.dimPermian)
-		) {
-			multiplier = 2;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef"))
+		{
+			multiplier = 32;
 		}
 
-		if (dimID == LepidodendronConfig.dimCambrian)
-		{
-			multiplier = 4;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest"))
-		{
-			multiplier = 20;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))
-		{
-			multiplier = 30;
-		}
-
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
+		for (int i = 0; i < (int) 3 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			int i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).getY();
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
@@ -278,8 +173,8 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
     
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_white_sponge");
-			setSoundType(SoundType.PLANT);
+			setTranslationKey("pf_glass_sponge");
+			setSoundType(SoundType.GLASS);
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);
@@ -288,11 +183,16 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
 		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
 		
 		@Override
-		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
+		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
 	
@@ -391,7 +291,7 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
+		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 		
@@ -583,7 +483,7 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Sponge");
-				tooltip.add("Periods: [Tonian(?) - Cryogenian(?) - Ediacaran(?) -] Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");}
+				tooltip.add("Periods: [Ediacaran(?) - Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic -] Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

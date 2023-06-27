@@ -1333,6 +1333,14 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 3));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 4));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 5));
+
+		OreDictionary.registerOre("boat", new ItemStack(Items.BOAT, 1));
+		OreDictionary.registerOre("boat", new ItemStack(Items.BIRCH_BOAT, 1));
+		OreDictionary.registerOre("boat", new ItemStack(Items.ACACIA_BOAT, 1));
+		OreDictionary.registerOre("boat", new ItemStack(Items.JUNGLE_BOAT, 1));
+		OreDictionary.registerOre("boat", new ItemStack(Items.SPRUCE_BOAT, 1));
+		OreDictionary.registerOre("boat", new ItemStack(Items.DARK_OAK_BOAT, 1));
+
 		OreDictionary.registerOre("plantdnaPNminecraft:oak_sapling", new ItemStack(Blocks.SAPLING, 1, 0));
 		OreDictionary.registerOre("plantdnaPNminecraft:spruce_sapling", new ItemStack(Blocks.SAPLING, 1, 1));
 		OreDictionary.registerOre("plantdnaPNminecraft:birch_sapling", new ItemStack(Blocks.SAPLING, 1, 2));

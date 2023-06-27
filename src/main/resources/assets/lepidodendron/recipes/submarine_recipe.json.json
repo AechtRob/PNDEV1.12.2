@@ -3,33 +3,35 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " 1 ",
-    "345",
-    " 7 "
+    "3 5",
+    "678"
   ],
   "key": {
     "1": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "blockGlass"
     },
     "3": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
-    },
-    "4": {
-      "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "blockIron"
     },
     "5": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "blockIron"
+    },
+    "6": {
+      "item": "lepidodendron:redstone_component"
     },
     "7": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "boat"
+    },
+    "8": {
+      "item": "lepidodendron:redstone_component"
     }
   },
   "result": {
-    "item": "lepidodendron:wire_mesh_fence",
-    "count": 4
+    "item": "lepidodendron:submarine_boat_item",
+    "count": 1
   }
 }

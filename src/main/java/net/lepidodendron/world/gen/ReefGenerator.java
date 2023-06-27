@@ -38,6 +38,7 @@ public class ReefGenerator extends WorldGenerator
 		int[] dimCheck = LepidodendronConfigPlants.dimReef;
 		if (shouldGenerateInDimension(dimID, dimCheck))
 		dimensionCriteria = true;
+
 		if (!dimensionCriteria)
 			return true;
 

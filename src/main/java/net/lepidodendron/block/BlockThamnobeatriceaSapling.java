@@ -213,7 +213,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sponge");
+				tooltip.add("Type: Marine Sponge");
 				tooltip.add("Periods: Ordovician");
 				tooltip.add("Propagation: n/a");
 			}

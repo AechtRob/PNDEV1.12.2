@@ -1798,6 +1798,9 @@ public class LepidodendronConfigPlants {
     public static String[] genBlueSpongeBlacklistBiomes = new String[0];
     public static String[] genBlueSpongeOverrideBiomes = new String[0];
     public static int weightBlueSponge = 10;
+    public static String[] genGlassSpongeBlacklistBiomes = new String[0];
+    public static String[] genGlassSpongeOverrideBiomes = new String[0];
+    public static int weightGlassSponge = 10;
     public static String[] genBrownSpongeBlacklistBiomes = new String[0];
     public static String[] genBrownSpongeOverrideBiomes = new String[0];
     public static int weightBrownSponge = 10;
@@ -2687,6 +2690,19 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Algae-Sponges", "weightBlueSponge", weightBlueSponge);
         prop.setComment("Percentage chance that Blue Sponges generates in a suitable chunk (0 to 100) [default: 10]");
         weightBlueSponge = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Algae-Sponges", "genGlassSpongeBlacklistBiomes", genGlassSpongeBlacklistBiomes);
+        prop.setComment("List of biomes Glass Sponges are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genGlassSpongeBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "genGlassSpongeOverrideBiomes", genGlassSpongeOverrideBiomes);
+        prop.setComment("List of biomes Glass Sponges are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genGlassSpongeOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "weightGlassSponge", weightGlassSponge);
+        prop.setComment("Percentage chance that Glass Sponges generates in a suitable chunk (0 to 100) [default: 10]");
+        weightGlassSponge = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Corals", "genCoralBlacklistBiomes", genCoralBlacklistBiomes);
