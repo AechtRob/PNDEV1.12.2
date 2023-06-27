@@ -141,7 +141,8 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
 				biomeCriteria = true;
 			}
 			else {
