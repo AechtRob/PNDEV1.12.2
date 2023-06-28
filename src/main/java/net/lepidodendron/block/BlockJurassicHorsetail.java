@@ -112,7 +112,9 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 
 		if (biome instanceof BiomeJurassic) {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -137,6 +139,14 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
 			GenChance = 256;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")) {
+			GenChance = 12;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
+			GenChance = 92;
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;

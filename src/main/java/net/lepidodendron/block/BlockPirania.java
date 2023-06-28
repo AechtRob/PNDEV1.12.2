@@ -543,7 +543,7 @@ public class BlockPirania extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sponge");
+				tooltip.add("Type: Marine Sponge");
 				tooltip.add("Periods: Cambrian - early Ordovician");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

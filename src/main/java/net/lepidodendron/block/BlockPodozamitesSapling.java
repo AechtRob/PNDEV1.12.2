@@ -144,6 +144,7 @@ public class BlockPodozamitesSapling extends ElementsLepidodendronMod.ModElement
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
+					$_dependencies.put("SaplingSpawn", true);
 					ProcedureWorldGenPodozamites.executeProcedure($_dependencies);
 				}
 	        }

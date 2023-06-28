@@ -1,0 +1,32 @@
+{
+	"name": "Eunotosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/eunotosaurus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_eunotosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eunotosaurus",
+			"title": "Eunotosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands, Lowlands$(br2)>Reptilia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/eunotosaurus.png"],
+			"title": "E. africanus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eunotosaurus",
+			"type": "text",
+			"text": "Eunotosaurus is a Permian reptile that could possibly have been related to turtles or parareptiles. It had wide and flat ribs which looked like a primitive turtle shell however, it is possible that these turtle like features evolved separately and it may not have been a primitive turtle relative at all."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eunotosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}
+

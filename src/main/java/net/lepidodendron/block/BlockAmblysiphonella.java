@@ -525,7 +525,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sponge");
+				tooltip.add("Type: Marine Sponge");
 				tooltip.add("Periods: late Carboniferous - Permian [- early Triassic(?)]");
 				tooltip.add("Propagation: n/a");
 			}

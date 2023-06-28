@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.block.BlockBryozoanReef;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -65,21 +66,31 @@ public class BryozoanReefGenerator extends WorldGenerator
 				&& !worldIn.isAirBlock(new BlockPos(j+1, k, l))
 				&& !worldIn.isAirBlock(new BlockPos(j-1, k, l))) {
 
-				//figure out a position and facing to place this at!
-				//First try regular uprights and then the rotations:
-				EnumFacing enumfacing = EnumFacing.UP;
 				BlockPos pos = new BlockPos(j, k - 1, l);
 				if (((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
-					|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
-					&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
+						&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 				)
 				{
+					int ii = rand.nextInt(4);
+					if (ii == 0) {
+						this.state = this.state.withProperty(BlockBryozoanReef.FACING, EnumFacing.NORTH);
+					}
+					if (ii == 1) {
+						this.state = this.state.withProperty(BlockBryozoanReef.FACING, EnumFacing.EAST);
+					}
+					if (ii == 2) {
+						this.state = this.state.withProperty(BlockBryozoanReef.FACING, EnumFacing.SOUTH);
+					}
+					if (ii == 3) {
+						this.state = this.state.withProperty(BlockBryozoanReef.FACING, EnumFacing.WEST);
+					}
 					worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
 				}
 			}

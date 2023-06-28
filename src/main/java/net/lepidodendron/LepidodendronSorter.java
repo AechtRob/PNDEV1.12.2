@@ -3867,6 +3867,7 @@ public class LepidodendronSorter {
     public static final int submarine_boat_item = 5009;
 
 
+    public static final int glass_sponge = 5010;
 
 
 

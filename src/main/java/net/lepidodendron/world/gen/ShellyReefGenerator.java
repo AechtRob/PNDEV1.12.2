@@ -203,7 +203,7 @@ public class ShellyReefGenerator extends WorldGenerator
 		return true;
 	}
 	
-	public IBlockState getShellyState(IBlockState state, Random rand) {
+	public static IBlockState getShellyState(IBlockState state, Random rand) {
 		int i = rand.nextInt(4);
 		switch (i) {
 			case 0:

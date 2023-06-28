@@ -88,8 +88,6 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeReefOverrideBiomes))
 			biomeCriteria = true;
 
-		if (matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeReefOverrideBiomes))
-			biomeCriteria = true;
 
 		if (!biomeCriteria)
 			return;

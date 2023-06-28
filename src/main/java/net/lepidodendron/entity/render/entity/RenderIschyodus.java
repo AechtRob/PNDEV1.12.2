@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderIschyodus extends RenderLiving<EntityPrehistoricFloraIschyodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ischyodus.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ischyodus_f.png");
 
     public static float getScaler() {
         return 0.8F * 0.55F;
@@ -20,6 +21,9 @@ public class RenderIschyodus extends RenderLiving<EntityPrehistoricFloraIschyodu
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraIschyodus entity) {
+        if(entity.getIsFemale()){
+            return RenderIschyodus.TEXTURE_F;
+        }
         return RenderIschyodus.TEXTURE;
     }
 

@@ -175,7 +175,7 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand) {
 				biomeCriteria = true;
 			}
 			else {

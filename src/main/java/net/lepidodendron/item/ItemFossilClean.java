@@ -449,6 +449,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_blastoid_3_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_blourugia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_blue_sponge_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_glass_sponge_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_amblysiphonella_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bobasatrania_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bolbitis_clean", "inventory"),
