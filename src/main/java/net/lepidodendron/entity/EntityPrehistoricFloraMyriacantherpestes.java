@@ -8,7 +8,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
-import net.lepidodendron.entity.render.entity.RenderArthropleura;
+import net.lepidodendron.entity.render.entity.RenderMyriacantherpestes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -272,57 +272,56 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 		} return LepidodendronMod.MYRIACANTHERPESTES_LOOT;
 	}
 
-	/*
+
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetPlinth() { return 0.56; }
-	public static double offsetWall(@Nullable String variant) { return 0.05; }
+	public static double offsetWall(@Nullable String variant) {
+		return -0.3;
+	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0.8;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
+		return -0.04F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.2;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
+		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.1;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.1;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 1.4;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.05F;
+		return -0.17F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.3;
+		return 0.6;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
+		return 0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderDisplays.TEXTURE_MYRIACANTHERPESTES;
+		return RenderMyriacantherpestes.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelMyriacantherpestes;
 	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderArthropleura.getScaler();
-	}
-	*/
+	public static float getScaler(@Nullable String variant) {return RenderMyriacantherpestes.getScaler();}
+
 }
