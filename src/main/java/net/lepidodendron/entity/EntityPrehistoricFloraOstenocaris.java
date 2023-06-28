@@ -173,7 +173,7 @@ public class EntityPrehistoricFloraOstenocaris extends EntityPrehistoricFloraFis
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.36; }
+	public static double offsetCase(@Nullable String variant) { return 0.36; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
