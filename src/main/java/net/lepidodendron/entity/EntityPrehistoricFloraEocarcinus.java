@@ -152,7 +152,7 @@ public class EntityPrehistoricFloraEocarcinus extends EntityPrehistoricFloraTril
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.34; }
+	public static double offsetCase(@Nullable String variant) { return 0.34; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

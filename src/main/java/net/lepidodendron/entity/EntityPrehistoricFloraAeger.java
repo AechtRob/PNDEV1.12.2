@@ -258,7 +258,7 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 
 	//Rendering taxidermy:
 	//--------------------
-//	public static double offsetCase() { return 0.19; }
+//	public static double offsetCase(@Nullable String variant) { return 0.19; }
 //
 //	public static double offsetWall(@Nullable String variant) {
 //		return 0.01;

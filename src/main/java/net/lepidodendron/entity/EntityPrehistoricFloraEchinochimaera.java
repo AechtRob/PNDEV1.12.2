@@ -228,7 +228,7 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.46; }
+	public static double offsetCase(@Nullable String variant) { return 0.46; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.08;
