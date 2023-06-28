@@ -961,20 +961,57 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDesertReborn);
             }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_sandy")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_pleuromeia_beds")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_desert")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDesertPF);
             }
             if (LepidodendronConfig.doSpawnsFossilsArcheology) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesFA);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDesertFA);
             }
             if (LepidodendronConfig.doSpawnsReborn) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesReborn);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDesertReborn);
             }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_pleuromeia_beds")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsPleuromeiaPF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesFA);
+//            }
+//            if (LepidodendronConfig.doSpawnsReborn) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje_edge")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsSphenopterisPF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesFA);
+//            }
+//            if (LepidodendronConfig.doSpawnsReborn) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsWoodlandPF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesFA);
+//            }
+//            if (LepidodendronConfig.doSpawnsReborn) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsPoljePF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesFA);
+//            }
+//            if (LepidodendronConfig.doSpawnsReborn) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsDunesReborn);
+//            }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_broken")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_canyons")) {
