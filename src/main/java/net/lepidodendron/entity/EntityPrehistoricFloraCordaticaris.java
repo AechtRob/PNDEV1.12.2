@@ -3,19 +3,16 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWander;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderAegirocassis;
+import net.lepidodendron.entity.render.entity.RenderCordaticaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemEggsAegirocassis;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -183,60 +180,58 @@ public class EntityPrehistoricFloraCordaticaris extends EntityPrehistoricFloraAg
 		return LepidodendronMod.CORDATICARIS_LOOT;
 	}
 
-	/*
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return 0.25;
+		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1;
+		return 1.4;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 1;
+		return 0.8;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.3;
+		return 0.4;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.3;
+		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 1.3;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.5;
+		return 1.3;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.3;
+		return 0.4;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.5;
+		return 0.4;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.09F;
+		return -0.15F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderDisplays.TEXTURE_AEGIROCASSIS;
+		return RenderCordaticaris.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAegirocassis;
+		return RenderDisplays.modelCordaticaris;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderAegirocassis.getScaler();
+		return RenderCordaticaris.getScaler();
 	}
 
-	 */
 }
 

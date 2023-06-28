@@ -10,7 +10,7 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderSaltriovenator;
+import net.lepidodendron.entity.render.entity.RenderCeratosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -345,10 +345,10 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.3;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.3;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 1.4;
@@ -364,12 +364,12 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderSaltriovenator.TEXTURE;
+		return RenderCeratosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelSaltriovenator;
+		return RenderDisplays.modelCeratosaurus;
 	}
-	public static float getScaler(@Nullable String variant) {return RenderSaltriovenator.getScaler();}
+	public static float getScaler(@Nullable String variant) {return RenderCeratosaurus.getScaler();}
 
 }
