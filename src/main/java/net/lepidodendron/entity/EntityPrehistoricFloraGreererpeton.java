@@ -322,22 +322,22 @@ public class EntityPrehistoricFloraGreererpeton extends EntityPrehistoricFloraSw
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.5;
+		return 0.35;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.85;
+		return 0.35;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.15;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -1.9;
+		return -0.3;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.15;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 1.8;
+		return 0.1;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
