@@ -295,7 +295,7 @@ public class BlockTrapWater extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
-		public void makeTrapped(World world, BlockPos pos) {
+		public static void makeTrapped(World world, BlockPos pos) {
 			if (hasTrapped(world, pos)) {
 				return;
 			}
@@ -442,9 +442,10 @@ public class BlockTrapWater extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityTrapWater extends TileEntityLockableLoot implements ISidedInventory {
+	public static class TileEntityTrapWater extends TileEntityLockableLoot implements ISidedInventory, ITickable {
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
-		
+		private int ticker;
+
 		public boolean isEmpty()
 		{
 			for (ItemStack itemstack : this.forgeContents)
@@ -617,6 +618,21 @@ public class BlockTrapWater extends ElementsLepidodendronMod.ModElement {
 			return new AxisAlignedBB(pos.getX() - 2, pos.getY(), pos.getZ() - 2, pos.getX() + 3, pos.getY() + 2, pos.getZ() + 3);
 		}
 
+		@Override
+		public void update() {
+			if (!this.getWorld().isRemote) {
+				--this.ticker;
 
+				if (this.ticker <= 0) {
+					this.ticker = 2400;
+				}
+
+				if (this.getWorld().rand.nextInt(this.ticker) == 0) {
+					BlockTrapWater.BlockCustom.makeTrapped(this.getWorld(), this.getPos());
+					this.ticker = 2400;
+				}
+			}
+		}
 	}
+
 }
