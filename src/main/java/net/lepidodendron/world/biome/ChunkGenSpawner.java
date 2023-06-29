@@ -45,7 +45,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         super(instance, 42);
     }
 
+
     public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen) {
+        executeProcedure(onlyWater, world, pos, rand, mobList, worldGen, false);
+    }
+
+    public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen, boolean genLakes) {
 
         double spawnDensity = LepidodendronConfig.spawnerDensity;
         if (spawnDensity < 0.0) {
@@ -63,9 +68,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         while (throttle <= 100 && spawnerCycle < (int)Math.ceil((10D * spawnDensity))) {
             BlockPos spawnPos = pos.add(16, 0, 16); //move to the centre of the 2x2 of chunks we are populating
             spawnPos = spawnPos.add(rand.nextInt(16) - 8, 0, rand.nextInt(16) - 8); //Pick a random coordinate around
-
+            if (genLakes) {
+                spawnPos = pos;
+            }
             //Get mob list and pick a mob for this biome:
             boolean TriassicCanyons = false;
+            boolean Creeks = false;
             String[] MobString = new String[0];
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
@@ -75,6 +83,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {
                     TriassicCanyons = true;
+                }
+                if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
+                    //That one is named differently :/
+                    if (biome.getRegistryName().toString().startsWith("lepidodendron:")
+                        && biome.getRegistryName().toString().indexOf("creek") > 0) {
+                        Creeks = true;
+                    }
                 }
             } else {
                 MobString = mobList;
@@ -978,8 +993,16 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             }
                                                         }
 
+                                                        //Deal with bumping up creek spawns:
+                                                        if (Creeks) {
+                                                            weight = weight * 10;
+                                                        }
+
                                                         if ((Math.random() * weighter) <= (double) weight) {
                                                             //System.err.println("Trying......");
+//                                                            if (entity instanceof EntityPrehistoricFloraKalbarria) {
+//                                                                int ll = 0;
+//                                                            }
                                                             int spawnQty = 0;
                                                             if (maxSpawn >= 1) {
                                                                 spawnQty = rand.nextInt(maxSpawn) + 1;

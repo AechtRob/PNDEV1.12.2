@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "late Devonian";}

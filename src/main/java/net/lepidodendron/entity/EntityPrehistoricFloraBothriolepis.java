@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "Devonian";}

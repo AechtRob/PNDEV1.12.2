@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -36,6 +37,7 @@ public class WorldGenDevonianLakes extends WorldGenerator
             position = position.down(4);
             boolean[] aboolean = new boolean[2048];
             int i = rand.nextInt(4) + 4;
+            BlockPos spawnPos = position;
 
             for (int j = 0; j < i; ++j)
             {
@@ -179,6 +181,7 @@ public class WorldGenDevonianLakes extends WorldGenerator
                 }
             }
 
+            ChunkGenSpawner.executeProcedure(false, worldIn, spawnPos, rand, null, true);
             return true;
         }
     }
