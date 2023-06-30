@@ -9,6 +9,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnLaidleria;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.PathNavigateAmphibian;
+import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -22,6 +24,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +41,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimmingAmphibianBase {
 	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLaidleria.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLaidleria.class, DataSerializers.VARINT);
 	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraLaidleria.class, DataSerializers.BOOLEAN);
@@ -50,13 +53,83 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraLaidleria(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
+		//this.navigator = new PathNavigateSwimmer(this, world);
+		if (this.isInWater()) {
+			this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+			this.navigator = new PathNavigateSwimmer(this, world);
+			this.isWaterNavigator = true;
+			this.isSeekingWater = false;
+		}
+		else {
+			if (isNearWater(this, this.getPosition())) {
+				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+				this.navigator = new PathNavigateAmphibian(this, world);
+				this.isWaterNavigator = false;
+				this.isSeekingWater = false;
+			}
+			else {//Find water!
+				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+				this.navigator = new PathNavigateAmphibianFindWater(this, world);
+				this.setPathPriority(PathNodeType.WATER, 10F);
+				this.isWaterNavigator = false;
+				this.isSeekingWater = true;
+			}
+		}
 		setSize(0.5F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Override
+	public void selectNavigator () {
+		if (this.isInWater() && !this.isWaterNavigator) {
+			this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+			this.navigator = new PathNavigateSwimmer(this, world);
+			this.isWaterNavigator = true;
+			this.isSeekingWater = false;
+			this.navigator.clearPath();
+			//System.err.println("Navigator changed to " + this.navigator);
+		}
+		else {
+			if (!this.isInWater() && isNearWater(this, this.getPosition()) && (this.isWaterNavigator || this.isSeekingWater)) {
+				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+				this.navigator = new PathNavigateAmphibian(this, world);
+				this.isWaterNavigator = false;
+				this.isSeekingWater = false;
+				this.navigator.clearPath();
+				//System.err.println("Navigator changed to " + this.navigator);
+			}
+			else {//Find water!
+				if (!this.isInWater() && !isNearWater(this, this.getPosition()) && (this.isWaterNavigator || !this.isSeekingWater)) {
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibianFindWater(this, world);
+					this.setPathPriority(PathNodeType.WATER, 10F);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = true;
+					this.navigator.clearPath();
+					//System.err.println("Navigator changed to " + this.navigator);
+				}
+			}
+		}
+	}
+
+	@Override
+	protected float getAISpeedSwimmingAmphibian() {
+		if (this.isReallyInWater()) {
+			if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+				return 0;
+			}
+			return 0.232f;
+		}
+		return 0.156F;
+	}
+
+	@Override
+	public int WaterDist() {
+		return 6;
 	}
 
 	@Override
@@ -128,13 +201,13 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 		return 128000;
 	}
 
-	@Override
-	protected float getAISpeedFish() {
-		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
-			return 0;
-		}
-		return 0.232f;
-	}
+//	@Override
+//	protected float getAISpeedFish() {
+//		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+//			return 0;
+//		}
+//		return 0.232f;
+//	}
 
 	@Override
 	protected void entityInit() {
@@ -192,10 +265,10 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 		this.dataManager.set(BOTTOM_FLAG, flag);
 	}
 
-	@Override
-	protected boolean isSlowAtBottom() {
-		return true;
-	}
+//	@Override
+//	protected boolean isSlowAtBottom() {
+//		return true;
+//	}
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
@@ -209,7 +282,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.85F, 300));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -478,7 +551,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 				float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
 				this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 10.0F);
-				float speed = getAISpeedFish();
+				float speed = getAISpeedSwimmingAmphibian();
 				this.EntityBase.setAIMoveSpeed(speed);
 
 				if (this.EntityBase.isAtBottom()) {

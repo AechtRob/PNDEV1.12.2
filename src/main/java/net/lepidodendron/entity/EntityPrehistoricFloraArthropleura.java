@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 	@Override
 	public boolean canJar() {
-		return true;
+		return false;
 	}
 
 	@Override

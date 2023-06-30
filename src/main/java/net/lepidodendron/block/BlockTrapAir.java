@@ -136,7 +136,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				return false;
 			}
 
-			if (ItemGlassJarItem.ItemCustom.isTargetInList(target)) { //catch the mob
+			if (ItemGlassJarItem.ItemCustom.isTargetInList(target, playerIn)) { //catch the mob
 				stack.shrink(1);
 				//Pick up this entity with the Jar:
 				ItemHandlerHelper.giveItemToPlayer(playerIn, BlockGlassJar.BlockCustom.createJarWithEntity(target));
@@ -522,12 +522,12 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				--this.ticker;
 
 				if (this.ticker <= 0) {
-					this.ticker = 2400;
+					this.ticker = 1200;
 				}
 
 				if (this.getWorld().rand.nextInt(this.ticker) == 0) {
 					BlockTrapAir.BlockCustom.makeTrapped(this.getWorld(), this.getPos());
-					this.ticker = 2400;
+					this.ticker = 1200;
 				}
 			}
 		}

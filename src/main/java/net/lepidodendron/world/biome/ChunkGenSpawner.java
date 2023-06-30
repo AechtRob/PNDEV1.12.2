@@ -74,6 +74,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             //Get mob list and pick a mob for this biome:
             boolean TriassicCanyons = false;
             boolean Creeks = false;
+            boolean Deserts = false;
             String[] MobString = new String[0];
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
@@ -84,11 +85,24 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {
                     TriassicCanyons = true;
                 }
-                if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
+                //if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
                     //That one is named differently :/
                     if (biome.getRegistryName().toString().startsWith("lepidodendron:")
                         && biome.getRegistryName().toString().indexOf("creek") > 0) {
                         Creeks = true;
+                    }
+                    if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
+                    ){
+                        Creeks = true;
+                    }
+                //}
+                if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
+                    //That one is named differently :/
+                    if (biome.getRegistryName().toString().startsWith("lepidodendron:")
+                            && biome.getRegistryName().toString().indexOf("desert") > 0) {
+                        Deserts = true;
                     }
                 }
             } else {
@@ -979,10 +993,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                         if (locationID == 2) { //Sea
                                                             weighter = 800D;
                                                         }
-                                                        if (locationID == 1 | locationID == 6 || locationID == 7) { //Land and thin sea layers more common
-                                                            weighter = 100D;
+                                                        if (locationID == 1 || locationID == 6 || locationID == 7 || locationID == 8) { //Land and thin sea layers more common
+                                                            weighter = 125D;
                                                         }
-
+                                                        if (locationID == 5) { //Leaves more common
+                                                            weighter = 200D;
+                                                        }
                                                         //trySpawn += 1;
 
                                                         //Deal with rare spawns:
@@ -994,8 +1010,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                         }
 
                                                         //Deal with bumping up creek spawns:
-                                                        if (Creeks) {
-                                                            weight = weight * 10;
+                                                        if (Creeks && locationID != 1) {
+                                                            weighter = weighter * 0.225;
+                                                        }
+
+                                                        //Deal with reducing desert spawns on land:
+                                                        else if (Deserts && locationID == 1) {
+                                                            weighter = weighter * 1.35;
                                                         }
 
                                                         if ((Math.random() * weighter) <= (double) weight) {

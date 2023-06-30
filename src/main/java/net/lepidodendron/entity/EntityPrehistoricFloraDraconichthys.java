@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraDraconichthys extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.40;
 	}
 
 	public static String getPeriod() {return "Devonian";}

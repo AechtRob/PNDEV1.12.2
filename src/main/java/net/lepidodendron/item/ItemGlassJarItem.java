@@ -30,6 +30,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -85,7 +86,7 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 			setMaxStackSize(16);
 		}
 
-		public static boolean isTargetInList(EntityLivingBase target) {
+		public static boolean isTargetInList(EntityLivingBase target, EntityPlayer playerIn) {
 			if (target == null) {
 				return false;
 			}
@@ -112,6 +113,9 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 			if (Arrays.asList(MobString).contains(EntityList.getKey(target).toString())) {
 				return true;
 			}
+			if (playerIn.getEntityWorld().isRemote) {
+				playerIn.sendMessage(new TextComponentString(target.getName() + " will not go into jars"));
+			}
 			return false;
 		}
 
@@ -121,7 +125,7 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 			if (isEntityFromItemStack(stack)) {
 				return super.itemInteractionForEntity(stack, playerIn, target, hand);
 			}
-			else if (isTargetInList(target)) { //catch the mob
+			else if (isTargetInList(target, playerIn)) { //catch the mob
 				ItemStack stackJar = new ItemStack(ItemGlassJarItem.block, (int) (1));
 				stackJar.setCount(1);
 				stack.shrink(1);

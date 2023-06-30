@@ -383,7 +383,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Airborne Creature Trap", 30, 7 - 16, 4210752);
+            this.fontRenderer.drawString("Invertebrate Creature Trap", 25, 7 - 16, 4210752);
             if (this.getEntity() != null) {
                 this.fontRenderer.drawString("Power the block", 50, 18 + 40 - 19, 4210752);
                 this.fontRenderer.drawString("to release the trapped", 31,
