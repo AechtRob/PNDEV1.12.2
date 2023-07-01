@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraPurlovia extends EntityPrehistoricFloraDiicto
 		return false;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.475F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

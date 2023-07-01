@@ -21,7 +21,7 @@ public class EntityLookIdleAI extends EntityAIBase
     {
         if (this.idleEntity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.idleEntity;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+            if (landbase.getAnimation() != landbase.NO_ANIMATION) {
                 return false;
             }
         }

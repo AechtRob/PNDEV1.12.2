@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.5F;
 	}
 

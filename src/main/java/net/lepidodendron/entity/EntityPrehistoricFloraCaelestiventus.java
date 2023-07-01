@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.285F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.18F;
 	}
 

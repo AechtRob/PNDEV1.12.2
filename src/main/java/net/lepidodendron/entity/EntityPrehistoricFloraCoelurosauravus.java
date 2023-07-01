@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.377F;
 	}
 

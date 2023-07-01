@@ -91,7 +91,7 @@ public class EntityPrehistoricFloraStahleckeria extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

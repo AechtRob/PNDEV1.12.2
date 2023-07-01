@@ -93,7 +93,7 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.36f;
 	}
 

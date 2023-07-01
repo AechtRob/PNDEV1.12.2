@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Kreischeria extends EntityPrehi
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.5F;
 	}
 

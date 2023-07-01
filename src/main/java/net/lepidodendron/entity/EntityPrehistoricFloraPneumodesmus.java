@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.35f;
 	}
 

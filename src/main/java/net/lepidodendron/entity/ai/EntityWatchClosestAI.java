@@ -39,7 +39,7 @@ public class EntityWatchClosestAI extends EntityAIBase
     {
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+            if (landbase.getAnimation() != landbase.NO_ANIMATION) {
                 return false;
             }
         }

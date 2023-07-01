@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.1f;
 	}
 

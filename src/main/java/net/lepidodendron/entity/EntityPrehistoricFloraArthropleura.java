@@ -90,7 +90,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.375f * (float)Math.max(0.6, this.getAgeScale());
 	}
 

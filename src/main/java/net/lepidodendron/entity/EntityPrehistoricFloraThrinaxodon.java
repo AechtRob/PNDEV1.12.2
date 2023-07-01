@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDii
 		return 160;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.378F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

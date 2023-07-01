@@ -310,7 +310,7 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.36f;
 	}
 

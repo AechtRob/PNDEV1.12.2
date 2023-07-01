@@ -97,7 +97,7 @@ public class EntityPrehistoricFloraEuparkeria extends EntityPrehistoricFloraLand
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

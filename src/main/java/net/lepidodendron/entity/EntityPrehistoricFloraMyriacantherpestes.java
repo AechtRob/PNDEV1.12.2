@@ -90,7 +90,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.2f * (float)Math.max(0.6, this.getAgeScale());
 	}
 

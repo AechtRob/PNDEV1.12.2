@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.322F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

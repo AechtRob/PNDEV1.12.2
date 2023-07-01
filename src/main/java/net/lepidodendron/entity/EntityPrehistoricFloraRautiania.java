@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraRautiania extends EntityPrehistoricFloraWeige
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.385F;
 	}
 

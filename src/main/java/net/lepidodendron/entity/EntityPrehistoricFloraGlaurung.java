@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraGlaurung extends EntityPrehistoricFloraWeigel
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.395F;
 	}
 

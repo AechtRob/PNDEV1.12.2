@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Permotarbus extends EntityPrehi
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.5F;
 	}
 

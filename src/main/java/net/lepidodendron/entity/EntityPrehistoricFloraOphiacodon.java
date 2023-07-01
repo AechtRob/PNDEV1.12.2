@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float calcSpeed = 0.288F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

@@ -38,6 +38,9 @@ public class LandWanderAvoidWaterClimbingAI extends EntityAIBase
     public boolean shouldExecute()
     {
 
+        if (!(entity.getAISpeedLand() > 0)) {
+            return false;
+        }
         if (entity.getAnimation() == entity.DRINK_ANIMATION) {
             return false;
         }

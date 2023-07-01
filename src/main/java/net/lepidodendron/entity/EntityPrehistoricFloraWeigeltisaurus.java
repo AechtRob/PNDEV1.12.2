@@ -166,7 +166,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.375F;
 	}
 

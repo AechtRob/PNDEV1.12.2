@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraSphenotitan extends EntityPrehistoricFloraLan
 	}
 
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

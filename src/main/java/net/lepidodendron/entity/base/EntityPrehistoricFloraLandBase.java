@@ -298,7 +298,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return this.getAISpeedLand();
     }
 
-    protected abstract float getAISpeedLand();
+    public abstract float getAISpeedLand();
 
     protected float getAISpeedSwimmingLand() {
         return getAISpeedLand();

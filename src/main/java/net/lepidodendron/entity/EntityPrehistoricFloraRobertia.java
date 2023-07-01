@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiicto
 		maxHealthAgeable = 8.0D;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.288F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

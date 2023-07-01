@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraM
 	//public static String getHabitat() {return "Terrestrial mammaliaform";}
 
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.591F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

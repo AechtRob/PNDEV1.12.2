@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPr
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.5F;
 	}
 

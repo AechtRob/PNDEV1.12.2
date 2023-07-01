@@ -36,7 +36,7 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.521F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

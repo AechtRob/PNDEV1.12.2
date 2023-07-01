@@ -42,6 +42,9 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
         if (entity.getAnimation() == entity.DRINK_ANIMATION) {
             return false;
         }
+        if (!(entity.getAISpeedLand() > 0)) {
+            return false;
+        }
         if (entity instanceof EntityPrehistoricFloraPlateosaurus) {
             EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) entity;
             if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {

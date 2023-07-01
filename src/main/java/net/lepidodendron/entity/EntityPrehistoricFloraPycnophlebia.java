@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 
 	public static String getPeriod() {return "Jurassic";}
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.18F;
 	}
 

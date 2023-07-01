@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraScorpion_Gondwanascorpio extends EntityPrehis
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.4F;
 	}
 
