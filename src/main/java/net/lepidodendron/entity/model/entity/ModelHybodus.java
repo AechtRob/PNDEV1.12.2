@@ -9,7 +9,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import scala.util.parsing.combinator.PackratParsers;
 
 public class ModelHybodus extends AdvancedModelBase {
     private final AdvancedModelRenderer Hybodus;

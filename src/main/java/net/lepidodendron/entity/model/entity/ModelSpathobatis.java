@@ -3,17 +3,12 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraEocarcinus;
-import net.lepidodendron.entity.EntityPrehistoricFloraIschyodus;
-import net.lepidodendron.entity.EntityPrehistoricFloraProtospinax;
 import net.lepidodendron.entity.EntityPrehistoricFloraSpathobatis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 
 public class ModelSpathobatis extends AdvancedModelBase {
     private ModelAnimator animator;

@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMorganucodon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelMorganucodon extends AdvancedModelBaseExtended {

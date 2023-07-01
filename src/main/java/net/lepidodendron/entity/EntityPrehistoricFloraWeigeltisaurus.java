@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockRottenLog;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandWanderAvoidWaterClimbingAI;
 import net.lepidodendron.entity.ai.LandWanderNestInBlockAI;
@@ -27,7 +28,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.MobEffects;
@@ -233,7 +233,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 		tasks.addTask(2, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new LandWanderNestInBlockAI(this));
 		tasks.addTask(4, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
-		tasks.addTask(5, new EntityAILookIdle(this));
+		tasks.addTask(5, new EntityLookIdleAI(this));
 	}
 
 	@Override

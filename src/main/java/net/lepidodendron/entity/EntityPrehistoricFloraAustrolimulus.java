@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
@@ -11,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -98,7 +98,7 @@ public class EntityPrehistoricFloraAustrolimulus extends EntityPrehistoricFloraW
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) 0.5F));
 		tasks.addTask(2, new WalkingAmphibianWander(this, NO_ANIMATION, 0.9, 0));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 	}
 
 	@Override

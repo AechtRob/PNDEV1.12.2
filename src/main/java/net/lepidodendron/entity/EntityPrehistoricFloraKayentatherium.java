@@ -7,8 +7,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -69,9 +67,9 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
 		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(11, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(12, new EntityAILookIdle(this));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(12, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1));
 		this.targetTasks.addTask(2, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}

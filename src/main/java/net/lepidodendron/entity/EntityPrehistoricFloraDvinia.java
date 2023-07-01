@@ -12,8 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectB
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -177,9 +175,9 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		tasks.addTask(5, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
 		tasks.addTask(7, new GrappleAI(this, 1.0D, false, this.getLookLength(), this.getGrappleAnimation(), 0.225));
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityAILookIdle(this));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraCrawlingFlyingInsectBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

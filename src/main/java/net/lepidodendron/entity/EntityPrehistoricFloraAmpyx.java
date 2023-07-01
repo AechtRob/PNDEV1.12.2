@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -95,7 +94,7 @@ public class EntityPrehistoricFloraAmpyx extends EntityPrehistoricFloraTrilobite
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
 		tasks.addTask(1, new ShoalTrilobiteBottomAI(this, 1, true));
 		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
 	}
 

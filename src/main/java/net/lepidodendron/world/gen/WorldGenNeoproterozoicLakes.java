@@ -1,6 +1,9 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockBacterialLayer;
+import net.lepidodendron.block.BlockVolcanicAsh;
+import net.lepidodendron.block.BlockVolcanicAshDark;
+import net.lepidodendron.block.BlockVolcanicAshLight;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;

@@ -5,13 +5,13 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.ai.LandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
@@ -337,7 +337,7 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	protected void initEntityAI() {
 		tasks.addTask(0, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(1, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
 	}
 
 	@Override

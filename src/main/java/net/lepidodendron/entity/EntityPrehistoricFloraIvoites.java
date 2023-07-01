@@ -11,7 +11,6 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsIvoites;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -88,7 +87,7 @@ public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautilo
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 

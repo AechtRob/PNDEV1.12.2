@@ -16,7 +16,6 @@ import net.lepidodendron.item.entities.ItemEggsOmnidens;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityVillager;
@@ -197,7 +196,7 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishBaseWalkBottom(this, NO_ANIMATION));
-		tasks.addTask(4, new EntityAILookIdle(this));
+		tasks.addTask(4, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));

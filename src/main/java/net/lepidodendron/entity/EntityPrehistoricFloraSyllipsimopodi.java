@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.entities.ItemNautiloidEggsSyllipsimopodi;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -84,7 +83,7 @@ public class EntityPrehistoricFloraSyllipsimopodi extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(2, new NautiloidWanderSurface(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 

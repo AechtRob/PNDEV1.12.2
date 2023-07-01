@@ -1,6 +1,8 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockTreefernBlackLog;
+import net.lepidodendron.block.BlockTreefernBlackShoot;
+import net.lepidodendron.block.BlockTreefernBlackShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBlack;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

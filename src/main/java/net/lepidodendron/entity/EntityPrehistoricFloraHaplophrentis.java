@@ -109,7 +109,7 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		//tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) 0.5F));
 		tasks.addTask(2, new WalkingAmphibianWander(this, NO_ANIMATION, 1, 0));
-		//tasks.addTask(3, new EntityAILookIdle(this));
+		//tasks.addTask(3, new EntityLookIdleAI(this));
 	}
 
 	@Override

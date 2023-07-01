@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicates;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -40,6 +41,12 @@ public class EntityWatchClosestAI extends EntityAIBase
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.entity;
             if (landbase.getAnimation() != landbase.NO_ANIMATION) {
+                return false;
+            }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.entity;
+            if (flybase.isReallyFlying()) {
                 return false;
             }
         }

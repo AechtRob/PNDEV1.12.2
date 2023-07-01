@@ -1,7 +1,8 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.block.BlockDNARecombinerForge;
-import net.lepidodendron.entity.model.tile.*;
+import net.lepidodendron.entity.model.tile.ModelDNARecombinerForgeFog;
+import net.lepidodendron.entity.model.tile.ModelDNARecombinerForgeOligopool;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;

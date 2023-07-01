@@ -11,7 +11,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
@@ -86,7 +85,7 @@ public class EntityPrehistoricFloraScorpion_Opsieobuthus extends EntityPrehistor
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new LandEntitySwimmingAI(this, 0.15, true));
 		tasks.addTask(4, new LandWanderAvoidWaterClimbingAI(this, 0.8D));
-		tasks.addTask(5, new EntityAILookIdle(this));
+		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}

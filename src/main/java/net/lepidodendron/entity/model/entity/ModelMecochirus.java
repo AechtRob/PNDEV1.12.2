@@ -2,7 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEocarcinus;
 import net.lepidodendron.entity.EntityPrehistoricFloraMecochirus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

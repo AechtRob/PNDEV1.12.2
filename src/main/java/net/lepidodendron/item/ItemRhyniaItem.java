@@ -4,7 +4,6 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockRhacophyton;
 import net.lepidodendron.block.BlockRhyniaLand;
 import net.lepidodendron.block.BlockRhyniaWater;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;

@@ -11,7 +11,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -71,7 +70,7 @@ public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEury
 		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new EurypteridWander(this, NO_ANIMATION));
-		tasks.addTask(4, new EntityAILookIdle(this));
+		tasks.addTask(4, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 	}
 

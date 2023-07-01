@@ -7,30 +7,23 @@ import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.block.BlockDollyphyton;
 import net.lepidodendron.block.BlockEdwardsiphyton;
 import net.lepidodendron.block.BlockSelaginella;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
-import net.lepidodendron.entity.render.entity.RenderGyrosteus;
 import net.lepidodendron.entity.render.entity.RenderHelenodora;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.entities.ItemLandSnail;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -115,7 +108,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 	}
 
 	@Override

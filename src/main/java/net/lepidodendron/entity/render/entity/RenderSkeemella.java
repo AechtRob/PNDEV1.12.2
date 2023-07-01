@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSkeemella;
-import net.lepidodendron.entity.EntityPrehistoricFloraVetulicola;
 import net.lepidodendron.entity.model.entity.ModelSkeemella;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

@@ -1,7 +1,5 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraMegateuthis;
-import net.lepidodendron.entity.EntityPrehistoricFloraPassaloteuthis;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;

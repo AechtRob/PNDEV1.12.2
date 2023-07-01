@@ -5,17 +5,13 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.SwimmingBottomWalkingSwimBottomDweller;
-import net.lepidodendron.entity.ai.SwimmingBottomWalkingWalk;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderProteroctopus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.client.model.ModelBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
-import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -129,7 +125,7 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new SwimmingBottomWalkingSwimBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(2, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 

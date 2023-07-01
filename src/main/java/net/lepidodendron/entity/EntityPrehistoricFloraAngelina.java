@@ -5,16 +5,15 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteSwimBase;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteSwimBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderSwim;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
 import net.lepidodendron.entity.render.entity.RenderAngelina;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -84,7 +83,7 @@ public class EntityPrehistoricFloraAngelina extends EntityPrehistoricFloraTrilob
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteSwimBase(this, 1));
 		tasks.addTask(1, new TrilobiteWanderSwim(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteSwimBase(this));
 	}
 

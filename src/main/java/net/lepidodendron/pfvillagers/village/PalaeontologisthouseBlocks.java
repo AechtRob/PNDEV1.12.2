@@ -1,9 +1,9 @@
 package net.lepidodendron.pfvillagers.village;
 
 import net.lepidodendron.block.BlockAcaciaBridge;
-import net.lepidodendron.block.base.BlockBridgePF;
 import net.lepidodendron.block.BlockOakBridge;
 import net.lepidodendron.block.BlockSpruceBridge;
+import net.lepidodendron.block.base.BlockBridgePF;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;

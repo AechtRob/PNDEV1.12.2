@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeurites;
 import net.lepidodendron.entity.model.entity.ModelMeganeurites;
-import net.lepidodendron.entity.model.entity.ModelMeganeuropsis;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;

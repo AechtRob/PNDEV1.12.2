@@ -7,6 +7,7 @@ import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.block.BlockDollyphyton;
 import net.lepidodendron.block.BlockEdwardsiphyton;
 import net.lepidodendron.block.BlockSelaginella;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
@@ -15,7 +16,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
@@ -109,7 +109,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 	}
 
 	@Override
