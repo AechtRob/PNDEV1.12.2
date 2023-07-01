@@ -181,7 +181,7 @@ public class EntityPrehistoricFloraJianshanopodia extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getLookTick() == 1000 && this.currentAnimation == NO_ANIMATION) {
 			this.setAnimation(LOOK_ANIMATION);

@@ -181,7 +181,7 @@ abstract public class EntityPrehistoricFloraScorpion extends EntityPrehistoricFl
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 		//if (this.getAnimation() == ATTACK_ANIMATION) {
 		//	System.err.println("attack tick " + this.getAnimationTick());
 		//}

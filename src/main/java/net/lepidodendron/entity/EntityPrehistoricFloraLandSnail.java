@@ -161,7 +161,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();

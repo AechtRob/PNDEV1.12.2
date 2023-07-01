@@ -441,7 +441,7 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		this.world.profiler.endSection();
 
 		if (!getBuried()) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 
 		if (!this.world.isRemote) {

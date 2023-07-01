@@ -319,7 +319,7 @@ public class EntityPrehistoricFloraEglonaspis extends EntityPrehistoricFloraFish
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (!getBuried()) {this.renderYawOffset = this.rotationYaw;}
+		//if (!getBuried()) {//this.renderYawOffset = this.rotationYaw;}
 
 		if (!this.world.isRemote) {
 

@@ -150,7 +150,7 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();

@@ -208,7 +208,7 @@ public class EntityPrehistoricFloraTullimonstrum extends EntityPrehistoricFloraF
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() != NO_ANIMATION) {
 			if (world.isRemote && animationTick >= currentAnimation.getDuration()) {

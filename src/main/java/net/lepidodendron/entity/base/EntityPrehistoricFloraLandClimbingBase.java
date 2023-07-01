@@ -494,7 +494,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             }
         }
         else {
-            this.renderYawOffset = this.rotationYaw;
+            //this.renderYawOffset = this.rotationYaw;
         }
 
         super.onLivingUpdate();

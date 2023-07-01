@@ -221,7 +221,7 @@ public class EntityPrehistoricFloraCaptorhinus extends EntityPrehistoricFloraLan
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//Tail stuff:
 		if ((double)this.getTicks() / 2400D == Math.round((double)this.getTicks() / 2400D)) {

@@ -283,7 +283,7 @@ public class EntityPrehistoricFloraHaldanodon extends EntityPrehistoricFloraSwim
 		}
 
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();

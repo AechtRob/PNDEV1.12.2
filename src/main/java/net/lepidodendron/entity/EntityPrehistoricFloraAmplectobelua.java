@@ -179,7 +179,7 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 35) {
 			launchAttack();

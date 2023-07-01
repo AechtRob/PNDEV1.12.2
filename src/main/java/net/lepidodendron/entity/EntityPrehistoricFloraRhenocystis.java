@@ -165,7 +165,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	@Override

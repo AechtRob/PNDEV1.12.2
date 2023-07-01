@@ -142,7 +142,7 @@ public class EntityPrehistoricFloraSclerodus extends EntityPrehistoricFloraFishB
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {

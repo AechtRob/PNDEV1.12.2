@@ -171,7 +171,7 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 

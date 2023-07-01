@@ -152,7 +152,7 @@ public class EntityPrehistoricFloraJellyfish_Palaeo1 extends EntityPrehistoricFl
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     public void onEntityUpdate()

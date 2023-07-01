@@ -184,7 +184,7 @@ public class EntityPrehistoricFloraXenusion extends EntityPrehistoricFloraTrilob
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//if (this.getAnimation() != NO_ANIMATION) {
 			//animationTick++;

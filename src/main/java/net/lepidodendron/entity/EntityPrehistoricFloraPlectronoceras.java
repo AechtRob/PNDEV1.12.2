@@ -185,7 +185,7 @@ public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		if(this.jumpCooldown > 0) {
 			this.jumpCooldown--;
 		}

@@ -180,7 +180,7 @@ public class EntityPrehistoricFloraEricixerxes extends EntityPrehistoricFloraSwi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	@Override

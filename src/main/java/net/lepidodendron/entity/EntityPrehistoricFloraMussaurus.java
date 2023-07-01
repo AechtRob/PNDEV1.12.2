@@ -304,7 +304,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (!world.isRemote) {
 			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
@@ -321,7 +321,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		}
 
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();

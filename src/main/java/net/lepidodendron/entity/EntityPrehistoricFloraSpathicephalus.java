@@ -262,7 +262,7 @@ public class EntityPrehistoricFloraSpathicephalus extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//System.err.println("getFeedTicks " + this.getFeedTicks());
 		//System.err.println("isHungry " + this.isHungry());

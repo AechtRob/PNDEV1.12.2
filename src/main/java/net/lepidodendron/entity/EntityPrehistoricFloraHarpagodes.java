@@ -93,7 +93,7 @@ public class EntityPrehistoricFloraHarpagodes extends EntityPrehistoricFloraSlit
 
 	@Override
 	public void onLivingUpdate() {
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 		//Updated from vanilla to disable jumping
 		//Adjusted from base so that mob rotates properly and faces forwards
 		if (this.jumpTicks > 0)

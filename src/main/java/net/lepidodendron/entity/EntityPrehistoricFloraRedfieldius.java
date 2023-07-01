@@ -157,7 +157,7 @@ public class EntityPrehistoricFloraRedfieldius extends EntityPrehistoricFloraFis
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {

@@ -144,7 +144,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	@Override
