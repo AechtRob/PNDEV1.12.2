@@ -89,12 +89,12 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/saurostomus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/songaichthys_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phytophilaspis_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/proconodontus_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/ozarkodina_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/iowagnathus_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/hindeodus_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/clarkina_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/misikella_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_proconodontus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_ozarkodina_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_iowagnathus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_hindeodus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_clarkina_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_misikella_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/shaihuludia_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/ursactis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/kootenayscolex_bucket", "inventory"),
@@ -679,7 +679,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/silurolepis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/entelognathus_bucket", "inventory"),
 
-
+				new ModelResourceLocation("lepidodendron:entities/cidaroida", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/archaeocidaris", "inventory"),
 
 
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)
@@ -697,6 +698,9 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
 					ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 					String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+					if (entityNBT.hasKey("PNType")) {
+						mobname = mobname + "_" + entityNBT.getString("PNType").toString();
+					}
 					ModelResourceLocation model =  new ModelResourceLocation(LepidodendronMod.MODID +":entities/" + mobname + "_bucket", "inventory");
 					List<IResource> list = null;
 					try {
@@ -730,6 +734,9 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
 				ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 				String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+				if (entityNBT.hasKey("PNType")) {
+					mobname = mobname + "_" + entityNBT.getString("PNType").toString();
+				}
 				return I18n.translateToLocal("item.pf_mob_bucket_full.name").trim()
 						+ ": "
 						+ I18n.translateToLocal("entity." + mobname + ".name").trim();
@@ -744,6 +751,9 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
 				ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 				String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+				if (entityNBT.hasKey("PNType")) {
+					mobname = mobname + "_" + entityNBT.getString("PNType").toString();
+				}
 				return "item.pf_" + mobname + "_bucket";
 			}
 			return super.getTranslationKey(stack);
