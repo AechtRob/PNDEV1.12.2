@@ -167,7 +167,7 @@ public class LepidodendronConfig {
     public static int waterDiploceraspis = 1;
     public static int waterMastodonsaurus = 1;
     public static int waterAcanthostomatops = 6;
-    public static int waterPhlegethontia = 1;
+    public static int waterPhlegethontia = 2;
     public static int waterProterogyrinus = 7;
     public static int waterAmphibamus = 8;
     public static int waterIchthyostega = 6;
@@ -194,10 +194,10 @@ public class LepidodendronConfig {
     public static int waterMetoposaurus = 8;
     public static int waterCacops = 10;
     public static int waterDasyceps = 10;
-    public static int waterDvinosaurus = 1;
+    public static int waterDvinosaurus = 2;
     public static int waterMelosaurus = 4;
     public static int waterPantylus = 8;
-    public static int waterUranocentrodon = 1;
+    public static int waterUranocentrodon = 2;
 
     public LepidodendronConfig() {
     }

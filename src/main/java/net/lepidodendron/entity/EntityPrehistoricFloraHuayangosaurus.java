@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderHuayangosaurus;
-import net.lepidodendron.entity.render.entity.RenderKentrosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -108,7 +107,7 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.330F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
