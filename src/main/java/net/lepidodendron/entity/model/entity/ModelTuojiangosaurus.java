@@ -1535,14 +1535,52 @@ public class ModelTuojiangosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-
     public void renderStaticWall(float f) {
-
+        this.upperbody.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
+        this.frontrightleg.setScale(0,0,0);
+        this.frontleftleg.setScale(0,0,0);
+        this.frontrightleg.scaleChildren = true;
+        this.frontleftleg.scaleChildren = true;
+        this.upperbody.offsetY = -0.08F;
+        this.upperbody.offsetX = 0.0F;
+        this.upperbody.offsetZ = 0.09F;
+        this.upperbody.render(0.01F);
+        this.frontrightleg.setScale(1,1,1);
+        this.frontleftleg.setScale(1,1,1);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(main, -0.07F, 0.0F, 0.1F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.05F, -0.08F);
+        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.19F, 0.0F);
+        this.setRotateAngle(neck2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neck3, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(head, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg, -0.9F, -0.3F, 0.0F);
+        this.setRotateAngle(frontleftleg2, -0.7F, 0.3F, 0.34F);
+        this.setRotateAngle(frontleftleg3, 1.57F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightleg, -0.9F, 0.3F, 0.0F);
+        this.setRotateAngle(frontrightleg2, -0.7F, -0.3F, -0.34F);
+        this.setRotateAngle(frontrightleg3, 1.57F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.5F, -0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.08F, 0.0F);
+        this.setRotateAngle(tail3, 0.14F, -0.09F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, -0.15F, 0.0F);
+        this.setRotateAngle(tail6, 0.05F, -0.18F, 0.0F);
+        this.setRotateAngle(backleftleg, -1.2F, -0.2F, -0.2F);
+        this.setRotateAngle(backleftleg2, 1.7F, -0.05F, 0.0F);
+        this.setRotateAngle(backleftleg3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg2, 1.1F, 0.2F, 0.0F);
+        this.setRotateAngle(backrightleg3, -1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg4, 0.0F, 0.0F, -0.15F);
+        this.main.offsetY = -0.07F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
 

@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderHuayangosaurus;
 import net.lepidodendron.entity.render.entity.RenderKentrosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -107,8 +108,8 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public float getAISpeedLand() {
-		float speedBase = 0.250F;
+	protected float getAISpeedLand() {
+		float speedBase = 0.330F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -413,27 +414,27 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 		return 0.85;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return -0.1;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.3;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 1.2;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.1;
+		return 0.5;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderKentrosaurus.TEXTURE;
+		return RenderHuayangosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelKentrosaurus;
+		return RenderDisplays.modelHuayangosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderKentrosaurus.getScaler();
+		return RenderHuayangosaurus.getScaler();
 	}
 
 

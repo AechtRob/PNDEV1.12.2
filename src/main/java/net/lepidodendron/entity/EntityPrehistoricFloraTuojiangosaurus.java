@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderKentrosaurus;
+import net.lepidodendron.entity.render.entity.RenderTuojiangosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -117,7 +118,7 @@ public class EntityPrehistoricFloraTuojiangosaurus extends EntityPrehistoricFlor
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.8F;
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
 	}
@@ -407,10 +408,10 @@ public class EntityPrehistoricFloraTuojiangosaurus extends EntityPrehistoricFlor
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.85;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
@@ -426,14 +427,14 @@ public class EntityPrehistoricFloraTuojiangosaurus extends EntityPrehistoricFlor
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderKentrosaurus.TEXTURE;
+		return RenderTuojiangosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelKentrosaurus;
+		return RenderDisplays.modelTuojiangosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderKentrosaurus.getScaler();
+		return RenderTuojiangosaurus.getScaler();
 	}
 
 

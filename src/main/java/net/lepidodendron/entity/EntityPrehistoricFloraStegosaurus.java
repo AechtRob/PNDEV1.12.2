@@ -117,7 +117,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.9F;
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
 	}
