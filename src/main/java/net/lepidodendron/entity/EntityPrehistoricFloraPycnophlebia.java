@@ -5,12 +5,10 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -53,7 +51,7 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 
 	public static String getPeriod() {return "Jurassic";}
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.18F;
 	}
 

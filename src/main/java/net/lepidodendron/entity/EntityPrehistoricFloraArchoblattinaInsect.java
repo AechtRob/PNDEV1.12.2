@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.285F;
 	}
 

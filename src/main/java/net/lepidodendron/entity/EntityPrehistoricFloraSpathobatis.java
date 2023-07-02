@@ -192,7 +192,7 @@ public class EntityPrehistoricFloraSpathobatis extends EntityPrehistoricFloraAge
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -225,7 +225,7 @@ public class EntityPrehistoricFloraSpathobatis extends EntityPrehistoricFloraAge
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.46; }
+	public static double offsetCase(@Nullable String variant) { return 0.46; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.08;

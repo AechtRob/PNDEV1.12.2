@@ -289,7 +289,7 @@ public class EntityPrehistoricFloraOttoia extends EntityPrehistoricFloraTrilobit
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (!getBuried()) {this.renderYawOffset = this.rotationYaw;}
+		//if (!getBuried()) {//this.renderYawOffset = this.rotationYaw;}
 
 		if (!this.world.isRemote) {
 

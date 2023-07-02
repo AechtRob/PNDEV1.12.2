@@ -437,7 +437,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     }
 
     @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
+    public Method testAndGetMethod(Class clazz, String methodname, @Nullable Class[] params) {
         Method methodToFind = null;
         try {
             methodToFind = clazz.getMethod(methodname, params);

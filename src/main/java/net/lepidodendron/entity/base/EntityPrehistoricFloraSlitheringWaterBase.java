@@ -368,7 +368,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	@Override
 	public void onLivingUpdate() {
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 		//Updated from vanilla to disable jumping and limit rotations
 		if (this.jumpTicks > 0)
 		{

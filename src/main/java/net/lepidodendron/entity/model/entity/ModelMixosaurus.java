@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMixosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-//import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 

@@ -1,7 +1,10 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.*;
+import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;

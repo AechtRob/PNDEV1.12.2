@@ -6917,6 +6917,64 @@
         "stream": false
       }
     ]
+  },
+
+
+  "europasaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:europasaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "europasaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:europasaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:europasaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "europasaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:europasaurus_death",
+        "stream": false
+      }
+    ]
   }
 
 }

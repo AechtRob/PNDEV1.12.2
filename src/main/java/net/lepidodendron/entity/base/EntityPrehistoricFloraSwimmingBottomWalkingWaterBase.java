@@ -498,7 +498,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
         //IF IS SWIMMING:
         if (this.isReallySwimming()) {
             super.onLivingUpdate();
-            this.renderYawOffset = this.rotationYaw;
+            //this.renderYawOffset = this.rotationYaw;
         }
         else {
             //ELSE:

@@ -97,7 +97,7 @@ public class EntityPrehistoricFloraEffigia extends EntityPrehistoricFloraLandBas
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.585F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -212,7 +212,7 @@ public class EntityPrehistoricFloraEffigia extends EntityPrehistoricFloraLandBas
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();

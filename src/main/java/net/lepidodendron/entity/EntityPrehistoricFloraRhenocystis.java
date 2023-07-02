@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.entity.RenderRhenocystis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
@@ -105,7 +104,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		//tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) 0.5F));
 		tasks.addTask(2, new WalkingAmphibianWander(this, NO_ANIMATION, 1, 0));
-		//tasks.addTask(3, new EntityAILookIdle(this));
+		//tasks.addTask(3, new EntityLookIdleAI(this));
 	}
 
 	@Override
@@ -165,7 +164,7 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	@Override

@@ -7,7 +7,11 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
-import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
+import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
+import net.lepidodendron.entity.EntityPrehistoricFloraMegasecoptera;
+import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -17,7 +21,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
@@ -293,7 +296,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     protected void initEntityAI() {
         this.tasks.addTask(0, new EntityMateAIInsectFlyingBase(this, 1.0D));
         this.tasks.addTask(1, new AIWanderInsect());
-        this.tasks.addTask(2, new EntityAILookIdle(this));
+        this.tasks.addTask(2, new EntityLookIdleAI(this));
     }
 
     @Override

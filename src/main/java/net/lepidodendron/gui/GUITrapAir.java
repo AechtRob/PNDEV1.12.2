@@ -15,7 +15,10 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryBasic;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -383,7 +386,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Airborne Creature Trap", 30, 7 - 16, 4210752);
+            this.fontRenderer.drawString("Invertebrate Creature Trap", 25, 7 - 16, 4210752);
             if (this.getEntity() != null) {
                 this.fontRenderer.drawString("Power the block", 50, 18 + 40 - 19, 4210752);
                 this.fontRenderer.drawString("to release the trapped", 31,

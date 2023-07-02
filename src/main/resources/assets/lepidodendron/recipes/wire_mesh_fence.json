@@ -8,19 +8,24 @@
   ],
   "key": {
     "1": {
-      "item": "minecraft:nugget_iron"
+      "type": "forge:ore_dict",
+      "ore": "nugget_iron"
     },
     "3": {
-      "item": "minecraft:nugget_iron"
+      "type": "forge:ore_dict",
+      "ore": "nugget_iron"
     },
     "4": {
-      "item": "minecraft:nugget_iron"
+      "type": "forge:ore_dict",
+      "ore": "nugget_iron"
     },
     "5": {
-      "item": "minecraft:nugget_iron"
+      "type": "forge:ore_dict",
+      "ore": "nugget_iron"
     },
     "7": {
-      "item": "minecraft:nugget_iron"
+      "type": "forge:ore_dict",
+      "ore": "nugget_iron"
     }
   },
   "result": {

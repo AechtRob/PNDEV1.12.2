@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.6;
 	}
 
 	@Override

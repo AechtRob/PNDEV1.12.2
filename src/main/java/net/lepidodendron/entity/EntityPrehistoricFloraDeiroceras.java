@@ -150,7 +150,7 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		if (this.isEntityAlive() && isInWater()) {
 			if (this.isAtBottom()) {
 				//Feeding from bottom pose:

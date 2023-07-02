@@ -271,6 +271,13 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
             this.motionY *= 0.6D;
         }
 
+        if (this.isReallyFlying()) {
+            float angle = (float) (Math.atan2(this.motionZ, this.motionX) * 180.0D / Math.PI) - 90.0F;
+            float rotation = MathHelper.wrapDegrees(angle - this.rotationYaw);
+            this.prevRotationYaw = this.rotationYaw;
+            this.rotationYaw += rotation;
+        }
+
         if (this.isReallyFlying() && getAttackTarget() == null) {
             if (this.getFlyTarget() != null && this.isReallyFlying()) {
                 if (!isTargetInAir() || !this.isReallyFlying()) {
@@ -349,7 +356,6 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         double maxDist = Math.max(3, bbLength * bbLength);
         if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
-
                 double xPos = this.getFlyTarget().getX() + 0.5D - posX;
                 double yPos = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;
                 double zPos = this.getFlyTarget().getZ() + 0.5D - posZ;

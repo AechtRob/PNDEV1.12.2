@@ -9,10 +9,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMeganeuropsis;
-import net.lepidodendron.entity.ai.EatMeatItemsAIFlyingInsect;
-import net.lepidodendron.entity.ai.EntityHurtByTargetSmallerThanMeAI;
-import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
-import net.lepidodendron.entity.ai.HuntSmallerThanMeAIInsect;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +18,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -142,7 +138,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (!world.isRemote) {
 			if (this.getAttackTarget() != null) {
@@ -214,7 +210,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		this.tasks.addTask(0, new EntityMateAIInsectFlyingBase(this, 1.0D));
 		this.tasks.addTask(1, new AIAttackInsect(false, this.getAttackLength()));
 		this.tasks.addTask(2, new AIWanderInsect());
-		this.tasks.addTask(3, new EntityAILookIdle(this));
+		this.tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAIFlyingInsect(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraLandBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

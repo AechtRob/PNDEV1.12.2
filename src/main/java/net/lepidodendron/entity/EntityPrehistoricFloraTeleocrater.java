@@ -128,7 +128,7 @@ public class EntityPrehistoricFloraTeleocrater extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.289F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -266,7 +266,7 @@ public class EntityPrehistoricFloraTeleocrater extends EntityPrehistoricFloraLan
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
@@ -307,7 +307,7 @@ public class EntityPrehistoricFloraTeleocrater extends EntityPrehistoricFloraLan
 	}
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.46; }
+	public static double offsetCase(@Nullable String variant) { return 0.46; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

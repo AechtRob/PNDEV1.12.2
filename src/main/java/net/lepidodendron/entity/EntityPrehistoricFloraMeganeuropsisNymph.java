@@ -11,6 +11,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
@@ -18,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -34,6 +36,12 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));
 	}
 
 	@Override

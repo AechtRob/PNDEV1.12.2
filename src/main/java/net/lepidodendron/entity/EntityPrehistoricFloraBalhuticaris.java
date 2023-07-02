@@ -142,7 +142,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
@@ -156,7 +156,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.26; }
+	public static double offsetCase(@Nullable String variant) { return 0.26; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

@@ -179,7 +179,7 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 35) {
 			launchAttack();
@@ -230,7 +230,7 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 	}
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.48; }
+	public static double offsetCase(@Nullable String variant) { return 0.48; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}

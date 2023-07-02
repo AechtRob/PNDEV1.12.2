@@ -25,6 +25,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -49,6 +50,12 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		maxWidth = getHitBoxSize()[0];
 		maxHeight = getHitBoxSize()[1];
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));
 	}
 
 	//*****************************************************

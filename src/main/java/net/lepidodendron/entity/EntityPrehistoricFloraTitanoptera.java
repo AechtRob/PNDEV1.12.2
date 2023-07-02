@@ -4,14 +4,16 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
-import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -312,7 +314,7 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 		this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
 		this.tasks.addTask(2, new EntityPrehistoricFloraCrawlingFlyingInsectBase.AIWanderInsect());
 		this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
-		this.tasks.addTask(4, new EntityAILookIdle(this));
+		this.tasks.addTask(4, new EntityLookIdleAI(this));
 	}
 
 	@Override

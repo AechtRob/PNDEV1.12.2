@@ -169,7 +169,7 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 

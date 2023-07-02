@@ -91,7 +91,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 			setResistance(1F);
 			setLightLevel(0F);
 			setLightOpacity(0);
-			setTickRandomly(true);
+			//setTickRandomly(true);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
@@ -136,7 +136,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				return false;
 			}
 
-			if (ItemGlassJarItem.ItemCustom.isTargetInList(target)) { //catch the mob
+			if (ItemGlassJarItem.ItemCustom.isTargetInList(target, playerIn)) { //catch the mob
 				stack.shrink(1);
 				//Pick up this entity with the Jar:
 				ItemHandlerHelper.giveItemToPlayer(playerIn, BlockGlassJar.BlockCustom.createJarWithEntity(target));
@@ -210,7 +210,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 			super.onBlockAdded(worldIn, pos, state);
 		}
 
-		public void makeTrapped(World world, BlockPos pos) {
+		public static void makeTrapped(World world, BlockPos pos) {
 			if (hasTrapped(world, pos)) {
 				return;
 			}
@@ -340,9 +340,10 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityTrapAir extends TileEntityLockableLoot implements ISidedInventory {
+	public static class TileEntityTrapAir extends TileEntityLockableLoot implements ISidedInventory, ITickable {
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
-		
+		private int ticker;
+
 		public boolean isEmpty()
 		{
 			for (ItemStack itemstack : this.forgeContents)
@@ -515,6 +516,21 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 			return new AxisAlignedBB(pos, pos.add(1, 3, 1));
 		}
 
+		@Override
+		public void update() {
+			if (!this.getWorld().isRemote) {
+				--this.ticker;
 
+				if (this.ticker <= 0) {
+					this.ticker = 1200;
+				}
+
+				if (this.getWorld().rand.nextInt(this.ticker) == 0) {
+					BlockTrapAir.BlockCustom.makeTrapped(this.getWorld(), this.getPos());
+					this.ticker = 1200;
+				}
+			}
+		}
 	}
+
 }

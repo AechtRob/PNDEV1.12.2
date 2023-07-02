@@ -240,7 +240,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         return super.attackEntityFrom(ds, i);
     }
 
-    protected abstract float getAISpeedLand();
+    public abstract float getAISpeedLand();
 
     @Override
     public boolean isOnLadder() {
@@ -494,7 +494,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             }
         }
         else {
-            this.renderYawOffset = this.rotationYaw;
+            //this.renderYawOffset = this.rotationYaw;
         }
 
         super.onLivingUpdate();

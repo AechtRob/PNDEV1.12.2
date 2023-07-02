@@ -43,12 +43,14 @@ public class RenderDisplays {
     public static final ModelCephalaspis modelCephalaspis = new ModelCephalaspis();
     public static final ModelCeratiocaris modelCeratiocaris = new ModelCeratiocaris();
     public static final ModelCeratodus modelCeratodus = new ModelCeratodus();
+    public static final ModelCeratosaurus modelCeratosaurus = new ModelCeratosaurus();
     public static final ModelChaoyangsaurus modelChaoyangsaurus = new ModelChaoyangsaurus();
     public static final ModelChinlea modelChinlea = new ModelChinlea();
     public static final ModelClimatius modelClimatius = new ModelClimatius();
     public static final ModelCoelophysis modelCoelophysis = new ModelCoelophysis();
     public static final ModelCometicercus modelCometicercus = new ModelCometicercus();
     public static final ModelConcavicaris modelConcavicaris = new ModelConcavicaris();
+    public static final ModelCordaticaris modelCordaticaris = new ModelCordaticaris();
     public static final ModelCowralepis modelCowralepis = new ModelCowralepis();
     public static final ModelCrassigyrinus modelCrassigyrinus = new ModelCrassigyrinus();
     public static final ModelCriocephalosaurus modelCriocephalosaurus = new ModelCriocephalosaurus();
@@ -146,6 +148,7 @@ public class RenderDisplays {
     public static final ModelMuensterella modelMuensterella = new ModelMuensterella();
     public static final ModelMussaurus modelMussaurus = new ModelMussaurus();
     public static final ModelMetopacanthus modelMetopacanthus = new ModelMetopacanthus();
+    public static final ModelMyriacantherpestes modelMyriacantherpestes = new ModelMyriacantherpestes();
     public static final ModelNeeyambaspis modelNeeyambaspis = new ModelNeeyambaspis();
     public static final ModelNerepisacanthus modelNerepisacanthus = new ModelNerepisacanthus();
     public static final ModelNothosaurus modelNothosaurus = new ModelNothosaurus();
@@ -213,6 +216,7 @@ public class RenderDisplays {
     public static final ModelSclerodus modelSclerodus = new ModelSclerodus();
     public static final ModelSlimonia modelSlimonia = new ModelSlimonia();
     public static final ModelSyringocrinus modelSyringocrinus= new ModelSyringocrinus();
+    public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
     public static final ModelTapinocephalus modelTapinocephalus = new ModelTapinocephalus();
     public static final ModelTauraspis modelTauraspis = new ModelTauraspis();

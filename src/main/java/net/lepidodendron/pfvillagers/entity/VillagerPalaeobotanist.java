@@ -2,7 +2,10 @@ package net.lepidodendron.pfvillagers.entity;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.enchantments.Enchantments;
-import net.lepidodendron.item.*;
+import net.lepidodendron.item.ItemBottleOfResin;
+import net.lepidodendron.item.ItemCollectionEnvelope;
+import net.lepidodendron.item.ItemFossilHammer;
+import net.lepidodendron.item.ItemHerbicide;
 import net.lepidodendron.pfvillagers.village.PalaeobotanistHouse;
 import net.lepidodendron.pfvillagers.village.VillageComponentPalaeobotanistHouse;
 import net.minecraft.enchantment.Enchantment;

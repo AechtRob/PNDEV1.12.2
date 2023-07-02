@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHungioides;
-import net.lepidodendron.entity.EntityPrehistoricFloraSacabambaspis;
 import net.lepidodendron.entity.model.entity.ModelHungioides;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

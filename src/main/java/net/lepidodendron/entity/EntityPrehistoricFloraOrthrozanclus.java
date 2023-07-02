@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
@@ -11,7 +12,6 @@ import net.lepidodendron.entity.render.entity.RenderOrthrozanclus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraOrthrozanclus extends EntityPrehistoricFloraS
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
 	}
 
 	@Override
@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraOrthrozanclus extends EntityPrehistoricFloraS
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.36; }
+	public static double offsetCase(@Nullable String variant) { return 0.36; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

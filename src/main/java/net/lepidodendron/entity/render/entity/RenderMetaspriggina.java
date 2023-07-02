@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraArduafrons;
 import net.lepidodendron.entity.EntityPrehistoricFloraMetaspriggina;
 import net.lepidodendron.entity.model.entity.ModelMetaspriggina;
 import net.minecraft.client.renderer.GlStateManager;

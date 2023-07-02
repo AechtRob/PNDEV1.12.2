@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraDraconichthys extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.40;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -195,7 +195,7 @@ public class EntityPrehistoricFloraDraconichthys extends EntityPrehistoricFloraA
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 15 && this.getAttackTarget() != null) {
 			launchAttack();

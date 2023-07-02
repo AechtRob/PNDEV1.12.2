@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraProcynosuchus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelProcynosuchus extends AdvancedModelBaseExtended {

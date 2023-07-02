@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -173,7 +173,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 

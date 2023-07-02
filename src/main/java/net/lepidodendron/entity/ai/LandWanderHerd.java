@@ -1,6 +1,8 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.ai.EntityAIBase;
 
 import java.util.List;
@@ -33,6 +35,20 @@ public class LandWanderHerd extends EntityAIBase
 
     public boolean shouldExecute()
     {
+
+        if (this.followingAnimal instanceof EntityPrehistoricFloraLandBase) {
+            if (!(((EntityPrehistoricFloraLandBase)this.followingAnimal).getAISpeedLand() > 0)) {
+                return false;
+            }
+        }
+
+        if (this.followingAnimal instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.followingAnimal;
+            if (flybase.isReallyFlying()) {
+                return false;
+            }
+        }
+
         if (((double)(this.followingAnimal.ticksExisted + this.followingAnimal.getTickOffset())) % 100D != 0) {
             //throttle the AI to avoid too much lag!
             return false;
