@@ -1018,12 +1018,47 @@ public class ModelHuayangosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
-
+        this.chest.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.rightArm.setScale(0,0,0);
+        this.leftArm.setScale(0,0,0);
+        this.rightArm.scaleChildren = true;
+        this.leftArm.scaleChildren = true;
+        this.chest.offsetY = 0.0F;
+        this.chest.offsetX = 0.0F;
+        this.chest.offsetZ = 0.05F;
+        this.chest.render(0.01F);
+        this.rightArm.setScale(1,1,1);
+        this.leftArm.setScale(1,1,1);
         resetToDefaultPose();
     }
-
-    public void renderStaticFloor(float f) {
-
+        public void renderStaticFloor(float f) {
+            this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(body, 0.0F, -0.25F, 0.0F);
+            this.setRotateAngle(chest, 0.0F, 0.25F, 0.0F);
+            this.setRotateAngle(leftArm, 0.6F, 0.0F, -0.3F);
+            this.setRotateAngle(leftArm2, -0.9F, 0.2F, 0.15F);
+            this.setRotateAngle(leftHand, 0.3F, 0.0F, 0.1F);
+            this.setRotateAngle(rightArm, 0.6F, 0.3F, 0.3F);
+            this.setRotateAngle(rightArm2, -1.0F, 0.0F, -0.2F);
+            this.setRotateAngle(rightHand, 0.5F, 0.0F, -0.1F);
+            this.setRotateAngle(neck, 0.0F, 0.2F, 0.0F);
+            this.setRotateAngle(neck2, -0.3F, 0.1F, 0.0F);
+            this.setRotateAngle(neck3, 0.1F, 0.0F, 0.0F);
+            this.setRotateAngle(head, 0.3F, 0.0F, 0.0F);
+            this.setRotateAngle(leftLeg, 0.1F, -0.2F, 0.0F);
+            this.setRotateAngle(leftLeg2, 0.52F, 0.0F, 0.0F);
+            this.setRotateAngle(leftFoot, -0.15F, 0.0F, 0.0F);
+            this.setRotateAngle(rightLeg, -0.1F, 0.0F, 0.0F);
+            this.setRotateAngle(rightLeg2, 0.1F, 0.0F, 0.0F);
+            this.setRotateAngle(rightFoot, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(tail, -0.15F, -0.1F, 0.05F);
+            this.setRotateAngle(tail2, 0.09F, -0.1F, 0.02F);
+            this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+            this.setRotateAngle(tail4, 0.0F, 0.19F, 0.0F);
+            this.setRotateAngle(tail5, 0.0F, 0.23F, 0.0F);
+        this.root.offsetY = -0.138F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
 

@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderEurhinosaurus;
 import net.lepidodendron.entity.render.entity.RenderOphthalmosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -275,22 +276,22 @@ public class EntityPrehistoricFloraEurhinosaurus extends EntityPrehistoricFloraA
 		return -0.3;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 1.2;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return -0.19;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 1.2F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.1F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 1.3;
@@ -299,27 +300,27 @@ public class EntityPrehistoricFloraEurhinosaurus extends EntityPrehistoricFloraA
 		return 1.2;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.7;
+		return -0.35;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 1.8F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.9;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.4F;
+		return -0.3F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderOphthalmosaurus.TEXTURE;
+		return RenderEurhinosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelOphthalmosaurus;
+		return RenderDisplays.modelEurhinosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderOphthalmosaurus.getScaler();
+		return RenderEurhinosaurus.getScaler();
 	}
 
 }

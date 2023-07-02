@@ -349,6 +349,7 @@ public class ModelEurhinosaurus extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.Head.offsetY = -0.01F;
         this.Head.offsetX = 0.01F;
+        this.Head.offsetZ = 0.13F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(22.5);
         this.Head.rotateAngleX = (float) Math.toRadians(0);
         this.Head.rotateAngleZ = (float) Math.toRadians(0);
@@ -356,10 +357,35 @@ public class ModelEurhinosaurus extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(Eurhinosaurus, -0.3927F, (float) Math.toRadians(90), -0.1F);
+        this.setRotateAngle(Eurhinosaurus, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(Body1, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.02F, 0.07F, 0.0F);
+        this.setRotateAngle(Body3, 0.03F, 0.09F, 0.0F);
+        this.setRotateAngle(Body4, 0.04F, 0.09F, 0.0F);
+        this.setRotateAngle(Body5, 0.05F, 0.09F, 0.0F);
+        this.setRotateAngle(Body6, 0.06F, 0.09F, 0.0F);
+        this.setRotateAngle(Body7, 0.07F, 0.09F, 0.0F);
+        this.setRotateAngle(Body8, 0.08F, 0.09F, 0.0F);
+        this.setRotateAngle(Head, -0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.05F, 0.0F, 0.0F);
+        this.Eurhinosaurus.offsetY = -0.3F;
+        this.Eurhinosaurus.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Eurhinosaurus, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(Body1, -0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.07F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.09F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.09F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Body7, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Body8, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.05F, 0.0F, 0.0F);
+        this.Eurhinosaurus.offsetY = -0.05F;
+        this.Eurhinosaurus.render(0.01F);
         resetToDefaultPose();
     }
 

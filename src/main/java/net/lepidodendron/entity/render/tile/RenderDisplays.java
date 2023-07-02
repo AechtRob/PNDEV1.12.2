@@ -92,6 +92,7 @@ public class RenderDisplays {
     public static final ModelEugaleaspis modelEugaleaspis = new ModelEugaleaspis();
     public static final ModelElasmodectes modelElasmodectes = new ModelElasmodectes();
     public static final ModelEuropasaurus modelEuropasaurus = new ModelEuropasaurus();
+    public static final ModelEurhinosaurus modelEurhinosaurus = new ModelEurhinosaurus();
     public static final ModelFallacosteus modelFallacosteus = new ModelFallacosteus();
     public static final ModelForeyia modelForeyia = new ModelForeyia();
     public static final ModelFurca modelFurca = new ModelFurca();
@@ -115,6 +116,7 @@ public class RenderDisplays {
     public static final ModelHybodus modelHybodus = new ModelHybodus();
     public static final ModelHomoeosaurus modelHomoeosaurus = new ModelHomoeosaurus();
     public static final ModelHelenodora modelHelenodora = new ModelHelenodora();
+    public static final ModelHuayangosaurus modelHuayangosaurus = new ModelHuayangosaurus();
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
     public static final ModelIvoites modelIvoites = new ModelIvoites();
     public static final ModelJamoytius modelJamoytius = new ModelJamoytius();
@@ -227,6 +229,7 @@ public class RenderDisplays {
     public static final ModelTemnodontosaurus modelTemnodontosaurus = new ModelTemnodontosaurus();
     public static final ModelTyphloesus modelTyphloesus = new ModelTyphloesus();
     public static final ModelTriadobatrachus modelTriadobatrachus = new ModelTriadobatrachus();
+    public static final ModelTuojiangosaurus modelTuojiangosaurus = new ModelTuojiangosaurus();
     public static final ModelUrosthenes modelUrosthenes = new ModelUrosthenes();
     public static final ModelUtatsusaurus modelUtatsusaurus = new ModelUtatsusaurus();
     public static final ModelVachonisia modelVachonisia = new ModelVachonisia();
