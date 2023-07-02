@@ -21,10 +21,7 @@ import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -43,6 +40,8 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
+
+	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thagomized", this);
 
 	public EntityPrehistoricFloraKentrosaurus(World world) {
 		super(world);
@@ -318,7 +317,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			if (this.getAttackBoundingBoxForDamage().intersects(this.getAttackTarget().getEntityBoundingBox())) {
 				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 				this.getAttackTarget().addVelocity(0, 0.1, 0);
-				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+				boolean b = this.getAttackTarget().attackEntityFrom(THAGOMIZED, (float) iattributeinstance.getAttributeValue());
 				if (this.getOneHit()) {
 					this.setAttackTarget(null);
 					this.setRevengeTarget(null);
