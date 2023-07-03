@@ -31,8 +31,8 @@ public class ModelMeganeurites extends AdvancedModelBase {
     private final AdvancedModelRenderer forewingL;
 
     public ModelMeganeurites() {
-        this.textureWidth = 64;
-        this.textureHeight = 64;
+        this.textureWidth = 48;
+        this.textureHeight = 32;
 
         this.body = new AdvancedModelRenderer(this);
         this.body.setRotationPoint(0.3051F, 19.939F, -0.2877F);

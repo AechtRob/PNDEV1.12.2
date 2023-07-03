@@ -14,6 +14,7 @@ public class RenderMeganeurites extends RenderLiving<EntityPrehistoricFloraMegan
 
     public RenderMeganeurites(RenderManager mgr) {
         super(mgr, new ModelMeganeurites(), 0.0f);
+        this.addLayer(new LayerMeganeuritesWing(this));
     }
 
 
@@ -29,31 +30,33 @@ public class RenderMeganeurites extends RenderLiving<EntityPrehistoricFloraMegan
     @Override
     protected void applyRotations(EntityPrehistoricFloraMeganeurites entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+
+        float getOffset = 0.250F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.40F, 0.05F, 0.0F);
+                GlStateManager.translate(getOffset, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case WEST:
-                GlStateManager.translate(-0.40F, 0.05F, 0.0F);
+                GlStateManager.translate(-getOffset, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.40F);
+                GlStateManager.translate(0.0F, 0.05F, -getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.40F);
+                GlStateManager.translate(0.0F, 0.05F, getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.5F + getOffset, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }

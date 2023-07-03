@@ -23,37 +23,39 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
     }
 
     public static float getScaler() {
-        return 1* 0.29f * 0.88F;
+        return 1 * 0.29f * 0.91F;
     }
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraMeganeura entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        float getOffset = 0.250F;
+
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.40F, 0.05F, 0.0F);
+                GlStateManager.translate(getOffset, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case WEST:
-                GlStateManager.translate(-0.40F, 0.05F, 0.0F);
+                GlStateManager.translate(-getOffset, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.40F);
+                GlStateManager.translate(0.0F, 0.05F, -getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.40F);
+                GlStateManager.translate(0.0F, 0.05F, getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.5F + getOffset, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
