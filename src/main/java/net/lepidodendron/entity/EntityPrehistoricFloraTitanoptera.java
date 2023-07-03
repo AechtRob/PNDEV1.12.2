@@ -267,7 +267,7 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	@Override
 	public ItemStack getPickedResult(RayTraceResult target)
 	{
-		if (target.entityHit instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+		if (target.entityHit instanceof EntityPrehistoricFloraTitanoptera) {
 			EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) target.entityHit;
 			switch (titanoptera.getPNType()) {
 				case CLATROTITAN: default:

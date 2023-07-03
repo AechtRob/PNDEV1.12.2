@@ -7,10 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
-import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
-import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
-import net.lepidodendron.entity.EntityPrehistoricFloraMegasecoptera;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
@@ -454,6 +451,18 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     if (this instanceof EntityPrehistoricFloraPalaeodictyoptera) {
                         itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraPalaeodictyoptera) this).getPNType().getName());
                     }
+                    if (this instanceof EntityPrehistoricFloraDragonfly) {
+                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraDragonfly) this).getPNType().getName());
+                    }
+                    if (this instanceof EntityPrehistoricFloraMegasecoptera) {
+                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraMegasecoptera) this).getPNType().getName());
+                    }
+                    if (this instanceof EntityPrehistoricFloraKalligrammatid) {
+                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraKalligrammatid) this).getPNType().getName());
+                    }
+                    if (this instanceof EntityPrehistoricFloraLacewing) {
+                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraLacewing) this).getPNType().getName());
+                    }
                     //Add more variants:
 
                 }
@@ -578,9 +587,16 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 if (tileentity != null) {
                     tileentity.getTileData().setString("PNType", megasecoptera.getPNType().getName());
                 }
-
-                //More variants here:
             }
+            else if (this instanceof EntityPrehistoricFloraDragonfly) {
+                EntityPrehistoricFloraDragonfly dragonfly = (EntityPrehistoricFloraDragonfly) this;
+                TileEntity tileentity = world.getTileEntity(pos);
+                if (tileentity != null) {
+                    tileentity.getTileData().setString("PNType", dragonfly.getPNType().getName());
+                }
+            }
+
+            //More variants here:
         }
     }
 

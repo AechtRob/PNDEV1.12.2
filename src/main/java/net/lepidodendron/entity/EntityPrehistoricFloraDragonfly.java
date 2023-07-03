@@ -4,7 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsPalaeodictyoptera;
+import net.lepidodendron.block.BlockInsectEggsDragonfly;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
@@ -373,7 +373,7 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 
 	@Override
 	public IBlockState getEggBlockState() {
-		return BlockInsectEggsPalaeodictyoptera.block.getDefaultState();
+		return BlockInsectEggsDragonfly.block.getDefaultState();
 	}
 
 	@Override

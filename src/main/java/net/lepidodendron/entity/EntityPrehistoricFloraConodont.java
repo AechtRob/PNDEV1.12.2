@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
@@ -53,6 +54,16 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	public EntityPrehistoricFloraConodont(World world) {
 		super(world);
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		if (!stack.hasTagCompound()) {
+			NBTTagCompound compound = new NBTTagCompound();
+			stack.setTagCompound(compound);
+		}
+		stack.getTagCompound().setString("PNType", this.getPNType().getName());
+		return stack;
 	}
 
 	@Override
@@ -398,7 +409,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_conodont_" + this.getPNType().getName() + ".name");
 		}
 	}
 

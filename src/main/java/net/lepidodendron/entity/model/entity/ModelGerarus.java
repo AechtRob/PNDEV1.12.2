@@ -239,7 +239,7 @@ public class ModelGerarus extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.Thoraxbase.render(f5 * 0.115f);
+        this.Thoraxbase.render(f5);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
@@ -263,7 +263,7 @@ public class ModelGerarus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Thoraxbase.offsetY = 1.325F;
+        //this.Thoraxbase.offsetY = 1.325F;
 
         float modifier = 1F;
 

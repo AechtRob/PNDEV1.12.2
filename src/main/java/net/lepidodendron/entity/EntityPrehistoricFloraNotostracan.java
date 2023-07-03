@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanStrudops;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanTriops;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -50,6 +51,16 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	public EntityPrehistoricFloraNotostracan(World world) {
 		super(world);
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		if (!stack.hasTagCompound()) {
+			NBTTagCompound compound = new NBTTagCompound();
+			stack.setTagCompound(compound);
+		}
+		stack.getTagCompound().setString("PNType", this.getPNType().getName());
+		return stack;
 	}
 
 	@Override

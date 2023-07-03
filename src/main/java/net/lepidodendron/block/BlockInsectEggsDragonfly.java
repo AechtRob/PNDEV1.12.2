@@ -77,10 +77,10 @@ public class BlockInsectEggsDragonfly extends ElementsLepidodendronMod.ModElemen
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeJurassic) {
-				BiomeJurassic biomeC = (BiomeJurassic) biome;
-				if (biomeC.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-						|| biomeC.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
-					int ii = random.nextInt(8);
+				BiomeJurassic biomeJ = (BiomeJurassic) biome;
+				if (biomeJ.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
+						|| biomeJ.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
+					int ii = random.nextInt(10);
 					String variant = null;
 					switch (ii) {
 						case 0: default:

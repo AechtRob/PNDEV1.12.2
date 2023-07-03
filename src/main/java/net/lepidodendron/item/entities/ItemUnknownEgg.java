@@ -475,6 +475,11 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 			if (stringEgg != null) {
 
 				stringEgg = stringEgg.replace(LepidodendronMod.MODID.toString() + ":", "");
+
+				if (stack.getTagCompound().hasKey("PNType")) {
+					stringEgg = stringEgg + "_" + stack.getTagCompound().getString("PNType").toString();
+				}
+
 				return I18n.translateToLocal("item.pf_eggs_generic_full.name").trim()
 						+ ": "
 						+ I18n.translateToLocal("entity." + stringEgg + ".name").trim();
@@ -486,6 +491,9 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 		{
 			String stringEgg = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("creature") : null);
 			if (stringEgg != null) {
+				if (stack.getTagCompound().hasKey("PNType")) {
+					stringEgg = stringEgg + "_" + stack.getTagCompound().getString("PNType").toString();
+				}
 				stringEgg = stringEgg.replace(LepidodendronMod.MODID.toString() + ":", "egg_");
 				return "item." + stringEgg;
 			}
@@ -544,7 +552,19 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 								blockpos = blockpos.down(); // If it's a JAFF tank place it IN the tank if we are clicking above it
 							}
 
+							if (itemstack.getTagCompound().hasKey("PNType")) {
+								String type = itemstack.getTagCompound().getString("PNType");
+								if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+									nbtStr = "{PNType:\"" + type + "\",AgeTicks:0}";
+								}
+								else {
+									nbtStr = "{PNType:\""  + type + "\"}";
+								}
+							}
+
 							EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggClassfromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+
+
 						}
 						if (!playerIn.capabilities.isCreativeMode) {
 							itemstack.shrink(1);

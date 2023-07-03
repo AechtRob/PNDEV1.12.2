@@ -45,15 +45,15 @@ public class RenderTitanoptera extends RenderLiving<EntityPrehistoricFloraTitano
         float scaler = this.getScaler();
         switch (entity.getPNType()) {
             case CLATROTITAN: default:
-                scaler = 0.20F;
+                scaler = 0.255F;
                 break;
 
             case GIGATITAN:
-                scaler = 0.225F;
+                scaler = 0.280F;
                 break;
 
             case MESOTITAN:
-                scaler = 0.220F;
+                scaler = 0.270F;
                 break;
         }
         float scale = 1.0F * scaler;
