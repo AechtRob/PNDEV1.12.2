@@ -32,6 +32,8 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
+	private int hoverCooldown;
+	private int hoverTick;
 
 	private static final float[] SIZE_1 = new float[]{0.3F, 0.2F};
 	private static final float[] SIZE_2 = new float[]{0.3F, 0.2F};
@@ -308,10 +310,40 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		this.dataManager.register(INSECT_TYPE, 0);
 	}
 
+	public void onEntityUpdate() {
+		if (!world.isRemote) {
+			if (this.hoverTick > 0) {
+				this.hoverTick--;
+			}
+			if (this.hoverCooldown > 0 && (!(hoverTick > 0))) {
+				this.hoverCooldown--;
+			}
+			if (this.hoverCooldown == 0 && this.hoverTick == 0) {
+				this.hoverTick = 100 + this.rand.nextInt(200);
+				this.hoverCooldown = 300 + this.rand.nextInt(300);
+			}
+
+			//System.err.println("this.hoverTick " + this.hoverTick);
+			//System.err.println("this.hoverCooldown " + this.hoverCooldown);
+		}
+
+		super.onEntityUpdate();
+
+		if (!world.isRemote) {
+			if (this.hoverTick > 0) {
+				this.motionX = 0;
+				this.motionY = 0;
+				this.motionZ = 0;
+			}
+		}
+	}
+
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setPNType(Type.byId(rand.nextInt(Type.values().length) + 1));
+		this.hoverCooldown = 300 + this.rand.nextInt(300);
+		this.hoverTick = 0;
 		return livingdata;
 	}
 
@@ -416,6 +448,11 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	protected float getAISpeedInsect() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (!world.isRemote) {
+			if (this.hoverTick > 0) {
+				return 0.0F; //Is static for hovering
+			}
 		}
 		return getFlySpeed();
 	}

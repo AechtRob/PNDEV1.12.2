@@ -53,6 +53,9 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	public float getAISpeedLand() {
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
 		return 0.285F;
 	}
 
@@ -162,15 +165,15 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	public int defaultWanderCooldown() {
-		return 0;
+		return 200;
 	}
 
 	@Override
-	protected float getAISpeedInsect() {
+	protected float getAISpeedInsect() { //Flying
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return 2.086f;
+		return 1.486f;
 	}
 
 	@Override
