@@ -353,7 +353,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     public void setTargetedFlight() {
         double bbLength = this.getEntityBoundingBox().getAverageEdgeLength() * 2.5D;
-        double maxDist = Math.max(3, bbLength * bbLength);
+        double maxDist = Math.max(6, bbLength * bbLength);
         if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
                 double xPos = this.getFlyTarget().getX() + 0.5D - posX;
