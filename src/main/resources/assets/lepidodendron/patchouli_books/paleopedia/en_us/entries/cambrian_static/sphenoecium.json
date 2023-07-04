@@ -1,0 +1,31 @@
+{
+	"name": "Sphenoecium",
+	"read_by_default": true,
+	"icon": "lepidodendron:sphenoecium",
+	"category": "lepidodendron:cambrian_static",
+	"turnin": "lepidodendron:pf_adv_book_sphenoecium",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sphenoecium",
+			"title": "Sphenoecium",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian(br2)$(l)Habitat:$() Marine$(br2)>Hemichordata$(br)>Graptolithina$(br)>Rhabdopleuridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/sphenoecium.png"],
+			"title": "Sphenoecium sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sphenoecium",
+			"type": "text",
+			"text": "Sphenoecium is a very early, benthic, probably sessile graptolite. Several species have been described. Like all graptolites, it was a colonial organism, and was comprised of many small fanworm-like organisms each with a seperate, calcified tube to live in. Sphenoecium did not branch, but the community tubes were instead clustered from a single basal point."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sphenoecium",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

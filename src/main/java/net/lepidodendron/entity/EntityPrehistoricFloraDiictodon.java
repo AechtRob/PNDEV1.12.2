@@ -638,25 +638,25 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		if (oldBurrowState.getBlock() == Blocks.STRUCTURE_VOID) {
 			return Blocks.STRUCTURE_VOID.getDefaultState();
 		}
-		if (oldBurrowState == Blocks.SAND.getStateFromMeta(0) || oldBurrowState == BlockSandWavy.block) {
+		if (oldBurrowState == Blocks.SAND.getStateFromMeta(0) || oldBurrowState == BlockSandWavy.block.getDefaultState()) {
 			return BlockSandSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == Blocks.SAND.getStateFromMeta(1) || oldBurrowState == BlockSandRedWavy.block) {
+		else if (oldBurrowState == Blocks.SAND.getStateFromMeta(1) || oldBurrowState == BlockSandRedWavy.block.getDefaultState()) {
 			return BlockSandRedSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == Blocks.GRAVEL || oldBurrowState == BlockGravelWavy.block) {
+		else if (oldBurrowState == Blocks.GRAVEL.getDefaultState() || oldBurrowState == BlockGravelWavy.block.getDefaultState()) {
 			return BlockGravelSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandPangaean.block.getDefaultState() || oldBurrowState == BlockSandPangaeanWavy.block) {
+		else if (oldBurrowState == BlockSandPangaean.block.getDefaultState() || oldBurrowState == BlockSandPangaeanWavy.block.getDefaultState()) {
 			return BlockSandPangaeanSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block) {
+		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block.getDefaultState()) {
 			return BlockSandBlackSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block) {
+		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block.getDefaultState()) {
 			return BlockSandWhiteSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandPaleoproterozoic.block.getDefaultState() || oldBurrowState == BlockSandPaleoproterozoicWavy.block) {
+		else if (oldBurrowState == BlockSandPaleoproterozoic.block.getDefaultState() || oldBurrowState == BlockSandPaleoproterozoicWavy.block.getDefaultState()) {
 			return BlockSandPaleoproterozoicSticky.block.getDefaultState();
 		}
 		else if (world.isAirBlock(pos) ||
@@ -664,25 +664,25 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 				&& oldBurrowState.getMaterial() != Material.GROUND
 				&& oldBurrowState.getMaterial() != Material.CLAY)
 				) {
-			if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(0) || world.getBiome(pos).topBlock == BlockSandWavy.block) {
+			if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(0) || world.getBiome(pos).topBlock == BlockSandWavy.block.getDefaultState()) {
 				return BlockSandSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(1) || world.getBiome(pos).topBlock == BlockSandRedWavy.block) {
+			else if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(1) || world.getBiome(pos).topBlock == BlockSandRedWavy.block.getDefaultState()) {
 				return BlockSandRedSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == Blocks.GRAVEL || world.getBiome(pos).topBlock == BlockGravelWavy.block) {
+			else if (world.getBiome(pos).topBlock == Blocks.GRAVEL.getDefaultState() || world.getBiome(pos).topBlock == BlockGravelWavy.block.getDefaultState()) {
 				return BlockGravelSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandPangaean.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPangaeanWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandPangaean.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPangaeanWavy.block.getDefaultState()) {
 				return BlockSandPangaeanSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandBlack.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandBlackWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandBlack.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandBlackWavy.block.getDefaultState()) {
 				return BlockSandBlackSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandWhite.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandWhiteWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandWhite.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandWhiteWavy.block.getDefaultState()) {
 				return BlockSandWhiteSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandPaleoproterozoic.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPaleoproterozoicWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandPaleoproterozoic.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPaleoproterozoicWavy.block.getDefaultState()) {
 				return BlockSandPaleoproterozoicSticky.block.getDefaultState();
 			}
 			return world.getBiome(pos).topBlock;

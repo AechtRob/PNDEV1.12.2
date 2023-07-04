@@ -6,8 +6,10 @@
  "item": "lepidodendron:bottle_of_dna_solvent"
  },
  {
- "type": "forge:ore_dict",
- "ore": "plantdnaPNlepidodendron:protea_sapling_1"
+ "type": "minecraft:item_nbt",
+ "item": "lepidodendron:fossil_clean",
+ "count": 1,
+ "nbt": {"PFStatic":{"id":"lepidodendron:coral_stony_rough_branching"}}
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +19,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:protea_sapling_1"}}
+ "nbt": {"PFStatic":{"id":"lepidodendron:coral_stony_rough_branching"}}
  }
 }
