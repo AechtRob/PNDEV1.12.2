@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraCordaticaris extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 14.0D;
+		maxHealthAgeable = 5.0D;
 	}
 
 	@Override

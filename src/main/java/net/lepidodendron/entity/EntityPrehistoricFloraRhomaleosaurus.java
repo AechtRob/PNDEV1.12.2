@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraRhomaleosaurus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 2F;
 		maxHeight = 0.925F;
-		maxHealthAgeable = 40.0D;
+		maxHealthAgeable = 50.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

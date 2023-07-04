@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 23.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

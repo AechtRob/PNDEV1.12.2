@@ -225,14 +225,14 @@ public class ModelRhinopteraspis extends AdvancedModelBase {
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
         float speed = 0.3F;
         if (!e.isInWater()) {
-            speed = 0.7F;
+            speed = 0.8F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
             this.swing(root, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.root.rotateAngleZ = (float) Math.toRadians(90);
-                //this.root.offsetY = -0.25F;
+                this.root.offsetY = -0.30F;
                 this.bob(root, -speed, 5F, false, f2, 1);
             }
         }

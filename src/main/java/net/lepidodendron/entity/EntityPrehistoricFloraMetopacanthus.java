@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 21.0D;
+		maxHealthAgeable = 14.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

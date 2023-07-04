@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		minWidth = 0.2F;
 		maxWidth = 0.9F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 
