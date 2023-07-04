@@ -63,6 +63,14 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	@Override
+	public ResourceLocation FlightSound() {
+		if (this.getPNType() == Type.DELITZSCHALA || this.getPNType() == Type.SINODUNBARIA) {
+			return new ResourceLocation("lepidodendron:dragonfly_flight");
+		}
+		return new ResourceLocation("lepidodendron:palaeodictyoptera_flight");
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)

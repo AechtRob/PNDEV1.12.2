@@ -1984,18 +1984,19 @@
       }
     ]
   },
-"bug_flight": {
+
+  "lacewing_flight": {
     "sounds": [
       {
-        "name": "lepidodendron:ancient_cockroach_flight01",
+        "name": "lepidodendron:lacewing_flight01",
         "stream": false
       },
       {
-        "name": "lepidodendron:ancient_cockroach_flight02",
+        "name": "lepidodendron:lacewing_flight02",
         "stream": false
       },
       {
-        "name": "lepidodendron:ancient_cockroach_flight03",
+        "name": "lepidodendron:lacewing_flight03",
         "stream": false
       }
     ]

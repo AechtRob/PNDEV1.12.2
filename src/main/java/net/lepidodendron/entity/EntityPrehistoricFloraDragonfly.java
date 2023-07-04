@@ -496,7 +496,7 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("");
+		return new ResourceLocation("lepidodendron:dragonfly_flight");
 	}
 
 }

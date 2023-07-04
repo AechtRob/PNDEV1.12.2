@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 		minWidth = 0.2F;
 		maxWidth = 0.35F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 
@@ -149,7 +149,7 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

@@ -436,7 +436,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:kalligrammatid_flight");
+		return new ResourceLocation("lepidodendron:lacewing_flight");
 	}
 
 }

@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 5.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

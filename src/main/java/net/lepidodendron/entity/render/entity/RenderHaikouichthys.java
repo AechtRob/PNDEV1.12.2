@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHaikouichthys extends RenderLiving<EntityPrehistoricFloraHaikouichthys> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haikouichthys.png");
 
-    public static float getScaler() {return 0.0575F;}
+    public static float getScaler() {return 0.055F;}
 
     public RenderHaikouichthys(RenderManager mgr) {
         super(mgr, new ModelHaikouichthys(), 0.0f);
@@ -29,9 +29,9 @@ public class RenderHaikouichthys extends RenderLiving<EntityPrehistoricFloraHaik
     }
     protected void preRenderCallback(EntityPrehistoricFloraHaikouichthys entity, float f) {
         float scale = this.getScaler();
-        if (scale < 0.1f) {
-            scale = 0.1f;
-        }
+//        if (scale < 0.1f) {
+//            scale = 0.1f;
+//        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

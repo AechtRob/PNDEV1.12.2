@@ -307,7 +307,7 @@ public class ModelLimulid extends AdvancedModelBase {
         AdvancedModelRenderer[] legsL = {this.legL, this.legL2, this.legL3, this.legL4, this.legL5};
         AdvancedModelRenderer[] legsR = {this.legR, this.legR2, this.legR3, this.legR4, this.legR5};
 
-        if (isAtBottom || !e.isInWater() || ((EntityPrehistoricFloraLimulid)e).isJumpingPF()) {
+        if (isAtBottom || (!e.isInWater()) || ((EntityPrehistoricFloraLimulid)e).isJumpingPF()) {
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
             this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);

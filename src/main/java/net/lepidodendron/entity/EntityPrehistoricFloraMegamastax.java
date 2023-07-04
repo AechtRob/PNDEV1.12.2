@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraMegamastax extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 13.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderChinlea extends RenderLiving<EntityPrehistoricFloraChinlea> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chinlea.png");
 
-    public static float getScaler() {return 0.29F;}
+    public static float getScaler() {return 0.24F;}
     public RenderChinlea(RenderManager mgr) {
         super(mgr, new ModelChinlea(), 0.0f);
     }

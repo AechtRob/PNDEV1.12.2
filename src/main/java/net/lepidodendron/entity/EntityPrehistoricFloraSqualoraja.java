@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 

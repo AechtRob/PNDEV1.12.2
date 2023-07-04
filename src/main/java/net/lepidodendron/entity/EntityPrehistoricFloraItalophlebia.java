@@ -85,7 +85,7 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return null;
+		return new ResourceLocation("lepidodendron:dragonfly_flight");
 	}
 
 	public static String getPeriod() {return "late Triassic";}

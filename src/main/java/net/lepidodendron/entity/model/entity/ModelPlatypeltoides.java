@@ -287,23 +287,23 @@ public class ModelPlatypeltoides extends AdvancedModelBase {
         this.Pygidium.cubeList.add(new ModelBox(Pygidium, 38, 29, -2.5F, -0.75F, 2.4F, 5, 1, 1, -0.06F, false));
 
         this.LLeg8 = new AdvancedModelRenderer(this);
-        this.LLeg8.setRotationPoint(-14.0F, 0.5F, 2.4F);
+        this.LLeg8.setRotationPoint(0.0F, 0.6958F, 2.4F);
         this.Pygidium.addChild(LLeg8);
 
 
         this.cube_r20 = new AdvancedModelRenderer(this);
-        this.cube_r20.setRotationPoint(14.0F, 0.0F, -0.5F);
+        this.cube_r20.setRotationPoint(0.0F, -0.1958F, -0.5F);
         this.LLeg8.addChild(cube_r20);
         this.setRotateAngle(cube_r20, 0.0F, 0.0F, 0.1309F);
         this.cube_r20.cubeList.add(new ModelBox(cube_r20, 18, 27, 0.0F, 0.0F, 0.0F, 3, 0, 1, 0.0F, false));
 
         this.RLeg8 = new AdvancedModelRenderer(this);
-        this.RLeg8.setRotationPoint(-14.0F, 0.5F, 2.4F);
+        this.RLeg8.setRotationPoint(0.0F, 0.6958F, 2.4F);
         this.Pygidium.addChild(RLeg8);
 
 
         this.cube_r21 = new AdvancedModelRenderer(this);
-        this.cube_r21.setRotationPoint(14.0F, 0.0F, -0.5F);
+        this.cube_r21.setRotationPoint(0.0F, -0.1958F, -0.5F);
         this.RLeg8.addChild(cube_r21);
         this.setRotateAngle(cube_r21, 0.0F, 0.0F, -0.1309F);
         this.cube_r21.cubeList.add(new ModelBox(cube_r21, 18, 26, -3.0F, 0.0F, 0.0F, 3, 0, 1, 0.0F, false));

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeura;
 import net.lepidodendron.entity.model.entity.ModelMeganeuropsis;
 import net.minecraft.client.renderer.GlStateManager;
@@ -63,9 +62,6 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMeganeura entity, float f) {
         float scale = this.getScaler();
-        if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
-            scale = 0.6F;
-        }
         GlStateManager.scale(scale, scale, scale);
     }
 
