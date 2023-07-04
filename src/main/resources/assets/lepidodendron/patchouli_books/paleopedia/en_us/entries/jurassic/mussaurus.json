@@ -2,14 +2,14 @@
 	"name": "Mussaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/mussaurus_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_mussaurus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_mussaurus",
 			"title": "Mussaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Temperate Forest$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Mussauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Temperate Forest$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Mussauridae"
 		},
 		{
 			"type": "image",
