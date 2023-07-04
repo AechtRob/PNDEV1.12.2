@@ -4904,7 +4904,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockMagnoliaFlower.TileEntityCustom.class, new RenderFlowerMagnolia());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockLiriodendronFlower.TileEntityCustom.class, new RenderFlowerLiriodendron());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockArchaeanthusFlower.TileEntityCustom.class, new RenderFlowerArchaeanthus());
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockEmbothriumFlower.TileEntityCustom.class, new RenderFlowerEmbothrium());
+        //ClientRegistry.bindTileEntitySpecialRenderer(BlockEmbothriumFlower.TileEntityCustom.class, new RenderFlowerEmbothrium());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockAmborellaFlower.TileEntityCustom.class, new RenderFlowerAmborella());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockCalycanthusFlower.TileEntityCustom.class, new RenderFlowerCalycanthus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockMicrovictoriaBud.TileEntityCustom.class, new RenderFlowerMicrovictoriaBud());

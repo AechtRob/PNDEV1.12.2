@@ -8,11 +8,14 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
+import java.util.Calendar;
+
 public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSanctacaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris.png");
+    public static final ResourceLocation TEXTURE_XMAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris_xmas.png");
 
     public static float getScaler() {
-        return 0.45F;
+        return 0.13F;
     }
 
     public RenderSanctacaris(RenderManager mgr) {
@@ -21,6 +24,12 @@ public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSancta
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSanctacaris entity) {
+        Calendar calendar = Calendar.getInstance();
+        if (calendar.get(2) + 1 == 12 && calendar.get(5) >= 24
+                || calendar.get(2) + 1 == 12 && calendar.get(5) <= 26 )
+        {
+            return RenderSanctacaris.TEXTURE_XMAS;
+        }
         return RenderSanctacaris.TEXTURE;
     }
 
