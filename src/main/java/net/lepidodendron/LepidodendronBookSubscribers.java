@@ -8606,6 +8606,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraAdamanteryon) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ADAMANTERYON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraNotidanoides) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_NOTIDANOIDES.trigger((EntityPlayerMP) event.getEntityPlayer());

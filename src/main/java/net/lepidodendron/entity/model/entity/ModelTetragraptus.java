@@ -190,6 +190,15 @@ public class ModelTetragraptus extends AdvancedModelBase {
             this.chainWave(Rightw, 0.12F, 0.08F, 1F, f2, 0.5F);
             this.chainWave(Leftw, 0.12F, 0.08F, -1F, -f2, -0.5F);
             this.chainFlap(Flapw, 0.12F, 0.08F, 1F, f2, 0.5F);
-            }
+        }
+
+        if (!e.isInWater()) {
+            this.resetToDefaultPose();
+            this.full.rotateAngleZ = (float) Math.toRadians(90);
+            this.full.offsetY = 0.9F;
+            this.full.scaleChildren = true;
+            this.full.setScaleX(0.2F);
+            this.full.setScaleZ(1.2F);
+        }
     }
 }

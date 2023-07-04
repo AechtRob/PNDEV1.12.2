@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:macrotaeniopteris_cone"
+      "item": "lepidodendron:macrotaeniopteris_seeds"
     },
     {
       "type": "forge:ore_dict",
@@ -11,7 +11,7 @@
     }
   ],
   "result": {
-    "item": "lepidodendron:macrotaeniopteris_seeds",
+    "item": "lepidodendron:macrotaeniopteris_item",
     "count": 1
   }
 }

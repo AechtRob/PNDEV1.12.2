@@ -2,14 +2,14 @@
 	"name": "Hurdia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_",
 			"title": "Hurdia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+			"text": "$(l)Temporal Range:$() Cambrian(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
 		},
 		{
 			"type": "image",

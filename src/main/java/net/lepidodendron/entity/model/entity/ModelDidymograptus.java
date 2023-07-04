@@ -106,5 +106,14 @@ public class ModelDidymograptus extends AdvancedModelBase {
             this.chainWave(Right, 0.12F, 0.15F, 1F, f2, 0.5F);
             this.chainWave(Left, 0.12F, 0.15F, -1F, -f2, -0.5F);
         }
+
+        if (!e.isInWater()) {
+            this.resetToDefaultPose();
+            this.full.rotateAngleZ = (float) Math.toRadians(90);
+            this.full.offsetY = 0.0F;
+            this.full.scaleChildren = true;
+            this.full.setScaleX(0.2F);
+            this.full.setScaleZ(1.2F);
+        }
     }
 }
