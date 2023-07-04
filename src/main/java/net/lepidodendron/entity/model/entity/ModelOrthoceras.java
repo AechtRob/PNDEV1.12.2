@@ -486,7 +486,7 @@ public class ModelOrthoceras extends AdvancedModelBaseExtended {
         }
         else {
             this.shellbase.rotateAngleZ = (float) Math.toRadians(90);
-            this.shellbase.offsetY = 1.15F - 1.2F;
+            this.shellbase.offsetY = 1.2F;
         }
 
     }
