@@ -83,11 +83,6 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 		return true;
 	}
 
-	@Override
-	public ResourceLocation FlightSound() {
-		return null;
-	}
-
 	public static String getPeriod() {return "mid Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
@@ -218,6 +213,11 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
 
+	}
+
+	@Override
+	public ResourceLocation FlightSound() {
+		return new ResourceLocation("lepidodendron:dragonfly_flight");
 	}
 
 }
