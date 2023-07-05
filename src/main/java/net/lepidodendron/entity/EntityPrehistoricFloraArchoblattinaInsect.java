@@ -76,7 +76,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	public IBlockState getEggBlockState() {
-		return BlockInsectEggsPalaeodictyoptera.block.getDefaultState();
+		return BlockInsectEggsArchoblattina.block.getDefaultState();
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

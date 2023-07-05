@@ -7906,6 +7906,15 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraScheenstia) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SCHEENSTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 		else if (event.getTarget() instanceof EntityPrehistoricFloraPseudotherium) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_PSEUDOTHERIUM.trigger((EntityPlayerMP) event.getEntityPlayer());

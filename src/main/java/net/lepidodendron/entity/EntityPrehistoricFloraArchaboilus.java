@@ -5,6 +5,8 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.BlockInsectEggsArchaboilus;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -46,12 +48,20 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 
 	@Override
 	public int defaultWanderCooldown() {
-		return 0;
+		return 500;
 	}
 
 	@Override
 	public float getAISpeedLand() {
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
 		return 0.18F;
+	}
+
+	@Override
+	public IBlockState getEggBlockState() {
+		return BlockInsectEggsArchaboilus.block.getDefaultState();
 	}
 
 	public static String getPeriod() {return "Jurassic";}

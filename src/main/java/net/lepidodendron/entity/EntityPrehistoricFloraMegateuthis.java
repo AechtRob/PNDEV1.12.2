@@ -21,6 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -100,7 +101,9 @@ public class EntityPrehistoricFloraMegateuthis extends EntityPrehistoricFloraNau
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem()
+				|| OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack)
+				|| OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack));
 	}
 
 	@Override

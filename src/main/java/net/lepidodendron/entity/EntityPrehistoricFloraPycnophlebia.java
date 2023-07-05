@@ -5,6 +5,8 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.BlockInsectEggsPycnophlebia;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -46,14 +48,23 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 
 	@Override
 	public int defaultWanderCooldown() {
-		return 0;
+		return 500;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
 	@Override
 	public float getAISpeedLand() {
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
 		return 0.18F;
 	}
+
+	@Override
+	public IBlockState getEggBlockState() {
+		return BlockInsectEggsPycnophlebia.block.getDefaultState();
+	}
+
 
 	//public static String getHabitat() {return "Terrestrial";}
 
