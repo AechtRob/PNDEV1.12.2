@@ -310,6 +310,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PIRANIA = new CustomTrigger("pf_book_pirania");
     public static final CustomTrigger CLICK_PITYS = new CustomTrigger("pf_book_pitys");
     public static final CustomTrigger CLICK_PLANE = new CustomTrigger("pf_book_plane");
+    public static final CustomTrigger CLICK_FIG = new CustomTrigger("pf_book_fig");
+    public static final CustomTrigger CLICK_FIG_BANYAN = new CustomTrigger("pf_book_fig_banyan");
     public static final CustomTrigger CLICK_PLEUROMEIA = new CustomTrigger("pf_book_pleuromeia");
     public static final CustomTrigger CLICK_PODOCARP = new CustomTrigger("pf_book_podocarp");
     public static final CustomTrigger CLICK_PODOZAMITES = new CustomTrigger("pf_book_podozamites");
@@ -1555,6 +1557,8 @@ public class ModTriggers
             CLICK_PIRANIA,
             CLICK_PITYS,
             CLICK_PLANE,
+            CLICK_FIG,
+            CLICK_FIG_BANYAN,
             CLICK_PLEUROMEIA,
             CLICK_PODOCARP,
             CLICK_PODOZAMITES,

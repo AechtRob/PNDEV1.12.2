@@ -130,15 +130,15 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
                             $_dependencies.put("world", worldIn);
                             $_dependencies.put("SaplingSpawn", false);
                             if (rand.nextInt(2) == 0) {
-                                worldIn.setBlockState(position, BlockTreefernBlackShootPlaceable.block.getDefaultState());
-                                BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, position, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                worldIn.setBlockState(blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
-                            else if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() + (rand.nextInt(7) - 3) > 95)) {
+                            else if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && blockpos.getY() + (rand.nextInt(7) - 3) > 95)) {
                                 ProcedureWorldGenTreefernBlack.executeProcedure($_dependencies);
                             }
                             else {
-                                worldIn.setBlockState(position, BlockTreefernBlackShootPlaceable.block.getDefaultState());
-                                BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, position, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                worldIn.setBlockState(blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
                         }
                     }

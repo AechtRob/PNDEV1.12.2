@@ -319,6 +319,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemPagiophyllumBoatItem.block;
             case HIRMERIELLA:
                 return ItemHirmeriellaBoatItem.block;
+            case FIG:
+                return ItemFigBoatItem.block;
 
         }
     }
@@ -457,6 +459,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockPagiophyllumPlanks.block;
             case HIRMERIELLA:
                 return BlockHirmeriellaPlanks.block;
+            case FIG:
+                return BlockFigPlanks.block;
 
         }
     }
@@ -1320,7 +1324,8 @@ public class EntityPNBoat extends EntityBoat
         BISONIA(62, "bisonia"),
         EMBOTHRIUM(63, "embothrium"),
         PAGIOPHYLLUM(64, "pagiophyllum"),
-        HIRMERIELLA(65, "hirmeriella")
+        HIRMERIELLA(65, "hirmeriella"),
+        FIG(66, "fig")
         ;
 
         private final String name;

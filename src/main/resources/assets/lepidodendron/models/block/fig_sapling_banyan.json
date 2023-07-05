@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/fig_sapling_banyan",
+    "particle": "lepidodendron:blocks/fig_sapling_banyan"
+  }
+}

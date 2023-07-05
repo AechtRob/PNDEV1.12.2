@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:fig_sapling_banyan" },
+        "stage=1": { "model": "lepidodendron:fig_sapling_banyan" }
+    }
+}
+
