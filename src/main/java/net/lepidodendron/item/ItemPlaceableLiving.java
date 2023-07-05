@@ -390,9 +390,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						if (item != null) {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
-							//if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-							//	itemstack.shrink(1);
-							//}
+							if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
+								itemstack.shrink(1);
+							}
 							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
 								//if (!playerIn.isCreative()) {
 									//itemstack.shrink(1);
