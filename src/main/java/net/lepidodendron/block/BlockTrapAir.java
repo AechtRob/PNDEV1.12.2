@@ -522,12 +522,12 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				--this.ticker;
 
 				if (this.ticker <= 0) {
-					this.ticker = 2400;
+					this.ticker = 4800;
 				}
 
 				if (this.getWorld().rand.nextInt(this.ticker) == 0) {
 					BlockTrapAir.BlockCustom.makeTrapped(this.getWorld(), this.getPos());
-					this.ticker = 2400;
+					this.ticker = 4800;
 				}
 			}
 		}

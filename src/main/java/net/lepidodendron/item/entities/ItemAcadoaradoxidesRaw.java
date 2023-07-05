@@ -38,7 +38,8 @@ public class ItemAcadoaradoxidesRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acadoaradoxides", ItemAcadoaradoxidesRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAcadoaradoxidesRaw.block);
-		OreDictionary.registerOre("foodTrilobiteraw", ItemAcadoaradoxidesRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemAcadoaradoxidesRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemAcadoaradoxidesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

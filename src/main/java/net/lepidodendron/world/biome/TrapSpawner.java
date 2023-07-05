@@ -209,6 +209,14 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                                                             correctBait = true;
                                                         }
                                                     }
+                                                    //Disallow large things as babies 99% of the time:
+                                                    if (correctBait) {
+                                                        if (nbtStr.indexOf("AgeTicks:0") > 0) {
+                                                            if (rand.nextInt(100) != 0) {
+                                                                correctBait = false;
+                                                            }
+                                                        }
+                                                    }
 
                                                     if (!errFound && correctBait) {
                                                         //System.err.println("Spawning " + mobToSpawn + " with locationID " + locationID + " at: " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
