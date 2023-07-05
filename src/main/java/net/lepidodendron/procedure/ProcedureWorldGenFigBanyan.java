@@ -1075,7 +1075,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
         //Nub on the top for leaves:
         BranchSegment = BranchSegment - 1;
         ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-        FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
         MaxHeight = Math.max(MaxHeight, branchpos);
         if (giant) {
             //Add prop trunk:
@@ -1111,7 +1111,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                         ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
                         branchpos = branchpos + 1;
                     }
-                    FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     //Add prop trunk:
                     if (giant) {
@@ -1145,7 +1145,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchSegment = BranchSegment - 1;
                     ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1182,7 +1182,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1218,7 +1218,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1280,7 +1280,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
         //Nub on the top for leaves:
         BranchSegment = BranchSegment - 1;
         ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-        FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
         MaxHeight = Math.max(MaxHeight, branchpos);
         if (giant) {
             //Add prop trunk:
@@ -1316,7 +1316,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                         ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
                         branchpos = branchpos + 1;
                     }
-                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1351,7 +1351,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchSegment = BranchSegment + 1;
                     ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1389,7 +1389,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1426,7 +1426,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1489,7 +1489,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
         //Nub on the top for leaves:
         BranchSegment = BranchSegment - 1;
         ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
-        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
         MaxHeight = Math.max(MaxHeight, branchpos);
         if (giant) {
             //Add prop trunk:
@@ -1525,7 +1525,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                         ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
                         branchpos = branchpos + 1;
                     }
-                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1560,7 +1560,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchSegment = BranchSegment - 1;
                     ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1598,7 +1598,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1635,7 +1635,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1697,7 +1697,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
         //Nub on the top for leaves:
         BranchSegment = BranchSegment - 1;
         ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
-        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
         MaxHeight = Math.max(MaxHeight, branchpos);
         if (giant) {
             //Add prop trunk:
@@ -1733,7 +1733,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                         ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
                         branchpos = branchpos + 1;
                     }
-                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1768,7 +1768,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchSegment = BranchSegment + 1;
                     ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1802,7 +1802,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchSegment = BranchSegment + 1;
                     ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1840,7 +1840,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
@@ -1876,7 +1876,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     //Nub on the top for leaves:
                     BranchLatCount = BranchLatCount - 1;
                     ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
-                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
                     MaxHeight = Math.max(MaxHeight, branchpos);
                     if (giant) {
                         //Add prop trunk:
