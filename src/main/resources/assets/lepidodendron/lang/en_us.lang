@@ -7058,6 +7058,7 @@ tile.pf_taxodium_door.name=Taxodium Door
 tile.pf_taxodium_fence.name=Taxodium Fence
 tile.pf_taxodium_fence_gate.name=Taxodium Fence Gate
 tile.pf_taxodium_knee.name=Taxodium Knee
+tile.pf_fig_banyan_root_knee.name=Banyan Aerial Root
 tile.pf_taxodium_leaves.name=Taxodium Leaves
 tile.pf_taxodium_litterbin.name=Taxodium Litter Bin
 tile.pf_taxodium_log.name=Taxodium Log

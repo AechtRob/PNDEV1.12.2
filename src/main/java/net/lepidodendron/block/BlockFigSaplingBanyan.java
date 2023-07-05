@@ -135,12 +135,17 @@ public class BlockFigSaplingBanyan extends ElementsLepidodendronMod.ModElement {
 	        }
 	        else
 	        {
-	           	int TreeHeight = 20 + rand.nextInt(18);
-				if (TreeHeight > 30 && Math.random() > 0.5) {
-					TreeHeight = 10 + rand.nextInt(18);
+				int x = pos.getX();
+				int y = pos.getY();
+				int z = pos.getZ();
+				{
+					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					ProcedureWorldGenFigBanyan.executeProcedure($_dependencies);
 				}
-				ProcedureWorldGenFigBanyan.executeProcedure(world, pos, TreeHeight);
-				//}
 	        }
 	    }
 	    

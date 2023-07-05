@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:fig_banyan_root_small", "x": 180
+    },
+    "bottom=true": {
+      "model": "lepidodendron:fig_banyan_root_small", "x": 180
+    },
+    "bottom=false": {
+      "model": "lepidodendron:fig_banyan_root_big", "x": 180
+    }
+  }
+}

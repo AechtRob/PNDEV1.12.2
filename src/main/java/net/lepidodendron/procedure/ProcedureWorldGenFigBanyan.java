@@ -1,394 +1,1946 @@
 package net.lepidodendron.procedure;
 
-import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockPlaneLeaves;
-import net.lepidodendron.block.BlockPlaneLog;
+import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-import java.util.List;
 import java.util.Random;
+
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElement {
-	public ProcedureWorldGenFigBanyan(ElementsLepidodendronMod instance) {
-		super(instance, 42);
-	}
+    public ProcedureWorldGenFigBanyan(ElementsLepidodendronMod instance) {
+        super(instance, 42);
+    }
 
-	private static final PropertyDirection FACING = BlockDirectional.FACING;
-	private static final PropertyBool CHECK_DECAY = PropertyBool.create("check_decay");
-	private static Random rand;
-    private static World world;
-    private static BlockPos basePos = BlockPos.ORIGIN;
-    private static int height;
-    private static int heightLimit;
-   	private static int heightLimitLimit = 18;
-    //private static double heightAttenuation = 0.618D;
-    private static double heightAttenuation = 0.818D;
-    //private static double leafDensity = 1.0D;
-    private static double leafDensity = 0.40D;
-    private static int leafDistanceLimit = 4;
-    private static List<ProcedureWorldGenFigBanyan.FoliageCoordinates> foliageCoords;
-    //private static double branchSlope = 0.381D;
-    private static double branchSlope = 0.781D;
-    //private static double scaleWidth = 1.0D;
-    private static double scaleWidth = 0.275D;
-    private static int trunkSize = 1;
+    public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+        if (dependencies.get("x") == null) {
+            System.err.println("Failed to load dependency x for procedure WorldGenFigBanyan!");
+            return;
+        }
+        if (dependencies.get("y") == null) {
+            System.err.println("Failed to load dependency y for procedure WorldGenFigBanyan!");
+            return;
+        }
+        if (dependencies.get("z") == null) {
+            System.err.println("Failed to load dependency z for procedure WorldGenFigBanyan!");
+            return;
+        }
+        if (dependencies.get("world") == null) {
+            System.err.println("Failed to load dependency world for procedure WorldGenFigBanyan!");
+            return;
+        }
+        int x = (int) dependencies.get("x");
+        int y = (int) dependencies.get("y");
+        int z = (int) dependencies.get("z");
+        World world = (World) dependencies.get("world");
+        int TrunkHeight = 0;
+        int counter = 0;
+        int propCounter = 0;
+        int branchpos = 0;
+        int BranchSegment = 0;
+        int BranchHeight = 0;
+        int LateralPosV = 0;
+        int LateralPosH = 0;
+        int BranchLatCount = 0;
+        int MaxHeight = 0;
 
-	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {
-		
-		//This is now a redevelopment of vanilla giant oak code (WorldGenBigTree):
-		
- 		//this.world = worldIn;
-        //this.basePos = position;
-        //this.rand = new Random(rand.nextLong());
-        world = WorldIn;
-        basePos = position;
-        Random randl = new Random();
-       	rand = new Random(randl.nextLong());
-       	heightLimit = TreeHeight;
-       	//heightLimitLimit = heightLimitLimit + (int) Math.round(Math.random() * 12);
+        Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
+        Material material1 = world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1))).getMaterial();
+        Material material2= world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)).getMaterial();
+        Material material3 = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))).getMaterial();
+        if ((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))
+                && material != Material.GRASS
+                && material != Material.GROUND
+                && material != Material.GLASS
+                && material != Material.IRON
+                && material != Material.ROCK
+                && material != Material.SAND
+                && material != Material.WOOD
+                && (world.canSeeSky(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1))))
+                && material1 != Material.GRASS
+                && material1 != Material.GROUND
+                && material1 != Material.GLASS
+                && material1 != Material.IRON
+                && material1 != Material.ROCK
+                && material1 != Material.SAND
+                && material1 != Material.WOOD
+                && (world.canSeeSky(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)))
+                && material2 != Material.GRASS
+                && material2 != Material.GROUND
+                && material2 != Material.GLASS
+                && material2 != Material.IRON
+                && material2 != Material.ROCK
+                && material2 != Material.SAND
+                && material2 != Material.WOOD
+                && (world.canSeeSky(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))))
+                && material3 != Material.GRASS
+                && material3 != Material.GROUND
+                && material3 != Material.GLASS
+                && material3 != Material.IRON
+                && material3 != Material.ROCK
+                && material3 != Material.SAND
+                && material3 != Material.WOOD
+        ) {
+            world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+            world.setBlockToAir(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)));
+            world.setBlockToAir(new BlockPos((int) (x + 1), (int) y, (int) z));
+            world.setBlockToAir(new BlockPos((int) x, (int) y, (int) (z - 1)));
 
-        if (heightLimit == 0)
-        {
-            heightLimit = 20 + rand.nextInt(heightLimitLimit);
+            world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+            ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 1), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 1), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y - 1), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+
+            ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 2), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 2), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y - 2), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+
+            //Trunk:
+            TrunkHeight = 6 + (int) Math.round(Math.random() * 12);
+            MaxHeight = TrunkHeight;
+
+            counter = 0;
+            while (counter <= TrunkHeight * 0.7) {
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+                ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+
+                counter = counter + 1;
+            }
+
+            //North:
+            LateralPosV = 0;
+            //Either attach at the top, or one below:
+            branchpos = counter - 1;
+            if (Math.random() >= 0.5) {branchpos = counter - 2;}
+            //We go up to a +/- 2 variable height:
+            BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+            BranchSegment = 1;
+            //We need to arbitrarily capture the lateral horizontal position as we build:
+            LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+            if (LateralPosH <= 2 && BranchHeight > 3) {LateralPosH = 3;}
+            if (LateralPosH <= 1) {LateralPosH = 2;}
+            while (branchpos < BranchHeight) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                BranchSegment = BranchSegment + 1;
+                if (Math.random() >= 0.7) {
+                    if (BranchSegment == LateralPosH) {
+                        LateralPosV = branchpos;
+                    }
+                    ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                    BranchSegment = BranchSegment + 1;
+                }
+                branchpos = branchpos + 1;
+            }
+            //Nub on the top for leaves:
+            BranchSegment = BranchSegment - 1;
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+            FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+            MaxHeight = Math.max(MaxHeight, branchpos);
+            //Add prop trunk:
+            BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z - BranchSegment);
+            propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+            if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+                //Laterals either in our axis or perpendicular:
+                if (Math.random() >= 0.5) {
+                    //In our axis:
+                    //A simple backward branch, RARELY upright:
+                    if (Math.random() > 0.75) {
+                        //Upright:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                            branchpos = branchpos + 1;
+                        }
+                        FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z - BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                    }
+                    else {
+                        //Diagonal:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH + 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                            BranchSegment = BranchSegment + 1;
+                            branchpos = branchpos + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchSegment = BranchSegment - 1;
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z - BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                    }
+                }
+                else {
+                    //Perpendicular axis, only two diagonals with 75% chance of each:
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                    }
+
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0) 
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                    }
+                }
+            }
+
+
+            //South:
+            LateralPosV = 0;
+            //Either attach at the top, or one below:
+            branchpos = counter - 1;
+            if (Math.random() >= 0.5) {branchpos = counter - 2;}
+            //We go up to a +/- 2 variable height:
+            BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+            BranchSegment = 1;
+            //We need to arbitrarily capture the lateral horizontal position as we build:
+            LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+            if (LateralPosH <= 2 && BranchHeight > 3) {LateralPosH = 3;}
+            if (LateralPosH <= 1) {LateralPosH = 2;}
+            while (branchpos < BranchHeight) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                BranchSegment = BranchSegment + 1;
+                if (Math.random() >= 0.7) {
+                    if (BranchSegment == LateralPosH) {
+                        LateralPosV = branchpos;
+                    }
+                    ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                    BranchSegment = BranchSegment + 1;
+                }
+                branchpos = branchpos + 1;
+            }
+            //Nub on the top for leaves:
+            BranchSegment = BranchSegment - 1;
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+            FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+            MaxHeight = Math.max(MaxHeight, branchpos);
+            //Add prop trunk:
+            topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+            propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+            
+            if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+                //Laterals either in our axis or perpendicular:
+                if (Math.random() >= 0.5) {
+                    //In our axis:
+                    //A simple backward branch, RARELY upright:
+                    if (Math.random() > 0.75) {
+                        //Upright:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                            branchpos = branchpos + 1;
+                        }
+                        FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                    else {
+                        //Diagonal:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH - 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                            BranchSegment = BranchSegment - 1;
+                            branchpos = branchpos + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchSegment = BranchSegment + 1;
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                }
+                else {
+                    //Perpendicular axis, only two diagonals with 75% chance of each:
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                }
+            }
+
+
+            //West:
+            LateralPosV = 0;
+            //Either attach at the top, or one below:
+            branchpos = counter - 1;
+            if (Math.random() >= 0.5) {branchpos = counter - 2;}
+            //We go up to a +/- 2 variable height:
+            BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+            BranchSegment = 1;
+            //We need to arbitrarily capture the lateral horizontal position as we build:
+            LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+            if (LateralPosH <= 2 && BranchHeight > 3) {LateralPosH = 3;}
+            if (LateralPosH <= 1) {LateralPosH = 2;}
+            while (branchpos < BranchHeight) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                BranchSegment = BranchSegment + 1;
+                if (Math.random() >= 0.7) {
+                    if (BranchSegment == LateralPosH) {
+                        LateralPosV = branchpos;
+                    }
+                    ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                    BranchSegment = BranchSegment + 1;
+                }
+                branchpos = branchpos + 1;
+            }
+            //Nub on the top for leaves:
+            BranchSegment = BranchSegment - 1;
+            ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+            MaxHeight = Math.max(MaxHeight, branchpos);
+            //Add prop trunk:
+            topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z);
+            propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+
+            if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+                //Laterals either in our axis or perpendicular:
+                if (Math.random() >= 0.5) {
+                    //In our axis:
+                    //A simple backward branch, RARELY upright:
+                    if (Math.random() > 0.75) {
+                        //Upright:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                            branchpos = branchpos + 1;
+                        }
+                        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                    else {
+                        //Diagonal:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH + 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                            BranchSegment = BranchSegment + 1;
+                            branchpos = branchpos + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchSegment = BranchSegment - 1;
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                }
+                else {
+                    //Perpendicular axis, only two diagonals with 75% chance of each:
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                }
+            }
+
+            //East:
+            LateralPosV = 0;
+            //Either attach at the top, or one below:
+            branchpos = counter - 1;
+            if (Math.random() >= 0.5) {branchpos = counter - 2;}
+            //We go up to a +/- 2 variable height:
+            BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+            BranchSegment = 1;
+            //We need to arbitrarily capture the lateral horizontal position as we build:
+            LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+            if (LateralPosH <= 2 && BranchHeight > 3) {LateralPosH = 3;}
+            if (LateralPosH <= 1) {LateralPosH = 2;}
+            while (branchpos < BranchHeight) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                BranchSegment = BranchSegment + 1;
+                if (Math.random() >= 0.7) {
+                    if (BranchSegment == LateralPosH) {
+                        LateralPosV = branchpos;
+                    }
+                    ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                    BranchSegment = BranchSegment + 1;
+                }
+                branchpos = branchpos + 1;
+            }
+            //Nub on the top for leaves:
+            BranchSegment = BranchSegment - 1;
+            ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+            MaxHeight = Math.max(MaxHeight, branchpos);
+            //Add prop trunk:
+            topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z);
+            propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+
+            if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+                //Laterals either in our axis or perpendicular:
+                if (Math.random() >= 0.5) {
+                    //In our axis:
+                    //A simple backward branch, RARELY upright:
+                    if (Math.random() > 0.75) {
+                        //Upright:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                            branchpos = branchpos + 1;
+                        }
+                        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                    else {
+                        //Diagonal:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH - 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                            BranchSegment = BranchSegment - 1;
+                            branchpos = branchpos + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchSegment = BranchSegment + 1;
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+
+
+                        //Diagonal:
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV;
+                        BranchSegment = LateralPosH - 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                            BranchSegment = BranchSegment - 1;
+                            branchpos = branchpos + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchSegment = BranchSegment + 1;
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+
+                    }
+                }
+                else {
+                    //Perpendicular axis, only two diagonals with 75% chance of each:
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+
+                    if (Math.random() >= 0.25) {
+                        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                        branchpos = LateralPosV + 1;
+                        BranchSegment = LateralPosH;
+                        BranchLatCount = 1;
+                        while (branchpos < BranchHeight) {
+                            ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                            branchpos = branchpos + 1;
+                            BranchLatCount = BranchLatCount + 1;
+                        }
+                        //Nub on the top for leaves:
+                        BranchLatCount = BranchLatCount - 1;
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeavesBanyan.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                        MaxHeight = Math.max(MaxHeight, branchpos);
+                        //Add prop trunk:
+                        topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount);
+                        propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+
+                    }
+                }
+            }
+
+            //Central crown:
+            counter = 0;
+            int additional = (int)(Math.random() * 2);
+            while (counter <= MaxHeight + additional) {
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+                ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) (z - 1), world, BlockFigLog.block, EnumFacing.NORTH);
+                counter = counter + 1;
+            }
+            FigCrown((int) x, (int) (y + counter - 1), (int) z, world, BlockFigLeavesBanyan.block, 4 + (int) Math.random() * 3, counter - 1);
+
+        }
+    }
+
+    public static final PropertyDirection FACING = BlockDirectional.FACING;
+
+    public static void FigCrown(int x, int y, int z, World world, Block blockLeaf, int radiusCrown, int height) {
+
+        int rad = Math.min(radiusCrown, 6);
+        //Size of leaf crown is proportional to distance from centre:
+        if (rad > 3) {
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 1, (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z - 1, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z + 1, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 1, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 1, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+        }
+        if (rad > 4) {
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z - 2, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z + 2, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 2, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 2, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z - 3, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z + 3, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 3, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 3, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+        }
+        if (rad > 5) {
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 3, (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 4, (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z - 3, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z + 3, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 3, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 3, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z - 4, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z + 4, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 4, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 4, (int) y, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z - 1, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z + 1, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 2, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 2, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z - 2, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z + 2, world, BlockFigLog.block, EnumFacing.EAST);
+            ProcedureTreeLog.executeProcedure((int) x + 2, (int) y + 2, (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            ProcedureTreeLog.executeProcedure((int) x - 2, (int) y + 2, (int) z, world, BlockFigLog.block, EnumFacing.UP);
         }
 
-        {
-            generateLeafNodeList();
-            generateLeaves();
-            generateTrunk();
-            generateLeafNodeBases();
-            //world = null; //Fix vanilla Mem leak, holds latest world
-            //return true;
-        }
-
-	}
-
-	/**
-     * Generates a list of leaf nodes for the tree, to be populated by generateLeaves.
-     */
-    static void generateLeafNodeList()
-    {
-        height = (int)((double)heightLimit * heightAttenuation);
-        if (height >= heightLimit)
-        {
-            height = heightLimit - 1;
-        }
-		
-        int i = (int)(1.382D + Math.pow(leafDensity * (double)heightLimit / 13.0D, 2.0D));
-
-        if (i < 1)
-        {
-            i = 1;
-        }
-
-        int j = basePos.getY() + height;
-        int k = heightLimit - leafDistanceLimit;
-        foliageCoords = Lists.<ProcedureWorldGenFigBanyan.FoliageCoordinates>newArrayList();
-        foliageCoords.add(new ProcedureWorldGenFigBanyan.FoliageCoordinates(basePos.up(k), j));
-
-        for (; k >= 0; --k)
-        {
-            float f = layerSize(k);
-
-            if (f >= 0.0F)
-            {
-                for (int l = 0; l < i; ++l)
-                {
-                    double d0 = scaleWidth * (double)f * ((double)rand.nextFloat() + 0.328D);
-                    double d1 = (double)(rand.nextFloat() * 2.0F) * Math.PI;
-                    double d2 = d0 * Math.sin(d1) + 0.5D;
-                    double d3 = d0 * Math.cos(d1) + 0.5D;
-                    BlockPos blockpos = basePos.add(d2, (double)(k - 1), d3);
-                    BlockPos blockpos1 = blockpos.up(leafDistanceLimit);
-
-                    if (checkBlockLine(blockpos, blockpos1) == -1)
-                    {
-                        int i1 = basePos.getX() - blockpos.getX();
-                        int j1 = basePos.getZ() - blockpos.getZ();
-                        double d4 = (double)blockpos.getY() - Math.sqrt((double)(i1 * i1 + j1 * j1)) * branchSlope;
-                        int k1 = d4 > (double)j ? j : (int)d4;
-                        BlockPos blockpos2 = new BlockPos(basePos.getX(), k1, basePos.getZ());
-
-                        if (checkBlockLine(blockpos2, blockpos) == -1)
-                        {
-                            foliageCoords.add(new ProcedureWorldGenFigBanyan.FoliageCoordinates(blockpos, blockpos2.getY()));
+        int xct;
+        int yct = y;
+        int zct;
+        while (rad >= 1) {
+            xct = -rad;
+            while (xct <= rad) {
+                zct = -rad;
+                while (zct <= rad) {
+                    if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int)  Math.abs(rad), 2))) {
+                        ProcedureTreeLeaf.executeProcedure(x + xct, yct, z + zct, world, blockLeaf);
+                        //Add aerial roots:
+                        if (yct == y && (Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int)  Math.abs(rad - 1), 2))) {
+                            FigRoots(world, x + xct, yct, z + zct, height);
                         }
                     }
+                    zct = zct + 1;
                 }
+                xct = xct + 1;
             }
-        }
-    }
-
-
-    static class FoliageCoordinates extends BlockPos
-        {
-            private final int branchBase;
-
-            public FoliageCoordinates(BlockPos pos, int p_i45635_2_)
-            {
-                super(pos.getX(), pos.getY(), pos.getZ());
-                this.branchBase = p_i45635_2_;
-            }
-
-            public int getBranchBase()
-            {
-                return this.branchBase;
-            }
+            yct = yct + 1;
+            rad = rad - 1;
         }
 
-	/**
-     * Gets the rough size of a layer of the tree.
-     */
-    static float layerSize(int y)
-    {
-        if ((float)y < (float)heightLimit * 0.3F)
-        {
-            return -1.0F;
-        }
-        else
-        {
-            float f = (float)heightLimit / 2.0F;
-            float f1 = f - (float)y;
-            float f2 = MathHelper.sqrt(f * f - f1 * f1);
+        //Backups in case we are at the centre:
+        ProcedureTreeLeaf.executeProcedure((int) x, (int) y + 1, (int) z, world, blockLeaf);
+        ProcedureTreeLeaf.executeProcedure((int) x + 1, (int) y, (int) z, world, blockLeaf);
+        ProcedureTreeLeaf.executeProcedure((int) x - 1, (int) y, (int) z, world, blockLeaf);
+        ProcedureTreeLeaf.executeProcedure((int) x, (int) y, (int) z + 1, world, blockLeaf);
+        ProcedureTreeLeaf.executeProcedure((int) x, (int) y, (int) z - 1, world, blockLeaf);
 
-            if (f1 == 0.0F)
-            {
-                f2 = f;
-            }
-            else if (Math.abs(f1) >= f)
-            {
-                return 0.0F;
-            }
-
-            return f2 * 0.5F;
-        }
-    }
-
-	/**
-     * Checks a line of blocks in the world from the first coordinate to triplet to the second, returning the distance
-     * (in blocks) before a non-air, non-leaf block is encountered and/or the end is encountered.
-     */
-    static int checkBlockLine(BlockPos posOne, BlockPos posTwo)
-    {
-        BlockPos blockpos = posTwo.add(-posOne.getX(), -posOne.getY(), -posOne.getZ());
-        int i = getGreatestDistance(blockpos);
-        float f = (float)blockpos.getX() / (float)i;
-        float f1 = (float)blockpos.getY() / (float)i;
-        float f2 = (float)blockpos.getZ() / (float)i;
-
-        if (i == 0)
-        {
-            return -1;
-        }
-        else
-        {
-            for (int j = 0; j <= i; ++j)
-            {
-                BlockPos blockpos1 = posOne.add((double)(0.5F + (float)j * f), (double)(0.5F + (float)j * f1), (double)(0.5F + (float)j * f2));
-
-               if (!isReplaceable(world, blockpos1))
-                {
-                    return j;
-                }
-            }
-
-            return -1;
-        }
-    }
-
-    /**
-     * Returns the absolute greatest distance in the BlockPos object.
-     */
-    private static int getGreatestDistance(BlockPos posIn)
-    {
-        int i = MathHelper.abs(posIn.getX());
-        int j = MathHelper.abs(posIn.getY());
-        int k = MathHelper.abs(posIn.getZ());
-
-        if (k > i && k > j)
-        {
-            return k;
-        }
-        else
-        {
-            return j > i ? j : i;
-        }
-    }
-
-    /**
-     * Generates the leaf portion of the tree as specified by the leafNodes list.
-     */
-    static void generateLeaves()
-    {
-        for (ProcedureWorldGenFigBanyan.FoliageCoordinates procedureworldgenplane$foliagecoordinates : foliageCoords)
-        {
-            generateLeafNode(procedureworldgenplane$foliagecoordinates);
-        }
     }
     
-    /**
-     * Generates the leaves surrounding an individual entry in the leafNodes list.
-     */
-    static void generateLeafNode(BlockPos pos)
-    {
-        for (int i = 0; i < leafDistanceLimit; ++i)
-        {
-            //crosSection(pos.up(i), leafSize(i), BlockPlaneLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
-            crosSection(pos.up(i), leafSize(i), BlockPlaneLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+    public static void FigProp(int TrunkHeight, int x, int y, int z, World world, boolean giant) {
+        
+        int counter = 0;
+        int branchpos = 0;
+        int BranchSegment = 0;
+        int BranchHeight = 0;
+        int LateralPosV = 0;
+        int LateralPosH = 0;
+        int BranchLatCount = 0;
+        int MaxHeight = 0;
+
+        //Trunk:
+        MaxHeight = TrunkHeight;
+        
+        counter = 0;
+        while (counter <= TrunkHeight * 0.7) {
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            counter = counter + 1;
         }
-    }
 
-    static void crosSection(BlockPos pos, float p_181631_2_, IBlockState p_181631_3_)
-    {
-        int i = (int)((double)p_181631_2_ + 0.618D);
+        //North:
+        LateralPosV = 0;
+        //Either attach at the top, or one below:
+        branchpos = counter - 1;
+        if (Math.random() >= 0.5) {
+            branchpos = counter - 2;
+        }
+        //We go up to a +/- 2 variable height:
+        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+        BranchSegment = 1;
+        //We need to arbitrarily capture the lateral horizontal position as we build:
+        LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+        if (LateralPosH <= 2 && BranchHeight > 3) {
+            LateralPosH = 3;
+        }
+        if (LateralPosH <= 1) {
+            LateralPosH = 2;
+        }
+        while (branchpos < BranchHeight) {
+            if (BranchSegment == LateralPosH) {
+                LateralPosV = branchpos;
+            }
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+            BranchSegment = BranchSegment + 1;
+            if (Math.random() >= 0.7) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                BranchSegment = BranchSegment + 1;
+            }
+            branchpos = branchpos + 1;
+        }
+        //Nub on the top for leaves:
+        BranchSegment = BranchSegment - 1;
+        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+        FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        MaxHeight = Math.max(MaxHeight, branchpos);
+        if (giant) {
+            //Add prop trunk:
+            BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z - BranchSegment);
+            int propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+        }
 
-        for (int j = -i; j <= i; ++j)
-        {
-            for (int k = -i; k <= i; ++k)
-            {
-                if (Math.pow((double)Math.abs(j) + 0.5D, 2.0D) + Math.pow((double)Math.abs(k) + 0.5D, 2.0D) <= (double)(p_181631_2_ * p_181631_2_))
-                {
-                    BlockPos blockpos = pos.add(j, 0, k);
-                    IBlockState state = world.getBlockState(blockpos);
+        if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+            //Laterals either in our axis or perpendicular:
+            if (Math.random() >= 0.5) {
+                //In our axis:
+                //A simple backward branch, RARELY upright:
+                if (Math.random() > 0.75) {
+                    //Upright:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        branchpos = branchpos + 1;
+                    }
+                    FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    //Add prop trunk:
+                    if (giant) {
+                        BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z - BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+                } else {
+                    //Diagonal:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH + 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                        BranchSegment = BranchSegment + 1;
+                        branchpos = branchpos + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchSegment = BranchSegment - 1;
+                    ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z - BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+                }
+            } else {
+                //Perpendicular axis, only two diagonals with 75% chance of each:
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x + BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+                }
 
-                    if (state.getBlock().isAir(state, world, blockpos) || state.getBlock().isLeaves(state, world, blockpos))
-                    {
-                        //this.setBlockAndNotifyAdequately(world, blockpos, p_181631_3_);
-                        world.setBlockState(blockpos, p_181631_3_, 3);
-                        
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
                     }
                 }
             }
         }
-    }
 
-    static float leafSize(int y)
-    {
-        if (y >= 0 && y < leafDistanceLimit)
-        {
-            return y != 0 && y != leafDistanceLimit - 1 ? 3.0F : 2.0F;
+
+        //South:
+        LateralPosV = 0;
+        //Either attach at the top, or one below:
+        branchpos = counter - 1;
+        if (Math.random() >= 0.5) {
+            branchpos = counter - 2;
         }
-        else
-        {
-            return -1.0F;
+        //We go up to a +/- 2 variable height:
+        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+        BranchSegment = 1;
+        //We need to arbitrarily capture the lateral horizontal position as we build:
+        LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+        if (LateralPosH <= 2 && BranchHeight > 3) {
+            LateralPosH = 3;
         }
-    }
-
-    /**
-     * Places the trunk for the big tree that is being generated. Able to generate double-sized trunks by changing a
-     * field that is always 1 to 2.
-     */
-    static void generateTrunk()
-    {
-        BlockPos blockpos = basePos;
-        BlockPos blockpos1 = basePos.up(height);
-        Block block = BlockPlaneLog.block;
-        limb(blockpos, blockpos1, block);
-
-        if (trunkSize == 2)
-        {
-            limb(blockpos.east(), blockpos1.east(), block);
-            limb(blockpos.east().south(), blockpos1.east().south(), block);
-            limb(blockpos.south(), blockpos1.south(), block);
+        if (LateralPosH <= 1) {
+            LateralPosH = 2;
         }
-    }
-
-    static void limb(BlockPos p_175937_1_, BlockPos p_175937_2_, Block p_175937_3_)
-    {
-        BlockPos blockpos = p_175937_2_.add(-p_175937_1_.getX(), -p_175937_1_.getY(), -p_175937_1_.getZ());
-        int i = getGreatestDistance(blockpos);
-        float f = (float)blockpos.getX() / (float)i;
-        float f1 = (float)blockpos.getY() / (float)i;
-        float f2 = (float)blockpos.getZ() / (float)i;
-
-        for (int j = 0; j <= i; ++j)
-        {
-            BlockPos blockpos1 = p_175937_1_.add((double)(0.5F + (float)j * f), (double)(0.5F + (float)j * f1), (double)(0.5F + (float)j * f2));
-            EnumFacing blocklog$enumaxis = getLogAxis(p_175937_1_, blockpos1);
-            
-            world.setBlockState(blockpos1, BlockPlaneLog.block.getDefaultState().withProperty(FACING,blocklog$enumaxis), 3);
-			//System.err.println("limb set "  + blockpos1.getX() + " " + blockpos1.getY() + " " + blockpos1.getZ());
-        }
-    }
-
-    private static EnumFacing getLogAxis(BlockPos p_175938_1_, BlockPos p_175938_2_)
-    {
-        EnumFacing blocklog$enumaxis = EnumFacing.NORTH;
-        int i = Math.abs(p_175938_2_.getX() - p_175938_1_.getX());
-        int j = Math.abs(p_175938_2_.getZ() - p_175938_1_.getZ());
-        int k = Math.max(i, j);
-
-        if (k > 0)
-        {
-            if (i == k)
-            {
-                blocklog$enumaxis = EnumFacing.UP;;
+        while (branchpos < BranchHeight) {
+            if (BranchSegment == LateralPosH) {
+                LateralPosV = branchpos;
             }
-            else if (j == k)
-            {
-                blocklog$enumaxis = EnumFacing.WEST;
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+            BranchSegment = BranchSegment + 1;
+            if (Math.random() >= 0.7) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                BranchSegment = BranchSegment + 1;
+            }
+            branchpos = branchpos + 1;
+        }
+        //Nub on the top for leaves:
+        BranchSegment = BranchSegment - 1;
+        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+        FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        MaxHeight = Math.max(MaxHeight, branchpos);
+        if (giant) {
+            //Add prop trunk:
+            BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+            int propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+        }
+
+        if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+            //Laterals either in our axis or perpendicular:
+            if (Math.random() >= 0.5) {
+                //In our axis:
+                //A simple backward branch, RARELY upright:
+                if (Math.random() > 0.75) {
+                    //Upright:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                        branchpos = branchpos + 1;
+                    }
+                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                } else {
+                    //Diagonal:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH - 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                        BranchSegment = BranchSegment - 1;
+                        branchpos = branchpos + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchSegment = BranchSegment + 1;
+                    ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
+            } else {
+                //Perpendicular axis, only two diagonals with 75% chance of each:
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x + BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
+
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.UP);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x - BranchLatCount, (int) (y + branchpos), (int) z + BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
             }
         }
 
-        return blocklog$enumaxis;
-    }
 
-    /**
-     * Generates additional wood blocks to fill out the bases of different leaf nodes that would otherwise degrade.
-     */
-    static void generateLeafNodeBases()
-    {
-        for (ProcedureWorldGenFigBanyan.FoliageCoordinates procedureworldgenplane$foliagecoordinates : foliageCoords)
-        {
-            int i = procedureworldgenplane$foliagecoordinates.getBranchBase();
-            BlockPos blockpos = new BlockPos(basePos.getX(), i, basePos.getZ());
+        //West:
+        LateralPosV = 0;
+        //Either attach at the top, or one below:
+        branchpos = counter - 1;
+        if (Math.random() >= 0.5) {
+            branchpos = counter - 2;
+        }
+        //We go up to a +/- 2 variable height:
+        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+        BranchSegment = 1;
+        //We need to arbitrarily capture the lateral horizontal position as we build:
+        LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+        if (LateralPosH <= 2 && BranchHeight > 3) {
+            LateralPosH = 3;
+        }
+        if (LateralPosH <= 1) {
+            LateralPosH = 2;
+        }
+        while (branchpos < BranchHeight) {
+            if (BranchSegment == LateralPosH) {
+                LateralPosV = branchpos;
+            }
+            ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            BranchSegment = BranchSegment + 1;
+            if (Math.random() >= 0.7) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                BranchSegment = BranchSegment + 1;
+            }
+            branchpos = branchpos + 1;
+        }
+        //Nub on the top for leaves:
+        BranchSegment = BranchSegment - 1;
+        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+        FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        MaxHeight = Math.max(MaxHeight, branchpos);
+        if (giant) {
+            //Add prop trunk:
+            BlockPos topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z);
+            int propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+        }
 
-			//System.err.println("Branch height? " + i);
+        if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+            //Laterals either in our axis or perpendicular:
+            if (Math.random() >= 0.5) {
+                //In our axis:
+                //A simple backward branch, RARELY upright:
+                if (Math.random() > 0.75) {
+                    //Upright:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                        branchpos = branchpos + 1;
+                    }
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
 
-            if (!blockpos.equals(procedureworldgenplane$foliagecoordinates) && leafNodeNeedsBase(i - basePos.getY()))
-            {
-            	//System.err.println("limb called " + blockpos.getX() + " " + blockpos.getY() + " " + blockpos.getZ());
-                limb(blockpos, procedureworldgenplane$foliagecoordinates, BlockPlaneLog.block);
+                } else {
+                    //Diagonal:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH + 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                        BranchSegment = BranchSegment + 1;
+                        branchpos = branchpos + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchSegment = BranchSegment - 1;
+                    ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
+            } else {
+                //Perpendicular axis, only two diagonals with 75% chance of each:
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
+
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x - BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
             }
         }
-    } 
-    
-    /**
-     * Indicates whether or not a leaf node requires additional wood to be added to preserve integrity.
-     */
-    static boolean leafNodeNeedsBase(int p_76493_1_)
-    {
-    		//System.err.println("heightLimit " + heightLimit);
-        return (double)p_76493_1_ >= (double)heightLimit * 0.2D;
+
+        //East:
+        LateralPosV = 0;
+        //Either attach at the top, or one below:
+        branchpos = counter - 1;
+        if (Math.random() >= 0.5) {
+            branchpos = counter - 2;
+        }
+        //We go up to a +/- 2 variable height:
+        BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+        BranchSegment = 1;
+        //We need to arbitrarily capture the lateral horizontal position as we build:
+        LateralPosH = (int) Math.round((BranchHeight - (counter - 1)) * 0.6) + (int) Math.round(Math.random() * 2) - 1;
+        if (LateralPosH <= 2 && BranchHeight > 3) {
+            LateralPosH = 3;
+        }
+        if (LateralPosH <= 1) {
+            LateralPosH = 2;
+        }
+        while (branchpos < BranchHeight) {
+            if (BranchSegment == LateralPosH) {
+                LateralPosV = branchpos;
+            }
+            ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+            BranchSegment = BranchSegment + 1;
+            if (Math.random() >= 0.7) {
+                if (BranchSegment == LateralPosH) {
+                    LateralPosV = branchpos;
+                }
+                ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                BranchSegment = BranchSegment + 1;
+            }
+            branchpos = branchpos + 1;
+        }
+        //Nub on the top for leaves:
+        BranchSegment = BranchSegment - 1;
+        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+        FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+        MaxHeight = Math.max(MaxHeight, branchpos);
+        if (giant) {
+            //Add prop trunk:
+            BlockPos topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z);
+            int propCounter = 0;
+            while ((topPos.down(propCounter).getY() > 0)
+                    && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                    || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+            ) {
+                //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                propCounter = propCounter + 1;
+            }
+            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+        }
+
+        if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
+            //Laterals either in our axis or perpendicular:
+            if (Math.random() >= 0.5) {
+                //In our axis:
+                //A simple backward branch, RARELY upright:
+                if (Math.random() > 0.75) {
+                    //Upright:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                        branchpos = branchpos + 1;
+                    }
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                } else {
+                    //Diagonal:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH - 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.UP);
+                        BranchSegment = BranchSegment - 1;
+                        branchpos = branchpos + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchSegment = BranchSegment + 1;
+                    ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                    //Diagonal:
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV;
+                    BranchSegment = LateralPosH - 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.EAST);
+                        BranchSegment = BranchSegment - 1;
+                        branchpos = branchpos + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchSegment = BranchSegment + 1;
+                    ProcedureTreeLog.executeProcedure((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x, (int) (y + branchpos), (int) z + BranchSegment, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x, (int) (y + branchpos), (int) z + BranchSegment);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
+            } else {
+                //Perpendicular axis, only two diagonals with 75% chance of each:
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z + BranchLatCount);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+                }
+
+                if (Math.random() >= 0.25) {
+                    BranchHeight = TrunkHeight + (int) (Math.round(Math.random() * 4)) - 2;
+                    branchpos = LateralPosV + 1;
+                    BranchSegment = LateralPosH;
+                    BranchLatCount = 1;
+                    while (branchpos < BranchHeight) {
+                        ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.EAST);
+                        branchpos = branchpos + 1;
+                        BranchLatCount = BranchLatCount + 1;
+                    }
+                    //Nub on the top for leaves:
+                    BranchLatCount = BranchLatCount - 1;
+                    ProcedureTreeLog.executeProcedure((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLog.block, EnumFacing.NORTH);
+                    FigCrown((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount, world, BlockFigLeaves.block, (int) Math.round((double) BranchSegment * 0.7), branchpos);
+                    MaxHeight = Math.max(MaxHeight, branchpos);
+                    if (giant) {
+                        //Add prop trunk:
+                        BlockPos topPos = new BlockPos((int) x + BranchSegment, (int) (y + branchpos), (int) z - BranchLatCount);
+                        int propCounter = 0;
+                        while ((topPos.down(propCounter).getY() > 0)
+                                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+                        ) {
+                            //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
+                            propCounter = propCounter + 1;
+                        }
+                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                    }
+
+                }
+            }
+        }
+
+        //Central dropped:
+        counter = 0;
+        int additional = (int)(Math.random() * 2);
+        while (counter <= MaxHeight + additional) {
+            ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockFigLog.block, EnumFacing.NORTH);
+            counter = counter + 1;
+        }
     }
 
-    static public boolean isReplaceable(World world, BlockPos pos)
-    {
-        IBlockState state = world.getBlockState(pos);
-        return state.getBlock().isAir(state, world, pos) || state.getBlock().isLeaves(state, world, pos) || state.getBlock().isWood(world, pos) || canGrowInto(state.getBlock());
+    public static void FigRoots(World world, int x, int y, int z, int height) {
+        BlockPos topPos = new BlockPos((int) x, (int) (y), (int) z);
+        Random rand = new Random();
+        if (rand.nextInt(32) != 0) {
+            return;
+        }
+        int rootLength = rand.nextInt(height);
+        int propCounter = 1;
+        while ((topPos.down(propCounter).getY() > 0) && propCounter <= rootLength
+                && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES)
+                || (world.getBlockState(topPos.down(propCounter)).getBlock() == BlockFigLog.block))
+        ) {
+            if ((world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WEB)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.WATER)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
+                    || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES))
+            ) {
+                world.setBlockState(topPos.down(propCounter), BlockFigBanyanRoot.block.getDefaultState());
+            }
+            propCounter = propCounter + 1;
+        }
     }
 
-     /**
-     * returns whether or not a tree can grow into a block
-     * For example, a tree will not grow into stone
-     */
-    static public  boolean canGrowInto(Block blockType)
-    {
-        Material material = blockType.getDefaultState().getMaterial();
-        return material == Material.AIR || material == Material.LEAVES || blockType == Blocks.GRASS || blockType == Blocks.DIRT || blockType == Blocks.LOG || blockType == Blocks.LOG2 || blockType == Blocks.SAPLING || blockType == Blocks.VINE;
-    }
-
-	
 }
