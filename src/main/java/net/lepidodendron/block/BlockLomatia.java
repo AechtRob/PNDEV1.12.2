@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemLomatiaFlower;
+import net.lepidodendron.item.ItemLomatiaSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -15,6 +18,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,10 +26,12 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -38,6 +44,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
@@ -45,16 +52,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:bellendena")
+public class BlockLomatia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:lomatia")
 	public static final Block block = null;
-	public BlockBellendena(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.bellendena);
+	public BlockLomatia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.lomatia);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom());
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("lomatia"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -62,33 +69,128 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:bellendena", "inventory"));
+				new ModelResourceLocation("lepidodendron:lomatia", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:bellendena", BlockBellendena.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockBellendena.block);
-		OreDictionary.registerOre("plant", BlockBellendena.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:lomatia", BlockLomatia.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockLomatia.block);
+		OreDictionary.registerOre("plant", BlockLomatia.block);
 	}
-
 
 	public static class BlockCustom extends BlockBush {
 
 		public static final PropertyBool FLOWERS = PropertyBool.create("flowers");
 
 		public BlockCustom() {
-			super(Material.PLANTS);
+			super();
+			setTranslationKey("pf_lomatia");
 			setSoundType(SoundType.PLANT);
-			setHardness(0F);
-			setResistance(0F);
+			setHardness(0.3F);
+			setResistance(0.3F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			setTranslationKey("pf_bellendena");
-			setRegistryName("bellendena");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FLOWERS, false));
+		}
+
+		@Override
+		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			//right-click block:
+			if ((!(worldIn.isRemote)) && worldIn.getBlockState(pos).getValue(FLOWERS)) {
+				ItemStack stack = playerIn.getHeldItem(hand);
+				if ((playerIn.capabilities.allowEdit) && stack.getItem() instanceof ItemShears
+						&& hand == EnumHand.MAIN_HAND)
+				{
+					//playerIn.swingArm(hand);
+					if (!(worldIn.isRemote) && Math.random() > 0.95) {
+						worldIn.destroyBlock(pos, false);
+					}
+					Block.spawnAsEntity(worldIn, pos, new ItemStack(ItemLomatiaFlower.block, 1));
+					stack.damageItem(1, playerIn);
+					return true;
+				}
+
+				if ((!playerIn.capabilities.allowEdit) || (playerIn.getHeldItemMainhand().getItem() != ItemLomatiaFlower.block) || (!LepidodendronConfig.doPropagation) || (!worldIn.getBlockState(pos).getValue(FLOWERS)))
+				{
+					return true;
+				}
+				else {
+					ItemStack itemstack = playerIn.getHeldItem(hand);
+					if (!playerIn.isCreative()) {itemstack.shrink(1);}
+					if (!((hand != playerIn.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+						if (Math.random() > 0.5) {
+							ItemStack stackSeed = new ItemStack(ItemLomatiaSeeds.block, (int) (1));
+							stackSeed.setCount(1);
+							ItemHandlerHelper.giveItemToPlayer(playerIn, stackSeed);
+							if (Math.random() > 0.75) {
+								worldIn.destroyBlock(pos, false);
+							}
+							return true;
+						}
+						else {
+							if (Math.random() > 0.75) {
+								worldIn.destroyBlock(pos, false);
+								return true;
+							}
+						}
+					}
+					return true;
+				}
+			}
+			else {
+				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+			}
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
+			
+			super.neighborChanged(state, world, pos, neighborBlock, fromPos);
+
+			if ((world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
+				&& (world.getBlockState(pos.down()).getMaterial() != Material.GRASS)
+				&& (world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
+			{
+				world.destroyBlock(pos, false);
+				if (Math.random() > 0.66) {
+					if (!LepidodendronConfig.doPropagation) {
+						//Spawn another sapling:
+						if (!world.isRemote) {
+							EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockLomatia.block, (int) (1)));
+							entityToSpawn.setPickupDelay(10);
+							world.spawnEntity(entityToSpawn);
+						}
+					}
+				}
+			}
+			else {
+				Block block = world.getBlockState(pos.up()).getBlock();
+				if (block != BlockLomatia2.block) {
+					world.setBlockToAir(pos);
+					if (Math.random() > 0.66) {
+						if (!LepidodendronConfig.doPropagation) {
+							//Spawn another sapling:
+							if (!world.isRemote) {
+								EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockLomatia.block, (int) (1)));
+								entityToSpawn.setPickupDelay(10);
+								world.spawnEntity(entityToSpawn);
+							}
+						}
+					}
+				}
+
+			}
+			
+		}
+
+	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+			world.setBlockState(pos.up(), BlockLomatia2.block.getDefaultState(), 3);
+			world.setBlockState(pos.up(2), BlockLomatia3.block.getDefaultState(), 3);
+			super.onBlockAdded(world, pos, state);
 		}
 
 		protected BlockStateContainer createBlockState()
@@ -139,7 +241,7 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
+		public BlockRenderLayer getRenderLayer()
 		{
 			return BlockRenderLayer.CUTOUT;
 		}
@@ -192,52 +294,49 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected boolean canSilkHarvest()
-	    {
-	        return false;
-	    }
+		{
+			return false;
+		}
 
 		@Override
 		public boolean canPlaceBlockAt(World world, BlockPos pos) {
-			if (!world.isAirBlock(pos)) {
+			if (!world.isAirBlock(pos) && super.canPlaceBlockAt(world, pos)
+					&& world.isAirBlock(pos.up())
+					&& world.isAirBlock(pos.up(2))) {
 				return false;
 			}
 			else return canSurviveAt(world, pos);
 		}
 
 		@Override
-		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
-			//super.neighborChanged(state, world, pos, neighborBlock, fromPos);
-			{
-		        if (!canSurviveAt(world, pos))
-		        {
-		            world.scheduleUpdate(pos, this, 1);
-		        }
-		    }
-		}
-
-		@Override
 		public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 			//super.updateTick(world, pos, state, random);
-	    	
-	        if (!world.isRemote)
-	        {
-	            if (!world.isAreaLoaded(pos, 3)) return;
-	            
+
+			if (!world.isRemote)
+			{
+				if (!world.isAreaLoaded(pos, 3)) return;
+
 				if (!canSurviveAt(world, pos))
-		        {
-		            world.destroyBlock(pos, false);
-		        }
+				{
+					world.destroyBlock(pos, false);
+				}
 				//Flower-fruit cycle:
 				else {
 					if ((Math.random() > 0.7)) {
 						if ((Math.random() > 0.7)) {
 							if (world.getBlockState(pos).getValue(FLOWERS)) {
-								world.setBlockState(pos, BlockBellendenaSeeds.block.getDefaultState(), 3);
+								world.setBlockState(pos, BlockLomatia.block.getDefaultState().withProperty(FLOWERS, false), 3);
+								world.setBlockState(pos.up(), BlockLomatia2.block.getDefaultState().withProperty(FLOWERS, false), 3);
+								world.setBlockState(pos.up(2), BlockLomatia3.block.getDefaultState().withProperty(FLOWERS, false), 3);
 							}
 							else {
-								world.setBlockState(pos, BlockBellendena.block.getDefaultState().withProperty(FLOWERS, true), 3);
-								world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+								world.setBlockState(pos, BlockLomatia.block.getDefaultState().withProperty(FLOWERS, true), 3);
+								world.setBlockState(pos.up(), BlockLomatia2.block.getDefaultState().withProperty(FLOWERS, true), 3);
+								world.setBlockState(pos.up(2), BlockLomatia3.block.getDefaultState().withProperty(FLOWERS, true), 3);
 							}
+							world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+							world.notifyBlockUpdate(pos, world.getBlockState(pos.up()), world.getBlockState(pos), 3);
+							world.notifyBlockUpdate(pos, world.getBlockState(pos.up(2)), world.getBlockState(pos), 3);
 						}
 					}
 				}
@@ -252,27 +351,27 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 		//@Override
 		public boolean canSurviveAt(World worldIn, BlockPos pos) {
 
-	    	if ((worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND) 
-	    		&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)
-	    		&& (worldIn.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
-	    	{
-	    		return false;
-	    	}
+			if ((worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND)
+				&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)
+				&& (worldIn.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
+			{
+				return false;
+			}
 			return true;
-	    }
+		}
 
 		@Override
 		public EnumOffsetType getOffsetType() {
 			return EnumOffsetType.XZ;
 		}
 
-		@SideOnly(Side.CLIENT)
+	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
-				tooltip.add("Periods: late Cretaceous (?) - Paleogene (?) - Neogene - Pleistocene [- present]");
-				tooltip.add("Propagation: produces envelopaable seeds on a flowering and fruiting cycle");}
+	        	tooltip.add("Periods: Cretaceous (?) - Paleogene - Neogene - Pleistocene [- present]");
+	        	tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
