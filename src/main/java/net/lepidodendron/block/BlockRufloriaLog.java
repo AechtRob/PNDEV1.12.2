@@ -59,7 +59,7 @@ public class BlockRufloriaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:rufloria_sapling", BlockRufloriaLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:rufloria_sapling", BlockRufloriaLog.block);
 		OreDictionary.registerOre("logWood", BlockRufloriaLog.block);
 	}
 

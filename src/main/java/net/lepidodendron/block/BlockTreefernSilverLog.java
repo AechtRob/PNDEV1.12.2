@@ -59,7 +59,7 @@ public class BlockTreefernSilverLog extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:silver_treefern_sapling", BlockTreefernSilverLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:silver_treefern_sapling", BlockTreefernSilverLog.block);
 		OreDictionary.registerOre("logWood", BlockTreefernSilverLog.block);
 	}
 

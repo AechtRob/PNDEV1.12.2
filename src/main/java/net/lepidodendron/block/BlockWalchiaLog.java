@@ -53,7 +53,7 @@ public class BlockWalchiaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:walchia_sapling", BlockWalchiaLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:walchia_sapling", BlockWalchiaLog.block);
 		OreDictionary.registerOre("logWood", BlockWalchiaLog.block);
 	}
 

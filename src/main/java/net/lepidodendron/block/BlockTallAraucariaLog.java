@@ -53,7 +53,7 @@ public class BlockTallAraucariaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:mirabilis_sapling", BlockTallAraucariaLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:mirabilis_sapling", BlockTallAraucariaLog.block);
 		OreDictionary.registerOre("logWood", BlockTallAraucariaLog.block);
 	}
 

@@ -59,7 +59,7 @@ public class BlockToditesLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:todites_sapling", BlockToditesLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:todites_sapling", BlockToditesLog.block);
 		OreDictionary.registerOre("logWood", BlockToditesLog.block);
 	}
 

@@ -60,7 +60,7 @@ public class BlockZygopteridaceaeLog extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:zygopteridaceae_sapling", BlockZygopteridaceaeLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:zygopteridaceae_sapling", BlockZygopteridaceaeLog.block);
 		OreDictionary.registerOre("logWood", BlockZygopteridaceaeLog.block);
 	}
 

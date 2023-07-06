@@ -53,7 +53,7 @@ public class BlockPodocarpLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:podocarp_sapling", BlockPodocarpLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:podocarp_sapling", BlockPodocarpLog.block);
 		OreDictionary.registerOre("logWood", BlockPodocarpLog.block);
 	}
 

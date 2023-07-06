@@ -53,7 +53,7 @@ public class BlockSycamoreLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:sycamore_sapling", BlockSycamoreLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:sycamore_sapling", BlockSycamoreLog.block);
 		OreDictionary.registerOre("logWood", BlockSycamoreLog.block);
 	}
 

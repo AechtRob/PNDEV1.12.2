@@ -55,7 +55,7 @@ public class BlockNypaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:nypa_sapling", BlockNypaLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:nypa_sapling", BlockNypaLog.block);
 		OreDictionary.registerOre("logWood", BlockNypaLog.block);
 	}
 

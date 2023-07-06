@@ -1,0 +1,28 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "lepidodendron:block/cube_noao",
+	"textures": {
+		"particle": "lepidodendron:blocks/montsechia",
+		"texture": "lepidodendron:blocks/montsechia"
+	},
+	"elements": [
+		{
+			"from": [0, -5.5, 0],
+			"to": [16, -5.5, 16],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, -6, 8]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 0], "texture": "#texture"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [8, -14, 0],
+			"to": [8, 2, 16],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, -6, 8]},
+			"faces": {
+				"east": {"uv": [16, 16, 0, 0], "rotation": 90, "texture": "#texture"},
+				"west": {"uv": [16, 0, 0, 16], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	]
+}

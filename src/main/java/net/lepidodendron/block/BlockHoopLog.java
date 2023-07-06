@@ -40,7 +40,7 @@ public class BlockHoopLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:hoop_araucaria_sapling", BlockHoopLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:hoop_araucaria_sapling", BlockHoopLog.block);
 		OreDictionary.registerOre("logWood", BlockHoopLog.block);
 	}
 

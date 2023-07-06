@@ -40,7 +40,7 @@ public class BlockGlossopterisLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:glossopterissapling", BlockGlossopterisLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:glossopterissapling", BlockGlossopterisLog.block);
 		OreDictionary.registerOre("logWood", BlockGlossopterisLog.block);
 	}
 
