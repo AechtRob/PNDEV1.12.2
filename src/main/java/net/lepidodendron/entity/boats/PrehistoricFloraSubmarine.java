@@ -8,7 +8,6 @@ import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
@@ -839,8 +838,8 @@ public class PrehistoricFloraSubmarine extends EntityBoat
 
             if (passenger instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer) passenger;
-                IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 1);
-                if (state.getMaterial() == Material.WATER) {
+                IBlockState state = world.getBlockState(new BlockPos(passenger.posX, passenger.getPosition().getY() + passenger.getEyeHeight(), passenger.posZ));
+                if (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) {
                     player.setAir(300);
                 }
                 else {
@@ -848,7 +847,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         player.removePotionEffect(MobEffects.NIGHT_VISION);
                     }
                 }
-                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && state.getMaterial() == Material.WATER && LepidodendronConfig.submarineNightvision) {
+                if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
                     player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
                 }
             }
