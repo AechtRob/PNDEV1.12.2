@@ -1,7 +1,7 @@
 {
 	"name": "Didymograptus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/didymograptus_icon.png",
+	"icon": "paleopedia:textures/items/didymograptus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_didymograptus",
 	"pages": [

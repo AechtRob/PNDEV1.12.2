@@ -1,7 +1,7 @@
 {
 	"name": "Acrolepis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/acrolepis_icon.png",
+	"icon": "paleopedia:textures/items/acrolepis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_acrolepis",
 	"pages": [

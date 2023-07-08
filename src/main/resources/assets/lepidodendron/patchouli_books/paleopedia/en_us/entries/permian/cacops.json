@@ -1,7 +1,7 @@
 {
 	"name": "Cacops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cacops_icon.png",
+	"icon": "paleopedia:textures/items/cacops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_cacops",
 	"pages": [

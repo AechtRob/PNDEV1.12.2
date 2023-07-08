@@ -1,7 +1,7 @@
 {
 	"name": "Vachonisia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/vachonisia_icon.png",
+	"icon": "paleopedia:textures/items/vachonisia_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_vachonisia",
 	"pages": [

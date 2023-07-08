@@ -1,7 +1,7 @@
 {
 	"name": "Eugaleaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eugaleaspis_icon.png",
+	"icon": "paleopedia:textures/items/eugaleaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eugaleaspis",
 	"pages": [

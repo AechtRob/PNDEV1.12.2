@@ -1,7 +1,7 @@
 {
 	"name": "Neeyambaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/neeyambaspis_icon.png",
+	"icon": "paleopedia:textures/items/neeyambaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_neeyambaspis",
 	"pages": [

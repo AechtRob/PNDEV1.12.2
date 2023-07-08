@@ -1,7 +1,7 @@
 {
 	"name": "Haikouichthys",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/haikouichthys_icon.png",
+	"icon": "paleopedia:textures/items/haikouichthys_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_haikouichthys",
 	"pages": [

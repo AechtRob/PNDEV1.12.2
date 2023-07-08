@@ -1,7 +1,7 @@
 {
 	"name": "Postosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/postosuchus_icon.png",
+	"icon": "paleopedia:textures/items/postosuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_postosuchus",
 	"pages": [

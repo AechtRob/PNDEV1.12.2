@@ -1,7 +1,7 @@
 {
 	"name": "Torpedaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/torpedaspis_icon.png",
+	"icon": "paleopedia:textures/items/torpedaspis_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_torpedaspis",
 	"pages": [

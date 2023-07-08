@@ -1,7 +1,7 @@
 {
 	"name": "Acutiramus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/acutiramus_icon.png",
+	"icon": "paleopedia:textures/items/acutiramus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_acutiramus",
 	"pages": [

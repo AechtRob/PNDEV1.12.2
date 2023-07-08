@@ -1,6 +1,6 @@
 {
  "parent": "item/generated",
  "textures": {
- "layer0": "paleopedia:kalligrammatid_oregramma_icon"
+ "layer0": "paleopedia:items/kalligrammatid_oregramma_icon"
  }
 }

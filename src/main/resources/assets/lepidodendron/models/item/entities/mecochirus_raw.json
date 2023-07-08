@@ -1,6 +1,6 @@
 {
  "parent": "item/generated",
  "textures": {
- "layer0": "paleopedia:mecochirus_icon"
+ "layer0": "paleopedia:items/mecochirus_icon"
  }
 }

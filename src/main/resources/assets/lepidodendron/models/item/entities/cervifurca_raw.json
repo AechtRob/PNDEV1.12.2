@@ -1,6 +1,6 @@
 {
  "parent": "item/generated",
  "textures": {
- "layer0": "paleopedia:cervifurca_icon"
+ "layer0": "paleopedia:items/cervifurca_icon"
  }
 }

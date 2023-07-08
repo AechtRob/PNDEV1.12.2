@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:rhadinacanthus_icon"
+    "layer0": "paleopedia:items/rhadinacanthus_icon"
   }
 }

@@ -1,7 +1,7 @@
 {
 	"name": "Strobilodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/caturus_icon.png",
+	"icon": "paleopedia:textures/items/caturus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_caturus",
 	"pages": [

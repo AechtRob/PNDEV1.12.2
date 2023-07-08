@@ -1,7 +1,7 @@
 {
 	"name": "Spiriferid",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/spiriferid_icon.png",
+	"icon": "paleopedia:textures/items/spiriferid_icon.png",
 	"category": "lepidodendron:ordovician_static",
 	"turnin": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Gantarostrataspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gantarostrataspis_icon.png",
+	"icon": "paleopedia:textures/items/gantarostrataspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gantarostrataspis",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Gooloogongia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gooloogongia_icon.png",
+	"icon": "paleopedia:textures/items/gooloogongia_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gooloogongia",
 	"pages": [

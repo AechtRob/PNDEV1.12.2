@@ -1,7 +1,7 @@
 {
 	"name": "Proterogyrinus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/proterogyrinus_icon.png",
+	"icon": "paleopedia:textures/items/proterogyrinus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_proterogyrinus",
 	"pages": [

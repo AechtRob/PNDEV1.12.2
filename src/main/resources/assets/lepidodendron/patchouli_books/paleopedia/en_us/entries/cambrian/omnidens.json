@@ -1,7 +1,7 @@
 {
 	"name": "Omnidens",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/omnidens_icon.png",
+	"icon": "paleopedia:textures/items/omnidens_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_omnidens",
 	"pages": [

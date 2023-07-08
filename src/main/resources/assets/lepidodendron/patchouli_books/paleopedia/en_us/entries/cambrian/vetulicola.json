@@ -1,7 +1,7 @@
 {
 	"name": "Vetulicola",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/vetulicola_icon.png",
+	"icon": "paleopedia:textures/items/vetulicola_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_vetulicola",
 	"pages": [

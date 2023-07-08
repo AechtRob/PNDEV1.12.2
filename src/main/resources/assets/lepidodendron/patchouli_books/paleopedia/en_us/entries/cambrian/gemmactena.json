@@ -1,7 +1,7 @@
 {
 	"name": "Gemmactena",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gemmactena_icon.png",
+	"icon": "paleopedia:textures/items/gemmactena_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gemmactena",
 	"pages": [

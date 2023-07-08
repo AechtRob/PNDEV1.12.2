@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:mazothairos_icon"
+    "layer0": "paleopedia:items/mazothairos_icon"
   }
 }

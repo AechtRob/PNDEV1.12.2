@@ -1,7 +1,7 @@
 {
 	"name": "Panguraptor",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/panguraptor_icon.png",
+	"icon": "paleopedia:textures/items/panguraptor_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_panguraptor",
 	"pages": [

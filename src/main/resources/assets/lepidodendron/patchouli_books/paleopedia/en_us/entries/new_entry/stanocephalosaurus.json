@@ -1,7 +1,7 @@
 {
 	"name": "Stanocephalosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/stanocephalosaurus_icon.png",
+	"icon": "paleopedia:textures/items/stanocephalosaurus_icon.png",
 	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_stanocephalosaurus",
 	"pages": [

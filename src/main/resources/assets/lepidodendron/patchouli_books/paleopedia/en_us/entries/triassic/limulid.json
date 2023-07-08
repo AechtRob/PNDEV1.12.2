@@ -1,7 +1,7 @@
 {
 	"name": "Limulid",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/limulid_icon.png",
+	"icon": "paleopedia:textures/items/limulid_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_limulid",
 	"pages": [

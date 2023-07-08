@@ -1,7 +1,7 @@
 {
 	"name": "Chinlea",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/chinlea_icon.png",
+	"icon": "paleopedia:textures/items/chinlea_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_chinlea",
 	"pages": [

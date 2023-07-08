@@ -1,7 +1,7 @@
 {
 	"name": "Permotarbus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permotarbus_icon.png",
+	"icon": "paleopedia:textures/items/permotarbus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 	"pages": [

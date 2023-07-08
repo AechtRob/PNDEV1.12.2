@@ -1,7 +1,7 @@
 {
 	"name": "Cladoselache",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cladoselache_icon.png",
+	"icon": "paleopedia:textures/items/cladoselache_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_cladoselache",
 	"pages": [

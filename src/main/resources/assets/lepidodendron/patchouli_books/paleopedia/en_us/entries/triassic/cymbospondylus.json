@@ -1,7 +1,7 @@
 {
 	"name": "Cymbospondylus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cymbospondylus_icon.png",
+	"icon": "paleopedia:textures/items/cymbospondylus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_cymbospondylus",
 	"pages": [

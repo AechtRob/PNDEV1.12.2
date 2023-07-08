@@ -1,7 +1,7 @@
 {
 	"name": "Gigantoscorpio",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gigantoscorpio_icon.png",
+	"icon": "paleopedia:textures/items/gigantoscorpio_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
 	"pages": [

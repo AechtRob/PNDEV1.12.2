@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:wingertshellicus_icon"
+    "layer0": "paleopedia:items/wingertshellicus_icon"
   },
   "display": {
     "ground": {

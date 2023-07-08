@@ -1,7 +1,7 @@
 {
 	"name": "Saivodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/saivodus_icon.png",
+	"icon": "paleopedia:textures/items/saivodus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_saivodus",
 	"pages": [

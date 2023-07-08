@@ -1,7 +1,7 @@
 {
 	"name": "Sclerocormus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sclerocormus_icon.png",
+	"icon": "paleopedia:textures/items/sclerocormus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_sclerocormus",
 	"pages": [

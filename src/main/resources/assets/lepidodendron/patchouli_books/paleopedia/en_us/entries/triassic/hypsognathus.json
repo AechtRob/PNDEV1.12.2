@@ -1,7 +1,7 @@
 {
 	"name": "Hypsognathus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/hypsognathus_icon.png",
+	"icon": "paleopedia:textures/items/hypsognathus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_hypsognathus",
 	"pages": [

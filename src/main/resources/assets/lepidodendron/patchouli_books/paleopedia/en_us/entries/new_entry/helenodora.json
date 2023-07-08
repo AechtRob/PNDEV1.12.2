@@ -1,7 +1,7 @@
 {
 	"name": "Helenodora",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/helenodora_icon.png",
+	"icon": "paleopedia:textures/items/helenodora_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_helenodora",
 	"pages": [

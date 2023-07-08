@@ -1,6 +1,6 @@
 {
     "name": "Paleogene",
     "description": "$(l)The New World Order$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
-    "icon": "paleopedia:textures/category_icon/icon_paleogene.png",
+    "icon": "paleopedia:textures/items/category_icon/icon_paleogene.png",
     "sortnum": 10
 }

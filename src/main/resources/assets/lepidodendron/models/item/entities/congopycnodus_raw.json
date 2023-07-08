@@ -1,6 +1,6 @@
 {
  "parent": "item/generated",
  "textures": {
- "layer0": "paleopedia:congopycnodus_icon"
+ "layer0": "paleopedia:items/congopycnodus_icon"
  }
 }

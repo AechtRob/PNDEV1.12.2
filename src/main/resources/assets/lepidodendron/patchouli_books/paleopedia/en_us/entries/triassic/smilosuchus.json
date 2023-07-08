@@ -1,7 +1,7 @@
 {
 	"name": "Smilosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/smilosuchus_icon.png",
+	"icon": "paleopedia:textures/items/smilosuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_smilosuchus",
 	"pages": [

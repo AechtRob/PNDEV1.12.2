@@ -1,7 +1,7 @@
 {
 	"name": "Dracopristis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dracopristis_icon.png",
+	"icon": "paleopedia:textures/items/dracopristis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_dracopristis",
 	"pages": [

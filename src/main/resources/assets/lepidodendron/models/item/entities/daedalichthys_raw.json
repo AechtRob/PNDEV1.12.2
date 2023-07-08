@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:daedalichthys_icon"
+    "layer0": "paleopedia:items/daedalichthys_icon"
   },
   "display": {
     "ground": {

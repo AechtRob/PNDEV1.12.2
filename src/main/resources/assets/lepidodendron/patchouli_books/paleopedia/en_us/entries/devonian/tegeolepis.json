@@ -1,7 +1,7 @@
 {
 	"name": "Tegeolepis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/tegeolepis_icon.png",
+	"icon": "paleopedia:textures/items/tegeolepis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_tegeolepis",
 	"pages": [

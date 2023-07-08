@@ -1,7 +1,7 @@
 {
 	"name": "Listracanthus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/listracanthus_icon.png",
+	"icon": "paleopedia:textures/items/listracanthus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_listracanthus",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Kulindadromeus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/kulindadromeus_icon.png",
+	"icon": "paleopedia:textures/items/kulindadromeus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_kulindadromeus",
 	"pages": [

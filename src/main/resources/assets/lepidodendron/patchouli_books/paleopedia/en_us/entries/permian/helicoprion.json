@@ -1,7 +1,7 @@
 {
 	"name": "Helicoprion",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/helicoprion_icon.png",
+	"icon": "paleopedia:textures/items/helicoprion_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_helicoprion",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Euparkeria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/euparkeria_icon.png",
+	"icon": "paleopedia:textures/items/euparkeria_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_euparkeria",
 	"pages": [

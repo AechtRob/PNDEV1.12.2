@@ -1,7 +1,7 @@
 {
 	"name": "Brochoadmones",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/brochoadmones_icon.png",
+	"icon": "paleopedia:textures/items/brochoadmones_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_brochoadmones",
 	"pages": [

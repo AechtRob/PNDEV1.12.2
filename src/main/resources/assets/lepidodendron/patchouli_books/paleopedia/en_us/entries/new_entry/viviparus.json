@@ -1,7 +1,7 @@
 {
 	"name": "Viviparus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/_icon.png",
+	"icon": "paleopedia:textures/items/_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [

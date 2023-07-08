@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:carolinites_icon"
+    "layer0": "paleopedia:items/carolinites_icon"
   }
 }

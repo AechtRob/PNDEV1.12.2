@@ -1,7 +1,7 @@
 {
 	"name": "Furca",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/furca_icon.png",
+	"icon": "paleopedia:textures/items/furca_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_furca",
 	"pages": [

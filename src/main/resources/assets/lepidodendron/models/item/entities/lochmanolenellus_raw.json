@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:lochmanolenellus_icon"
+    "layer0": "paleopedia:items/lochmanolenellus_icon"
   }
 }

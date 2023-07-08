@@ -1,7 +1,7 @@
 {
 	"name": "Mixopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/mixopterus_icon.png",
+	"icon": "paleopedia:textures/items/mixopterus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_mixopterus",
 	"pages": [

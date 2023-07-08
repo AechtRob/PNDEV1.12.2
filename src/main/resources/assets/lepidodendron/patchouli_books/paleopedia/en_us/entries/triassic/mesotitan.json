@@ -1,7 +1,7 @@
 {
 	"name": "Mesotitan",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/mesotitan_icon.png",
+	"icon": "paleopedia:textures/items/mesotitan_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 	"pages": [

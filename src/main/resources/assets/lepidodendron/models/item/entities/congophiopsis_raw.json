@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:congophiopsis_icon"
+    "layer0": "paleopedia:items/congophiopsis_icon"
   }
 }

@@ -1,7 +1,7 @@
 {
 	"name": "Uralichas",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/uralichas_icon.png",
+	"icon": "paleopedia:textures/items/uralichas_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_uralichas",
 	"pages": [

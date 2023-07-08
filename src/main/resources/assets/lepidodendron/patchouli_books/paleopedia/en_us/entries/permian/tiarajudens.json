@@ -1,7 +1,7 @@
 {
 	"name": "Tiarajudens",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/tiarajudens_icon.png",
+	"icon": "paleopedia:textures/items/tiarajudens_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_tiarajudens",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Besanosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/besanosaurus_icon.png",
+	"icon": "paleopedia:textures/items/besanosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_besanosaurus",
 	"pages": [

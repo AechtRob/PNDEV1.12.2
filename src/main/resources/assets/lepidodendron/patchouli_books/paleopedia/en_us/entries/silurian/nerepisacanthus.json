@@ -1,7 +1,7 @@
 {
 	"name": "Nerepisacanthus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/nerepisacanthus_icon.png",
+	"icon": "paleopedia:textures/items/nerepisacanthus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_nerepisacanthus",
 	"pages": [

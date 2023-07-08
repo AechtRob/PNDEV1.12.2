@@ -1,7 +1,7 @@
 {
 	"name": "Lotosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lotosaurus_icon.png",
+	"icon": "paleopedia:textures/items/lotosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_lotosaurus",
 	"pages": [

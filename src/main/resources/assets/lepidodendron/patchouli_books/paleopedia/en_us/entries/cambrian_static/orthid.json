@@ -1,7 +1,7 @@
 {
 	"name": "Orthid",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/orthid_icon.png",
+	"icon": "paleopedia:textures/items/orthid_icon.png",
 	"category": "lepidodendron:cambrian_static",
 	"turnin": "lepidodendron:pf_adv_book_brachiopod_orthid",
 	"pages": [

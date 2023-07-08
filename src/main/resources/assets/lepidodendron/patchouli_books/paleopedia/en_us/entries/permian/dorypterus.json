@@ -1,7 +1,7 @@
 {
 	"name": "Dorypterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dorypterus_icon.png",
+	"icon": "paleopedia:textures/items/dorypterus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dorypterus",
 	"pages": [

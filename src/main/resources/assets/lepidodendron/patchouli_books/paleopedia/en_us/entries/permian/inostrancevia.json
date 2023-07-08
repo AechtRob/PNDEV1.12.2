@@ -1,7 +1,7 @@
 {
 	"name": "Inostrancevia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/inostrancevia_icon.png",
+	"icon": "paleopedia:textures/items/inostrancevia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_inostrancevia",
 	"pages": [

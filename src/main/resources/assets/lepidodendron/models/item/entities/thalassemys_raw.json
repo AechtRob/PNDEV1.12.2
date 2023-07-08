@@ -1,6 +1,6 @@
 {
  "parent": "item/generated",
  "textures": {
- "layer0": "paleopedia:thalassemys_icon"
+ "layer0": "paleopedia:items/thalassemys_icon"
  }
 }

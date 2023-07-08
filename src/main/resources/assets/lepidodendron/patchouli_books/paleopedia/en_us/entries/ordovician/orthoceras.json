@@ -1,7 +1,7 @@
 {
 	"name": "Orthoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/shell_orthoceras.png",
+	"icon": "paleopedia:textures/items/shell_orthoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_orthoceras",
 	"pages": [

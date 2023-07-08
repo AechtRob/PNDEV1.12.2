@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:rebellatrix_icon"
+    "layer0": "paleopedia:items/rebellatrix_icon"
   }
 }

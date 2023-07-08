@@ -1,7 +1,7 @@
 {
 	"name": "Diadectes",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/diadectes_icon.png",
+	"icon": "paleopedia:textures/items/diadectes_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_diadectes",
 	"pages": [

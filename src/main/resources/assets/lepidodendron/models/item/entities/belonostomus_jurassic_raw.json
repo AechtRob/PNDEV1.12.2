@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:belonostomus_jurassic_icon"
+    "layer0": "paleopedia:items/belonostomus_jurassic_icon"
   }
 }

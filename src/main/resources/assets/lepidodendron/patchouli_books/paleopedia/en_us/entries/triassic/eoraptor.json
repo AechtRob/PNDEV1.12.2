@@ -1,7 +1,7 @@
 {
 	"name": "Eoraptor",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eoraptor_icon.png",
+	"icon": "paleopedia:textures/items/eoraptor_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_eoraptor",
 	"pages": [

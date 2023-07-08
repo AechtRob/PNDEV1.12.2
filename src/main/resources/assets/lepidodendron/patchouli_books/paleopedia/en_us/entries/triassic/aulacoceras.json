@@ -1,7 +1,7 @@
 {
 	"name": "Aulacoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/aulacoceras_icon.png",
+	"icon": "paleopedia:textures/items/aulacoceras_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_aulacoceras",
 	"pages": [

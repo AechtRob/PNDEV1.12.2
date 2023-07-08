@@ -1,7 +1,7 @@
 {
 	"name": "Ampyx",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ampyx_icon.png",
+	"icon": "paleopedia:textures/items/ampyx_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_ampyx",
 	"pages": [

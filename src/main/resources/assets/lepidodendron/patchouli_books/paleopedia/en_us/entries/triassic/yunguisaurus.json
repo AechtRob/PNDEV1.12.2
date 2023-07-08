@@ -1,7 +1,7 @@
 {
 	"name": "Yunguisaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/yunguisaurus_icon.png",
+	"icon": "paleopedia:textures/items/yunguisaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_yunguisaurus",
 	"pages": [

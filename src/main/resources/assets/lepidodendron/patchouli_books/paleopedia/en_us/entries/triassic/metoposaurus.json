@@ -1,7 +1,7 @@
 {
 	"name": "Metoposaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/metoposaurus_icon.png",
+	"icon": "paleopedia:textures/items/metoposaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_metoposaurus",
 	"pages": [

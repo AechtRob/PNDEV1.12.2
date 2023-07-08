@@ -1,7 +1,7 @@
 {
 	"name": "Glaurung",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/glaurung_icon.png",
+	"icon": "paleopedia:textures/items/glaurung_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_glaurung",
 	"pages": [

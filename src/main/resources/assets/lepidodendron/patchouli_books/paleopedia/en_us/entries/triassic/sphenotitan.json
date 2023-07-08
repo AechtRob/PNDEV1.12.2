@@ -1,7 +1,7 @@
 {
 	"name": "Sphenotitan",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sphenotitan_icon.png",
+	"icon": "paleopedia:textures/items/sphenotitan_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_sphenotitan",
 	"pages": [

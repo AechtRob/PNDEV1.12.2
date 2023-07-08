@@ -1,7 +1,7 @@
 {
 	"name": "Macromesodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/macromesodon_icon.png",
+	"icon": "paleopedia:textures/items/macromesodon_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_macromesodon",
 	"pages": [

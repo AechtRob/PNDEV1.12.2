@@ -1,7 +1,7 @@
 {
 	"name": "Dickinsonia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dickinsonia_icon.png",
+	"icon": "paleopedia:textures/items/dickinsonia_icon.png",
 	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dickinsonia",
 	"pages": [

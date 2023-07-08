@@ -1,7 +1,7 @@
 {
 	"name": "Scleromochlus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/scleromochlus_icon.png",
+	"icon": "paleopedia:textures/items/scleromochlus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_scleromochlus",
 	"pages": [

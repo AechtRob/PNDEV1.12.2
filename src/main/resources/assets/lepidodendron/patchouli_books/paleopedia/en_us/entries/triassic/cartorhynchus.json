@@ -1,7 +1,7 @@
 {
 	"name": "Cartorhynchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cartorhynchus_icon.png",
+	"icon": "paleopedia:textures/items/cartorhynchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_cartorhynchus",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Lonchidion",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lonchidion_icon.png",
+	"icon": "paleopedia:textures/items/lonchidion_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_lonchidion",
 	"pages": [

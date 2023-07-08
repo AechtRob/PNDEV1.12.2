@@ -1,7 +1,7 @@
 {
 	"name": "Placodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/placodus_icon.png",
+	"icon": "paleopedia:textures/items/placodus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_placodus",
 	"pages": [

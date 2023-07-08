@@ -1,7 +1,7 @@
 {
 	"name": "Mastodonsaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/mastodonsaurus_icon.png",
+	"icon": "paleopedia:textures/items/mastodonsaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_mastodonsaurus",
 	"pages": [

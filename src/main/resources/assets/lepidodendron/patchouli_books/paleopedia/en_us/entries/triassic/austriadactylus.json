@@ -1,7 +1,7 @@
 {
 	"name": "Austriadactylus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/austriadactylus_icon.png",
+	"icon": "paleopedia:textures/items/austriadactylus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_austriadactylus",
 	"pages": [

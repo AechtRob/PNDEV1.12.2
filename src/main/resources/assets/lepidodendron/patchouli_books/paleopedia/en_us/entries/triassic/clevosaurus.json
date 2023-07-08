@@ -1,7 +1,7 @@
 {
 	"name": "Clevosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/clevosaurus_icon.png",
+	"icon": "paleopedia:textures/items/clevosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_clevosaurus",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Lystrosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lystrosaurus_icon.png",
+	"icon": "paleopedia:textures/items/lystrosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lystrosaurus",
 	"pages": [

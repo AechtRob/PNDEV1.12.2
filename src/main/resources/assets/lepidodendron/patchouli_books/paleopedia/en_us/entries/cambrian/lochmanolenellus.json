@@ -1,7 +1,7 @@
 {
 	"name": "Lochmanolenellus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lochmanolenellus_icon.png",
+	"icon": "paleopedia:textures/items/lochmanolenellus_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lochmanolenellus",
 	"pages": [

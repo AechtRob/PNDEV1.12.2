@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:bobasatrania_icon"
+    "layer0": "paleopedia:items/bobasatrania_icon"
   }
 }

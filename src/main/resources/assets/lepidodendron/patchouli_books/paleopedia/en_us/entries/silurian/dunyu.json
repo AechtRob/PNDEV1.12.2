@@ -1,7 +1,7 @@
 {
 	"name": "Dunyu",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dunyu_icon.png",
+	"icon": "paleopedia:textures/items/dunyu_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dunyu",
 	"pages": [

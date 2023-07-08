@@ -1,7 +1,7 @@
 {
 	"name": "Batrachotomus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/batrachotomus_icon.png",
+	"icon": "paleopedia:textures/items/batrachotomus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_batrachotomus",
 	"pages": [

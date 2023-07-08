@@ -1,6 +1,6 @@
 {
     "name": "Cambrian",
     "description": "$(l)The first of the Paleozoic$()$(br)The Cambrian period featured many of Earth's first animals in most of the modern lineages. Though arthropods dominated this period. $(br2)$(l)Portal Block: Sponge ",
-    "icon": "paleopedia:textures/category_icon/icon_cambrian.png",
+    "icon": "paleopedia:textures/items/category_icon/icon_cambrian.png",
     "sortnum": 1
 }

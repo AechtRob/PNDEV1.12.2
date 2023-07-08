@@ -1,7 +1,7 @@
 {
 	"name": "Cameroceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/shell_cameroceras.png",
+	"icon": "paleopedia:textures/items/shell_cameroceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_cameroceras",
 	"pages": [

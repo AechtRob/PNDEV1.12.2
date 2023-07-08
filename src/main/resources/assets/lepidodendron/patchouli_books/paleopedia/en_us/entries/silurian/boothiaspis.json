@@ -1,7 +1,7 @@
 {
 	"name": "Boothiaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/boothiaspis_icon.png",
+	"icon": "paleopedia:textures/items/boothiaspis_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_boothiaspis",
 	"pages": [

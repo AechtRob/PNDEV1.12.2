@@ -1,7 +1,7 @@
 {
 	"name": "Cowralepis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cowralepis_icon.png",
+	"icon": "paleopedia:textures/items/cowralepis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_cowralepis",
 	"pages": [

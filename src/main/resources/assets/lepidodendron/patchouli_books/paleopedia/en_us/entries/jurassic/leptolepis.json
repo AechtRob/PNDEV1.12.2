@@ -1,7 +1,7 @@
 {
 	"name": "Leptolepis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/leptolepis_icon.png",
+	"icon": "paleopedia:textures/items/leptolepis_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_leptolepis",
 	"pages": [

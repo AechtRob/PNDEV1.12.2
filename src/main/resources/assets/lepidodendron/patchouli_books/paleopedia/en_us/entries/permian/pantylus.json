@@ -1,7 +1,7 @@
 {
 	"name": "Pantylus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pantylus_icon.png",
+	"icon": "paleopedia:textures/items/pantylus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pantylus",
 	"pages": [

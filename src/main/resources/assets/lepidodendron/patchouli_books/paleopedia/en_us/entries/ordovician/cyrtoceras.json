@@ -1,7 +1,7 @@
 {
 	"name": "Cyrtoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/shell_cyrtoceras.png",
+	"icon": "paleopedia:textures/items/shell_cyrtoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_cyrtoceras",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Aegirocassis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/aegirocassis_icon.png",
+	"icon": "paleopedia:textures/items/aegirocassis_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_aegirocassis",
 	"pages": [

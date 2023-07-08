@@ -1,7 +1,7 @@
 {
 	"name": "Ceratiocaris",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ceratiocaris_icon.png",
+	"icon": "paleopedia:textures/items/ceratiocaris_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_ceratiocaris",
 	"pages": [

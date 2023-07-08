@@ -1,7 +1,7 @@
 {
 	"name": "Barbclabornia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/barbclabornia_icon.png",
+	"icon": "paleopedia:textures/items/barbclabornia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_barbclabornia",
 	"pages": [

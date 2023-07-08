@@ -1,7 +1,7 @@
 {
 	"name": "Pelurgaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pelurgaspis_icon.png",
+	"icon": "paleopedia:textures/items/pelurgaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pelurgaspis",
 	"pages": [

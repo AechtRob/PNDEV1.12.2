@@ -1,7 +1,7 @@
 {
 	"name": "Eryon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eryon_icon.png",
+	"icon": "paleopedia:textures/items/eryon_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_eryon",
 	"pages": [

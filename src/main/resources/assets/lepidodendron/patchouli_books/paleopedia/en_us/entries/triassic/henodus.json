@@ -1,7 +1,7 @@
 {
 	"name": "Henodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/henodus_icon.png",
+	"icon": "paleopedia:textures/items/henodus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_henodus",
 	"pages": [

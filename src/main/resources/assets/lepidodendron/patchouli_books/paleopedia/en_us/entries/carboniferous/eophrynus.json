@@ -1,7 +1,7 @@
 {
 	"name": "Eophrynus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eophrynus_icon.png",
+	"icon": "paleopedia:textures/items/eophrynus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 	"pages": [

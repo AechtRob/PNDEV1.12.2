@@ -1,7 +1,7 @@
 {
 	"name": "Parapeytoia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/parapeytoia_icon.png",
+	"icon": "paleopedia:textures/items/parapeytoia_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_parapeytoia",
 	"pages": [

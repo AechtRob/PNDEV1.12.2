@@ -1,7 +1,7 @@
 {
 	"name": "Melosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/melosaurus_icon.png",
+	"icon": "paleopedia:textures/items/melosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_melosaurus",
 	"pages": [

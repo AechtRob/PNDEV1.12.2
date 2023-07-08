@@ -1,7 +1,7 @@
 {
 	"name": "Lituites",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lituites_icon.png",
+	"icon": "paleopedia:textures/items/lituites_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_lituites",
 	"pages": [

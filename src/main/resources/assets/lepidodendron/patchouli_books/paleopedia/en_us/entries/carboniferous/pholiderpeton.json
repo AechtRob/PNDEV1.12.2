@@ -1,7 +1,7 @@
 {
 	"name": "Pholiderpeton",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pholiderpeton_icon.png",
+	"icon": "paleopedia:textures/items/pholiderpeton_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_pholiderpeton",
 	"pages": [

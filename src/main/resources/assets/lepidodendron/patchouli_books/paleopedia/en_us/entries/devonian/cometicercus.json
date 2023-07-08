@@ -1,7 +1,7 @@
 {
 	"name": "Cometicercus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cometicercus_icon.png",
+	"icon": "paleopedia:textures/items/cometicercus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_cometicercus",
 	"pages": [

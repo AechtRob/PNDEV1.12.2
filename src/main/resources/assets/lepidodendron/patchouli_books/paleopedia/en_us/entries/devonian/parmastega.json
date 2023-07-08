@@ -1,7 +1,7 @@
 {
 	"name": "Parmastega",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/parmastega_icon.png",
+	"icon": "paleopedia:textures/items/parmastega_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_parmastega",
 	"pages": [

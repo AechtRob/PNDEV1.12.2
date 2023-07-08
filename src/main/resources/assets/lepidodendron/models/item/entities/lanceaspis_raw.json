@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:lanceaspis_icon"
+    "layer0": "paleopedia:items/lanceaspis_icon"
   }
 }

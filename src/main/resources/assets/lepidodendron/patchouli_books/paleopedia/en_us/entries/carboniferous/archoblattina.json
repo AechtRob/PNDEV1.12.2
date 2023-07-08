@@ -1,7 +1,7 @@
 {
 	"name": "Progonoblattina",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/archoblattina_icon.png",
+	"icon": "paleopedia:textures/items/archoblattina_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_archoblattina",
 	"pages": [

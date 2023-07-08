@@ -1,7 +1,7 @@
 {
 	"name": "Hungioides",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/hungioides_icon.png",
+	"icon": "paleopedia:textures/items/hungioides_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_hungioides",
 	"pages": [

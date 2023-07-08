@@ -1,7 +1,7 @@
 {
 	"name": "Brindabellaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/brindabellaspis_icon.png",
+	"icon": "paleopedia:textures/items/brindabellaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_brindabellaspis",
 	"pages": [

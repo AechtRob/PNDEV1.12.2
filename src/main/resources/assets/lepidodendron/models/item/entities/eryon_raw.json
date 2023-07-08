@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:eryon_icon"
+    "layer0": "paleopedia:items/eryon_icon"
   }
 }

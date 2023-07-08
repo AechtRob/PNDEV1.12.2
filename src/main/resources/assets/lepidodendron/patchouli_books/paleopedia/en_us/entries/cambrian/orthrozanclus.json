@@ -1,7 +1,7 @@
 {
 	"name": "Orthrozanclus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/orthrozanclus_icon.png",
+	"icon": "paleopedia:textures/items/orthrozanclus_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_orthrozanclus",
 	"pages": [

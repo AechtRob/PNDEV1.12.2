@@ -1,7 +1,7 @@
 {
 	"name": "Sphooceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sphooceras_icon.png",
+	"icon": "paleopedia:textures/items/sphooceras_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_sphooceras",
 	"pages": [

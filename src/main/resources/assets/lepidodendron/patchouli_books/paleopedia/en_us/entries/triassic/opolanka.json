@@ -1,7 +1,7 @@
 {
 	"name": "Opolanka",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/opolanka_icon.png",
+	"icon": "paleopedia:textures/items/opolanka_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_opolanka",
 	"pages": [

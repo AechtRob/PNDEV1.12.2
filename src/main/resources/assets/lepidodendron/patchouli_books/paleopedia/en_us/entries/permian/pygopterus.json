@@ -1,7 +1,7 @@
 {
 	"name": "Pygopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pygopterus_icon.png",
+	"icon": "paleopedia:textures/items/pygopterus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pygopterus",
 	"pages": [

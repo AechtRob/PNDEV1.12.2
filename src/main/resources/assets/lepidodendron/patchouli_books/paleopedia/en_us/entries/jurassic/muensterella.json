@@ -1,7 +1,7 @@
 {
 	"name": "Muensterella",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/muensterella_icon.png",
+	"icon": "paleopedia:textures/items/muensterella_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_muensterella",
 	"pages": [

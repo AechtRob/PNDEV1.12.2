@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:uralichas_icon"
+    "layer0": "paleopedia:items/uralichas_icon"
   }
 }

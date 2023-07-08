@@ -1,6 +1,6 @@
 {
     "name": "Cretaceous",
     "description": "$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
-    "icon": "paleopedia:textures/category_icon/icon_cretaceous.png",
+    "icon": "paleopedia:textures/items/category_icon/icon_cretaceous.png",
     "sortnum": 9
 }

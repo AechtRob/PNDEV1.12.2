@@ -1,7 +1,7 @@
 {
 	"name": "Teleocrater",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/teleocrater_icon.png",
+	"icon": "paleopedia:textures/items/teleocrater_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_teleocrater",
 	"pages": [

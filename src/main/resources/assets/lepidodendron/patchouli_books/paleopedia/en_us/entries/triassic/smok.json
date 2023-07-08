@@ -1,7 +1,7 @@
 {
 	"name": "Smok",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/smok_icon.png",
+	"icon": "paleopedia:textures/items/smok_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_smok",
 	"pages": [

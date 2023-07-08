@@ -1,7 +1,7 @@
 {
 	"name": "Sillosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sillosuchus_icon.png",
+	"icon": "paleopedia:textures/items/sillosuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_sillosuchus",
 	"pages": [

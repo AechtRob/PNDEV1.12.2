@@ -1,7 +1,7 @@
 {
 	"name": "Rhamphodopsis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/rhamphodopsis_icon.png",
+	"icon": "paleopedia:textures/items/rhamphodopsis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_rhamphodopsis",
 	"pages": [

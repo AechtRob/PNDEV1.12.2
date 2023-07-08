@@ -1,7 +1,7 @@
 {
 	"name": "Dunbaria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dunbaria_icon.png",
+	"icon": "paleopedia:textures/items/dunbaria_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 	"pages": [

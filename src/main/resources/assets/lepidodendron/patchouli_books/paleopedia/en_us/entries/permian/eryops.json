@@ -1,7 +1,7 @@
 {
 	"name": "Eryops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eryops_icon.png",
+	"icon": "paleopedia:textures/items/eryops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eryops",
 	"pages": [
