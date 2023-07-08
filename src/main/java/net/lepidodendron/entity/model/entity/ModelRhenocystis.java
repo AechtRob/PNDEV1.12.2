@@ -77,20 +77,20 @@ public class ModelRhenocystis extends AdvancedModelBase {
     }
         public void renderStaticWall(float f) {
             this.body.rotateAngleX = (float) Math.toRadians(90);
-            this.body.offsetY = 0.0F;
+            this.body.offsetY = -0.2F;
             this.body.offsetX = 0.0F;
-            this.body.offsetZ = 0.0F;
+            this.body.offsetZ = -0.38F;
             this.body.render(0.01F);
             resetToDefaultPose();
         }
 
         public void renderStaticFloor(float f) {
             this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(body4, 0.09F, 0.0F, 0.0F);
-            this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
-            this.body.offsetY = -0.14F;
+            this.setRotateAngle(body2, 0.2F, 0.0F, 0.0F);
+            this.setRotateAngle(body3, 0.4F, 0.0F, 0.0F);
+            this.setRotateAngle(body4, -0.4F, 0.0F, 0.0F);
+            this.setRotateAngle(body5, -0.7F, 0.0F, 0.0F);
+            this.body.offsetY = 0.160F;
             this.body.render(0.01F);
             resetToDefaultPose();
         }

@@ -478,6 +478,7 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Tail, 0.2F, 0.4F, 0.0F);
         this.setRotateAngle(Tail2, 0.0F, -0.6F, 0.0F);
         this.setRotateAngle(bone, -0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(bonejawthing, -0.1F, 0.0F, 0.0F);
         this.Mastodonsaurus.offsetY = -0.17F;
         this.Mastodonsaurus.render(0.01F);
         resetToDefaultPose();

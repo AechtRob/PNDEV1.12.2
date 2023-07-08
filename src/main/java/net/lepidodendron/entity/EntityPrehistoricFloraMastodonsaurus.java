@@ -406,22 +406,20 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 1.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 1.1;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 1.2F;
 	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0.6F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.0;
