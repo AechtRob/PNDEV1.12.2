@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSpawnEggConodontClarkina extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_clarkina")
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_conodont_clarkina")
 	public static final Item block = null;
 	public ItemSpawnEggConodontClarkina(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.clarkina_raw);
@@ -39,14 +39,14 @@ public class ItemSpawnEggConodontClarkina extends ElementsLepidodendronMod.ModEl
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_clarkina", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_clarkina", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_clarkina");
-			setRegistryName("spawn_egg_clarkina");
+			setTranslationKey("pf_spawn_egg_conodont_clarkina");
+			setRegistryName("spawn_egg_conodont_clarkina");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "clarkina";

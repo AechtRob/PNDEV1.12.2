@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/atli_shoot",
+    "particle": "lepidodendron:blocks/atli_shoot"
+  }
+}

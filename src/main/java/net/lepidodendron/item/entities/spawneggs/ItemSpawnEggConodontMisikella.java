@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSpawnEggConodontMisikella extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_misikella")
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_conodont_misikella")
 	public static final Item block = null;
 	public ItemSpawnEggConodontMisikella(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.misikella_raw);
@@ -39,14 +39,14 @@ public class ItemSpawnEggConodontMisikella extends ElementsLepidodendronMod.ModE
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_misikella", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_misikella", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_misikella");
-			setRegistryName("spawn_egg_misikella");
+			setTranslationKey("pf_spawn_egg_conodont_misikella");
+			setRegistryName("spawn_egg_conodont_misikella");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "misikella";

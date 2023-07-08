@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
 		"e": "lepidodendron:blocks/dicroidium_b_e",

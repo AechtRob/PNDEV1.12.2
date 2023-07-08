@@ -325,7 +325,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/chotecops_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/claudiosaurus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/climatius_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/clydagnathus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_clydagnathus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/cobelodus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/coccosteus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/coelacanthus_bucket", "inventory"),
@@ -543,7 +543,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				//new ModelResourceLocation("lepidodendron:entities/priscomyzon_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/profallotaspis_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/proganochelys_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/promissum_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/conodont_promissum_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/proterogyrinus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/protozygoptera_nymph_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/psarolepis_bucket", "inventory"),
@@ -679,8 +679,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/silurolepis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/entelognathus_bucket", "inventory"),
 
-				new ModelResourceLocation("lepidodendron:entities/cidaroida", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/archaeocidaris", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/cidaroida_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/archaeocidaris_bucket", "inventory"),
 
 
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)

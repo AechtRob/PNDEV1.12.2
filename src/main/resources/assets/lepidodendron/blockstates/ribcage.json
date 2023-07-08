@@ -1,28 +1,7 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "lepidodendron:ribcage",
-      "y": 180
-    },
-    "facing=south": {
-      "model": "lepidodendron:ribcage",
-      "y": 0
-    },
-    "facing=west": {
-      "model": "lepidodendron:ribcage",
-      "y": -270
-    },
-    "facing=east": {
-      "model": "lepidodendron:ribcage",
-      "y": -90
-    },
-    "facing=up": {
-      "model": "lepidodendron:ribcage",
-      "y": 0
-    },
-    "facing=down": {
-      "model": "lepidodendron:ribcage",
-      "y": 0
+    "normal": {
+      "model": "lepidodendron:ribcage"
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:trap_air"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:trap_air"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:trap_air", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:trap_air", "y": 180}
+    ],
+    
+    "facing=west": [
+      {"model": "lepidodendron:trap_air", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:trap_air"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:trap_air"}
+    ]
+  }
+}

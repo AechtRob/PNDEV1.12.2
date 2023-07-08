@@ -39,7 +39,7 @@ public class ItemSpawnEggConodontIowagnathus extends ElementsLepidodendronMod.Mo
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_iowagnathus", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_iowagnathus", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {

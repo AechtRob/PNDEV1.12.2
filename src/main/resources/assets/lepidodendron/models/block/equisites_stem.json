@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "block/cube",
 	"textures": {
 		"up": "lepidodendron:blocks/equisites_branch_end",

@@ -232,7 +232,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 					if (world.canSeeSky(targetBlock) && Math.random() > (1-(spread/100)) && (targetBlock != pos) && (world.isAirBlock(targetBlock)) && (canSurviveAt(world, targetBlock))) {
 						world.setBlockState(targetBlock, BlockFieldHorsetail.block.getDefaultState(), 3);	
 					}
-					//Perhaps the original plant also dies back now, but only if there another plant within 2 blocks (else TODO:he colony dies!):
+					//Perhaps the original plant also dies back now, but only if there another plant within 2 blocks (else the colony dies!):
 					boolean YouAreNotAloneNooneIsAlone = false;
 					int xct = -2;
 					int yct;

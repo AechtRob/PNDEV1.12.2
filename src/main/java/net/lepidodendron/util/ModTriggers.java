@@ -408,6 +408,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_WOLLEMI = new CustomTrigger("pf_book_wollemi");
     public static final CustomTrigger CLICK_WOOD_HORSETAIL = new CustomTrigger("pf_book_wood_horsetail");
     public static final CustomTrigger CLICK_XENOCLADIA = new CustomTrigger("pf_book_xenocladia");
+    public static final CustomTrigger CLICK_ATLI = new CustomTrigger("pf_book_atli");
     public static final CustomTrigger CLICK_RATTAN = new CustomTrigger("pf_book_rattan");
     public static final CustomTrigger CLICK_XIANGUANGIA = new CustomTrigger("pf_book_xianguangia");
     public static final CustomTrigger CLICK_XIHUPHYLLUM = new CustomTrigger("pf_book_xihuphyllum");
@@ -1657,6 +1658,7 @@ public class ModTriggers
             CLICK_WOLLEMI,
             CLICK_WOOD_HORSETAIL,
             CLICK_XENOCLADIA,
+            CLICK_ATLI,
             CLICK_RATTAN,
             CLICK_XIANGUANGIA,
             CLICK_XIHUPHYLLUM,

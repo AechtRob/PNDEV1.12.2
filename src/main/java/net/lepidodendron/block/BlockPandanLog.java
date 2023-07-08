@@ -109,7 +109,7 @@ public class BlockPandanLog extends ElementsLepidodendronMod.ModElement {
 			Boolean leavesblock1 = false;
 			Boolean leavesattached = false;
 
-			if ((block1 == BlockPandanShoot.block) || (block1 == BlockPandanShootPlaceable.block)) {
+				if ((block1 == BlockPandanShoot.block) || (block1 == BlockPandanShootPlaceable.block) || (block1 == BlockPandanShootFruit.block)) {
 				leavesattached = true;
 				leavesblock1 = true;
 	    	}

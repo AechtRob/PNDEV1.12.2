@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSpawnEggConodontHindeodus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_hindeodus")
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_conodont_hindeodus")
 	public static final Item block = null;
 	public ItemSpawnEggConodontHindeodus(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.hindeodus_raw);
@@ -39,14 +39,14 @@ public class ItemSpawnEggConodontHindeodus extends ElementsLepidodendronMod.ModE
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_hindeodus", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_hindeodus", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_hindeodus");
-			setRegistryName("spawn_egg_hindeodus");
+			setTranslationKey("pf_spawn_egg_conodont_hindeodus");
+			setRegistryName("spawn_egg_conodont_hindeodus");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "hindeodus";

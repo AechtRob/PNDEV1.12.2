@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSpawnEggConodontOzarkodina extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_ozarkodina")
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_conodont_ozarkodina")
 	public static final Item block = null;
 	public ItemSpawnEggConodontOzarkodina(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.ozarkodina_raw);
@@ -39,14 +39,14 @@ public class ItemSpawnEggConodontOzarkodina extends ElementsLepidodendronMod.Mod
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_ozarkodina", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_ozarkodina", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_ozarkodina");
-			setRegistryName("spawn_egg_ozarkodina");
+			setTranslationKey("pf_spawn_egg_conodont_ozarkodina");
+			setRegistryName("spawn_egg_conodont_ozarkodina");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "ozarkodina";

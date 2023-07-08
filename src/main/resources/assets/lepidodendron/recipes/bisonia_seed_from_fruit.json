@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:bisonia_fruit"
+      "item": "lepidodendron:bisonia_fruit"
     }
   ],
   "result": {
