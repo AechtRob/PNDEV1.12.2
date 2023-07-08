@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/nerinea_item"
+    "layer0": "paleopedia:items/nerinea_icon"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/megistaspis_raw"
+    "layer0": "paleopedia:items/megistaspis_icon"
   }
 }
