@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "paleopedia:ascoceras_icon"
+    "all": "paleopedia:items/ascoceras_icon"
   }
 }

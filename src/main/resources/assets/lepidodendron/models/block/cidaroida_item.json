@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "paleopedia:cidaroida_icon"
+    "all": "paleopedia:items/cidaroida_icon"
   }
 }

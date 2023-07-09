@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "paleopedia:lepidaster_icon"
+    "all": "paleopedia:items/lepidaster_icon"
   }
 }
