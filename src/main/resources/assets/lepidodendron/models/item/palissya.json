@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/palissya_inventory"
+    "layer0": "lepidodendron:items/palissya_inventory"
   }
 }
