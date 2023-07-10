@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/anemone_red"
+    "layer0": "lepidodendron:blocks/anemone_red"
   }
 }

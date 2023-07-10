@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/bucket_conodont_iowagnathu"
+    "layer0": "lepidodendron:items/entities/bucket_conodont_iowagnathus"
   }
 }
