@@ -82,6 +82,23 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+		boolean dimensionCriteria = false;
+		boolean isNetherType = false;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLeptopterisEpiphyte))
+			dimensionCriteria = true;
+		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && !LepidodendronConfig.genAllPlants)
+			dimensionCriteria = false;
+		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene
+		) {
+			dimensionCriteria = true;
+		}
+
+		if (!dimensionCriteria)
+			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
@@ -93,10 +110,9 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
+
 		if (matchBiome(biome, LepidodendronConfigPlants.genLeptopterisEpiphyteOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && !LepidodendronConfig.genAllPlants)
-			biomeCriteria = false;
 
 		if (biome instanceof BiomeJurassic)
 		{
@@ -137,6 +153,17 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public static boolean matchBiome(Biome biome, String[] biomesList) {
 
