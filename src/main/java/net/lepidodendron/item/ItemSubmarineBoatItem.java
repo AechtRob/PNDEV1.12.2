@@ -20,6 +20,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -27,6 +28,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -56,6 +58,20 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("submarine_boat_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.maxStackSize = 1;
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+			//if (LepidodendronConfig.machinesRF) {
+				DecimalFormat df = new DecimalFormat("###.#");
+				if (stack.hasTagCompound()) {
+					if (stack.getTagCompound().hasKey("rf")) {
+						return super.getItemStackDisplayName(stack) + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+					}
+				}
+			//}
+			return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_no_battery.name");
 		}
 
 		@Override
@@ -118,6 +134,11 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
 					PrehistoricFloraSubmarine entityPNsubmarine = new PrehistoricFloraSubmarine(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
 					entityPNsubmarine.rotationYaw = playerIn.rotationYaw;
+					if (itemstack.hasTagCompound()) {
+						if (itemstack.getTagCompound().hasKey("rf")) {
+							entityPNsubmarine.setRF(itemstack.getTagCompound().getInteger("rf"));
+						}
+					}
 
 					if (!worldIn.getCollisionBoxes(entityPNsubmarine, entityPNsubmarine.getEntityBoundingBox().grow(-0.1D)).isEmpty())
 					{

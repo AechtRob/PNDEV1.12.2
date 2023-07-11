@@ -1,0 +1,43 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:hardened_clay"
+    },
+    "1": {
+      "item": "lepidodendron:redstone_component"
+    },
+    "2": {
+      "item": "minecraft:hardened_clay"
+    },
+    "3": {
+      "item": "minecraft:hardened_clay"
+    },
+    "4": {
+      "item": "lepidodendron:bottle_of_sulfuric_acid"
+    },
+    "5": {
+      "item": "minecraft:hardened_clay"
+    },
+    "6": {
+      "item": "minecraft:hardened_clay"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "blockIron"
+    },
+    "8": {
+      "item": "minecraft:hardened_clay"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:battery_submarine_item",
+    "count": 1
+  }
+}

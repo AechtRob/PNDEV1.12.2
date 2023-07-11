@@ -1096,6 +1096,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUITrapWater.GUIID) {
 				return new GUITrapWater.GUILepidodendronTrapWater(world, x, y, z, player);
 			}
+			if (id == GUIBatterySubmarine.GUIID) {
+				return new GUIBatterySubmarine.GUILepidodendronBatterySubmarine(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -1136,6 +1139,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUITrapWater.GUIID) {
 				return new GUITrapWater.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUIBatterySubmarine.GUIID) {
+				return new GUIBatterySubmarine.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

@@ -1,7 +1,7 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"particle": "lepidodendron:items/hydrangea_blue_flower",
+		"particle": "lepidodendron:items/hydrangea_flower_blue",
 		"e": "lepidodendron:blocks/hydrangea_blue_1_e",
 		"w": "lepidodendron:blocks/hydrangea_blue_1_w",
 		"eu": "lepidodendron:blocks/hydrangea_blue_2_e",

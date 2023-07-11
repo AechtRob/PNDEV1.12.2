@@ -3,7 +3,9 @@ package net.lepidodendron.entity.boats;
 import com.google.common.collect.Lists;
 import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.item.ItemSubmarineBatterypack;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -14,6 +16,7 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -24,13 +27,16 @@ import net.minecraft.network.play.client.CPacketSteerBoat;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class PrehistoricFloraSubmarine extends EntityBoat
@@ -38,6 +44,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(PrehistoricFloraSubmarine.class, DataSerializers.FLOAT);
+    private static final DataParameter<Integer> RF_SUPPLY = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
     private final float[] paddlePositions;
     private float momentum;
@@ -84,16 +91,30 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         this.prevPosZ = z;
     }
 
+    public double getEnergyFraction() {
+       return ((double) this.getRF()) / 1000000D;
+    }
 
+    public void setRF(int rf)
+    {
+        this.dataManager.set(RF_SUPPLY, rf);
+    }
+
+    public int getRF()
+    {
+        return (this.dataManager.get(RF_SUPPLY));
+    }
 
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound)
     {
+        compound.setInteger("RF", this.getRF());
     }
 
     @Override
     protected void readEntityFromNBT(NBTTagCompound compound)
     {
+        this.setRF(compound.getInteger("RF"));
     }
 
     @Override
@@ -114,6 +135,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         this.dataManager.register(TIME_SINCE_HIT, Integer.valueOf(0));
         this.dataManager.register(FORWARD_DIRECTION, Integer.valueOf(1));
         this.dataManager.register(DAMAGE_TAKEN, Float.valueOf(0.0F));
+        this.dataManager.register(RF_SUPPLY, Integer.valueOf(-1));
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -175,7 +197,13 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                 {
                     if (!flag && this.world.getGameRules().getBoolean("doEntityDrops"))
                     {
-                        this.dropItemWithOffset(this.getItemBoat(), 1, 0.0F);
+                        ItemStack stack = new ItemStack(ItemSubmarineBoatItem.block, 1);
+                        if (this.getRF() >= 0) {
+                            NBTTagCompound stackNBT = new NBTTagCompound();
+                            stackNBT.setInteger("rf", this.getRF());
+                            stack.setTagCompound(stackNBT);
+                        }
+                        Block.spawnAsEntity(world, this.getPosition(), stack);
                     }
 
                     this.setDead();
@@ -216,7 +244,13 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     @Nonnull
     public ItemStack getPickedResult(RayTraceResult target)
     {
-        return new ItemStack(this.getItemBoat());
+        ItemStack stack = new ItemStack(ItemSubmarineBoatItem.block, 1);
+        if (this.getRF() >= 0) {
+            NBTTagCompound stackNBT = new NBTTagCompound();
+            stackNBT.setInteger("rf", this.getRF());
+            stack.setTagCompound(stackNBT);
+        }
+        return stack;
     }
 
     @SideOnly(Side.CLIENT)
@@ -255,6 +289,24 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     @Override
     public void onUpdate()
     {
+
+        if (LepidodendronConfig.machinesRF && this.getRF() >= 1) {
+            if ((this.status == Status.IN_WATER
+                || this.status == Status.UNDER_FLOWING_WATER
+                || this.status == Status.UNDER_WATER)
+                &&
+                (this.leftInputDown ||
+                this.rightInputDown ||
+                this.forwardInputDown ||
+                this.backInputDown ||
+                this.downInputDown ||
+                this.upInputDown ||
+                this.leftStrafeInputDown ||
+                this.rightStrafeInputDown)
+            ){
+                this.setRF(this.getRF() - 1);
+            }
+        }
 
         this.previousStatus = this.status;
         this.status = this.getBoatStatus();
@@ -387,7 +439,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             double d2 = this.posZ + (this.lerpZ - this.posZ) / (double)this.lerpSteps;
             double d3 = MathHelper.wrapDegrees(this.lerpYaw - (double)this.rotationYaw);
             this.rotationYaw = (float)((double)this.rotationYaw + d3 / (double)this.lerpSteps);
-            this.rotationPitch = (float)((double)this.rotationPitch + (this.lerpPitch - (double)this.rotationPitch) / (double)this.lerpSteps);
+            //this.rotationPitch = (float)((double)this.rotationPitch + (this.lerpPitch - (double)this.rotationPitch) / (double)this.lerpSteps);
             --this.lerpSteps;
             this.setPosition(d0, d1, d2);
             this.setRotation(this.rotationYaw, this.rotationPitch);
@@ -742,7 +794,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             }
 
             this.rotationYaw += this.deltaRotation;
-            this.rotationPitch += this.deltaPitch;
+            //this.rotationPitch += this.deltaPitch;
 
             if (this.forwardInputDown)
             {
@@ -889,9 +941,100 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     @Override
     public boolean processInitialInteract(EntityPlayer player, EnumHand hand)
     {
-        if (player.isSneaking())
+        boolean riding = false;
+        if (player.isRiding()) {
+            if (player.getRidingEntity() == this) {
+                if (this.getControllingPassenger() == player) {
+                    riding = true;
+                }
+            }
+        }
+        if (riding) {
+            //What am I clicking on?
+            //Central panel (interact with entities)
+            if (player.rotationYaw - this.rotationYaw > -22 && player.rotationYaw - this.rotationYaw < 22 && player.rotationPitch - this.rotationPitch > -60 && player.rotationPitch - this.rotationPitch < -30) {
+
+
+            }
+            //Left panel (read battery)
+            if (player.rotationYaw - this.rotationYaw > -65 && player.rotationYaw - this.rotationYaw < -38 && player.rotationPitch - this.rotationPitch > -55 && player.rotationPitch - this.rotationPitch < -30) {
+                if (player.world.isRemote) {
+                    if (this.getRF() == -1) {
+                        player.sendMessage(new TextComponentString("Submarine power: no battery!"));
+                    }
+                    else {
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        player.sendMessage(new TextComponentString("Submarine power: " + df.format(this.getEnergyFraction() * 100) + "%"));
+                    }
+                }
+            }
+            //Right panel (remove or add battery)
+            if (player.rotationYaw - this.rotationYaw > 38 && player.rotationYaw - this.rotationYaw < 65 && player.rotationPitch - this.rotationPitch > -55 && player.rotationPitch - this.rotationPitch < -30) {
+                if (!player.world.isRemote) {
+                    if (this.getRF() == -1) {
+                        //There is no battery: can we add one from our hand?
+                        if (player.getHeldItem(hand).getItem() == ItemSubmarineBatterypack.block) {
+                            int rf = 1000000;
+                            ItemStack stack = player.getHeldItem(hand);
+                            if (LepidodendronConfig.machinesRF) {
+                                if (stack.hasTagCompound()) {
+                                    if (stack.getTagCompound().hasKey("rf")) {
+                                        rf = stack.getTagCompound().getInteger("rf");
+                                    }
+                                    else {
+                                        rf = 0;
+                                    }
+                                }
+                                else {
+                                    rf = 0;
+                                }
+                            }
+                            this.setRF(rf);
+                            stack.shrink(1);
+                            world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+                        }
+                    }
+                    else {
+                        //Is our hand empty to remove the battery?
+                        if (player.getHeldItem(hand).isEmpty()) {
+                            ItemStack stack = new ItemStack(ItemSubmarineBatterypack.block, 1);
+                            int rf = this.getRF();
+                            NBTTagCompound stackNBT = new NBTTagCompound();
+                            stackNBT.setInteger("rf", rf);
+                            stack.setTagCompound(stackNBT);
+                            ItemHandlerHelper.giveItemToPlayer(player, stack);
+                            world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+                            this.setRF(Integer.valueOf(-1));
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        else if (player.isSneaking())
         {
             return false;
+        }
+        else if ((!this.world.isRemote) && player.getHeldItem(hand).getItem() == ItemSubmarineBatterypack.block && this.getRF() == -1) {
+            int rf = 1000000;
+            ItemStack stack = player.getHeldItem(hand);
+            if (LepidodendronConfig.machinesRF) {
+                if (stack.hasTagCompound()) {
+                    if (stack.getTagCompound().hasKey("rf")) {
+                        rf = stack.getTagCompound().getInteger("rf");
+                    }
+                    else {
+                        rf = 0;
+                    }
+                }
+                else {
+                    rf = 0;
+                }
+            }
+            this.setRF(rf);
+            stack.shrink(1);
+            world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+            return true;
         }
         else
         {
@@ -931,7 +1074,13 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         {
                             for (int i = 0; i < 3; ++i)
                             {
-                                this.entityDropItem(new ItemStack(ItemSubmarineBoatItem.block, 1), 0.0F);
+                                ItemStack stack = new ItemStack(ItemSubmarineBoatItem.block, 1);
+                                if (this.getRF() >= 0) {
+                                    NBTTagCompound stackNBT = new NBTTagCompound();
+                                    stackNBT.setInteger("rf", this.getRF());
+                                    stack.setTagCompound(stackNBT);
+                                }
+                                Block.spawnAsEntity(world, this.getPosition(), stack);
                             }
                         }
                     }
@@ -1033,6 +1182,19 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                 this.rightStrafeInputDown = false;
             }
         }
+
+        if ((LepidodendronConfig.machinesRF && this.getRF() == 0)
+            || this.getRF() == -1) { //Power has run out or battery is absent
+            this.leftInputDown = false;
+            this.rightInputDown = false;
+            this.forwardInputDown = false;
+            this.backInputDown = false;
+            this.downInputDown = false;
+            this.upInputDown = false;
+            this.leftStrafeInputDown = false;
+            this.rightStrafeInputDown = false;
+        }
+
     }
 
     public static enum Status
@@ -1056,7 +1218,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             this.posY = this.lerpY;
             this.posZ = this.lerpZ;
             this.rotationYaw = (float)this.lerpYaw;
-            this.rotationPitch = (float)this.lerpPitch;
+            //this.rotationPitch = (float)this.lerpPitch;
         }
     }
 }

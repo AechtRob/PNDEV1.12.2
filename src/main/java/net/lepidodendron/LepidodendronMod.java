@@ -2047,6 +2047,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation CERVIFURCA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cervifurca"));
 
 
+	public static final int GUI_BATTERY_SUBMARINE_ID = 801;
 
 
 	@Mod.EventHandler

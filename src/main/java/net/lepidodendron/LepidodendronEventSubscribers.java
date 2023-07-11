@@ -68,6 +68,7 @@ public class LepidodendronEventSubscribers {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
 				player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+				player.sendMessage(new TextComponentString("Left control panel: read battery; right control panel: add/remove battery"));
 			}
 		}
 	}
