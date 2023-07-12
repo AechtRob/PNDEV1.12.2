@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -33,6 +34,11 @@ public class EntityPrehistoricFloraJellyfish6 extends EntityPrehistoricFloraJell
     public EntityPrehistoricFloraJellyfish6(World world) {
         super(world);
         setSize(1.6F, 0.9F);
+    }
+
+    @Override
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        return EnumCreatureAttributePN.INVERTEBRATE;
     }
 
     @Override

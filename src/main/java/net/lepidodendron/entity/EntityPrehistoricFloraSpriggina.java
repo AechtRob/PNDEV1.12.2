@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -38,6 +39,11 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 	public EntityPrehistoricFloraSpriggina(World world) {
 		super(world);
 		setSize(0.4F, 0.3F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -103,7 +109,7 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override

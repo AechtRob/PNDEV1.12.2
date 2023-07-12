@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemEchinodermEggsArchaeocidaris;
 import net.minecraft.entity.Entity;
@@ -36,6 +37,11 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraArchaeocidaris(World world) {
 		super(world, 0);//Does not slither
 		setSize(0.26F, 0.2F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

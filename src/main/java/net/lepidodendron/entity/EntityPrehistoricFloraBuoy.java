@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemBuoyItem;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
@@ -34,6 +35,11 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
     public EntityPrehistoricFloraBuoy(World world) {
         super(world);
         setSize(1.5F, 2.0F);
+    }
+
+    @Override
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        return EnumCreatureAttributePN.UNDEFINED;
     }
 
     public EntityPrehistoricFloraBuoy(World worldIn, double x, double y, double z)

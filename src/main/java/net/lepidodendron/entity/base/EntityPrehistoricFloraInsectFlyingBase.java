@@ -10,6 +10,7 @@ import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
@@ -80,6 +81,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
+            return EnumCreatureAttributePN.INVERTEBRATE;
+        }
+        return EnumCreatureAttributePN.VERTEBRATE;
     }
 
     public boolean hasPNVariants() {

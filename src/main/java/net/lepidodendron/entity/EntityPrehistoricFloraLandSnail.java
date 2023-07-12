@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemLandSnail;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -48,6 +49,11 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

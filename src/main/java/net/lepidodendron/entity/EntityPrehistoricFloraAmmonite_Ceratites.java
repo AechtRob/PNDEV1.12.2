@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsCeratites;
 import net.minecraft.entity.item.EntityItem;
@@ -34,6 +35,11 @@ public class EntityPrehistoricFloraAmmonite_Ceratites extends EntityPrehistoricF
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

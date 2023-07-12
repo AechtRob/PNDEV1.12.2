@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderVampyronassa;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemNautiloidEggsVampyronassa;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.item.EntityItem;
@@ -35,6 +36,11 @@ public class EntityPrehistoricFloraVampyronassa extends EntityPrehistoricFloraNa
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.ai.WebsteroprionEatItemsAIHole;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -51,6 +52,10 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 		super(world);
 		setSize(0.99F, 0.99F);
 		this.targetSorter = new EntityPrehistoricFloraWebsteroprionHole.PlayerSorter(this);
+	}
+
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

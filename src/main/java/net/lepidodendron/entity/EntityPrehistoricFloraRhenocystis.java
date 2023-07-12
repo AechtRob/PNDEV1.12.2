@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderRhenocystis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemEchinodermEggsRhenocystis;
 import net.minecraft.client.model.ModelBase;
@@ -36,6 +37,11 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

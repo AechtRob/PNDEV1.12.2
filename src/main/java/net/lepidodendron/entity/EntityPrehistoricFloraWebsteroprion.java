@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -63,6 +64,11 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
 		maxHealthAgeable = 12D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

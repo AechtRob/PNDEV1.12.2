@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.render.entity.RenderTyrannophontes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
@@ -40,6 +41,11 @@ public class EntityPrehistoricFloraTyrannophontes extends EntityPrehistoricFlora
 		maxWidth = 0.25F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

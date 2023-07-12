@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWanderBottomFeed;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsEndoceras;
 import net.minecraft.entity.item.EntityItem;
@@ -38,6 +39,11 @@ public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNauti
 		maxWidth = 1.5F;
 		maxHeight = 1.5F;
 		maxHealthAgeable = 46.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@SideOnly(Side.CLIENT)

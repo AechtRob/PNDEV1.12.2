@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderProteroctopus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.minecraft.client.model.ModelBase;
@@ -44,6 +45,12 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();

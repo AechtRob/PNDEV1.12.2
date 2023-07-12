@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderSphooceras;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsSphooceras;
 import net.minecraft.client.model.ModelBase;
@@ -39,6 +40,11 @@ public class EntityPrehistoricFloraSphooceras extends EntityPrehistoricFloraNaut
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

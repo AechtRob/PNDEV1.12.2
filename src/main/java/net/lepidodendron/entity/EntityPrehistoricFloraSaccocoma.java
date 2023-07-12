@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.entity.Entity;
@@ -40,6 +41,11 @@ public class EntityPrehistoricFloraSaccocoma extends EntityPrehistoricFloraAgeab
 		maxWidth = 0.3F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -46,6 +47,11 @@ public class EntityPrehistoricFloraOttoia extends EntityPrehistoricFloraTrilobit
 	public EntityPrehistoricFloraOttoia(World world) {
 		super(world);
 		setSize(0.25F, 0.2F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

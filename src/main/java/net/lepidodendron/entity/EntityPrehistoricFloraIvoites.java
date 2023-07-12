@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderIvoites;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsIvoites;
 import net.minecraft.client.model.ModelBase;
@@ -37,6 +38,11 @@ public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautilo
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 3;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.render.entity.RenderOmnidens;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.item.entities.ItemEggsOmnidens;
 import net.minecraft.client.model.ModelBase;
@@ -68,6 +69,11 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new MillipedeBuffer();
 		}
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -231,7 +237,7 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override

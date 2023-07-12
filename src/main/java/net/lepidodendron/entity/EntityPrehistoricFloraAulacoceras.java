@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsAulacoceras;
 import net.minecraft.entity.item.EntityItem;
@@ -33,6 +34,11 @@ public class EntityPrehistoricFloraAulacoceras extends EntityPrehistoricFloraNau
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

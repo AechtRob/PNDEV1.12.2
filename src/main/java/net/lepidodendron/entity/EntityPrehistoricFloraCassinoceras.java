@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsCassinoceras;
 import net.minecraft.entity.item.EntityItem;
@@ -36,6 +37,11 @@ public class EntityPrehistoricFloraCassinoceras extends EntityPrehistoricFloraNa
 		maxWidth = 0.2F;
 		maxHeight = 0.35F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

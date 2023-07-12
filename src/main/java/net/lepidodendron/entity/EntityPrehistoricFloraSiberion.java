@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.nbt.NBTTagCompound;
@@ -41,6 +42,11 @@ public class EntityPrehistoricFloraSiberion extends EntityPrehistoricFloraTrilob
 	public EntityPrehistoricFloraSiberion(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -143,7 +149,7 @@ public class EntityPrehistoricFloraSiberion extends EntityPrehistoricFloraTrilob
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override

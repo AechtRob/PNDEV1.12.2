@@ -1,6 +1,8 @@
 package net.lepidodendron.util;
 
 import net.lepidodendron.block.BlockSorterFossil;
+import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.entity.Entity;
@@ -110,6 +112,30 @@ public class FossilSorterHooks
                                 EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resourcelocation));
                                 EntityLiving entity = (EntityLiving) ee.newInstance(hopper.getWorld());
                                 boolean isArthropod = entity.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD;
+                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                    isArthropod = ((EntityPrehistoricFloraAgeableBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+                                    isArthropod = ((EntityPrehistoricFloraCrawlingFlyingInsectBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraFishBase) {
+                                    isArthropod = ((EntityPrehistoricFloraFishBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                                    isArthropod = ((EntityPrehistoricFloraInsectFlyingBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+                                    isArthropod = ((EntityPrehistoricFloraJellyfishBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+                                    isArthropod = ((EntityPrehistoricFloraSlitheringWaterBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+                                    isArthropod = ((EntityPrehistoricFloraTrilobiteBottomBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
+                                else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+                                    isArthropod = ((EntityPrehistoricFloraTrilobiteSwimBase)entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                }
                                 if (entity != null) {
                                     entity.setDead();
                                 }

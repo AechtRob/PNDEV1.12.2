@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderThanahita;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -45,6 +46,11 @@ public class EntityPrehistoricFloraThanahita extends EntityPrehistoricFloraTrilo
 		super(world);
 		setSize(0.15F, 0.15F);
 		LOOK_ANIMATION = Animation.create(170);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -149,7 +155,7 @@ public class EntityPrehistoricFloraThanahita extends EntityPrehistoricFloraTrilo
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsPachydesmoceras;
 import net.minecraft.entity.item.EntityItem;
@@ -36,6 +37,11 @@ public class EntityPrehistoricFloraAmmonite_Pachydesmoceras extends EntityPrehis
 		maxWidth = 1.0F;
 		maxHeight = 0.99F;
 		maxHealthAgeable = 10;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

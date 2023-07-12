@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottomNoJump;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -62,6 +63,13 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.BOOLEAN);
 
 	private int inPFLove;
+
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
+			return EnumCreatureAttributePN.INVERTEBRATE;
+		}
+		return EnumCreatureAttributePN.VERTEBRATE;
+	}
 
 	@Override
 	public boolean isRiding() {

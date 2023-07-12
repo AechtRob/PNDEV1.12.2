@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.render.entity.RenderLeviathania;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemLeviathania;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBase;
@@ -41,6 +42,11 @@ public class EntityPrehistoricFloraLeviathania extends EntityPrehistoricFloraSli
 	public EntityPrehistoricFloraLeviathania(World world) {
 		super(world, 26);
 		setSize(0.4F, 0.4F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
