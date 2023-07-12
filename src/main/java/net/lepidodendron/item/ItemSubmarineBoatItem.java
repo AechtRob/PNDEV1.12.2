@@ -2,6 +2,7 @@
 package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
@@ -63,14 +64,18 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public String getItemStackDisplayName(ItemStack stack)
 		{
-			//if (LepidodendronConfig.machinesRF) {
-				DecimalFormat df = new DecimalFormat("###.#");
-				if (stack.hasTagCompound()) {
-					if (stack.getTagCompound().hasKey("rf")) {
+
+			DecimalFormat df = new DecimalFormat("###.#");
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("rf")) {
+					if (LepidodendronConfig.machinesRF) {
 						return super.getItemStackDisplayName(stack) + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
 					}
+					else {
+						return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
+					}
 				}
-			//}
+			}
 			return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_no_battery.name");
 		}
 
