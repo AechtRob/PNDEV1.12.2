@@ -10841,15 +10841,15 @@ public class LepidodendronBookSubscribers {
 							break;
 
 						case TRIOPS1:
-							ModTriggers.CLICK_TRIOPS1.trigger((EntityPlayerMP) event.getEntityPlayer());
+							ModTriggers.CLICK_TRIOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 							break;
 
 						case TRIOPS2:
-							ModTriggers.CLICK_TRIOPS2.trigger((EntityPlayerMP) event.getEntityPlayer());
+							ModTriggers.CLICK_TRIOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 							break;
 
 						case TRIOPS3:
-							ModTriggers.CLICK_TRIOPS3.trigger((EntityPlayerMP) event.getEntityPlayer());
+							ModTriggers.CLICK_TRIOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 							break;
 
 

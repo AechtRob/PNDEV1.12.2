@@ -1715,25 +1715,15 @@ public class LepidodendronMod {
 
 
 	public static final int ENTITY_DRAGONFLY = 692;
-	public static final ResourceLocation DRAGONFLY1_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly1"));
 	public static final ResourceLocation DRAGONFLY1_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly1_jar"));
-	public static final ResourceLocation DRAGONFLY2_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly2"));
 	public static final ResourceLocation DRAGONFLY2_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly2_jar"));
-	public static final ResourceLocation DRAGONFLY3_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly3"));
 	public static final ResourceLocation DRAGONFLY3_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly3_jar"));
-	public static final ResourceLocation DRAGONFLY4_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly4"));
 	public static final ResourceLocation DRAGONFLY4_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly4_jar"));
-	public static final ResourceLocation DRAGONFLY5_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly5"));
 	public static final ResourceLocation DRAGONFLY5_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly5_jar"));
-	public static final ResourceLocation DRAGONFLY6_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly6"));
 	public static final ResourceLocation DRAGONFLY6_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly6_jar"));
-	public static final ResourceLocation DRAGONFLY7_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly7"));
 	public static final ResourceLocation DRAGONFLY7_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly7_jar"));
-	public static final ResourceLocation DRAGONFLY8_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly8"));
 	public static final ResourceLocation DRAGONFLY8_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly8_jar"));
-	public static final ResourceLocation DRAGONFLY9_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly9"));
 	public static final ResourceLocation DRAGONFLY9_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly9_jar"));
-	public static final ResourceLocation DRAGONFLY10_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly10"));
 	public static final ResourceLocation DRAGONFLY10_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dragonfly10_jar"));
 
 

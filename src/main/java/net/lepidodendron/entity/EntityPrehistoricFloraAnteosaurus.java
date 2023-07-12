@@ -46,8 +46,8 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		super(world);
 		setSize(1.1F, 1.3F);
 		minWidth = 0.18F;
-		maxWidth = 1.1F;
-		maxHeight = 1.3F;
+		maxWidth = 1.2F;
+		maxHeight = 1.4F;
 		maxHealthAgeable = 50.0D;
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

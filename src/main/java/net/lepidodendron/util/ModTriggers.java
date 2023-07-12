@@ -1228,9 +1228,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TANYRHINICHTHYS = new CustomTrigger("pf_book_tanyrhinichthys");
     public static final CustomTrigger CLICK_AMMONITE_PERISPHINCTES = new CustomTrigger("pf_book_perisphinctes");
     public static final CustomTrigger CLICK_LAIDLERIA = new CustomTrigger("pf_book_laidleria");
-    public static final CustomTrigger CLICK_TRIOPS1 = new CustomTrigger("pf_book_triops");
-    public static final CustomTrigger CLICK_TRIOPS2 = new CustomTrigger("pf_book_triops");
-    public static final CustomTrigger CLICK_TRIOPS3 = new CustomTrigger("pf_book_triops");
+    public static final CustomTrigger CLICK_TRIOPS = new CustomTrigger("pf_book_triops");
     public static final CustomTrigger CLICK_PYCNOPHLEBIA = new CustomTrigger("pf_book_pycnophlebia");
     public static final CustomTrigger CLICK_ARCHABOILUS = new CustomTrigger("pf_book_archaboilus");
     public static final CustomTrigger CLICK_EUROPASAURUS = new CustomTrigger("pf_book_europasaurus");
@@ -2470,9 +2468,7 @@ public class ModTriggers
             CLICK_TANYRHINICHTHYS,
             CLICK_AMMONITE_PERISPHINCTES,
             CLICK_LAIDLERIA,
-            CLICK_TRIOPS1,
-            CLICK_TRIOPS2,
-            CLICK_TRIOPS3,
+            CLICK_TRIOPS,
             CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS,
             CLICK_PYCNOPHLEBIA,
             CLICK_ARCHABOILUS,

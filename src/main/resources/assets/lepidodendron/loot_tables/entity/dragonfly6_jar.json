@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "lacewing_aetheogramma",
+      "name": "phantaspis",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:bug_raw",
+          "name": "lepidodendron:dragonfly_dragonfly6_raw",
           "weight": 1,
           "functions": [
             {
