@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderJeholotriton;
 import net.lepidodendron.entity.render.entity.RenderPederpes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -370,32 +371,32 @@ public class EntityPrehistoricFloraJeholotriton extends EntityPrehistoricFloraSw
 		return 0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.1;
+		return 0.15;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.07;
+		return 0.2;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.14;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
+		return 0.17F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.1;
+		return -0.02;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPederpes.TEXTURE;
+		return RenderJeholotriton.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPederpes;
+		return RenderDisplays.modelJeholotriton;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPederpes.getScaler();
+		return RenderJeholotriton.getScaler();
 	}
 }

@@ -12,7 +12,7 @@ public class RenderKootenayscolex extends RenderLiving<EntityPrehistoricFloraKoo
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kootenayscolex.png");
 
     public static float getScaler() {
-        return 0.45F;
+        return 0.4F;
     }
 
     public RenderKootenayscolex(RenderManager mgr) {

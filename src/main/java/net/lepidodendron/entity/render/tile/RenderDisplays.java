@@ -79,6 +79,7 @@ public class RenderDisplays {
     public static final ModelDunyu modelDunyu = new ModelDunyu();
     public static final ModelDysaloTaxi modelDysalotosaurus = new ModelDysaloTaxi();
     public static final ModelDicranurus modelDicranurus = new ModelDicranurus();
+    public static final ModelDuslia modelDuslia = new ModelDuslia();
     public static final ModelEastmanosteus modelEastmanosteus = new ModelEastmanosteus();
     public static final ModelEdaphosaurus modelEdaphosaurus = new ModelEdaphosaurus();
     public static final ModelElginia modelElginia = new ModelElginia();
@@ -121,7 +122,9 @@ public class RenderDisplays {
     public static final ModelHuayangosaurus modelHuayangosaurus = new ModelHuayangosaurus();
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
     public static final ModelIvoites modelIvoites = new ModelIvoites();
+    public static final ModelIowacystis modelIowacystis = new ModelIowacystis();
     public static final ModelJamoytius modelJamoytius = new ModelJamoytius();
+    public static final ModelJeholotriton modelJeholotriton = new ModelJeholotriton();
     public static final ModelKaibabvenator modelKaibabvenator = new ModelKaibabvenator();
     public static final ModelKentrosaurus modelKentrosaurus = new ModelKentrosaurus();
     public static final ModelKujdanowiaspis modelKujdanowiaspis = new ModelKujdanowiaspis();
@@ -195,6 +198,7 @@ public class RenderDisplays {
     public static final ModelRolfosteus modelRolfosteus = new ModelRolfosteus();
     public static final ModelRubidgea modelRubidgea = new ModelRubidgea();
     public static final ModelRhenocystis modelRhenocystis = new ModelRhenocystis();
+    public static final ModelRutgersella modelRutgersella = new ModelRutgersella();
     public static final ModelSaivodus modelSaivodus = new ModelSaivodus();
     public static final ModelSaltriovenator modelSaltriovenator = new ModelSaltriovenator();
     public static final ModelSanctacaris modelSanctacaris = new ModelSanctacaris();
@@ -232,7 +236,7 @@ public class RenderDisplays {
     public static final ModelTyrannophontes modelTyrannophontes = new ModelTyrannophontes();
     public static final ModelTemnodontosaurus modelTemnodontosaurus = new ModelTemnodontosaurus();
     public static final ModelTyphloesus modelTyphloesus = new ModelTyphloesus();
-    public static final ModelTriadobatrachus modelTriadobatrachus = new ModelTriadobatrachus();
+    public static final ModelTribrachiodemas modelTribrachiodemas= new ModelTribrachiodemas();
     public static final ModelTuojiangosaurus modelTuojiangosaurus = new ModelTuojiangosaurus();
     public static final ModelUrosthenes modelUrosthenes = new ModelUrosthenes();
     public static final ModelUtatsusaurus modelUtatsusaurus = new ModelUtatsusaurus();
