@@ -963,8 +963,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         player.sendMessage(new TextComponentString("Submarine power: no battery!"));
                     }
                     else {
-                        DecimalFormat df = new DecimalFormat("###.#");
-                        player.sendMessage(new TextComponentString("Submarine power: " + df.format(this.getEnergyFraction() * 100) + "%"));
+                        if (LepidodendronConfig.machinesRF) {
+                            player.sendMessage(new TextComponentString("Submarine power: powered"));
+                        } else {
+                            DecimalFormat df = new DecimalFormat("###.#");
+                            player.sendMessage(new TextComponentString("Submarine power: " + df.format(this.getEnergyFraction() * 100) + "%"));
+                        }
                     }
                 }
             }
