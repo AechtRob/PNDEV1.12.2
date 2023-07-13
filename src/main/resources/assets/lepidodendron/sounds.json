@@ -6725,19 +6725,7 @@
   "kalligrammatid_flight": {
     "sounds": [
       {
-        "name": "lepidodendron:kalligrammatid_takeoff01",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:kalligrammatid_takeoff02",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:kalligrammatid_takeoff03",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:kalligrammatid_takeoff04",
+        "name": "lepidodendron:kalligrammatid_flight01",
         "stream": false
       }
     ]
