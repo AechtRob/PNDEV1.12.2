@@ -1117,6 +1117,43 @@ public class EntityLists {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapWaterBurntSwampPF);
                     break;
             }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_woodland")) {
+            switch (genType) {
+                case 0:
+                default:
+                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                        MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsWoodlandPF);
+                    }
+                    break;
+                case 1:
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapAirWoodlandPF);
+                    break;
+                case 2:
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapGroundWoodlandPF);
+                    break;
+                case 3:
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapWaterWoodlandPF);
+                    break;
+            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_savanna")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")) {
+            switch (genType) {
+                case 0:
+                default:
+                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                        MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsSteppePF);
+                    }
+                    break;
+                case 1:
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapAirSteppePF);
+                    break;
+                case 2:
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapGroundSteppePF);
+                    break;
+                case 3:
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapWaterWoodlandPF);
+                    break;
+            }
         }
 
         //PERMIAN:

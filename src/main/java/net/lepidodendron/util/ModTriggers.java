@@ -125,6 +125,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_VITIS = new CustomTrigger("pf_book_vitis");
     public static final CustomTrigger CLICK_CASTERICYSTIS = new CustomTrigger("pf_book_castericystis");
     public static final CustomTrigger CLICK_CECROPSIS = new CustomTrigger("pf_book_cecropsis");
+    public static final CustomTrigger CLICK_RHACOPTERIS = new CustomTrigger("pf_book_rhacopteris");
     public static final CustomTrigger CLICK_CHARNIA = new CustomTrigger("pf_book_charnia");
     public static final CustomTrigger CLICK_CHARNIODISCUS = new CustomTrigger("pf_book_charniodiscus");
     public static final CustomTrigger CLICK_CHAUNOGRAPTUS = new CustomTrigger("pf_book_chaunograptus");
@@ -1373,6 +1374,7 @@ public class ModTriggers
             CLICK_VITIS,
             CLICK_CASTERICYSTIS,
             CLICK_CECROPSIS,
+            CLICK_RHACOPTERIS,
             CLICK_CHARNIA,
             CLICK_CHARNIODISCUS,
             CLICK_CHAUNOGRAPTUS,

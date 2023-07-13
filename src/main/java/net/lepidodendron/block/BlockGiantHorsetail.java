@@ -151,7 +151,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills) {
 				biomeCriteria = true;
 			}
-			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")) {
+			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_woodland")) {
 				biomeCriteria = true;
 			}
 			else {
