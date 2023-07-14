@@ -76,7 +76,7 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	public boolean dropsEggs() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -106,8 +106,6 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 		if (i < 1) {i = 1;}
 		return i;
 	}
-
-
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
