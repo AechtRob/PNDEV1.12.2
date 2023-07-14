@@ -1,6 +1,5 @@
 {
-  
-  
+
   "respawner": {
     "sounds": [
       {
@@ -6980,6 +6979,123 @@
         "stream": false
       }
     ]
+  },
+
+
+  "kayentatherium_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kayentatherium_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kayentatherium_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kayentatherium_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kayentatherium_living04",
+        "stream": false
+      }
+    ]
+  },
+  "kayentatherium_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kayentatherium_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kayentatherium_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kayentatherium_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "kayentatherium_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kayentatherium_death",
+        "stream": false
+      }
+    ]
+  },
+
+
+  "tanycolagreus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanycolagreus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "tanycolagreus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanycolagreus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "tanycolagreus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanycolagreus_death",
+        "stream": false
+      }
+    ]
+  },
+  "tanycolagreus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanycolagreus_roar01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanycolagreus_roar02",
+        "stream": false
+      }
+    ]
   }
+
 
 }
