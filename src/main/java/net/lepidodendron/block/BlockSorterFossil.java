@@ -169,7 +169,7 @@ public class BlockSorterFossil extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntitySorterFossil extends TileEntityLockableLoot implements IHopper, ITickable {
+	public static class TileEntitySorterFossil extends TileEntityLockableLoot implements IHopper, ITickable, ISidedInventory {
 		private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(5, ItemStack.EMPTY);
 		private int transferCooldown = -1;
 		private long tickedGameTime;
@@ -920,6 +920,27 @@ public class BlockSorterFossil extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			return true;
+		}
+
+		@Override
+		public int[] getSlotsForFace(EnumFacing side) {
+			return new int[]{0,1,2,3,4};
+		}
+
+		@Override
+		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+			return direction == EnumFacing.UP;
+		}
+
+		@Override
+		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+			return false;
+		}
+
+		@Override
+		public boolean hasCapability(net.minecraftforge.common.capabilities.Capability<?> capability, @javax.annotation.Nullable net.minecraft.util.EnumFacing facing)
+		{
+			return (capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.UP);
 		}
 	}
 }
