@@ -9,7 +9,11 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderLibys;
+import net.lepidodendron.entity.render.entity.RenderRhomaleosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -177,5 +181,54 @@ public class EntityPrehistoricFloraLibys extends EntityPrehistoricFloraAgeableFi
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.LIBYS_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 2.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 2.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.9F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 1.4F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.3F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.1F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderLibys.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelLibys;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderLibys.getScaler();
+	}
 }

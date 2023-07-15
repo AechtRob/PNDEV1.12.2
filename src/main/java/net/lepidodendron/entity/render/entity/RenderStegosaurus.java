@@ -18,7 +18,7 @@ public class RenderStegosaurus extends RenderLiving<EntityPrehistoricFloraStegos
     }
 
     public static float getScaler() {
-        return 1.4F;
+        return 1.28F;
     }
 
     @Override

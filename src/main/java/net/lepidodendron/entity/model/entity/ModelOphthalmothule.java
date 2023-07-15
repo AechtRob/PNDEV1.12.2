@@ -319,17 +319,66 @@ public class ModelOphthalmothule extends AdvancedModelBaseExtended {
         this.Hips.render(f5);
     }
         public void renderStaticWall(float f) {
-            this.Hips.rotateAngleY = (float) Math.toRadians(0);
-            this.Hips.offsetY = -0.04F;
-            this.Hips.offsetX = 0.0F;
-            this.Hips.offsetZ = 0.0F;
-            this.Hips.render(0.01F);
+            this.Bodyfront.rotateAngleY = (float) Math.toRadians(0);
+            this.setRotateAngle(Leftfrontflipper1, 0.0F, 0.2F, -0.2F);
+            this.setRotateAngle(Rightfrontflipper1, 0.0F, -0.2F, 0.2F);
+            this.setRotateAngle(Neck1, 0.1F, -0.05F, 0.0F);
+            this.setRotateAngle(Neck2, 0.0F, -0.06F, 0.0F);
+            this.setRotateAngle(Neck3, 0.0F, -0.07F, 0.0F);
+            this.setRotateAngle(Neck4, -0.05F, 0.07F, 0.0F);
+            this.setRotateAngle(Neck5, -0.10F, 0.06F, 0.0F);
+            this.setRotateAngle(Neck6, -0.15F, 0.05F, 0.0F);
+            this.setRotateAngle(head, 0.0F, 0.04F, 0.0F);
+            this.Bodyfront.offsetY = -0.04F;
+            this.Bodyfront.offsetX = 0.0F;
+            this.Bodyfront.offsetZ = -0.13F;
+            this.Bodyfront.render(0.01F);
             resetToDefaultPose();
         }
         public void renderStaticFloor(float f) {
+            this.setRotateAngle(Hips, -0.1F, -0.1F, 0.0F);
+            this.setRotateAngle(Bodymiddle, 0.08F, -0.1F, 0.0F);
+            this.setRotateAngle(Bodyfront, 0.1F, -0.15F, 0.0F);
+            this.setRotateAngle(Neck1, 0.1F, -0.05F, 0.0F);
+            this.setRotateAngle(Neck2, 0.0F, -0.06F, 0.0F);
+            this.setRotateAngle(Neck3, 0.0F, -0.07F, 0.0F);
+            this.setRotateAngle(Neck4, -0.05F, 0.07F, 0.0F);
+            this.setRotateAngle(Neck5, -0.10F, 0.06F, 0.0F);
+            this.setRotateAngle(Neck6, -0.15F, 0.05F, 0.0F);
+            this.setRotateAngle(head, 0.0F, 0.04F, 0.0F);
+            this.setRotateAngle(Leftfrontflipper1, 0.0F, 0.0F, -0.2F);
+            this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.0F, 0.2F);
+            this.setRotateAngle(Tail1, -0.2F, -0.1F, 0.0F);
+            this.setRotateAngle(Tail2, -0.05F, -0.15F, 0.0F);
+            this.setRotateAngle(Tail3, -0.08F, -0.2F, 0.0F);
+            this.setRotateAngle(Tail4, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(Lefthindflipper1, 0.0F, 0.0F, 0.2F);
+            this.setRotateAngle(Righthindflipper1, 0.0F, 0.0F, -0.2F);
+            this.Hips.offsetY = -0.32F;
+            this.Hips.render(0.01F);
             resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Hips, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.12F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.14F, 0.0F);
+        this.setRotateAngle(Neck4, 0.0F, 0.16F, 0.0F);
+        this.setRotateAngle(Neck5, 0.0F, 0.18F, 0.0F);
+        this.setRotateAngle(Neck6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.22F, 0.0F);
+        this.setRotateAngle(Leftfrontflipper1, 0.0F, 0.0F, 0.25F);
+        this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.0F, -0.25F);
+        this.setRotateAngle(Tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.11F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindflipper1, 0.0F, 0.0F, -0.25F);
+        this.setRotateAngle(Righthindflipper1, 0.0F, 0.0F, 0.25F);
+        this.Hips.offsetY = 0.0F;
+        this.Hips.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {

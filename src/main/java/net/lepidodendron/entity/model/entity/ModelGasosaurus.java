@@ -464,11 +464,39 @@ public class ModelGasosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-
     public void renderStaticWall(float f) {
+        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.chest.offsetY = -0.05F;
+        this.chest.offsetX = 0.0F;
+        this.chest.offsetZ = -0.15F;
+        this.chest.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.15F, 0.0F);
+        this.setRotateAngle(tail3, 0.03F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail5, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(leftLeg, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg4, 0.65F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, 0.2F, 0.2F, 0.15F);
+        this.setRotateAngle(rightLeg2, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg4, 0.68F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, -0.2F, 0.0F, 0.0F);
+        this.root.offsetY = -0.105F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
 
