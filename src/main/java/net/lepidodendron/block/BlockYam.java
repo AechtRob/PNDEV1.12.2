@@ -135,6 +135,11 @@ public class BlockYam extends ElementsLepidodendronMod.ModElement {
 	           		super.harvestBlock(worldIn, player, pos, state, te, stack);
 	        	}
 	        }
+			if (worldIn instanceof IBlockAccess) {
+				if (getActualState(state, (IBlockAccess) worldIn, pos).getValue(GROUND)) {
+					spawnAsEntity(worldIn, pos, new ItemStack(ItemYamTuber.block, 1));
+				}
+			}
 	    }
 
 	    @Override
