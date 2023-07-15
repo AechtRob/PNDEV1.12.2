@@ -1090,6 +1090,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sea_anemone_9_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_anemone_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_daisy_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_gansufructus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_yam_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_buttercup_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_chloranthus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bellendena_clean", "inventory"),

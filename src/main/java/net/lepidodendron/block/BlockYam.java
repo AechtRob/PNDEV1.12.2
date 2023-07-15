@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemYamTuber;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.SoundType;
@@ -25,6 +26,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -41,16 +43,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockVitis extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:vitis")
+public class BlockYam extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:yam")
 	public static final Block block = null;
-	public BlockVitis(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.vitis);
+	public BlockYam(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.yam);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("vitis"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("yam"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -59,31 +61,40 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
     public static final PropertyBool EAST = PropertyBool.create("east");
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
+	public static final PropertyBool GROUND = PropertyBool.create("ground");
     
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:vitis", "inventory"));
+				new ModelResourceLocation("lepidodendron:yam", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:vitis", BlockVitis.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockVitis.block);
-		OreDictionary.registerOre("plant", BlockVitis.block);
-		OreDictionary.registerOre("itemMossForStone", BlockVitis.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:yam", BlockYam.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockYam.block);
+		OreDictionary.registerOre("plant", BlockYam.block);
+		OreDictionary.registerOre("itemMossForStone", BlockYam.block);
 	}
 
 	public static class BlockCustom extends BlockVine {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
-			setTranslationKey("pf_vitis");
+			setTranslationKey("pf_yam");
 			setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         	setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			Material material = worldIn.getBlockState(pos.down()).getMaterial();
+			Boolean ground = ((material == Material.GROUND || material == Material.GRASS || material == Material.SAND)
+					&& worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID);
+			return state.withProperty(GROUND, ground);
 		}
 
 		@Override
@@ -98,7 +109,7 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 
 		protected BlockStateContainer createBlockState()
 	    {
-	        return new BlockStateContainer(this, new IProperty[] {UP, NORTH, EAST, SOUTH, WEST});
+	        return new BlockStateContainer(this, new IProperty[] {UP, NORTH, EAST, SOUTH, WEST, GROUND});
 	    }
 
 	    @Override
@@ -139,7 +150,7 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 	    public boolean canAttachTo(World p_193395_1_, BlockPos p_193395_2_, EnumFacing p_193395_3_)
 	    {
 	        Block block = p_193395_1_.getBlockState(p_193395_2_.up()).getBlock();
-	        return this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.offset(p_193395_3_.getOpposite()), p_193395_3_) && (block == Blocks.AIR || block == this || block == BlockVitisGrape.block || this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.up(), EnumFacing.UP));
+	        return this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.offset(p_193395_3_.getOpposite()), p_193395_3_) && (block == Blocks.AIR || block == this || this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.up(), EnumFacing.UP));
 	    }
 
 	    private boolean isAcceptableNeighbor(World p_193396_1_, BlockPos p_193396_2_, EnumFacing p_193396_3_)
@@ -169,7 +180,6 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 	                        {
 	                            if (
 									(worldIn.getBlockState(pos.add(k, i1, l)).getBlock() == this)
-									|| (worldIn.getBlockState(pos.add(k, i1, l)).getBlock() == BlockVitisGrape.block)
 										)
 	                            {
 	                                --j;
@@ -204,14 +214,6 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 	                    }
 
 						IBlockState state1 = state;
-						if (rand.nextInt(3) == 0) {
-							state1 = BlockVitisGrape.block.getDefaultState()
-									.withProperty(UP, state.getValue(UP))
-									.withProperty(NORTH, state.getValue(NORTH))
-									.withProperty(EAST, state.getValue(EAST))
-									.withProperty(SOUTH, state.getValue(SOUTH))
-									.withProperty(WEST, state.getValue(WEST));
-						}
 	                    if (((Boolean)iblockstate2.getValue(NORTH)).booleanValue() || ((Boolean)iblockstate2.getValue(EAST)).booleanValue() || ((Boolean)iblockstate2.getValue(SOUTH)).booleanValue() || ((Boolean)iblockstate2.getValue(WEST)).booleanValue())
 	                    {
 	                        worldIn.setBlockState(blockpos2, state1, 2);
@@ -254,14 +256,6 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 	                        else if (iblockstate3.getBlockFaceShape(worldIn, blockpos4, enumfacing1) == BlockFaceShape.SOLID)
 	                        {
 								IBlockState state2 = state;
-								if (rand.nextInt(3) == 0) {
-									state2 = BlockVitisGrape.block.getDefaultState()
-											.withProperty(UP, state.getValue(UP))
-											.withProperty(NORTH, state.getValue(NORTH))
-											.withProperty(EAST, state.getValue(EAST))
-											.withProperty(SOUTH, state.getValue(SOUTH))
-											.withProperty(WEST, state.getValue(WEST));
-								}
 	                            worldIn.setBlockState(pos, state2.withProperty(getPropertyFor(enumfacing1), Boolean.valueOf(true)), 2);
 	                        }
 	                    }
@@ -287,21 +281,13 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 	                            }
 
 								IBlockState state3 = iblockstate1;
-								if (rand.nextInt(3) == 0) {
-									state3 = BlockVitisGrape.block.getDefaultState()
-											.withProperty(UP, iblockstate1.getValue(UP))
-											.withProperty(NORTH, iblockstate1.getValue(NORTH))
-											.withProperty(EAST, iblockstate1.getValue(EAST))
-											.withProperty(SOUTH, iblockstate1.getValue(SOUTH))
-											.withProperty(WEST, iblockstate1.getValue(WEST));
-								}
 
 	                            if (((Boolean)iblockstate1.getValue(NORTH)).booleanValue() || ((Boolean)iblockstate1.getValue(EAST)).booleanValue() || ((Boolean)iblockstate1.getValue(SOUTH)).booleanValue() || ((Boolean)iblockstate1.getValue(WEST)).booleanValue())
 	                            {
 	                                worldIn.setBlockState(blockpos3, state3, 2);
 	                            }
 	                        }
-	                        else if (block == this || block == BlockVitisGrape.block)
+	                        else if (block == this)
 	                        {
 	                            IBlockState iblockstate4 = iblockstate;
 	
@@ -344,6 +330,14 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+			super.getDrops(drops, world, pos, state, fortune);
+			if (getActualState(state, world, pos).getValue(GROUND)) {
+				drops.add(new ItemStack(ItemYamTuber.block, 1));
+			}
+		}
+
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
 		{
 			if (!worldIn.isRemote && !this.recheckGrownSides(worldIn, pos, state))
@@ -365,7 +359,7 @@ public class BlockVitis extends ElementsLepidodendronMod.ModElement {
 				{
 					IBlockState iblockstate1 = worldIn.getBlockState(pos.up());
 
-					if ((iblockstate1.getBlock() != this && iblockstate1.getBlock() != BlockVitisGrape.block)
+					if ((iblockstate1.getBlock() != this)
 							|| !((Boolean)iblockstate1.getValue(propertybool)).booleanValue())
 					{
 						state = state.withProperty(propertybool, Boolean.valueOf(false));
