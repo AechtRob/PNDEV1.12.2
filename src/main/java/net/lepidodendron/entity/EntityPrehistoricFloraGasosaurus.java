@@ -10,6 +10,7 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderGasosaurus;
 import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -337,30 +338,30 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 0.8;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 0.8;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 1;
+		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.2F;
+		return -0.5F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0.5F;}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderMegalosaurus.TEXTURE;
+		return RenderGasosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelMegalosaurus;
+		return RenderDisplays.modelGasosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderMegalosaurus.getScaler();
+		return RenderGasosaurus.getScaler();
 	}
 }
