@@ -69,16 +69,16 @@ public class BlockNypaShoot02SideCorner extends ElementsLepidodendronMod.ModElem
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 		{
-			if ((worldIn.getBlockState(pos)).getValue(BlockHorizontal.FACING) == EnumFacing.NORTH) {
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.NORTH) {
 				pos = pos.south().west();
 			}
-			if ((worldIn.getBlockState(pos)).getValue(BlockHorizontal.FACING) == EnumFacing.SOUTH) {
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.SOUTH) {
 				pos = pos.north().east();
 			}
-			if ((worldIn.getBlockState(pos)).getValue(BlockHorizontal.FACING) == EnumFacing.EAST) {
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.EAST) {
 				pos = pos.west().north();
 			}
-			if ((worldIn.getBlockState(pos)).getValue(BlockHorizontal.FACING) == EnumFacing.WEST) {
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.WEST) {
 				pos = pos.east().south();
 			}
 			boolean boolVar = false;
