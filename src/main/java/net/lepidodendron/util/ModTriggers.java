@@ -124,6 +124,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BUCKTHORN = new CustomTrigger("pf_book_buckthorn");
     public static final CustomTrigger CLICK_ACTINIDEA = new CustomTrigger("pf_book_actinidea");
     public static final CustomTrigger CLICK_VITIS = new CustomTrigger("pf_book_vitis");
+    public static final CustomTrigger CLICK_HOPS = new CustomTrigger("pf_book_hops");
     public static final CustomTrigger CLICK_YAM = new CustomTrigger("pf_book_yam");
     public static final CustomTrigger CLICK_CASTERICYSTIS = new CustomTrigger("pf_book_castericystis");
     public static final CustomTrigger CLICK_CECROPSIS = new CustomTrigger("pf_book_cecropsis");
@@ -1375,6 +1376,7 @@ public class ModTriggers
             CLICK_BUCKTHORN,
             CLICK_ACTINIDEA,
             CLICK_VITIS,
+            CLICK_HOPS,
             CLICK_YAM,
             CLICK_CASTERICYSTIS,
             CLICK_CECROPSIS,
