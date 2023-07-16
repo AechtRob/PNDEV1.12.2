@@ -110,6 +110,7 @@ public class RenderDisplays {
     public static final ModelGyrodus modelGyrodus = new ModelGyrodus();
     public static final ModelGephyrostegus modelGephyrostegus = new ModelGephyrostegus();
     public static final ModelGreererpeton modelGreererpeton = new ModelGreererpeton();
+    public static final ModelGasosaurus modelGasosaurus = new ModelGasosaurus();
     public static final ModelHaikouichthys modelHaikouichthys = new ModelHaikouichthys();
     public static final ModelHarpacanthus modelHarpacanthus = new ModelHarpacanthus();
     public static final ModelHelicoprion modelHelicoprion = new ModelHelicoprion();
@@ -137,6 +138,7 @@ public class RenderDisplays {
     public static final ModelLunaspis modelLunaspis = new ModelLunaspis();
     public static final ModelLungmenshanaspis modelLungmenshanaspis = new ModelLungmenshanaspis();
     public static final ModelLeviathania modelLeviathania = new ModelLeviathania();
+    public static final ModelLibys modelLibys = new ModelLibys();
     public static final ModelMacromesodon modelMacromesodon = new ModelMacromesodon();
     public static final ModelMastodonsaurus modelMastodonsaurus = new ModelMastodonsaurus();
     public static final ModelMaterpiscis modelMaterpiscis = new ModelMaterpiscis();
@@ -162,6 +164,7 @@ public class RenderDisplays {
     public static final ModelOphthalmosaurus modelOphthalmosaurus = new ModelOphthalmosaurus();
     public static final ModelOrthrozanclus modelOrthrozanclus = new ModelOrthrozanclus();
     public static final ModelOxyosteus modelOxyosteus = new ModelOxyosteus();
+    public static final ModelOphthalmothule modelOphthalmothule = new ModelOphthalmothule();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
     public static final ModelPalaeodictyopteraMedium modelPalaeodictyopteraMedium = new ModelPalaeodictyopteraMedium();
     public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
@@ -199,6 +202,7 @@ public class RenderDisplays {
     public static final ModelRubidgea modelRubidgea = new ModelRubidgea();
     public static final ModelRhenocystis modelRhenocystis = new ModelRhenocystis();
     public static final ModelRutgersella modelRutgersella = new ModelRutgersella();
+    public static final ModelRhinopteraspis modelRhinopteraspis = new ModelRhinopteraspis();
     public static final ModelSaivodus modelSaivodus = new ModelSaivodus();
     public static final ModelSaltriovenator modelSaltriovenator = new ModelSaltriovenator();
     public static final ModelSanctacaris modelSanctacaris = new ModelSanctacaris();

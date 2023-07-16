@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderOphthalmothule;
 import net.lepidodendron.entity.render.entity.RenderRhomaleosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -241,16 +242,14 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 		return -1.36;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 1.2;
 	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 2.0;
-	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 1.2;}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.15;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.9F;
+		return -1.2F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.0;
@@ -259,33 +258,33 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 		return 1.4F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.9;
+		return 1.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 1.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 2.0F;
+		return 0.5F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.66;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.5F;
+		return -1.3F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderRhomaleosaurus.TEXTURE;
+		return RenderOphthalmothule.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelRhomaleosaurus;
+		return RenderDisplays.modelOphthalmothule;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderRhomaleosaurus.getScaler();
+		return RenderOphthalmothule.getScaler();
 	}
 }
 

@@ -193,17 +193,22 @@ public class ModelRhinopteraspis extends AdvancedModelBase {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetX = -0.05F;
+        this.root.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(root, 0.2F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.0F;
+        this.root.offsetX = -0.0F;
         this.root.offsetY = -0.23F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetY = -0.6F;
-        this.root.offsetX = -0.04F;
-        this.root.offsetZ = 0.0F;
+        this.setRotateAngle(root, 0.0F, 0.0F, -0.15F);
+        this.setRotateAngle(head, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.12F, 0.0F);
+        this.setRotateAngle(tail3, 0.15F, 0.14F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, 0.16F, 0.0F);
+        this.root.offsetY = -0.15F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
