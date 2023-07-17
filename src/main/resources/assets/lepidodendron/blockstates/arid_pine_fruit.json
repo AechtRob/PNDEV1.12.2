@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:arid_pine_fruit_1"},
+      {"model": "lepidodendron:arid_pine_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:arid_pine_fruit_block_inventory"
+    }
+  }
+}

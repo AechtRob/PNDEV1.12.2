@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/arid_pine_log_end",
+    "up": "lepidodendron:blocks/arid_pine_log_end",
+    "north": "lepidodendron:blocks/arid_pine_log",
+    "east": "lepidodendron:blocks/arid_pine_log",
+    "south": "lepidodendron:blocks/arid_pine_log",
+    "west": "lepidodendron:blocks/arid_pine_log",
+    "particle": "lepidodendron:blocks/arid_pine_log_end"
+  }
+}

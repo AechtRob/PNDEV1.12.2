@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -73,6 +74,31 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 			setTranslationKey("pf_spore_collection_envelope");
 			setRegistryName("spore_collection_envelope");
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack) {
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().getString("plant") != null) {
+					if (!stack.getTagCompound().getString("plant").equalsIgnoreCase("")) {
+						String resourcelocation = stack.getTagCompound().getString("plant");
+						if (!(I18n.translateToLocal("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")
+								.equalsIgnoreCase("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name"))) {
+							return I18n.translateToLocal("item.pf_spore_collection_envelope_full.name").trim()
+									+ ": "
+									+ I18n.translateToLocal("tile.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+						} else if (!(I18n.translateToLocal("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")
+								.equalsIgnoreCase("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name"))) {
+							return I18n.translateToLocal("item.pf_spore_collection_envelope_full.name").trim()
+									+ ": "
+									+ I18n.translateToLocal("item.pf_" + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
+						} else {
+							return super.getItemStackDisplayName(stack);
+						}
+					}
+				}
+			}
+			return super.getItemStackDisplayName(stack);
 		}
 
 		@Override
