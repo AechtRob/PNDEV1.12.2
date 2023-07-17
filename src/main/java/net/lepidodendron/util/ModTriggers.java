@@ -59,6 +59,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TELOPEA = new CustomTrigger("pf_book_telopea");
     public static final CustomTrigger CLICK_ORITES = new CustomTrigger("pf_book_orites");
     public static final CustomTrigger CLICK_LOMATIA = new CustomTrigger("pf_book_lomatia");
+    public static final CustomTrigger CLICK_DRIMYS = new CustomTrigger("pf_book_drimys");
     public static final CustomTrigger CLICK_VOLTZIA = new CustomTrigger("pf_book_voltzia");
     public static final CustomTrigger CLICK_HYDRANGEA = new CustomTrigger("pf_book_hydrangea");
     public static final CustomTrigger CLICK_EMBOTHRIUM = new CustomTrigger("pf_book_embothrium");
@@ -124,6 +125,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BUCKTHORN = new CustomTrigger("pf_book_buckthorn");
     public static final CustomTrigger CLICK_ACTINIDEA = new CustomTrigger("pf_book_actinidea");
     public static final CustomTrigger CLICK_VITIS = new CustomTrigger("pf_book_vitis");
+    public static final CustomTrigger CLICK_HOPS = new CustomTrigger("pf_book_hops");
     public static final CustomTrigger CLICK_YAM = new CustomTrigger("pf_book_yam");
     public static final CustomTrigger CLICK_CASTERICYSTIS = new CustomTrigger("pf_book_castericystis");
     public static final CustomTrigger CLICK_CECROPSIS = new CustomTrigger("pf_book_cecropsis");
@@ -1311,6 +1313,7 @@ public class ModTriggers
             CLICK_TELOPEA,
             CLICK_ORITES,
             CLICK_LOMATIA,
+            CLICK_DRIMYS,
             CLICK_VOLTZIA,
             CLICK_HYDRANGEA,
             CLICK_EMBOTHRIUM,
@@ -1375,6 +1378,7 @@ public class ModTriggers
             CLICK_BUCKTHORN,
             CLICK_ACTINIDEA,
             CLICK_VITIS,
+            CLICK_HOPS,
             CLICK_YAM,
             CLICK_CASTERICYSTIS,
             CLICK_CECROPSIS,

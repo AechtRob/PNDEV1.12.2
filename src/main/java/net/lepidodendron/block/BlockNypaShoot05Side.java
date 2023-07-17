@@ -67,6 +67,28 @@ public class BlockNypaShoot05Side extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.NORTH) {
+				pos = pos.south();
+			}
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.SOUTH) {
+				pos = pos.north();
+			}
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.EAST) {
+				pos = pos.west();
+			}
+			if (state.getValue(BlockHorizontal.FACING) == EnumFacing.WEST) {
+				pos = pos.east();
+			}
+			boolean boolVar = false;
+			if ((double) (pos.getX() + pos.getZ())/3 == (int) (pos.getX() + pos.getZ())/3) {
+				boolVar = true;
+			}
+			return state.withProperty(VAR, boolVar);
+		}
+
+		@Override
 		@Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 			return NULL_AABB;
