@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:golden_larch_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:golden_larch_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:golden_larch_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:golden_larch_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:golden_larch_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:golden_larch_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:golden_larch_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "lepidodendron:blocks/arid_pine_planks",
+    "particle": "lepidodendron:blocks/arid_pine_planks"
+  }
+}

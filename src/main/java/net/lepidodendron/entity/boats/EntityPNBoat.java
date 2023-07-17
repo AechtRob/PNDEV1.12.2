@@ -321,6 +321,14 @@ public class EntityPNBoat extends EntityBoat
                 return ItemHirmeriellaBoatItem.block;
             case FIG:
                 return ItemFigBoatItem.block;
+            case GOLDEN_LARCH:
+                return ItemGoldenLarchBoatItem.block;
+            case ARID_PINE:
+                return ItemAridPineBoatItem.block;
+            case OLIVE:
+                return ItemOliveBoatItem.block;
+            case CEDAR:
+                return ItemCedarBoatItem.block;
 
         }
     }
@@ -461,6 +469,14 @@ public class EntityPNBoat extends EntityBoat
                 return BlockHirmeriellaPlanks.block;
             case FIG:
                 return BlockFigPlanks.block;
+            case GOLDEN_LARCH:
+                return BlockGoldenLarchPlanks.block;
+            case ARID_PINE:
+                return BlockAridPinePlanks.block;
+            case OLIVE:
+                return BlockOlivePlanks.block;
+            case CEDAR:
+                return BlockCedarPlanks.block;
 
         }
     }
@@ -1325,7 +1341,11 @@ public class EntityPNBoat extends EntityBoat
         EMBOTHRIUM(63, "embothrium"),
         PAGIOPHYLLUM(64, "pagiophyllum"),
         HIRMERIELLA(65, "hirmeriella"),
-        FIG(66, "fig")
+        FIG(66, "fig"),
+        GOLDEN_LARCH(67, "golden_larch"),
+        OLIVE(67, "olive"),
+        CEDAR(67, "cedar"),
+        ARID_PINE(67, "arid_pine")
         ;
 
         private final String name;

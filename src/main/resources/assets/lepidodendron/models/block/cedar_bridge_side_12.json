@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/bridge_side",
+ "textures": {
+ "wood": "lepidodendron:blocks/cedar_planks",
+ "metal": "blocks/redstone_block"
+ }
+}

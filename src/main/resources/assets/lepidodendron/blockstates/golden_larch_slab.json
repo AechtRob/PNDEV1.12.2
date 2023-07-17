@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:golden_larch_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:golden_larch_slab_top"
+    }
+  }
+}
