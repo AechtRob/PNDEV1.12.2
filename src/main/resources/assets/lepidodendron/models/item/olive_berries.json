@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/olive_berries"
+    "layer0": "lepidodendron:items/olive_fruit"
   }
 }
