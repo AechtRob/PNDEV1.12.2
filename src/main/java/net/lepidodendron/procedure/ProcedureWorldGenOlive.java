@@ -39,143 +39,413 @@ public class ProcedureWorldGenOlive extends ElementsLepidodendronMod.ModElement 
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		int TrunkHeight = 15 + (int) (Math.round(Math.random() * 20D));
+		int TrunkHeight = 3 + (int) (Math.round(Math.random() * 3D));
 		int counter = 0;
 		int yy = y;
 		int upright = 0;
 		int yyy = 0;
-		Random rand = new Random();
+		Random rand = world.rand;
 
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
+		Material material1 = world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1))).getMaterial();
+		Material material2= world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)).getMaterial();
+		Material material3 = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))).getMaterial();
 		if ((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))
-			&& material != Material.GRASS
-			&& material != Material.GROUND
-			&& material != Material.GLASS
-			&& material != Material.IRON
-			&& material != Material.ROCK
-			&& material != Material.SAND
-			&& material != Material.WOOD
+				&& material != Material.GRASS
+				&& material != Material.GROUND
+				&& material != Material.GLASS
+				&& material != Material.IRON
+				&& material != Material.ROCK
+				&& material != Material.SAND
+				&& material != Material.WOOD
+				&& (world.canSeeSky(new BlockPos((int) (x + 1), (int) (y + 1), (int) (z - 1))))
+				&& material1 != Material.GRASS
+				&& material1 != Material.GROUND
+				&& material1 != Material.GLASS
+				&& material1 != Material.IRON
+				&& material1 != Material.ROCK
+				&& material1 != Material.SAND
+				&& material1 != Material.WOOD
+				&& (world.canSeeSky(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)))
+				&& material2 != Material.GRASS
+				&& material2 != Material.GROUND
+				&& material2 != Material.GLASS
+				&& material2 != Material.IRON
+				&& material2 != Material.ROCK
+				&& material2 != Material.SAND
+				&& material2 != Material.WOOD
+				&& (world.canSeeSky(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))))
+				&& material3 != Material.GRASS
+				&& material3 != Material.GROUND
+				&& material3 != Material.GLASS
+				&& material3 != Material.IRON
+				&& material3 != Material.ROCK
+				&& material3 != Material.SAND
+				&& material3 != Material.WOOD
 		) {
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+			world.setBlockToAir(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)));
+			world.setBlockToAir(new BlockPos((int) (x + 1), (int) y, (int) z));
+			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) (z - 1)));
+
+			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+			ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 1), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+			ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 1), (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
+			ProcedureTreeLog.executeProcedure((int) x, (int) (y - 1), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+
+			ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 2), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+			ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y - 2), (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
+			ProcedureTreeLog.executeProcedure((int) x, (int) (y - 2), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+
+			//Trunk:
+			int radius = world.rand.nextInt(2) + 5;
+			TrunkHeight = 2 + rand.nextInt(3);
+			boolean hollow = false;
+
 			counter = 0;
-			while (counter <= TrunkHeight) {
-				yy = y + counter;
-				ProcedureTreeLog.executeProcedure((int) x, (int) yy, (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
-				counter = counter + 1;
-			}
-
-			//Topshoot:
-			ProcedureTreeLeaf.executeProcedure(x, y + counter, z, world, getLeaves());
-			ProcedureTreeLeaf.executeProcedure(x + 1, y + counter - 1 , z, world, getLeaves());
-			ProcedureTreeLeaf.executeProcedure(x - 1, y + counter - 1 , z, world, getLeaves());
-			ProcedureTreeLeaf.executeProcedure(x, y + counter - 1 , z + 1, world, getLeaves());
-			ProcedureTreeLeaf.executeProcedure(x, y + counter - 1 , z - 1, world, getLeaves());
-
-			//Top layer, a bit random....
-			yy = y + counter - 2;
-			if (Math.random() > 0.85) {
-				//North
-				ProcedureTreeLog.executeProcedure(x, yy, z - 1, world, BlockOliveLog.block, EnumFacing.WEST);
-				ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, getLeaves(), 1, 0.4);
-			}
-			if (Math.random() > 0.85) {
-				//South
-				ProcedureTreeLog.executeProcedure(x, yy, z + 1, world, BlockOliveLog.block, EnumFacing.WEST);
-				ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, getLeaves(), 1, 0.4);
-			}
-			if (Math.random() > 0.85) {
-				//East
-				ProcedureTreeLog.executeProcedure(x + 1, yy, z, world, BlockOliveLog.block, EnumFacing.UP);
-				ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z, world, getLeaves(), 1, 0.4);
-			}
-			if (Math.random() > 0.85) {
-				//West
-				ProcedureTreeLog.executeProcedure(x - 1, yy, z, world, BlockOliveLog.block, EnumFacing.UP);
-				ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z, world, getLeaves(), 1, 0.4);
-			}
-
-			yy = y + counter - 3;
-			ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, getLeaves(), 1, 0);
-			yy = yy - 1;
-			ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, getLeaves(), 1, 0.2);
-
-			yy = yy - 1;
-
-			while (yy > (Math.round((double)TrunkHeight * 0.38) + y)) {
-				boolean branch = false;
-				//Try north:
-				if (Math.random() > 0.66) {
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x, yy, z - 1, world, BlockOliveLog.block, EnumFacing.EAST);
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x, yy, z - 2, world, BlockOliveLog.block, EnumFacing.EAST);
-					upright = rand.nextInt(3);
-					yyy = 1;
-					while (yyy <= upright) {
-						ProcedureTreeLog.executeProcedure(x, yy + yyy, z - 2, world, BlockOliveLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x, yy + yyy, z - 2, world, getLeaves(), 1, 0.3);
-						yyy = yyy + 1;
+			if (rand.nextInt(20) == 0) {
+				//Hollow ones:
+				hollow = true;
+				int i = rand.nextInt(4);
+				int ii = rand.nextInt(TrunkHeight - 1);
+				while (counter <= TrunkHeight) {
+					ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					//East sometimes hollow:
+					if (!(i == 2 && counter > ii)) {
+						ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
 					}
-					branch = true;
-				}
+					ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
 
-				//Try south:
-				if (Math.random() > 0.66) {
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x, yy, z + 1, world, BlockOliveLog.block, EnumFacing.EAST);
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x, yy, z + 2, world, BlockOliveLog.block, EnumFacing.EAST);
-					upright = rand.nextInt(3);
-					yyy = 1;
-					while (yyy <= upright) {
-						ProcedureTreeLog.executeProcedure(x, yy + yyy, z + 2, world, BlockOliveLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x, yy + yyy, z + 2, world, getLeaves(), 1, 0.3);
-						yyy = yyy + 1;
+					ProcedureTreeLog.executeProcedure((int) (x - 1), (int) (y + counter), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					//West sometimes hollow:
+					if (!(i == 3 && counter > ii)) {
+						ProcedureTreeLog.executeProcedure((int) (x - 1), (int) (y + counter), (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
 					}
-					branch = true;
-				}
+					ProcedureTreeLog.executeProcedure((int) (x - 1), (int) (y + counter), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
 
-				//Try east:
-				if (Math.random() > 0.66) {
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x + 1, yy, z, world, BlockOliveLog.block, EnumFacing.UP);
-					ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x + 2, yy, z, world, BlockOliveLog.block, EnumFacing.UP);
-					upright = rand.nextInt(3);
-					yyy = 1;
-					while (yyy <= upright) {
-						ProcedureTreeLog.executeProcedure(x + 2, yy + yyy, z, world, BlockOliveLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x + 2, yy + yyy, z, world, getLeaves(), 1, 0.3);
-						yyy = yyy + 1;
+					//North sometimes hollow:
+					if (!(i == 0 && counter > ii)) {
+						ProcedureTreeLog.executeProcedure((int) (x), (int) (y + counter), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
 					}
-					branch = true;
-				}
 
-				//Try west:
-				if (Math.random() > 0.66) {
-					ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x - 1, yy, z, world, BlockOliveLog.block, EnumFacing.UP);
-					ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z, world, getLeaves(), 1, 0.3);
-					ProcedureTreeLog.executeProcedure(x - 2, yy, z, world, BlockOliveLog.block, EnumFacing.UP);
-					upright = rand.nextInt(3);
-					yyy = 1;
-					while (yyy <= upright) {
-						ProcedureTreeLog.executeProcedure(x - 2, yy + yyy, z, world, BlockOliveLog.block, EnumFacing.NORTH);
-						ProcedureLeavesAroundLog.executeProcedure(x - 2, yy + yyy, z, world, getLeaves(), 1, 0.3);
-						yyy = yyy + 1;
+					//South sometimes hollow:
+					if (!(i == 1 && counter > ii)) {
+						ProcedureTreeLog.executeProcedure((int) (x), (int) (y + counter), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
 					}
-					branch = true;
+
+					counter = counter + 1;
 				}
 
-				if (!branch) {
-					yy = yy - 1;
+				counter = counter - 1;
+				//Crown support:
+				int offsetter = rand.nextInt(3) - 1;
+				ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z + offsetter + 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z + offsetter - 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z + offsetter + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z + offsetter - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter + 1), (int) (z + offsetter + 1), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter + 1), (int) (z + offsetter - 1), world, BlockOliveLog.block, EnumFacing.UP);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter + 1), (int) (z + offsetter + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter + 1), (int) (z + offsetter - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+
+					ProcedureTreeLog.executeProcedure((int) (x - 5), (int) (y + counter + 1), (int) (z + offsetter + 2), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x - 5), (int) (y + counter + 1), (int) (z + offsetter - 2), world, BlockOliveLog.block, EnumFacing.UP);
 				}
-				else {
-					yy = yy - 2 - (int) Math.round((Math.random() * 2D));
+
+				offsetter = rand.nextInt(3) - 1;
+				ProcedureTreeLog.executeProcedure((int) (x + 2), (int) (y + counter), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z + offsetter + 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z + offsetter - 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z + offsetter + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z + offsetter - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter + 1), (int) (z + offsetter + 1), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter + 1), (int) (z + offsetter - 1), world, BlockOliveLog.block, EnumFacing.UP);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter + 1), (int) (z + offsetter + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter + 1), (int) (z + offsetter - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+
+					ProcedureTreeLog.executeProcedure((int) (x + 5), (int) (y + counter + 1), (int) (z + offsetter + 2), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + 5), (int) (y + counter + 1), (int) (z + offsetter - 2), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+
+				offsetter = rand.nextInt(3) - 1;
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.UP);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.EAST);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.UP);
+
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z + 5), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z + 5), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+
+				offsetter = rand.nextInt(3) - 1;
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.UP);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.EAST);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.UP);
+
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z - 5), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z - 5), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+
+			}
+			else {
+				while (counter <= TrunkHeight) {
+					ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) z, world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+
+					counter = counter + 1;
+				}
+
+				counter = counter - 1;
+				//Crown support:
+				int offsetter = rand.nextInt(2);
+				ProcedureTreeLog.executeProcedure((int) (x - 1), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter + 1), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter + 1), (int) (z - offsetter + 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter + 1), (int) (z - offsetter - 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter + 1), (int) (z - offsetter + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + counter + 1), (int) (z - offsetter - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z - offsetter + 1), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z - offsetter - 1), world, BlockOliveLog.block, EnumFacing.UP);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z - offsetter + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x - 3), (int) (y + counter + 1), (int) (z - offsetter - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+
+					ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter + 1), (int) (z - offsetter + 2), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x - 4), (int) (y + counter + 1), (int) (z - offsetter - 2), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+
+				offsetter = rand.nextInt(2);
+				ProcedureTreeLog.executeProcedure((int) (x + 2), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter + 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter - 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter + 1), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter - 1), world, BlockOliveLog.block, EnumFacing.UP);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + 3), (int) (y + counter + 1), (int) (z - offsetter - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+
+					ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter + 1), (int) (z - offsetter + 2), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + 4), (int) (y + counter + 1), (int) (z - offsetter - 2), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+
+				offsetter = rand.nextInt(2);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter + 1), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.UP);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.EAST);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z + 3), world, BlockOliveLog.block, EnumFacing.UP);
+
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z + 4), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+
+				offsetter = rand.nextInt(2);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.EAST);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.UP);
+				if (radius > 5) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 1), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.EAST);
+				//}
+				//if (radius > 6) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z - 3), world, BlockOliveLog.block, EnumFacing.UP);
+
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter + 2), (int) (y + counter + 1), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter - 2), (int) (y + counter + 1), (int) (z - 4), world, BlockOliveLog.block, EnumFacing.EAST);
 				}
 
 			}
 
+			//Decorative bits and bobs:
+			if (!hollow) {
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y), (int) (z), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x, (int) (y), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 1, (int) (y), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 2, (int) (y), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 2, (int) (y), (int) (z), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 1, (int) (y), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x, (int) (y), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+
+				//Nubs
+				int offsetter = rand.nextInt(2);
+				int offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x - 1), (int) (y + offsetterY + 1), (int) (z - offsetter))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x - 1), (int) (y + offsetterY - 1), (int) (z - offsetter))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x - 1), (int) (y + offsetterY), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+
+				offsetter = rand.nextInt(2);
+				offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x + 2), (int) (y + offsetterY + 1), (int) (z - offsetter))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x + 2), (int) (y + offsetterY - 1), (int) (z - offsetter))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x + 2), (int) (y + counter), (int) (z - offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+
+				offsetter = rand.nextInt(2);
+				offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x + offsetterY + 1), (int) (y + counter), (int) (z + 1))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x + offsetter), (int) (y + offsetterY - 1), (int) (z + 1))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+
+				offsetter = rand.nextInt(2);
+				offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x + offsetterY + 1), (int) (y + counter), (int) (z - 2))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x + offsetter), (int) (y + offsetterY - 1), (int) (z - 2))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + counter), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+			}
+			else {
+				//Hollow:
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 2, (int) (y), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 2, (int) (y), (int) (z), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 2, (int) (y), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x, (int) (y), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 1, (int) (y), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 2, (int) (y), (int) (z + 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 2, (int) (y), (int) (z), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 2, (int) (y), (int) (z - 1), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x, (int) (y), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+				if (rand.nextInt(12) == 0) {
+					ProcedureTreeLog.executeProcedure((int) x + 1, (int) (y), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.NORTH);
+				}
+
+				//Nubs
+				int offsetter = rand.nextInt(3) - 1;
+				int offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x - 2), (int) (y + offsetterY + 1), (int) (z + offsetter))).getBlock() != BlockOliveLog.block
+					&& world.getBlockState(new BlockPos((int) (x - 2), (int) (y + offsetterY - 1), (int) (z + offsetter))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x - 2), (int) (y + offsetterY), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+				offsetter = rand.nextInt(3) - 1;
+				offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x + 2), (int) (y + offsetterY + 1), (int) (z + offsetter))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x + 2), (int) (y + offsetterY - 1), (int) (z + offsetter))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x + 2), (int) (y + offsetterY), (int) (z + offsetter), world, BlockOliveLog.block, EnumFacing.UP);
+				}
+
+				offsetter = rand.nextInt(3) - 1;
+				offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x + offsetter), (int) (y + offsetterY + 1), (int) (z + 2))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x + offsetter), (int) (y + offsetterY - 1), (int) (z + 2))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + offsetterY), (int) (z + 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+
+				offsetter = rand.nextInt(3) - 1;
+				offsetterY = rand.nextInt(TrunkHeight - 1) + 1;
+				if (rand.nextInt(4) == 0 && world.getBlockState(new BlockPos((int) (x + offsetter), (int) (y + offsetterY + 1), (int) (z - 2))).getBlock() != BlockOliveLog.block
+						&& world.getBlockState(new BlockPos((int) (x + offsetter), (int) (y + offsetterY - 1), (int) (z - 2))).getBlock() != BlockOliveLog.block) {
+					ProcedureTreeLog.executeProcedure((int) (x + offsetter), (int) (y + offsetterY), (int) (z - 2), world, BlockOliveLog.block, EnumFacing.EAST);
+				}
+			}
+
+			placeCrown(world, new BlockPos(x, y + counter, z), radius);
 		}
 	}
 
@@ -188,15 +458,44 @@ public class ProcedureWorldGenOlive extends ElementsLepidodendronMod.ModElement 
 		return BlockOliveLeaves.block;
 	}
 
-	public static void PlaceLeaves(World world, BlockPos pos) 
-	{
-		if (Math.random() > 0.15) {ProcedureTreeLeaf.executeProcedure(pos.getX(), pos.getY(), pos.getZ(), world, getLeaves());}
-		if (Math.random() > 0.15) {ProcedureTreeLeaf.executeProcedure(pos.getX(), pos.getY() + 1, pos.getZ(), world, getLeaves());}
-		if (Math.random() > 0.15) {ProcedureTreeLeaf.executeProcedure(pos.getX() + 1, pos.getY(), pos.getZ(), world, getLeaves());}
-		if (Math.random() > 0.15) {ProcedureTreeLeaf.executeProcedure(pos.getX() - 1, pos.getY(), pos.getZ(), world, getLeaves());}
-		if (Math.random() > 0.15) {ProcedureTreeLeaf.executeProcedure(pos.getX(), pos.getY(), pos.getZ() + 1, world, getLeaves());}
-		if (Math.random() > 0.15) {ProcedureTreeLeaf.executeProcedure(pos.getX(), pos.getY(), pos.getZ() - 1, world, getLeaves());}
-		
+	public static void placeCrown(World world, BlockPos pos, int radius) {
+		int rad = radius;
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		boolean skip = true;
+
+		int xct;
+		int yct = y;
+		int zct;
+		while (rad >= 3) {
+			xct = -rad;
+			while (xct <= rad) {
+				zct = -rad;
+				while (zct <= rad) {
+					if (xct == 0 && zct == 0 && rad >= 4) {
+						ProcedureTreeLog.executeProcedure(x + xct, yct, z + zct, world, BlockOliveLog.block, EnumFacing.NORTH);
+					} else if (Math.abs(xct) == 1 && Math.abs(zct) == 0 && rad >= 5) {
+						ProcedureTreeLog.executeProcedure(x + xct, yct, z + zct, world, BlockOliveLog.block, EnumFacing.UP);
+					} else if (Math.abs(xct) == 0 && Math.abs(zct) == 1 && rad >= 5) {
+						ProcedureTreeLog.executeProcedure(x + xct, yct, z + zct, world, BlockOliveLog.block, EnumFacing.EAST);
+					} else if ((Math.pow((int) Math.abs(xct), 2) + Math.pow((int) Math.abs(zct), 2) <= Math.pow((int) Math.abs(rad), 2))) {
+						//if (!(world.rand.nextInt(10) == 0 && (Math.pow((int) Math.abs(xct), 2) + Math.pow((int) Math.abs(zct), 2) == Math.pow((int) Math.abs(rad), 2)))) {
+							ProcedureTreeLeaf.executeProcedure(x + xct, yct, z + zct, world, getLeaves());
+						//}
+					}
+					zct = zct + 1;
+				}
+				xct = xct + 1;
+			}
+			yct = yct + 1;
+			if (!skip) {
+				rad = rad - 1;
+			}
+			skip = false;
+		}
 	}
-	
 }
+
+
+
