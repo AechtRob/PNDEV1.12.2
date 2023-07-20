@@ -108,19 +108,19 @@ public class ProcedureWorldGenThuja extends ElementsLepidodendronMod.ModElement 
 				ProcedureTreeLog.executeProcedure((int) (x + 1), (int) (y + counter), (int) z, world, BlockThujaLog.block, EnumFacing.NORTH);
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) (z - 1), world, BlockThujaLog.block, EnumFacing.NORTH);
 
-				if (counter + (rand.nextInt(2) - 1) < TrunkHeight * 0.25) {
+				if (counter + (rand.nextInt(3) - 1) < TrunkHeight * 0.25) {
 					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y + counter), (int) (z - 1), world, BlockThujaLog.block, EnumFacing.NORTH);
 				}
-				if (counter + (rand.nextInt(2) - 1) < TrunkHeight * 0.25) {
+				if (counter + (rand.nextInt(3) - 1) < TrunkHeight * 0.25) {
 					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y + counter), (int) (z), world, BlockThujaLog.block, EnumFacing.NORTH);
 				}
-				if (counter + (rand.nextInt(2) - 1) < TrunkHeight * 0.25) {
+				if (counter + (rand.nextInt(3) - 1) < TrunkHeight * 0.25) {
 					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y + counter), (int) (z + 1), world, BlockThujaLog.block, EnumFacing.NORTH);
 				}
-				if (counter + (rand.nextInt(2) - 1) < TrunkHeight * 0.25) {
+				if (counter + (rand.nextInt(3) - 1) < TrunkHeight * 0.25) {
 					ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) (z + 1), world, BlockThujaLog.block, EnumFacing.NORTH);
 				}
-				if (counter + (rand.nextInt(2) - 1) < TrunkHeight * 0.25) {
+				if (counter + (rand.nextInt(3) - 1) < TrunkHeight * 0.25) {
 					ProcedureTreeLog.executeProcedure((int) x + 1, (int) (y + counter), (int) (z + 1), world, BlockThujaLog.block, EnumFacing.NORTH);
 				}
 
