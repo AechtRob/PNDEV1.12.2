@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenPagiophyllum;
+import net.lepidodendron.procedure.ProcedureWorldGenThuja;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -44,32 +44,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockPagiophyllumSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:pagiophyllum_sapling")
+public class BlockThujaSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:thuja_sapling")
 	public static final Block block = null;
-	public BlockPagiophyllumSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.pagiophyllum_sapling);
+	public BlockThujaSapling(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.thuja_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("pagiophyllum_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("thuja_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:pagiophyllum_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:thuja_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:pagiophyllum_sapling", BlockPagiophyllumSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockPagiophyllumSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockPagiophyllumSapling.block);
-		OreDictionary.registerOre("plant", BlockPagiophyllumSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:thuja_sapling", BlockThujaSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockThujaSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockThujaSapling.block);
+		OreDictionary.registerOre("plant", BlockThujaSapling.block);
 	}
 
 
@@ -83,18 +83,8 @@ public class BlockPagiophyllumSapling extends ElementsLepidodendronMod.ModElemen
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_pagiophyllum_sapling");
+			setTranslationKey("pf_thuja_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
-		}
-
-		@Override
-		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 100;
-		}
-
-		@Override
-		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
 		}
 
 		@Override
@@ -148,13 +138,15 @@ public class BlockPagiophyllumSapling extends ElementsLepidodendronMod.ModElemen
 	            int x = pos.getX();
 				int y = pos.getY();
 				int z = pos.getZ();
+				boolean SaplingSpawn = true;
 				{
 					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenPagiophyllum.executeProcedure($_dependencies);
+					$_dependencies.put("SaplingSpawn", SaplingSpawn);
+					ProcedureWorldGenThuja.executeProcedure($_dependencies);
 				}
 	        }
 	    }
@@ -200,16 +192,15 @@ public class BlockPagiophyllumSapling extends ElementsLepidodendronMod.ModElemen
 		protected BlockStateContainer createBlockState()
 	    {
 	        return new BlockStateContainer(this, new IProperty[] {STAGE});
-	    }     
+	    }    
 
 	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: [Carboniferous - Permian -] Triassic - Jurassic - Cretaceous");
-				tooltip.add("Propagation: fruit/cone");
-			}
+				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

@@ -4,7 +4,6 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockInsectEggsLacewing;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -48,7 +47,7 @@ public class ItemLacewingEggsItem extends ElementsLepidodendronMod.ModElement {
 			maxStackSize = 64;
 			setTranslationKey("pf_insect_eggs_lacewing_item");
 			setRegistryName("insect_eggs_lacewing_item");
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(null);
 		}
 
 		@Override

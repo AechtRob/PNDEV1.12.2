@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:thuja_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:thuja_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:thuja_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:thuja_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:thuja_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:thuja_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:thuja_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

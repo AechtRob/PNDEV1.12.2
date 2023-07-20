@@ -107,7 +107,7 @@ public class BlockAridPineLeaves extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -154,7 +154,7 @@ public class BlockAridPineLeaves extends ElementsLepidodendronMod.ModElement {
 			if ((Math.random() >= 0.8) && (LepidodendronConfig.doPropagation)) {
 				IBlockState _bs = BlockAridPineFruit.block.getDefaultState();
 				worldIn.setBlockState(pos, _bs, 3);
-				}
+			}
 		}
 
 		@Override

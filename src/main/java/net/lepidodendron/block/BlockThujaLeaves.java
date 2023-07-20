@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemThujaFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -14,8 +15,6 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -24,7 +23,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -33,17 +31,18 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cedar_leaves")
+public class BlockThujaLeaves extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:thuja_leaves")
 	public static final Block block = null;
-	public BlockCedarLeaves(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.cedar_leaves);
+	public BlockThujaLeaves(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.thuja_leaves);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("cedar_leaves"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("thuja_leaves"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -51,23 +50,23 @@ public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:cedar_leaves", "inventory"));
+				new ModelResourceLocation("lepidodendron:thuja_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:cedar_sapling", BlockCedarLeaves.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockCedarLeaves.block);
-		OreDictionary.registerOre("plant", BlockCedarLeaves.block);
-		OreDictionary.registerOre("treeLeaves", BlockCedarLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:thuja_sapling", BlockThujaLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockThujaLeaves.block);
+		OreDictionary.registerOre("plant", BlockThujaLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockThujaLeaves.block);
 	}
 
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_cedar_leaves");
+			setTranslationKey("pf_thuja_leaves");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.2F);
 			setResistance(0.2F);
@@ -131,7 +130,8 @@ public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
 		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
 			return MapColor.FOLIAGE;
 		}
-
+		
+		
 		@Override
 		protected int getSaplingDropChance(IBlockState state) {
 			return 20;
@@ -140,32 +140,10 @@ public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				// Drop air and use the fruit method instead:
-				return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+				return new ItemStack(ItemThujaFruit.block, (int) (1)).getItem();
 			}
 			else {
-				return Item.getItemFromBlock(BlockCedarSapling.block);
-			}
-		}
-		
-		@Override
-		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
-			super.breakBlock(worldIn, pos, state);
-			if (worldIn.getBlockState(pos).getBlock() == BlockCedarLog.block) {
-				return;
-			}
-			if ((Math.random() >= 0.8) && (LepidodendronConfig.doPropagation)) {
-				IBlockState _bs = BlockCedarFruit.block.getDefaultState();
-				worldIn.setBlockState(pos, _bs, 3);
-			}
-		}
-
-		@Override
-		public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
-			super.onBlockHarvested(worldIn, pos, state, player);
-			if ((Math.random() >= 0.8) && (LepidodendronConfig.doPropagation)) {
-				IBlockState _bs = BlockCedarFruit.block.getDefaultState();
-				worldIn.setBlockState(pos, _bs, 3);
+				return Item.getItemFromBlock(BlockThujaSapling.block);
 			}
 		}
 
