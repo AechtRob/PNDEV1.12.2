@@ -107,7 +107,7 @@ public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -151,10 +151,13 @@ public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
 			super.breakBlock(worldIn, pos, state);
+			if (worldIn.getBlockState(pos).getBlock() == BlockCedarLog.block) {
+				return;
+			}
 			if ((Math.random() >= 0.8) && (LepidodendronConfig.doPropagation)) {
 				IBlockState _bs = BlockCedarFruit.block.getDefaultState();
 				worldIn.setBlockState(pos, _bs, 3);
-				}
+			}
 		}
 
 		@Override
@@ -163,7 +166,7 @@ public class BlockCedarLeaves extends ElementsLepidodendronMod.ModElement {
 			if ((Math.random() >= 0.8) && (LepidodendronConfig.doPropagation)) {
 				IBlockState _bs = BlockCedarFruit.block.getDefaultState();
 				worldIn.setBlockState(pos, _bs, 3);
-				}
+			}
 		}
 
 		@Override
