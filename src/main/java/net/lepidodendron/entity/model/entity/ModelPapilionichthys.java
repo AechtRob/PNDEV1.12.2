@@ -240,16 +240,35 @@ public class ModelPapilionichthys extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Papilionichthys.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Papilionichthys.rotateAngleY = (float) Math.toRadians(90);
+        this.Papilionichthys.offsetY = -0.2F;
+        this.Papilionichthys.offsetX = -0.05F;
+        this.Papilionichthys.offsetZ = -0.28F;
         this.Papilionichthys.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3F, 0.0F);
+        this.Papilionichthys.offsetY = -0.2F;
+        this.Papilionichthys.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3F, 0.0F);
+        this.Papilionichthys.offsetY = 0.0F;
+        this.Papilionichthys.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -333,13 +333,13 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		return 0.09;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.4F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0F;

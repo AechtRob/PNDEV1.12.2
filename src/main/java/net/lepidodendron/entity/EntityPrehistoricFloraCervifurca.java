@@ -201,22 +201,22 @@ public class EntityPrehistoricFloraCervifurca extends EntityPrehistoricFloraFish
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.5;
+		return 0.5;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.85;
+		return 0.45;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.15;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -1.9;
+		return 0.5;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.15;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 1.8;
+		return 0.0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
