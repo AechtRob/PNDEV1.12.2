@@ -160,6 +160,7 @@ public class CharniaGenerator extends WorldGenerator
 					&& yTop > 95)
 					&& (this.charnia == BlockFunisia.block
 					|| this.charnia == BlockCoronacollina.block
+					|| this.charnia == BlockBomakellia.block
 					|| this.charnia == BlockPambikalbae.block
 					)
 				)
