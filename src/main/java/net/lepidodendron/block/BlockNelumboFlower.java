@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemNelumboSeeds;
+import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.SoundType;
@@ -15,10 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -148,14 +146,16 @@ public class BlockNelumboFlower extends ElementsLepidodendronMod.ModElement {
 	            
 				if (!this.canBlockStay(world, pos, state))
 		        {
-		            world.destroyBlock(pos, false);
-		        }
+					world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+					world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				}
 		        
 			}
 
 			//Decay the flower after a while:
 			if (Math.random() > 0.6 && Math.random() > 0.6) {
-				world.destroyBlock(pos, false);
+				world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+				world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			
 		}
@@ -239,14 +239,16 @@ public class BlockNelumboFlower extends ElementsLepidodendronMod.ModElement {
 						stackSeed.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
 						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
 						}
 						return true;
 					}
 					else {
 						if (Math.random() > 0.8) {
-							world.destroyBlock(pos, false);
-		    				return true;
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+							return true;
 						}
 					}	
 				}

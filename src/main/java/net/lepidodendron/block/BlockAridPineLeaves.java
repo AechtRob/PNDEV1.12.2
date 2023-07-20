@@ -151,6 +151,10 @@ public class BlockAridPineLeaves extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
 			super.breakBlock(worldIn, pos, state);
+			if (worldIn.getBlockState(pos).getBlock() == BlockAridPineLog.block
+				|| worldIn.getBlockState(pos).getBlock() == BlockAridPineLeaves.block) {
+				return;
+			}
 			if ((Math.random() >= 0.8) && (LepidodendronConfig.doPropagation)) {
 				IBlockState _bs = BlockAridPineFruit.block.getDefaultState();
 				worldIn.setBlockState(pos, _bs, 3);

@@ -96,7 +96,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 			ProcedureTreeLog.executeProcedure((int) x, (int) (y - 1), (int) (z - 1), world, BlockCedarLog.block, EnumFacing.NORTH);
 
 			//Trunk:
-			TrunkHeight = 5 + (rand.nextInt(4)) + (rand.nextInt(4));
+			TrunkHeight = 5 + (rand.nextInt(5)) + (rand.nextInt(5));
 
 			counter = 0;
 			while (counter <= TrunkHeight) {
@@ -278,7 +278,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 		double branchskip = 0;
 		boolean try2 = false;
 		//Trunk:
-		TrunkHeight = 12 + rand.nextInt(4) + rand.nextInt(4);
+		TrunkHeight = 16 + rand.nextInt(8) + rand.nextInt(8);
 
 		counter = 0;
 		while (counter <= TrunkHeight) {

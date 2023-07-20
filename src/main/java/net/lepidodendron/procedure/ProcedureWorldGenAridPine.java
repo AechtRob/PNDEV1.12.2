@@ -69,7 +69,7 @@ public class ProcedureWorldGenAridPine extends ElementsLepidodendronMod.ModEleme
 			if (Math.random() > 0.4) {
 				TrunkHeight = TrunkHeight + (Math.random() * 4);
 			}
-			TrunkHeightBare = (int)Math.round(((float)TrunkHeight * 0.55F)) + rand.nextInt(4);
+			TrunkHeightBare = (int)Math.round(((float)TrunkHeight * 0.55F)) + rand.nextInt(4) - 2;
 
 			counter = 0;
 			while (counter <= TrunkHeightBare) {
