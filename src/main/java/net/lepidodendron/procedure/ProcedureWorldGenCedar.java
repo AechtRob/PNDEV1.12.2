@@ -171,7 +171,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 
 	public static void limbSouthNorth(World world, int x, int y, int z, Random rand, int flip, boolean top) {
 		int n = 0;
-		if (flip == -1) {
+		if (flip == 1) {
 			n = -1;
 		}
 		if (rand.nextInt(2) == 0 && !top) {
@@ -425,7 +425,12 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 
 					xx = xx + 1;
 					randomiser = randomiser + 1;
-					if (Math.random() > 0.6) yy = yy - 1;
+					if (counter < (TrunkHeight/4D)) {
+						if (Math.random() > 0.2) yy = yy - 1;
+					}
+					else {
+						if (Math.random() > 0.6) yy = yy - 1;
+					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
 				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
@@ -470,7 +475,12 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 
 					xx = xx - 1;
 					randomiser = randomiser + 1;
-					if (Math.random() > 0.6) yy = yy - 1;
+					if (counter < (TrunkHeight/4D)) {
+						if (Math.random() > 0.2) yy = yy - 1;
+					}
+					else {
+						if (Math.random() > 0.6) yy = yy - 1;
+					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
 
@@ -516,7 +526,12 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 
 					zz = zz - 1;
 					randomiser = randomiser + 1;
-					if (Math.random() > 0.6) yy = yy - 1;
+					if (counter < (TrunkHeight/4D)) {
+						if (Math.random() > 0.2) yy = yy - 1;
+					}
+					else {
+						if (Math.random() > 0.6) yy = yy - 1;
+					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
 				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
@@ -561,7 +576,12 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 
 					zz = zz + 1;
 					randomiser = randomiser + 1;
-					if (Math.random() > 0.6) yy = yy - 1;
+					if (counter < (TrunkHeight/4D)) {
+						if (Math.random() > 0.2) yy = yy - 1;
+					}
+					else {
+						if (Math.random() > 0.6) yy = yy - 1;
+					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
 				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
