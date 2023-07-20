@@ -96,7 +96,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 			ProcedureTreeLog.executeProcedure((int) x, (int) (y - 1), (int) (z - 1), world, BlockCedarLog.block, EnumFacing.NORTH);
 
 			//Trunk:
-			TrunkHeight = 6 + (Math.random() * 4) + (Math.random() * 4);
+			TrunkHeight = 5 + (rand.nextInt(4)) + (rand.nextInt(4));
 
 			counter = 0;
 			while (counter <= TrunkHeight) {
