@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:thuja_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:thuja_seed",
+    "count": 1
+  }
+}

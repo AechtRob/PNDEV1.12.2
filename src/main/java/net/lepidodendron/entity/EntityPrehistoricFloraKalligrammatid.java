@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.item.ItemKalligrammatidEggsItem;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -18,6 +19,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -72,35 +74,46 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
-//	@Override
-//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-//			//Cycle the variants:
-//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeodictyoptera")) {
-//				if (!player.capabilities.isCreativeMode)
-//				{
-//					player.getHeldItem(hand).shrink(1);
-//				}
-//				int type = this.getPNType().ordinal();
-//				type = type + 1;
-//				if (type > Type.values().length) {
-//					type = 0;
-//				}
-//				this.setPNType(Type.byId(type));
-//
-//				float f = this.width;
-//				this.width = getHitBoxSize()[0];
-//				this.height = getHitBoxSize()[1];
-//				if (this.width != f) {
-//					double d0 = (double) width / 2.0D;
-//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-//				}
-//			}
-//		}
-//
-//		return super.processInteract(player, hand);
-//	}
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraKalligrammatid) {
+			EntityPrehistoricFloraKalligrammatid Kalligrammatid = (EntityPrehistoricFloraKalligrammatid) target.entityHit;
+			switch (Kalligrammatid.getPNType()) {
+				case KALLIGRAMMA: default:
+					return new ItemStack(ItemSpawnEggKalligrammatidKalligramma.block, 1);
+
+				case APOCHRYSOGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidApochrysogramma.block, 1);
+
+				case HUIYINGOGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidHuiyingogramma.block, 1);
+
+				case LIASSOPSYCHOPS:
+					return new ItemStack(ItemSpawnEggKalligrammatidLiassopsychops.block, 1);
+
+				case MEIONEURITES:
+					return new ItemStack(ItemSpawnEggKalligrammatidMeioneurites.block, 1);
+
+				case ABRIGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidAbrigramma.block, 1);
+
+				case ITHIGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidIthigramma.block, 1);
+
+				case OREGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidOregramma.block, 1);
+
+				case MAKARKINIA:
+					return new ItemStack(ItemSpawnEggKalligrammatidMakarkinia.block, 1);
+
+				case SOPHOGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidSophogramma.block, 1);
+
+			}
+		}
+		return ItemStack.EMPTY;
+	}
 
 	@Override
 	public boolean hasPNVariants() {

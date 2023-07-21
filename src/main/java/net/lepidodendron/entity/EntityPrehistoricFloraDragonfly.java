@@ -75,33 +75,44 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	}
 
 //	@Override
-//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-//			//Cycle the variants:
-//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
-//				if (!player.capabilities.isCreativeMode)
-//				{
-//					player.getHeldItem(hand).shrink(1);
-//				}
-//				int type = this.getPNType().ordinal();
-//				type = type + 1;
-//				if (type > Type.values().length) {
-//					type = 0;
-//				}
-//				this.setPNType(Type.byId(type));
+//	public ItemStack getPickedResult(RayTraceResult target)
+//	{
+//		if (target.entityHit instanceof EntityPrehistoricFloraDragonfly) {
+//			EntityPrehistoricFloraDragonfly Dragonfly = (EntityPrehistoricFloraDragonfly) target.entityHit;
+//			switch (Dragonfly.getPNType()) {
+//				case DRAGONFLY1: default:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly1.block, 1);
 //
-//				float f = this.width;
-//				this.width = getHitBoxSize()[0];
-//				this.height = getHitBoxSize()[1];
-//				if (this.width != f) {
-//					double d0 = (double) width / 2.0D;
-//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-//				}
+//				case DRAGONFLY2:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly2.block, 1);
+//
+//				case DRAGONFLY3:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly3.block, 1);
+//
+//				case DRAGONFLY4:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly4.block, 1);
+//
+//				case DRAGONFLY5:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly5.block, 1);
+//
+//				case DRAGONFLY6:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly6.block, 1);
+//
+//				case DRAGONFLY7:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly7.block, 1);
+//
+//				case DRAGONFLY8:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly8.block, 1);
+//
+//				case DRAGONFLY9:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly9.block, 1);
+//
+//				case DRAGONFLY10:
+//					return new ItemStack(ItemSpawnEggDragonflyDragonfly10.block, 1);
+//
 //			}
 //		}
-//
-//		return super.processInteract(player, hand);
+//		return ItemStack.EMPTY;
 //	}
 
 	public boolean hasPNVariants() {
