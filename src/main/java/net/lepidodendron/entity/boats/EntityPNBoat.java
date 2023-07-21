@@ -329,6 +329,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemOliveBoatItem.block;
             case CEDAR:
                 return ItemCedarBoatItem.block;
+            case THUJA:
+                return ItemThujaBoatItem.block;
 
         }
     }
@@ -477,6 +479,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockOlivePlanks.block;
             case CEDAR:
                 return BlockCedarPlanks.block;
+            case THUJA:
+                return BlockThujaPlanks.block;
 
         }
     }
@@ -1343,9 +1347,10 @@ public class EntityPNBoat extends EntityBoat
         HIRMERIELLA(65, "hirmeriella"),
         FIG(66, "fig"),
         GOLDEN_LARCH(67, "golden_larch"),
-        OLIVE(67, "olive"),
-        CEDAR(67, "cedar"),
-        ARID_PINE(67, "arid_pine")
+        OLIVE(68, "olive"),
+        CEDAR(69, "cedar"),
+        ARID_PINE(70, "arid_pine"),
+        THUJA(71, "arid_pine")
         ;
 
         private final String name;

@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanStrudops;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanTriops;
@@ -97,7 +98,6 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		}
 	}
 
-
 	public boolean hasPNVariants() {
 		return true;
 	}
@@ -157,6 +157,11 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 			return values()[0];
 		}
 
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	public float[] getHitBoxSize() {

@@ -3094,7 +3094,7 @@ public class LepidodendronSorter {
     public static final int telemachus_seed = 3090;
     public static final int telopea_seeds = 3091;
     public static final int thucydia_seed = 3092;
-    public static final int thuja_nuts = 3093;
+    public static final int thuja_seed = 3093;
     public static final int trichopitys_seeds = 3094;
     public static final int umaltolepis_seed = 3095;
     public static final int utrechtia_seed = 3096;
