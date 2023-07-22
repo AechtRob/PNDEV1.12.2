@@ -59,6 +59,12 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
     }
 
     @Override
+    public boolean isChild()
+    {
+        return false;
+    }
+
+    @Override
     public boolean isRiding() {
         if (this.getRidingEntity() != null) {
             if (this.getRidingEntity() instanceof EntityBoat) {

@@ -72,6 +72,12 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	}
 
 	@Override
+	public boolean isChild()
+	{
+		return false;
+	}
+
+	@Override
 	public boolean isRiding() {
 		if (this.getRidingEntity() != null) {
 			if (this.getRidingEntity() instanceof EntityBoat) {

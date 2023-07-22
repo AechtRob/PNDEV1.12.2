@@ -436,6 +436,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CEDAR = new CustomTrigger("pf_book_cedar");
     public static final CustomTrigger CLICK_OLIVE = new CustomTrigger("pf_book_olive");
     public static final CustomTrigger CLICK_THUJA = new CustomTrigger("pf_book_thuja");
+    public static final CustomTrigger CLICK_LIQUIDAMBAR = new CustomTrigger("pf_book_liquidambar");
 
     public static final CustomTrigger CLICK_KERAPHYTON = new CustomTrigger("pf_book_keraphyton");
     public static final CustomTrigger CLICK_PIETZSCHIA = new CustomTrigger("pf_book_pietzschia");
@@ -1695,6 +1696,7 @@ public class ModTriggers
             CLICK_CEDAR,
             CLICK_OLIVE,
             CLICK_THUJA,
+            CLICK_LIQUIDAMBAR,
             CLICK_KERAPHYTON,
             CLICK_PIETZSCHIA,
             CLICK_FLABELLOPTERIS,

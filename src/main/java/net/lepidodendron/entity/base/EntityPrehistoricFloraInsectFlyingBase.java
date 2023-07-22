@@ -83,6 +83,12 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    @Override
+    public boolean isChild()
+    {
+        return false;
+    }
+
     public EnumCreatureAttributePN getPNCreatureAttribute() {
         if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
             return EnumCreatureAttributePN.INVERTEBRATE;

@@ -85,6 +85,12 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         return EnumCreatureAttributePN.VERTEBRATE;
     }
 
+    @Override
+    public boolean isChild()
+    {
+        return false;
+    }
+
     public boolean hasPNVariants() {
         return false;
     }

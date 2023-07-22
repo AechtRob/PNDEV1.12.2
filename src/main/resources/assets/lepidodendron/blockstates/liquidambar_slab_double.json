@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:liquidambar_slab_double"
+    }
+  }
+}

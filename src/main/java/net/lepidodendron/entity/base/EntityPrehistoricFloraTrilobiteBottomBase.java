@@ -71,6 +71,12 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         }
     }
 
+    @Override
+    public boolean isChild()
+    {
+        return false;
+    }
+
     public EnumCreatureAttributePN getPNCreatureAttribute() {
         if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
             return EnumCreatureAttributePN.INVERTEBRATE;
