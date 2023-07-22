@@ -14,6 +14,7 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -130,11 +131,18 @@ public class EntityPrehistoricFloraItalophlebiaNymph extends EntityPrehistoricFl
 
 	}
 
-	//@Override
-	//public net.minecraft.util.SoundEvent getAmbientSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_idle"));
-	//}
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		ResourceLocation name = EntityList.getKey(EntityPrehistoricFloraItalophlebia.class);
+		if (name != null && EntityList.ENTITY_EGGS.containsKey(name))
+		{
+			ItemStack stack = new ItemStack(net.minecraft.init.Items.SPAWN_EGG);
+			net.minecraft.item.ItemMonsterPlacer.applyEntityIdToItemStack(stack, name);
+			return stack;
+		}
+		return ItemStack.EMPTY;
+	}
 
 	@Override
 	public SoundEvent getAmbientSound() {

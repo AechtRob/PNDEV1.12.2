@@ -14,6 +14,7 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -36,6 +37,19 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		ResourceLocation name = EntityList.getKey(EntityPrehistoricFloraMeganeuropsis.class);
+		if (name != null && EntityList.ENTITY_EGGS.containsKey(name))
+		{
+			ItemStack stack = new ItemStack(net.minecraft.init.Items.SPAWN_EGG);
+			net.minecraft.item.ItemMonsterPlacer.applyEntityIdToItemStack(stack, name);
+			return stack;
+		}
+		return ItemStack.EMPTY;
 	}
 
 	@Override
