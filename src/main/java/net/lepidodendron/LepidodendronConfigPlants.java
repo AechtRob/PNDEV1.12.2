@@ -681,6 +681,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierCooksonia = 1;
     public static boolean spreadCooksonia = true;
 
+    public static boolean genSeagrass = false;
+    public static String[] genSeagrassBlacklistBiomes = new String[0];
+    public static String[] genSeagrassOverrideBiomes = new String[0];
+    public static int[] dimSeagrass = new int[]{0};
+    public static int minheightSeagrass = 1;
+    public static int maxheightSeagrass = 90;
+    public static double multiplierSeagrass = 1;
+    public static boolean spreadSeagrass = true;
+
     public static boolean genRhynia = false;
     public static String[] genRhyniaBlacklistBiomes = new String[0];
     public static String[] genRhyniaOverrideBiomes = new String[0];
@@ -4888,6 +4897,38 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Cooksonia", "spreadCooksonia", spreadCooksonia);
         prop.setComment("Set to true for Cooksonia to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadCooksonia = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Seagrass", "genSeagrass", genSeagrass);
+        prop.setComment("Set to true to generate Seagrass naturally [default: false]");
+        genSeagrass = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "genSeagrassBlacklistBiomes", genSeagrassBlacklistBiomes);
+        prop.setComment("List of biomes Seagrass are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSeagrassBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "genSeagrassOverrideBiomes", genSeagrassOverrideBiomes);
+        prop.setComment("List of biomes Seagrass are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSeagrassOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Seagrass", "dimSeagrass", dimSeagrass);
+        prop.setComment("List of dimension IDs Seagrass can generate in [default: 0]");
+        dimSeagrass = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "minheightSeagrass", minheightSeagrass);
+        prop.setComment("Minimum height that Seagrass can generate (1 to 250) [default: 1]");
+        minheightSeagrass = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "maxheightSeagrass", maxheightSeagrass);
+        prop.setComment("Maximum height that Seagrass can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightSeagrass = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "multiplierSeagrass", multiplierSeagrass);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSeagrass = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "spreadSeagrass", spreadSeagrass);
+        prop.setComment("Set to true for Seagrass to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadSeagrass = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Psilophyton", "genPsilophyton", genPsilophyton);
