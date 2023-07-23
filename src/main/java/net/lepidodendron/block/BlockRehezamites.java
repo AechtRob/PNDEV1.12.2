@@ -46,16 +46,16 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:otozamites")
+public class BlockRehezamites extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:rehezamites")
 	public static final Block block = null;
-	public BlockOtozamites(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.otozamites);
+	public BlockRehezamites(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.rehezamites);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("otozamites"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("rehezamites"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -63,22 +63,22 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:otozamites", "inventory"));
+				new ModelResourceLocation("lepidodendron:rehezamites", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:otozamites", BlockOtozamites.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockOtozamites.block);
-		OreDictionary.registerOre("plant", BlockOtozamites.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:rehezamites", BlockRehezamites.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockRehezamites.block);
+		OreDictionary.registerOre("plant", BlockRehezamites.block);
 	}
 
 	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_otozamites");
+			setTranslationKey("pf_rehezamites");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.2F);
 			setResistance(0.2F);
@@ -126,7 +126,7 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(BlockOtozamites.block, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(BlockRehezamites.block, (int) (1)));
 		}
 
 		@Override
@@ -171,17 +171,16 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
+			return 100;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 30;
+			return 60;
 		}
-
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockOtozamites.block, (int) (1));
+			return new ItemStack(BlockRehezamites.block, (int) (1));
 		}
 
 		@Override
@@ -201,7 +200,7 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 				return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 			}
 			else {
-				return Item.getItemFromBlock(BlockOtozamites.block);
+				return Item.getItemFromBlock(BlockRehezamites.block);
 			}
 		}
 
@@ -217,7 +216,7 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 
 	    @Override
         public ItemStack getSilkTouchDrop(IBlockState state)  {
-            return new ItemStack(BlockOtozamites.block, (int) (1));
+            return new ItemStack(BlockRehezamites.block, (int) (1));
         }
 
 	    @Override
@@ -230,7 +229,7 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 				if ((Math.random() > 0.66) && (!LepidodendronConfig.doPropagation)) {
 					//Spawn another sapling:
 					if (!world.isRemote) {
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockOtozamites.block, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockRehezamites.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						world.spawnEntity(entityToSpawn);
 					}
@@ -238,13 +237,13 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 			}
 			
 			Block block = world.getBlockState(pos.up()).getBlock();
-			if (block != BlockOtozamitesTop.block) {
+			if (block != BlockRehezamitesCentre.block) {
 				world.setBlockToAir(pos);
 				
 				if ((Math.random() > 0.66) && (!LepidodendronConfig.doPropagation)) {
 					//Spawn another sapling:
 					if (!world.isRemote) {
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockOtozamites.block, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockRehezamites.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						world.spawnEntity(entityToSpawn);
 					}
@@ -254,12 +253,13 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 		
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-	        return super.canPlaceBlockAt(worldIn, pos) && worldIn.isAirBlock(pos.up());
+	        return super.canPlaceBlockAt(worldIn, pos) && worldIn.isAirBlock(pos.up()) && worldIn.isAirBlock((pos.up()).up());
 	    }
 
 	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
 	    	
-			world.setBlockState(pos.up(), BlockOtozamitesTop.block.getDefaultState(), 3);
+			world.setBlockState(pos.up(), BlockRehezamitesCentre.block.getDefaultState(), 3);
+			world.setBlockState((pos.up()).up(), BlockRehezamitesTop.block.getDefaultState(), 3);
 			
 			super.onBlockAdded(world, pos, state);
 	    }
@@ -269,8 +269,8 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales shrub");
-	        	tooltip.add("Periods: late Triassic - Jurassic - Cretaceous");
-	        	tooltip.add("Propagation: seeds");}
+	        tooltip.add("Periods: Cretaceous");
+	        tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
@@ -288,7 +288,7 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockOtozamites.block;
+			return BlockRehezamites.block;
 		}
 
 		@Override

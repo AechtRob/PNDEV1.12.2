@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/rehezamites_t_e",
+"w":"lepidodendron:blocks/rehezamites_t_w"
+}
+}
