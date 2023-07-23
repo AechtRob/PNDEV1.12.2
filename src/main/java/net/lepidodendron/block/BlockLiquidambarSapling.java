@@ -135,9 +135,9 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 	        }
 	        else
 	        {
-	           	int TreeHeight = 15 + rand.nextInt(18);
-				if (TreeHeight > 25 && Math.random() > 0.5) {
-					TreeHeight = 12 + rand.nextInt(18);
+	           	int TreeHeight = 15 + rand.nextInt(14);
+				if (TreeHeight > 25 && Math.random() > 0.4) {
+					TreeHeight = 12 + rand.nextInt(8);
 				}
 				ProcedureWorldGenLiquidambar.executeProcedure(world, pos, TreeHeight);
 				//}

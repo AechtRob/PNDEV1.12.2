@@ -37,6 +37,11 @@ public class EntityPrehistoricFloraSymphysops extends EntityPrehistoricFloraFish
 	}
 
 	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
+	}
+
+	@Override
 	public boolean canShoal() {
 		return (!(this.getAlarmCooldown() > 0));
 	}
@@ -115,11 +120,6 @@ public class EntityPrehistoricFloraSymphysops extends EntityPrehistoricFloraFish
 	@Override
 	public String getTexture() {
 		return this.getTexture();
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override

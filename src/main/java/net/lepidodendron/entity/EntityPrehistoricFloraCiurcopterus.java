@@ -18,6 +18,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -53,6 +54,12 @@ public class EntityPrehistoricFloraCiurcopterus extends EntityPrehistoricFloraSw
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
+	}
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();

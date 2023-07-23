@@ -36,8 +36,8 @@ public class ProcedureWorldGenLiquidambar extends ElementsLepidodendronMod.ModEl
     //private static double heightAttenuation = 0.618D;
     private static double heightAttenuation = 0.318D;
     //private static double leafDensity = 1.0D;
-    private static double leafDensity = 1.00D;
-    private static int leafDistanceLimit = 4;
+    private static double leafDensity = 2.00D;
+    private static int leafDistanceLimit = 3;
     private static List<ProcedureWorldGenLiquidambar.FoliageCoordinates> foliageCoords;
     //private static double branchSlope = 0.381D;
     private static double branchSlope = 0.781D;
