@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteSwimBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderSwim;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -32,6 +33,11 @@ public class EntityPrehistoricFloraLunataspis extends EntityPrehistoricFloraTril
 	public EntityPrehistoricFloraLunataspis(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -97,7 +103,7 @@ public class EntityPrehistoricFloraLunataspis extends EntityPrehistoricFloraTril
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override

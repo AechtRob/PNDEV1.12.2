@@ -54,6 +54,12 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 		this.targetSorter = new EntityPrehistoricFloraWebsteroprionHole.PlayerSorter(this);
 	}
 
+	@Override
+	public boolean isChild()
+	{
+		return false;
+	}
+
 	public EnumCreatureAttributePN getPNCreatureAttribute() {
 		return EnumCreatureAttributePN.INVERTEBRATE;
 	}

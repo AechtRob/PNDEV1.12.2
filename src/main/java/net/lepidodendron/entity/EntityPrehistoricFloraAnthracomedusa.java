@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,6 +32,11 @@ public class EntityPrehistoricFloraAnthracomedusa extends EntityPrehistoricFlora
     public EntityPrehistoricFloraAnthracomedusa(World world) {
         super(world);
         setSize(0.6F, 0.35F);
+    }
+
+    @Override
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        return EnumCreatureAttributePN.INVERTEBRATE;
     }
 
     @Override

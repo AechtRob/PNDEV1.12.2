@@ -108,7 +108,7 @@ public class EntityPrehistoricFloraPhanerotinus extends EntityPrehistoricFloraTr
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsDragonfly;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -18,6 +19,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -74,46 +76,46 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
-//	@Override
-//	public ItemStack getPickedResult(RayTraceResult target)
-//	{
-//		if (target.entityHit instanceof EntityPrehistoricFloraDragonfly) {
-//			EntityPrehistoricFloraDragonfly Dragonfly = (EntityPrehistoricFloraDragonfly) target.entityHit;
-//			switch (Dragonfly.getPNType()) {
-//				case DRAGONFLY1: default:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly1.block, 1);
-//
-//				case DRAGONFLY2:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly2.block, 1);
-//
-//				case DRAGONFLY3:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly3.block, 1);
-//
-//				case DRAGONFLY4:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly4.block, 1);
-//
-//				case DRAGONFLY5:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly5.block, 1);
-//
-//				case DRAGONFLY6:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly6.block, 1);
-//
-//				case DRAGONFLY7:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly7.block, 1);
-//
-//				case DRAGONFLY8:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly8.block, 1);
-//
-//				case DRAGONFLY9:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly9.block, 1);
-//
-//				case DRAGONFLY10:
-//					return new ItemStack(ItemSpawnEggDragonflyDragonfly10.block, 1);
-//
-//			}
-//		}
-//		return ItemStack.EMPTY;
-//	}
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraDragonfly) {
+			EntityPrehistoricFloraDragonfly Dragonfly = (EntityPrehistoricFloraDragonfly) target.entityHit;
+			switch (Dragonfly.getPNType()) {
+				case DRAGONFLY1: default:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly1.block, 1);
+
+				case DRAGONFLY2:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly2.block, 1);
+
+				case DRAGONFLY3:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly3.block, 1);
+
+				case DRAGONFLY4:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly4.block, 1);
+
+				case DRAGONFLY5:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly5.block, 1);
+
+				case DRAGONFLY6:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly6.block, 1);
+
+				case DRAGONFLY7:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly7.block, 1);
+
+				case DRAGONFLY8:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly8.block, 1);
+
+				case DRAGONFLY9:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly9.block, 1);
+
+				case DRAGONFLY10:
+					return new ItemStack(ItemSpawnEggDragonflyDragonfly10.block, 1);
+
+			}
+		}
+		return ItemStack.EMPTY;
+	}
 
 	public boolean hasPNVariants() {
 		return true;

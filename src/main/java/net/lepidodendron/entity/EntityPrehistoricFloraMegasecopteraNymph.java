@@ -6,6 +6,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMegasecopteraSylvohymen;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,6 +19,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -54,25 +56,17 @@ public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricF
 	//Insect variant managers:
 
 	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-			//Cycle the variants:
-			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_megasecoptera_nymph")) {
-				if (!player.capabilities.isCreativeMode)
-				{
-					player.getHeldItem(hand).shrink(1);
-				}
-				int type = this.getPNType().ordinal();
-				type = type + 1;
-				if (type > EntityPrehistoricFloraMegasecopteraNymph.Type.values().length) {
-					type = 0;
-				}
-				this.setPNType(EntityPrehistoricFloraMegasecopteraNymph.Type.byId(type));
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraMegasecopteraNymph) {
+			EntityPrehistoricFloraMegasecopteraNymph MegasecopteraNymph = (EntityPrehistoricFloraMegasecopteraNymph) target.entityHit;
+			switch (MegasecopteraNymph.getPNType()) {
+				case SYLVOHYMEN: default:
+					return new ItemStack(ItemSpawnEggMegasecopteraSylvohymen.block, 1);
+
 			}
 		}
-
-		return super.processInteract(player, hand);
+		return ItemStack.EMPTY;
 	}
 
 	@Override

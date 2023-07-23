@@ -6,7 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMegasecoptera;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMegasecopteraSylvohymen;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;

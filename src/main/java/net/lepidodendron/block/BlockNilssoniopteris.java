@@ -152,7 +152,7 @@ public class BlockNilssoniopteris extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Bennettitiales Plant");
+				tooltip.add("Type: Bennettitales Plant");
 	        	tooltip.add("Periods: late Permian - Triassic - Jurassic - early Cretaceous");
 	        	tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);

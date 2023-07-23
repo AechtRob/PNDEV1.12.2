@@ -9,6 +9,9 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.ai.LandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
@@ -21,6 +24,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -126,6 +130,26 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 			return values()[0];
 		}
 
+	}
+
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraTitanopteraNymph) {
+			EntityPrehistoricFloraTitanopteraNymph titanopteraNymph = (EntityPrehistoricFloraTitanopteraNymph) target.entityHit;
+			switch (titanopteraNymph.getPNType()) {
+				case CLATROTITAN: default:
+					return new ItemStack(ItemSpawnEggTitanopteraClatrotitan.block, 1);
+
+				case GIGATITAN:
+					return new ItemStack(ItemSpawnEggTitanopteraGigatitan.block, 1);
+
+				case MESOTITAN:
+					return new ItemStack(ItemSpawnEggTitanopteraMesotitan.block, 1);
+
+			}
+		}
+		return ItemStack.EMPTY;
 	}
 
 	public ResourceLocation getFreezeLoot() {

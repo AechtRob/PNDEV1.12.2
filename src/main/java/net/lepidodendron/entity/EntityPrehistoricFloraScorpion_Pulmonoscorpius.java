@@ -10,6 +10,7 @@ import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemMonsterPlacer;
@@ -46,6 +47,11 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 		else {
 			maxHealthAgeable = 6.0D;
 		}
+	}
+
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override

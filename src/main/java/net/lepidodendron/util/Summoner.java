@@ -156,10 +156,10 @@ public class Summoner extends CommandBase
                         EntityPrehistoricFloraKalligrammatid kalligrammatid = (EntityPrehistoricFloraKalligrammatid) entity;
                         kalligrammatid.setPNType(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variantStr));
                     }
-//                    else if (entity instanceof EntityPrehistoricFloraKalligrammatidNymph && !variantStr.equalsIgnoreCase("")) {
-//                        EntityPrehistoricFloraKalligrammatidNymph kalligrammatid = (EntityPrehistoricFloraKalligrammatidNymph) entity;
-//                        kalligrammatid.setPNType(EntityPrehistoricFloraKalligrammatidNymph.Type.getTypeFromString(variantStr));
-//                    }
+                    else if (entity instanceof EntityPrehistoricFloraNotostracan && !variantStr.equalsIgnoreCase("")) {
+                        EntityPrehistoricFloraNotostracan notostracan = (EntityPrehistoricFloraNotostracan) entity;
+                        notostracan.setPNType(EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variantStr));
+                    }
                     else if (entity instanceof EntityPrehistoricFloraLacewing && !variantStr.equalsIgnoreCase("")) {
                         EntityPrehistoricFloraLacewing lacewing = (EntityPrehistoricFloraLacewing) entity;
                         lacewing.setPNType(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variantStr));

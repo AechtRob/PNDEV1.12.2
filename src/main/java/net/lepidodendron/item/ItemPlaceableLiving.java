@@ -261,7 +261,14 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 			String stringDNA = (blockNBT.getString("id"));
 			if (stringDNA.indexOf("@") >= 0) {
-				return stringDNA.substring(stringDNA.indexOf("@") + 1);
+				String varStr = stringDNA.substring(stringDNA.indexOf("@") + 1);
+				if (varStr.equalsIgnoreCase("triops_random")) {
+					varStr = "triops" + (itemRand.nextInt(3) + 1);
+				}
+				if (varStr.equalsIgnoreCase("dragonfly_random")) {
+					varStr = "dragonfly" + (itemRand.nextInt(10) + 1);
+				}
+				return varStr;
 			}
 			return "";
 		}

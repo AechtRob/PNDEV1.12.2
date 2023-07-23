@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
 	}
 
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
+	}
+
 	public ItemStack getPropagule() {
 		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
 		if (!stack.hasTagCompound()) {
@@ -254,11 +259,6 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	@Override
 	public String getTexture() {
 		return this.getTexture();
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override
