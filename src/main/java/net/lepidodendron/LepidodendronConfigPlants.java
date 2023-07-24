@@ -688,7 +688,7 @@ public class LepidodendronConfigPlants {
     public static int minheightSeagrass = 1;
     public static int maxheightSeagrass = 90;
     public static double multiplierSeagrass = 1;
-    public static boolean spreadSeagrass = true;
+    public static int radiusSeagrass = 6;
 
     public static boolean genRhynia = false;
     public static String[] genRhyniaBlacklistBiomes = new String[0];
@@ -4926,9 +4926,9 @@ public class LepidodendronConfigPlants {
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierSeagrass = prop.getDouble();
         propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Seagrass", "spreadSeagrass", spreadSeagrass);
-        prop.setComment("Set to true for Seagrass to spread naturally, and to false to require bonemeal to spread [default: true]");
-        spreadSeagrass = prop.getBoolean();
+        prop = cfg.get("WorldGen Seagrass", "radiusSeagrass", radiusSeagrass);
+        prop.setComment("Radius Seagrass can spread (0 to 8). Increasing this may cause lag. [default: 6]");
+        radiusSeagrass = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Psilophyton", "genPsilophyton", genPsilophyton);

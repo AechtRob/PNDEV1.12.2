@@ -7,11 +7,12 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
@@ -19,6 +20,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -30,7 +32,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -38,6 +39,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IShearable;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -68,7 +70,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:sea_grass", "inventory"));
-			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockSeaGrass.LEVEL).build());
+			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockSeaGrass.LEVEL).ignore(BlockSeaGrass.SPREADABLE).build());
 	}
 
 	@Override
@@ -79,9 +81,9 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockSeaGrass.block);
 	}
 
-
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-	
+	public static final PropertyBool SPREADABLE = PropertyBool.create("spreadable");
+
 	public static class BlockCustom extends SeedSporeBlockBase implements IShearable {
 	    
 		public BlockCustom() {
@@ -93,13 +95,8 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(3);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadSeagrass) {
-				setTickRandomly(true);
-			}
-			else {
-				setTickRandomly(false);
-			}
-			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
+			setTickRandomly(true);
+			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(SPREADABLE, true));
 		}
 
 		@Override
@@ -116,47 +113,34 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 				}
 				else {
 					Random rand = new Random();
-					int xx = rand.nextInt(3) - 1;
-					int yy = rand.nextInt(3) - 1;
-					int zz = rand.nextInt(3) - 1;
-					//Try to spread:
-					BlockPos targetBlock = pos.add(xx, yy, zz);
-					double spread = (double) LepidodendronConfig.spreadPlants;
-					if (spread < 1) {
-						spread = 1;
-					}
-					if (spread > 100) {
-						spread = 100;
-					}
-					if (Math.random() > (1-(spread/100)) && (targetBlock != pos) && (world.getBlockState(targetBlock).getBlock() == Blocks.WATER) && (canPlaceBlockAt(world, targetBlock))) {
-						world.setBlockState(targetBlock, BlockSeaGrass.block.getDefaultState(), 3);
-					}
-					//Perhaps the original plant also dies back now, but only if there another plant within 2 blocks (else TODO:he colony dies!):
-					boolean YouAreNotAloneNooneIsAlone = false;
-					int xct = -2;
-					int yct;
-					int zct;
-					while ((xct <= 2) && (!YouAreNotAloneNooneIsAlone)) {
-						yct = -1;
-						while ((yct <= 2) && (!YouAreNotAloneNooneIsAlone)) {
-							zct = -2;
-							while ((zct <= 2) && (!YouAreNotAloneNooneIsAlone)) {
-								if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int) 2,2)) && ((world.getBlockState(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))).getBlock() == this)) {
-									if (!(xct == 0 && zct == 0 && yct == 0)) {YouAreNotAloneNooneIsAlone = true;}
-								}
-								zct = zct + 1;
-							}
-							yct = yct + 1;
+					if ((Boolean) state.getValue(SPREADABLE)) {
+						//System.err.println("Ticked a spreadable block");
+						int spreadradius = (int) LepidodendronConfigPlants.radiusSeagrass;
+						if (spreadradius < 0) {
+							spreadradius = 0;
 						}
-						xct = xct + 1;
-					}
-					if (YouAreNotAloneNooneIsAlone && Math.random() > 0.9) {
-						if (Math.random() > 0.8) {
-							//world.destroyBlock(pos, false);
-							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
-							world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						if (spreadradius > 8) {
+							spreadradius = 8;
 						}
-					}
+						int xx = rand.nextInt((spreadradius * 2) + 1) - spreadradius;
+						int yy = rand.nextInt((spreadradius * 2) + 1) - spreadradius;
+						int zz = rand.nextInt((spreadradius * 2) + 1) - spreadradius;
+						//Try to spread:
+						BlockPos targetBlock = pos.add(xx, yy, zz);
+						double spread = (double) LepidodendronConfig.spreadPlants;
+						if (spread < 1) {
+							spread = 1;
+						}
+						if (spread > 100) {
+							spread = 100;
+						}
+						if (Math.random() > (1 - (spread / 100)) && (targetBlock != pos)
+								&& (world.getBlockState(targetBlock).getBlock() instanceof BlockFluidBase || world.getBlockState(targetBlock).getBlock() instanceof BlockLiquid)
+								&& world.getBlockState(targetBlock).getMaterial() == Material.WATER
+								&& (canPlaceBlockAt(world, targetBlock))) {
+							world.setBlockState(targetBlock, BlockSeaGrass.block.getDefaultState().withProperty(SPREADABLE, false), 3);
+						}
+					} 
 				}
 			}
 		}
@@ -207,13 +191,19 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public IBlockState getStateFromMeta(int meta)
 	    {
-	        return this.getDefaultState();
+			return this.getDefaultState().withProperty(SPREADABLE, meta > 0);
 	    }
 
 	    @Override
 	    public int getMetaFromState(IBlockState state)
 	    {
-	        return 0;
+			int i = 0;
+			if (((Boolean)state.getValue(SPREADABLE)).booleanValue())
+			{
+				i = 1;
+			}
+
+			return i;
 	    }
 
 	    @Override
@@ -223,7 +213,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 
 		protected BlockStateContainer createBlockState()
 	    {
-	        return new BlockStateContainer(this, new IProperty[] {LEVEL});
+	        return new BlockStateContainer(this, new IProperty[] {LEVEL, SPREADABLE});
 	    }
 	    
 		@Override
@@ -272,6 +262,12 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			}
 	    	super.breakBlock(worldIn, pos, state);
 	    }
+
+		@Override
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
+												EntityLivingBase placer) {
+			return this.getDefaultState();
+		}
 
 	    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 	    {
