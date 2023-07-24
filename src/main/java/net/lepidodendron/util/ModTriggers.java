@@ -53,6 +53,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
+    public static final CustomTrigger CLICK_ZINGIBEROPSIS = new CustomTrigger("pf_book_zingiberopsis");
     public static final CustomTrigger CLICK_GANSUFRUCTUS = new CustomTrigger("pf_book_gansufructus");
     public static final CustomTrigger CLICK_CHLORANTHUS = new CustomTrigger("pf_book_chloranthus");
     public static final CustomTrigger CLICK_BUTTERCUP = new CustomTrigger("pf_book_buttercup");
@@ -104,6 +105,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BJUVIA = new CustomTrigger("pf_book_bjuvia");
     public static final CustomTrigger CLICK_BLACK_TREEFERN = new CustomTrigger("pf_book_black_treefern");
     public static final CustomTrigger CLICK_BOLBITIS = new CustomTrigger("pf_book_bolbitis");
+    public static final CustomTrigger CLICK_SEAGRASS = new CustomTrigger("pf_book_sea_grass");
     public static final CustomTrigger CLICK_BOMAKELLIA = new CustomTrigger("pf_book_bomakellia");
     public static final CustomTrigger CLICK_BOTHRODENDRON = new CustomTrigger("pf_book_bothrodendron");
     public static final CustomTrigger CLICK_BRACHIOPOD_GIGANTOPRODUCTUS = new CustomTrigger("pf_book_brachiopod_gigantoproductus");
@@ -1316,6 +1318,7 @@ public class ModTriggers
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
             CLICK_DAISY,
+            CLICK_ZINGIBEROPSIS,
             CLICK_GANSUFRUCTUS,
             CLICK_CHLORANTHUS,
             CLICK_BUTTERCUP,
@@ -1366,6 +1369,7 @@ public class ModTriggers
             CLICK_BJUVIA,
             CLICK_BLACK_TREEFERN,
             CLICK_BOLBITIS,
+            CLICK_SEAGRASS,
             CLICK_BOMAKELLIA,
             CLICK_BOTHRODENDRON,
             CLICK_BRACHIOPOD_GIGANTOPRODUCTUS,

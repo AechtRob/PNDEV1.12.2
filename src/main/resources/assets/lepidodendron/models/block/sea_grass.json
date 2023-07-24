@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:block/template_seagrass",
+  "textures": {
+    "texture": "lepidodendron:blocks/sea_grass"
+  }
+}

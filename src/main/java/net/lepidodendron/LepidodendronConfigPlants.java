@@ -681,6 +681,14 @@ public class LepidodendronConfigPlants {
     public static double multiplierCooksonia = 1;
     public static boolean spreadCooksonia = true;
 
+    public static boolean genSeagrass = false;
+    public static String[] genSeagrassBlacklistBiomes = new String[0];
+    public static String[] genSeagrassOverrideBiomes = new String[0];
+    public static int[] dimSeagrass = new int[]{0};
+    public static double multiplierSeagrass = 1;
+    public static int radiusSeagrass = 6;
+    public static int weightSeagrass = 50;
+
     public static boolean genRhynia = false;
     public static String[] genRhyniaBlacklistBiomes = new String[0];
     public static String[] genRhyniaOverrideBiomes = new String[0];
@@ -4888,6 +4896,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Cooksonia", "spreadCooksonia", spreadCooksonia);
         prop.setComment("Set to true for Cooksonia to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadCooksonia = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Seagrass", "genSeagrass", genSeagrass);
+        prop.setComment("Set to true to generate Seagrass naturally [default: false]");
+        genSeagrass = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "genSeagrassBlacklistBiomes", genSeagrassBlacklistBiomes);
+        prop.setComment("List of biomes Seagrass are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSeagrassBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "genSeagrassOverrideBiomes", genSeagrassOverrideBiomes);
+        prop.setComment("List of biomes Seagrass are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSeagrassOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Seagrass", "dimSeagrass", dimSeagrass);
+        prop.setComment("List of dimension IDs Seagrass can generate in [default: 0]");
+        dimSeagrass = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "multiplierSeagrass", multiplierSeagrass);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSeagrass = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Seagrass", "radiusSeagrass", radiusSeagrass);
+        prop.setComment("Radius Seagrass can spread (0 to 8). Increasing this may cause lag. [default: 6]");
+        radiusSeagrass = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sea Seagrass", "weightSeagrass", weightSeagrass);
+        prop.setComment("Percentage chance that Seagrass generates in a suitable chunk (0 to 100) [default: 50]");
+        weightSeagrass = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Psilophyton", "genPsilophyton", genPsilophyton);
