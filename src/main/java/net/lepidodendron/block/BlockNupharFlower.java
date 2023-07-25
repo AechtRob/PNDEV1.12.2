@@ -2,25 +2,28 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.item.ItemNupharSeeds;
+import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -30,17 +33,16 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
-import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:microvictoria_bud")
+public class BlockNupharFlower extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:nuphar_flower_worldgen")
 	public static final Block block = null;
-	public BlockMicrovictoriaBud(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.microvictoria_bud);
+	public BlockNupharFlower(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.nuphar_flower_worldgen);
 	}
 
 	@Override
@@ -51,17 +53,19 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockMicrovictoriaBud.TileEntityCustom.class, "lepidodendron:tileentitymicrovictoria_bud");
+		GameRegistry.registerTileEntity(BlockNupharFlower.TileEntityCustom.class, "lepidodendron:tileentitynuphar_flower");
 	}
 
 	//@SideOnly(Side.CLIENT)
 	//@Override
 	//public void registerModels(ModelRegistryEvent event) {
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-	//			new ModelResourceLocation("lepidodendron:microvictoria_bud", "inventory"));
+	//			new ModelResourceLocation("lepidodendron:nuphar_flower_worldgen", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad implements ITileEntityProvider {
+	public static final PropertyBool VARIANT = PropertyBool.create("var");
+
+	public static class BlockCustom extends BlockLilyPad implements ITileEntityProvider, net.minecraftforge.common.IShearable {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -70,14 +74,33 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setCreativeTab(null);
 			setTickRandomly(true);
-			setTranslationKey("pf_microvictoria_bud");
-			setRegistryName("microvictoria_bud");
+			setTranslationKey("pf_nuphar_flower_worldgen");
+			setRegistryName("nuphar_flower_worldgen");
 			this.setDefaultState(this.blockState.getBaseState());
 		}
 
 		@Override
+		public IBlockState getStateFromMeta(int meta) {
+			return this.getDefaultState().withProperty(VARIANT, meta > 0);
+		}
+
+		@Override
+		public int getMetaFromState(IBlockState state) {
+			int i = 0;
+			if (state.getValue(VARIANT)) {
+				i = 1;
+			}
+			return i;
+		}
+
+		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{VARIANT});
+		}
+
+		@Override
 		public TileEntity createNewTileEntity(World worldIn, int meta) {
-			return new BlockMicrovictoriaBud.TileEntityCustom();
+			return new BlockNupharFlower.TileEntityCustom();
 		}
 
 		@Override
@@ -99,12 +122,19 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
     	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
+		
+		@Override
+		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+			return NonNullList.withSize(1, new ItemStack(BlockNupharFlowerPlaceable.block, (int) (1)));
+		}
 
 		@Override
-		@Nullable
+		@javax.annotation.Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 			return NULL_AABB;
 		}
@@ -125,10 +155,6 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
-	    {}
-
-		@Override
 		public boolean isOpaqueCube(IBlockState state) {
 			return false;
 		}
@@ -139,13 +165,13 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockMicrovictoria.block, (int) (1));
+		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+			drops.add(new ItemStack(Blocks.AIR, (int) (1)));
 		}
 
 		@Override
-		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-			drops.add(new ItemStack(Blocks.AIR, (int) (1)));
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			return new ItemStack(BlockNupharFlowerPlaceable.block, (int) (1));
 		}
 
 		@Override
@@ -168,31 +194,25 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 			//super.updateTick(world, pos, state, random);
-	    	
+				
 	        if (!world.isRemote)
 	        {
 	            if (!world.isAreaLoaded(pos, 3)) return;
 	            
 				if (!this.canBlockStay(world, pos, state))
 		        {
-		            world.destroyBlock(pos, false);
-					return;
-		        }
+					world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+					world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				}
 		        
 			}
 
-			//Move onto a full flower:
-		    if (Math.random() > 0.6 && Math.random() > 0.6 && world.isAirBlock(pos.up()) && world.canSeeSky(pos)) {
-		    	world.setBlockState(pos, BlockMicrovictoriaFlower.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					TileEntity _tileEntity = world.getTileEntity(pos);
-					IBlockState _bs = world.getBlockState(pos);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(pos, _bs, _bs, 3);
-					}
-		    }
-		    
+			//Decay the flower after a while:
+			if (Math.random() > 0.6 && Math.random() > 0.6) {
+				world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+				world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			
 		}
 
 		@Override
@@ -220,10 +240,10 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
-	    	if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockMicrovictoriaStem.block) {
+	    	if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNupharStem.block) {
 				return true;
 			}
-	    	if ((worldIn.getBlockState(pos.down(2)).getBlock() == BlockMicrovictoria.block))
+	    	if ((worldIn.getBlockState(pos.down(2)).getBlock() == BlockNuphar.block))
 	    	{
 	    		return true;
 	    	}
@@ -259,6 +279,38 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 	    	return false;
 	    }
 
+	    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	    {
+        if ((!player.capabilities.allowEdit) || (player.getHeldItemMainhand().getItem() != Item.getItemFromBlock(BlockNupharFlowerPlaceable.block)) || !LepidodendronConfig.doPropagation)
+	        {
+	            return true;
+	        }
+	        else {
+	        	ItemStack itemstack = player.getHeldItem(hand);
+	        	if (!player.isCreative()) {itemstack.shrink(1);}
+	        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+					if (Math.random() > 0.5) {
+						ItemStack stackSeed = new ItemStack(ItemNupharSeeds.block, (int) (1));
+						stackSeed.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
+						if (Math.random() > 0.75) {
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						}
+						return true;
+					}
+					else {
+						if (Math.random() > 0.8) {
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+							return true;
+						}
+					}	
+				}
+	        	return true;
+	        }
+	    }
+
 	}
 
 	public static class TileEntityCustom extends TileEntity {
@@ -287,6 +339,11 @@ public class BlockMicrovictoriaBud extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void handleUpdateTag(NBTTagCompound tag) {
 			this.readFromNBT(tag);
+		}
+
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 1, 1));
 		}
 
 	}

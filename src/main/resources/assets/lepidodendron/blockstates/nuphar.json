@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:nuphar"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:nuphar_inventory"
+    }
+  }
+}
