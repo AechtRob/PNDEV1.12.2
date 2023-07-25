@@ -67,6 +67,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_AMBORELLA = new CustomTrigger("pf_book_amborella");
     public static final CustomTrigger CLICK_ILICIUM = new CustomTrigger("pf_book_ilicium");
     public static final CustomTrigger CLICK_CALYCANTHUS = new CustomTrigger("pf_book_calycanthus");
+    public static final CustomTrigger CLICK_JERSEYANTHUS = new CustomTrigger("pf_book_jerseyanthus");
     public static final CustomTrigger CLICK_ARAUCARITES = new CustomTrigger("pf_book_araucarites");
     public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
     public static final CustomTrigger CLICK_ARCHAEANTHUS = new CustomTrigger("pf_book_archaeanthus");
@@ -1333,6 +1334,7 @@ public class ModTriggers
             CLICK_AMBORELLA,
             CLICK_ILICIUM,
             CLICK_CALYCANTHUS,
+            CLICK_JERSEYANTHUS,
             CLICK_ARAUCARITES,
             CLICK_ARBOREA,
             CLICK_ARCHAEANTHUS,
