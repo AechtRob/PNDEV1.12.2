@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:mosacaulis_1"},
+      {"model": "lepidodendron:mosacaulis_2"},
+      {"model": "lepidodendron:mosacaulis_3"}
+    ]
+  }
+}

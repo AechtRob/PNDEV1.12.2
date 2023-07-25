@@ -9,11 +9,9 @@ import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
@@ -44,7 +42,6 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.IShearable;
-import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -57,16 +54,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sea_grass")
+public class BlockMosacaulis extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:mosacaulis")
 	public static final Block block = null;
-	public BlockSeaGrass(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sea_grass);
+	public BlockMosacaulis(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.mosacaulis);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("sea_grass"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("mosacaulis"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -74,25 +71,27 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:sea_grass", "inventory"));
-			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockSeaGrass.LEVEL).ignore(BlockSeaGrass.SPREADABLE).build());
+				new ModelResourceLocation("lepidodendron:mosacaulis", "inventory"));
+			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMosacaulis.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:sea_grass", BlockSeaGrass.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockSeaGrass.block);
-		OreDictionary.registerOre("plant", BlockSeaGrass.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:mosacaulis", BlockMosacaulis.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockMosacaulis.block);
+		OreDictionary.registerOre("plant", BlockMosacaulis.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-	public static final PropertyBool SPREADABLE = PropertyBool.create("spreadable");
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		int weight = LepidodendronConfigPlants.weightSeagrass;
+		int weight = LepidodendronConfigPlants.weightMosacaulis;
+		if (dimID == LepidodendronConfig.dimCretaceous) {
+			weight = 100;
+		}
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -101,7 +100,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genSeagrassBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genMosacaulisBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -109,11 +108,9 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genSeagrassOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genMosacaulisOverrideBiomes))
 			biomeCriteria = true;
-
-
-
+		
 		if (dimID == LepidodendronConfig.dimPrecambrian
 				|| dimID == LepidodendronConfig.dimCambrian
 				|| dimID == LepidodendronConfig.dimOrdovician
@@ -123,6 +120,9 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene
 		) {
 			biomeCriteria = false;
 		}
@@ -131,6 +131,9 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
+		if (dimID == LepidodendronConfig.dimCretaceous) {
+			multiplier = 10;
+		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
@@ -169,7 +172,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 	    
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_sea_grass");
+			setTranslationKey("pf_mosacaulis");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.5F);
 			setResistance(0F);
@@ -177,7 +180,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(3);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setTickRandomly(true);
-			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(SPREADABLE, true));
+			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
 		}
 
 		@Override
@@ -191,37 +194,6 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 				if (!canPlaceBlockAt(world, pos))
 				{
 					world.destroyBlock(pos, false);
-				}
-				else {
-					Random rand = new Random();
-					if ((Boolean) state.getValue(SPREADABLE)) {
-						//System.err.println("Ticked a spreadable block");
-						int spreadradius = (int) LepidodendronConfigPlants.radiusSeagrass;
-						if (spreadradius < 0) {
-							spreadradius = 0;
-						}
-						if (spreadradius > 8) {
-							spreadradius = 8;
-						}
-						int xx = rand.nextInt((spreadradius * 2) + 1) - spreadradius;
-						int yy = rand.nextInt((spreadradius * 2) + 1) - spreadradius;
-						int zz = rand.nextInt((spreadradius * 2) + 1) - spreadradius;
-						//Try to spread:
-						BlockPos targetBlock = pos.add(xx, yy, zz);
-						double spread = (double) LepidodendronConfig.spreadPlants;
-						if (spread < 1) {
-							spread = 1;
-						}
-						if (spread > 100) {
-							spread = 100;
-						}
-						if (Math.random() > (1 - (spread / 100)) && (targetBlock != pos)
-								&& (world.getBlockState(targetBlock).getBlock() instanceof BlockFluidBase || world.getBlockState(targetBlock).getBlock() instanceof BlockLiquid)
-								&& world.getBlockState(targetBlock).getMaterial() == Material.WATER
-								&& (canPlaceBlockAt(world, targetBlock))) {
-							world.setBlockState(targetBlock, BlockSeaGrass.block.getDefaultState().withProperty(SPREADABLE, false), 3);
-						}
-					}
 				}
 			}
 		}
@@ -259,7 +231,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 				drops.add(new ItemStack(Blocks.AIR, (int) (1)));
 			}
 			else {
-				drops.add(new ItemStack(BlockSeaGrass.block, (int) (1)));
+				drops.add(new ItemStack(BlockMosacaulis.block, (int) (1)));
 			}
 		}
 
@@ -272,19 +244,13 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public IBlockState getStateFromMeta(int meta)
 	    {
-			return this.getDefaultState().withProperty(SPREADABLE, meta > 0);
+			return this.getDefaultState();
 	    }
 
 	    @Override
 	    public int getMetaFromState(IBlockState state)
 	    {
-			int i = 0;
-			if (((Boolean)state.getValue(SPREADABLE)).booleanValue())
-			{
-				i = 1;
-			}
-
-			return i;
+			return 0;
 	    }
 
 	    @Override
@@ -294,7 +260,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 
 		protected BlockStateContainer createBlockState()
 	    {
-	        return new BlockStateContainer(this, new IProperty[] {LEVEL, SPREADABLE});
+	        return new BlockStateContainer(this, new IProperty[] {LEVEL});
 	    }
 	    
 		@Override
@@ -375,16 +341,16 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine flowering plant");
-				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-				tooltip.add("Note: planted up to 10 blocks under water on sand. Spreads to adjacent blocks");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Type: Marine lycophyte water plant");
+				tooltip.add("Periods: Cretaceous");
+				tooltip.add("Note: planted up to 10 blocks under water on sand");
+				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
 		@Override
 		public Block planted() {
-			return BlockSeaGrass.block;
+			return BlockMosacaulis.block;
 		}
 
 		@Override
@@ -402,5 +368,6 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		public List<ItemStack> onSheared(@Nonnull ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
+
 	}
 }
