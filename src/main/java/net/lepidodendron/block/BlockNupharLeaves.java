@@ -9,11 +9,9 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -26,16 +24,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:nelumbo_bud")
+public class BlockNupharLeaves extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:nuphar_leaves")
 	public static final Block block = null;
-	public BlockNelumboBud(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.nelumbo_bud);
+	public BlockNupharLeaves(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.nuphar_leaves);
 	}
 
 	@Override
@@ -48,7 +44,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 	//@Override
 	//public void registerModels(ModelRegistryEvent event) {
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-	//			new ModelResourceLocation("lepidodendron:nelumbo_bud", "inventory"));
+	//			new ModelResourceLocation("lepidodendron:nuphar_leaves", "inventory"));
 	//}
 
 	public static class BlockCustom extends BlockLilyPad {
@@ -60,14 +56,14 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setCreativeTab(null);
 			setTickRandomly(true);
-			setTranslationKey("pf_nelumbo_bud");
-			setRegistryName("nelumbo_bud");
+			setTranslationKey("pf_nuphar_leaves");
+			setRegistryName("nuphar_leaves");
 			this.setDefaultState(this.blockState.getBaseState());
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -90,12 +86,8 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0D, 0.5D, 0D, 1D, 1.5D, 1D);
+			return new AxisAlignedBB(0D, -0.5D, 0D, 1D, 0.5D, 1D);
 		}
-
-		@Override
-		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
-	    {}
 
 		@Override
 		public boolean isOpaqueCube(IBlockState state) {
@@ -109,7 +101,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockNelumbo.block, (int) (1));
+			return new ItemStack(BlockNuphar.block, (int) (1));
 		}
 
 		@Override
@@ -145,23 +137,9 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 				if (!this.canBlockStay(world, pos, state))
 		        {
 		            world.destroyBlock(pos, false);
-					return;
 		        }
 		        
 			}
-
-			//Move onto a full flower:
-		    if (Math.random() > 0.6 && Math.random() > 0.6 && world.isAirBlock(pos.up()) && world.canSeeSky(pos)) {
-		    	world.setBlockState(pos, BlockNelumboFlower.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					TileEntity _tileEntity = world.getTileEntity(pos);
-					IBlockState _bs = world.getBlockState(pos);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(pos, _bs, _bs, 3);
-					}
-		    }
-		    
 		}
 
 		@Override
@@ -189,15 +167,13 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
-	    	if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNelumboStem.block) {
+	    	if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNupharStem.block) {
 				return true;
 			}
-	    	if ((worldIn.getBlockState(pos.down(2)).getBlock() == BlockNelumbo.block))
-	    	{
-	    		return true;
-	    	}
-	    	if (!worldIn.isAirBlock(pos) || !worldIn.isAirBlock(pos.up())
-	    		|| !worldIn.canSeeSky(pos))
+	    	if ((worldIn.getBlockState(pos.down(2).east()).getBlock() != BlockNuphar.block) 
+	    		&& (worldIn.getBlockState(pos.down(2).west()).getBlock() != BlockNuphar.block)
+	    		&& (worldIn.getBlockState(pos.down(2).north()).getBlock() != BlockNuphar.block)
+	    		&& (worldIn.getBlockState(pos.down(2).south()).getBlock() != BlockNuphar.block))
 	    	{
 	    		return false;
 	    	}
@@ -207,7 +183,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 	    }
 		
 		@Override
-	    public net.minecraftforge.common.EnumPlantType getPlantType(net.minecraft.world.IBlockAccess world, BlockPos pos)
+	    public net.minecraftforge.common.EnumPlantType getPlantType(IBlockAccess world, BlockPos pos)
 	    {
 	        return net.minecraftforge.common.EnumPlantType.Water;
 	    }

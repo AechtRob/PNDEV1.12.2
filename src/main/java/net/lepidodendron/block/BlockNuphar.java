@@ -42,16 +42,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:microvictoria")
+public class BlockNuphar extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:nuphar")
 	public static final Block block = null;
-	public BlockMicrovictoria(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.microvictoria);
+	public BlockNuphar(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.nuphar);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("microvictoria"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("nuphar"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -59,16 +59,16 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:microvictoria", "inventory"));
-			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMicrovictoria.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:nuphar", "inventory"));
+			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNuphar.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:microvictoria", BlockMicrovictoria.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockMicrovictoria.block);
-		OreDictionary.registerOre("plant", BlockMicrovictoria.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nuphar", BlockNuphar.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockNuphar.block);
+		OreDictionary.registerOre("plant", BlockNuphar.block);
 	}
 
 
@@ -77,7 +77,7 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_microvictoria");
+			setTranslationKey("pf_nuphar");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.5F);
 			setResistance(0F);
@@ -172,12 +172,12 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 		    		//Check the water column and place stems, and then leaves, accordingly:
 		    		if (isWaterBlock(world, pos.north().up(colWater + 1)))
 		    		{
-		    			world.setBlockState(pos.north().up(colWater), BlockMicrovictoriaStem.block.getDefaultState(), 3);
+		    			world.setBlockState(pos.north().up(colWater), BlockNupharStem.block.getDefaultState(), 3);
 		    		}
 		    		colWater = colWater + 1;
 		    	}
 		    	if (canLeavesPlaceAt(world, pos.north().up(colWater))) {
-		    		world.setBlockState(pos.north().up(colWater), BlockMicrovictoriaLeaves.block.getDefaultState(), 3);
+		    		world.setBlockState(pos.north().up(colWater), BlockNupharLeaves.block.getDefaultState(), 3);
 		    	}
 	    	}
 
@@ -187,12 +187,12 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 		    		//Check the water column and place stems, and then leaves, accordingly:
 		    		if (isWaterBlock(world, pos.south().up(colWater + 1)))
 		    		{
-		    			world.setBlockState(pos.south().up(colWater), BlockMicrovictoriaStem.block.getDefaultState(), 3);
+		    			world.setBlockState(pos.south().up(colWater), BlockNupharStem.block.getDefaultState(), 3);
 		    		}
 		    		colWater = colWater + 1;
 		    	}
 		    	if (canLeavesPlaceAt(world, pos.south().up(colWater))) {
-		    		world.setBlockState(pos.south().up(colWater), BlockMicrovictoriaLeaves.block.getDefaultState(), 3);
+		    		world.setBlockState(pos.south().up(colWater), BlockNupharLeaves.block.getDefaultState(), 3);
 		    	}
 	    	}
 
@@ -202,12 +202,12 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 		    		//Check the water column and place stems, and then leaves, accordingly:
 		    		if (isWaterBlock(world, pos.east().up(colWater + 1)))
 		    		{
-		    			world.setBlockState(pos.east().up(colWater), BlockMicrovictoriaStem.block.getDefaultState(), 3);
+		    			world.setBlockState(pos.east().up(colWater), BlockNupharStem.block.getDefaultState(), 3);
 		    		}
 		    		colWater = colWater + 1;
 		    	}
 		    	if (canLeavesPlaceAt(world, pos.east().up(colWater))) {
-		    		world.setBlockState(pos.east().up(colWater), BlockMicrovictoriaLeaves.block.getDefaultState(), 3);
+		    		world.setBlockState(pos.east().up(colWater), BlockNupharLeaves.block.getDefaultState(), 3);
 		    	}
 	    	}
 
@@ -217,12 +217,12 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 		    		//Check the water column and place stems, and then leaves, accordingly:
 		    		if (isWaterBlock(world, pos.west().up(colWater + 1)))
 		    		{
-		    			world.setBlockState(pos.west().up(colWater), BlockMicrovictoriaStem.block.getDefaultState(), 3);
+		    			world.setBlockState(pos.west().up(colWater), BlockNupharStem.block.getDefaultState(), 3);
 		    		}
 		    		colWater = colWater + 1;
 		    	}
 		    	if (canLeavesPlaceAt(world, pos.west().up(colWater))) {
-		    		world.setBlockState(pos.west().up(colWater), BlockMicrovictoriaLeaves.block.getDefaultState(), 3);
+		    		world.setBlockState(pos.west().up(colWater), BlockNupharLeaves.block.getDefaultState(), 3);
 		    	}
 	    	}
 
@@ -239,13 +239,13 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
-			if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockMicrovictoriaStem.block) {
+			if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNupharStem.block) {
 				return true;
 			}
-	    	if ((worldIn.getBlockState(pos.down(2).east()).getBlock() != BlockMicrovictoria.block)
-	    		&& (worldIn.getBlockState(pos.down(2).west()).getBlock() != BlockMicrovictoria.block)
-	    		&& (worldIn.getBlockState(pos.down(2).north()).getBlock() != BlockMicrovictoria.block)
-	    		&& (worldIn.getBlockState(pos.down(2).south()).getBlock() != BlockMicrovictoria.block))
+	    	if ((worldIn.getBlockState(pos.down(2).east()).getBlock() != BlockNuphar.block)
+	    		&& (worldIn.getBlockState(pos.down(2).west()).getBlock() != BlockNuphar.block)
+	    		&& (worldIn.getBlockState(pos.down(2).north()).getBlock() != BlockNuphar.block)
+	    		&& (worldIn.getBlockState(pos.down(2).south()).getBlock() != BlockNuphar.block))
 	    	{
 	    		return false;
 	    	}
@@ -265,10 +265,10 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
-			if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockMicrovictoriaStem.block) {
+			if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNupharStem.block) {
 				return true;
 			}
-	    	if (worldIn.getBlockState(pos.down(2)).getBlock() != BlockMicrovictoria.block)
+	    	if (worldIn.getBlockState(pos.down(2)).getBlock() != BlockNuphar.block)
 	    	{
 	    		return false;
 	    	}
@@ -290,18 +290,18 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    @Override
 	    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 			//Force ticks of any stems around it:
-			worldIn.scheduleUpdate(pos.north().up(), BlockMicrovictoriaStem.block, 1);
-			worldIn.scheduleUpdate(pos.south().up(), BlockMicrovictoriaStem.block, 1);
-			worldIn.scheduleUpdate(pos.east().up(), BlockMicrovictoriaStem.block, 1);
-			worldIn.scheduleUpdate(pos.west().up(), BlockMicrovictoriaStem.block, 1);
-			worldIn.scheduleUpdate(pos.up(), BlockMicrovictoriaStem.block, 1);
+			worldIn.scheduleUpdate(pos.north().up(), BlockNupharStem.block, 1);
+			worldIn.scheduleUpdate(pos.south().up(), BlockNupharStem.block, 1);
+			worldIn.scheduleUpdate(pos.east().up(), BlockNupharStem.block, 1);
+			worldIn.scheduleUpdate(pos.west().up(), BlockNupharStem.block, 1);
+			worldIn.scheduleUpdate(pos.up(), BlockNupharStem.block, 1);
 			
-			worldIn.scheduleUpdate(pos.north().up(2), BlockMicrovictoriaLeaves.block, 1);
-			worldIn.scheduleUpdate(pos.south().up(2), BlockMicrovictoriaLeaves.block, 1);
-			worldIn.scheduleUpdate(pos.east().up(2), BlockMicrovictoriaLeaves.block, 1);
-			worldIn.scheduleUpdate(pos.west().up(2), BlockMicrovictoriaLeaves.block, 1);
-			worldIn.scheduleUpdate(pos.up(2), BlockMicrovictoriaBud.block, 1);
-			worldIn.scheduleUpdate(pos.up(2), BlockMicrovictoriaFlower.block, 1);
+			worldIn.scheduleUpdate(pos.north().up(2), BlockNupharLeaves.block, 1);
+			worldIn.scheduleUpdate(pos.south().up(2), BlockNupharLeaves.block, 1);
+			worldIn.scheduleUpdate(pos.east().up(2), BlockNupharLeaves.block, 1);
+			worldIn.scheduleUpdate(pos.west().up(2), BlockNupharLeaves.block, 1);
+			worldIn.scheduleUpdate(pos.up(2), BlockNupharBud.block, 1);
+			worldIn.scheduleUpdate(pos.up(2), BlockNupharFlower.block, 1);
 
 			//Chance of a second drop:
 			if (Math.random() >= 0.7 && !LepidodendronConfig.doPropagation) {
@@ -328,9 +328,9 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    		if (worldIn.isAirBlock(pos.up(colWater + 1))
 	    			|| worldIn.getBlockState(pos.up(colWater + 1)).getMaterial() == Material.ICE
 					|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock().isReplaceable(worldIn, pos.up(colWater + 1))
-	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockMicrovictoriaBud.block
-	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockMicrovictoriaFlower.block
-	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockMicrovictoriaFlowerPlaceable.block)
+	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNupharBud.block
+	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNupharFlower.block
+	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNupharFlowerPlaceable.block)
 	    		{
 	    			isAir = true;
 	    		}
@@ -344,6 +344,9 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    @Override
 		public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 			//super.updateTick(world, pos, state, random);
+			if (world.isRemote) {
+				return;
+			}
 			if ((!this.canPlaceBlockAt(world, pos))
 				|| ((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
@@ -354,23 +357,23 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 			else {
 				this.onBlockAdded(world, pos, state);
 				//Do a flower?
-				if ((Math.random() > 0.6) && (Math.random() > 0.6) && (world.getBlockState(pos.up(2)).getBlock() != BlockMicrovictoriaFlower.block) 
-			    	&& (world.getBlockState(pos.up(2)).getBlock() != BlockMicrovictoriaBud.block)) {
+				if ((Math.random() > 0.6) && (Math.random() > 0.6) && (world.getBlockState(pos.up(2)).getBlock() != BlockNupharFlower.block) 
+			    	&& (world.getBlockState(pos.up(2)).getBlock() != BlockNupharBud.block)) {
 					int colWater = 1;
 			    	while (colWater < 6 && isWaterBlock(world, pos.up(colWater))) {
 			    		//Check the water column and place stems, and then bud/flower, accordingly:
 			    		if (isWaterBlock(world, pos.up(colWater + 1)))
 			    		{
-			    			world.setBlockState(pos.up(colWater), BlockMicrovictoriaStem.block.getDefaultState(), 3);
+			    			world.setBlockState(pos.up(colWater), BlockNupharStem.block.getDefaultState(), 3);
 			    		}
 			    		colWater = colWater + 1;
 			    	}
 			    	if (canFlowerPlaceAt(world, pos.up(colWater))) {
-			    		if ((world.getBlockState(pos.up(colWater)).getBlock() != BlockMicrovictoriaFlower.block) 
-			    			&& (world.getBlockState(pos.up(colWater)).getBlock() != BlockMicrovictoriaBud.block
-			    			&& world.getBlockState(pos.up(colWater)).getBlock() != BlockMicrovictoriaFlowerPlaceable.block))
+			    		if ((world.getBlockState(pos.up(colWater)).getBlock() != BlockNupharFlower.block) 
+			    			&& (world.getBlockState(pos.up(colWater)).getBlock() != BlockNupharBud.block
+			    			&& world.getBlockState(pos.up(colWater)).getBlock() != BlockNupharFlowerPlaceable.block))
 			    		{
-							world.setBlockState(pos.up(colWater), BlockMicrovictoriaBud.block.getDefaultState(), 3);
+							world.setBlockState(pos.up(colWater), BlockNupharBud.block.getDefaultState().withProperty(BlockNupharBud.VARIANT, random.nextInt(2) == 0), 3);
 			    		}
 			    	}
 				}
@@ -394,7 +397,7 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering water plant");
-	        tooltip.add("Periods: Cretaceous");
+	        tooltip.add("Periods: Cretaceous (?) - Paleogene - Neogene - Pleistocene [- present]");
 	        tooltip.add("Note: planted under water");
 	        tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);

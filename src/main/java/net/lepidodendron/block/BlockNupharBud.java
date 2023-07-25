@@ -5,14 +5,20 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -22,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -31,11 +38,11 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:nelumbo_bud")
+public class BlockNupharBud extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:nuphar_bud")
 	public static final Block block = null;
-	public BlockNelumboBud(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.nelumbo_bud);
+	public BlockNupharBud(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.nuphar_bud);
 	}
 
 	@Override
@@ -44,14 +51,14 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
-	//@SideOnly(Side.CLIENT)
-	//@Override
-	//public void registerModels(ModelRegistryEvent event) {
-	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-	//			new ModelResourceLocation("lepidodendron:nelumbo_bud", "inventory"));
-	//}
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(BlockNupharBud.TileEntityCustom.class, "lepidodendron:tileentitynuphar_bud");
+	}
 
-	public static class BlockCustom extends BlockLilyPad {
+	public static final PropertyBool VARIANT = PropertyBool.create("var");
+
+	public static class BlockCustom extends BlockLilyPad implements ITileEntityProvider {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -60,20 +67,60 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setCreativeTab(null);
 			setTickRandomly(true);
-			setTranslationKey("pf_nelumbo_bud");
-			setRegistryName("nelumbo_bud");
+			setTranslationKey("pf_nuphar_bud");
+			setRegistryName("nuphar_bud");
 			this.setDefaultState(this.blockState.getBaseState());
+		}
+
+		@Override
+		public IBlockState getStateFromMeta(int meta) {
+			return this.getDefaultState().withProperty(VARIANT, meta > 0);
+		}
+
+		@Override
+		public int getMetaFromState(IBlockState state) {
+			int i = 0;
+			if (state.getValue(VARIANT)) {
+				i = 1;
+			}
+			return i;
+		}
+
+		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{VARIANT});
+		}
+
+		@Override
+		public TileEntity createNewTileEntity(World worldIn, int meta) {
+			return new BlockNupharBud.TileEntityCustom();
+		}
+
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
+		}
+
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			//if (tileentity instanceof TileEntityNest)
+			//InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
+			world.removeTileEntity(pos);
+			super.breakBlock(world, pos, state);
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
 
 		@Override
-		@javax.annotation.Nullable
+		@Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 			return NULL_AABB;
 		}
@@ -109,7 +156,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockNelumbo.block, (int) (1));
+			return new ItemStack(BlockNuphar.block, (int) (1));
 		}
 
 		@Override
@@ -152,7 +199,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 
 			//Move onto a full flower:
 		    if (Math.random() > 0.6 && Math.random() > 0.6 && world.isAirBlock(pos.up()) && world.canSeeSky(pos)) {
-		    	world.setBlockState(pos, BlockNelumboFlower.block.getDefaultState(), 3);
+		    	world.setBlockState(pos, BlockNupharFlower.block.getDefaultState().withProperty(VARIANT, state.getValue(VARIANT)), 3);
 				if (!world.isRemote) {
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					IBlockState _bs = world.getBlockState(pos);
@@ -189,10 +236,10 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
-	    	if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNelumboStem.block) {
+	    	if (worldIn.getBlockState(pos.down(2)).getBlock() == BlockNupharStem.block) {
 				return true;
 			}
-	    	if ((worldIn.getBlockState(pos.down(2)).getBlock() == BlockNelumbo.block))
+	    	if ((worldIn.getBlockState(pos.down(2)).getBlock() == BlockNuphar.block))
 	    	{
 	    		return true;
 	    	}
@@ -207,7 +254,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 	    }
 		
 		@Override
-	    public net.minecraftforge.common.EnumPlantType getPlantType(net.minecraft.world.IBlockAccess world, BlockPos pos)
+	    public net.minecraftforge.common.EnumPlantType getPlantType(IBlockAccess world, BlockPos pos)
 	    {
 	        return net.minecraftforge.common.EnumPlantType.Water;
 	    }
@@ -229,4 +276,35 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 	    }
 
 	}
+
+	public static class TileEntityCustom extends TileEntity {
+
+		@Override
+		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
+		{
+			return (oldState.getBlock() != newSate.getBlock());
+		}
+
+		@Override
+		public SPacketUpdateTileEntity getUpdatePacket() {
+			return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
+		}
+
+		@Override
+		public NBTTagCompound getUpdateTag() {
+			return this.writeToNBT(new NBTTagCompound());
+		}
+
+		@Override
+		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+			this.readFromNBT(pkt.getNbtCompound());
+		}
+
+		@Override
+		public void handleUpdateTag(NBTTagCompound tag) {
+			this.readFromNBT(tag);
+		}
+
+	}
+
 }

@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/nuphar_c",
+"w":"lepidodendron:blocks/nuphar_c",
+"ee":"lepidodendron:blocks/nuphar_e",
+"ww":"lepidodendron:blocks/nuphar_w"
+}
+}

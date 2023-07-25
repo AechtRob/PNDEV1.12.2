@@ -290,6 +290,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NATHORSTIANA = new CustomTrigger("pf_book_nathorstiana");
     public static final CustomTrigger CLICK_NELUMBO = new CustomTrigger("pf_book_nelumbo");
     public static final CustomTrigger CLICK_MICROVICTORIA = new CustomTrigger("pf_book_microvictoria");
+    public static final CustomTrigger CLICK_NUPHAR = new CustomTrigger("pf_book_nuphar");
     public static final CustomTrigger CLICK_NEMATOPHYTA = new CustomTrigger("pf_book_nematophyta");
     public static final CustomTrigger CLICK_NEMEJCOPTERIS = new CustomTrigger("pf_book_nemejcopteris");
     public static final CustomTrigger CLICK_NEOCALAMITES = new CustomTrigger("pf_book_neocalamites");
@@ -1556,6 +1557,7 @@ public class ModTriggers
             CLICK_NATHORSTIANA,
             CLICK_NELUMBO,
             CLICK_MICROVICTORIA,
+            CLICK_NUPHAR,
             CLICK_NEMATOPHYTA,
             CLICK_NEMEJCOPTERIS,
             CLICK_NEOCALAMITES,
