@@ -57,22 +57,28 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean cystoids = (this.algae == BlockCystoidAristocystites.block || this.algae == BlockCystoidBolboporites.block || this.algae == BlockCystoidEchinosphaerites.block || this.algae == BlockCystoidPseudocrinites.block);
 		boolean ediacaran = (this.algae == BlockTawuia.block);
 		boolean seagrass = (this.algae == BlockSeaGrass.block);
+		boolean mosacaulis = (this.algae == BlockMosacaulis.block);
 		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
 		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
 		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
 		if (cystoids) {dimCheck = LepidodendronConfigPlants.dimCrinoid;}
 		if (ediacaran) {dimCheck = LepidodendronConfigPlants.dimEdiacaran;}
 		if (seagrass) {dimCheck = LepidodendronConfigPlants.dimSeagrass;}
+		if (mosacaulis) {dimCheck = LepidodendronConfigPlants.dimMosacaulis;}
 		if (shouldGenerateInDimension(dimID, dimCheck))
 		dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass))
-			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass))
-			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass))
-			|| (dimID == LepidodendronConfig.dimPrecambrian && (!rugosas) && (!cystoids) && (!anemones) && (!seagrass))
-			|| ((dimID == LepidodendronConfig.dimCarboniferous ) && (!cystoids) && (!ediacaran) && (!seagrass))
-			|| ((dimID == LepidodendronConfig.dimPermian ) && (!cystoids) && (!ediacaran) && (!seagrass))
-			|| ((dimID == LepidodendronConfig.dimTriassic ) && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass))
-			|| ((dimID == LepidodendronConfig.dimJurassic ) && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass))
+		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
+			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimPrecambrian && (!rugosas) && (!cystoids) && (!anemones) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimCarboniferous && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimPermian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimTriassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimJurassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimCretaceous && (!cystoids) && (!ediacaran) && (!rugosas))
+			|| (dimID == LepidodendronConfig.dimPaleogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimNeogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimPleistocene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis))
 			) {
 			dimensionCriteria = true;
 		}
@@ -244,7 +250,7 @@ public class AlgaeGenerator extends WorldGenerator
 								&& (this.algae != BlockFenestellaGiantRed.block) //this is preferred on the sides
 								&& (this.algae != BlockFenestellaGiantYellow.block) //this is preferred on the sides
 						) {
-							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block && this.algae != BlockSeaGrass.block) {
+							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block && this.algae != BlockSeaGrass.block && this.algae != BlockMosacaulis.block) {
 								worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							} else {
 								worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
@@ -284,6 +290,7 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockTawuia.block)
 											&& (this.algae != BlockUnderwaterDebris.block)
 											&& (this.algae != BlockSeaGrass.block)
+											&& (this.algae != BlockMosacaulis.block)
 							) {
 								for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
 									pos = new BlockPos(j, k, l);

@@ -689,6 +689,13 @@ public class LepidodendronConfigPlants {
     public static int radiusSeagrass = 6;
     public static int weightSeagrass = 50;
 
+    public static boolean genMosacaulis = false;
+    public static String[] genMosacaulisBlacklistBiomes = new String[0];
+    public static String[] genMosacaulisOverrideBiomes = new String[0];
+    public static int[] dimMosacaulis = new int[]{0};
+    public static double multiplierMosacaulis = 1;
+    public static int weightMosacaulis = 50;
+
     public static boolean genRhynia = false;
     public static String[] genRhyniaBlacklistBiomes = new String[0];
     public static String[] genRhyniaOverrideBiomes = new String[0];
@@ -4924,6 +4931,30 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Sea Seagrass", "weightSeagrass", weightSeagrass);
         prop.setComment("Percentage chance that Seagrass generates in a suitable chunk (0 to 100) [default: 50]");
         weightSeagrass = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Mosacaulis", "genMosacaulis", genMosacaulis);
+        prop.setComment("Set to true to generate Mosacaulis naturally [default: false]");
+        genMosacaulis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mosacaulis", "genMosacaulisBlacklistBiomes", genMosacaulisBlacklistBiomes);
+        prop.setComment("List of biomes Mosacaulis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genMosacaulisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mosacaulis", "genMosacaulisOverrideBiomes", genMosacaulisOverrideBiomes);
+        prop.setComment("List of biomes Mosacaulis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genMosacaulisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Mosacaulis", "dimMosacaulis", dimMosacaulis);
+        prop.setComment("List of dimension IDs Mosacaulis can generate in [default: 0]");
+        dimMosacaulis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mosacaulis", "multiplierMosacaulis", multiplierMosacaulis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierMosacaulis = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sea Mosacaulis", "weightMosacaulis", weightMosacaulis);
+        prop.setComment("Percentage chance that Mosacaulis generates in a suitable chunk (0 to 100) [default: 50]");
+        weightMosacaulis = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Psilophyton", "genPsilophyton", genPsilophyton);

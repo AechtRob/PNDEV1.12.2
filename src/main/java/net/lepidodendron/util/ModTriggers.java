@@ -106,6 +106,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BLACK_TREEFERN = new CustomTrigger("pf_book_black_treefern");
     public static final CustomTrigger CLICK_BOLBITIS = new CustomTrigger("pf_book_bolbitis");
     public static final CustomTrigger CLICK_SEAGRASS = new CustomTrigger("pf_book_sea_grass");
+    public static final CustomTrigger CLICK_MOSACAULIS = new CustomTrigger("pf_book_mosacaulis");
     public static final CustomTrigger CLICK_BOMAKELLIA = new CustomTrigger("pf_book_bomakellia");
     public static final CustomTrigger CLICK_BOTHRODENDRON = new CustomTrigger("pf_book_bothrodendron");
     public static final CustomTrigger CLICK_BRACHIOPOD_GIGANTOPRODUCTUS = new CustomTrigger("pf_book_brachiopod_gigantoproductus");
@@ -1371,6 +1372,7 @@ public class ModTriggers
             CLICK_BOLBITIS,
             CLICK_SEAGRASS,
             CLICK_BOMAKELLIA,
+            CLICK_MOSACAULIS,
             CLICK_BOTHRODENDRON,
             CLICK_BRACHIOPOD_GIGANTOPRODUCTUS,
             CLICK_BRACHIOPOD_ORTHID,
