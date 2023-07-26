@@ -1,0 +1,31 @@
+{
+	"name": "Piatnitzkysaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/piatnitzkysaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_piatnitzkysaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_piatnitzkysaurus",
+			"title": "Piatnitzkysaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Piatnitzkysauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/piatnitzkysaurus.png"],
+			"title": "P. floresi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_piatnitzkysaurus",
+			"type": "text",
+			"text": "Piatnitzkysaurus is a medium sized theropod that lived during the lower part of the jurassic period of what is now Argentina. It was first collected in 1977 from the Canadon Asfalto Formation.\nThe braincase Piatnitzkysaurus is one of the few detailed accounts of braincase morphology in basal theropods. Piatnitzkysaurus estimates for adults are around 4.3 meters long and around 450 kilograms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_piatnitzkysaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

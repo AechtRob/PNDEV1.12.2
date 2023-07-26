@@ -1,0 +1,31 @@
+{
+	"name": "Yuxisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yuxisaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_yuxisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yuxisaurus",
+			"title": "",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/yuxisaurus.png"],
+			"title": "Y. kopchicki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yuxisaurus",
+			"type": "text",
+			"text": "Yuxisaurus is a genus of basal thyreophoran dinosaur from the Jurassic. It comes from the Fengjiahe Formation of what is now the Yunnan Province of China. Yuxisaurus was named after the Yuxi Prefecture in the Yunnan Province. Yuxisaurus is estimated to have been about 4 meters in length. It is known from an incomplete skeleton including parts of the skull, vertebrae, parts of limbs, and at least 120 osteoderms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yuxisaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

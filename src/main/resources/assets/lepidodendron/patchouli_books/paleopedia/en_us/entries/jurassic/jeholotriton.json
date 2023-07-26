@@ -1,0 +1,31 @@
+{
+	"name": "Jeholotriton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/jeholotriton_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_jeholotriton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jeholotriton",
+			"title": "Jeholotriton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Amphibia $(br)>Urodela $(br)>Cryptobranchoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/jeholotriton.png"],
+			"title": "J. paradoxus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jeholotriton",
+			"type": "text",
+			"text": "Jeholotriton is a genus of primitive salamander thought to be from the Middle/Upper Jurassic Period.  It comes from the Daohugou Beds in the Inner Mongolia region of China. The Genus was named \"Jehol-\" after the Jehol Biota Lower Cretaceous ecosystem, however it was later discovered that the Daogugou Beds represents fossils from the Middle/Upper Jurassic."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jeholotriton",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}
