@@ -383,7 +383,7 @@ public class ModelGyrosteus extends AdvancedModelBase {
         if (!e.isInWater()) {
             //this.Body.rotateAngleZ = (float) Math.toRadians(90);
             //this.main.offsetY = -0.2F;
-            this.bob(main, -speed * 1.8F, 2.5F, false, f2, 1);
+            this.bob(main, -speed * 3.8F, 0.25F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
         }
