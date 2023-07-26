@@ -234,24 +234,6 @@ public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElem
 
 		@Override
 		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
-			if (face == EnumFacing.DOWN && state.getValue(FACING) == EnumFacing.UP) {
-				return true;
-			}
-			if (face == EnumFacing.UP && state.getValue(FACING) == EnumFacing.DOWN) {
-				return true;
-			}
-			if (face == EnumFacing.EAST && state.getValue(FACING) == EnumFacing.WEST) {
-				return true;
-			}
-			if (face == EnumFacing.WEST && state.getValue(FACING) == EnumFacing.EAST) {
-				return true;
-			}
-			if (face == EnumFacing.NORTH && state.getValue(FACING) == EnumFacing.SOUTH) {
-				return true;
-			}
-			if (face == EnumFacing.SOUTH && state.getValue(FACING) == EnumFacing.NORTH) {
-				return true;
-			}
 			return false;
 		}
 

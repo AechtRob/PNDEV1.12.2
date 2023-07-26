@@ -1,0 +1,31 @@
+{
+	"name": "Sclerodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sclerodus_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_sclerodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sclerodus",
+			"title": "Sclerodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Agnatha $(br)>Cephalaspidiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/sclerodus.png"],
+			"title": "S. pustuliferus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerodus",
+			"type": "text",
+			"text": "First described in 1839, Sclerodus was a genus of Cephalaspidomorph osteostracan jawless fish that lived during the Silurian. It is most recognizable for its extremely long and arching cornua, which closed almost against its own body. Not only were the long cornuas visually impressive, but the lateral field on its head was also remarkable due to the presence of holes running down its length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

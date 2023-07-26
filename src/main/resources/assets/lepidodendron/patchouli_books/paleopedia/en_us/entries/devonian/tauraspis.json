@@ -1,0 +1,31 @@
+{
+	"name": "Tauraspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_tauraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tauraspis",
+			"title": "Tauraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Osteostraci $(br)>Benneviaspidida $(br)>Boreaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/tauraspis.png"],
+			"title": "T. rara",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tauraspis",
+			"type": "text",
+			"text": "Tauraspis was a genus of osteostracan jawless fish that lived during the Early Devonian. The name \"Tauraspis\" means \"bull shield\", in reference to the strange, superficially horn-like bony protrusions on the front of its face. Its remains have been found in Severnaya Zemlya, Russia, and were first described in 1995. It seemingly lived in shallow waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tauraspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
