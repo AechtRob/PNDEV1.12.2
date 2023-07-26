@@ -1,29 +1,29 @@
 {
 	"name": "Calceolispongia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
-	"category": "lepidodendron:permian_static",
+	"icon": "paleopedia:textures/items/calceolispongia_icon.png",
+	"category": "lepidodendron:_static",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_calceolispongia",
 			"title": "Calceolispongia",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Echinodermata $(br)>Crinoidea $(br)>Cladida $(br)>Calceolispongiidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/calceolispongia.png"],
 			"title": "C. hindei",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_calceolispongia",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_calceolispongia",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
