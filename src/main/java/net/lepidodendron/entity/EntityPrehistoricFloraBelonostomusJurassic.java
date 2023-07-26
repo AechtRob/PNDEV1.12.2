@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 		minWidth = 0.1F;
 		maxWidth = 0.45F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

@@ -1,0 +1,31 @@
+{
+	"name": "Belonostomus sp.1",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/belonostomus_cretaceous_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
+			"title": "Belonostomus sp.1",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/belonostomus_cretaceous.png"],
+			"title": "Belonostomus sp.1",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
+			"type": "text",
+			"text": "Belonostomus is a genus of Aspidorhynchid fish that existed worldwide between the Late Jurassic and the Paleocene.\nUsually not longer than 50 cm long, the animal was a very widespread predator characterized by its long body and rostrum, not too dissimilar from their close cousin Aspidorhynchus.\nThe genus was named by Agassiz in 1834 to accommodate the species B. tenuirostris, previously assigned to the genus Aspidorhynchus.\nBelonostomus 'sp.1' is a cretaceous species of Belonostomus from the sediments of Lebanon, particularly recognizable by the ridiculously long rostrum that would extend sometimes to be as long as the whole rest of the body; although the remains of this species were described, no official binomial naming was assigned to it, thus the lack of species name."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -386,13 +386,6 @@ public class ModelGreererpeton extends AdvancedModelBaseExtended {
             this.setRotateAngle(FootL, -(float)Math.toRadians(2.7647), -(float)Math.toRadians(-25.0981), -(float)Math.toRadians(-5.4974));
             this.setRotateAngle(FootR, -(float)Math.toRadians(2.7647), (float)Math.toRadians(-25.0981), -(float)Math.toRadians(-5.4974));
 
-
-
-
-
-
-
-
             if (f3 == 0.0F || !greer.getIsMoving()) {
                 return;
             }
@@ -403,12 +396,12 @@ public class ModelGreererpeton extends AdvancedModelBaseExtended {
             this.chainSwingExtended(LeftLeg, speed, 0.2F,0F,3.0F, f2, 0.7F);
             this.chainSwingExtended(RightLeg, speed , -0.2F,0F,0, f2, 0.7F);
 
-            this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(Tail, speed * 1.2F, 0.3F, -3, f2, 0.8F);
-            this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
+            this.chainWave(Tail, speed * 2, 0.05F, -3, f2, 1);
+            this.chainSwing(Tail, speed * 1.2F * 2, 0.3F, -3, f2, 0.8F);
+            this.chainSwing(Torso, speed * 2, 0.1F, -3, f2, 1);
         }
         else {
-            speed = speed *0.5F;
+            speed = speed * 0.5F;
             if (greer.getIsFast()) {
                 speed = speed * 1.33F;
             }

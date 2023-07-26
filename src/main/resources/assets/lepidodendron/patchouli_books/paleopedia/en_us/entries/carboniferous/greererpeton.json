@@ -1,0 +1,31 @@
+{
+	"name": "Greererpeton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/greererpeton_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_greererpeton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_greererpeton",
+			"title": "Greererpeton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Chordata $(br)>Colosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/greererpeton.png"],
+			"title": "G. burkemorani",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_greererpeton",
+			"type": "text",
+			"text": "Greererpeton is a colosteid stegocephalian known from the Carboniferous Visean of Greer, West Virginia. Reaching about 1.4m, it is a primitive tetrapod, having a relatively long and slender body. Considering its size being close to modern giant salamanders, it probably had similar ecology."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_greererpeton",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}
