@@ -62,6 +62,7 @@ public class RenderDisplays {
     public static final ModelCowielepis modelCowielepis = new ModelCowielepis();
     public static final ModelCryolophosaurus modelCryolophosaurus = new ModelCryolophosaurus();
     public static final ModelCervifurca modelCervifurca = new ModelCervifurca();
+    public static final ModelClarkeiteuthis modelClarkeiteuthis = new ModelClarkeiteuthis();
     public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
     public static final ModelDapedium modelDapedium = new ModelDapedium();
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
@@ -111,6 +112,7 @@ public class RenderDisplays {
     public static final ModelGephyrostegus modelGephyrostegus = new ModelGephyrostegus();
     public static final ModelGreererpeton modelGreererpeton = new ModelGreererpeton();
     public static final ModelGasosaurus modelGasosaurus = new ModelGasosaurus();
+    public static final ModelGeosaurus modelGeosaurus = new ModelGeosaurus();
     public static final ModelHaikouichthys modelHaikouichthys = new ModelHaikouichthys();
     public static final ModelHarpacanthus modelHarpacanthus = new ModelHarpacanthus();
     public static final ModelHelicoprion modelHelicoprion = new ModelHelicoprion();
@@ -121,6 +123,7 @@ public class RenderDisplays {
     public static final ModelHomoeosaurus modelHomoeosaurus = new ModelHomoeosaurus();
     public static final ModelHelenodora modelHelenodora = new ModelHelenodora();
     public static final ModelHuayangosaurus modelHuayangosaurus = new ModelHuayangosaurus();
+    public static final ModelHadronector modelHadronector = new ModelHadronector();
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
     public static final ModelIvoites modelIvoites = new ModelIvoites();
     public static final ModelIowacystis modelIowacystis = new ModelIowacystis();
@@ -191,6 +194,7 @@ public class RenderDisplays {
     public static final ModelPurlovia modelPurlovia = new ModelPurlovia();
     public static final ModelPygopterus modelPygopterus = new ModelPygopterus();
     public static final ModelPricyclopyge modelPricyclopyge = new ModelPricyclopyge();
+    public static final ModelPapilionichthys modelPapilionichthys = new ModelPapilionichthys();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
@@ -203,6 +207,7 @@ public class RenderDisplays {
     public static final ModelRhenocystis modelRhenocystis = new ModelRhenocystis();
     public static final ModelRutgersella modelRutgersella = new ModelRutgersella();
     public static final ModelRhinopteraspis modelRhinopteraspis = new ModelRhinopteraspis();
+    public static final ModelRainerichthys modelRainerichthys = new ModelRainerichthys();
     public static final ModelSaivodus modelSaivodus = new ModelSaivodus();
     public static final ModelSaltriovenator modelSaltriovenator = new ModelSaltriovenator();
     public static final ModelSanctacaris modelSanctacaris = new ModelSanctacaris();

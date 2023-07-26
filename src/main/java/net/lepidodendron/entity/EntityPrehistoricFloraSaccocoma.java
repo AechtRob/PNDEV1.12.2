@@ -88,11 +88,12 @@ public class EntityPrehistoricFloraSaccocoma extends EntityPrehistoricFloraAgeab
 
 	@Override
 	public int getAttackLength() {
-		return 100;
+		return 10;
 	}
+
 	@Override
 	public int getRoarLength() {
-		return 100;
+		return 0;
 	}
 
 	@Override
