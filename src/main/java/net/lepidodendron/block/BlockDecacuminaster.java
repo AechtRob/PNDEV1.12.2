@@ -30,6 +30,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -50,6 +51,7 @@ public class BlockDecacuminaster extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockDecacuminaster.TileEntityCustom.class, "lepidodendron:tileentitydecacuminaster_item");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_decacuminaster", BlockDecacuminaster.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -1,0 +1,31 @@
+{
+	"name": "Saccocoma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/saccocoma_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_saccocoma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_saccocoma",
+			"title": "Saccocoma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Echinodermata $(br)>Crinozoa $(br)>Crinoidea $(br)>Roveacrinida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/saccocoma.png"],
+			"title": "S. alpina",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saccocoma",
+			"type": "text",
+			"text": "Saccocoma is one of the most common echinoderms known from Solnhofen. It was a free-swimming member of the crinoid family, reconstructed by us as similar in some way to modern feather stars. It probably lived in the marine water column and fed on plankton."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saccocoma",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

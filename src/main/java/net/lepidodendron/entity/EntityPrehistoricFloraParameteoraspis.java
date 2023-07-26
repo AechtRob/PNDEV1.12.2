@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraParameteoraspis.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(maxWidth, maxHeight);
+		setSize(0.8F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.3F;
@@ -309,10 +309,10 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		return 0.03;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
@@ -327,10 +327,10 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.09;
+		return 0.00;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.09;
+		return 0.00;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;

@@ -258,11 +258,12 @@ public class ModelPhlebolepis extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
         this.root.offsetZ = -1.1F;
-        this.root.offsetY = -0.25F;
-        this.root.offsetX = -0.01F;
+        this.root.offsetY = -0.22F;
+        this.root.offsetX = -0.05F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Headmiddle, 0.2F, 0.0F, 0.0F);
         this.setRotateAngle(Bodyfront, 0.0F, 0.15F, 0.0F);

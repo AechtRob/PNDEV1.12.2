@@ -181,7 +181,7 @@ public class ModelAthenaegis extends AdvancedModelBase {
     }
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetY = -0.13F;
+        this.main.offsetY = -0.20F;
         this.main.offsetX = -0.06F;
         this.main.render(0.01F);
         resetToDefaultPose();

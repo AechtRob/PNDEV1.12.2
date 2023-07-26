@@ -61,9 +61,9 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private static final DataParameter<Integer> FLYCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WANDERCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.BOOLEAN);
 
-    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private int inPFLove;
     private boolean laying;
 
