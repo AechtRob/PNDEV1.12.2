@@ -304,41 +304,11 @@ public class ModelParameteoraspis extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body4, 0.0F, -0.1309F, 0.0F);
-        this.setRotateAngle(body5, 0.0436F, -0.0873F, 0.0F);
-        this.setRotateAngle(body6, 0.0873F, 0.1745F, 0.0F);
-        this.setRotateAngle(body7, 0.2618F, 0.2618F, 0.0F);
-        this.setRotateAngle(cube_r1, 0.5672F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r10, 0.0873F, 0.0F, 0.5672F);
-        this.setRotateAngle(cube_r12, 0.0F, 0.0349F, 0.0F);
-        this.setRotateAngle(cube_r13, 0.0F, -0.0873F, 0.0F);
-        this.setRotateAngle(cube_r14, 0.0F, -0.1745F, 0.0F);
-        this.setRotateAngle(cube_r15, 0.0F, -0.3491F, 0.0F);
-        this.setRotateAngle(cube_r16, 0.0F, -1.1519F, 0.0F);
-        this.setRotateAngle(cube_r17, 0.0F, -1.0297F, 0.0F);
-        this.setRotateAngle(cube_r18, 0.0F, -0.8727F, 0.0F);
-        this.setRotateAngle(cube_r19, 0.0873F, 0.0F, -0.5672F);
-        this.setRotateAngle(cube_r2, 0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r20, 0.0F, -0.6283F, 0.0F);
-        this.setRotateAngle(cube_r21, 0.1222F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r22, 0.1222F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r23, -0.1222F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r24, -0.1222F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r25, 0.3927F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r26, 0.0F, 0.3054F, 0.0F);
-        this.setRotateAngle(cube_r27, 0.0F, -0.3054F, 0.0F);
-        this.setRotateAngle(cube_r3, 0.0F, -0.0349F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.0F, 0.0873F, 0.0F);
-        this.setRotateAngle(cube_r5, 0.0F, 0.1745F, 0.0F);
-        this.setRotateAngle(cube_r6, 0.0F, 0.3491F, 0.0F);
-        this.setRotateAngle(cube_r7, 0.0F, 1.1519F, 0.0F);
-        this.setRotateAngle(cube_r8, 0.0F, 1.0297F, 0.0F);
-        this.setRotateAngle(cube_r9, 0.0F, 0.8727F, 0.0F);
-        this.setRotateAngle(eyes_r1, 0.1309F, 0.0F, 0.0F);
-        this.setRotateAngle(FinLeft, -0.0873F, 0.1745F, 0.0F);
-        this.setRotateAngle(FinRight, -0.0873F, -0.1745F, 0.0F);
-        this.setRotateAngle(tailfin3, -0.1309F, 0.0F, 0.0F);
-        this.Parameteoraspis.offsetY = -0.02F;
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.03F, 0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(body7, 0.1F, -0.1F, 0.0F);
+        this.Parameteoraspis.offsetY = -0.05F;
         this.Parameteoraspis.render(0.01F);
         resetToDefaultPose();
     }
