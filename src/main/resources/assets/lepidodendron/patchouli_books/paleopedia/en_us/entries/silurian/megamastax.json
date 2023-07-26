@@ -1,0 +1,31 @@
+{
+	"name": "Megamastax",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megamastax_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_megamastax",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megamastax",
+			"title": "Megamastax",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Sarcopterygii"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/megamastax.png"],
+			"title": "M. amblyodus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megamastax",
+			"type": "text",
+			"text": "Megamastax amblyodus (which translates to \"blunt-toothed big mouth\") was a species of lobe-finned fish that lived during the Late Silurian (around 423 million years ago). Its remains (which are rather fragmentary, consisting only of a semi-complete lower jaw) have been found in the Kuanti Formation in China. It is currently the largest known vertebrate of its time period, estimated at a whopping 1 metre long."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megamastax",
+			"type": "text",
+			"text": "Rounded coronoid teeth suggest that this early vertebrate apex predator fed mainly on hard-shelled prey which, between the various molluscs, trilobites, brachiopods, jawless fish and early placoderms, existed in abundance.$(br)$(br)$(br)$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

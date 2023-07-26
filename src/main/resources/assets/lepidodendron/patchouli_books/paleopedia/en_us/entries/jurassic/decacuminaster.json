@@ -1,0 +1,31 @@
+{
+	"name": "Decacuminaster",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/decacuminaster_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_decacuminaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_decacuminaster",
+			"title": "Decacuminaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Echinodermata $(br)>Asteroidea $(br)>Velatida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/decacuminaster.png"],
+			"title": "D. solaris",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_decacuminaster",
+			"type": "text",
+			"text": "Decacuminaster was a relatively large (20 cm diameter) starfish with many arms, found in the late Middle Jurassic La Voulte formation in modern SW France. It seems to have lived in deep water, although the location was not terribly far from the coast at the time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_decacuminaster",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

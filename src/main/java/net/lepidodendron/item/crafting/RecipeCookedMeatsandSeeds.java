@@ -825,6 +825,7 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemKootenayscolexRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemUrsactisRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemSokkaejaecystisRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemSaccocomaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);
 
 
 

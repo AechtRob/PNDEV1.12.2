@@ -297,18 +297,20 @@ public class ModelParameteoraspis extends AdvancedModelBase {
         this.Parameteoraspis.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Parameteoraspis.offsetY = -0.195F;
+        this.Parameteoraspis.offsetY = -0.05F;
         this.Parameteoraspis.offsetZ = 0.007F;
         this.Parameteoraspis.rotateAngleX = (float) Math.toRadians(90);
         this.Parameteoraspis.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(body5, 0.03F, 0.1F, 0.0F);
         this.setRotateAngle(body6, 0.05F, -0.05F, 0.0F);
         this.setRotateAngle(body7, 0.1F, -0.1F, 0.0F);
         this.Parameteoraspis.offsetY = -0.05F;
+        this.Parameteoraspis.offsetZ = -0.2F;
         this.Parameteoraspis.render(0.01F);
         resetToDefaultPose();
     }

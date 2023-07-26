@@ -50,7 +50,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.BOOLEAN);
-    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
 
     private int inPFLove;
 

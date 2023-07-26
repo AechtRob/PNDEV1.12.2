@@ -1016,10 +1016,10 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
         this.main.render(f5);
     }
 
-    public void renderStaticPlinth(float f) {
-
-        resetToDefaultPose();
+    public void renderStaticDisplayCase(float f) {
+        renderStaticFloor(f);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(antennaL, 0.0F, -0.6109F, 0.0F);
         this.setRotateAngle(antennaR, 0.0F, 0.6109F, 0.0F);
@@ -1161,6 +1161,7 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
         this.setRotateAngle(legR8, 0.0F, 0.0F, -0.2618F);
         this.setRotateAngle(legR9, 0.0F, 0.0F, -0.2618F);
         this.setRotateAngle(telson, 0.0F, -0.1745F, 0.0F);
+        this.main.offsetZ = -0.15F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }

@@ -1,0 +1,31 @@
+{
+	"name": "Squaloraja",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/squaloraja_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_squaloraja",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_squaloraja",
+			"title": "Squaloraja",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Chondrichthyes $(br)>Chimaeriformes $(br)>Squalorajidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/squaloraja.png"],
+			"title": "S. polyspondyla",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squaloraja",
+			"type": "text",
+			"text": "Squaloraja was a cartilaginous fish (specifically a Chimaeriform) that lived during the Early Jurassic (around 200 - 195 million years ago). The head of this flattened, ray-like fish sometimes bore a long, horn-like process. This \"horn\" is thought to have been an example of sexual dimorphism, with the structure only occurring in males. First discovered by Mary Anning in 1829, Squaloraja's remains have been found at Lyme Regis in southern England, as well as in Osteno in Italy."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squaloraja",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

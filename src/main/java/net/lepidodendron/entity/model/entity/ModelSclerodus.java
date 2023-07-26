@@ -324,9 +324,9 @@ public class ModelSclerodus extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.Sclerodus.rotateAngleY = (float) Math.toRadians(90);
-        this.Sclerodus.offsetY = -0.13F;
-        this.Sclerodus.offsetX = -0.06F;
+        this.Sclerodus.rotateAngleX = (float) Math.toRadians(90);
+        this.Sclerodus.offsetY = -0.18F;
+        this.Sclerodus.offsetZ = -0.00F;
         this.Sclerodus.render(0.01F);
         resetToDefaultPose();
     }
