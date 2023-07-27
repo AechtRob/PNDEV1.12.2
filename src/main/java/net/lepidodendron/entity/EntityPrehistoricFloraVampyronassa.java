@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderVampyronassa;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsVampyronassa;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.item.EntityItem;
@@ -94,6 +95,12 @@ public class EntityPrehistoricFloraVampyronassa extends EntityPrehistoricFloraNa
 		tasks.addTask(2, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
 	}
 
 	@Override
