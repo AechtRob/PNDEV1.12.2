@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.entity.RenderPapilionichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -69,8 +68,8 @@ public class EntityPrehistoricFloraPapilionichthys extends EntityPrehistoricFlor
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.4f;
-	}
+		return 0.375f;
+	} //was 0.4F
 
 	@Override
 	protected boolean isSlowAtBottom() {

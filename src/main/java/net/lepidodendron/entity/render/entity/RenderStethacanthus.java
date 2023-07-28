@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderStethacanthus extends RenderLiving<EntityPrehistoricFloraStethacanthus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stethacanthus.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stethacanthus_female.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stethacanthus_female.png");
 
     public static float getScaler() {
         return 0.7F;
@@ -21,7 +21,7 @@ public class RenderStethacanthus extends RenderLiving<EntityPrehistoricFloraStet
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraStethacanthus entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraStethacanthus.Type.FEMALE) {
             return RenderStethacanthus.TEXTURE_F;
         }
         return RenderStethacanthus.TEXTURE;
@@ -33,9 +33,9 @@ public class RenderStethacanthus extends RenderLiving<EntityPrehistoricFloraStet
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraStethacanthus entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.6F;
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (entity.getPNType() == EntityPrehistoricFloraStethacanthus.Type.FEMALE) {
+            scale = this.getScaler() * 0.6F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

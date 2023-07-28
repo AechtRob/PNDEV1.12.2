@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCtenurella extends RenderLiving<EntityPrehistoricFloraCtenurella> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenurella.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenurella_female.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenurella_female.png");
 
     public static float getScaler() {
         return 0.7F * 0.33F;
@@ -21,7 +21,7 @@ public class RenderCtenurella extends RenderLiving<EntityPrehistoricFloraCtenure
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCtenurella entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraCtenurella.Type.FEMALE) {
             return RenderCtenurella.TEXTURE_F;
         }
         return RenderCtenurella.TEXTURE;
@@ -33,9 +33,9 @@ public class RenderCtenurella extends RenderLiving<EntityPrehistoricFloraCtenure
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCtenurella entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.75F;
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (entity.getPNType() == EntityPrehistoricFloraCtenurella.Type.FEMALE) {
+            scale = this.getScaler() * 0.75F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

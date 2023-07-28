@@ -15,12 +15,19 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -35,6 +42,8 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
+	private static final DataParameter<Integer> CTENURELLA_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraCtenurella.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraCtenurella(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
@@ -42,6 +51,134 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(CTENURELLA_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraCtenurella.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraCtenurella.Type typeThat = ((EntityPrehistoricFloraCtenurella) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraCtenurella.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraCtenurella.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraCtenurella.Type.byId(rand.nextInt(EntityPrehistoricFloraCtenurella.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraCtenurella.Type type)
+	{
+		this.dataManager.set(CTENURELLA_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraCtenurella.Type getPNType()
+	{
+		return EntityPrehistoricFloraCtenurella.Type.byId(((Integer)this.dataManager.get(CTENURELLA_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraCtenurella.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.CTENURELLA_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.CTENURELLA_LOOT_F;
+		}
 	}
 
 	@Override
@@ -179,11 +316,6 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 		super.onEntityUpdate();
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CTENURELLA_LOOT;
-	}
-
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
@@ -233,13 +365,18 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderCtenurella.TEXTURE_F;
+		}
 		return RenderCtenurella.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelCtenurella;}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderCtenurella.getScaler() * 0.75F;
+		}
 		return RenderCtenurella.getScaler();
 	}
-
 }
 

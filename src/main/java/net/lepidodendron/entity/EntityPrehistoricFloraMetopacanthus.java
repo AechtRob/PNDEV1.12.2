@@ -14,12 +14,14 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.MoverType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -28,6 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -45,6 +48,8 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 	int bottomCooldown;
 	boolean bottomFlag;
 
+	private static final DataParameter<Integer> METOPACANTHUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMetopacanthus.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraMetopacanthus(World world) {
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraMetopacanthus.SwimmingMoveHelperBase();
@@ -58,6 +63,135 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(METOPACANTHUS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraMetopacanthus.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraMetopacanthus.Type typeThat = ((EntityPrehistoricFloraMetopacanthus) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraMetopacanthus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraMetopacanthus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraMetopacanthus.Type.byId(rand.nextInt(EntityPrehistoricFloraMetopacanthus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraMetopacanthus.Type type)
+	{
+		this.dataManager.set(METOPACANTHUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraMetopacanthus.Type getPNType()
+	{
+		return EntityPrehistoricFloraMetopacanthus.Type.byId(((Integer)this.dataManager.get(METOPACANTHUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraMetopacanthus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.METOPACANTHUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.METOPACANTHUS_LOOT_F;
+		}
+	}
+
 
 	@Override
 	public void onUpdate() {
@@ -225,11 +359,6 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		super.onEntityUpdate();
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.METOPACANTHUS_LOOT;
-	}
-
 	@Override
 	public void travel(float strafe, float vertical, float forward) {
 		float f4;
@@ -349,6 +478,9 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderMetopacanthus.TEXTURE_F;
+		}
 		return RenderMetopacanthus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -356,6 +488,10 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		return RenderDisplays.modelMetopacanthus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderMetopacanthus.getScaler() * 0.75F;
+		}
 		return RenderMetopacanthus.getScaler();
 	}
+
 }

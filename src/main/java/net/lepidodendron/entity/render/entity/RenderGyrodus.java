@@ -30,8 +30,8 @@ public class RenderGyrodus extends RenderLiving<EntityPrehistoricFloraGyrodus> {
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraGyrodus entity, float f) {
         float scale = this.getScaler()*entity.getAgeScale();
-        if (scale < 0.1f) {
-            scale = 0.1f;
+        if (scale < 0.3f) {
+            scale = 0.3f;
         }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;

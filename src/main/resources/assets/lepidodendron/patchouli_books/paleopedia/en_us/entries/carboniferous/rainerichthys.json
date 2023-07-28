@@ -1,0 +1,31 @@
+{
+	"name": "Rainerichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rainerichthys_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_rainerichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rainerichthys",
+			"title": "Rainerichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Chondrichthyes $(br)>Iniopterygia $(br)>Iniopterygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rainerichthys.png"],
+			"title": "R. zangerli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rainerichthys",
+			"type": "text",
+			"text": "Rainerichthys, is a Carboniferous Iniopterygian fish that had a specialized bottom jaw whorl. Like its other iniopterygian cousins, it looked superficially like flying fish, though it would not have \"flown\" out of the water. This entire group is limited to the carboniferous."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rainerichthys",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

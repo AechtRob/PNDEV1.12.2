@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemEchinochimaeraFemaleRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:echinochimaera_f_raw")
@@ -35,7 +37,7 @@ public class ItemEchinochimaeraFemaleRaw extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_echinochimaera_f", ItemEchinochimaeraFemaleRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_echinochimaera@female", ItemEchinochimaeraFemaleRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEchinochimaeraFemaleRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
@@ -45,6 +47,11 @@ public class ItemEchinochimaeraFemaleRaw extends ElementsLepidodendronMod.ModEle
 			setRegistryName("echinochimaera_f_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "female";
 		}
 
 	}

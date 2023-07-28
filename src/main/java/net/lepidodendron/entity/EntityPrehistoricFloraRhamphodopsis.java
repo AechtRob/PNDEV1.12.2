@@ -15,12 +15,19 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -35,6 +42,8 @@ public class EntityPrehistoricFloraRhamphodopsis extends EntityPrehistoricFloraA
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
+	private static final DataParameter<Integer> RHAMPHODOPSIS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraRhamphodopsis.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraRhamphodopsis(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
@@ -42,6 +51,115 @@ public class EntityPrehistoricFloraRhamphodopsis extends EntityPrehistoricFloraA
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(RHAMPHODOPSIS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraRhamphodopsis.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraRhamphodopsis.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraRhamphodopsis.Type.byId(rand.nextInt(EntityPrehistoricFloraRhamphodopsis.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraRhamphodopsis.Type type)
+	{
+		this.dataManager.set(RHAMPHODOPSIS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraRhamphodopsis.Type getPNType()
+	{
+		return EntityPrehistoricFloraRhamphodopsis.Type.byId(((Integer)this.dataManager.get(RHAMPHODOPSIS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraRhamphodopsis.Type.getTypeFromString(compound.getString("PNType")));
+		}
 	}
 
 	@Override

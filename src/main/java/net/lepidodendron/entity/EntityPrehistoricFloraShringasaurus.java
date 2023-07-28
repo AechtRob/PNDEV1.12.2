@@ -15,10 +15,16 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -28,6 +34,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -44,6 +51,8 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	private int inPFLove;
 	private int PFdrinking;
 
+	private static final DataParameter<Integer> SHRINGASAURUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraShringasaurus.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraShringasaurus(World world) {
 		super(world);
 		setSize(0.82F, 1.05F);
@@ -53,6 +62,144 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(SHRINGASAURUS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraShringasaurus.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraShringasaurus.Type typeThat = ((EntityPrehistoricFloraShringasaurus) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraShringasaurus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraShringasaurus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraShringasaurus.Type.byId(rand.nextInt(EntityPrehistoricFloraShringasaurus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraShringasaurus.Type type)
+	{
+		this.dataManager.set(SHRINGASAURUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraShringasaurus.Type getPNType()
+	{
+		return EntityPrehistoricFloraShringasaurus.Type.byId(((Integer)this.dataManager.get(SHRINGASAURUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraShringasaurus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.SHRINGASAURUS_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.SHRINGASAURUS_LOOT_F_YOUNG;
+			}
+		}
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.SHRINGASAURUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.SHRINGASAURUS_LOOT_F;
 		}
 	}
 
@@ -299,13 +446,6 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.SHRINGASAURUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.SHRINGASAURUS_LOOT;
-	}
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
@@ -349,6 +489,9 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderShringasaurus.TEXTURE_F;
+		}
 		return RenderShringasaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -356,6 +499,9 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		return RenderDisplays.modelShringasaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderShringasaurus.getScaler() * 0.85F;
+		}
 		return RenderShringasaurus.getScaler();
 	}
 

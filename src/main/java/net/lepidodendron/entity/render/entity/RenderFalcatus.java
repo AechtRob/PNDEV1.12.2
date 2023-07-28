@@ -18,7 +18,7 @@ public class RenderFalcatus extends RenderLiving<EntityPrehistoricFloraFalcatus>
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraFalcatus entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraFalcatus.Type.FEMALE) {
             return RenderFalcatus.TEXTURE_F;
         }
         return RenderFalcatus.TEXTURE;
@@ -35,7 +35,7 @@ public class RenderFalcatus extends RenderLiving<EntityPrehistoricFloraFalcatus>
 
     protected void preRenderCallback(EntityPrehistoricFloraFalcatus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraFalcatus.Type.FEMALE) {
             scale = scale * 0.8F;
         }
         GlStateManager.scale(scale, scale, scale);

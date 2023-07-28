@@ -85,8 +85,8 @@ public class EntityPrehistoricFloraGyrodus extends EntityPrehistoricFloraAgeable
 
 	@Override
 	public int getAdultAge() {
-		return 0;
-	} //Only adults!
+		return 32000;
+	}
 
 	@Override
 	protected float getAISpeedFish() {
@@ -197,10 +197,10 @@ public class EntityPrehistoricFloraGyrodus extends EntityPrehistoricFloraAgeable
 		return false;
 	}
 
-	@Override
-	public float getAgeScale() {
-		return 1;
-	}
+//	@Override
+//	public float getAgeScale() {
+//		return 1;
+//	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);

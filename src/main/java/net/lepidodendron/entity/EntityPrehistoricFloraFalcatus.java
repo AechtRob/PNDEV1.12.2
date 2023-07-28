@@ -8,18 +8,21 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -31,8 +34,9 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-
 	public ChainBuffer chainBuffer;
+
+	private static final DataParameter<Integer> FALCATUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraFalcatus.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraFalcatus(World world) {
 		super(world);
@@ -41,6 +45,134 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 		maxWidth = 0.2F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 7.0D;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(FALCATUS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraFalcatus.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraFalcatus.Type typeThat = ((EntityPrehistoricFloraFalcatus) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraFalcatus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraFalcatus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraFalcatus.Type.byId(rand.nextInt(EntityPrehistoricFloraFalcatus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraFalcatus.Type type)
+	{
+		this.dataManager.set(FALCATUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraFalcatus.Type getPNType()
+	{
+		return EntityPrehistoricFloraFalcatus.Type.byId(((Integer)this.dataManager.get(FALCATUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraFalcatus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.FALCATUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.FALCATUS_LOOT_F;
+		}
 	}
 
 	@Override
@@ -185,9 +317,5 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.FALCATUS_LOOT;
-	}
 
 }

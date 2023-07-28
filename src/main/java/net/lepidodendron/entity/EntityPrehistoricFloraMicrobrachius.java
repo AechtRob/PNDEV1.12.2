@@ -15,12 +15,14 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.MoverType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +31,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -44,6 +47,8 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	int bottomCooldown;
 	boolean bottomFlag;
 
+	private static final DataParameter<Integer> MICROBRACHIUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMicrobrachius.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraMicrobrachius(World world) {
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraMicrobrachius.SwimmingMoveHelperBase();
@@ -53,6 +58,134 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(MICROBRACHIUS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraMicrobrachius.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraMicrobrachius.Type typeThat = ((EntityPrehistoricFloraMicrobrachius) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraMicrobrachius.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraMicrobrachius.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraMicrobrachius.Type.byId(rand.nextInt(EntityPrehistoricFloraMicrobrachius.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraMicrobrachius.Type type)
+	{
+		this.dataManager.set(MICROBRACHIUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraMicrobrachius.Type getPNType()
+	{
+		return EntityPrehistoricFloraMicrobrachius.Type.byId(((Integer)this.dataManager.get(MICROBRACHIUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraMicrobrachius.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.MICROBRACHIUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.MICROBRACHIUS_LOOT_F;
+		}
 	}
 
 	@Override
@@ -234,11 +367,6 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 		super.onEntityUpdate();
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MICROBRACHIUS_LOOT;
-	}
-
 	@Override
 	public void travel(float strafe, float vertical, float forward) {
 		float f4;
@@ -359,6 +487,9 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderMicrobrachius.TEXTURE_F;
+		}
 		return RenderMicrobrachius.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -366,4 +497,5 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	public static float getScaler(@Nullable String variant) {
 		return RenderMicrobrachius.getScaler();
 	}
+
 }

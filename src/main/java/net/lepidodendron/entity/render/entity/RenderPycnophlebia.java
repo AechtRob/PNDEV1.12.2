@@ -22,7 +22,7 @@ public class RenderPycnophlebia extends RenderLiving<EntityPrehistoricFloraPycno
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPycnophlebia entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraPycnophlebia.Type.FEMALE) {
             return RenderPycnophlebia.TEXTURE_F;
         }
         return RenderPycnophlebia.TEXTURE;

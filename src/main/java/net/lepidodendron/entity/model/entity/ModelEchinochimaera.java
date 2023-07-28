@@ -674,7 +674,7 @@ public class ModelEchinochimaera extends AdvancedModelBase {
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
 
-            if(ee.getIsFemale()) {
+            if (ee.getPNType() == EntityPrehistoricFloraEchinochimaera.Type.FEMALE) {
                 this.walk(femalejaw, (float) (speed * 0.75), 0.3F, true, 0, 0, f2, 1);
                 this.chainSwing(fishTailF, speed*0.75F, 0.27F, 0, f2, 1);
                 this.walk(backleftfinfemale, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);

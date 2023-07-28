@@ -46,7 +46,6 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	private static final float[] TRIOPS2_SIZE = new float[]{0.3F, 0.2F};
 	private static final float[] TRIOPS3_SIZE = new float[]{0.3F, 0.2F};
 
-
 	private static final DataParameter<Integer> NOTOSTRACA_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraNotostracan.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraNotostracan(World world) {
@@ -80,8 +79,20 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraNotostracan)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			Type typeThis = this.getPNType();
+			Type typeThat = ((EntityPrehistoricFloraNotostracan) otherAnimal).getPNType();
+			if (typeThis == Type.STRUDOPS) {
+				if (((EntityPrehistoricFloraNotostracan) otherAnimal).getPNType() != this.getPNType()) {
+					return false;
+				}
+			}
+			else {
+				//Triops:
+				if (typeThat == Type.STRUDOPS) {
+					return false;
+				}
+			}
 		}
 		return this.isInLove() && otherAnimal.isInLove();
 	}

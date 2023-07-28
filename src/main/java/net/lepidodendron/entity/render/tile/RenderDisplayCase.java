@@ -334,9 +334,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
         String stringDNA = (blockNBT.getString("id"));
         if (stringDNA != null) {
-            int ii = stringDNA.indexOf("@");
-            if (ii >= 1) {
-                stringDNA = stringDNA.substring(0, ii);
+            if (stringDNA.indexOf("@") >= 1) {
+                stringDNA = stringDNA.substring(0, stringDNA.indexOf("@"));
             }
             classOut = findEntity(stringDNA);
         }

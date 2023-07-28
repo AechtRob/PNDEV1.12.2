@@ -13,14 +13,21 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -34,6 +41,8 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
+	private static final DataParameter<Integer> XINPUSAURUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraXinpusaurus.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraXinpusaurus(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
@@ -44,8 +53,141 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	}
 
 	@Override
-	public void entityInit() {
+	protected void entityInit() {
 		super.entityInit();
+		this.dataManager.register(XINPUSAURUS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraXinpusaurus.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraXinpusaurus.Type typeThat = ((EntityPrehistoricFloraXinpusaurus) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraXinpusaurus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraXinpusaurus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraXinpusaurus.Type.byId(rand.nextInt(EntityPrehistoricFloraXinpusaurus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraXinpusaurus.Type type)
+	{
+		this.dataManager.set(XINPUSAURUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraXinpusaurus.Type getPNType()
+	{
+		return EntityPrehistoricFloraXinpusaurus.Type.byId(((Integer)this.dataManager.get(XINPUSAURUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraXinpusaurus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.XINPUSAURUS_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.XINPUSAURUS_LOOT_F_YOUNG;
+			}
+		}
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.XINPUSAURUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.XINPUSAURUS_LOOT_F;
+		}
 	}
 
 	@Override
@@ -220,14 +362,6 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.XINPUSAURUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.XINPUSAURUS_LOOT;
-	}
-
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraXinpusaurus(this.world);
@@ -276,6 +410,9 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderXinpusaurus.TEXTURE_F;
+		}
 		return RenderXinpusaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -283,6 +420,9 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return RenderDisplays.modelXinpusaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderXinpusaurus.getScaler() * (0.85F/0.7F);
+		}
 		return RenderXinpusaurus.getScaler();
 	}
 

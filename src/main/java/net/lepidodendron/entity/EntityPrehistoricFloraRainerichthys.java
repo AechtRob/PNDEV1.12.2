@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderGeosaurus;
 import net.lepidodendron.entity.render.entity.RenderRainerichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -69,7 +68,7 @@ public class EntityPrehistoricFloraRainerichthys extends EntityPrehistoricFloraF
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.4f;
+		return 0.38f;
 	}
 
 	@Override

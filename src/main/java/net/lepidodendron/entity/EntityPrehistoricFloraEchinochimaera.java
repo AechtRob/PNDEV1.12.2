@@ -10,19 +10,25 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderStethacanthus;
+import net.lepidodendron.entity.render.entity.RenderEchinochimaera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -37,6 +43,8 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
+	private static final DataParameter<Integer> ECHINOCHIMAERA_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraEchinochimaera.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraEchinochimaera(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
@@ -46,6 +54,122 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 		maxHealthAgeable = 5.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(ECHINOCHIMAERA_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraEchinochimaera.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraEchinochimaera.Type typeThat = ((EntityPrehistoricFloraEchinochimaera) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraEchinochimaera.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraEchinochimaera.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraEchinochimaera.Type.byId(rand.nextInt(EntityPrehistoricFloraEchinochimaera.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraEchinochimaera.Type type)
+	{
+		this.dataManager.set(ECHINOCHIMAERA_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraEchinochimaera.Type getPNType()
+	{
+		return EntityPrehistoricFloraEchinochimaera.Type.byId(((Integer)this.dataManager.get(ECHINOCHIMAERA_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraEchinochimaera.Type.getTypeFromString(compound.getString("PNType")));
 		}
 	}
 
@@ -220,10 +344,14 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (this.getIsFemale()) {
-			return LepidodendronMod.ECHINOCHIMAERA_LOOT_F;
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.ECHINOCHIMAERA_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.ECHINOCHIMAERA_LOOT_F;
 		}
-		return LepidodendronMod.ECHINOCHIMAERA_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -269,15 +397,20 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderStethacanthus.TEXTURE;
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderEchinochimaera.TEXTURE_F;
+		}
+		return RenderEchinochimaera.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelStethacanthus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderStethacanthus.getScaler();
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderEchinochimaera.getScaler() * 0.6F;
+		}
+		return RenderEchinochimaera.getScaler();
 	}
-
 }
 

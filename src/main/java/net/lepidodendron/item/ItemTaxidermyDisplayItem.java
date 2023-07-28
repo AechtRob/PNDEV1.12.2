@@ -50,6 +50,7 @@ public class ItemTaxidermyDisplayItem extends ElementsLepidodendronMod.ModElemen
 				if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
+					resourcelocation = resourcelocation.replace("@", "_");
 					return I18n.translateToLocal(this.getUnlocalizedNameInefficiently(stack) + ".name").trim()
 							+ ": "
 							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();

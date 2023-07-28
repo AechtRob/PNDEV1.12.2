@@ -295,6 +295,7 @@ public class ModelShringasaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Shringasaurus.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.Neck2.offsetY = 0F;
         this.Neck2.offsetX = 0F;
