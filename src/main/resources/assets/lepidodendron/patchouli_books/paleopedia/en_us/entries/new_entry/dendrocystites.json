@@ -1,29 +1,29 @@
 {
 	"name": "Dendrocystites",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/dendrocystites_icon.png",
 	"category": "lepidodendron:ordovician_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_dendrocystites",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_dendrocystites",
 			"title": "Dendrocystites",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>Echinodermata $(br)>Soluta $(br)>Dendrocystitida"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/dendrocystites.png"],
 			"title": "D. sedgwickii",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_dendrocystites",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_dendrocystites",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

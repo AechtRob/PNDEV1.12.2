@@ -1,29 +1,29 @@
 {
 	"name": "Ithigramma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/kalligrammatid_ithigramma_icon.png",
 	"category": "lepidodendron:cretaceous_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
 			"title": "Ithigramma",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/ithigramma.png"],
 			"title": "I. multinervia",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
 			"type": "text",
 			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

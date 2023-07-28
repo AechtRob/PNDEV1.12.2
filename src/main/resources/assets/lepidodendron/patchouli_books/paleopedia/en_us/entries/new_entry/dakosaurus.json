@@ -1,29 +1,29 @@
 {
 	"name": "Dakosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/dakosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_dakosaurus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_dakosaurus",
 			"title": "Dakosaurus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Crocodylomorpha $(br)>Thalattosuchia $(br)>Metriorhynchidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/dakosaurus.png"],
 			"title": "D. maximus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_dakosaurus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_dakosaurus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
 		}

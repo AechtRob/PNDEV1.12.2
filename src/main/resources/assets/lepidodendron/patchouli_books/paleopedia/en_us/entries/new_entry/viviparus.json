@@ -1,29 +1,29 @@
 {
 	"name": "Viviparus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/viviparus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_viviparus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_viviparus",
 			"title": "Viviparus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Gastropoda $(br)>Architaenioglossa $(br)>Viviparidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/viviparus.png"],
 			"title": "Viviparus sp.",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_viviparus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_viviparus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Punch"
 		}

@@ -1,29 +1,29 @@
 {
 	"name": "Sophogramma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/kalligrammatid_sophogramma_icon.png",
 	"category": "lepidodendron:cretaceous_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
 			"title": "Sophogramma",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>kalligrammatidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/sophogramma.png"],
 			"title": "S. lii",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
 			"type": "text",
 			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

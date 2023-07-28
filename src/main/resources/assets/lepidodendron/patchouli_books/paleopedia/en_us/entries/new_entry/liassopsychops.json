@@ -1,29 +1,29 @@
 {
 	"name": "Liassopsychops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/kalligrammatid_liassopsychops_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_liassopsychops",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_liassopsychops",
 			"title": "Liassopsychops",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Prohemerobiidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/liassopsychops.png"],
 			"title": "L. curvatus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_liassopsychops",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_liassopsychops",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

@@ -1,29 +1,29 @@
 {
 	"name": "Hupehsuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/hupehsuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_hupehsuchus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_hupehsuchus",
 			"title": "Hupehsuchus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Hupehsuchia $(br)>Hupehsuchidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/hupehsuchus.png"],
 			"title": "H. nanchangensis",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_hupehsuchus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_hupehsuchus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
 		}

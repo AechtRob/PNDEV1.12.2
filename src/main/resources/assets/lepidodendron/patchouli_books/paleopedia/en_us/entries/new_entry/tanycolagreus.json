@@ -1,29 +1,29 @@
 {
 	"name": "Tanycolagreus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/tanycolagreus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_tanycolagreus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_tanycolagreus",
 			"title": "Tanycolagreus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Tyrannosauroidea?"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/tanycolagreus.png"],
 			"title": "T. topwilsoni",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_tanycolagreus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_tanycolagreus",
 			"type": "text",
 			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}

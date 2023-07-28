@@ -1,29 +1,29 @@
 {
 	"name": "Docodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/docodon_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_docodon",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_docodon",
 			"title": "Docodon",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Mammaliaformes $(br)>Docodonta $(br)>Docodontidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/docodon.png"],
 			"title": "D. victor",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_docodon",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_docodon",
 			"type": "text",
 			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Burrow$(br)$(l)Method of Obtaining:$() Find Egg in Burrow"
 		}

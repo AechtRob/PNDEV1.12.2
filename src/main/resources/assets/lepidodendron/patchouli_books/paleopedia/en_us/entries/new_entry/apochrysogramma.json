@@ -1,12 +1,12 @@
 {
 	"name": "Apochrysogramma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/apochrysogramma_icon.png",
+	"icon": "paleopedia:textures/items/kalligrammatid_apochrysogramma_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_apochrysogramma",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_apochrysogramma",
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
 			"title": "Apochrysogramma",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_apochrysogramma",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_apochrysogramma",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
 			"type": "text",
 			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

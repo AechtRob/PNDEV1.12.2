@@ -1,29 +1,29 @@
 {
 	"name": "Proterosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/proterosuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_proterosuchus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_proterosuchus",
 			"title": "Proterosuchus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Archosauriformes $(br)>Proterosuchidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/proterosuchus.png"],
 			"title": "P. fergusi",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
 			"type": "text",
 			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Mound$(br)$(l)Method of Obtaining:$() Find Egg in Mound"
 		}

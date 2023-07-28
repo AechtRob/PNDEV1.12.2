@@ -1,29 +1,29 @@
 {
 	"name": "Coccoderma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/coccoderma_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_coccoderma",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_coccoderma",
 			"title": "Coccoderma",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Sarcopterygii $(br)>Actinistia $(br)>Laugiidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/coccoderma.png"],
 			"title": "C. bavaricum",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_coccoderma",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_coccoderma",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
 		}

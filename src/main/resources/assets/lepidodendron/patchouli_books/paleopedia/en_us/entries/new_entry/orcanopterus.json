@@ -1,29 +1,29 @@
 {
 	"name": "Orcanopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/orcanopterus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_orcanopterus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_orcanopterus",
 			"title": "Orcanopterus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>Eurypterida $(br)>Waeringopteridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/orcanopterus.png"],
 			"title": "O. manitoulinensis",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_orcanopterus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_orcanopterus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

@@ -1,29 +1,29 @@
 {
 	"name": "Dicranurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/dicranurus_icon.png",
 	"category": "lepidodendron:devonian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_dicranurus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_dicranurus",
 			"title": "Dicranurus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Trilobita $(br)>Odontopleurida $(br)>Odontopleuridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/dicranurus.png"],
 			"title": "D. elegans",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_dicranurus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_dicranurus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

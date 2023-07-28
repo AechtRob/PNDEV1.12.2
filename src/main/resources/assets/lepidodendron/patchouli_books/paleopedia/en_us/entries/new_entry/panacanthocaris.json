@@ -1,29 +1,29 @@
 {
 	"name": "Panacanthocaris",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/panacanthocaris_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_panacanthocaris",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_panacanthocaris",
 			"title": "Panacanthocaris",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)$(l)Habitat:$() $(br2)>Crustacea $(br)>Branchiopoda $(br)>Kazacharthra $(br)>Ketmeniidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/panacanthocaris.png"],
 			"title": "P. ketmenia",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
 			"type": "text",
  			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

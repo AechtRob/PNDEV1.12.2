@@ -1,29 +1,29 @@
 {
 	"name": "Protospinax",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/protospinax_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_protospinax",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_protospinax",
 			"title": "Protospinax",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Chondrichthyes $(br)>Squalomorphii"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/protospinax.png"],
 			"title": "P. annectans",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_protospinax",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_protospinax",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

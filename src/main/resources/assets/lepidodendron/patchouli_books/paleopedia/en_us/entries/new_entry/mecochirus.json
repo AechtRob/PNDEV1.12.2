@@ -1,29 +1,29 @@
 {
 	"name": "Mecochirus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/mecochirus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_mecochirus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_mecochirus",
 			"title": "Mecochirus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Crustacea $(br)>Malacostraca $(br)>Decapoda $(br)>Mechochiridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/mecochirus.png"],
 			"title": "M. longimanatus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_mecochirus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_mecochirus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
