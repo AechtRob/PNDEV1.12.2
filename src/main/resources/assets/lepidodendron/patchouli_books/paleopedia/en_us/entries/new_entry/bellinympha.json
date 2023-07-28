@@ -1,12 +1,12 @@
 {
 	"name": "Bellinympha",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/bellinympha_icon.png",
+	"icon": "paleopedia:textures/items/lacewing_bellinympha_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_bellinympha",
+	"turnin": "lepidodendron:pf_adv_book_lacewing_bellinympha",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_bellinympha",
+			"trigger": "lepidodendron:pf_adv_book_lacewing_bellinympha",
 			"title": "Bellinympha",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Saucrosmylidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_bellinympha",
+			"advancement": "lepidodendron:pf_adv_book_lacewing_bellinympha",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_bellinympha",
+			"advancement": "lepidodendron:pf_adv_book_lacewing_bellinympha",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

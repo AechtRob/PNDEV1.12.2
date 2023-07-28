@@ -1,29 +1,29 @@
 {
 	"name": "Slimonia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/slimonia_icon.png",
 	"category": "lepidodendron:silurian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_slimonia",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_slimonia",
 			"title": "Slimonia",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Chelicerata $(br)>Eurypterida $(br)>Slimonidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/slimonia.png"],
 			"title": "S. acuminata",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_slimonia",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_slimonia",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

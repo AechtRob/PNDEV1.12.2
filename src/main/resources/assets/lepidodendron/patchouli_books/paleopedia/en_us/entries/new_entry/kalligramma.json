@@ -1,29 +1,29 @@
 {
 	"name": "Kalligramma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/kalligrammatid_kalligramma_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_kalligramma",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_kalligramma",
 			"title": "Kalligramma",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/kalligramma.png"],
 			"title": "K. paradoxum",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_kalligramma",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_kalligramma",
 			"type": "text",
 			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

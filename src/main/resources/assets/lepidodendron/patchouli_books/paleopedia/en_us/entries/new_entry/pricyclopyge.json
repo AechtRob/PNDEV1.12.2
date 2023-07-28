@@ -1,29 +1,29 @@
 {
 	"name": "Pricyclopyge",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/pricyclopyge_icon.png",
 	"category": "lepidodendron:ordovician_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_pricyclopyge",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_pricyclopyge",
 			"title": "Pricyclopyge",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>Trilobita $(br)>Asaphida $(br)>Cyclopygidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/pricyclopyge.png"],
 			"title": "P. prisca",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_pricyclopyge",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_pricyclopyge",
 			"type": "text",
  			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

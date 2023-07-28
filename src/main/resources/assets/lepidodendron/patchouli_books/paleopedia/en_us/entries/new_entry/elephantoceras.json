@@ -1,29 +1,29 @@
 {
 	"name": "Elephantoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/elephantoceras_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_elephantoceras",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_elephantoceras",
 			"title": "Elephantoceras",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonoidea $(br)>Goniatitida $(br)>Pseudohaloritidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/elephantoceras.png"],
 			"title": "E. spinonodosum",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_elephantoceras",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_elephantoceras",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs"
 		}

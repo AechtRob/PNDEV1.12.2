@@ -1,29 +1,29 @@
 {
 	"name": "Sylvohymen",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/sylvohymen_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_sylvohymen",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_sylvohymen",
 			"title": "Sylvohymen",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Megasecoptera $(br)>Bardohymenidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/sylvohymen.png"],
 			"title": "S. sibiricus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_sylvohymen",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_sylvohymen",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

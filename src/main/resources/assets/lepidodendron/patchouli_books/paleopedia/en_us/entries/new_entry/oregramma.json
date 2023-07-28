@@ -1,29 +1,29 @@
 {
 	"name": "Oregramma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/kalligrammatid_oregramma_icon.png",
 	"category": "lepidodendron:cretaceous_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
 			"title": "Oregramma",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/oregramma.png"],
 			"title": "O. illecebrosa",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
 			"type": "text",
 			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
