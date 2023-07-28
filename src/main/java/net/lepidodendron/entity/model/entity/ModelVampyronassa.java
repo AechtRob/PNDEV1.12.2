@@ -336,7 +336,7 @@ public class ModelVampyronassa extends AdvancedModelBaseExtended {
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.25F;
+            //this.body.offsetY = 1.25F;
         }
 
     }
