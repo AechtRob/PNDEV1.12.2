@@ -239,11 +239,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                     nbtStr = mobToSpawn.substring(strPos4, mobToSpawn.length());
                                                     mobToSpawn = mobToSpawn.substring(0, strPos4);
 
-                                                    //Is the nbt string made of alternates?
-                                                    if (nbtStr.indexOf("@") > 0) {
-                                                        String[] arrSplit = nbtStr.split("@");
-                                                        nbtStr = arrSplit[rand.nextInt(arrSplit.length)];
-                                                    }
+//                                                    //Is the nbt string made of alternates?
+//                                                    if (nbtStr.indexOf("@") > 0) {
+//                                                        String[] arrSplit = nbtStr.split("@");
+//                                                        nbtStr = arrSplit[rand.nextInt(arrSplit.length)];
+//                                                    }
                                                 }
 
                                                 if (findEntity(mobToSpawn) != null) {
@@ -1130,6 +1130,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
                                                             if (!(TriassicCanyons && spawnPos.getY() > 70)) {
                                                                 for (int i = 0; i < spawnQty; ++i) {
+
+                                                                    //Is the nbt string made of alternates?
+                                                                    if (nbtStr.indexOf("@") > 0) {
+                                                                        String[] arrSplit = nbtStr.split("@");
+                                                                        nbtStr = arrSplit[rand.nextInt(arrSplit.length)];
+                                                                    }
+
                                                                     if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0 && doAgeVar) {
                                                                         EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
                                                                         int adultAge = ageableBase.getAdultAge();

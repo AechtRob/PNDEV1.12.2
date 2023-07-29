@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraZenaspis extends EntityPrehistoricFloraFishBa
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.485f;
+		return 0.465f;
 	}
 
 	@Override

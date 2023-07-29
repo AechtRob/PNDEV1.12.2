@@ -1,29 +1,29 @@
 {
 	"name": "Gigantocapulus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/gigantocapulus_icon.png",
 	"category": "lepidodendron:cretaceous_static",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_gigantocapulus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_gigantocapulus",
 			"title": "Gigantocapulus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Gastropoda $(br)>Gigantocapulidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/gigantocapulus.png"],
 			"title": "G. giganteus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_gigantocapulus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_gigantocapulus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

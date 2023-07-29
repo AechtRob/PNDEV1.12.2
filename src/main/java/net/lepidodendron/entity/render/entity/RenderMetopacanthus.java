@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMetopacanthus extends RenderLiving<EntityPrehistoricFloraMetopacanthus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/metopacanthus.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/metopacanthus_f.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/metopacanthus_f.png");
 
     public static float getScaler() {
         return 0.7F * 0.7F;
@@ -21,7 +21,7 @@ public class RenderMetopacanthus extends RenderLiving<EntityPrehistoricFloraMeto
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMetopacanthus entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraMetopacanthus.Type.FEMALE) {
             return RenderMetopacanthus.TEXTURE_F;
         }
         return RenderMetopacanthus.TEXTURE;
@@ -34,8 +34,8 @@ public class RenderMetopacanthus extends RenderLiving<EntityPrehistoricFloraMeto
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMetopacanthus entity, float f) {
         float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.75F;
+        if (entity.getPNType() == EntityPrehistoricFloraMetopacanthus.Type.FEMALE) {
+            scale = this.getScaler() * 0.75F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

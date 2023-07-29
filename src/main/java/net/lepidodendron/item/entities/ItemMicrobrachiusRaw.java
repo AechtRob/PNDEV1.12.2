@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemMicrobrachiusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:microbrachius_raw")
@@ -35,7 +37,7 @@ public class ItemMicrobrachiusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microbrachius", ItemMicrobrachiusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microbrachius@male", ItemMicrobrachiusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMicrobrachiusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
@@ -45,6 +47,11 @@ public class ItemMicrobrachiusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("microbrachius_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "male";
 		}
 
 	}

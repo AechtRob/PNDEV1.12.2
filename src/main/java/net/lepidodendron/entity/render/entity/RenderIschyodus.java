@@ -21,7 +21,7 @@ public class RenderIschyodus extends RenderLiving<EntityPrehistoricFloraIschyodu
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraIschyodus entity) {
-        if(entity.getIsFemale()){
+        if(entity.getPNType() == EntityPrehistoricFloraIschyodus.Type.FEMALE){
             return RenderIschyodus.TEXTURE_F;
         }
         return RenderIschyodus.TEXTURE;
@@ -33,7 +33,7 @@ public class RenderIschyodus extends RenderLiving<EntityPrehistoricFloraIschyodu
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraIschyodus entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
+        float scale = this.getScaler() * entity.getAgeScale();
 
         if (scale < 0.1f) {
             scale = 0.1f;

@@ -29,9 +29,9 @@ public class RenderPseudorhina extends RenderLiving<EntityPrehistoricFloraPseudo
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPseudorhina entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.95F;
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (entity.getPNType() == EntityPrehistoricFloraPseudorhina.Type.FEMALE) {
+            scale = this.getScaler() * 0.95F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

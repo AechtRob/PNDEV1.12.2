@@ -1,29 +1,29 @@
 {
 	"name": "Hovasaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/hovasaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_hovasaurus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_hovasaurus",
 			"title": "Hovasaurus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Tangasauridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/hovasaurus.png"],
 			"title": "H. boulei",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_hovasaurus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_hovasaurus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Mound$(br)$(l)Method of Obtaining:$() Find Eggs in Mound"
 		}

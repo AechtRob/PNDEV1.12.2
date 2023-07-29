@@ -366,6 +366,8 @@ public class ModelPromexyele extends AdvancedModelBase {
             if (!e.isInWater()) {
                 this.Promexyele.rotateAngleZ = (float) Math.toRadians(90);
                 this.Promexyele.offsetY = -0.7F;
+                this.Promexyele.offsetX = -0.7F;
+                this.Promexyele.offsetZ = -0.5F;
                 this.bob(Promexyele, -speed, 5F, false, f2, 1);
             }
         }

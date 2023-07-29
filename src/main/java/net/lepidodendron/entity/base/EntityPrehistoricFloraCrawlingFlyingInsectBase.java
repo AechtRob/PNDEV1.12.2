@@ -61,7 +61,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private static final DataParameter<Integer> FLYCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WANDERCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.BOOLEAN);
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private int inPFLove;
@@ -167,7 +166,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(FLYCOOLDOWN, 0);
         this.dataManager.register(WANDERCOOLDOWN, 0);
-        this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
     }
@@ -203,7 +201,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        this.setIsFemale(rand.nextInt(2) == 0);
         this.setTicks(0);
         this.setMateable(0);
         return livingdata;
@@ -272,7 +269,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.setFlyCooldown(compound.getInteger("FlyCooldown"));
         this.setWanderCooldown(compound.getInteger("WanderCooldown"));
         compound.setInteger("TickOffset", this.getTickOffset());
-        this.setIsFemale(compound.getBoolean("female"));
         this.setTicks(compound.getInteger("Ticks"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.laying = compound.getBoolean("laying");
@@ -284,7 +280,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         compound.setInteger("FlyCooldown", this.getFlyCooldown());
         compound.setInteger("WanderCooldown", this.getWanderCooldown());
         compound.setInteger("Ticks", this.getTicks());
-        compound.setBoolean("female", this.getIsFemale());
         compound.setInteger("TickOffset", this.getTickOffset());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setBoolean("laying", this.laying);
@@ -325,14 +320,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     public abstract String getTexture();
 
     public String tagEgg () {return "";}
-
-    public boolean getIsFemale() {
-        return this.dataManager.get(ISFEMALE);
-    }
-
-    public void setIsFemale(boolean female) {
-        this.dataManager.set(ISFEMALE, female);
-    }
 
     @Override
     protected void applyEntityAttributes() {

@@ -116,10 +116,10 @@ public class EntityPrehistoricFloraKleptothule extends EntityPrehistoricFloraEur
 
 	@Override
 	protected float getAISpeedEurypterid() {
-		if (!this.isAtBottom()) {
-			return 0.068F;
+		if (this.isAtBottom()) {
+			return 0.03F;
 		}
-		return 0.102F;
+		return 0.24F;
 	}
 
 	@Override

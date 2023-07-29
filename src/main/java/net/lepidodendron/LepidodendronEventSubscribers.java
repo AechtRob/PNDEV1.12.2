@@ -657,7 +657,7 @@ public class LepidodendronEventSubscribers {
 					case 0:
 					default: //Oak
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene - present");
+						tt.add("Periods: [late Cretaceous (?) -] Paleogene - Neogene - Pleistocene - present");
 						tt.add("Propagation: acorns drop from leaves");
 						break;
 
@@ -687,7 +687,7 @@ public class LepidodendronEventSubscribers {
 
 					case 5: //Dark Oak
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene - present");
+						tt.add("Periods: [late Cretaceous (?) -] Paleogene - Neogene - Pleistocene - present");
 						tt.add("Propagation: acorns drop from leaves");
 						break;
 				}

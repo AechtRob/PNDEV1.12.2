@@ -379,6 +379,8 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 						for (int var2 = 0; var2 < var; ++var2) {
 							int oreDictID = oreDicts[var2];
 							String oreName = OreDictionary.getOreName(oreDictID);
+							oreName = oreName.replace("@male", "@gendered");
+							oreName = oreName.replace("@female", "@gendered");
 							if (oreName.startsWith("plantdnaPN")) {
 								id_dna = oreName.substring(10);
 								tag = "PFPlant";

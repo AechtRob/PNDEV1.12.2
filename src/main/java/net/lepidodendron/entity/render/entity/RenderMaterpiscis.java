@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMaterpiscis extends RenderLiving<EntityPrehistoricFloraMaterpiscis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/materpiscis_male.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/materpiscis_female.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/materpiscis_female.png");
 
     public static float getScaler() {
         return 0.7F * 0.24F;
@@ -21,7 +21,7 @@ public class RenderMaterpiscis extends RenderLiving<EntityPrehistoricFloraMaterp
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMaterpiscis entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraMaterpiscis.Type.FEMALE) {
             return RenderMaterpiscis.TEXTURE_F;
         }
         return RenderMaterpiscis.TEXTURE;
@@ -33,9 +33,9 @@ public class RenderMaterpiscis extends RenderLiving<EntityPrehistoricFloraMaterp
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMaterpiscis entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.75F;
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (entity.getPNType() == EntityPrehistoricFloraMaterpiscis.Type.FEMALE) {
+            scale = this.getScaler() * 0.75F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

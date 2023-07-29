@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_belonostomus_jurassic",
 			"type": "text",
-			"text": ""
+			"text": "Belonostomus is a genus of Aspidorhynchid fish that existed worldwide between the Late Jurassic and the Paleocene. Usually not longer than 50 cm long, the animal was a very widespread predator characterized by its long body and rostrum. B. kochii is but one of the several Jurassic species described from the famous locality of Solnhofen and its limestones; alongside it at least another three species come from the same area, mostly differentiated by the size and shape of their rostra."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_belonostomus_jurassic",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

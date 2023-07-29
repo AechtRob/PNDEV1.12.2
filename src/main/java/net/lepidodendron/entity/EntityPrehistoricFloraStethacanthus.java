@@ -14,15 +14,21 @@ import net.lepidodendron.entity.render.entity.RenderStethacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -37,6 +43,8 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
+	private static final DataParameter<Integer> STETHACANTHUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraStethacanthus.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraStethacanthus(World world) {
 		super(world);
 		setSize(0.7F, 0.8F);
@@ -46,6 +54,144 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(STETHACANTHUS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraStethacanthus.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraStethacanthus.Type typeThat = ((EntityPrehistoricFloraStethacanthus) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraStethacanthus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraStethacanthus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraStethacanthus.Type.byId(rand.nextInt(EntityPrehistoricFloraStethacanthus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraStethacanthus.Type type)
+	{
+		this.dataManager.set(STETHACANTHUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraStethacanthus.Type getPNType()
+	{
+		return EntityPrehistoricFloraStethacanthus.Type.byId(((Integer)this.dataManager.get(STETHACANTHUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraStethacanthus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.STETHACANTHUS_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.STETHACANTHUS_LOOT_F_YOUNG;
+			}
+		}
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.STETHACANTHUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.STETHACANTHUS_LOOT_F;
 		}
 	}
 
@@ -218,14 +364,6 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.STETHACANTHUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.STETHACANTHUS_LOOT;
-	}
-
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.46; }
@@ -269,6 +407,9 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderStethacanthus.TEXTURE_F;
+		}
 		return RenderStethacanthus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -276,6 +417,9 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		return RenderDisplays.modelStethacanthus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderStethacanthus.getScaler() * 0.6F;
+		}
 		return RenderStethacanthus.getScaler();
 	}
 

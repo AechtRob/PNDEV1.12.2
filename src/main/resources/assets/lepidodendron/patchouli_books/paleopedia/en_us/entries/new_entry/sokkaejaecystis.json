@@ -1,29 +1,29 @@
 {
 	"name": "Sokkaejaecystis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/sokkaejaecystis_icon.png",
 	"category": "lepidodendron:cambrian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_sokkaejaecystis",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_sokkaejaecystis",
 			"title": "Sokkaejaecystis",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)>Echinodermata $(br)>Stylophora $(br)>Cornuta"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/sokkaejaecystis.png"],
 			"title": "S. serrata",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_sokkaejaecystis",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_sokkaejaecystis",
 			"type": "text",
  			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

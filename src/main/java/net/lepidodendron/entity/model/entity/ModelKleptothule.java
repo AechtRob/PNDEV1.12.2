@@ -595,9 +595,10 @@ public class ModelKleptothule extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.pygidium};
 
-        float speed = 0.45F;
-        float tailVdegree = 0.30F;
-        float tailHdegree = 0.0F;
+        float speed = 0.2F;
+        float speede = 0.4F;
+        float tailVdegree = 0.01F;
+        float tailHdegree = 0.1F;
         float tailSwing = 0.3F;
 
         if (!e.isInWater()) {
@@ -614,56 +615,59 @@ public class ModelKleptothule extends AdvancedModelBase {
         if (isAtBottom) {
             //System.err.println("Animation at bottom");
             speed = 0.18F;
-            tailVdegree = 0.02F;
-            tailHdegree = 0.05F;
+            speede = 0.25F;
+            tailVdegree = 0.01F;
+            tailHdegree = 0.13F;
             tailSwing = 0.2F;
         }
 
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed, tailVdegree * 0.3f, -3, f2, 1);
-            this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+            if(e.isInWater()) {
+                this.chainWave(fishTail, speed, tailVdegree * 0.2f, 3, f2, 3);
+                this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+            }
 
-            this.flap(leftLeg1, speed, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(rightLeg1, speed, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(leftLeg2, speed, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg2, speed, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg3, speed, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg3, speed, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg4, speed, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg4, speed, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg5, speed, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg5, speed, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg6, speed, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg6, speed, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg7, speed, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg7, speed, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg8, speed, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg8, speed, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg9, speed, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg9, speed, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg10, speed, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg10, speed, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg11, speed, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg11, speed, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg12, speed, -0.5F, false, 11.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg12, speed, 0.5F, false, 11.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg13, speed, -0.5F, false, 12.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg13, speed, 0.5F, false, 12.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg14, speed, -0.5F, false, 13.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg14, speed, 0.5F, false, 13.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg15, speed, -0.5F, false, 14.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg15, speed, 0.5F, false, 14.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg16, speed, -0.5F, false, 15.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg16, speed, 0.5F, false, 15.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg17, speed, -0.5F, false, 16.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg17, speed, 0.5F, false, 16.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg18, speed, -0.5F, false, 17.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg18, speed, 0.5F, false, 17.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg19, speed, -0.5F, false, 18.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg19, speed, 0.5F, false, 18.0F, 0.5F, f2, 0.3F);
-            this.flap(leftLeg20, speed, -0.5F, false, 19.0F, -0.5F, f2, 0.3F);
-            this.flap(rightLeg20, speed, 0.5F, false, 19.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg1, speede, -0.5F, false, 0, -0.5F, f2, 0.3F);
+            this.flap(rightLeg1, speede, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.flap(leftLeg2, speede, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg2, speede, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg3, speede, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg3, speede, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg4, speede, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg4, speede, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg5, speede, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg5, speede, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg6, speede, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg6, speede, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg7, speede, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg7, speede, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg8, speede, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg8, speede, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg9, speede, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg9, speede, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg10, speede, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg10, speede, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg11, speede, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg11, speede, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg12, speede, -0.5F, false, 11.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg12, speede, 0.5F, false, 11.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg13, speede, -0.5F, false, 12.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg13, speede, 0.5F, false, 12.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg14, speede, -0.5F, false, 13.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg14, speede, 0.5F, false, 13.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg15, speede, -0.5F, false, 14.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg15, speede, 0.5F, false, 14.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg16, speede, -0.5F, false, 15.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg16, speede, 0.5F, false, 15.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg17, speede, -0.5F, false, 16.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg17, speede, 0.5F, false, 16.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg18, speede, -0.5F, false, 17.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg18, speede, 0.5F, false, 17.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg19, speede, -0.5F, false, 18.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg19, speede, 0.5F, false, 18.0F, 0.5F, f2, 0.3F);
+            this.flap(leftLeg20, speede, -0.5F, false, 19.0F, -0.5F, f2, 0.3F);
+            this.flap(rightLeg20, speede, 0.5F, false, 19.0F, 0.5F, f2, 0.3F);
 
             this.swing(leftbackAntennae, 0.4F, -0.2F, false, 0, -0.1F, f2, 0.8F);
             this.swing(rightbackAntennae, 0.4F, 0.2F, false, 0, 0.1F, f2, 0.8F);
@@ -676,9 +680,9 @@ public class ModelKleptothule extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 //this.Kleptothule.offsetY = 1.02F;
-                this.bob(Kleptothule, -speed, 0.21F, false, f2, 1);
-                this.chainWave(fishTail, speed, tailHdegree*0.2F, -3, f2, 1);
-                this.chainSwing(fishTail, speed, tailVdegree*0.2F, -3, f2, 1);
+                //this.bob(Kleptothule, -speed, 0.21F, false, f2, 1);
+                //this.chainWave(fishTail, speed*0.5F, tailHdegree*0.1F, -1, f2, 1);
+                //this.chainSwing(fishTail, speed*0.5F, tailVdegree*0.1F, -3, f2, 1);
             }
         }
     }

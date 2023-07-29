@@ -15,12 +15,19 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -35,6 +42,8 @@ public class EntityPrehistoricFloraMaterpiscis extends EntityPrehistoricFloraAge
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
+	private static final DataParameter<Integer> MATERPISCIS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMaterpiscis.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraMaterpiscis(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
@@ -42,6 +51,134 @@ public class EntityPrehistoricFloraMaterpiscis extends EntityPrehistoricFloraAge
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(MATERPISCIS_TYPE, 0);
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			EntityPrehistoricFloraMaterpiscis.Type typeThis = this.getPNType();
+			EntityPrehistoricFloraMaterpiscis.Type typeThat = ((EntityPrehistoricFloraMaterpiscis) otherAnimal).getPNType();
+			if (typeThis == typeThat) {
+				return false;
+			}
+		}
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraMaterpiscis.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraMaterpiscis.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraMaterpiscis.Type.byId(rand.nextInt(EntityPrehistoricFloraMaterpiscis.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraMaterpiscis.Type type)
+	{
+		this.dataManager.set(MATERPISCIS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraMaterpiscis.Type getPNType()
+	{
+		return EntityPrehistoricFloraMaterpiscis.Type.byId(((Integer)this.dataManager.get(MATERPISCIS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraMaterpiscis.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.MATERPISCIS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.MATERPISCIS_LOOT_F;
+		}
 	}
 
 	@Override
@@ -179,11 +316,6 @@ public class EntityPrehistoricFloraMaterpiscis extends EntityPrehistoricFloraAge
 		super.onEntityUpdate();
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MATERPISCIS_LOOT;
-	}
-
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
@@ -233,13 +365,18 @@ public class EntityPrehistoricFloraMaterpiscis extends EntityPrehistoricFloraAge
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderMaterpiscis.TEXTURE_F;
+		}
 		return RenderMaterpiscis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelMaterpiscis;}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderMaterpiscis.getScaler() * 0.75F;
+		}
 		return RenderMaterpiscis.getScaler();
 	}
-
 }
 

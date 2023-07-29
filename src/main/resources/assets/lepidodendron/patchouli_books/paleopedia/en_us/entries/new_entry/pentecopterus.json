@@ -1,29 +1,29 @@
 {
 	"name": "Pentecopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/pentecopterus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_pentecopterus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_pentecopterus",
 			"title": "Pentecopterus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>Eurypterida $(br)>Megalograptidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/pentecopterus.png"],
 			"title": "P. decorahensis",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_pentecopterus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_pentecopterus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEchinochimaera extends RenderLiving<EntityPrehistoricFloraEchinochimaera> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_male.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_female.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/echinochimaera_female.png");
 
     public static float getScaler() {
         return 0.24F;
@@ -21,10 +21,14 @@ public class RenderEchinochimaera extends RenderLiving<EntityPrehistoricFloraEch
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEchinochimaera entity) {
-        if (entity.getIsFemale()) {
-            return RenderEchinochimaera.TEXTURE_F;
+        switch (entity.getPNType()) {
+            case MALE:
+            default:
+                return TEXTURE;
+
+            case FEMALE:
+                return TEXTURE_F;
         }
-        return RenderEchinochimaera.TEXTURE;
     }
 
     @Override
@@ -33,9 +37,9 @@ public class RenderEchinochimaera extends RenderLiving<EntityPrehistoricFloraEch
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEchinochimaera entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.6F;
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (entity.getPNType() == EntityPrehistoricFloraEchinochimaera.Type.FEMALE) {
+            scale = this.getScaler() * 0.6F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

@@ -1,29 +1,29 @@
 {
 	"name": "Mazothairos",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/mazothairos_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_mazothairos",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_mazothairos",
 			"title": "Mazothairos",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Palaeodictyoptera $(br)>Homoiopteridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/mazothairos.png"],
 			"title": "M. enormis",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_mazothairos",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_mazothairos",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

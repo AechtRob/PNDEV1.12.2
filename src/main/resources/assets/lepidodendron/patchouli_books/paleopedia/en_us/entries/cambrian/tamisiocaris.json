@@ -1,0 +1,31 @@
+{
+	"name": "Tamisiocaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tamisiocaris_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_tamisiocaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tamisiocaris",
+			"title": "Tamisiocaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/tamisiocaris.png"],
+			"title": "T. borealis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish and meat$(br)$(l)Breeds with:$() Fish and meat$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

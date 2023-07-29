@@ -1,29 +1,29 @@
 {
 	"name": "Stoermeropterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/_icon.png",
+	"icon": "paleopedia:textures/items/stoermeropterus_icon.png",
 	"category": "lepidodendron:silurian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_stoermeropterus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_stoermeropterus",
 			"title": "Stoermeropterus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Eurypterida $(br)>Moselopteroidea $(br)>Moselopteridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/stoermeropterus.png"],
 			"title": "S. conicus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_stoermeropterus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_stoermeropterus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

@@ -35,11 +35,11 @@ public class EntityPrehistoricFloraBelonostomusCretaceous extends EntityPrehisto
 
 	public EntityPrehistoricFloraBelonostomusCretaceous(World world) {
 		super(world);
-		setSize(0.45F, 0.2F);
+		setSize(0.25F, 0.15F);
 		minWidth = 0.1F;
-		maxWidth = 0.45F;
-		maxHeight = 0.2F;
-		maxHealthAgeable = 13.0D;
+		maxWidth = 0.25F;
+		maxHeight = 0.15F;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

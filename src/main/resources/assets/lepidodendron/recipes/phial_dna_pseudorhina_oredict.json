@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNlepidodendron:prehistoric_flora_pseudorhina"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_pseudorhina@gendered"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_pseudorhina"}}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_pseudorhina@gendered"}}
  }
 }

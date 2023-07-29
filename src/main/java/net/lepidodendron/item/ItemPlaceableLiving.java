@@ -268,6 +268,14 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 				if (varStr.equalsIgnoreCase("dragonfly_random")) {
 					varStr = "dragonfly" + (itemRand.nextInt(10) + 1);
 				}
+				if (varStr.equalsIgnoreCase("gendered")) {
+					if (itemRand.nextInt(2) == 0) {
+						varStr = "male";
+					}
+					else {
+						varStr = "female";
+					}
+				}
 				return varStr;
 			}
 			return "";

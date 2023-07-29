@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemStethacanthusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:stethacanthus_raw")
@@ -35,7 +37,7 @@ public class ItemStethacanthusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_stethacanthus", ItemStethacanthusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_stethacanthus@male", ItemStethacanthusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemStethacanthusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemStethacanthusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemStethacanthusRaw.block);
@@ -48,6 +50,11 @@ public class ItemStethacanthusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("stethacanthus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "male";
 		}
 
 	}
