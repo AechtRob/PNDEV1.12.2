@@ -1,7 +1,7 @@
 {
 	"name": "Spiroceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/spiroceras_icon.png",
+	"icon": "lepidodendron:shell_spiroceras",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_spiroceras",
 	"pages": [

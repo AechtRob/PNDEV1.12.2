@@ -1,7 +1,7 @@
 {
     "name": "Cretaceous Statics",
     "description": "Static Animals of the Cretaceous",
-    "icon": "lepidodendron:ginkgo_sapling",
+    "icon": "lepidodendron:bivalve_inoceramus_gigantocapulus",
     "parent": "lepidodendron:cretaceous",
     "sortnum": 2
 }
