@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:tuanshanzia",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:tuanshanzia",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:tuanshanzia",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:tuanshanzia",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:tuanshanzia",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:tuanshanzia",
+      "y": 0
+    }
+  }
+}

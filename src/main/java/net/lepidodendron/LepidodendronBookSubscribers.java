@@ -1018,6 +1018,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tuanshanzia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TUANSHANZIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:charniodiscus"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {

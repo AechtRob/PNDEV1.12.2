@@ -2,9 +2,7 @@
   "variants": {
     "normal": [
       {"model": "lepidodendron:diskagma"},
-      {"model": "lepidodendron:diskagma", "y": 90 },
-      {"model": "lepidodendron:diskagma", "y": 180 },
-      {"model": "lepidodendron:diskagma", "y": 270 }
+      {"model": "lepidodendron:diskagma_var"}
     ]
   }
 }

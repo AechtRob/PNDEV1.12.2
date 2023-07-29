@@ -93,6 +93,17 @@ public class CharniaGenerator extends WorldGenerator
 				dimensionCriteria = true;
 			}
 
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+			)
+					&& this.charnia == BlockTuanshanzia.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockTuanshanzia.block) {
+				dimensionCriteria = false;
+			}
+
 
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
