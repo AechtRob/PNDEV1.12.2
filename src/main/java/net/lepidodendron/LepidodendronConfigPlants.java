@@ -2290,7 +2290,7 @@ public class LepidodendronConfigPlants {
         dimEdiacaran = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Ediacaran", "weightEdiacaran", weightEdiacaran);
-        prop.setComment("Percentage chance that non-mob-like members of the Ediacaran Biota generate in a suitable chunk (0 to 100) [default: 100]");
+        prop.setComment("Percentage chance that non-mob-like members of the Precambrian Biota generate in a suitable chunk (0 to 100) [default: 100]");
         weightEdiacaran = prop.getInt();
         propOrder.add(prop.getName());
 

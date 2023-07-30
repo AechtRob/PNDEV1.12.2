@@ -20,22 +20,22 @@
         {"model": "lepidodendron:acid_bath_up", "y": 180}
       ]
     },
-    {   "when": { "facing": "north", "pipe": true },
+    {   "when": { "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_up_pipe", "y": 270 }
       ]
     },
-    {   "when": { "facing": "south", "pipe": true },
+    {   "when": { "facing": "south" },
       "apply": [
         {"model": "lepidodendron:acid_bath_up_pipe", "y": 90}
       ]
     },
-    {   "when": { "facing": "east", "pipe": true },
+    {   "when": { "facing": "east" },
       "apply": [
         {"model": "lepidodendron:acid_bath_up_pipe" }
       ]
     },
-    {   "when": { "facing": "west", "pipe": true },
+    {   "when": { "facing": "west" },
       "apply": [
         {"model": "lepidodendron:acid_bath_up_pipe", "y": 180}
       ]
