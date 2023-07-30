@@ -38,6 +38,10 @@
 		{
 			"type": "lepidodendron:biomelocations3",
 			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
 		}
 	]
 }
