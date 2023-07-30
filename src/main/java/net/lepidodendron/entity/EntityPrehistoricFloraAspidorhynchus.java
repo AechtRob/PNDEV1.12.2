@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraAspidorhynchus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -1,0 +1,31 @@
+{
+	"name": "Apiocrinites",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_apiocrinites",
+	"category": "lepidodendron:jurassic_static",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
+			"title": "Apiocrinites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata(br)>Crinoidea(br)>Millericrinida(br)>Apiocrinitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/apiocrinites.png"],
+			"title": "A. negevensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
+			"type": "text",
+			"text": "Apiocrinites is a genus of crinoid from the Jurassic period of Asia and Europe. Its name comes from the Greek 'apion' meaning 'pear.' Its bulb was rather small, with a length of around 20 cm or less in many specimens."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
