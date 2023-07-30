@@ -82,7 +82,13 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
     //checks if the animal is actually swimming
     public boolean getIsSwimming() {
-        return (Boolean)this.dataManager.get(SWIMMING).booleanValue();
+        try {
+            if (this.dataManager.get(SWIMMING).getClass().equals(Boolean.TYPE)) {
+                return (Boolean)this.dataManager.get(SWIMMING);
+            }
+        } catch (Exception error) {
+        }
+        return false;
     }
 
     //sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
@@ -230,7 +236,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
     //a stricter check on if the animal is swimming, (It is not doing its transition animation)
     public boolean isReallySwimming() {
-        return this.getIsSwimming() && this.getAnimation() != this.SWIM_ANIMATION;
+        return (this.getIsSwimming()) && (this.getAnimation() != this.SWIM_ANIMATION);
     }
 
     @Override
@@ -328,7 +334,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     public void travel(float strafe, float vertical, float forward) {
         float f4;
-        //IF IS SWIMMING:
+        //IF IS SWIMMINGPN:
         if (this.isReallySwimming()) {
             if (this.isServerWorld()) {
                 if (isInWater()) {
@@ -495,7 +501,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
             this.selectNavigator();
         }
 
-        //IF IS SWIMMING:
+        //IF IS SWIMMINGPN:
         if (this.isReallySwimming()) {
             super.onLivingUpdate();
             //this.renderYawOffset = this.rotationYaw;

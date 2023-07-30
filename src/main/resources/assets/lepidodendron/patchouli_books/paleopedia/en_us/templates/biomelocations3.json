@@ -1,0 +1,11 @@
+{
+  "processor": "net.lepidodendron.util.SpawnLocations3",
+  "components": [
+    {
+      "type": "text",
+      "text": "#mob",
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "processor": "net.lepidodendron.util.SpawnLocations1",
+  "components": [
+    {
+      "type": "header",
+      "text": "Biomes:",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "text",
+      "text": "#mob",
+      "scale": 0.1,
+
+      "x": 0,
+      "y": 10
+    }
+  ]
+}
