@@ -82,7 +82,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
     //checks if the animal is actually swimming
     public boolean getIsSwimming() {
-        return this.dataManager.get(SWIMMING);
+        return (Boolean)this.dataManager.get(SWIMMING).booleanValue();
     }
 
     //sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
