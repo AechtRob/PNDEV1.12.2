@@ -1,0 +1,31 @@
+{
+	"name": "Eugeniacrinites",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_eugeniacrinites",
+	"category": "lepidodendron:jurassic_static",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",
+			"title": "Eugeniacrinites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata(br)>Crinoidea(br)>Cyrtocrinida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/eugeniacrinites.png"],
+			"title": "E. cariophilites",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",
+			"type": "text",
+			"text": "Eugeniacrinites is a genus of crinoid from the Jurassic and Cretaceous periods. It was a Cyrtocrinid, an order of crinoids that that had asymmetrical calyxes and had very small skeletal units. They had stems that attached directly to the substrate and used their arms to catch floating prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"name": "Kosmoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/kosmoceras_icon.png",
+	"icon": "lepidodendron:shell_kosmoceras",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_kosmoceras",
 	"pages": [

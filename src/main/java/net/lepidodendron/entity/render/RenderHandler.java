@@ -4830,6 +4830,8 @@ public class RenderHandler {
         //Tile Entities:
         //-------------
         if (LepidodendronConfig.renderAnimations) {
+            //Ancient:
+            ClientRegistry.bindTileEntitySpecialRenderer(BlockTuanshanzia.TileEntityCustom.class, new RenderTuanshanzia());
             //Ediacaran:
             ClientRegistry.bindTileEntitySpecialRenderer(BlockCharnia.TileEntityCustom.class, new RenderCharnia());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockCharniodiscus.TileEntityCustom.class, new RenderCharniodiscus());

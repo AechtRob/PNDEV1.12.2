@@ -136,7 +136,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	//public static String getHabitat() {return "Gliding Reptile";}
 
 	public boolean getIsFlying() {
-		return this.dataManager.get(ISFLYING);
+		return (Boolean)this.dataManager.get(ISFLYING).booleanValue();
 	}
 
 	public void setIsFlying(boolean isFlying) {

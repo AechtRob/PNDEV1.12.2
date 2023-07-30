@@ -2,7 +2,7 @@
 	"name": "Stoermeropterus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/stoermeropterus_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_stoermeropterus",
 	"pages": [
 		{

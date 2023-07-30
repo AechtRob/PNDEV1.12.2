@@ -114,6 +114,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBradgatia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBurykhia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCharnia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTuanshanzia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCharniodiscus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCloudina.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoronacollina.block).toString(),

@@ -1,7 +1,7 @@
 {
 	"name": "Aphetoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/shell_aphetoceras.png",
+	"icon": "paleopedia:textures/shell_aphetoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_aphetoceras",
 	"pages": [

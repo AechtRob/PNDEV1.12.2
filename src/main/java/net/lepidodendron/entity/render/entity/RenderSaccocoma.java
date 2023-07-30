@@ -12,7 +12,7 @@ public class RenderSaccocoma extends RenderLiving<EntityPrehistoricFloraSaccocom
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saccocoma.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.395F *0.6F;
     }
     public RenderSaccocoma(RenderManager mgr) {
         super(mgr, new ModelSaccocoma(), 0.0f);
