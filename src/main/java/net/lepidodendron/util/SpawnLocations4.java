@@ -70,7 +70,7 @@ public class SpawnLocations4 implements IComponentProcessor {
     public static boolean spawnsHere(String mobID, String biomeID) {
         Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(biomeID));
         String[] possibleMobs = EntityLists.mobString(biome, 0);
-        return matchMob(mobID + ":", possibleMobs);
+        return matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs);
     }
 
     public static boolean matchMob(String mob, String[] mobList) {
