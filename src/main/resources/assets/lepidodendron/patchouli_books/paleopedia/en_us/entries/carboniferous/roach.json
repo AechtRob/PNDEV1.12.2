@@ -26,6 +26,11 @@
 			"advancement": "lepidodendron:pf_adv_book_roachoid",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Wood/Moss Egg (Small)$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		},
+		{
+			"type": "text",
+			"title": "Biomes:",
+			"text": "Widespread"
 		}
 	]
 }
