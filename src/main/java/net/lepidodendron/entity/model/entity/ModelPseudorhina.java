@@ -227,7 +227,7 @@ public class ModelPseudorhina extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.main.offsetZ = -0.5F;
-        EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
+        EntityPrehistoricFloraPseudorhina ee = (EntityPrehistoricFloraPseudorhina) e;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] leftwings = {this.leftwing, this.leftwing2};
@@ -237,6 +237,8 @@ public class ModelPseudorhina extends AdvancedModelBase {
             speed = 0.7F * 0.5F;
         } else if (!ee.getIsMoving()) {
             speed = 0.7F * 0.13F;
+        } else if (ee.isAtBottom()){
+            speed = speed * 0.2F;
         }
 
 
