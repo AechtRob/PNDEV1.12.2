@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:wing_meganeura"
+			"item": "lepidodendron:meganeura_raw"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_meganeura.title"

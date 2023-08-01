@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:europasaurus_item"
+			"item": "lepidodendron:europasaurus_raw"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_europasaurus.title"
