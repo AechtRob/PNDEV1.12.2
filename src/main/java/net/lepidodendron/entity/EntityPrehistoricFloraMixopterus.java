@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraMixopterus extends EntityPrehistoricFloraEury
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.5;
+		return this.getAgeScale() < 0.75;
 	}
 
 	public static String getPeriod() {return "Silurian";}

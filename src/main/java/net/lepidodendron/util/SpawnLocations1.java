@@ -24,7 +24,7 @@ public class SpawnLocations1 implements IComponentProcessor {
 
     @Override
     public String process(String s) {
-        String biomeList = getBiomeList(this.mob);
+        String biomeList = getBiomeList(this.mob, 0, 15);
         if (biomeList != null) {
             if (!biomeList.equalsIgnoreCase("")) {
                 return biomeList;
@@ -34,7 +34,7 @@ public class SpawnLocations1 implements IComponentProcessor {
     }
 
     @Nullable
-    public static String getBiomeList(String mobID) {
+    public static String getBiomeList(String mobID, int from, int to) {
         String biomeList = "; ";
         String biomeListFinal = "; ";
         int i = 0;
@@ -51,7 +51,7 @@ public class SpawnLocations1 implements IComponentProcessor {
                         if (spawnsHere(mobID, biomeID)) {
                             i ++;
                             biomeList = biomeList + biomeName + "; ";
-                            if (i <= 15) {
+                            if (i > from && i <= to) {
                                 biomeListFinal = biomeListFinal + biomeName + "; ";
                             }
                         }
@@ -60,19 +60,39 @@ public class SpawnLocations1 implements IComponentProcessor {
             }
             if (!biomeListFinal.equalsIgnoreCase("; ")) {
                 biomeListFinal = biomeListFinal.substring(2);
-                if (i <= 15) {
+                if (i <= to) {
                     biomeListFinal = biomeListFinal.substring(0, biomeListFinal.length() - 2);
                 }
                 return biomeListFinal;
             }
         }
-        return biomeUnknown;
+        if (from == 0) {
+            return biomeUnknown;
+        }
+        return "";
     }
 
     public static boolean spawnsHere(String mobID, String biomeID) {
         Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(biomeID));
         String[] possibleMobs = EntityLists.mobString(biome, 0);
-        return matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs);
+        boolean spawns = false;
+        String pnVariant = "";
+        int i = mobID.indexOf("@");
+        if (i > 0) {
+            pnVariant = mobID.substring(i + 1);
+            mobID = mobID.substring(0, i);
+        }
+        if (matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs)) {
+            if (pnVariant.equalsIgnoreCase("")) {
+                spawns = true;
+            }
+            else {
+                if (matchMob("PNType:\"" + pnVariant + "\"", possibleMobs)) {
+                    spawns = true;
+                }
+            }
+        }
+        return spawns;
     }
 
     public static boolean matchMob(String mob, String[] mobList) {

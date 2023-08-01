@@ -35,8 +35,8 @@ public class LepidodendronOreHandler {
 					|| event.getWorld().getBiome( event.getPos().add(8,0,8)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_regolith")
 					|| event.getWorld().getBiome( event.getPos().add(8,0,8)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")) {
 					genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 50,
-							new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 9),
-							100, 140);
+						new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 9),
+						100, 140);
 				}
 				event.setResult(Event.Result.DENY);
 			}

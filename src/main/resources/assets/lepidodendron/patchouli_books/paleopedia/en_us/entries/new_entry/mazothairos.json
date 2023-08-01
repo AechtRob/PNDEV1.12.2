@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/mazothairos_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
-	"turnin": "lepidodendron:pf_adv_book_mazothairos",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_mazothairos",
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
 			"title": "Mazothairos",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Palaeodictyoptera $(br)>Homoiopteridae"
@@ -18,14 +18,30 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mazothairos",
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mazothairos",
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
 		}
 	]
 }

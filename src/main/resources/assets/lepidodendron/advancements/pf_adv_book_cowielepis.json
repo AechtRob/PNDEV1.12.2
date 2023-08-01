@@ -10,7 +10,8 @@
 			"translate": "advancements.pf_adv_book_cowielepis.description"
 		}
 	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
+
+	"parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
