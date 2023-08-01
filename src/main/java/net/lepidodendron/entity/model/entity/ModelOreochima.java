@@ -155,13 +155,19 @@ public class ModelOreochima extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.13F;
-        this.body.offsetX = -0.06F;
+        this.body.offsetZ = -0.38F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.0F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.3F, 0.0F);
+        this.body.offsetY = -0.14F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

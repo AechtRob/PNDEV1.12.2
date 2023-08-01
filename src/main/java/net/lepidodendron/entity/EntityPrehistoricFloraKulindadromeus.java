@@ -7,9 +7,13 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
+import net.lepidodendron.entity.render.entity.RenderKulindadromeus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
@@ -228,7 +232,9 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		return null;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {
+		return "Jurassic";
+	}
 
 	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
@@ -275,9 +281,8 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		}
 		if (this.getIsHopping()) {
 			if (!this.getMovingOnLand()) {
-				speedBase =  0.03F; //static moment of the hop animation
-			}
-			else {
+				speedBase = 0.03F; //static moment of the hop animation
+			} else {
 				speedBase = speedBase * 1.4F; //The moving part of the hop animation
 			}
 		}
@@ -287,10 +292,9 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	public boolean getMovingOnLand() {
 		int animCycle = 80;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=20 && tickAnim <= 56)) {
+		if ((tickAnim >= 20 && tickAnim <= 56)) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -311,8 +315,7 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public float getEyeHeight()
-	{
+	public float getEyeHeight() {
 		return Math.max(super.getEyeHeight(), this.height * 1.05F);
 	}
 
@@ -338,14 +341,13 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
+	public boolean isBreedingItem(ItemStack stack) {
 		return (
 				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+				//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -367,8 +369,7 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public boolean isDrinking()
-	{
+	public boolean isDrinking() {
 		boolean test = (this.getPFDrinking() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -388,14 +389,11 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 			EnumFacing facing = null;
 			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
+			} else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
+			} else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
-			}
-			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
+			} else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
@@ -421,20 +419,20 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kulindadromeus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:kulindadromeus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kulindadromeus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:kulindadromeus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kulindadromeus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:kulindadromeus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
@@ -442,12 +440,10 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 				.getObject(new ResourceLocation("lepidodendron:kulindadromeus_alarm"));
 	}
 
-	public void playAlarmSound()
-	{
+	public void playAlarmSound() {
 		SoundEvent soundevent = this.getAlarmSound();
 		//System.err.println("looking for alarm sound");
-		if (soundevent != null)
-		{
+		if (soundevent != null) {
 			//System.err.println("playing alarm sound");
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.alarmCooldown = 20;
@@ -525,55 +521,69 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-//	public static double offsetPlinth() { return 0.16; }
-//	public static double offsetWall(@Nullable String variant) { return 0.05; }
-//	public static double upperfrontverticallinedepth(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbackverticallinedepth(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperfrontlineoffset(@Nullable String variant) {
-//		return 0.2;
-//	}
-//	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0F;
-//	}
-//	public static double upperbacklineoffset(@Nullable String variant) {
-//		return 0.2;
-//	}
-//	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0F;
-//	}
-//	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-//		return 0.3;
-//	}
-//	public static double lowerbackverticallinedepth(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerfrontlineoffset(@Nullable String variant) {
-//		return 0.2;
-//	}
-//	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0F;
-//	}
-//	public static double lowerbacklineoffset(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0F;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderDisplays.TEXTURE_KULINDADROMEUS;
-//	}
-//
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelKulindadromeus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderKulindadromeus.getScaler();
-//	}
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
 
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.46;
+	}
+
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.45;
+	}
+
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.2;
+	}
+
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.2;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderKulindadromeus.TEXTURE;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelKulindadromeus;
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderKulindadromeus.getScaler();
+	}
 }

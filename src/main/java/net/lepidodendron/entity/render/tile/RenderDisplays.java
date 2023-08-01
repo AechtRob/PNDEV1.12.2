@@ -63,6 +63,7 @@ public class RenderDisplays {
     public static final ModelCryolophosaurus modelCryolophosaurus = new ModelCryolophosaurus();
     public static final ModelCervifurca modelCervifurca = new ModelCervifurca();
     public static final ModelClarkeiteuthis modelClarkeiteuthis = new ModelClarkeiteuthis();
+    public static final ModelChunerpeton modelChunerpeton = new ModelChunerpeton();
     public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
     public static final ModelDapedium modelDapedium = new ModelDapedium();
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
@@ -81,6 +82,7 @@ public class RenderDisplays {
     public static final ModelDysaloTaxi modelDysalotosaurus = new ModelDysaloTaxi();
     public static final ModelDicranurus modelDicranurus = new ModelDicranurus();
     public static final ModelDuslia modelDuslia = new ModelDuslia();
+    public static final ModelDocodon modelDocodon = new ModelDocodon();
     public static final ModelEastmanosteus modelEastmanosteus = new ModelEastmanosteus();
     public static final ModelEdaphosaurus modelEdaphosaurus = new ModelEdaphosaurus();
     public static final ModelElginia modelElginia = new ModelElginia();
@@ -124,6 +126,7 @@ public class RenderDisplays {
     public static final ModelHelenodora modelHelenodora = new ModelHelenodora();
     public static final ModelHuayangosaurus modelHuayangosaurus = new ModelHuayangosaurus();
     public static final ModelHadronector modelHadronector = new ModelHadronector();
+    public static final ModelHupehsuchus modelHupehsuchus = new ModelHupehsuchus();
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
     public static final ModelIvoites modelIvoites = new ModelIvoites();
     public static final ModelIowacystis modelIowacystis = new ModelIowacystis();
@@ -133,6 +136,7 @@ public class RenderDisplays {
     public static final ModelKentrosaurus modelKentrosaurus = new ModelKentrosaurus();
     public static final ModelKujdanowiaspis modelKujdanowiaspis = new ModelKujdanowiaspis();
     public static final ModelKaykay modelKaykay = new ModelKaykay();
+    public static final ModelKulindadromeus modelKulindadromeus = new ModelKulindadromeus();
     public static final ModelLasanius modelLasanius = new ModelLasanius();
     public static final ModelLepidotes modelLepidotes = new ModelLepidotes();
     public static final ModelLeptolepis modelLeptolepis = new ModelLeptolepis();
@@ -168,6 +172,7 @@ public class RenderDisplays {
     public static final ModelOrthrozanclus modelOrthrozanclus = new ModelOrthrozanclus();
     public static final ModelOxyosteus modelOxyosteus = new ModelOxyosteus();
     public static final ModelOphthalmothule modelOphthalmothule = new ModelOphthalmothule();
+    public static final ModelOreochima modelOreochima = new ModelOreochima();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
     public static final ModelPalaeodictyopteraMedium modelPalaeodictyopteraMedium = new ModelPalaeodictyopteraMedium();
     public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
@@ -195,6 +200,9 @@ public class RenderDisplays {
     public static final ModelPygopterus modelPygopterus = new ModelPygopterus();
     public static final ModelPricyclopyge modelPricyclopyge = new ModelPricyclopyge();
     public static final ModelPapilionichthys modelPapilionichthys = new ModelPapilionichthys();
+    public static final ModelPseudorhina modelPseudorhina = new ModelPseudorhina();
+    public static final ModelPhorcynis modelPhorcynis = new ModelPhorcynis();
+    public static final ModelPropterus modelPropterus = new ModelPropterus();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
