@@ -1255,6 +1255,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARCHABOILUS = new CustomTrigger("pf_book_archaboilus");
     public static final CustomTrigger CLICK_EUROPASAURUS = new CustomTrigger("pf_book_europasaurus");
     public static final CustomTrigger CLICK_JEHOLOTRITON = new CustomTrigger("pf_book_jeholotriton");
+    public static final CustomTrigger CLICK_ANGUSTIDONTUS = new CustomTrigger("pf_book_angustidontus");
 
     public static final CustomTrigger CLICK_GLYPTOPS = new CustomTrigger("pf_book_glyptops");
     public static final CustomTrigger CLICK_KAYENTACHELYS = new CustomTrigger("pf_book_kayentachelys");
@@ -2531,6 +2532,7 @@ public class ModTriggers
             CLICK_CRYOLOPHOSAURUS,
             CLICK_OLENELLUS,
             CLICK_CERVIFURCA,
+            CLICK_ANGUSTIDONTUS
 
 
 
