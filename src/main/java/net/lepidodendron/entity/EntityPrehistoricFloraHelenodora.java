@@ -58,7 +58,6 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		return true;
 	}
 
-
 	public static String getPeriod() {
 		return "Carboniferous";
 	}

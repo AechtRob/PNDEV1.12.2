@@ -1234,8 +1234,8 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
             */
 
             this.bob(this.main, 0.5F, 0.001F, false, f2, 1F);
-            this.chainWaveExtended(bodySegments, 1.6F, 0.001F, 0.02F, 0, f2, 1f);
-            this.chainWaveExtended(bodySegments2, 1.6F, -0.001F, 0.04F, 3, f2, 1f);
+            //this.chainWaveExtended(bodySegments, 1.6F, 0.001F, 0.02F, 0, f2, 1f);
+            //this.chainWaveExtended(bodySegments2, 1.6F, -0.001F, 0.04F, 3, f2, 1f);
 
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.2F, -0.2F, -3, f2, 1);

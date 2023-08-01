@@ -179,7 +179,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:arthropleura_idle"));
+				.getObject(new ResourceLocation("lepidodendron:eoarthropleura_idle"));
 		//=null
 	}
 

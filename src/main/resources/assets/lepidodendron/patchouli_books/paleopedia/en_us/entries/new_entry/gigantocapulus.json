@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/gigantocapulus_icon.png",
 	"category": "lepidodendron:cretaceous_static",
-	"turnin": "lepidodendron:pf_adv_book_gigantocapulus",
+	"turnin": "lepidodendron:pf_book_bivalve_inoceramus_gigantocapulus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_gigantocapulus",
+			"trigger": "lepidodendron:pf_book_bivalve_inoceramus_gigantocapulus",
 			"title": "Gigantocapulus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Gastropoda $(br)>Gigantocapulidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gigantocapulus",
+			"advancement": "lepidodendron:pf_book_bivalve_inoceramus_gigantocapulus",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gigantocapulus",
+			"advancement": "lepidodendron:pf_book_bivalve_inoceramus_gigantocapulus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
