@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:shell_perisphinctes"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_ammonite_perisphinctes.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_ammonite_perisphinctes.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_ammonite_perisphinctes"
+		}
+	}
+}

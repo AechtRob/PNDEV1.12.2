@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
 			"title": "Pachydiscus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Paleogene(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Pachydiscidae"
+			"text": "$(l)Temporal Range:$() Cretaceous - Paleogene$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Pachydiscidae"
 		},
 		{
 			"type": "image",
