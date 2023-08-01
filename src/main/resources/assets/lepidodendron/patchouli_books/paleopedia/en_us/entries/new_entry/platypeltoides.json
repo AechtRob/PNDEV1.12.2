@@ -6,7 +6,7 @@
 	"turnin": "lepidodendron:pf_adv_book_platypeltoides",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_platypeltoides",
 			"title": "Platypeltoides",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>Trilobita $(br)>Asaphida $(br)>Nileidae"

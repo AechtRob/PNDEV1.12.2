@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_phyllocrinus",
 			"title": "Phyllocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata(br)>Crinoidea(br)>Cyrtocrinida(br)>Phyllocrinidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyrtocrinida$(br)>Phyllocrinidae"
 		},
 		{
 			"type": "image",

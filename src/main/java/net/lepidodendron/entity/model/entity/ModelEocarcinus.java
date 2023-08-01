@@ -392,7 +392,7 @@ public class ModelEocarcinus extends AdvancedModelBase {
         EntityPrehistoricFloraEocarcinus ee = (EntityPrehistoricFloraEocarcinus) entitylivingbaseIn;
 
         if (ee.isInWater()) {
-            if(ee.getIsMoving()) {
+            if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
 

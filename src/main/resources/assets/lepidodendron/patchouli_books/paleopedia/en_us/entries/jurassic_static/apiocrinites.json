@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
 			"title": "Apiocrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata(br)>Crinoidea(br)>Millericrinida(br)>Apiocrinitidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Millericrinida$(br)>Apiocrinitidae"
 		},
 		{
 			"type": "image",

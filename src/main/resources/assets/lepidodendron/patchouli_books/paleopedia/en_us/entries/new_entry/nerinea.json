@@ -3,7 +3,7 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/nerinea_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_nerinea",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_nerinea",

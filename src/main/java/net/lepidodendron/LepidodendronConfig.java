@@ -187,7 +187,7 @@ public class LepidodendronConfig {
     public static int waterAcanthostega = 2;
     public static int waterMegalocephalus = 4;
     public static int waterSpathicephalus = 4;
-    public static boolean colourPulmonoscorpius = true;
+    public static boolean colourPulmonoscorpius = false;
     public static int waterPederpes = 16;
     public static int waterPlatyhystrix = 16;
     public static int waterBalanerpeton = 8;
@@ -999,7 +999,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Mobs", "colourPulmonoscorpius", colourPulmonoscorpius);
-        prop.setComment("Render the Pulmonoscorpius in a colourful, \"Prehistoric Park\"-inspired texture [default: true]");
+        prop.setComment("Render the Pulmonoscorpius in a colourful, \"Prehistoric Park\"-inspired texture [default: false]");
         colourPulmonoscorpius = prop.getBoolean();
         propOrder.add(prop.getName());
 

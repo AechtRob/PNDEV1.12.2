@@ -76,7 +76,6 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		OreDictionary.registerOre("itemShellfish", BlockBivalveInoceramusGigantocapulus.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
