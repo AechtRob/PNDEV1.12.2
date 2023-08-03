@@ -35,7 +35,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     private int inPFLove;
     private int jumpTicks;
 
-    private static final DataParameter<Boolean> SWIMMING = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
+    //private static final DataParameter<Boolean> SWIMMING = EntityDataManager.<Boolean>createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> SWIMTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WALKTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
 
@@ -82,18 +82,18 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
     //checks if the animal is actually swimming
     public boolean getIsSwimming() {
-        try {
-            if (this.dataManager.get(SWIMMING).getClass().equals(Boolean.TYPE)) {
-                return (Boolean)this.dataManager.get(SWIMMING);
-            }
-        } catch (Exception error) {
-        }
+        //try {
+            //if (this.dataManager.get(SWIMMING).getClass().equals(Boolean.TYPE)) {
+                //return (Boolean)this.dataManager.get(SWIMMING).booleanValue();
+            //}
+        //} catch (Exception error) {
+        //}
         return false;
     }
 
     //sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
     public void setIsSwimming(boolean isSwimming) {
-        this.dataManager.set(SWIMMING, isSwimming);
+
     }
 
     //returns the length, in ticks, of the swim cycle
@@ -170,7 +170,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     protected void entityInit() {
         super.entityInit();
-        this.dataManager.register(SWIMMING, false);
+        //this.dataManager.register(SWIMMING, false);
         this.dataManager.register(SWIMTICK, 0);
         this.dataManager.register(WALKTICK, this.rand.nextInt(this.walkLength() + 1));
         this.setScaleForAge(false);
@@ -179,7 +179,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        this.setIsSwimming(false);
+        //this.setIsSwimming(false);
         this.setSwimTick(0);
         this.setWalkTick(this.rand.nextInt(this.walkLength() + 1));
         return livingdata;
@@ -187,14 +187,14 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
-        compound.setBoolean("pfswimming", this.getIsSwimming());
+        //compound.setBoolean("pfswimming", this.getIsSwimming());
         compound.setInteger("pfswimtick", this.getSwimTick());
         compound.setInteger("pfwalktick", this.getWalkTick());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
-        this.setIsSwimming(compound.getBoolean("pfswimming"));
+        //this.setIsSwimming(compound.getBoolean("pfswimming"));
         this.setSwimTick(compound.getInteger("pfswimtick"));
         this.setWalkTick(compound.getInteger("pfwalktick"));
     }
@@ -499,6 +499,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
         if (!this.world.isRemote) {
             this.selectNavigator();
+            //this.swimmingHolder = this.isReallySwimming();
         }
 
         //IF IS SWIMMINGPN:
