@@ -35,7 +35,6 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     private int inPFLove;
     private int jumpTicks;
 
-    //private static final DataParameter<Boolean> SWIMMING = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> SWIMTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WALKTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
 
@@ -486,6 +485,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
         if (!this.world.isRemote) {
             this.selectNavigator();
+            //this.swimmingHolder = this.isReallySwimming();
         }
 
         //IF IS SWIMMINGPN:
