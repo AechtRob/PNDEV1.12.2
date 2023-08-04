@@ -36,6 +36,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -58,6 +59,7 @@ public class BlockSabalFruitBunch extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentitysabal_fruit_bunch");
+		OreDictionary.registerOre("itemFruit", BlockSabalFruitBunch.block);
 	}
 
 	@SideOnly(Side.CLIENT)

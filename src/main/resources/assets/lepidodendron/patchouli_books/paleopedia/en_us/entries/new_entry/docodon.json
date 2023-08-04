@@ -26,6 +26,14 @@
 			"advancement": "lepidodendron:pf_adv_book_docodon",
 			"type": "text",
 			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Burrow$(br)$(l)Method of Obtaining:$() Find Egg in Burrow"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_docodon"
+		},
+		{
+			"type": "lepidodendron:breeding",
+			"mob": "lepidodendron:prehistoric_flora_docodon"
 		}
 	]
 }

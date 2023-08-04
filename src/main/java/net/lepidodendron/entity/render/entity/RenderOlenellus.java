@@ -12,7 +12,7 @@ public class RenderOlenellus extends RenderLiving<EntityPrehistoricFloraOlenellu
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/olenellus.png");
 
     public static float getScaler() {
-        return 0.2F;
+        return 0.3F;
     }
     public RenderOlenellus(RenderManager mgr) {
         super(mgr, new ModelOlenellus(), 0.0f);

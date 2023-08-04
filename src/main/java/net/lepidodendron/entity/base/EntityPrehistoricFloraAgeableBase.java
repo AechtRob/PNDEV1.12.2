@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
@@ -45,6 +46,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -95,6 +97,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
     }
 
     @Override
@@ -1394,6 +1402,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public boolean isBreedingItem(ItemStack stack)
     {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
         return false;
     }
 

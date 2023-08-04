@@ -4,9 +4,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ShoalingHelper;
-import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -36,6 +36,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -55,16 +56,23 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);
         this.enablePersistence();
-        if (this.isSlowAtBottom()) {
-            this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
+        if (world != null) {
+            if (this.isSlowAtBottom()) {
+                this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
+            } else {
+                this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelper();
+            }
+            this.navigator = new PathNavigateSwimmer(this, world);
         }
-        else{
-            this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelper();
-        }
-        this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
     }
 
     @Override
@@ -349,7 +357,12 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     @Override
     public boolean isBreedingItem(ItemStack stack)
     {
-        return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public EnumCreatureAttributePN getPNCreatureAttribute() {

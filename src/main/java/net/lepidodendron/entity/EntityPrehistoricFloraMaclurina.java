@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
@@ -24,7 +25,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -97,6 +98,11 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 	}
 
 	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.ALGAE);
+	}
+
+	@Override
 	public boolean isAIDisabled() {
 		return false;
 	}
@@ -123,11 +129,7 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));
-	}
+	
 
 	@Override
 	public SoundEvent getAmbientSound() {

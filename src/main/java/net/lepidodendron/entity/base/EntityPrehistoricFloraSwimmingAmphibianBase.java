@@ -35,25 +35,27 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
     public EntityPrehistoricFloraSwimmingAmphibianBase(World world) {
         super(world);
 
-        if (this.isInWater()) {
-            this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.SwimmingMoveHelper();
-            this.navigator = new PathNavigateSwimmer(this, world);
-            this.isWaterNavigator = true;
-            this.isSeekingWater = false;
-        }
-        else {
-            if (isNearWater(this, this.getPosition())) {
-                this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-                this.navigator = new PathNavigateAmphibian(this, world);
-                this.isWaterNavigator = false;
+        if (world != null) {
+            if (this.isInWater()) {
+                this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.SwimmingMoveHelper();
+                this.navigator = new PathNavigateSwimmer(this, world);
+                this.isWaterNavigator = true;
                 this.isSeekingWater = false;
             }
-            else {//Find water!
-                this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-                this.navigator = new PathNavigateAmphibianFindWater(this, world);
-                this.setPathPriority(PathNodeType.WATER, 10F);
-                this.isWaterNavigator = false;
-                this.isSeekingWater = true;
+            else {
+                if (isNearWater(this, this.getPosition())) {
+                    this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateAmphibian(this, world);
+                    this.isWaterNavigator = false;
+                    this.isSeekingWater = false;
+                }
+                else {//Find water!
+                    this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateAmphibianFindWater(this, world);
+                    this.setPathPriority(PathNodeType.WATER, 10F);
+                    this.isWaterNavigator = false;
+                    this.isSeekingWater = true;
+                }
             }
         }
 

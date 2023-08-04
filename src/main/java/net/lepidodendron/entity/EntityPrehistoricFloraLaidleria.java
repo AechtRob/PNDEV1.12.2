@@ -11,14 +11,12 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -37,7 +35,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -53,27 +51,27 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 
 	public EntityPrehistoricFloraLaidleria(World world) {
 		super(world);
-		//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
-		//this.navigator = new PathNavigateSwimmer(this, world);
-		if (this.isInWater()) {
-			this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
-			this.navigator = new PathNavigateSwimmer(this, world);
-			this.isWaterNavigator = true;
-			this.isSeekingWater = false;
-		}
-		else {
-			if (isNearWater(this, this.getPosition())) {
-				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-				this.navigator = new PathNavigateAmphibian(this, world);
-				this.isWaterNavigator = false;
+		if (world != null) {
+			//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
+			//this.navigator = new PathNavigateSwimmer(this, world);
+			if (this.isInWater()) {
+				this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+				this.navigator = new PathNavigateSwimmer(this, world);
+				this.isWaterNavigator = true;
 				this.isSeekingWater = false;
-			}
-			else {//Find water!
-				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-				this.navigator = new PathNavigateAmphibianFindWater(this, world);
-				this.setPathPriority(PathNodeType.WATER, 10F);
-				this.isWaterNavigator = false;
-				this.isSeekingWater = true;
+			} else {
+				if (isNearWater(this, this.getPosition())) {
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibian(this, world);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = false;
+				} else {//Find water!
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibianFindWater(this, world);
+					this.setPathPriority(PathNodeType.WATER, 10F);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = true;
+				}
 			}
 		}
 		setSize(0.5F, 0.2F);
@@ -283,20 +281,15 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.85F, 300));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					|| stack.getItem() == ItemFishFood.block
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
 
 	@Override

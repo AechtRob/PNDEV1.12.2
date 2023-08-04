@@ -4,9 +4,9 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.item.ItemLacewingEggsItem;
-import net.lepidodendron.item.entities.ItemBugRaw;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
@@ -28,6 +28,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -243,11 +244,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		return getStandardLoot();
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemBugRaw.block;
-	}
+	
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
@@ -438,6 +435,11 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	@Override
 	public ResourceLocation FlightSound() {
 		return new ResourceLocation("lepidodendron:lacewing_flight");
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 }

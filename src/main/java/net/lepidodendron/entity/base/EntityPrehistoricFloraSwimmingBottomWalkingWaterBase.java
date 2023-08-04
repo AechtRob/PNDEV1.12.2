@@ -35,14 +35,15 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     private int inPFLove;
     private int jumpTicks;
 
-    private static final DataParameter<Boolean> SWIMMING = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> SWIMTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WALKTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);
 
     //standard constructor, calls the parent class, adds a navigator and creates three animations, eat, swim and unswim
     public EntityPrehistoricFloraSwimmingBottomWalkingWaterBase(World world) {
         super(world);
-        this.selectNavigator();
+        if (world != null) {
+            this.selectNavigator();
+        }
         SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
         UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
         EAT_ANIMATION = Animation.create(this.getEatLength());
@@ -53,6 +54,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     public Animation[] getAnimations() {
         return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
     }
+
     //how long is the eat animation
     public int getEatLength() {
         return 10;
@@ -81,20 +83,10 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     }
 
     //checks if the animal is actually swimming
-    public boolean getIsSwimming() {
-        try {
-            if (this.dataManager.get(SWIMMING).getClass().equals(Boolean.TYPE)) {
-                return (Boolean)this.dataManager.get(SWIMMING);
-            }
-        } catch (Exception error) {
-        }
-        return false;
-    }
+    public abstract boolean getIsSwimming(); //Needs override in actual mob
 
     //sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
-    public void setIsSwimming(boolean isSwimming) {
-        this.dataManager.set(SWIMMING, isSwimming);
-    }
+    public abstract void setIsSwimming(boolean isSwimming); //Needs override in actual mob
 
     //returns the length, in ticks, of the swim cycle
     public int getSwimTick() {
@@ -170,7 +162,6 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     protected void entityInit() {
         super.entityInit();
-        this.dataManager.register(SWIMMING, false);
         this.dataManager.register(SWIMTICK, 0);
         this.dataManager.register(WALKTICK, this.rand.nextInt(this.walkLength() + 1));
         this.setScaleForAge(false);
@@ -179,7 +170,6 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        this.setIsSwimming(false);
         this.setSwimTick(0);
         this.setWalkTick(this.rand.nextInt(this.walkLength() + 1));
         return livingdata;
@@ -187,14 +177,12 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
-        compound.setBoolean("pfswimming", this.getIsSwimming());
         compound.setInteger("pfswimtick", this.getSwimTick());
         compound.setInteger("pfwalktick", this.getWalkTick());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
-        this.setIsSwimming(compound.getBoolean("pfswimming"));
         this.setSwimTick(compound.getInteger("pfswimtick"));
         this.setWalkTick(compound.getInteger("pfwalktick"));
     }
@@ -499,6 +487,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
 
         if (!this.world.isRemote) {
             this.selectNavigator();
+            //this.swimmingHolder = this.isReallySwimming();
         }
 
         //IF IS SWIMMINGPN:

@@ -48,7 +48,9 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     public EntityPrehistoricFloraAgeableFlyingBase(World world) {
         super(world);
-        this.selectNavigator();
+        if (world != null) {
+            this.selectNavigator();
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }

@@ -394,7 +394,7 @@ public class ModelCameroceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.shellbase.offsetY = 1.2F;
+        //this.shellbase.offsetY = 1.2F;
         this.shellbase.offsetZ = -0.9F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.tentacle1a, this.tentacle1b};
@@ -474,7 +474,7 @@ public class ModelCameroceras extends AdvancedModelBaseExtended {
         }
         else {
             this.shellbase.rotateAngleZ = (float) Math.toRadians(90);
-            this.shellbase.offsetY = 1.15F;
+            this.shellbase.offsetY = 1.15F - 1.2F;
         }
 
     }

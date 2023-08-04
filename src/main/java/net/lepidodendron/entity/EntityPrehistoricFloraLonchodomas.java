@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -95,7 +96,12 @@ public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTri
 		tasks.addTask(1, new ShoalTrilobiteBottomAI(this, 1, true));
 		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override

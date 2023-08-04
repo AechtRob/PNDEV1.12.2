@@ -44,7 +44,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -64,6 +64,11 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		super(world);
 		setSize(0.55F, 0.42F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT, DietString.BUG);
 	}
 
 	@Override
@@ -211,7 +216,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		this.tasks.addTask(1, new AIAttackInsect(false, this.getAttackLength()));
 		this.tasks.addTask(2, new AIWanderInsect());
 		this.tasks.addTask(3, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAIFlyingInsect(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraInsectFlyingBaseAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraLandBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraCrawlingFlyingInsectBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -220,13 +225,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		this.targetTasks.addTask(5, new HuntSmallerThanMeAIInsect(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+	
 
 	@Override
 	public int getAnimationTick() {

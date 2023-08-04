@@ -5,9 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottomNoJump;
-import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -42,6 +42,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -69,6 +70,23 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 			return EnumCreatureAttributePN.INVERTEBRATE;
 		}
 		return EnumCreatureAttributePN.VERTEBRATE;
+	}
+
+	public abstract String[] getFoodOreDicts();
+
+	public String[] getMeatDropOreDicts() {
+		return DietString.NULL;
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		for (String oreDict : this.getFoodOreDicts()) {
+			if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -101,12 +119,6 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public String getBucketMessage() {
 		return "is too grown up to fit into a bucket";
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
 	}
 
 	@Override

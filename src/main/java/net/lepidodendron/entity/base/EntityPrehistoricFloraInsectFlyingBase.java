@@ -8,6 +8,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBaseAI;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
@@ -73,14 +75,33 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     public EntityPrehistoricFloraInsectFlyingBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
-        this.navigator = new PathNavigateFlyingNoWater(this, world);
-        this.getNavigator().getNodeProcessor().setCanSwim(false);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
+            this.navigator = new PathNavigateFlyingNoWater(this, world);
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack)
+    {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
     }
 
     @Override
@@ -308,14 +329,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         this.tasks.addTask(0, new EntityMateAIInsectFlyingBase(this, 1.0D));
         this.tasks.addTask(1, new AIWanderInsect());
         this.tasks.addTask(2, new EntityLookIdleAI(this));
-    }
-
-    @Override
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return (
-            (OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-        );
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraInsectFlyingBaseAI(this));
     }
 
     @Override

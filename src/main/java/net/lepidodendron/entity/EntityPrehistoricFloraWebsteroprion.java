@@ -38,6 +38,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -57,8 +58,10 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 
 	public EntityPrehistoricFloraWebsteroprion(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
-		this.navigator = new PathNavigateWaterBottom(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
+			this.navigator = new PathNavigateWaterBottom(this, world);
+		}
 		setSize(0.6F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
@@ -203,6 +206,11 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		this.targetTasks.addTask(0, new WebsteroprionEatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.NULL);
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.DietString;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -12,6 +13,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -24,6 +26,11 @@ public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraM
 		maxWidth = 0.27F;
 		maxHeight = 0.35F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG, DietString.MEAT);
 	}
 
 	public static String getPeriod() {return "Triassic";}

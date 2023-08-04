@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -12,6 +13,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -24,6 +26,11 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraMorg
 		maxWidth = 0.7F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 9.0D;
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 	public static String getPeriod() {return "Jurassic";}

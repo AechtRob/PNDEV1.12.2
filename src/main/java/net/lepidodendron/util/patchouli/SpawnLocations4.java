@@ -1,9 +1,9 @@
-package net.lepidodendron.util;
+package net.lepidodendron.util.patchouli;
 
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariableProvider;
 
-public class SpawnLocations3 implements IComponentProcessor {
+public class SpawnLocations4 implements IComponentProcessor {
 
     String mob;
 
@@ -14,7 +14,7 @@ public class SpawnLocations3 implements IComponentProcessor {
 
     @Override
     public String process(String s) {
-        String biomeList = SpawnLocations1.getBiomeList(this.mob, 32, 49);
+        String biomeList = SpawnLocations1.getBiomeList(this.mob, 49, 66);
         if (biomeList != null) {
             if (!biomeList.equalsIgnoreCase("")) {
                 return biomeList;

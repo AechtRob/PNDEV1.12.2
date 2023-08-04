@@ -288,8 +288,8 @@ public class ModelPhillipsia extends AdvancedModelBase {
         this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
         this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
 
-        this.swing(AntennaL, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
-        this.swing(AntennaR, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        this.swing(AntennaL, 0.3F, -0.2F, true, 0, -0.1F, f2, 0.8F);
+        this.swing(AntennaR, 0.3F, 0.2F, true, 0, 0.1F, f2, 0.8F);
 
         if (f3 != 0) {
             this.chainSwing(bodyF, 0.1F, 0.06F, -3, f2, 1.0F);

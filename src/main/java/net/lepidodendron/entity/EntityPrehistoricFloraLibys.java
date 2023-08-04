@@ -3,20 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAI;
-import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderLibys;
-import net.lepidodendron.entity.render.entity.RenderRhomaleosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -26,6 +20,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -62,12 +57,6 @@ public class EntityPrehistoricFloraLibys extends EntityPrehistoricFloraAgeableFi
 	@Override
 	public boolean isSmall() {
 		return true;
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemFishFood.block;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -121,8 +110,13 @@ public class EntityPrehistoricFloraLibys extends EntityPrehistoricFloraAgeableFi
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		}
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
+	}
 
 	@Override
 	public boolean isAIDisabled() {
