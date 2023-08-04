@@ -21,7 +21,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -41,7 +40,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
-	private static final DataParameter<Boolean> SWIMMING = EntityDataManager.<Boolean>createKey(EntityPrehistoricFloraSlimonia.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -254,48 +252,9 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 		return LepidodendronMod.SLIMONIA_LOOT;
 	}
 
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(SWIMMING, false);
-	}
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setIsSwimming(false);
-		//this.setSwimTick(0);
-		//this.setWalkTick(this.rand.nextInt(this.walkLength() + 1));
-		return livingdata;
-	}
-	public void writeEntityToNBT(NBTTagCompound compound) {
-		super.writeEntityToNBT(compound);
-		compound.setBoolean("pfswimming", this.getIsSwimming());
-		//compound.setInteger("pfswimtick", this.getSwimTick());
-		//compound.setInteger("pfwalktick", this.getWalkTick());
-	}
 
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.setIsSwimming(compound.getBoolean("pfswimming"));
-		//this.setSwimTick(compound.getInteger("pfswimtick"));
-		//this.setWalkTick(compound.getInteger("pfwalktick"));
-	}
-	@Override
-	public boolean getIsSwimming() {
-		//try {
-		//if (this.dataManager.get(SWIMMING).getClass().equals(Boolean.TYPE)) {
-		return (Boolean)this.dataManager.get(SWIMMING).booleanValue();
-		//}
-		//} catch (Exception error) {
-		//}
-		//return false;
-	}
-	//sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
-	@Override
-	public void setIsSwimming(boolean isSwimming) {
-		this.dataManager.set(SWIMMING, Boolean.valueOf(isSwimming));
-	}
-
+	//Rendering taxidermy:
+	//--------------------
 	public static double offsetWall(@Nullable String variant) {
 		return -0.7;
 	}
