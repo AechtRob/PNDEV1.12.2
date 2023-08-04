@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aspidorhynchus",
 			"title": "Aspidorhynchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
 			"type": "text",
-			"text": "Aspidorhynchus is a genus of Actinopterygian fish that lived between the Late Jurassic and the Early Cretaceous in Europe and potentially Asia, America and the Antarctic. the most obvious characteristic of Aspidorhynchus was the elongated rostrum, which would grow to be visibly longer than the jaw, giving the head the characteristic spear nosed"
+			"text": "Aspidorhynchus is a genus of Actinopterygian fish that lived between the Late Jurassic in Europe, America and the Antarctic. the most obvious characteristic of Aspidorhynchus was the elongated rostrum, which would grow to be visibly longer than the jaw, giving the head the characteristic spear nosed"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",

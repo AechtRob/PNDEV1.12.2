@@ -101,9 +101,9 @@ public class EntityPrehistoricFloraJeholotriton extends EntityPrehistoricFloraSw
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.1F;
+		float calcSpeed = 0.07F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.185f;
+			calcSpeed= 0.1f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

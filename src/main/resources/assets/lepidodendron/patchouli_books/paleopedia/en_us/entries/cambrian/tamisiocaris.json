@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",
 			"type": "text",
-			"text": ""
+			"text": "Tamisiocaris is a genus of radiodont described from Sirius Paset in Greenland. This radiodont is only described from frontal appendages, each endites on segments had dense bristle-like spines. It is suggested that Tamisiocaris was filter-feeding radiodont, by gathering plankton to feathery appendages."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",
+			"type": "text",
+			"text": "Interestingly, before detailed description of the animal in 2014, a Canadian artist John Meszaros drew a fictional filter feeding radiodont called \"Cetiocaris\". After that Tamisiocaris was placed to family called \"Cetiocaridae\" named after that fictional creature, but due to ICZN rules it was later renamed to Tamisiocarididae."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",

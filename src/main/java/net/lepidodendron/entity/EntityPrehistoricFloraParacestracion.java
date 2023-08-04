@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraParacestracion extends EntityPrehistoricFlora
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 

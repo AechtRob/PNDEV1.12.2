@@ -262,8 +262,8 @@ public class ModelParacestracion extends AdvancedModelBase {
             this.flap(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.swing(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if(ee.getIsMoving()|| e.isInWater()) { //if moving, slap fins
-                this.flap(frontleftfin, speed * 2.5F, 0.4F, true, -3, 0, f2, 1);
-                this.flap(frontrightfin, speed* 2.5F, -0.4F, true, -3, 0, f2, 1);
+                this.flap(frontleftfin, speed * 2.5F, 0.4F, false, -0, -0.5F, f2, 1);
+                this.flap(frontrightfin, speed* 2.5F, -0.4F, false, -0, 0.5F, f2, 1);
                 this.chainWave(fishTail, speed* 2.5F, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed* 2.5F, 0.25F, -3, f2, 1);
             }
@@ -271,8 +271,8 @@ public class ModelParacestracion extends AdvancedModelBase {
             else{ //if not accelerating swing fins instead
                 //this.swing(leftFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -0, -0.5F, f2, 1);
                 //this.swing(rightFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -3, 0.5F, f2, 1);
-                this.flap(frontleftfin, (speed), 0.25F, true, -3, 0, f2, 1);
-                this.flap(frontrightfin, (speed), -0.25F, true, -3, 0, f2, 1);
+                this.flap(frontleftfin, (speed), 0.25F, false, -0, -0.5F, f2, 1);
+                this.flap(frontrightfin, (speed), -0.25F, false, -0, 0.5F, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed, 0.3F, -3, f2, 1);
             }

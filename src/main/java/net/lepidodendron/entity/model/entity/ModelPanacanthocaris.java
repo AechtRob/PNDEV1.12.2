@@ -417,14 +417,14 @@ public class ModelPanacanthocaris extends AdvancedModelBase {
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(fishTail, speed, 0.3F, -3, f2, 0.7F);
+            this.chainSwing(fishTail, speed*0.5F, 0.25F, -3, f2, 0.7F);
             this.swing(uropodL, speed, 0.05F, false, 0, 0, f2, 1F);
             this.swing(uropodR, speed, 0.05F, true, 0, -0, f2, 1F);
             this.chainSwing(legsL, speed, 0.1F, -3, f2, 0.7F);
             this.chainSwing(legsR, speed, 0.1F, -3, f2, 0.7F);
             this.swing(bone, speed, 0.35F, true, 0, -0F, f2, 0.3F);
             this.swing(antennaR, speed, -0.35F, true, 0, -0F, f2, 0.3F);
-            this.swing(Body, speed, 0.15F, true, 0, 0, f2, 1);
+            //this.swing(Body, speed, 0.15F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Body.rotateAngleZ = (float) Math.toRadians(90);
                 //this.Body.offsetY = 1.07F;

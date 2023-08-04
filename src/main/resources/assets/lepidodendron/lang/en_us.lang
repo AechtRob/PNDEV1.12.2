@@ -7693,6 +7693,7 @@ tile.pf_zygopteris_sapling.name=Zygopteris Sapling
 tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.
+item.pf_viviparus_item.name=Viviparus
 oredict.listAllfishraw.name=Raw Fish
 oredict.listAllfishcooked.name=Cooked Fish
 oredict.listAllmeatraw.name=Raw Meat
