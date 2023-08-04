@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemArchocyrtusRaw extends ElementsLepidodendronMod.ModElement {
@@ -37,14 +40,28 @@ public class ItemArchocyrtusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archocyrtus", ItemArchocyrtusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemArchocyrtusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemArchocyrtusRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemArchocyrtusRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemArchocyrtusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
-			super(1, 0.05f, false);
+			super();
 			setTranslationKey("pf_archocyrtus_raw");
 			setRegistryName("archocyrtus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:archocyrtus";
+		}
+
+		@Nullable
+		@Override
+		public String getVariantStr() {
+			return null;
 		}
 	}
 }

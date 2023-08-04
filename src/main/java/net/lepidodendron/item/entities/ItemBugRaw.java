@@ -37,8 +37,8 @@ public class ItemBugRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("listAllmeatraw", ItemBugRaw.block);
-		//OreDictionary.registerOre("foodMeat", ItemBugRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemBugRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemBugRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemBugRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemBugRaw.block);
 	}

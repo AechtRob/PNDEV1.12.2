@@ -42,6 +42,8 @@ public class ItemPalaeodictyopteraDunbariaRaw extends ElementsLepidodendronMod.M
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@dunbaria", ItemPalaeodictyopteraDunbariaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraDunbariaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraDunbariaRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemPalaeodictyopteraDunbariaRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemPalaeodictyopteraDunbariaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

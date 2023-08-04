@@ -502,13 +502,40 @@ public class ModelKulindadromeus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetY = -0.054F;
-        this.root.render(0.01F);
+            this.setRotateAngle(Hips, -0.2F, 0.0F, 0.0F);
+            this.setRotateAngle(Tail1, 0.0F, -0.1F, 0.0F);
+            this.setRotateAngle(Tail2, 0.0F, -0.1F, 0.0F);
+            this.setRotateAngle(Tail3, 0.05F, -0.1F, 0.0F);
+            this.setRotateAngle(Tail4, 0.1F, -0.1F, 0.0F);
+            this.setRotateAngle(Bodymiddle, 0.23F, 0.1F, 0.0F);
+            this.setRotateAngle(Bodyfront, 0.29F, 0.1F, 0.0F);
+            this.setRotateAngle(Neck1, -0.5F, 0.1F, 0.0F);
+            this.setRotateAngle(Neck2, -0.2F, 0.1F, 0.0F);
+            this.setRotateAngle(Neck3, 0.27F, 0.1F, 0.0F);
+            this.setRotateAngle(Head, 0.0F, 0.1F, 0.0F);
+            this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg1, 0.2F, -0.3F, -0.1F);
+            this.setRotateAngle(Rightleg1, -0.9F, 0.5F, 0.0F);
+            this.setRotateAngle(Rightleg2, 1.4F, 0.0F, 0.0F);
+            this.setRotateAngle(Rightleg3, -1.2F, 0.0F, 0.0F);
+            this.setRotateAngle(Rightleg4, 0.9F, 0.0F, 0.0F);
+            this.root.offsetY = -0.06F;
+            this.root.render(0.01F);
+            resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.Bodyfront.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.3F, 0.2F);
+        this.Bodyfront.offsetY = -0.04F;
+        this.Bodyfront.offsetX = 0.0F;
+        this.Bodyfront.offsetZ = -0.1F;
+        this.Bodyfront.render(0.01F);
         resetToDefaultPose();
     }
-
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

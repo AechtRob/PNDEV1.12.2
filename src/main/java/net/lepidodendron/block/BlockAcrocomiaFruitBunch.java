@@ -36,6 +36,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -57,7 +58,9 @@ public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElemen
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		super.init(event);
 		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentityacrocomia_fruit_bunch");
+		OreDictionary.registerOre("itemFruit", BlockAcrocomiaFruitBunch.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -66,6 +69,7 @@ public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElemen
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:acrocomia_fruit_bunch", "inventory"));
 	}
+
 	public static class BlockCustom extends Block implements ITileEntityProvider, IShearable {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {

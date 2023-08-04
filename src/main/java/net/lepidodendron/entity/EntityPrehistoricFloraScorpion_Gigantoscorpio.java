@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraScorpion;
-import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,6 +25,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -47,6 +47,11 @@ public class EntityPrehistoricFloraScorpion_Gigantoscorpio extends EntityPrehist
 		else {
 			maxHealthAgeable = 6.0D;
 		}
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override
@@ -92,14 +97,8 @@ public class EntityPrehistoricFloraScorpion_Gigantoscorpio extends EntityPrehist
 		tasks.addTask(3, new LandEntitySwimmingAI(this, 0.15, true));
 		tasks.addTask(4, new LandWanderAvoidWaterClimbingAI(this, 0.8D));
 		tasks.addTask(5, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemBugRaw.block;
 	}
 
 	@Override

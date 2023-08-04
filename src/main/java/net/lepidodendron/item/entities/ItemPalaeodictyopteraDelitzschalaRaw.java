@@ -42,6 +42,8 @@ public class ItemPalaeodictyopteraDelitzschalaRaw extends ElementsLepidodendronM
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@delitzschala", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraDelitzschalaRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemPalaeodictyopteraDelitzschalaRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemPalaeodictyopteraDelitzschalaRaw.block);
 	}
 
 	public static class ItemCustom extends ItemGlassCaseDisplayItem {

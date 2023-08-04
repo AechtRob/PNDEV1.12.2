@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -13,12 +11,12 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.Comparator;
 import java.util.List;
 
-public class EatFishItemsAI extends EntityAIBase {
-    private final EntityPrehistoricFloraAgeableBase entity;
+public class EatItemsEntityPrehistoricFloraTrilobiteSwimBaseAI extends EntityAIBase {
+    private final EntityPrehistoricFloraTrilobiteSwimBase entity;
     private final ItemsSorter targetSorter;
     private EntityItem targetItem;
 
-    public EatFishItemsAI(EntityPrehistoricFloraAgeableBase entity) {
+    public EatItemsEntityPrehistoricFloraTrilobiteSwimBaseAI(EntityPrehistoricFloraTrilobiteSwimBase entity) {
         super();
         this.entity = entity;
         this.targetSorter = new ItemsSorter(entity);
@@ -26,21 +24,8 @@ public class EatFishItemsAI extends EntityAIBase {
     }
 
     @Override
-    public void resetTask()
-    {
-        this.entity.setEatTarget(null);
-        this.targetItem = null;
-    }
-
-    @Override
     public boolean shouldExecute() {
-        if (this.entity.getHealth() <= 0) {
-            return false;
-        }
         this.targetItem = this.getNearestItem(16);
-        //if (this.targetItem == null) {
-            //this.entity.setIsFast(false);
-        //}
         return this.targetItem != null;
     }
 
@@ -55,24 +40,12 @@ public class EatFishItemsAI extends EntityAIBase {
     @Override
     public void updateTask() {
         double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow((this.entity.posY - this.targetItem.posY)/2D, 2.0D) + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
-        this.entity.setEatTarget(this.targetItem);
-        this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 1D);
+        this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 2D);
         //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
         if (distance < Math.max(1.0F, this.entity.getEntityBoundingBox().getAverageEdgeLength())) {
             if (this.targetItem != null) {
-                this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
-            }
-        }
-        //A helper for things flying above their targets:
-        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
-            if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
-                if (this.targetItem != null) {
-                    this.entity.setEatTarget(null);
-                    this.entity.eatItem(this.targetItem.getItem());
-                    this.targetItem.getItem().shrink(1);
-                }
             }
         }
         if (this.entity.getNavigator().noPath()) {
@@ -81,14 +54,16 @@ public class EatFishItemsAI extends EntityAIBase {
     }
 
     private EntityItem getNearestItem(int range) {
+        String[] oreDictList = this.entity.getFoodOreDicts();
         List<EntityItem> Items = this.entity.world.getEntitiesWithinAABB(EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range));
         Items.sort(this.targetSorter);
         for (EntityItem currentItem : Items) {
             if (!currentItem.getItem().isEmpty()) {
-                if (((OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), currentItem.getItem()))
-                    || (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishcooked"), currentItem.getItem())))
-                    && !cantReachItem(currentItem)) {
-                    return currentItem;
+                for (String oreDict : oreDictList) {
+                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), currentItem.getItem())
+                            && !cantReachItem(currentItem)) {
+                        return currentItem;
+                    }
                 }
             }
         }
@@ -96,12 +71,6 @@ public class EatFishItemsAI extends EntityAIBase {
     }
 
     public boolean cantReachItem(Entity item) {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase ee = (EntityPrehistoricFloraLandBase) this.entity;
-            if (item.isInWater()) {
-                return true;
-            }
-        }
         RayTraceResult rayTrace = this.entity.world.rayTraceBlocks(this.entity.getPositionVector().add(0, this.entity.height / 2, 0), item.getPositionVector().add(0, item.height / 2, 0), false);
         if (rayTrace != null && rayTrace.hitVec != null) {
             BlockPos sidePos = rayTrace.getBlockPos();

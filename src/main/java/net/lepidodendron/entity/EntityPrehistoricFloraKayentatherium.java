@@ -8,7 +8,6 @@ import net.lepidodendron.entity.render.entity.RenderPseudotherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -16,7 +15,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -70,16 +69,13 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(12, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(2, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack) {
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-				//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("foodInsect"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FRUIT, DietString.PLANTS), DietString.SEED);
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {

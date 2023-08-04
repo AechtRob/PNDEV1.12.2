@@ -38,6 +38,8 @@ public class ItemEoarthropleuraRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eoarthropleura", ItemEoarthropleuraRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEoarthropleuraRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEoarthropleuraRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemEoarthropleuraRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemEoarthropleuraRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

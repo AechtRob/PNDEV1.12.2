@@ -1,4 +1,4 @@
-package net.lepidodendron.util;
+package net.lepidodendron.util.patchouli;
 
 import net.lepidodendron.world.biome.EntityLists;
 import net.minecraft.util.ResourceLocation;
@@ -53,6 +53,14 @@ public class SpawnLocations1 implements IComponentProcessor {
                             biomeList = biomeList + biomeName + "; ";
                             if (i > from && i <= to) {
                                 biomeListFinal = biomeListFinal + biomeName + "; ";
+                            }
+                            if (i > 66) {
+                                if (from == 0) {
+                                    return "Widespread";
+                                }
+                                else {
+                                    return "";
+                                }
                             }
                         }
                     }

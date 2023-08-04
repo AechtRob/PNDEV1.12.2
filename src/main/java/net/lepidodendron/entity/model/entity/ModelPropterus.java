@@ -181,13 +181,20 @@ public class ModelPropterus extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.main.offsetY = -0.13F;
-        this.main.offsetX = -0.06F;
+        this.main.offsetZ = 0.02F;
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = -0.0F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.5F, 0.0F);
+        this.main.offsetY = -0.14F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

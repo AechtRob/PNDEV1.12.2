@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -13,47 +11,20 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.Comparator;
 import java.util.List;
 
-public class EatAlgaeItemsAI extends EntityAIBase {
-    private final EntityPrehistoricFloraAgeableBase entity;
+public class EatItemsEntityPrehistoricFloraJellyfishBaseAI extends EntityAIBase {
+    private final EntityPrehistoricFloraJellyfishBase entity;
     private final ItemsSorter targetSorter;
     private EntityItem targetItem;
-    private double speed;
 
-    public EatAlgaeItemsAI(EntityPrehistoricFloraAgeableBase entity, double speedIn) {
+    public EatItemsEntityPrehistoricFloraJellyfishBaseAI(EntityPrehistoricFloraJellyfishBase entity) {
         super();
         this.entity = entity;
-        this.speed = speedIn;
         this.targetSorter = new ItemsSorter(entity);
         this.setMutexBits(1);
     }
 
     @Override
-    public void resetTask()
-    {
-        this.entity.setEatTarget(null);
-        this.targetItem = null;
-    }
-
-    @Override
     public boolean shouldExecute() {
-        if (this.entity.getHealth() <= 0) {
-            return false;
-        }
-
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.getAnimation() == LandBase.DRINK_ANIMATION) {
-                return false;
-            }
-        }
-
-        if (this.entity instanceof EntityPrehistoricFloraPlateosaurus) {
-            EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.entity;
-            if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
-                return false;
-            }
-        }
-
         this.targetItem = this.getNearestItem(16);
         return this.targetItem != null;
     }
@@ -68,13 +39,12 @@ public class EatAlgaeItemsAI extends EntityAIBase {
 
     @Override
     public void updateTask() {
-        double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow((this.entity.posY - this.targetItem.posY)/2D, 2.0D)  + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
-        this.entity.setEatTarget(this.targetItem);
-        this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, this.speed);
+        double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow((this.entity.posY - this.targetItem.posY)/2D, 2.0D) + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
+        //this.entity.setEatTarget(this.targetItem);
+        this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 2D);
         //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
         if (distance < Math.max(1.0F, this.entity.getEntityBoundingBox().getAverageEdgeLength())) {
             if (this.targetItem != null) {
-                this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
             }
@@ -85,13 +55,16 @@ public class EatAlgaeItemsAI extends EntityAIBase {
     }
 
     private EntityItem getNearestItem(int range) {
+        String[] oreDictList = this.entity.getFoodOreDicts();
         List<EntityItem> Items = this.entity.world.getEntitiesWithinAABB(EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range));
         Items.sort(this.targetSorter);
         for (EntityItem currentItem : Items) {
             if (!currentItem.getItem().isEmpty()) {
-                if (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), currentItem.getItem())
-                    && !cantReachItem(currentItem)) {
-                    return currentItem;
+                for (String oreDict : oreDictList) {
+                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), currentItem.getItem())
+                            && !cantReachItem(currentItem)) {
+                        return currentItem;
+                    }
                 }
             }
         }
@@ -99,12 +72,6 @@ public class EatAlgaeItemsAI extends EntityAIBase {
     }
 
     public boolean cantReachItem(Entity item) {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase ee = (EntityPrehistoricFloraLandBase) this.entity;
-            if (item.isInWater()) {
-                return true;
-            }
-        }
         RayTraceResult rayTrace = this.entity.world.rayTraceBlocks(this.entity.getPositionVector().add(0, this.entity.height / 2, 0), item.getPositionVector().add(0, item.height / 2, 0), false);
         if (rayTrace != null && rayTrace.hitVec != null) {
             BlockPos sidePos = rayTrace.getBlockPos();
