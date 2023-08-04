@@ -375,7 +375,7 @@ public class ModelArctinurus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.3F);
+        this.body.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -399,7 +399,7 @@ public class ModelArctinurus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.body.offsetZ = -0.1F;
-        this.body.offsetY = 1.05F;
+        //this.body.offsetY = 1.05F;
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {
