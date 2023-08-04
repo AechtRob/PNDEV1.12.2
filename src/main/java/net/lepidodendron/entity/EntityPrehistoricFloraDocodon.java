@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.render.entity.RenderDocodon;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -123,14 +124,14 @@ public class EntityPrehistoricFloraDocodon extends EntityPrehistoricFloraMorganu
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPseudotherium.TEXTURE;
+		return RenderDocodon.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPseudotherium;
+		return RenderDisplays.modelDocodon;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPseudotherium.getScaler();
+		return RenderDocodon.getScaler();
 	}
 
 }
