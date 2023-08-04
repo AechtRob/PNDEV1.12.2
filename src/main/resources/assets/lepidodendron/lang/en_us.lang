@@ -7700,6 +7700,7 @@ oredict.listAllmeatraw.name=Raw Meat
 oredict.listAllmeatcooked.name=Cooked Meat
 oredict.itemFishFood.name=Fish Food
 oredict.itemAlgae.name=Algae
+oredict.itemRotten.name=Rotten flesh
 oredict.itemShellfish.name=Shellfish and Bivalves
 oredict.itemMoss.name=Moss
 oredict.plant.name=Plants
