@@ -58,8 +58,10 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 
 	public EntityPrehistoricFloraWebsteroprion(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
-		this.navigator = new PathNavigateWaterBottom(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
+			this.navigator = new PathNavigateWaterBottom(this, world);
+		}
 		setSize(0.6F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.6F;

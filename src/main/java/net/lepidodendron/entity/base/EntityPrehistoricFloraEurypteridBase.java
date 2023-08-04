@@ -32,8 +32,10 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
     public EntityPrehistoricFloraEurypteridBase(World world) {
         super(world);
         //this.spawnableBlock = Blocks.WATER;
-        this.moveHelper = new EntityPrehistoricFloraEurypteridBase.SwimmingMoveHelper();
-        this.navigator = new PathNavigateSwimmer(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraEurypteridBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmer(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }

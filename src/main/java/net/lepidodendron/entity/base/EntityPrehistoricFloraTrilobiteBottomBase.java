@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGreenAlgaeMat;
 import net.lepidodendron.block.BlockRedAlgaeMat;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.entity.util.ShoalingHelper;
@@ -64,8 +65,10 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     public EntityPrehistoricFloraTrilobiteBottomBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
-        this.navigator = new PathNavigateWaterBottom(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
+            this.navigator = new PathNavigateWaterBottom(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -84,6 +87,10 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
 
 
     public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
+    }
 
     @Override
     public boolean isChild()

@@ -48,8 +48,10 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraGerrothorax(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraGerrothorax.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraGerrothorax.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.5F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.5F;

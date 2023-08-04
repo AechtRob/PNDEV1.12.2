@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
@@ -99,6 +100,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
+    }
 
     @Override
     public void onUpdate() {

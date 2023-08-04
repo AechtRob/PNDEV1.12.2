@@ -24,13 +24,13 @@ public class Diet implements IComponentProcessor {
     public String process(String s) {
         EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(this.mob));
         Class clazz = ee.getEntityClass();
-        Method renderMethod = RenderDisplayWallMount.testAndGetMethod(clazz, "getFoodOreDicts", null);
+        Method method = RenderDisplayWallMount.testAndGetMethod(clazz, "getFoodOreDicts", null);
         String[] string = new String[]{};
         String result = "";
-        if (renderMethod != null) {
+        if (method != null) {
             try {
                 EntityLiving entity = (EntityLiving) ee.newInstance(null);
-                string = (String[]) renderMethod.invoke(entity, null);
+                string = (String[]) method.invoke(entity, null);
                 entity.setDead();
             }
             catch (Exception e) {

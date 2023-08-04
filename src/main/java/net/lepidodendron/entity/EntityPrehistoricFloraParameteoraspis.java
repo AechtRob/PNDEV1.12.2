@@ -45,8 +45,10 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraParameteoraspis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraParameteoraspis.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraParameteoraspis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.8F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;

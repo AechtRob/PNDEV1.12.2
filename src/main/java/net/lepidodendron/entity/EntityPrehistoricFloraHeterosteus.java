@@ -39,8 +39,10 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraHeterosteus(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraHeterosteus.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraHeterosteus.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(1.85F, 0.5F);
 		minWidth = 0.2F;
 		maxWidth = 1.85F;

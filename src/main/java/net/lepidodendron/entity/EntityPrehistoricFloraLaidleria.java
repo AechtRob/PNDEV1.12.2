@@ -51,27 +51,27 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 
 	public EntityPrehistoricFloraLaidleria(World world) {
 		super(world);
-		//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
-		//this.navigator = new PathNavigateSwimmer(this, world);
-		if (this.isInWater()) {
-			this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
-			this.navigator = new PathNavigateSwimmer(this, world);
-			this.isWaterNavigator = true;
-			this.isSeekingWater = false;
-		}
-		else {
-			if (isNearWater(this, this.getPosition())) {
-				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-				this.navigator = new PathNavigateAmphibian(this, world);
-				this.isWaterNavigator = false;
+		if (world != null) {
+			//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
+			//this.navigator = new PathNavigateSwimmer(this, world);
+			if (this.isInWater()) {
+				this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+				this.navigator = new PathNavigateSwimmer(this, world);
+				this.isWaterNavigator = true;
 				this.isSeekingWater = false;
-			}
-			else {//Find water!
-				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-				this.navigator = new PathNavigateAmphibianFindWater(this, world);
-				this.setPathPriority(PathNodeType.WATER, 10F);
-				this.isWaterNavigator = false;
-				this.isSeekingWater = true;
+			} else {
+				if (isNearWater(this, this.getPosition())) {
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibian(this, world);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = false;
+				} else {//Find water!
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibianFindWater(this, world);
+					this.setPathPriority(PathNodeType.WATER, 10F);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = true;
+				}
 			}
 		}
 		setSize(0.5F, 0.2F);

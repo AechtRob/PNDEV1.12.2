@@ -41,7 +41,9 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     //standard constructor, calls the parent class, adds a navigator and creates three animations, eat, swim and unswim
     public EntityPrehistoricFloraSwimmingBottomWalkingWaterBase(World world) {
         super(world);
-        this.selectNavigator();
+        if (world != null) {
+            this.selectNavigator();
+        }
         SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
         UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
         EAT_ANIMATION = Animation.create(this.getEatLength());

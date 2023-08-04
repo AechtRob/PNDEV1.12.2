@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraTitanoptera;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
@@ -68,8 +69,10 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
         this.enablePersistence();
-        this.selectNavigator();
-        this.getNavigator().getNodeProcessor().setCanSwim(false);
+        if (world != null) {
+            this.selectNavigator();
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -104,6 +107,10 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     }
 
     public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
+    }
 
     @Override
     public boolean isBreedingItem(ItemStack stack)

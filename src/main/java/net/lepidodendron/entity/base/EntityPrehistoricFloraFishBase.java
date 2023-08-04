@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -55,19 +56,24 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);
         this.enablePersistence();
-        if (this.isSlowAtBottom()) {
-            this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
+        if (world != null) {
+            if (this.isSlowAtBottom()) {
+                this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
+            } else {
+                this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelper();
+            }
+            this.navigator = new PathNavigateSwimmer(this, world);
         }
-        else{
-            this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelper();
-        }
-        this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
     }
 
     public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
+    }
 
     @Override
     public boolean isChild()

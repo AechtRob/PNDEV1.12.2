@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -23,6 +24,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class LepidodendronBookSubscribers {
 
@@ -4077,7 +4079,6 @@ public class LepidodendronBookSubscribers {
 		String agePercent = "";
 		double maxHealth = 0;
 		double actualHealth = 0;
-		BlockPos nestPos = null;
 		String nestString = "";
 
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -4091,40 +4092,57 @@ public class LepidodendronBookSubscribers {
 			maxHealth = ((EntityLivingBase) event.getTarget()).getMaxHealth();
 			actualHealth = ((EntityLivingBase) event.getTarget()).getHealth();
 		}
-		if (event.getTarget() instanceof EntityPrehistoricFloraLandBase) {
-			if (((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
-				|| ((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
-				if (((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
+		nestString = getNestString(event.getTarget(), true);
+
+		if (event.getWorld().isRemote) {
+			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + df.format(actualHealth) + "/" + df.format(maxHealth) + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
+		}
+	}
+
+	public static String getNestString(Entity entity, boolean click) {
+
+		String nestString = "";
+		BlockPos nestPos = null;
+		if (entity instanceof EntityPrehistoricFloraLandBase) {
+			if (((EntityPrehistoricFloraLandBase) entity).hasNest()
+					|| ((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
+				if (((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
 					nestString = " lays eggs into mounds in blocks";
 				}
-				else if (((EntityPrehistoricFloraLandBase) event.getTarget()).dropsEggs()) {
+				else if (((EntityPrehistoricFloraLandBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
 				else {
-					nestPos = ((EntityPrehistoricFloraLandBase) event.getTarget()).getNestLocation();
-					if (nestPos != null
-							&& ((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
-							&& !((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
-						nestString = " has nest at " + nestPos.getX() + " " + nestPos.getY() + " " + nestPos.getZ();
-					} else {
-						nestString = " with no known nest";
+					if (click) {
+						nestPos = ((EntityPrehistoricFloraLandBase) entity).getNestLocation();
+						if (nestPos != null
+								&& ((EntityPrehistoricFloraLandBase) entity).hasNest()
+								&& !((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
+							nestString = " has nest at " + nestPos.getX() + " " + nestPos.getY() + " " + nestPos.getZ();
+						} else {
+							nestString = " with no known nest";
+						}
+					}
+					else {
+						nestString = " requires a nest to lay into";
 					}
 				}
 			}
-			else if (((EntityPrehistoricFloraLandBase) event.getTarget()).dropsEggs()) {
+			else if (((EntityPrehistoricFloraLandBase) entity).dropsEggs()) {
 				nestString = " drops egg items";
 			}
-			else if (((EntityPrehistoricFloraLandBase) event.getTarget()).laysEggs()) {
+			else if (((EntityPrehistoricFloraLandBase) entity).laysEggs()) {
 				nestString = " lays eggs into mosses, selaginella and rotten wood";
 			}
 			else {
 				nestString = " lays eggs in water";
 			}
 		}
-
-		if (event.getWorld().isRemote) {
-			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + df.format(actualHealth) + "/" + df.format(maxHealth) + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
+		if (!click) {
+			nestString = nestString.trim();
+			nestString = nestString.substring(0, 1).toUpperCase(Locale.ROOT) + nestString.substring(1);
 		}
+		return nestString;
 	}
 
 	public void deliverStatsNest(PlayerInteractEvent.RightClickBlock event) {

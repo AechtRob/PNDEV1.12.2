@@ -32,18 +32,18 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
 
     public EntityPrehistoricFloraAmphibianBase(World world) {
         super(world);
-        if (this.isInWater()) {
-            this.moveHelper = new EntityPrehistoricFloraAmphibianBase.SwimmingMoveHelper();
-            this.navigator = new PathNavigateSwimmer(this, world);
-        }
-        else {
-            if (isNearWater(this, this.getPosition())) {
-                this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
-                this.navigator = new PathNavigateAmphibian(this, world);
-            }
-            else {//Find water!
-                this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
-                this.navigator = new PathNavigateAmphibianFindWater(this, world);
+        if (world != null) {
+            if (this.isInWater()) {
+                this.moveHelper = new EntityPrehistoricFloraAmphibianBase.SwimmingMoveHelper();
+                this.navigator = new PathNavigateSwimmer(this, world);
+            } else {
+                if (isNearWater(this, this.getPosition())) {
+                    this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateAmphibian(this, world);
+                } else {//Find water!
+                    this.moveHelper = new EntityPrehistoricFloraAmphibianBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateAmphibianFindWater(this, world);
+                }
             }
         }
         if (FMLCommonHandler.instance().getSide().isClient()) {

@@ -45,8 +45,10 @@ public class EntityPrehistoricFloraPhyllolepis extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraPhyllolepis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraPhyllolepis.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraPhyllolepis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.5F, 0.35F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;

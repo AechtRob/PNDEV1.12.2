@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
@@ -54,14 +55,20 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
     public EntityPrehistoricFloraJellyfishBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraJellyfishBase.SwimmingMoveHelper();
-        this.navigator = new PathNavigateSwimmer(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraJellyfishBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmer(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
     }
 
     public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
+    }
 
     @Override
     public boolean isChild()

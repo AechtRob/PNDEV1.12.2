@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottomNoJump;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -72,6 +73,10 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	}
 
 	public abstract String[] getFoodOreDicts();
+
+	public String[] getMeatDropOreDicts() {
+		return DietString.NULL;
+	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)

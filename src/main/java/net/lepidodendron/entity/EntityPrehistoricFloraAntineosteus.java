@@ -34,8 +34,10 @@ public class EntityPrehistoricFloraAntineosteus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraAntineosteus(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraAntineosteus.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraAntineosteus.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(1.25F, 0.85F);
 		minWidth = 0.2F;
 		maxWidth = 1.25F;

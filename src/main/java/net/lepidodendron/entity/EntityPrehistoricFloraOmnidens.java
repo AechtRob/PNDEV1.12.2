@@ -59,8 +59,10 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 	public EntityPrehistoricFloraOmnidens(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		this.moveHelper = new EntityPrehistoricFloraOmnidens.WanderMoveHelper();
-		this.navigator = new PathNavigateWaterBottom(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraOmnidens.WanderMoveHelper();
+			this.navigator = new PathNavigateWaterBottom(this, world);
+		}
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;

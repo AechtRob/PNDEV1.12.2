@@ -45,8 +45,10 @@ public class EntityPrehistoricFloraCowralepis extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraCowralepis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraCowralepis.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraCowralepis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.4F, 0.25F);
 		minWidth = 0.2F;
 		maxWidth = 0.4F;

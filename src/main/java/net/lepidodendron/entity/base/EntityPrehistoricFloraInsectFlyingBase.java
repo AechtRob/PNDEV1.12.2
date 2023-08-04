@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBaseAI;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
@@ -74,9 +75,11 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     public EntityPrehistoricFloraInsectFlyingBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
-        this.navigator = new PathNavigateFlyingNoWater(this, world);
-        this.getNavigator().getNodeProcessor().setCanSwim(false);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
+            this.navigator = new PathNavigateFlyingNoWater(this, world);
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -96,6 +99,10 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     }
 
     public abstract String[] getFoodOreDicts();
+
+    public String[] getMeatDropOreDicts() {
+        return DietString.NULL;
+    }
 
     @Override
     public boolean isChild()

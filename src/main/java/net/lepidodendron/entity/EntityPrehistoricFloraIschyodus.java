@@ -49,8 +49,10 @@ public class EntityPrehistoricFloraIschyodus extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraIschyodus(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraIschyodus.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraIschyodus.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.5F, 0.5F);
 		minWidth = 0.2F;
 		maxWidth = 0.3F;

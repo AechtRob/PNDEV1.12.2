@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderPseudorhina;
-import net.lepidodendron.entity.render.entity.RenderSqualoraja;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -51,8 +50,10 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraPseudorhina(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraPseudorhina.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraPseudorhina.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.9F, 0.35F);
 		minWidth = 0.2F;
 		maxWidth = 0.9F;

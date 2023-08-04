@@ -38,8 +38,10 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraDeltoptychius(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraDeltoptychius.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraDeltoptychius.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.4F, 0.45F);
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
