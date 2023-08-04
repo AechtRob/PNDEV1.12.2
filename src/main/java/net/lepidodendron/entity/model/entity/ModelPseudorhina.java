@@ -204,15 +204,33 @@ public class ModelPseudorhina extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.main.rotateAngleX = (float) Math.toRadians(90);
-        this.main.rotateAngleZ = (float) Math.toRadians(90);
-        this.main.offsetX = -0.02F;
-        this.main.offsetZ = -0.01F;
+        this.main.rotateAngleX = (float) Math.toRadians(0);
+        this.main.rotateAngleY = (float) Math.toRadians(70);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.1F, 0.0F);
+        this.main.offsetX = -0.0F;
+        this.main.offsetZ = -0.14F;
         this.main.offsetY = -0.245F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, -0.05F, 0.0F);
+        this.setRotateAngle(tail5, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -0.2F);
+        this.main.offsetY = -0.14F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
 

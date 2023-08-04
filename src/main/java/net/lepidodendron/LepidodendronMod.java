@@ -928,7 +928,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation WHATCHEERIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/whatcheeria"));
 	public static final ResourceLocation WHATCHEERIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/whatcheeria_young"));
 	public static final int ENTITY_HELENODORA = 354;
-	//public static final ResourceLocation HELENODORA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/helenodora"));
+	public static final ResourceLocation HELENODORA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/helenodora"));
 	public static final int ENTITY_MEGANEURA = 355;
 	public static final ResourceLocation MEGANEURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/meganeura"));
 	public static final ResourceLocation MEGANEURA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/meganeura_jar"));

@@ -42,6 +42,8 @@ public class ItemKalligrammatidLiassopsychopsRaw extends ElementsLepidodendronMo
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemKalligrammatidLiassopsychopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKalligrammatidLiassopsychopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKalligrammatidLiassopsychopsRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemKalligrammatidLiassopsychopsRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemKalligrammatidLiassopsychopsRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

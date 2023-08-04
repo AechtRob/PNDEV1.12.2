@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -39,14 +40,22 @@ public class ItemArchaboilusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaboilus@male", ItemArchaboilusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemArchaboilusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemArchaboilusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
-			super(1, 0.05f, false);
+			super();
 			setTranslationKey("pf_archaboilus_raw");
 			setRegistryName("archaboilus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:archaboilus";
 		}
 
 		@Nullable

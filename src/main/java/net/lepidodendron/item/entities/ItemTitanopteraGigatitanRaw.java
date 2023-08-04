@@ -39,6 +39,8 @@ public class ItemTitanopteraGigatitanRaw extends ElementsLepidodendronMod.ModEle
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_titanoptera_gigatitan", ItemTitanopteraGigatitanRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTitanopteraGigatitanRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTitanopteraGigatitanRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemTitanopteraGigatitanRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemTitanopteraGigatitanRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

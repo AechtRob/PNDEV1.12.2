@@ -254,15 +254,23 @@ public class ModelPhorcynis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.body.rotateAngleX = (float) Math.toRadians(90);
-        this.body.rotateAngleZ = (float) Math.toRadians(90);
+        this.body.rotateAngleX = (float) Math.toRadians(0);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetX = -0.02F;
-        this.body.offsetZ = -0.01F;
+        this.body.offsetZ = -0.05F;
         this.body.offsetY = -0.245F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.3F, 0.0F);
+        this.body.offsetY = -0.14F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
 

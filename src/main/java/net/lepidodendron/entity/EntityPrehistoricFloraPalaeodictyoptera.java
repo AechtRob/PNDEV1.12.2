@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsPalaeodictyoptera;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
 import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
@@ -33,6 +34,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -731,5 +733,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		return RenderPalaeodictyoptera.getScaler(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant));
 	}
 
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
+	}
 
 }

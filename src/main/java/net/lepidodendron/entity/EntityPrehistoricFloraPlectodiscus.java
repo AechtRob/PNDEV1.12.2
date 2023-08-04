@@ -3,6 +3,8 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
@@ -22,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJellyfishBase {
 
@@ -70,7 +73,14 @@ public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJe
     protected void initEntityAI() {
         tasks.addTask(0, new EntityMateAIJellyfishBase(this, 1));
         tasks.addTask(1, new JellyfishWanderSurface(this, ANIMATION_JELLYFISH_WANDER));
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraJellyfishBaseAI(this));
     }
+
+    @Override
+    public String[] getFoodOreDicts() {
+        return ArrayUtils.addAll(DietString.FISHFOOD);
+    }
+
     @Override
     public String getTexture() {
         return this.getTexture();

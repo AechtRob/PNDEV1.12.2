@@ -4092,7 +4092,8 @@ public class LepidodendronBookSubscribers {
 			actualHealth = ((EntityLivingBase) event.getTarget()).getHealth();
 		}
 		if (event.getTarget() instanceof EntityPrehistoricFloraLandBase) {
-			if (((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()) {
+			if (((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
+				|| ((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
 				if (((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
 					nestString = " lays eggs into mounds in blocks";
 				}

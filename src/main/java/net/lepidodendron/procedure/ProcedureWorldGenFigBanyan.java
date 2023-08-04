@@ -1,7 +1,9 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockFigBanyanRoot;
+import net.lepidodendron.block.BlockFigLeavesBanyan;
+import net.lepidodendron.block.BlockFigLog;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;

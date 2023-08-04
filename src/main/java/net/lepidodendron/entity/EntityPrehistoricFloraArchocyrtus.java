@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsProtozygoptera;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
@@ -40,6 +41,11 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 	public EntityPrehistoricFloraArchocyrtus(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.PLANTS;
 	}
 
 	public void onEntityUpdate() {

@@ -4,10 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteSwimBase;
-import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteSwimBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderSwim;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
 import net.lepidodendron.entity.render.entity.RenderCancrinos;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -88,7 +85,12 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 		tasks.addTask(0, new EntityMateAITrilobiteSwimBase(this, 1));
 		tasks.addTask(1, new TrilobiteWanderSwim(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteSwimBase(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteSwimBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override
