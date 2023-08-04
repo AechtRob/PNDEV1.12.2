@@ -95,7 +95,12 @@ public class EntityPrehistoricFloraAmpyx extends EntityPrehistoricFloraTrilobite
 		tasks.addTask(1, new ShoalTrilobiteBottomAI(this, 1, true));
 		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override

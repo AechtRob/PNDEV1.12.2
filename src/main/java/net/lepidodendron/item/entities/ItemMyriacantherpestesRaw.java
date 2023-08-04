@@ -41,6 +41,8 @@ public class ItemMyriacantherpestesRaw extends ElementsLepidodendronMod.ModEleme
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_myriacantherpestes", ItemMyriacantherpestesRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMyriacantherpestesRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemMyriacantherpestesRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemMyriacantherpestesRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemMyriacantherpestesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

@@ -45,6 +45,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -96,6 +97,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
     }
+
+    public abstract String[] getFoodOreDicts();
 
     @Override
     public void onUpdate() {
@@ -1394,6 +1397,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public boolean isBreedingItem(ItemStack stack)
     {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
         return false;
     }
 

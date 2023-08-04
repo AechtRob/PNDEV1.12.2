@@ -7,9 +7,7 @@ import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.block.BlockDollyphyton;
 import net.lepidodendron.block.BlockEdwardsiphyton;
 import net.lepidodendron.block.BlockSelaginella;
-import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemLandSnail;
@@ -30,7 +28,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -116,12 +114,12 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
 		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemMoss"), stack));
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MOSS, DietString.FUNGI);
 	}
 
 	@Override

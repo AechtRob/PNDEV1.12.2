@@ -4,10 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -82,7 +79,12 @@ public class EntityPrehistoricFloraAcadoaradoxides extends EntityPrehistoricFlor
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
 		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override

@@ -3,6 +3,8 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
@@ -57,7 +59,14 @@ public class EntityPrehistoricFloraDidymograptus extends EntityPrehistoricFloraJ
     protected void initEntityAI() {
         tasks.addTask(0, new EntityMateAIJellyfishBase(this, 1));
         tasks.addTask(1, new JellyfishWander(this, ANIMATION_JELLYFISH_WANDER));
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraJellyfishBaseAI(this));
     }
+
+    @Override
+    public String[] getFoodOreDicts() {
+        return DietString.FISHFOOD;
+    }
+
     @Override
     public String getTexture() {
         return this.getTexture();

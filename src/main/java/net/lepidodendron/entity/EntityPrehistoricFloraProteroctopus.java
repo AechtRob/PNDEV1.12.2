@@ -10,19 +10,25 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalking
 import net.lepidodendron.entity.render.entity.RenderProteroctopus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
-import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -33,6 +39,9 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 	public ChainBuffer tailBuffer;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+
+	private static final DataParameter<Boolean> SWIMMING = EntityDataManager.createKey(EntityPrehistoricFloraProteroctopus.class, DataSerializers.BOOLEAN);
+	//Needs to be here because it is not loaded in time to be accessed by the client if it's on the parent class!
 
 	public EntityPrehistoricFloraProteroctopus(World world) {
 		super(world);
@@ -45,6 +54,43 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(SWIMMING, false);
+		this.setScaleForAge(false);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setIsSwimming(false);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setBoolean("pfswimming", this.getIsSwimming());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setIsSwimming(compound.getBoolean("pfswimming"));
+	}
+
+	//checks if the animal is actually swimming
+	@Override
+	public boolean getIsSwimming() {
+		return (Boolean)this.dataManager.get(SWIMMING);
+	}
+
+	//sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
+	@Override
+	public void setIsSwimming(boolean isSwimming) {
+		this.dataManager.set(SWIMMING, isSwimming);
+	}
+
 
 	@Override
 	public EnumCreatureAttributePN getPNCreatureAttribute() {
@@ -133,13 +179,12 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 		tasks.addTask(1, new SwimmingBottomWalkingSwimBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(2, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override

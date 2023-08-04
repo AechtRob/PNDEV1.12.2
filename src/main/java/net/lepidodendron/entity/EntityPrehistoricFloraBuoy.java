@@ -38,6 +38,11 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
     }
 
     @Override
+    public String[] getFoodOreDicts() {
+        return new String[]{};
+    }
+
+    @Override
     public EnumCreatureAttributePN getPNCreatureAttribute() {
         return EnumCreatureAttributePN.UNDEFINED;
     }
