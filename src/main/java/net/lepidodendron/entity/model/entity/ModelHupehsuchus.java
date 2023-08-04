@@ -273,10 +273,32 @@ public class ModelHupehsuchus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hupehsuchus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Neck, 0.4F, 0.3F, 0.0F);
+        this.setRotateAngle(Head, -0.3F, 0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(Tail4, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(LArm, 0.3F, 0.3F, -0.3F);
+        this.setRotateAngle(RArm, 0.3F, -0.3F, 0.3F);
+        this.Hupehsuchus.offsetY = -0.14F;
+        this.Hupehsuchus.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.Neck.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(Neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.Neck.offsetY = -0.03F;
+        this.Neck.offsetX = 0.0F;
+        this.Neck.offsetZ = -0.3F;
+        this.Neck.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

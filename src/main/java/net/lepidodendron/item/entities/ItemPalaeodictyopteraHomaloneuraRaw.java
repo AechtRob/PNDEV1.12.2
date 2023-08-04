@@ -42,6 +42,8 @@ public class ItemPalaeodictyopteraHomaloneuraRaw extends ElementsLepidodendronMo
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@homaloneura", ItemPalaeodictyopteraHomaloneuraRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraHomaloneuraRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraHomaloneuraRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemPalaeodictyopteraHomaloneuraRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemPalaeodictyopteraHomaloneuraRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

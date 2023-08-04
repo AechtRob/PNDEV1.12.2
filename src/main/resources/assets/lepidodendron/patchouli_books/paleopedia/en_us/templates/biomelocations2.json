@@ -1,5 +1,5 @@
 {
-  "processor": "net.lepidodendron.util.SpawnLocations2",
+  "processor": "net.lepidodendron.util.patchouli.SpawnLocations2",
   "components": [
     {
       "type": "text",

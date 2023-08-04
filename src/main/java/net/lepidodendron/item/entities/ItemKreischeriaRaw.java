@@ -39,6 +39,8 @@ public class ItemKreischeriaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_trigonotarbid_kreischeria", ItemKreischeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKreischeriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKreischeriaRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemKreischeriaRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemKreischeriaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

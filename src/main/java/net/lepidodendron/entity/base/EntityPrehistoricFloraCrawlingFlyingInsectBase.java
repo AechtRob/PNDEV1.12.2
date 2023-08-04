@@ -24,6 +24,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -33,10 +34,7 @@ import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
@@ -65,6 +63,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private int inPFLove;
     private boolean laying;
+    private EntityItem eatTarget;
 
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
@@ -75,6 +74,46 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.chainBuffer = new ChainBuffer();
         }
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public void eatItem(ItemStack stack) {
+        if (stack != null && stack.getItem() != null) {
+            float itemHealth = 0.5F; //Default minimal nutrition
+            if (stack.getItem() instanceof ItemFood) {
+                itemHealth = ((ItemFood) stack.getItem()).getHealAmount(stack);
+            }
+            this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
+            stack.shrink(1);
+
+            if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+                SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
+                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            }
+        }
+    }
+
+    @Nullable
+    public EntityItem getEatTarget()
+    {
+        return this.eatTarget;
+    }
+
+    public void setEatTarget(@Nullable EntityItem entityItem)
+    {
+        this.eatTarget = entityItem;
+    }
+
+    public abstract String[] getFoodOreDicts();
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack)
+    {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public EnumCreatureAttributePN getPNCreatureAttribute() {
@@ -290,14 +329,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     public static final Animation ANIMATION_WANDER = Animation.create(20);
 
-    @Override
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return (
-                (OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-        );
-    }
-
     //@Override
     //protected void updateAITasks()
     //{
@@ -310,6 +341,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.tasks.addTask(2, new AIWanderInsect());
         this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
         this.tasks.addTask(4, new EntityLookIdleAI(this));
+
     }
 
     @Override

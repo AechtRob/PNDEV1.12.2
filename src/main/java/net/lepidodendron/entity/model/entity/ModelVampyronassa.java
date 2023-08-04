@@ -252,10 +252,10 @@ public class ModelVampyronassa extends AdvancedModelBaseExtended {
         this.body.render(f5);
     }
         public void renderStaticWall(float f) {
-            this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(body, 0.5F, 0.0F, 0.0F);
             this.body.offsetY = -0.25F;
             this.body.offsetX = 0.0F;
-            this.body.offsetZ = -0.8F;
+            this.body.offsetZ = -0.78F;
             this.body.rotateAngleY = (float) Math.toRadians(0);
             this.body.render(0.01F);
             resetToDefaultPose();

@@ -26,6 +26,10 @@
 			"advancement": "lepidodendron:pf_adv_book_antineosteus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_antineosteus"
 		}
 	]
 }
