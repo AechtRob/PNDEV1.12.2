@@ -5,10 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.entity.*;
@@ -20,6 +17,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -135,7 +133,12 @@ public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
 		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override

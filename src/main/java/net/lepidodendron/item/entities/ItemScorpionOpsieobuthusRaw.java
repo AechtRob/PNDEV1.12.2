@@ -32,6 +32,8 @@ public class ItemScorpionOpsieobuthusRaw extends ElementsLepidodendronMod.ModEle
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpion_opsieobuthus", ItemScorpionOpsieobuthusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemScorpionOpsieobuthusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemScorpionOpsieobuthusRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemScorpionOpsieobuthusRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemScorpionOpsieobuthusRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -1,6 +1,6 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -11,12 +11,12 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.Comparator;
 import java.util.List;
 
-public class EatMeatItemsAIFlyingInsect extends EntityAIBase {
-    private final EntityPrehistoricFloraInsectFlyingBase entity;
+public class EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI extends EntityAIBase {
+    private final EntityPrehistoricFloraTrilobiteBottomBase entity;
     private final ItemsSorter targetSorter;
     private EntityItem targetItem;
 
-    public EatMeatItemsAIFlyingInsect(EntityPrehistoricFloraInsectFlyingBase entity) {
+    public EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(EntityPrehistoricFloraTrilobiteBottomBase entity) {
         super();
         this.entity = entity;
         this.targetSorter = new ItemsSorter(entity);
@@ -25,21 +25,8 @@ public class EatMeatItemsAIFlyingInsect extends EntityAIBase {
 
     @Override
     public boolean shouldExecute() {
-        if (this.entity.getHealth() <= 0) {
-            return false;
-        }
         this.targetItem = this.getNearestItem(16);
-        //if (this.targetItem == null) {
-        //    this.entity.setIsFast(false);
-        //}
         return this.targetItem != null;
-    }
-
-    @Override
-    public void resetTask()
-    {
-        this.entity.setEatTarget(null);
-        this.targetItem = null;
     }
 
     @Override
@@ -53,12 +40,11 @@ public class EatMeatItemsAIFlyingInsect extends EntityAIBase {
     @Override
     public void updateTask() {
         double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow((this.entity.posY - this.targetItem.posY)/2D, 2.0D) + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
-        this.entity.setEatTarget(this.targetItem);
-        this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 1D);
+        //this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 2D);
+        this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 2D);
         //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
         if (distance < Math.max(1.0F, this.entity.getEntityBoundingBox().getAverageEdgeLength())) {
             if (this.targetItem != null) {
-                this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
             }
@@ -69,14 +55,16 @@ public class EatMeatItemsAIFlyingInsect extends EntityAIBase {
     }
 
     private EntityItem getNearestItem(int range) {
+        String[] oreDictList = this.entity.getFoodOreDicts();
         List<EntityItem> Items = this.entity.world.getEntitiesWithinAABB(EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range));
         Items.sort(this.targetSorter);
         for (EntityItem currentItem : Items) {
             if (!currentItem.getItem().isEmpty()) {
-                if (((OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), currentItem.getItem()))
-                    || (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatcooked"), currentItem.getItem())))
-                    && !cantReachItem(currentItem)) {
-                    return currentItem;
+                for (String oreDict : oreDictList) {
+                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), currentItem.getItem())
+                            && !cantReachItem(currentItem)) {
+                        return currentItem;
+                    }
                 }
             }
         }

@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsArchaboilus;
+import net.lepidodendron.entity.ai.DietString;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -42,6 +43,11 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 	public EntityPrehistoricFloraArchaboilus(World world) {
 		super(world);
 		setSize(0.18F, 0.15F);
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.PLANTS;
 	}
 
 	@Override

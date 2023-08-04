@@ -1,4 +1,4 @@
-package net.lepidodendron.util;
+package net.lepidodendron.util.patchouli;
 
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariableProvider;

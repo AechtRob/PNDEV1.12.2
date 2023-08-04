@@ -32,6 +32,8 @@ public class ItemScorpionGigantoscorpioRaw extends ElementsLepidodendronMod.ModE
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpion_gigantoscorpio", ItemScorpionGigantoscorpioRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemScorpionGigantoscorpioRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemScorpionGigantoscorpioRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemScorpionGigantoscorpioRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemScorpionGigantoscorpioRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

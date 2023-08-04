@@ -39,6 +39,8 @@ public class ItemDragonfly7Raw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dragonfly@dragonfly1", ItemDragonfly7Raw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDragonfly7Raw.block);
 		OreDictionary.registerOre("foodMeat", ItemDragonfly7Raw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemDragonfly7Raw.block);
+		OreDictionary.registerOre("foodInsect", ItemDragonfly7Raw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -42,6 +42,8 @@ public class ItemLacewingAetheogrammaRaw extends ElementsLepidodendronMod.ModEle
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemLacewingAetheogrammaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemLacewingAetheogrammaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemLacewingAetheogrammaRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemLacewingAetheogrammaRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemLacewingAetheogrammaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

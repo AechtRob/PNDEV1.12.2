@@ -5,9 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
-import net.lepidodendron.entity.ai.LandWanderAvoidWaterAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -27,7 +25,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -49,11 +47,7 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 		maxHealthAgeable = 0.8D;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemMoss"), stack));
-	}
+	
 
 	@Override
 	public ItemStack getPickedResult(RayTraceResult target)
@@ -135,6 +129,12 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 		tasks.addTask(0, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(1, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(2, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FISH), DietString.MEAT), DietString.ROTTEN);
 	}
 
 	@Override
