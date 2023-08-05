@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dickinsonia",
 			"title": "Dickinsonia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)>Proarticulata$(br)>Dipleurozoa$(br)>Dickinsoniidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Dipleurozoa$(br)>Dickinsoniidae"
 		},
 		{
 			"type": "image",
