@@ -40,6 +40,7 @@ public class ItemFadeniaCarboniferousRaw extends ElementsLepidodendronMod.ModEle
 		OreDictionary.registerOre("listAllfishraw", ItemFadeniaCarboniferousRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemFadeniaCarboniferousRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemFadeniaCarboniferousRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemFadeniaCarboniferousRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

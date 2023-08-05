@@ -32,6 +32,7 @@ public class ItemChaoyangsaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_chaoyangsaurus", ItemChaoyangsaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemChaoyangsaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemChaoyangsaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemChaoyangsaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

@@ -43,6 +43,7 @@ public class ItemGerarusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemGerarusRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemGerarusRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemGerarusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemGerarusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

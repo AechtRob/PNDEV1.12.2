@@ -174,7 +174,7 @@ public class ModelFurcaster extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.core.render(f5 * 0.08F);
+        this.core.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -188,7 +188,7 @@ public class ModelFurcaster extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.core.offsetY = 1.5F;
+        //this.core.offsetY = 1.5F;
         AdvancedModelRenderer[] Arm1 = {this.arm1a, this.arm1b, this.arm1c, this.arm1d, this.arm1e};
         AdvancedModelRenderer[] Arm2 = {this.arm2a, this.arm2b, this.arm2c, this.arm2d, this.arm2e};
         AdvancedModelRenderer[] Arm3 = {this.arm3a, this.arm3b, this.arm3c, this.arm3d, this.arm3e};

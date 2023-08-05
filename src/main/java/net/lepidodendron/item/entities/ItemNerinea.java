@@ -54,6 +54,7 @@ public class ItemNerinea extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemNerinea.block);
 		OreDictionary.registerOre("foodMeat", ItemNerinea.block);
 		OreDictionary.registerOre("itemShellfish", ItemNerinea.block);
+		OreDictionary.registerOre("pndietMeat", ItemNerinea.block);
 	}
 
 

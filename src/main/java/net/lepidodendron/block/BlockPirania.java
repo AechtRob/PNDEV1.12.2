@@ -79,6 +79,7 @@ public class BlockPirania extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:pirania", BlockPirania.block);
 		OreDictionary.registerOre("sponge", BlockPirania.block);
+		OreDictionary.registerOre("pndietSponge", BlockPirania.block);
 	}
 
 

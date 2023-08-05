@@ -33,6 +33,7 @@ public class ItemVetulicolaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemVetulicolaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVetulicolaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVetulicolaRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemVetulicolaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

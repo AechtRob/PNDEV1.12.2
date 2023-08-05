@@ -54,6 +54,7 @@ public class ItemPhanerotinus extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemPhanerotinus.block);
 		OreDictionary.registerOre("foodMeat", ItemPhanerotinus.block);
 		OreDictionary.registerOre("itemShellfish", ItemPhanerotinus.block);
+		OreDictionary.registerOre("pndietShellfish", ItemPhanerotinus.block);
 	}
 
 

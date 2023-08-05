@@ -13,9 +13,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockBacterialLayerArchean extends ElementsLepidodendronMod.ModElement {
@@ -23,6 +25,12 @@ public class BlockBacterialLayerArchean extends ElementsLepidodendronMod.ModElem
 	public static final Block block = null;
 	public BlockBacterialLayerArchean(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.bacterial_layer);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pndietMicrobial", BlockBacterialLayerArchean.block);
 	}
 
 	@Override

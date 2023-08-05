@@ -34,6 +34,7 @@ public class ItemScorpionPulmonoscorpiusRaw extends ElementsLepidodendronMod.Mod
 		OreDictionary.registerOre("foodMeat", ItemScorpionPulmonoscorpiusRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemScorpionPulmonoscorpiusRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemScorpionPulmonoscorpiusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemScorpionPulmonoscorpiusRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -75,6 +75,7 @@ public class BlockCoralStonyPipeStack extends ElementsLepidodendronMod.ModElemen
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_stony_pipe_stack", BlockCoralStonyPipeStack.block);
 		OreDictionary.registerOre("coral", BlockCoralStonyPipeStack.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralStonyPipeStack.block);
 	}
 
 

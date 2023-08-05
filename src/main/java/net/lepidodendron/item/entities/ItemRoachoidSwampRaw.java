@@ -41,6 +41,7 @@ public class ItemRoachoidSwampRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemRoachoidSwampRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemRoachoidSwampRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemRoachoidSwampRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemRoachoidSwampRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

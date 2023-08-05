@@ -44,6 +44,7 @@ public class ItemPalaeodictyopteraSinodunbariaRaw extends ElementsLepidodendronM
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraSinodunbariaRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemPalaeodictyopteraSinodunbariaRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemPalaeodictyopteraSinodunbariaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemPalaeodictyopteraSinodunbariaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

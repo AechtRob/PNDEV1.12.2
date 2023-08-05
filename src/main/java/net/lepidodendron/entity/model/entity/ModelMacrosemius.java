@@ -276,13 +276,20 @@ public class ModelMacrosemius extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Macrosemius.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.Macrosemius.offsetY = -0.13F;
-        this.Macrosemius.offsetX = -0.06F;
+        this.Macrosemius.offsetZ = -0.0F;
+        this.Macrosemius.offsetY = -0.2F;
+        this.Macrosemius.offsetX = -0.02F;
         this.Macrosemius.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.45F, 0.0F);
+        this.Macrosemius.offsetY = -0.14F;
+        this.Macrosemius.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

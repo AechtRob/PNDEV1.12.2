@@ -71,6 +71,7 @@ public class BlockHerpetogaster extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockHerpetogaster.TileEntityCustom.class, "lepidodendron:tileentityherpetogaster");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:herpetogaster", BlockHerpetogaster.block);
+		OreDictionary.registerOre("pndietEncruster", BlockHerpetogaster.block);
 	}
 
 

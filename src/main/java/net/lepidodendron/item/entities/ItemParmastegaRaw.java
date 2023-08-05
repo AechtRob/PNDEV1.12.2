@@ -39,6 +39,7 @@ public class ItemParmastegaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_parmastega", ItemParmastegaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemParmastegaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemParmastegaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemParmastegaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

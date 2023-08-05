@@ -39,6 +39,7 @@ public class ItemEchinochimaeraFemaleRaw extends ElementsLepidodendronMod.ModEle
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_echinochimaera@female", ItemEchinochimaeraFemaleRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEchinochimaeraFemaleRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemEchinochimaeraFemaleRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

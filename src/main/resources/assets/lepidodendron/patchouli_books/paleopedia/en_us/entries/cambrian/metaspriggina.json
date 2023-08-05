@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_metaspriggina",
 			"title": "Metaspriggina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Chordata$(br)>Metaspriggiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Metaspriggiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Metaspriggina is an early chordate that bore similarities to Pikaia and Haikouichthys. It is one of the earliest vetebrates, and it possessed two upward facing eyes and lacked fins. They were probably filter feeders, swimming above the sea floor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_metaspriggina",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_metaspriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_metaspriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_metaspriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_metaspriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_metaspriggina"
 		}
 	]
 }

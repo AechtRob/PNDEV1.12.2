@@ -54,6 +54,7 @@ public class ItemLeviathania extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemLeviathania.block);
 		OreDictionary.registerOre("foodMeat", ItemLeviathania.block);
 		OreDictionary.registerOre("itemShellfish", ItemLeviathania.block);
+		OreDictionary.registerOre("pndietMeat", ItemLeviathania.block);
 	}
 
 

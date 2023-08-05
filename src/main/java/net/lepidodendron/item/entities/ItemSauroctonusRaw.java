@@ -39,6 +39,7 @@ public class ItemSauroctonusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sauroctonus", ItemSauroctonusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSauroctonusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSauroctonusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemSauroctonusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

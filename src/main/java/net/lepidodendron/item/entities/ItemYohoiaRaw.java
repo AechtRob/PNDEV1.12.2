@@ -33,6 +33,7 @@ public class ItemYohoiaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemYohoiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemYohoiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemYohoiaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemYohoiaRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

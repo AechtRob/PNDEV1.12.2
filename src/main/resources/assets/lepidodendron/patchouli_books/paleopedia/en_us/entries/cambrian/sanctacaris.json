@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sanctacaris",
 			"title": "Sanctacaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Habeliida $(br)>Sanctacarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Habeliida $(br)>Sanctacarididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Sanctacaris uncata, which means \"claw of saintly crab\", is around 9 cm-long arthropod from Burgess Shale. It belongs to the group called Habeliida, which is closely related to modern chelicerates (group including horseshoe crabs, spiders, scorpions etc.) Although not exactly known from Sanctacaris, according to Habelia it probably had strong jaw on the base of each legs on head, and it probably crushed hard-shelled arthropods with these jaws!"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_sanctacaris",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sanctacaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sanctacaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sanctacaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sanctacaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sanctacaris"
 		}
 	]
 }

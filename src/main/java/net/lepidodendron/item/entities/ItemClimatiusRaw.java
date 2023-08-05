@@ -37,6 +37,7 @@ public class ItemClimatiusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_climatius", ItemClimatiusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemClimatiusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemClimatiusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

@@ -40,6 +40,7 @@ public class ItemMegalograptusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemMegalograptusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMegalograptusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemMegalograptusRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemMegalograptusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

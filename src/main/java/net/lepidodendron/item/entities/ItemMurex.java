@@ -54,6 +54,7 @@ public class ItemMurex extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemMurex.block);
 		OreDictionary.registerOre("foodMeat", ItemMurex.block);
 		OreDictionary.registerOre("itemShellfish", ItemMurex.block);
+		OreDictionary.registerOre("pndietMeat", ItemMurex.block);
 	}
 
 

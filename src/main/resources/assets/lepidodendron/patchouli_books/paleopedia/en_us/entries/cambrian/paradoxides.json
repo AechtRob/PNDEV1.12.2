@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paradoxides",
 			"title": "Paradoxides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Paradoxides was a trilobite from the middle Cambrian with 2 curved spines at the ends of its cephalon. It is relatively large and flat and would have lived on the sea floor scavenging for food. Like other early trilobites, Paradoxides might have been able to roll."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_paradoxides",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paradoxides"
 		}
 	]
 }

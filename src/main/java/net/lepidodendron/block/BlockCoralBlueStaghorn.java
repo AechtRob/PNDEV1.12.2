@@ -75,6 +75,7 @@ public class BlockCoralBlueStaghorn extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_blue_staghorn", BlockCoralBlueStaghorn.block);
 		OreDictionary.registerOre("coral", BlockCoralBlueStaghorn.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralBlueStaghorn.block);
 	}
 
 

@@ -40,6 +40,7 @@ public class ItemPlectronocerasRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemPlectronocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPlectronocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPlectronocerasRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemPlectronocerasRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

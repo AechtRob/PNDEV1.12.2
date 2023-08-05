@@ -76,6 +76,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:grypania", BlockGrypania.block);
+		OreDictionary.registerOre("itemAlgae", BlockGrypania.block);
 	}
 
 
@@ -284,8 +285,8 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Unicellular tube-shaped organism");
-				tooltip.add("Periods: Paleoproterozoic - Mesoproterozoic - Neoproterozoic - Ediacaran");}
+				tooltip.add("Type: Unicellular, tube-shaped, algae-like organism");
+				tooltip.add("Periods: Paleoproterozoic (Rhyacian - Orosirian - Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

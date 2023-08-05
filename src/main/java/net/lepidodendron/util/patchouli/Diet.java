@@ -1,5 +1,6 @@
 package net.lepidodendron.util.patchouli;
 
+import net.lepidodendron.LepidodendronBookSubscribers;
 import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
@@ -27,10 +28,12 @@ public class Diet implements IComponentProcessor {
         Method method = RenderDisplayWallMount.testAndGetMethod(clazz, "getFoodOreDicts", null);
         String[] string = new String[]{};
         String result = "";
+        String nestString = "N/A";
         if (method != null) {
             try {
                 EntityLiving entity = (EntityLiving) ee.newInstance(null);
                 string = (String[]) method.invoke(entity, null);
+                nestString = LepidodendronBookSubscribers.getNestString(entity, false);
                 entity.setDead();
             }
             catch (Exception e) {
@@ -39,11 +42,14 @@ public class Diet implements IComponentProcessor {
         }
         if (string.length > 0) {
             for (String element : string) {
-                result = result + "$(br)" + I18n.translateToLocal("oredict." + element + ".name").trim();
+                result = result + "$(br)" + "$(li)" + I18n.translateToLocal("oredict." + element + ".name").trim();
             }
-            return result;
         }
-        return "Unknown";
+        else {
+            result = "$(br)Unknown diet";
+        }
+
+        return "$(br)$(l)Diet:$()$(br)" + result + "$(br2)" + "$(l)Breeding notes:$()$(br)" + nestString;
     }
 
 }

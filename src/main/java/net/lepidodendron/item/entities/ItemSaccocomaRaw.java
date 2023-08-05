@@ -37,6 +37,7 @@ public class ItemSaccocomaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_saccocoma", ItemSaccocomaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSaccocomaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSaccocomaRaw.block);
+		OreDictionary.registerOre("pndietCrinoid", ItemSaccocomaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

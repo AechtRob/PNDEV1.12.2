@@ -52,6 +52,7 @@ public class BlockVillebrunaster extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockVillebrunaster.TileEntityCustom.class, "lepidodendron:tileentityvillebrunaster_item");
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_villebrunaster", BlockVillebrunaster.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockVillebrunaster.block);
 	}
 
 	@SideOnly(Side.CLIENT)

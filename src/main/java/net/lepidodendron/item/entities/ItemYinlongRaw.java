@@ -32,6 +32,7 @@ public class ItemYinlongRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_yinlong", ItemYinlongRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemYinlongRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemYinlongRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemYinlongRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

@@ -40,6 +40,7 @@ public class ItemTriops3Raw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemTriops3Raw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTriops3Raw.block);
 		OreDictionary.registerOre("foodMeat", ItemTriops3Raw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemTriops3Raw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

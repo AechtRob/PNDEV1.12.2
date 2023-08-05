@@ -269,8 +269,31 @@ public class ModelStanocephalosaurus extends AdvancedModelBaseExtended {
         this.body3.render(f5);
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(head, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.28F, 0.0F, 0.0F);
+        this.body3.offsetZ = -0.065F;
+        this.body3.offsetY = -0.065F;
+        this.body3.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticWall(float f) {
+        this.neck.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(head, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.02F;
+        this.neck.offsetX = 0.0F;
+        this.neck.offsetZ = 0.1F;
+        this.neck.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

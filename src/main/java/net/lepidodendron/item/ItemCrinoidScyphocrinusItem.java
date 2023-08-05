@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockBlastoid3;
 import net.lepidodendron.block.BlockCrinoidScyphocrinus;
 import net.lepidodendron.block.BlockCrinoidScyphocrinusFloat;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
@@ -60,6 +61,7 @@ public class ItemCrinoidScyphocrinusItem extends ElementsLepidodendronMod.ModEle
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_scyphocrinus_item", ItemCrinoidScyphocrinusItem.block);
+		OreDictionary.registerOre("pndietCrinoid", ItemCrinoidScyphocrinusItem.block);
 	}
 
 	public static class ItemCustom extends Item {

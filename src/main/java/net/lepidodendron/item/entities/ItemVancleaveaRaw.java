@@ -32,6 +32,7 @@ public class ItemVancleaveaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_vancleavea", ItemVancleaveaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVancleaveaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVancleaveaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemVancleaveaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

@@ -82,8 +82,8 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:cornulitida", BlockCornulitida.block);
+		OreDictionary.registerOre("pndietEncruster", BlockCornulitida.block);
 	}
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yilingia",
 			"title": "Yilingia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Animalia"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia"
 		},
 		{
 			"type": "image",

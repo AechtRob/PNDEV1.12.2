@@ -272,7 +272,7 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.76;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0.4;

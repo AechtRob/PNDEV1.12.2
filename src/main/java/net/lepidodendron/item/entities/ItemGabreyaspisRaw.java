@@ -39,6 +39,7 @@ public class ItemGabreyaspisRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGabreyaspisRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemGabreyaspisRaw.block);
 	}
 
 

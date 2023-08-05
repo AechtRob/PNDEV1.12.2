@@ -12,6 +12,8 @@ public class RenderEurypterus extends RenderLiving<EntityPrehistoricFloraEurypte
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus_baby.png");
 
+    public static float getScaler() {return 0.3F;}
+
     public RenderEurypterus(RenderManager mgr) {
         super(mgr, new ModelEurypterus(), 0.0f);
     }
@@ -19,7 +21,7 @@ public class RenderEurypterus extends RenderLiving<EntityPrehistoricFloraEurypte
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEurypterus entity) {
         float scale = entity.getAgeScale();
-        if (entity.isSmall()) {
+        if (scale < 0.6F) {
             return RenderEurypterus.TEXTURE_BABY;
         }
         return RenderEurypterus.TEXTURE;
@@ -32,7 +34,7 @@ public class RenderEurypterus extends RenderLiving<EntityPrehistoricFloraEurypte
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEurypterus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

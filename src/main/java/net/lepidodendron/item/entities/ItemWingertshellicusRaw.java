@@ -28,6 +28,7 @@ public class ItemWingertshellicusRaw extends ElementsLepidodendronMod.ModElement
 		OreDictionary.registerOre("listAllmeatraw", ItemWingertshellicusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWingertshellicusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemWingertshellicusRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemWingertshellicusRaw.block);
 	}
 	@Override
 	public void initElements() {

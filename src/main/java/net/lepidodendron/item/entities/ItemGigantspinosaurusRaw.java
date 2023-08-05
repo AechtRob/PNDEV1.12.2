@@ -32,6 +32,7 @@ public class ItemGigantspinosaurusRaw extends ElementsLepidodendronMod.ModElemen
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gigantspinosaurus", ItemGigantspinosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGigantspinosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGigantspinosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemGigantspinosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

@@ -54,6 +54,7 @@ public class ItemHarpagodes extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemHarpagodes.block);
 		OreDictionary.registerOre("foodMeat", ItemHarpagodes.block);
 		OreDictionary.registerOre("itemShellfish", ItemHarpagodes.block);
+		OreDictionary.registerOre("pndietMeat", ItemHarpagodes.block);
 	}
 
 

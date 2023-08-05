@@ -81,6 +81,7 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:chaunograptus", BlockChaunograptus.block);
+		OreDictionary.registerOre("pndietEncruster", BlockChaunograptus.block);
 	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable {

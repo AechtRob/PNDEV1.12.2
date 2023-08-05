@@ -37,6 +37,7 @@ public class ItemCasineriaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_casineria", ItemCasineriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCasineriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCasineriaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemCasineriaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

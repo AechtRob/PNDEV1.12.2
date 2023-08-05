@@ -27,6 +27,7 @@ public class ItemYunguisaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_yunguisaurus", ItemYunguisaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemYunguisaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemYunguisaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemYunguisaurusRaw.block);
 	}
 
 	@Override

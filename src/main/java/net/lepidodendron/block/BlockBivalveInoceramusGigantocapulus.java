@@ -74,6 +74,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_inoceramus_gigantocapulus", BlockBivalveInoceramusGigantocapulus.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveInoceramusGigantocapulus.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveInoceramusGigantocapulus.block);
 	}
 
 	@Override

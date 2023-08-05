@@ -37,6 +37,7 @@ public class ItemCynognathusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cynognathus", ItemCynognathusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCynognathusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCynognathusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemCynognathusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

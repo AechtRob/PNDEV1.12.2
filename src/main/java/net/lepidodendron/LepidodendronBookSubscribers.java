@@ -3,8 +3,7 @@ package net.lepidodendron;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.*;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -4136,6 +4135,75 @@ public class LepidodendronBookSubscribers {
 			}
 			else {
 				nestString = " lays eggs in water";
+			}
+		}
+		else {
+			if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+				if (((EntityPrehistoricFloraAgeableBase) entity).createPFChild(((EntityPrehistoricFloraAgeableBase) entity)) != null) {
+					nestString = " gives birth to live young";
+				}
+				if (((EntityPrehistoricFloraAgeableBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+				if (((EntityPrehistoricFloraTrilobiteBottomBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+				if (((EntityPrehistoricFloraTrilobiteSwimBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+				if (((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraFishBase) {
+				if (((EntityPrehistoricFloraFishBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
+				if (((EntityPrehistoricFloraInsectFlyingBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+				if (((EntityPrehistoricFloraJellyfishBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
+			}
+			if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).dropsEggs()) {
+					nestString = " drops egg items";
+				}
+				else {
+					nestString = " lays eggs in water";
+				}
 			}
 		}
 		if (!click) {

@@ -33,6 +33,7 @@ public class ItemXenacanthusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemXenacanthusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXenacanthusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemXenacanthusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemXenacanthusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

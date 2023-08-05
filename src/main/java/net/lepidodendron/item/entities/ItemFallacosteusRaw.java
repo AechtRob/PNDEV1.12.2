@@ -37,6 +37,7 @@ public class ItemFallacosteusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fallacosteus", ItemFallacosteusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFallacosteusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemFallacosteusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

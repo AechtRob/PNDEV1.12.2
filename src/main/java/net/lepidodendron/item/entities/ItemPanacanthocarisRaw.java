@@ -28,6 +28,7 @@ public class ItemPanacanthocarisRaw extends ElementsLepidodendronMod.ModElement 
 		OreDictionary.registerOre("listAllmeatraw", ItemPanacanthocarisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPanacanthocarisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPanacanthocarisRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemPanacanthocarisRaw.block);
 	}
 	@Override
 	public void initElements() {

@@ -38,21 +38,22 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 
-        String[] var2 = LepidodendronConfig.genLogResin;
-        int var3 = var2.length;
-        int meta;
+		String[] var2 = LepidodendronConfig.genLogResin;
+		int var3 = var2.length;
+		int meta;
 
-		try {			
-			for(Object block : Block.REGISTRY){ 
+		try {
+			for (Object block : Block.REGISTRY) {
 				//String name = Block.REGISTRY.getNameForObject((Block)block).toString();
-				if(true) {;
+				if (true) {
+					;
 					//outstream.write(name);
 					//outstream.newLine();
 					//System.err.println("BLOCK FOUND: " + name);
 
-			        for(int var4 = 0; var4 < var3; ++var4) {
-			            String checkBlock = var2[var4];
-			            //Is there a metadata tag? If so, keep it and strip it out of the string:
+					for (int var4 = 0; var4 < var3; ++var4) {
+						String checkBlock = var2[var4];
+						//Is there a metadata tag? If so, keep it and strip it out of the string:
 						int strPos = checkBlock.indexOf(":", checkBlock.indexOf(":") + 1);
 						//System.err.println("ORGBLOCK: " + checkBlock);
 						//System.err.println("SECOND COLON: " + strPos);
@@ -60,40 +61,39 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 							meta = (int) Integer.parseInt(checkBlock.substring(strPos + 1));
 							checkBlock = checkBlock.substring(0, strPos);
 							//System.err.println("REVBLOCK: " + checkBlock + " meta: " + meta);
-						}
-						else {
+						} else {
 							meta = -1;
 						}
 
-			            if (checkBlock.equalsIgnoreCase(Block.REGISTRY.getNameForObject((Block)block).toString())) {
-			            	if(meta == -1) {
-			            		OreDictionary.registerOre("logResin", new ItemStack((Block)block, (int) (1)));
-			            	}
-			            	else {
-			            		OreDictionary.registerOre("logResin", new ItemStack((Block)block, (int) (1), meta));
-			            	}
-			            }
-	
+						if (checkBlock.equalsIgnoreCase(Block.REGISTRY.getNameForObject((Block) block).toString())) {
+							if (meta == -1) {
+								OreDictionary.registerOre("logResin", new ItemStack((Block) block, (int) (1)));
+							} else {
+								OreDictionary.registerOre("logResin", new ItemStack((Block) block, (int) (1), meta));
+							}
+						}
+
 					}
 				}
 			}
 		} catch (Exception e) {
-		}		
+		}
 
 		var2 = LepidodendronConfig.genPlantPrehistoric;
-        var3 = var2.length;
+		var3 = var2.length;
 
-		try {			
-			for(Object block : Block.REGISTRY){ 
+		try {
+			for (Object block : Block.REGISTRY) {
 				//String name = Block.REGISTRY.getNameForObject((Block)block).toString();
-				if(true) {;
+				if (true) {
+					;
 					//outstream.write(name);
 					//outstream.newLine();
 					//System.err.println("BLOCK FOUND: " + name);
 
-			        for(int var4 = 0; var4 < var3; ++var4) {
-			            String checkBlock = var2[var4];
-			            //Is there a metadata tag? If so, keep it and strip it out of the string:
+					for (int var4 = 0; var4 < var3; ++var4) {
+						String checkBlock = var2[var4];
+						//Is there a metadata tag? If so, keep it and strip it out of the string:
 						int strPos = checkBlock.indexOf(":", checkBlock.indexOf(":") + 1);
 						//System.err.println("ORGBLOCK: " + checkBlock);
 						//System.err.println("SECOND COLON: " + strPos);
@@ -101,21 +101,19 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 							meta = (int) Integer.parseInt(checkBlock.substring(strPos + 1));
 							checkBlock = checkBlock.substring(0, strPos);
 							//System.err.println("REVBLOCK: " + checkBlock + " meta: " + meta);
-						}
-						else {
+						} else {
 							meta = -1;
 						}
 
-			            if (checkBlock.equalsIgnoreCase(Block.REGISTRY.getNameForObject((Block)block).toString())) {
-			            	if (meta == -1) {
-			            		OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block)block, (int) (1)));
-								OreDictionary.registerOre("plant", new ItemStack((Block)block, (int) (1)));
-			            	}
-			            	else {
-			            		OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block)block, (int) (1), meta));
-								OreDictionary.registerOre("plant", new ItemStack((Block)block, (int) (1), meta));
-			            	}
-			            }
+						if (checkBlock.equalsIgnoreCase(Block.REGISTRY.getNameForObject((Block) block).toString())) {
+							if (meta == -1) {
+								OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block) block, (int) (1)));
+								OreDictionary.registerOre("plant", new ItemStack((Block) block, (int) (1)));
+							} else {
+								OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block) block, (int) (1), meta));
+								OreDictionary.registerOre("plant", new ItemStack((Block) block, (int) (1), meta));
+							}
+						}
 
 					}
 				}
@@ -197,14 +195,14 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		//Fungi:
 		OreDictionary.registerOre("itemFungus", new ItemStack(Blocks.BROWN_MUSHROOM, 1));
 		OreDictionary.registerOre("itemFungus", new ItemStack(Blocks.RED_MUSHROOM, 1));
-        OreDictionary.registerOre("itemFungus", new ItemStack(Items.MUSHROOM_STEW, 1, 0));
+		OreDictionary.registerOre("itemFungus", new ItemStack(Items.MUSHROOM_STEW, 1, 0));
 
 		//Vanilla ferns - for the fern organic ground block recipe:
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.TALLGRASS, 1, 2));
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 
 		//Moss:
-        OreDictionary.registerOre("itemMossForStone", new ItemStack(Blocks.VINE, 1, 0));
+		OreDictionary.registerOre("itemMossForStone", new ItemStack(Blocks.VINE, 1, 0));
 
 		//Algae:
 		OreDictionary.registerOre("itemAlgae", BlockBrownAlgae.block);
@@ -222,8 +220,8 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemAlgae", BlockStalkyBrownAlgae.block);
 		OreDictionary.registerOre("itemAlgae", BlockGreenAlgaeMat.block);
 		OreDictionary.registerOre("itemAlgae", BlockRedAlgaeMat.block);
-        OreDictionary.registerOre("itemAlgae", ItemCorallineAlgaeItem.block);
-        OreDictionary.registerOre("itemAlgae", ItemSlimyAlgaeItem.block);
+		OreDictionary.registerOre("itemAlgae", ItemCorallineAlgaeItem.block);
+		OreDictionary.registerOre("itemAlgae", ItemSlimyAlgaeItem.block);
 
 		//Seeds:
 		OreDictionary.registerOre("listAllseed", ItemAethophyllumNuts.block);
@@ -510,82 +508,82 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllSeed", ItemFurculaSeeds.block);
 		OreDictionary.registerOre("seed", ItemFurculaSeeds.block);
 		OreDictionary.registerOre("seeds", ItemFurculaSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemMacrotaeniopteirsSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemMacrotaeniopteirsSeeds.block);
-        OreDictionary.registerOre("seed", ItemMacrotaeniopteirsSeeds.block);
-        OreDictionary.registerOre("seeds", ItemMacrotaeniopteirsSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemTelemachusSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemTelemachusSeed.block);
-        OreDictionary.registerOre("seed", ItemTelemachusSeed.block);
-        OreDictionary.registerOre("seeds", ItemTelemachusSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemSphenobaieraSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemSphenobaieraSeed.block);
-        OreDictionary.registerOre("seed", ItemSphenobaieraSeed.block);
-        OreDictionary.registerOre("seeds", ItemSphenobaieraSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemBeechSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemBeechSeeds.block);
-        OreDictionary.registerOre("seed", ItemBeechSeeds.block);
-        OreDictionary.registerOre("seeds", ItemBeechSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemPlaneSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemPlaneSeeds.block);
-        OreDictionary.registerOre("seed", ItemPlaneSeeds.block);
-        OreDictionary.registerOre("seeds", ItemPlaneSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemSycamoreSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemSycamoreSeeds.block);
-        OreDictionary.registerOre("seed", ItemSycamoreSeeds.block);
-        OreDictionary.registerOre("seeds", ItemSycamoreSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemStiffCycadSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemStiffCycadSeed.block);
-        OreDictionary.registerOre("seed", ItemStiffCycadSeed.block);
-        OreDictionary.registerOre("seeds", ItemStiffCycadSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemGlossophyllumSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemGlossophyllumSeeds.block);
-        OreDictionary.registerOre("seed", ItemGlossophyllumSeeds.block);
-        OreDictionary.registerOre("seeds", ItemGlossophyllumSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemMonkeyPuzzleAraucariaNuts.block);
-        OreDictionary.registerOre("listAllSeed", ItemMonkeyPuzzleAraucariaNuts.block);
-        OreDictionary.registerOre("seed", ItemMonkeyPuzzleAraucariaNuts.block);
-        OreDictionary.registerOre("seeds", ItemMonkeyPuzzleAraucariaNuts.block);
-        OreDictionary.registerOre("listAllseed", ItemAraucaritesNuts.block);
-        OreDictionary.registerOre("listAllSeed", ItemAraucaritesNuts.block);
-        OreDictionary.registerOre("seed", ItemAraucaritesNuts.block);
-        OreDictionary.registerOre("seeds", ItemAraucaritesNuts.block);
-        OreDictionary.registerOre("listAllseed", ItemPentoxylalesSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemPentoxylalesSeeds.block);
-        OreDictionary.registerOre("seed", ItemPentoxylalesSeeds.block);
-        OreDictionary.registerOre("seeds", ItemPentoxylalesSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemFurcifoliumSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemFurcifoliumSeed.block);
-        OreDictionary.registerOre("seed", ItemFurcifoliumSeed.block);
-        OreDictionary.registerOre("seeds", ItemFurcifoliumSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemCypressSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemCypressSeed.block);
-        OreDictionary.registerOre("seed", ItemCypressSeed.block);
-        OreDictionary.registerOre("seeds", ItemCypressSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemPhoenicopsisSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemPhoenicopsisSeed.block);
-        OreDictionary.registerOre("seed", ItemPhoenicopsisSeed.block);
-        OreDictionary.registerOre("seeds", ItemPhoenicopsisSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemGinkgoitesSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemGinkgoitesSeed.block);
-        OreDictionary.registerOre("seed", ItemGinkgoitesSeed.block);
-        OreDictionary.registerOre("seeds", ItemGinkgoitesSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemArchaeanthusSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemArchaeanthusSeeds.block);
-        OreDictionary.registerOre("seed", ItemArchaeanthusSeeds.block);
-        OreDictionary.registerOre("seeds", ItemArchaeanthusSeeds.block);
-        OreDictionary.registerOre("listAllseed", ItemFrenelopsisSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemFrenelopsisSeed.block);
-        OreDictionary.registerOre("seed", ItemFrenelopsisSeed.block);
-        OreDictionary.registerOre("seeds", ItemFrenelopsisSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemHermanophytonSeed.block);
-        OreDictionary.registerOre("listAllSeed", ItemHermanophytonSeed.block);
-        OreDictionary.registerOre("seed", ItemHermanophytonSeed.block);
-        OreDictionary.registerOre("seeds", ItemHermanophytonSeed.block);
-        OreDictionary.registerOre("listAllseed", ItemAppleSeeds.block);
-        OreDictionary.registerOre("listAllSeed", ItemAppleSeeds.block);
-        OreDictionary.registerOre("seed", ItemAppleSeeds.block);
-        OreDictionary.registerOre("seeds", ItemAppleSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemMacrotaeniopteirsSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemMacrotaeniopteirsSeeds.block);
+		OreDictionary.registerOre("seed", ItemMacrotaeniopteirsSeeds.block);
+		OreDictionary.registerOre("seeds", ItemMacrotaeniopteirsSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemTelemachusSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemTelemachusSeed.block);
+		OreDictionary.registerOre("seed", ItemTelemachusSeed.block);
+		OreDictionary.registerOre("seeds", ItemTelemachusSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemSphenobaieraSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemSphenobaieraSeed.block);
+		OreDictionary.registerOre("seed", ItemSphenobaieraSeed.block);
+		OreDictionary.registerOre("seeds", ItemSphenobaieraSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemBeechSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemBeechSeeds.block);
+		OreDictionary.registerOre("seed", ItemBeechSeeds.block);
+		OreDictionary.registerOre("seeds", ItemBeechSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemPlaneSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemPlaneSeeds.block);
+		OreDictionary.registerOre("seed", ItemPlaneSeeds.block);
+		OreDictionary.registerOre("seeds", ItemPlaneSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemSycamoreSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemSycamoreSeeds.block);
+		OreDictionary.registerOre("seed", ItemSycamoreSeeds.block);
+		OreDictionary.registerOre("seeds", ItemSycamoreSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemStiffCycadSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemStiffCycadSeed.block);
+		OreDictionary.registerOre("seed", ItemStiffCycadSeed.block);
+		OreDictionary.registerOre("seeds", ItemStiffCycadSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemGlossophyllumSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemGlossophyllumSeeds.block);
+		OreDictionary.registerOre("seed", ItemGlossophyllumSeeds.block);
+		OreDictionary.registerOre("seeds", ItemGlossophyllumSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemMonkeyPuzzleAraucariaNuts.block);
+		OreDictionary.registerOre("listAllSeed", ItemMonkeyPuzzleAraucariaNuts.block);
+		OreDictionary.registerOre("seed", ItemMonkeyPuzzleAraucariaNuts.block);
+		OreDictionary.registerOre("seeds", ItemMonkeyPuzzleAraucariaNuts.block);
+		OreDictionary.registerOre("listAllseed", ItemAraucaritesNuts.block);
+		OreDictionary.registerOre("listAllSeed", ItemAraucaritesNuts.block);
+		OreDictionary.registerOre("seed", ItemAraucaritesNuts.block);
+		OreDictionary.registerOre("seeds", ItemAraucaritesNuts.block);
+		OreDictionary.registerOre("listAllseed", ItemPentoxylalesSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemPentoxylalesSeeds.block);
+		OreDictionary.registerOre("seed", ItemPentoxylalesSeeds.block);
+		OreDictionary.registerOre("seeds", ItemPentoxylalesSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemFurcifoliumSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemFurcifoliumSeed.block);
+		OreDictionary.registerOre("seed", ItemFurcifoliumSeed.block);
+		OreDictionary.registerOre("seeds", ItemFurcifoliumSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemCypressSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemCypressSeed.block);
+		OreDictionary.registerOre("seed", ItemCypressSeed.block);
+		OreDictionary.registerOre("seeds", ItemCypressSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemPhoenicopsisSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemPhoenicopsisSeed.block);
+		OreDictionary.registerOre("seed", ItemPhoenicopsisSeed.block);
+		OreDictionary.registerOre("seeds", ItemPhoenicopsisSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemGinkgoitesSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemGinkgoitesSeed.block);
+		OreDictionary.registerOre("seed", ItemGinkgoitesSeed.block);
+		OreDictionary.registerOre("seeds", ItemGinkgoitesSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemArchaeanthusSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemArchaeanthusSeeds.block);
+		OreDictionary.registerOre("seed", ItemArchaeanthusSeeds.block);
+		OreDictionary.registerOre("seeds", ItemArchaeanthusSeeds.block);
+		OreDictionary.registerOre("listAllseed", ItemFrenelopsisSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemFrenelopsisSeed.block);
+		OreDictionary.registerOre("seed", ItemFrenelopsisSeed.block);
+		OreDictionary.registerOre("seeds", ItemFrenelopsisSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemHermanophytonSeed.block);
+		OreDictionary.registerOre("listAllSeed", ItemHermanophytonSeed.block);
+		OreDictionary.registerOre("seed", ItemHermanophytonSeed.block);
+		OreDictionary.registerOre("seeds", ItemHermanophytonSeed.block);
+		OreDictionary.registerOre("listAllseed", ItemAppleSeeds.block);
+		OreDictionary.registerOre("listAllSeed", ItemAppleSeeds.block);
+		OreDictionary.registerOre("seed", ItemAppleSeeds.block);
+		OreDictionary.registerOre("seeds", ItemAppleSeeds.block);
 		OreDictionary.registerOre("listAllseed", ItemAcaciaSeed.block);
 		OreDictionary.registerOre("listAllSeed", ItemAcaciaSeed.block);
 		OreDictionary.registerOre("seed", ItemAcaciaSeed.block);
@@ -685,18 +683,18 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 
 		OreDictionary.registerOre("dirt", BlockPrehistoricGroundLush.block);
 		OreDictionary.registerOre("dirt", BlockPrehistoricGroundBasic.block);
-        OreDictionary.registerOre("dirt", BlockPrehistoricGroundFern.block);
-        OreDictionary.registerOre("dirt", BlockPrehistoricGroundMossy.block);
+		OreDictionary.registerOre("dirt", BlockPrehistoricGroundFern.block);
+		OreDictionary.registerOre("dirt", BlockPrehistoricGroundMossy.block);
 		OreDictionary.registerOre("dirt", BlockSandyDirt.block);
-        OreDictionary.registerOre("dirt", BlockSandyDirtBlack.block);
-        OreDictionary.registerOre("dirt", BlockSandyDirtPangaean.block);
-        OreDictionary.registerOre("dirt", BlockSandyDirtRed.block);
-        OreDictionary.registerOre("dirt", BlockSandyDirtWhite.block);
+		OreDictionary.registerOre("dirt", BlockSandyDirtBlack.block);
+		OreDictionary.registerOre("dirt", BlockSandyDirtPangaean.block);
+		OreDictionary.registerOre("dirt", BlockSandyDirtRed.block);
+		OreDictionary.registerOre("dirt", BlockSandyDirtWhite.block);
 		OreDictionary.registerOre("dirt", BlockCoarseSandyDirt.block);
-        OreDictionary.registerOre("dirt", BlockCoarseSandyDirtBlack.block);
+		OreDictionary.registerOre("dirt", BlockCoarseSandyDirtBlack.block);
 		OreDictionary.registerOre("dirt", BlockCoarseSandyDirtPangaean.block);
 		OreDictionary.registerOre("dirt", BlockCoarseSandyDirtRed.block);
-        OreDictionary.registerOre("dirt", BlockCoarseSandyDirtWhite.block);
+		OreDictionary.registerOre("dirt", BlockCoarseSandyDirtWhite.block);
 		OreDictionary.registerOre("dirt", BlockCoarseSiltyDirt.block);
 		OreDictionary.registerOre("dirt", BlockSiltyDirt.block);
 		OreDictionary.registerOre("dirt", new ItemStack(Blocks.DIRT, 1, 0));
@@ -732,12 +730,12 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("sandstone", BlockSandstonePangaean.block);
 		OreDictionary.registerOre("sandstone", BlockSandstonePangaeanCarved.block);
 		OreDictionary.registerOre("sandstone", BlockSandstonePangaeanSmooth.block);
-        OreDictionary.registerOre("sandstone", BlockSandstoneBlack.block);
-        OreDictionary.registerOre("sandstone", BlockSandstoneBlackCarved.block);
-        OreDictionary.registerOre("sandstone", BlockSandstoneBlackSmooth.block);
-        OreDictionary.registerOre("sandstone", BlockSandstoneWhite.block);
-        OreDictionary.registerOre("sandstone", BlockSandstoneWhiteCarved.block);
-        OreDictionary.registerOre("sandstone", BlockSandstoneWhiteSmooth.block);
+		OreDictionary.registerOre("sandstone", BlockSandstoneBlack.block);
+		OreDictionary.registerOre("sandstone", BlockSandstoneBlackCarved.block);
+		OreDictionary.registerOre("sandstone", BlockSandstoneBlackSmooth.block);
+		OreDictionary.registerOre("sandstone", BlockSandstoneWhite.block);
+		OreDictionary.registerOre("sandstone", BlockSandstoneWhiteCarved.block);
+		OreDictionary.registerOre("sandstone", BlockSandstoneWhiteSmooth.block);
 		OreDictionary.registerOre("sandstone", Blocks.SANDSTONE);
 		OreDictionary.registerOre("sandstone", Blocks.RED_SANDSTONE);
 
@@ -745,7 +743,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("sand", BlockPrehistoricGroundSandPangaean.block);
 		OreDictionary.registerOre("sand", BlockPrehistoricGroundSandRed.block);
 		OreDictionary.registerOre("sand", BlockPrehistoricGroundSandBlack.block);
-        OreDictionary.registerOre("sand", BlockPrehistoricGroundSandWhite.block);
+		OreDictionary.registerOre("sand", BlockPrehistoricGroundSandWhite.block);
 		OreDictionary.registerOre("sand", BlockSandPangaean.block);
 		OreDictionary.registerOre("sand", BlockSandPangaeanSticky.block);
 		OreDictionary.registerOre("sand", BlockSandPangaeanWavy.block);
@@ -762,10 +760,10 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("sand", BlockSandBlackSticky.block);
 		OreDictionary.registerOre("sand", BlockSandBlackWavy.block);
 		OreDictionary.registerOre("sand", BlockSandBlackWavySticky.block);
-        OreDictionary.registerOre("sand", BlockSandWhite.block);
-        OreDictionary.registerOre("sand", BlockSandWhiteSticky.block);
-        OreDictionary.registerOre("sand", BlockSandWhiteWavy.block);
-        OreDictionary.registerOre("sand", BlockSandWhiteWavySticky.block);
+		OreDictionary.registerOre("sand", BlockSandWhite.block);
+		OreDictionary.registerOre("sand", BlockSandWhiteSticky.block);
+		OreDictionary.registerOre("sand", BlockSandWhiteWavy.block);
+		OreDictionary.registerOre("sand", BlockSandWhiteWavySticky.block);
 
 		OreDictionary.registerOre("blockSand", BlockPrehistoricGroundSand.block);
 		OreDictionary.registerOre("blockSand", BlockPrehistoricGroundSandPangaean.block);
@@ -1326,7 +1324,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 4));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 5));
 
-		//Vanilla trees:
+		//Vanilla:
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 1));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 2));
@@ -1387,8 +1385,42 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNminecraft:rabbit", new ItemStack(Items.RABBIT, 1));
 		OreDictionary.registerOre("mobdnaPNminecraft:zombie", new ItemStack(Items.ROTTEN_FLESH, 1));
 
+		OreDictionary.registerOre("pndietRotten", new ItemStack(Items.ROTTEN_FLESH, 1));
+		OreDictionary.registerOre("pndietFish", new ItemStack(Items.FISH, 1, 0));
+		OreDictionary.registerOre("pndietFish", new ItemStack(Items.COOKED_FISH, 1, 0));
+		OreDictionary.registerOre("pndietFish", new ItemStack(Items.FISH, 1, 1));
+		OreDictionary.registerOre("pndietFish", new ItemStack(Items.COOKED_FISH, 1, 1));
+		OreDictionary.registerOre("pndietFish", new ItemStack(Items.FISH, 1, 2));
+		OreDictionary.registerOre("pndietFish", new ItemStack(Items.FISH, 1, 3));
+		OreDictionary.registerOre("pndietMeat", Items.BEEF);
+		OreDictionary.registerOre("pndietMeat", Items.COOKED_BEEF);
+		OreDictionary.registerOre("pndietMeat", Items.PORKCHOP);
+		OreDictionary.registerOre("pndietMeat", Items.COOKED_PORKCHOP);
+		OreDictionary.registerOre("pndietMeat", Items.CHICKEN);
+		OreDictionary.registerOre("pndietMeat", Items.COOKED_CHICKEN);
+		OreDictionary.registerOre("pndietMeat", Items.MUTTON);
+		OreDictionary.registerOre("pndietMeat", Items.COOKED_MUTTON);
+		OreDictionary.registerOre("pndietMeat", Items.RABBIT);
+		OreDictionary.registerOre("pndietMeat", Items.COOKED_RABBIT);
+		OreDictionary.registerOre("pndietFruit", Items.APPLE);
+		OreDictionary.registerOre("pndietFruit", Items.MELON);
+		OreDictionary.registerOre("pndietFruit", new ItemStack(Blocks.MELON_BLOCK, 1));
+		OreDictionary.registerOre("pndietFruit", new ItemStack(Blocks.PUMPKIN, 1));
+		OreDictionary.registerOre("pndietSeed", Items.BEETROOT_SEEDS);
+		OreDictionary.registerOre("pndietSeed", Items.MELON_SEEDS);
+		OreDictionary.registerOre("pndietSeed", Items.PUMPKIN_SEEDS);
+		OreDictionary.registerOre("pndietSeed", Items.WHEAT_SEEDS);
+		OreDictionary.registerOre("pndietSeed", Items.BREAD);
+		OreDictionary.registerOre("pndietTuber", Items.BEETROOT);
+		OreDictionary.registerOre("pndietTuber", Items.CARROT);
+		OreDictionary.registerOre("pndietTuber", Items.POTATO);
+		OreDictionary.registerOre("pndietTuber", Items.BAKED_POTATO);
+		OreDictionary.registerOre("pndietFungus", new ItemStack(Blocks.BROWN_MUSHROOM_BLOCK, 1));
+		OreDictionary.registerOre("pndietFungus", new ItemStack(Blocks.RED_MUSHROOM_BLOCK, 1));
+		OreDictionary.registerOre("pndietFungus", new ItemStack(Blocks.BROWN_MUSHROOM, 1));
+		OreDictionary.registerOre("pndietFungus", new ItemStack(Blocks.RED_MUSHROOM, 1));
+		OreDictionary.registerOre("pndietSponge", new ItemStack(Blocks.SPONGE, 1, 0));
+		OreDictionary.registerOre("pndietSponge", new ItemStack(Blocks.SPONGE, 1, 1));
+
 	}
-
-
-
 }

@@ -76,6 +76,7 @@ public class BlockCastericystis extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:castericystis", BlockCastericystis.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCastericystis.block);
 	}
 
 

@@ -115,7 +115,7 @@ public class EntityPrehistoricFloraLaminacaris extends EntityPrehistoricFloraAge
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.FISHFOOD);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH), DietString.CRUSTACEAN);
 	}
 
 	@Override

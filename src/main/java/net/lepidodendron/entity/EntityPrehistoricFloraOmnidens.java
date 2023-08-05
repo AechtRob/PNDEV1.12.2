@@ -4,7 +4,6 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
@@ -18,7 +17,6 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -126,7 +124,7 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -220,9 +218,8 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH), DietString.CRUSTACEAN);
 	}
-
 
 	@Override
 	public boolean isAIDisabled() {
@@ -417,16 +414,11 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemEggsOmnidens.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			this.setTicks(0);
-		}
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemEggsOmnidens.block, (int) (1));
 	}
 
 	@Nullable

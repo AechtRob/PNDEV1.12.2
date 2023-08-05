@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phantaspis",
 			"title": "Phantaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Trilobita$(br)>Ptychopariida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Ptychopariida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Phantaspis is a Cambrian trilobite which had a specialized cephalon that resembled a plow. Its cephalon likely helped it to disrupt the sediment in order to bring out prey for it to feed on."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_phantaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phantaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phantaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phantaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phantaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phantaspis"
 		}
 	]
 }

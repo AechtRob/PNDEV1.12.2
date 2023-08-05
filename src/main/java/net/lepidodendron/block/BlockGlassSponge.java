@@ -77,6 +77,7 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:glass_sponge", BlockGlassSponge.block);
 		OreDictionary.registerOre("sponge", BlockGlassSponge.block);
+		OreDictionary.registerOre("pndietSponge", BlockGlassSponge.block);
 	}
 
 

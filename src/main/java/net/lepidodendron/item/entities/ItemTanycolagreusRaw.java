@@ -37,6 +37,7 @@ public class ItemTanycolagreusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tanycolagreus", ItemTanycolagreusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTanycolagreusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTanycolagreusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemTanycolagreusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

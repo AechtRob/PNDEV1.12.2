@@ -43,6 +43,7 @@ public class ItemMyriacantherpestesRaw extends ElementsLepidodendronMod.ModEleme
 		OreDictionary.registerOre("foodMeat", ItemMyriacantherpestesRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemMyriacantherpestesRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemMyriacantherpestesRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemMyriacantherpestesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

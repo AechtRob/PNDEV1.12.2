@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tamisiocaris",
 			"title": "Tamisiocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Dinocaridida $(br)>Radiodonta"
 		},
 		{
 			"type": "image",
@@ -28,9 +28,24 @@
 			"text": "Interestingly, before detailed description of the animal in 2014, a Canadian artist John Meszaros drew a fictional filter feeding radiodont called \"Cetiocaris\". After that Tamisiocaris was placed to family called \"Cetiocaridae\" named after that fictional creature, but due to ICZN rules it was later renamed to Tamisiocarididae."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish and meat$(br)$(l)Breeds with:$() Fish and meat$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tamisiocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tamisiocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tamisiocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tamisiocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tamisiocaris"
 		}
 	]
 }

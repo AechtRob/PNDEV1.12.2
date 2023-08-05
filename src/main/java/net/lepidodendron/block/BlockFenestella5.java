@@ -80,6 +80,7 @@ public class BlockFenestella5 extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:fenestella_5", BlockFenestella5.block);
+		OreDictionary.registerOre("pndietEncruster", BlockFenestella5.block);
 	}
 
 
