@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
+import net.lepidodendron.entity.render.entity.RenderTritylodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.DamageSource;
@@ -130,14 +131,14 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraMorg
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPseudotherium.TEXTURE;
+		return RenderTritylodon.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPseudotherium;
+		return RenderDisplays.modelTritylodon;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPseudotherium.getScaler();
+		return RenderTritylodon.getScaler();
 	}
 
 }
