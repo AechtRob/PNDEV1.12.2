@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ottoia",
 			"title": "Ottoia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean & Reef$(br2)>Ottoidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ottoidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ottoia was a worm like animal from the late Cambrian which would have lived in burrows on the sea floor. It hunted prey with its proboscis and it may have also scavenged on dead organisms on the sea floor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ottoia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ottoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ottoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ottoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ottoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ottoia"
 		}
 	]
 }

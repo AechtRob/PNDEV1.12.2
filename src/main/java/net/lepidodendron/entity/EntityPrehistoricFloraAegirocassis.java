@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWander;
 import net.lepidodendron.entity.ai.DietString;
@@ -16,7 +15,6 @@ import net.lepidodendron.item.entities.ItemEggsAegirocassis;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -66,7 +64,7 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -181,17 +179,11 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemEggsAegirocassis.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-				this.setLaying(false);
-			}
-			this.setTicks(0);
-		}
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemEggsAegirocassis.block, (int) (1));
 	}
 
 	@Nullable

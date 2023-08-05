@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vetulicola",
 			"title": "Vetulicola",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Vetulicolidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Vetulicolidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Vetulicola is a marine organism from the enigmatic phylum Vetulicolia. Its body had 2 parts, a main body which included the gills and the mouth as well as the tail. It was thought to have either been a filter feeder or a detritivore."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_vetulicola",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vetulicola"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vetulicola"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vetulicola"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vetulicola"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vetulicola"
 		}
 	]
 }

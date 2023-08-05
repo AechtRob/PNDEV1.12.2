@@ -291,6 +291,7 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockUnderwaterDebris.block)
 											&& (this.algae != BlockSeaGrass.block)
 											&& (this.algae != BlockMosacaulis.block)
+											&& (this.algae != BlockTuanshanzia.block)
 							) {
 								for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
 									pos = new BlockPos(j, k, l);

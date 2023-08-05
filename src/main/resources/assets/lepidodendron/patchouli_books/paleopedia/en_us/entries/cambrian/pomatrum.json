@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pomatrum",
 			"title": "Pomatrum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Didazoonidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Didazoonidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pomatrum is a vetulicolian, an enigmatic animal from the early Cambrian which had a tube shaped body and a tail. They also had every gill slits on the side of its body and a mouth at the end of the body, with no eyes."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pomatrum",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pomatrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pomatrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pomatrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pomatrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pomatrum"
 		}
 	]
 }

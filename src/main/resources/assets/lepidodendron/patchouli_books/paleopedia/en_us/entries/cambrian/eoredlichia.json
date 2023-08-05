@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eoredlichia",
 			"title": "Eoredlichia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuary$(br2)>Trilobita$(br)>Redlichiida$(br)>Redlichiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Redlichiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eoredlichia is a moderately sized trilobite that was very flat, like other early trilobites. It is also one of the few trilobite species for which there are preserved antennae, legs, and gills. It probably scourged the ocean floor for food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eoredlichia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eoredlichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eoredlichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eoredlichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eoredlichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eoredlichia"
 		}
 	]
 }
