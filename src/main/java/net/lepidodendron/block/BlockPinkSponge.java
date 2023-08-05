@@ -84,6 +84,7 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:pink_sponge", BlockPinkSponge.block);
 		OreDictionary.registerOre("sponge", BlockPinkSponge.block);
+		OreDictionary.registerOre("pndietSponge", BlockPinkSponge.block);
 	}
 
 

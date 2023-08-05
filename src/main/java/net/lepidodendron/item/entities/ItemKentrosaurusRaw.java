@@ -32,6 +32,7 @@ public class ItemKentrosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kentrosaurus", ItemKentrosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKentrosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKentrosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemKentrosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

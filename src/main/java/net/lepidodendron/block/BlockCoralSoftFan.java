@@ -75,6 +75,7 @@ public class BlockCoralSoftFan extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_soft_fan", BlockCoralSoftFan.block);
 		OreDictionary.registerOre("coral", BlockCoralSoftFan.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralSoftFan.block);
 	}
 
 

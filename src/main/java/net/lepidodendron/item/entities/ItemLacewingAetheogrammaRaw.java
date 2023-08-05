@@ -44,6 +44,7 @@ public class ItemLacewingAetheogrammaRaw extends ElementsLepidodendronMod.ModEle
 		OreDictionary.registerOre("foodMeat", ItemLacewingAetheogrammaRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemLacewingAetheogrammaRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemLacewingAetheogrammaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingAetheogrammaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

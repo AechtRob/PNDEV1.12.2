@@ -59,6 +59,7 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("plantdnaPNlepidodendron:prototaxites", BlockPrototaxitesBlock.block);
 		OreDictionary.registerOre("itemFungus", BlockPrototaxitesBlock.block);
+		OreDictionary.registerOre("pndietFungus", BlockPrototaxitesBlock.block);
 	}
 
 	public static class BlockCustom extends Block {

@@ -54,6 +54,7 @@ public class ItemSpiniplatyceras extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemSpiniplatyceras.block);
 		OreDictionary.registerOre("foodMeat", ItemSpiniplatyceras.block);
 		OreDictionary.registerOre("itemShellfish", ItemSpiniplatyceras.block);
+		OreDictionary.registerOre("pndietMeat", ItemSpiniplatyceras.block);
 	}
 
 

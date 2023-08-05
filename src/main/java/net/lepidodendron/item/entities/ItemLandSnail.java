@@ -54,6 +54,7 @@ public class ItemLandSnail extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemLandSnail.block);
 		OreDictionary.registerOre("foodMeat", ItemLandSnail.block);
 		OreDictionary.registerOre("itemShellfish", ItemLandSnail.block);
+		OreDictionary.registerOre("pndietMeat", ItemLandSnail.block);
 	}
 
 	public static class ItemCustom extends Item {

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockCorallineAlgae;
+import net.lepidodendron.block.BlockStalkyBrownAlgae;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
@@ -27,9 +28,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 
@@ -40,6 +43,12 @@ public class ItemCorallineAlgaeItem extends ElementsLepidodendronMod.ModElement 
 
 	public ItemCorallineAlgaeItem(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.coralline_algae_item);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("itemAlgae", ItemCorallineAlgaeItem.block);
 	}
 
 	@Override

@@ -70,6 +70,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:thamnobeatricea_sapling", BlockThamnobeatriceaSapling.block);
 		OreDictionary.registerOre("sponge", BlockThamnobeatriceaSapling.block);
+		OreDictionary.registerOre("pndietSponge", BlockThamnobeatriceaSapling.block);
 	}
 
 

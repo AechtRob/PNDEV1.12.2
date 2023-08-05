@@ -72,6 +72,7 @@ public class BlockInaria extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:inaria", BlockInaria.block);
+		OreDictionary.registerOre("pndietSponge", BlockInaria.block);
 	}
 
 

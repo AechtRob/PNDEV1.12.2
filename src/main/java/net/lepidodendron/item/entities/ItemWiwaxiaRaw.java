@@ -33,6 +33,7 @@ public class ItemWiwaxiaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemWiwaxiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWiwaxiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWiwaxiaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemWiwaxiaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

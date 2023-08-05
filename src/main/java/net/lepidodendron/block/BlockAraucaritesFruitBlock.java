@@ -51,7 +51,7 @@ public class BlockAraucaritesFruitBlock extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemFruit", BlockAraucaritesFruitBlock.block);
+		OreDictionary.registerOre("pndietFruit", BlockAraucaritesFruitBlock.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -33,6 +33,7 @@ public class ItemCoccodermaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemCoccodermaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCoccodermaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCoccodermaRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemCoccodermaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

@@ -34,6 +34,7 @@ public class ItemFurcaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemFurcaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemFurcaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemFurcaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemFurcaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

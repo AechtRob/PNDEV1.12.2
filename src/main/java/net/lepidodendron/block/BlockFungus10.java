@@ -69,6 +69,7 @@ public class BlockFungus10 extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNFungus10", BlockFungus10.block);
 		OreDictionary.registerOre("itemFungus", BlockFungus10.block);
+		OreDictionary.registerOre("pndietFungus", BlockFungus10.block);
 	}
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {

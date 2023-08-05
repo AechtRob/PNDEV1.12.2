@@ -82,6 +82,7 @@ public class BlockBlastoid2 extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:blastoid_2", BlockBlastoid2.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockBlastoid2.block);
 	}
 
 

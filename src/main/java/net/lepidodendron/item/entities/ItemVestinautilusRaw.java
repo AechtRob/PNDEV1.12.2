@@ -34,6 +34,7 @@ public class ItemVestinautilusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemVestinautilusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVestinautilusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVestinautilusRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemVestinautilusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

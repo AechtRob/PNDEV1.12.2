@@ -44,6 +44,7 @@ public class ItemKalligrammatidHuiyingogrammaRaw extends ElementsLepidodendronMo
 		OreDictionary.registerOre("foodMeat", ItemKalligrammatidHuiyingogrammaRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemKalligrammatidHuiyingogrammaRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemKalligrammatidHuiyingogrammaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemKalligrammatidHuiyingogrammaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

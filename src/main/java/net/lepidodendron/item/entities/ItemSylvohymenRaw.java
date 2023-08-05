@@ -42,6 +42,7 @@ public class ItemSylvohymenRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megasecoptera@sylvohymen", ItemSylvohymenRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSylvohymenRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSylvohymenRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemSylvohymenRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

@@ -44,6 +44,7 @@ public class ItemPalaeodictyopteraMazothairosRaw extends ElementsLepidodendronMo
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraMazothairosRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemPalaeodictyopteraMazothairosRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemPalaeodictyopteraMazothairosRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemPalaeodictyopteraMazothairosRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

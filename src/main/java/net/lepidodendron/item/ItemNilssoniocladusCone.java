@@ -32,7 +32,7 @@ public class ItemNilssoniocladusCone extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemFruit", ItemNilssoniocladusCone.block);
+		OreDictionary.registerOre("pndietFruit", ItemNilssoniocladusCone.block);
 	}
 
 	@SideOnly(Side.CLIENT)

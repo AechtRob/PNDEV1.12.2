@@ -35,6 +35,7 @@ public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus@male", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemXinpusaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemXinpusaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

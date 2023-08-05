@@ -76,6 +76,7 @@ public class BlockSphenoecium extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:sphenoecium", BlockSphenoecium.block);
+		OreDictionary.registerOre("pndietEncruster", BlockSphenoecium.block);
 	}
 
 

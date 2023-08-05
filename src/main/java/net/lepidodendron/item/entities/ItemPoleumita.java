@@ -52,6 +52,7 @@ public class ItemPoleumita extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemPoleumita.block);
 		OreDictionary.registerOre("foodMeat", ItemPoleumita.block);
 		OreDictionary.registerOre("itemShellfish", ItemPoleumita.block);
+		OreDictionary.registerOre("pndietMeat", ItemPoleumita.block);
 	}
 
 

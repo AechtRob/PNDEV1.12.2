@@ -32,6 +32,7 @@ public class ItemHuayangosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_huayangosaurus", ItemHuayangosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHuayangosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemHuayangosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemHuayangosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

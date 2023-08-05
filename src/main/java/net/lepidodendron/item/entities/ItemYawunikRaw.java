@@ -33,6 +33,7 @@ public class ItemYawunikRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemYawunikRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemYawunikRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemYawunikRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemYawunikRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

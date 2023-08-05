@@ -39,6 +39,7 @@ public class ItemSpathicephalusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_spathicephalus", ItemSpathicephalusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSpathicephalusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSpathicephalusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemSpathicephalusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -44,6 +44,7 @@ public class ItemPalaeodictyopteraLycocercusRaw extends ElementsLepidodendronMod
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraLycocercusRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemPalaeodictyopteraLycocercusRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemPalaeodictyopteraLycocercusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemPalaeodictyopteraLycocercusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

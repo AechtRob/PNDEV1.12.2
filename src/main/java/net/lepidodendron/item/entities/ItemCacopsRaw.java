@@ -37,6 +37,7 @@ public class ItemCacopsRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cacops", ItemCacopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCacopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCacopsRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemCacopsRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

@@ -54,6 +54,7 @@ public class ItemEuspira extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemEuspira.block);
 		OreDictionary.registerOre("foodMeat", ItemEuspira.block);
 		OreDictionary.registerOre("itemShellfish", ItemEuspira.block);
+		OreDictionary.registerOre("pndietMeat", ItemEuspira.block);
 	}
 
 	public static class ItemCustom extends Item {

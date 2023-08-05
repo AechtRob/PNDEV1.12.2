@@ -41,6 +41,7 @@ public class ItemCaryosyntripsRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemCaryosyntripsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCaryosyntripsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCaryosyntripsRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemCaryosyntripsRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {

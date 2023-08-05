@@ -68,6 +68,7 @@ public class BlockCrinoidPentacrinites extends ElementsLepidodendronMod.ModEleme
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_pentacrinites", BlockCrinoidPentacrinites.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidPentacrinites.block);
 	}
 
 

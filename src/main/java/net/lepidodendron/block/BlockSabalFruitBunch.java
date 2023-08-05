@@ -59,7 +59,7 @@ public class BlockSabalFruitBunch extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentitysabal_fruit_bunch");
-		OreDictionary.registerOre("itemFruit", BlockSabalFruitBunch.block);
+		OreDictionary.registerOre("pndietFruit", BlockSabalFruitBunch.block);
 	}
 
 	@SideOnly(Side.CLIENT)

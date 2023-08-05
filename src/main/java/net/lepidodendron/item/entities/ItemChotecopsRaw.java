@@ -38,6 +38,7 @@ public class ItemChotecopsRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemChotecopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemChotecopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemChotecopsRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemChotecopsRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

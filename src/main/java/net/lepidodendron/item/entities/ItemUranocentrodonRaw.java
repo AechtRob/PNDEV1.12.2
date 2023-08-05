@@ -39,6 +39,7 @@ public class ItemUranocentrodonRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_uranocentrodon", ItemUranocentrodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemUranocentrodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemUranocentrodonRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemUranocentrodonRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

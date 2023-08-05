@@ -38,6 +38,7 @@ public class ItemEuchambersiaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_euchambersia", ItemEuchambersiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEuchambersiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEuchambersiaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemEuchambersiaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

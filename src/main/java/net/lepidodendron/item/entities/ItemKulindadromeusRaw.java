@@ -32,6 +32,7 @@ public class ItemKulindadromeusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kulindadromeus", ItemKulindadromeusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKulindadromeusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKulindadromeusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemKulindadromeusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

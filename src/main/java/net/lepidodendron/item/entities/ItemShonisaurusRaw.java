@@ -39,6 +39,7 @@ public class ItemShonisaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_shonisaurus", ItemShonisaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemShonisaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemShonisaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemShonisaurusRaw.block);
 	}
 
 

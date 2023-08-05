@@ -78,6 +78,7 @@ public class BlockEchmatocrinus extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:echmatocrinus", BlockEchmatocrinus.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockEchmatocrinus.block);
 	}
 
 

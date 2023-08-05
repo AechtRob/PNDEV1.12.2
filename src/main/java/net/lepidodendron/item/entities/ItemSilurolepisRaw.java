@@ -37,6 +37,7 @@ public class ItemSilurolepisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_silurolepis", ItemSilurolepisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSilurolepisRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemSilurolepisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

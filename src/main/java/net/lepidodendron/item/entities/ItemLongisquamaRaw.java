@@ -39,6 +39,7 @@ public class ItemLongisquamaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_longisquama", ItemLongisquamaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemLongisquamaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemLongisquamaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemLongisquamaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

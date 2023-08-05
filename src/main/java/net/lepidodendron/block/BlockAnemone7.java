@@ -81,6 +81,7 @@ public class BlockAnemone7 extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:sea_anemone_7", BlockAnemone7.block);
+		OreDictionary.registerOre("pndietEncruster", BlockAnemone7.block);
 	}
 
 

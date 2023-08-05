@@ -38,6 +38,7 @@ public class ItemBelantseaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemBelantseaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBelantseaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBelantseaRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemBelantseaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

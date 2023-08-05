@@ -39,6 +39,7 @@ public class ItemRemigiomontanusRaw extends ElementsLepidodendronMod.ModElement 
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_remigiomontanus", ItemRemigiomontanusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRemigiomontanusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemRemigiomontanusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemRemigiomontanusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

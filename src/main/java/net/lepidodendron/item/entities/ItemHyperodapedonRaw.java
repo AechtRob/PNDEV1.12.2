@@ -39,6 +39,7 @@ public class ItemHyperodapedonRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hyperodapedon", ItemHyperodapedonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHyperodapedonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemHyperodapedonRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemHyperodapedonRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

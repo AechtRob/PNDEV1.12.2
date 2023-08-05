@@ -44,6 +44,7 @@ public class ItemLacewingLichenipolystoechotesRaw extends ElementsLepidodendronM
 		OreDictionary.registerOre("foodMeat", ItemLacewingLichenipolystoechotesRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemLacewingLichenipolystoechotesRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemLacewingLichenipolystoechotesRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingLichenipolystoechotesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

@@ -40,6 +40,7 @@ public class ItemPrototaxitesChunk extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("plantdnaPNlepidodendron:prototaxites", ItemPrototaxitesChunk.block);
 		OreDictionary.registerOre("itemFungus", ItemPrototaxitesChunk.block);
+		OreDictionary.registerOre("pndietFungus", ItemPrototaxitesChunk.block);
 	}
 
 	public static class ItemCustom extends Item {

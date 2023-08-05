@@ -82,6 +82,7 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:tentaculita", BlockTentaculita.block);
+		OreDictionary.registerOre("pndietEncruster", BlockTentaculita.block);
 	}
 
 

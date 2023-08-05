@@ -32,7 +32,7 @@ public class ItemStiffCycadCone extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemFruit", ItemStiffCycadCone.block);
+		OreDictionary.registerOre("pndietFruit", ItemStiffCycadCone.block);
 	}
 
 	@SideOnly(Side.CLIENT)

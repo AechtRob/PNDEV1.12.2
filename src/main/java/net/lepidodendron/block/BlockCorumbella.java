@@ -73,6 +73,7 @@ public class BlockCorumbella extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:corumbella", BlockCorumbella.block);
+		OreDictionary.registerOre("pndietEncruster", BlockCorumbella.block);
 	}
 
 

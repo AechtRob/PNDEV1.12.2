@@ -78,6 +78,7 @@ public class BlockCystoidAristocystites extends ElementsLepidodendronMod.ModElem
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:cystoid_aristocystites", BlockCystoidAristocystites.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCystoidAristocystites.block);
 	}
 
 

@@ -71,6 +71,7 @@ public class BlockThamnobeatricea extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:thamnobeatricea_sapling", BlockThamnobeatricea.block);
 		OreDictionary.registerOre("sponge", BlockThamnobeatricea.block);
+		OreDictionary.registerOre("pndietSponge", BlockThamnobeatricea.block);
 	}
 
 	public static class BlockCustom extends Block implements IShearable {

@@ -40,6 +40,7 @@ public class ItemPhragmocerasRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phragmoceras", ItemPhragmocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPhragmocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPhragmocerasRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemPhragmocerasRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {

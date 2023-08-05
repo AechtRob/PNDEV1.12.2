@@ -44,6 +44,7 @@ public class ItemHarvestmanRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemHarvestmanRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemHarvestmanRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemHarvestmanRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemHarvestmanRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

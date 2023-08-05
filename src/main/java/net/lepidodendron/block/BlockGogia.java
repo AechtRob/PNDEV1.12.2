@@ -78,6 +78,7 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:gogia", BlockGogia.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockGogia.block);
 	}
 
 

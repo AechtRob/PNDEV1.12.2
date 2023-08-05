@@ -32,6 +32,7 @@ public class ItemWalliseropsRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_walliserops", ItemWalliseropsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWalliseropsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWalliseropsRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemWalliseropsRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

@@ -76,6 +76,7 @@ public class BlockBivalveTall extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_tall", BlockBivalveTall.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveTall.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveTall.block);
 	}
 
 

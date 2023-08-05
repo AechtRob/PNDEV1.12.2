@@ -54,6 +54,7 @@ public class ItemNipponomaria extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemNipponomaria.block);
 		OreDictionary.registerOre("foodMeat", ItemNipponomaria.block);
 		OreDictionary.registerOre("itemShellfish", ItemNipponomaria.block);
+		OreDictionary.registerOre("pndietMeat", ItemNipponomaria.block);
 	}
 
 

@@ -11,9 +11,11 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemCookedPrototaxites extends ElementsLepidodendronMod.ModElement {
@@ -21,6 +23,12 @@ public class ItemCookedPrototaxites extends ElementsLepidodendronMod.ModElement 
 	public static final Item block = null;
 	public ItemCookedPrototaxites(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.cooked_prototaxites);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pndietFungus", ItemCookedPrototaxites.block);
 	}
 
 	@Override

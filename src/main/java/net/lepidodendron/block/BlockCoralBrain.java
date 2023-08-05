@@ -75,6 +75,7 @@ public class BlockCoralBrain extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_brain", BlockCoralBrain.block);
 		OreDictionary.registerOre("coral", BlockCoralBrain.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralBrain.block);
 	}
 
 

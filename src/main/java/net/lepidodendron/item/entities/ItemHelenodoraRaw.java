@@ -38,6 +38,7 @@ public class ItemHelenodoraRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemHelenodoraRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemHelenodoraRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemHelenodoraRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemHelenodoraRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

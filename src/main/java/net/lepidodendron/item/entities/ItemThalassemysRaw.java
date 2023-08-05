@@ -39,6 +39,7 @@ public class ItemThalassemysRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_thalassemys", ItemThalassemysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemThalassemysRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemThalassemysRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemThalassemysRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
