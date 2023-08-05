@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helmetia",
 			"title": "Helmetia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean + Reef$(br2)>Trilobitomorpha$(br)>Conciliterga"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobitomorpha$(br)>Conciliterga"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Helmetia was a Cambrian trilobitomorph that possessed a large flat carapace that covered its entire body and head. Its fossils are incredibly rare and poorly known. Its carapace was separated into many segments each ending with angled spike. Because of this, it was inferred to have been a slow swimmer."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_helmetia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_helmetia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_helmetia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_helmetia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_helmetia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_helmetia"
 		}
 	]
 }

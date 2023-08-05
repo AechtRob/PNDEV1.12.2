@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMooreoceras;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -56,7 +55,7 @@ public class EntityPrehistoricFloraMooreoceras extends EntityPrehistoricFloraNau
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -111,16 +110,11 @@ public class EntityPrehistoricFloraMooreoceras extends EntityPrehistoricFloraNau
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsMooreoceras.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			this.setTicks(0);
-		}
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemNautiloidEggsMooreoceras.block, (int) (1));
 	}
 
 	@Override

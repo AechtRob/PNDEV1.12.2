@@ -461,7 +461,7 @@ public class BlockThectardis extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Undetermined cone-like organism");
-				tooltip.add("Periods: Ediacaran");
+				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

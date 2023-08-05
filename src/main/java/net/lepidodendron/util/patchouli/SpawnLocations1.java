@@ -13,7 +13,7 @@ import java.util.Collections;
 
 public class SpawnLocations1 implements IComponentProcessor {
 
-    public static final String biomeUnknown = "Biomes not yet defined or not present in this modpack";
+    public static final String biomeUnknown = "$(br)Biomes not yet defined or not present in this modpack";
 
     String mob;
 
@@ -35,8 +35,8 @@ public class SpawnLocations1 implements IComponentProcessor {
 
     @Nullable
     public static String getBiomeList(String mobID, int from, int to) {
-        String biomeList = "; ";
-        String biomeListFinal = "; ";
+        String biomeList = "$(br)";
+        String biomeListFinal = "$(br)";
         int i = 0;
         ArrayList<String> biomeArray = new ArrayList<String>();
         for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
@@ -47,16 +47,16 @@ public class SpawnLocations1 implements IComponentProcessor {
             for (String biomeID : biomeArray) {
                 String biomeName = ForgeRegistries.BIOMES.getValue(new ResourceLocation(biomeID)).getBiomeName();
                 if (biomeName.length() > 0 && !biomeName.equalsIgnoreCase("null")) {
-                    if (!biomeList.contains("; " + biomeName + "; ")) {
+                    if (!biomeList.contains("$(br)" + biomeName + "$(br)")) {
                         if (spawnsHere(mobID, biomeID)) {
                             i ++;
-                            biomeList = biomeList + biomeName + "; ";
+                            biomeList = biomeList + biomeName + "$(br)";
                             if (i > from && i <= to) {
-                                biomeListFinal = biomeListFinal + biomeName + "; ";
+                                biomeListFinal = biomeListFinal + "$(li)" + biomeName + "$(br)";
                             }
                             if (i > 66) {
                                 if (from == 0) {
-                                    return "Widespread";
+                                    return "$(br)Widespread";
                                 }
                                 else {
                                     return "";
@@ -66,10 +66,9 @@ public class SpawnLocations1 implements IComponentProcessor {
                     }
                 }
             }
-            if (!biomeListFinal.equalsIgnoreCase("; ")) {
-                biomeListFinal = biomeListFinal.substring(2);
+            if (!biomeListFinal.equalsIgnoreCase("$(br)")) {
                 if (i <= to) {
-                    biomeListFinal = biomeListFinal.substring(0, biomeListFinal.length() - 2);
+                    biomeListFinal = biomeListFinal.substring(0, biomeListFinal.length() - 5);
                 }
                 return biomeListFinal;
             }

@@ -23,9 +23,24 @@
 			"text": "Microdictyon was an armored worm like animal placed within Onychophora. It had 10 pairs of sclerites on the sides matched with a pair of tentacle like feetand its body was tube shaped."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_microdictyon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_microdictyon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_microdictyon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_microdictyon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_microdictyon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_microdictyon"
 		}
 	]
 }

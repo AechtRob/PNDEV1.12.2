@@ -1,28 +1,55 @@
 {
-  "variants": {
-    "facing=north": {
-      "model": "lepidodendron:tuanshanzia",
-      "y": 180
+  "multipart": [
+  	
+    { "when": { "facing": "north" },
+      "apply": { "model": "lepidodendron:tuanshanzia_base", "x": 90 }
     },
-    "facing=south": {
-      "model": "lepidodendron:tuanshanzia",
-      "y": 0
+    
+    { "when":
+    	{ "facing": "east" },
+      "apply": { "model": "lepidodendron:tuanshanzia_base", "x": 90, "y": 90 }
     },
-    "facing=west": {
-      "model": "lepidodendron:tuanshanzia",
-      "y": -270
+    
+    { "when": {"facing": "south" },
+      "apply": { "model": "lepidodendron:tuanshanzia_base", "x": 90, "y": 180 }
     },
-    "facing=east": {
-      "model": "lepidodendron:tuanshanzia",
-      "y": -90
+  { "when": { "facing": "west" },
+      "apply": { "model": "lepidodendron:tuanshanzia_base", "x": 90, "y": 270 }
     },
-    "facing=up": {
-      "model": "lepidodendron:tuanshanzia",
-      "y": 0
+  { "when": { "facing": "up" },
+      "apply": [
+        { "model": "lepidodendron:tuanshanzia_base" },
+        { "model": "lepidodendron:tuanshanzia_base", "y": 90 },
+        { "model": "lepidodendron:tuanshanzia_base", "y": 180 },
+        { "model": "lepidodendron:tuanshanzia_base", "y": 270 }
+      ]
     },
-    "facing=down": {
-      "model": "lepidodendron:tuanshanzia",
-      "y": 0
+    { "when":
+      { "facing": "up" },
+      "apply": [
+        { "model": "lepidodendron:tuanshanzia_1" },
+        { "model": "lepidodendron:tuanshanzia_1", "y": 90 },
+        { "model": "lepidodendron:tuanshanzia_1", "y": 180 },
+        { "model": "lepidodendron:tuanshanzia_1", "y": 270 },
+        { "model": "lepidodendron:tuanshanzia_2" },
+        { "model": "lepidodendron:tuanshanzia_2", "y": 90 },
+        { "model": "lepidodendron:tuanshanzia_2", "y": 180 },
+        { "model": "lepidodendron:tuanshanzia_2", "y": 270 },
+        { "model": "lepidodendron:tuanshanzia_3" },
+        { "model": "lepidodendron:tuanshanzia_3", "y": 90 },
+        { "model": "lepidodendron:tuanshanzia_3", "y": 180 },
+        { "model": "lepidodendron:tuanshanzia_3", "y": 270 }
+      ]
+    },
+    
+    { "when": { "facing": "down" },
+      "apply": [
+        { "model": "lepidodendron:tuanshanzia_base", "x": 180},
+        { "model": "lepidodendron:tuanshanzia_base", "x": 180, "Y": 90 },
+        { "model": "lepidodendron:tuanshanzia_base", "x": 180, "Y": 180 },
+        { "model": "lepidodendron:tuanshanzia_base", "x": 180, "Y": 270 }
+      ]
     }
-  }
+    
+  ]
 }

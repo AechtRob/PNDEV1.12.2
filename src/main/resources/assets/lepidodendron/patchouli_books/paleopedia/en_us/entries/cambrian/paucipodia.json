@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paucipodia",
 			"title": "Paucipodia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Xenusia$(br)>Archonychophora$(br)>Paucipodiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia$(br)>Archonychophora$(br)>Paucipodiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Paucipodia is a lobopod from the lower Cambrian period. It was a worm like creature with many pairs of tentacle like legs and a tube shaped body. It did not have any sclerites unlike some other Xenusians."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_paucipodia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paucipodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paucipodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paucipodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paucipodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paucipodia"
 		}
 	]
 }

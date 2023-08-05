@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraJellyfish_Precambrian extends EntityPrehistor
         return true;
     }
 
-    public static String getPeriod() {return "Ediacaran (speculative)";}
+    public static String getPeriod() {return "Neoproterozoic (Ediacaran) (speculative)";}
 
     //public static String getHabitat() {return "Aquatic";}
 
