@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hurdia",
 			"title": "Hurdia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
 		},
 		{
 			"type": "image",

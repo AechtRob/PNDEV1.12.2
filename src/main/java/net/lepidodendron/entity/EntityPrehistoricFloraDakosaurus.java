@@ -41,8 +41,8 @@ public class EntityPrehistoricFloraDakosaurus extends EntityPrehistoricFloraAgea
 		setSize(1.5F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
-		maxHeight = 0.4F;
-		maxHealthAgeable = 36.0D;
+		maxHeight = 0.55F;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
