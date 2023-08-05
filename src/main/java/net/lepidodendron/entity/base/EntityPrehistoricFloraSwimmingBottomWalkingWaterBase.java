@@ -320,7 +320,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     @Override
     public void travel(float strafe, float vertical, float forward) {
         float f4;
-        //IF IS SWIMMINGPN:
+        //IF IS SWIMMINGPNPN:
         if (this.isReallySwimming()) {
             if (this.isServerWorld()) {
                 if (isInWater()) {
@@ -488,7 +488,7 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
             //this.swimmingHolder = this.isReallySwimming();
         }
 
-        //IF IS SWIMMINGPN:
+        //IF IS SWIMMINGPNPN:
         if (this.isReallySwimming()) {
             super.onLivingUpdate();
             //this.renderYawOffset = this.rotationYaw;
