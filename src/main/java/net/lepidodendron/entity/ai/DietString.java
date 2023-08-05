@@ -4,7 +4,7 @@ public class DietString {
 
     public static final String[] NULL = new String[]{};
     public static final String[] FISHFOOD = new String[]{"itemFishFood"};
-    public static final String[] FISH = new String[]{"pndietfish"};
+    public static final String[] FISH = new String[]{"pndietFish"};
     public static final String[] MEAT = new String[]{"pndietMeat"};
     public static final String[] BUG = new String[]{"pndietBug"};
     public static final String[] SHELLFISH = new String[]{"pndietShellfish"};

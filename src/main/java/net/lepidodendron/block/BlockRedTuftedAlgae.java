@@ -583,8 +583,8 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Algae");
-	        tooltip.add("Periods: [Cambrian -] Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
-	        tooltip.add("Propagation: water");}
+	        	tooltip.add("Periods: [Cambrian -] Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
+	        	tooltip.add("Propagation: water");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
