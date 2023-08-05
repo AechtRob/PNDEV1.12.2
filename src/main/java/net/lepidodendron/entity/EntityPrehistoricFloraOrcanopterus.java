@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraOrcanopterus extends EntityPrehistoricFloraSw
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	private static final DataParameter<Boolean> SWIMMING = EntityDataManager.createKey(EntityPrehistoricFloraOrcanopterus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> SWIMMINGPN = EntityDataManager.createKey(EntityPrehistoricFloraOrcanopterus.class, DataSerializers.BOOLEAN);
 	//Needs to be here because it is not loaded in time to be accessed by the client if it's on the parent class!
 
 	public EntityPrehistoricFloraOrcanopterus(World world) {
@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraOrcanopterus extends EntityPrehistoricFloraSw
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(SWIMMING, false);
+		this.dataManager.register(SWIMMINGPN, false);
 		this.setScaleForAge(false);
 	}
 
@@ -89,13 +89,13 @@ public class EntityPrehistoricFloraOrcanopterus extends EntityPrehistoricFloraSw
 	//checks if the animal is actually swimming
 	@Override
 	public boolean getIsSwimming() {
-		return (Boolean)this.dataManager.get(SWIMMING);
+		return (Boolean)this.dataManager.get(SWIMMINGPN);
 	}
 
 	//sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
 	@Override
 	public void setIsSwimming(boolean isSwimming) {
-		this.dataManager.set(SWIMMING, isSwimming);
+		this.dataManager.set(SWIMMINGPN, isSwimming);
 	}
 
 
