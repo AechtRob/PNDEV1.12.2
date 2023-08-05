@@ -44,6 +44,7 @@ public class ItemLacewingCretapsychopsRaw extends ElementsLepidodendronMod.ModEl
 		OreDictionary.registerOre("foodMeat", ItemLacewingCretapsychopsRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemLacewingCretapsychopsRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemLacewingCretapsychopsRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingCretapsychopsRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

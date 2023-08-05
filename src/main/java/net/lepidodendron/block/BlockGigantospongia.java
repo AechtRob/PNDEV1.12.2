@@ -74,6 +74,7 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:gigantospongia", BlockGigantospongia.block);
 		OreDictionary.registerOre("sponge", BlockGigantospongia.block);
+		OreDictionary.registerOre("pndietSponge", BlockGigantospongia.block);
 	}
 
 	@Override

@@ -54,6 +54,7 @@ public class ItemStrombus extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemStrombus.block);
 		OreDictionary.registerOre("foodMeat", ItemStrombus.block);
 		OreDictionary.registerOre("itemShellfish", ItemStrombus.block);
+		OreDictionary.registerOre("pndietMeat", ItemStrombus.block);
 	}
 
 

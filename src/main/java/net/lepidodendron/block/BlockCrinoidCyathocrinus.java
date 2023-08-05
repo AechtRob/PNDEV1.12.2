@@ -83,6 +83,7 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_cyathocrinus", BlockCrinoidCyathocrinus.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidCyathocrinus.block);
 	}
 
 

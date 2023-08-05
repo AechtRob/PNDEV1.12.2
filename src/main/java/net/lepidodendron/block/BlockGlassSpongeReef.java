@@ -36,9 +36,11 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Random;
 
@@ -48,6 +50,12 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 	public static final Block block = null;
 	public BlockGlassSpongeReef(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.glass_sponge_reef);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pndietSponge", BlockGlassSpongeReef.block);
 	}
 
 	@Override

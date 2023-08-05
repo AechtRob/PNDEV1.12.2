@@ -40,6 +40,7 @@ public class ItemBungartiusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bungartius", ItemBungartiusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBungartiusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBungartiusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemBungartiusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

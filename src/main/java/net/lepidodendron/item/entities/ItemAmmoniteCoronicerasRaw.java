@@ -40,6 +40,7 @@ public class ItemAmmoniteCoronicerasRaw extends ElementsLepidodendronMod.ModElem
 		OreDictionary.registerOre("listAllfishraw", ItemAmmoniteCoronicerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAmmoniteCoronicerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAmmoniteCoronicerasRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemAmmoniteCoronicerasRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {

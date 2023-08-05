@@ -71,6 +71,7 @@ public class BlockAulacera extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:aulacera_sapling", BlockAulacera.block);
 		OreDictionary.registerOre("sponge", BlockAulacera.block);
+		OreDictionary.registerOre("pndietSponge", BlockAulacera.block);
 	}
 
 	public static class BlockCustom extends Block implements IShearable {

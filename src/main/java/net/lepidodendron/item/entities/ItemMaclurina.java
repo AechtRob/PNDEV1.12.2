@@ -54,6 +54,7 @@ public class ItemMaclurina extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemMaclurina.block);
 		OreDictionary.registerOre("foodMeat", ItemMaclurina.block);
 		OreDictionary.registerOre("itemShellfish", ItemMaclurina.block);
+		OreDictionary.registerOre("pndietMeat", ItemMaclurina.block);
 	}
 
 	public static class ItemCustom extends Item {

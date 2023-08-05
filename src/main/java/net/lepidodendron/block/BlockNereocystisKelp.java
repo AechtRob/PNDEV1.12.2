@@ -39,9 +39,11 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -59,6 +61,12 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom());
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("itemAlgae", BlockNereocystisKelp.block);
 	}
 
 	@SideOnly(Side.CLIENT)

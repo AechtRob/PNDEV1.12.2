@@ -73,6 +73,7 @@ public class BlockNematophyta extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemFungus", BlockNematophyta.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockNematophyta.block);
 		OreDictionary.registerOre("plant", BlockNematophyta.block);
+		OreDictionary.registerOre("pndietFungus", BlockNematophyta.block);
 	}
 
 	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {

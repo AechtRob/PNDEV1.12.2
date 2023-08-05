@@ -51,7 +51,7 @@ public class BlockMonkeyPuzzleAraucariaFruitBlock extends ElementsLepidodendronM
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemFruit", BlockMonkeyPuzzleAraucariaFruitBlock.block);
+		OreDictionary.registerOre("pndietFruit", BlockMonkeyPuzzleAraucariaFruitBlock.block);
 	}
 
 	@SideOnly(Side.CLIENT)

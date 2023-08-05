@@ -33,6 +33,7 @@ public class ItemVarialepisRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemVarialepisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVarialepisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVarialepisRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemVarialepisRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

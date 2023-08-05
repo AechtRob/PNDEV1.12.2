@@ -39,6 +39,7 @@ public class ItemKayentachelysRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kayentachelys", ItemKayentachelysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKayentachelysRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKayentachelysRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemKayentachelysRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -54,6 +54,7 @@ public class ItemViviparus extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemViviparus.block);
 		OreDictionary.registerOre("foodMeat", ItemViviparus.block);
 		OreDictionary.registerOre("itemShellfish", ItemViviparus.block);
+		OreDictionary.registerOre("pndietMeat", ItemViviparus.block);
 	}
 
 

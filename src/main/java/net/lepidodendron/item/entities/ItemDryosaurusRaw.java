@@ -32,6 +32,7 @@ public class ItemDryosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dryosaurus", ItemDryosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDryosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDryosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemDryosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

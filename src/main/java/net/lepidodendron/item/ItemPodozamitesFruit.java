@@ -32,7 +32,7 @@ public class ItemPodozamitesFruit extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemFruit", ItemPodozamitesFruit.block);
+		OreDictionary.registerOre("pndietFruit", ItemPodozamitesFruit.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -27,6 +27,7 @@ public class ItemBishanopliosaurusRaw extends ElementsLepidodendronMod.ModElemen
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bishanopliosaurus", ItemBishanopliosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBishanopliosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBishanopliosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemBishanopliosaurusRaw.block);
 	}
 
 	@Override

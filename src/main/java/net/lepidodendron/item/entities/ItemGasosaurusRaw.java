@@ -38,6 +38,7 @@ public class ItemGasosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gasosaurus", ItemGasosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGasosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGasosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemGasosaurusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

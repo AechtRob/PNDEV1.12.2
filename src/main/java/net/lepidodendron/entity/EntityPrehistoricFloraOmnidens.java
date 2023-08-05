@@ -220,9 +220,8 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH), DietString.CRUSTACEAN);
 	}
-
 
 	@Override
 	public boolean isAIDisabled() {

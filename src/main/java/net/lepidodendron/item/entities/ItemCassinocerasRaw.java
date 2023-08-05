@@ -39,6 +39,7 @@ public class ItemCassinocerasRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemCassinocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCassinocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCassinocerasRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemCassinocerasRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {

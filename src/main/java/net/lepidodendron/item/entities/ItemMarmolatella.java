@@ -54,6 +54,7 @@ public class ItemMarmolatella extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemMarmolatella.block);
 		OreDictionary.registerOre("foodMeat", ItemMarmolatella.block);
 		OreDictionary.registerOre("itemShellfish", ItemMarmolatella.block);
+		OreDictionary.registerOre("pndietMeat", ItemMarmolatella.block);
 	}
 
 

@@ -36,9 +36,11 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -50,6 +52,12 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 	public static final Block block = null;
 	public BlockGreenSproutingAlgae(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.green_sprouting_algae);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("itemAlgae", BlockGreenSproutingAlgae.block);
 	}
 
 	@Override

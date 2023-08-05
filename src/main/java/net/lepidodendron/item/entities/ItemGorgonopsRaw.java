@@ -38,6 +38,7 @@ public class ItemGorgonopsRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gorgonops", ItemGorgonopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGorgonopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGorgonopsRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemGorgonopsRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

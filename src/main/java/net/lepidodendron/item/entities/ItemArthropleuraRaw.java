@@ -40,6 +40,7 @@ public class ItemArthropleuraRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemArthropleuraRaw.block);
 		OreDictionary.registerOre("listAllinsectraw", ItemArthropleuraRaw.block);
 		OreDictionary.registerOre("foodInsect", ItemArthropleuraRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemArthropleuraRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

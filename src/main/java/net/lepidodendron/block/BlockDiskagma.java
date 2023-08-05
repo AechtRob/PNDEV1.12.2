@@ -65,6 +65,7 @@ public class BlockDiskagma extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("plantdnaPNlepidodendron:diskagma", BlockDiskagma.block);
+		OreDictionary.registerOre("pndietFungus", BlockDiskagma.block);
 	}
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {

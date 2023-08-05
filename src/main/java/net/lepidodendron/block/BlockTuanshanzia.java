@@ -67,6 +67,7 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockTuanshanzia.TileEntityCustom.class, "lepidodendron:tileentitytuanshanzia");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:tuanshanzia", BlockTuanshanzia.block);
+		OreDictionary.registerOre("itemAlgae", BlockTuanshanzia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

@@ -66,73 +66,71 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
             Collections.sort(list, this.sorter);
             for (EntityLivingBase entityChooser : list) {
                 boolean targetOK = true;
-
-                if (entityChooser != null) { //Eurypterids and fish dont attack players on land:
-                    if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
-                        if (!isInWaterforHunting(this.targetEntity)) {
-                            targetOK = false;
-                        }
-                    }
-                }
+                boolean dietOK = false;
 
                 if (entityChooser != null) {
-                    if ((this.targetEntity.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
+                    if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
+                        if (!isInWaterforHunting(this.targetEntity)) {
+                            targetOK = false; //Eurypterids and fish dont attack players on land:
+                        }
+                    }
+                    else if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
-                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
+                    else if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
-                    if ((entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
+                    else if ((entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
                     ) { //Disallow cannibalism!
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
                 }
 
-                //Next figure out if this entity drops loot I can eat:
-                boolean dietOK = false;
-                Method method = RenderDisplayWallMount.testAndGetMethod(entityChooser.getClass(), "getLootTable", null);
-                ResourceLocation resourcelocation = null;
-                if (method != null) {
+
+                if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
+                    this.targetEntity = entityChooser;
+                    break;
+                }
+
+                if (targetOK) {
+                    //Next figure out if this entity drops loot I can eat:
+                    ResourceLocation resourcelocation = null;
                     try {
+                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable", null);
                         method.setAccessible(true); //Uggggh, reflection :(
                         resourcelocation = (ResourceLocation) method.invoke(entityChooser, null);
+                    } catch (Exception e) {
                     }
-                    catch (Exception e) {
-                    }
-                } else {
-                }
-                if (resourcelocation != null)
-                {
-                    LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-                    LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE);
+                    if (resourcelocation != null) {
+                        LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE);
 
-                    for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build()))
-                    {
-                        //Loop over the itemstack to see what it is:
-                        Method method2 = RenderDisplayWallMount.testAndGetMethod(this.entity.getClass(), "getFoodOreDicts", null);
-                        String[] oreDictList = new String[]{};
-                        String result = "";
-                        if (method2 != null) {
-                            try {
-                                oreDictList = (String[]) method2.invoke(this.entity.getClass(), null);
-                                for (String oreDict : oreDictList) {
-                                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
-                                        dietOK = true;
-                                        break;
+                        for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
+                            //Loop over the itemstack to see what it is:
+                            Method method2 = RenderDisplayWallMount.testAndGetMethod(this.entity.getClass(), "getFoodOreDicts", null);
+                            String[] oreDictList = new String[]{};
+                            String result = "";
+                            if (method2 != null) {
+                                try {
+                                    oreDictList = (String[]) method2.invoke(this.entity, null);
+                                    for (String oreDict : oreDictList) {
+                                        if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
+                                            dietOK = true;
+                                            break;
+                                        }
                                     }
+                                } catch (Exception e) {
                                 }
+                            } else {
                             }
-                            catch (Exception e) {
+                            if (dietOK) {
+                                break;
                             }
-                        } else {
-                        }
-                        if (dietOK) {
-                            break;
                         }
                     }
                 }
@@ -143,7 +141,6 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 }
             }
         }
-
 
         if (this.targetEntity != null) {
             this.entity.setIsFast(true);

@@ -32,6 +32,7 @@ public class ItemEndothiodonRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_endothiodon", ItemEndothiodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEndothiodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEndothiodonRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemEndothiodonRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

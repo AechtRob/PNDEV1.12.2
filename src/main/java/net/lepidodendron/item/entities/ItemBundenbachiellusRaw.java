@@ -39,6 +39,7 @@ public class ItemBundenbachiellusRaw extends ElementsLepidodendronMod.ModElement
 		OreDictionary.registerOre("listAllfishraw", ItemBundenbachiellusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBundenbachiellusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBundenbachiellusRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemBundenbachiellusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

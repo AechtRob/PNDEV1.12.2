@@ -75,6 +75,7 @@ public class BlockCoralStonyRoughBranching extends ElementsLepidodendronMod.ModE
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_stony_rough_branching", BlockCoralStonyRoughBranching.block);
 		OreDictionary.registerOre("coral", BlockCoralStonyRoughBranching.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralStonyRoughBranching.block);
 	}
 
 

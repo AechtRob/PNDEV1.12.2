@@ -75,6 +75,7 @@ public class BlockCoralStonySparseBranching extends ElementsLepidodendronMod.Mod
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_stony_sparse_branching", BlockCoralStonySparseBranching.block);
 		OreDictionary.registerOre("coral", BlockCoralStonySparseBranching.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralStonySparseBranching.block);
 	}
 
 

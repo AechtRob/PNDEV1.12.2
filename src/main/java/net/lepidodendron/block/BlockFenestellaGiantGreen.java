@@ -75,6 +75,7 @@ public class BlockFenestellaGiantGreen extends ElementsLepidodendronMod.ModEleme
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:fenestella_giant_green", BlockFenestellaGiantGreen.block);
+		OreDictionary.registerOre("pndietEncruster", BlockFenestellaGiantGreen.block);
 	}
 
 

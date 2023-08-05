@@ -37,6 +37,7 @@ public class ItemDasycepsRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dasyceps", ItemDasycepsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDasycepsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDasycepsRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemDasycepsRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

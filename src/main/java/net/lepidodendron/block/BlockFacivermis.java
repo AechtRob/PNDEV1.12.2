@@ -75,6 +75,7 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(TileEntityFacivermis.class, "lepidodendron:tileentityfacivermis");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:facivermis", BlockFacivermis.block);
+		OreDictionary.registerOre("pndietEncruster", BlockFacivermis.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

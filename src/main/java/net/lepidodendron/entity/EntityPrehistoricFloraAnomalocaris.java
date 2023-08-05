@@ -119,7 +119,7 @@ public class EntityPrehistoricFloraAnomalocaris extends EntityPrehistoricFloraAg
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH), DietString.CRUSTACEAN);
 	}
 
 

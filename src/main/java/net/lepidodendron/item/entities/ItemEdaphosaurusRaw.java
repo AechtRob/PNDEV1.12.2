@@ -38,6 +38,7 @@ public class ItemEdaphosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_edaphosaurus", ItemEdaphosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEdaphosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEdaphosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemEdaphosaurusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

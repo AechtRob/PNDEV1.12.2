@@ -78,6 +78,7 @@ public class BlockCystoidBolboporites extends ElementsLepidodendronMod.ModElemen
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:cystoid_bolboporites", BlockCystoidBolboporites.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCystoidBolboporites.block);
 	}
 
 
