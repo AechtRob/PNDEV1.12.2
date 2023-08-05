@@ -15,7 +15,7 @@
 			"type": "image",
 			"images": ["paleopedia:textures/villebrunaster.png"],
 			"title": "V. fezouataensis",
-			"text": ""
+			"text": "Villebrunaster is a starfish like animal known from the Ordovician of Morocco and France. It had five arms which are evenly spread out in a pentagonal shape. Phylogenetic analysis indicates that Villebrunaster was the oldest and earliest diverging asterozoan."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_villebrunaster",

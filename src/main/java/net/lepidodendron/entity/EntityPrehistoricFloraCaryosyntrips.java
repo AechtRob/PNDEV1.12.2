@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraCaryosyntrips extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override
