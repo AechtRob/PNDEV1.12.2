@@ -514,7 +514,7 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Undetermined organism");
-				tooltip.add("Periods: Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian)");
+				tooltip.add("Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
