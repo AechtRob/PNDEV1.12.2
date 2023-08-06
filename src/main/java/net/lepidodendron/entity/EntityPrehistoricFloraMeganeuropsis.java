@@ -218,11 +218,12 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		this.tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraInsectFlyingBaseAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraLandBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraCrawlingFlyingInsectBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(5, new HuntSmallerThanMeAIInsect(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 3.0F, false));
+//		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraLandBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(2, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraCrawlingFlyingInsectBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(3, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIInsect(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(5, new HuntSmallerThanMeAIInsect(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	
