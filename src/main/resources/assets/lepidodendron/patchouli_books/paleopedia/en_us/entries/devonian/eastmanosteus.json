@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eastmanosteus",
 			"title": "Eastmanosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Arthrodira$(br)>Dunkleosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Dunkleosteidae"
 		},
 		{
 			"type": "image",
@@ -32,11 +32,25 @@
 			"type": "text",
 			"text": "E. calliaspis preserved traces of the muscle fibers, circulatory structures and even nerve tissues, making it among the earliest known traces of soft tissues in gnathostomes. Eastmanosteus calliaspis was among the largest known fishes from the Gogo Formation in which it was found, although this species was only about half the size of the larger ones inside the genus, with an estimated length of 1.5 m."
 		},
-
 		{
-			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eastmanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eastmanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eastmanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eastmanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eastmanosteus"
 		}
 	]
 }

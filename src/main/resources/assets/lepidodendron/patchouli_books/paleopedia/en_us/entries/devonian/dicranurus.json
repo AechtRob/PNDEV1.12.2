@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dicranurus",
 			"title": "Dicranurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Trilobita $(br)>Odontopleurida $(br)>Odontopleuridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda $(br)>Trilobita $(br)>Odontopleurida $(br)>Odontopleuridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dicranurus is a Devonian trilobite known mainly from Morocco. It had long spines that protruded from its head and body, some of which were longer than the length of the body itself.  It also had a pair of large curled horns at the top of its head, and probably used these spines to defend itself from predators such as placoderms."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dicranurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dicranurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dicranurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dicranurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dicranurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dicranurus"
 		}
 	]
 }

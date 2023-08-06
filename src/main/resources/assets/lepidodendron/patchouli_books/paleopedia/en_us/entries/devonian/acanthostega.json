@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthostega",
 			"title": "Acanthostega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Stegocephalia$(br)>Acanthostegidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Stegocephalia$(br)>Acanthostegidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": " "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_acanthostega",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn-like Eggs underwater$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
 		}
 	]
 }

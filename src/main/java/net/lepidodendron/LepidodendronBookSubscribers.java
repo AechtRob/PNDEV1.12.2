@@ -4103,7 +4103,10 @@ public class LepidodendronBookSubscribers {
 		String nestString = "";
 		BlockPos nestPos = null;
 		if (entity instanceof EntityPrehistoricFloraLandBase) {
-			if (((EntityPrehistoricFloraLandBase) entity).hasNest()
+			if (((EntityPrehistoricFloraLandBase) entity).createPFChild(((EntityPrehistoricFloraLandBase) entity)) != null) {
+				nestString = " gives birth to live young";
+			}
+			else if (((EntityPrehistoricFloraLandBase) entity).hasNest()
 					|| ((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
 				if (((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
 					nestString = " lays eggs into mounds in blocks";
@@ -4145,14 +4148,14 @@ public class LepidodendronBookSubscribers {
 				if (((EntityPrehistoricFloraAgeableBase) entity).createPFChild(((EntityPrehistoricFloraAgeableBase) entity)) != null) {
 					nestString = " gives birth to live young";
 				}
-				if (((EntityPrehistoricFloraAgeableBase) entity).dropsEggs()) {
+				else if (((EntityPrehistoricFloraAgeableBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
 				else {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+			else if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
 				if (((EntityPrehistoricFloraTrilobiteBottomBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4160,7 +4163,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+			else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
 				if (((EntityPrehistoricFloraTrilobiteSwimBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4168,7 +4171,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+			else if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
 				if (((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4176,7 +4179,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraFishBase) {
+			else if (entity instanceof EntityPrehistoricFloraFishBase) {
 				if (((EntityPrehistoricFloraFishBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4184,7 +4187,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
+			else if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
 				if (((EntityPrehistoricFloraInsectFlyingBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4195,7 +4198,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+			else if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
 				if (((EntityPrehistoricFloraJellyfishBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4203,7 +4206,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+			else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
 				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
