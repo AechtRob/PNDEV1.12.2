@@ -4188,8 +4188,11 @@ public class LepidodendronBookSubscribers {
 				if (((EntityPrehistoricFloraInsectFlyingBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
-				else {
+				else if (!((EntityPrehistoricFloraInsectFlyingBase) entity).laysInBlock()) {
 					nestString = " lays eggs in water";
+				}
+				else {
+					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
 			}
 			if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
