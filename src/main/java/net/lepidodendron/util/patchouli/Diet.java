@@ -38,7 +38,7 @@ public class Diet implements IComponentProcessor {
         if (method != null) {
             try {
                 EntityLiving entity = (EntityLiving) ee.newInstance(null);
-                string = (String[]) method.invoke(entity, null);
+                string = (String[]) method.invoke(entity, (Object[]) null);
                 nestString = LepidodendronBookSubscribers.getNestString(entity, false);
                 entity.setDead();
             }
