@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megalograptus",
 			"title": "Megalograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean & Sponge Forest$(br2)>Eurypterida$(br)>Carcinosomatoidea$(br)>Megalograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Eurypterida$(br)>Carcinosomatoidea$(br)>Megalograptidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Megalograptus is a famous sea scorpion from the Late Ordovician period. Some specimens were so well preserved, life colorations could be inferred from them. Those colors were inferred to be a dark brown and black on its tail and pincers and a lighter body coloration. They also had a trident like tail and their arms had a multitude of spines on them."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megalograptus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megalograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megalograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megalograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megalograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megalograptus"
 		}
 	]
 }

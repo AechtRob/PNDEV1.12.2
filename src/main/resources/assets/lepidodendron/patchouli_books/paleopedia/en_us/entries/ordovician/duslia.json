@@ -1,0 +1,46 @@
+{
+	"name": "Duslia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/duslia_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_duslia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_duslia",
+			"title": "Duslia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Artiopoda $(br)>Vicissicaudata $(br)>Cheloniellida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/duslia.png"],
+			"title": "D. insignis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_duslia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		}
+	]
+}

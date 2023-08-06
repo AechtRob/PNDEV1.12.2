@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phanerotinus",
 			"title": "Phanerotinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Ocean$(br2)>Gastropoda$(br)>Euomphalina$(br)>Euomphalidae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)>Gastropoda$(br)>Euomphalina$(br)>Euomphalidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Phanerotinus was a Devonian to Carboniferous aquatic gastropod. It had a long shell which was coiled at the end. In life, it probably did not move much, being a suspension feeder."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_phanerotinus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Hit to pick up"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phanerotinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phanerotinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phanerotinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phanerotinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phanerotinus"
 		}
 	]
 }

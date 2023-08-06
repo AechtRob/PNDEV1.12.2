@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phialaspis",
 			"title": "Phialaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Pteraspidomorphi $(br)>Traquairaspidiformes $(br)>Phialaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Pteraspidomorphi $(br)>Traquairaspidiformes $(br)>Phialaspididae"
 		},
 		{
 			"type": "image",
@@ -26,6 +26,26 @@
 			"advancement": "lepidodendron:pf_adv_book_phialaspis",
 			"type": "text",
 			"text": ", perhaps for added stability while swimming.$(br)$(br)$(br)$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phialaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phialaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phialaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phialaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phialaspis"
 		}
 	]
 }

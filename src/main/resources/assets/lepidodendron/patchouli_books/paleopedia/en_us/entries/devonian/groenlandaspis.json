@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_groenlandaspis",
 			"title": "Groenlandaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean, Brackish, Forest, Floodplain, Swamp, Vale$(br2)>Arthrodira$(br)>Groenlandaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Groenlandaspididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Groenlandaspis is a rare example of a fossil that gives us insight into the coloration of the animal when it lived. Because of this, we know that Groenlandaspis was rusty red on the top with a countershade of white. In life, it probably was a benthic feeder, swimming along the seafloor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_groenlandaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_groenlandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_groenlandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_groenlandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_groenlandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_groenlandaspis"
 		}
 	]
 }

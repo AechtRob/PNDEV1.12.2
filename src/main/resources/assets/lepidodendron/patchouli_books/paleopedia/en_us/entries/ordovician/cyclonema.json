@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyclonema",
 			"title": "Cyclonema",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Ocean, Lagoon, Sponge, Bryozoan Reef$(br2)>Gastropoda$(br)>Euomphalina$(br)>Platyceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)>Gastropoda$(br)>Euomphalina$(br)>Platyceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cyclonema is a tiny marine gastropod that scourged the ancient oceans. It was most common during the Ordovician period and its numbers began dwindling in the later periods. Cyclonema would have looked very similar to modern sea snails and probably lived in a similar fashion, filling similar niches."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cyclonema",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Hit to Pick Up"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cyclonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cyclonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cyclonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cyclonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cyclonema"
 		}
 	]
 }

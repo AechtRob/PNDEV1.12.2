@@ -1,0 +1,46 @@
+{
+	"name": "Chasmataspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chasmataspis_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_chasmataspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chasmataspis",
+			"title": "Chasmataspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Dekatriata $(br)>Chasmataspidida $(br)>Chasmataspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/chasmataspis.png"],
+			"title": "C. laurencii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chasmataspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chasmataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chasmataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chasmataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chasmataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chasmataspis"
+		}
+	]
+}

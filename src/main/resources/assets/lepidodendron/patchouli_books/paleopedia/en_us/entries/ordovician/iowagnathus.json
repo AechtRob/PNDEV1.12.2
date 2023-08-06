@@ -1,0 +1,46 @@
+{
+	"name": "Iowagnathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iowagnathus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_iowagnathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iowagnathus",
+			"title": "Iowagnathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Iowagnathidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/iowagnathus.png"],
+			"title": "I. grandis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iowagnathus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_conodont@iowagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_conodont@iowagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_conodont@iowagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_conodont@iowagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_conodont@iowagnathus"
+		}
+	]
+}

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_harvestman",
 			"title": "Harvestman",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian+$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Opiliones"
+			"text": "$(l)Temporal Range:$() Devonian+$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Opiliones"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Harvestmen are arachnids characterized by a smalled elliptical body and eight long legs, that extend from its fused body. They have a single pair of eyes in the middle of the cephalothorax. They are non venomous carnivorous animals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_harvestman",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Wood/Moss Egg (Small)$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_harvestman"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_harvestman"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_harvestman"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_harvestman"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_harvestman"
 		}
 	]
 }

@@ -1,0 +1,46 @@
+{
+	"name": "Carolinites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/carolinites_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_carolinites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_carolinites",
+			"title": "Carolinites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Proetida $(br)>Telephinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/carolinites.png"],
+			"title": "C. bulbosa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_carolinites",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_carolinites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_carolinites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_carolinites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_carolinites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_carolinites"
+		}
+	]
+}

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ogyginus",
 			"title": "Ogyginus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Frozen Ocean & Algal Reef$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ogyginus is an Ordivician trilobite most commonly found in Wales. The medium sized type species, O. corndensis, inhabited the freezing sub-glacial oceans of the Ordovician. However, the species O. forteyi which comes from the Valongo Formation, Portugal, is known to grow up to lengths of 72 cm. Ogyginus therefore is among the largest trilobites and also lived in close proximity with other massive trilobites like Hungioides, Isotelus, and Uralichas."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ogyginus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ogyginus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ogyginus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ogyginus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ogyginus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ogyginus"
 		}
 	]
 }

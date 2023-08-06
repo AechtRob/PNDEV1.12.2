@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyrtoceras",
 			"title": "Cyrtoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Nautiloidea$(br)>Oncocerida"
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)>Nautiloidea$(br)>Oncocerida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cyrtoceras is an early nautiloid that lived from the Ordovician until the Devonian. Its shell resembled a semi curved orthocone shell, showing early stages of the transition from straight shells to swirl shells."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cyrtoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cyrtoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cyrtoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cyrtoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cyrtoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cyrtoceras"
 		}
 	]
 }

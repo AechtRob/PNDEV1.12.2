@@ -1,0 +1,46 @@
+{
+	"name": "Cowielepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cowielepis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_cowielepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cowielepis",
+			"title": "Cowielepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Anaspida $(br)>Birkeniiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cowielepis.png"],
+			"title": "C. ritchiei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cowielepis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cowielepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cowielepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cowielepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cowielepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cowielepis"
+		}
+	]
+}

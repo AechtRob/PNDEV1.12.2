@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sacabambaspis",
 			"title": "Sacabambaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Lagoon, Sponge Forest$(br2)>Pteraspidomorphi$(br)>Sacabambaspidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Pteraspidomorphi$(br)>Sacabambaspidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Sacabambaspis is a jawless fish from the Ordovician period. It lived in shallow waters and was about 25 cm long. Its head shield was made of 2 plates that met at its sides. Its eyes were close to the tip of the head and the rest of the body was covered in strap like scales behind the head shield"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_sacabambaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sacabambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sacabambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sacabambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sacabambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sacabambaspis"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_symphysops",
 			"title": "Symphysops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>Trilobita $(br)>Asaphida $(br)>Cyclopygidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Asaphida $(br)>Cyclopygidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Symphysops is a small Ordovician trilobite found in many countries all over the world. It is a member of Cyclopygidae, a family of large eyed and likely pelagic swimming trilobites. It likely had a pelagic lifestyle, evidenced by its large eyes that merged at the front of the head and its fossils are often found in association with other pelagic trilobites."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_symphysops",
-			"type": "text",
- 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
 		}
 	]
 }

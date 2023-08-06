@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_palaeocharinus",
 			"title": "Palaeocharinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Palaeocharinidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Palaeocharinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Palaeocharinus is a trigonotarbid arachnid from Devonian Europe. It likely moved in a fashion similar to modern arachnids and it would probably lay its eggs on moss or logs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_palaeocharinus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Small Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus"
 		}
 	]
 }

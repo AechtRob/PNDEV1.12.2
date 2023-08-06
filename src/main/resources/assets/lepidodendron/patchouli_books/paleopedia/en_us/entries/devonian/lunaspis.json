@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lunaspis",
 			"title": "Lunaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Petalichthyida$(br)>Macropetalichthyidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Petalichthyida$(br)>Macropetalichthyidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lunaspis comes from the Greek 'Luna' meaning moon, and 'aspis' meaning shield. Lunaspis is a petalichthyid placoderm that lived in shallow marine habitats. They are flat with elongated pectoral spines and shortened thoracic armor with dorsally facing eyes. They also have long and thing tails similar to rays and skates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lunaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lunaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lunaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lunaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lunaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lunaspis"
 		}
 	]
 }

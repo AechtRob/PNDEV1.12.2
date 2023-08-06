@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_holonema",
 			"title": "Holonema",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean, Reef$(br2)>Arthrodira$(br)>Holonematidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Holonematidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Holonema is a medium sized placoderm from the Devonian period. H. westolli in particular was found wholly preserved in the Gogo Formation of Australia. They had a massive head shield an wing like pectoral fins and were likely to be benthic feeders with a specialized snout."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_holonema",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_holonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_holonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_holonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_holonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_holonema"
 		}
 	]
 }

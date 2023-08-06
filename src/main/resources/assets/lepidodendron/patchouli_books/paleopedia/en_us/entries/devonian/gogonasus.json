@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gogonasus",
 			"title": "Gogonasus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reefs$(br2)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Sarcopterygii"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gogonasus is a lobe finned fish from the Gogo formation of Australia. It lived in the late Devonian period and its skeleton shows features of tetrapods as well as early forms of the forearm bones. It is believed to be an ambush hunter, using its forelimbs to dart out quickly to catch prey. It is known from a 3 dimensional skeleton."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gogonasus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gogonasus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gogonasus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gogonasus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gogonasus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gogonasus"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mcnamaraspis",
 			"title": "Mcnamaraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Arthrodira$(br)>Brachythoraci$(br)>Incisoscutoidea"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Brachythoraci$(br)>Incisoscutoidea"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Mcnamaraspis is a small placoderm from the Gogo Formation of Australia. It was similar in size and shape to Coccosteus another placoderm fish. It had razor sharp teeth plates which shows that it was an active predator."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mcnamaraspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mcnamaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mcnamaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mcnamaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mcnamaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mcnamaraspis"
 		}
 	]
 }
