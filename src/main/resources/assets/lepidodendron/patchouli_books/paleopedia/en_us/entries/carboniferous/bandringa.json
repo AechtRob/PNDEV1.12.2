@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bandringa",
 			"title": "Bandringa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Near-Shore, Estuaries and Swamps(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>Bandringidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>Bandringidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Bandringa is a long snouted elasmobranch from the Carboniferous period. It fed by suction feeding and used its long snout and needle like spines to hunt in murky waters."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_bandringa",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bandringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bandringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bandringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bandringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bandringa"
 		}
 	]
 }

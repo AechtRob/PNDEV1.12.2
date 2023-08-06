@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rayonnoceras",
 			"title": "Rayonnoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Pseudorthocerida$(br)>Carbactinoceratidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cephalopoda$(br)>Pseudorthocerida$(br)>Carbactinoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Rayonnoceras is a Carboniferous orthocone cephalopod. Its large straight shell had many rings on it and it had a canal system within its siphuncle. Its orientation during life would have been horizontal, like some other orthocones that preceded it."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_rayonnoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rayonnoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rayonnoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rayonnoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rayonnoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rayonnoceras"
 		}
 	]
 }

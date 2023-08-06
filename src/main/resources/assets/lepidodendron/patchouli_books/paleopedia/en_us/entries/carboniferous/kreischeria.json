@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",
 			"title": "Kreischeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kreischeria is a trigonotarbid from the Carboniferous period. It bore a resemblence to modern spiders and ticks and it had a protective carapace on it abdomen. Its head was pointed like other trigonotarbids and they could not produce silk."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"
 		}
 	]
 }

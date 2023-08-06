@@ -76,7 +76,7 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		int weight = LepidodendronConfigPlants.weightRedAlgaeMat;
+		int weight = LepidodendronConfigPlants.weightAlgalFrond;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -85,8 +85,8 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if ((!matchBiome(biome, LepidodendronConfigPlants.genRedAlgaeMatBlacklistBiomes))
-				&& (matchBiome(biome, LepidodendronConfigPlants.genRedAlgaeMatOverrideBiomes)
+		if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondBlacklistBiomes))
+				&& (matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)
 				|| dimID == LepidodendronConfig.dimPrecambrian)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -97,14 +97,14 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			if (!
+			if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)) && !
 					(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
 					)
 			) {
 				biomeCriteria = false;
@@ -470,7 +470,7 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine algae-like organism");
-				tooltip.add("Periods: Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)");
+				tooltip.add("Periods: Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) [- Neoproterozoic (Tonian - Cryogenian - Ediacaran)]");
 				tooltip.add("Propagation: water");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

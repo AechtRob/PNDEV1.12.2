@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arthropleura",
 			"title": "Arthropleura",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Burnt Swamp$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "It's not well understood why Arthropleura became gigantic. A popular theory is that high oxygen levels played a role, but this is questionable given that large Arthropleura are also known from early Permian with relatively low oxygen levels.  "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_arthropleura",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss/Log Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arthropleura"
 		}
 	]
 }

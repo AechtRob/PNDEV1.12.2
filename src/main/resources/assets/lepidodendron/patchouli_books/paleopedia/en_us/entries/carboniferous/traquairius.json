@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_traquairius",
 			"title": "Traquairius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Menaspiformes$(br)>Traquairiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Menaspiformes$(br)>Traquairiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Traquairius was a weirdly shaped Menaspid Holocephalian fish from the Bear Gulch of the Carboniferous. It was up to 30 cm long and it had lionfish like protrusions on its head and body."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_traquairius",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_traquairius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_traquairius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_traquairius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_traquairius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_traquairius"
 		}
 	]
 }

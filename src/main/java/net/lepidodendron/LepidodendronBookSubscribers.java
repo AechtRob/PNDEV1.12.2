@@ -4127,6 +4127,9 @@ public class LepidodendronBookSubscribers {
 					}
 				}
 			}
+			else if (entity instanceof EntityPrehistoricFloraScorpion) {
+				nestString = " carries eggs";
+			}
 			else if (((EntityPrehistoricFloraLandBase) entity).dropsEggs()) {
 				nestString = " drops egg items";
 			}
@@ -4170,7 +4173,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " drops egg items";
 				}
 				else {
-					nestString = " lays eggs in water";
+					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
 			}
 			if (entity instanceof EntityPrehistoricFloraFishBase) {

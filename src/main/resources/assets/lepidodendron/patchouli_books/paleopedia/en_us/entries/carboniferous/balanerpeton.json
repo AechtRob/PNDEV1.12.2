@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_balanerpeton",
 			"title": "Balanerpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Temnospondyli$(br)>Dendrerpetontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Temnospondyli$(br)>Dendrerpetontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Balanerpeton is a half meter long amphibian from the Early Carboniferous. It may have been capable of hearing high frequency sounds and it would have respired by gulping air instead of expanding its chest to take in air."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_balanerpeton",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_balanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_balanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_balanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_balanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_balanerpeton"
 		}
 	]
 }

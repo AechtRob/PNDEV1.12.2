@@ -94,7 +94,7 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                     //Next figure out if this entity drops loot I can eat:
                     ResourceLocation resourcelocation = null;
                     try {
-                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable", null);
+                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable", new Class[]{null});
                         method.setAccessible(true); //Uggggh, reflection :(
                         resourcelocation = (ResourceLocation) method.invoke(entityChooser, new Object[]{null});
                     } catch (Exception e) {

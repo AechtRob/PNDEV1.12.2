@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_roachoid",
 			"title": "Roach",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous+$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>Blattodea"
+			"text": "$(l)Temporal Range:$() Carboniferous+$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>Blattodea"
 		},
 		{
 			"type": "image",
@@ -23,14 +23,24 @@
 			"text": "Insects of the order Blattodea have been around since the Carboniferous period. Blattodea includes termites and cockroaches, although both of those don't show up until the Lower Cretaceous period. Blattoids are generally active and mobile creatures."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_roachoid",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Wood/Moss Egg (Small)$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_roachoid_arid"
 		},
 		{
-			"type": "text",
-			"title": "Biomes:",
-			"text": "Widespread"
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_roachoid_arid"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_roachoid_arid"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_roachoid_arid"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_roachoid_arid"
 		}
 	]
 }

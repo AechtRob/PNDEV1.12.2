@@ -1,0 +1,46 @@
+{
+	"name": "Phillipsia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phillipsia_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_phillipsia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phillipsia",
+			"title": "Phillipsia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Trilobita $(br)>Proetida $(br)>Phillipsiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/phillipsia.png"],
+			"title": "Phillipsia sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phillipsia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		}
+	]
+}

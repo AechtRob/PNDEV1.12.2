@@ -101,6 +101,8 @@ public class EntityPrehistoricFloraScorpion_Gigantoscorpio extends EntityPrehist
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
 
+
+
 	@Override
 	public void onDeath(DamageSource cause) {
 		if (!world.isRemote && this.getBabies() && (!this.getIsBaby())) {

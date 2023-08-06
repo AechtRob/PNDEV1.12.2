@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phlegethontia",
 			"title": "Phlegethontia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Aistopoda$(br)>Phlegethontiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Aistopoda$(br)>Phlegethontiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Phlegethontia is an aistopod from the Carboniferous and Permian periods. It looked like a snake but was actually an early stegocephalian, closer to amphibians than reptiles. They were likely semiaquatic animals that hunted fish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_phlegethontia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phlegethontia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phlegethontia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phlegethontia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phlegethontia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phlegethontia"
 		}
 	]
 }

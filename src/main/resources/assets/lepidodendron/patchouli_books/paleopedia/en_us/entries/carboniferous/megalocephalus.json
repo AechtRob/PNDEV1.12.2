@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megalocephalus",
 			"title": "Megalocephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Megalocephalus was a Late Carboniferous carnivorous amphibian which measured up to 1.5 meters. It is known from its skull and it had long pointed teeth, with a really hard bite force."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megalocephalus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megalocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megalocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megalocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megalocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megalocephalus"
 		}
 	]
 }

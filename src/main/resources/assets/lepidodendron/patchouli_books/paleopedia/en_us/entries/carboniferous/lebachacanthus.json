@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lebachacanthus",
 			"title": "Lebachacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Carboniferous Swamp, Permian Rivers$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Xenacanthida$(br)>Diplodoselachidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Xenacanthida$(br)>Diplodoselachidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lebachacanthus was a xenacanthid shark from the Permian period. It was a freshwater animal which lived in swamps and bogs and preyed upon amphibians and small fish. It was originally classified as a species of Orthacanthus but was later moved to its own species and it now belongs to a separate family. The fin spines in females were longer than those in males."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lebachacanthus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lebachacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lebachacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lebachacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lebachacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lebachacanthus"
 		}
 	]
 }

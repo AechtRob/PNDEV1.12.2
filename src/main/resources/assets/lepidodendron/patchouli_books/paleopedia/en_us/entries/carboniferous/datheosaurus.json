@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_datheosaurus",
 			"title": "Datheosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Marshes$(br2)>Cotylosauria$(br)>Caseidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)Cotylosauria$(br)>Caseidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Datheosaurus is a caseid from the Carboniferous to Permian periods. It was related to the larger, wider, Cotylorhynchus of the Permian. It had a long whip like tail and they were herbivorous animals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_datheosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_datheosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_datheosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_datheosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_datheosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_datheosaurus"
 		}
 	]
 }

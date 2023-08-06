@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_lycocercus",
 			"title": "Lycocercus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Lycocercidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Lycocercidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lycocercus is a palaeodictyopteran from the Carboniferous period. Its fossils had preserved some patterns."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_lycocercus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus"
 		}
 	]
 }

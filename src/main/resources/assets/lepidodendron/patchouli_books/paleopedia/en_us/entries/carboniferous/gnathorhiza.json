@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gnathorhiza",
 			"title": "Gnathorhiza",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gnathorhiza is a prehistoric lungfish from the Carboniferous to Early Triassic periods. It had a long and slender body with a pair of long fins which it may have used to help it walk underwater and potentially on land for brief periods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gnathorhiza",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gnathorhiza"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gnathorhiza"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gnathorhiza"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gnathorhiza"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gnathorhiza"
 		}
 	]
 }

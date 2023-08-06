@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crassigyrinus",
 			"title": "Crassigyrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Stegocephalia$(br)>Crassigyrinidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Stegocephalia$(br)>Crassigyrinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Crassigyrinus is a carnivorous stem tetrapod from the Early Carboniferous. It had very tiny limbs and long tail. Its body was streamlined and allowed it to swim better. Because its limbs were so small, it is implied to have been completely aquatic."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_crassigyrinus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_crassigyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_crassigyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_crassigyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_crassigyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_crassigyrinus"
 		}
 	]
 }

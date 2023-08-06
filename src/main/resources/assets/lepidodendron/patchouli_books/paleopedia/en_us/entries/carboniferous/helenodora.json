@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helenodora",
 			"title": "Helenodora",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Burnt Swamp$(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Helenodora is an onychophoran worm from the Carboniferous. It may have lived on land or underwater."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_helenodora",
-			"type": "text",
-			"text": "$(l)Eats:$() Moss$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
 		}
 	]
 }
