@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -37,6 +38,8 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraStoermeropterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
 
+	public Animation SWIM_ANIMATION;
+	public Animation UNSWIM_ANIMATION;
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
@@ -53,9 +56,117 @@ public class EntityPrehistoricFloraStoermeropterus extends EntityPrehistoricFlor
 		maxWidth = 0.7F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 12.0D;
+		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
+		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	//an array of all the animations
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
+	}
+
+	//a stricter check on if the animal is swimming, (It is not doing its transition animation)
+	public boolean isReallySwimming() {
+		return (this.getIsSwimming()) && (this.getAnimation() != this.SWIM_ANIMATION);
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (!this.world.isRemote && !this.isReallySwimming()) {
+			this.setIsSwimming(true);
+			this.setAnimation(SWIM_ANIMATION);
+			this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+		}
+
+		return super.attackEntityFrom(source, amount);
+	}
+
+	public void onEntityUpdate() {
+
+		int i = this.getAir();
+		super.onEntityUpdate();
+
+		if (this.isEntityAlive() && !isInWater()) {
+			--i;
+			this.setAir(i);
+
+			if (this.getAir() == -20) {
+				this.setAir(0);
+				this.attackEntityFrom(DamageSource.DROWN, 2.0F);
+			}
+		} else {
+			this.setAir(300);
+		}
+
+		if (!world.isRemote) {
+
+			if (!this.isReallyInWater()) {
+				this.setIsSwimming(false);
+				this.setWalkTick(1);
+			}
+			else {
+
+				if (this.getSwimTick() > 0) {
+					this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
+					if (this.getSwimTick() < 0) {
+						this.setSwimTick(0);
+					}
+				}
+				if (this.getWalkTick() > 0) {
+					this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
+					if (this.getWalkTick() < 0) {
+						this.setWalkTick(0);
+					}
+				}
+
+				if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
+					this.setIsSwimming(false);
+					this.setAnimation(UNSWIM_ANIMATION);
+					this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
+				}
+
+				if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
+					this.setIsSwimming(true);
+					this.setAnimation(SWIM_ANIMATION);
+					this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+				}
+			}
+
+			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
+//Lay eggs perhaps:
+			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+					&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+					|| BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+					&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition())
+					|| BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition().down()))
+			) {
+				//if (Math.random() > 0.5) {
+				this.setTicks(-50); //Flag this as stationary for egg-laying
+				//}
+			}
+
+			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+				//Is stationary for egg-laying:
+				//System.err.println("Test2");
+				IBlockState eggs = BlockEurypteridEggsSlimonia.block.getDefaultState();
+				if (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition())) {
+					world.setBlockState(this.getPosition(), eggs);
+					this.setLaying(false);
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				}
+				if (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition().down())) {
+					world.setBlockState(this.getPosition().down(), eggs);
+					this.setLaying(false);
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				}
+				this.setTicks(0);
+			}
+		}
+
 	}
 
 	@Override
@@ -238,39 +349,6 @@ public class EntityPrehistoricFloraStoermeropterus extends EntityPrehistoricFlor
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition().down()))
-		) {
-			//if (Math.random() > 0.5) {
-			this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
-		}
-
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockEurypteridEggsSlimonia.block.getDefaultState();
-			if (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			if (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
-		}
-	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
