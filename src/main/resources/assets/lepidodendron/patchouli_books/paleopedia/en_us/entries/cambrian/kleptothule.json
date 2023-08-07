@@ -1,0 +1,46 @@
+{
+	"name": "Kleptothule",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kleptothule_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_kleptothule",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kleptothule",
+			"title": "Kleptothule",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita $(br)>Redlichiida $(br)>Fallotaspidoidea? $(br)>Nevadiidae?"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/kleptothule.png"],
+			"title": "K. rasmusseni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kleptothule",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kleptothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kleptothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kleptothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kleptothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kleptothule"
+		}
+	]
+}

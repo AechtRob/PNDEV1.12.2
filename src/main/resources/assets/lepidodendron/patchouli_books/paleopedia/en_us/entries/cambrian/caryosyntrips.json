@@ -1,0 +1,46 @@
+{
+	"name": "Caryosyntrips",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caryosyntrips_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_caryosyntrips",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caryosyntrips",
+			"title": "Caryosyntrips",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/caryosyntrips.png"],
+			"title": "C. serratus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caryosyntrips",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caryosyntrips"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caryosyntrips"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caryosyntrips"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caryosyntrips"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caryosyntrips"
+		}
+	]
+}

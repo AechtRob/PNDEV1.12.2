@@ -1,0 +1,46 @@
+{
+	"name": "Cordaticaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cordaticaris_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_cordaticaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cordaticaris",
+			"title": "Cordaticaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cordaticaris.png"],
+			"title": "C. striatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordaticaris",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		}
+	]
+}

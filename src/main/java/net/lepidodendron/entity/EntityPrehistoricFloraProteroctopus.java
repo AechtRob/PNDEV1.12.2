@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
@@ -32,6 +33,8 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
 
+	public Animation SWIM_ANIMATION;
+	public Animation UNSWIM_ANIMATION;
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
@@ -48,9 +51,90 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4.0D;
+		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
+		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	//an array of all the animations
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
+	}
+
+	//a stricter check on if the animal is swimming, (It is not doing its transition animation)
+	public boolean isReallySwimming() {
+		return (this.getIsSwimming()) && (this.getAnimation() != this.SWIM_ANIMATION);
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (!this.world.isRemote && !this.isReallySwimming()) {
+			this.setIsSwimming(true);
+			this.setAnimation(SWIM_ANIMATION);
+			this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+		}
+
+		return super.attackEntityFrom(source, amount);
+	}
+
+	public void onEntityUpdate() {
+
+		int i = this.getAir();
+		super.onEntityUpdate();
+
+		if (this.isEntityAlive() && !isInWater()) {
+			--i;
+			this.setAir(i);
+
+			if (this.getAir() == -20) {
+				this.setAir(0);
+				this.attackEntityFrom(DamageSource.DROWN, 2.0F);
+			}
+		} else {
+			this.setAir(300);
+		}
+
+		if (!world.isRemote) {
+
+			if (!this.isReallyInWater()) {
+				this.setIsSwimming(false);
+				this.setWalkTick(1);
+			}
+			else {
+
+				if (this.getSwimTick() > 0) {
+					this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
+					if (this.getSwimTick() < 0) {
+						this.setSwimTick(0);
+					}
+				}
+				if (this.getWalkTick() > 0) {
+					this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
+					if (this.getWalkTick() < 0) {
+						this.setWalkTick(0);
+					}
+				}
+
+				if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
+					this.setIsSwimming(false);
+					this.setAnimation(UNSWIM_ANIMATION);
+					this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
+				}
+
+				if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
+					this.setIsSwimming(true);
+					this.setAnimation(SWIM_ANIMATION);
+					this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+				}
+			}
+
+			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
+
+		}
+
 	}
 
 	@Override
@@ -198,10 +282,6 @@ public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraS
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	}
-
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
 	}
 
 	@Override

@@ -305,9 +305,9 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.MEGALOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.GASOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.MEGALOSAURUS_LOOT;
+		return LepidodendronMod.GASOSAURUS_LOOT;
 	}
 
 	//Rendering taxidermy:
