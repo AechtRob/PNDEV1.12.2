@@ -95,8 +95,6 @@ public class EntityPrehistoricFloraAmmonite_Coroniceras extends EntityPrehistori
 		return DietString.FISHFOOD;
 	}
 
-	
-
 	@Override
 	public boolean isAIDisabled() {
 		return false;

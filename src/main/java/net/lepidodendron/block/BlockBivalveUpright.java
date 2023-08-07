@@ -74,6 +74,7 @@ public class BlockBivalveUpright extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_upright", BlockBivalveUpright.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveUpright.block);
+		OreDictionary.registerOre("foodSeafood", BlockBivalveUpright.block);
 		OreDictionary.registerOre("pndietShellfish", BlockBivalveUpright.block);
 	}
 

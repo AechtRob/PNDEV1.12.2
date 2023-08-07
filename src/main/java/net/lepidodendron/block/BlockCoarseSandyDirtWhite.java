@@ -19,9 +19,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockCoarseSandyDirtWhite extends ElementsLepidodendronMod.ModElement {
@@ -29,6 +31,12 @@ public class BlockCoarseSandyDirtWhite extends ElementsLepidodendronMod.ModEleme
 	public static final Block block = null;
 	public BlockCoarseSandyDirtWhite(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.coarse_sandy_dirt_white);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dirt", BlockCoarseSandyDirtWhite.block);
 	}
 
 	@Override

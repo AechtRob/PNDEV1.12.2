@@ -37,6 +37,7 @@ public class ItemCamuropiscisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_camuropiscis", ItemCamuropiscisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCamuropiscisRaw.block);
+		OreDictionary.registerOre("foodFish", ItemCamuropiscisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCamuropiscisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -32,6 +32,7 @@ public class ItemFurcifoliumSeed extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemFurcifoliumSeed.block);
+		OreDictionary.registerOre("foodPinenuts", ItemFurcifoliumSeed.block);
 	}
 
 	@SideOnly(Side.CLIENT)

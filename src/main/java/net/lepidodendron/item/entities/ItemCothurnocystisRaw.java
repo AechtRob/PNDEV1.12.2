@@ -36,9 +36,7 @@ public class ItemCothurnocystisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNCothurnocystis", ItemCothurnocystisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCothurnocystisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCothurnocystisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCothurnocystisRaw.block);
+		OreDictionary.registerOre("foodSeafood", ItemCothurnocystisRaw.block);
 		OreDictionary.registerOre("pndietCrinoid", ItemCothurnocystisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

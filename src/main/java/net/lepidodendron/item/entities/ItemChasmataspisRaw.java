@@ -36,9 +36,7 @@ public class ItemChasmataspisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_chasmataspis", ItemChasmataspisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemChasmataspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemChasmataspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemChasmataspisRaw.block);
+		OreDictionary.registerOre("foodCrustacean", ItemChasmataspisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemChasmataspisRaw.block);
 	}
 

@@ -36,9 +36,7 @@ public class ItemCooperocerasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cooperoceras", ItemCooperocerasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCooperocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCooperocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCooperocerasRaw.block);
+		OreDictionary.registerOre("foodCalamari", ItemCooperocerasRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemCooperocerasRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {

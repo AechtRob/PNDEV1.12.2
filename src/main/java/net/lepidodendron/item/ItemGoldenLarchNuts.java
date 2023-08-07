@@ -32,6 +32,7 @@ public class ItemGoldenLarchNuts extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemGoldenLarchNuts.block);
+		OreDictionary.registerOre("foodPinenuts", ItemGoldenLarchNuts.block);
 	}
 
 	@SideOnly(Side.CLIENT)

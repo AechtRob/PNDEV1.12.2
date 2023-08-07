@@ -38,8 +38,7 @@ public class ItemClarkinaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_clarkina", ItemClarkinaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemClarkinaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemClarkinaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemClarkinaRaw.block);
+		OreDictionary.registerOre("foodFish", ItemClarkinaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemClarkinaRaw.block);
 	}
 

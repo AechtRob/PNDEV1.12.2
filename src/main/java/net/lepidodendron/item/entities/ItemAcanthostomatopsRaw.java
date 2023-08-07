@@ -36,7 +36,7 @@ public class ItemAcanthostomatopsRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acanthostomatops", ItemAcanthostomatopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAcanthostomatopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthostomatopsRaw.block);
+		OreDictionary.registerOre("foodAmphibian", ItemAcanthostomatopsRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemAcanthostomatopsRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

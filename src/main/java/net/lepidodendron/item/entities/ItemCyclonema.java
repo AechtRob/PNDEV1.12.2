@@ -50,9 +50,8 @@ public class ItemCyclonema extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cyclonema", ItemCyclonema.block);
 		OreDictionary.registerOre("itemShellfish", ItemCyclonema.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCyclonema.block);
-		OreDictionary.registerOre("foodMeat", ItemCyclonema.block);
-		OreDictionary.registerOre("pndietMeat", ItemCyclonema.block);
+		OreDictionary.registerOre("foodSnail", ItemCyclonema.block);
+		OreDictionary.registerOre("pndietShellfish", ItemCyclonema.block);
 	}
 
 	public static class ItemCustom extends Item {

@@ -78,6 +78,8 @@ public class BlockBrachiopodGigantoproductus extends ElementsLepidodendronMod.Mo
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_gigantoproductus", BlockBrachiopodGigantoproductus.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodGigantoproductus.block);
+		OreDictionary.registerOre("foodSeafood", BlockBrachiopodGigantoproductus.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBrachiopodGigantoproductus.block);
 	}
 
 	@Override

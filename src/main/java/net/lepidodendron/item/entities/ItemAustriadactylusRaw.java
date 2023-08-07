@@ -36,7 +36,7 @@ public class ItemAustriadactylusRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_austriadactylus", ItemAustriadactylusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAustriadactylusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAustriadactylusRaw.block);
+		OreDictionary.registerOre("foodPterosaur", ItemAustriadactylusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemAustriadactylusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

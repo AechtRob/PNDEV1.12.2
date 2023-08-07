@@ -37,10 +37,7 @@ public class ItemArchaboilusRawF extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaboilus@female", ItemArchaboilusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArchaboilusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArchaboilusRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemArchaboilusRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("foodBug", ItemArchaboilusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemArchaboilusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

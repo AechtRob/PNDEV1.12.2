@@ -37,6 +37,7 @@ public class ItemBrindabellaspisRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_brindabellaspis", ItemBrindabellaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBrindabellaspisRaw.block);
+		OreDictionary.registerOre("foodFish", ItemBrindabellaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBrindabellaspisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
