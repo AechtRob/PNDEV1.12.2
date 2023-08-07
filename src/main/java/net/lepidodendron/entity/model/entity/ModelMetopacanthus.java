@@ -431,28 +431,30 @@ public class ModelMetopacanthus extends AdvancedModelBase {
             speed=0.13F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
+            this.walk(jaw, (float) (0.1), 0.2F, true, -2, 0.44F, f2, 1);
 
 
+                //this.walk(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
 
-            //this.walk(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-
-                this.flap(frontleftfin, (float)(speed*0.5F), (float)Math.toRadians(40.3015), false, -3, 0.6F, f2, 1);
-                this.flap(frontrightfin, (float)(speed*0.5F), (float)Math.toRadians(40.3015), false, -6, -0.6F, f2, 1);
-                this.chainWave(fishTail, speed*0.8F, 0.05F, -3, f2, 1);
-                this.chainSwing(fishTail, speed*0.8F, 0.25F, -3, f2, 1);
+                this.flap(frontleftfin, (float) (speed * 0.5F), (float) Math.toRadians(40.3015), false, -3, 0.6F, f2, 1);
+                this.flap(frontrightfin, (float) (speed * 0.5F), (float) Math.toRadians(40.3015), false, -6, -0.6F, f2, 1);
+                if(e.isInWater()) {
+                    this.chainWave(fishTail, speed * 0.8F, 0.05F, -3, f2, 1);
+                    this.chainSwing(fishTail, speed * 0.8F, 0.25F, -3, f2, 1);
+                }
                 this.flap(backleftfin, (speed), 0.2F, true, 0, 0, f2, 1);
                 this.flap(backrightfin, (speed), 0.2F, true, 0, 0, f2, 1);
-                this.walk(jaw, (float) (0.1), 0.2F, true, -2, 0.44F, f2, 1);
 
 
-
-            // this.walk(backrightfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-
+                // this.walk(backrightfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
 
 
-            if (!e.isInWater()) {
+            if(!e.isInWater()) {
+                //this.chainWave(fishTail, speed * 0.8F, 0.05F, -3, f2, 1);
+                this.chainSwing(fishTail, speed * 3F, 0.25F, -3, f2, 1);
                 this.main.offsetY = 0F;
-                //this.bob(main, speed*2F, 5F, false, f2, 1);
+                this.main.rotateAngleZ = (float) Math.toRadians(90);
+                this.bob(main, speed*5F, 5F, false, f2, 1);
             }
         }
     }
