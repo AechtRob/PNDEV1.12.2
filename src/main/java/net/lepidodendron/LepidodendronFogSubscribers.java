@@ -32,6 +32,7 @@ import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -51,20 +52,22 @@ public class LepidodendronFogSubscribers {
     private static boolean fogDensityInit;
     private static Vec3d fogRGBMultiplier;
     private static float fogDensity;
+    private static float fogDensity2;
     private static boolean biomeScan;
+    private static Vec3d fogRGB;
 
 	
 	public boolean biomeCheck(World world, BlockPos center)
     {
 		Biome player = world.getBiome(center);
-		Biome north = world.getBiome(center.add(0, 0, -12));
-		Biome south = world.getBiome(center.add(0, 0, 12));
-		Biome east = world.getBiome(center.add(12, 0, 0));
-		Biome west = world.getBiome(center.add(-12, 0, 0));
-		Biome northwest = world.getBiome(center.add(-12, 0, -12));
-		Biome southwest = world.getBiome(center.add(-12, 0, 12));
-		Biome northeast = world.getBiome(center.add(12, 0, -12));
-		Biome southeast = world.getBiome(center.add(12, 0, 12));
+		Biome north = world.getBiome(center.add(0, 0, -6));
+		Biome south = world.getBiome(center.add(0, 0, 6));
+		Biome east = world.getBiome(center.add(6, 0, 0));
+		Biome west = world.getBiome(center.add(-6, 0, 0));
+		Biome northwest = world.getBiome(center.add(-6, 0, -6));
+		Biome southwest = world.getBiome(center.add(-6, 0, 6));
+		Biome northeast = world.getBiome(center.add(6, 0, -6));
+		Biome southeast = world.getBiome(center.add(6, 0, 6));
 		if(player.equals(north) && north.equals(south) &&
 		south.equals(east) && east.equals(west) &&
 		west.equals(northwest) && northwest.equals(northeast) &&
@@ -78,6 +81,64 @@ public class LepidodendronFogSubscribers {
 		return biomeScan;
     }
 
+	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
+	public void testEvent(PlayerTickEvent event)
+	{
+		GameSettings settings = Minecraft.getMinecraft().gameSettings;
+		if (event.player.world.provider.getDimension() == LepidodendronConfig.dimPrecambrian
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCambrian
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimOrdovician
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimSilurian
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimPermian
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimTriassic
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimJurassic
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceous
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimPaleogene
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimNeogene
+				|| event.player.world.provider.getDimension() == LepidodendronConfig.dimPleistocene
+		) {
+			if(event.player.getPosition().getX() != fogX || event.player.getPosition().getZ() != fogZ || Math.abs(event.player.motionY) >=0.01f || fogRGB == null)
+			{
+				  int[] ranges = ForgeModContainer.blendRanges;
+			        int distance = 0;
+			        if (settings.fancyGraphics && ranges.length > 0)
+			        {
+			            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+			        }
+
+			        float fog = 0;
+			        float red = 0;
+			        float green = 0;
+			        float blue = 0;
+			        int divider = 0;
+			        for (int x = -distance; x <= distance; ++x)
+			        {
+			            for (int z = -distance; z <= distance; ++z)
+			            {
+			                BlockPos pos = event.player.getPosition().add(x, 0, z);
+			                Biome biome = event.player.world.getBiome(pos);
+							float density = Math.max(1,getBiomeFactor(biome, event.player.getPosition().getY()));///prevents divide-by-zero errors
+							Vec3d fogColor = getBiomeFogColors(event.player.world, biome, (float) Minecraft.getMinecraft().getRenderPartialTicks());
+							
+							red += fogColor.x;
+							green += fogColor.y;
+							blue += fogColor.z;
+							fog += density;
+							divider++;
+			            }
+			        }
+			    Vec3d color = new Vec3d(red / divider,green / divider,blue / divider);
+				fogDensity2 = Math.max(1,(fog/divider));//getBiomeFogDensity(event.player.world, event.player.getPosition(), (float) Minecraft.getMinecraft().getRenderPartialTicks());
+				fogRGB = color;//getFogBlendColour(event.player.world, event.player.getPosition(), (float) Minecraft.getMinecraft().getRenderPartialTicks());	
+				fogX = event.player.getPosition().getX();
+				fogZ = event.player.getPosition().getZ();
+			}	
+		}
+	}
+	
 	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
@@ -131,15 +192,15 @@ public class LepidodendronFogSubscribers {
 
 			//float f1 = event.getFarPlaneDistance();
 
-			float biomeFog = this.getBiomeFogDensity(player.world, player.getPosition(), (float) event.getRenderPartialTicks());
+			//float biomeFog = fogDensity2;//this.getBiomeFogDensity(player.world, player.getPosition(), (float) event.getRenderPartialTicks());
 
             if (GLContext.getCapabilities().GL_NV_fog_distance)
             {
                 GlStateManager.glFogi(34138, 34139);
             }
 			
-			GL11.glFogf(GL11.GL_FOG_START,(far/biomeFog) * (0.75F/biomeFog));
-            GL11.glFogf(GL11.GL_FOG_END,(far/biomeFog));
+			GL11.glFogf(GL11.GL_FOG_START,(far/fogDensity2) * (0.75F/fogDensity2));
+            GL11.glFogf(GL11.GL_FOG_END,(far/fogDensity2));
 		}
 	}
 
@@ -167,6 +228,22 @@ public class LepidodendronFogSubscribers {
 			float green = 0;
 			float blue = 0;
 
+			if (world.provider.getDimension() != LepidodendronConfig.dimPrecambrian
+					&& world.provider.getDimension() != LepidodendronConfig.dimCambrian
+					&& world.provider.getDimension() != LepidodendronConfig.dimOrdovician
+					&& world.provider.getDimension() != LepidodendronConfig.dimSilurian
+					&& world.provider.getDimension() != LepidodendronConfig.dimDevonian
+					&& world.provider.getDimension() != LepidodendronConfig.dimCarboniferous
+					&& world.provider.getDimension() != LepidodendronConfig.dimPermian
+					&& world.provider.getDimension() != LepidodendronConfig.dimTriassic
+					&& world.provider.getDimension() != LepidodendronConfig.dimJurassic
+					&& world.provider.getDimension() != LepidodendronConfig.dimCretaceous
+					&& world.provider.getDimension() != LepidodendronConfig.dimPaleogene
+					&& world.provider.getDimension() != LepidodendronConfig.dimNeogene
+					&& world.provider.getDimension() != LepidodendronConfig.dimPleistocene) {
+				fogRGB = null; //Resets fog color for tick event.
+			}
+			
 			if (world.isRemote && (player instanceof EntityPlayer)) {
 				if (world.provider.getDimension() == LepidodendronConfig.dimPrecambrian
 						|| world.provider.getDimension() == LepidodendronConfig.dimCambrian
@@ -192,10 +269,14 @@ public class LepidodendronFogSubscribers {
 
 							if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
 								if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER) || (b instanceof BlockPortal)) {
-									Vec3d fogColor = getFogBlendColour(world, player.getPosition(), (float) event.getRenderPartialTicks());//getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
-									red = (float) fogColor.x;
-									green = (float) fogColor.y;
-									blue = (float) fogColor.z;
+									//Vec3d fogColor = getFogBlendColour(world, player.getPosition(), (float) event.getRenderPartialTicks());//getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
+									if (fogRGB == null)
+									{
+										fogRGB = getFogBlendColour(world, player.getPosition(), (float) event.getRenderPartialTicks());//getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
+									}
+									red = (float) fogRGB.x;
+									green = (float) fogRGB.y;
+									blue = (float) fogRGB.z;
 
 									float rain = world.getRainStrength((float) event.getRenderPartialTicks());
 									float thunder = world.getThunderStrength((float) event.getRenderPartialTicks());
@@ -218,7 +299,7 @@ public class LepidodendronFogSubscribers {
 	public float getBiomeFogDensity(World world, BlockPos center, float partialTicks)
     {
 		GameSettings settings = Minecraft.getMinecraft().gameSettings;
-        if (settings.fancyGraphics && (center.getX() != fogX || center.getZ() != fogZ))
+        /*if (settings.fancyGraphics && (center.getX() != fogX || center.getZ() != fogZ))
         {
         	biomeScan = this.biomeCheck(world, center);
         }
@@ -226,13 +307,13 @@ public class LepidodendronFogSubscribers {
         {
             return fogDensity;
         }
-        fogDensityInit = true;
+        fogDensityInit = true;*/
        // System.out.println("Biome scan: "+biomeScan);
         int[] ranges = ForgeModContainer.blendRanges;
         int distance = 0;
         if (settings.fancyGraphics && ranges.length > 0)
         {
-            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
         }
 
         float fog = 0;
@@ -251,9 +332,9 @@ public class LepidodendronFogSubscribers {
             }
         }
 
-        fogX = center.getX();
-        fogY = center.getY();
-        fogZ = center.getZ();
+        //fogX = center.getX();
+        //fogY = center.getY();
+        //fogZ = center.getZ();
         fogDensity = Math.max(1,(fog/divider));
         return fogDensity;
     }
@@ -261,7 +342,7 @@ public class LepidodendronFogSubscribers {
 	public Vec3d getFogBlendColour(World world, BlockPos center, float partialTicks)
     {
 		GameSettings settings = Minecraft.getMinecraft().gameSettings;
-        if (settings.fancyGraphics && (center.getX() != fogX || center.getZ() != fogZ))
+/*        if (settings.fancyGraphics && (center.getX() != fogX || center.getZ() != fogZ))
         {
         	biomeScan = this.biomeCheck(world, center);
         }
@@ -270,12 +351,12 @@ public class LepidodendronFogSubscribers {
             return fogRGBMultiplier;
         }
         fogInit = true;
-
+*/
         int[] ranges = ForgeModContainer.blendRanges;
         int distance = 0;
         if (settings.fancyGraphics && ranges.length > 0)
         {
-            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
         }
 
         float red = 0;
@@ -431,6 +512,17 @@ public class LepidodendronFogSubscribers {
 					Vec3d fog = new Vec3d(r, g, b);
 					//System.out.println("Fog: "+fog.x);
 					return fog;
+				}
+				else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
+					r = 177D / 255D;
+					g = 192D / 255D;
+					b = 216D / 255D;
+					r *= f2 * 0.94F + 0.06F;
+					g *= f2 * 0.94F + 0.06F;
+					b *= f2 * 0.91F + 0.09F;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
 				} else {
 					r = 138D / 255D;
 					g = 240D / 255D;
@@ -526,10 +618,10 @@ public class LepidodendronFogSubscribers {
 
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if ((biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-					|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris)
-					&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-					&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
+			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
+					|| (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse"))) {
 				return 1.75f;
 			}
 		}
@@ -542,8 +634,11 @@ public class LepidodendronFogSubscribers {
 		}
 		if (biome instanceof BiomeJurassic) {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
-				return 1.8f;
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
+				return 1.75f;
+			}
+			if (biomeJurassic.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")|| biomeJurassic.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_creek_fog")) {
+				return 2f;
 			}
 		}
 
