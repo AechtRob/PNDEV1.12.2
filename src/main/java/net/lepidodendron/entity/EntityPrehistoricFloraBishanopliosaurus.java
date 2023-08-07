@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraBishanopliosaurus extends EntityPrehistoricFl
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.925F;
-		maxHealthAgeable = 36.0D;
+		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
