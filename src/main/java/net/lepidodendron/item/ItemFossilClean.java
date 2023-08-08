@@ -1132,7 +1132,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_spiny_cycad_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_spriggina_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_spruce_sapling_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_squaloraja_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_squaloraja_gendered_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_squatinactis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stagonolepis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stauropteris_clean", "inventory"),
@@ -1266,7 +1266,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_jungle_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_acacia_sapling_clean", "inventory"),
 
-				new ModelResourceLocation("lepidodendron:fossils/fossil_microbrachius_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_microbrachius_gendered_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_chotecops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ivoites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_paramblypterus_clean", "inventory"),

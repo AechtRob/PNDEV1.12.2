@@ -11223,15 +11223,15 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 
-			else if (event.getTarget() instanceof EntityPrehistoricFloraStoermeropterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_STOERMEROPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraStoermeropterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_STOERMEROPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraHoplitaspis) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_HOPLITASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -11250,24 +11250,24 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraPentecopterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_PENTECOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraOrcanopterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_ORCANOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraPentecopterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_PENTECOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraOrcanopterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_ORCANOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraOnychopterella) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_ONYCHOPTERELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -11277,15 +11277,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraStrobilopterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_STROBILOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraStrobilopterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_STROBILOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraXinjiangchelys) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_XINJIANGCHELYS.trigger((EntityPlayerMP) event.getEntityPlayer());
