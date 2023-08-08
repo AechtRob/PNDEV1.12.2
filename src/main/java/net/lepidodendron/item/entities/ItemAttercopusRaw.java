@@ -35,7 +35,7 @@ public class ItemAttercopusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_attercopus", ItemAttercopusRaw.block);
-		OreDictionary.registerOre("foodBug", ItemAttercopusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemAttercopusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemAttercopusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

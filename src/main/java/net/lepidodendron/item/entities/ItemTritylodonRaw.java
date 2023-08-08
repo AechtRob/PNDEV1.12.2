@@ -38,7 +38,7 @@ public class ItemTritylodonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tritylodon", ItemTritylodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTritylodonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTritylodonRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemTritylodonRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemTritylodonRaw.block);
 	}
 

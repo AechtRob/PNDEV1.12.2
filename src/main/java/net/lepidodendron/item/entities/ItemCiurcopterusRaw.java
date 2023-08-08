@@ -37,7 +37,7 @@ public class ItemCiurcopterusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ciurcopterus", ItemCiurcopterusRaw.block);
-		OreDictionary.registerOre("foodCrustacean", ItemCiurcopterusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemCiurcopterusRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemCiurcopterusRaw.block);
 	}
 

@@ -38,7 +38,7 @@ public class ItemMixosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_mixosaurus", ItemMixosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMixosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMixosaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemMixosaurusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemMixosaurusRaw.block);
 	}
 

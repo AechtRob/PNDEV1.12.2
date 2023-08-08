@@ -36,7 +36,7 @@ public class ItemChinleaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_chinlea", ItemChinleaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemChinleaRaw.block);
-		OreDictionary.registerOre("foodFish", ItemChinleaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemChinleaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemChinleaRaw.block);
 	}
 

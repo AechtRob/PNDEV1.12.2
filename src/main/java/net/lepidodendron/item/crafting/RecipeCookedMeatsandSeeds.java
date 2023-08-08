@@ -25,34 +25,34 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemPrototaxitesChunk.block, (int) (1)), new ItemStack(ItemCookedPrototaxites.block, (int) (1)), 0.5F);
 		GameRegistry.addSmelting(new ItemStack(ItemYamTuber.block, (int) (1)), new ItemStack(ItemYamTuberBaked.block, (int) (1)), 0.5F);
 
-		for (ItemStack stack : OreDictionary.getOres("foodCalamari")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceCalamari")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoCalamari.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodSnail")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceSnail")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoEscargots.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodMeat")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceMeat")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoSteak.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodBug")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceBug")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoInsectTreat.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodScampi")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceScampi")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoScampi.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodCrustacean")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceCrustacean")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoThermidor.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodPterosaur")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnacePterosaur")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoPteroKebab.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodAmphibian")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceAmphibian")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoFillet.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodSeafood")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceSeafood")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoSeafood.block, 1), 0.35F);
 		}
-		for (ItemStack stack : OreDictionary.getOres("foodFish")) {
+		for (ItemStack stack : OreDictionary.getOres("pnfurnaceFish")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoFishcake.block, 1), 0.35F);
 		}
 

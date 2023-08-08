@@ -38,8 +38,7 @@ public class ItemPlatycaraspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_platycaraspis", ItemPlatycaraspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPlatycaraspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPlatycaraspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPlatycaraspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPlatycaraspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPlatycaraspisRaw.block);
 	}
 

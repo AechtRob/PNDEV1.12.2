@@ -36,9 +36,7 @@ public class ItemIowacystisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_iowacystis", ItemIowacystisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemIowacystisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemIowacystisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemIowacystisRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemIowacystisRaw.block);
 		OreDictionary.registerOre("pndietCrinoid", ItemIowacystisRaw.block);
 	}
 

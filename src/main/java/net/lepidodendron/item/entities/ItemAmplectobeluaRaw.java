@@ -38,7 +38,7 @@ public class ItemAmplectobeluaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_amplectobelua", ItemAmplectobeluaRaw.block);
-		OreDictionary.registerOre("foodCrustacean", ItemAmplectobeluaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemAmplectobeluaRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemAmplectobeluaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

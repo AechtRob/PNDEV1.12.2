@@ -35,9 +35,7 @@ public class ItemKleptothuleRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kleptothule", ItemKleptothuleRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemKleptothuleRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKleptothuleRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKleptothuleRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemKleptothuleRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemKleptothuleRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

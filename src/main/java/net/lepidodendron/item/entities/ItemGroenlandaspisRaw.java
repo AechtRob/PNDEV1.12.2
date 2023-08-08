@@ -37,8 +37,7 @@ public class ItemGroenlandaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_groenlandaspis", ItemGroenlandaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGroenlandaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGroenlandaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGroenlandaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGroenlandaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGroenlandaspisRaw.block);
 	}
 

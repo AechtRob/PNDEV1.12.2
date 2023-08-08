@@ -36,7 +36,7 @@ public class ItemCalvapilosaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_calvapilosa", ItemCalvapilosaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCalvapilosaRaw.block);
-		OreDictionary.registerOre("foodSnail", ItemCalvapilosaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemCalvapilosaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemCalvapilosaRaw.block);
 	}
 

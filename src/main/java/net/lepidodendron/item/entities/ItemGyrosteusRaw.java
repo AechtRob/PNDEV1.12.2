@@ -38,8 +38,7 @@ public class ItemGyrosteusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gyrosteus", ItemGyrosteusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGyrosteusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGyrosteusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGyrosteusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGyrosteusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGyrosteusRaw.block);
 	}
 

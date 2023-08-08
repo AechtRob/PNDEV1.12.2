@@ -23,9 +23,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemNautiloidEggsMooreoceras extends ElementsLepidodendronMod.ModElement {
@@ -33,6 +35,12 @@ public class ItemNautiloidEggsMooreoceras extends ElementsLepidodendronMod.ModEl
 	public static final Item block = null;
 	public ItemNautiloidEggsMooreoceras(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.eggs_mooreoceras);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemNautiloidEggsMooreoceras.block);
 	}
 
 	@Override

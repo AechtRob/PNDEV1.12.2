@@ -35,7 +35,7 @@ public class ItemChotecopsRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_chotecops", ItemChotecopsRaw.block);
-		OreDictionary.registerOre("foodCrustacean", ItemChotecopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemChotecopsRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemChotecopsRaw.block);
 	}
 

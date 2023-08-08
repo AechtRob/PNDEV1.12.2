@@ -37,7 +37,7 @@ public class ItemAsteracanthusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_asteracanthus", ItemAsteracanthusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAsteracanthusRaw.block);
-		OreDictionary.registerOre("foodFish", ItemAsteracanthusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemAsteracanthusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemAsteracanthusRaw.block);
 	}
 

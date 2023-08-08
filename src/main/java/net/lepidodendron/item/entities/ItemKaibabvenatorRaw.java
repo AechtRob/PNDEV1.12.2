@@ -38,8 +38,7 @@ public class ItemKaibabvenatorRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kaibabvenator", ItemKaibabvenatorRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemKaibabvenatorRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKaibabvenatorRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKaibabvenatorRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemKaibabvenatorRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemKaibabvenatorRaw.block);
 	}
 

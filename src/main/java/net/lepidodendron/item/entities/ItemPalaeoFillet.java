@@ -32,7 +32,6 @@ public class ItemPalaeoFillet extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("foodCooked", ItemPalaeoScampi.block);
-		OreDictionary.registerOre("foodMeat", ItemPalaeoScampi.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemPalaeoScampi.block);
 	}
 

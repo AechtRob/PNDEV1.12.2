@@ -35,7 +35,7 @@ public class ItemArchoblattinaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archoblattina", ItemArchoblattinaRaw.block);
-		OreDictionary.registerOre("foodBug", ItemArchoblattinaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemArchoblattinaRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemArchoblattinaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -37,9 +37,7 @@ public class ItemNahecarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_nahecaris", ItemNahecarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemNahecarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemNahecarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemNahecarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemNahecarisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemNahecarisRaw.block);
 	}
 

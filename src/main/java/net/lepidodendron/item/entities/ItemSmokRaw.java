@@ -38,7 +38,7 @@ public class ItemSmokRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_smok", ItemSmokRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSmokRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSmokRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemSmokRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemSmokRaw.block);
 	}
 

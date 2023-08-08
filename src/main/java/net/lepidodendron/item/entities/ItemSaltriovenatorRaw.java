@@ -37,7 +37,7 @@ public class ItemSaltriovenatorRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_saltriovenator", ItemSaltriovenatorRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSaltriovenatorRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSaltriovenatorRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemSaltriovenatorRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemSaltriovenatorRaw.block);
 	}
 

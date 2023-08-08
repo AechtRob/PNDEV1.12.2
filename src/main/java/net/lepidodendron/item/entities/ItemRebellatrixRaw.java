@@ -38,8 +38,7 @@ public class ItemRebellatrixRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_rebellatrix", ItemRebellatrixRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemRebellatrixRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemRebellatrixRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRebellatrixRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemRebellatrixRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemRebellatrixRaw.block);
 	}
 

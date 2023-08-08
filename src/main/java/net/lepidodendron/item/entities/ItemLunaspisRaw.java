@@ -38,8 +38,7 @@ public class ItemLunaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lunaspis", ItemLunaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemLunaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLunaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLunaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemLunaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemLunaspisRaw.block);
 	}
 

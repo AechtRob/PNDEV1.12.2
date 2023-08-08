@@ -36,7 +36,7 @@ public class ItemAthenaegisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_athenaegis", ItemAthenaegisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAthenaegisRaw.block);
-		OreDictionary.registerOre("foodFish", ItemAthenaegisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemAthenaegisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemAthenaegisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

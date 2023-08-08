@@ -36,8 +36,7 @@ public class ItemDapediumRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dapedium", ItemDapediumRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemDapediumRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDapediumRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDapediumRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemDapediumRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemDapediumRaw.block);
 	}
 

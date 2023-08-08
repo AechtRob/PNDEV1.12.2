@@ -36,7 +36,7 @@ public class ItemBanffiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_banffia", ItemBanffiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBanffiaRaw.block);
-		OreDictionary.registerOre("foodSeafood", ItemBanffiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemBanffiaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBanffiaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

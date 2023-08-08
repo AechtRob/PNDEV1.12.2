@@ -30,10 +30,7 @@ public class ItemScorpionPulmonoscorpiusRaw extends ElementsLepidodendronMod.Mod
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpion_pulmonoscorpius", ItemScorpionPulmonoscorpiusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemScorpionPulmonoscorpiusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemScorpionPulmonoscorpiusRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemScorpionPulmonoscorpiusRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemScorpionPulmonoscorpiusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemScorpionPulmonoscorpiusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemScorpionPulmonoscorpiusRaw.block);
 	}
 

@@ -38,8 +38,7 @@ public class ItemLonchidionRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lonchidion", ItemLonchidionRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemLonchidionRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLonchidionRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLonchidionRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemLonchidionRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemLonchidionRaw.block);
 	}
 

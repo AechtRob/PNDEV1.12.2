@@ -37,8 +37,7 @@ public class ItemEglonaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eglonaspis", ItemEglonaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEglonaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemEglonaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEglonaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemEglonaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemEglonaspisRaw.block);
 	}
 

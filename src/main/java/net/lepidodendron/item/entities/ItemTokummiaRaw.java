@@ -37,9 +37,7 @@ public class ItemTokummiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tokummia", ItemTokummiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemTokummiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemTokummiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTokummiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemTokummiaRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemTokummiaRaw.block);
 	}
 

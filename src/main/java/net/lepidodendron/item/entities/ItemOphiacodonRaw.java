@@ -38,7 +38,7 @@ public class ItemOphiacodonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ophiacodon", ItemOphiacodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemOphiacodonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemOphiacodonRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemOphiacodonRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemOphiacodonRaw.block);
 	}
 

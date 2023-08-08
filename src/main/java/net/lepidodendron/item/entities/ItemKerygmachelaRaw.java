@@ -37,9 +37,7 @@ public class ItemKerygmachelaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kerygmachela", ItemKerygmachelaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemKerygmachelaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKerygmachelaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKerygmachelaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemKerygmachelaRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemKerygmachelaRaw.block);
 	}
 

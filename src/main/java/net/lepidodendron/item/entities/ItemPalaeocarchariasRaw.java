@@ -36,8 +36,7 @@ public class ItemPalaeocarchariasRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeocarcharias", ItemPalaeocarchariasRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPalaeocarchariasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPalaeocarchariasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPalaeocarchariasRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPalaeocarchariasRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPalaeocarchariasRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

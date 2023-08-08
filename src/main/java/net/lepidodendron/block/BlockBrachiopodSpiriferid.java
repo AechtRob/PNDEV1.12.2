@@ -85,7 +85,7 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_spiriferid", BlockBrachiopodSpiriferid.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodSpiriferid.block);
-		OreDictionary.registerOre("foodSeafood", BlockBrachiopodSpiriferid.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBrachiopodSpiriferid.block);
 		OreDictionary.registerOre("pndietShellfish", BlockBrachiopodSpiriferid.block);
 	}
 

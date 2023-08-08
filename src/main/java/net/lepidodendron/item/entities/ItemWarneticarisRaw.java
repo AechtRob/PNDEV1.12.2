@@ -37,9 +37,7 @@ public class ItemWarneticarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_warneticaris", ItemWarneticarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemWarneticarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemWarneticarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemWarneticarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemWarneticarisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemWarneticarisRaw.block);
 	}
 

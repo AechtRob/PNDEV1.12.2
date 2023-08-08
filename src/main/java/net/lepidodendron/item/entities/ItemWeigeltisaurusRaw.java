@@ -31,7 +31,7 @@ public class ItemWeigeltisaurusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_weigeltisaurus", ItemWeigeltisaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWeigeltisaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemWeigeltisaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemWeigeltisaurusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemWeigeltisaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)

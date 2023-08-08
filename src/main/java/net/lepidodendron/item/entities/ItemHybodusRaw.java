@@ -38,8 +38,7 @@ public class ItemHybodusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hybodus", ItemHybodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHybodusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHybodusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHybodusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemHybodusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemHybodusRaw.block);
 	}
 

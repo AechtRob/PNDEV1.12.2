@@ -37,7 +37,7 @@ public class ItemErythrosuchusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_erythrosuchus", ItemErythrosuchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemErythrosuchusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemErythrosuchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemErythrosuchusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemErythrosuchusRaw.block);
 	}
 

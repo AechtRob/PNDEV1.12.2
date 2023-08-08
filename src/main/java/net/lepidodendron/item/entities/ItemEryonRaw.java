@@ -35,9 +35,7 @@ public class ItemEryonRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eryon", ItemEryonRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemEryonRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemEryonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEryonRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemEryonRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemEryonRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -38,8 +38,7 @@ public class ItemLuoxiongichthysRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_luoxiongichthys", ItemLuoxiongichthysRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemLuoxiongichthysRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLuoxiongichthysRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLuoxiongichthysRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemLuoxiongichthysRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemLuoxiongichthysRaw.block);
 	}
 

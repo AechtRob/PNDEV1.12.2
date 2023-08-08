@@ -37,9 +37,7 @@ public class ItemSongaichthysRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_songaichthys", ItemSongaichthysRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSongaichthysRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSongaichthysRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSongaichthysRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemSongaichthysRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemSongaichthysRaw.block);
 	}
 

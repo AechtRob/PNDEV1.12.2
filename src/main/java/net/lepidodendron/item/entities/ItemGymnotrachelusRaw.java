@@ -36,8 +36,7 @@ public class ItemGymnotrachelusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gymnotrachelus", ItemGymnotrachelusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGymnotrachelusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGymnotrachelusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGymnotrachelusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGymnotrachelusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGymnotrachelusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

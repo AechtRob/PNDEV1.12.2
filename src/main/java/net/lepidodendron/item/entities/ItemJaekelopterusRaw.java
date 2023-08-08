@@ -37,9 +37,7 @@ public class ItemJaekelopterusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_jaekelopterus", ItemJaekelopterusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemJaekelopterusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemJaekelopterusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemJaekelopterusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemJaekelopterusRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemJaekelopterusRaw.block);
 	}
 

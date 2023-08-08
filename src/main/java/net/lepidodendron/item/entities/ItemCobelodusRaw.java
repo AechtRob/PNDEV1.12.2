@@ -36,7 +36,7 @@ public class ItemCobelodusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cobelodus", ItemCobelodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCobelodusRaw.block);
-		OreDictionary.registerOre("foodFish", ItemCobelodusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCobelodusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCobelodusRaw.block);
 	}
 

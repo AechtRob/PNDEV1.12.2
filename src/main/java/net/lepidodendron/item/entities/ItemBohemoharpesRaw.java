@@ -35,7 +35,7 @@ public class ItemBohemoharpesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bohemoharpes", ItemBohemoharpesRaw.block);
-		OreDictionary.registerOre("foodCrustacean", ItemBohemoharpesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemBohemoharpesRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemBohemoharpesRaw.block);
 	}
 

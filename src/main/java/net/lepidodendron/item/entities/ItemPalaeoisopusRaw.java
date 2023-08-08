@@ -37,9 +37,7 @@ public class ItemPalaeoisopusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeoisopus", ItemPalaeoisopusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPalaeoisopusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPalaeoisopusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPalaeoisopusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemPalaeoisopusRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemPalaeoisopusRaw.block);
 	}
 

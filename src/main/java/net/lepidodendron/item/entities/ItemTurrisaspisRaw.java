@@ -38,8 +38,7 @@ public class ItemTurrisaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_turrisaspis", ItemTurrisaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemTurrisaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemTurrisaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTurrisaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemTurrisaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemTurrisaspisRaw.block);
 	}
 

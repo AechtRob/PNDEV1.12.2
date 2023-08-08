@@ -38,8 +38,7 @@ public class ItemQilinyuRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_qilinyu", ItemQilinyuRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemQilinyuRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemQilinyuRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemQilinyuRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemQilinyuRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemQilinyuRaw.block);
 	}
 

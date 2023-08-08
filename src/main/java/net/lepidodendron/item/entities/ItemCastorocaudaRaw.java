@@ -38,7 +38,7 @@ public class ItemCastorocaudaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_castorocauda", ItemCastorocaudaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCastorocaudaRaw.block);
-		OreDictionary.registerOre("foodAmphibian", ItemCastorocaudaRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemCastorocaudaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemCastorocaudaRaw.block);
 	}
 

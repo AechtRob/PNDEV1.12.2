@@ -36,9 +36,7 @@ public class ItemStrobilopterusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_strobilopterus", ItemStrobilopterusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemStrobilopterusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemStrobilopterusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemStrobilopterusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemStrobilopterusRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemStrobilopterusRaw.block);
 	}
 

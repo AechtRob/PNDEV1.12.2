@@ -37,9 +37,7 @@ public class ItemMontecarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_montecaris", ItemMontecarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemMontecarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMontecarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMontecarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemMontecarisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemMontecarisRaw.block);
 	}
 

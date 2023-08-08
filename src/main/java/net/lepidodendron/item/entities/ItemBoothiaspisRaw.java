@@ -36,7 +36,7 @@ public class ItemBoothiaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_boothiaspis", ItemBoothiaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBoothiaspisRaw.block);
-		OreDictionary.registerOre("foodFish", ItemBoothiaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemBoothiaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBoothiaspisRaw.block);
 	}
 

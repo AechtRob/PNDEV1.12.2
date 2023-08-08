@@ -38,9 +38,7 @@ public class ItemLituitesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lituites", ItemLituitesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLituitesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLituitesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLituitesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemLituitesRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemLituitesRaw.block);
 	}
 

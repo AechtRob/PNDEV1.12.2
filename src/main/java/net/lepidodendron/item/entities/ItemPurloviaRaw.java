@@ -38,7 +38,7 @@ public class ItemPurloviaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_purlovia", ItemPurloviaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPurloviaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPurloviaRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemPurloviaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemPurloviaRaw.block);
 	}
 

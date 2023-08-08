@@ -74,7 +74,7 @@ public class BlockBivalveMegalodon extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_megalodon", BlockBivalveMegalodon.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveMegalodon.block);
-		OreDictionary.registerOre("foodSeafood", BlockBivalveMegalodon.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveMegalodon.block);
 		OreDictionary.registerOre("pndietShellfish", BlockBivalveMegalodon.block);
 	}
 
