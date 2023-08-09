@@ -37,9 +37,7 @@ public class ItemRhenocystisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_rhenocystis", ItemRhenocystisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemRhenocystisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemRhenocystisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRhenocystisRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemRhenocystisRaw.block);
 		OreDictionary.registerOre("pndietCrinoid", ItemRhenocystisRaw.block);
 	}
 

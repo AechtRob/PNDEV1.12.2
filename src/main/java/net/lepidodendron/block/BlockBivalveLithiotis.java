@@ -74,7 +74,7 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_lithiotis", BlockBivalveLithiotis.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveLithiotis.block);
-		OreDictionary.registerOre("foodSeafood", BlockBivalveLithiotis.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveLithiotis.block);
 		OreDictionary.registerOre("pndietShellfish", BlockBivalveLithiotis.block);
 	}
 

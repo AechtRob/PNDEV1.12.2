@@ -38,7 +38,7 @@ public class ItemProburnetiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_proburnetia", ItemProburnetiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemProburnetiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemProburnetiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemProburnetiaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemProburnetiaRaw.block);
 	}
 

@@ -51,10 +51,9 @@ public class ItemMurex extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_murex", ItemMurex.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMurex.block);
-		OreDictionary.registerOre("foodMeat", ItemMurex.block);
 		OreDictionary.registerOre("itemShellfish", ItemMurex.block);
-		OreDictionary.registerOre("pndietMeat", ItemMurex.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemMurex.block);
+		OreDictionary.registerOre("pndietShellfish", ItemMurex.block);
 	}
 
 

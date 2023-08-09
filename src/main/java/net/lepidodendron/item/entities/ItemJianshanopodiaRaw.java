@@ -37,9 +37,8 @@ public class ItemJianshanopodiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_jianshanopodia", ItemJianshanopodiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemJianshanopodiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemJianshanopodiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemJianshanopodiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemJianshanopodiaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemJianshanopodiaRaw.block);
 	}
 

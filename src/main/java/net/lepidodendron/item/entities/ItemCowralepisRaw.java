@@ -36,7 +36,7 @@ public class ItemCowralepisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cowralepis", ItemCowralepisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCowralepisRaw.block);
-		OreDictionary.registerOre("foodFish", ItemCowralepisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCowralepisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCowralepisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -36,9 +36,7 @@ public class ItemHarpesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_harpes", ItemHarpesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemHarpesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHarpesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHarpesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemHarpesRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemHarpesRaw.block);
 	}
 

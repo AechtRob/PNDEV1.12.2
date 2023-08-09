@@ -38,8 +38,7 @@ public class ItemPromexyeleRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_promexyele", ItemPromexyeleRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPromexyeleRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPromexyeleRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPromexyeleRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPromexyeleRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPromexyeleRaw.block);
 	}
 

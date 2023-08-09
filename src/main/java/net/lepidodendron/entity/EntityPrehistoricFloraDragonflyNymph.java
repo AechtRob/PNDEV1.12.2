@@ -1,8 +1,6 @@
 
 package net.lepidodendron.entity;
 
-import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
@@ -25,9 +23,6 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -191,42 +186,6 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 	
 	}
 
-	public ResourceLocation getFreezeLoot() {
-		switch (this.getPNType()) {
-			case DRAGONFLY1: default:
-				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY2:
-				return LepidodendronMod.PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY3:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY4:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY5:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY6:
-				return LepidodendronMod.PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY7:
-				return LepidodendronMod.PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY8:
-				return LepidodendronMod.PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY9:
-			case DRAGONFLY10:
-				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT_JAR;
-		}
-	}
-
-	public ResourceLocation getStandardLoot() {
-		return LepidodendronMod.BUG_LOOT;
-	}
-
 	public float getFlySpeed() {
 		return 3f;
 	}
@@ -267,29 +226,7 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return getStandardLoot();
-	}
-
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			ResourceLocation resourcelocation = getFreezeLoot();
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", this.getPNType().getName());
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				variantNBT.setString("PNDisplaycase", stringEgg);
-				itemstack.setTagCompound(variantNBT);
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
+		return null;
 	}
 
 	@Override

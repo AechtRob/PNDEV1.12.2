@@ -37,7 +37,7 @@ public class ItemAmmoniteDactyliocerasRaw extends ElementsLepidodendronMod.ModEl
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_dactylioceras", ItemAmmoniteDactyliocerasRaw.block);
-		OreDictionary.registerOre("foodCalamari", ItemAmmoniteDactyliocerasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemAmmoniteDactyliocerasRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemAmmoniteDactyliocerasRaw.block);
 	}
 

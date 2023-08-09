@@ -37,9 +37,7 @@ public class ItemLyrarapaxRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lyrarapax", ItemLyrarapaxRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLyrarapaxRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLyrarapaxRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLyrarapaxRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemLyrarapaxRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemLyrarapaxRaw.block);
 	}
 

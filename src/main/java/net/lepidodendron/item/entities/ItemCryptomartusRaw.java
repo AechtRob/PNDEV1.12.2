@@ -39,7 +39,7 @@ public class ItemCryptomartusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_trigonotarbid_cryptomartus", ItemCryptomartusRaw.block);
-		OreDictionary.registerOre("foodBug", ItemCryptomartusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemCryptomartusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemCryptomartusRaw.block);
 	}
 

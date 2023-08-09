@@ -38,7 +38,7 @@ public class ItemCervifurcaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cervifurca", ItemCervifurcaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCervifurcaRaw.block);
-		OreDictionary.registerOre("foodFish", ItemCervifurcaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCervifurcaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCervifurcaRaw.block);
 	}
 

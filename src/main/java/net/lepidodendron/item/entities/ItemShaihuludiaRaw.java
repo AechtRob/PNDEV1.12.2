@@ -38,8 +38,7 @@ public class ItemShaihuludiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_shaihuludia", ItemShaihuludiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemShaihuludiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemShaihuludiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemShaihuludiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemShaihuludiaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemShaihuludiaRaw.block);
 	}
 

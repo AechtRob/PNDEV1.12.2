@@ -38,8 +38,7 @@ public class ItemIniopteryxRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_iniopteryx", ItemIniopteryxRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemIniopteryxRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemIniopteryxRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemIniopteryxRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemIniopteryxRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemIniopteryxRaw.block);
 	}
 

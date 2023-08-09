@@ -37,7 +37,7 @@ public class ItemCometicercusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cometicercus", ItemCometicercusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCometicercusRaw.block);
-		OreDictionary.registerOre("foodFish", ItemCometicercusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCometicercusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCometicercusRaw.block);
 	}
 

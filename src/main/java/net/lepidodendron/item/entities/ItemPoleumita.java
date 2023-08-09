@@ -49,10 +49,9 @@ public class ItemPoleumita extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_poleumita", ItemPoleumita.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPoleumita.block);
-		OreDictionary.registerOre("foodMeat", ItemPoleumita.block);
 		OreDictionary.registerOre("itemShellfish", ItemPoleumita.block);
-		OreDictionary.registerOre("pndietMeat", ItemPoleumita.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemPoleumita.block);
+		OreDictionary.registerOre("pndietShellfish", ItemPoleumita.block);
 	}
 
 

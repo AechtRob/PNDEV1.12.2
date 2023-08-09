@@ -37,7 +37,7 @@ public class ItemArthropleuraRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_arthropleura", ItemArthropleuraRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemArthropleuraRaw.block);
-		OreDictionary.registerOre("foodBug", ItemArthropleuraRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemArthropleuraRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemArthropleuraRaw.block);
 	}
 

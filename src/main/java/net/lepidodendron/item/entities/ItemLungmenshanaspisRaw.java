@@ -38,8 +38,7 @@ public class ItemLungmenshanaspisRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lungmenshanaspis", ItemLungmenshanaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemLungmenshanaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLungmenshanaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLungmenshanaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemLungmenshanaspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemLungmenshanaspisRaw.block);
 	}
 

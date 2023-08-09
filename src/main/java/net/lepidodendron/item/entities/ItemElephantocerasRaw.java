@@ -37,9 +37,7 @@ public class ItemElephantocerasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_elephantoceras", ItemElephantocerasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemElephantocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemElephantocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemElephantocerasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemElephantocerasRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemElephantocerasRaw.block);
 	}
 

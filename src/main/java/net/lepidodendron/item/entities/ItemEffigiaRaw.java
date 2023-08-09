@@ -37,7 +37,7 @@ public class ItemEffigiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_effigia", ItemEffigiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEffigiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEffigiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemEffigiaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemEffigiaRaw.block);
 	}
 

@@ -37,9 +37,7 @@ public class ItemSlimoniaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_slimonia", ItemSlimoniaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSlimoniaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSlimoniaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSlimoniaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemSlimoniaRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemSlimoniaRaw.block);
 	}
 

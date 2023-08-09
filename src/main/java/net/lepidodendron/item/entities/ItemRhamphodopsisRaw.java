@@ -38,8 +38,7 @@ public class ItemRhamphodopsisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_rhamphodopsis@gendered", ItemRhamphodopsisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemRhamphodopsisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemRhamphodopsisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRhamphodopsisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemRhamphodopsisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemRhamphodopsisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

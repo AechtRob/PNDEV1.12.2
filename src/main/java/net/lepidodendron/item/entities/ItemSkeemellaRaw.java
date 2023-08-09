@@ -38,8 +38,7 @@ public class ItemSkeemellaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_skeemella", ItemSkeemellaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSkeemellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSkeemellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSkeemellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemSkeemellaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemSkeemellaRaw.block);
 	}
 

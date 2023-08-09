@@ -38,7 +38,7 @@ public class ItemPristerognathusRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pristerognathus", ItemPristerognathusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPristerognathusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPristerognathusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemPristerognathusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemPristerognathusRaw.block);
 	}
 

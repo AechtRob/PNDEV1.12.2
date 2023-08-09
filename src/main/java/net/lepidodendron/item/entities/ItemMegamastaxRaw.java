@@ -36,8 +36,7 @@ public class ItemMegamastaxRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megamastax", ItemMegamastaxRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMegamastaxRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMegamastaxRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMegamastaxRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemMegamastaxRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemMegamastaxRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

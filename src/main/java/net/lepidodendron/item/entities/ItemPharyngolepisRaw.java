@@ -38,8 +38,7 @@ public class ItemPharyngolepisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pharyngolepis", ItemPharyngolepisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPharyngolepisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPharyngolepisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPharyngolepisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPharyngolepisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPharyngolepisRaw.block);
 	}
 

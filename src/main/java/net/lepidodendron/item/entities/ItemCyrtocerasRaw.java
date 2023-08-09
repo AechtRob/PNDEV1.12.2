@@ -36,7 +36,7 @@ public class ItemCyrtocerasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cyrtoceras", ItemCyrtocerasRaw.block);
-		OreDictionary.registerOre("foodCalamari", ItemCyrtocerasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemCyrtocerasRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemCyrtocerasRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {

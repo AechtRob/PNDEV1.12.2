@@ -38,8 +38,7 @@ public class ItemUrosthenesRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_urosthenes", ItemUrosthenesRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemUrosthenesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemUrosthenesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemUrosthenesRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemUrosthenesRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemUrosthenesRaw.block);
 	}
 

@@ -36,7 +36,7 @@ public class ItemCeratodusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ceratodus", ItemCeratodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCeratodusRaw.block);
-		OreDictionary.registerOre("foodFish", ItemCeratodusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCeratodusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCeratodusRaw.block);
 	}
 

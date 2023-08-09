@@ -37,7 +37,7 @@ public class ItemAmmoniteParapuzosiaRaw extends ElementsLepidodendronMod.ModElem
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_parapuzosia", ItemAmmoniteParapuzosiaRaw.block);
-		OreDictionary.registerOre("foodCalamari", ItemAmmoniteParapuzosiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemAmmoniteParapuzosiaRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemAmmoniteParapuzosiaRaw.block);
 	}
 

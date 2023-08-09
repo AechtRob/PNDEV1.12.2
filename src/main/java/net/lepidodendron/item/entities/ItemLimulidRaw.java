@@ -37,9 +37,7 @@ public class ItemLimulidRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_limulid", ItemLimulidRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLimulidRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLimulidRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLimulidRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemLimulidRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemLimulidRaw.block);
 	}
 

@@ -36,9 +36,7 @@ public class ItemHoplitaspisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hoplitaspis", ItemHoplitaspisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemHoplitaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHoplitaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHoplitaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemHoplitaspisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemHoplitaspisRaw.block);
 	}
 

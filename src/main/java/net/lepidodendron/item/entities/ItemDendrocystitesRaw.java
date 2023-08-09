@@ -36,9 +36,7 @@ public class ItemDendrocystitesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dendrocystites", ItemDendrocystitesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemDendrocystitesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDendrocystitesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDendrocystitesRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemDendrocystitesRaw.block);
 		OreDictionary.registerOre("pndietCrinoid", ItemDendrocystitesRaw.block);
 	}
 

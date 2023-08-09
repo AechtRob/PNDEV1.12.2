@@ -37,9 +37,8 @@ public class ItemPaucipodiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_paucipodia", ItemPaucipodiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPaucipodiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPaucipodiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPaucipodiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemPaucipodiaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemPaucipodiaRaw.block);
 	}
 

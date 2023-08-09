@@ -38,7 +38,7 @@ public class ItemRobertiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_robertia", ItemRobertiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRobertiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRobertiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemRobertiaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemRobertiaRaw.block);
 	}
 

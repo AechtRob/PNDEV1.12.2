@@ -37,7 +37,7 @@ public class ItemAcadoaradoxidesRaw extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acadoaradoxides", ItemAcadoaradoxidesRaw.block);
-		OreDictionary.registerOre("foodCrustacean", ItemAcadoaradoxidesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemAcadoaradoxidesRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemAcadoaradoxidesRaw.block);
 	}
 

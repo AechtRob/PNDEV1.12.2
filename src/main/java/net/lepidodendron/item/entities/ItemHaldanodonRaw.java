@@ -38,7 +38,7 @@ public class ItemHaldanodonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_haldanodon", ItemHaldanodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHaldanodonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHaldanodonRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemHaldanodonRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemHaldanodonRaw.block);
 	}
 

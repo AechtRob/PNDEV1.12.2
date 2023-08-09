@@ -36,7 +36,7 @@ public class ItemCartorhynchusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cartorhynchus", ItemCartorhynchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCartorhynchusRaw.block);
-		OreDictionary.registerOre("foodAmphibian", ItemCartorhynchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemCartorhynchusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemCartorhynchusRaw.block);
 	}
 

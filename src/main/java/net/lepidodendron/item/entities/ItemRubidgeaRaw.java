@@ -38,7 +38,7 @@ public class ItemRubidgeaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_rubidgea", ItemRubidgeaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRubidgeaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRubidgeaRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemRubidgeaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemRubidgeaRaw.block);
 	}
 
