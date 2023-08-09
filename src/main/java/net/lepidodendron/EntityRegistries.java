@@ -845,8 +845,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_stegosaurus", EntityPrehistoricFloraStegosaurus.class, LepidodendronMod.ENTITY_STEGOSAURUS, 156,-4348535,-14086899);
         registerEntity("prehistoric_flora_tuojiangosaurus", EntityPrehistoricFloraTuojiangosaurus.class, LepidodendronMod.ENTITY_TUOJIANGOSAURUS, 156,-6988235,-2239032);
 //        registerEntity("prehistoric_flora_diandongosuchus", EntityPrehistoricFloraDiandongosuchus.class, LepidodendronMod.ENTITY_DIANDONGOSUCHUS, 64,-7701652,-1);
-        registerEntity("prehistoric_flora_hypuronector", EntityPrehistoricFloraHypuronector.class, LepidodendronMod.ENTITY_HYPURONECTOR, 48,-7701652,-1);
-        registerEntity("prehistoric_flora_longisquama", EntityPrehistoricFloraLongisquama.class, LepidodendronMod.ENTITY_LONGISQUAMA, 48,-7701652,-1);
+//        registerEntity("prehistoric_flora_hypuronector", EntityPrehistoricFloraHypuronector.class, LepidodendronMod.ENTITY_HYPURONECTOR, 48,-7701652,-1);
+//        registerEntity("prehistoric_flora_longisquama", EntityPrehistoricFloraLongisquama.class, LepidodendronMod.ENTITY_LONGISQUAMA, 48,-7701652,-1);
         registerEntity("prehistoric_flora_yuxisaurus", EntityPrehistoricFloraYuxisaurus.class, LepidodendronMod.ENTITY_YUXISAURUS, 64,-1125201,-11582672);
         registerEntity("prehistoric_flora_cryolophosaurus", EntityPrehistoricFloraCryolophosaurus.class, LepidodendronMod.ENTITY_CRYOLOPHOSAURUS, 84,-0,-61096);
         registerEntity("prehistoric_flora_tanycolagreus", EntityPrehistoricFloraTanycolagreus.class, LepidodendronMod.ENTITY_TANYCOLAGREUS, 64,-13756400,-4348535);
