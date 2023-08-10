@@ -63,7 +63,7 @@ public class ModelRutgersella extends AdvancedModelBase {
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
         this.main.setScaleZ(scaler);
         float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
-        this.main.setScaleX(scaler2 * 0.85F);
+        this.main.setScaleX(scaler2 * 0.5F);
 
 
     }
