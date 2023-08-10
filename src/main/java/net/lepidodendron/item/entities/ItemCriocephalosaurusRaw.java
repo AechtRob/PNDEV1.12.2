@@ -38,7 +38,7 @@ public class ItemCriocephalosaurusRaw extends ElementsLepidodendronMod.ModElemen
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_criocephalosaurus", ItemCriocephalosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCriocephalosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCriocephalosaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemCriocephalosaurusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemCriocephalosaurusRaw.block);
 	}
 

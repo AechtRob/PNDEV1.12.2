@@ -38,8 +38,7 @@ public class ItemPomatrumRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pomatrum", ItemPomatrumRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPomatrumRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPomatrumRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPomatrumRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemPomatrumRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPomatrumRaw.block);
 	}
 

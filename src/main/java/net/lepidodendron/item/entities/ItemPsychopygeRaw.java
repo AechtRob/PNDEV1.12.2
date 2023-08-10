@@ -35,9 +35,7 @@ public class ItemPsychopygeRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_psychopyge", ItemPsychopygeRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPsychopygeRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPsychopygeRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPsychopygeRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemPsychopygeRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemPsychopygeRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

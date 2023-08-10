@@ -38,7 +38,7 @@ public class ItemMorganucodonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_morganucodon", ItemMorganucodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMorganucodonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMorganucodonRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemMorganucodonRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemMorganucodonRaw.block);
 	}
 

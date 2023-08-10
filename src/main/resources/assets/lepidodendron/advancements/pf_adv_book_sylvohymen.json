@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:sylvohymen_raw"
+			"item": "lepidodendron:megasecoptera_sylvohymen_raw"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_sylvohymen.title"
@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_sylvohymen"
+			"trigger": "pf_book_megasecoptera_sylvohymen"
 		}
 	}
 }

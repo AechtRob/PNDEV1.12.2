@@ -31,7 +31,7 @@ public class ItemTuojiangosaurusRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tuojiangosaurus", ItemTuojiangosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTuojiangosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTuojiangosaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemTuojiangosaurusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemTuojiangosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)

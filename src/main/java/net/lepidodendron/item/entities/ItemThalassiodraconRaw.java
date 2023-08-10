@@ -38,7 +38,7 @@ public class ItemThalassiodraconRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_thalassiodracon", ItemThalassiodraconRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemThalassiodraconRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemThalassiodraconRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemThalassiodraconRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemThalassiodraconRaw.block);
 	}
 

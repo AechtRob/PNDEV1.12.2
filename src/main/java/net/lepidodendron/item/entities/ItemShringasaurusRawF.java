@@ -40,7 +40,7 @@ public class ItemShringasaurusRawF extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_shringasaurus@female", ItemShringasaurusRawF.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemShringasaurusRawF.block);
-		OreDictionary.registerOre("foodMeat", ItemShringasaurusRawF.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemShringasaurusRawF.block);
 		OreDictionary.registerOre("pndietMeat", ItemShringasaurusRawF.block);
 	}
 

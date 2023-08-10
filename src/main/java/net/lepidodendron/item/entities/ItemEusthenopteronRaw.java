@@ -37,8 +37,7 @@ public class ItemEusthenopteronRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eusthenopteron", ItemEusthenopteronRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEusthenopteronRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemEusthenopteronRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEusthenopteronRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemEusthenopteronRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemEusthenopteronRaw.block);
 	}
 

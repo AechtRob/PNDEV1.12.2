@@ -37,7 +37,7 @@ public class ItemPiatnitzkysaurusRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_piatnitzkysaurus", ItemPiatnitzkysaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPiatnitzkysaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPiatnitzkysaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemPiatnitzkysaurusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemPiatnitzkysaurusRaw.block);
 	}
 

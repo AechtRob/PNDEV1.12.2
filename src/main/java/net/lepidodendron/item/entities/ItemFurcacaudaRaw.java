@@ -37,8 +37,7 @@ public class ItemFurcacaudaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_furcacauda", ItemFurcacaudaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFurcacaudaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemFurcacaudaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemFurcacaudaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemFurcacaudaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemFurcacaudaRaw.block);
 	}
 

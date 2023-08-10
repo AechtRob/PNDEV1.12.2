@@ -40,6 +40,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
         this.minSize = minSize;
         this.maxSize = maxSize;
         this.cannibal  = cannibal;
+        this.setMutexBits(1);
     }
 
     @Override
@@ -109,9 +110,9 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     //Next figure out if this entity drops loot I can eat:
                     ResourceLocation resourcelocation = null;
                     try {
-                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable", new Class[]{null});
+                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable");
                         method.setAccessible(true); //Uggggh, reflection :(
-                        resourcelocation = (ResourceLocation) method.invoke(entityChooser, new Object[]{null});
+                        resourcelocation = (ResourceLocation) method.invoke(entityChooser);
                     } catch (Exception e) {
                     }
                     if (resourcelocation != null) {
@@ -125,7 +126,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                             String result = "";
                             if (method2 != null) {
                                 try {
-                                    oreDictList = (String[]) method2.invoke(this.entity, new Object[]{null});
+                                    oreDictList = (String[]) method2.invoke(this.entity);
                                     for (String oreDict : oreDictList) {
                                         if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
                                             dietOK = true;

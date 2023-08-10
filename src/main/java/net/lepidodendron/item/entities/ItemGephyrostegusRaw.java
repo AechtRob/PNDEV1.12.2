@@ -38,7 +38,7 @@ public class ItemGephyrostegusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gephyrostegus", ItemGephyrostegusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGephyrostegusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGephyrostegusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemGephyrostegusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemGephyrostegusRaw.block);
 	}
 

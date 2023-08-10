@@ -38,8 +38,7 @@ public class ItemStensioellaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_stensioella", ItemStensioellaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemStensioellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemStensioellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemStensioellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemStensioellaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemStensioellaRaw.block);
 	}
 

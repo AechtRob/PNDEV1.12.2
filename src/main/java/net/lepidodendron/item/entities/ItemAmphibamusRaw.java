@@ -36,7 +36,7 @@ public class ItemAmphibamusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_amphibamus", ItemAmphibamusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAmphibamusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmphibamusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemAmphibamusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemAmphibamusRaw.block);
 	}
 

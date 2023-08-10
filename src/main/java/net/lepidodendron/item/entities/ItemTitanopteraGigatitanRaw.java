@@ -37,10 +37,7 @@ public class ItemTitanopteraGigatitanRaw extends ElementsLepidodendronMod.ModEle
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_titanoptera_gigatitan", ItemTitanopteraGigatitanRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemTitanopteraGigatitanRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTitanopteraGigatitanRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemTitanopteraGigatitanRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemTitanopteraGigatitanRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemTitanopteraGigatitanRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemTitanopteraGigatitanRaw.block);
 	}
 

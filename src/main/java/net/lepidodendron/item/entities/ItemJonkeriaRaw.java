@@ -38,7 +38,7 @@ public class ItemJonkeriaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_jonkeria", ItemJonkeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemJonkeriaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemJonkeriaRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemJonkeriaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemJonkeriaRaw.block);
 	}
 

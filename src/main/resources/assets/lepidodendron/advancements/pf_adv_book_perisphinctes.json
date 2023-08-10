@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_perisphinctes"
+			"trigger": "pf_book_ammonite_perisphinctes"
 		}
 	}
 }

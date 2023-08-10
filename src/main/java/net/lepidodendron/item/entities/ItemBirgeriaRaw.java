@@ -36,8 +36,7 @@ public class ItemBirgeriaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_birgeria", ItemBirgeriaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBirgeriaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemBirgeriaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemBirgeriaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemBirgeriaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBirgeriaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

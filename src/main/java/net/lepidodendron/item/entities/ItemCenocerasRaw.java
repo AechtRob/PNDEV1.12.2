@@ -37,9 +37,7 @@ public class ItemCenocerasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cenoceras", ItemCenocerasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCenocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCenocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCenocerasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemCenocerasRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemCenocerasRaw.block);
 	}
 

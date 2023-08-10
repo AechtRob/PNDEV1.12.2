@@ -37,9 +37,7 @@ public class ItemSchinderhannesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_schinderhannes", ItemSchinderhannesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSchinderhannesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSchinderhannesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSchinderhannesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemSchinderhannesRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemSchinderhannesRaw.block);
 	}
 

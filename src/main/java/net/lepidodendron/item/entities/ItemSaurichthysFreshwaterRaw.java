@@ -38,8 +38,7 @@ public class ItemSaurichthysFreshwaterRaw extends ElementsLepidodendronMod.ModEl
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_saurichthys_freshwater", ItemSaurichthysFreshwaterRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSaurichthysFreshwaterRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSaurichthysFreshwaterRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSaurichthysFreshwaterRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemSaurichthysFreshwaterRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemSaurichthysFreshwaterRaw.block);
 	}
 

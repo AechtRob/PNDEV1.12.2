@@ -32,6 +32,7 @@ public class ItemMonkeyPuzzleAraucariaNuts extends ElementsLepidodendronMod.ModE
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemMonkeyPuzzleAraucariaNuts.block);
+		OreDictionary.registerOre("foodPinenuts", ItemMonkeyPuzzleAraucariaNuts.block);
 	}
 
 	@SideOnly(Side.CLIENT)

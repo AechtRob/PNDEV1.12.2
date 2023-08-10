@@ -37,9 +37,8 @@ public class ItemUrsactisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ursactis", ItemUrsactisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemUrsactisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemUrsactisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemUrsactisRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemUrsactisRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemUrsactisRaw.block);
 	}
 

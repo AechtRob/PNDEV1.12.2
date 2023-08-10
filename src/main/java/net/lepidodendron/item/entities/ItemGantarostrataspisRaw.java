@@ -37,8 +37,7 @@ public class ItemGantarostrataspisRaw extends ElementsLepidodendronMod.ModElemen
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gantarostrataspis", ItemGantarostrataspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGantarostrataspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGantarostrataspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGantarostrataspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGantarostrataspisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGantarostrataspisRaw.block);
 	}
 

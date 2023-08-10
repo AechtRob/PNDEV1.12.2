@@ -36,9 +36,7 @@ public class ItemEricixerxesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ericixerxes", ItemEricixerxesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemEricixerxesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemEricixerxesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEricixerxesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemEricixerxesRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemEricixerxesRaw.block);
 	}
 

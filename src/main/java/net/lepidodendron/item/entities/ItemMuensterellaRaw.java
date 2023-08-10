@@ -37,9 +37,7 @@ public class ItemMuensterellaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_muensterella", ItemMuensterellaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemMuensterellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMuensterellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMuensterellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemMuensterellaRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemMuensterellaRaw.block);
 	}
 

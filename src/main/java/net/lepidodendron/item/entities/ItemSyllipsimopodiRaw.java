@@ -37,9 +37,7 @@ public class ItemSyllipsimopodiRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_syllipsimopodi", ItemSyllipsimopodiRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSyllipsimopodiRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSyllipsimopodiRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSyllipsimopodiRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemSyllipsimopodiRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemSyllipsimopodiRaw.block);
 	}
 

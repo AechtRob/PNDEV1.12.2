@@ -38,8 +38,7 @@ public class ItemGoodradigbeeonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_goodradigbeeon", ItemGoodradigbeeonRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGoodradigbeeonRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGoodradigbeeonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGoodradigbeeonRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGoodradigbeeonRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGoodradigbeeonRaw.block);
 	}
 

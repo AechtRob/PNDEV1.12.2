@@ -40,10 +40,7 @@ public class ItemLacewingCretapsychopsRaw extends ElementsLepidodendronMod.ModEl
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemLacewingCretapsychopsRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLacewingCretapsychopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLacewingCretapsychopsRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemLacewingCretapsychopsRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemLacewingCretapsychopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingCretapsychopsRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemLacewingCretapsychopsRaw.block);
 	}
 

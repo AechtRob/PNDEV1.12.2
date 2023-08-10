@@ -31,7 +31,7 @@ public class ItemHualianceratopsRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hualianceratops", ItemHualianceratopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHualianceratopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHualianceratopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemHualianceratopsRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemHualianceratopsRaw.block);
 	}
 	@SideOnly(Side.CLIENT)

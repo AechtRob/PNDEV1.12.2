@@ -38,8 +38,7 @@ public class ItemForeyiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_foreyia", ItemForeyiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemForeyiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemForeyiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemForeyiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemForeyiaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemForeyiaRaw.block);
 	}
 

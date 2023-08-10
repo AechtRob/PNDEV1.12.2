@@ -37,8 +37,7 @@ public class ItemAcrolepisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acrolepis", ItemAcrolepisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAcrolepisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAcrolepisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcrolepisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemAcrolepisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemAcrolepisRaw.block);
 	}
 

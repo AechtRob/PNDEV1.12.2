@@ -37,9 +37,7 @@ public class ItemPterygotusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pterygotus", ItemPterygotusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPterygotusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPterygotusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPterygotusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemPterygotusRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemPterygotusRaw.block);
 	}
 

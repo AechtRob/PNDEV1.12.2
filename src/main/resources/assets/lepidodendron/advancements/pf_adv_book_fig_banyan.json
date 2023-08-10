@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:fig_banyan_sapling"
+			"item": "lepidodendron:fig_sapling_banyan"
 		 },
 		"title": {
 			"translate": "advancements.pf_adv_book_fig_banyan.title"

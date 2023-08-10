@@ -38,7 +38,7 @@ public class ItemXinjiangchelysRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xinjiangchelys", ItemXinjiangchelysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXinjiangchelysRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemXinjiangchelysRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemXinjiangchelysRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemXinjiangchelysRaw.block);
 	}
 

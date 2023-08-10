@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderCancrinos;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -13,14 +13,16 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilobiteSwimBase {
+public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilobiteBottomBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -30,7 +32,7 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 
 	public EntityPrehistoricFloraCancrinos(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.3F, 0.2F);
 	}
 
 	@Override
@@ -54,11 +56,7 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		if (this.isAtBottom()){
-			return 0.07f;
-		} else {
-			return 0.15f;
-		}
+		return 0.1f;
 	}
 
 	@Override
@@ -82,15 +80,15 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAITrilobiteSwimBase(this, 1));
-		tasks.addTask(1, new TrilobiteWanderSwim(this, NO_ANIMATION));
+		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
+		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteSwimBaseAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.FISHFOOD;
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -116,23 +114,23 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(1.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getAmbientSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getDeathSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
@@ -204,4 +202,5 @@ public class EntityPrehistoricFloraCancrinos extends EntityPrehistoricFloraTrilo
 	public static float getScaler(@Nullable String variant) {
 		return RenderCancrinos.getScaler();
 	}
+
 }

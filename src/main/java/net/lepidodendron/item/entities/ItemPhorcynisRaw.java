@@ -38,8 +38,7 @@ public class ItemPhorcynisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phorcynis@gendered", ItemPhorcynisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPhorcynisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPhorcynisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPhorcynisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPhorcynisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPhorcynisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -36,8 +36,7 @@ public class ItemBavariscylliumRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bavariscyllium", ItemBavariscylliumRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBavariscylliumRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemBavariscylliumRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemBavariscylliumRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemBavariscylliumRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBavariscylliumRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -38,7 +38,7 @@ public class ItemDiandongosuchusRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diandongosuchus", ItemDiandongosuchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDiandongosuchusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDiandongosuchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemDiandongosuchusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemDiandongosuchusRaw.block);
 	}
 

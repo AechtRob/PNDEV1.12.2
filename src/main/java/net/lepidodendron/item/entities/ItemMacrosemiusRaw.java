@@ -38,8 +38,7 @@ public class ItemMacrosemiusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_macrosemius", ItemMacrosemiusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMacrosemiusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMacrosemiusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMacrosemiusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemMacrosemiusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemMacrosemiusRaw.block);
 	}
 

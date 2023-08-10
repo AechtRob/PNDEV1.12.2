@@ -36,7 +36,7 @@ public class ItemDiploceraspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diploceraspis", ItemDiploceraspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDiploceraspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDiploceraspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemDiplocaulusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemDiploceraspisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

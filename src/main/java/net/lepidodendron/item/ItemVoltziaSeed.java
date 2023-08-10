@@ -32,6 +32,7 @@ public class ItemVoltziaSeed extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemVoltziaSeed.block);
+		OreDictionary.registerOre("foodPinenuts", ItemVoltziaSeed.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_caryosyntrips",
 			"type": "text",
-			"text": ""
+			"text": "Caryosyntrips is a genus of Cambrian radiodont from North America and Europe. The name, translating to \"Nutcracker\", comes from the only element known of the animal: the front appendages. Like in many other radiodonts, the frontal appendages of Caryosyntrips were the most hardened parts of the animal, making their preservation more likely than the rest of its body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caryosyntrips",
+			"type": "text",
+			"text": "What makes Caryosyntrips unique among known radiodonts, however, is the shape and orientation of these appendages. While in a more classic type of predatory radiodont one would expect the appendages to curl beneath the level of the head, in Caryosyntrips the frontal appendages seemingly would lie horizontal to the body and wouldn't have been able to curl up or bend in any meaningful fashion;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caryosyntrips",
+			"type": "text",
+			"text": "this type of appendage has been thought to hint at a durophagous diet. The genus name comes from the Greek words Karyon for \"wallnut\" and Syntrips, a mythical demon who would crush ceramics. The animal was first cited in 2005 by Caron as \"Dinocaridida A\", however it was officially described 5 years later in 2010 by Daley and Budd."
 		},
 		{
 			"type": "lepidodendron:diet",

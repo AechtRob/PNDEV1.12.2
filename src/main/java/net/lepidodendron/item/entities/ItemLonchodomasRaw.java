@@ -36,9 +36,7 @@ public class ItemLonchodomasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lonchodomas", ItemLonchodomasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLonchodomasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLonchodomasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLonchodomasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemLonchodomasRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemLonchodomasRaw.block);
 	}
 

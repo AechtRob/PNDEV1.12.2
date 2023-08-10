@@ -38,7 +38,7 @@ public class ItemPrionosuchusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_prionosuchus", ItemPrionosuchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPrionosuchusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPrionosuchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemPrionosuchusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemPrionosuchusRaw.block);
 	}
 

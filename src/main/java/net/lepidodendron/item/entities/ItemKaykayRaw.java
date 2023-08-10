@@ -38,8 +38,7 @@ public class ItemKaykayRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kaykay", ItemKaykayRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemKaykayRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKaykayRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKaykayRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemKaykayRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemKaykayRaw.block);
 	}
 

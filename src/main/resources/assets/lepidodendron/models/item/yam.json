@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "lepidodendron:blocks/vitis_ground"
+        "layer0": "lepidodendron:blocks/yam_1_ground"
     }
 }

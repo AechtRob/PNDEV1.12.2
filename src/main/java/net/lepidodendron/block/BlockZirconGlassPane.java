@@ -15,9 +15,11 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
@@ -25,6 +27,12 @@ public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
 	public static final Block block = null;
 	public BlockZirconGlassPane(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.zircon_glass_pane);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("paneGlass", BlockZirconGlassPane.block);
 	}
 
 	@Override

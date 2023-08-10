@@ -37,10 +37,7 @@ public class ItemDaohugoucossusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_daohugoucossus", ItemDaohugoucossusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDaohugoucossusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDaohugoucossusRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemDaohugoucossusRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemDaohugoucossusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemDaohugoucossusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemDaohugoucossusRaw.block);
 	}
 

@@ -37,9 +37,7 @@ public class ItemCeratiocarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ceratiocaris", ItemCeratiocarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCeratiocarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCeratiocarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCeratiocarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemCeratiocarisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemCeratiocarisRaw.block);
 	}
 

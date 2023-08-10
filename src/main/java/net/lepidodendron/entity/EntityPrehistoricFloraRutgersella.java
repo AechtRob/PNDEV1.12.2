@@ -100,6 +100,7 @@ public class EntityPrehistoricFloraRutgersella extends EntityPrehistoricFloraSli
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.RUTGERSELLA_LOOT;
 	}
+
 	public static double offsetWall(@Nullable String variant) {
 		return -0.45;
 	}

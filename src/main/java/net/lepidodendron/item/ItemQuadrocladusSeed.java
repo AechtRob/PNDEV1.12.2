@@ -32,6 +32,7 @@ public class ItemQuadrocladusSeed extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemQuadrocladusSeed.block);
+		OreDictionary.registerOre("foodPinenuts", ItemQuadrocladusSeed.block);
 	}
 
 	@SideOnly(Side.CLIENT)

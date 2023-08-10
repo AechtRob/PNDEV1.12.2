@@ -25,9 +25,7 @@ public class ItemWillwerathiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_willwerathia", ItemWillwerathiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemWillwerathiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemWillwerathiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemWillwerathiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemWillwerathiaRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemWillwerathiaRaw.block);
 	}
 	@Override

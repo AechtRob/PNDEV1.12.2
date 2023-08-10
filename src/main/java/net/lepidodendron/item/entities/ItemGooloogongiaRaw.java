@@ -37,6 +37,7 @@ public class ItemGooloogongiaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gooloogongia", ItemGooloogongiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGooloogongiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGooloogongiaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGooloogongiaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
