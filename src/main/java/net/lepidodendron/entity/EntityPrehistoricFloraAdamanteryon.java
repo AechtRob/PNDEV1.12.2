@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.render.entity.RenderAdamanteryon;
 import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -180,7 +181,7 @@ public class EntityPrehistoricFloraAdamanteryon extends EntityPrehistoricFloraTr
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.06;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -196,14 +197,14 @@ public class EntityPrehistoricFloraAdamanteryon extends EntityPrehistoricFloraTr
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderEryon.TEXTURE;
+		return RenderAdamanteryon.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelEryon;
+		return RenderDisplays.modelAdamanteryon;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderEryon.getScaler();
+		return RenderAdamanteryon.getScaler();
 	}
 
 }

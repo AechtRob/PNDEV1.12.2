@@ -192,12 +192,33 @@ public class ModelSpathobatis extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleX = (float) Math.toRadians(90);
+        this.main.rotateAngleZ = (float) Math.toRadians(90);
+        this.main.offsetX = -0.07F;
+        this.main.offsetZ = 0.02F;
+        this.main.offsetY = -0.245F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
-
-    public void renderStaticFloor(float f) {
-        resetToDefaultPose();
-    }
+        public void renderStaticFloor(float f) {
+            this.setRotateAngle(main, 0.2F, 0.0F, -0.2F);
+            this.setRotateAngle(tail, 0.1F, 0.1F, 0.0F);
+            this.setRotateAngle(tail2, 0.1F, 0.1F, 0.0F);
+            this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+            this.setRotateAngle(tail4, 0.1F, -0.2F, 0.0F);
+            this.setRotateAngle(tail5, 0.2F, -0.3F, 0.0F);
+            this.setRotateAngle(tail6, 0.2F, -0.3F, 0.0F);
+            this.setRotateAngle(leftwing, 0.0F, 0.0F, -0.1F);
+            this.setRotateAngle(leftwing2, 0.0F, 0.0F, -0.1F);
+            this.setRotateAngle(leftwing3, 0.0F, 0.0F, -0.2F);
+            this.setRotateAngle(leftwing4, 0.0F, 0.0F, -0.3F);
+            this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.1F);
+            this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.1F);
+            this.setRotateAngle(rightwing3, 0.0F, 0.0F, 0.2F);
+            this.setRotateAngle(rightwing4, 0.0F, 0.0F, 0.3F);
+            this.main.offsetY = -0.14F;
+            this.main.render(0.01F);
+            resetToDefaultPose();
+        }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

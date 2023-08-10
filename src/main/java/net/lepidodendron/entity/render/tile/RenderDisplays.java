@@ -20,6 +20,7 @@ public class RenderDisplays {
     public static final ModelAthenaegis modelAthenaegis = new ModelAthenaegis();
     public static final ModelAnaethalion modelAnaethalion = new ModelAnaethalion();
     public static final ModelAngelina modelAngelina = new ModelAngelina();
+    public static final ModelAdamanteryon modelAdamanteryon = new ModelAdamanteryon();
     public static final ModelBalhuticaris modelBalhuticaris = new ModelBalhuticaris();
     public static final ModelBandringa modelBandringa = new ModelBandringa();
     public static final ModelBarameda modelBarameda = new ModelBarameda();
@@ -64,6 +65,7 @@ public class RenderDisplays {
     public static final ModelCervifurca modelCervifurca = new ModelCervifurca();
     public static final ModelClarkeiteuthis modelClarkeiteuthis = new ModelClarkeiteuthis();
     public static final ModelChunerpeton modelChunerpeton = new ModelChunerpeton();
+    public static final ModelCongophiopsis modelCongophiopsis = new ModelCongophiopsis();
     public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
     public static final ModelDapedium modelDapedium = new ModelDapedium();
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
@@ -133,6 +135,7 @@ public class RenderDisplays {
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
     public static final ModelIvoites modelIvoites = new ModelIvoites();
     public static final ModelIowacystis modelIowacystis = new ModelIowacystis();
+    public static final ModelIschyodus modelIschyodus = new ModelIschyodus();
     public static final ModelJamoytius modelJamoytius = new ModelJamoytius();
     public static final ModelJeholotriton modelJeholotriton = new ModelJeholotriton();
     public static final ModelKaibabvenator modelKaibabvenator = new ModelKaibabvenator();
@@ -178,6 +181,7 @@ public class RenderDisplays {
     public static final ModelOxyosteus modelOxyosteus = new ModelOxyosteus();
     public static final ModelOphthalmothule modelOphthalmothule = new ModelOphthalmothule();
     public static final ModelOreochima modelOreochima = new ModelOreochima();
+    public static final ModelOrthocormus modelOrthocormus = new ModelOrthocormus();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
     public static final ModelPalaeodictyopteraMedium modelPalaeodictyopteraMedium = new ModelPalaeodictyopteraMedium();
     public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
@@ -209,6 +213,8 @@ public class RenderDisplays {
     public static final ModelPhorcynis modelPhorcynis = new ModelPhorcynis();
     public static final ModelPropterus modelPropterus = new ModelPropterus();
     public static final ModelPhillipsia modelPhillipsia = new ModelPhillipsia();
+    public static final ModelPalaeocarcharias modelPalaeocarcharias = new ModelPalaeocarcharias();
+    public static final ModelPassaloteuthis modelPassaloteuthis = new ModelPassaloteuthis();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
@@ -244,6 +250,8 @@ public class RenderDisplays {
     public static final ModelSlimonia modelSlimonia = new ModelSlimonia();
     public static final ModelSyringocrinus modelSyringocrinus= new ModelSyringocrinus();
     public static final ModelStanocephalosaurus modelStanocephalosaurus= new ModelStanocephalosaurus();
+    public static final ModelSpathobatis modelSpathobatis= new ModelSpathobatis();
+    public static final ModelSiderops modelSiderops= new ModelSiderops();
     public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
     public static final ModelTapinocephalus modelTapinocephalus = new ModelTapinocephalus();
@@ -263,6 +271,7 @@ public class RenderDisplays {
     public static final ModelTribrachiodemas modelTribrachiodemas= new ModelTribrachiodemas();
     public static final ModelTuojiangosaurus modelTuojiangosaurus = new ModelTuojiangosaurus();
     public static final ModelTritylodon modelTritylodon = new ModelTritylodon();
+    public static final ModelTrachymetopon modelTrachymetopon = new ModelTrachymetopon();
     public static final ModelUrosthenes modelUrosthenes = new ModelUrosthenes();
     public static final ModelUtatsusaurus modelUtatsusaurus = new ModelUtatsusaurus();
     public static final ModelVachonisia modelVachonisia = new ModelVachonisia();

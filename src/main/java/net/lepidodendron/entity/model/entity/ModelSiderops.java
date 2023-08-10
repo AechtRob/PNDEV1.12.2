@@ -464,10 +464,30 @@ public class ModelSiderops extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.neck.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(wholehead, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.1F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.02F;
+        this.neck.offsetX = 0.0F;
+        this.neck.offsetZ = 0.0F;
+        this.neck.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(front, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(front2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(wholehead, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3F, 0.0F);
+        this.body.offsetY = -0.13F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

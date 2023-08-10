@@ -238,16 +238,15 @@ public class ModelAdamanteryon extends AdvancedModelBase {
         this.body.render(f5);
     }
 
-    public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.01F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
-    
     public void renderStaticFloor(float f) {
-
-        this.body.offsetZ = -0.04F;
-        this.body.offsetY = 0.09F;
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(belly, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tailfan, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL2, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(clawR, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(clawR2, 0.0F, -0.5F, 0.0F);
+        this.body.offsetY = 0.15F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
