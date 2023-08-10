@@ -106,7 +106,7 @@ public class LepidodendronFogSubscribers {
 			        int distance = 0;
 			        if (settings.fancyGraphics && ranges.length > 0)
 			        {
-			            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+			            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
 			        }
 
 			        float fog = 0;
