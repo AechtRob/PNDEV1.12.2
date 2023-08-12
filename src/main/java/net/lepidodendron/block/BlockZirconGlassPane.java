@@ -3,11 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockFenceSpecialPF;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPane;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -20,6 +19,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
@@ -37,7 +38,7 @@ public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("zircon_glass_pane"));
+		elements.blocks.add(() -> new BlockCustomPF().setRegistryName("zircon_glass_pane"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -48,13 +49,23 @@ public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:zircon_glass_pane", "inventory"));
 	}
 
-	public static class BlockCustom extends BlockPane {
-		public BlockCustom() {
-			super(Material.GLASS, false);
+	public static class BlockCustomPF extends BlockFenceSpecialPF {
+		public BlockCustomPF() {
+			super();
 			setSoundType(SoundType.GLASS);
 			setTranslationKey("pf_zircon_glass_pane");
 			setHardness(0.3F);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		@Override
+		public int quantityDropped(Random random) {
+			return 0;
+		}
+
+		@Override
+		protected boolean canSilkHarvest() {
+			return true;
 		}
 
 		@Override

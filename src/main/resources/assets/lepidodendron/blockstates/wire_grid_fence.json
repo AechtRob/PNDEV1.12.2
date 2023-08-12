@@ -1,0 +1,82 @@
+{
+ "multipart": [
+ { "apply": { "model": "lepidodendron:wire_grid_fence_post_ends" }},
+ { "when": { "north": false, "east": false, "south": false, "west": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_post" }
+ },
+ { "when": { "north": true, "east": false, "south": false, "west": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_cap" }
+ },
+ { "when": { "north": false, "east": true, "south": false, "west": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_cap", "y": 90 }
+ },
+ { "when": { "north": false, "east": false, "south": true, "west": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_cap_alt" }
+ },
+ { "when": { "north": false, "east": false, "south": false, "west": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_cap_alt", "y": 90 }
+ },
+ { "when": { "north": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side" }
+ },
+ { "when": { "north": true, "up": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_u" }
+ },
+ { "when": { "north": true, "down": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_d" }
+ },
+ { "when": { "east": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side", "y": 90 }
+ },
+ { "when": { "east": true, "up": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_u", "y": 90 }
+ },
+ { "when": { "east": true, "down": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_d", "y": 90 }
+ },
+ { "when": { "south": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_alt" }
+ },
+ { "when": { "south": true, "up": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_alt_u" }
+ },
+ { "when": { "south": true, "down": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_alt_d" }
+ },
+ { "when": { "west": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_alt", "y": 90 }
+ },
+ { "when": { "west": true, "up": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_alt_u", "y": 90 }
+ },
+ { "when": { "west": true, "down": false },
+ "apply": { "model": "lepidodendron:wire_grid_fence_side_alt_d", "y": 90 }
+ },
+
+
+ { "when": { "ne": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_r", "y": 270 }
+ },
+ { "when": { "nw": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_l", "y": 270 }
+ },
+ { "when": { "se": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_l", "y": 90 }
+ },
+ { "when": { "sw": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_r", "y": 90 }
+ },
+ { "when": { "es": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_r" }
+ },
+ { "when": { "en": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_l" }
+ },
+ { "when": { "wn": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_r", "y": 180 }
+ },
+ { "when": { "ws": true },
+ "apply": { "model": "lepidodendron:wire_grid_fence_corner_l", "y": 180 }
+ }
+ ]
+}

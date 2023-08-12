@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:block/half_slab_wire_join_corner_ne_top",
+  "textures": {
+    "wire": "lepidodendron:blocks/wire_mesh_fence"
+  }
+}
