@@ -7660,6 +7660,7 @@ tile.pf_williamsonia_shoot_top.name=Williamsonia Shoot
 tile.pf_williamsonia_shoot_worldgen.name=Williamsonia Shoot
 tile.pf_wire_mesh_fence.name=Wire Mesh Fence
 tile.pf_wire_mesh_tile.name=Wire Mesh Plate
+tile.pf_vertical_wire.name=Vertical Wire Barrier
 tile.pf_wire_mesh_fence_gate.name=Wire Mesh Gate
 tile.pf_wire_mesh_door.name=Wire Mesh Door
 item.pf_wire_mesh_door_item.name=Wire Mesh Door

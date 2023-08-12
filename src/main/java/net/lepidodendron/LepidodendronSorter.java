@@ -4054,6 +4054,7 @@ public class LepidodendronSorter {
 
 
     public static final int glass_sponge = 5010;
+    public static final int vertical_wire = 5011;
 
 
 

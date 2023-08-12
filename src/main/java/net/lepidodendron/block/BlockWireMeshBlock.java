@@ -10,6 +10,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
@@ -52,6 +53,12 @@ public class BlockWireMeshBlock extends ElementsLepidodendronMod.ModElement {
 			setHardness(5.0F);
 			setResistance(10.0F);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		@Override
+		public boolean canEntityDestroy(IBlockState state, IBlockAccess world, BlockPos pos, Entity entity)
+		{
+			return false;
 		}
 
 		@Override
