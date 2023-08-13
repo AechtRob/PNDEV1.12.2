@@ -38,8 +38,7 @@ public class ItemMegactenopetalusRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megactenopetalus", ItemMegactenopetalusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMegactenopetalusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMegactenopetalusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMegactenopetalusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemMegactenopetalusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemMegactenopetalusRaw.block);
 	}
 

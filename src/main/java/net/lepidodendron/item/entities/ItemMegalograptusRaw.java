@@ -37,9 +37,7 @@ public class ItemMegalograptusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megalograptus", ItemMegalograptusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemMegalograptusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMegalograptusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMegalograptusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemMegalograptusRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemMegalograptusRaw.block);
 	}
 

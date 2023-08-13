@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mooreoceras",
 			"title": "Mooreoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Pseudorthocerida$(br)>Pseudorthoceratidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Cephalopoda$(br)>Pseudorthocerida$(br)>Pseudorthoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Mooreoceras is an fast moving, carnivorous orthocone that lived from the Carboniferous to Permian periods. It hunted by grabbing prey with its tentacles. It lived in an environment that was a more cool tempereate zone rather than a tropical sea. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mooreoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mooreoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mooreoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mooreoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mooreoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mooreoceras"
 		}
 	]
 }

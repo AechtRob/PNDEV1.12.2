@@ -1,0 +1,46 @@
+{
+	"name": "Meganeurites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/meganeurites_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_meganeurites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_meganeurites",
+			"title": "Meganeurites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta $(br)>Meganisoptera $(br)>Meganeuridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/meganeurites.png"],
+			"title": "M. gracilipes",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_meganeurites",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_meganeurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_meganeurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_meganeurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_meganeurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_meganeurites"
+		}
+	]
+}

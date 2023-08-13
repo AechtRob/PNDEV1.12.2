@@ -37,9 +37,8 @@ public class ItemOdontogriphusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_odontogriphus", ItemOdontogriphusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemOdontogriphusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemOdontogriphusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemOdontogriphusRaw.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemOdontogriphusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemOdontogriphusRaw.block);
 	}
 

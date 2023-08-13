@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_websteroprion",
 			"title": "Websteroprion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Annelida$(br)>Polychaeta"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Annelida$(br)>Polychaeta"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Westeroprion is a polychaete that lived during the devonian period. It is known from many saw like teeth and probably resembled a bobbit worm in life. It was likely an ambush predator, hiding in burrows and lunging outwards to catch prey that passed overhead."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_websteroprion",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs or Break its burrow"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_websteroprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_websteroprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_websteroprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_websteroprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_websteroprion"
 		}
 	]
 }

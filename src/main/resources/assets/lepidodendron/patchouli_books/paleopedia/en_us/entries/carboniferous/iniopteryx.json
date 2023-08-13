@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_iniopteryx",
 			"title": "Iniopteryx",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Iniopterygiformes$(br)>Iniopterygidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Iniopterygiformes$(br)>Iniopterygidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Iniopteryx is a cartilaginous fish from the Carboniferous that bore some similarities to flying fish though it is uncertain whether they could actually leap out of the water. It had specialized spines and fins which resembled wings, though it could have been a benthic feeder instead of a gliding fish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_iniopteryx",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iniopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iniopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iniopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iniopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iniopteryx"
 		}
 	]
 }

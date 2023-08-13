@@ -20,9 +20,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Random;
 
@@ -32,6 +34,12 @@ public class BlockSandyDirtBlack extends ElementsLepidodendronMod.ModElement {
 	public static final Block block = null;
 	public BlockSandyDirtBlack(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.sandy_dirt_black);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dirt", BlockSandyDirtBlack.block);
 	}
 
 	@Override

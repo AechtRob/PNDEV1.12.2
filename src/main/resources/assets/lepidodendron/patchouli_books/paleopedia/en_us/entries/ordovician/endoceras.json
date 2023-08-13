@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_endoceras",
 			"title": "Endoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Sponge Forest$(br2)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Endoceras is a large straight celled cephalopod from the Ordovician. Its name comes from the Ancient Greek for inner horn and it was quite widespread, with fossils being found in Europe, North America, and Australia. Endoceras probably lived similar to other orthocones, being an ambush predator. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_endoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_endoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_endoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_endoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_endoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_endoceras"
 		}
 	]
 }

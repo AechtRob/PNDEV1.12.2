@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_astraspis",
 			"title": "Astraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Sponge & Bryozoan Reef$(br2)>Agnatha$(br)>Pteraspidomorphi$(br)>Pteraspidiformes"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Agnatha$(br)>Pteraspidomorphi$(br)>Pteraspidiformes"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Astraspis is an Ordovician agnathan with unique scutes all over its head shield. It was more of a flat agnathan and it had a short tail. It got its name from the bony plates that covered its headshield."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_astraspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_astraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_astraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_astraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_astraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_astraspis"
 		}
 	]
 }

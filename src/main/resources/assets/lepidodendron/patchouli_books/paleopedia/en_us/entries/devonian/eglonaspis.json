@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eglonaspis",
 			"title": "Eglonaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkholes$(br2)>Heterostraci$(br)>Amphiaspidida$(br)>Eglonaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Heterostraci$(br)>Amphiaspidida$(br)>Eglonaspididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eglonaspis is a blind amphiaspid from the Devonian. Its fossils were found in Siberia near the Taymyr Peninsula, which was a hypersaline lagoon during the Devonian. It was a benthic feeder that may have spent most of its time buried in the sediment."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eglonaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eglonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eglonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eglonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eglonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eglonaspis"
 		}
 	]
 }

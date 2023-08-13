@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cameroceras",
 			"title": "Cameroceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Bryozoan Reef$(br2)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cameroceras (chambered horn) is a giant orthocone which lived during the Ordovician to Silurian periods. Cameroceras (originally erected in the 1840s for C. trentonense) has become a wastebasket taxon which has also been used to hold many different types of large to very large, straight-shelled endocerid nautiloids. These inhabited shallow seas and became very diverse during the Upper Ordovician but did not recover their diversity after the Ordovician-Silurian extinction event. They may have been ambush predators that lunged at prey and consumed them."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cameroceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cameroceras"
 		}
 	]
 }

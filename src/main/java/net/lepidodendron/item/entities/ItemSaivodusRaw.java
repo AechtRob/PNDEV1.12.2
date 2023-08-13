@@ -38,8 +38,7 @@ public class ItemSaivodusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_saivodus", ItemSaivodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSaivodusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSaivodusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSaivodusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemSaivodusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemSaivodusRaw.block);
 	}
 

@@ -1,0 +1,46 @@
+{
+	"name": "Echinochimaera",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/echinochimaera_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_echinochimaera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_echinochimaera",
+			"title": "Echinochimaera",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Holocephali $(br)>Chimaeriformes $(br)>Echinochimaeridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/echinochimaera.png"],
+			"title": "E. meltoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_echinochimaera",
+			"type": "text",
+			"text": "Echinochimaera is a Carboniferous holocephalian with fossils known from Beach Gulch Montana. Its name means prickly chimaera, referencing the spines that lined its body and tail. The genus shows a high amount of sexual dimorphism with males looking wildly different from females. The males were more spiny and larger than the female specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_echinochimaera"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_echinochimaera"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_echinochimaera"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_echinochimaera"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_echinochimaera"
+		}
+	]
+}

@@ -37,9 +37,8 @@ public class ItemRutgersellaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_rutgersella", ItemRutgersellaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemRutgersellaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRutgersellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRutgersellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemRutgersellaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemRutgersellaRaw.block);
 	}
 

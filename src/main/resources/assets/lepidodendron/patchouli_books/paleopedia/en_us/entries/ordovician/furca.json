@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_furca",
 			"title": "Furca",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Furca is a marrellomorph from the Late Ordovician period. It possessed a broad head shield with 3 pairs of spines along its body with smaller spines lining the entire head shield."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_furca",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_furca"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_furca"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_furca"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_furca"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_furca"
 		}
 	]
 }

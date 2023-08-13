@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_myriacantherpestes",
 			"title": "Myriacantherpestes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Arthropoda $(br)>Diplopoda $(br)>Euphoberiida $(br)>Euphoberiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda $(br)>Diplopoda $(br)>Euphoberiida $(br)>Euphoberiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Myriacantherpestes was a 30 cm (just under 1 foot) long euphoberiid millipede that lived during the Carboniferous. It was characterized by having numerous spines growing from its body segments. Due to its strange appearance, a species in this group was originally mistaken as cycad seed! In its relative Euphoberia, aggregation behavior is known, so - admittedly speculatively - juvenile Myriacantherpestes might also have gathered together in groups"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_myriacantherpestes",
-			"type": "text",
-			"text": ", possibly even defending themselves using noxious organic chemicals.$(br)$(br)$(br)$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss/Log$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriacantherpestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_myriacantherpestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_myriacantherpestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_myriacantherpestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_myriacantherpestes"
 		}
 	]
 }

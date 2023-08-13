@@ -32,12 +32,15 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
     private final EntityPrehistoricFloraAgeableBase entity;
     private final double minSize;
     private final double maxSize;
+    private final boolean cannibal;
 
-    public HuntForDietEntityPrehistoricFloraAgeableBaseAI(EntityPrehistoricFloraAgeableBase entity, Class<T> classTarget, boolean checkSight, Predicate<? super T> targetSelector, double minSize, double maxSize) {
+    public HuntForDietEntityPrehistoricFloraAgeableBaseAI(EntityPrehistoricFloraAgeableBase entity, Class<T> classTarget, boolean checkSight, Predicate<? super T> targetSelector, double minSize, double maxSize, boolean cannibal) {
         super(entity, classTarget, 0, checkSight, true, targetSelector);
         this.entity = entity;
         this.minSize = minSize;
         this.maxSize = maxSize;
+        this.cannibal  = cannibal;
+        this.setMutexBits(1);
     }
 
     @Override
@@ -46,6 +49,12 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
         if (!this.entity.getWillHunt()) {
             //this.entity.setIsFast(false);
             return false;
+        }
+
+        if (this.targetEntity != null) {
+            if (this.targetEntity.isDead) {
+                this.targetEntity = null;
+            }
         }
 
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
@@ -70,21 +79,21 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 
                 if (entityChooser != null) {
                     if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
-                        if (!isInWaterforHunting(this.targetEntity)) {
+                        if (!isInWaterforHunting(entityChooser)) {
                             targetOK = false; //Eurypterids and fish dont attack players on land:
                         }
                     }
-                    else if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
+                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
-                    else if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
+                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
-                    else if ((entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
+                    if ((!this.cannibal) && (entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
                     ) { //Disallow cannibalism!
                         //this.entity.setIsFast(false);
                         targetOK = false;
@@ -101,9 +110,9 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     //Next figure out if this entity drops loot I can eat:
                     ResourceLocation resourcelocation = null;
                     try {
-                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable", null);
+                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable");
                         method.setAccessible(true); //Uggggh, reflection :(
-                        resourcelocation = (ResourceLocation) method.invoke(entityChooser, null);
+                        resourcelocation = (ResourceLocation) method.invoke(entityChooser);
                     } catch (Exception e) {
                     }
                     if (resourcelocation != null) {
@@ -117,7 +126,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                             String result = "";
                             if (method2 != null) {
                                 try {
-                                    oreDictList = (String[]) method2.invoke(this.entity, null);
+                                    oreDictList = (String[]) method2.invoke(this.entity);
                                     for (String oreDict : oreDictList) {
                                         if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
                                             dietOK = true;

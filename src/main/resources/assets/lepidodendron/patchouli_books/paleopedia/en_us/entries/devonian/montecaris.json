@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_montecaris",
 			"title": "Montecaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Malacostraca$(br)>Echinocarididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Malacostraca$(br)>Echinocarididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Montecaris was a relatively large phyllocarid crustacean from the Devonian period. It had an exoskeleton shell covering a majority of its body including the legs, arms and parts of the head. It also possessed a long spiny tail."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_montecaris",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_montecaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_montecaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_montecaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_montecaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_montecaris"
 		}
 	]
 }

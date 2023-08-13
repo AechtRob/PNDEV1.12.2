@@ -1,0 +1,46 @@
+{
+	"name": "Psychopyge",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/psychopyge_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_psychopyge",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_psychopyge",
+			"title": "Psychopyge",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda $(br)>Trilobita $(br)>Phacopida $(br)>Acastidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/psychopyge.png"],
+			"title": "P. elegans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psychopyge",
+			"type": "text",
+			"text": "Psychopyge is a genus of Devonian trilobites known from Morocco. It had a lance like nose protrusion which may have been used as a shovel or as a way to fight with other Psychopyge. It also had small spines that extended from each segment of the body, and the head."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_psychopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_psychopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_psychopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_psychopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_psychopyge"
+		}
+	]
+}

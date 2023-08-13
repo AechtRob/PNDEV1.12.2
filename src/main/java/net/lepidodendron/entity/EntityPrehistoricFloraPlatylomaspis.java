@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraPlatylomaspis extends EntityPrehistoricFloraF
 
 	public EntityPrehistoricFloraPlatylomaspis(World world) {
 		super(world);
-		setSize(0.6F, 0.5F);
+		setSize(0.5F, 0.25F);
 	}
 
 	@Override

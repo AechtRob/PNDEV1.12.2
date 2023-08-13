@@ -37,9 +37,7 @@ public class ItemLanceaspisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lanceaspis", ItemLanceaspisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLanceaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLanceaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLanceaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemLanceaspisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemLanceaspisRaw.block);
 	}
 

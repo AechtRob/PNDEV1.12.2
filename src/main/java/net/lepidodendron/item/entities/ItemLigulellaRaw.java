@@ -36,8 +36,7 @@ public class ItemLigulellaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ligulella", ItemLigulellaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemLigulellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLigulellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLigulellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemLigulellaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemLigulellaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

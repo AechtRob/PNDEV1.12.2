@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pholiderpeton",
 			"title": "Pholiderpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Embolomeri$(br)>Eogyrinidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Embolomeri$(br)>Eogyrinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pholiderpeton is an embolomere amphibian from the late Carboniferous period. P. scutigerum grew up to 2 meters in length with some species grow even larger than that. They were carnivorous and would have hunted the estuarine fish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pholiderpeton",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pholiderpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pholiderpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pholiderpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pholiderpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pholiderpeton"
 		}
 	]
 }

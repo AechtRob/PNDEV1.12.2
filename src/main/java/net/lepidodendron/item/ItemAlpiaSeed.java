@@ -32,6 +32,7 @@ public class ItemAlpiaSeed extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemAlpiaSeed.block);
+		OreDictionary.registerOre("foodPinenuts", ItemAlpiaSeed.block);
 	}
 
 	@SideOnly(Side.CLIENT)

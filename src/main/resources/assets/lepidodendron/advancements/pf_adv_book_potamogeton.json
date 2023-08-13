@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:potamogetons_item"
+			"item": "lepidodendron:potamogeton_item"
 		 },
 		"title": {
 			"translate": "advancements.pf_adv_book_potamogetons.title"
@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_potamogetons"
+			"trigger": "pf_book_potamogeton"
 		}
 	}
 }

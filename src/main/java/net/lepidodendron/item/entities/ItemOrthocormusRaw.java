@@ -37,8 +37,7 @@ public class ItemOrthocormusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_orthocormus", ItemOrthocormusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemOrthocormusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemOrthocormusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemOrthocormusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemOrthocormusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemOrthocormusRaw.block);
 	}
 

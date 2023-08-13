@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cassinoceras",
 			"title": "Cassinoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Bryozoan Reef$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Bisonocerida$(br)>Piloceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Bisonocerida$(br)>Piloceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cassinoceras is a nautiloid from the Ordovician period whose fossils have been found in North America. They had a short, laterally compressed shell, loosely having a triangular shape. These nautiloids could grow up to 30 cm in length and would have been free swimmers, preying on smaller invertebrates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cassinoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cassinoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cassinoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cassinoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cassinoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cassinoceras"
 		}
 	]
 }

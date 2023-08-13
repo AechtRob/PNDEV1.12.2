@@ -1,0 +1,31 @@
+{
+	"name": "Thanahita",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/thanahita_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_thanahita",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thanahita",
+			"title": "Thanahita",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Panarthropoda $(br)>Hallucigeniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/thanahita.png"],
+			"title": "T. distos",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thanahita",
+			"type": "text",
+			"text": "Thanahita is a Silurian member of the Cambrian lobopod group, representing a late surviving genus of the clade. It superficially resembled Hallucigenia, albeit without the long spines on its back. Thanahita is known from the Coalbrookdale Formation of England, which preserves other soft bodied arthropods in extremely good quality."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thanahita",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

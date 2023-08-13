@@ -37,9 +37,7 @@ public class ItemConcavicarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_concavicaris", ItemConcavicarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemConcavicarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemConcavicarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemConcavicarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemConcavicarisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemConcavicarisRaw.block);
 	}
 

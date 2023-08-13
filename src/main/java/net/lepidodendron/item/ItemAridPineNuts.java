@@ -32,6 +32,7 @@ public class ItemAridPineNuts extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemAridPineNuts.block);
+		OreDictionary.registerOre("foodPinenuts", ItemAridPineNuts.block);
 	}
 
 	@SideOnly(Side.CLIENT)

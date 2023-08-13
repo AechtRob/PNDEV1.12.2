@@ -38,8 +38,7 @@ public class ItemScaumenaciaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scaumenacia", ItemScaumenaciaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemScaumenaciaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemScaumenaciaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemScaumenaciaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemScaumenaciaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemScaumenaciaRaw.block);
 	}
 

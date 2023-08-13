@@ -24,7 +24,7 @@ public class SpawnLocations1 implements IComponentProcessor {
 
     @Override
     public String process(String s) {
-        String biomeList = getBiomeList(this.mob, 0, 15);
+        String biomeList = getBiomeList(this.mob, 0, 10);
         if (biomeList != null) {
             if (!biomeList.equalsIgnoreCase("")) {
                 return biomeList;
@@ -54,7 +54,7 @@ public class SpawnLocations1 implements IComponentProcessor {
                             if (i > from && i <= to) {
                                 biomeListFinal = biomeListFinal + "$(li)" + biomeName + "$(br)";
                             }
-                            if (i > 66) {
+                            if (i > 40) {
                                 if (from == 0) {
                                     return "$(br)Widespread";
                                 }
@@ -89,7 +89,10 @@ public class SpawnLocations1 implements IComponentProcessor {
             pnVariant = mobID.substring(i + 1);
             mobID = mobID.substring(0, i);
         }
-        if (matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs)) {
+        if (matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs)
+            || (
+                    mobID.contains("lepidodendron:prehistoric_flora_roachoid_") && matchMob("lepidodendron:prehistoric_flora_roachoid_", possibleMobs)
+                )) {
             if (pnVariant.equalsIgnoreCase("")) {
                 spawns = true;
             }

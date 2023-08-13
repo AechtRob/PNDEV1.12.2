@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_temperoceras",
 			"title": "Temperoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() (O)Sponge Forest, (S)Reef, Crinoid Garden, Ocean$(br2)>Nautiloidea$(br)>Orthocerida$(br)>Geisonoceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)>Nautiloidea$(br)>Orthocerida$(br)>Geisonoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Temperoceras was an orthoconic nautiloid from Afroeurasia during the Ordovician to Devonian periods. Its shell had a tubular siphuncle and was much thinner than other larger orthocones. It probably lived like other orthocones, as an ambush hunter."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_temperoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_temperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_temperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_temperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_temperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_temperoceras"
 		}
 	]
 }

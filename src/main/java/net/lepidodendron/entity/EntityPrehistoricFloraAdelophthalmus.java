@@ -67,9 +67,9 @@ public class EntityPrehistoricFloraAdelophthalmus extends EntityPrehistoricFlora
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 0));
-		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new EurypteridWander(this, NO_ANIMATION));
-		tasks.addTask(4, new EntityLookIdleAI(this));
+		//tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(2, new EurypteridWander(this, NO_ANIMATION));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

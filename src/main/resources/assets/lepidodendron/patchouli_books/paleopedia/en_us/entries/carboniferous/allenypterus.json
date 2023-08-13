@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_allenypterus",
 			"title": "Allenypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marshes$(br2)>Sarcopterygii$(br)>Hadronectoridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Sarcopterygii$(br)>Hadronectoridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Allenypterus is a lobe finned fish from the Bear Gulch Limestone. It had a rain drop shaped body and lived in shallow freshwater environments."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_allenypterus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_allenypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_allenypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_allenypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_allenypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_allenypterus"
 		}
 	]
 }

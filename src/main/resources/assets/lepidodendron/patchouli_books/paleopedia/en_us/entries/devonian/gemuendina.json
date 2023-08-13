@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gemuendina",
 			"title": "Gemuendina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Rhenanida$(br)>Asterosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)Rhenanida$(br)>Asterosteidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Despite its looks, Gemuendina was a placoderm and not a ray. Like rays, it had wing like pectoral fins, and had a flat body. It had an upward facing mouth which meant it probably suctioned prey that swam overhead instead of sifting through the sediment like modern rays. Size range includes anywhere from 30 to 100 centimeters in length."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gemuendina",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gemuendina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gemuendina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gemuendina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gemuendina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gemuendina"
 		}
 	]
 }

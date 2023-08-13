@@ -36,8 +36,7 @@ public class ItemBelonostomusJurassicRaw extends ElementsLepidodendronMod.ModEle
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_belonostomus_jurassic", ItemBelonostomusJurassicRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBelonostomusJurassicRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemBelonostomusJurassicRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemBelonostomusJurassicRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemBelonostomusJurassicRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBelonostomusJurassicRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

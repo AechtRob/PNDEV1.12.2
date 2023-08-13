@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_plectodiscus",
 			"title": "Plectodiscus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Anthoathecata$(br)>Porpitidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Anthoathecata$(br)>Porpitidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Plectodiscus is hydrozoan known from the Devonian Hunsrück Slate, Germany. It had a sail like structure on its circular body, and a large number of tentacles were growing on the bottom. It looked similar to the extant by-the-wind-sailor, and it is thought that it had a similar ecology."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_plectodiscus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plectodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plectodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plectodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plectodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plectodiscus"
 		}
 	]
 }

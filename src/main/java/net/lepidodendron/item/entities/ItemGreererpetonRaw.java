@@ -38,7 +38,7 @@ public class ItemGreererpetonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_greererpeton", ItemGreererpetonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGreererpetonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGreererpetonRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemGreererpetonRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemGreererpetonRaw.block);
 	}
 

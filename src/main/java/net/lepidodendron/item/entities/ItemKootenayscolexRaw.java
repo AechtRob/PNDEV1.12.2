@@ -38,8 +38,7 @@ public class ItemKootenayscolexRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kootenayscolex", ItemKootenayscolexRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemKootenayscolexRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKootenayscolexRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKootenayscolexRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemKootenayscolexRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemKootenayscolexRaw.block);
 	}
 

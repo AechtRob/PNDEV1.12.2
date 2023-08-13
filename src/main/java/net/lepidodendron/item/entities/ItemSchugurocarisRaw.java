@@ -37,9 +37,7 @@ public class ItemSchugurocarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_schugurocaris", ItemSchugurocarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSchugurocarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSchugurocarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSchugurocarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemSchugurocarisRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemSchugurocarisRaw.block);
 	}
 

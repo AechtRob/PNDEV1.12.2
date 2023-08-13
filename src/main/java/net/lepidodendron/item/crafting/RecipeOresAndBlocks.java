@@ -3,13 +3,13 @@ package net.lepidodendron.item.crafting;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.item.ItemRedClayBall;
-import net.lepidodendron.item.ItemZircon;
+import net.lepidodendron.item.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
@@ -19,6 +19,11 @@ public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+
+		for (ItemStack stack : OreDictionary.getOres("blockSand")) {
+			GameRegistry.addSmelting(stack, new ItemStack(Blocks.GLASS, (int) (1)), 0.1F);
+		}
+
 		GameRegistry.addSmelting(new ItemStack(BlockMeteorite.block, (int) (1)), new ItemStack(Items.IRON_INGOT, (int) (1)), 1F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockLavaCobble.block, (int) (1)), new ItemStack(BlockLavaRock.block, (int) (1)), 0.1F);
@@ -53,5 +58,7 @@ public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
 		GameRegistry.addSmelting(new ItemStack(BlockStonePorphyry.block, (int) (1)), new ItemStack(BlockStonePorphyrySmooth.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockStonePeridotite.block, (int) (1)), new ItemStack(BlockStonePeridotiteSmooth.block, (int) (1)), 0.1F);
 
+		GameRegistry.addSmelting(new ItemStack(BlockBalticAmberOre.block, (int) (1)), new ItemStack(ItemBalticAmberChunk.block, (int) (1)), 1F);
+		GameRegistry.addSmelting(new ItemStack(BlockDominicanAmberOre.block, (int) (1)), new ItemStack(ItemDominicanAmberChunk.block, (int) (1)), 1F);
 	}
 }

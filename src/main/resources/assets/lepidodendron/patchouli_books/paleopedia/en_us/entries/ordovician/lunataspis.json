@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lunataspis",
 			"title": "Lunataspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Sponge FOorest$(br2)>Xiphosura$(br)>Xiphosurida"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Xiphosura$(br)>Xiphosurida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lunataspis is the oldest known xiphosuran and it bore resemblence to horseshoe crabs, suggesting they may have lived in a way similar to modern horseshoe crabs. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lunataspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lunataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lunataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lunataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lunataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lunataspis"
 		}
 	]
 }

@@ -35,9 +35,7 @@ public class ItemCarcinosomaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_carcinosoma", ItemCarcinosomaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCarcinosomaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCarcinosomaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCarcinosomaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemCarcinosomaRaw.block);
 		OreDictionary.registerOre("pndietCrustacean", ItemCarcinosomaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

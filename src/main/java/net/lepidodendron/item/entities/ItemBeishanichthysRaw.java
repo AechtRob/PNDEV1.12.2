@@ -36,8 +36,7 @@ public class ItemBeishanichthysRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_beishanichthys", ItemBeishanichthysRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBeishanichthysRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemBeishanichthysRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemBeishanichthysRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemBeishanichthysRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemBeishanichthysRaw.block);
 	}
 

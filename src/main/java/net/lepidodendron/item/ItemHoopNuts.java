@@ -27,6 +27,7 @@ public class ItemHoopNuts extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemHoopNuts.block);
+		OreDictionary.registerOre("foodPinenuts", ItemHoopNuts.block);
 	}
 
 	@Override

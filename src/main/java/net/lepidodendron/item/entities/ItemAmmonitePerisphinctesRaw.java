@@ -37,9 +37,7 @@ public class ItemAmmonitePerisphinctesRaw extends ElementsLepidodendronMod.ModEl
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_perisphinctes", ItemAmmonitePerisphinctesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAmmonitePerisphinctesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAmmonitePerisphinctesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmmonitePerisphinctesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemAmmonitePerisphinctesRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemAmmonitePerisphinctesRaw.block);
 	}
 

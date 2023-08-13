@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aegirocassis",
 			"title": "Aegirocassis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Algal Reef$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Aegirocassis is a giant filter feeding radiodont which lived during the Ordovician period. Unlike its anomalocarids, which were predatory, Aegirocassis probably swam around slowly, drawing in food to eat with their appendages and filtering out water, keeping the prey trapped to be eaten."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_aegirocassis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aegirocassis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aegirocassis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aegirocassis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aegirocassis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aegirocassis"
 		}
 	]
 }

@@ -40,10 +40,7 @@ public class ItemKalligrammatidHuiyingogrammaRaw extends ElementsLepidodendronMo
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemKalligrammatidHuiyingogrammaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKalligrammatidHuiyingogrammaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKalligrammatidHuiyingogrammaRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemKalligrammatidHuiyingogrammaRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemKalligrammatidHuiyingogrammaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemKalligrammatidHuiyingogrammaRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemKalligrammatidHuiyingogrammaRaw.block);
 	}
 

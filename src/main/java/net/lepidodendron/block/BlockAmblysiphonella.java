@@ -76,7 +76,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:amblysiphonella", BlockAmblysiphonella.block);
-		OreDictionary.registerOre("sponge", BlockAmblysiphonella.block);
+		OreDictionary.registerOre("itemSponge", BlockAmblysiphonella.block);
 		OreDictionary.registerOre("pndietSponge", BlockAmblysiphonella.block);
 	}
 

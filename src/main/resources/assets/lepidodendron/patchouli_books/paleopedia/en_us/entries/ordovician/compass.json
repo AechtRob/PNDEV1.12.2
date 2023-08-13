@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish2",
 			"title": "Compass Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jellyfish in modern forms have existed since at least the Cambrian period, and in very similar forms before even then. This exact species is a modern species but entirely similar to what has existed since ancient times. The compass jelly is a coastal jellyfish that generally lives in temperate regions of the northeastern Atlantic Ocean. It has radial symmetry and brown markings shaped like V's on it bell. They generally feed on marine invertebrates and plankton."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jellyfish2",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish2"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish2"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish2"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish2"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish2"
 		}
 	]
 }

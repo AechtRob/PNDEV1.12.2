@@ -340,14 +340,14 @@ public class ModelDraconichthys extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
 
-        float speed = 0.186F;
+        float speed = 0.286F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
         if (ee.getIsFast()) {
             speed = speed * 2.6F;
         }
         float still = 1f;
         if (f3 == 0.0F) {
-            still = 0.9F;
+            still = 0.5F;
         }
         if (!e.isInWater()) {
             speed = 0.34F;

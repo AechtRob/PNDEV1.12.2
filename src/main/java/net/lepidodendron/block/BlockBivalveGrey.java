@@ -76,6 +76,7 @@ public class BlockBivalveGrey extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_grey", BlockBivalveGrey.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveGrey.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveGrey.block);
 		OreDictionary.registerOre("pndietShellfish", BlockBivalveGrey.block);
 	}
 

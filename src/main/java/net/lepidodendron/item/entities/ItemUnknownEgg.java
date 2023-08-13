@@ -22,11 +22,13 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
@@ -39,6 +41,12 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemUnknownEgg.block);
 	}
 
 	@SideOnly(Side.CLIENT)

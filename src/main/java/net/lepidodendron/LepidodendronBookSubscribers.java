@@ -4103,7 +4103,10 @@ public class LepidodendronBookSubscribers {
 		String nestString = "";
 		BlockPos nestPos = null;
 		if (entity instanceof EntityPrehistoricFloraLandBase) {
-			if (((EntityPrehistoricFloraLandBase) entity).hasNest()
+			if (((EntityPrehistoricFloraLandBase) entity).createPFChild(((EntityPrehistoricFloraLandBase) entity)) != null) {
+				nestString = " gives birth to live young";
+			}
+			else if (((EntityPrehistoricFloraLandBase) entity).hasNest()
 					|| ((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
 				if (((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
 					nestString = " lays eggs into mounds in blocks";
@@ -4127,6 +4130,9 @@ public class LepidodendronBookSubscribers {
 					}
 				}
 			}
+			else if (entity instanceof EntityPrehistoricFloraScorpion) {
+				nestString = " carries eggs";
+			}
 			else if (((EntityPrehistoricFloraLandBase) entity).dropsEggs()) {
 				nestString = " drops egg items";
 			}
@@ -4142,14 +4148,14 @@ public class LepidodendronBookSubscribers {
 				if (((EntityPrehistoricFloraAgeableBase) entity).createPFChild(((EntityPrehistoricFloraAgeableBase) entity)) != null) {
 					nestString = " gives birth to live young";
 				}
-				if (((EntityPrehistoricFloraAgeableBase) entity).dropsEggs()) {
+				else if (((EntityPrehistoricFloraAgeableBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
 				else {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+			else if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
 				if (((EntityPrehistoricFloraTrilobiteBottomBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4157,7 +4163,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+			else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
 				if (((EntityPrehistoricFloraTrilobiteSwimBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4165,15 +4171,15 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+			else if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
 				if (((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
 				else {
-					nestString = " lays eggs in water";
+					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraFishBase) {
+			else if (entity instanceof EntityPrehistoricFloraFishBase) {
 				if (((EntityPrehistoricFloraFishBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4181,15 +4187,18 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
+			else if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
 				if (((EntityPrehistoricFloraInsectFlyingBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
-				else {
+				else if (!((EntityPrehistoricFloraInsectFlyingBase) entity).laysInBlock()) {
 					nestString = " lays eggs in water";
 				}
+				else {
+					nestString = " lays eggs into mosses, selaginella and rotten wood";
+				}
 			}
-			if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+			else if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
 				if (((EntityPrehistoricFloraJellyfishBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -4197,7 +4206,7 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs in water";
 				}
 			}
-			if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+			else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
 				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
@@ -11214,15 +11223,15 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 
-			else if (event.getTarget() instanceof EntityPrehistoricFloraStoermeropterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_STOERMEROPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraStoermeropterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_STOERMEROPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraHoplitaspis) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_HOPLITASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -11241,24 +11250,24 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraPentecopterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_PENTECOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraOrcanopterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_ORCANOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraPentecopterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_PENTECOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraOrcanopterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_ORCANOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraOnychopterella) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_ONYCHOPTERELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -11268,15 +11277,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraStrobilopterus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_STROBILOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
+//			else if (event.getTarget() instanceof EntityPrehistoricFloraStrobilopterus) {
+//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+//					ModTriggers.CLICK_STROBILOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+//				}
+//				event.getEntityPlayer().swingArm(event.getHand());
+//				deliverStatsEntity(event);
+//				event.setCanceled(true);
+//				return;
+//			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraXinjiangchelys) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_XINJIANGCHELYS.trigger((EntityPlayerMP) event.getEntityPlayer());

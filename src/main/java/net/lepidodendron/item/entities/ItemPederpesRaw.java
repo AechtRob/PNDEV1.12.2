@@ -38,7 +38,7 @@ public class ItemPederpesRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pederpes", ItemPederpesRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPederpesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPederpesRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemPederpesRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemPederpesRaw.block);
 	}
 

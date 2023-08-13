@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gooloogongia",
 			"title": "Gooloogongia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Floodplain$(br2)>Sarcopterygii$(br)>Rhizodontida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Sarcopterygii$(br)>Rhizodontida"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": " with the inner row being larger fangs. The teeth were sharp and needle-like, but the many armoured placoderms living in the region at the time were probably not on this fish's menu, as its teeth likely wouldn't have been able to pierce their bony armour plating."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gooloogongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gooloogongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gooloogongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gooloogongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gooloogongia"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eusthenopteron",
 			"title": "Eusthenopteron",
 			"type": "quest",
-			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Sarcopterygii$(br)>Tristichopteridae"
+			"text": "$(l)Temporal Range: $()Devonian$(br2)>Sarcopterygii$(br)>Tristichopteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eusthenopteron is an ancient lobe finned fish and while it is wildly associated with the transition to tetrapods, the animal was strictly aquatic. However, Eusthenopteron shared many features with the early tetrapods such as having internal nostrils and teeth with infolded enamel."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eusthenopteron",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
 		}
 	]
 }

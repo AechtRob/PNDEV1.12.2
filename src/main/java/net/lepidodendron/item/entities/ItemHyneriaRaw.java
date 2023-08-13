@@ -38,8 +38,7 @@ public class ItemHyneriaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hyneria", ItemHyneriaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHyneriaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHyneriaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHyneriaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemHyneriaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemHyneriaRaw.block);
 	}
 

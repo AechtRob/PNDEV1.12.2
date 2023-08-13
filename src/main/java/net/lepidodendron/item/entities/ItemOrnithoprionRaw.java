@@ -38,8 +38,7 @@ public class ItemOrnithoprionRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ornithoprion", ItemOrnithoprionRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemOrnithoprionRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemOrnithoprionRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemOrnithoprionRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemOrnithoprionRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemOrnithoprionRaw.block);
 	}
 

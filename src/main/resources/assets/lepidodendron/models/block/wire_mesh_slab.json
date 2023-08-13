@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:block/half_slab_wire",
+  "textures": {
+    "wire": "lepidodendron:blocks/wire_mesh_fence"
+  }
+}

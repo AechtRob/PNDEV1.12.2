@@ -1,7 +1,6 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
@@ -9,14 +8,10 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
@@ -109,7 +104,7 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 1));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		//tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));
@@ -117,8 +112,8 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
@@ -177,9 +172,9 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
-			launchAttack();
-		}
+//		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+//			launchAttack();
+//		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
@@ -220,14 +215,14 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 		return (testLay(world, pos.down()) || testLay(world, pos)) ;
 	}
 
-	@Override
-	public boolean attackEntityAsMob(Entity entity) {
-		if (this.getAnimation() == NO_ANIMATION) {
-			this.setAnimation(ATTACK_ANIMATION);
-			//System.err.println("set attack");
-		}
-		return false;
-	}
+//	@Override
+//	public boolean attackEntityAsMob(Entity entity) {
+//		if (this.getAnimation() == NO_ANIMATION) {
+//			this.setAnimation(ATTACK_ANIMATION);
+//			//System.err.println("set attack");
+//		}
+//		return false;
+//	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);

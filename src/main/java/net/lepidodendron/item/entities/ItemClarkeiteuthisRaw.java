@@ -37,9 +37,7 @@ public class ItemClarkeiteuthisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_clarkeiteuthis", ItemClarkeiteuthisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemClarkeiteuthisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemClarkeiteuthisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemClarkeiteuthisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemClarkeiteuthisRaw.block);
 		OreDictionary.registerOre("pndietNautiloid", ItemClarkeiteuthisRaw.block);
 	}
 

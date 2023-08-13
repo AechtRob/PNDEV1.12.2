@@ -38,7 +38,7 @@ public class ItemProganochelysRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_proganochelys", ItemProganochelysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemProganochelysRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemProganochelysRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemProganochelysRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemProganochelysRaw.block);
 	}
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anthracomedusa",
 			"title": "Anthracomedusa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Estuaries$(br2)>Cnidaria$(br)>Cubozoa$(br)>Carybdeida"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria$(br)>Cubozoa$(br)>Carybdeida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Anthracomedusa is a Carboniferous jellyfish which looked like a plastic bag. It was slender in overal shape, due to its long tentacles."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_anthracomedusa",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anthracomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anthracomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anthracomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anthracomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anthracomedusa"
 		}
 	]
 }

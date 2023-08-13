@@ -37,6 +37,7 @@ public class ItemWuttagoonaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_wuttagoonaspis", ItemWuttagoonaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemWuttagoonaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemWuttagoonaspisRaw.block);;
 		OreDictionary.registerOre("pndietFish", ItemWuttagoonaspisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

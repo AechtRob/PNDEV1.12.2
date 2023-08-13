@@ -37,7 +37,7 @@ public class ItemGlaurungRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_glaurung", ItemGlaurungRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGlaurungRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGlaurungRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemGlaurungRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemGlaurungRaw.block);
 	}
 

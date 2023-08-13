@@ -31,7 +31,7 @@ public class ItemWebsteroprionRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_websteroprion", ItemWebsteroprionRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWebsteroprionRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemWebsteroprionRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemWebsteroprionRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemWebsteroprionRaw.block);
 	}
 	@SideOnly(Side.CLIENT)

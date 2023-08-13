@@ -2,6 +2,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.LepidodendronConfig;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -10,6 +11,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -189,6 +191,14 @@ abstract public class EntityPrehistoricFloraScorpion extends EntityPrehistoricFl
 			//System.err.println("launch on tick " + this.getAnimationTick());
 			launchAttack();
 
+		}
+
+		//Bear eggs perhaps:
+		if (!world.isRemote && this.getCanBreed() && (!this.getBabies()) && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+			this.setBabies(true);
+			this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			this.setLaying(false);
+			this.setTicks(0);
 		}
 
 		//AnimationHandler.INSTANCE.updateAnimations(this);

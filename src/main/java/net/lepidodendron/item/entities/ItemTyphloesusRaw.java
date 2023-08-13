@@ -38,8 +38,7 @@ public class ItemTyphloesusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_typhloesus", ItemTyphloesusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemTyphloesusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemTyphloesusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTyphloesusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemTyphloesusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemTyphloesusRaw.block);
 	}
 

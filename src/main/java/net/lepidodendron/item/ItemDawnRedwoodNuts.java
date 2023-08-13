@@ -32,6 +32,7 @@ public class ItemDawnRedwoodNuts extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("pndietSeed", ItemDawnRedwoodNuts.block);
+		OreDictionary.registerOre("foodPinenuts", ItemDawnRedwoodNuts.block);
 	}
 
 	@SideOnly(Side.CLIENT)

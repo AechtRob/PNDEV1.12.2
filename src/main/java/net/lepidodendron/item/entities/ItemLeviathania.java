@@ -51,10 +51,9 @@ public class ItemLeviathania extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_leviathania", ItemLeviathania.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLeviathania.block);
-		OreDictionary.registerOre("foodMeat", ItemLeviathania.block);
 		OreDictionary.registerOre("itemShellfish", ItemLeviathania.block);
-		OreDictionary.registerOre("pndietMeat", ItemLeviathania.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemLeviathania.block);
+		OreDictionary.registerOre("pndietShellfish", ItemLeviathania.block);
 	}
 
 

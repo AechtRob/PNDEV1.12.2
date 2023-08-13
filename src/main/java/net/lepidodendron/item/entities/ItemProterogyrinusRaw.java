@@ -38,7 +38,7 @@ public class ItemProterogyrinusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_proterogyrinus", ItemProterogyrinusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemProterogyrinusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemProterogyrinusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemProterogyrinusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemProterogyrinusRaw.block);
 	}
 

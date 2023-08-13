@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_amphibamus",
 			"title": "Amphibamus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Temnospondyli$(br)>Amphibamidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Temnospondyli$(br)>Amphibamidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Amphibamus is a Carboniferous temnospondyl that was about 20 cm long. It had a flat head and body and may have spent most of its time in the water, though it could go onto land."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_amphibamus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn Like Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_amphibamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_amphibamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_amphibamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_amphibamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_amphibamus"
 		}
 	]
 }

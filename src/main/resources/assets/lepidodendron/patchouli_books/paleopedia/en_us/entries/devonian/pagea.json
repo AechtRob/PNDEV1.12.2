@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pagea",
 			"title": "Pagea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Swamp, Wet Meadow$(br2)>Eurypterida$(br)>Stylonuroidea$(br)>Stylonuridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Eurypterida$(br)>Stylonuroidea$(br)>Stylonuridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pagea is a stylonurid eurypterid, that lived throughout the Devonian period. It was quite large and the third and fourth prosomal appendages had double rows of flat spines. The eyes were located closer to the center of its head carapace. As it was a stylonurine, it likely moved across the ocean floor with its pointed legs in search of food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pagea",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pagea"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pagea"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pagea"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pagea"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pagea"
 		}
 	]
 }

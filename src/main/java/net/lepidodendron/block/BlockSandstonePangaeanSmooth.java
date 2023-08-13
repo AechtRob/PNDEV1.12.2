@@ -16,9 +16,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockSandstonePangaeanSmooth extends ElementsLepidodendronMod.ModElement {
@@ -26,6 +28,12 @@ public class BlockSandstonePangaeanSmooth extends ElementsLepidodendronMod.ModEl
 	public static final Block block = null;
 	public BlockSandstonePangaeanSmooth(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.sandstone_pangaean_smooth);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("sandstone", BlockSandstonePangaeanSmooth.block);
 	}
 
 	@Override

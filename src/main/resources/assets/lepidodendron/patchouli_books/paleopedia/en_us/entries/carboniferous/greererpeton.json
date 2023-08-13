@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_greererpeton",
 			"title": "Greererpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Chordata $(br)>Colosteidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata $(br)>Colosteidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Greererpeton is a colosteid stegocephalian known from the Carboniferous Visean of Greer, West Virginia. Reaching about 1.4m, it is a primitive tetrapod, having a relatively long and slender body. Considering its size being close to modern giant salamanders, it probably had similar ecology."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_greererpeton",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_greererpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_greererpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_greererpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_greererpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_greererpeton"
 		}
 	]
 }

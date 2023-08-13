@@ -40,8 +40,7 @@ public class ItemSylvohymenRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megasecoptera@sylvohymen", ItemSylvohymenRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSylvohymenRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSylvohymenRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemSylvohymenRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemSylvohymenRaw.block);
 	}
 

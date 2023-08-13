@@ -1,0 +1,31 @@
+{
+	"name": "Quasimodichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/quasimodichthys_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_quasimodichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_quasimodichthys",
+			"title": "Quasimodichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii $(br)>Semionotiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/quasimodichthys.png"],
+			"title": "Q. piauhyensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
+			"type": "text",
+			"text": "Quasimodichthys is a Jurassic semionotiforme. It is characterized by a hump on its back, which is where the first part of its name 'Quasimodo,' from the Hunchback of Notre Dame, comes from."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

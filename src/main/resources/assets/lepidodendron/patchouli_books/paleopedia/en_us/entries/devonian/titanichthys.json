@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_titanichthys",
 			"title": "Titanichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Dinichthyloidea"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Dinichthyloidea"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Titanichthys was a large placoderm that did not have sharp mouth plates leading to scientists believing it to be a filter feeder, like today's basking shark. This makes it the first known large sized vertebrate filter feeder. It probably swam around the shallow seas inhaling schools of fish or zooplankton, then allowing water to escape while retaining the prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_titanichthys",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_titanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_titanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_titanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_titanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_titanichthys"
 		}
 	]
 }

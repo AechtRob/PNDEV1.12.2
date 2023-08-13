@@ -1,0 +1,47 @@
+{
+	"name": "Cothurnocystis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cothurnocystis_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_cothurnocystis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cothurnocystis",
+			"title": "Cothurnocystis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Stylophora$(br)>Cornuta$(br)>Cothurnocystidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cothurnocystis.png"],
+			"title": "C. elizae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cothurnocystis",
+			"type": "text",
+			"text": "Cothurnocystis is a stylophorine echinoderm from the Ordovician period. Its shape is very weird, and it did not resemble any modern echinoderm species. It had a flattened body and a small tail. On its body was a small opening and these animals lacked any sort of symmetry."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cothurnocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cothurnocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cothurnocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cothurnocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cothurnocystis"
+		}
+	]
+}
+
