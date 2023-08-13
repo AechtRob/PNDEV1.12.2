@@ -720,7 +720,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_adamanteryon", EntityPrehistoricFloraAdamanteryon.class, LepidodendronMod.ENTITY_ADAMANTERYON, 48,-3428700,-4300441);
         registerEntity("prehistoric_flora_scheenstia", EntityPrehistoricFloraScheenstia.class, LepidodendronMod.ENTITY_SCHEENSTIA, 64,-2048337,-12305108);
 
-        registerEntity("prehistoric_flora_dragonfly", EntityPrehistoricFloraDragonfly.class, LepidodendronMod.ENTITY_DRAGONFLY, 48,-2048337,-12305108);
+        registerEntityNoEgg("prehistoric_flora_dragonfly", EntityPrehistoricFloraDragonfly.class, LepidodendronMod.ENTITY_DRAGONFLY, 48);//,-2048337,-12305108);
         registerEntityNoEgg("prehistoric_flora_dragonfly_nymph", EntityPrehistoricFloraDragonflyNymph.class, LepidodendronMod.ENTITY_DRAGONFLY_NYMPH, 48);
         registerEntity("prehistoric_flora_cothurnocystis", EntityPrehistoricFloraCothurnocystis.class, LepidodendronMod.ENTITY_COTHURNOCYSTIS, 48,-10006873,-5200944);
         registerEntity("prehistoric_flora_iowacystis", EntityPrehistoricFloraIowacystis.class, LepidodendronMod.ENTITY_IOWACYSTIS, 48,-8742174,-6133664);
@@ -821,7 +821,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_laidleria", EntityPrehistoricFloraLaidleria.class, LepidodendronMod.ENTITY_LAIDLERIA, 64,-3964582,-3424071);
         registerEntity("prehistoric_flora_archaboilus", EntityPrehistoricFloraArchaboilus.class, LepidodendronMod.ENTITY_ARCHABOILUS, 48,-13955584,-2911628);
         registerEntity("prehistoric_flora_pycnophlebia", EntityPrehistoricFloraPycnophlebia.class, LepidodendronMod.ENTITY_PYCNOPHLEBIA, 48,-8891109,-3035014);
-        registerEntity("prehistoric_flora_notostracan", EntityPrehistoricFloraNotostracan.class, LepidodendronMod.ENTITY_NOTOSTRACAN, 48,-10652884,-14341605);
+        registerEntityNoEgg("prehistoric_flora_notostracan", EntityPrehistoricFloraNotostracan.class, LepidodendronMod.ENTITY_NOTOSTRACAN, 48);//,-10652884,-14341605);
         registerEntity("prehistoric_flora_ammonite_perisphinctes", EntityPrehistoricFloraAmmonite_Perisphinctes.class, LepidodendronMod.ENTITY_AMMONITE_PERISPHINCTES, 64,-10652884,-2437690);
         registerEntity("prehistoric_flora_jeholotriton", EntityPrehistoricFloraJeholotriton.class, LepidodendronMod.ENTITY_JEHOLOTRITON, 48,-11919589,-3235195);
         registerEntity("prehistoric_flora_stanocephalosaurus", EntityPrehistoricFloraStanocephalosaurus.class, LepidodendronMod.ENTITY_STANOCEPHALOSAURUS, 64,-4744862,-12047334);

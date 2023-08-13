@@ -3,6 +3,8 @@ package net.lepidodendron;
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
+import net.lepidodendron.item.crafting.RecipeCookedMeatsandSeeds;
+import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
@@ -1122,14 +1124,14 @@ public class LepidodendronMod {
 	public static final ResourceLocation HYPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypsognathus_young"));
 	public static final ResourceLocation HYPSOGNATHUS_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypsognathus_jar"));
 	public static final int ENTITY_HYPURONECTOR = 433;
-	public static final ResourceLocation HYPURONECTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypuronector"));
+	//public static final ResourceLocation HYPURONECTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypuronector"));
 	public static final int ENTITY_LAGOSUCHUS = 434;
 	//public static final ResourceLocation LAGOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lagosuchus"));
 	public static final int ENTITY_LESSEMSAURUS = 435;
 	public static final ResourceLocation LESSEMSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lessemsaurus"));
 	public static final ResourceLocation LESSEMSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lessemsaurus_young"));
 	public static final int ENTITY_LONGISQUAMA = 436;
-	public static final ResourceLocation LONGISQUAMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/longisquama"));
+	//public static final ResourceLocation LONGISQUAMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/longisquama"));
 	public static final int ENTITY_LOTOSAURUS = 437;
 	public static final ResourceLocation LOTOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lotosaurus"));
 	public static final ResourceLocation LOTOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lotosaurus_young"));
@@ -2089,6 +2091,9 @@ public class LepidodendronMod {
 		modfixes.registerFix(FixTypes.ENTITY, FixerTitanoptera.FixerTitanoptera);
 		modfixes.registerFix(FixTypes.ENTITY, FixerTitanopteraNymph.FixerTitanopteraNymph);
 		modfixes.registerFix(FixTypes.ENTITY, FixerConodont.FixerConodont);
+
+		RecipeOresAndBlocks.registerSmelting();
+		RecipeCookedMeatsandSeeds.registerSmelting();
 	}
 
 	@Mod.EventHandler

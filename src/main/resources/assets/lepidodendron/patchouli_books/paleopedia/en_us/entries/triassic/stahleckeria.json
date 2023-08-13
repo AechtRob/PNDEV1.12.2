@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_stahleckeria",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
 		}
 	]
 }

@@ -43,8 +43,8 @@ public class EntityPrehistoricFloraProterosuchus extends EntityPrehistoricFloraL
 		super(world);
 		setSize(0.76F, 0.65F);
 		minWidth = 0.18F;
-		maxWidth = 0.76F;
-		maxHeight = 0.65F;
+		maxWidth = 0.86F;
+		maxHeight = 1.05F;
 		maxHealthAgeable = 25.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

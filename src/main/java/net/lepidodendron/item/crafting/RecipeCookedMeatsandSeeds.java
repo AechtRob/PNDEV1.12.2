@@ -1,25 +1,23 @@
 
 package net.lepidodendron.item.crafting;
 
-import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.item.*;
 import net.lepidodendron.item.entities.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-@ElementsLepidodendronMod.ModElement.Tag
-public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModElement {
-	public RecipeCookedMeatsandSeeds(ElementsLepidodendronMod instance) {
-		super(instance, 1092);
-	}
+//@ElementsLepidodendronMod.ModElement.Tag
+public class RecipeCookedMeatsandSeeds  {
+//	public RecipeCookedMeatsandSeeds(ElementsLepidodendronMod instance) {
+//		super(instance, 1092);
+//	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
+	//@Override
+	public static void registerSmelting() {
 
 		GameRegistry.addSmelting(new ItemStack(BlockArtocarpusFruitBlock.block, (int) (1)), new ItemStack(ItemCookedBreadfruit.block, (int) (1)), 0.5F);
 		GameRegistry.addSmelting(new ItemStack(ItemPrototaxitesChunk.block, (int) (1)), new ItemStack(ItemCookedPrototaxites.block, (int) (1)), 0.5F);

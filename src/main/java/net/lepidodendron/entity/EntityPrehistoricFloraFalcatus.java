@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraFalcatus(World world) {
 		super(world);
-		setSize(0.1F, 0.2F);
+		setSize(0.2F, 0.25F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.25F;

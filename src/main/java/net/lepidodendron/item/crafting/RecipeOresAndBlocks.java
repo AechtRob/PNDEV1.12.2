@@ -1,24 +1,25 @@
 
 package net.lepidodendron.item.crafting;
 
-import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.item.*;
+import net.lepidodendron.item.ItemBalticAmberChunk;
+import net.lepidodendron.item.ItemDominicanAmberChunk;
+import net.lepidodendron.item.ItemRedClayBall;
+import net.lepidodendron.item.ItemZircon;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-@ElementsLepidodendronMod.ModElement.Tag
-public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
-	public RecipeOresAndBlocks(ElementsLepidodendronMod instance) {
-		super(instance, 436);
-	}
+//@ElementsLepidodendronMod.ModElement.Tag
+public class RecipeOresAndBlocks  {
+//	public RecipeOresAndBlocks(ElementsLepidodendronMod instance) {
+//		super(instance, 436);
+//	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
+
+	public static void registerSmelting() {
 
 		for (ItemStack stack : OreDictionary.getOres("blockSand")) {
 			GameRegistry.addSmelting(stack, new ItemStack(Blocks.GLASS, (int) (1)), 0.1F);

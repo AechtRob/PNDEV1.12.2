@@ -877,7 +877,8 @@ public class AcidBathOutputMobs {
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraHypuronector.class)).getRegistryName().toString(),
                 //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraLongisquama.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraNotostracan.class)).getRegistryName().toString() + "@triops_random",
-                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraXinpusaurus.class)).getRegistryName().toString() + "@gendered"
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraXinpusaurus.class)).getRegistryName().toString() + "@gendered",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraProterosuchus.class)).getRegistryName().toString()
 
 
 
@@ -1051,6 +1052,7 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraKosmoceras.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraElasmodectes.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraQuasimodichthys.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraDakosaurus.class)).getRegistryName().toString()
 
 
         };
@@ -1083,7 +1085,8 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraKalligrammatid.class)).getRegistryName().toString() + "@" + EntityPrehistoricFloraKalligrammatid.Type.ITHIGRAMMA.getName(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraIsanichthys.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraIschyodus.class)).getRegistryName().toString() + "@gendered",
-                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraNotostracan.class)).getRegistryName().toString() + "@triops_random"
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraNotostracan.class)).getRegistryName().toString() + "@triops_random",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraDakosaurus.class)).getRegistryName().toString()
 
 
 

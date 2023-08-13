@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Mound$(br)$(l)Method of Obtaining:$() Find Egg in Mound"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
 		}
 	]
 }
