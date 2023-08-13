@@ -7745,23 +7745,57 @@ tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click 
 item.pf_viviparus_item.name=Viviparus
 
 oredict.pndietFish.name=Fish
+oredict.listAllfishraw.name=Fish
+oredict.listAllfishcooked.name=Fish
+oredict.listAllfishfresh.name=Fish
+oredict.pndietMeat.name=Meat
+oredict.listAllmeatraw.name=Meat
+oredict.listAllmeatcooked.name=Meat
 oredict.pndietMeat.name=Meat
 oredict.pndietCrustacean.name=Crustaceans and similar
+oredict.foodCrabraw.name=Crustaceans and similar
+oredict.foodCrabcooked.name=Crustaceans and similar
+oredict.foodCrayfishraw.name=Crustaceans and similar
+oredict.foodCrayfishcooked.name=Crustaceans and similar
+oredict.foodShrimpraw.name=Crustaceans and similar
+oredict.foodShrimpcooked.name=Crustaceans and similar
 oredict.pndietNautiloid.name=Nautiloids, Cephalopods and similar
+oredict.foodCalamariraw.name=Nautiloids, Cephalopods and similar
+oredict.foodCalamaricooked.name=Nautiloids, Cephalopods and similar
+oredict.foodOctopusraw.name=Nautiloids, Cephalopods and similar
+oredict.foodOctopuscooked.name=Nautiloids, Cephalopods and similar
 oredict.pndietBug.name=Insects and similar
 oredict.pndietShellfish.name=Bivalves and similar
+oredict.foodClamraw.name=Bivalves and similar
+oredict.foodClamcooked.name=Bivalves and similar
+oredict.foodScallopraw.name=Bivalves and similar
+oredict.foodScallopcooked.name=Bivalves and similar
+oredict.foodMusselraw.name=Bivalves and similar
+oredict.foodMusselcooked.name=Bivalves and similar
+oredict.foodOysterraw.name=Bivalves and similar
+oredict.foodOystercooked.name=Bivalves and similar
 oredict.pndietCrinoid.name=Crinoids and similar
 oredict.itemFishFood.name=Fish Food
 oredict.itemAlgae.name=Algae
+oredict.cropSeaweed.name=Algae
 oredict.pndietRotten.name=Rotten flesh
 oredict.pndietTuber.name=Roots
+oredict.listAllrootveggie.name=Roots
 oredict.pndietFungus.name=Fungi
+oredict.listAllmushroom.name=Fungi
 oredict.pndietFruit.name=Fruits and Cones
+oredict.listAllfruit.name=Fruits and Cones
 oredict.pndietSeed.name=Seeds
+oredict.listAllseed.name=Seeds
+oredict.listAllgrain.name=Seeds
 oredict.pndietMicrobial.name=Microbial matter
 oredict.itemMoss.name=Mosses
 oredict.plant.name=Plants
+oredict.listAllgreenveggie.name=Plants
 oredict.dietEncruster.name=Smaller static water creatures
+
+
+
 
 tile.pf_actinidea.name=Actinidea
 item.pf_actinidea_seeds.name=Actinidea Seeds

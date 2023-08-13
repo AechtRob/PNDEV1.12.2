@@ -3,7 +3,6 @@ package net.lepidodendron.entity.ai;
 import com.google.common.base.Predicate;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuropsis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.passive.EntityVillager;
@@ -105,21 +104,12 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
 
                         for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
                             //Loop over the itemstack to see what it is:
-                            Method method2 = RenderDisplayWallMount.testAndGetMethod(this.entity.getClass(), "getFoodOreDicts", null);
-                            String[] oreDictList = new String[]{};
-                            String result = "";
-                            if (method2 != null) {
-                                try {
-                                    oreDictList = (String[]) method2.invoke(this.entity, new Object[]{null});
-                                    for (String oreDict : oreDictList) {
-                                        if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
-                                            dietOK = true;
-                                            break;
-                                        }
-                                    }
-                                } catch (Exception e) {
+                            String[] oreDictList = this.entity.getFoodOreDicts();
+                            for (String oreDict : oreDictList) {
+                                if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
+                                    dietOK = true;
+                                    break;
                                 }
-                            } else {
                             }
                             if (dietOK) {
                                 break;

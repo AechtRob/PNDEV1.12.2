@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eunotosaurus",
 			"title": "Eunotosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands, Lowlands$(br2)>Reptilia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia"
 		},
 		{
 			"type": "image",

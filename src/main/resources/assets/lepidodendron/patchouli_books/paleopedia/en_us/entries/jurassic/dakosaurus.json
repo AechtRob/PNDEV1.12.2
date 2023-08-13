@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dakosaurus",
 			"title": "Dakosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Crocodylomorpha $(br)>Thalattosuchia $(br)>Metriorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Reptilia $(br)>Crocodylomorpha $(br)>Thalattosuchia $(br)>Metriorhynchidae"
 		},
 		{
 			"type": "image",
