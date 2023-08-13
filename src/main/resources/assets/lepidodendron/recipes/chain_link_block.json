@@ -9,27 +9,27 @@
   "key": {
     "0": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "nuggetIron"
     },
     "2": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "nuggetIron"
     },
     "4": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "ingotIron"
     },
     "6": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "nuggetIron"
     },
     "8": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "nuggetIron"
     }
   },
   "result": {
     "item": "lepidodendron:chain_link_block",
-    "count": 4
+    "count": 1
   }
 }

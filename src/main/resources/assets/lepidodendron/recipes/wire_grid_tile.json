@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:wire_grid_block"
+    },
+    "4": {
+      "item": "lepidodendron:wire_grid_block"
+    },
+    "5": {
+      "item": "lepidodendron:wire_grid_block"
+    },
+    "6": {
+      "item": "lepidodendron:wire_grid_block"
+    },
+    "7": {
+      "item": "lepidodendron:wire_grid_block"
+    },
+    "8": {
+      "item": "lepidodendron:wire_grid_block"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:wire_grid_tile",
+    "count": 16
+  }
+}

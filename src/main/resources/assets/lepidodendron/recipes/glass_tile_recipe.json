@@ -3,16 +3,31 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "   ",
-    " 4 ",
-    "   "
+    "345",
+    "678"
   ],
   "key": {
+    "3": {
+      "item": "lepidodendron:zircon_glass"
+    },
     "4": {
-      "item": "lepidodendron:zircon_glass_pane"
+      "item": "lepidodendron:zircon_glass"
+    },
+    "5": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "6": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "7": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "8": {
+      "item": "lepidodendron:zircon_glass"
     }
   },
   "result": {
     "item": "lepidodendron:zircon_glass_tile",
-    "count": 2
+    "count": 16
   }
 }
