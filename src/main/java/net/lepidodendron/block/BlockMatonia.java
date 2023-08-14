@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -74,7 +77,7 @@ public class BlockMatonia extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends SeedSporeBushBase {
+	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
@@ -86,6 +89,12 @@ public class BlockMatonia extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_matonia");
 			setRegistryName("matonia");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MATONIA;
 		}
 
 		@Override

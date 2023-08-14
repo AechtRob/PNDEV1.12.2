@@ -2,7 +2,10 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -171,7 +174,7 @@ public class BlockGuangdedendron extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
 
 		
 		public static final PropertyBool BOTTOM = PropertyBool.create("bottom");
@@ -187,6 +190,12 @@ public class BlockGuangdedendron extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_guangdedendron");
 			setRegistryName("guangdedendron");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(BOTTOM, false).withProperty(STEM, false).withProperty(AGE, Integer.valueOf(0)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GUANGDEDENDRON;
 		}
 
 		@Override

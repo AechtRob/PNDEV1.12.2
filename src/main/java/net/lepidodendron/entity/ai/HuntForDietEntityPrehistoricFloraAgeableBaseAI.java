@@ -5,7 +5,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -25,6 +24,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -102,8 +102,10 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 
 
                 if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
-                    this.targetEntity = entityChooser;
-                    break;
+                    if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietMeat")) {
+                        this.targetEntity = entityChooser;
+                        break;
+                    }
                 }
 
                 if (targetOK) {
@@ -121,21 +123,12 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 
                         for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
                             //Loop over the itemstack to see what it is:
-                            Method method2 = RenderDisplayWallMount.testAndGetMethod(this.entity.getClass(), "getFoodOreDicts", null);
-                            String[] oreDictList = new String[]{};
-                            String result = "";
-                            if (method2 != null) {
-                                try {
-                                    oreDictList = (String[]) method2.invoke(this.entity);
-                                    for (String oreDict : oreDictList) {
-                                        if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
-                                            dietOK = true;
-                                            break;
-                                        }
-                                    }
-                                } catch (Exception e) {
+                            String[] oreDictList = this.entity.getFoodOreDicts();
+                            for (String oreDict : oreDictList) {
+                                if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
+                                    dietOK = true;
+                                    break;
                                 }
-                            } else {
                             }
                             if (dietOK) {
                                 break;

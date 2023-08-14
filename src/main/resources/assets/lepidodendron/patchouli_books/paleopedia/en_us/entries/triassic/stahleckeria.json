@@ -1,0 +1,46 @@
+{
+	"name": "Stahleckeria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stahleckeria_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_stahleckeria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stahleckeria",
+			"title": "Stahleckeria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Synapsida $(br)>Therapsida $(br)>Anomodontia $(br)>Stahleckeriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/stahleckeria.png"],
+			"title": "S. potens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stahleckeria",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stahleckeria"
+		}
+	]
+}

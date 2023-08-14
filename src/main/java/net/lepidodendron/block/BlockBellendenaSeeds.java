@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -45,7 +48,7 @@ public class BlockBellendenaSeeds extends ElementsLepidodendronMod.ModElement {
 		elements.blocks.add(() -> new BlockCustom());
 	}
 
-	public static class BlockCustom extends SeedSporeBushBase {
+	public static class BlockCustom extends SeedSporeBushBase implements IAdvancementGranter {
 		
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -57,6 +60,12 @@ public class BlockBellendenaSeeds extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(null);
 			setTranslationKey("pf_bellendena_seeds");
 			setRegistryName("bellendena_seeds");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BELLENDENA;
 		}
 
 		@Override

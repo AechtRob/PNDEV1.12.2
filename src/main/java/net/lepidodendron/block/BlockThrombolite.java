@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
@@ -22,6 +25,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -45,7 +50,7 @@ public class BlockThrombolite extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:thrombolite", "inventory"));
 	}
 
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.ROCK);
 			setTranslationKey("pf_thrombolite");
@@ -57,6 +62,12 @@ public class BlockThrombolite extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			setDefaultSlipperiness(0.7f);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_THROMBOLITE;
 		}
 		
 		@Override

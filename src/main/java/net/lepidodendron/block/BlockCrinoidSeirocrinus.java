@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -80,7 +83,7 @@ public class BlockCrinoidSeirocrinus extends ElementsLepidodendronMod.ModElement
 	//Generation is done as a structure on floating wood!
 	//-------------------------------------------------------
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 		private static int crinoidheight;
@@ -98,6 +101,12 @@ public class BlockCrinoidSeirocrinus extends ElementsLepidodendronMod.ModElement
         	this.setTickRandomly(true);
 			setTranslationKey("pf_crinoid_seirocrinus");
 			setRegistryName("crinoid_seirocrinus");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CRINOID_SEIROCRINUS;
 		}
 
 		@Override

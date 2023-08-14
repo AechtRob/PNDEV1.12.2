@@ -17,7 +17,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockLeavesPF extends BlockLeaves {
+public abstract class BlockLeavesPF extends BlockLeaves implements IAdvancementGranter {
 
 	public BlockLeavesPF() {
 		super();

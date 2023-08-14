@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemSlimyAlgaeItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -28,6 +31,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:slimy_algae_land")
@@ -49,7 +54,7 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:primeval_grass_land", "inventory"));
 	//}
 	
-	public static class BlockCustom extends BlockBush implements net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends BlockBush implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -60,6 +65,12 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setTranslationKey("pf_slimy_algae_land");
 			setRegistryName("slimy_algae_land");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 
 		@Override

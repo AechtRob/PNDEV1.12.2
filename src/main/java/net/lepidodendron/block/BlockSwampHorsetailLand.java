@@ -5,10 +5,13 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemSwampHorsetailItem;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -59,7 +62,7 @@ public class BlockSwampHorsetailLand extends ElementsLepidodendronMod.ModElement
 	//			new ModelResourceLocation("lepidodendron:primeval_grass_land", "inventory"));
 	//}
 	
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -76,6 +79,12 @@ public class BlockSwampHorsetailLand extends ElementsLepidodendronMod.ModElement
 			}
 			setTranslationKey("pf_swamp_horsetail_land");
 			setRegistryName("swamp_horsetail_land");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SWAMP_HORSETAIL;
 		}
 
 		@Override

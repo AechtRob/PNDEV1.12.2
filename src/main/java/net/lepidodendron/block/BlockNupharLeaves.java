@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.SoundType;
@@ -24,6 +27,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -47,7 +51,7 @@ public class BlockNupharLeaves extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:nuphar_leaves", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad {
+	public static class BlockCustom extends BlockLilyPad implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -59,6 +63,12 @@ public class BlockNupharLeaves extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_nuphar_leaves");
 			setRegistryName("nuphar_leaves");
 			this.setDefaultState(this.blockState.getBaseState());
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NUPHAR;
 		}
 
 		@SideOnly(Side.CLIENT)

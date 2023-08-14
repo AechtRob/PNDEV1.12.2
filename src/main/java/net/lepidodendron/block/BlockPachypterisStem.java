@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -49,7 +52,7 @@ public class BlockPachypterisStem extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:isoetes", "inventory"));
 	//}
 
-	public static class BlockCustom extends SeedSporeBlockBase {
+	public static class BlockCustom extends SeedSporeBlockBase implements IAdvancementGranter {
 
 		protected static final AxisAlignedBB PACHYPTERIS_STEM_AABB = new AxisAlignedBB(0D, -1D, 0D, 1D, 0D, 1D);
 		
@@ -63,6 +66,12 @@ public class BlockPachypterisStem extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(null);
 			setTranslationKey("pf_weichselia_stem");
 			setRegistryName("pachypteris_stem");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_WEICHSELIA;
 		}
 
 		@SideOnly(Side.CLIENT)

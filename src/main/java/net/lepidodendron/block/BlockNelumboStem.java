@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -29,6 +32,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -55,7 +59,7 @@ public class BlockNelumboStem extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.WATER);
 			setTranslationKey("pf_nelumbo_stem");
@@ -67,6 +71,12 @@ public class BlockNelumboStem extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(null);
 			this.setTickRandomly(true);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NELUMBO;
 		}
 
 		@Override

@@ -2,10 +2,13 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemMontsechiaItem;
 import net.lepidodendron.item.ItemMontsechiaSeeds;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.MontsechiaGenerator;
 import net.minecraft.block.Block;
@@ -140,7 +143,7 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -157,6 +160,12 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_montsechia");
 			setRegistryName("montsechia");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MONTSECHIA;
 		}
 
 		@Override

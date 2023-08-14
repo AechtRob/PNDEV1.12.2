@@ -10,6 +10,7 @@ import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraWebsteroprionHoleAI;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -35,7 +36,7 @@ import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.List;
 
-public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implements IAnimatedEntity {
+public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implements IAnimatedEntity, IPrehistoricDiet {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -174,6 +175,7 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 	//	return 0;
 	//}
 
+	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.MEAT, DietString.FISH), DietString.CRUSTACEAN), DietString.NAUTILOID);
 	}

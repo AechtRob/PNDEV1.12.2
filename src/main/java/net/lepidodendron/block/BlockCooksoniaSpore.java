@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -55,7 +58,7 @@ public class BlockCooksoniaSpore extends ElementsLepidodendronMod.ModElement {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 		//		new ModelResourceLocation("lepidodendron:cooksonia_spore", "inventory"));
 	}
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -72,6 +75,12 @@ public class BlockCooksoniaSpore extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_cooksonia_spore");
 			setRegistryName("cooksonia_spore");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_COOKSONIA;
 		}
 
 		@Override

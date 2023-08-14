@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eunotosaurus",
 			"title": "Eunotosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands, Lowlands$(br2)>Reptilia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eunotosaurus is a Permian reptile that could possibly have been related to turtles or parareptiles. It had wide and flat ribs which looked like a primitive turtle shell however, it is possible that these turtle like features evolved separately and it may not have been a primitive turtle relative at all."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eunotosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
 		}
 	]
 }

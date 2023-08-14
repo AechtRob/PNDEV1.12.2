@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeSilurian;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -175,7 +178,7 @@ public class BlockCrinoidPisocrinus extends ElementsLepidodendronMod.ModElement 
 		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidPisocrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 		private static int crinoidheight;
@@ -193,6 +196,12 @@ public class BlockCrinoidPisocrinus extends ElementsLepidodendronMod.ModElement 
         	this.setTickRandomly(true);
 			setTranslationKey("pf_crinoid_pisocrinus");
 			setRegistryName("crinoid_pisocrinus");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CRINOID_PISOCRINUS;
 		}
 
 		@Override

@@ -6,8 +6,8 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGreenAlgaeMat;
 import net.lepidodendron.block.BlockRedAlgaeMat;
-import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -47,7 +47,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -83,13 +83,6 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
             }
         }
         return false;
-    }
-
-
-    public abstract String[] getFoodOreDicts();
-
-    public String[] getMeatDropOreDicts() {
-        return DietString.NULL;
     }
 
     @Override

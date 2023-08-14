@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -165,7 +168,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends SeedSporeBlockBase implements IShearable {
+	public static class BlockCustom extends SeedSporeBlockBase implements IShearable, IAdvancementGranter {
 	    
 		public BlockCustom() {
 			super(Material.WATER);
@@ -178,6 +181,12 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setTickRandomly(true);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(SPREADABLE, true));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SEAGRASS;
 		}
 
 		@Override

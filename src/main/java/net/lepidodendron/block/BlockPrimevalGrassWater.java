@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemPrimaevalGrassSeeds;
 import net.lepidodendron.item.ItemPrimevalGrassItem;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.IGrowable;
@@ -59,7 +62,7 @@ public class BlockPrimevalGrassWater extends ElementsLepidodendronMod.ModElement
 	//			new ModelResourceLocation("lepidodendron:archaefructus", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -76,6 +79,12 @@ public class BlockPrimevalGrassWater extends ElementsLepidodendronMod.ModElement
 			}
 			setTranslationKey("pf_primaeval_grass_water");
 			setRegistryName("primaeval_grass_water");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PRIMAEVAL_GRASS;
 		}
 
 		@Override

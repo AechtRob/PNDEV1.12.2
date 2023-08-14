@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemSlimyAlgaeItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.SoundType;
@@ -51,7 +54,7 @@ public class BlockSlimyAlgaeWater extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:archaefructus", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad implements net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends BlockLilyPad implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -62,6 +65,12 @@ public class BlockSlimyAlgaeWater extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(null);
 			setTranslationKey("pf_slimy_algae_water");
 			setRegistryName("slimy_algae_water");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 		
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
