@@ -110,6 +110,7 @@ public class AcidBathOutputStatics {
     public static String[] getPrecambrianCleanedFossilsStatics() {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockArkarua.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockArborea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBomakellia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBradgatia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBurykhia.block).toString(),
