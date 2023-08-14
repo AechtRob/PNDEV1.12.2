@@ -86,7 +86,7 @@ public class BlockSapling extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_lepidodendron_sapling");
+			setTranslationKey("pf_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
