@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -32,6 +35,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
@@ -62,7 +67,7 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemRope", BlockAtliStem.block);
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 	
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool TOPSHOOT = PropertyBool.create("topshoot");
@@ -77,6 +82,12 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(TOPSHOOT, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ATLI;
 		}
 
 		@Override

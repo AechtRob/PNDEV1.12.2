@@ -2,9 +2,12 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -211,7 +214,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends SeedSporeReedBase {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
 
 		public static final PropertyBool BASE = PropertyBool.create("base");
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
@@ -225,6 +228,12 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_reticulopteris");
 			setRegistryName("reticulopteris");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(BASE, false).withProperty(AGE, Integer.valueOf(0)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_RETICULOPTERIS;
 		}
 
 		@Override

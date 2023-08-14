@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.SoundType;
@@ -76,7 +79,7 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemMossForStone", BlockActinidea.block);
 	}
 
-	public static class BlockCustom extends BlockVine {
+	public static class BlockCustom extends BlockVine implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
@@ -85,6 +88,13 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
         	setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
 		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ACTINIDEA;
+		}
+
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {

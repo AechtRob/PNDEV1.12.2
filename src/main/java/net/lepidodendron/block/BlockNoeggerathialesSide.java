@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -32,6 +35,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -58,7 +62,7 @@ public class BlockNoeggerathialesSide extends ElementsLepidodendronMod.ModElemen
 
 	public static final PropertyInteger SIDE = PropertyInteger.create("side", 0, 7);
 	
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_noeggerathiales_shoot_side");
@@ -69,6 +73,12 @@ public class BlockNoeggerathialesSide extends ElementsLepidodendronMod.ModElemen
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(SIDE, 0).withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NOEGGERATHIALES;
 		}
 
 		@Override

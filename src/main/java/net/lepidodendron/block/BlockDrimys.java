@@ -4,9 +4,12 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemDrimysFlower;
 import net.lepidodendron.item.ItemDrimysSeeds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockLeaves;
@@ -81,7 +84,7 @@ public class BlockDrimys extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockDrimys.block);
 	}
 
-	public static class BlockCustom extends BlockBush {
+	public static class BlockCustom extends BlockBush implements IAdvancementGranter {
 
 		public static final PropertyBool FLOWERS = PropertyBool.create("flowers");
 
@@ -95,6 +98,12 @@ public class BlockDrimys extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FLOWERS, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_DRIMYS;
 		}
 
 		@Override

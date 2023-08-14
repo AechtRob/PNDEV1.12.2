@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -22,6 +25,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -44,7 +48,7 @@ public class BlockEremopterisTop extends ElementsLepidodendronMod.ModElement {
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:eremopteris_top", "inventory"));
 	//}
-	public static class BlockCustomFlower extends SeedSporeReedBase {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(null);
@@ -53,6 +57,12 @@ public class BlockEremopterisTop extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_eremopteris_top");
 			setRegistryName("eremopteris_top");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_EREMOPTERIS;
 		}
 
 		@Override

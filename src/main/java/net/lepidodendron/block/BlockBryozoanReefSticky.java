@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -34,6 +37,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -65,7 +69,7 @@ public class BlockBryozoanReefSticky extends ElementsLepidodendronMod.ModElement
 				new ModelResourceLocation("lepidodendron:bryozoan_reef_sticky", "inventory"));
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.CORAL);
@@ -77,6 +81,12 @@ public class BlockBryozoanReefSticky extends ElementsLepidodendronMod.ModElement
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_REEF_BRYOZOAN;
 		}
 
 		@SideOnly(Side.CLIENT)

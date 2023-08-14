@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemBaragwanathiaItem;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -62,7 +65,7 @@ public class BlockBaragwanathia extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:baragwanathia", "inventory"));
 	//}
 
-	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable {
+	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -79,6 +82,12 @@ public class BlockBaragwanathia extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_baragwanathia");
 			setRegistryName("baragwanathia");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BARAGWANATHIA;
 		}
 
 		@Override

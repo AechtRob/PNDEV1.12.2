@@ -43,6 +43,15 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ALLONNIA = new CustomTrigger("pf_book_allonnia");
     public static final CustomTrigger CLICK_ALPIA = new CustomTrigger("pf_book_alpia");
     public static final CustomTrigger CLICK_AMBLYSIPHONELLA = new CustomTrigger("pf_book_amblysiphonella");
+    public static final CustomTrigger CLICK_REEF_BRYOZOAN = new CustomTrigger("pf_book_reef_bryozoan");
+    public static final CustomTrigger CLICK_REEF_CORAL = new CustomTrigger("pf_book_reef_bryozoan");
+    public static final CustomTrigger CLICK_REEF_ALGAL = new CustomTrigger("pf_book_reef_algal");
+    public static final CustomTrigger CLICK_REEF_SHELLY = new CustomTrigger("pf_book_reef_shelly");
+    public static final CustomTrigger CLICK_REEF_SPONGE = new CustomTrigger("pf_book_reef_sponge");
+    public static final CustomTrigger CLICK_REEF_STROMATOPOROIDEA = new CustomTrigger("pf_book_reef_stromatoporoidea");
+    public static final CustomTrigger CLICK_REEF_DEAD = new CustomTrigger("pf_book_reef_dead");
+    public static final CustomTrigger CLICK_REEF_ARCHAEOCYATHEA = new CustomTrigger("pf_book_reef_archaeocyatha");
+    public static final CustomTrigger CLICK_REEF_GLASS_SPONGE = new CustomTrigger("pf_book_reef_glass_sponge");
     public static final CustomTrigger CLICK_ANEUROPHYTON = new CustomTrigger("pf_book_aneurophyton");
     public static final CustomTrigger CLICK_ANKYROPTERIS = new CustomTrigger("pf_book_ankyropteris");
     public static final CustomTrigger CLICK_ANOMOZAMITES = new CustomTrigger("pf_book_anomozamites");
@@ -53,6 +62,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
+    public static final CustomTrigger CLICK_ALGAE = new CustomTrigger("pf_book_algae");
+    public static final CustomTrigger CLICK_KELP = new CustomTrigger("pf_book_kelp");
     public static final CustomTrigger CLICK_ZINGIBEROPSIS = new CustomTrigger("pf_book_zingiberopsis");
     public static final CustomTrigger CLICK_GANSUFRUCTUS = new CustomTrigger("pf_book_gansufructus");
     public static final CustomTrigger CLICK_CHLORANTHUS = new CustomTrigger("pf_book_chloranthus");
@@ -141,6 +152,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CHAUNOGRAPTUS = new CustomTrigger("pf_book_chaunograptus");
     public static final CustomTrigger CLICK_CINNAMON_FERN = new CustomTrigger("pf_book_cinnamon_fern");
     public static final CustomTrigger CLICK_CLADOPHLEBIS = new CustomTrigger("pf_book_cladophlebis");
+    public static final CustomTrigger CLICK_LICHEN = new CustomTrigger("pf_book_lichen");
     public static final CustomTrigger CLICK_CLATHROPTERIS = new CustomTrigger("pf_book_clathropteris");
     public static final CustomTrigger CLICK_CLAYTOSMUNDA = new CustomTrigger("pf_book_claytosmunda");
     public static final CustomTrigger CLICK_CLOUDINA = new CustomTrigger("pf_book_cloudina");
@@ -1315,6 +1327,15 @@ public class ModTriggers
             CLICK_ALPIA,
             CLICK_AMBLYSIPHONELLA,
             CLICK_ANEUROPHYTON,
+            CLICK_REEF_ALGAL,
+            CLICK_REEF_SPONGE,
+            CLICK_REEF_STROMATOPOROIDEA,
+            CLICK_REEF_DEAD,
+            CLICK_REEF_BRYOZOAN,
+            CLICK_REEF_ARCHAEOCYATHEA,
+            CLICK_REEF_GLASS_SPONGE,
+            CLICK_REEF_CORAL,
+            CLICK_REEF_SHELLY,
             CLICK_ANKYROPTERIS,
             CLICK_ANOMOZAMITES,
             CLICK_ANTARCTICYCAS,
@@ -1323,7 +1344,9 @@ public class ModTriggers
             CLICK_BISONIA,
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
+            CLICK_ALGAE,
             CLICK_DAISY,
+            CLICK_KELP,
             CLICK_ZINGIBEROPSIS,
             CLICK_GANSUFRUCTUS,
             CLICK_CHLORANTHUS,
@@ -1412,6 +1435,7 @@ public class ModTriggers
             CLICK_CINNAMON_FERN,
             CLICK_CLADOPHLEBIS,
             CLICK_CLATHROPTERIS,
+            CLICK_LICHEN,
             CLICK_CLAYTOSMUNDA,
             CLICK_CLOUDINA,
             CLICK_COBBANIA,

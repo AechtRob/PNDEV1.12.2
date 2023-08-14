@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemNypaFruit;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -32,6 +35,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -58,7 +62,7 @@ public class BlockNypaShoot extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyBool VAR = PropertyBool.create("var");
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_nypa_shoot_worldgen");
@@ -69,6 +73,12 @@ public class BlockNypaShoot extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(VAR, false).withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NYPA;
 		}
 
 		@Override

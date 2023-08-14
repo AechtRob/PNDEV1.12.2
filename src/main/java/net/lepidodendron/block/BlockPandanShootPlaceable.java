@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -34,6 +37,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockPandanShootPlaceable extends ElementsLepidodendronMod.ModElement {
@@ -66,7 +71,7 @@ public class BlockPandanShootPlaceable extends ElementsLepidodendronMod.ModEleme
 		OreDictionary.registerOre("treeLeaves", BlockPandanShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_pandan_shoot");
@@ -77,6 +82,12 @@ public class BlockPandanShootPlaceable extends ElementsLepidodendronMod.ModEleme
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PANDAN;
 		}
 
 		@Override

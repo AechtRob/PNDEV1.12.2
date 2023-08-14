@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypeSilurian;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
@@ -178,7 +181,7 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
 		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidScyphocrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 		private static int crinoidheight;
@@ -196,6 +199,12 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
         	this.setTickRandomly(true);
 			setTranslationKey("pf_crinoid_scyphocrinus");
 			setRegistryName("crinoid_scyphocrinus");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CRINOID_SCYPHOCRINUS;
 		}
 
 		@Override

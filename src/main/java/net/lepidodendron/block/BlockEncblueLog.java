@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -59,11 +62,11 @@ public class BlockEncblueLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("plantdnaPNlepidodendron:encblue_sapling", BlockEncblueLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:encblue_sapling", BlockEncblueLog.block);
 		OreDictionary.registerOre("logWood", BlockEncblueLog.block);
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
     public static final PropertyBool EAST = PropertyBool.create("east");
@@ -86,7 +89,11 @@ public class BlockEncblueLog extends ElementsLepidodendronMod.ModElement {
         	this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(UP, Boolean.valueOf(false)).withProperty(DOWN, Boolean.valueOf(false)).withProperty(LEAVES, Boolean.valueOf(false)));
 		}
 
-
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ENCBLUE;
+		}
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {

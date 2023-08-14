@@ -42,6 +42,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -303,6 +304,12 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_inoceramus");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_INOCERAMUS;
 		}
 
 		@Override

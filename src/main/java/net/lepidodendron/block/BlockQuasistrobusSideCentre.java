@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -58,7 +61,7 @@ public class BlockQuasistrobusSideCentre extends ElementsLepidodendronMod.ModEle
 	
 	public static final PropertyInteger SIDE = PropertyInteger.create("side", 0, 7);
 	
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_quasistrobus_side_centre");
@@ -69,6 +72,12 @@ public class BlockQuasistrobusSideCentre extends ElementsLepidodendronMod.ModEle
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(SIDE, 0).withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_QUASISTROBUS;
 		}
 
 		@Override

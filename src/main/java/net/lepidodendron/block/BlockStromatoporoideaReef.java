@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockFalling;
@@ -36,6 +39,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -67,7 +71,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 				new ModelResourceLocation("lepidodendron:stromatoporoidea_reef", "inventory"));
 	}
 
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.CORAL);
@@ -79,6 +83,12 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_REEF_STROMATOPOROIDEA;
 		}
 
 		@Override

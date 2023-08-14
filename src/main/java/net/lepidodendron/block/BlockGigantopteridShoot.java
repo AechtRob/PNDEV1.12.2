@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -62,7 +65,7 @@ public class BlockGigantopteridShoot extends ElementsLepidodendronMod.ModElement
 	public static final PropertyBool STEM = PropertyBool.create("stem");
     public static final PropertyBool TOP = PropertyBool.create("top");
     
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_gigantopterid_shoot_worldgen");
@@ -73,6 +76,12 @@ public class BlockGigantopteridShoot extends ElementsLepidodendronMod.ModElement
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(STEM, false).withProperty(TOP, false).withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GIGANTOPTERID;
 		}
 
 		@Override

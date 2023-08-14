@@ -5,6 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -58,7 +61,7 @@ public class BlockPsilophytonStem extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:psilophyton_stem", "inventory"));
 	}
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -75,6 +78,12 @@ public class BlockPsilophytonStem extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_psilophyton_stem");
 			setRegistryName("psilophyton_stem");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PSILOPHYTON;
 		}
 
 		@Override

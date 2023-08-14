@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -220,7 +223,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 		}
 	}
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 	
@@ -236,6 +239,12 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
         	this.setTickRandomly(true);
 			setTranslationKey("pf_algae_brown_ascending");
 			setRegistryName("algae_brown_ascending");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 	
 		

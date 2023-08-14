@@ -5,10 +5,13 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemPrimaevalGrassSeeds;
 import net.lepidodendron.item.ItemPrimevalGrassItem;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -57,7 +60,7 @@ public class BlockPrimevalGrassLand extends ElementsLepidodendronMod.ModElement 
 	//			new ModelResourceLocation("lepidodendron:primeval_grass_land", "inventory"));
 	//}
 	
-	public static class BlockCustom extends BlockBush implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends BlockBush implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -74,6 +77,12 @@ public class BlockPrimevalGrassLand extends ElementsLepidodendronMod.ModElement 
 			}
 			setTranslationKey("pf_primaeval_grass_land");
 			setRegistryName("primaeval_grass_land");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PRIMAEVAL_GRASS;
 		}
 
 		@Override

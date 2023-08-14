@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.ReefGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -45,6 +48,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -147,7 +151,7 @@ public class BlockCoral extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.CORAL);
@@ -159,6 +163,12 @@ public class BlockCoral extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_REEF_CORAL;
 		}
 
 		@Override

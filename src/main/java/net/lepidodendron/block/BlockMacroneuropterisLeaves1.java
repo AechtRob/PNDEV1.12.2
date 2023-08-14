@@ -4,31 +4,30 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockLeavesPF;
 import net.lepidodendron.procedure.ProcedureTreeLeaf;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockMacroneuropterisLeaves1 extends ElementsLepidodendronMod.ModElement {
@@ -51,7 +50,7 @@ public class BlockMacroneuropterisLeaves1 extends ElementsLepidodendronMod.ModEl
 		//		new ModelResourceLocation("lepidodendron:macroneuropteris_leaves_1", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_macroneuropteris_leaves_1");
@@ -64,9 +63,10 @@ public class BlockMacroneuropterisLeaves1 extends ElementsLepidodendronMod.ModEl
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 		}
 
+		@Nullable
 		@Override
-		public BlockPlanks.EnumType getWoodType(int meta) {
-			return null;
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MACRONEUROPTERIS;
 		}
 
 		@Override
@@ -75,58 +75,19 @@ public class BlockMacroneuropterisLeaves1 extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		protected ItemStack getSilkTouchDrop(IBlockState state) {
-			return new ItemStack(BlockMacroneuropterisLeaves.block, 1);
+		protected boolean canSilkHarvest()
+		{
+			return true;
+		}
+
+		@Override
+		public ItemStack getSilkTouchDrop(IBlockState state)  {
+			return new ItemStack(BlockMacroneuropterisLeaves.block, (int) (1));
 		}
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 			return new ItemStack(BlockMacroneuropterisLeaves.block, (int) (1));
-		}
-
-		@Override
-		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE});
-		}
-
-		public IBlockState getStateFromMeta(int meta) {
-			return this.getDefaultState().withProperty(DECAYABLE, (meta & 1) != 0).withProperty(CHECK_DECAY, (meta & 2) != 0);
-		}
-
-		public int getMetaFromState(IBlockState state) {
-			int i = 0;
-			if (!(Boolean) state.getValue(DECAYABLE))
-				i |= 1;
-			if ((Boolean) state.getValue(CHECK_DECAY))
-				i |= 2;
-			return i;
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-    public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-
-		@Override
-		public boolean isOpaqueCube(IBlockState state) {
-			return false;
-		}
-
-		@Override
-		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
-		}
-
-		@Override
-		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 30;
-		}
-
-		@Override
-		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.FOLIAGE;
 		}
 
 		@Override
@@ -206,13 +167,6 @@ public class BlockMacroneuropterisLeaves1 extends ElementsLepidodendronMod.ModEl
 	            }
 	        }
 		}
-
-		@Override
-		@SideOnly(Side.CLIENT)
-	    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-	    {
-	    	return true;
-	    }
 
 	}
 }

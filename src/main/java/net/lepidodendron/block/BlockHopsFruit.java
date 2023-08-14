@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemHopsFruit;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.SoundType;
@@ -50,13 +53,19 @@ public class BlockHopsFruit extends ElementsLepidodendronMod.ModElement {
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
 
-	public static class BlockCustom extends BlockVine {
+	public static class BlockCustom extends BlockVine implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
 			setTranslationKey("pf_hops_fruit");
 			setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         	setTickRandomly(true);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_HOPS;
 		}
 
 		@Override

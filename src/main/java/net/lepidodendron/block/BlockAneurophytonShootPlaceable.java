@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -35,6 +38,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAneurophytonShootPlaceable extends ElementsLepidodendronMod.ModElement {
@@ -67,7 +72,7 @@ public class BlockAneurophytonShootPlaceable extends ElementsLepidodendronMod.Mo
 		OreDictionary.registerOre("plant", BlockAneurophytonShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_aneurophyton_shoot");
@@ -78,6 +83,12 @@ public class BlockAneurophytonShootPlaceable extends ElementsLepidodendronMod.Mo
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ANEUROPHYTON;
 		}
 
 		@Override

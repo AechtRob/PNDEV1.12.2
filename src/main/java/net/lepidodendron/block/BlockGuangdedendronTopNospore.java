@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -22,6 +25,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -44,7 +48,7 @@ public class BlockGuangdedendronTopNospore extends ElementsLepidodendronMod.ModE
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:guangdedendron_shoot_nospore", "inventory"));
 	//}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(null);
@@ -53,6 +57,12 @@ public class BlockGuangdedendronTopNospore extends ElementsLepidodendronMod.ModE
 			setLightLevel(0F);
 			setTranslationKey("pf_guangdedendron_shoot_nospore");
 			setRegistryName("guangdedendron_shoot_nospore");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GUANGDEDENDRON;
 		}
 
 		@Override

@@ -2,9 +2,12 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemEquisetitesReedItem;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -219,7 +222,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 	
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
@@ -228,6 +231,12 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_equisetites_reed");
 			setRegistryName("equisetites_reed");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_EQUISETITES_REED;
 		}
 
 		@Override

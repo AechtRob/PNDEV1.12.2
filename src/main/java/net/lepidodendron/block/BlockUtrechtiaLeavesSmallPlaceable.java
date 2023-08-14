@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemUtrechtiaFruit;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
@@ -30,6 +33,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockUtrechtiaLeavesSmallPlaceable extends ElementsLepidodendronMod.ModElement {
@@ -62,7 +67,7 @@ public class BlockUtrechtiaLeavesSmallPlaceable extends ElementsLepidodendronMod
 		OreDictionary.registerOre("treeLeaves", BlockUtrechtiaLeavesSmallPlaceable.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			//super(Material.PLANTS);
@@ -75,6 +80,12 @@ public class BlockUtrechtiaLeavesSmallPlaceable extends ElementsLepidodendronMod
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false).withProperty(FACING, EnumFacing.NORTH));
 			//setTickRandomly(true);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_UTRECHTIA;
 		}
 
 		@Override
