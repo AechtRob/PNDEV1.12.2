@@ -379,19 +379,31 @@ public class ModelPanacanthocaris extends AdvancedModelBase {
         //this.head.render(f5 * 0.25F);
         this.Body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Body.rotateAngleY = (float) Math.toRadians(90);
-        this.Body.offsetX = -0.F;
-        this.Body.offsetY = -0F;
-        this.Body.offsetZ = 0.0F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.08F, 0.0F, 0.3F);
+        this.setRotateAngle(thorax1, 0.2F, 0.1F, 0.1F);
+        this.setRotateAngle(thorax2, 0.2F, 0.2F, 0.1F);
+        this.setRotateAngle(thorax3, 0.2F, -0.2F, 0.1F);
+        this.setRotateAngle(abdomen, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(telson, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(uropodL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(uropodR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(antennaR, 0.0F, 0.1F, -0.4F);
+        this.setRotateAngle(bone, 0.0F, 0.1F, 0.4F);
+        this.Body.offsetY = -0.14F;
         this.Body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(90);
+        this.Body.rotateAngleZ = (float) Math.toRadians(180);
+        this.setRotateAngle(antennaR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetY = -0.25F;
+        this.Body.offsetX = -0.02F;
+        this.Body.offsetZ = -0.02F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

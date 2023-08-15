@@ -372,9 +372,13 @@ public class ModelEocarcinus extends AdvancedModelBase {
     }
     
     public void renderStaticFloor(float f) {
-
-        this.body.offsetZ = -0.04F;
-        this.body.offsetY = 0.09F;
+        this.setRotateAngle(clawR, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(clawR2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(clawR3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL3, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = 0.12F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
