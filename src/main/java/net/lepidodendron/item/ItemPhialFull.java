@@ -317,6 +317,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			string = string.replace("lepidodendron:amphibian_spawn_", "");
 			string = string.replace("lepidodendron:eurypterid_eggs_", "");
 			string = string.replace("lepidodendron:insect_eggs_", "");
+			string = string.replace("_item", "");
 			return string;
 		}
 
