@@ -309,8 +309,12 @@ public class ModelCenoceras extends AdvancedModelBaseExtended {
         this.shell.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.shell.rotateAngleY = (float) Math.toRadians(90);
-        this.shell.offsetY = -0.45F;
+        this.shell.offsetY = -0.2F;
+        this.shell.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.shell.offsetY = 0.1F;
         this.shell.render(0.01F);
         resetToDefaultPose();
     }

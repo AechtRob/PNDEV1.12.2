@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderDollocaris;
+import net.lepidodendron.entity.render.entity.RenderOstenocaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -182,22 +183,22 @@ public class EntityPrehistoricFloraOstenocaris extends EntityPrehistoricFloraFis
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.4;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return -0.3;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.55;
@@ -219,14 +220,14 @@ public class EntityPrehistoricFloraOstenocaris extends EntityPrehistoricFloraFis
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderDollocaris.TEXTURE;
+		return RenderOstenocaris.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelDollocaris;
+		return RenderDisplays.modelOstenocaris;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderDollocaris.getScaler();
+		return RenderOstenocaris.getScaler();
 	}
 
 }

@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.render.entity.RenderEocarcinus;
 import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -165,13 +166,13 @@ public class EntityPrehistoricFloraEocarcinus extends EntityPrehistoricFloraTril
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.8;}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
@@ -196,14 +197,14 @@ public class EntityPrehistoricFloraEocarcinus extends EntityPrehistoricFloraTril
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderEryon.TEXTURE;
+		return RenderEocarcinus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelEryon;
+		return RenderDisplays.modelEocarcinus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderEryon.getScaler();
+		return RenderEocarcinus.getScaler();
 	}
 
 }
