@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderBundenbachiellus;
+import net.lepidodendron.entity.render.entity.RenderPanacanthocaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -187,7 +188,7 @@ public class EntityPrehistoricFloraPanacanthocaris extends EntityPrehistoricFlor
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.36;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -196,21 +197,21 @@ public class EntityPrehistoricFloraPanacanthocaris extends EntityPrehistoricFlor
 		return -0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderBundenbachiellus.TEXTURE;
+		return RenderPanacanthocaris.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelBundenbachiellus;
+		return RenderDisplays.modelPanacanthocaris;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderBundenbachiellus.getScaler();
+		return RenderPanacanthocaris.getScaler();
 	}
 
 }
