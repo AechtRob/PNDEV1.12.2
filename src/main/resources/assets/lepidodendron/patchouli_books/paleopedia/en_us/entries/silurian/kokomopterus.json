@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kokomopterus",
 			"title": "Kokomopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Reef$(br2)>Eurypterida$(br)>Kokomopteroidea$(br)>Kokomopteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Eurypterida$(br)>Kokomopteroidea$(br)>Kokomopteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kokomopterus is a eurypterid from Indiana, named for the city of Kokomo. Like stylonurids, it lacked the paddle shaped appendages and instead had pointed appendages, better suited for walking than swimming. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kokomopterus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kokomopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kokomopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kokomopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kokomopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kokomopterus"
 		}
 	]
 }

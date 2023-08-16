@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_caviramus",
 			"title": "Caviramus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Canyons, Beaches$(br2)>Pterosauria$(br)>Caviramidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pterosauria$(br)>Caviramidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Caviramus schesaplanensis was a basal pterosaur native to what is now the Swiss Alps. It was easily identifiable by the tall, thin bony crest on its head, and unusual teeth that may have allowed it to chew. Its diet is thought to have been either generalist or maybe even herbivorous."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_caviramus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caviramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caviramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caviramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caviramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caviramus"
 		}
 	]
 }

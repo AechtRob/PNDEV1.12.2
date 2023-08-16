@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_postosuchus",
 			"title": "Postosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Volcanic Hills$(br2)>Pseudosuchia$(br)>Rauisuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Rauisuchidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Postosuchus was a genus of large rauisuchid archosaur that lived during the Late Triassic in what is now the USA. This huge carnivore was most likely the apex predator of its ecosystem, perhaps feeding on herbivores such as Trilophosaurus and Typothorax. Once thought to be a quadruped, Postosuchus is now thought to have been bipedal. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_postosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_postosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_postosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_postosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_postosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_postosuchus"
 		}
 	]
 }

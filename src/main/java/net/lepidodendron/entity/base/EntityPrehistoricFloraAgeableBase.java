@@ -92,7 +92,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
         this.enablePersistence();
-        this.setScaleForAge(false);
+        if (worldIn != null) {
+            this.setScaleForAge(false);
+        }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());

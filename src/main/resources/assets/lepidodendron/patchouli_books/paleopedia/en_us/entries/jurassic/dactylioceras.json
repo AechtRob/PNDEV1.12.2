@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"title": "Dactylioceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Ammonitida$(br)>Dactylioceratidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Ammonitida$(br)>Dactylioceratidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Due to their abundance and ease of collection, the existence of these fossil shells was widely known even in ancient times, an example of which seen in medieval Yorkshire, where the people of Whitby used to carve faces onto the shells of these cephalopods, believing them to be snakes petrified by Saint Hilda."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_dactylioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_dactylioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_dactylioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_dactylioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_dactylioceras"
 		}
 	]
 }

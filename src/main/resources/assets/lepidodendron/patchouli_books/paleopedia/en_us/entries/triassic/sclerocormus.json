@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sclerocormus",
 			"title": "Sclerocormus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
 		},
 		{
 			"type": "image",
@@ -26,6 +26,26 @@
 			"advancement": "lepidodendron:pf_adv_book_sclerocormus",
 			"type": "text",
 			"text": "The really early appearance of this animal in the fossil record (248 million years ago), only around 4 million years after the end Permian mass extinction event, is testament to the quick recovery of life in the earliest Triassic and the incredible evolutionary radiation of the times. $(br)>$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sclerocormus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sclerocormus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sclerocormus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sclerocormus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sclerocormus"
 		}
 	]
 }

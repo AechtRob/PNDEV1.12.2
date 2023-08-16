@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_shonisaurus",
 			"title": "Shonisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Ichthyosauria$(br)>Shastasauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Ichthyosauria$(br)>Shastasauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Shonisaurus was a genus of predatory shastasaurid ichthyosaur that lived during the Late Triassic in what is now Nevada, USA. Its name means \"lizard from the Shoshone Mountains\", where its fossils were found. The fossils are thought to have been preserved in oxygen-poor deep sea sediments. Measuring 13 - 15 metres long and weighing a whopping 16-30 metric tons, Shonisaurus was not only one of the largest ichthyosaurs and one of the largest marine reptiles, its immense length and bulk even put its size on par with that of many of the larger modern whales!"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_shonisaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shonisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shonisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shonisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shonisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shonisaurus"
 		}
 	]
 }

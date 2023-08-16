@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dasyceps",
 			"title": "Dasyceps",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest, Wetlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dasyceps is a zatracheidid temnospondyl from the Early Permian period. It was the largest of the zatracheidids and they had a crested and flat head with large flat bodies and a short tail. It was a carnivore and would likely have hunted fish and invertebrates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dasyceps",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dasyceps"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dasyceps"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dasyceps"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dasyceps"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dasyceps"
 		}
 	]
 }

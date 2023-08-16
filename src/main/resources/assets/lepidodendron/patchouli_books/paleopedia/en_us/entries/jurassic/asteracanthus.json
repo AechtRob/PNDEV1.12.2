@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_asteracanthus",
 			"title": "Asteracanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() N/A$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Asteracanthus is hybodont shark from the Jurassic to Cretaceous, with some dubious records from earlier periods. Even though it was about 3m, it is known from a very well-preserved mostly complete specimen from Solnhofen. Its teeth suggest a durophagous diet, consisting of hard-shelled animals, and it probably had a benthic ecology."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_asteracanthus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_asteracanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_asteracanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_asteracanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_asteracanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_asteracanthus"
 		}
 	]
 }

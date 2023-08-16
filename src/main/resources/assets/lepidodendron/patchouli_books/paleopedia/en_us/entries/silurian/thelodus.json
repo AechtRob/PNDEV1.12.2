@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thelodus",
 			"title": "Thelodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean, Lagoon$(br2)>Thelodonti$(br)>Thelodontiformes$(br)>Coelolepidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Thelodonti$(br)>Thelodontiformes$(br)>Coelolepidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Thelodus is a flat jawless fish from the Silurian period. Thelodus is known mainly from scales and impressions in rocks. It could have been up to a meter in length and they probably fed by sucking in prey with their mouths. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_thelodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thelodus"
 		}
 	]
 }

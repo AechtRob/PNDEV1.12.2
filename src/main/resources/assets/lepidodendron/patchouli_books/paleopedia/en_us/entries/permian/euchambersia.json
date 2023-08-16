@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_euchambersia",
 			"title": "Euchambersia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest, Aridlands$(br2)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Euchambersia is a carnivorous therapsid from the Permian period. It has been proposed that Euchambersia may have the means to produce and deliver venom with its bite. It may have used the venom to help it in injuring and immobilizing prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_euchambersia",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_euchambersia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_euchambersia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_euchambersia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_euchambersia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_euchambersia"
 		}
 	]
 }

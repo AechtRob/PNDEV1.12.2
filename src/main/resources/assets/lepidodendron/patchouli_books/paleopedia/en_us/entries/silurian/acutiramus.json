@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acutiramus",
 			"title": "Acutiramus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() (S)Ocean, Lagoon, (D)Ocean$(br2)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Acutiramus is a giant predatory eurypterid that first appeared in the late Silurian period, surviving into the early Devonian. Its name comes from the Latin acuto(sharp) and ramus(branch) referring to the acute angle of the final tooth of the claws relative to the rest of the claw. Acutiramus grew to over 2 meters and probably had low visual acuity and claws for slicing rather than shearing. It may have been an ambush predator or a scavenger."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_acutiramus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acutiramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acutiramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acutiramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acutiramus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acutiramus"
 		}
 	]
 }

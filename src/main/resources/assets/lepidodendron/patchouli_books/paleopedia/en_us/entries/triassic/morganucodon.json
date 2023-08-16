@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_morganucodon",
 			"title": "Morganucodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Forest$(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Morganucodon is an early mammaliaform that lived from the Late Triassic to Jurassic periods. it resembled a rat in appearance but unlike other early mammaliaforms, Morganucodon was found to be more well preserved and abundant. Morganucodon was likely a nocturnal burrower, spending the day inside its burrow to avoid the larger dinosaurs that it coexisted with in the Jurassic."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_morganucodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_morganucodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_morganucodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_morganucodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_morganucodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_morganucodon"
 		}
 	]
 }

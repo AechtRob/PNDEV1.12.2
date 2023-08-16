@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trimerus",
 			"title": "Trimerus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Homalonotidae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Trilobita$(br)>Phacopida$(br)>Homalonotidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Trimerus is a small trilobite from the Silurian to Devonian periods. Its body had many little segments and it was a benthic feeder."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_trimerus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trimerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trimerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trimerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trimerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trimerus"
 		}
 	]
 }

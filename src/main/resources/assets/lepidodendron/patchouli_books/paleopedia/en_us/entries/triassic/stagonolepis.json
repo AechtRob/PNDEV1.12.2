@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stagonolepis",
 			"title": "Stagonolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Desert Dunes, Canyons$(br2)>Pseudosuchia$(br)>Aetosauria$(br)>Stagonolepididae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Aetosauria$(br)>Stagonolepididae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "The long body of Stagonolepis is characteristic of herbivorous Aetosaurians, developed to house the large intestines needed for it to digest plant fibers. Of the two currently recognized species, only one is of moderately recent description (2010), while the other was described in 1844 by Louis Agassiz, one of the biggest names in the field at the time."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stagonolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stagonolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stagonolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stagonolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stagonolepis"
 		}
 	]
 }

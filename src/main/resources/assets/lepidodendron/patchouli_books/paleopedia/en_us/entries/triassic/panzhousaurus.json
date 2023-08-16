@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panzhousaurus",
 			"title": "Panzhousaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Sauropterygia$(br)>Nothosauroidea$(br)>Pachypleurosauria"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropterygia$(br)>Nothosauroidea$(br)>Pachypleurosauria"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "name was coined, the specimen was confirmed adult in age by the fusion of its upper skull bones. Phylogenetic analyses on this animal elucidated its position among sauropterygians, confirming its close relation with Pachypleurosaur-like forms already known and expanding our knowledge on the placement and relationships of known sauropterygians. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_panzhousaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_panzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_panzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_panzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_panzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_panzhousaurus"
 		}
 	]
 }

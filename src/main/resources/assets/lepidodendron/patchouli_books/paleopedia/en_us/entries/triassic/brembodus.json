@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brembodus",
 			"title": "Brembodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Brembodonidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Brembodonidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Brembodus was one of the first pycnodonts, a group of durophagous animals characteristic of most of the Mesozoic and the beginning of the Cenozoic. Brembodus lived around cliff sides and rocks, slowly swimming while foraging for food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_brembodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brembodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brembodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brembodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brembodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brembodus"
 		}
 	]
 }

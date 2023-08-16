@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"title": "Titanites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Ammonitida"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Ammonitida"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Although the reason for why Titanites grew so large are still not entirely understood, to swim freely, this large sized predator would've needed at the very least 2 or 3 meters of water depth and thus moderately deep waters."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_titanites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_titanites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_titanites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_titanites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_titanites"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arduafrons",
 			"title": "Arduafrons",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Like usual for fossils coming from that area, the remains of Arduafrons were particularly well preserved and allowed researchers to observe this bizarre animal in detail. Arduafrons was strangely enough a particularly archaic member among Pycnodontiformes despite it's late appearance in the fossil record, with some papers placing it close to Gyrodus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_arduafrons",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arduafrons"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arduafrons"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arduafrons"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arduafrons"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arduafrons"
 		}
 	]
 }

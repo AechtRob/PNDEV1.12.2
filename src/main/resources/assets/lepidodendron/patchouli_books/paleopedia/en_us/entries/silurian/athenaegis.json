@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_athenaegis",
 			"title": "Athenaegis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Pteraspidomorphi $(br)>Heterostraci $(br)>Tolypelepidida $(br)>Tolypelepididae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Pteraspidomorphi $(br)>Heterostraci $(br)>Tolypelepidida $(br)>Tolypelepididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Athenaegis was a genus of pteraspidomorph jawless fish that lived during the Early Silurian (around 443 - 433 million years ago). Its remains were found at Avalanche Lake near the Mackenzie Mountains in Canada's Northwest Territories, in lithified shales."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_athenaegis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_athenaegis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_athenaegis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_athenaegis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_athenaegis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_athenaegis"
 		}
 	]
 }

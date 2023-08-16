@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_besanosaurus",
 			"title": "Besanosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Sauropsida$(br)>Ichthyopterygia$(br)>Merriamosauria$(br)>Besanosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropsida$(br)>Ichthyopterygia$(br)>Merriamosauria$(br)>Besanosauridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "The animal was first described by Dal Sasso and Pinna in 1996, based on an almost complete specimen recovered three years prior in the Sasso Caldo quarry by volunteers. The skeleton required around 22 months to prepare and 145 radiographs to pinpoint inside the stone matrix it was embedded in. Today the animal is known from several specimens, some more complete than others, ranging from just 1 m to an estimated 8 m in length."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_besanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_besanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_besanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_besanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_besanosaurus"
 		}
 	]
 }

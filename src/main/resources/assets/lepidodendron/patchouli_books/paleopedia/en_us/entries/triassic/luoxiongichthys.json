@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_luoxiongichthys",
 			"title": "Luoxiongichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Halecomorphi"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Halecomorphi"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "While the shape of the back wouldn’t have been problematic for the fish during locomotion, it would’ve required the animal constant adjustment while idling in the water to maintain vertical positioning.Luoxiongichthys inhabited Triassic reefs and cliff sides."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_luoxiongichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_luoxiongichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_luoxiongichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_luoxiongichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_luoxiongichthys"
 		}
 	]
 }

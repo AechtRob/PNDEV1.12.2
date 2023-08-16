@@ -48,7 +48,9 @@ public class Diet implements IComponentProcessor {
         }
         if (string.length > 0) {
             for (String element : string) {
-                result = result + "$(br)" + "$(li)" + I18n.translateToLocal("oredict." + element + ".name").trim();
+                if (!result.contains("$(li)" + I18n.translateToLocal("oredict." + element + ".name").trim())) {
+                    result = result + "$(br)" + "$(li)" + I18n.translateToLocal("oredict." + element + ".name").trim();
+                }
             }
         }
         else {

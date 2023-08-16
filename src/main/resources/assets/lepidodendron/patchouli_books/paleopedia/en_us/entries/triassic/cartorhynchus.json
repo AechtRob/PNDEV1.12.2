@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cartorhynchus",
 			"title": "Cartorhynchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Beaches$(br2)>Reptilia$(br)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "The poorly ossified bones of the hand and wrist suggest the animal had flipper-like flexible hands, allowing it to not only swim but drag itself on land as well, trait that eventually justified its scientific epithet 'lenticarpus' which translates to 'flexible wrist.'"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cartorhynchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cartorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cartorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cartorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cartorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cartorhynchus"
 		}
 	]
 }

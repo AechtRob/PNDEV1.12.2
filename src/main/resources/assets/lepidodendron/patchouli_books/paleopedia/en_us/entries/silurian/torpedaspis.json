@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_torpedaspis",
 			"title": "Torpedaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean$(br2)>Agnatha$(br)>Pteraspidomorphi$(br)>Cyathaspidiformes$(br)>Cyathaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Agnatha$(br)>Pteraspidomorphi$(br)>Cyathaspidiformes$(br)>Cyathaspidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Torpedaspis is a genus of jawless fish from the Silurian period. They had a distinct torpedo like body, hence their naming. They were most likely to be bottom dwelling animals and these fish could grow up around 30cm in length"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_torpedaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_torpedaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_torpedaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_torpedaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_torpedaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_torpedaspis"
 		}
 	]
 }

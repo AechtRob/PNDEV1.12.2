@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_elginia",
 			"title": "Elginia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Elginia is a small pareiasaurid from the late Permian period. it had many horns on its head and two longer horns at the top of its head. Elginia could grow up to a meter in length and it used its horns likely as a sort of defense against predators."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_elginia",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_elginia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_elginia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_elginia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_elginia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_elginia"
 		}
 	]
 }

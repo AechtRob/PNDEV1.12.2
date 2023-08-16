@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_platylomaspis",
 			"title": "Platylomaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Lagoon$(br2)>Galeaspida$(br)>Polybranchiaspidiformes$(br)>Gumuaspidida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Galeaspida$(br)>Polybranchiaspidiformes$(br)>Gumuaspidida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Platylomaspis is a galeaspid jawless fish with a weird looking head shield. Its head shield was spade shaped, and it had the opening on the top of its head like other galeaspids."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_platylomaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_platylomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_platylomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_platylomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_platylomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_platylomaspis"
 		}
 	]
 }

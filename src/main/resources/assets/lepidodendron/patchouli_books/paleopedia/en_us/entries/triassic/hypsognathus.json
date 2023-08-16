@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hypsognathus",
 			"title": "Hypsognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xerics$(br2)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Hypsognathus is a species of Procolophonid from the Triassic of North America. Late surviving member of its group, its small and short body would sit close to the ground where it could reach the tough vegetation it fed on. The strong and blunt teeth in his mouth would work perfectly to break down the fibers of the plants it preyed upon. The bony spikes at the sides of the head potentially acted as a defence mechanism against predators."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hypsognathus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hypsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hypsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hypsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hypsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hypsognathus"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rebellatrix",
 			"title": "Rebellatrix",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinistia$(br)>Rebellatricidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinistia$(br)>Rebellatricidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Rebellatrix divaricerca is an unusual species of Coelacanth. Characterized by its unique fork-tailed appearance, this animal was unique among its peers for being a fast swimming active animal, unseen in modern day Coelacanths. Paleontologically of importance for challenging the idea that Coelacanth fishes remained unchanged after the Carboniferous and helped to bring light to the diversity of these animals in a time when they were much more populous than today."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_rebellatrix",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rebellatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rebellatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rebellatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rebellatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rebellatrix"
 		}
 	]
 }

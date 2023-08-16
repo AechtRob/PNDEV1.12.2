@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_monograptus",
 			"title": "Monograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Graptolithina$(br)>Graptoloidea$(br)>Monograptidae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Graptolithina$(br)>Graptoloidea$(br)>Monograptidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Monograptus is a graptolite in the last stage of the graptoloid evolution before they became extinct in the Devonian. Monograptus spiralis was shaped like a spiral, hence the name. It likely floated around the oceans like some modern colonial organisms."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_monograptus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food(Unrealistic)$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_monograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_monograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_monograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_monograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_monograptus"
 		}
 	]
 }

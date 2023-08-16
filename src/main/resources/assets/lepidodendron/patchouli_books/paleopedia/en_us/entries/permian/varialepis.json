@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_varialepis",
 			"title": "Varialepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Varialepididae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Varialepididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Varialepis was a genus of small freshwater palaeoniscid fish from the Permian period. It was a carnivorous animal and would feed on smaller fish. Varialepis lad large eyes and a short body and may have swam in groups."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_varialepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_varialepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_varialepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_varialepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_varialepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_varialepis"
 		}
 	]
 }

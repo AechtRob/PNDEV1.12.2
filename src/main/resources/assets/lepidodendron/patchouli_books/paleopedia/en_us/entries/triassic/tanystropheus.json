@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tanystropheus",
 			"title": "Tanystropheus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Protorosauria$(br)>Tanystropheidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Protorosauria$(br)>Tanystropheidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "teeth, were perfectly adapted for snatching schooling fish. Recent studies on the animal have revealed that it would have swam by alternatively kicking the back legs, not too different from some types of turtles"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tanystropheus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tanystropheus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tanystropheus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tanystropheus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tanystropheus"
 		}
 	]
 }

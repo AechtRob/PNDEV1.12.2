@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lepidaster",
 			"title": "Lepidaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Echinodermata $(br)>Asteroidea $(br)>Lepidasteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Echinodermata $(br)>Asteroidea $(br)>Lepidasteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lepidaster is a Silurian echinoderm. It had many arms and looked similar to modern multi armed starfish. It is known from the Wenlock Formation of England. The discovery of Lepidaster revealed that Silurian starfish may have filled a similar range of trophic guilds as modern starfish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lepidaster",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lepidaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lepidaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lepidaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lepidaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lepidaster"
 		}
 	]
 }

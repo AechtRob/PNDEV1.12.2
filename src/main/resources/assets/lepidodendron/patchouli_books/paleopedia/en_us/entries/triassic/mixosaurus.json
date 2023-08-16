@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mixosaurus",
 			"title": "Mixosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Ichthyosauria$(br)>Mixosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Ichthyosauria$(br)>Mixosauridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "This changed in 2020 when two specimens (BES SC 1000 & BES SC 1001) were discovered in Besano, which preserved traces of soft tissue and allowed us to finally identify the origin of dorsal fins in Ichthyosaurs as more basal than once thought."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mixosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mixosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mixosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mixosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mixosaurus"
 		}
 	]
 }

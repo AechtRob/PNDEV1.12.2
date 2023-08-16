@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yunguisaurus",
 			"title": "Yunguisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Sauropterygia$(br)>Pistosauria"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Sauropterygia$(br)>Pistosauria"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Unlike Nothosaurus, which had still quite developed arms, Yunguisaurus had flattened paddle like flipper more closely associated with the Jurassic long necked marine reptiles."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yunguisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yunguisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yunguisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yunguisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yunguisaurus"
 		}
 	]
 }

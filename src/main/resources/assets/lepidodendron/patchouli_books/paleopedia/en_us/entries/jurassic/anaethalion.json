@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anaethalion",
 			"title": "Anaethalion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii $(br)>Elopiformes $(br)>Anaethalionidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Elopiformes $(br)>Anaethalionidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Anaethalion is considered today as one of the most basal among the Elopomorphs, the same group containing extant Elopiformes, Albuliformes, Anguilliformes, Saccopharyngiformes and Gonorynchiformes. Being contained in its own family alongside of close relatives like Eichstaettia, Anaethalion as a genus is now potentially considered paraphyletic and some of the species now under it might be renamed in the future."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_anaethalion",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
 		}
 	]
 }

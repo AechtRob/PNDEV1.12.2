@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eoraptor",
 			"title": "Eoraptor",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Moss Meadow$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Alongside its remains, other dinosaurian and non dinosaurian bones were found, although at the time dinosaurs were a minority in comparison to other tetrapods, only composing around 6% of the total fauna found in the digsite. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eoraptor",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eoraptor"
 		}
 	]
 }

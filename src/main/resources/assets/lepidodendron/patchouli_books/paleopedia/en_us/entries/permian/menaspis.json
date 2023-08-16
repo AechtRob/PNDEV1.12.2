@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_menaspis",
 			"title": "Menaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Chimaeriformes$(br)>Menaspidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Chimaeriformes$(br)>Menaspidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Menaspis was a cartilaginous holocephalian fish that lived during the Late Permian in what is now Germany. This small shallow-water marine fish was instantly recognizable by the three pairs of bizarre protrusions on its face."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_menaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_menaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_menaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_menaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_menaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_menaspis"
 		}
 	]
 }
