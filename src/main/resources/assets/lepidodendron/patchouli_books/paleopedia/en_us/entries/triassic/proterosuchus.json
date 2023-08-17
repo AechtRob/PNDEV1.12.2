@@ -1,0 +1,46 @@
+{
+	"name": "Proterosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/proterosuchus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_proterosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_proterosuchus",
+			"title": "Proterosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Archosauriformes $(br)>Proterosuchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/proterosuchus.png"],
+			"title": "P. fergusi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_proterosuchus"
+		}
+	]
+}

@@ -3,8 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -24,6 +27,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -53,7 +57,7 @@ public class BlockGunneraShootFlower extends ElementsLepidodendronMod.ModElement
 	public static final PropertyBool WEST = PropertyBool.create("west");
 	public static final PropertyBool UP = PropertyBool.create("up");
 
-	public static class BlockCustomFlower extends SeedSporeBlockBase {
+	public static class BlockCustomFlower extends SeedSporeBlockBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super(Material.WOOD);
 			setSoundType(SoundType.WOOD);
@@ -65,6 +69,12 @@ public class BlockGunneraShootFlower extends ElementsLepidodendronMod.ModElement
 			setRegistryName("gunnera_shoot_flower");
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setTickRandomly(true);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GUNNERA;
 		}
 
 		@Override

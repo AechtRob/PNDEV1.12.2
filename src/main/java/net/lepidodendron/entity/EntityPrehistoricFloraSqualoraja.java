@@ -49,8 +49,10 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraSqualoraja(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraSqualoraja.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraSqualoraja.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.5F, 0.25F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;

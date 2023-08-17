@@ -39,6 +39,8 @@ public class ItemMaterpiscisRawF extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_materpiscis@female", ItemMaterpiscisRawF.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMaterpiscisRawF.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemMaterpiscisRawF.block);
+		OreDictionary.registerOre("pndietFish", ItemMaterpiscisRawF.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

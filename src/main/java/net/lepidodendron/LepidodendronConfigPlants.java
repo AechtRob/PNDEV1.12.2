@@ -1784,6 +1784,9 @@ public class LepidodendronConfigPlants {
     public static String[] genRedAlgaeMatBlacklistBiomes = new String[0];
     public static String[] genRedAlgaeMatOverrideBiomes = new String[0];
     public static int weightRedAlgaeMat = 100;
+    public static String[] genAlgalFrondBlacklistBiomes = new String[0];
+    public static String[] genAlgalFrondOverrideBiomes = new String[0];
+    public static int weightAlgalFrond = 100;
     public static String[] genRedLeafyAlgaeBlacklistBiomes = new String[0];
     public static String[] genRedLeafyAlgaeOverrideBiomes = new String[0];
     public static int weightRedLeafyAlgae = 100;
@@ -2515,6 +2518,18 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Algae-Sponges", "weightGreenLeafyAlgae", weightGreenLeafyAlgae);
         prop.setComment("Percentage chance that Green Leafy Algae generates in a suitable chunk (0 to 100) [default: 100]");
         weightGreenLeafyAlgae = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "genAlgalFrondBlacklistBiomes", genAlgalFrondBlacklistBiomes);
+        prop.setComment("List of biomes Frondose Archaic Algae are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAlgalFrondBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "genAlgalFrondOverrideBiomes", genAlgalFrondOverrideBiomes);
+        prop.setComment("List of biomes Frondose Archaic Algae are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genAlgalFrondOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "weightAlgalFrond", weightAlgalFrond);
+        prop.setComment("Percentage chance that Frondose Archaic Algae generate in a suitable chunk (0 to 100) [default: 100]");
+        weightAlgalFrond = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Algae-Sponges", "genRedAlgaeMatBlacklistBiomes", genRedAlgaeMatBlacklistBiomes);
         prop.setComment("List of biomes Red Algae Mats are blacklisted from, in the format: modid:biomeid [default: empty]");

@@ -37,10 +37,8 @@ public class ItemDragonfly8Raw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dragonfly@dragonfly1", ItemDragonfly8Raw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDragonfly8Raw.block);
-		OreDictionary.registerOre("foodMeat", ItemDragonfly8Raw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemDragonfly8Raw.block);
-		OreDictionary.registerOre("foodInsect", ItemDragonfly8Raw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemDragonfly8Raw.block);
+		OreDictionary.registerOre("pndietBug", ItemDragonfly8Raw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

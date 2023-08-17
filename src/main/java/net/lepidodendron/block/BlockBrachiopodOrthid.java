@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.entities.ItemBivalveRaw;
 import net.lepidodendron.util.*;
@@ -83,6 +84,8 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_orthid", BlockBrachiopodOrthid.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodOrthid.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBrachiopodOrthid.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBrachiopodOrthid.block);
 	}
 
 	@Override
@@ -353,7 +356,7 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable , IAdvancementGranter {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -368,6 +371,12 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BRACHIOPOD_ORTHID;
 		}
 
 		@Override

@@ -40,10 +40,8 @@ public class ItemKalligrammatidOregrammaRaw extends ElementsLepidodendronMod.Mod
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemKalligrammatidOregrammaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKalligrammatidOregrammaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKalligrammatidOregrammaRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemKalligrammatidOregrammaRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemKalligrammatidOregrammaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemKalligrammatidOregrammaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemKalligrammatidOregrammaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

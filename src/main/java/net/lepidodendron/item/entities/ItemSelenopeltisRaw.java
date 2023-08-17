@@ -37,9 +37,8 @@ public class ItemSelenopeltisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_selenopeltis", ItemSelenopeltisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSelenopeltisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSelenopeltisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSelenopeltisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemSelenopeltisRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemSelenopeltisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

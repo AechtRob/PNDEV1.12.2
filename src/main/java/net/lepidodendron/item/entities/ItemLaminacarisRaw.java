@@ -37,9 +37,8 @@ public class ItemLaminacarisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_laminacaris", ItemLaminacarisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLaminacarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLaminacarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLaminacarisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemLaminacarisRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemLaminacarisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

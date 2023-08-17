@@ -9,7 +9,7 @@
             "trigger": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
             "title": "Anthracomartus",
             "type": "quest",
-            "text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br)>Arachnida$(br)>Trigonotarbida$(br)>Anthracomartidae"
+            "text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Anthracomartidae"
         },
 	{
             "type": "image",
@@ -22,10 +22,25 @@
 		"type": "text",
 		"text": "Anthracomartus is a Carboniferous trigonotarbid which lived in the forested environments. It had a tick shaped body with a pointed head."
 	},
-	{
-		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
-		"type": "text",
-		"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
-	}
+      {
+        "type": "lepidodendron:diet",
+        "mob": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus"
+      },
+      {
+        "type": "lepidodendron:biomelocations1",
+        "mob": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus"
+      },
+      {
+        "type": "lepidodendron:biomelocations2",
+        "mob": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus"
+      },
+      {
+        "type": "lepidodendron:biomelocations3",
+        "mob": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus"
+      },
+      {
+        "type": "lepidodendron:biomelocations4",
+        "mob": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus"
+      }
     ]
 }

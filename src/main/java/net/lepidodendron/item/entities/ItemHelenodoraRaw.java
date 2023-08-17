@@ -34,10 +34,8 @@ public class ItemHelenodoraRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_helenodora", ItemHelenodoraRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHelenodoraRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHelenodoraRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemHelenodoraRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemHelenodoraRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemHelenodoraRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemHelenodoraRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

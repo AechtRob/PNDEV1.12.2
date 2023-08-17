@@ -38,8 +38,8 @@ public class ItemFadeniaCarboniferousRaw extends ElementsLepidodendronMod.ModEle
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fadenia_carboniferous", ItemFadeniaCarboniferousRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFadeniaCarboniferousRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemFadeniaCarboniferousRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemFadeniaCarboniferousRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemFadeniaCarboniferousRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemFadeniaCarboniferousRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

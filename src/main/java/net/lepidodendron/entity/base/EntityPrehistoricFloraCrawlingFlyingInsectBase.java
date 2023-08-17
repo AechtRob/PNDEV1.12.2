@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -48,7 +49,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -68,8 +69,10 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
         this.enablePersistence();
-        this.selectNavigator();
-        this.getNavigator().getNodeProcessor().setCanSwim(false);
+        if (world != null) {
+            this.selectNavigator();
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -102,8 +105,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     {
         this.eatTarget = entityItem;
     }
-
-    public abstract String[] getFoodOreDicts();
 
     @Override
     public boolean isBreedingItem(ItemStack stack)

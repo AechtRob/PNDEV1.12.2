@@ -1,0 +1,17 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "#wire",
+		"wire": "#wire"
+	},
+	"elements": [
+		{
+			"from": [16, 0.06, 16],
+			"to": [24, 0.06, 24],
+			"faces": {
+				"up": {"uv": [8, 8, 16, 16], "texture": "#wire"},
+				"down": {"uv": [16, 8, 8, 16], "texture": "#wire"}
+			}
+		}
+	]
+}

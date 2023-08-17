@@ -4,32 +4,40 @@
 			"apply": [
 				{"model": "lepidodendron:stromatoporoidea_1"},
 				{"model": "lepidodendron:stromatoporoidea_2"},
-				{"model": "lepidodendron:stromatoporoidea_3", "weight": 3 },
-				{"model": "lepidodendron:stromatoporoidea_4", "weight": 3 }
+				{"model": "lepidodendron:stromatoporoidea_3", "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_4", "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_plain_1", "weight": 10 },
+				{"model": "lepidodendron:stromatoporoidea_plain_2", "weight": 20 }
 			]
 		},
 		{	"when": { "facing": "east" },
 			"apply": [
 				{"model": "lepidodendron:stromatoporoidea_1", "y": 90 },
 				{"model": "lepidodendron:stromatoporoidea_2", "y": 90 },
-				{"model": "lepidodendron:stromatoporoidea_3", "y": 90, "weight": 3 },
-				{"model": "lepidodendron:stromatoporoidea_4", "y": 90, "weight": 3 }
+				{"model": "lepidodendron:stromatoporoidea_3", "y": 90, "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_4", "y": 90, "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_plain_1", "y": 90, "weight": 10 },
+				{"model": "lepidodendron:stromatoporoidea_plain_2", "y": 90, "weight": 20 }
 			]
 		},
 		{	"when": { "facing": "south" },
 			"apply": [
 				{"model": "lepidodendron:stromatoporoidea_1", "y": 180 },
 				{"model": "lepidodendron:stromatoporoidea_2", "y": 180 },
-				{"model": "lepidodendron:stromatoporoidea_3", "y": 180, "weight": 3 },
-				{"model": "lepidodendron:stromatoporoidea_4", "y": 180, "weight": 3 }
+				{"model": "lepidodendron:stromatoporoidea_3", "y": 180, "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_4", "y": 180, "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_plain_1", "y": 180, "weight": 10 },
+				{"model": "lepidodendron:stromatoporoidea_plain_2", "y": 180, "weight": 20 }
 			]
 		},
 		{	"when": { "facing": "west" },
 			"apply": [
 				{"model": "lepidodendron:stromatoporoidea_1", "y": 270 },
 				{"model": "lepidodendron:stromatoporoidea_2", "y": 270 },
-				{"model": "lepidodendron:stromatoporoidea_3", "y": 270, "weight": 3 },
-				{"model": "lepidodendron:stromatoporoidea_4", "y": 270, "weight": 3 }
+				{"model": "lepidodendron:stromatoporoidea_3", "y": 270, "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_4", "y": 270, "weight": 2 },
+				{"model": "lepidodendron:stromatoporoidea_plain_1", "y": 270, "weight": 10 },
+				{"model": "lepidodendron:stromatoporoidea_plain_2", "y": 270, "weight": 20 }
 			]
 		}
 	]

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_placodus",
 			"title": "Placodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Shallow Ocean + Clam Beds$(br2)>Sauropterygia$(br)>Placodontia$(br)>Placodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropterygia$(br)>Placodontia$(br)>Placodontidae"
 		},
 		{
 			"type": "image",
@@ -23,10 +23,25 @@
 			"text": "Placodus (meaning \"flat tooth\") was a genus of placodont marine reptile that lived during the Middle Triassic. Remains of this animal have been found in Germany, France, Poland, and China. The strong jaws and teeth (including chisel-like incisors) of this shallow-water animal suggest that it ate hard-shelled food, such as bivalves."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_placodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Shellfish$(br)$(l)Breeds with:$() Shellfish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
-		}
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_placodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_placodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_placodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_placodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_placodus"
+		}	
 	]
 }
 

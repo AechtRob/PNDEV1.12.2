@@ -1,12 +1,12 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.world.gen.CharniaGenerator;
+import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -16,28 +16,26 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -65,12 +63,10 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		GameRegistry.registerTileEntity(BlockTuanshanzia.TileEntityCustom.class, "lepidodendron:tileentitytuanshanzia");
-		OreDictionary.registerOre("staticdnaPNlepidodendron:tuanshanzia", BlockTuanshanzia.block);
+		OreDictionary.registerOre("itemAlgae", BlockTuanshanzia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -82,23 +78,84 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		int weight = LepidodendronConfigPlants.weightEdiacaran;
+
+		int weight = LepidodendronConfigPlants.weightAlgalFrond;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
 		}
 
-		for (int i = 0; i < (int) 2; i++) {
+		boolean biomeCriteria = false;
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondBlacklistBiomes))
+				&& (matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)
+				|| dimID == LepidodendronConfig.dimPrecambrian)) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+		}
+
+		if (dimID == LepidodendronConfig.dimPrecambrian) {
+			if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)) && !
+					(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+					)
+			) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (!biomeCriteria)
+			return;
+
+		int multiplier = 1;
+
+		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel()+1);
+			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new CharniaGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
+			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable {
+	public static boolean matchBiome(Biome biome, String[] biomesList) {
+    	
+    	//String regName = biome.getRegistryName().toString();
+    	
+        String[] var2 = biomesList;
+        int var3 = biomesList.length;
 
+        for(int var4 = 0; var4 < var3; ++var4) {
+            String checkBiome = var2[var4];
+            if (!checkBiome.contains(":")) {
+            	//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
+	            if (checkBiome.equalsIgnoreCase(
+	            	biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
+	            	)) {
+	                return true;
+	            }
+        	}
+        	if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+	
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
+		
+		public static final PropertyDirection FACING = BlockDirectional.FACING;
+    
 		public BlockCustom() {
 			super(Material.WATER);
 			setTranslationKey("pf_tuanshanzia");
@@ -108,145 +165,110 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(3);
 			//this.setTickRandomly(true);
-			setCreativeTab(TabLepidodendronStatic.tab);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0));
+			setCreativeTab(TabLepidodendronPlants.tab);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
 		}
 
+		@Nullable
 		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote)) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_TUANSHANZIA;
 		}
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
 		}
-
-		@Override
-		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-			return state.withProperty(LEVEL, 0);
-		}
-
-		@Override
-		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-			//System.err.println("Placed by: " + placer);
-			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-		}
-
-		@Override
-		public IBlockState getStateFromMeta(int meta)
-		{
-			EnumFacing enumfacing = EnumFacing.byIndex(meta);
-
-			if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-			{
-				enumfacing = EnumFacing.NORTH;
-			}
-
-			return this.getDefaultState().withProperty(FACING, enumfacing);
-		}
-
-		@Override
-		public int getMetaFromState(IBlockState state)
-		{
-			return ((EnumFacing)state.getValue(FACING)).getIndex();
-		}
-
-		@Override
-		public IBlockState withRotation(IBlockState state, Rotation rot) {
-			return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
-		}
-
-		@SuppressWarnings("deprecation")
-		@Override
-		public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
-			return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
-		}
-
-		@Override
-		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
-			super.eventReceived(state, worldIn, pos, eventID, eventParam);
-			TileEntity tileentity = worldIn.getTileEntity(pos);
-			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
-		}
-
-		@Nullable
-		@Override
-		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new TileEntityCustom();
-		}
-
-		public TileEntityCustom createNewTileEntity(World worldIn, int meta) {
-			return new TileEntityCustom();
-		}
-
-		@Override
-		public boolean hasTileEntity(IBlockState state) {
-			return true;
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public EnumBlockRenderType getRenderType(IBlockState state) {
-			if (LepidodendronConfig.renderAnimations) {
-				return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
-			}
-			return EnumBlockRenderType.MODEL;
-		}
-
-		@Override
-		public void breakBlock(World world, BlockPos pos, IBlockState state) {
-			TileEntity tileentity = world.getTileEntity(pos);
-			//if (tileentity instanceof TileEntityNest)
-			//	InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
-			world.removeTileEntity(pos);
-			super.breakBlock(world, pos, state);
-		}
-
-		@Override
-		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, new IProperty[]{LEVEL, FACING});
-		}
-
-		@Override
-		public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos) {
-			return true;
-		}
-
+			
+		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
+		
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
+	
+	    @Nullable
+	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+	    {
+	        return NULL_AABB;
+	    }
 
-		@Nullable
-		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-			return NULL_AABB;
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
+				case SOUTH :
+				default :
+					return new AxisAlignedBB(0.3D, 0D, 0D, 0.7D, 1.0D, 1.0D);
+				case NORTH :
+					return new AxisAlignedBB(0.3D, 0D, 0D, 0.7D, 1D, 01.0D);
+				case WEST :
+					return new AxisAlignedBB(0D, 0D, 0.3D, 1D, 1D, 0.7D);
+				case EAST :
+					return new AxisAlignedBB(0D, 0D, 0.3D, 1D, 1D, 0.7D);
+				case UP :
+					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
+				case DOWN :
+					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
+			}
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
 		public BlockRenderLayer getRenderLayer() {
-			return BlockRenderLayer.CUTOUT;
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return BlockRenderLayer.CUTOUT;
+			}
+			return BlockRenderLayer.TRANSLUCENT;
 		}
 
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-			return layer == BlockRenderLayer.CUTOUT_MIPPED;
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return layer == BlockRenderLayer.CUTOUT_MIPPED;
+			}
+			return layer == BlockRenderLayer.TRANSLUCENT;
 		}
 
 		@Override
 		public boolean isOpaqueCube(IBlockState state) {
 			return false;
 		}
+		
+		@Override
+		public boolean isFullCube(IBlockState state)
+	    {
+	        return false;
+	    }
 
 		@Override
-		public boolean isFullCube(IBlockState state) {
-			return false;
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{LEVEL, FACING});
+		}
+
+		@Override
+		public IBlockState withRotation(IBlockState state, Rotation rot) {
+			return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
+		}
+
+		@Override
+		public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+			return state.withRotation(mirrorIn.toRotation((EnumFacing) state.getValue(FACING)));
+		}
+
+		@Override
+		public IBlockState getStateFromMeta(int meta) {
+			return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
+		}
+
+		@Override
+		public int getMetaFromState(IBlockState state) {
+			return ((EnumFacing) state.getValue(FACING)).getIndex();
+		}
+
+		@Override
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
+				EntityLivingBase placer) {
+				return this.getDefaultState().withProperty(FACING, facing);
 		}
 
 		@Override
@@ -268,11 +290,12 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
-
+		
 		@Override
-		protected boolean canSilkHarvest() {
-			return false;
-		}
+		protected boolean canSilkHarvest()
+	    {
+	        return false;
+	    }
 
 		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
@@ -281,71 +304,185 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
+		{
 			if (!canPlaceBlockAt(worldIn, pos)) {
 				worldIn.setBlockToAir(pos);
 			}
+			else {
+				if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.south());
+					if (worldIn.isAirBlock(pos.south()) || 
+						(
+							(iblockstate.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
+							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.south()))
+						)	
+					)
+						{
+							worldIn.setBlockToAir(pos);
+							
+						}
+					}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.SOUTH) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.north());
+					if (worldIn.isAirBlock(pos.north()) || 
+						(
+							(iblockstate.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
+							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.north()))
+						)	
+					)
+						{
+							worldIn.setBlockToAir(pos);
+							
+						}
+					}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.EAST) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.west());
+					if (worldIn.isAirBlock(pos.west()) || 
+						(
+							(iblockstate.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
+							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.west()))
+						)	
+					)
+						{
+							worldIn.setBlockToAir(pos);
+							
+						}
+					}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.WEST) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.east());
+					if (worldIn.isAirBlock(pos.east()) || 
+						(
+							(iblockstate.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
+							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.east()))
+						)	
+					)
+						{
+							worldIn.setBlockToAir(pos);
+							
+						}
+					}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.UP) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.down());
+					if (worldIn.isAirBlock(pos.down()) || 
+						(
+							(iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
+							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()))
+						)	
+					)
+						{
+							worldIn.setBlockToAir(pos);
+							
+						}
+					}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.DOWN) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.up());
+					if (worldIn.isAirBlock(pos.up()) || 
+						(
+							(iblockstate.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
+							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.up()))
+						)	
+					)
+						{
+							worldIn.setBlockToAir(pos);
+							
+						}
+					}
+			}
+		}
+	
+		@Override
+	    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+	    {
+	        return BlockFaceShape.UNDEFINED;
+	    }
+
+		@Override
+	    public boolean canBeReplacedByLeaves(IBlockState state, IBlockAccess world, BlockPos pos)
+	    {
+	        return true;
+	    }
+
+	    //@Override
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+		{
+
+			//System.err.println("Can place");
+			
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
+				return super.canPlaceBlockAt(worldIn, pos); 
+			}
+			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
+			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
+			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
+			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY))) {
+			//	return false;
+			//}
+			return false; 
 		}
 
 		@Override
-		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
-			return BlockFaceShape.UNDEFINED;
-		}
-
-		@Override
-		public boolean canBeReplacedByLeaves(IBlockState state, IBlockAccess world, BlockPos pos) {
-			return true;
-		}
-
-		//@Override
-		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
-					&& (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)) {
-				return super.canPlaceBlockAt(worldIn, pos);
+		public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
+	    {
+	    	boolean blockface  = true;
+			if (side == EnumFacing.NORTH) {
+	        	if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
+	        		blockface = false;
+			}
+			if (side == EnumFacing.SOUTH) {
+	        	if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
+	        		blockface = false;
+			}
+			if (side == EnumFacing.EAST) {
+	        	if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
+	        		blockface = false;
+			}
+			if (side == EnumFacing.WEST) {
+	        	if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
+	        		blockface = false;
+			}
+			if (side == EnumFacing.UP) {
+	        	if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID)
+	        		blockface = false;
+			}
+			if (side == EnumFacing.DOWN) {
+	        	if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
+	        		blockface = false;
 			}
 
-			return false;
-		}
-
+			
+			return (blockface && canPlaceBlockAt(worldIn, pos));
+			
+	    }
+		
 		@Override
-		public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
-		}
+	    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
+	    {
+	        return true;
+	    }
 
-		public boolean isWaterBlock(World world, BlockPos pos) {
+	    public boolean isWaterBlock(World world, BlockPos pos) {
 			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
 				//IBlockState iblockstate = world.getBlockState(pos);
-				//if (((Integer) iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
+				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;
 				//}
 			}
-			return false;
-		}
-
-		@SideOnly(Side.CLIENT)
+	    	return false;
+	    }
+	    
+	    @SideOnly(Side.CLIENT)
 		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Enigmatic, blade-shaped organism");
-				tooltip.add("Periods: Early Mesoproterozoic (Calymmian)");
-			}
-			super.addInformation(stack, player, tooltip, advanced);
-		}
+	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+	        if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Marine algae-like organism");
+				tooltip.add("Periods: Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) [- Neoproterozoic (Tonian - Cryogenian - Ediacaran)]");
+				tooltip.add("Propagation: water");}
+	        super.addInformation(stack, player, tooltip, advanced);
+	    }
 
-
-	}
-
-	public static class TileEntityCustom extends TileEntity {
-
-		@Override
-		public AxisAlignedBB getRenderBoundingBox() {
-			return new AxisAlignedBB(pos, pos.add(1, 2, 1));
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public double getMaxRenderDistanceSquared() {
-			return 2304;
-		}
 	}
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tullimonstrum",
 			"title": "Tullimonstrum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Estuaries(br2)>Bilateria"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Bilateria"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Tullimonstrum, also known as the Tully Monster, is an enigmatic marine animal from the Mazon Creek of the Carboniferous. Scientists to this day still debate on what kind of animal it was. It had a long proboscis, reminiscent of the Cambrian Opabinia and stalked eyes with a squid like body."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tullimonstrum",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tullimonstrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tullimonstrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tullimonstrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tullimonstrum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tullimonstrum"
 		}
 	]
 }

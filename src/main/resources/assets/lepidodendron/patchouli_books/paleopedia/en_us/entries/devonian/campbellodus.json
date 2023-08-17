@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_campbellodus",
 			"title": "Campbellodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Ptychodontida$(br)>Ptychodontidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ptychodontida$(br)>Ptychodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Campbellodus had short spinal plates and a high dorsal spine, it also had a long tail. They did not have as much armor as other placoderms but their teeth were still made of bony plates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_campbellodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_campbellodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_campbellodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_campbellodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_campbellodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_campbellodus"
 		}
 	]
 }

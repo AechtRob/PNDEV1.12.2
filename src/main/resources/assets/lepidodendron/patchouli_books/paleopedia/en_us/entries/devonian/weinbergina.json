@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_weinbergina",
 			"title": "Weinbergina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Arthropoda$(br)>Chelicerata"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Weinbergina is around 10 cm-long xiphosuran from Devonian Hunsrück Slate, Germany. It had six pairs of legs, which is exceptional and unusual for the anatomy of Euchelicerata. It is possible that one of the pair of legs are actually exopods, but no definitive conclusions have been reached. The shape of the tip of the leg seems to have been suitable for walking on sinking substrates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_weinbergina",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_weinbergina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_weinbergina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_weinbergina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_weinbergina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_weinbergina"
 		}
 	]
 }

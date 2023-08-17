@@ -381,7 +381,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
 
             if (Plateosaurus.getIsFast() && Plateosaurus.getAnimation() != Plateosaurus.STAND_ANIMATION) { //Running
                 float speed = masterSpeed / 2.5F;
-                this.basin.offsetY = -0.25F - 0.2F;
+                this.basin.offsetY = 0.2f;
                 this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
                 this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
@@ -426,7 +426,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
             }
             else if (Plateosaurus.getAnimation() != Plateosaurus.STAND_ANIMATION) { //Walking
                 float speed = masterSpeed / 2.00F;
-                this.basin.offsetY = -0.15F - 0.2F;
+                this.basin.offsetY = 0.2f;
                 this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 

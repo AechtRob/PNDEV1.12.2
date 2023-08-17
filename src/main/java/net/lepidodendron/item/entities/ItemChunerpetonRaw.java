@@ -32,7 +32,8 @@ public class ItemChunerpetonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_chunerpeton", ItemChunerpetonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemChunerpetonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemChunerpetonRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemChunerpetonRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemChunerpetonRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

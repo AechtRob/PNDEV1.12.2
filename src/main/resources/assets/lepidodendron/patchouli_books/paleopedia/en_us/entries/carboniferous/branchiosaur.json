@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_branchiosaur",
 			"title": "Branchiosaurs",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Amphibia$(br)>Temnospondyli$(br)>Amphibamiformes$(br)>Branchiosauridae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Amphibamiformes$(br)>Branchiosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Branchiosaurs are a family of temnospondyls which lived from the Carboniferous to Permian periods. They had external gills and had an overall juvenile appearance. One species, $(o)Melanerpeton$() even had fossilized skin patters, which was a sort of checkered pattern. They were generally small and spent most of their time in the water."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_branchiosaur",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_branchiosaur"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_branchiosaur"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_branchiosaur"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_branchiosaur"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_branchiosaur"
 		}
 	]
 }

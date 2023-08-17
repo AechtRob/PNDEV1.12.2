@@ -34,7 +34,8 @@ public class ItemDoswelliaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		//OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_doswellia", ItemDoswelliaRaw.block);
 		//OreDictionary.registerOre("listAllmeatraw", ItemDoswelliaRaw.block);
-		//OreDictionary.registerOre("foodMeat", ItemDoswelliaRaw.block);
+		//OreDictionary.registerOre("pnfurnaceMeat", ItemDoswelliaRaw.block);
+		//OreDictionary.registerOre("pndietMeat", ItemDoswelliaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

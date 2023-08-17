@@ -42,6 +42,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +75,8 @@ public class BlockBivalveDark extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_dark", BlockBivalveDark.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDark.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveDark.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveDark.block);
 	}
 
 
@@ -304,6 +307,12 @@ public class BlockBivalveDark extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_dark");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_DARK;
 		}
 
 		@Override

@@ -1,0 +1,47 @@
+{
+	"name": "Helenodora",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/helenodora_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_helenodora",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helenodora",
+			"title": "Helenodora",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/helenodora.png"],
+			"title": "H. inopinata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helenodora",
+			"type": "text",
+			"text": "Helenodora is an onychophoran worm from the Carboniferous. It may have lived on land or underwater."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_helenodora"
+		}
+	]
+}
+

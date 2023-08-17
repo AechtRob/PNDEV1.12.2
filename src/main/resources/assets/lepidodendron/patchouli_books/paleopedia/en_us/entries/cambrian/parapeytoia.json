@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_parapeytoia",
 			"title": "Parapeytoia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Megacheira$(br)>Jianfengiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Megacheira$(br)>Jianfengiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Parapeytoia is a megacheiran arthropod from the Cambrian period. It is know from preserved frontal appendages and its body comprised of many smaller appendages and it possessed 8 body segments. It was likely to have been a benthic feeder."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_parapeytoia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parapeytoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parapeytoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parapeytoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parapeytoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parapeytoia"
 		}
 	]
 }

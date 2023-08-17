@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -195,7 +196,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 	}
 
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -212,6 +213,12 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			}
 			setTranslationKey("pf_green_filamentous_algae");
 			setRegistryName("green_filamentous_algae");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 
 		@Override

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_falcatus",
 			"title": "Falcatus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Symmoriiformes$(br)>Falcatidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)(br2)>Chondrichthyes$(br)>Symmoriiformes$(br)>Falcatidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Falcatus is a symmoriid fish from the Carboniferous. Easily recognizable due to its quite clear sexual dimorphism, the males of the species possessed a hook-shaped spine growing from the top of the head, absent in the other gender. Originally described in 1883 based on the spines alone, it was only in 1985, more than a century later, that fossils of the actual complete animal were described, some of which showing the characteristic spine described so long ago."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_falcatus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_falcatus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_falcatus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_falcatus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_falcatus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_falcatus"
 		}
 	]
 }

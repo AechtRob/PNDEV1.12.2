@@ -39,8 +39,8 @@ public class ItemFadeniaPermotriassicRaw extends ElementsLepidodendronMod.ModEle
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fadenia_permotriassic", ItemFadeniaPermotriassicRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFadeniaPermotriassicRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemFadeniaPermotriassicRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemFadeniaPermotriassicRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemFadeniaPermotriassicRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemFadeniaPermotriassicRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

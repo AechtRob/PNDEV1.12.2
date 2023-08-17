@@ -27,8 +27,10 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
 
     public EntityPrehistoricFloraAgeableFishBase(World world) {
         super(world);
-        this.moveHelper = new EntityPrehistoricFloraAgeableFishBase.SwimmingMoveHelper();
-        this.navigator = new PathNavigateSwimmer(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraAgeableFishBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmer(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }

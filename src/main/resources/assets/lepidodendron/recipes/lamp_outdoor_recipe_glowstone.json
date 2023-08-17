@@ -1,0 +1,21 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "slabIron"
+    },
+    "4": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lamp_outdoor",
+    "count": 1
+  }
+}

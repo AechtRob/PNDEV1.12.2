@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yorgia",
 			"title": "Yorgia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Yorgiidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Yorgiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Yorgia is a disc like Ediacaran organism with no appendages and several segments to its body. It moved along the sea floor as evidenced by trace fossils associated with Yorgia."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_yorgia",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yorgia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yorgia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yorgia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yorgia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yorgia"
 		}
 	]
 }

@@ -1,0 +1,46 @@
+{
+	"name": "Plectronoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/plectronoceras_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_plectronoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_plectronoceras",
+			"title": "Plectronoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Mollusca $(br)>Cephalopoda $(br)>Plectronocerida $(br)>Plectronoceridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/plectronoceras.png"],
+			"title": "P. cambria",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_plectronoceras",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plectronoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plectronoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plectronoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plectronoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plectronoceras"
+		}
+	]
+}

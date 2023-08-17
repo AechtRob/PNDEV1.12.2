@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pederpes",
 			"title": "Pederpes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Stegocephalia$(br)>Whatcheeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Stegocephalia$(br)>Whatcheeriidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pederpes was a basal Carboniferous tetrapod that lived a semiaquatic lifestyle. It was an average sized early tetrapod and it would have been able to sustain itself quite some time on land, though would have hunted in the water."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pederpes",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pederpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pederpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pederpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pederpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pederpes"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aeger",
 			"title": "Aeger",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Aegeridae"
+			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Aegeridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Aeger was especially common in Europe's coastal waters, with a plentiful fossil record in areas of Bavaria like the famous Solnhofen, the same area that yielded the world renowned Archaeopteryx lithographica fossil but he's also found in abundance in Osteno, Italy."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_aeger",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aeger"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aeger"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aeger"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aeger"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aeger"
 		}
 	]
 }

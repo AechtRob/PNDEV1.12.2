@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_caelestiventus",
 			"title": "Caelestiventus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Desert$(br2)>Pterosauria$(br)>Dimorphodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pterosauria$(br)>Dimorphodontidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Largest among the known Triassic pterosaurs, Caelestiventus had a wingspan of 1.5 m and potentially larger, as indicated from the immature stage of the only known fossil. The animal is known from only one partial specimen composed by several skull bones and one carpal of the wing."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_caelestiventus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caelestiventus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caelestiventus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caelestiventus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caelestiventus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caelestiventus"
 		}
 	]
 }

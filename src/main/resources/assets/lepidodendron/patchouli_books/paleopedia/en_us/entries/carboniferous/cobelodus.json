@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cobelodus",
 			"title": "Cobelodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Shallow ocean(C), River(P)$(br2)>Chondrichthyes$(br)>Symmoriiformes$(br)>Symmoriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Chondrichthyes$(br)>Symmoriiformes$(br)>Symmoriidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cobelodus is a holocephalian shark from the late Carboniferous to early Permian period. It grew up to 2 meters long and had a bulbous head with large round eyes situated near the nose. It had a large dorsal fin positioned much further back on its body near its pelvic fins and it was thought to have lived in estuarine environments."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cobelodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cobelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cobelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cobelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cobelodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cobelodus"
 		}
 	]
 }

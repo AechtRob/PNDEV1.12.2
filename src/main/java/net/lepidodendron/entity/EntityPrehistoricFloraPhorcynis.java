@@ -10,7 +10,6 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderPhorcynis;
-import net.lepidodendron.entity.render.entity.RenderSqualoraja;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -50,8 +49,10 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraPhorcynis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraPhorcynis.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraPhorcynis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.35F, 0.25F);
 		minWidth = 0.2F;
 		maxWidth = 0.35F;

@@ -52,6 +52,7 @@ public class BlockHelianthaster extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockHelianthaster.TileEntityCustom.class, "lepidodendron:tileentityhelianthaster_item");
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_helianthaster", BlockHelianthaster.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockHelianthaster.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -44,8 +44,10 @@ public class EntityPrehistoricFloraBavariscyllium extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraBavariscyllium(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraBavariscyllium.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraBavariscyllium.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.3F, 0.25F);
 		minWidth = 0.2F;
 		maxWidth = 0.4F;

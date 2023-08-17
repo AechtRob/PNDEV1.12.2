@@ -38,9 +38,8 @@ public class ItemCaryosyntripsRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_caryosyntrips", ItemCaryosyntripsRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCaryosyntripsRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCaryosyntripsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCaryosyntripsRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemCaryosyntripsRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemCaryosyntripsRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {

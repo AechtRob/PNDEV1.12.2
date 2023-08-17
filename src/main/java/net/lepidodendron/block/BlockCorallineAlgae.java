@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemCorallineAlgaeItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.IGrowable;
@@ -52,7 +55,7 @@ public class BlockCorallineAlgae extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:coralline_algae", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable {
+	public static class BlockCustom extends BlockLilyPad implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.STONE);
@@ -65,6 +68,12 @@ public class BlockCorallineAlgae extends ElementsLepidodendronMod.ModElement {
 			setTickRandomly(false);
 			setTranslationKey("pf_coralline_algae");
 			setRegistryName("coralline_algae");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_stenodictya",
 			"title": "Stenodictya",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Dictyoneuridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Dictyoneuridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Stenodictya is a paleodictyopteran from the Carboniferous period. Its fossils were discovered in Commentry Shales of France."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_stenodictya",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya"
 		}
 	]
 }

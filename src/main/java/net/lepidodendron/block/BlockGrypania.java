@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.gen.CharniaGenerator;
 import net.minecraft.block.Block;
@@ -76,6 +79,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:grypania", BlockGrypania.block);
+		OreDictionary.registerOre("itemAlgae", BlockGrypania.block);
 	}
 
 
@@ -96,7 +100,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.WATER);
@@ -109,6 +113,12 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(LEVEL, 0));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GRYPANIA;
 		}
 
 		@Override
@@ -284,8 +294,8 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Unicellular tube-shaped organism");
-				tooltip.add("Periods: Paleoproterozoic - Mesoproterozoic - Neoproterozoic - Ediacaran");}
+				tooltip.add("Type: Unicellular, tube-shaped, algae-like organism");
+				tooltip.add("Periods: Paleoproterozoic (Rhyacian - Orosirian - Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

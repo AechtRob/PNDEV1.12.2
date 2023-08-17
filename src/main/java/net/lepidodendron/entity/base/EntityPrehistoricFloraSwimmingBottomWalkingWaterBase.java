@@ -17,7 +17,6 @@ import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -29,8 +28,6 @@ import javax.annotation.Nullable;
 
 public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase extends EntityPrehistoricFloraAgeableBase {
 
-    public Animation SWIM_ANIMATION;
-    public Animation UNSWIM_ANIMATION;
     public Animation EAT_ANIMATION;
     private int inPFLove;
     private int jumpTicks;
@@ -41,16 +38,10 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     //standard constructor, calls the parent class, adds a navigator and creates three animations, eat, swim and unswim
     public EntityPrehistoricFloraSwimmingBottomWalkingWaterBase(World world) {
         super(world);
-        this.selectNavigator();
-        SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
-        UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
+        if (world != null) {
+            this.selectNavigator();
+        }
         EAT_ANIMATION = Animation.create(this.getEatLength());
-    }
-
-    //an array of all the animations
-    @Override
-    public Animation[] getAnimations() {
-        return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
     }
 
     //how long is the eat animation
@@ -221,77 +212,8 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
     }
 
     //a stricter check on if the animal is swimming, (It is not doing its transition animation)
-    public boolean isReallySwimming() {
-        return (this.getIsSwimming()) && (this.getAnimation() != this.SWIM_ANIMATION);
-    }
+    public abstract boolean isReallySwimming();
 
-    @Override
-    public boolean attackEntityFrom(DamageSource source, float amount) {
-        if (!this.world.isRemote && !this.isReallySwimming()) {
-            this.setIsSwimming(true);
-            this.setAnimation(SWIM_ANIMATION);
-            this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
-        }
-
-        return super.attackEntityFrom(source, amount);
-    }
-
-    public void onEntityUpdate() {
-
-        int i = this.getAir();
-        super.onEntityUpdate();
-
-        if (this.isEntityAlive() && !isInWater()) {
-            --i;
-            this.setAir(i);
-
-            if (this.getAir() == -20) {
-                this.setAir(0);
-                this.attackEntityFrom(DamageSource.DROWN, 2.0F);
-            }
-        } else {
-            this.setAir(300);
-        }
-
-        if (!world.isRemote) {
-
-            if (!this.isReallyInWater()) {
-                this.setIsSwimming(false);
-                this.setWalkTick(1);
-            }
-            else {
-
-                if (this.getSwimTick() > 0) {
-                    this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
-                    if (this.getSwimTick() < 0) {
-                        this.setSwimTick(0);
-                    }
-                }
-                if (this.getWalkTick() > 0) {
-                    this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
-                    if (this.getWalkTick() < 0) {
-                        this.setWalkTick(0);
-                    }
-                }
-
-                if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
-                    this.setIsSwimming(false);
-                    this.setAnimation(UNSWIM_ANIMATION);
-                    this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
-                }
-
-                if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
-                    this.setIsSwimming(true);
-                    this.setAnimation(SWIM_ANIMATION);
-                    this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
-                }
-            }
-
-            //System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
-
-        }
-
-    }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
         RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);

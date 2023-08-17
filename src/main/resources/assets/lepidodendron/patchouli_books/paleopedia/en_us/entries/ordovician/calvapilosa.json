@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_calvapilosa",
 			"title": "Calvapilosa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Algal Reef$(br2)>Mollusca$(br)>Siphogonuchitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Siphogonuchitidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Calvapilosa is a slug like mollusc from the Ordovician period. It had a body with many little spins on it and a large shell over its head but not covering the rest of its body. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_calvapilosa",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_calvapilosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_calvapilosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_calvapilosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_calvapilosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_calvapilosa"
 		}
 	]
 }

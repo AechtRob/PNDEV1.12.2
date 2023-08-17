@@ -24,6 +24,32 @@
     },
     {   "when": { "west": false },
       "apply": { "model": "lepidodendron:zircon_glass_pane_noside", "y": 270 }
+    },
+
+
+    {   "when": { "ne": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_r", "y": 270 }
+    },
+    {   "when": { "nw": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_l", "y": 270 }
+    },
+    {   "when": { "se": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_l", "y": 90 }
+    },
+    {   "when": { "sw": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_r", "y": 90 }
+    },
+    {   "when": { "es": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_r" }
+    },
+    {   "when": { "en": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_l" }
+    },
+    {   "when": { "wn": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_r", "y": 180 }
+    },
+    {   "when": { "ws": true },
+      "apply": { "model": "lepidodendron:zircon_glass_pane_corner_l", "y": 180 }
     }
   ]
 }

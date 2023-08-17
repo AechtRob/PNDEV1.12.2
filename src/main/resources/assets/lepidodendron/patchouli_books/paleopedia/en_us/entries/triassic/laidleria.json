@@ -1,0 +1,46 @@
+{
+	"name": "Laidleria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/laidleria_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_laidleria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_laidleria",
+			"title": "Laidleria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Amphibia $(br)>Temnospondyli $(br)>Plagiosauroidea $(br)>Laidleriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/laidleria.png"],
+			"title": "L. gracilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laidleria",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		}
+	]
+}

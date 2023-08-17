@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
@@ -55,7 +58,7 @@ public class BlockTreefernSilverShootSideDiag extends ElementsLepidodendronMod.M
 	//			new ModelResourceLocation("lepidodendron:silver_treefern_shoot_side_diag", "inventory"));
 	//}
 	
-	public static class BlockCustom extends SeedSporeBlockBase {
+	public static class BlockCustom extends SeedSporeBlockBase implements IAdvancementGranter {
 
 		public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
@@ -69,6 +72,12 @@ public class BlockTreefernSilverShootSideDiag extends ElementsLepidodendronMod.M
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SILVER_TREEFERN;
 		}
 
 		@Override

@@ -37,6 +37,8 @@ public class ItemGogonasusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gogonasus", ItemGogonasusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGogonasusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGogonasusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemGogonasusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

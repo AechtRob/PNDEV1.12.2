@@ -2,13 +2,11 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemNautiloidEggsManticoceras;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -52,7 +50,7 @@ public class EntityPrehistoricFloraAmmonite_Manticoceras extends EntityPrehistor
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -111,16 +109,11 @@ public class EntityPrehistoricFloraAmmonite_Manticoceras extends EntityPrehistor
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsManticoceras.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			this.setTicks(0);
-		}
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemNautiloidEggsManticoceras.block, (int) (1));
 	}
 
 	@Nullable

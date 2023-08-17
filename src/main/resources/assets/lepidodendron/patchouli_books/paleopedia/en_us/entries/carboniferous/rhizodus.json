@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhizodus",
 			"title": "Rhizodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Freshwater$(br2)>Sarcopterygii$(br)>Rhizodontida$(br)>Rhizodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Sarcopterygii$(br)>Rhizodontida$(br)>Rhizodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Rhizodus is a giant lobe finned fish that lived in the Carboniferous period. They were apex predators and lived in freshwater and fed on medium sized amphibians and other fish. They also bore plate like scares along their bodies."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_rhizodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhizodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhizodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhizodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhizodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhizodus"
 		}
 	]
 }

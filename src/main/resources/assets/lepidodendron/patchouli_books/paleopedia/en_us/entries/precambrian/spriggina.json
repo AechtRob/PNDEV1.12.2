@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spriggina",
 			"title": "Spriggina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Sprigginidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Sprigginidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Spriggina is a bilaterian animal from the late Ediacaran period. It is made up of several interlocking plates and many fused segments. It was probably predatory."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_spriggina",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spriggina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spriggina"
 		}
 	]
 }

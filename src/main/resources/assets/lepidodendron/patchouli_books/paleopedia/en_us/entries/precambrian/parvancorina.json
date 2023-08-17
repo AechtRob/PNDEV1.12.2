@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_parvancorina",
 			"title": "Parvancorina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Parvancorina is a bilaterally symmetrical animal that lived on the Ediacaran seafloor. It has superficial similarities to trilobites. Its name comes from the Latin parva ancora (small anchor). They likely lived by slowly moving about the seafloor and were not attached to the seafloor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_parvancorina",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parvancorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parvancorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parvancorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parvancorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parvancorina"
 		}
 	]
 }

@@ -35,9 +35,8 @@ public class ItemDalmanitesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dalmanites", ItemDalmanitesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemDalmanitesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDalmanitesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDalmanitesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemDalmanitesRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemDalmanitesRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

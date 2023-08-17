@@ -38,7 +38,8 @@ public class ItemPlaceriasRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_placerias", ItemPlaceriasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPlaceriasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPlaceriasRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemPlaceriasRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemPlaceriasRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

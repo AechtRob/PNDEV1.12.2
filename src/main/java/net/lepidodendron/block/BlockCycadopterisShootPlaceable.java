@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -67,7 +70,7 @@ public class BlockCycadopterisShootPlaceable extends ElementsLepidodendronMod.Mo
 		OreDictionary.registerOre("treeLeaves", BlockCycadopterisShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super();
@@ -81,6 +84,11 @@ public class BlockCycadopterisShootPlaceable extends ElementsLepidodendronMod.Mo
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
 		}
 
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CYCADOPTERIS;
+		}
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {

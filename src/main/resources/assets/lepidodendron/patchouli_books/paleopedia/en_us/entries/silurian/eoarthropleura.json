@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eoarthropleura",
 			"title": "Eoarthropleura",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Land$(br2)>Diplopoda$(br)>Eoarthropleurida$(br)>Eoarthropleuridae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Diplopoda$(br)>Eoarthropleurida$(br)>Eoarthropleuridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eoarthropleura is a genus of millipede like arthropods. Fossils are mainly of cuticle fragments and it is the oldest known terrestrial animal in North America. It probably lived similar to modern day millipedes."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eoarthropleura",
-			"type": "text",
-			"text": "$(l)Eats:$() Moss$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Eggs in Moss$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
 		}
 	]
 }

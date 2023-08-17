@@ -37,10 +37,8 @@ public class ItemProtozygopteraRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_protozygoptera", ItemProtozygopteraRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemProtozygopteraRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemProtozygopteraRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemProtozygopteraRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemProtozygopteraRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemProtozygopteraRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemProtozygopteraRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

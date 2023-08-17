@@ -3,8 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.item.ItemEquisetitesReedItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -24,6 +27,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -46,7 +50,7 @@ public class BlockEquisetitesReedTopSpore extends ElementsLepidodendronMod.ModEl
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:equisetites_reed_shoot_spore", "inventory"));
 	//}
-	public static class BlockCustomFlower extends SeedSporeReedBase {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(null);
@@ -55,6 +59,12 @@ public class BlockEquisetitesReedTopSpore extends ElementsLepidodendronMod.ModEl
 			setLightLevel(0F);
 			setTranslationKey("pf_equisetites_reed_shoot_spore");
 			setRegistryName("equisetites_reed_shoot_spore");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_EQUISETITES_REED;
 		}
 
 		@Override

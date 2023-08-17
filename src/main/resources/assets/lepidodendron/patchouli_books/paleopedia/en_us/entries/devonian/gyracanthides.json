@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gyracanthides",
 			"title": "Gyracanthides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Brackish$(br2)>Acanthodii$(br)>Gyracanthidae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)>Acanthodii$(br)>Gyracanthidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gyracanthides is an acanthodian with a long pectoral spine. It was dorsoventrally flat and had a laterally compressed caudal fin. Its scales were thin and slightly concave and it had a pair of spines on its fins."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gyracanthides",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gyracanthides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gyracanthides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gyracanthides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gyracanthides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gyracanthides"
 		}
 	]
 }

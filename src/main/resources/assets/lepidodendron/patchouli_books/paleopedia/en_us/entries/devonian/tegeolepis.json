@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tegeolepis",
 			"title": "Tegeolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Actinopterygii"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Actinopterygii"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Tegeolepis is an almost 1 meter long actinopterygian fish from the Devonian period. It was one of the earliest actinopterygians and was a free swimming predator, with its slender body build and pointed head. It was found in the Cleveland Shale of Ohio, the same locality where Dunkleosteus was found."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tegeolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tegeolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tegeolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tegeolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tegeolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tegeolepis"
 		}
 	]
 }

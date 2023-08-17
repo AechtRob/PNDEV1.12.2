@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateWaterBottomNoJump;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
@@ -45,7 +46,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -70,8 +71,6 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 		}
 		return EnumCreatureAttributePN.VERTEBRATE;
 	}
-
-	public abstract String[] getFoodOreDicts();
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)

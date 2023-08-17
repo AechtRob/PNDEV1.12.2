@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_captorhinus",
 			"title": "Captorhinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Reptilia$(br)>Captorhinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Captorhinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Captorhinus aguti is a genus of captorhinid reptile found all across the world, from Brazil, Europe, India, and more. This reptile is the type genus for the family Captorhinidae, which are all hook-snouted reptiles with shortened tails, including the much larger Labidosaurus. Captorhinus was quite the unusual reptile, as several cleavage planes were prevalent on the tail vertebrae of juveniles, suggesting the young were capable of detaching their tails, similarly to several groups of modern day reptiles. This, however, was just a case of convergent evolution."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_captorhinus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_captorhinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_captorhinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_captorhinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_captorhinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_captorhinus"
 		}
 	]
 }

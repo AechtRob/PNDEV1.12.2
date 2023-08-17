@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_promissum",
 			"title": "Promissum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Frozen Ocean$(br2)>Conodonta$(br)>Balognathidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Conodonta$(br)>Balognathidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Promissum was a primitive chordate, a conodont which had a primitive mouth under its eyes with tons of mineralized teeth. It looked like a small eel, having no fins except on the tail. Promissum was probably able to maintain a cruising speed."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_promissum",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_conodont@promissum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_conodont@promissum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_conodont@promissum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_conodont@promissum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_conodont@promissum"
 		}
 	]
 }

@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -27,6 +30,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -56,7 +61,7 @@ public class BlockStromatoliteSticky extends ElementsLepidodendronMod.ModElement
 	public static final PropertyBool EAST = PropertyBool.create("east");
 	public static final PropertyBool WEST = PropertyBool.create("west");
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.ROCK);
 			setTranslationKey("pf_stromatolite_sticky");
@@ -70,6 +75,12 @@ public class BlockStromatoliteSticky extends ElementsLepidodendronMod.ModElement
 			setDefaultSlipperiness(0.7f);
 			useNeighborBrightness = true;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(TOPSHOOT, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_STROMATOLITE;
 		}
 
 		@Override

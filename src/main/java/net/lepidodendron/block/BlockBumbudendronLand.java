@@ -5,10 +5,13 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemBumbudendronItem;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.util.SoundTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
@@ -59,7 +62,7 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:primeval_grass_land", "inventory"));
 	//}
 	
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundTypes.DRY_CRUNCH_PLANT);
@@ -78,6 +81,11 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("bumbudendron_land");
 		}
 
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BUMBUDENDRON;
+		}
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {

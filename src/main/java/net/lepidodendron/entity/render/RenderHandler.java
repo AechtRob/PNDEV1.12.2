@@ -4217,6 +4217,12 @@ public class RenderHandler {
                 return new RenderDragonfly(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDragonflyNymph.class, new IRenderFactory<EntityPrehistoricFloraDragonflyNymph>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDragonflyNymph> createRenderFor(RenderManager manager) {
+                return new RenderDragonflyNymph(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDendrocystites.class, new IRenderFactory<EntityPrehistoricFloraDendrocystites>() {
             @Override
             public Render<? super EntityPrehistoricFloraDendrocystites> createRenderFor(RenderManager manager) {
@@ -4830,9 +4836,7 @@ public class RenderHandler {
         //Tile Entities:
         //-------------
         if (LepidodendronConfig.renderAnimations) {
-            //Ancient:
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockTuanshanzia.TileEntityCustom.class, new RenderTuanshanzia());
-            //Ediacaran:
+            //Neoproterozoic (Ediacaran):
             ClientRegistry.bindTileEntitySpecialRenderer(BlockCharnia.TileEntityCustom.class, new RenderCharnia());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockCharniodiscus.TileEntityCustom.class, new RenderCharniodiscus());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockArborea.TileEntityCustom.class, new RenderArborea());
@@ -4849,7 +4853,7 @@ public class RenderHandler {
         }
 
         //These do not have block models available:
-        //Ediacaran:
+        //Neoproterozoic (Ediacaran):
         ClientRegistry.bindTileEntitySpecialRenderer(BlockPteridinium.TileEntityCustom.class, new RenderPteridinium());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockCoronacollina.TileEntityCustom.class, new RenderCoronacollina());
         //Cambrian:

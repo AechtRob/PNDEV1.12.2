@@ -40,10 +40,8 @@ public class ItemHarvestmanRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_harvestman", ItemHarvestmanRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHarvestmanRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHarvestmanRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemHarvestmanRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemHarvestmanRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemHarvestmanRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemHarvestmanRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {

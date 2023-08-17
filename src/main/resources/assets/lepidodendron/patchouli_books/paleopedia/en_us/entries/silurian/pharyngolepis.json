@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pharyngolepis",
 			"title": "Pharyngolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean$(br2)>Anaspida$(br)>Birkeniiformes"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Anaspida$(br)>Birkeniiformes"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pharyngolepis is a primitive jawless fish that had well developed anal and caudal fins. It did not have dorsal fins or paired fins so it was probably a poor swimmer, staying close to the seafloor. It had rows of bony spines, probably for protection against predators and it probably fed by scooping up food from the ocean floor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pharyngolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pharyngolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pharyngolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pharyngolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pharyngolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pharyngolepis"
 		}
 	]
 }

@@ -45,8 +45,10 @@ public class EntityPrehistoricFloraWuttagoonaspis extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraWuttagoonaspis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraWuttagoonaspis.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraWuttagoonaspis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.5F, 0.5F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;

@@ -37,10 +37,8 @@ public class ItemRoachoidSwampRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_roachoid_swamp", ItemRoachoidSwampRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemRoachoidSwampRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRoachoidSwampRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemRoachoidSwampRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemRoachoidSwampRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemRoachoidSwampRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemRoachoidSwampRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

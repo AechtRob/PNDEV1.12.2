@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -70,10 +73,11 @@ public class BlockAulacera extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:aulacera_sapling", BlockAulacera.block);
-		OreDictionary.registerOre("sponge", BlockAulacera.block);
+		OreDictionary.registerOre("itemSponge", BlockAulacera.block);
+		OreDictionary.registerOre("pndietSponge", BlockAulacera.block);
 	}
 
-	public static class BlockCustom extends Block implements IShearable {
+	public static class BlockCustom extends Block implements IShearable, IAdvancementGranter {
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
     public static final PropertyBool EAST = PropertyBool.create("east");
@@ -93,6 +97,12 @@ public class BlockAulacera extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronStatic.tab);
 			
         	this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(UP, Boolean.valueOf(false)).withProperty(DOWN, Boolean.valueOf(false)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_AULACERA;
 		}
 
 		@Override

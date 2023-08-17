@@ -1,5 +1,6 @@
 package net.lepidodendron.util.patchouli;
 
+import net.lepidodendron.LepidodendronBookSubscribers;
 import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
@@ -22,15 +23,23 @@ public class Diet implements IComponentProcessor {
 
     @Override
     public String process(String s) {
-        EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(this.mob));
+        String mobString = this.mob;
+        int i = mobString.indexOf("@");
+        if (i > 0) {
+            //pnVariant = mobString.substring(i + 1);
+            mobString = mobString.substring(0, i);
+        }
+        EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobString));
         Class clazz = ee.getEntityClass();
-        Method renderMethod = RenderDisplayWallMount.testAndGetMethod(clazz, "getFoodOreDicts", null);
+        Method method = RenderDisplayWallMount.testAndGetMethod(clazz, "getFoodOreDicts", null);
         String[] string = new String[]{};
         String result = "";
-        if (renderMethod != null) {
+        String nestString = "N/A";
+        if (method != null) {
             try {
                 EntityLiving entity = (EntityLiving) ee.newInstance(null);
-                string = (String[]) renderMethod.invoke(entity, null);
+                string = (String[]) method.invoke(entity, (Object[]) null);
+                nestString = LepidodendronBookSubscribers.getNestString(entity, false);
                 entity.setDead();
             }
             catch (Exception e) {
@@ -39,11 +48,16 @@ public class Diet implements IComponentProcessor {
         }
         if (string.length > 0) {
             for (String element : string) {
-                result = result + "$(br)" + I18n.translateToLocal("oredict." + element + ".name").trim();
+                if (!result.contains("$(li)" + I18n.translateToLocal("oredict." + element + ".name").trim())) {
+                    result = result + "$(br)" + "$(li)" + I18n.translateToLocal("oredict." + element + ".name").trim();
+                }
             }
-            return result;
         }
-        return "Unknown";
+        else {
+            result = "$(br)Unknown diet";
+        }
+
+        return "$(br)$(l)Diet:$()$(br)" + result + "$(br2)" + "$(l)Breeding notes:$()$(br)" + nestString;
     }
 
 }

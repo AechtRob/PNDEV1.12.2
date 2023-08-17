@@ -3,24 +3,17 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
-import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
@@ -53,13 +46,13 @@ public class EntityPrehistoricFloraYilingia extends EntityPrehistoricFloraTrilob
 		return true;
 	}
 
-	public static String getPeriod() {return "Ediacaran";}
+	public static String getPeriod() {return "Neoproterozoic (Ediacaran)";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -181,23 +174,6 @@ public class EntityPrehistoricFloraYilingia extends EntityPrehistoricFloraTrilob
 			} else {
 				slitherStage = slitherStage - rand.nextInt(2);
 			}
-		}
-
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
-				if (!itemstack.hasTagCompound()) {
-					itemstack.setTagCompound(new NBTTagCompound());
-				}
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				itemstack.getTagCompound().setString("creature", stringEgg);
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-				world.spawnEntity(entityToSpawn);
-			}
-			this.setTicks(0);
 		}
 	}
 

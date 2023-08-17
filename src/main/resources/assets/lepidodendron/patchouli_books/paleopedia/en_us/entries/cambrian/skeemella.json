@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_skeemella",
 			"title": "Skeemella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Vetulicolia$(br)>Banffozoa$(br)>Banffidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia$(br)>Banffozoa$(br)>Banffidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Skeemella is a genus of Vetulicolian, and although Skeemella currently resides as a Vetulicolian and shares traits with them, it simultaneously possesses traits of both chordates and arthropods, such as the arthropod-like segmentation on its tail. This suggests several things, such as Skeemella either not being a vetulicolian, Vetulicolians in general not being chordates, or possibly a simple case of convergent evolution."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_skeemella",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_skeemella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_skeemella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_skeemella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_skeemella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_skeemella"
 		}
 	]
 }

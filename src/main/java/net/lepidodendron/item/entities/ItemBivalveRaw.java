@@ -36,8 +36,9 @@ public class ItemBivalveRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("listAllfishraw", ItemBivalveRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemBivalveRaw.block);
 		OreDictionary.registerOre("itemShellfish", ItemBivalveRaw.block);
+		OreDictionary.registerOre("pndietShellfish", ItemBivalveRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {

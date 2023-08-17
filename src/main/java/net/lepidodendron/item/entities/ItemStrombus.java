@@ -51,9 +51,9 @@ public class ItemStrombus extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_strombus", ItemStrombus.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemStrombus.block);
-		OreDictionary.registerOre("foodMeat", ItemStrombus.block);
 		OreDictionary.registerOre("itemShellfish", ItemStrombus.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemStrombus.block);
+		OreDictionary.registerOre("pndietShellfish", ItemStrombus.block);
 	}
 
 

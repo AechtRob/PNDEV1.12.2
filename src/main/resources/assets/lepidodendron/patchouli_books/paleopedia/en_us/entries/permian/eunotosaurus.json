@@ -1,0 +1,47 @@
+{
+	"name": "Eunotosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eunotosaurus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_eunotosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eunotosaurus",
+			"title": "Eunotosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/eunotosaurus.png"],
+			"title": "E. africanus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eunotosaurus",
+			"type": "text",
+			"text": "Eunotosaurus is a Permian reptile that could possibly have been related to turtles or parareptiles. It had wide and flat ribs which looked like a primitive turtle shell however, it is possible that these turtle like features evolved separately and it may not have been a primitive turtle relative at all."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eunotosaurus"
+		}
+	]
+}
+

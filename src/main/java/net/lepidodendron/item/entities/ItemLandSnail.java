@@ -51,9 +51,8 @@ public class ItemLandSnail extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_snail_land", ItemLandSnail.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLandSnail.block);
-		OreDictionary.registerOre("foodMeat", ItemLandSnail.block);
-		OreDictionary.registerOre("itemShellfish", ItemLandSnail.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemLandSnail.block);
+		OreDictionary.registerOre("pndietBug", ItemLandSnail.block);
 	}
 
 	public static class ItemCustom extends Item {

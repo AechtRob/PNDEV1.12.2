@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockLeavesPF;
 import net.lepidodendron.procedure.ProcedureTreeLeaf;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +27,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAlethopterisLeaves extends ElementsLepidodendronMod.ModElement {
@@ -47,7 +51,6 @@ public class BlockAlethopterisLeaves extends ElementsLepidodendronMod.ModElement
 				new ModelResourceLocation("lepidodendron:alethopteris_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
@@ -61,6 +64,13 @@ public class BlockAlethopterisLeaves extends ElementsLepidodendronMod.ModElement
 		public BlockCustom() {
 			setTranslationKey("pf_alethopteris_leaves");
 		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALETHOPTERIS;
+		}
+
 
 		@Override
 		protected int getSaplingDropChance(IBlockState state) {

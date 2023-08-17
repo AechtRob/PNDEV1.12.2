@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gerarus",
 			"title": "Gerarus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamp/Marsh/Burnt Swamp$(br2)>Insecta$(br)>Archaeorthoptera$(br)>Geraridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Archaeorthoptera$(br)>Geraridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gerarus is one of the most abundant Carboniferous insects. They had a wingspan of up to 10cm and had sharp spines on its thorax."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gerarus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gerarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gerarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gerarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gerarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gerarus"
 		}
 	]
 }

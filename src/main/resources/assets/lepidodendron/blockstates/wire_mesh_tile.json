@@ -1,0 +1,114 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": {
+        "model": "lepidodendron:wire_mesh_slab", "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": {
+        "model": "lepidodendron:wire_mesh_slab", "x": 90, "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": {
+        "model": "lepidodendron:wire_mesh_slab", "x": 90, "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": {
+        "model": "lepidodendron:wire_mesh_slab", "x": 90, "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": {
+        "model": "lepidodendron:wire_mesh_slab"
+      }
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": {
+        "model": "lepidodendron:wire_mesh_slab", "x": 180
+      }
+    },
+
+
+
+
+    {   "when": { "facing":"down","northeast":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_ne" }
+    },
+    {   "when": { "facing":"down","southeast":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_se" }
+    },
+    {   "when": { "facing":"down","southwest":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_sw" }
+    },
+    {   "when": { "facing":"down","northwest":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_nw" }
+    },
+
+
+    {   "when": { "facing":"down","north":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_side_n" }
+    },
+    {   "when": { "facing":"down","east":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_side_e" }
+    },
+    {   "when": { "facing":"down","south":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_side_s" }
+    },
+    {   "when": { "facing":"down","west":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_top_side_w" }
+    },
+
+
+
+
+    {   "when": { "facing":"up","northeast":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_ne" }
+    },
+    {   "when": { "facing":"up","southeast":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_se" }
+    },
+    {   "when": { "facing":"up","southwest":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_sw" }
+    },
+    {   "when": { "facing":"up","northwest":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_nw" }
+    },
+
+
+    {   "when": { "facing":"up","north":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_side_n" }
+    },
+    {   "when": { "facing":"up","east":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_side_e" }
+    },
+    {   "when": { "facing":"up","south":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_side_s" }
+    },
+    {   "when": { "facing":"up","west":"true" },
+      "apply": {  "model": "lepidodendron:wire_mesh_slab_side_w" }
+    }
+
+
+  ]
+}

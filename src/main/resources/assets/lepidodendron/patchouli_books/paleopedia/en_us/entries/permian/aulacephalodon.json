@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aulacephalodon",
 			"title": "Aulacephalodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Arid Lands$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Geikiidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Geikiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Aulacephalodon is a medium sized synapsid from the Permian period. It was a Geikiid, which had characteristic bulbs on the tops and front of their heads and they had long tusks that they may have used for digging. Aulacephalodon was the only genus among dicynodonts to possess canine tusks."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_aulacephalodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aulacephalodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aulacephalodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aulacephalodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aulacephalodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aulacephalodon"
 		}
 	]
 }

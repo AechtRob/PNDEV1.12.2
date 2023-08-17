@@ -38,7 +38,8 @@ public class ItemMicrocleidusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microcleidus", ItemMicrocleidusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMicrocleidusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMicrocleidusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemMicrocleidusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemMicrocleidusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

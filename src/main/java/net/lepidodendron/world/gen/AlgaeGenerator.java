@@ -133,6 +133,13 @@ public class AlgaeGenerator extends WorldGenerator
 			}
 		}
 
+		if (this.algae == BlockTuanshanzia.block) {
+			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")) {
+				multiplier = 2;
+			}
+		}
+
 		for (int i = 0; i < (64 * multiplier); ++i)
 		{
 
@@ -291,6 +298,7 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockUnderwaterDebris.block)
 											&& (this.algae != BlockSeaGrass.block)
 											&& (this.algae != BlockMosacaulis.block)
+											&& (this.algae != BlockTuanshanzia.block)
 							) {
 								for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
 									pos = new BlockPos(j, k, l);

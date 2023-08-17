@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemZingiberopsisSeeds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -71,7 +74,7 @@ public class BlockZingiberopsis extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends BlockBush {
+	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -81,6 +84,12 @@ public class BlockZingiberopsis extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_zingiberopsis");
 			setRegistryName("zingiberopsis");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ZINGIBEROPSIS;
 		}
 
 		@Override
@@ -111,7 +120,7 @@ public class BlockZingiberopsis extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.15D, 1.0D);
+			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.5D, 1.0D);
 		}
 
 		@Override

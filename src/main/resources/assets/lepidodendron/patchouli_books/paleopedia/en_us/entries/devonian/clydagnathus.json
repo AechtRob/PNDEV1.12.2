@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_clydagnathus",
 			"title": "Clydagnathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Ocean$(br2)>Conodonta$(br)>Ozarkodinida$(br)>Cavusgnathidae"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Conodonta$(br)>Ozarkodinida$(br)>Cavusgnathidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Clydagnathus is one of the few conodonts which have been preserved with its body shape, which demonstrated a similar body plan to Promissum. Clydagnathus is known from India and Morocco."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_clydagnathus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clydagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clydagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clydagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clydagnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clydagnathus"
 		}
 	]
 }

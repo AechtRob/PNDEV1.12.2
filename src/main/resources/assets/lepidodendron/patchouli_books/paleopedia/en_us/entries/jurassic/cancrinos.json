@@ -1,0 +1,46 @@
+{
+	"name": "Cancrinos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cancrinos_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cancrinos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cancrinos",
+			"title": "Cancrinos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Crustacea $(br)>Malacostraca $(br)>Decapoda $(br)>Cancrinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cancrinos.png"],
+			"title": "C. claviger",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cancrinos",
+			"type": "text",
+			"text": "Cancrinos is a small Jurassic crustacean known from the Solnhofen Limestone of Germany. It is a crustacean related to slipper lobsters and is characterized by its bunny ear like antennae that slipper lobsters lack. There used to be a Cretaceous species, but it has since been reassigned to its own genus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cancrinos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cancrinos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cancrinos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cancrinos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cancrinos"
+		}
+	]
+}

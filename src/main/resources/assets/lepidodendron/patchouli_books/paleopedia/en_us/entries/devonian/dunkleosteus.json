@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dunkleosteus",
 			"title": "Dunkleosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Dunkleosteidae"
+			"text": "$(l)Temporal Range: $()Devonian$(br2)>Arthrodira$(br)>Dunkleosteidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dunkleosteus is a famous placoderm fish and was among the largest to have ever lived, growing to roughly 6 meters. Dunkleosteus had a four bar linkage mechanism for jaw opening which incorporates the skull and the shield. It was suggested that it preyed on armored animals such as ammonites or other placoderms because its teeth plates were strong enough to easily crush armor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dunkleosteus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dunkleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dunkleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dunkleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dunkleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dunkleosteus"
 		}
 	]
 }

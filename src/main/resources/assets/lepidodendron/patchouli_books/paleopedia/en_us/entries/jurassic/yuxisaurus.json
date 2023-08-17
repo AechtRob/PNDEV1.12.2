@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yuxisaurus",
 			"title": "Yuxisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Yuxisaurus is a genus of basal thyreophoran dinosaur from the Jurassic. It comes from the Fengjiahe Formation of what is now the Yunnan Province of China. Yuxisaurus was named after the Yuxi Prefecture in the Yunnan Province. Yuxisaurus is estimated to have been about 4 meters in length. It is known from an incomplete skeleton including parts of the skull, vertebrae, parts of limbs, and at least 120 osteoderms."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_yuxisaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yuxisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yuxisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yuxisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yuxisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yuxisaurus"
 		}
 	]
 }

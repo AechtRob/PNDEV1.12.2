@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
@@ -51,7 +54,7 @@ public class BlockNypaShootSideCorner extends ElementsLepidodendronMod.ModElemen
 
 	public static final PropertyBool VAR = PropertyBool.create("var");
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 
 		public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
@@ -64,6 +67,12 @@ public class BlockNypaShootSideCorner extends ElementsLepidodendronMod.ModElemen
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(VAR, false).withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NYPA;
 		}
 
 		@Override

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_urocordylus",
 			"title": "Urocordylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marsh$(br2)>Lepospondyli$(br)>Nectridea$(br)>Urocordylidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Lepospondyli$(br)>Nectridea$(br)>Urocordylidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Urocordylus is a long tailed amphibian from the Carboniferous period. It had a salamander like body and it swam by wiggling its tail. Its total length was about half a meter long."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_urocordylus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_urocordylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_urocordylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_urocordylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_urocordylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_urocordylus"
 		}
 	]
 }

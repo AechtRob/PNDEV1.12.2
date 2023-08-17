@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eugaleaspis",
 			"title": "Eugaleaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Eugaleaspis had previously been thought to have lived during the Silurian as well, however that species has now been synonymized with Dunyu, leaving the only valid species in the Devonian."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eugaleaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eugaleaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eugaleaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eugaleaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eugaleaspis"
 		}
 	]
 }

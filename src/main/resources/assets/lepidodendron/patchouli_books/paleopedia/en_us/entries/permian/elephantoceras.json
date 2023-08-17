@@ -1,0 +1,46 @@
+{
+	"name": "Elephantoceras",
+	"read_by_default": true,
+	"icon": "lepidodendron:items/shell_elephantoceras",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_elephantoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_elephantoceras",
+			"title": "Elephantoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonoidea $(br)>Goniatitida $(br)>Pseudohaloritidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/elephantoceras.png"],
+			"title": "E. spinonodosum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elephantoceras",
+			"type": "text",
+			"text": "Elephantoceras is a ammonite from the Middle Permian of China. Elephantoceras is characterized by tusk like horns growing from its shell that curled upwards and forwards, making its shell look somewhat like an elephant's head."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_elephantoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_elephantoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_elephantoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_elephantoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_elephantoceras"
+		}
+	]
+}

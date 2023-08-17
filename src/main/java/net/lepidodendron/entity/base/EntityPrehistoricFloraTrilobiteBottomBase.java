@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGreenAlgaeMat;
 import net.lepidodendron.block.BlockRedAlgaeMat;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -46,7 +47,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -64,8 +65,10 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     public EntityPrehistoricFloraTrilobiteBottomBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
-        this.navigator = new PathNavigateWaterBottom(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
+            this.navigator = new PathNavigateWaterBottom(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -81,9 +84,6 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         }
         return false;
     }
-
-
-    public abstract String[] getFoodOreDicts();
 
     @Override
     public boolean isChild()

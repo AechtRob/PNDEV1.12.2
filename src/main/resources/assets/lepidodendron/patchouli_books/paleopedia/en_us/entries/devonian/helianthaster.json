@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helianthaster",
 			"title": "Helianthaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Helianthaster is a genus of prehistoric starfish from the Devonian period. It is reminiscent of the modern crown of thorns starfish, which had many mre arms than the more common 5 armed starfish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_helianthaster",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_helianthaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_helianthaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_helianthaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_helianthaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_helianthaster"
 		}
 	]
 }

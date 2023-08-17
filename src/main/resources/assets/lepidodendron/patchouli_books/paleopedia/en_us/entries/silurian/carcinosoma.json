@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_carcinosoma",
 			"title": "Carcinosoma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Reef, Crinoid Garden$(br2)>Eurypterida$(br)>Carinosomatoidea$(br)>Carcinosomatidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Eurypterida$(br)>Carinosomatoidea$(br)>Carcinosomatidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Carsinosoma was one of the larger eurypterids that stalked the Silurian period. Its claws had many curved spines, probably used for grappling and ripping up prey. Color has also been preserved in Carsinosoma, and it would have been a dark brown with black tipped scales on the legs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_carcinosoma",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_carcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_carcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_carcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_carcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_carcinosoma"
 		}
 	]
 }

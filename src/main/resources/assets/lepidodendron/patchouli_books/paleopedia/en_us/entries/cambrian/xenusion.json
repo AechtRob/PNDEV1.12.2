@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_xenusion",
 			"title": "Xenusion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Xenusion is a worm like lobopodian from the early Cambrian which had spines on its tube like body and pairs of annulated legs similar to modern onychophorans."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_xenusion",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xenusion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xenusion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xenusion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xenusion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xenusion"
 		}
 	]
 }

@@ -42,6 +42,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +75,8 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_inoceramus_gigantocapulus", BlockBivalveInoceramusGigantocapulus.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveInoceramusGigantocapulus.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveInoceramusGigantocapulus.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveInoceramusGigantocapulus.block);
 	}
 
 	@Override
@@ -302,6 +305,12 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_inoceramus_gigantocapulus");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS;
 		}
 
 		@Override

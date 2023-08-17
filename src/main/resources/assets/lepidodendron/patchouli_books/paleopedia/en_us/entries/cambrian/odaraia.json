@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_odaraia",
 			"title": "Odaraia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Crustacea$(br)>Hymenocarina$(br)>Odaraiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Crustacea$(br)>Hymenocarina$(br)>Odaraiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Odaraia is a crustacean from the middle Cambrian. It had a large pair of eyes at the front of its body and a tube shaped body with 45 pairs of limbs and 3 tail fins."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_odaraia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_odaraia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_odaraia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_odaraia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_odaraia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_odaraia"
 		}
 	]
 }

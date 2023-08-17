@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemSwampHorsetailItem;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -61,7 +64,7 @@ public class BlockSwampHorsetailWater extends ElementsLepidodendronMod.ModElemen
 	//			new ModelResourceLocation("lepidodendron:archaefructus", "inventory"));
 	//}
 
-	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -78,6 +81,12 @@ public class BlockSwampHorsetailWater extends ElementsLepidodendronMod.ModElemen
 			}
 			setTranslationKey("pf_swamp_horsetail_water");
 			setRegistryName("swamp_horsetail_water");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SWAMP_HORSETAIL;
 		}
 
 		@Override

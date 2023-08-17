@@ -110,11 +110,11 @@ public class AcidBathOutputStatics {
     public static String[] getPrecambrianCleanedFossilsStatics() {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockArkarua.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockArborea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBomakellia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBradgatia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBurykhia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCharnia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockTuanshanzia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCharniodiscus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCloudina.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoronacollina.block).toString(),
@@ -141,7 +141,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGrypania.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHorodyskia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockDiskagma.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockDiskagma.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTuanshanzia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
         return resLoc;

@@ -44,8 +44,10 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraGoodradigbeeon(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraGoodradigbeeon.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraGoodradigbeeon.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.6F, 0.35F);
 		minWidth = 0.2F;
 		maxWidth = 0.6F;

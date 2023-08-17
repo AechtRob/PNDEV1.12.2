@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/triops1_raw"
+    "layer0": "paleopedia:items/notostraca_icon"
   }
 }

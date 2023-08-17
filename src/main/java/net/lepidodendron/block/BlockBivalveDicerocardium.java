@@ -42,6 +42,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +75,8 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_dicerocardium", BlockBivalveDicerocardium.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveDicerocardium.block);
 	}
 
 	@Override
@@ -300,6 +303,12 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_dicerocardium");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_DICEROCARDIUM;
 		}
 
 		@Override

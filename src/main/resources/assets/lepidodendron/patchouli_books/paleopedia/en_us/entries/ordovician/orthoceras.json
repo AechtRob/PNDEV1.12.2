@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_orthoceras",
 			"title": "Orthoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Frozen, Sponge, Bryozoan & Ocean$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Orthoceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Orthoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Orthoceras (straight horn) is a orthocone cephalopod from the middle Ordovician. Although it looked similar, having a straight shell with other nautiloids such as Endoceras, it was not actually related due to differences in the internal structures of the shell. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_orthoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_orthoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_orthoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_orthoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_orthoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_orthoceras"
 		}
 	]
 }

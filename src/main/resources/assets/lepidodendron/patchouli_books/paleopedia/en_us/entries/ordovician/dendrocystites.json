@@ -1,0 +1,46 @@
+{
+	"name": "Dendrocystites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dendrocystites_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_dendrocystites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dendrocystites",
+			"title": "Dendrocystites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata $(br)>Soluta $(br)>Dendrocystitida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/dendrocystites.png"],
+			"title": "D. sedgwickii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dendrocystites",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dendrocystites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dendrocystites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dendrocystites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dendrocystites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dendrocystites"
+		}
+	]
+}

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mimetaster",
 			"title": "Mimetaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Mimetaster is an aquatic arthropod closely related to the Cambrian Marrella. It was extremely common in the area that it was found, leading to scientists believing that they lived in small groups, so they would likely have died and fossilized together. Mimetaster looked quite strange, with 6 spines protruding from its head and 2 long arms."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mimetaster",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mimetaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mimetaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mimetaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mimetaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mimetaster"
 		}
 	]
 }

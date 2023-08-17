@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockLeavesPF;
 import net.lepidodendron.procedure.ProcedureTreeLeaf;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +27,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockPhoenixLeaves extends ElementsLepidodendronMod.ModElement {
@@ -61,6 +65,12 @@ public class BlockPhoenixLeaves extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
 			setTranslationKey("pf_phoenix_leaves");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PHOENIX;
 		}
 		
 		@Override

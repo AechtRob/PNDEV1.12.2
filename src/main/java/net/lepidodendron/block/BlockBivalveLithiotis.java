@@ -42,6 +42,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +75,8 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_lithiotis", BlockBivalveLithiotis.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveLithiotis.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveLithiotis.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveLithiotis.block);
 	}
 
 
@@ -303,6 +306,12 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_lithiotis");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_LITHIOTIS;
 		}
 
 		@Override

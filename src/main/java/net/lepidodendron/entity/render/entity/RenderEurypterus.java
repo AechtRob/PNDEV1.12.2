@@ -21,7 +21,7 @@ public class RenderEurypterus extends RenderLiving<EntityPrehistoricFloraEurypte
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEurypterus entity) {
         float scale = entity.getAgeScale();
-        if (entity.isSmall()) {
+        if (scale < 0.6F) {
             return RenderEurypterus.TEXTURE_BABY;
         }
         return RenderEurypterus.TEXTURE;

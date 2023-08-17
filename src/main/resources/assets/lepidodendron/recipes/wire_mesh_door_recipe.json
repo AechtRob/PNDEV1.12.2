@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:wire_mesh_block"
+    },
+    "1": {
+      "item": "lepidodendron:wire_mesh_block"
+    },
+    "2": {
+      "item": "lepidodendron:wire_mesh_block"
+    },
+    "3": {
+      "item": "lepidodendron:wire_mesh_block"
+    },
+    "4": {
+      "item": "lepidodendron:wire_mesh_block"
+    },
+    "5": {
+      "item": "lepidodendron:wire_mesh_block"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:wire_mesh_door_item",
+    "count": 3
+  }
+}

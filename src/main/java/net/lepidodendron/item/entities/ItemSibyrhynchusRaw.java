@@ -38,8 +38,8 @@ public class ItemSibyrhynchusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sibyrhynchus", ItemSibyrhynchusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSibyrhynchusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSibyrhynchusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSibyrhynchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemSibyrhynchusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemSibyrhynchusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

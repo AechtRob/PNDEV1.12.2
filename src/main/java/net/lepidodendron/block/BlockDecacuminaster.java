@@ -52,6 +52,7 @@ public class BlockDecacuminaster extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockDecacuminaster.TileEntityCustom.class, "lepidodendron:tileentitydecacuminaster_item");
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_decacuminaster", BlockDecacuminaster.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockDecacuminaster.block);
 	}
 
 	@SideOnly(Side.CLIENT)

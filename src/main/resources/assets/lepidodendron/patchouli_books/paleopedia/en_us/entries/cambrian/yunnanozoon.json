@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yunnanozoon",
 			"title": "Yunnanozoon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Chordata$(br)>Yunnanozoonidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Yunnanozoonidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Yunnanozoon was an early Cambrian organism that looked like a tube with a single large body fin. It is sometimes associated with Vetulicolians."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_yunnanozoon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yunnanozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yunnanozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yunnanozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yunnanozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yunnanozoon"
 		}
 	]
 }

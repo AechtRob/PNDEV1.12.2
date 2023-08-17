@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:sponge_reef"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_reef_sponge.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_reef_sponge.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_reef_sponge"
+		}
+	}
+}

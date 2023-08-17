@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_clevosaurus",
 			"title": "Clevosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() All$(br2)>Reptilia$(br)>Rhynochocephalia$(br)>Clevosauridae"
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Reptilia$(br)>Rhynochocephalia$(br)>Clevosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Clevosaurus was a genus of rhyncocephalian reptile that lived during the Late Triassic to Early Jurassic. It ranged across most of Pangaea, with fossils having been found on every continent except Australia and Antarctica. Clevosaurus is thought to have been an insectivore, with a bite pressure strong enough to feed on even hard-shelled insects such as beetles."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_clevosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_clevosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_clevosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_clevosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_clevosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_clevosaurus"
 		}
 	]
 }

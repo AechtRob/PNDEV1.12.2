@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sillosuchus",
 			"title": "Sillosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Moss Meadow$(br2)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Shuvosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Shuvosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Sillosuchus is a genus of shuvosaurid archosaur from the Late Triassic of South America. Although their closest living relatives are crocodilians, they were bipedal and lightly armored, superficially resembling dinosaurs. Sillosuchus and related animals like Effigia were also toothless and beaked herbivores. Sillosuchus was named after Dr. William Sill. Sillosuchus was a poposaurid which was an unusual group of reptiles, which also included carnivorous members like Poposaurus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_sillosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sillosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sillosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sillosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sillosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sillosuchus"
 		}
 	]
 }

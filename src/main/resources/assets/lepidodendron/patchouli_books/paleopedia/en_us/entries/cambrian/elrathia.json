@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_elrathia",
 			"title": "Elrathia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean & Reef$(br2)>Trilobita$(br)>Ptychopariida$(br)>Alokistocaridae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Ptychopariida$(br)>Alokistocaridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Elrathia was a trilobite that likely occupied the exaerobic zone of the deep waters. It probably foraged for food in the benthic environments using its antenna."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_elrathia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_elrathia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_elrathia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_elrathia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_elrathia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_elrathia"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_belantsea",
 			"title": "Belantsea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Belantseidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Belantseidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Belantsea is a petalodontid cartilaginous fish from the Carboniferous. It had a leaf shaped body and triangular teeth which it used to eat bryozoans, sponges and crinoids. It was likely a slow swimmer but could had great maneuverability."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_belantsea",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_belantsea"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_belantsea"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_belantsea"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_belantsea"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_belantsea"
 		}
 	]
 }

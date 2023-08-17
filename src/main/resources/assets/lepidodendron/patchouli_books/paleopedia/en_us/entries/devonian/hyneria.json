@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyneria",
 			"title": "Hyneria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest$(br2)>Eotetrapodiformes$(br)>Tristichopteridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Eotetrapodiformes$(br)>Tristichopteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Hyneria is named for the village of Hyner, Pennsylvania, near where the species was found. It was relatively large, growing up to 2.5-3.7m and it had large sensory canals possibly to aid in the detection of prey. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hyneria",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Egg Block$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hyneria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hyneria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hyneria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hyneria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hyneria"
 		}
 	]
 }

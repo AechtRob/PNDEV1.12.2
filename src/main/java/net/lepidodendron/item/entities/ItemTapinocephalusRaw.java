@@ -38,7 +38,8 @@ public class ItemTapinocephalusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tapinocephalus", ItemTapinocephalusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTapinocephalusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTapinocephalusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemTapinocephalusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemTapinocephalusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

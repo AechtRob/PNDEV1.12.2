@@ -1,0 +1,46 @@
+{
+	"name": "Pricyclopyge",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pricyclopyge_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_pricyclopyge",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pricyclopyge",
+			"title": "Pricyclopyge",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Asaphida $(br)>Cyclopygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pricyclopyge.png"],
+			"title": "P. prisca",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pricyclopyge",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pricyclopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pricyclopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pricyclopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pricyclopyge"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pricyclopyge"
+		}
+	]
+}

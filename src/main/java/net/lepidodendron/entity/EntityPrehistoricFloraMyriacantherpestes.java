@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.*;
@@ -15,6 +16,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -24,6 +26,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
@@ -121,8 +125,9 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
-		tasks.addTask(2, new LandWanderAvoidWaterAI(this, 1.0D, 5));
-		tasks.addTask(3, new EntityLookIdleAI(this));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new LandWanderAvoidWaterAI(this, 1.0D, 5));
+		tasks.addTask(4, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
@@ -164,6 +169,8 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(0.8D);
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
@@ -223,6 +230,26 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 			this.stepSoundTick = 0;
 		}
 
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	@Override
+	public boolean attackEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+
+	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tiarajudens",
 			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>Therapsida$(br)>Anomodontia$(br)>Anomocephaloidea"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Anomocephaloidea"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiarajudens",
 			"type": "text",
-			"text": "Tiarajudens eccentricus was an anomodont synapsid that lived during the Middle Permian in what is now southern Brazil. Despite its long, fearsome-looking sabre-like canines, Tiarajudens was actually a herbivore with multiple different types of teeth. The sabres were most likely used for either self-defence, or for fighting rivals of their own species."
+			"text": "Tiarajudens eccentricus was an anomodont synapsid that lived during the Middle Permian in what is now southern Brazil. Despite its long, fearsome-looking sabre-like canines, Tiarajudens was actually a herbivore with multiple different types of teeth. The sabres were perhaps used for either self-defence, or for mating display and fighting rivals of their own species, or for digging for edible roots."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tiarajudens",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tiarajudens"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tiarajudens"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tiarajudens"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tiarajudens"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tiarajudens"
 		}
 	]
 }

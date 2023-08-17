@@ -35,9 +35,9 @@ public class ItemTribrachiodemasRaw extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tribrachiodemas", ItemTribrachiodemasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemTribrachiodemasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTribrachiodemasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTribrachiodemasRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemTribrachiodemasRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemTribrachiodemasRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

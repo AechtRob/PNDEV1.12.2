@@ -38,7 +38,8 @@ public class ItemLimnoscelisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_limnoscelis", ItemLimnoscelisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemLimnoscelisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLimnoscelisRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemLimnoscelisRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemLimnoscelisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

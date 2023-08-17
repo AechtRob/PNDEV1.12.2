@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -52,7 +55,7 @@ public class BlockCrinoidScyphocrinusFloat extends ElementsLepidodendronMod.ModE
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).build());
 	}
 
-	public static class BlockCustom extends Block  {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -63,6 +66,12 @@ public class BlockCrinoidScyphocrinusFloat extends ElementsLepidodendronMod.ModE
 			setLightLevel(0F);
 			setTranslationKey("pf_crinoid_scyphocrinus_float");
 			setRegistryName("crinoid_scyphocrinus_float");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CRINOID_SCYPHOCRINUS;
 		}
 
 		@Override

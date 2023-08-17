@@ -51,27 +51,27 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 
 	public EntityPrehistoricFloraLaidleria(World world) {
 		super(world);
-		//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
-		//this.navigator = new PathNavigateSwimmer(this, world);
-		if (this.isInWater()) {
-			this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
-			this.navigator = new PathNavigateSwimmer(this, world);
-			this.isWaterNavigator = true;
-			this.isSeekingWater = false;
-		}
-		else {
-			if (isNearWater(this, this.getPosition())) {
-				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-				this.navigator = new PathNavigateAmphibian(this, world);
-				this.isWaterNavigator = false;
+		if (world != null) {
+			//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
+			//this.navigator = new PathNavigateSwimmer(this, world);
+			if (this.isInWater()) {
+				this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+				this.navigator = new PathNavigateSwimmer(this, world);
+				this.isWaterNavigator = true;
 				this.isSeekingWater = false;
-			}
-			else {//Find water!
-				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
-				this.navigator = new PathNavigateAmphibianFindWater(this, world);
-				this.setPathPriority(PathNodeType.WATER, 10F);
-				this.isWaterNavigator = false;
-				this.isSeekingWater = true;
+			} else {
+				if (isNearWater(this, this.getPosition())) {
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibian(this, world);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = false;
+				} else {//Find water!
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibianFindWater(this, world);
+					this.setPathPriority(PathNodeType.WATER, 10F);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = true;
+				}
 			}
 		}
 		setSize(0.5F, 0.2F);
@@ -282,9 +282,10 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.85F, 300));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_attercopus",
 			"title": "Attercopus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forests$(br2)>Arachnida$(br)>Uraraneida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arachnida$(br)>Uraraneida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Originally thought to be a trigonotarbid, Attercopus was later redescribed as the most primitve version of a true spider. Attercopus did not have spinnerets, however, it still would have produced silk from spigots located across the abdomen. It also had a segmented tail."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_attercopus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Raw Bug Meat$(br)$(l)Egg Type:$() Small Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_attercopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_attercopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_attercopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_attercopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_attercopus"
 		}
 	]
 }

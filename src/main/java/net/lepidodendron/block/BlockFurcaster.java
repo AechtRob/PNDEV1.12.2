@@ -52,6 +52,7 @@ public class BlockFurcaster extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockFurcaster.TileEntityCustom.class, "lepidodendron:tileentityfurcaster_item");
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_furcaster", BlockFurcaster.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockFurcaster.block);
 	}
 
 	@SideOnly(Side.CLIENT)

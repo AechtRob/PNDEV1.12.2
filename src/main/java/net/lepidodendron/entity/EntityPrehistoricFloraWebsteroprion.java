@@ -58,8 +58,10 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 
 	public EntityPrehistoricFloraWebsteroprion(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
-		this.navigator = new PathNavigateWaterBottom(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
+			this.navigator = new PathNavigateWaterBottom(this, world);
+		}
 		setSize(0.6F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
@@ -201,14 +203,16 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new WebsteroprionWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new WebsteroprionEatItemsAI(this));
+		//this.targetTasks.addTask(0, new WebsteroprionEatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 10F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		//this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.NULL);
+		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.MEAT, DietString.FISH), DietString.CRUSTACEAN), DietString.NAUTILOID);
 	}
 
 	@Override

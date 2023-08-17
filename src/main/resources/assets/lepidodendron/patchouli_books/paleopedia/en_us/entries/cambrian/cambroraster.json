@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cambroraster",
 			"title": "Cambroraster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,8 @@
 			"text": "Cambroraster is a genus of hurdiid radiodont describled in 2019. It was relatively large, up to 30 cm long and it had a horseshoe shaped dorsal carapace. It likely fed by sifting through the sediment with its oral cone and frontal appendages, with had hooked spines."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cambroraster",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cambroraster"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",

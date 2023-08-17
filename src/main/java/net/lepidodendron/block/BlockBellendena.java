@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -74,7 +77,7 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustom extends BlockBush {
+	public static class BlockCustom extends BlockBush implements IAdvancementGranter {
 
 		public static final PropertyBool FLOWERS = PropertyBool.create("flowers");
 
@@ -89,6 +92,12 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_bellendena");
 			setRegistryName("bellendena");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FLOWERS, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BELLENDENA;
 		}
 
 		protected BlockStateContainer createBlockState()

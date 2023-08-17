@@ -37,9 +37,8 @@ public class ItemSidneyiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sidneyia", ItemSidneyiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSidneyiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSidneyiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSidneyiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemSidneyiaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemSidneyiaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

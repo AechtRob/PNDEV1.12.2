@@ -51,9 +51,9 @@ public class ItemNerinea extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_nerinea", ItemNerinea.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemNerinea.block);
-		OreDictionary.registerOre("foodMeat", ItemNerinea.block);
 		OreDictionary.registerOre("itemShellfish", ItemNerinea.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemNerinea.block);
+		OreDictionary.registerOre("pndietShellfish", ItemNerinea.block);
 	}
 
 

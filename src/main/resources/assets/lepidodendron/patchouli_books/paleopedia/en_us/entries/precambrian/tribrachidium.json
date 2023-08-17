@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tribrachidium",
 			"title": "Tribrachidium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Trilobozoa$(br)>Tribrachididae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Trilobozoa$(br)>Tribrachididae"
 		},
 		{
 			"type": "image",

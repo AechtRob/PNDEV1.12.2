@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_orodus",
 			"title": "Orodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)$(l)Habitat:$() Aquatic$(br2)>Chondrichthyes$(br)>Orodontida$(br)>Orodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chondrichthyes$(br)>Orodontida$(br)>Orodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Orodus is a weirdly shaped cartilaginous fish that lived from the Late Carboniferous to Early Permian. It was quite large for cartilaginous fish of its time."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_orodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_orodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_orodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_orodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_orodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_orodus"
 		}
 	]
 }

@@ -37,7 +37,8 @@ public class ItemEryopsRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eryops", ItemEryopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEryopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEryopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemEryopsRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemEryopsRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

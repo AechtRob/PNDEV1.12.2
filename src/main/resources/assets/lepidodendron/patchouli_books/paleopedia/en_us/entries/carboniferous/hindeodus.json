@@ -1,0 +1,46 @@
+{
+	"name": "Hindeodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hindeodus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_hindeodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hindeodus",
+			"title": "Hindeodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Anchignathodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/hindeodus.png"],
+			"title": "H. cristulus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hindeodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_conodont@hindeodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_conodont@hindeodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_conodont@hindeodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_conodont@hindeodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_conodont@hindeodus"
+		}
+	]
+}

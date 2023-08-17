@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_saivodus",
 			"title": "Saivodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Ctenacanthiformes"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Ctenacanthiformes"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Saivodus is a giant prehistoric ctenacanth shark that lurked among the Carboniferous oceans. It was probably an apex predator that hunted near the surface of the waters."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_saivodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_saivodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_saivodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_saivodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_saivodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_saivodus"
 		}
 	]
 }

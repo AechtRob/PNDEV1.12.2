@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_entelognathus",
 			"title": "Entelognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Coral Cleft$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>$(o)incertae sedis"
 		},
 		{
 			"type": "image",
@@ -28,14 +28,24 @@
 			"text": "The tridimensionality of the fossils also revealed a strange characteristic quirk of the animal. Its eyes were fixed forward and angled downwards, giving the fish a dopey expression. It is unclear why it was like this, but it is hypothesized that the animal ate burying animals, like brachiopods, invertebrates, or small agnathan fish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_entelognathus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_entelognathus"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_entelognathus",
-			"type": "text",
-			"text": ""
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_entelognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_entelognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_entelognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_entelognathus"
 		}
 	]
 }

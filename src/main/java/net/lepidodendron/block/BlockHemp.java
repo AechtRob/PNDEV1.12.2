@@ -2,8 +2,11 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -198,7 +201,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends SeedSporeReedBase {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
 
 		
 		public BlockCustomFlower() {
@@ -210,6 +213,12 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_hemp");
 			setRegistryName("hemp");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_HEMP;
 		}
 
 		@Override

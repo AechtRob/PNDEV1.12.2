@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mussaurus",
 			"title": "Mussaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Temperate Forest$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Mussauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Mussauridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Not unlike Plateosaurus, the Mussaurus too was bipedal in its later stages of maturity, so much so that some of their remains were interpreted to be Plateosaurus in the early 80s before being properly reassigned to Mussaurus. The original description of the animal was by José Fernando Bonaparte, one of the most well known paleontologists in Argentinean history, who only recently left us in Febuary 2020 at age 91."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mussaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mussaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mussaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mussaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mussaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mussaurus"
 		}
 	]
 }

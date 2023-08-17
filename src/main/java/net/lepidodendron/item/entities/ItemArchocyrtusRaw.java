@@ -38,10 +38,8 @@ public class ItemArchocyrtusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archocyrtus", ItemArchocyrtusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArchocyrtusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArchocyrtusRaw.block);
-		OreDictionary.registerOre("listAllinsectraw", ItemArchocyrtusRaw.block);
-		OreDictionary.registerOre("foodInsect", ItemArchocyrtusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemArchocyrtusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemArchocyrtusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {

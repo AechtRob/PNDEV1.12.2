@@ -30,9 +30,9 @@ public class ItemXenusionRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xenusion", ItemXenusionRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemXenusionRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXenusionRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemXenusionRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemXenusionRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemXenusionRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

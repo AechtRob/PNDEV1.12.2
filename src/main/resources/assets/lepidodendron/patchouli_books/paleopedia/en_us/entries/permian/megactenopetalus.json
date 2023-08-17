@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megactenopetalus",
 			"title": "Megactenopetalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Ocean Cliffs$(br2)>Chondrichthyes$(br)>Petalodontiformes$(br)>Pristodontidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes$(br)>Petalodontiformes$(br)>Pristodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Megactenopetalus is a large petalodont shark from the Permian period. It is known only from its peculiar teeth but its body shape has been inferred from the related petalodont, Belantsea. It could grow up to 1.6 meters in length and was one of the last petalodonts to have lived."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megactenopetalus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megactenopetalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megactenopetalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megactenopetalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megactenopetalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megactenopetalus"
 		}
 	]
 }

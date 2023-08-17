@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_edestus",
 			"title": "Edestus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Edestidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Edestidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Edestus is a large eugeneodont from the Carboniferous period. It is characterized by its unique tooth whorls, and only a single whorl appeared in the midline of each jaw. Its tooth whorls were likely adapted to allow it to more easily slice up prey, which would get stuck in its mouth, making them easier to cut up and eat."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_edestus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_edestus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_edestus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_edestus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_edestus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_edestus"
 		}
 	]
 }

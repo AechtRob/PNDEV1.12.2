@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
@@ -55,7 +58,7 @@ public class BlockWattiezaShootSide02 extends ElementsLepidodendronMod.ModElemen
 	//			new ModelResourceLocation("lepidodendron:wattieza_shoot_side_02", "inventory"));
 	//}
 	
-	public static class BlockCustom extends SeedSporeBlockBase {
+	public static class BlockCustom extends SeedSporeBlockBase implements IAdvancementGranter {
 
 		public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
@@ -69,6 +72,12 @@ public class BlockWattiezaShootSide02 extends ElementsLepidodendronMod.ModElemen
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_WATTIEZA;
 		}
 
 		@Override

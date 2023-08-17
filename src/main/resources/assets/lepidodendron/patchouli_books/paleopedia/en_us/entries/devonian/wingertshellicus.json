@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_wingertshellicus",
 			"title": "Wingertshellicus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Arthropoda$(br)>incertae sedis"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>incertae sedis"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Wingertshellicus is a worm-like arthropod known from Devonian Hunsrück Slate, Germany. A characteristic feature of this arthropod is that of the several appendages, only three pairs are noticeably elongated. Researchers have speculated that this is an arthropod related to insects. However, later studies found that these appendages actually grew on the head, ruling out relation with insects."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_wingertshellicus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_wingertshellicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_wingertshellicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_wingertshellicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_wingertshellicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_wingertshellicus"
 		}
 	]
 }

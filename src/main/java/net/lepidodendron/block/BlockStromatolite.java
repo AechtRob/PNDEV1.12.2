@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
@@ -45,6 +46,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -229,7 +231,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyBool EAST = PropertyBool.create("east");
 	public static final PropertyBool WEST = PropertyBool.create("west");
 	
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.ROCK);
 			setTranslationKey("pf_stromatolite");
@@ -243,6 +245,12 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 			setDefaultSlipperiness(0.7f);
 			useNeighborBrightness = true;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(TOPSHOOT, true));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_STROMATOLITE;
 		}
 
 		@Override

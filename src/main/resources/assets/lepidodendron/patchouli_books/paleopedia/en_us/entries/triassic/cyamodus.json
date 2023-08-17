@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyamodus",
 			"title": "Cyamodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Clam Beds$(br2)>Sauropterygia$(br)>Placodontia$(br)>Cyamodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropterygia$(br)>Placodontia$(br)>Cyamodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cyamodus was a genus of placodont that lived during the Middle Triassic in what is now Germany. Inhabiting marine shallows, Cyamodus and most other placodonts had strong jaws with teeth specialized for crushing shellfish. Like several other placodonts, it had a flat, turtle-like shell that protected it from larger marine reptiles."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cyamodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Bivalves$(br)$(l)Breeds with:$() Bivalves$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cyamodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cyamodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cyamodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cyamodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cyamodus"
 		}
 	]
 }

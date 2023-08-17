@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
@@ -30,9 +29,6 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
@@ -149,32 +145,7 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 		return ItemStack.EMPTY;
 	}
 
-	public ResourceLocation getFreezeLoot() {
-		switch (this.getPNType()) {
-			case CLATROTITAN: default:
-				return LepidodendronMod.TITANOPTERA_NYMPH_LOOT;
 
-			case GIGATITAN:
-				return LepidodendronMod.TITANOPTERA_NYMPH_LOOT;
-
-			case MESOTITAN:
-				return LepidodendronMod.TITANOPTERA_NYMPH_LOOT;
-		}
-	}
-
-	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case CLATROTITAN: default:
-				return LepidodendronMod.BUG_LOOT;
-
-			case GIGATITAN:
-				return LepidodendronMod.BUG_LOOT;
-
-			case MESOTITAN:
-				return LepidodendronMod.BUG_LOOT;
-
-		}
-	}
 
 //	public float getFlySpeed() {
 //		switch (this.getPNType()) {
@@ -223,25 +194,14 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return getStandardLoot();
+		return null;
 	}
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
 	{
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			ResourceLocation resourcelocation = getFreezeLoot();
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", this.getPNType().getName());
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				variantNBT.setString("PNDisplaycase", stringEgg);
-				itemstack.setTagCompound(variantNBT);
-				this.entityDropItem(itemstack, 0.0F);
-			}
+			return;
 		}
 		else {
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);

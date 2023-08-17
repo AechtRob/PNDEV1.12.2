@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.GlassSpongeReefGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -36,10 +39,13 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -48,6 +54,12 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 	public static final Block block = null;
 	public BlockGlassSpongeReef(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.glass_sponge_reef);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pndietSponge", BlockGlassSpongeReef.block);
 	}
 
 	@Override
@@ -139,7 +151,7 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.CORAL);
@@ -151,6 +163,12 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_REEF_GLASS_SPONGE;
 		}
 
 		@Override

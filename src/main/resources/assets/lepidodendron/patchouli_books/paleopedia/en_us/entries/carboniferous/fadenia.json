@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_fadenia_carboniferous",
 			"title": "Fadenia gigas",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Fadenia gigas is a species of Fadenia which lived during the Carboniferous period. It grew up to 6 meters long and it had a tooth whorl similar to other caseodonts. It mainly inhabited marine environments and probably actively hunted."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_fadenia_carboniferous",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_carboniferous"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_carboniferous"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_carboniferous"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_carboniferous"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_carboniferous"
 		}
 	]
 }

@@ -51,9 +51,9 @@ public class ItemMarmolatella extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_marmolatella", ItemMarmolatella.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMarmolatella.block);
-		OreDictionary.registerOre("foodMeat", ItemMarmolatella.block);
 		OreDictionary.registerOre("itemShellfish", ItemMarmolatella.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemMarmolatella.block);
+		OreDictionary.registerOre("pndietShellfish", ItemMarmolatella.block);
 	}
 
 

@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBas
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
@@ -47,11 +48,11 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
-    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraInsectFlyingBase.class, DataSerializers.VARINT);
 
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraInsectFlyingBase.class, DataSerializers.VARINT);
 
@@ -74,9 +75,11 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     public EntityPrehistoricFloraInsectFlyingBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
-        this.navigator = new PathNavigateFlyingNoWater(this, world);
-        this.getNavigator().getNodeProcessor().setCanSwim(false);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraInsectFlyingBase.FlightMoveHelper(this);
+            this.navigator = new PathNavigateFlyingNoWater(this, world);
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -94,8 +97,6 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
         return false;
     }
-
-    public abstract String[] getFoodOreDicts();
 
     @Override
     public boolean isChild()

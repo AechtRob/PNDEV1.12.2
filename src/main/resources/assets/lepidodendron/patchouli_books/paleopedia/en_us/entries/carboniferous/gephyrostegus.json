@@ -1,0 +1,47 @@
+{
+	"name": "Gephyrostegus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gephyrostegus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_gephyrostegus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gephyrostegus",
+			"title": "Gephyrostegus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Gephyrostegida$(br)>Gephyrostegidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Gephyrostegus.png"],
+			"title": "G. bohemicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gephyrostegus",
+			"type": "text",
+			"text": "Gephyrostegus is a reptiliomorph from the Late Carboniferous. It was very small, only 22cm in length and it is known to have preyed on insects. It may have been semi aquatic, laying eggs in water, but staying mostly on land."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gephyrostegus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gephyrostegus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gephyrostegus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gephyrostegus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gephyrostegus"
+		}
+	]
+}
+

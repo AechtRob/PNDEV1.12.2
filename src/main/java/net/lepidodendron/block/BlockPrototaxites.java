@@ -2,7 +2,10 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.WorldGenPrototaxites;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
@@ -37,6 +40,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -130,7 +134,7 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements IGrowable {
+	public static class BlockCustom extends Block implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -142,6 +146,12 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 			setTickRandomly(true);
 			setTranslationKey("pf_prototaxites");
 			setRegistryName("prototaxites");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PROTOTAXITES;
 		}
 
 		@Override

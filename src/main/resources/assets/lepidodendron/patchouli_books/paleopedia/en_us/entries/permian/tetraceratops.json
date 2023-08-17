@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tetraceratops",
 			"title": "Tetraceratops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest$(br2)>Synapsida$(br)>Pantherapsida"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Pantherapsida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Tetraceratops is a horned synapsid from the Permian period. Its name means 'four horned face.' However despite this naming, it actually had 6 horns on its head and it also had 2 pairs of canines in its mouth. Their teeth were sharp and dagger like, perfect for tearing flesh."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tetraceratops",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants(br)$(l)Breeds with:$() Plants(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tetraceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tetraceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tetraceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tetraceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tetraceratops"
 		}
 	]
 }

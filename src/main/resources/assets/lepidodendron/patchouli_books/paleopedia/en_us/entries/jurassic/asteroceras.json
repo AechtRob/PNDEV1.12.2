@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_asteroceras",
 			"title": "Asteroceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Arietitidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Arietitidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": " although this ornamentation varied visibly depending on the developmental stage of the animal. In certain areas, this ammonite is such a common fossil find as to have given the name to the formation its found in, as its the case in the Obtususton-Formation in Germany, taking the name from the species name of Asteroceras obtusum."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_asteroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_asteroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_asteroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_asteroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_asteroceras"
 		}
 	]
 }

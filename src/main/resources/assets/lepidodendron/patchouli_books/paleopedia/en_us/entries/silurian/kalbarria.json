@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kalbarria",
 			"title": "Kalbarria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Land$(br2)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kalbarria is a euthycarcinoid arthropod from the Tumblagooda Sandstone, believed to be between the Ordovician-Silurian. This is only one example of finding the body fossil, while all other fossils from that sandstone are trace fossils. Some trace fossils known from sandstones seem to indicate trackways by this animal or closely related animals. Unfortunately, it has not been studied much in recent years due to uncertainties in the study of sandstone and the state of fossil preservation."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kalbarria",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalbarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalbarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalbarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalbarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalbarria"
 		}
 	]
 }

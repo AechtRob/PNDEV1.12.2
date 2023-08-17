@@ -36,7 +36,8 @@ public class ItemOpolankaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_opolanka", ItemOpolankaRaw.block);
-		OreDictionary.registerOre("itemShellfish", ItemOpolankaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemOpolankaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemOpolankaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -37,9 +37,8 @@ public class ItemDusliaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_duslia", ItemDusliaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemDusliaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDusliaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemDusliaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemDusliaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemDusliaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

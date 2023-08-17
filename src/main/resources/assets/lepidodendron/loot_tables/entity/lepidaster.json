@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:lepidaster_raw",
+          "name": "lepidodendron:lepidaster_item",
           "weight": 1,
           "functions": [
             {

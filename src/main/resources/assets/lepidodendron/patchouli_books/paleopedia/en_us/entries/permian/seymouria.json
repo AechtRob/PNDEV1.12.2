@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_seymouria",
 			"title": "Seymouria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands$(br2)>Seymouriamorpha$(br)>Seymouriidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Seymouriamorpha$(br)>Seymouriidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Seymouria is a semi aquatic Permian amphibian that was also well adapted for terrestrial life. They had a short head and a short tail and represent a transitional period between amphibian and reptile. They lived in environments that would have fluctuated between wet and dry seasons and so they may have went through metamorphosis very early in life."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_seymouria",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_seymouria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_seymouria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_seymouria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_seymouria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_seymouria"
 		}
 	]
 }

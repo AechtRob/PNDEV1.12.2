@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_canadia",
 			"title": "Canadia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Annelida$(br)>Polychaeta"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Annelida$(br)>Polychaeta"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,8 @@
 			"text": "Canadia is a polychaete worm from the Burgess shale. It had many tentacle like protrusions along its body and it would have been a carnivorous free swimmer."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_canadia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_canadia"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",

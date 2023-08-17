@@ -39,6 +39,8 @@ public class ItemMicrobrachiusRawF extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microbrachius@female", ItemMicrobrachiusRawF.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMicrobrachiusRawF.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemMicrobrachiusRawF.block);
+		OreDictionary.registerOre("pndietFish", ItemMicrobrachiusRawF.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

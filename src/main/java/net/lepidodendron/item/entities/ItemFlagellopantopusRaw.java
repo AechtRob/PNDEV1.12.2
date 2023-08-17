@@ -33,10 +33,7 @@ public class ItemFlagellopantopusRaw extends ElementsLepidodendronMod.ModElement
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("dnaPNFlagellopantopus", ItemFlagellopantopusRaw.block);
-		//OreDictionary.registerOre("listAllfishraw", ItemFlagellopantopusRaw.block);
-		//OreDictionary.registerOre("listAllmeatraw", ItemFlagellopantopusRaw.block);
-		//OreDictionary.registerOre("foodMeat", ItemFlagellopantopusRaw.block);
+		//NEED ADDING OREDICTS
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

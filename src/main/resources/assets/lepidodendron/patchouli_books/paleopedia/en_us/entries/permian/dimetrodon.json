@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dimetrodon",
 			"title": "Dimetrodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br2)>Synapsida$(br)>Sphenacodontidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Sphenacodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dimetrodon is a famous sphenacodont from the Permian period. It had a distinctive large sail and one of the most well known apex predators in its environment, feeding on fish and tetrapods. They also would have competed with the smaller Ctenospondylus for food. Its sail was formed from elongated neural spines from its vertebrae."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dimetrodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon"
 		}
 	]
 }

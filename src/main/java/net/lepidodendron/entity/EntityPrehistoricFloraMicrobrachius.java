@@ -47,8 +47,10 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraMicrobrachius(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraMicrobrachius.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraMicrobrachius.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.2F, 0.2F);
 		minWidth = 0.2F;
 		maxWidth = 0.2F;

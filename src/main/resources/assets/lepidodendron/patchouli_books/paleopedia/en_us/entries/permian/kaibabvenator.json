@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kaibabvenator",
 			"title": "Kaibabvenator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kaibabvenator was a very large ctenacanthiform shark that lived in shallow seas during the Middle Permian. Its 30 mm long teeth are known from Arizona, and the shark's name references the limestone of the Kaibab Formation which forms the rim of the Grand Canyon. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kaibabvenator",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kaibabvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kaibabvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kaibabvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kaibabvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kaibabvenator"
 		}
 	]
 }

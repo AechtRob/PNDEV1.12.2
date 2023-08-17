@@ -23,9 +23,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Random;
 
@@ -44,6 +46,12 @@ public class BlockNothofagusSlab extends ElementsLepidodendronMod.ModElement {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("nothofagus_slab"));
 		elements.blocks.add(() -> new BlockCustom.Double().setRegistryName("nothofagus_slab_double"));
 		elements.items.add(() -> new ItemSlab(block, (BlockSlab) block, (BlockSlab) block_slab_double).setRegistryName(block.getRegistryName()));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("slabWood", BlockNothofagusSlab.block);
 	}
 
 	@SideOnly(Side.CLIENT)

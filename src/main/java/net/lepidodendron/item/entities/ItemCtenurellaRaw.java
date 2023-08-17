@@ -38,8 +38,8 @@ public class ItemCtenurellaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ctenurella@male", ItemCtenurellaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCtenurellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCtenurellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCtenurellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCtenurellaRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemCtenurellaRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

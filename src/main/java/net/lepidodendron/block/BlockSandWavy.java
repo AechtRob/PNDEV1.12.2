@@ -22,9 +22,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockSandWavy extends ElementsLepidodendronMod.ModElement {
@@ -32,6 +34,13 @@ public class BlockSandWavy extends ElementsLepidodendronMod.ModElement {
 	public static final Block block = null;
 	public BlockSandWavy(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.sand_wavy);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("sand", BlockSandWavy.block);
+		OreDictionary.registerOre("blockSand", BlockSandWavy.block);
 	}
 
 	@Override

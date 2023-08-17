@@ -37,9 +37,8 @@ public class ItemMarrellaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_marrella", ItemMarrellaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemMarrellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMarrellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMarrellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemMarrellaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemMarrellaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

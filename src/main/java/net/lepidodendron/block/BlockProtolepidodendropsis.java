@@ -2,7 +2,10 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -192,7 +195,7 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 		}
 	}
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 	public static final PropertyInteger SECTION = PropertyInteger.create("section", 0, 4);
 
@@ -207,6 +210,12 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			setCreativeTab(null);
 			setTickRandomly(true);
         	this.setDefaultState(this.blockState.getBaseState().withProperty(SECTION, 0));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PROTOLEPIDODENDROPSIS;
 		}
 
 		@Override

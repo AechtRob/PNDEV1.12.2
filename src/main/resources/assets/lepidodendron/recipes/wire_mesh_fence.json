@@ -2,34 +2,34 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
+    "012",
     "345",
-    " 7 "
+    "   "
   ],
   "key": {
+    "0": {
+      "item": "lepidodendron:wire_mesh_block"
+    },
     "1": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "nuggetIron"
+    },
+    "2": {
+      "item": "lepidodendron:wire_mesh_block"
     },
     "3": {
-      "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "item": "lepidodendron:wire_mesh_block"
     },
     "4": {
       "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "ore": "nuggetIron"
     },
     "5": {
-      "type": "forge:ore_dict",
-      "ore": "nugget_iron"
-    },
-    "7": {
-      "type": "forge:ore_dict",
-      "ore": "nugget_iron"
+      "item": "lepidodendron:wire_mesh_block"
     }
   },
   "result": {
     "item": "lepidodendron:wire_mesh_fence",
-    "count": 4
+    "count": 16
   }
 }
