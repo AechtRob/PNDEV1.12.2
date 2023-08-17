@@ -120,7 +120,7 @@ public class BlockAmentotaxus4Berries extends ElementsLepidodendronMod.ModElemen
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

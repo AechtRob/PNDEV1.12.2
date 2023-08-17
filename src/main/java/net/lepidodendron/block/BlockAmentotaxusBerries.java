@@ -100,7 +100,7 @@ public class BlockAmentotaxusBerries extends ElementsLepidodendronMod.ModElement
 							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
 					)
 			) {
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockAmentotaxus.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				worldIn.spawnEntity(entityToSpawn);
 			}
@@ -150,7 +150,7 @@ public class BlockAmentotaxusBerries extends ElementsLepidodendronMod.ModElement
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

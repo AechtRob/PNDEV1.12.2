@@ -106,7 +106,7 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 			if (worldIn.rand.nextInt(4) == 0) {
 				if (!(state.getValue(FRUITS))) {
-					worldIn.setBlockState(pos, this.getDefaultState().withProperty(FRUITS, true));
+					worldIn.setBlockState(pos, this.getDefaultState().withProperty(DECAYABLE, state.getValue(DECAYABLE)).withProperty(CHECK_DECAY, state.getValue(CHECK_DECAY)).withProperty(FRUITS, true));
 				}
 			}
 			super.updateTick(worldIn, pos, state, rand);
@@ -137,17 +137,51 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public IBlockState getStateFromMeta(int meta) {
-			return this.getDefaultState().withProperty(DECAYABLE, (meta & 1) != 0).withProperty(CHECK_DECAY, (meta & 2) != 0).withProperty(FRUITS, (meta & 3) != 0);
+			if (meta == 1) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true).withProperty(FRUITS, true);
+			}
+			if (meta == 2) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true).withProperty(FRUITS, false);
+			}
+			if (meta == 3) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, false).withProperty(FRUITS, false);
+			}
+			if (meta == 4) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, false).withProperty(FRUITS, true);
+			}
+			if (meta == 5) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, false).withProperty(FRUITS, false);
+			}
+			if (meta == 6) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, false).withProperty(FRUITS, true);
+			}
+			if (meta == 7) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, true).withProperty(FRUITS, true);
+			}
+			if (meta == 8) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, true).withProperty(FRUITS, false);
+			}
+			return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true).withProperty(FRUITS, true);
 		}
 
 		public int getMetaFromState(IBlockState state) {
-			int i = 0;
-			if (!(Boolean) state.getValue(DECAYABLE))
-				i |= 1;
-			if ((Boolean) state.getValue(CHECK_DECAY))
-				i |= 2;
-			if ((Boolean) state.getValue(FRUITS))
-				i |= 3;
+			int i = 5;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 1;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 2;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 3;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 4;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 5;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 6;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 7;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 8;
 			return i;
 		}
 
@@ -160,7 +194,7 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 					ItemStack stackSeed = new ItemStack(ItemYewBerries.block, (int) (1));
 					stackSeed.setCount(1);
 					ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-					world.setBlockState(pos, BlockYewLeavesBerries.block.getDefaultState().withProperty(FRUITS, false), 3);
+					world.setBlockState(pos, BlockYewLeavesBerries.block.getDefaultState().withProperty(DECAYABLE, state.getValue(DECAYABLE)).withProperty(CHECK_DECAY, state.getValue(CHECK_DECAY)).withProperty(FRUITS, false), 3);
 					return true;
 				}
 				return true;
