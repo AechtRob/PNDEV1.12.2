@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ophthalmothule",
 			"title": "Ophthalmothule",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Cryptoclididae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Cryptoclididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ophthalmothule",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
 		}
 	]
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
+    "fruits=true":  { "model": "lepidodendron:yew_leaves_berries" },
+    "fruits=false":  { "model": "lepidodendron:yew_leaves" },
     "normal": [
       {"model": "lepidodendron:yew_leaves_berries"}
     ]

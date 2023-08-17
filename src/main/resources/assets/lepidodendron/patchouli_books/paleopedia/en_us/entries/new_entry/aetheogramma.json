@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lacewing_aetheogramma",
 			"title": "Aetheogramma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Neuroptera $(br)>Myrmeleontiformia $(br)>Aetheogrammatidae"
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Myrmeleontiformia $(br)>Aetheogrammatidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Aetheogramma is genus of lacewing from Yixian Formation, Early Cretaceous of Liaoning, China. It is known from two species, and belongs to its own family called Aetheogrammatidae. It had a long proboscis like that of other Kalligrammatids."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lacewing_aetheogramma",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@aetheogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@aetheogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@aetheogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@aetheogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@aetheogramma"
 		}
 	]
 }

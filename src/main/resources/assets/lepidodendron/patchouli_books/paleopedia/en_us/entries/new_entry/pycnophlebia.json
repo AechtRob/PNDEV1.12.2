@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pycnophlebia",
 			"title": "Pycnophlebia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Orthoptera $(br)>Hagloidea $(br)>Prophalangopsidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Orthoptera $(br)>Hagloidea $(br)>Prophalangopsidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pycnophlebia",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
 		}
 	]
 }

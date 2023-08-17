@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kayentatherium",
 			"title": "Kayentatherium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Cynodontia $(br)>Tritylodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cynodontia $(br)>Tritylodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kayentatherium",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Burrow$(br)$(l)Method of Obtaining:$() Find Egg in Burrow"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kayentatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kayentatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kayentatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kayentatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kayentatherium"
 		}
 	]
 }
