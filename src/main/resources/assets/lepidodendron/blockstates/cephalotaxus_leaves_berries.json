@@ -1,5 +1,7 @@
 {
   "variants": {
+    "fruits=true":  { "model": "lepidodendron:cephalotaxus_leaves_berries" },
+    "fruits=false":  { "model": "lepidodendron:cephalotaxus_leaves" },
     "normal": [
       {"model": "lepidodendron:cephalotaxus_leaves_berries"}
     ]

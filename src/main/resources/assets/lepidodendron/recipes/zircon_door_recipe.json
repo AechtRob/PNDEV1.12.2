@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "1": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "2": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "3": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "4": {
+      "item": "lepidodendron:zircon_glass"
+    },
+    "5": {
+      "item": "lepidodendron:zircon_glass"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:zircon_glass_door_item",
+    "count": 3
+  }
+}

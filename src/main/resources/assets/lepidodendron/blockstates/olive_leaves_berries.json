@@ -1,5 +1,7 @@
 {
   "variants": {
+    "fruits=true":  { "model": "lepidodendron:olive_leaves_berries" },
+    "fruits=false":  { "model": "lepidodendron:olive_leaves" },
     "normal": [
       {"model": "lepidodendron:olive_leaves_berries"}
     ]
