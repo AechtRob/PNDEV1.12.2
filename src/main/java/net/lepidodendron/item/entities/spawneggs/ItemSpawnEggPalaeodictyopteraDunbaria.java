@@ -53,6 +53,16 @@ public class ItemSpawnEggPalaeodictyopteraDunbaria extends ElementsLepidodendron
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -5717544;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10583218;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "early Permian";
 		}

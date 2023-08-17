@@ -53,6 +53,16 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -10530510;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12371420;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - [Present]";
 		}

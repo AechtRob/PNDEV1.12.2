@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontClarkina extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -12502987;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -4605010;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Permian - Triassic";
 		}

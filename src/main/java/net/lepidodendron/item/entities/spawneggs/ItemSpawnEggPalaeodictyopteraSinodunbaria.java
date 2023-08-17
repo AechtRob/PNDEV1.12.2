@@ -53,6 +53,16 @@ public class ItemSpawnEggPalaeodictyopteraSinodunbaria extends ElementsLepidoden
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -4544654;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -6509419;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Carboniferous";
 		}

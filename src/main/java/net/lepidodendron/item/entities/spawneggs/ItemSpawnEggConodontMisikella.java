@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontMisikella extends ElementsLepidodendronMod.ModE
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -13620180;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12238784;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Triassic - Jurassic";
 		}
