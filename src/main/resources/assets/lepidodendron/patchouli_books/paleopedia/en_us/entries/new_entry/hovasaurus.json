@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hovasaurus",
 			"title": "Hovasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Tangasauridae"
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Reptilia $(br)>Tangasauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hovasaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Mound$(br)$(l)Method of Obtaining:$() Find Eggs in Mound"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hovasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hovasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hovasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hovasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hovasaurus"
 		}
 	]
 }
