@@ -1,0 +1,6 @@
+{
+ "parent": "lepidodendron:item/bench_item",
+ "textures": {
+ "wood": "lepidodendron:blocks/golden_larch_planks"
+ }
+}

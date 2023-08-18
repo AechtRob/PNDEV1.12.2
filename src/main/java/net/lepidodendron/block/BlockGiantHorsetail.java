@@ -186,7 +186,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -253,8 +254,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")) {
 			GenChance = 64;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
-			GenChance = 32;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
+			GenChance = 30;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
 			GenChance = 256;

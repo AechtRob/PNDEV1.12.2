@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cedar_fruit_1"},
+      {"model": "lepidodendron:cedar_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:cedar_fruit_block_inventory"
+    }
+  }
+}

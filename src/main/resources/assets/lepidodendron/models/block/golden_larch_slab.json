@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/golden_larch_planks",
+    "top": "lepidodendron:blocks/golden_larch_planks",
+    "side": "lepidodendron:blocks/golden_larch_planks"
+  }
+}

@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockAgathisSapling;
+import net.lepidodendron.block.BlockScrubbyPineSapling;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -42,7 +42,7 @@ public class ItemScrubbyPineNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAgathisSapling.block.getDefaultState(),1);
+			super(BlockScrubbyPineSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_scrubby_pine_nuts");
 			setRegistryName("scrubby_pine_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

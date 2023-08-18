@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:golden_larch_fruit_1"},
+      {"model": "lepidodendron:golden_larch_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:golden_larch_fruit_block_inventory"
+    }
+  }
+}

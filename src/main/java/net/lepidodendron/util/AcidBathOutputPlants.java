@@ -648,7 +648,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAtliSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGansufructus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYam.block).toString(),
-<<<<<<< HEAD
                 ForgeRegistries.ITEMS.getKey(ItemPotamogetonItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDrewria.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGoldenLarchSapling.block).toString(),
@@ -661,8 +660,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaGrass.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMosacaulis.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockJerseyanthusSapling.block).toString(),
-=======
->>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling"
@@ -775,7 +772,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDrimys.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemMontsechiaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYam.block).toString(),
-<<<<<<< HEAD
                 ForgeRegistries.ITEMS.getKey(ItemPotamogetonItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGoldenLarchSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAridPineSapling.block).toString(),
@@ -786,8 +782,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockZingiberopsis.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaGrass.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNuphar.block).toString(),
-=======
->>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -900,7 +894,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDrimys.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemMontsechiaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYam.block).toString(),
-<<<<<<< HEAD
                 ForgeRegistries.ITEMS.getKey(ItemPotamogetonItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGoldenLarchSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAridPineSapling.block).toString(),
@@ -910,8 +903,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLiquidambarSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaGrass.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNuphar.block).toString(),
-=======
->>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -1024,7 +1015,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDrimys.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemMontsechiaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYam.block).toString(),
-<<<<<<< HEAD
                 ForgeRegistries.ITEMS.getKey(ItemPotamogetonItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGoldenLarchSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAridPineSapling.block).toString(),
@@ -1034,8 +1024,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLiquidambarSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaGrass.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNuphar.block).toString(),
-=======
->>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",

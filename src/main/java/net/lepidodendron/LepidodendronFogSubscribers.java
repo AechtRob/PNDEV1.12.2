@@ -96,7 +96,7 @@ public class LepidodendronFogSubscribers {
 			int distance = 0;
 			if (ranges.length > 0) {
 				//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length - 1)];
-				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
 			}
 
 			int divider = 0;
@@ -182,7 +182,7 @@ public class LepidodendronFogSubscribers {
 							if (ranges.length > 0)
 							{
 								//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
-								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
+								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
 							}
 							int divider = 0;
 							for (int x = -distance; x <= distance; ++x)
@@ -377,22 +377,6 @@ public class LepidodendronFogSubscribers {
 	}
 
 	private float getBiomeFactor(Biome biome) {
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_spikes")) {
-			return 150;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
-			return 150;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim")) {
-			return 120;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
-			return 150;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) {
-			return 150;
-		}
 
 		if (biome instanceof BiomePrecambrian) {
 			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
@@ -421,6 +405,18 @@ public class LepidodendronFogSubscribers {
 			}
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_spikes")) {
+			return 150;
+		}
+
+		if (biome instanceof BiomeCarboniferous) {
+			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
+			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
+				return 200;
+			}
+		}
+
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
@@ -429,14 +425,21 @@ public class LepidodendronFogSubscribers {
 					&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse"))) {
 				return 150;
 			}
-		}
-		if (biome instanceof BiomeCarboniferous) {
-			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
-					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
-				return 200;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
+				return 150;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim")) {
+				return 120;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
+				return 150;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) {
+				return 150;
 			}
 		}
+
 		if (biome instanceof BiomeJurassic) {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
