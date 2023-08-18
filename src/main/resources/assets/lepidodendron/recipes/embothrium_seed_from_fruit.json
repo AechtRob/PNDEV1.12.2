@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:embothrium_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:embothrium_seed",
+    "count": 1
+  }
+}
