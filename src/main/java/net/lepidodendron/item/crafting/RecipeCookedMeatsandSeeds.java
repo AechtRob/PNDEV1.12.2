@@ -58,6 +58,7 @@ public class RecipeCookedMeatsandSeeds  {
 
 		GameRegistry.addSmelting(new ItemStack(ItemChestnut.block, (int) (1)), new ItemStack(ItemChestnutRoasted.block, (int) (1)), 0.15F);
 
+<<<<<<< HEAD
 		for (ItemStack stack : OreDictionary.getOres("foodPinenuts")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemRoastedPineNuts.block, 1), 0.15F);
 		}
@@ -84,5 +85,45 @@ public class RecipeCookedMeatsandSeeds  {
 		}
 
 
+=======
+		//All our conifers:
+		GameRegistry.addSmelting(new ItemStack(ItemAethophyllumNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemAgathisNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemAlpiaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemAraucarioxylonNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemAraucaritesNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemBrachyphyllumSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemBristleconeSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemBunyaNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemBuriadiaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemBushyAraucariaNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemColumnarisNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemCordaitesSeeds.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemCypressSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemDawnRedwoodNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemDicranophyllumSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemFrenelopsisSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemFurcifoliumSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemMonkeyPuzzleAraucariaNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemOrtiseiaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemPseudovoltziaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemQuadrocladusSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemRedwoodNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemRufloriaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemSciadopitysNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemSpruceSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemTallAraucariaNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemTaxodiumSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemTelemachusSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemThucydiaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemUtrechtiaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemWachtlerinaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemWalchiaSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemWollemiSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemHoopNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemScrubbyPineNuts.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemElatocladusSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(ItemPagiophyllumSeed.block, (int) (1)), new ItemStack(ItemRoastedPineNuts.block, (int) (1)), 0.15F);
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 	}
 }

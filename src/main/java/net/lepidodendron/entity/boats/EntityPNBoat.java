@@ -321,6 +321,7 @@ public class EntityPNBoat extends EntityBoat
                 return ItemHirmeriellaBoatItem.block;
             case FIG:
                 return ItemFigBoatItem.block;
+<<<<<<< HEAD
             case GOLDEN_LARCH:
                 return ItemGoldenLarchBoatItem.block;
             case ARID_PINE:
@@ -333,6 +334,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemThujaBoatItem.block;
             case LIQUIDAMBAR:
                 return ItemLiquidambarBoatItem.block;
+=======
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 
         }
     }
@@ -473,6 +476,7 @@ public class EntityPNBoat extends EntityBoat
                 return BlockHirmeriellaPlanks.block;
             case FIG:
                 return BlockFigPlanks.block;
+<<<<<<< HEAD
             case GOLDEN_LARCH:
                 return BlockGoldenLarchPlanks.block;
             case ARID_PINE:
@@ -485,6 +489,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockThujaPlanks.block;
             case LIQUIDAMBAR:
                 return BlockLiquidambarPlanks.block;
+=======
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 
         }
     }
@@ -1349,6 +1355,7 @@ public class EntityPNBoat extends EntityBoat
         EMBOTHRIUM(63, "embothrium"),
         PAGIOPHYLLUM(64, "pagiophyllum"),
         HIRMERIELLA(65, "hirmeriella"),
+<<<<<<< HEAD
         FIG(66, "fig"),
         GOLDEN_LARCH(67, "golden_larch"),
         OLIVE(68, "olive"),
@@ -1356,6 +1363,9 @@ public class EntityPNBoat extends EntityBoat
         ARID_PINE(70, "arid_pine"),
         THUJA(71, "arid_pine"),
         LIQUIDAMBAR(71, "liquidambar")
+=======
+        FIG(66, "fig")
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
         ;
 
         private final String name;

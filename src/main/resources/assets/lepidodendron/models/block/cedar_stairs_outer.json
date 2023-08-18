@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "lepidodendron:blocks/cedar_planks",
-    "top": "lepidodendron:blocks/cedar_planks",
-    "side": "lepidodendron:blocks/cedar_planks"
-  }
-}

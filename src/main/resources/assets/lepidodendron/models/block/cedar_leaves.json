@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "lepidodendron:blocks/cedar_leaves",
-    "particle": "lepidodendron:blocks/cedar_leaves"
-  }
-}

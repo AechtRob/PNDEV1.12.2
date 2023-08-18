@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_side",
-  "textures": {
-    "texture": "lepidodendron:blocks/olive_planks",
-    "particle": "lepidodendron:blocks/olive_planks"
-  }
-}

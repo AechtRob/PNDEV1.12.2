@@ -1,8 +1,0 @@
-{
-  "parent": "block/upper_slab",
-  "textures": {
-    "bottom": "lepidodendron:blocks/arid_pine_planks",
-    "top": "lepidodendron:blocks/arid_pine_planks",
-    "side": "lepidodendron:blocks/arid_pine_planks"
-  }
-}

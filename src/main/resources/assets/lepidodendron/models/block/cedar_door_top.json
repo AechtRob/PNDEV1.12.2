@@ -1,8 +1,0 @@
-{
-    "parent": "block/door_top",
-    "textures": {
-        "bottom": "lepidodendron:blocks/cedar_door_bottom",
-        "top": "lepidodendron:blocks/cedar_door_top"
-    }
-}
-

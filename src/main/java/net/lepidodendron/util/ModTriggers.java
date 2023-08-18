@@ -228,7 +228,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EMPLECTOPTERIS = new CustomTrigger("pf_book_emplectopteris");
     public static final CustomTrigger CLICK_ENCBLUE = new CustomTrigger("pf_book_encblue");
     public static final CustomTrigger CLICK_EPHEDRA = new CustomTrigger("pf_book_ephedra");
-    public static final CustomTrigger CLICK_DREWRIA = new CustomTrigger("pf_book_drewria");
     public static final CustomTrigger CLICK_PROTOGNETUM = new CustomTrigger("pf_book_protognetum");
     public static final CustomTrigger CLICK_DAYVAULTIA = new CustomTrigger("pf_book_dayvaultia");
     public static final CustomTrigger CLICK_EQUISETITES_REED = new CustomTrigger("pf_book_equisetites_reed");
@@ -270,7 +269,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_INARIA = new CustomTrigger("pf_book_inaria");
     public static final CustomTrigger CLICK_ISCHNOPHYTON = new CustomTrigger("pf_book_ischnophyton");
     public static final CustomTrigger CLICK_ISOETES = new CustomTrigger("pf_book_isoetes");
-    public static final CustomTrigger CLICK_POTAMOGETON = new CustomTrigger("pf_book_potamogeton");
     public static final CustomTrigger CLICK_IRANIA = new CustomTrigger("pf_book_irania");
     public static final CustomTrigger CLICK_PAGIOPHYLLUM = new CustomTrigger("pf_book_pagiophyllum");
     public static final CustomTrigger CLICK_HIRMERIELLA = new CustomTrigger("pf_book_hirmeriella");
@@ -452,12 +450,15 @@ public class ModTriggers
     public static final CustomTrigger CLICK_AMENOTAXUS = new CustomTrigger("pf_book_amentotaxus");
     public static final CustomTrigger CLICK_PALISSYA = new CustomTrigger("pf_book_palissya");
     public static final CustomTrigger CLICK_SCRUBBY_PINE = new CustomTrigger("pf_book_scrubby_pine");
+<<<<<<< HEAD
     public static final CustomTrigger CLICK_GOLDEN_LARCH = new CustomTrigger("pf_book_golden_larch");
     public static final CustomTrigger CLICK_ARID_PINE = new CustomTrigger("pf_book_arid_pine");
     public static final CustomTrigger CLICK_CEDAR = new CustomTrigger("pf_book_cedar");
     public static final CustomTrigger CLICK_OLIVE = new CustomTrigger("pf_book_olive");
     public static final CustomTrigger CLICK_THUJA = new CustomTrigger("pf_book_thuja");
     public static final CustomTrigger CLICK_LIQUIDAMBAR = new CustomTrigger("pf_book_liquidambar");
+=======
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 
     public static final CustomTrigger CLICK_KERAPHYTON = new CustomTrigger("pf_book_keraphyton");
     public static final CustomTrigger CLICK_PIETZSCHIA = new CustomTrigger("pf_book_pietzschia");
@@ -1514,7 +1515,6 @@ public class ModTriggers
             CLICK_EMPLECTOPTERIS,
             CLICK_ENCBLUE,
             CLICK_EPHEDRA,
-            CLICK_DREWRIA,
             CLICK_PROTOGNETUM,
             CLICK_DAYVAULTIA,
             CLICK_EQUISETITES_REED,
@@ -1556,7 +1556,6 @@ public class ModTriggers
             CLICK_INARIA,
             CLICK_ISCHNOPHYTON,
             CLICK_ISOETES,
-            CLICK_POTAMOGETON,
             CLICK_IRANIA,
             CLICK_JUNGLE,
             CLICK_KOMLOPTERIS,
@@ -1735,12 +1734,15 @@ public class ModTriggers
             CLICK_AMENOTAXUS,
             CLICK_PALISSYA,
             CLICK_SCRUBBY_PINE,
+<<<<<<< HEAD
             CLICK_GOLDEN_LARCH,
             CLICK_ARID_PINE,
             CLICK_CEDAR,
             CLICK_OLIVE,
             CLICK_THUJA,
             CLICK_LIQUIDAMBAR,
+=======
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
             CLICK_KERAPHYTON,
             CLICK_PIETZSCHIA,
             CLICK_FLABELLOPTERIS,

@@ -1,7 +1,0 @@
-{
-    "parent": "block/leaves",
-    "textures": {
-        "all": "lepidodendron:blocks/olive_leaves"
-    }
-}
-

@@ -664,7 +664,6 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eosaurichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eosimops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ephedra_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_drewria_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_protognetum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dayvaultia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_equisetites_reed_item_clean", "inventory"),
@@ -776,7 +775,6 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_inostrancevia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ischnophyton_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_isoetes_item_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_potamogeton_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_irania_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_isotelus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_italophlebia_clean", "inventory"),
@@ -1342,12 +1340,15 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_eugeniacrinites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_phyllocrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_scrubby_pine_sapling_clean", "inventory"),
+<<<<<<< HEAD
 				new ModelResourceLocation("lepidodendron:fossils/fossil_golden_larch_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_arid_pine_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cedar_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_olive_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_thuja_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_liquidambar_sapling_clean", "inventory"),
+=======
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_blooming_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_brain_clean", "inventory"),

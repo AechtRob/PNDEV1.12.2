@@ -57,7 +57,6 @@ public class RecipeOresAndBlocks  {
 		GameRegistry.addSmelting(new ItemStack(BlockBrownstone.block, (int) (1)), new ItemStack(BlockBrownstoneSmooth.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockStoneScoria.block, (int) (1)), new ItemStack(BlockStoneScoriaSmooth.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockStonePorphyry.block, (int) (1)), new ItemStack(BlockStonePorphyrySmooth.block, (int) (1)), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(BlockStonePeridotite.block, (int) (1)), new ItemStack(BlockStonePeridotiteSmooth.block, (int) (1)), 0.1F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockBalticAmberOre.block, (int) (1)), new ItemStack(ItemBalticAmberChunk.block, (int) (1)), 1F);
 		GameRegistry.addSmelting(new ItemStack(BlockDominicanAmberOre.block, (int) (1)), new ItemStack(ItemDominicanAmberChunk.block, (int) (1)), 1F);

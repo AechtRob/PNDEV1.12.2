@@ -1,9 +1,0 @@
-{
-  "variants":
-  {
-    "normal": [
-      {"model": "lepidodendron:drewria" },
-      {"model": "lepidodendron:drewria_var"}
-    ]
-  }
-}

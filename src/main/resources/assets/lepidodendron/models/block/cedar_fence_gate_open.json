@@ -1,8 +1,0 @@
-{
-    "parent": "block/fence_gate_open",
-    "textures": {
-        "texture": "lepidodendron:blocks/cedar_planks",
-    "particle": "lepidodendron:blocks/cedar_planks"
-    }
-}
-

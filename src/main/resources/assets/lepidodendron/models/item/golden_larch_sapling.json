@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lepidodendron:blocks/golden_larch_sapling"
-  }
-}

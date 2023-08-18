@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "lepidodendron:blocks/arid_pine_sapling",
-    "particle": "lepidodendron:blocks/arid_pine_sapling"
-  }
-}

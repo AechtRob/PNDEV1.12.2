@@ -120,6 +120,945 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+<<<<<<< HEAD
+=======
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dawn_redwood_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DAWN_REDWOOD.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:dendrograptus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DENDROGRAPTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sphenoecium"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SPHENOECIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:diaphorodendron_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DIAPHORODENDRON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicksonia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICKSONIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicranophyllum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICRANOPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicroidium_e"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICROIDIUM_E.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicroidium_f_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICROIDIUM_F.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicroidium_h_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICROIDIUM_H.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicroidium_o_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICROIDIUM_O.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dicroidium_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICROIDIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:dictyonema"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICTYONEMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dictyophyllum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DICTYOPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:dinomischus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DINOMISCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dioon_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DIOON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dollyphyton"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DOLLYPHYTON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:echmatocrinus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ECHMATOCRINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:edwardsiphyton"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_EDWARDSIPHYTON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:elkinsia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ELKINSIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:emplectopteris_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_EMPLECTOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:encblue_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ENCBLUE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ephedra"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_EPHEDRA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:protognetum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PROTOGNETUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:dayvaultia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_DAYVAULTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:equisetites_reed_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_EQUISETITES_REED.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:equisetites_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_EQUISETITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:eremopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_EREMOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:hemp"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HEMP.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:escumasia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ESCUMASIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:facivermis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FACIVERMIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:fern_epiphyte"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FERN_EPIPHYTE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:field_horsetail"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FIELD_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:foozia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FOOZIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:frenelopsis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FRENELOPSIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:funisia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FUNISIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:furcifolium"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FURCIFOLIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:furcula_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FURCULA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:gangamopteris_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GANGAMOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:giant_horsetail"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GIANT_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:jurassic_horsetail"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_JURASSIC_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:gigantopterid_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GIGANTOPTERID.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ginkgo_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GINKGO.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ginkgoites_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GINKGOITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:glenopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GLENOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:glossophyllum_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GLOSSOPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:glossopterissapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GLOSSOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:gogia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GOGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:grassy_horsetail"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GRASSY_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:grypania"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GRYPANIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:guangdedendron"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GUANGDEDENDRON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:haootia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HAOOTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:hapsidophyllas"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HAPSIDOPHYLLAS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:helicocystis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HELICOCYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:hermanophyton"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HERMANOPHYTON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:herpetogaster"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HERPETOGASTER.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:hironoia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HIRONOIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:gunnera_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GUNNERA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:hymenaea_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HYMENAEA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ibyka"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_IBYKA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:inaria"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_INARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ischnophyton"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ISCHNOPHYTON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:isoetes_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ISOETES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:irania_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_IRANIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:pagiophyllum_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PAGIOPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:hirmeriella_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HIRMERIELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:jungle_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_JUNGLE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:komlopteris_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_KOMLOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ladinia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LADINIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:leclercqia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LECLERCQIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:lepidocystis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LEPIDOCYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:lepidopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LEPIDOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:leptocycas_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LEPTOCYCAS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:leptopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LEPTOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:lesleya"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LESLEYA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:liriodendron_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LIRIODENDRON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:lycopia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LYCOPIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:lyginopteris_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LYGINOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:lygodium"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LYGODIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:lyracystis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LYRACYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:macroneuropteris_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MACRONEUROPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:macrotaeniopteris_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MACROTAENIOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:magnolia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MAGNOLIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:maple_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MAPLE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:marattia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MARATTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:medullosales_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MEDULLOSALES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:mirabilis_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MIRABILIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:monkey_puzzle_araucaria_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MONKEY_PUZZLE_ARAUCARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:monkeypuzzle_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MONKEYPUZZLE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:namacalathus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NAMACALATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:namapoikia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NAMAPOIKIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nathorstiana_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NATHORSTIANA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nelumbo"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NELUMBO.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:microvictoria"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MICROVICTORIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nematophyta"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NEMATOPHYTA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nemejcopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NEMEJCOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:neocalamites_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NEOCALAMITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:neuropteridium"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NEUROPTERIDIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nilssonia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NILSSONIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nilssoniocladus_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NILSSONIOCLADUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nilssoniopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NILSSONIOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:noeggerathiales_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NOEGGERATHIALES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:pandan_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PANDAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nothofagus_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NOTHOFAGUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:nystroemia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_NYSTROEMIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:oak_sapling"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
@@ -156,6 +1095,781 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+<<<<<<< HEAD
+=======
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:stromatocystites"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_STROMATOCYSTITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:stromatolite"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_STROMATOLITE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:stromatoveris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_STROMATOVERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:surangephyllum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SURANGEPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:swamp_horsetail_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SWAMP_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:swartpuntia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SWARTPUNTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:sycamore_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SYCAMORE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:chestnut_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CHESTNUT.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tawuia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TAWUIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:taxodium_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TAXODIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:telemachus_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TELEMACHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:tempskya_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TEMPSKYA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tentaculita"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TENTACULITA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:tetraxylopteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TETRAXYLOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:thamnobeatricea_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_THAMNOBEATRICEA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:thaumaptilon"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_THAUMAPTILON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:thectardis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_THECTARDIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:thrombolite"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_THROMBOLITE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:thucydia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_THUCYDIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:tietea_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TIETEA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:tmesipteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TMESIPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:todites_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TODITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:tongchuanophyllum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TONGCHUANOPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tribrachidium"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TRIBRACHIDIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:trichopitys"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TRICHOPITYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:tyrmia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TYRMIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:umaltolepis"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_UMALTOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:utrechtia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_UTRECHTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:valmeyerodendron_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_VALMEYERODENDRON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:ventogyrus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_VENTOGYRUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:wachtleria"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WACHTLERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:wachtlerina"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WACHTLERINA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:walchia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WALCHIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:water_horsetail_item"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WATER_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:wattieza_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WATTIEZA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:pachypteris"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WEICHSELIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:wielandiella"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WIELANDIELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:williamsonia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WILLIAMSONIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:wollemi_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WOLLEMI.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:wood_horsetail"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_WOOD_HORSETAIL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:xenocladia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_XENOCLADIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:atli_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ATLI.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:rattan_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_RATTAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:xianguangia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_XIANGUANGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:xihuphyllum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_XIHUPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:yew_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_YEW.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:zamites_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ZAMITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:zosterophyllum"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ZOSTEROPHYLLUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:zygopteridaceae_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ZYGOPTERIDACEAE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:zygopteris_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ZYGOPTERIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:gigantospongia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GIGANTOSPONGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:glass_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GLASS_SPONGE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:cephalotaxus_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CEPHALOTAXUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:cunninghamia_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CUNNINGHAMIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:hoop_araucaria_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_HOOP_ARAUCARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:amentotaxus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_AMENOTAXUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:palissya"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALISSYA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:scrubby_pine_sapling"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SCRUBBY_PINE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+
+
+			//Grouped ones:
+			//-------------
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:blastoid_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:blastoid_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:blastoid_3"),
+						target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_BLASTOID.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:caytoniales"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:caytoniales2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CAYTONIALES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:ktalenia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+			) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_KTALENIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_3"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_4"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_5"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_giant_blue"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_giant_green"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_giant_orange"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_giant_red"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:fenestella_giant_yellow"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+			) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_FENESTELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:matonia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:matonia_large"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MATONIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:primocandelabrum_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:primocandelabrum_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PRIMOCANDELABRUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:rugosa_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:rugosa_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:rugosa_3"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:rugosa_4"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:rugosa_5"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_RUGOSA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_3"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_4"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_5"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_6"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_7"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_8"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:sea_anemone_9"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SEA_ANEMONE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:sphenophyllales"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:sphenophyllales1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SPHENOPHYLLALES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_3"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_4"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_block_1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_block_2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:tabulata_block_3"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TABULATA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:blue_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:branched_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:brown_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:dark_orange_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:dark_pink_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:orange_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:pink_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:red_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:white_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:yellow_sponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_SPONGE.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_bamboo"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_blue_crust"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_blue_staghorn"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_brain"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_carnation"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_red_tree"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_soft_fan"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_blooming"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_fractal_branching"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_lumpy"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_pipe_stack"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_puffy"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_rough_branching"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_sparse_branching"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_tubular"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_tan_staghorn"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+			) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CORAL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+
+
+			//Special case:
+			else if (target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()).getItem()
+				== Item.getItemFromBlock(BlockWebsteroprionBurrow.block)) {
+				if (!(event.getWorld().getEntitiesWithinAABB(EntityPrehistoricFloraWebsteroprionHole.class, new AxisAlignedBB(event.getPos(), event.getPos().add(1, 1, 1))).isEmpty())) {
+					if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+						ModTriggers.CLICK_WEBSTEROPRION.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+					event.getEntityPlayer().swingArm(event.getHand());
+					event.setCanceled(true);
+					return;
+				}
+			}
+
+>>>>>>> parent of 988043d66 (Merge branch 'AechtRob:master' into master)
 
 		}
 

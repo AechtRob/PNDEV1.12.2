@@ -1,8 +1,0 @@
-{
-    "parent": "block/door_bottom",
-    "textures": {
-        "bottom": "lepidodendron:blocks/olive_door_bottom",
-        "top": "lepidodendron:blocks/olive_door_top"
-    }
-}
-
