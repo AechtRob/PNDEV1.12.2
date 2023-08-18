@@ -239,7 +239,7 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsWeigeltisaurus.block, (int) (1)));
 				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtidens")) {
+				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCeltedens.block, (int) (1)));
 				}
 				else {
