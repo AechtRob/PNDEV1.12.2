@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cacops",
 			"title": "Cacops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae$(br)>Eucacopinae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae$(br)>Eucacopinae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cacops is a plump looking temnospondyl from the Middle Permian period. It had a large head and body with a short tail and no neck. Its arms and legs were also very short given the body proportions. It had fewer but larger teeth that covered most of the insides of its mouth."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cacops",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cacops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cacops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cacops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cacops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cacops"
 		}
 	]
 }

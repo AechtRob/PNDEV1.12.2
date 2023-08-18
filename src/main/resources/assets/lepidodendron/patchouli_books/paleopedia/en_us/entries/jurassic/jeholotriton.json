@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jeholotriton",
 			"title": "Jeholotriton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Amphibia $(br)>Urodela $(br)>Cryptobranchoidea"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Amphibia $(br)>Urodela $(br)>Cryptobranchoidea"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jeholotriton is a genus of primitive salamander thought to be from the Middle/Upper Jurassic Period.  It comes from the Daohugou Beds in the Inner Mongolia region of China. The Genus was named \"Jehol-\" after the Jehol Biota Lower Cretaceous ecosystem, however it was later discovered that the Daogugou Beds represents fossils from the Middle/Upper Jurassic."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jeholotriton",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jeholotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jeholotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jeholotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jeholotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jeholotriton"
 		}
 	]
 }

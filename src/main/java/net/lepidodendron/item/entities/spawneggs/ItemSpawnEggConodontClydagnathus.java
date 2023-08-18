@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontClydagnathus extends ElementsLepidodendronMod.M
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -900335;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10271193;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Devonian - Carboniferous";
 		}

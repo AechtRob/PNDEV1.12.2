@@ -313,8 +313,12 @@ public class ModelOstenocaris extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(0);
-        this.body.offsetZ = 0.03F;
+        this.body.offsetY = -0.2F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.body.rotateAngleX = (float) Math.toRadians(20);
         this.body.offsetY = -0.2F;
         this.body.render(0.01F);
         resetToDefaultPose();

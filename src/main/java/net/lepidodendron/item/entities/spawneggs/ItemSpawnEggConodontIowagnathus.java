@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontIowagnathus extends ElementsLepidodendronMod.Mo
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -3829209;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12833240;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Ordovician";
 		}

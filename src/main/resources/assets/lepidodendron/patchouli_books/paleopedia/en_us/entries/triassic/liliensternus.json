@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_liliensternus",
 			"title": "Liliensternus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Shrubland, Lakeland, Volcanic Hills$(br2)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysoidea"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysoidea"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "the new name for it was coined and the remains reassigned to it by Samuel Paul Welles.  In 1993 a new species was assigned to Liliensternus based on remains from France but in 2007 those were reassigned to a new genus named Lophostropheus.  Today Liliensternus appears in the Bedheim’s Coat of Arms, where the first remains were found."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_liliensternus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_liliensternus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_liliensternus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_liliensternus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_liliensternus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_liliensternus"
 		}
 	]
 }

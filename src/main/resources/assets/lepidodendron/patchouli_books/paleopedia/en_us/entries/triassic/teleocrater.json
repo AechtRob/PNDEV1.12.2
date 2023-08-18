@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_teleocrater",
 			"title": "Teleocrater",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Scrubland$(br2)>Archosauria$(br)>Avemetatarsalia$(br)>Aphanosauria"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauria$(br)>Avemetatarsalia$(br)>Aphanosauria"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Teleocrater is a Triassic Aphanosaurian archosaur. With a total length of about 2 m, Teleocrater is characterized by its long neck. Contrary to what is thought from its small sauropod-like appearance, Teleocrater is carnivorous animal with sharp teeth. Aphanosauria is important in considering the evolution of dinosaurs and pterosaurs. Aphanosauria is the only avemetatarsalian known to have branched from a common ancestor of Ornithodira, a group that includes dinosaurs (including birds) and pterosaurs. Unlike most ornithodirans, Teleocrater is not good at running, given its hind leg anatomy."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_teleocrater",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_teleocrater"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_teleocrater"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_teleocrater"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_teleocrater"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_teleocrater"
 		}
 	]
 }

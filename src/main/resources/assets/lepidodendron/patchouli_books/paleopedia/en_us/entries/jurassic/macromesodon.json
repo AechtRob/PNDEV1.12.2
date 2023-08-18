@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_macromesodon",
 			"title": "Macromesodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "The animal is perhaps most famous from German digsites like those seen in Solnhofen but a second recognized species is also known from Cerin in France. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_macromesodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_macromesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_macromesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_macromesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_macromesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_macromesodon"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dunyu",
 			"title": "Dunyu",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Coral Cleft$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Dunyu was first described in 2012 based on remains found in the Yulungssu Formation in Qujing city, Yunnan, while the second smaller species was reclassified under Dunyu from its previous classification inside the genus Eugaleaspis; the smaller species was originally found in the slightly older sediments of Chongqin."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dunyu",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dunyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dunyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dunyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dunyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dunyu"
 		}
 	]
 }

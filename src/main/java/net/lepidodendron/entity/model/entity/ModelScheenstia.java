@@ -387,27 +387,25 @@ public class ModelScheenstia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bodyfront.render(f5);
     }
-
     public void renderStaticWall(float f) {
-        this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetY = -0.13F;
-        this.Bodyfront.offsetX = -0.06F;
-        this.Bodyfront.render(0.01F);
+        this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(Lowerjaw, 0.05F, 0.0F, 0.0F);
+        this.root.offsetY = -0.17F;
+        this.root.offsetX = -0.03F;
+        this.root.offsetZ = -0.1F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
-        this.Lowerjaw.rotateAngleX = (float) Math.toRadians(40.2);
-        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(10);
-        this.Bodyend.rotateAngleY = (float) Math.toRadians(20);
-        this.Tailbase.rotateAngleY = (float) Math.toRadians(12.5);
-        this.Tailmiddlebase.rotateAngleY = (float) Math.toRadians(-17.5);
-        this.Tailmiddleend.rotateAngleY = (float) Math.toRadians(-20);
-        this.Tailend.rotateAngleY = (float) Math.toRadians(-18.2);
-        this.setRotateAngle(Bodyfront, 0.7418F, (float) Math.toRadians(90), 0.0F);
-        this.Bodyfront.offsetY = -0.2F;
-        this.Bodyfront.offsetZ = 0.06F;
-        this.Bodyfront.offsetX = -0.06F;
-        this.Bodyfront.render(0.01F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, -0.6F, 0.0F);
+        this.root.offsetY = -0.14F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

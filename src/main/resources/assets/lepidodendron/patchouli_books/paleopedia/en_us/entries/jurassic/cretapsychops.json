@@ -1,0 +1,46 @@
+{
+	"name": "Cretapsychops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lacewing_cretapsychops_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_lacewing_cretapsychops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lacewing_cretapsychops",
+			"title": "Cretapsychops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Psychopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cretapsychops.png"],
+			"title": "C. corami",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lacewing_cretapsychops",
+			"type": "text",
+			"text": "Cretapsychops is a genus of psychopsid lacewing. Its type species C. corami is described from the Weald Clay, Lower Cretaceous of England, which is famous for dinosaurs such as Baryonyx. A second species, C. decipiens is described from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. Fossil of this species had well-preserved complex wing patterns. A third species, C. skywalkeri from Karabastau Formation, Upper Jurassic of Kazakhstan, had similar wing patterns."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@cretapsychops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@cretapsychops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@cretapsychops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@cretapsychops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@cretapsychops"
+		}
+	]
+}

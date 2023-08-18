@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aspidorhynchus",
 			"title": "Aspidorhynchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Several specimens of Aspidorynchus were found to be instead under the genus Belonostomus, a close relative of it that is also found in the same deposits. Eventually fossils of Aspidorhynchus started being described from other regions as well, like Britain, France and James Ross Island in the Antarctic."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aspidorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aspidorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aspidorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aspidorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aspidorhynchus"
 		}
 	]
 }

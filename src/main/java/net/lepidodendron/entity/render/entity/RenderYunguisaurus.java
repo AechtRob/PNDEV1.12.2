@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderYunguisaurus extends RenderLiving<EntityPrehistoricFloraYunguisaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunguisaurus.png");
+    public static float getScaler() {return 1.0F * 0.8F; }
 
     public RenderYunguisaurus(RenderManager mgr) {
         super(mgr, new ModelYunguisaurus(), 1.5f);
@@ -27,7 +28,7 @@ public class RenderYunguisaurus extends RenderLiving<EntityPrehistoricFloraYungu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraYunguisaurus entity, float f) {
-        float scale = entity.getAgeScale() * 0.8F;
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;

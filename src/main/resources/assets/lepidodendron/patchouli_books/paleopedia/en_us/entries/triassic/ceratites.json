@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_ceratites",
 			"title": "Ceratites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Ceratitidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Ceratitidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "how this animal was much more stable than other ammonites, with the aperture of the shell laying almost horizontally and allowing the animal to move without the being rocked back and forth from the intermittent propulsion. Ceratites wasn't a particularly fast animal also due to its large ribs creating drag and adding weight to it, however smoother specimens inside the genus might've been relatively more agile."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ammonite_ceratites",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_ceratites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_ceratites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_ceratites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_ceratites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_ceratites"
 		}
 	]
 }

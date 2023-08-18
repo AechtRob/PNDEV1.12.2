@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lepidotes",
 			"title": "Lepidotes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() N/A $(br2)>Actinopterygii$(br)>Lepisosteiformes$(br)>Lepidotidae"
+			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)>Actinopterygii$(br)>Lepisosteiformes$(br)>Lepidotidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Unlike carp however, the inside of the mouth was lined with a small number of thin grasping teeth near the front, and many globular teeth further back suited for crushing. Fossilized Lepidotes stomach contents from the Early Jurassic of Germany suggest that at least part of its diet consisted of relatively soft-bodied crustaceans."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lepidotes",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lepidotes"
 		}
 	]
 }

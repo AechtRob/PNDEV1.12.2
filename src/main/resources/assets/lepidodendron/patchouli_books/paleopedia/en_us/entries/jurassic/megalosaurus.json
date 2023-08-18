@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megalosaurus",
 			"title": "Megalosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Theropoda$(br)>Megalosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Theropoda$(br)>Megalosauridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "To this day no complete specimen has ever been found and even putting together all known bones of it we still wouldn't be able to create a full skeleton of one!  "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megalosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megalosaurus"
 		}
 	]
 }

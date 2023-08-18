@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_placerias",
 			"title": "Placerias",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Stahleckeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Stahleckeriidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Placerias hesternus was a large dicynodont that lived during the Late Triassic in what is now the USA. The robust, stocky anatomy of Placerias has sometimes been compared to that of a modern hippo, though it is thought to have been more terrestrial. It likely used its beak to slice through tough vegetation, and its tusks for digging it up."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_placerias",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_placerias"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_placerias"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_placerias"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_placerias"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_placerias"
 		}
 	]
 }

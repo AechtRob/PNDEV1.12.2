@@ -1,0 +1,46 @@
+{
+	"name": "Apochrysogramma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_apochrysogramma_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
+			"title": "Apochrysogramma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/apochrysogramma.png"],
+			"title": "A. rotundum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
+			"type": "text",
+			"text": "Apochrysogramma is a genus of kalligrammatid lacewing from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. It had a simple, circle-like eyespot on forewings."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@apochrysogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@apochrysogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@apochrysogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@apochrysogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@apochrysogramma"
+		}
+	]
+}

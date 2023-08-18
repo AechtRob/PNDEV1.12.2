@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hualianceratops",
 			"title": "Hualianceratops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Hualianceratops is a basal ceratopsian described from Shishugou Formation, Xinjiang, China. Unlike Yinlong, known from the same formation, it is only known from fragmentary skull materials. It was relatively large chaoyangsaurid with skull about 25 cm, only a bit smaller than the largest skull of Yinlong."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hualianceratops",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hualianceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hualianceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hualianceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hualianceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hualianceratops"
 		}
 	]
 }

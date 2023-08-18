@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_edaphosaurus",
 			"title": "Edaphosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Swamps/Hills$(br2)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Edaphosaurus was a large herbivorous animal which lived in the earliest Permian period. It had a large sail with many knobs on each spine and was preyed upon by the famous Dimetrodon. Edaphosaurs also existed in the late Carboniferous period, but in this mod are represented there by Remigiomontanus, a smaller sister-species."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_edaphosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_edaphosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_edaphosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_edaphosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_edaphosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_edaphosaurus"
 		}
 	]
 }

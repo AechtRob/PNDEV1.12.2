@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panguraptor",
 			"title": "Panguraptor",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Theropoda$(br)>Coelophysidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Theropoda$(br)>Coelophysidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Panguraptor lufengensis is a species of coelophysid coelophysoid from southern China. The name comes from the chinese Deity Pangu, as well as the supercontinent of Pangaea. Panguraptor was found to be basal to Coelophysidae, and shows several atopomorphies unique to itself, such as a bump after its eyes and a relatively blunt snout compared to other coelophysids."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_panguraptor",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_panguraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_panguraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_panguraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_panguraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_panguraptor"
 		}
 	]
 }

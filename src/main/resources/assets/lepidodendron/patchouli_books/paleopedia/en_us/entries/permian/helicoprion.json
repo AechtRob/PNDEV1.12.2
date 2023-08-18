@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helicoprion",
 			"title": "Helicoprion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Helicoprionidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Helicoprionidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Helicoprion is a genus of holocephalian shark from the Permian period. It is characterized by a buzz saw like tooth whorl that puzzled palaeontologists on where its placement in the animals mouth was like for decades. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_helicoprion",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_helicoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_helicoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_helicoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_helicoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_helicoprion"
 		}
 	]
 }

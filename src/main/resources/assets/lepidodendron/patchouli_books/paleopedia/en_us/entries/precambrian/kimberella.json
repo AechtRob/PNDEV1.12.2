@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kimberella",
 			"title": "Kimberella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Bilateria"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Bilateria"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kimberella was a slug like Ediacaran organism that lived in shallow waters, which were more well oxygenated. It probably grazed on microbial mats as its main source of food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kimberella",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kimberella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kimberella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kimberella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kimberella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kimberella"
 		}
 	]
 }

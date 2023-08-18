@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bohemoharpes",
 			"title": "Bohemoharpes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Ocean, Crinoid Garden, Devonian Marine$(br2)>Trilobita$(br)>Harpetida$(br)>Harpetidae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Trilobita$(br)>Harpetida$(br)>Harpetidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "As the name suggests, Bohemoharpes is a Silurian trilobite from the Bohemia region, Czech Republic, and is closely related and similar to Harpes. Though, Bohemoharpes has a wider and rounder cephalon. The large and round head shield of harpetid trilobites make them instantly recognizable."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_bohemoharpes",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bohemoharpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bohemoharpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bohemoharpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bohemoharpes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bohemoharpes"
 		}
 	]
 }

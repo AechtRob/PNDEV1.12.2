@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jonkeria",
 			"title": "Jonkeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jonkeria is a massive hippo like therapsid from the Permian period. It was an herbivore and grew up to 3.5 meters in length. It had an elongated snout as well as sharp incisors in its mouth. Jonkeria looked identical to its relative Titanosuchus except for the length of its limbs with Jonkeria having much shorter limbs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jonkeria",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jonkeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jonkeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jonkeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jonkeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jonkeria"
 		}
 	]
 }

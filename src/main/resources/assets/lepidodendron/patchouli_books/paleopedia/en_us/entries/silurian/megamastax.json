@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megamastax",
 			"title": "Megamastax",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Sarcopterygii"
 		},
 		{
 			"type": "image",
@@ -26,6 +26,26 @@
 			"advancement": "lepidodendron:pf_adv_book_megamastax",
 			"type": "text",
 			"text": "Rounded coronoid teeth suggest that this early vertebrate apex predator fed mainly on hard-shelled prey which, between the various molluscs, trilobites, brachiopods, jawless fish and early placoderms, existed in abundance.$(br)$(br)$(br)$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megamastax"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megamastax"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megamastax"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megamastax"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megamastax"
 		}
 	]
 }

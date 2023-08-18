@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ainiktozoon",
 			"title": "Ainiktozoon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Lagoon$(br2)>Thylacocephala$(br)>Concavicarida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Thylacocephala$(br)>Concavicarida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ainiktozoon was an early Thylacocephalan that lived during the Silurian period. It resembled a shrimp with a large head carapace that stuck outwards. Its name comes from the Greek ainiktos(enigmatic) and zoon(animal)."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ainiktozoon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ainiktozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ainiktozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ainiktozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ainiktozoon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ainiktozoon"
 		}
 	]
 }

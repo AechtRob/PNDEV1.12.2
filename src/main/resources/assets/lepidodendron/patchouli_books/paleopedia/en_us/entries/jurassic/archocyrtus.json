@@ -1,0 +1,46 @@
+{
+	"name": "Archocyrtus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archocyrtus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_archocyrtus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archocyrtus",
+			"title": "Archocyrtus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Diptera $(br)>Acroceridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/archocyrtus.png"],
+			"title": "A. kovalevi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archocyrtus",
+			"type": "text",
+			"text": "Archocyrtus is a genus of dipteran insect from Karabastau Formation, Upper Jurassic of Kazakhstan. It had a long proboscis twice as long as its body length. It was probably one of the early pollinators, that fed on common \"flowers\" at that time such as bennettitales."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archocyrtus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archocyrtus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archocyrtus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archocyrtus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archocyrtus"
+		}
+	]
+}

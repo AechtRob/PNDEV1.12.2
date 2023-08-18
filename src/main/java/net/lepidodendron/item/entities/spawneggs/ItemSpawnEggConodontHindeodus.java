@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontHindeodus extends ElementsLepidodendronMod.ModE
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -6702669;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -2039586;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Carboniferous - Permian - Triassic";
 		}

@@ -53,6 +53,16 @@ public class ItemSpawnEggNotostracanStrudops extends ElementsLepidodendronMod.Mo
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -9482444;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10990001;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Devonian";
 		}

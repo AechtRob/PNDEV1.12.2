@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thalassiodracon",
 			"title": "Thalassiodracon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Pliosauridae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Pliosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_thalassiodracon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
 		}
 	]
 }

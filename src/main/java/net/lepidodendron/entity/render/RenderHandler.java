@@ -4217,6 +4217,12 @@ public class RenderHandler {
                 return new RenderDragonfly(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDragonflyNymph.class, new IRenderFactory<EntityPrehistoricFloraDragonflyNymph>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDragonflyNymph> createRenderFor(RenderManager manager) {
+                return new RenderDragonflyNymph(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDendrocystites.class, new IRenderFactory<EntityPrehistoricFloraDendrocystites>() {
             @Override
             public Render<? super EntityPrehistoricFloraDendrocystites> createRenderFor(RenderManager manager) {

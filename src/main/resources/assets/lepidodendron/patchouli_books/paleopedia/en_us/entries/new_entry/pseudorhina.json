@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudorhina",
 			"title": "Pseudorhina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Chondrichthyes $(br)>Squatiniformes $(br)>Pseudorhinidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chondrichthyes $(br)>Squatiniformes $(br)>Pseudorhinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pseudorhina",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pseudorhina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pseudorhina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pseudorhina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pseudorhina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pseudorhina"
 		}
 	]
 }

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderLepidotes;
+import net.lepidodendron.entity.render.entity.RenderScheenstia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -204,7 +205,7 @@ public class EntityPrehistoricFloraScheenstia extends EntityPrehistoricFloraFish
 		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.03;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
@@ -217,14 +218,14 @@ public class EntityPrehistoricFloraScheenstia extends EntityPrehistoricFloraFish
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderLepidotes.TEXTURE;
+		return RenderScheenstia.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelLepidotes;
+		return RenderDisplays.modelScheenstia;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderLepidotes.getScaler();
+		return RenderScheenstia.getScaler();
 	}
 
 }

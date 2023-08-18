@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eurypterus",
 			"title": "Eurypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() All Aquatic$(br2)>Eurypterida$(br)>Eurypteroidea$(br)>Eurypteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Eurypterida$(br)>Eurypteroidea$(br)>Eurypteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eurypterus is a famous sea scorpion from the Silurian period. It averaged 13-23 cm in length. It possessed appendages that looked like paddles, used for swimming. They were generalists, both hunting and scavenging for food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eurypterus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eurypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eurypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eurypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eurypterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eurypterus"
 		}
 	]
 }

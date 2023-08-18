@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_birgeria",
 			"title": "Birgeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Birgeriformes$(br)>Birgeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Birgeriformes$(br)>Birgeriidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Able to reach 2 m in length, Birgeria was an offshore pelagic predator with a large mouth covered in teeth alternating in size and a long and strong body, practically scale-less if not for a small section towards the tail, covered in a small sheath of thin ganoid scales, which would provide rigidity to the top section of the tail."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_birgeria",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_birgeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_birgeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_birgeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_birgeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_birgeria"
 		}
 	]
 }

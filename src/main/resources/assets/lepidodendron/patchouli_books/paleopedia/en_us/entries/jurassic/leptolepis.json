@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_leptolepis",
 			"title": "Leptolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A $(br2)>Actinopterygii$(br)>Leptolepiformes$(br)>Leptolepidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Leptolepiformes$(br)>Leptolepidae"
 		},
 		{
 			"type": "image",
@@ -28,14 +28,24 @@
 			"text": "It was also found in both marine and freshwater ecosystems, including at the famous Morrison Formation. For a long time, Leptolepis was used as a wastebasket taxon, until Swedish ichthyologist Orvar Nybelin revised the genus in 1974, narrowing it down to seven recognized species. Mass graves of Leptolepis suggest that it lived in large schools."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_leptolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_leptolepis"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_leptolepis",
-			"type": "text",
-			"text": ""
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_leptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_leptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_leptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_leptolepis"
 		}
 	]
 }

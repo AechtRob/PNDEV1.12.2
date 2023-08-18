@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_blourugia",
 			"title": "Blourugia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Actinopteri"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Actinopteri"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Blourugia is a Permian freshwater ray finned fish that is related to Palaeoniscum and Platysomus. It is named after the farm where it was first discovered and it has a somewhat deep bodied shape. It was around 20cm in length."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_blourugia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_blourugia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_blourugia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_blourugia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_blourugia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_blourugia"
 		}
 	]
 }

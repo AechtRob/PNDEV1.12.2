@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mesosaurus",
 			"title": "Mesosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Beaches$(br2)>Parareptilia$(br)>Mesosauria$(br)>Mesosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Mesosauria$(br)>Mesosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Mesosaurus is a semi aquatic reptil from the Permian period. It was a small animal, with a paddle like tail and having elongated teeth, used for catching and eating fish. It is one of the first reptiles known to have returned to the water."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mesosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mesosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mesosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mesosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mesosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mesosaurus"
 		}
 	]
 }

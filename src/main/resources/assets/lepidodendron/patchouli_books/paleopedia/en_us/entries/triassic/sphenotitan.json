@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sphenotitan",
 			"title": "Sphenotitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Scrubland, Volcanic Hills$(br2)>Reptilia$(br)>Rhynchocephalia$(br)>Opisthodontia"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Rhynchocephalia$(br)>Opisthodontia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Sphenotitan is a basal sphenodont reptile from the Late Triassic of Argentina. It was relatively large for rhynchocephalians (tuataras and relatives) with a skull length of 100 mm. Sphenotitan is believed to be herbivorous based on its dentition in fossil specimens"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_sphenotitan",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sphenotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sphenotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sphenotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sphenotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sphenotitan"
 		}
 	]
 }

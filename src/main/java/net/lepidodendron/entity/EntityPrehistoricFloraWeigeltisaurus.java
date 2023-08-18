@@ -78,6 +78,11 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {

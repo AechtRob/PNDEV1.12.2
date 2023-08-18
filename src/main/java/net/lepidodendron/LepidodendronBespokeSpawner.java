@@ -29,12 +29,14 @@ public class LepidodendronBespokeSpawner {
                 String biomeName = biome.getRegistryName().toString();
                 //System.err.println("SpawnbiomeName: " + biomeName);
                 for (int a = 0; a < LepidodendronConfig.mobSpawnBespoke.length; a++) {
-                    String aStr = LepidodendronConfig.mobSpawnBespoke[a];
+                    String aStr = LepidodendronConfig.mobSpawnBespoke[a].trim();
                     //System.err.println("aStr: " + aStr);
                     //System.err.println("aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName): " + aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName));
-                    if (aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName)) {
-                        spawn = true;
-                        bstrCt += 1;
+                    if (aStr.length() > 0) {
+                        if (aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName)) {
+                            spawn = true;
+                            bstrCt += 1;
+                        }
                     }
                 }
                 if (bstrCt > 0) {

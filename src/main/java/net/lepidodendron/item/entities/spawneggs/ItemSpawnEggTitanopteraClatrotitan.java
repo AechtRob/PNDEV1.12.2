@@ -53,6 +53,16 @@ public class ItemSpawnEggTitanopteraClatrotitan extends ElementsLepidodendronMod
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -6848971;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -13292525;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Triassic";
 		}

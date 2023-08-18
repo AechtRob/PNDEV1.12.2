@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_italophlebia",
 			"title": "Italophlebia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakeland, Flooded Forest$(br2)>Insecta$(br)>Odonata$(br)>Triassolestidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Insecta$(br)>Odonata$(br)>Triassolestidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Italophlebia was a dragonfly that lived during the Late Triassic. Its fossils have been found in Italy (hence its name), as well as Germany, in lake and lagoon deposits."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_italophlebia",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Egg in Water$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_italophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_italophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_italophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_italophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_italophlebia"
 		}
 	]
 }

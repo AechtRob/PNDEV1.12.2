@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_albertonia",
 			"title": "Albertonia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Amiiformes$(br)>Parasemionotidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Amiiformes$(br)>Parasemionotidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Albertonia is a Triassic fish from Canada. This fish was first described in 1916 as Elonichthys and only reclassified under its own genus in 1966. Perhaps most characteristic for its deep round body and large pectoral fins, this animal also had a long head for its body size and robust, ganoin covered scales covering its body. The shape of the body and eyes and its preservation hint at Albertonia having been a deep sea animal that fed on plankton."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_albertonia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_albertonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_albertonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_albertonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_albertonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_albertonia"
 		}
 	]
 }

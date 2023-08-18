@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontOzarkodina extends ElementsLepidodendronMod.Mod
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -12114401;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -4351128;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Ordovician - Silurian - [Devonian?]";
 		}

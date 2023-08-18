@@ -1,7 +1,7 @@
 {
   "ambientocclusion": false,
   "textures": {
-    "particle": "lepidodendron:items/rhacopteris_imventory",
+    "particle": "lepidodendron:items/rhacopteris_inventory",
     "w": "lepidodendron:blocks/rhacopteris_2_w",
     "e": "lepidodendron:blocks/rhacopteris_2_e",
     "wu": "lepidodendron:blocks/rhacopteris_3_w",

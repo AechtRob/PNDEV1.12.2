@@ -53,6 +53,16 @@ public class ItemSpawnEggPalaeodictyopteraDelitzschala extends ElementsLepidoden
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -10702793;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10583218;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Carboniferous";
 		}

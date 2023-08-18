@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyperodapedon",
 			"title": "Hyperodapedon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() All$(br2)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Hyperodapedon was a genus of rhynchosaurian reptile that lived during the Middle to Late Triassic. It was seemingly quite widespread, with fossils occurring in Africa, Asia, Europe, North America, and South America. This animal used its hind legs and beak-like snout to dig for buried plant matter, that it then processed with jaws built for precision-shearing."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hyperodapedon",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hyperodapedon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hyperodapedon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hyperodapedon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hyperodapedon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hyperodapedon"
 		}
 	]
 }

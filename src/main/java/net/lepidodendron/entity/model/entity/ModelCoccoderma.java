@@ -242,16 +242,25 @@ public class ModelCoccoderma extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.root.offsetY = -0.17F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = -0.1F;
         this.root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.0F, 0.0F);
+        this.root.offsetY = -0.14F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

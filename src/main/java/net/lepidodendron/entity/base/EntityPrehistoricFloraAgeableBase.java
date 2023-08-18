@@ -92,11 +92,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
         this.enablePersistence();
-        this.setScaleForAge(false);
+        if (worldIn != null) {
+            this.setScaleForAge(false);
+        }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    public boolean noMossEggs() {
+        return false;
     }
 
     @Override
@@ -1124,7 +1130,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
@@ -1149,6 +1155,31 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         else { //It must be moss or wood:
                             te.getTileData().setString("egg", this.getEggNBT());
                         }
+                    }
+                    IBlockState state = world.getBlockState(nestPos);
+                    world.notifyBlockUpdate(nestPos, state, state, 3);
+                    this.setLaying(false);
+                }
+                this.setTicks(0);
+            }
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > 0
+            ) {
+                //if (Math.random() > 0.5) {
+                this.setTicks(-50); //Flag this as stationary for egg-laying
+                this.setAnimation(LAY_ANIMATION);
+                //}
+            }
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -30 && this.getTicks() < 0) {
+                //Is stationary for egg-laying and this is a totten-log lay
+                //System.err.println("Laying an egg in it");
+
+                //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                if (this.testLay(world, this.getPosition().down()) && world.getBlockState(this.getPosition().down()).getBlock() == BlockRottenLog.block) {
+                    BlockPos nestPos = this.getPosition().down();
+                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                    TileEntity te = world.getTileEntity(nestPos);
+                    if (te != null) {
+                        te.getTileData().setString("egg", this.getEggNBT());
                     }
                     IBlockState state = world.getBlockState(nestPos);
                     world.notifyBlockUpdate(nestPos, state, state, 3);

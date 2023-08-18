@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scheenstia",
 			"title": "Scheenstia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() $(br2)>Actinopterygii $(br)>Lepisosteiformes $(br)>Lepidotidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Actinopterygii $(br)>Lepisosteiformes $(br)>Lepidotidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_scheenstia",
-			"type": "text",
- 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
 		}
 	]
 }

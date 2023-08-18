@@ -1291,7 +1291,7 @@ public class EntityLists {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapGroundSteppePF);
                     break;
                 case 3:
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapWaterWoodlandPF);
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousTrapWaterSteppePF);
                     break;
             }
         }

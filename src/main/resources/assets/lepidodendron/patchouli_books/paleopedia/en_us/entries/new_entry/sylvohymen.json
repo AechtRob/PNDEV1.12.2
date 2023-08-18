@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megasecoptera_sylvohymen",
 			"title": "Sylvohymen",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Insecta $(br)>Megasecoptera $(br)>Bardohymenidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Insecta $(br)>Megasecoptera $(br)>Bardohymenidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megasecoptera_sylvohymen",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Aquatic Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
 		}
 	]
 }

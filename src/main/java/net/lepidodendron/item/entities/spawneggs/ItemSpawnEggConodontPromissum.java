@@ -53,6 +53,16 @@ public class ItemSpawnEggConodontPromissum extends ElementsLepidodendronMod.ModE
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -12301749;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -1;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Ordovician";
 		}

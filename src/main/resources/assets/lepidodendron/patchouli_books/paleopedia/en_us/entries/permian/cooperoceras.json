@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cooperoceras",
 			"title": "Cooperoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Nautilida$(br)>Tainoceratidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Nautilida$(br)>Tainoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cooperoceras is a nautiloid from the Late Permian period. They had a spiralled shell with curved hollow spines along the spiral. They were quite small, their shells measuring to less than half a meter in diameter."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cooperoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cooperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cooperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cooperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cooperoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cooperoceras"
 		}
 	]
 }

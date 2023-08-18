@@ -66,6 +66,8 @@ public class RenderDisplays {
     public static final ModelClarkeiteuthis modelClarkeiteuthis = new ModelClarkeiteuthis();
     public static final ModelChunerpeton modelChunerpeton = new ModelChunerpeton();
     public static final ModelCongophiopsis modelCongophiopsis = new ModelCongophiopsis();
+    public static final ModelCoccoderma modelCoccoderma = new ModelCoccoderma();
+    public static final ModelCenoceras modelCenoceras = new ModelCenoceras();
     public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
     public static final ModelDapedium modelDapedium = new ModelDapedium();
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
@@ -102,6 +104,7 @@ public class RenderDisplays {
     public static final ModelElasmodectes modelElasmodectes = new ModelElasmodectes();
     public static final ModelEuropasaurus modelEuropasaurus = new ModelEuropasaurus();
     public static final ModelEurhinosaurus modelEurhinosaurus = new ModelEurhinosaurus();
+    public static final ModelEocarcinus modelEocarcinus = new ModelEocarcinus();
     public static final ModelFallacosteus modelFallacosteus = new ModelFallacosteus();
     public static final ModelForeyia modelForeyia = new ModelForeyia();
     public static final ModelFurca modelFurca = new ModelFurca();
@@ -169,6 +172,7 @@ public class RenderDisplays {
     public static final ModelMyriacantherpestes modelMyriacantherpestes = new ModelMyriacantherpestes();
     public static final ModelMarmorerpeton modelMarmorerpeton = new ModelMarmorerpeton();
     public static final ModelMacrosemius modelMacrosemius = new ModelMacrosemius();
+    public static final ModelMicrocleidus modelMicrocleidus = new ModelMicrocleidus();
     public static final ModelNeeyambaspis modelNeeyambaspis = new ModelNeeyambaspis();
     public static final ModelNerepisacanthus modelNerepisacanthus = new ModelNerepisacanthus();
     public static final ModelNothosaurus modelNothosaurus = new ModelNothosaurus();
@@ -182,6 +186,7 @@ public class RenderDisplays {
     public static final ModelOphthalmothule modelOphthalmothule = new ModelOphthalmothule();
     public static final ModelOreochima modelOreochima = new ModelOreochima();
     public static final ModelOrthocormus modelOrthocormus = new ModelOrthocormus();
+    public static final ModelOstenocaris modelOstenocaris = new ModelOstenocaris();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
     public static final ModelPalaeodictyopteraMedium modelPalaeodictyopteraMedium = new ModelPalaeodictyopteraMedium();
     public static final ModelPalaeodictyopteraSmall modelPalaeodictyopteraSmall = new ModelPalaeodictyopteraSmall();
@@ -215,6 +220,7 @@ public class RenderDisplays {
     public static final ModelPhillipsia modelPhillipsia = new ModelPhillipsia();
     public static final ModelPalaeocarcharias modelPalaeocarcharias = new ModelPalaeocarcharias();
     public static final ModelPassaloteuthis modelPassaloteuthis = new ModelPassaloteuthis();
+    public static final ModelPanacanthocaris modelPanacanthocaris = new ModelPanacanthocaris();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
@@ -252,6 +258,7 @@ public class RenderDisplays {
     public static final ModelStanocephalosaurus modelStanocephalosaurus= new ModelStanocephalosaurus();
     public static final ModelSpathobatis modelSpathobatis= new ModelSpathobatis();
     public static final ModelSiderops modelSiderops= new ModelSiderops();
+    public static final ModelScheenstia modelScheenstia= new ModelScheenstia();
     public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
     public static final ModelTapinocephalus modelTapinocephalus = new ModelTapinocephalus();

@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/spawn_egg_dragonfly7"
+    "layer0": "items/spawn_egg",
+    "layer1": "items/spawn_egg_overlay"
   }
 }

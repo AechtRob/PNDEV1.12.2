@@ -1,0 +1,46 @@
+{
+	"name": "Bellinympha",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lacewing_bellinympha_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_lacewing_bellinympha",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lacewing_bellinympha",
+			"title": "Bellinympha",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Neuroptera $(br)>Saucrosmylidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bellinympha.png"],
+			"title": "B. dancei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lacewing_bellinympha",
+			"type": "text",
+			"text": "Bellinympha is a genus of lacewing from the Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. Its fossil, especially one of B. filicifolia, is well-preserved with wing patterns visible. Patterning on the forewing looked similar to that of pinnate-leaved plants such as cycadophytes, suggesting it was an early example of leaf mimesis in insects."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@bellinympha"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@bellinympha"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@bellinympha"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@bellinympha"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@bellinympha"
+		}
+	]
+}

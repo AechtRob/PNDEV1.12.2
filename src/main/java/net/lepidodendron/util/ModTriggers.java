@@ -44,7 +44,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ALPIA = new CustomTrigger("pf_book_alpia");
     public static final CustomTrigger CLICK_AMBLYSIPHONELLA = new CustomTrigger("pf_book_amblysiphonella");
     public static final CustomTrigger CLICK_REEF_BRYOZOAN = new CustomTrigger("pf_book_reef_bryozoan");
-    public static final CustomTrigger CLICK_REEF_CORAL = new CustomTrigger("pf_book_reef_bryozoan");
+    public static final CustomTrigger CLICK_REEF_CORAL = new CustomTrigger("pf_book_reef_coral");
     public static final CustomTrigger CLICK_REEF_ALGAL = new CustomTrigger("pf_book_reef_algal");
     public static final CustomTrigger CLICK_REEF_SHELLY = new CustomTrigger("pf_book_reef_shelly");
     public static final CustomTrigger CLICK_REEF_SPONGE = new CustomTrigger("pf_book_reef_sponge");
@@ -387,6 +387,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SILVER_TREEFERN = new CustomTrigger("pf_book_silver_treefern");
     public static final CustomTrigger CLICK_SIPHUSAUCTUM = new CustomTrigger("pf_book_siphusauctum");
     public static final CustomTrigger CLICK_SKAARIPTERIS = new CustomTrigger("pf_book_skaaripteris");
+    public static final CustomTrigger CLICK_BOTRYCHIOPSIS = new CustomTrigger("pf_book_botrychiopsis");
     public static final CustomTrigger CLICK_SPACIINODUM = new CustomTrigger("pf_book_spaciinodum");
     public static final CustomTrigger CLICK_SPHENOBAIERA = new CustomTrigger("pf_book_sphenobaiera");
     public static final CustomTrigger CLICK_SPHENOPTERIS = new CustomTrigger("pf_book_sphenopteris");
@@ -770,6 +771,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SAIVODUS = new CustomTrigger("pf_book_saivodus");
     public static final CustomTrigger CLICK_SALTRIOVENATOR = new CustomTrigger("pf_book_saltriovenator");
     public static final CustomTrigger CLICK_SAURICHTHYS = new CustomTrigger("pf_book_saurichthys");
+    public static final CustomTrigger CLICK_SAURICHTHYS_FRESHWATER = new CustomTrigger("pf_book_saurichthys_freshwater");
     public static final CustomTrigger CLICK_SAUROCTONUS = new CustomTrigger("pf_book_sauroctonus");
     public static final CustomTrigger CLICK_SCAUMENACIA = new CustomTrigger("pf_book_scaumenacia");
     public static final CustomTrigger CLICK_SCHINDERHANNES = new CustomTrigger("pf_book_schinderhannes");
@@ -1669,6 +1671,7 @@ public class ModTriggers
             CLICK_SILVER_TREEFERN,
             CLICK_SIPHUSAUCTUM,
             CLICK_SKAARIPTERIS,
+            CLICK_BOTRYCHIOPSIS,
             CLICK_SPACIINODUM,
             CLICK_SPHENOBAIERA,
             CLICK_SPHENOPTERIS,
@@ -2145,6 +2148,7 @@ public class ModTriggers
             CLICK_SAIVODUS,
             CLICK_SALTRIOVENATOR,
             CLICK_SAURICHTHYS,
+            CLICK_SAURICHTHYS_FRESHWATER,
             CLICK_SAUROCTONUS,
             CLICK_SAUROSUCHUS,
             CLICK_SCAUMENACIA,

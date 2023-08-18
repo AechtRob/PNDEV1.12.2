@@ -1,0 +1,35 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/zircon_glass_pane_gate",
+		"pane": "lepidodendron:blocks/zircon_glass_pane_gate"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 7],
+			"to": [16, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 16], "texture": "#pane", "cullface": "north"},
+				"east": {"uv": [7, 0, 9, 16], "texture": "#pane"},
+				"south": {"uv": [8, 0, 16, 16], "texture": "#pane"},
+				"west": {"uv": [9, 0, 7, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 9, 7], "texture": "#pane"},
+				"down": {"uv": [7, 0, 9, 7], "texture": "#pane"}
+			}
+		},
+		{
+			"from": [0, 0, 7],
+			"to": [8, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 8]},
+			"faces": {
+				"north": {"uv": [8, 0, 16, 16], "texture": "#pane", "cullface": "north"},
+				"east": {"uv": [7, 0, 9, 16], "texture": "#pane"},
+				"south": {"uv": [0, 0, 8, 16], "texture": "#pane"},
+				"west": {"uv": [9, 0, 7, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 9, 7], "texture": "#pane"},
+				"down": {"uv": [7, 0, 9, 7], "texture": "#pane"}
+			}
+		}
+	]
+}

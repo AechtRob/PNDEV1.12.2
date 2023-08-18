@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_psarolepis",
 			"title": "Psarolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Osteichthyes$(br)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Osteichthyes$(br)>Sarcopterygii"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Psarolepis, whose name comes from the Greek psaros(speckled) and lepis(scale), is a bony fish from the late Silurian to Early Devonian periods. It had a pair of tooth whorls which extended up at the front of the lower jaw. The head was made of thick dermal plates and it had fin spines, on the shoulder girdle and the dorsal fin. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_psarolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_psarolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_psarolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_psarolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_psarolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_psarolepis"
 		}
 	]
 }

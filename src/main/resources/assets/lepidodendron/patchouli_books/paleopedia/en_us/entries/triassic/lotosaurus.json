@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lotosaurus",
 			"title": "Lotosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Beaches, Canyons$(br2)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Lotosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Lotosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lotosaurus adentus was a species of poposauroid archosaur that lived during the Middle Triassic in what is now China's Hunan Province. Like some other poposauroids, this toothless herbivore sported elongated vertebral processes along its back that formed a sort of \"sail\" or \"hump\". Lotosaurus fossils have been found together in mass bone beds where multiple individuals died at around the same time, seemingly as a result of drought."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lotosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lotosaurus"
 		}
 	]
 }

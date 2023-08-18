@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_boothiaspis",
 			"title": "Boothiaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean, Crinoid Garden$(br2)>Pteraspidomorphi$(br)>Cyathaspidida$(br)>Ctenaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Pteraspidomorphi$(br)>Cyathaspidida$(br)>Ctenaspidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Boothiaspis is an agnathan from the Silurian Period. They are flat and wide jawless fish that had little knobs on the top of its headshield. It was quite small, reaching only about 30cm in length. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_boothiaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_boothiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_boothiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_boothiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_boothiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_boothiaspis"
 		}
 	]
 }

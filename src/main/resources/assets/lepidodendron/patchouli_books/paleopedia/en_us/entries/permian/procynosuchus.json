@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_procynosuchus",
 			"title": "Procynosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands, Lowlands$(br2)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Procynosuchus is a cynodont from the late Permian period. it is considered to be one of the most basal cynodonts and measured 60 cm in length. It was also adapted to swimming and it probably lived a semi aquatic lifestyle."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_procynosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_procynosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_procynosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_procynosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_procynosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_procynosuchus"
 		}
 	]
 }

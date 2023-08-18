@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_guiyu",
 			"title": "Guiyu",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() $(br2)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Sarcopterygii"
 		},
 		{
 			"type": "image",
@@ -26,6 +26,26 @@
 			"advancement": "lepidodendron:pf_adv_book_guiyu",
 			"type": "text",
 			"text": "One thing that makes Guiyu especially interesting is that even though it was a bony fish, it predated the split between ray-finned fish (Actinopterygii) and lobe-finned fish (Sarcopterygii).$(br)$(br)$(br)$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
 		}
 	]
 }

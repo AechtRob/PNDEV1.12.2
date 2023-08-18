@@ -1,7 +1,7 @@
 {
 	"name": "Kosmoceras",
 	"read_by_default": true,
-	"icon": "lepidodendron:shell_kosmoceras",
+	"icon": "lepidodendron:items/shell_kosmoceras",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_kosmoceras",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kosmoceras",
 			"title": "Kosmoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Kosmoceratidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Kosmoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kosmoceras is a medium sized ammonite from the Callovian stage of the Middle Jurassic of Europe. It had irregular ribbing and irregular tubercles with a smooth depression along the rim. Some species had knobs running along their coiled shell."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kosmoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kosmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kosmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kosmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kosmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kosmoceras"
 		}
 	]
 }

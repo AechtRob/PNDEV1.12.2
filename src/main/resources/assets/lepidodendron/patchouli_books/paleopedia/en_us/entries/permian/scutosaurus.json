@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scutosaurus",
 			"title": "Scutosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Scutosaurus is a large pareiasaur from the Permian period. It had a tank like build with hardened scutes along its back and head and they had powerful muscles, especially around the neck. Its head was covered in ridges and scutes and also had horns that protected its face. Scutosaurus was an herbivore and they would have been preyed upon by large gorgonopsids like Inostrancevia."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_scutosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scutosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scutosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scutosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scutosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scutosaurus"
 		}
 	]
 }

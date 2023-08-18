@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ursactis",
 			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() $(br2)>"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ursactis",
-			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 			"title": "Clatrotitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Forest$(br2)>Insecta$(br)>Titanoptera$(br)>Mesotitanidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Insecta$(br)>Titanoptera$(br)>Mesotitanidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Clatrotitan was a genus of titanopteran insect that lived during the Middle Triassic in what is now Australia. The type species, C. andersoni, is known from an exquisitely preserved forewing that measured 13.8 cm (5.4 inches) long. The wing is so well preserved that its striped patterns are clearly visible."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@clatrotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@clatrotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@clatrotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@clatrotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@clatrotitan"
 		}
 	]
 }

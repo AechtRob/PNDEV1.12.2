@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vancleavea",
 			"title": "Vancleavea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Canyons and Creeks$(br2)>Reptilia$(br)>Proterochampsia$(br)>Doswelliidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Proterochampsia$(br)>Doswelliidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "The osteoderms of the tail were unusual as they grew vertically forming a single tail-like fluke, trait rarely seen in reptiles and archosaurs as usually such structures are created by the lengthening of the neural spines instead of the osteoderms themselves. The nostrils pointed upwards, a feature useful for an animal living a submerged lifestyle, while the hip bone was strangely similar in shape to that of Drepanosaurs, a group of animals unrelated to it."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_vancleavea",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vancleavea"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vancleavea"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vancleavea"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vancleavea"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vancleavea"
 		}
 	]
 }

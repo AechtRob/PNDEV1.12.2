@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}

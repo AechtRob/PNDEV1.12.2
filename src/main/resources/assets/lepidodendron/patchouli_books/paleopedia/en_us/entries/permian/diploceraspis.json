@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diploceraspis",
 			"title": "Diploceraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands, Desert$(br2)>Lepospndyli$(br)>Nectridea$(br)>Diplocaulidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Lepospndyli$(br)>Nectridea$(br)>Diplocaulidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Diploceraspis is an amphibian from the Permian period that was related to Diplocaulus. It had a much thinner head crest than Diplocaulus and was much smaller, only measuring to about half a meter in length."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_diploceraspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diploceraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diploceraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diploceraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diploceraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diploceraspis"
 		}
 	]
 }

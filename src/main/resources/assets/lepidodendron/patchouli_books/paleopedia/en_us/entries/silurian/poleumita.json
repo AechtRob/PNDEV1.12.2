@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_poleumita",
 			"title": "Poleumita",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean, Reef, Crinoid Garden$(br2)>Gastropoda$(br)>Euomphalidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Gastropoda$(br)>Euomphalidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Poleumita is a medium sized a sea snail. It is known to have lived during the Silurian period. It likely fed and moved in ways similar to today's sea snails."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_poleumita",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Hit to Pick Up"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_poleumita"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_poleumita"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_poleumita"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_poleumita"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_poleumita"
 		}
 	]
 }

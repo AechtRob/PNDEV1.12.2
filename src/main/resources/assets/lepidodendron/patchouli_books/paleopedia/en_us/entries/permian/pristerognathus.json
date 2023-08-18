@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pristerognathus",
 			"title": "Pristerognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pristerognathus is a therocephalian from the Middle Permian period. It was a predator with large canines and it was about the size of a dog, reaching 1.5 meters in length. Its fossils have been discovered in South Africa and they likely lived in wooded areas and preyed on smaller therapsids of the time."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pristerognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pristerognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pristerognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pristerognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pristerognathus"
 		}
 	]
 }

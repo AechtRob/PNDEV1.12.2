@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 			"title": "Gigatitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Warm Lakeland$(br2)>Insecta$(br)>Titanoptera$(br)>Gigatitanidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Insecta$(br)>Titanoptera$(br)>Gigatitanidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gigatitan was a genus of titanopteran insect that lived during the Middle to Late Triassic in what is now the Madygen Formation of Kyrgyzstan. Like most titanopterans, it was a mantis-like predator that caught smaller prey using its enlarged, spiny forelimbs. Despite its large wings, its relatively heavy weight may have limited it to gliding rather than truly \"flying\". Distinctive stripes along its wings used for warning displays indicate it was active during the day."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@gigatitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@gigatitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@gigatitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@gigatitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@gigatitan"
 		}
 	]
 }

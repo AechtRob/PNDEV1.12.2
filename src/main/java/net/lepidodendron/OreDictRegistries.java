@@ -592,5 +592,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemSponge", new ItemStack(Blocks.SPONGE, 1, 0));
 		OreDictionary.registerOre("itemSponge", new ItemStack(Blocks.SPONGE, 1, 1));
 
+		OreDictionary.registerOre("pndietSeed", new ItemStack(Items.BREAD, 1, 0));
+
 	}
 }

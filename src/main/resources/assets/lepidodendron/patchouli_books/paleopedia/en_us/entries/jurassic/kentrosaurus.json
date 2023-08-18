@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kentrosaurus",
 			"title": "Kentrosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Stegosauria$(br)>Stegosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Stegosauria$(br)>Stegosauridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": " The ratio of these variants is around 2:1 in favour of the robust morph, implying that if this is indeed a case of sexual dimorphism, then the robust ones were likely the females."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kentrosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
 		}
 	]
 }

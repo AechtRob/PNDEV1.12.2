@@ -53,6 +53,16 @@ public class ItemSpawnEggPalaeodictyopteraHomoioptera extends ElementsLepidodend
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -9475752;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10583218;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Carboniferous";
 		}

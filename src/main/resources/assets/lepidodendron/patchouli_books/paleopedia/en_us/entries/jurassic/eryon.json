@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eryon",
 			"title": "Eryon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Eryonidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Eryonidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eryon is one of the most common crustaceans from the Jurassic, known from formations such as the Solnhofen. It was relatively related to modern polychelid. With its flat body, it was probably a benthic feeder, using long pincers to obtain foods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eryon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eryon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eryon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eryon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eryon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eryon"
 		}
 	]
 }

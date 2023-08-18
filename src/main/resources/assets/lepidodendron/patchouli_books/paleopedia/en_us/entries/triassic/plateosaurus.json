@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_plateosaurus",
 			"title": "Plateosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Volcanic Hills$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Plateosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Plateosauridae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Due to this confusing history, Plateosaurus has been known under many names in the past, a wide range of Junior synonyms now for the most part invalid.\nWith more than 100 skeletons known today, several of which almost complete, Plateosauru is one of the better known dinosaurs to science and boasts the title of the third oldest valid dinosaur to be named."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_plateosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plateosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plateosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plateosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plateosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plateosaurus"
 		}
 	]
 }
