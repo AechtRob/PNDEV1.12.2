@@ -19,13 +19,16 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
 
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
+    //Lizards etc:
     private static final ModelRottenLogEggs rotten_wood_eggs = new ModelRottenLogEggs();
     private static final ResourceLocation TEXTURE_CASINERIA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
     private static final ResourceLocation TEXTURE_DREPANOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_HYLONOMUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus_eggs.png");
     private static final ResourceLocation TEXTURE_LABIDOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
+    private static final ResourceLocation TEXTURE_CELTEDENS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens_eggs.png");
 
+    //Insects etc:
     private static final ModelInsectEggs insect_eggs = new ModelInsectEggs();
     private static final ResourceLocation TEXTURE_ARTHROPLEURA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_arthropleura.png");
     private static final ResourceLocation TEXTURE_EOARTHROPLEURA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_eoarthropleura.png");
@@ -39,7 +42,6 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
     private static final ResourceLocation TEXTURE_MYRIACANTHERPESTES_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_myriacantherpestes.png");
     private static final ResourceLocation TEXTURE_ARCHABOILUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_archaboilus_eggs.png");
     private static final ResourceLocation TEXTURE_PYCNOPHLEBIA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_pycnophlebia_eggs.png");
-    private static final ResourceLocation TEXTURE_CELTEDENS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens_eggs.png");
     private static final ResourceLocation TEXTURE_ARCHOCYRTUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_archocyrtus.png");
 
     private static final ModelTrigonotarbidEggs trigonotarbid_eggs = new ModelTrigonotarbidEggs();
@@ -79,7 +81,7 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.pushMatrix();
 
-            if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_hylonomus")) {
+            if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_HYLONOMUS_EGGS);
@@ -87,7 +89,7 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                 GlStateManager.popMatrix();
             }
 
-            else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_casineria")) {
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_CASINERIA_EGGS);
@@ -95,7 +97,7 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                 GlStateManager.popMatrix();
             }
 
-            else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_drepanosaurus")) {
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_drepanosaurus")) {
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DREPANOSAURUS_EGGS);
@@ -103,7 +105,7 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                 GlStateManager.popMatrix();
             }
 
-            else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_labidosaurus")) {
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_LABIDOSAURUS_EGGS);
@@ -111,10 +113,17 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                 GlStateManager.popMatrix();
             }
 
-            else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_weigeltisaurus")) {
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_WEIGELTISAURUS_EGGS);
+                rotten_wood_eggs.renderAll(0.075F);
+                GlStateManager.popMatrix();
+            }
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
+                GlStateManager.pushMatrix();
+                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_CELTEDENS_EGGS);
                 rotten_wood_eggs.renderAll(0.075F);
                 GlStateManager.popMatrix();
             }
@@ -251,13 +260,6 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_PYCNOPHLEBIA_EGGS);
-                insect_eggs.renderAll(0.075F);
-                GlStateManager.popMatrix();
-            }
-            else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_celtedens")) {
-                GlStateManager.pushMatrix();
-                GlStateManager.scale(0.5F, 0.5F, 0.5F);
-                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_CELTEDENS_EGGS);
                 insect_eggs.renderAll(0.075F);
                 GlStateManager.popMatrix();
             }

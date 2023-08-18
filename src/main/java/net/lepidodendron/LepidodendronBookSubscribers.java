@@ -224,7 +224,12 @@ public class LepidodendronBookSubscribers {
 				nestString = " drops egg items";
 			}
 			else if (((EntityPrehistoricFloraLandBase) entity).laysEggs()) {
-				nestString = " lays eggs into mosses, selaginella and rotten wood";
+				if (((EntityPrehistoricFloraLandBase) entity).noMossEggs()) {
+					nestString = " lays eggs into rotten wood";
+				}
+				else {
+					nestString = " lays eggs into mosses, selaginella and rotten wood";
+				}
 			}
 			else {
 				nestString = " lays eggs in water";

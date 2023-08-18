@@ -47,6 +47,11 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {

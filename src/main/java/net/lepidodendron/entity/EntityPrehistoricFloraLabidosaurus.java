@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraLabidosaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {

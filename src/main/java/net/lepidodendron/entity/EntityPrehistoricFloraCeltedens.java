@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraCeltedens extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public boolean canJar() {
 		return false;
 	}

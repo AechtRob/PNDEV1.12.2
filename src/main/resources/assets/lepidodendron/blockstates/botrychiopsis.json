@@ -2,7 +2,8 @@
   "variants": {
     "normal": [
       {"model": "lepidodendron:botrychiopsis"},
-      {"model": "lepidodendron:botrychiopsis_var"}
+      {"model": "lepidodendron:botrychiopsis_var"},
+      {"model": "lepidodendron:botrychiopsis_var2"}
     ]
   }
 }

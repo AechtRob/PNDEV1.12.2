@@ -5,10 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.entities.ItemBugRaw;
-import net.lepidodendron.item.entities.ItemEggsHylonomus;
-import net.lepidodendron.item.entities.ItemEggsLabidosaurus;
-import net.lepidodendron.item.entities.ItemEggsOphiacodon;
+import net.lepidodendron.item.entities.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -227,14 +224,23 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 
 			EntityItem entityToSpawn = null;
 			if (!eggRenderType.equals("")) {
-				if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":eggs_hylonomus")) {
+				if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCasineria.block, (int) (1)));
+				}
+//				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_drepanosaurus")) {
+//					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsDrepanosaurus.block, (int) (1)));
+//				}
+				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHylonomus.block, (int) (1)));
 				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":eggs_ophiacodon")) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsOphiacodon.block, (int) (1)));
-				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":eggs_labidosaurus")) {
+				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsLabidosaurus.block, (int) (1)));
+				}
+				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsWeigeltisaurus.block, (int) (1)));
+				}
+				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtidens")) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCeltedens.block, (int) (1)));
 				}
 				else {
 					Block blockSpawn = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(eggRenderType)).getDefaultState().getBlock();
