@@ -165,12 +165,16 @@ public class ModelOnychopterella extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-
-    public void renderStaticWall(float f) {
-        this.Body.rotateAngleY = (float) Math.toRadians(90);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(legL4, 0.0F, -0.6F, 0.8F);
+        this.setRotateAngle(legR4, 0.0F, 0.6F, -0.8F);
+        this.Body.offsetY = -0.05F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

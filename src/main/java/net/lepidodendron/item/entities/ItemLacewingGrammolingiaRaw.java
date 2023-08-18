@@ -39,7 +39,7 @@ public class ItemLacewingGrammolingiaRaw extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemLacewingGrammolingiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_Lacewing@grammolingia", ItemLacewingGrammolingiaRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingGrammolingiaRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemLacewingGrammolingiaRaw.block);
 	}
@@ -56,13 +56,13 @@ public class ItemLacewingGrammolingiaRaw extends ElementsLepidodendronMod.ModEle
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_lacewing";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "grammalingia";
 		}
 	}
 }

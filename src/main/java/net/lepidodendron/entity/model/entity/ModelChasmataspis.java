@@ -238,11 +238,34 @@ public class ModelChasmataspis extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-
     public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(Body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body7, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetY = -0.2F;
+        this.Body.offsetX = 0.0F;
+        this.Body.offsetZ = -0.28F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(carapace, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Body1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body8, 0.0F, 0.3F, 0.0F);
+        this.Body.offsetY = 0.057F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

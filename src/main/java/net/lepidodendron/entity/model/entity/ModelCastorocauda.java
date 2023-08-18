@@ -325,7 +325,44 @@ public class ModelCastorocauda extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.Bodyfront.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, -0.0F);
+        this.Rightupperarm.setScale(0,0,0);
+        this.Leftupperarm.setScale(0,0,0);
+        this.Rightupperarm.scaleChildren = true;
+        this.Leftupperarm.scaleChildren = true;
+        this.Bodyfront.offsetY = 0.0F;
+        this.Bodyfront.offsetX = 0.0F;
+        this.Bodyfront.offsetZ = 0.1F;
+        this.Bodyfront.render(0.01F);
+        this.Rightupperarm.setScale(1,1,1);
+        this.Leftupperarm.setScale(1,1,1);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, -0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailend, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerarm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfrontfoot, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindfoot, 2.9F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, 2.9F, 0.0F, 0.0F);
+        this.root.offsetY = -0.09F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
