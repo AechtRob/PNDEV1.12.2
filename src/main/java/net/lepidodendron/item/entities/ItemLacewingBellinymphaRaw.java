@@ -56,13 +56,13 @@ public class ItemLacewingBellinymphaRaw extends ElementsLepidodendronMod.ModElem
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_lacewing";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "bellinympha";
 		}
 	}
 }

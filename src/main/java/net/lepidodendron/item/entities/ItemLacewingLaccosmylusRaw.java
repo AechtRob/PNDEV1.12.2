@@ -62,7 +62,7 @@ public class ItemLacewingLaccosmylusRaw extends ElementsLepidodendronMod.ModElem
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "laccosmylus";
 		}
 	}
 }
