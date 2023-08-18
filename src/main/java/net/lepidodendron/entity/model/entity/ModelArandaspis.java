@@ -140,7 +140,7 @@ public class ModelArandaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Bodyhead.offsetY = 1.2F;
+        this.Bodyhead.offsetY = 1.0F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
@@ -154,7 +154,7 @@ public class ModelArandaspis extends AdvancedModelBase {
             this.swing(Bodyhead, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Bodyhead.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodyhead.offsetY = 1.4F - 1.2F;
+                this.Bodyhead.offsetY = 1.315F;
                 this.bob(Bodyhead, -speed, 5F, false, f2, 1);
             }
         }
