@@ -7,10 +7,8 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeOrdovician;
-import net.lepidodendron.util.EnumBiomeTypeSilurian;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
@@ -103,7 +101,7 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid)) {
 			dimensionCriteria = true;
 		}
-		if (dimID == LepidodendronConfig.dimSilurian || dimID == LepidodendronConfig.dimOrdovician
+		if (dimID == LepidodendronConfig.dimSilurian
 		) {
 			dimensionCriteria = true;
 		}
@@ -146,6 +144,17 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeDevonian)
+		{
+			BiomeDevonian biomeDev = (BiomeDevonian) biome;
+			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
 				biomeCriteria = true;
 			}
 			else {
@@ -415,7 +424,7 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Crinoid");
-				tooltip.add("Periods: Ordovician - Silurian");
+				tooltip.add("Periods: [Ordovician(?) -] Silurian - Devonian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

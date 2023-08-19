@@ -39,7 +39,7 @@ public class ItemLacewingLaccosmylusRaw extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemLacewingLaccosmylusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@laccosmylus", ItemLacewingLaccosmylusRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingLaccosmylusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemLacewingLaccosmylusRaw.block);
 	}
@@ -56,13 +56,13 @@ public class ItemLacewingLaccosmylusRaw extends ElementsLepidodendronMod.ModElem
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_lacewing";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "laccosmylus";
 		}
 	}
 }

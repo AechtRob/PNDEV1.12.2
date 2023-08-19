@@ -434,11 +434,8 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.offsetY = -0.25F;
         this.Ciurcopterus.offsetZ = 0.1F;
 
-
         AdvancedModelRenderer[] fishBody = {this.TergiteA1, this.TergiteA2, this.TergiteA3, this.TergiteA4, this.TergiteA5, this.TergiteA6, this.Telson};
         AdvancedModelRenderer[] fishTail = {this.TergiteA6, this.Telson};
-
-
 
         //mouthparts:
         this.walk(cheliceraL, 0.35F, -0.15F, false, 0, -0.1F, f2, 0.6F);
@@ -453,8 +450,8 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         EntityPrehistoricFloraCiurcopterus ciurc = (EntityPrehistoricFloraCiurcopterus) e;
 
 
-        if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {//on land
-            if(!ciurc.getIsMoving()) {
+        if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
+            if ((!ciurc.getIsMoving()) && ciurc.isReallyInWater()) {
                 this.chainWave(fishBody, speed, 0.02F, -0.2F, f2, 0.2F);
                 this.chainSwing(fishTail, speed, 0.05F, -0.6F, f2, 0.6F);
                 this.chainWave(fishTail, speed, 0.05F, -0.6F, f2, 0.6F);
@@ -472,8 +469,8 @@ public class ModelCiurcopterus extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                // this.body.offsetY = 0.2F;
-                //this.bob(body, -speed * 1.5F, 2F, false, f2, 1);
-                this.chainSwing(fishBody, speed, 0.01F, -2, f2, 1);
+                this.bob(Ciurcopterus, -speed * 5.0F, 2F, false, f2, 1);
+                this.chainSwing(fishBody, speed * 3.0F, 0.05F, -2, f2, 1);
             }
         }
     }
@@ -483,19 +480,18 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.resetToDefaultPose();
         EntityPrehistoricFloraCiurcopterus ee = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         //Swimming pose:
-
-        if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
-            //Walk pose:
-
+        if (ee.isReallyInWater() && ee.getIsMoving()) {
+            if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
+                //Walk pose:
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            } else {
+                if ((ee.getAnimation() != ee.SWIM_ANIMATION)) {
+                    if (ee.getIsFast()) {
+                        animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
-        } else {
-            if ((ee.getAnimation() != ee.SWIM_ANIMATION)) {
-                if (ee.getIsFast()) {
-                    animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-
-                } else {
-                    animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    } else {
+                        animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    }
                 }
             }
         }

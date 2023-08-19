@@ -6,9 +6,14 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
+import net.lepidodendron.entity.render.entity.RenderLacewing;
+import net.lepidodendron.entity.render.entity.RenderLacewing;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemLacewingEggsItem;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -28,6 +33,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -242,6 +249,140 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return getStandardLoot();
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA: default:
+				return 0.0;
+
+			case CRETAPSYCHOPS:
+				return 0.0;
+
+			case LACCOSMYLUS:
+				return 0.0;
+
+			case LICHENIPOLYSTOECHOTES:
+				return 0.0;
+
+			case BELLINYMPHA:
+				return 0.0;
+
+			case GRAMMOLINGIA:
+				return 0.0;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA: default:
+				return 0.0;
+
+			case CRETAPSYCHOPS:
+				return 0.0;
+
+			case LACCOSMYLUS:
+				return 0.0;
+
+			case LICHENIPOLYSTOECHOTES:
+				return 0.0;
+
+			case BELLINYMPHA:
+				return 0.0;
+
+			case GRAMMOLINGIA:
+				return 0.0;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.95;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.06;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA:
+			default:
+				return RenderLacewing.TEXTURE_AETHEOGRAMMA;
+
+			case CRETAPSYCHOPS:
+				return RenderLacewing.TEXTURE_CRETAPSYCHOPS;
+
+			case LACCOSMYLUS:
+				return RenderLacewing.TEXTURE_LACCOSMYLUS;
+
+			case LICHENIPOLYSTOECHOTES:
+				return RenderLacewing.TEXTURE_LICHENIPOLYSTOECHOTES;
+
+			case BELLINYMPHA:
+				return RenderLacewing.TEXTURE_BELLINYMPHA;
+
+			case GRAMMOLINGIA:
+				return RenderLacewing.TEXTURE_GRAMMOLINGIA;
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA:
+			default:
+				return RenderDisplays.modelLacewing;
+
+			case CRETAPSYCHOPS:
+				return RenderDisplays.modelLacewing;
+
+			case LACCOSMYLUS:
+				return RenderDisplays.modelLacewing;
+
+			case LICHENIPOLYSTOECHOTES:
+				return RenderDisplays.modelLacewing;
+
+			case BELLINYMPHA:
+				return RenderDisplays.modelLacewing;
+
+			case GRAMMOLINGIA:
+				return RenderDisplays.modelLacewing;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderLacewing.getScaler(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant));
 	}
 
 	

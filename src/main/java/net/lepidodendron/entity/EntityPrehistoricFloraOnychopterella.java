@@ -10,6 +10,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockEurypteridEggsOnychopterella;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
+import net.lepidodendron.entity.render.entity.RenderOnychopterella;
 import net.lepidodendron.entity.render.entity.RenderSlimonia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -382,13 +383,13 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderSlimonia.TEXTURE;
+		return RenderOnychopterella.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelSlimonia;
+		return RenderDisplays.modelOnychopterella;
 	}
 
-	public static float getScaler(@Nullable String variant) {return RenderSlimonia.getScaler();}
+	public static float getScaler(@Nullable String variant) {return RenderOnychopterella.getScaler();}
 }

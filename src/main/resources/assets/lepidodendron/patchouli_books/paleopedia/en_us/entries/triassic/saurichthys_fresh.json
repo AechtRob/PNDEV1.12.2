@@ -1,7 +1,7 @@
 {
-	"name": "saurichthys_freshwater",
+	"name": "Saurichthys (freshwater)",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/saurichthys_freshwater_icon.png",
+	"icon": "lepidodendron:textures/items/entities/saurichthys_freshwater_raw.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_saurichthys_freshwater",
 	"pages": [

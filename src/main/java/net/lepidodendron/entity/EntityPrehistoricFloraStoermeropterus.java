@@ -63,6 +63,10 @@
 //		}
 //	}
 //
+//public static String getHabitat() {
+//        return I18n.translateToLocal("helper.pf_aquatic.name");
+//        }
+//
 //	//an array of all the animations
 //	@Override
 //	public Animation[] getAnimations() {
