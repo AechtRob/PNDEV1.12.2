@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraCriocephalosaurus extends EntityPrehistoricFl
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.3275F;
+		float speedBase = 0.3175F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -92,7 +92,7 @@ public class EntityPrehistoricFloraCriocephalosaurus extends EntityPrehistoricFl
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 1.86F;
 		}
 		return speedBase;
 	}
