@@ -19,6 +19,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,6 +42,10 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	@Override

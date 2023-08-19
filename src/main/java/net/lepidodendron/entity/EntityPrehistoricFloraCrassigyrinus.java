@@ -28,6 +28,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -49,6 +50,10 @@ public class EntityPrehistoricFloraCrassigyrinus extends EntityPrehistoricFloraS
 		maxWidth = 0.65F;
 		maxHeight = 0.40F;
 		maxHealthAgeable = 24.0D;
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	@Override

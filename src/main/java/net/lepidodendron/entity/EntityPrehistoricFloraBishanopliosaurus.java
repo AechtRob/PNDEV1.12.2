@@ -231,10 +231,12 @@ public class EntityPrehistoricFloraBishanopliosaurus extends EntityPrehistoricFl
 		}
 		return LepidodendronMod.BISHANOPLIOSAURUS_LOOT;
 	}
+
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraBishanopliosaurus(this.world);
 	}
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {

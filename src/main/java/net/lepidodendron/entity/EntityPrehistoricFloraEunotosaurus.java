@@ -53,33 +53,10 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 
 	@Override
 	public int getEggType() {
-		return 1; //medium
-	}
-
-	@Override
-	public boolean placesNest() {
-		return true;
-	}
-
-	@Override
-	public boolean isNestMound() {
-		return true;
-	}
-
-	public boolean testLay(World world, BlockPos pos) {
-		return (
-				nestBlockMatch(world, pos)
-		);
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Permian";}
-
-	//public static String getHabitat() {return "Terrestrial Synapsid";}
-
-	@Override
-	public boolean hasNest() {
-		return true;
-	}
 
 	@Override
 	public int getAttackLength() {
@@ -199,7 +176,6 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {

@@ -16,6 +16,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
@@ -43,7 +44,7 @@ public class EntityPrehistoricFloraStahleckeria extends EntityPrehistoricFloraLa
 	public EntityPrehistoricFloraStahleckeria(World world) {
 		super(world);
 		setSize(1.05F, 1.0F);
-		minWidth = 0.2F;
+		minWidth = 0.3F;
 		maxWidth = 1.05F;
 		maxHeight = 1.0F;
 		maxHealthAgeable = 26.0D;
@@ -218,12 +219,24 @@ public class EntityPrehistoricFloraStahleckeria extends EntityPrehistoricFloraLa
 			launchAttack();
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
 			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	@Override
+	public void launchAttack() {
+		if (this.getAttackTarget() != null) {
+			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+			this.getAttackTarget().addVelocity(0, 0.1, 0);
+			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+			if (this.getOneHit()) {
+				this.setAttackTarget(null);
+				this.setRevengeTarget(null);
+			}
+		}
 	}
 
 	@Override

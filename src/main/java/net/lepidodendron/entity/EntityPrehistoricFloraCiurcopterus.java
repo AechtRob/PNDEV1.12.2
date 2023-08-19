@@ -28,6 +28,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -62,6 +63,10 @@ public class EntityPrehistoricFloraCiurcopterus extends EntityPrehistoricFloraSw
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	//an array of all the animations
@@ -138,7 +143,7 @@ public class EntityPrehistoricFloraCiurcopterus extends EntityPrehistoricFloraSw
 			}
 
 			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
-//Lay eggs perhaps:
+			//Lay eggs perhaps:
 			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 					&& (BlockEurypteridEggsCiurcopterus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 					|| BlockEurypteridEggsCiurcopterus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
