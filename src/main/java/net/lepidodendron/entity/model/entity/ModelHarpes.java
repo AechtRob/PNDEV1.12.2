@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraHarpes;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -247,16 +248,18 @@ public class ModelHarpes extends AdvancedModelBase {
         AdvancedModelRenderer[] legsR = {this.leg5, this.leg6, this.leg7, this.leg8};
 
         if (isAtBottom) {
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            this.flap(leg, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(leg5, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(leg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(leg6, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(leg3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(leg7, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(leg4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(leg8, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            if (((EntityPrehistoricFloraHarpes) e).getIsMoving()) {
+                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+                this.flap(leg, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+                this.flap(leg5, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+                this.flap(leg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(leg6, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(leg3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(leg7, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(leg4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                this.flap(leg8, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            }
             this.bob(main, 0.0F, 0.0F, false, f2, 1);
         }
         else {

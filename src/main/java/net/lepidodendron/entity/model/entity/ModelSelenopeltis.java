@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraSelenopeltis;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -266,20 +267,22 @@ public class ModelSelenopeltis extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyF = {this.body1,this.body2,this.body3,this.body4};
 
         if (isAtBottom) {
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(legR, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(legL5, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR5, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 0.5F);
-            this.chainWave(bodyF, 0.1F, 0.0f, -3, f2, 0F);
+            if (((EntityPrehistoricFloraSelenopeltis) e).getIsMoving()) {
+                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+                this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+                this.flap(legR, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+                this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                this.flap(legL5, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(legR5, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 0.5F);
+                this.chainWave(bodyF, 0.1F, 0.0f, -3, f2, 0F);
+            }
             this.bob(head, 0.0F, 0.0F, false, f2, 1);
         }
         else {

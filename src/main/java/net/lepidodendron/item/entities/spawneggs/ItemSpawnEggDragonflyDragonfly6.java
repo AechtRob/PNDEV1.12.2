@@ -54,7 +54,7 @@ public class ItemSpawnEggDragonflyDragonfly6 extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public String getPeriod() {
-			return "Carboniferous";
+			return "Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]";
 		}
 
 		@Override

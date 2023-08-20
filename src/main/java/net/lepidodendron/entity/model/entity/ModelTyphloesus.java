@@ -3,6 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraTyphloesus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
@@ -213,7 +214,7 @@ public class ModelTyphloesus extends AdvancedModelBase {
             zz = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
         }
         this.Foregut.offsetX = (float) Math.toRadians(xx);
-        this.Foregut.offsetY = (float) Math.toRadians(yy);
+        this.Foregut.offsetY = -(float) Math.toRadians(yy);
         this.Foregut.offsetZ = (float) Math.toRadians(zz);
 
         if (tickAnim >= 0 && tickAnim < 2) {
@@ -237,8 +238,14 @@ public class ModelTyphloesus extends AdvancedModelBase {
             zz = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
         }
         this.Radula.offsetX = (float) Math.toRadians(xx);
-        this.Radula.offsetY = (float) Math.toRadians(yy);
+        this.Radula.offsetY = -(float) Math.toRadians(yy);
         this.Radula.offsetZ = (float) Math.toRadians(zz);
+
+    }
+
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        EntityPrehistoricFloraTyphloesus e = (EntityPrehistoricFloraTyphloesus) entity;
+        animator.update(entity);
 
     }
 
