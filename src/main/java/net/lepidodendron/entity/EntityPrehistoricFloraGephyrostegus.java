@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 5.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

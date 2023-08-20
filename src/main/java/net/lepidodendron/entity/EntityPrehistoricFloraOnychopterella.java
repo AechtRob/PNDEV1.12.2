@@ -11,7 +11,6 @@ import net.lepidodendron.block.BlockEurypteridEggsOnychopterella;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderOnychopterella;
-import net.lepidodendron.entity.render.entity.RenderSlimonia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;

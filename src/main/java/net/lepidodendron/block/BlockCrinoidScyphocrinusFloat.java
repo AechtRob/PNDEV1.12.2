@@ -8,6 +8,7 @@ import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -26,6 +27,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -189,9 +191,14 @@ public class BlockCrinoidScyphocrinusFloat extends ElementsLepidodendronMod.ModE
 		}
 
 		public boolean isWaterBlock(World world, BlockPos pos) { //Different logic this time! We do need actual water blocks, not merely material
-			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
-				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
-					return true;
+//			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
+//				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
+//					return true;
+//			}
+			if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
+					|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
+				&& world.getBlockState(pos).getMaterial() == Material.WATER) {
+				return true;
 			}
 	    	return false;
 	    }

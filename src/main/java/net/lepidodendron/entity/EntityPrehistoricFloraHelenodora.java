@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.entity.render.entity.RenderHelenodora;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -162,6 +163,10 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemUnknownEggLand.block, (int) (1));
+	}
 
 	@Override
 	public void onLivingUpdate() {

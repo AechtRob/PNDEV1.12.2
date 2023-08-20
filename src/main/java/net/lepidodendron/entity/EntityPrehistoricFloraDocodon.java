@@ -2,9 +2,8 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.render.entity.RenderDocodon;
 import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.render.entity.RenderPseudotherium;
+import net.lepidodendron.entity.render.entity.RenderDocodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.DamageSource;

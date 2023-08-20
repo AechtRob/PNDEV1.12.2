@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockShulkerBox;
@@ -196,8 +197,7 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 		public boolean canAttachTo(World world, BlockPos pos, EnumFacing facing)
 		{
 			//Is under water?
-			if (!((world.getBlockState(pos.up()).getBlock() == Blocks.WATER
-				|| world.getBlockState(pos.up()).getBlock() == Blocks.FLOWING_WATER
+			if (!((Functions.isWater(world, pos.up())
 				|| world.getBlockState(pos.up()).getBlock() == BlockChaunograptus.block)
 				&& !world.isAirBlock(pos.north())
 				&& !world.isAirBlock(pos.south())

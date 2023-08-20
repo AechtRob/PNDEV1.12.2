@@ -162,7 +162,6 @@ public class ModelSyringocrinus extends AdvancedModelBase {
 
             this.arm.swing(speed/5, 0.1F, false, 0, 0, f2, 1F);
 
-
             this.swing(main, speed, 0.06F, true, 0, 0, f2, 1);
 
         }

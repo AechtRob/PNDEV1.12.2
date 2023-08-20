@@ -28,7 +28,7 @@ public class EntityPrehistoricFloraMegistaspis extends EntityPrehistoricFloraTri
 
 	public EntityPrehistoricFloraMegistaspis(World world) {
 		super(world);
-		setSize(0.2F, 0.15F);
+		setSize(0.275F, 0.175F);
 	}
 
 	@Override

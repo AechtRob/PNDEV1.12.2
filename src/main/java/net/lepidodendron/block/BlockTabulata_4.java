@@ -221,8 +221,7 @@ public class BlockTabulata_4 extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (blockpos1.getY() < world.getSeaLevel()
-								&& (world.getBlockState(blockpos1).getBlock() == Blocks.WATER
-								|| world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER)
+								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
 								&& !world.isAirBlock(blockpos1.east())

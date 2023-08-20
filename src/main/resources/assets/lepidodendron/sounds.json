@@ -6980,8 +6980,7 @@
       }
     ]
   },
-
-
+  
   "kayentatherium_idle": {
     "sounds": [
       {
@@ -7026,8 +7025,7 @@
       }
     ]
   },
-
-
+  
   "tanycolagreus_idle": {
     "sounds": [
       {
@@ -7095,7 +7093,120 @@
         "stream": false
       }
     ]
-  }
+  },
+  
+  "stahleckeria_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stahleckeria_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_living06",
+        "stream": false
+      }
+    ]
+  },
+  "stahleckeria_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stahleckeria_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "stahleckeria_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stahleckeria_death",
+        "stream": false
+      }
+    ]
+  },
+  "stahleckeria_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stahleckeria_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stahleckeria_threat03",
+        "stream": false
+      }
+    ]
+  },
 
+  "eunotosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eunotosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eunotosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eunotosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eunotosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "eunotosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eunotosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eunotosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eunotosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eunotosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eunotosaurus_death",
+        "stream": false
+      }
+    ]
+  }
 
 }

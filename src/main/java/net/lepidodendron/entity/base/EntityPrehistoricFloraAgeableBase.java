@@ -1238,9 +1238,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
                 //System.err.println("setting attack anim");
                 this.setAnimation(ATTACK_ANIMATION);
-                if (this.getAnimation() == ATTACK_ANIMATION && !world.isRemote) {
+                //if (this.getAnimation() == ATTACK_ANIMATION && !world.isRemote) {
                     //System.err.println("is attacking");
-                }
+                //}
                 SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
                 this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }

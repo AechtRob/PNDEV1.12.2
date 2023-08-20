@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderTyphloesus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -41,13 +42,19 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
 	public ItemStack getPropagule() {
 		return new ItemStack(ItemUnknownPlanula.block, (int) (1));
 	}
+
 	@Override
 	public boolean canShoal() {
 		return false;
@@ -194,6 +201,7 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
+
 	}
 
 	@Override
