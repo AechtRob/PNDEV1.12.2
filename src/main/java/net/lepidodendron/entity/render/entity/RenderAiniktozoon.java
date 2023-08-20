@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAiniktozoon;
-import net.lepidodendron.entity.EntityPrehistoricFloraTurboscinetes;
 import net.lepidodendron.entity.model.entity.ModelAiniktozoon;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

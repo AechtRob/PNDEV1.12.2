@@ -6,8 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
-import net.lepidodendron.entity.render.entity.RenderLacewing;
 import net.lepidodendron.entity.render.entity.RenderLacewing;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemLacewingEggsItem;

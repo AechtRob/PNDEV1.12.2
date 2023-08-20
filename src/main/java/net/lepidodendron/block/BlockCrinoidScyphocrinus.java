@@ -7,14 +7,10 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypeSilurian;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -45,7 +41,6 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -397,12 +392,12 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
 //				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
 //					return true;
 //			}
-			if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
-					|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
-					&& world.getBlockState(pos).getMaterial() == Material.WATER) {
-				return true;
-			}
-	    	return false;
+//			if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
+//					|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
+//					&& world.getBlockState(pos).getMaterial() == Material.WATER) {
+//				return true;
+//			}
+	    	return Functions.isWater(world, pos);
 	    }
 
 	    

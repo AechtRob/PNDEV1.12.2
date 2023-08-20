@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
-import net.lepidodendron.entity.render.entity.RenderOnychopterella;
 import net.lepidodendron.entity.render.entity.RenderPlectronoceras;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;

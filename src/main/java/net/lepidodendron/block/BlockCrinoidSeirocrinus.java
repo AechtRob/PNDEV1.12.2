@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -282,11 +283,11 @@ public class BlockCrinoidSeirocrinus extends ElementsLepidodendronMod.ModElement
 		}
 
 		public boolean isWaterBlock(World world, BlockPos pos) { //Different logic this time! We do need actual water blocks, not merely material
-			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
-				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
-					return true;
-			}
-	    	return false;
+//			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
+//				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
+//					return true;
+//			}
+	    	return Functions.isWater(world, pos);
 	    }
 
 	    

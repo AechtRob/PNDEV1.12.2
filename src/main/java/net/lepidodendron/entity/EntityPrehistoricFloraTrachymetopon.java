@@ -6,8 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
-import net.lepidodendron.entity.render.entity.RenderOrthocormus;
 import net.lepidodendron.entity.render.entity.RenderTrachymetopon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;

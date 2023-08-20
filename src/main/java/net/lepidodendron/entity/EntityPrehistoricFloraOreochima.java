@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.entity.RenderOreochima;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;

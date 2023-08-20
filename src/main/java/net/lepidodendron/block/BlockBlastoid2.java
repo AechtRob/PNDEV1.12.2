@@ -231,7 +231,7 @@ public class BlockBlastoid2 extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER || world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER) {
+						if (Functions.isWater(world, blockpos1)) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth

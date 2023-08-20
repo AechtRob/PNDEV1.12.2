@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -12,7 +13,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -154,7 +154,7 @@ public class AlgaeGenerator extends WorldGenerator
 			if (worldIn.isBlockLoaded(new BlockPos(j, k, l))) {
 
 				if (this.algae.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
-						&& (worldIn.getBlockState(new BlockPos(j, k, l)).getBlock() == Blocks.WATER || worldIn.getBlockState(new BlockPos(j, k, l)).getBlock() == Blocks.FLOWING_WATER)
+						&& (Functions.isWater(worldIn, new BlockPos(j, k, l)))
 						&& !worldIn.isAirBlock(new BlockPos(j, k, l + 1))
 						&& !worldIn.isAirBlock(new BlockPos(j, k, l - 1))
 						&& !worldIn.isAirBlock(new BlockPos(j + 1, k, l))

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockCrinoidScyphocrinus;
 import net.lepidodendron.block.BlockCrinoidScyphocrinusFloat;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.Functions;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -28,7 +29,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -158,11 +158,11 @@ public class ItemCrinoidScyphocrinusItem extends ElementsLepidodendronMod.ModEle
 //				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
 //			return true;
 //		}
-		if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
-				|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
-				&& world.getBlockState(pos).getMaterial() == Material.WATER) {
-			return true;
-		}
-		return false;
+//		if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
+//				|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
+//				&& world.getBlockState(pos).getMaterial() == Material.WATER) {
+//			return true;
+//		}
+		return Functions.isWater(world, pos);
 	}
 }
