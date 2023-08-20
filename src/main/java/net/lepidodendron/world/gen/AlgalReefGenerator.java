@@ -2,11 +2,11 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockAlgalReef;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -60,8 +60,8 @@ public class AlgalReefGenerator extends WorldGenerator
 			int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
 
 			if (this.reef.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
-				&& (worldIn.getBlockState(new BlockPos(j, k, l)).getBlock() == Blocks.WATER || worldIn.getBlockState(new BlockPos(j, k, l)).getBlock() == Blocks.FLOWING_WATER)
-				&& (worldIn.getBlockState(new BlockPos(j, k + 1, l)).getBlock() == Blocks.WATER || worldIn.getBlockState(new BlockPos(j, k + 1, l)).getBlock() == Blocks.FLOWING_WATER)
+				&& (Functions.isWater(worldIn, new BlockPos(j, k, l)))
+				&& (Functions.isWater(worldIn, new BlockPos(j, k + 1, l)))
 				&& !worldIn.isAirBlock(new BlockPos(j, k, l+1))
 				&& !worldIn.isAirBlock(new BlockPos(j, k, l-1))
 				&& !worldIn.isAirBlock(new BlockPos(j+1, k, l))

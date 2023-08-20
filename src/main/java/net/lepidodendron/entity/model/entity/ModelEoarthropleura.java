@@ -318,40 +318,42 @@ public class ModelEoarthropleura extends AdvancedModelBase {
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
+            if (((EntityPrehistoricFloraEoarthropleura) e).getIsMoving()) {
+                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+                //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
 
-            this.chainSwing(Body1, 0.3F, -0.016F, -3, f2, 1);
-            this.chainSwing(Body2, 0.3F, 0.016F, -3, f2, 1);
-            this.chainSwing(Body3, 0.3F, -0.016F, -3, f2, 1);
-            this.chainSwing(Body4, 0.3F, 0.018F, -3, f2, 1);
-            this.chainSwing(Body5, 0.2F, -0.018F, -3, f2, 1);
-            this.chainSwing(Body6, 0.2F, 0.020F, -3, f2, 1);
-            this.chainSwing(Body7, 0.15F, -0.020F, -3, f2, 1);
-            this.chainSwing(Body8, 0.15F, 0.022F, -3, f2, 1);
-            this.chainSwing(Body9, 0.15F, -0.022F, -3, f2, 1);
+                this.chainSwing(Body1, 0.3F, -0.016F, -3, f2, 1);
+                this.chainSwing(Body2, 0.3F, 0.016F, -3, f2, 1);
+                this.chainSwing(Body3, 0.3F, -0.016F, -3, f2, 1);
+                this.chainSwing(Body4, 0.3F, 0.018F, -3, f2, 1);
+                this.chainSwing(Body5, 0.2F, -0.018F, -3, f2, 1);
+                this.chainSwing(Body6, 0.2F, 0.020F, -3, f2, 1);
+                this.chainSwing(Body7, 0.15F, -0.020F, -3, f2, 1);
+                this.chainSwing(Body8, 0.15F, 0.022F, -3, f2, 1);
+                this.chainSwing(Body9, 0.15F, -0.022F, -3, f2, 1);
 
-            this.flap(legL_r1, 0.7F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(legR_r1, 0.7F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(legL_r2, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r2, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r3, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r3, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r4, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r4, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r5, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r5, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r6, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r6, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r7, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r7, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r8, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r8, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r9, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r9, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL_r10, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(legR_r10, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r1, 0.7F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+                this.flap(legR_r1, 0.7F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+                this.flap(legL_r2, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r2, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r3, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r3, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r4, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r4, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r5, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r5, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r6, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r6, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r7, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r7, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r8, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r8, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r9, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r9, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(legL_r10, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                this.flap(legR_r10, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            }
         }
     }
 }

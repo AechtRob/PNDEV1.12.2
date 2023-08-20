@@ -1,9 +1,9 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockChaunograptus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -86,8 +86,7 @@ public class WorldGenChaunograptus extends WorldGenerator {
 
 	public boolean isWaterBlock(World world, BlockPos pos) {
 
-		if (!((world.getBlockState(pos.up()).getBlock() == Blocks.WATER
-				|| world.getBlockState(pos.up()).getBlock() == Blocks.FLOWING_WATER
+		if (!((Functions.isWater(world, pos.up())
 				|| world.getBlockState(pos.up()).getBlock() == BlockChaunograptus.block)
 				&& !world.isAirBlock(pos.north())
 				&& !world.isAirBlock(pos.south())

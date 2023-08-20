@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
@@ -172,8 +173,7 @@ public class BlockHerpetogaster extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (blockpos1.getY() < world.getSeaLevel()
-								&& (world.getBlockState(blockpos1).getBlock() == Blocks.WATER
-								|| world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER)
+								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
 								&& !world.isAirBlock(blockpos1.east())

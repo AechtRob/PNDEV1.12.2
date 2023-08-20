@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraFurcaster;
-import net.lepidodendron.entity.EntityPrehistoricFloraTurboscinetes;
 import net.lepidodendron.entity.model.entity.ModelFurcaster;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

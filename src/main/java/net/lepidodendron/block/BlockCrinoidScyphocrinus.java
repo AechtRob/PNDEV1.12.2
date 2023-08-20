@@ -7,10 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypeSilurian;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
@@ -391,11 +388,16 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
 		}
 
 		public boolean isWaterBlock(World world, BlockPos pos) { //Different logic this time! We do need actual water blocks, not merely material
-			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
-				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
-					return true;
-			}
-	    	return false;
+//			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
+//				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
+//					return true;
+//			}
+//			if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
+//					|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
+//					&& world.getBlockState(pos).getMaterial() == Material.WATER) {
+//				return true;
+//			}
+	    	return Functions.isWater(world, pos);
 	    }
 
 	    

@@ -421,27 +421,29 @@ public class ModelEricixerxes extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyF = {this.body4,this.body5,this.body6,this.body7,this.body8,this.body9,this.body10,this.body11,this.body12,this.body13};
 
         if (isAtBottom || !e.isInWater()) {
-            this.chainWave(legsL, 0.5F, 0.2F, 1, f2, 1);
-            this.chainWave(legsR, 0.5F, 0.2F, 1, f2, 1);
-            this.flap(legL, 0.5F, -0.3F, false, 0, -0.3F, f2, 0.2F);
-            this.flap(legR, 0.5F, 0.3F, false, 0, 0.3F, f2, 0.2F);
-            this.flap(legL2, 0.5F, -0.3F, false, 1.0F, -0.3F, f2, 0.2F);
-            this.flap(legR2, 0.5F, 0.3F, false, 1.0F, 0.3F, f2, 0.2F);
-            this.flap(legL3, 0.5F, -0.25F, false, 2.0F, -0.25F, f2, 0.2F);
-            this.flap(legR3, 0.5F, 0.25F, false, 2.0F, 0.25F, f2, 0.2F);
-            this.flap(legL4, 0.5F, -0.25F, false, 3.0F, -0.25F, f2, 0.2F);
-            this.flap(legR4, 0.5F, 0.25F, false, 3.0F, 0.25F, f2, 0.2F);
-            this.flap(legL5, 0.5F, -0.2F, false, 4.0F, -0.2F, f2, 0.2F);
-            this.flap(legR5, 0.5F, 0.2F, false, 4.0F, 0.2F, f2, 0.2F);
-            this.flap(legL6, 0.5F, -0.2F, false, 5.0F, -0.2F, f2, 0.2F);
-            this.flap(legR6, 0.5F, 0.2F, false, 5.0F, 0.2F, f2, 0.2F);
-            this.flap(legL7, 0.5F, -0.2F, false, 6.0F, -0.2F, f2, 0.2F);
-            this.flap(legR7, 0.5F, 0.2F, false, 6.0F, 0.2F, f2, 0.2F);
-            this.flap(legL8, 0.5F, -0.2F, false, 7.0F, -0.2F, f2, 0.15F);
-            this.flap(legR8, 0.5F, 0.2F, false, 7.0F, 0.2F, f2, 0.15F);
-            this.flap(legL9, 0.5F, -0.2F, false, 8.0F, -0.2F, f2, 0.15F);
-            this.flap(legR9, 0.5F, 0.2F, false, 8.0F, 0.2F, f2, 0.15F);
-            this.chainWave(bodyF, 0.5F, 0.01f, -1, f2, 0.4F);
+            if (((EntityPrehistoricFloraEricixerxes) e).getIsMoving()) {
+                this.chainWave(legsL, 0.5F, 0.2F, 1, f2, 1);
+                this.chainWave(legsR, 0.5F, 0.2F, 1, f2, 1);
+                this.flap(legL, 0.5F, -0.3F, false, 0, -0.3F, f2, 0.2F);
+                this.flap(legR, 0.5F, 0.3F, false, 0, 0.3F, f2, 0.2F);
+                this.flap(legL2, 0.5F, -0.3F, false, 1.0F, -0.3F, f2, 0.2F);
+                this.flap(legR2, 0.5F, 0.3F, false, 1.0F, 0.3F, f2, 0.2F);
+                this.flap(legL3, 0.5F, -0.25F, false, 2.0F, -0.25F, f2, 0.2F);
+                this.flap(legR3, 0.5F, 0.25F, false, 2.0F, 0.25F, f2, 0.2F);
+                this.flap(legL4, 0.5F, -0.25F, false, 3.0F, -0.25F, f2, 0.2F);
+                this.flap(legR4, 0.5F, 0.25F, false, 3.0F, 0.25F, f2, 0.2F);
+                this.flap(legL5, 0.5F, -0.2F, false, 4.0F, -0.2F, f2, 0.2F);
+                this.flap(legR5, 0.5F, 0.2F, false, 4.0F, 0.2F, f2, 0.2F);
+                this.flap(legL6, 0.5F, -0.2F, false, 5.0F, -0.2F, f2, 0.2F);
+                this.flap(legR6, 0.5F, 0.2F, false, 5.0F, 0.2F, f2, 0.2F);
+                this.flap(legL7, 0.5F, -0.2F, false, 6.0F, -0.2F, f2, 0.2F);
+                this.flap(legR7, 0.5F, 0.2F, false, 6.0F, 0.2F, f2, 0.2F);
+                this.flap(legL8, 0.5F, -0.2F, false, 7.0F, -0.2F, f2, 0.15F);
+                this.flap(legR8, 0.5F, 0.2F, false, 7.0F, 0.2F, f2, 0.15F);
+                this.flap(legL9, 0.5F, -0.2F, false, 8.0F, -0.2F, f2, 0.15F);
+                this.flap(legR9, 0.5F, 0.2F, false, 8.0F, 0.2F, f2, 0.15F);
+                this.chainWave(bodyF, 0.5F, 0.01f, -1, f2, 0.4F);
+            }
             this.bob(body, 0.5F, 0.02F, true, f2, 0.5F);
         }
         else {

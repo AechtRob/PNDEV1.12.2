@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.entity.RenderPhillipsia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -33,7 +32,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 
 	public EntityPrehistoricFloraPhillipsia(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.3F, 0.20F);
 	}
 
 	@Override
@@ -115,7 +114,7 @@ public class EntityPrehistoricFloraPhillipsia extends EntityPrehistoricFloraTril
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 

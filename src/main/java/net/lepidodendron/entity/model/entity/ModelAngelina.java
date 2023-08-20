@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraAngelina;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -366,24 +367,22 @@ public class ModelAngelina extends AdvancedModelBase {
         this.swing(AntennaeLeft, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(AntennaeRight, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
 
-        if (f3 != 0) {
+        if (((EntityPrehistoricFloraAngelina)e).getIsMoving()) {
             this.chainSwing(bodyF, 0.1F, 0.06F, -3, f2, 1.0F);
+            this.flap(LLeg1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+            this.flap(RLeg1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+            this.flap(LLeg2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
         }
-
-        this.flap(LLeg1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-        this.flap(RLeg1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-        this.flap(LLeg2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
-
     }
 }

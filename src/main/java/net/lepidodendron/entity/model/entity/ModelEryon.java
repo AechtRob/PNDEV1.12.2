@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraEryon;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -289,7 +290,7 @@ public class ModelEryon extends AdvancedModelBase {
                 this.swing(pincerL, 0.18F, -0.23F, true, 0f, 0.1f, f2, 1F);
                 this.swing(pincerR, 0.18F, 0.23F, true, 1.5f, -0.1f, f2, 1F);
 
-                if (f3 != 0.0F) {
+                if (((EntityPrehistoricFloraEryon) e).getIsMoving()) {
 
                     this.swing(legL, speedLeg, -degreeLeg, false, 0, -0.5F, f2, 0.7F);
                     this.swing(legR, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);
