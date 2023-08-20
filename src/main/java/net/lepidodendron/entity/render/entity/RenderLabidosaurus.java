@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLabidosaurus extends RenderLiving<EntityPrehistoricFloraLabidosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus.png");
+    public static float getScaler() {
+        return 0.385f;
+    }
 
     public RenderLabidosaurus(RenderManager mgr) {
         super(mgr, new ModelLabidosaurus(), 0.5f);
@@ -27,7 +30,7 @@ public class RenderLabidosaurus extends RenderLiving<EntityPrehistoricFloraLabid
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLabidosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.2F;
     }
