@@ -124,12 +124,38 @@ public class ModelLacewing extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+        public void renderStaticSuspended(float f) {
+            this.setRotateAngle(body, 0.0F, 0.0F, 0.3F);
+            this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
+            this.setRotateAngle(hindwingR, 0.0F, 0.0F, -0.2F);
+            this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
+            this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
+            this.body.offsetY = 0.0F;
+            this.body.render(0.01f);
+    }
 
-    public void renderStatic(float f) {
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
+        this.body.offsetY = -0.3F;
         this.body.render(0.01f);
     }
 
     public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(antennaR, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(antennaL, 0.0F, -0.2F, 0.0F);
         this.body.offsetY = -0.3F;
         this.body.render(0.01f);
         resetToDefaultPose();
