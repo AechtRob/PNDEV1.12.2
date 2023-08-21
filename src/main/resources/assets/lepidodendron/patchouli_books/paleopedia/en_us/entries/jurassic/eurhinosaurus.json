@@ -1,0 +1,60 @@
+{
+	"name": "Eurhinosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eurhinosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_eurhinosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eurhinosaurus",
+			"title": "Eurhinosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Ichthyosauria $(br)>Leptonectidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/eurhinosaurus.png"],
+			"title": "E. huenei",
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eurhinosaurus",
+			"type": "text",
+			"text": "Eurhinosaurus is a genus of Ichthyosaur from the Early Jurassic of Europe. This up to 7 m long Ichthyosaur possessed the characteristic fish-shaped body as most derived members of the group, however, what makes Eurhinosaurus most characteristic is the presence of a disproportionally large rostrum compared to its lower jaw, which gives this animal an almost swordfish like appearance."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eurhinosaurus",
+			"type": "text",
+			"text": "Eurhinosaurus is thought to have lived in the open sea off shore, as demonstrated by the types of sediments and faunas in the digsites this genus was found in. Despite the amount of specimens and relatively good preservation of them, Eurhinosaurus remains one of the least studied ichthyosaurs to date."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eurhinosaurus",
+			"type": "text",
+			"text": "Despite its swordfish-like appearance some people suggest this animal wasn't able to hunt like one; while not much is known on the feeding habits of this animal, there are two different views on how Eurhinosaurus would've gathered food."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eurhinosaurus",
+			"type": "text",
+			"text": "The first and most often cited one is that Eurhinosaurus would hunt much like a swordfish, swimming at high speed and using its long rostrum as a weapon to hit and stun prey; the second hypothesis postulates the skull to not have been resistant enough to lateral stresses as to allow such thrashing and instead suggests Eurhinosaurus might have fed on benthic animals, potentially using its long rostrum to disturb the ocean floor to force prey out of hiding."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eurhinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eurhinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eurhinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eurhinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eurhinosaurus"
+		}
+	]
+}
