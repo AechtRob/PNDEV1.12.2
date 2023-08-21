@@ -149,6 +149,7 @@ public class RenderDisplays {
     public static final ModelKujdanowiaspis modelKujdanowiaspis = new ModelKujdanowiaspis();
     public static final ModelKaykay modelKaykay = new ModelKaykay();
     public static final ModelKulindadromeus modelKulindadromeus = new ModelKulindadromeus();
+    public static final ModelKalligrammatid modelKalligrammatid = new ModelKalligrammatid();
     public static final ModelLasanius modelLasanius = new ModelLasanius();
     public static final ModelLepidotes modelLepidotes = new ModelLepidotes();
     public static final ModelLeptolepis modelLeptolepis = new ModelLeptolepis();

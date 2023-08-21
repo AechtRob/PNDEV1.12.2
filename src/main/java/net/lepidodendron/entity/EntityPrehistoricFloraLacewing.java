@@ -296,37 +296,37 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	}
 
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.75;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return 0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.6;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.6F;
+		return 0.0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
