@@ -1712,8 +1712,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_HUPEHSUCHUS = 689;
 	public static final ResourceLocation HUPEHSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hupehsuchus"));
 	public static final int ENTITY_MEGATEUTHIS = 690;
-	public static final ResourceLocation MEGATEUTHIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megateuthis"));
-	public static final ResourceLocation MEGATEUTHIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megateuthis_young"));
+	//public static final ResourceLocation MEGATEUTHIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megateuthis"));
+	//public static final ResourceLocation MEGATEUTHIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megateuthis_young"));
 	public static final int ENTITY_PASSALOTEUTHIS = 691;
 	public static final ResourceLocation PASSALOTEUTHIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/passaloteuthis"));
 	public static final ResourceLocation PASSALOTEUTHIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/passaloteuthis_young"));
