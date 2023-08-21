@@ -1,0 +1,56 @@
+{
+	"name": "Castorocauda",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/castorocauda_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_castorocauda",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_castorocauda",
+			"title": "Castorocauda",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mammaliaformes $(br)>Docodonta $(br)>Docodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/castorocauda.png"],
+			"title": "C. lutrasimilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_castorocauda",
+			"type": "text",
+			"text": "Castorocauda lutrasimilis was a species of docodont mammaliaform that lived during the Middle Jurassic (around 164 million years ago). It is known from a partial - though very well preserved - partial skeleton that was found in the Daohugou Beds in Inner Mongolia, China, as part of the Yanliao biota. Its home would've been a wet, seasonally cool, temperate environment (with an average temperature perhaps no higher than 15°C or 59°F)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_castorocauda",
+			"type": "text",
+			"text": "The fossil preserves a fair amount of the animal's soft tissue, including fur, and key parts of the tail. The soft tissue on the tail forms a flattened, mostly hairless paddle that superficially resembles that of a modern beaver, suggesting that Castorocauda was in all likelihood a semi-aquatic swimmer."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_castorocauda",
+			"type": "text",
+			"text": "Where it differed from a beaver, however, was in its diet: Interlocking teeth with recurved molars (convergently evolved with those of the much later seals and Eocene whales) suggest that the jaws of this mammaliaform were specially built for gripping slippery prey, namely fish. Castorocauda's limbs also show adaptations for digging, implying it might have been a burrower as well as a swimmer."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_castorocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_castorocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_castorocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_castorocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_castorocauda"
+		}
+	]
+}
