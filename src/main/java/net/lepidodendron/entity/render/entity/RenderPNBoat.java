@@ -75,7 +75,13 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_EMBOTHRIUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_embothrium.png");
     private static final ResourceLocation TEXTURE_PAGIOPHYLLUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_pagiophyllum.png");
     private static final ResourceLocation TEXTURE_HIRMERIELLA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_hirmeriella.png");
-    private static final ResourceLocation TEXTURE_GLASS = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_glass.png");
+    private static final ResourceLocation TEXTURE_FIG = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_fig.png");
+    private static final ResourceLocation TEXTURE_GOLDEN_LARCH = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_golden_larch.png");
+    private static final ResourceLocation TEXTURE_ARID_PINE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_arid_pine.png");
+    private static final ResourceLocation TEXTURE_OLIVE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_olive.png");
+    private static final ResourceLocation TEXTURE_CEDAR = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_cedar.png");
+    private static final ResourceLocation TEXTURE_THUJA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_thuja.png");
+    private static final ResourceLocation TEXTURE_LIQUIDAMBAR = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_liquidambar.png");
 
 
     public RenderPNBoat(RenderManager renderManagerIn) {
@@ -217,6 +223,20 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_PAGIOPHYLLUM;
             case HIRMERIELLA:
                 return TEXTURE_HIRMERIELLA;
+            case FIG:
+                return TEXTURE_FIG;
+            case GOLDEN_LARCH:
+                return TEXTURE_GOLDEN_LARCH;
+            case ARID_PINE:
+                return TEXTURE_ARID_PINE;
+            case OLIVE:
+                return TEXTURE_OLIVE;
+            case CEDAR:
+                return TEXTURE_CEDAR;
+            case THUJA:
+                return TEXTURE_THUJA;
+            case LIQUIDAMBAR:
+                return TEXTURE_LIQUIDAMBAR;
         }
     }
 }
