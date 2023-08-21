@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -47,6 +48,45 @@ public class ItemPrehistoricPlantable extends Item {
 
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if (this.plantBlock.getBlock() instanceof BlockVine) {
+			this.plantBlock = this.plantBlock.withProperty(BlockVine.UP, false)
+				.withProperty(BlockVine.NORTH, false)
+				.withProperty(BlockVine.SOUTH, false)
+				.withProperty(BlockVine.EAST, false)
+				.withProperty(BlockVine.WEST, false);
+			switch (facing.getIndex()) {
+				case 2:
+					this.plantBlock = this.plantBlock.withProperty(BlockVine.SOUTH, true);
+					break;
+				case 5:
+					this.plantBlock = this.plantBlock.withProperty(BlockVine.WEST, true);
+					break;
+				case 3:
+					this.plantBlock = this.plantBlock.withProperty(BlockVine.NORTH, true);
+					break;
+				case 4:
+					this.plantBlock = this.plantBlock.withProperty(BlockVine.EAST, true);
+					break;
+				default:
+					return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+			}
+			//Get the block clicked on:
+			if (this.plantBlock != null) {
+				if (worldIn.isAirBlock(pos.offset(facing, this.offsetY)) &&
+						this.plantBlock.getBlock().canPlaceBlockOnSide(worldIn, pos.offset(facing, this.offsetY), facing)
+				) {
+					//We can plant this vine here!
+					ItemStack itemstack = player.getHeldItem(hand);
+					SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+					player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					itemstack.shrink(1);
+					worldIn.setBlockState(pos.offset(facing, this.offsetY), this.plantBlock);
+					this.plantBlock.getBlock().onBlockAdded(worldIn, pos.offset(facing, this.offsetY), this.plantBlock);
+					return EnumActionResult.SUCCESS;
+				}
+			}
+			return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+		}
 		//Get the block clicked on:
 		if (this.plantBlock != null) {
 			if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(this.offsetY))

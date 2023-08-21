@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnLaidleria;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
@@ -173,12 +172,6 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 	public int getRoarLength() {
 		return 120;
 	}
-
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraLaidleria(this.world);
-	}
-
 
 	@Override
 	public boolean dropsEggs() {

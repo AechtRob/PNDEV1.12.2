@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCtenospondylus extends RenderLiving<EntityPrehistoricFloraCtenospondylus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenospondylus.png");
+    public static float getScaler() {return 0.55f; }
 
     public RenderCtenospondylus(RenderManager mgr) {
         super(mgr, new ModelCtenospondylus(), 0.5f);
@@ -27,7 +28,7 @@ public class RenderCtenospondylus extends RenderLiving<EntityPrehistoricFloraCte
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCtenospondylus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.350F;
     }

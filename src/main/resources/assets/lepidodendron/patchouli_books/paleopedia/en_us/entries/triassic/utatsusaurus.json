@@ -1,5 +1,5 @@
 {
-	"name": "",
+	"name": "Utatsusaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/utatsusaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
@@ -7,7 +7,7 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_utatsusaurus",
-			"title": "",
+			"title": "Utatsusaurus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropsida$(br)>Ichthyopterygia$(br)>Utatsusauridae"
 		},

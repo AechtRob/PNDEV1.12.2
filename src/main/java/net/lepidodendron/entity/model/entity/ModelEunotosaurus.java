@@ -350,10 +350,11 @@ public class ModelEunotosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Hips.offsetY = 0.013F;
+        float ZOffset = -0.2f;
+        this.body.offsetZ = ZOffset;
 
         EntityPrehistoricFloraEunotosaurus euno = (EntityPrehistoricFloraEunotosaurus) e;
-        float masterSpeed = euno.getTravelSpeed();
+        float masterSpeed = euno.getTravelSpeed() * 4F;
 
         this.faceTarget(f3, f4, 5, neck);
         this.faceTarget(f3, f4, 5, neck2);
@@ -412,13 +413,13 @@ public class ModelEunotosaurus extends AdvancedModelBaseExtended {
         this.walk(hindlegL4, speed, 0.25F, true, 5, -0.08F, f2, 1F);
         this.walk(hindlegR4, speed, 0.25F, true, 2, -0.08F, f2, 1F);
 
-        this.swing(body2, speed, 0.12F, false, 5.0F,0.06F, f2, 1.0F);
+        this.swing(body2, speed * 0.5F, 0.12F, false, 5.0F,0.06F, f2, 1.0F);
 
 
         //this.chainWave(Tail, (speed*0.6F), -0.085F, -0.2F, f2, 1F);
-        this.chainSwing(Tail, (speed*0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
+        this.chainSwing(Tail, (speed*0.6F) * 1.5F, 0.07F, 0.12F, f2, 1F);
 
-        this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(2.2), false, 1.5F, f2, 1);
+        this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(2.2), false, 1.5F, f2, 1) + ZOffset;
 
     }
 

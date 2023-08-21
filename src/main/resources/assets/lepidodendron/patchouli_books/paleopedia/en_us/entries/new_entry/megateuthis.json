@@ -2,7 +2,7 @@
 	"name": "Megateuthis",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/megateuthis_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_megateuthis",
 	"pages": [
 		{
