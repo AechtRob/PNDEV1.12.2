@@ -1,0 +1,46 @@
+{
+	"name": "Murex",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/murex_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_murex",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_murex",
+			"title": "Murex",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Neogastropoda $(br)>Muricidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/murex.png"],
+			"title": "Murex sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_murex",
+			"type": "text",
+			"text": "Murex is a very unique looking extant genus of sea snails. They can be traced back to the Cretaceous period. Murex belongs to a predatory family of snails called Muricidae or rock snails. Rock snails are particularly known for their showy shells and Murex is no exception. Murex can have long shells with numerous spines and colorful inner surfaces."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_murex"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_murex"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_murex"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_murex"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_murex"
+		}
+	]
+}

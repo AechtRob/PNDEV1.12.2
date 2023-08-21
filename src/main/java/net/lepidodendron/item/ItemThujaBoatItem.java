@@ -125,7 +125,7 @@ public class ItemThujaBoatItem extends ElementsLepidodendronMod.ModElement {
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
 					EntityPNBoat entityPNboat = new EntityPNBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
-					entityPNboat.setBoatType(EntityPNBoat.Type.TELEMACHUS.ordinal());
+					entityPNboat.setBoatType(EntityPNBoat.Type.THUJA.ordinal());
 					entityPNboat.rotationYaw = playerIn.rotationYaw;
 
 					if (!worldIn.getCollisionBoxes(entityPNboat, entityPNboat.getEntityBoundingBox().grow(-0.1D)).isEmpty())

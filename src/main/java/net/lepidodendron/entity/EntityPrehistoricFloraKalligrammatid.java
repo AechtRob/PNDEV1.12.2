@@ -6,9 +6,13 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.RenderKalligrammatid;
+import net.lepidodendron.entity.render.entity.RenderLacewing;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemKalligrammatidEggsItem;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -28,6 +32,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -294,6 +300,176 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return getStandardLoot();
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA: default:
+				return 0.0;
+
+			case APOCHRYSOGRAMMA:
+				return 0.0;
+
+			case LIASSOPSYCHOPS:
+				return 0.0;
+
+			case MEIONEURITES:
+				return 0.0;
+
+			case ABRIGRAMMA:
+				return 0.0;
+
+			case ITHIGRAMMA:
+				return 0.0;
+
+			case OREGRAMMA:
+				return 0.0;
+
+			case MAKARKINIA:
+				return 0.0;
+
+			case SOPHOGRAMMA:
+				return 0.0;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA: default:
+				return 0.0;
+
+			case APOCHRYSOGRAMMA:
+				return 0.0;
+
+			case LIASSOPSYCHOPS:
+				return 0.0;
+
+			case MEIONEURITES:
+				return 0.0;
+
+			case ABRIGRAMMA:
+				return 0.0;
+
+			case ITHIGRAMMA:
+				return 0.0;
+
+			case OREGRAMMA:
+				return 0.0;
+
+			case MAKARKINIA:
+				return 0.0;
+
+			case SOPHOGRAMMA:
+				return 0.0;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.75;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA:
+			default:
+				return RenderKalligrammatid.TEXTURE_KALLIGRAMMA;
+
+			case APOCHRYSOGRAMMA:
+				return RenderKalligrammatid.TEXTURE_APOCHRYSOGRAMMA;
+
+			case LIASSOPSYCHOPS:
+				return RenderKalligrammatid.TEXTURE_LIASSOPSYCHOPS;
+
+			case MEIONEURITES:
+				return RenderKalligrammatid.TEXTURE_MEIONEURITES;
+
+			case ABRIGRAMMA:
+				return RenderKalligrammatid.TEXTURE_ABRIGRAMMA;
+
+			case ITHIGRAMMA:
+				return RenderKalligrammatid.TEXTURE_ITHIGRAMMA;
+
+			case OREGRAMMA:
+				return RenderKalligrammatid.TEXTURE_OREGRAMMA;
+
+			case MAKARKINIA:
+				return RenderKalligrammatid.TEXTURE_MAKARKINIA;
+
+			case SOPHOGRAMMA:
+				return RenderKalligrammatid.TEXTURE_SOPHOGRAMMA;
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA:
+			default:
+				return RenderDisplays.modelKalligrammatid;
+
+			case APOCHRYSOGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case LIASSOPSYCHOPS:
+				return RenderDisplays.modelKalligrammatid;
+
+			case MEIONEURITES:
+				return RenderDisplays.modelKalligrammatid;
+
+			case ABRIGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case ITHIGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case OREGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case MAKARKINIA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case SOPHOGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderKalligrammatid.getScaler(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant));
 	}
 
 	@Override

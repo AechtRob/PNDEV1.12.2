@@ -1,0 +1,56 @@
+{
+	"name": "Temnodontosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/temnodontosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_temnodontosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_temnodontosaurus",
+			"title": "",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Ichthyosauria $(br)>Temnodontosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/temnodontosaurus.png"],
+			"title": "T. trigonodon",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_temnodontosaurus",
+			"type": "text",
+			"text": "Temnodontosaurus was among the largest Ichthyosaurs. It is known from fossils in Western Europe. Temnodontosaurus has many noticeable identifying features which are uncommon in other post-Triassic Ichthyosaurs such as its long and slender forelimbs and hindlimbs. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_temnodontosaurus",
+			"type": "text",
+			"text": "Temnodontosaurus also had the largest eye of any Ichthyosaur and of any animal measured, with the largest species T. platyodon having 25 cm diameter sclerotic rings. Like other Ichthyosaurs, Temnodontosaurus would've had very high visual capacity. It would've likely swam the open oceans, snapping at belemnites and other prey. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_temnodontosaurus",
+			"type": "text",
+			"text": "Temnodontosaurus has had a long history of discovery, being the first Ichthyosaur skull ever discovered. The skull was first discovered by Joseph Anning in 1811 and the rest of the skeleton was discovered by his sister Mary Anning the year later. Though it was originally named Ichthyosaurus, it was later renamed as Temnodontosaurus in 1889 by Richard Lydekker. Temnodontosaurus is featured at Crystal Palace."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_temnodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_temnodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_temnodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_temnodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_temnodontosaurus"
+		}
+	]
+}

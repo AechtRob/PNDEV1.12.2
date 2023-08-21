@@ -1,0 +1,46 @@
+{
+	"name": "Uarbryichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/uarbryichthys_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_uarbryichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_uarbryichthys",
+			"title": "Uarbryichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Macrosemiiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/uarbryichthys.png"],
+			"title": "U. latus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uarbryichthys",
+			"type": "text",
+			"text": "Uarbryichthys is macrosemiid actinopterygian fish from Talbragar River Bed in New South Wales, Australia. With a length up to 26.5 cm, it is characterized by a fusiform body shape and large dorsal fin."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_uarbryichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_uarbryichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_uarbryichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_uarbryichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_uarbryichthys"
+		}
+	]
+}

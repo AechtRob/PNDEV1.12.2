@@ -1,0 +1,46 @@
+{
+	"name": "Pycnophlebia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pycnophlebia_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_pycnophlebia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pycnophlebia",
+			"title": "Pycnophlebia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Orthoptera $(br)>Hagloidea $(br)>Prophalangopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pycnophlebia.png"],
+			"title": "P. deichmuelleri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pycnophlebia",
+			"type": "text",
+			"text": "Pycnophlebia is a genus of hagloid orthopteran known from multiple formations in Jurassic, mainly in Germany. Some species from Solnhofen Limestone had wing length over 10 cm."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pycnophlebia"
+		}
+	]
+}

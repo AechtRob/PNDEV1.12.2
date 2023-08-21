@@ -1,0 +1,46 @@
+{
+	"name": "Euspira",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/euspira_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_euspira",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_euspira",
+			"title": "Euspira",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Littorinimorpha $(br)>Naticidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/euspira.png"],
+			"title": "Euspira sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_euspira",
+			"type": "text",
+			"text": "Euspira is a medium-sized sea snailfound throughout the world. They are a type of Naticid snail, popularly known as moon snails. They can be found as far back as Triassic strata and can still be found in modern oceans. Moon snails are named after their globular shells and distinct shape. They feed mostly on bivalves, breaking into the softer flesh using their radula and acid."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_euspira"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_euspira"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_euspira"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_euspira"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_euspira"
+		}
+	]
+}

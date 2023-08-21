@@ -480,17 +480,29 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.resetToDefaultPose();
         EntityPrehistoricFloraCiurcopterus ee = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         //Swimming pose:
-        if (ee.isReallyInWater() && ee.getIsMoving()) {
-            if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
-                //Walk pose:
-                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            } else {
-                if ((ee.getAnimation() != ee.SWIM_ANIMATION)) {
-                    if (ee.getIsFast()) {
-                        animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-
+        if (ee.isReallyInWater()) {
+            if (ee.getIsMoving()) {
+                if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
+                    //Walk pose:
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
+                } else {
+                    if ((ee.getAnimation() != ee.SWIM_ANIMATION)) {
+                        if (ee.getIsFast()) {
+                            animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                        } else {
+                            animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
+                        }
+                    }
+                }
+            }
+            else { //in water but not moving:
+                if (ee.getAnimation() != ee.UNSWIM_ANIMATION && ee.getAnimation() != ee.SWIM_ANIMATION) {
+                    if (ee.isReallySwimming()) {
+                        //Swim static pose:
+                        animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
                     } else {
-                        animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                        //Walk static pose:
+                        animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
                     }
                 }
             }
@@ -498,10 +510,13 @@ public class ModelCiurcopterus extends AdvancedModelBase {
 
     }
 
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraCiurcopterus entity = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         int animCycle = 30;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;
@@ -848,10 +863,14 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.setRotateAngle(TergiteA6, TergiteA6.rotateAngleX + (float) Math.toRadians(2+Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-180))*0.8), TergiteA6.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-90))*0.8), TergiteA6.rotateAngleZ + (float) Math.toRadians(0));
         this.setRotateAngle(Telson, Telson.rotateAngleX + (float) Math.toRadians(3+Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-240))), Telson.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-150))), Telson.rotateAngleZ + (float) Math.toRadians(0));
     }
-    public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+
+    public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraCiurcopterus entity = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         int animCycle = 20;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;

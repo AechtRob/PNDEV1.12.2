@@ -1,0 +1,46 @@
+{
+	"name": "Viviparus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/viviparus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_viviparus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_viviparus",
+			"title": "Viviparus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Architaenioglossa $(br)>Viviparidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/viviparus.png"],
+			"title": "Viviparus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_viviparus",
+			"type": "text",
+			"text": "Viviparus is a common freshwater snail found in modern waters and in prehistoric waters too. Viviparus are found throughout the world and date back as far as the Jurassic. Viviparus feed on organic microdebris in the water, sucking them up using its siphon. Viviparus are unique among gastropods for their ovoviviparity, being able to give live birth. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_viviparus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_viviparus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_viviparus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_viviparus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_viviparus"
+		}
+	]
+}
