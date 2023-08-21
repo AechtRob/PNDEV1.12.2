@@ -308,6 +308,7 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -324,12 +325,12 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;
         AdvancedAdvancedModelRenderer.rotateAngleZ = z;
     }
-
 
     @Override
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
@@ -562,7 +563,8 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        //this.body.offsetY = 1.50F;
+        this.body.offsetY = 1.50F;
+        this.body.offsetZ = 0.50F;
 
         this.faceTarget(f3, f4, 5, neck2);
         this.faceTarget(f3, f4, 5, neck3);
@@ -597,7 +599,7 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
             this.swing(body, speed * 0.5F, 0.02F, true, 0, 0, f2, 0.8F);
             this.bob(body, speed * 0.5F, 0.07F, true, f2, 0.8F);
 
-            this.body.offsetZ = this.moveBox(0.25F, 0.1F, false, f2, 1) + 1F;
+            this.body.offsetZ = this.moveBox(0.25F, 0.1F, false, f2, 1) + 0.5F;
 
         }
         else {
