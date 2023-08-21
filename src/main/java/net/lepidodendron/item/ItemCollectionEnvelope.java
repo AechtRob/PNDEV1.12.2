@@ -181,27 +181,50 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 
 							//If it's a vine:
 							if (plantBlock instanceof BlockVine) {
-								if (worldIn.isAirBlock(pos.offset(facing))
-										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
-								) {
-									//We can plant this here!
-									SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
-									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
-											.withProperty(BlockVine.NORTH, facing.getOpposite() == EnumFacing.NORTH)
-											.withProperty(BlockVine.SOUTH, facing.getOpposite() == EnumFacing.SOUTH)
-											.withProperty(BlockVine.EAST, facing.getOpposite() == EnumFacing.EAST)
-											.withProperty(BlockVine.WEST, facing.getOpposite() == EnumFacing.WEST)
-											.withProperty(BlockVine.UP, facing.getOpposite() == EnumFacing.UP));
-									plantBlock.onBlockAdded(worldIn, pos.offset(facing), plantBlock.getDefaultState());
-									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-									if (!player.isCreative() && willEmpty) {
-										itemstack.shrink(1);
-										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+								if (offsetY < 1) {
+									offsetY = 1;
+								}
+								IBlockState plantBlockState = plantBlock.getDefaultState().withProperty(BlockVine.UP, false)
+										.withProperty(BlockVine.NORTH, false)
+										.withProperty(BlockVine.SOUTH, false)
+										.withProperty(BlockVine.EAST, false)
+										.withProperty(BlockVine.WEST, false);
+								switch (facing.getIndex()) {
+									case 2:
+										plantBlockState = plantBlockState.withProperty(BlockVine.SOUTH, true);
+										break;
+									case 5:
+										plantBlockState = plantBlockState.withProperty(BlockVine.WEST, true);
+										break;
+									case 3:
+										plantBlockState = plantBlockState.withProperty(BlockVine.NORTH, true);
+										break;
+									case 4:
+										plantBlockState = plantBlockState.withProperty(BlockVine.EAST, true);
+										break;
+									default:
+										return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+								}
+								//Get the block clicked on:
+								if (plantBlockState != null) {
+									if (worldIn.isAirBlock(pos.offset(facing, offsetY)) &&
+											plantBlockState.getBlock().canPlaceBlockOnSide(worldIn, pos.offset(facing, offsetY), facing)
+									) {
+										//We can plant this vine here!
+										SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+										player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+										worldIn.setBlockState(pos.offset(facing, offsetY), plantBlockState);
+										plantBlockState.getBlock().onBlockAdded(worldIn, pos.offset(facing, offsetY), plantBlockState);
+										ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+										if (!player.isCreative() && willEmpty) {
+											itemstack.shrink(1);
+											ItemHandlerHelper.giveItemToPlayer(player, envelope);
+										}
+										return EnumActionResult.SUCCESS;
 									}
-									return EnumActionResult.SUCCESS;
 								}
 							}
+
 							//If it's a moss or other directional block:
 							else if (plantBlock instanceof SeedSporeFacingBlockBase) {
 								if (worldIn.isAirBlock(pos.offset(facing))
