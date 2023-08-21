@@ -17,10 +17,10 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemPhorcynisRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:phorcynis_raw")
+public class ItemPhorcynisRawF extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:phorcynis_raw_f")
 	public static final Item block = null;
-	public ItemPhorcynisRaw(ElementsLepidodendronMod instance) {
+	public ItemPhorcynisRawF(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.phorcynis_raw);
 	}
 
@@ -32,27 +32,27 @@ public class ItemPhorcynisRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/phorcynis_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/phorcynis_raw_f", "inventory"));
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phorcynis@male", ItemPhorcynisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPhorcynisRaw.block);
-		OreDictionary.registerOre("pnfurnaceFish", ItemPhorcynisRaw.block);
-		OreDictionary.registerOre("pndietFish", ItemPhorcynisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phorcynis@female", ItemPhorcynisRawF.block);
+		OreDictionary.registerOre("listAllfishraw", ItemPhorcynisRawF.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPhorcynisRawF.block);
+		OreDictionary.registerOre("pndietFish", ItemPhorcynisRawF.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_phorcynis_raw");
-			setRegistryName("phorcynis_raw");
+			setTranslationKey("pf_phorcynis_raw_f");
+			setRegistryName("phorcynis_raw_f");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
 
 		@Nullable
 		public String getVariantStr() {
-			return "male";
+			return "female";
 		}
 	}
 }
