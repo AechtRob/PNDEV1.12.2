@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.15F;
+		float speedBase = 0.25F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
