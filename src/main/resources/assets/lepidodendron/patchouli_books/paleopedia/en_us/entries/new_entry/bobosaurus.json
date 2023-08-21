@@ -23,6 +23,16 @@
 			"text": ""
 		},
 		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
 			"type": "lepidodendron:diet",
 			"mob": "lepidodendron:prehistoric_flora_bobosaurus"
 		},
