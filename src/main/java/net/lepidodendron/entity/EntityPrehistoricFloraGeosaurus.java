@@ -4,11 +4,12 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderGeosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -31,7 +32,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,6 +48,11 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
 	}
 
 	@Override
@@ -104,7 +110,7 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
-	protected float getAISpeedFish() {
+	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.15F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.2f;
@@ -118,16 +124,24 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraAgeab
 		return  calcSpeed;
 	}
 
+//	@Override
+//	protected boolean isSlowAtBottom() {
+//		return false;
+//	}
+
 	@Override
-	protected boolean isSlowAtBottom() {
-		return false;
+	public int WaterDist() {
+		int i = (int) LepidodendronConfig.waterCeratodus;
+		if (i > 16) {i = 16;}
+		if (i < 1) {i = 1;}
+		return i;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.2, 5, true, 0));
+		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
