@@ -174,6 +174,7 @@ public class RenderDisplays {
     public static final ModelMuensterella modelMuensterella = new ModelMuensterella();
     public static final ModelMussaurus modelMussaurus = new ModelMussaurus();
     public static final ModelMetopacanthus modelMetopacanthus = new ModelMetopacanthus();
+    public static final ModelMorrolepis modelMorrolepis = new ModelMorrolepis();
     public static final ModelMyriacantherpestes modelMyriacantherpestes = new ModelMyriacantherpestes();
     public static final ModelMarmorerpeton modelMarmorerpeton = new ModelMarmorerpeton();
     public static final ModelMacrosemius modelMacrosemius = new ModelMacrosemius();
