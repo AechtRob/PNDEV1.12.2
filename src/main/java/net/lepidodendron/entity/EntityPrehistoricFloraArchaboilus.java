@@ -18,6 +18,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -43,6 +44,31 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 	public EntityPrehistoricFloraArchaboilus(World world) {
 		super(world);
 		setSize(0.18F, 0.15F);
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:archaboilus_chirp"));
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 60;
+	}
+
+	@Override
+	public void playLivingSound() {
+		if (this.getIsFlying()) {
+			return;
+		}
+		SoundEvent soundevent = this.getAmbientSound();
+		if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+			if (soundevent != null)
+			{
+				this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			}
+		}
 	}
 
 	@Override

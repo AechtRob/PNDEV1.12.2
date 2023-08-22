@@ -4,10 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderPanacanthocaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -58,7 +55,7 @@ public class EntityPrehistoricFloraPanacanthocaris extends EntityPrehistoricFlor
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -88,7 +85,7 @@ public class EntityPrehistoricFloraPanacanthocaris extends EntityPrehistoricFlor
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
+		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
 	}
 
