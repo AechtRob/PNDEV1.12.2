@@ -332,9 +332,17 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		super.onEntityUpdate();
 	}
 
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.PSEUDORHINA_LOOT;
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.PSEUDORHINA_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.PSEUDORHINA_LOOT_F;
+		}
 	}
 
 	@Override

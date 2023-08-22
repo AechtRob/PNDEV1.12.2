@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraKaykay extends EntityPrehistoricFloraAgeableF
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 22.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraKaykay extends EntityPrehistoricFloraAgeableF
 	@Override
 	public int getAdultAge() {
 		return 36000;
-	} //Only adults!
+	}
 
 	@Override
 	protected float getAISpeedFish() {
@@ -97,7 +97,8 @@ public class EntityPrehistoricFloraKaykay extends EntityPrehistoricFloraAgeableF
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 //		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
@@ -175,11 +176,6 @@ public class EntityPrehistoricFloraKaykay extends EntityPrehistoricFloraAgeableF
 			//System.err.println("set attack");
 		}
 		return false;
-	}
-
-	@Override
-	public float getAgeScale() {
-		return 1;
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

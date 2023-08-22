@@ -1741,8 +1741,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation PROPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/propterus"));
 	public static final int ENTITY_PSEUDORHINA = 696;
 	public static final ResourceLocation PSEUDORHINA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudorhina"));
+	public static final ResourceLocation PSEUDORHINA_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudorhina_f"));
 	public static final int ENTITY_PHORCYNIS = 697;
 	public static final ResourceLocation PHORCYNIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phorcynis"));
+	public static final ResourceLocation PHORCYNIS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phorcynis_f"));
 	public static final int ENTITY_HOMOEOSAURUS = 698;
 	public static final ResourceLocation HOMOEOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/homoeosaurus"));
 	public static final int ENTITY_CHUNERPETON = 699;
