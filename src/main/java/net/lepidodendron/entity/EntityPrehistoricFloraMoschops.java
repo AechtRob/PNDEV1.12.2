@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.295F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 1.60F;
 		}
 		return speedBase;
 	}
