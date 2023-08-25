@@ -387,12 +387,38 @@ public class ModelGeosaurus extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] BL = {this.Rightthigh, this.Rightshin, this.Righthindfoot};
         //AdvancedModelRenderer[] BR = {this.Leftthigh, this.Leftshin, this.Lefthindfoot};
 
-        if (!Dako.isReallyInWater()) { //will never happen as it should not be on land
-            //this.leftarm.rotateAngleZ = (float) Math.toRadians(15.6125);
-            //this.rightarm3.rotateAngleZ = (float) Math.toRadians(-18.662);
+        AdvancedModelRenderer[] fishTail = {this.Body4, this.Tail, this.Tail2, this.Tail3, this.Tail4};
+        AdvancedModelRenderer[] finPectoralLeft = {this.UpperArmL, this.HandL};
+        AdvancedModelRenderer[] finPectoralRight = {this.UpperArmR, this.HandR};
+        AdvancedModelRenderer[] finPelvicLeft = {this.UpperLegL, this.LowerLegL, this.FootL};
+        AdvancedModelRenderer[] finPelvicRight = {this.UpperLegR, this.LowerLegR, this.FootR};
 
-            //this.leftleg.rotateAngleX = -(float) Math.toRadians(22.9232);
-            //this.rightleg3.rotateAngleX = -(float) Math.toRadians(22.9232);
+        if (!Dako.isReallyInWater()) { //will never happen as it should not be on land
+            float speed = 0.3F;
+            float outOfWater = 1.45f;
+
+            this.Body.bob(speed, 0.35F, false, f2, 1F);
+
+            this.chainWave(fishTail, speed * outOfWater, 0.05F * outOfWater, -3, f2, 1);
+            this.chainSwing(fishTail, speed * outOfWater, 0.15F * outOfWater, -2.5, f2, 1);
+            this.swing(Body, speed * outOfWater, 0.21F * outOfWater, true, 0, 0, f2, 1);
+
+            this.chainWave(finPectoralLeft, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainSwingExtended(finPectoralLeft, speed * outOfWater, 0.8F * outOfWater, 0.5F, 3, f2, 1);
+            this.chainFlap(finPectoralLeft, speed * outOfWater, 0.15F * outOfWater, -0.8, f2, 1);
+
+            this.chainWave(finPectoralRight, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainSwing(finPectoralRight, speed * outOfWater, -0.8F * outOfWater, 0.5F, f2, 1);
+            this.chainFlap(finPectoralRight, speed * outOfWater, -0.15F * outOfWater, 0.8, f2, 1);
+
+            this.chainWave(finPelvicLeft, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainSwing(finPelvicLeft, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainFlap(finPelvicLeft, speed * outOfWater, 0.10F * outOfWater, -0.5, f2, 1);
+
+            this.chainWave(finPelvicRight, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainSwingExtended(finPelvicRight, speed * outOfWater, -0.20F * outOfWater, 0.3F, 3, f2, 1);
+            this.chainFlap(finPelvicRight, speed * outOfWater, -0.10F * outOfWater, 0.5, f2, 1);
+
         }
     }
     @Override
@@ -402,12 +428,14 @@ public class ModelGeosaurus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraGeosaurus ee = (EntityPrehistoricFloraGeosaurus) entitylivingbaseIn;
 
         if (ee.isReallyInWater()) {
-
                 if (ee.getIsFast()) { //Running
                     animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 } else { //Walking
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
+        }
+        else {
+            //Do the LL one defined above
         }
         if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

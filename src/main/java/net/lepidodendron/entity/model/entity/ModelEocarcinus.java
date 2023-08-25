@@ -399,10 +399,11 @@ public class ModelEocarcinus extends AdvancedModelBase {
             if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
+            else {
+            }
 
         }
         else {
-
         }
 
 
@@ -802,7 +803,20 @@ public class ModelEocarcinus extends AdvancedModelBase {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        //this.resetToDefaultPose();
+        EntityPrehistoricFloraEocarcinus ee = (EntityPrehistoricFloraEocarcinus) e;
+        if (ee.isInWater()) {
+            if (ee.getIsMoving()) {
+                //Do the BB animation
+            }
+            else {
+                this.swing(antennaL, 0.3F, -0.2F, false, 0, -0.1F, f2, 0.8F);
+                this.swing(antennaR, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+            }
+        }
+        else {
+            this.swing(antennaL, 0.3F, -0.2F, false, 0, -0.1F, f2, 0.8F);
+            this.swing(antennaR, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        }
 
     }
 }

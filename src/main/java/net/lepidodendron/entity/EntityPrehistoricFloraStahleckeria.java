@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraStahleckeria extends EntityPrehistoricFloraLa
 		setSize(1.05F, 1.0F);
 		minWidth = 0.3F;
 		maxWidth = 1.05F;
-		maxHeight = 1.0F;
+		maxHeight = 1.20F;
 		maxHealthAgeable = 26.0D;
 		NOISE_ANIMATION = Animation.create(25);
 	}

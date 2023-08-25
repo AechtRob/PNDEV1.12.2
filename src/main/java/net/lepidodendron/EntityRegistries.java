@@ -714,7 +714,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_ciurcopterus", EntityPrehistoricFloraCiurcopterus.class, LepidodendronMod.ENTITY_CIURCOPTERUS, 64,-14407893,-13088915);
 
         registerEntity("prehistoric_flora_hadronector", EntityPrehistoricFloraHadronector.class, LepidodendronMod.ENTITY_HADRONECTOR, 48,-8230066,-10275303);
-        registerEntity("prehistoric_flora_megateuthis", EntityPrehistoricFloraMegateuthis.class, LepidodendronMod.ENTITY_MEGATEUTHIS, 128,-11456718,-6920610);
+        //registerEntity("prehistoric_flora_megateuthis", EntityPrehistoricFloraMegateuthis.class, LepidodendronMod.ENTITY_MEGATEUTHIS, 128,-11456718,-6920610);
         registerEntity("prehistoric_flora_passaloteuthis", EntityPrehistoricFloraPassaloteuthis.class, LepidodendronMod.ENTITY_PASSALOTEUTHIS, 48,-2122351,-3155746);
         registerEntity("prehistoric_flora_hupehsuchus", EntityPrehistoricFloraHupehsuchus.class, LepidodendronMod.ENTITY_HUPEHSUCHUS, 48,-4480401,-10663884);
         registerEntity("prehistoric_flora_adamanteryon", EntityPrehistoricFloraAdamanteryon.class, LepidodendronMod.ENTITY_ADAMANTERYON, 48,-3428700,-4300441);
@@ -754,7 +754,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_morrolepis", EntityPrehistoricFloraMorrolepis.class, LepidodendronMod.ENTITY_MORROLEPIS, 48,-9476772,-3422527);
 
         registerEntityNoEgg("prehistoric_flora_megasecoptera", EntityPrehistoricFloraMegasecoptera.class, LepidodendronMod.ENTITY_MEGASECOPTERA, 64);
-        registerEntity("prehistoric_flora_meganeurites", EntityPrehistoricFloraMeganeurites.class, LepidodendronMod.ENTITY_MEGANEURITES, 64,-9476772,-3422527);
+        registerEntity("prehistoric_flora_meganeurites", EntityPrehistoricFloraMeganeurites.class, LepidodendronMod.ENTITY_MEGANEURITES, 64,-15524311,-15910811);
         registerEntity("prehistoric_flora_daohugoucossus", EntityPrehistoricFloraDaohugoucossus.class, LepidodendronMod.ENTITY_DAOHUGOUCOSSUS, 48,-15578831,-3422527);
         registerEntity("prehistoric_flora_panacanthocaris", EntityPrehistoricFloraPanacanthocaris.class, LepidodendronMod.ENTITY_PANACANTHOCARIS, 48,-14540261,-9808613);
         registerEntity("prehistoric_flora_trachymetopon", EntityPrehistoricFloraTrachymetopon.class, LepidodendronMod.ENTITY_TRACHYMETOPON, 128,-11511205,-5851979);

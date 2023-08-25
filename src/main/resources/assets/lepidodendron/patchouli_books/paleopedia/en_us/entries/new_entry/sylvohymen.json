@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/megasecoptera_sylvohymen_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_megasecoptera_sylvohymen",
+	"turnin": "lepidodendron:pf_adv_book_sylvohymen",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_megasecoptera_sylvohymen",
+			"trigger": "lepidodendron:pf_adv_book_sylvohymen",
 			"title": "Sylvohymen",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Insecta $(br)>Megasecoptera $(br)>Bardohymenidae"
@@ -18,7 +18,7 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megasecoptera_sylvohymen",
+			"advancement": "lepidodendron:pf_adv_book_sylvohymen",
 			"type": "text",
 			"text": ""
 		},

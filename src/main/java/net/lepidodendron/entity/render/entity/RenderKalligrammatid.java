@@ -2,6 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
+import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
 import net.lepidodendron.entity.model.entity.ModelKalligrammatid;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,16 +10,16 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKalligrammatid extends RenderLiving<EntityPrehistoricFloraKalligrammatid> {
-    private static final ResourceLocation TEXTURE_KALLIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_kalligramma.png");
-    private static final ResourceLocation TEXTURE_APOCHRYSOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_apochrysogramma.png");
+    public static final ResourceLocation TEXTURE_KALLIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_kalligramma.png");
+    public static final ResourceLocation TEXTURE_APOCHRYSOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_apochrysogramma.png");
     private static final ResourceLocation TEXTURE_HUIYINGOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_huiyingogramma.png");
-    private static final ResourceLocation TEXTURE_LIASSOPSYCHOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_liassopsychops.png");
-    private static final ResourceLocation TEXTURE_MEIONEURITES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_meioneurites.png");
-    private static final ResourceLocation TEXTURE_ABRIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_abrigramma.png");
-    private static final ResourceLocation TEXTURE_ITHIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_ithigramma.png");
-    private static final ResourceLocation TEXTURE_OREGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_oregramma.png");
-    private static final ResourceLocation TEXTURE_MAKARKINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_makarkinia.png");
-    private static final ResourceLocation TEXTURE_SOPHOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_sophogramma.png");
+    public static final ResourceLocation TEXTURE_LIASSOPSYCHOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_liassopsychops.png");
+    public static final ResourceLocation TEXTURE_MEIONEURITES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_meioneurites.png");
+    public static final ResourceLocation TEXTURE_ABRIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_abrigramma.png");
+    public static final ResourceLocation TEXTURE_ITHIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_ithigramma.png");
+    public static final ResourceLocation TEXTURE_OREGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_oregramma.png");
+    public static final ResourceLocation TEXTURE_MAKARKINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_makarkinia.png");
+    public static final ResourceLocation TEXTURE_SOPHOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_sophogramma.png");
 
     public RenderKalligrammatid(RenderManager mgr) {
         super(mgr, new ModelKalligrammatid(), 0.0f);
@@ -92,7 +93,40 @@ public class RenderKalligrammatid extends RenderLiving<EntityPrehistoricFloraKal
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
+    public static float getScaler(EntityPrehistoricFloraKalligrammatid.Type variant) {
+        switch (variant) {
+            case KALLIGRAMMA:
+            default:
+                return 0.3F;
 
+            case APOCHRYSOGRAMMA:
+                return 0.3F;
+
+            case HUIYINGOGRAMMA:
+                return 0.3F;
+
+            case LIASSOPSYCHOPS:
+                return 0.3F;
+
+            case MEIONEURITES:
+                return 0.3F;
+
+            case ABRIGRAMMA:
+                return 0.3F;
+
+            case ITHIGRAMMA:
+                return 0.3F;
+
+            case OREGRAMMA:
+                return 0.3F;
+
+            case MAKARKINIA:
+                return 0.3F;
+
+            case SOPHOGRAMMA:
+                return 0.3F;
+        }
+    }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraKalligrammatid entity, float f) {
         float scaler = 1F;

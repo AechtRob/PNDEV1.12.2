@@ -39,7 +39,7 @@ public class ItemLacewingLichenipolystoechotesRaw extends ElementsLepidodendronM
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_Lacewing@lichenipolystoechotes", ItemLacewingLichenipolystoechotesRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes", ItemLacewingLichenipolystoechotesRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingLichenipolystoechotesRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemLacewingLichenipolystoechotesRaw.block);
 	}
@@ -62,7 +62,7 @@ public class ItemLacewingLichenipolystoechotesRaw extends ElementsLepidodendronM
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lichenipolystochtes";
+			return "lichenipolystoechotes";
 		}
 	}
 }

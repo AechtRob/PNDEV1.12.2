@@ -120,8 +120,6 @@ public class EntityPrehistoricFloraBelonostomusJurassic extends EntityPrehistori
 		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
 	}
 
-	
-
 	@Override
 	public boolean isAIDisabled() {
 		return false;

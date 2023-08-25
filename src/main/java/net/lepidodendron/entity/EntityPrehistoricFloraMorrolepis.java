@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderLeptolepis;
+import net.lepidodendron.entity.render.entity.RenderMorrolepis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -217,11 +218,11 @@ public class EntityPrehistoricFloraMorrolepis extends EntityPrehistoricFloraFish
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderLeptolepis.TEXTURE;
+		return RenderMorrolepis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelLeptolepis;
+		return RenderDisplays.modelMorrolepis;
 	}
 	public static float getScaler(@Nullable String variant) {
 		return RenderLeptolepis.getScaler();

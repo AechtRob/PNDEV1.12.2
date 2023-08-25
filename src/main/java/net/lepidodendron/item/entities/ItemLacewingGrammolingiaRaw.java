@@ -62,7 +62,7 @@ public class ItemLacewingGrammolingiaRaw extends ElementsLepidodendronMod.ModEle
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "grammalingia";
+			return "grammolingia";
 		}
 	}
 }

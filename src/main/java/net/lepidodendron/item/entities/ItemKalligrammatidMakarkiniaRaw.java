@@ -39,7 +39,7 @@ public class ItemKalligrammatidMakarkiniaRaw extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemKalligrammatidMakarkiniaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kalligrammatid@makarkinia", ItemKalligrammatidMakarkiniaRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemKalligrammatidMakarkiniaRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemKalligrammatidMakarkiniaRaw.block);
 	}
@@ -56,13 +56,13 @@ public class ItemKalligrammatidMakarkiniaRaw extends ElementsLepidodendronMod.Mo
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_kalligrammatid";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "makarkinia";
 		}
 	}
 }

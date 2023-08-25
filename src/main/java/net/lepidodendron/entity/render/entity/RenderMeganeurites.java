@@ -30,7 +30,7 @@ public class RenderMeganeurites extends RenderLiving<EntityPrehistoricFloraMegan
     protected void applyRotations(EntityPrehistoricFloraMeganeurites entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
-        float getOffset = 0.250F;
+        float getOffset = 0.08F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:

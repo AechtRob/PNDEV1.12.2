@@ -2,15 +2,12 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderMegateuthis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
-import net.lepidodendron.item.entities.ItemNautiloidEggsMegateuthis;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -130,10 +127,11 @@ public class EntityPrehistoricFloraMegateuthis extends EntityPrehistoricFloraNau
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsMegateuthis.block, (int) (1));
-	}
+//	@Override
+//	public ItemStack getPropagule() {
+//		return new ItemStack(ItemNautiloidEggsMegateuthis.block, (int) (1));
+//	}
+
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
@@ -149,10 +147,11 @@ public class EntityPrehistoricFloraMegateuthis extends EntityPrehistoricFloraNau
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.MEGATEUTHIS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.MEGATEUTHIS_LOOT;
+		return null;
+//		if (!this.isPFAdult()) {
+//			return LepidodendronMod.MEGATEUTHIS_LOOT_YOUNG;
+//		}
+//		return LepidodendronMod.MEGATEUTHIS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

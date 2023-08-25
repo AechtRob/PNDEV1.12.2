@@ -36,7 +36,7 @@ public class ItemPhorcynisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phorcynis@gendered", ItemPhorcynisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phorcynis@male", ItemPhorcynisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPhorcynisRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemPhorcynisRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemPhorcynisRaw.block);
@@ -52,7 +52,7 @@ public class ItemPhorcynisRaw extends ElementsLepidodendronMod.ModElement {
 
 		@Nullable
 		public String getVariantStr() {
-			return "gendered";
+			return "male";
 		}
 	}
 }
