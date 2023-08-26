@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_metopacanthus",
 			"type": "text",
-			"text": ""
+			"text": "Metopacanthus was an Early Jurassic chimaera described from the Sachrang Formation of Germany, which preserves a marine environment of the Tethys Ocean. Metopacanthus is unique in the presence of a large, jaw-like structure over the head. The name means “forehead spine,” referencing this strange feature. This structure was not used for feeding and was most likely a cephalic clasper, a feature present in modern chimaeras,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_metopacanthus",
+			"type": "text",
+			"text": " which use it to hold their partner while mating. It is larger proportionally than the clasper possessed by any of its living relatives, and is lined with distinct tooth-like scales that oppose matching denticles on the dorsal surface of the head."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_metopacanthus",
+			"type": "text",
+			"text": " It is likely that the clasper was a sexually dimorphic feature present only in males, as is the case in modern chimaeras. It is unclear why the cephalic clasper was so exaggerated in this genus when compared to its relatives. Metopacanthus is also notable for its long rostrum, which downturns sharply to form a hooked tip."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,0 +1,56 @@
+{
+	"name": "Eocarcinus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eocarcinus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_eocarcinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eocarcinus",
+			"title": "Eocarcinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Crustacea $(br)>Malacostraca $(br)>Decapoda $(br)>Eocarcinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/eocarcinus.png"],
+			"title": "E. praecursor",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocarcinus",
+			"type": "text",
+			"text": "Eocarcinus was a decapod crustacean that lived during the early Jurassic, described from rocks in the United Kingdom. The name, Eocarcinus, best interpreted to mean “early crab” accurately describes this ancient crustacean, which is generally regarded as the oldest known member of the group Brachyura, or “true crabs.”"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocarcinus",
+			"type": "text",
+			"text": "Eocarcinus clearly illustrates the evolution of modern crabs from earlier elongate decapods, as it is intermediate in features between these two forms. The carapace is wide and flattened, though not to the same degree as modern brachyurans. The pleon, or abdomen, is proportionally larger than in modern crabs, and it is unclear whether it would have been folded under the body. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocarcinus",
+			"type": "text",
+			"text": "The process by which brachyurans evolved from an elongate form to their current morphology is one that has repeated independently among several different decapod groups, and is known as “Carcinization.” Eocarcinus was likely ecologically similar to many modern crabs; a marine bottom-dweller that consumed a wide variety of organic matter. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eocarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eocarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eocarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eocarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eocarcinus"
+		}
+	]
+}
