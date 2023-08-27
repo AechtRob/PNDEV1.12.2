@@ -344,31 +344,31 @@ public class ModelTrachymetopon extends AdvancedModelBase {
         //this.head.rotateAngleY += f3 / (180F / (float) Math.PI);
         //this.head.rotateAngleX += f4 / (180F / (float) Math.PI);
 
-        if (f3 != 0.0F) {
-            this.walk(Jaw, (float) (speed * 1.5), 0.1F, true, -0.8F, -0.1F, f2, 1);
-        }
+
+            this.walk(Jaw, (float) (speed * 0.5), 0.1F, true, -0.8F, -0.1F, f2, 1);
+
 
         if (e.isInWater()) {
             this.chainWave(fishTail, speed * still, 0.02F * still, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * still, 0.50F * still, -1.25, f2, 0.5F * still);
-            this.swing(Body, speed, 0.2F, true, 0, 0, f2, 0.8F);
+            this.swing(Body, speed*still, 0.2F, true, 0, 0, f2, 0.8F);
         }
         else {
-            this.swing(Body, speed, 0.1F, true, 0, 0, f2, 0.5F);
+            this.swing(Body, speed*still, 0.1F, true, 0, 0, f2, 0.5F);
         }
 
-        this.walk(PectoralFinL, (float) (speed * 0.75), 0.1F, true, 3, 0, f2, 1);
-        this.swing(PectoralFinL, (float) (speed * 0.75), 0.1F, true, 3, 0, f2, 1);
-        this.walk(PectoralFinR, (float) (speed * 0.75), 0.1F, true, 0, 0, f2, 1);
-        this.swing(PectoralFinR, (float) (speed * 0.75), -0.1F, true, 0, 0, f2, 1);
+        this.walk(PectoralFinL, (float) (speed * 0.75*still), 0.1F, true, 3, 0, f2, 1);
+        this.swing(PectoralFinL, (float) (speed * 0.75*still), 0.1F, true, 3, 0, f2, 1);
+        this.walk(PectoralFinR, (float) (speed * 0.75*still), 0.1F, true, 0, 0, f2, 1);
+        this.swing(PectoralFinR, (float) (speed * 0.75*still), -0.1F, true, 0, 0, f2, 1);
 
-        this.walk(PelvicFinL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.swing(PelvicFinL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-        this.flap(PelvicFinL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+        this.walk(PelvicFinL, (float) (speed * 0.75*still), 0.2F, true, 0, 0, f2, 1);
+        this.swing(PelvicFinL, (float) (speed * 0.75*still), 0.2F, true, 0, 0, f2, 1);
+        this.flap(PelvicFinL, (float) (speed * 0.75*still), 0.2F, true, 0, 0, f2, 1);
 
-        this.walk(PelvicFinR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
-        this.swing(PelvicFinR, (float) (speed * 0.75), -0.2F, true, 3, 0, f2, 1);
-        this.flap(PelvicFinR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
+        this.walk(PelvicFinR, (float) (speed * 0.75*still), 0.2F, true, 3, 0, f2, 1);
+        this.swing(PelvicFinR, (float) (speed * 0.75*still), -0.2F, true, 3, 0, f2, 1);
+        this.flap(PelvicFinR, (float) (speed * 0.75*still), 0.2F, true, 3, 0, f2, 1);
 
         if (!e.isInWater()) {
             this.Body.rotateAngleZ = (float) Math.toRadians(90);
