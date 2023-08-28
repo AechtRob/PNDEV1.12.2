@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.285F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -92,7 +92,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 1.75F;
 		}
 		return speedBase;
 	}
