@@ -856,6 +856,15 @@ public class EntityRegistries {
 
         registerEntity("prehistoric_flora_criocephalosaurus", EntityPrehistoricFloraCriocephalosaurus.class, LepidodendronMod.ENTITY_CRIOCEPHALOSAURUS, 64,-3627679,-6583436);
 
+        //registerEntity("prehistoric_flora_senekichthys", EntityPrehistoricFloraSenekichthys.class, LepidodendronMod.ENTITY_SENEKICHTHYS, 48,-7701652,-1);
+        //registerEntity("prehistoric_flora_harpagofututor", EntityPrehistoricFloraHarpagofututor.class, LepidodendronMod.ENTITY_HARPAGOFUTUTOR, 48,-7701652,-1);
+        //registerEntity("prehistoric_flora_debeerius", EntityPrehistoricFloraDebeerius.class, LepidodendronMod.ENTITY_DEBEERIUS, 48,-7701652,-1);
+        //registerEntity("prehistoric_flora_heteropetalus", EntityPrehistoricFloraHeteropetalus.class, LepidodendronMod.ENTITY_HETEROPETALUS, 48,-7701652,-1);
+        //registerEntity("prehistoric_flora_polysentor", EntityPrehistoricFloraPolysentor.class, LepidodendronMod.ENTITY_POLYSENTOR, 48,-7701652,-1);
+        //registerEntity("prehistoric_flora_tanaocrossus", EntityPrehistoricFloraTanaocrossus.class, LepidodendronMod.ENTITY_TANAOCROSSUS, 48,-7701652,-1);
+        //registerEntity("prehistoric_flora_waptia, EntityPrehistoricFloraWaptia.class, LepidodendronMod.ENTITY_WAPTIA, 48,-7701652,-1);
+
+
         registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
         registerEntityNoEgg("prehistoric_flora_submarine", PrehistoricFloraSubmarine.class, LepidodendronMod.ENTITY_SUBMARINE, 80);
         registerEntityNoEgg("prehistoric_flora_buoy", EntityPrehistoricFloraBuoy.class, LepidodendronMod.ENTITY_BUOY, 256);

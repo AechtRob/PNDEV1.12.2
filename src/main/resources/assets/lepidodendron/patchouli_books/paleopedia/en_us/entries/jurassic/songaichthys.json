@@ -1,0 +1,61 @@
+{
+	"name": "Songaichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/songaichthys_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_songaichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_songaichthys",
+			"title": "Songaichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Ankylophoriformes $(br)>Ankylophoridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/songaichthys.png"],
+			"title": "S. luctacki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_songaichthys",
+			"type": "text",
+			"text": "Songaichthys luctacki is a species of Ankylophorid Actinopterygian fish from the middle Jurassic of Congo. Much like other remains from the Kisangani formation, this animal would have lived in freshwater lacustrine and riverine environments. Not longer than 10 cm, "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_songaichthys",
+			"type": "text",
+			"text": "this anchovy-shaped fish was covered head to tail by lepisosteid-type scales with peg-and-socket articulations, similar in shape and structure to ones seen in modern day gars. Songaichthys is characterised by its small braincase compared to the body, a neurocranium covered by a thin sheet of ganoin and the large Suspensorium, a bone in the face under the eye and above the jaw."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_songaichthys",
+			"type": "text",
+			"text": "The Premaxillary bones of Songaichthys were small and placed laterally on the head, giving way to the large and thin maxillae; both jaw and maxillae were toothless or possessed extremely reduced teeth in Songaichthys. As for other members of the Ankylophoriformes,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_songaichthys",
+			"type": "text",
+			"text": "Songaichthys too was once classified in the large paraphyletic grouping of archaic teleosts known as \"Pholidophoriformes\"; this order is now being broken up in several monophyletic lineages, one of which being where Songaichthys now lies. The name Songaichthys translates into \"Songa fish\" referring to the Songa Limestones, a subdivision of the Kisangani (Stanleyville) formation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_songaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_songaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_songaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_songaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_songaichthys"
+		}
+	]
+}

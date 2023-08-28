@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hovasaurus",
 			"type": "text",
-			"text": ""
+			"text": "Hovasaurus was a basal diapsid reptile belonging to the family Tangasauridae. It has been found in what is now Madagascar in layers dated to the Late Permian and Early Triassic, giving it status as a survivor of the P-Tr mass extinction. Despite this, Hovasaurus is the youngest identified tangasaurid, leaving no known descendants."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hovasaurus",
+			"type": "text",
+			"text": "Hovasaurus was well-adapted for an aquatic lifestyle, best illustrated by its long, laterally-flattened tail and dense ribs. The tail, which was around 60 centimeters long, represents two thirds of the total body length. Many specimens have also been found with small stones (gastroliths) in the body cavity, which have been suggested to act as ballast, reducing buoyancy. It is most likely named in reference to the Hova, a historical class of people in Madagascar."
 		},
 		{
 			"type": "lepidodendron:diet",

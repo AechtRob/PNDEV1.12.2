@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_propterus",
 			"type": "text",
-			"text": ""
+			"text": "Propterus was a Late Jurassic fish that lived in the waters of the Solnhofen archipelago. It was described in 1834 by Louis Agassiz from the Altmühltal Formation of Germany, informally known as the Solnhofen Limestone. It was a macrosemiiform, one among several of that phenotypically diverse group found there. As such, it was a member of the clade Ginglymodi,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_propterus",
+			"type": "text",
+			"text": "which today consists of only gars. It was a fairly small fish around 15 centimeters in length, most notable for the presence of a large, pointed dorsal fin present on some species in the genus. The environment that these fish lived in consisted of open marine environments and shallow lagoons. It has been suggested that the macrosemiiforms had morphology adapted for slow, precise movements useful for navigating in complex environments such as reefs."
 		},
 		{
 			"type": "lepidodendron:diet",
