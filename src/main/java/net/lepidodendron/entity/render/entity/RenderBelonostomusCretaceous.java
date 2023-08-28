@@ -37,4 +37,5 @@ public class RenderBelonostomusCretaceous extends RenderLiving<EntityPrehistoric
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }
+
 }

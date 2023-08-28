@@ -27,6 +27,7 @@ public class RenderDisplays {
     public static final ModelBarbclabornia modelBarbclabornia = new ModelBarbclabornia();
     public static final ModelBatrachotomus modelBatrachotomus = new ModelBatrachotomus();
     public static final ModelBeishanichthys modelBeishanichthys = new ModelBeishanichthys();
+    public static final ModelBelonostomus modelBelonostomus = new ModelBelonostomus();
     public static final ModelBesanosaurus modelBesanosaurus = new ModelBesanosaurus();
     public static final ModelBishanopliosaurus modelBishanopliosaurus = new ModelBishanopliosaurus();
     public static final ModelBrindabellaspis modelBrindabellaspis = new ModelBrindabellaspis();
@@ -257,6 +258,7 @@ public class RenderDisplays {
     public static final ModelSpathicephalus modelSpathicephalus = new ModelSpathicephalus();
     public static final ModelSphooceras modelSphooceras = new ModelSphooceras();
     public static final ModelSqualoraja modelSqualoraja = new ModelSqualoraja();
+    public static final ModelStegosaurus modelStegosaurus = new ModelStegosaurus();
     public static final ModelStethacanthus modelStethacanthus = new ModelStethacanthus();
     public static final ModelSuminia modelSuminia = new ModelSuminia();
     public static final ModelStahleckeria modelStahleckeria = new ModelStahleckeria();
@@ -269,6 +271,7 @@ public class RenderDisplays {
     public static final ModelScheenstia modelScheenstia= new ModelScheenstia();
     public static final ModelSpiroceras modelSpiroceras= new ModelSpiroceras();
     public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
+    public static final ModelTanycolagreus modelTanycolagreus = new ModelTanycolagreus();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
     public static final ModelTapinocephalus modelTapinocephalus = new ModelTapinocephalus();
     public static final ModelTauraspis modelTauraspis = new ModelTauraspis();
