@@ -283,6 +283,7 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
 
     @Override
     public void onLivingUpdate() {
+        this.renderYawOffset = this.rotationYaw;
 
         ////this.renderYawOffset = this.rotationYaw;
         //Updated from vanilla to disable jumping and limit rotations

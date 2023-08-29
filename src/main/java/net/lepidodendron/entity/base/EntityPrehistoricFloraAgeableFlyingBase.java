@@ -278,6 +278,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
             float rotation = MathHelper.wrapDegrees(angle - this.rotationYaw);
             this.prevRotationYaw = this.rotationYaw;
             this.rotationYaw += rotation;
+            //this.renderYawOffset = this.rotationYaw;
         }
 
         if (this.isReallyFlying() && getAttackTarget() == null) {
@@ -369,6 +370,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 moveForward = (float) this.getAISpeedFly();
                 prevRotationYaw = rotationYaw;
                 rotationYaw += rotation;
+                //renderYawOffset = rotationYaw;
             }
             else {
                 this.setFlyTarget(null);

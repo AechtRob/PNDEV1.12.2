@@ -335,6 +335,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     public void onLivingUpdate() {
 
         super.onLivingUpdate();
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.inPFLove > 0)
         {

@@ -337,6 +337,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.inPFLove > 0)
         {

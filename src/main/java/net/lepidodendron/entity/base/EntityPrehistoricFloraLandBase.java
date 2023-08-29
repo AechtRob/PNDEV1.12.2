@@ -213,17 +213,15 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             return;
         }
 
-        double d0 = (pos.getX() + 0.5) - this.posX;
-        double d2 = (pos.getZ() + 0.5) - this.posZ;
-        double d1;
+        double entityX = this.getEntityBoundingBox().minX + ((this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX)/2.0D);
+        double entityZ = this.getEntityBoundingBox().minZ + ((this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ)/2.0D);
 
-        d1 = (pos.getY() + 0.5D) - (this.posY + (double)this.getEyeHeight());
+        double d0 = (pos.getX() + 0.5) - entityX;
+        double d2 = (pos.getZ() + 0.5) - entityZ;
 
-        double d3 = (double)MathHelper.sqrt(d0 * d0 + d2 * d2);
         float f = (float)(MathHelper.atan2(d2, d0) * (180D / Math.PI)) - 90.0F;
-        float f1 = (float)(-(MathHelper.atan2(d1, d3) * (180D / Math.PI)));
-        this.rotationPitch = this.updateRotation(this.rotationPitch, f1, maxPitchIncrease);
         this.rotationYaw = this.updateRotation(this.rotationYaw, f, maxYawIncrease);
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     public float updateRotation(float angle, float targetAngle, float maxIncrease)
@@ -378,6 +376,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     @Override
     public void onEntityUpdate() {
         super.onEntityUpdate();
+
         if (!world.isRemote) {
             //if (this.getAnimation() == DRINK_ANIMATION) {
             //    System.err.println("Anim tick " + this.getAnimationTick());
@@ -387,11 +386,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setAnimation(DRINK_ANIMATION);
                 //this.setIsDrinking(rand.nextInt(800) + 700);
             }
-            if (this.getAnimation() == DRINK_ANIMATION){
-                int k = this.getAnimationTick();
-                int l = DRINK_ANIMATION.getDuration();
-                int p = 1;
-            }
 
             if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() >= DRINK_ANIMATION.getDuration() - 1) {
                 int i = Math.max((int)Math.round(getDrinkCooldown()/2), 1);
@@ -400,9 +394,9 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setDrinkingFrom(null);
                 this.setAnimation(NO_ANIMATION);
             }
-            if (this.getDrinkingFrom() != null) {
-                this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-            }
+            //if (this.getDrinkingFrom() != null) {
+            //    this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+            //}
         }
 
     }
@@ -413,6 +407,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public void onLivingUpdate()
     {
+        this.renderYawOffset = this.rotationYaw;
+
         if (this instanceof EntityPrehistoricFloraMegalosaurus)
         if (this.getAnimation() == ((EntityPrehistoricFloraMegalosaurus)this).HURT_ANIMATION) {
             int lll = 1;
@@ -546,6 +542,25 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
 
+            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null) {
+                //If this is hunting and is not close enough, sneak up:
+                float distEntity = this.getDistancePrey(this.getAttackTarget());
+                if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+                    this.setIsSneaking(true);
+                }
+                if (this.getIsSneaking() &&
+                    (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity <= (this.getSneakRange() * 0.5)
+                ) {
+                    this.setIsSneaking(false);
+                }
+            }
+            else {
+                this.setIsSneaking(false);
+            }
+
+            if (!this.getIsFast()) {
+                this.setSneaking(false);
+            }
         }
 
         if (!this.isPFAdult())

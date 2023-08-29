@@ -591,6 +591,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     @Override
     public void onLivingUpdate() {
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.inPFLove > 0)
         {

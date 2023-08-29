@@ -370,6 +370,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
 
     @Override
     public void onLivingUpdate() {
+        this.renderYawOffset = this.rotationYaw;
         //Updated from vanilla to allow underwater jumping:
         if (this.jumpTicks > 0)
         {

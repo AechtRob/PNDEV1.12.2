@@ -677,6 +677,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.inPFLove > 0)
         {
