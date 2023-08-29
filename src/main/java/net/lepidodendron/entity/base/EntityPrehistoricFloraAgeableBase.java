@@ -918,7 +918,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setIsSneaking(false);
             }
 
-            if (!this.getIsFast()) {
+            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget()) {
                 this.setSneaking(false);
             }
 
