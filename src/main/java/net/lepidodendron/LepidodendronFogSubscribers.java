@@ -104,7 +104,7 @@ public class LepidodendronFogSubscribers {
 			{
 				  int[] ranges = ForgeModContainer.blendRanges;
 			        int distance = 0;
-			        if (settings.fancyGraphics && ranges.length > 0)
+			        if (settings.fancyGraphics && !biomeCheck(event.player.world, event.player.getPosition()) && ranges.length > 0)
 			        {
 			            distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 4)];
 			        }
