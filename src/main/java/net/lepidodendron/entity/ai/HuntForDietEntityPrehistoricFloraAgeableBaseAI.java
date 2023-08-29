@@ -80,7 +80,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if (entityChooser != null) {
                     if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
                         if (!isInWaterforHunting(entityChooser)) {
-                            targetOK = false; //Eurypterids and fish dont attack players on land:
+                            targetOK = false; //Eurypterids and fish don't attack players on land:
                         }
                     }
                     if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
@@ -111,9 +111,9 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if (targetOK) {
                     //Next figure out if this entity drops loot I can eat:
                     ResourceLocation resourcelocation = null;
-                    try {
-                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable");
-                        method.setAccessible(true); //Uggggh, reflection :(
+                    try { //Uggggh, reflection :(
+                        Method method = entityChooser.getClass().getDeclaredMethod("func_184647_J"); //"getLootTable"
+                        method.setAccessible(true);
                         resourcelocation = (ResourceLocation) method.invoke(entityChooser);
                     } catch (Exception e) {
                     }

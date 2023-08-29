@@ -262,6 +262,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     public void onLivingUpdate() {
 
         if (!world.isRemote) {
+
             if (this.getClimbingCooldown() > 0) {
                 this.setClimbingCooldown(this.getClimbingCooldown() - 1);
             }
@@ -440,6 +441,9 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         }
 
         if (this.getIsClimbing()) {
+
+            this.faceBlock(this.getPosition().offset(getClimbFacing().getOpposite()), 10, 10);
+
             switch (getClimbFacing()) {
                 case NORTH:
                 default:

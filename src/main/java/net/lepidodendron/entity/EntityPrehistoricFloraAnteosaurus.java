@@ -175,7 +175,6 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		return DietString.MEAT;
 	}
 
-	
 
 	@Override
 	public boolean findGrappleTarget() {
