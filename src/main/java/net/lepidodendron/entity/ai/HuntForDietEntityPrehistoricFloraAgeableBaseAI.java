@@ -113,6 +113,9 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     ResourceLocation resourcelocation = null;
                     try { //Uggggh, reflection :(
                         Method method = entityChooser.getClass().getDeclaredMethod("func_184647_J"); //"getLootTable"
+                        if (method == null) {
+                            method = entityChooser.getClass().getDeclaredMethod("getLootTable");
+                        }
                         method.setAccessible(true);
                         resourcelocation = (ResourceLocation) method.invoke(entityChooser);
                     } catch (Exception e) {
