@@ -286,6 +286,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     default: {
                         if (this.motionZ <=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH)) {
                             this.motionZ = -0.2;
+                            this.faceBlock(this.getPosition().north(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -294,6 +295,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.SOUTH);
+                            this.faceBlock(this.getPosition().north(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -302,6 +304,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 1: {
                         if (this.motionZ >=0 && !this.collidedHorizontally && this.isBlockClimbable(world,new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH)) {
                             this.motionZ = 0.2;
+                            this.faceBlock(this.getPosition().south(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -310,6 +313,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.NORTH);
+                            this.faceBlock(this.getPosition().south(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -318,6 +322,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 2: {
                         if (this.motionX >=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST)) {
                             this.motionX = 0.2;
+                            this.faceBlock(this.getPosition().east(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -326,6 +331,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.WEST);
+                            this.faceBlock(this.getPosition().east(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -334,6 +340,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 3: {
                         if (this.motionX <=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST)) {
                             this.motionX = -0.2;
+                            this.faceBlock(this.getPosition().west(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -342,6 +349,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.EAST);
+                            this.faceBlock(this.getPosition().west(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
