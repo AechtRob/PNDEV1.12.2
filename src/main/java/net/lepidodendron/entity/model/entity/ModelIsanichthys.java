@@ -177,16 +177,24 @@ public class ModelIsanichthys extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5);
     }
-
     public void renderStaticWall(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.Body.offsetY = -0.13F;
-        this.Body.offsetX = -0.06F;
+        this.Body.offsetY = -0.2F;
+        this.Body.offsetX = -0.05F;
+        this.Body.offsetZ = -0.0F;
         this.Body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, -0.5F, 0.0F);
+        this.Body.offsetY = -0.14F;
+        this.Body.offsetZ = -0.1F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

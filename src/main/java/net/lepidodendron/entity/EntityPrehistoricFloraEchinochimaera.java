@@ -349,7 +349,6 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.46; }
-
 	public static double offsetWall(@Nullable String variant) {
 		return 0.08;
 	}
@@ -373,7 +372,7 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.86;
+		return 0.5;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -396,7 +395,7 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelStethacanthus;
+		return RenderDisplays.modelEchinochimaera;
 	}
 	public static float getScaler(@Nullable String variant) {
 		if (variant.equalsIgnoreCase("female")) {
