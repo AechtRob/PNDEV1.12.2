@@ -223,9 +223,6 @@ public class EntityPrehistoricFloraStahleckeria extends EntityPrehistoricFloraLa
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

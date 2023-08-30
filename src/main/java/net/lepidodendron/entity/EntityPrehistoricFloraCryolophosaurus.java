@@ -263,10 +263,6 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 				}
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				if (this.getOneHit()) {
-					this.setAttackTarget(null);
-					this.setRevengeTarget(null);
-				}
 			}
 		}
 

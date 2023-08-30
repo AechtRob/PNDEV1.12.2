@@ -285,10 +285,6 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		if (this.getHopPhaseHopping() == 1 && this.getIsMoving()) {
