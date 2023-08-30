@@ -488,6 +488,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.playSound(SoundEvents.ENTITY_ZOMBIE_BREAK_DOOR_WOOD, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 }
             }
+            if (this.getOneHit()) {
+                this.setAttackTarget(null);
+                this.setRevengeTarget(null);
+                this.setWarnTarget(null);
+            }
+            this.setOneHit(false);
         }
     }
 
@@ -902,7 +908,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
 
-            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null) {
+            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
                 //If this is hunting and is not close enough, sneak up:
                 float distEntity = this.getDistancePrey(this.getAttackTarget());
                 if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
@@ -918,7 +924,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setIsSneaking(false);
             }
 
-            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget()) {
+            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
                 this.setSneaking(false);
             }
 
@@ -1054,11 +1060,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.alarmCooldown --;
         }
 
-        if (this.warnCooldown > 0) {
-            this.warnCooldown --;
-        }
+//        if (this.warnCooldown > 0) {
+//            this.warnCooldown --;
+//        }
 
         if (this.getWarnTarget() != null && !world.isRemote) {
+            if (this.warnCooldown > 0) {
+                this.warnCooldown --;
+            }
             this.faceEntity(this.getWarnTarget(), 10, 10);
             //this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());

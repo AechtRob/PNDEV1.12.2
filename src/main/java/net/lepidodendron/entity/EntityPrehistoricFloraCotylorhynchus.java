@@ -202,10 +202,6 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-			    this.setAttackTarget(null);
-			    this.setRevengeTarget(null);
-            }
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

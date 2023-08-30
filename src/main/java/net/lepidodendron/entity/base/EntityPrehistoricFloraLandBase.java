@@ -542,7 +542,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
 
-            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null) {
+            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
                 //If this is hunting and is not close enough, sneak up:
                 float distEntity = this.getDistancePrey(this.getAttackTarget());
                 if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
@@ -558,7 +558,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setIsSneaking(false);
             }
 
-            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget()) {
+            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
                 this.setSneaking(false);
             }
         }

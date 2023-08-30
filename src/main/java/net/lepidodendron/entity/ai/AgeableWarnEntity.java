@@ -101,6 +101,7 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                 if (this.closestLivingEntity instanceof EntityLivingBase) {
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());
+                    ageableBase.setAttackTarget(null);
                     ageableBase.faceEntity(this.closestLivingEntity, 10, 10);
                     //ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
 
