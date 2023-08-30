@@ -236,8 +236,8 @@ public class ModelTapinocephalus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraTapinocephalus Tapinocephalus = (EntityPrehistoricFloraTapinocephalus) e;
         float masterSpeed = Tapinocephalus.getTravelSpeed();
 
-        this.faceTarget(f3, f4, 2, Neck);
-        this.faceTarget(f3, f4, 4, Head);
+        this.faceTarget(f3, f4, 3, Neck);
+        this.faceTarget(f3, f4, 5, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tail1, this.Tail2, this.Tail3};
 

@@ -117,7 +117,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.37F;
+			speedBase = speedBase * 2.00F;
 		}
 		return speedBase;
 	}
