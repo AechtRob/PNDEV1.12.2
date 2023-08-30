@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.ShoalingHelper;
@@ -483,7 +484,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             EntityLivingBase ee = this.getAttackTarget();
             if (ee.isRiding() && this.breaksBoat()) {
                 Entity boat = ee.getRidingEntity();
-                if (boat instanceof EntityBoat) {
+                if (boat instanceof EntityBoat && (!(boat instanceof PrehistoricFloraSubmarine))) {
                     boat.setDead();
                     this.playSound(SoundEvents.ENTITY_ZOMBIE_BREAK_DOOR_WOOD, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 }
