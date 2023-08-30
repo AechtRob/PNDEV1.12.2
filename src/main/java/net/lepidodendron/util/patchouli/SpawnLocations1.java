@@ -24,7 +24,7 @@ public class SpawnLocations1 implements IComponentProcessor {
 
     @Override
     public String process(String s) {
-        String biomeList = getBiomeList(this.mob, 0, 10);
+        String biomeList = getBiomeList(this.mob, 0, 8);
         if (biomeList != null) {
             if (!biomeList.equalsIgnoreCase("")) {
                 return biomeList;
@@ -54,7 +54,7 @@ public class SpawnLocations1 implements IComponentProcessor {
                             if (i > from && i <= to) {
                                 biomeListFinal = biomeListFinal + "$(li)" + biomeName + "$(br)";
                             }
-                            if (i > 40) {
+                            if (i > 35) {
                                 if (from == 0) {
                                     return "$(br)Widespread";
                                 }

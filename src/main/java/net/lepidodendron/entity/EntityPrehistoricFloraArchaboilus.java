@@ -93,13 +93,13 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		{
 			return false;
 		}
-		else {
-			EntityPrehistoricFloraArchaboilus.Type typeThis = this.getPNType();
-			EntityPrehistoricFloraArchaboilus.Type typeThat = ((EntityPrehistoricFloraArchaboilus) otherAnimal).getPNType();
-			if (typeThis == typeThat) {
-				return false;
-			}
-		}
+//		else {
+//			EntityPrehistoricFloraArchaboilus.Type typeThis = this.getPNType();
+//			EntityPrehistoricFloraArchaboilus.Type typeThat = ((EntityPrehistoricFloraArchaboilus) otherAnimal).getPNType();
+//			if (typeThis == typeThat) {
+//				return false;
+//			}
+//		}
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 

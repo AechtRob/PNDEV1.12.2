@@ -20,12 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kayentatherium",
 			"type": "text",
-			"text": "First discovered in the 1950s, this Early Jurassic tritylodontid cynodont, known from the Kayenta Formation of Arizona, was unusually large and stocky for a therapsid of its time, measuring around 1 metre (3 feet) long and sporting a robust and stocky build.\nIts powerful jaws and superficially almost rodent-esque front teeth suggest that it may have been either herbivorous or possibly durophagous. It is also thought to have been semi-aquatic, with adaptations suggesting limb-powered swimming."
+			"text": "First discovered in the 1950s, this Early Jurassic tritylodontid cynodont, known from the Kayenta Formation of Arizona, was unusually large and stocky for a therapsid of its time, measuring around 1 metre (3 feet) long and sporting a robust and stocky build. Its powerful jaws and superficially almost rodent-esque front teeth suggest that it may have been either herbivorous or possibly durophagous. It is also thought to have been semi-aquatic, with adaptations suggesting"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kayentatherium",
 			"type": "text",
-			"text": "In 2000, a Kayentatherium fossil was discovered preserving an adult with a litter/clutch of a whopping 38 infants!  The babies were also relatively well developed, indicating they were able to fend for themselves from an early age. This suggests that Kayentatherium and other tritylodonts may have used a different parenting strategy from most modern mammals: Instead of investing more parental energy into fewer offspring, they seem to have instead had many offspring in order to \"overwhelm\" a high mortality rate."
+			"text": "limb-powered swimming. In 2000, a Kayentatherium fossil was discovered preserving an adult with a litter/clutch of a whopping 38 infants!  The babies were also relatively well developed, indicating they were able to fend for themselves from an early age. This suggests that Kayentatherium and other tritylodonts may have used a different parenting strategy from most modern mammals: Instead of investing more parental energy into fewer offspring,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kayentatherium",
+			"type": "text",
+			"text": "they seem to have instead had many offspring in order to \"overwhelm\" a high mortality rate."
 		},
 		{
 			"type": "lepidodendron:diet",

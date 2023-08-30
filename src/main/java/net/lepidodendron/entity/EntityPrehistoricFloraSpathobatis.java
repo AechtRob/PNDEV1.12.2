@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraSpathobatis extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 14.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

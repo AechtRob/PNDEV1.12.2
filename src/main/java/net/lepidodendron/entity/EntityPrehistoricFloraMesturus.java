@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderArduafrons;
+import net.lepidodendron.entity.render.entity.RenderMesturus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -217,14 +217,14 @@ public class EntityPrehistoricFloraMesturus extends EntityPrehistoricFloraFishBa
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderArduafrons.TEXTURE;
+		return RenderMesturus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelArduafrons;
+		return RenderDisplays.modelMesturus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderArduafrons.getScaler();
+		return RenderMesturus.getScaler();
 	}
 
 }

@@ -536,12 +536,12 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             ) {
                 if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
                 ) {
-                    if (Math.random() > 0.5) {
+                    //if (Math.random() > 0.5) {
                         this.setTicks(-50); //Flag this as stationary for egg-laying
                         this.setAnimation(LAY_ANIMATION);
-                    }
+                    //}
                 }
-                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > -30 && this.getTicks() < 0) {
+                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() >= -50 && this.getTicks() < 0) {
                     //Is stationary for egg-laying:
                     //System.err.println("Laying an egg in it");
 

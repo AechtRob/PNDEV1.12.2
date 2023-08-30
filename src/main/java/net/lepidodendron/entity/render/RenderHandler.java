@@ -4880,6 +4880,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAmmonite_Pachydesmoceras.TileEntityCustom.class, new RenderNautiloidShellAmmonite_Pachydesmoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAmmonite_Pachydiscus.TileEntityCustom.class, new RenderNautiloidShellAmmonite_Pachydiscus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAmmonite_Coroniceras.TileEntityCustom.class, new RenderNautiloidShellAmmonite_Coroniceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAmmonite_Perisphinctes.TileEntityCustom.class, new RenderNautiloidShellAmmonite_Perisphinctes());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAphetoceras.TileEntityCustom.class, new RenderNautiloidShellAphetoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellBasiloceras.TileEntityCustom.class, new RenderNautiloidShellBasiloceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellCameroceras.TileEntityCustom.class, new RenderNautiloidShellCameroceras());
@@ -4938,6 +4939,9 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsHarvestman.TileEntityCustom.class, new RenderEggsHarvestman());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsTitanoptera.TileEntityCustom.class, new RenderEggsTitanoptera());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsPalaeontinid.TileEntityCustom.class, new RenderEggsPalaeontinid());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsDaohugoucossus.TileEntityCustom.class, new RenderEggsDaohugoucossus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsPycnophlebia.TileEntityCustom.class, new RenderEggsPycnophlebia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsArchaboilus.TileEntityCustom.class, new RenderEggsArchaboilus());
 
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRottenLog.TileEntityCustom.class, new RenderRottenLog());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDollyphyton.TileEntityCustom.class, new RenderDollyphyton());

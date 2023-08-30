@@ -68,13 +68,13 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 		{
 			return false;
 		}
-		else {
-			EntityPrehistoricFloraPycnophlebia.Type typeThis = this.getPNType();
-			EntityPrehistoricFloraPycnophlebia.Type typeThat = ((EntityPrehistoricFloraPycnophlebia) otherAnimal).getPNType();
-			if (typeThis == typeThat) {
-				return false;
-			}
-		}
+//		else {
+//			EntityPrehistoricFloraPycnophlebia.Type typeThis = this.getPNType();
+//			EntityPrehistoricFloraPycnophlebia.Type typeThat = ((EntityPrehistoricFloraPycnophlebia) otherAnimal).getPNType();
+//			if (typeThis == typeThat) {
+//				return false;
+//			}
+//		}
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
