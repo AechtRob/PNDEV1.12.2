@@ -325,7 +325,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		if (this.standCooldown > 0) {
@@ -357,7 +357,9 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 

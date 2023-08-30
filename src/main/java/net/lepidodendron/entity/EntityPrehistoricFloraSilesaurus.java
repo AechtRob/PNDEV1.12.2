@@ -313,7 +313,9 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 

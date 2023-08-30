@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
@@ -222,7 +222,9 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 

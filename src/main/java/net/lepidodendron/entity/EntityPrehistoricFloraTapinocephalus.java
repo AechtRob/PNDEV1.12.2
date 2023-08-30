@@ -239,7 +239,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 		//this.renderYawOffset = this.rotationYaw;
 
 		if ((!this.willGrapple) && this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -255,7 +255,9 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 
