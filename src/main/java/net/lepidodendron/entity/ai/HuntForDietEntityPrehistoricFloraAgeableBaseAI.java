@@ -164,7 +164,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
     @Override
     public boolean shouldContinueExecuting() {
         //Is there a nearer target it would be better to take, by looking at half my normal hunt distance?
-        if (this.entity.getAttackTarget() != null) {
+        if (this.entity.getAttackTarget() != null && !this.entity.getOneHit()) {
             List<T> list = this.taskOwner.world.<T>getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance() * 0.5D), this.targetEntitySelector);
 
             if (list.isEmpty()) {
