@@ -79,6 +79,7 @@ public class AttackAI extends EntityAIBase {
         if (this.entity.getAttackBoundingBox().intersects(target.getEntityBoundingBox())
             && isDirectPathBetweenPoints(this.entity.getPositionVector(), target.getPositionVector())) {
             this.entity.attackEntityAsMob(target);
+            this.entity.setOneHit(false);
             //Apply a slight slowdown to the target:
             if (target instanceof EntityLivingBase) {
                 ((EntityLivingBase) target).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20, 1, false, false));

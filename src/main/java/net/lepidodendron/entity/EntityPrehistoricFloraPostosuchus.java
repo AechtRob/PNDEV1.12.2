@@ -42,10 +42,10 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraPostosuchus(World world) {
 		super(world);
-		setSize(0.85F, 1.82F);
+		setSize(0.95F, 1.92F);
 		minWidth = 0.12F;
-		maxWidth = 0.85F;
-		maxHeight = 1.82F;
+		maxWidth = 0.95F;
+		maxHeight = 1.92F;
 		maxHealthAgeable = 60.0D;
 		NOISE_ANIMATION = Animation.create(25);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
