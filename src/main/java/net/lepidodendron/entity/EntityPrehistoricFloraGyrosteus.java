@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraGyrosteus extends EntityPrehistoricFloraAgeab
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 2F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 50.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

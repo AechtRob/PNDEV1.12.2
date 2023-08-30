@@ -36,7 +36,7 @@ public class EntityPrehistoricFloraTrachymetopon extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 1.5F;
-		maxHealthAgeable = 35.0D;
+		maxHealthAgeable = 40.0D;
 	}
 
 	@Override

@@ -82,7 +82,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.LegL.addChild(KneeL);
         this.setRotateAngle(KneeL, 1.0472F, 0.0F, 0.0F);
         this.KneeL.cubeList.add(new ModelBox(KneeL, 23, 66, -2.5F, -0.2F, -0.9F, 3, 10, 3, 0.0F, false));
-        this.KneeL.cubeList.add(new ModelBox(KneeL, 0, 42, -2.5F, -0.2F, -0.1F, 3, 10, 3, -0.001F, false));
+        this.KneeL.cubeList.add(new ModelBox(KneeL, 0, 42, -2.5F, -0.2F, -0.1F, 3, 10, 3, -0.01F, false));
 
         this.MetatarsalL = new AdvancedModelRenderer(this);
         this.MetatarsalL.setRotationPoint(-1.0F, 10.0F, 2.0F);
@@ -101,7 +101,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.FootL.addChild(cube_r1);
         this.setRotateAngle(cube_r1, -0.0524F, 0.0F, 0.0F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 68, 16, -1.5F, -1.1F, -4.7F, 3, 1, 5, 0.0F, false));
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 69, 42, -1.5F, -0.6F, -4.7F, 3, 1, 5, -0.001F, false));
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 69, 42, -1.5F, -0.6F, -4.7F, 3, 1, 5, -0.01F, false));
 
         this.LegR = new AdvancedModelRenderer(this);
         this.LegR.setRotationPoint(-5.4F, 2.0F, 0.0F);
@@ -114,7 +114,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.LegR.addChild(KneeR);
         this.setRotateAngle(KneeR, 1.0472F, 0.0F, 0.0F);
         this.KneeR.cubeList.add(new ModelBox(KneeR, 23, 66, -0.5F, -0.2F, -0.9F, 3, 10, 3, 0.0F, true));
-        this.KneeR.cubeList.add(new ModelBox(KneeR, 0, 42, -0.5F, -0.2F, -0.1F, 3, 10, 3, -0.001F, true));
+        this.KneeR.cubeList.add(new ModelBox(KneeR, 0, 42, -0.5F, -0.2F, -0.1F, 3, 10, 3, -0.01F, true));
 
         this.MetatarsalR = new AdvancedModelRenderer(this);
         this.MetatarsalR.setRotationPoint(1.0F, 10.0F, 2.0F);
@@ -133,7 +133,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.FootR.addChild(cube_r2);
         this.setRotateAngle(cube_r2, -0.0524F, 0.0F, 0.0F);
         this.cube_r2.cubeList.add(new ModelBox(cube_r2, 68, 16, -1.5F, -1.1F, -4.7F, 3, 1, 5, 0.0F, true));
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 69, 42, -1.5F, -0.6F, -4.7F, 3, 1, 5, -0.001F, true));
+        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 69, 42, -1.5F, -0.6F, -4.7F, 3, 1, 5, -0.01F, true));
 
         this.Tail1 = new AdvancedModelRenderer(this);
         this.Tail1.setRotationPoint(0.0F, 0.0F, 6.0F);
@@ -184,7 +184,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.cube_r5.setRotationPoint(0.0F, 7.7F, -4.5F);
         this.Chest.addChild(cube_r5);
         this.setRotateAngle(cube_r5, -0.1222F, 0.0F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 50, 50, -4.0F, -1.8668F, 0.0948F, 8, 2, 6, -0.001F, false));
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 50, 50, -4.0F, -1.8668F, 0.0948F, 8, 2, 6, -0.01F, false));
 
         this.cube_r6 = new AdvancedModelRenderer(this);
         this.cube_r6.setRotationPoint(0.0F, 1.8F, -1.8F);
@@ -214,8 +214,8 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.cube_r7.setRotationPoint(0.0F, -0.2F, 0.1F);
         this.MetacarpalL.addChild(cube_r7);
         this.setRotateAngle(cube_r7, 0.1222F, 0.0F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 23, 42, -1.0F, 0.0F, 0.1F, 2, 2, 1, -0.002F, false));
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 23, 46, -1.0F, 0.0F, -0.3F, 2, 2, 1, -0.001F, false));
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 23, 42, -1.0F, 0.0F, 0.1F, 2, 2, 1, -0.02F, false));
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 23, 46, -1.0F, 0.0F, -0.3F, 2, 2, 1, -0.01F, false));
 
         this.HandL = new AdvancedModelRenderer(this);
         this.HandL.setRotationPoint(0.0F, 1.4F, 1.3F);
@@ -251,8 +251,8 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.cube_r9.setRotationPoint(0.0F, -0.2F, 0.1F);
         this.MetacarpalR.addChild(cube_r9);
         this.setRotateAngle(cube_r9, 0.1222F, 0.0F, 0.0F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 23, 42, -1.0F, 0.0F, 0.1F, 2, 2, 1, -0.002F, true));
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 23, 46, -1.0F, 0.0F, -0.3F, 2, 2, 1, -0.001F, true));
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 23, 42, -1.0F, 0.0F, 0.1F, 2, 2, 1, -0.02F, true));
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 23, 46, -1.0F, 0.0F, -0.3F, 2, 2, 1, -0.01F, true));
 
         this.HandR = new AdvancedModelRenderer(this);
         this.HandR.setRotationPoint(0.0F, 1.4F, 1.3F);
@@ -291,13 +291,13 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.Neck1 = new AdvancedModelRenderer(this);
         this.Neck1.setRotationPoint(-0.5F, -3.2F, -4.3F);
         this.Neck2.addChild(Neck1);
-        this.Neck1.cubeList.add(new ModelBox(Neck1, 36, 66, -1.5F, -0.7F, -3.7F, 4, 4, 4, -0.002F, false));
+        this.Neck1.cubeList.add(new ModelBox(Neck1, 36, 66, -1.5F, -0.7F, -3.7F, 4, 4, 4, -0.02F, false));
 
         this.cube_r13 = new AdvancedModelRenderer(this);
         this.cube_r13.setRotationPoint(0.0F, 3.4F, -3.1F);
         this.Neck1.addChild(cube_r13);
         this.setRotateAngle(cube_r13, 0.3491F, 0.0F, 0.0F);
-        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 0, 0, -0.5F, -1.26F, -0.1103F, 2, 2, 2, -0.002F, false));
+        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 0, 0, -0.5F, -1.26F, -0.1103F, 2, 2, 2, -0.02F, false));
 
         this.Head = new AdvancedModelRenderer(this);
         this.Head.setRotationPoint(0.0F, -0.2F, -3.6F);
@@ -308,33 +308,33 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.cube_r14.setRotationPoint(-0.5F, 0.5F, -2.9F);
         this.Head.addChild(cube_r14);
         this.setRotateAngle(cube_r14, 0.3142F, 0.0F, 0.0F);
-        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 33, 0, -1.0F, -0.0293F, -0.0169F, 4, 1, 3, -0.001F, false));
+        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 33, 0, -1.0F, -0.0293F, -0.0169F, 4, 1, 3, -0.01F, false));
 
         this.cube_r15 = new AdvancedModelRenderer(this);
         this.cube_r15.setRotationPoint(-0.5F, 1.1F, -3.8F);
         this.Head.addChild(cube_r15);
         this.setRotateAngle(cube_r15, 0.5934F, 0.0F, 0.0F);
-        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 0, 26, -0.5F, -0.0235F, 0.0647F, 3, 1, 1, -0.002F, false));
+        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 0, 26, -0.5F, -0.0235F, 0.0647F, 3, 1, 1, -0.02F, false));
 
         this.cube_r16 = new AdvancedModelRenderer(this);
         this.cube_r16.setRotationPoint(0.0F, 1.5F, -4.7F);
         this.Head.addChild(cube_r16);
         this.setRotateAngle(cube_r16, 0.384F, 0.0F, 0.0F);
-        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 36, 75, -1.0F, -0.0572F, -0.051F, 3, 1, 2, -0.001F, false));
+        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 36, 75, -1.0F, -0.0572F, -0.051F, 3, 1, 2, -0.01F, false));
 
         this.cube_r17 = new AdvancedModelRenderer(this);
         this.cube_r17.setRotationPoint(0.0F, 3.1F, -7.2F);
         this.Head.addChild(cube_r17);
         this.setRotateAngle(cube_r17, 0.5934F, 0.0F, 0.0F);
-        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 48, 0, -0.5F, 0.0143F, -0.0837F, 2, 1, 3, -0.001F, false));
+        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 48, 0, -0.5F, 0.0143F, -0.0837F, 2, 1, 3, -0.01F, false));
 
         this.cube_r18 = new AdvancedModelRenderer(this);
         this.cube_r18.setRotationPoint(0.0F, 0.6F, 0.0F);
         this.Head.addChild(cube_r18);
         this.setRotateAngle(cube_r18, 0.2967F, 0.0F, 0.0F);
-        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 62, 16, -0.5F, 0.7F, -7.7F, 2, 1, 1, 0.001F, false));
-        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 23, 50, -1.0F, 0.7F, -6.7F, 3, 1, 3, -0.001F, false));
-        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 31, 24, -1.5F, -0.3F, -3.7F, 4, 2, 4, 0.001F, false));
+        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 62, 16, -0.5F, 0.7F, -7.7F, 2, 1, 1, 0.01F, false));
+        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 23, 50, -1.0F, 0.7F, -6.7F, 3, 1, 3, -0.01F, false));
+        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 31, 24, -1.5F, -0.3F, -3.7F, 4, 2, 4, 0.01F, false));
         this.cube_r18.cubeList.add(new ModelBox(cube_r18, 17, 60, -0.5F, 0.3F, -7.7F, 2, 1, 1, 0.0F, false));
         this.cube_r18.cubeList.add(new ModelBox(cube_r18, 0, 21, -0.8F, 1.0F, -6.7F, 0, 1, 3, 0.0F, true));
         this.cube_r18.cubeList.add(new ModelBox(cube_r18, 0, 21, 1.8F, 1.0F, -6.7F, 0, 1, 3, 0.0F, false));
@@ -345,11 +345,11 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.Head.addChild(Jaw);
         this.setRotateAngle(Jaw, 0.4276F, 0.0F, 0.0F);
         this.Jaw.cubeList.add(new ModelBox(Jaw, 63, 72, -1.5F, -0.1F, -4.0F, 4, 1, 4, 0.0F, false));
-        this.Jaw.cubeList.add(new ModelBox(Jaw, 69, 59, -1.5F, 0.6F, -4.0F, 4, 1, 4, -0.001F, false));
+        this.Jaw.cubeList.add(new ModelBox(Jaw, 69, 59, -1.5F, 0.6F, -4.0F, 4, 1, 4, -0.01F, false));
         this.Jaw.cubeList.add(new ModelBox(Jaw, 73, 23, -1.0F, -0.1F, -7.0F, 3, 1, 3, 0.0F, false));
         this.Jaw.cubeList.add(new ModelBox(Jaw, 50, 50, 1.79F, -0.8F, -7.0F, 0, 1, 2, 0.0F, false));
         this.Jaw.cubeList.add(new ModelBox(Jaw, 50, 50, -0.79F, -0.8F, -7.0F, 0, 1, 2, 0.0F, true));
-        this.Jaw.cubeList.add(new ModelBox(Jaw, 48, 24, -1.5F, -2.0F, -3.1F, 4, 2, 3, -0.003F, false));
+        this.Jaw.cubeList.add(new ModelBox(Jaw, 48, 24, -1.5F, -2.0F, -3.1F, 4, 2, 3, -0.03F, false));
 
         this.cube_r19 = new AdvancedModelRenderer(this);
         this.cube_r19.setRotationPoint(0.0F, 0.0F, -6.8F);
@@ -367,13 +367,13 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
         this.cube_r21.setRotationPoint(0.0F, 1.6F, -4.0F);
         this.Jaw.addChild(cube_r21);
         this.setRotateAngle(cube_r21, -0.2269F, 0.0F, 0.0F);
-        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 52, 16, -1.0F, -1.0314F, -2.9264F, 3, 1, 3, -0.001F, false));
+        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 52, 16, -1.0F, -1.0314F, -2.9264F, 3, 1, 3, -0.01F, false));
 
         this.cube_r22 = new AdvancedModelRenderer(this);
         this.cube_r22.setRotationPoint(0.0F, 1.6F, -4.0F);
         this.Jaw.addChild(cube_r22);
         this.setRotateAngle(cube_r22, -0.2269F, 0.0F, 0.0F);
-        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 73, 49, -0.5F, -1.0F, 0.1F, 2, 1, 3, -0.001F, false));
+        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 73, 49, -0.5F, -1.0F, 0.1F, 2, 1, 3, -0.01F, false));
 
 
         updateDefaultPose();

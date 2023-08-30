@@ -177,7 +177,7 @@ public class BlockGunneraShoot extends ElementsLepidodendronMod.ModElement {
 					.withProperty(SOUTH, stateSouth.getBlock() == this || stateSouth.getBlock() == BlockGunneraShootFlower.block || leavesSouth)
 					.withProperty(EAST, stateEast.getBlock() == this || stateEast.getBlock() == BlockGunneraShootFlower.block || leavesEast)
 					.withProperty(WEST, stateWest.getBlock() == this || stateWest.getBlock() == BlockGunneraShootFlower.block || leavesWest)
-					.withProperty(UP, leavesUp);
+					.withProperty(UP, stateUp.getBlock() == this || stateUp.getBlock() == BlockGunneraShootFlower.block ||leavesUp);
 		}
 
 		@Override
