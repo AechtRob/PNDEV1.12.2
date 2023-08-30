@@ -43,9 +43,8 @@
 			"text": "Once considered to be a cannibal due to small bones from alleged juveniles in the stomach cavity, we now know this to be untrue as most of the remains interpreted to be juveniles were instead of small non dinosaurian reptiles like Hesperosuchus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_coelophysis",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_coelophysis"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
