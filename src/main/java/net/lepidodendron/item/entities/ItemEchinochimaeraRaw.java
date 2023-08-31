@@ -53,7 +53,7 @@ public class ItemEchinochimaeraRaw extends ElementsLepidodendronMod.ModElement {
 
 		@Nullable
 		public String getVariantStr() {
-			return "female";
+			return "male";
 		}
 
 	}
