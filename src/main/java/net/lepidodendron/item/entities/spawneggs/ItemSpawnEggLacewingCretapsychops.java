@@ -53,6 +53,16 @@ public class ItemSpawnEggLacewingCretapsychops extends ElementsLepidodendronMod.
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -13358044;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -9148327;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic - Cretaceous";
 		}

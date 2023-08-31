@@ -53,6 +53,16 @@ public class ItemSpawnEggLacewingGrammolingia extends ElementsLepidodendronMod.M
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -12301749;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -2698552;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

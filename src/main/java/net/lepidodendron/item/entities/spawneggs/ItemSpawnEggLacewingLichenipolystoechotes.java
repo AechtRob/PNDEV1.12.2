@@ -53,6 +53,16 @@ public class ItemSpawnEggLacewingLichenipolystoechotes extends ElementsLepidoden
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -4612570 ;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12964824;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

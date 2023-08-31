@@ -591,7 +591,7 @@ public class ModelKleptothule extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Crotalocephalus.offsetY = 1.0F;
+        this.Kleptothule.offsetZ = -0.5F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.pygidium};
 
@@ -625,7 +625,7 @@ public class ModelKleptothule extends AdvancedModelBase {
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             if(e.isInWater()) {
                 this.chainWave(fishTail, speed, tailVdegree * 0.2f, 3, f2, 3);
-                this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+                this.chainSwing(fishTail, speed, tailHdegree * 0.5F, -2.5, f2, tailSwing * 0.5F);
             }
 
             this.flap(leftLeg1, speede, -0.5F, false, 0, -0.5F, f2, 0.3F);

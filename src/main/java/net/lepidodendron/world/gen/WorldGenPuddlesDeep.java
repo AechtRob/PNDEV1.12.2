@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class WorldGenPuddles extends WorldGenerator
+public class WorldGenPuddlesDeep extends WorldGenerator
 {
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -30,8 +30,18 @@ public class WorldGenPuddles extends WorldGenerator
             )
             {
                 worldIn.setBlockState(blockpos.down(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down(2), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().east(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().west(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().east().north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().west().north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().east().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos.down().west().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault && worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_pleuromeia_beds")) {
-                    if (rand.nextInt(200) == 0) {
+                    if (rand.nextInt(300) == 0) {
                         if (!worldIn.isRemote && worldIn.getMinecraftServer() != null) {
                             //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
                             worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {

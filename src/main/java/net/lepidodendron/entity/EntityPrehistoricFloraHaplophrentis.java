@@ -50,12 +50,17 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	public boolean getMovingOnLand() {
 		int animCycle = 28;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=0 && tickAnim < 20)) {
+		if ((tickAnim >=10 && tickAnim < 24)) {
 			return true;
 		}
 		else {
 			return false;
 		}
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 400;
 	}
 
 	public static String getPeriod() {return "Cambrian";}

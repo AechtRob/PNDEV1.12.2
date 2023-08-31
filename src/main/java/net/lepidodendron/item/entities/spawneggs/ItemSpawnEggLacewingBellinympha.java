@@ -53,6 +53,17 @@ public class ItemSpawnEggLacewingBellinympha extends ElementsLepidodendronMod.Mo
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -9135044  ;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -13223643;
+		}
+
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

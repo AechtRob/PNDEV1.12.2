@@ -53,6 +53,17 @@ public class ItemSpawnEggLacewingAetheogramma extends ElementsLepidodendronMod.M
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -12965340;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -6320759;
+		}
+
+
+		@Override
 		public String getPeriod() {
 			return "Cretaceous";
 		}
