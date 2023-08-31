@@ -96,7 +96,7 @@ public class BlockNautiloidShellAmmonite_Perisphinctes extends ElementsLepidoden
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.3D, 0.6D);
+			return new AxisAlignedBB(0.3D, 0.0D, 0.3D, 0.7D, 0.3D, 0.7D);
 		}
 
 		@Override

@@ -93,16 +93,30 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		{
 			return false;
 		}
-//		else {
-//			EntityPrehistoricFloraArchaboilus.Type typeThis = this.getPNType();
-//			EntityPrehistoricFloraArchaboilus.Type typeThat = ((EntityPrehistoricFloraArchaboilus) otherAnimal).getPNType();
-//			if (typeThis == typeThat) {
-//				return false;
-//			}
-//		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraArchaboilus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraArchaboilus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

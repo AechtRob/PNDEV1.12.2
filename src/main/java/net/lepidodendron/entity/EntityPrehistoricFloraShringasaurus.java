@@ -71,6 +71,11 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -82,15 +87,29 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 			return false;
 		}
 		else {
-			EntityPrehistoricFloraShringasaurus.Type typeThis = this.getPNType();
-			EntityPrehistoricFloraShringasaurus.Type typeThat = ((EntityPrehistoricFloraShringasaurus) otherAnimal).getPNType();
-			if (typeThis == typeThat) {
-				return false;
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraShringasaurus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraShringasaurus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
 			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

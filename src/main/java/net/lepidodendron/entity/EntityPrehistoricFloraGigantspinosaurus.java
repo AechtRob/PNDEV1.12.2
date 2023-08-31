@@ -70,7 +70,6 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 
 	public static String getPeriod() {return "Jurassic";}
 
-
 	@Override
 	public boolean hasNest() {
 		return true;

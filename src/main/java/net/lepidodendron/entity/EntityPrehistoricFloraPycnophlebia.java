@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 0;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -68,16 +73,30 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 		{
 			return false;
 		}
-//		else {
-//			EntityPrehistoricFloraPycnophlebia.Type typeThis = this.getPNType();
-//			EntityPrehistoricFloraPycnophlebia.Type typeThat = ((EntityPrehistoricFloraPycnophlebia) otherAnimal).getPNType();
-//			if (typeThis == typeThat) {
-//				return false;
-//			}
-//		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraPycnophlebia)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraPycnophlebia)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

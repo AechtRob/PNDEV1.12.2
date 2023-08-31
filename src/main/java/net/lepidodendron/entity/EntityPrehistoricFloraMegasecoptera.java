@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -61,9 +66,26 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 

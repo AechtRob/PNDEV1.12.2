@@ -234,6 +234,9 @@ public class LepidodendronBookSubscribers {
 			else {
 				nestString = " lays eggs in water";
 			}
+			if (((EntityPrehistoricFloraLandBase) entity).breedPNVariantsMatch() == -1) {
+				nestString = nestString + ". Requires male-female to breed.";
+			}
 		}
 		else {
 			if (entity instanceof EntityPrehistoricFloraAgeableBase) {
@@ -246,6 +249,9 @@ public class LepidodendronBookSubscribers {
 				else {
 					nestString = " lays eggs in water";
 				}
+				if (((EntityPrehistoricFloraAgeableBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
+				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
 				if (((EntityPrehistoricFloraTrilobiteBottomBase) entity).dropsEggs()) {
@@ -253,6 +259,9 @@ public class LepidodendronBookSubscribers {
 				}
 				else {
 					nestString = " lays eggs in water";
+				}
+				if (((EntityPrehistoricFloraTrilobiteBottomBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
 				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
@@ -262,6 +271,9 @@ public class LepidodendronBookSubscribers {
 				else {
 					nestString = " lays eggs in water";
 				}
+				if (((EntityPrehistoricFloraTrilobiteSwimBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
+				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
 				if (((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).dropsEggs()) {
@@ -270,6 +282,9 @@ public class LepidodendronBookSubscribers {
 				else {
 					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
+				if (((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
+				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraFishBase) {
 				if (((EntityPrehistoricFloraFishBase) entity).dropsEggs()) {
@@ -277,6 +292,9 @@ public class LepidodendronBookSubscribers {
 				}
 				else {
 					nestString = " lays eggs in water";
+				}
+				if (((EntityPrehistoricFloraFishBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
 				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
@@ -289,6 +307,9 @@ public class LepidodendronBookSubscribers {
 				else {
 					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
+				if (((EntityPrehistoricFloraInsectFlyingBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
+				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
 				if (((EntityPrehistoricFloraJellyfishBase) entity).dropsEggs()) {
@@ -297,6 +318,9 @@ public class LepidodendronBookSubscribers {
 				else {
 					nestString = " lays eggs in water";
 				}
+				if (((EntityPrehistoricFloraJellyfishBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
+				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
 				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).dropsEggs()) {
@@ -304,6 +328,9 @@ public class LepidodendronBookSubscribers {
 				}
 				else {
 					nestString = " lays eggs in water";
+				}
+				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).breedPNVariantsMatch() == -1) {
+					nestString = nestString + ". Requires male-female to breed.";
 				}
 			}
 		}

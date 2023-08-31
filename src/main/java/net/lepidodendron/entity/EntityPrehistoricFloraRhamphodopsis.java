@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraRhamphodopsis extends EntityPrehistoricFloraA
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -69,9 +74,30 @@ public class EntityPrehistoricFloraRhamphodopsis extends EntityPrehistoricFloraA
 		{
 			return false;
 		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraRhamphodopsis)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraRhamphodopsis)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

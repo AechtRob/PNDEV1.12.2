@@ -60,7 +60,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
 	}
 
-
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
 
 	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
@@ -73,9 +76,26 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 

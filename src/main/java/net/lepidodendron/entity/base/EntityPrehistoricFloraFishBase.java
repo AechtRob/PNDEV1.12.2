@@ -75,6 +75,20 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         return false;
     }
 
+    public boolean hasPNVariants() {
+        return false;
+    }
+
+    /**
+     * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+     * -1 = the variants must be different to breed
+     * 0 = the variants can be either different or the same to breed
+     * 1 = the variants must be the same to breed
+     */
+    public byte breedPNVariantsMatch() {
+        return 0;
+    }
+
     @Override
     public boolean isRiding() {
         if (this.getRidingEntity() != null) {

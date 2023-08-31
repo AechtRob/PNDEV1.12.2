@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 0;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -67,15 +72,29 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 			return false;
 		}
 		else {
-			EntityPrehistoricFloraXinpusaurus.Type typeThis = this.getPNType();
-			EntityPrehistoricFloraXinpusaurus.Type typeThat = ((EntityPrehistoricFloraXinpusaurus) otherAnimal).getPNType();
-			if (typeThis == typeThat) {
-				return false;
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraXinpusaurus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraXinpusaurus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
 			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}
