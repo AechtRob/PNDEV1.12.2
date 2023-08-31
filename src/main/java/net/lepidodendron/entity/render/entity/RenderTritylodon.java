@@ -11,7 +11,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTritylodon extends RenderLiving<EntityPrehistoricFloraTritylodon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tritylodon.png");
 
-    public static float getScaler() {return 0.57f;}
+    public static float getScaler() {return 0.325f;}
+
     public RenderTritylodon(RenderManager mgr) {
         super(mgr, new ModelTritylodon(), 0.14f);
     }
@@ -28,9 +29,9 @@ public class RenderTritylodon extends RenderLiving<EntityPrehistoricFloraTritylo
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTritylodon entity, float f) {
-        float scale = entity.getAgeScale()*getScaler(); //This is smaller than Tritylodon
+        float scale = entity.getAgeScale() * getScaler(); //This is smaller than Tritylodon
         GlStateManager.scale(scale, scale, scale);
-        //this.shadowSize = entity.width * scale * 0.125F;
+        this.shadowSize = entity.width * scale * 0.15F;
     }
 
 }

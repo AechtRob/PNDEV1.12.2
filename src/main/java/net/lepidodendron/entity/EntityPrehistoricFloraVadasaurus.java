@@ -14,7 +14,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -71,15 +70,10 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 	}
 
 	@Override
-	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
 	public boolean breathesAir() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean dropsEggs() {
 		return false;
@@ -87,6 +81,16 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 
 	@Override
 	public boolean laysEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
 		return true;
 	}
 
@@ -103,25 +107,9 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 	}
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
+		return (
+				nestBlockMatch(world, pos)
+		);
 	}
 
 	@Override
@@ -148,7 +136,7 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new LandWanderNestAI(this));
+		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
 		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.65, 90));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
@@ -260,6 +248,7 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
+
 
 	@Override
 	public void onEntityUpdate() {

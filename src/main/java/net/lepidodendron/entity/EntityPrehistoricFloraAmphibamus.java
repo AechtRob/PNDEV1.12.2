@@ -50,6 +50,16 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 	}
 
 	@Override
+	public int animSpeedAdder() {
+		if ((this.getIsMoving() || (!this.onGround) || this.isJumping || this.isReallyInWater())
+				&& this.getTicks() >= 0
+		) {
+			return 1;
+		}
+		return 0;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -70,12 +80,15 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.15F;
+		float calcSpeed = 0.105F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.3f;
+			calcSpeed= 0.285f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 2.85F;
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
@@ -103,10 +116,10 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.6, 20));
-		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(5, new EntityLookIdleAI(this));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F, true));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F, true));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F, true));
+		tasks.addTask(5, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 //		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

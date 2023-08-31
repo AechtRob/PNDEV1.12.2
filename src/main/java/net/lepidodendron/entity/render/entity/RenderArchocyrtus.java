@@ -23,10 +23,42 @@ public class RenderArchocyrtus extends RenderLiving<EntityPrehistoricFloraArchoc
         return RenderArchocyrtus.TEXTURE;
     }
 
+    public static float getOffset() {
+        return 0.145F;
+    }
+
     @Override
     protected void applyRotations(EntityPrehistoricFloraArchocyrtus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        switch (entityLiving.getAttachmentFacing()) {
+            case DOWN:
+            default:
+                break;
+            case EAST:
+                GlStateManager.translate(this.getOffset(), 0.05F, 0.0F);
+                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
+                break;
+            case WEST:
+                GlStateManager.translate(-this.getOffset(), 0.05F, 0.0F);
+                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
+                break;
+            case NORTH:
+                GlStateManager.translate(0.0F, 0.05F, -this.getOffset());
+                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                break;
+            case SOUTH:
+                GlStateManager.translate(0.0F, 0.05F, this.getOffset());
+                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
+                break;
+            case UP:
+                GlStateManager.translate(0.0F, 0.5F + this.getOffset(), 0.0F);
+                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+        }
     }
+
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraArchocyrtus entity, float f) {
         float scale = this.getScaler();

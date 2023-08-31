@@ -62,7 +62,7 @@ public class ItemLacewingAetheogrammaRaw extends ElementsLepidodendronMod.ModEle
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "atheogramma";
+			return "aetheogramma";
 		}
 	}
 }

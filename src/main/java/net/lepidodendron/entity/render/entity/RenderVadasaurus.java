@@ -12,7 +12,7 @@ public class RenderVadasaurus extends RenderLiving<EntityPrehistoricFloraVadasau
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vadasaurus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.25F;
+        return 0.7F * 0.375F;
     }
     public RenderVadasaurus(RenderManager mgr) {
         super(mgr, new ModelVadasaurus(), 0.0f);

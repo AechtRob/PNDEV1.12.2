@@ -22,6 +22,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
@@ -361,12 +362,6 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	}
 
 	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
-	}
-
-	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(CONODONT_TYPE, 0);
@@ -376,8 +371,30 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setPNType(EntityPrehistoricFloraConodont.Type.byId(rand.nextInt(EntityPrehistoricFloraConodont.Type.values().length) + 1));
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		return livingdata;
 	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
+	}
+
+	protected void setSizer(float width, float height)
+	{
+		if (width != this.width || height != this.height)
+		{
+			float f = this.width;
+			this.width = width;
+			this.height = height;
+			if (this.width < f) {
+				double d0 = (double) width / 2.0D;
+				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+			}
+		}
+	}
+
 	public void setPNType(Type type)
 	{
 		this.dataManager.set(CONODONT_TYPE, Integer.valueOf(type.ordinal()));
