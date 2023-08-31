@@ -1,0 +1,71 @@
+{
+	"name": "Congopycnodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/congopycnodus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_congopycnodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_congopycnodus",
+			"title": "Congopycnodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Pycnodontiformes $(br)>Coccodontoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/congopycnodus.png"],
+			"title": "C. cornutus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congopycnodus",
+			"type": "text",
+			"text": "Congopycnodus is a species of Coccodontoid Pycnodont from the Middle Jurassic of Africa. This animal, maybe growing to 15-20 cm in length, is known only from some pieces of the top of its skull and a series of nuchal horns from different individuals. Despite the fragmentary remains, the nuchal horns that were discovered are unmistakably belonging to a basal Coccodontoidean Pycnodont,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congopycnodus",
+			"type": "text",
+			"text": " the same group that would later give rise to the more bizarre shaped and famous of the Pycnodonts. The placement of Congopycnodus in the family tree remains unclear to this day, being instead assigned as a precursor to Gebrayelichthyidae and Gladiopycnodontidae. What makes Congopycnodus an outlier compared to its peers was its habitat;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congopycnodus",
+			"type": "text",
+			"text": "While most Pycnodonts known lived in Tropical reef environments, Congopycnodus inhabited river and lake environments, as a testament to a more widespread radiation of the group than previously thought, although he is not the only occurrence of the group known from non marine areas. Congopycnodus, alongside remains from Middle Jurassic of Thailand,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congopycnodus",
+			"type": "text",
+			"text": "help us understand the spread of this peculiar and very diverse group of Neopterygians from their modest origins in Triassic Europe to their eventual rise in the Cretaceous up to their disappearance in the Eocene. This animal represents the only known ancestor to the specialized Coccodontoidean Pycnodonts of Cretaceous Lebanon, until now an unsolved evolutionary puzzle."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congopycnodus",
+			"type": "text",
+			"text": "Congopycnodus and the coeval faunas from Congo it lived with were found in the Stanleyville formation not far from Kisangani, the capital of the Tshopo province of Congo, at the time a system of lakes and rivers."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congopycnodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_congopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_congopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_congopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_congopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_congopycnodus"
+		}
+	]
+}

@@ -12,7 +12,7 @@ public class RenderPanacanthocaris extends RenderLiving<EntityPrehistoricFloraPa
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panacanthocaris.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.325F;
     }
     public RenderPanacanthocaris(RenderManager mgr) {
         super(mgr, new ModelPanacanthocaris(), 0.0f);

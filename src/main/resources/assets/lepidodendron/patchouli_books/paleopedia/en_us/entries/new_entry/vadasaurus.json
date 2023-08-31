@@ -1,20 +1,20 @@
 {
-	"name": "",
+	"name": "Vadasaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/vadasaurus_icon.png",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_vadasaurus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_vadasaurus",
-			"title": "",
+			"title": "Vadasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)>"
+			"text": "$(l)Temporal Range:$()Jurassic $(br2)>Reptilia$(br)>Rhynchocephalia$(br2)>Sphenodontia"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/vadasaurus.png"],
-			"title": "",
+			"title": "Vadasaurus herzogi",
 			"text": ""
 		},
 		{

@@ -7,9 +7,8 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderKalligrammatid;
-import net.lepidodendron.entity.render.entity.RenderLacewing;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemKalligrammatidEggsItem;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -66,6 +65,11 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -76,9 +80,26 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraKalligrammatid)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraKalligrammatid)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraKalligrammatid)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -565,9 +586,10 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 	@Override
 	public ItemStack getDroppedEggItemStack() {
-		ItemStack stack = new ItemStack(ItemKalligrammatidEggsItem.block, (int) (1));
+		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
 		NBTTagCompound variantNBT = new NBTTagCompound();
 		variantNBT.setString("PNType", this.getPNType().getName());
+		variantNBT.setString("creature", "lepidodendron:prehistoric_fora_kalligrammatid");
 		stack.setTagCompound(variantNBT);
 		return stack;
 	}

@@ -65,6 +65,11 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -76,15 +81,29 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 			return false;
 		}
 		else {
-			EntityPrehistoricFloraMicrobrachius.Type typeThis = this.getPNType();
-			EntityPrehistoricFloraMicrobrachius.Type typeThat = ((EntityPrehistoricFloraMicrobrachius) otherAnimal).getPNType();
-			if (typeThis == typeThat) {
-				return false;
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraMicrobrachius)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraMicrobrachius)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
 			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

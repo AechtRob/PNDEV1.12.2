@@ -1,0 +1,46 @@
+{
+	"name": "Clarkina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/clarkina_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_clarkina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_clarkina",
+			"title": "Clarkina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Gondolellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/clarkina.png"],
+			"title": "Clarkina sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_clarkina",
+			"type": "text",
+			"text": "Clarkina is a genus of conodont known from Permian to earliest Triassic. Some fossils from Japan preserved head materials including in situ teeth rows and eye soft tissues."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clarkina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clarkina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clarkina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clarkina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_conodont@clarkina"
+		}
+	]
+}

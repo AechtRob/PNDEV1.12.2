@@ -60,6 +60,11 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -71,15 +76,29 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 			return false;
 		}
 		else {
-			EntityPrehistoricFloraEchinochimaera.Type typeThis = this.getPNType();
-			EntityPrehistoricFloraEchinochimaera.Type typeThat = ((EntityPrehistoricFloraEchinochimaera) otherAnimal).getPNType();
-			if (typeThis == typeThat) {
-				return false;
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraEchinochimaera)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraEchinochimaera)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
 			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}
@@ -349,7 +368,6 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.46; }
-
 	public static double offsetWall(@Nullable String variant) {
 		return 0.08;
 	}
@@ -373,7 +391,7 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.86;
+		return 0.5;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -396,7 +414,7 @@ public class EntityPrehistoricFloraEchinochimaera extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelStethacanthus;
+		return RenderDisplays.modelEchinochimaera;
 	}
 	public static float getScaler(@Nullable String variant) {
 		if (variant.equalsIgnoreCase("female")) {

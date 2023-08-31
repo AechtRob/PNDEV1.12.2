@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.295F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 1.60F;
 		}
 		return speedBase;
 	}
@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
@@ -222,7 +222,9 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 

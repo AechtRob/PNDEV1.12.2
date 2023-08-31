@@ -182,14 +182,22 @@ public class ModelUarbryichthys extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
+        this.body.offsetY = -0.18F;
+        this.body.offsetX = -0.05F;
+        this.body.offsetZ = 0.02F;
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.13F;
-        this.body.offsetX = -0.06F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.28F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.1F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

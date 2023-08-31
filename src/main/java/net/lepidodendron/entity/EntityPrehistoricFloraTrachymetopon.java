@@ -33,10 +33,10 @@ public class EntityPrehistoricFloraTrachymetopon extends EntityPrehistoricFloraA
 	public EntityPrehistoricFloraTrachymetopon(World world) {
 		super(world);
 		setSize(1.5F, 1.5F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 1.5F;
-		maxHealthAgeable = 21.0D;
+		maxHealthAgeable = 40.0D;
 	}
 
 	@Override

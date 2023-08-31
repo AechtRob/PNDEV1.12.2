@@ -29,7 +29,7 @@ public class RenderTrachymetopon extends RenderLiving<EntityPrehistoricFloraTrac
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTrachymetopon entity, float f) {
-        float scale = this.getScaler();
+        float scale = entity.getAgeScale() * this.getScaler() ;
         if (scale < 0.1f) {
             scale = 0.1f;
         }

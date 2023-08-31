@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.285F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -92,7 +92,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 1.75F;
 		}
 		return speedBase;
 	}
@@ -239,7 +239,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 		//this.renderYawOffset = this.rotationYaw;
 
 		if ((!this.willGrapple) && this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -255,7 +255,9 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 

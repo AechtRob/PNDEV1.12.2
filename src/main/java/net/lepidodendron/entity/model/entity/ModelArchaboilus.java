@@ -196,6 +196,7 @@ public class ModelArchaboilus extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -229,7 +230,7 @@ public class ModelArchaboilus extends AdvancedModelBase {
             if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             } else {
-
+                animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
 
         }
@@ -243,7 +244,7 @@ public class ModelArchaboilus extends AdvancedModelBase {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(xx), main.rotateAngleY + (float) Math.toRadians(yy), main.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(-2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*480/0.5+150))*1.5), main.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+150))*2.5), main.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+60))*2.5));
         this.main.rotationPointX = this.main.rotationPointX + (float)(0);
         this.main.rotationPointY = this.main.rotationPointY - (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*480/0.5+60))*0.1);
         this.main.rotationPointZ = this.main.rotationPointZ + (float)(0);
@@ -496,13 +497,19 @@ public class ModelArchaboilus extends AdvancedModelBase {
             zz = 0;
         }
         this.setRotateAngle(leftlegs3, leftlegs3.rotateAngleX + (float) Math.toRadians(xx), leftlegs3.rotateAngleY + (float) Math.toRadians(yy), leftlegs3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
         this.setRotateAngle(rightantennae, rightantennae.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+120))*5), rightantennae.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+150))*2.5), rightantennae.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+180))*2.5));
+
+
         this.setRotateAngle(leftantennae, leftantennae.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+60))*5), leftantennae.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+90))*2.5), leftantennae.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240/0.5+120))*2.5));
 
     }
 
     public void animFlying(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraArchaboilus entity = (EntityPrehistoricFloraArchaboilus) entitylivingbaseIn;
+
         int animCycle = 20;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -512,13 +519,29 @@ public class ModelArchaboilus extends AdvancedModelBase {
         this.main.rotationPointX = this.main.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5+30))*0.25);
         this.main.rotationPointY = this.main.rotationPointY - (float)(0);
         this.main.rotationPointZ = this.main.rotationPointZ + (float)(0);
+
+
         this.setRotateAngle(rightleg, rightleg.rotateAngleX + (float) Math.toRadians(0), rightleg.rotateAngleY + (float) Math.toRadians(0), rightleg.rotateAngleZ + (float) Math.toRadians(67.5));
+
+
         this.setRotateAngle(leftleg, leftleg.rotateAngleX + (float) Math.toRadians(0), leftleg.rotateAngleY + (float) Math.toRadians(0), leftleg.rotateAngleZ + (float) Math.toRadians(-67.5));
+
+
         this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(0), rightleg2.rotateAngleY + (float) Math.toRadians(-22.5), rightleg2.rotateAngleZ + (float) Math.toRadians(22.5));
+
+
         this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(0), leftleg2.rotateAngleY + (float) Math.toRadians(22.5), leftleg2.rotateAngleZ + (float) Math.toRadians(-22.5));
+
+
         this.setRotateAngle(rightleg3, rightleg3.rotateAngleX + (float) Math.toRadians(0), rightleg3.rotateAngleY + (float) Math.toRadians(0), rightleg3.rotateAngleZ + (float) Math.toRadians(-22.5));
+
+
         this.setRotateAngle(rightlegs3, rightlegs3.rotateAngleX + (float) Math.toRadians(0), rightlegs3.rotateAngleY + (float) Math.toRadians(0), rightlegs3.rotateAngleZ + (float) Math.toRadians(45));
+
+
         this.setRotateAngle(leftleg3, leftleg3.rotateAngleX + (float) Math.toRadians(0), leftleg3.rotateAngleY + (float) Math.toRadians(0), leftleg3.rotateAngleZ + (float) Math.toRadians(22.5));
+
+
         this.setRotateAngle(leftlegs3, leftlegs3.rotateAngleX + (float) Math.toRadians(0), leftlegs3.rotateAngleY + (float) Math.toRadians(0), leftlegs3.rotateAngleZ + (float) Math.toRadians(-45));
 
 
@@ -1299,18 +1322,24 @@ public class ModelArchaboilus extends AdvancedModelBase {
             zz = 0;
         }
         this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(xx), leftwing2.rotateAngleY + (float) Math.toRadians(yy), leftwing2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
         this.setRotateAngle(rightantennae, rightantennae.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5))*5), rightantennae.rotateAngleY + (float) Math.toRadians(0), rightantennae.rotateAngleZ + (float) Math.toRadians(0));
+
+
         this.setRotateAngle(leftantennae, leftantennae.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5-60))*5), leftantennae.rotateAngleY + (float) Math.toRadians(0), leftantennae.rotateAngleZ + (float) Math.toRadians(0));
     }
 
-    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraArchaboilus entity = (EntityPrehistoricFloraArchaboilus) entitylivingbaseIn;
 
-        int animCycle = 14;
-        double tickAnim = animTick + partialTickTime;
+        int animCycle = 10;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
+
         if (tickAnim >= 0 && tickAnim < 1) {
             xx = 20 + (((tickAnim - 0) / 1) * (21.25549-(20)));
             yy = 10 + (((tickAnim - 0) / 1) * (21.70506-(10)));
@@ -1321,10 +1350,10 @@ public class ModelArchaboilus extends AdvancedModelBase {
             yy = 21.70506 + (((tickAnim - 1) / 1) * (10-(21.70506)));
             zz = 4.56993 + (((tickAnim - 1) / 1) * (0-(4.56993)));
         }
-        else if (tickAnim >= 2 && tickAnim < 14) {
-            xx = 20 + (((tickAnim - 2) / 12) * (20-(20)));
-            yy = 10 + (((tickAnim - 2) / 12) * (10-(10)));
-            zz = 0 + (((tickAnim - 2) / 12) * (0-(0)));
+        else if (tickAnim >= 2 && tickAnim < 10) {
+            xx = 20 + (((tickAnim - 2) / 8) * (20-(20)));
+            yy = 10 + (((tickAnim - 2) / 8) * (10-(10)));
+            zz = 0 + (((tickAnim - 2) / 8) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1332,7 +1361,12 @@ public class ModelArchaboilus extends AdvancedModelBase {
             zz = 0;
         }
         this.setRotateAngle(rightwing, rightwing.rotateAngleX + (float) Math.toRadians(xx), rightwing.rotateAngleY + (float) Math.toRadians(yy), rightwing.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
         this.setRotateAngle(rightwing2, rightwing2.rotateAngleX + (float) Math.toRadians(-15), rightwing2.rotateAngleY + (float) Math.toRadians(0), rightwing2.rotateAngleZ + (float) Math.toRadians(0));
+
+
 
         if (tickAnim >= 0 && tickAnim < 1) {
             xx = 20 + (((tickAnim - 0) / 1) * (21.25549-(20)));
@@ -1344,10 +1378,10 @@ public class ModelArchaboilus extends AdvancedModelBase {
             yy = -21.70506 + (((tickAnim - 1) / 1) * (-10-(-21.70506)));
             zz = -4.56993 + (((tickAnim - 1) / 1) * (0-(-4.56993)));
         }
-        else if (tickAnim >= 2 && tickAnim < 14) {
-            xx = 20 + (((tickAnim - 2) / 12) * (20-(20)));
-            yy = -10 + (((tickAnim - 2) / 12) * (-10-(-10)));
-            zz = 0 + (((tickAnim - 2) / 12) * (0-(0)));
+        else if (tickAnim >= 2 && tickAnim < 10) {
+            xx = 20 + (((tickAnim - 2) / 8) * (20-(20)));
+            yy = -10 + (((tickAnim - 2) / 8) * (-10-(-10)));
+            zz = 0 + (((tickAnim - 2) / 8) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1355,8 +1389,12 @@ public class ModelArchaboilus extends AdvancedModelBase {
             zz = 0;
         }
         this.setRotateAngle(leftwing, leftwing.rotateAngleX + (float) Math.toRadians(xx), leftwing.rotateAngleY + (float) Math.toRadians(yy), leftwing.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
         this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(-15), leftwing2.rotateAngleY + (float) Math.toRadians(0), leftwing2.rotateAngleZ + (float) Math.toRadians(0));
     }
+
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);

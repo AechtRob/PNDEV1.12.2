@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraDaohugoucossus extends EntityPrehistoricFlora
 
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	@Override

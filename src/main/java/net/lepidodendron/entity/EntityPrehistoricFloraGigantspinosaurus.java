@@ -70,7 +70,6 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 
 	public static String getPeriod() {return "Jurassic";}
 
-
 	@Override
 	public boolean hasNest() {
 		return true;
@@ -316,7 +315,9 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 				if (this.getOneHit()) {
 					this.setAttackTarget(null);
 					this.setRevengeTarget(null);
+					this.setWarnTarget(null);
 				}
+				this.setOneHit(false);
 			}
 		}
 	}

@@ -1,0 +1,46 @@
+{
+	"name": "Harpagodes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/harpagodes_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_harpagodes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_harpagodes",
+			"title": "Harpagodes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca $(br)>Gastropoda $(br)>Caenogastropoda $(br)>Harpagodidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/harpagodes.png"],
+			"title": "Harpagodes sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harpagodes",
+			"type": "text",
+			"text": "Harpagodes is an unusual and spiky sea snail that has been found in Jurassic to Cretaceous rocks across Europe, the Middle East, Africa, Mesoamerica, and South America. It is immediately recognizable from it's long whorl-like digitations. These finger-like digitations are an iconic feature of Aporrhaidae which gives them the name \"pelican's foot snails.\" However, Harpagodes has much longer spines."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_harpagodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_harpagodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_harpagodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_harpagodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_harpagodes"
+		}
+	]
+}

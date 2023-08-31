@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -121,6 +122,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_orodus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_protozygoptera", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeontinid", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_daohugoucossus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_tiktaalik", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_lonchidion", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_titanoptera", "inventory"),
@@ -290,6 +292,9 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 						}
 
 						SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
+						if (worldIn.getBlockState(pos.offset(facing)).getMaterial() != Material.WATER) {
+							soundevent = SoundEvents.BLOCK_SLIME_PLACE;
+						}
 						worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 						ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
 						if (!player.isCreative()) {

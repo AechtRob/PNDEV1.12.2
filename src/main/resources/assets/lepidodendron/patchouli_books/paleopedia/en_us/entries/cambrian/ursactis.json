@@ -1,0 +1,61 @@
+{
+	"name": "Ursactis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ursactis_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_ursactis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ursactis",
+			"title": "Ursactis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Annelida $(br)>Polychaeta"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ursactis.png"],
+			"title": "U. comosa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ursactis",
+			"type": "text",
+			"text": "Ursactis comosa is a species of Polychaete anellid from the Cambrian of the Burgess shales, Canada. Despite its recent description, as per the time of writing, the animal is already the most abundant Cambrian Polychaete known to date, hailing from a recently discovered locality within the Burgess Shales known as Tokumm Creek and counting more than 580 specimens."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ursactis",
+			"type": "text",
+			"text": "Most specimens were collected between 2018 and 2022 in the newly discovered location, just 6 km northwest of Marble Canyon, digsite that yielded animals like Tokummia, the name of which is unrelated to the name of the new digsite. Specimens of Ursactis have been found in clusters with more than a dozen each, potentially hinting at these animals living in loose communities. This animal had a remarkably low amount of segments"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ursactis",
+			"type": "text",
+			"text": "in the body which increased in size with the body length, showing these early anellids grew by lengthening their segments rather than adding new ones, with the larger individuals possessing not over 10 segments each. The name Ursactis derives from the constellation of Ursa Major and actis, Greek for a ray, referring to the starry appearance of the animal."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ursactis",
+			"type": "text",
+			"text": "Each segment of the animal, called a chaetiger, possessed bump-like appendages on the superior and inferior sides of it, called respectively Notopodia on the top and Neuropodia on the bottom; each notopodium and neuropodium had hair-like structures originate from them, called chetae. The head of Ursactis possessed two palps which would be around 1/5th as long as the whole body of the animal."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ursactis"
+		}
+	]
+}

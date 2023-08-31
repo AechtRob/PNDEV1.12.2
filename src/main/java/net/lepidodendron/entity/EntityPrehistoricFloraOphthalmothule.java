@@ -40,9 +40,9 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 		super(world);
 		setSize(2F, 0.9F);
 		minWidth = 0.1F;
-		maxWidth = 2F;
+		maxWidth = 1.6F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 45.0D;
+		maxHealthAgeable = 40.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.2F;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -75,6 +75,19 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 
 	@Override
 	public void playLivingSound() {
+		if (!this.isReallyInWater()) {
+			return;
+		}
+		if (this.getAnimation() != null) {
+			SoundEvent soundevent = this.getAmbientSound();
+			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+				this.setAnimation(ROAR_ANIMATION);
+				if (soundevent != null)
+				{
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
 	}
 
 	@Override
@@ -163,23 +176,26 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:ophthalmothule_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:ophthalmothule_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:ophthalmothule_death"));
 	}
 
 	@Override
@@ -230,6 +246,7 @@ public class EntityPrehistoricFloraOphthalmothule extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraOphthalmothule(this.world);
 	}
+
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

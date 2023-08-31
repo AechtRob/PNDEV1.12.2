@@ -10,7 +10,7 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
+import net.lepidodendron.entity.render.entity.RenderTanycolagreus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -256,7 +256,6 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
 			if (this.getAnimationTick() == 18) {
-				launchAttack();
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
@@ -265,10 +264,7 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 				}
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				if (this.getOneHit()) {
-					this.setAttackTarget(null);
-					this.setRevengeTarget(null);
-				}
+				launchAttack();
 			}
 		}
 
@@ -336,10 +332,10 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 1;
@@ -353,13 +349,13 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderMegalosaurus.TEXTURE;
+		return RenderTanycolagreus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelMegalosaurus;
+		return RenderDisplays.modelTanycolagreus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderMegalosaurus.getScaler();
+		return RenderTanycolagreus.getScaler();
 	}
 }

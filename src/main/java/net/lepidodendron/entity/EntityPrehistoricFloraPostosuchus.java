@@ -18,7 +18,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -43,10 +42,10 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraPostosuchus(World world) {
 		super(world);
-		setSize(0.85F, 1.82F);
+		setSize(0.95F, 1.92F);
 		minWidth = 0.12F;
-		maxWidth = 0.85F;
-		maxHeight = 1.82F;
+		maxWidth = 0.95F;
+		maxHeight = 1.92F;
 		maxHealthAgeable = 60.0D;
 		NOISE_ANIMATION = Animation.create(25);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -95,7 +94,7 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 40;
 	}
 
 	@Override
@@ -114,7 +113,7 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 30;
 	}
 
 	@Override
@@ -133,17 +132,25 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.580F;
+		float speedBase = 0.3750F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			return 0.0F; //Is drinking
 		}
-		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+		if (this.getIsSneaking()) {
+			speedBase = speedBase * 0.5F;
+		}
+		else if (this.getIsFast()) {
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public float getSneakRange() {
+		return 8;
 	}
 
 	@Override
@@ -163,7 +170,7 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 			this.ambientSoundTime = -this.getAmbientTalkInterval();
 			//if (rand.nextInt(6) != 0) {
 				SoundEvent soundevent = this.getAmbientAmbientSound();
-				if (soundevent != null) {
+				if (soundevent != null && (!this.getIsSneaking())) {
 					if (this.getAnimation() == NO_ANIMATION) {
 						this.setAnimation(NOISE_ANIMATION);
 						//System.err.println("Playing noise sound on remote: " + (world.isRemote));
@@ -272,19 +279,11 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

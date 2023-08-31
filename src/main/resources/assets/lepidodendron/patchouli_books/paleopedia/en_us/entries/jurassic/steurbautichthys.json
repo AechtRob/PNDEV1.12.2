@@ -1,0 +1,61 @@
+{
+	"name": "Steurbautichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/steurbautichthys_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_steurbautichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_steurbautichthys",
+			"title": "Steurbautichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Ankylophoriformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/steurbautichthys.png"],
+			"title": "S. aequatorialis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_steurbautichthys",
+			"type": "text",
+			"text": "Steurbautichthys is a species of Ankylophorid fish from the Middle Jurassic of Congo. As one of the many fish species found in the Kisangani Formation of Congo, this animal would've lived in lacustrine and fluvial waters. Growing up to 25 cm in length, this fish was marked by a rather large, rounded head and a series of anatomical traits of it's cranial anatomy;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_steurbautichthys",
+			"type": "text",
+			"text": "the jaws, covered in small conical teeth, would articulate at around the same height as the back of it's eye socket attaching to the quadrate. The tail of this animal was rather homocercal, meaning the upper and lower part of the caudal fin would've been close to symmetrical. The other fins of the animal were rather small compared to its body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_steurbautichthys",
+			"type": "text",
+			"text": "Like many fishes from the Kisangani Formation, Steurbautichthys was named by Louis Taverne, however the remains were known for many decades before their rediscription in 2011; the first remains of the species were, in fact, described as a species under the genus Pholidophorus in 1962 by de Saint-Seine & Casier."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_steurbautichthys",
+			"type": "text",
+			"text": "The 2011 redescription, while affirming Steurbautichthys' position among Pholidophoriformes, also managed to point out some important distinctions on the animal's anatomy, enough to justify it's placement among Ankylophoridae, family already known from the digsite and represented by the coeval fish Songaichthys."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_steurbautichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_steurbautichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_steurbautichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_steurbautichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_steurbautichthys"
+		}
+	]
+}

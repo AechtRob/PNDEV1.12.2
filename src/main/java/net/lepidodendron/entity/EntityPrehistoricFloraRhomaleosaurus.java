@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraRhomaleosaurus extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraRhomaleosaurus(World world) {
 		super(world);
 		setSize(2F, 0.925F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 2F;
 		maxHeight = 0.925F;
 		maxHealthAgeable = 50.0D;

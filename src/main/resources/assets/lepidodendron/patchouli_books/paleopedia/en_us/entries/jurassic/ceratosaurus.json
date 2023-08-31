@@ -1,0 +1,66 @@
+{
+	"name": "Ceratosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ceratosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_ceratosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ceratosaurus",
+			"title": "Ceratosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Ceratosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ceratosaurus.png"],
+			"title": "C. nasicornis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
+			"type": "text",
+			"text": "Ceratosaurus nasicornis is a species of Ceratosaurian Theropod from the Late Jurassic North America and Portugal. Meaning \"Horned Lizard\", the dinosaur is perhaps among the most famous of Jurassic Theropods, easily recognized by the crests growing on the nose and above the eyes and its proportionally large teeth, muscular legs, reduced arms and the singular row of osteoderms running down its back."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
+			"type": "text",
+			"text": "Although not directly related to birds, the hip bones of Ceratosaurus were fused together in a similar fashion to one. The type specimen the animal was described on was around 5.5 m long but it's unclear if it was fully grown or not, with authors such as David Norman who estimated it growing up to 6.1 m long in 1985, estimation based on an exceptionally large specimen found in the 60s."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
+			"type": "text",
+			"text": "The most famous Ceratosaurus fossils have been found in the Cleveland-Lloyd Dinosaur Quarry in Utah and the Dry Mesa quarry in Colorado, fossils of which were used to describe the species all the way back in 1884 by Othniel Charles Marsh. Further species of Ceratosaurus past the type one have since been discovered, although their validity remains contested to this day."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
+			"type": "text",
+			"text": "Upon its discovery Marsh used Ceratosaurus as a way to further prove the link between dinosaurs and modern day birds while, at the same time, placing it in its own genus, family and infraorder, the Ceratosauria; Edward Drinker Cope contested this classification by citing the presence of the horns as merely proof of it being a new species but not enough to justify a genus for it,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
+			"type": "text",
+			"text": " instead renaming Ceratosaurus inside the growing Wastebasket that Megalosaurus eventually became. It took more than a century for Marsh's original analysis to gain credibility and be widely accepted as before that many authors classified the animal either under Megalosauria, Carnosauria or Coelurosauria, even being considered the most basal Theropod after the Triassic by Gilmore in 1920."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ceratosaurus"
+		}
+	]
+}

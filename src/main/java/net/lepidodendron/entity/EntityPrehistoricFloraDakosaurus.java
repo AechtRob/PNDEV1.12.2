@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraDakosaurus extends EntityPrehistoricFloraAgea
 		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Jurassic [- Cretaceous(?)]";}
 
 	@Override
 	public int airTime() {
@@ -205,10 +205,6 @@ public class EntityPrehistoricFloraDakosaurus extends EntityPrehistoricFloraAgea
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 15 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

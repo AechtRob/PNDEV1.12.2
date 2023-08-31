@@ -79,12 +79,12 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 30;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 20;
 	} //Roar
 
 	@Override
@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.35F;
+		float speedBase = 0.305F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -256,7 +256,6 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
 			if (this.getAnimationTick() == 18) {
-				launchAttack();
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
@@ -265,10 +264,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 				}
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				if (this.getOneHit()) {
-					this.setAttackTarget(null);
-					this.setRevengeTarget(null);
-				}
+				launchAttack();
 			}
 		}
 

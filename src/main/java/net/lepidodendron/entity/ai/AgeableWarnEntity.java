@@ -3,6 +3,7 @@ package net.lepidodendron.entity.ai;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
@@ -57,6 +58,13 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
 
     public boolean shouldExecute()
     {
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+                return false;
+            }
+        }
+
         if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
             EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) this.entity;
             if ((!ageableBase.isPFAdult()) || ageableBase.getWarnTarget() != null || ageableBase.getAttackTarget() != null || ageableBase.getEatTarget() != null) {
@@ -93,6 +101,7 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                 if (this.closestLivingEntity instanceof EntityLivingBase) {
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());
+                    ageableBase.setAttackTarget(null);
                     ageableBase.faceEntity(this.closestLivingEntity, 10, 10);
                     //ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
 

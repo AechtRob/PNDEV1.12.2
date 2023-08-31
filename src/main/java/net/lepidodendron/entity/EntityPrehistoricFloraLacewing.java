@@ -8,7 +8,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderLacewing;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemLacewingEggsItem;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -60,7 +60,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
 	}
 
-
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
 
 	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
@@ -73,9 +76,26 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -478,9 +498,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	@Override
 	public ItemStack getDroppedEggItemStack() {
-		ItemStack stack = new ItemStack(ItemLacewingEggsItem.block, (int) (1));
+		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
 		NBTTagCompound variantNBT = new NBTTagCompound();
 		variantNBT.setString("PNType", this.getPNType().getName());
+		variantNBT.setString("creature", "lepidodendron:prehistoric_fora_lacewing");
 		stack.setTagCompound(variantNBT);
 		return stack;
 	}

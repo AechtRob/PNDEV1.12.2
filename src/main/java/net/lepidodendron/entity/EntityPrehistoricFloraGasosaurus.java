@@ -79,12 +79,12 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 30;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 20;
 	} //Roar
 
 	@Override
@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.37F;
+		float speedBase = 0.280F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -215,25 +215,25 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:gasosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:gasosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:gasosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:gasosaurus_death"));
 	}
 
 	@Override
@@ -254,7 +254,6 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
 			if (this.getAnimationTick() == 18) {
-				launchAttack();
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
@@ -263,10 +262,7 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 				}
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				if (this.getOneHit()) {
-					this.setAttackTarget(null);
-					this.setRevengeTarget(null);
-				}
+				launchAttack();
 			}
 		}
 

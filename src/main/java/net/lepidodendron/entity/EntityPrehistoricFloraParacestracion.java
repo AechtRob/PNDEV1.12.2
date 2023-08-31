@@ -9,7 +9,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderSqualoraja;
+import net.lepidodendron.entity.render.entity.RenderParacestracion;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -339,14 +339,14 @@ public class EntityPrehistoricFloraParacestracion extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderSqualoraja.TEXTURE;
+		return RenderParacestracion.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelSqualoraja;
+		return RenderDisplays.modelParacestracion;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderSqualoraja.getScaler();
+		return RenderParacestracion.getScaler();
 	}
 
 }

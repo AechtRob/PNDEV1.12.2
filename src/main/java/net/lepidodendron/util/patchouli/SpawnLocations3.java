@@ -14,7 +14,7 @@ public class SpawnLocations3 implements IComponentProcessor {
 
     @Override
     public String process(String s) {
-        String biomeList = SpawnLocations1.getBiomeList(this.mob, 20, 30);
+        String biomeList = SpawnLocations1.getBiomeList(this.mob, 17, 26);
         if (biomeList != null) {
             if (!biomeList.equalsIgnoreCase("")) {
                 return biomeList;

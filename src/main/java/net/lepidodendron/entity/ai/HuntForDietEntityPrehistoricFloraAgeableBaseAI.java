@@ -80,7 +80,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if (entityChooser != null) {
                     if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
                         if (!isInWaterforHunting(entityChooser)) {
-                            targetOK = false; //Eurypterids and fish dont attack players on land:
+                            targetOK = false; //Eurypterids and fish don't attack players on land:
                         }
                     }
                     if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
@@ -111,11 +111,17 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if (targetOK) {
                     //Next figure out if this entity drops loot I can eat:
                     ResourceLocation resourcelocation = null;
-                    try {
-                        Method method = entityChooser.getClass().getDeclaredMethod("getLootTable");
-                        method.setAccessible(true); //Uggggh, reflection :(
+                    try { //Uggggh, reflection :(
+                        Method method = entityChooser.getClass().getDeclaredMethod("func_184647_J"); //"getLootTable"
+                        method.setAccessible(true);
                         resourcelocation = (ResourceLocation) method.invoke(entityChooser);
                     } catch (Exception e) {
+                        try { //Uggggh, reflection :(
+                            Method method = entityChooser.getClass().getDeclaredMethod("getLootTable");
+                            method.setAccessible(true);
+                            resourcelocation = (ResourceLocation) method.invoke(entityChooser);
+                        } catch (Exception ee) {
+                        }
                     }
                     if (resourcelocation != null) {
                         LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
@@ -152,6 +158,101 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
         }
 
         return this.targetEntity != null;
+    }
+
+    
+    @Override
+    public boolean shouldContinueExecuting() {
+        //Is there a nearer target it would be better to take, by looking at half my normal hunt distance?
+        if (this.entity.getAttackTarget() != null && (!this.entity.getOneHit()) && this.entity.getRevengeTarget() == null) {
+            List<T> list = this.taskOwner.world.<T>getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance() * 0.5D), this.targetEntitySelector);
+
+            if (list.isEmpty()) {
+                return false;
+            } else {
+                Collections.sort(list, this.sorter);
+                for (EntityLivingBase entityChooser : list) {
+                    boolean targetOK = true;
+                    boolean dietOK = false;
+
+                    if (entityChooser != null) {
+                        if (this.entity instanceof EntityPrehistoricFloraEurypteridBase || this.entity instanceof EntityPrehistoricFloraAgeableFishBase) {
+                            if (!isInWaterforHunting(entityChooser)) {
+                                targetOK = false; //Eurypterids and fish don't attack players on land:
+                            }
+                        }
+                        if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
+                        ) {
+                            //this.entity.setIsFast(false);
+                            targetOK = false;
+                        }
+                        if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
+                        ) {
+                            //this.entity.setIsFast(false);
+                            targetOK = false;
+                        }
+                        if ((!this.cannibal) && (entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
+                        ) { //Disallow cannibalism!
+                            //this.entity.setIsFast(false);
+                            targetOK = false;
+                        }
+                    }
+
+
+                    if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
+                        if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietMeat")) {
+                            this.targetEntity = entityChooser;
+                            break;
+                        }
+                    }
+
+                    if (targetOK) {
+                        //Next figure out if this entity drops loot I can eat and is it closer than what I am currently hunting:
+                        ResourceLocation resourcelocation = null;
+                        try { //Uggggh, reflection :(
+                            Method method = entityChooser.getClass().getDeclaredMethod("func_184647_J"); //"getLootTable"
+                            method.setAccessible(true);
+                            resourcelocation = (ResourceLocation) method.invoke(entityChooser);
+                        } catch (Exception e) {
+                            try { //Uggggh, reflection :(
+                                Method method = entityChooser.getClass().getDeclaredMethod("getLootTable");
+                                method.setAccessible(true);
+                                resourcelocation = (ResourceLocation) method.invoke(entityChooser);
+                            } catch (Exception ee) {
+                            }
+                        }
+                        if (resourcelocation != null) {
+                            LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+                            LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE);
+
+                            for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
+                                //Loop over the itemstack to see what it is:
+                                String[] oreDictList = this.entity.getFoodOreDicts();
+                                for (String oreDict : oreDictList) {
+                                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
+                                        dietOK = true;
+                                        break;
+                                    }
+                                }
+                                if (dietOK) {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager)) {
+                        if (this.entity.getDistance(entityChooser) < this.entity.getDistance(this.entity.getAttackTarget())) {
+                            this.targetEntity = entityChooser;
+                            this.entity.setAttackTarget(this.targetEntity);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return super.shouldContinueExecuting();
     }
 
     public boolean isInWaterforHunting(Entity entity) {

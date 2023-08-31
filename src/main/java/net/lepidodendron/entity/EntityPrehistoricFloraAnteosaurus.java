@@ -117,7 +117,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.37F;
+			speedBase = speedBase * 2.00F;
 		}
 		return speedBase;
 	}
@@ -175,7 +175,6 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		return DietString.MEAT;
 	}
 
-	
 
 	@Override
 	public boolean findGrappleTarget() {
@@ -268,10 +267,6 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {

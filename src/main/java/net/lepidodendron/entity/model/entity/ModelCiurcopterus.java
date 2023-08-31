@@ -396,6 +396,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Ciurcopterus.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.Ciurcopterus.rotateAngleY = (float) Math.toRadians(360);
         this.setRotateAngle(Body, 1.5F, 0.0F, -0.25F);
@@ -405,6 +406,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(TergiteA1, 0.1F, 0.0F, 0.0F);
@@ -420,6 +422,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -474,6 +477,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
             }
         }
     }
+
     @Override
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);

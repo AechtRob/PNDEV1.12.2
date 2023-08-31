@@ -178,13 +178,13 @@ public class EntityPrehistoricFloraHovasaurus extends EntityPrehistoricFloraSwim
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hovasaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:claudiosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hovasaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:claudiosaurus_hurt"));
 	}
 
 	//@Override
@@ -195,7 +195,7 @@ public class EntityPrehistoricFloraHovasaurus extends EntityPrehistoricFloraSwim
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hovasaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:claudiosaurus_death"));
 	}
 
 	//@Override
@@ -235,10 +235,6 @@ public class EntityPrehistoricFloraHovasaurus extends EntityPrehistoricFloraSwim
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

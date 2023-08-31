@@ -7,6 +7,9 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderBelonostomusCretaceous;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -120,7 +123,7 @@ public class EntityPrehistoricFloraBelonostomusCretaceous extends EntityPrehisto
 		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
 	}
 
-	
+
 
 	@Override
 	public boolean isAIDisabled() {
@@ -209,56 +212,56 @@ public class EntityPrehistoricFloraBelonostomusCretaceous extends EntityPrehisto
 
 	//Rendering taxidermy:
 	//--------------------
-//	public static double offsetWall(@Nullable String variant) {
-//		return 0.21;
-//	}
-//	public static double upperfrontverticallinedepth(@Nullable String variant) {
-//		return 0.8;
-//	}
-//	public static double upperbackverticallinedepth(@Nullable String variant) {
-//		return 0.8;
-//	}
-//	public static double upperfrontlineoffset(@Nullable String variant) {
-//		return 0.2;
-//	}
-//	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return -0.04F;
-//	}
-//	public static double upperbacklineoffset(@Nullable String variant) {
-//		return 0.2;
-//	}
-//	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-//		return -0.04F;
-//	}
-//	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerbackverticallinedepth(@Nullable String variant) {
-//		return 0.7;
-//	}
-//	public static double lowerfrontlineoffset(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0F;
-//	}
-//	public static double lowerbacklineoffset(@Nullable String variant) {
-//		return -0.03;
-//	}
-//	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-//		return -0.14F;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderDisplays.TEXTURE_ASPIDORHYNCHUS;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelAspidorhynchus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderAspidorhynchus.getScaler();
-//	}
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.55;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.035;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.04F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderBelonostomusCretaceous.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelBelonostomus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderBelonostomusCretaceous.getScaler();
+	}
 
 }
 

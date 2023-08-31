@@ -1,0 +1,46 @@
+{
+	"name": "Scheenstia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scheenstia_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_scheenstia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scheenstia",
+			"title": "Scheenstia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Actinopterygii $(br)>Lepisosteiformes $(br)>Lepidotidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/scheenstia.png"],
+			"title": "S. maxima",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scheenstia",
+			"type": "text",
+			"text": "Scheenstia is an extinct genus of large, neopterygian ray-finned fish from the Late Jurassic Period to the Early Cretaceous Period. The teeth of this genus were replaced synchronously, meaning they do a full 180 rotation during development, something not seen in any other vertebrates. The closest living relatives of the Scheenstia are the Gars."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scheenstia"
+		}
+	]
+}

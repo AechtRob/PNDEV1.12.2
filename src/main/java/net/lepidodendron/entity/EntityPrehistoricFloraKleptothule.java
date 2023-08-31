@@ -28,10 +28,10 @@ public class EntityPrehistoricFloraKleptothule extends EntityPrehistoricFloraEur
 
 	public EntityPrehistoricFloraKleptothule(World world) {
 		super(world);
-		setSize(0.25F, 0.25F);
+		setSize(0.25F, 0.15F);
 		minWidth = 0.1F;
 		maxWidth = 0.25F;
-		maxHeight = 0.25F;
+		maxHeight = 0.15F;
 		maxHealthAgeable = 2.0D;
 	}
 

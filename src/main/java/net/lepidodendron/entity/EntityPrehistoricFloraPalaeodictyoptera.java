@@ -24,6 +24,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
@@ -73,6 +74,11 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -83,9 +89,26 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraPalaeodictyoptera)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -347,7 +370,28 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setPNType(Type.byId(rand.nextInt(Type.values().length) + 1));
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		return livingdata;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
+	}
+
+	protected void setSizer(float width, float height)
+	{
+		if (width != this.width || height != this.height)
+		{
+			float f = this.width;
+			this.width = width;
+			this.height = height;
+			if (this.width < f) {
+				double d0 = (double) width / 2.0D;
+				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+			}
+		}
 	}
 
 	@Override
@@ -500,7 +544,8 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(Math.floor(this.getHitBoxSize()[0] * 15F));
+		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

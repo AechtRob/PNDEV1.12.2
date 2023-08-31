@@ -1,0 +1,46 @@
+{
+	"name": "Saurostomus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/saurostomus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_saurostomus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_saurostomus",
+			"title": "Saurostomus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Pachycormiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/saurostomus.png"],
+			"title": "S. esocinus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saurostomus",
+			"type": "text",
+			"text": "Saurostomus is an extinct genus of Osteichthyes or bony fish, living during the Early Jurassic Period of Europe. It was a medium sized pachycormid fish that likely hunted by chasing its prey down."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_saurostomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_saurostomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_saurostomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_saurostomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_saurostomus"
+		}
+	]
+}

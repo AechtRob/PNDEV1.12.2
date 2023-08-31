@@ -71,6 +71,11 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -116,6 +121,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		}
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

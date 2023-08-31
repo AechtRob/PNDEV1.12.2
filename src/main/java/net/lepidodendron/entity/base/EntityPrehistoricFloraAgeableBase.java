@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.ShoalingHelper;
@@ -57,6 +58,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> HUNTING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> ISFAST = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> ISSNEAKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
@@ -105,6 +107,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
+    public float getSneakRange() {
+        return 0;
+    }
+
     @Override
     public void onUpdate() {
         if (!this.updateBlocked) {
@@ -124,6 +130,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public boolean hasPNVariants() {
         return false;
+    }
+
+    /**
+     * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+     * -1 = the variants must be different to breed
+     * 0 = the variants can be either different or the same to breed
+     * 1 = the variants must be the same to breed
+    */
+    public byte breedPNVariantsMatch() {
+        return 0;
     }
 
     public ItemStack getPropagule() {
@@ -442,6 +458,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(TICKS, 0);
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
+        this.dataManager.register(ISSNEAKING, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
@@ -477,11 +494,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             EntityLivingBase ee = this.getAttackTarget();
             if (ee.isRiding() && this.breaksBoat()) {
                 Entity boat = ee.getRidingEntity();
-                if (boat instanceof EntityBoat) {
+                if (boat instanceof EntityBoat && (!(boat instanceof PrehistoricFloraSubmarine))) {
                     boat.setDead();
                     this.playSound(SoundEvents.ENTITY_ZOMBIE_BREAK_DOOR_WOOD, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 }
             }
+            if (this.getOneHit()) {
+                this.setAttackTarget(null);
+                this.setRevengeTarget(null);
+                this.setWarnTarget(null);
+            }
+            this.setOneHit(false);
         }
     }
 
@@ -579,6 +602,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.set(ISFAST, isFast);
     }
 
+    public boolean getIsSneaking() {
+        return this.dataManager.get(ISSNEAKING);
+    }
+
+    public void setIsSneaking(boolean isSneaking) {
+        this.dataManager.set(ISSNEAKING, isSneaking);
+    }
+
     public boolean getIsMoving() {
         return this.dataManager.get(ISMOVING);
     }
@@ -604,6 +635,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setTicks(0);
         this.setTickOffset(rand.nextInt(1000));
         this.setIsFast(false);
+        this.setIsSneaking(false);
         this.setWillHunt(false);
         //this.heal(this.getMaxHealth());
         //this.setNoAI(false);
@@ -695,6 +727,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("TickOffset", this.getTickOffset());
         compound.setBoolean("willHunt", this.getWillHunt());
         compound.setBoolean("isFast", this.getIsFast());
+        compound.setBoolean("isSneaking", this.getIsSneaking());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
@@ -714,6 +747,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setTickOffset(compound.getInteger("TickOffset"));
         this.setWillHunt(compound.getBoolean("willHunt"));
         this.setIsFast(compound.getBoolean("isFast"));
+        this.setIsSneaking(compound.getBoolean("isSneaking"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
@@ -870,6 +904,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+        this.renderYawOffset = this.rotationYaw;
 
         if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
@@ -883,6 +918,26 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 }
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+
+            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
+                //If this is hunting and is not close enough, sneak up:
+                float distEntity = this.getDistancePrey(this.getAttackTarget());
+                if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+                    this.setIsSneaking(true);
+                }
+                if (this.getIsSneaking() &&
+                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity <= (this.getSneakRange() * 0.5)
+                ) {
+                    this.setIsSneaking(false);
+                }
+            }
+            else {
+                this.setIsSneaking(false);
+            }
+
+            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
+                this.setSneaking(false);
+            }
 
         }
 
@@ -920,6 +975,19 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
     }
 
+    public float getDistancePrey(Entity entityIn)
+    {
+        double entityX = this.getEntityBoundingBox().minX + ((this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX)/2.0D);
+        double entityZ = this.getEntityBoundingBox().minZ + ((this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ)/2.0D);
+        double preyX = entityIn.getEntityBoundingBox().minX + ((entityIn.getEntityBoundingBox().maxX - entityIn.getEntityBoundingBox().minX)/2.0D);
+        double preyZ = entityIn.getEntityBoundingBox().minZ + ((entityIn.getEntityBoundingBox().maxZ - entityIn.getEntityBoundingBox().minZ)/2.0D);
+
+        float f = (float)(entityX - preyX);
+        float f1 = (float)(this.posY - entityIn.posY);
+        float f2 = (float)(entityZ - preyZ);
+        return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2);
+    }
+
     public int grappleChance() {
         return 500;
     }
@@ -936,7 +1004,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public void playLivingSound() {
         //super.playLivingSound();
-        if (this.getAnimation() == NO_ANIMATION) {
+        if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
             if (!this.world.isRemote) {
             //if (this.getAnimation() == NO_ANIMATION) {
                 //this.setAnimation(ROAR_ANIMATION);
@@ -1003,11 +1071,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.alarmCooldown --;
         }
 
-        if (this.warnCooldown > 0) {
-            this.warnCooldown --;
-        }
+//        if (this.warnCooldown > 0) {
+//            this.warnCooldown --;
+//        }
 
         if (this.getWarnTarget() != null && !world.isRemote) {
+            if (this.warnCooldown > 0) {
+                this.warnCooldown --;
+            }
             this.faceEntity(this.getWarnTarget(), 10, 10);
             //this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());

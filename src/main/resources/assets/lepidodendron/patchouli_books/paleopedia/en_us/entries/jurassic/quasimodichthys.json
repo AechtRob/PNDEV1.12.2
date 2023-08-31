@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
 			"type": "text",
-			"text": "Quasimodichthys is a Jurassic semionotiforme. It is characterized by a hump on its back, which is where the first part of its name 'Quasimodo,' from the Hunchback of Notre Dame, comes from."
+			"text": "Quasimodichthys is a species of Semionotiform fish from the Late Jurassic of Brazil. Formerly known as a species of Lepidotes, the animal received its new genus name only rather recently, making it fully distinct. The remains of this animal come from the Pastos Bons Formation of Brazil, which back in the Late Jurassic was part of an extensive warm arid environment;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
+			"type": "text",
+			"text": "Quasimodichthys would've lived in saline lakes the temperature of which could've reached 20-30°C (68-86 F), interspaced by dry periods which would cause mass cyclical death events. Alongside this peculiar fish, the same digsites also yield Ostracods, Mawsoniids, Pleuropholids and other Semionotids. The generic name of the animal was given in honor of the fictional character Quasimodo"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
+			"type": "text",
+			"text": " from \"The Hunchback of Notre-Dame\" by Victor Hugo. Rather large at around 45-50 cm long, this fish would develop a characteristic hunched back with age, characteristic not seen in young individuals. Thanks to the mass death events that lead to the preservation of this animal, we have plenty of complete and well preserved specimens, shedding light on the complete ontogenetic series of this fish and allowing for a clear view of its life stages."
 		},
 		{
 			"type": "lepidodendron:diet",

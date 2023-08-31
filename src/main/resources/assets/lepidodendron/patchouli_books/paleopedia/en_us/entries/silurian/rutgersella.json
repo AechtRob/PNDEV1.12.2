@@ -1,0 +1,46 @@
+{
+	"name": "Rutgersella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rutgersella_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_rutgersella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rutgersella",
+			"title": "Rutgersella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rutgersella.png"],
+			"title": "R. truexi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rutgersella",
+			"type": "text",
+			"text": "Rutgersella is a problematic fossil hailing from the Early Silurian Period, Pennsylvania. The reasoning for its problematic position in the Silurian is that it resembles lifeforms like Dickinsonia, which went extinct at the end of the Ediacaran Period, some 95 Mya, which suggests it may be a very late surviving vendobiont"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rutgersella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rutgersella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rutgersella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rutgersella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rutgersella"
+		}
+	]
+}

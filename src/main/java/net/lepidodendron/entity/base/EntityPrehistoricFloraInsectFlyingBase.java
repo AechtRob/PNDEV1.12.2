@@ -115,6 +115,16 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         return false;
     }
 
+    /**
+     * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+     * -1 = the variants must be different to breed
+     * 0 = the variants can be either different or the same to breed
+     * 1 = the variants must be the same to breed
+     */
+    public byte breedPNVariantsMatch() {
+        return 0;
+    }
+
     public ItemStack getDroppedEggItemStack() {
         return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
@@ -536,12 +546,12 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             ) {
                 if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
                 ) {
-                    if (Math.random() > 0.5) {
+                    //if (Math.random() > 0.5) {
                         this.setTicks(-50); //Flag this as stationary for egg-laying
                         this.setAnimation(LAY_ANIMATION);
-                    }
+                    //}
                 }
-                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > -30 && this.getTicks() < 0) {
+                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() >= -50 && this.getTicks() < 0) {
                     //Is stationary for egg-laying:
                     //System.err.println("Laying an egg in it");
 
@@ -677,6 +687,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.inPFLove > 0)
         {

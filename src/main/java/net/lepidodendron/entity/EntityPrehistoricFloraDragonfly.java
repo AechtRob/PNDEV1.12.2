@@ -62,6 +62,11 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -72,9 +77,26 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraDragonfly)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraDragonfly)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraDragonfly)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -119,6 +141,7 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		return ItemStack.EMPTY;
 	}
 
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}

@@ -214,10 +214,6 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -295,8 +291,14 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 	@Override
 	protected double getAISpeedSwim() {
 		if (!this.isReallySwimming()) {
+			if (this.getIsFast()) {
+				return 0.25F;
+			}
 			return 0.2f;
 		} else {
+			if (this.getIsFast()) {
+				return 0.3F;
+			}
 			return 0.13f;
 		}
 	}
