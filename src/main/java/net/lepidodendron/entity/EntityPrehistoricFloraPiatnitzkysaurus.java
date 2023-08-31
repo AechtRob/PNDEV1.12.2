@@ -79,12 +79,12 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 30;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 20;
 	} //Roar
 
 	@Override
@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.35F;
+		float speedBase = 0.305F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

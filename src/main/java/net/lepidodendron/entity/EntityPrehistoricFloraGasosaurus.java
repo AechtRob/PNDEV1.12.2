@@ -79,12 +79,12 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 30;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 20;
 	} //Roar
 
 	@Override
@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.37F;
+		float speedBase = 0.280F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -215,25 +215,25 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:gasosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:gasosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:gasosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:gasosaurus_death"));
 	}
 
 	@Override

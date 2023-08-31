@@ -7265,6 +7265,81 @@
         "stream": false
       }
     ]
-  }
+  },
 
+
+  "gasosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gasosaurus_living01",
+        "stream": false
+      }
+    ]
+  },
+  "gasosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gasosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gasosaurus_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "gasosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gasosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "gasosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gasosaurus_roar01",
+        "stream": false
+      }
+    ]
+  },
+
+
+  "piatnitzkysaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:piatnitzkysaurus_living01",
+        "stream": false
+      }
+    ]
+  },
+  "piatnitzkysaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:piatnitzkysaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:piatnitzkysaurus_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "piatnitzkysaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:piatnitzkysaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "piatnitzkysaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:piatnitzkysaurus_roar01",
+        "stream": false
+      }
+    ]
+  }
 }
