@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderEryon;
+import net.lepidodendron.entity.render.entity.RenderMecochirus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -196,14 +197,14 @@ public class EntityPrehistoricFloraMecochirus extends EntityPrehistoricFloraTril
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderEryon.TEXTURE;
+		return RenderMecochirus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelEryon;
+		return RenderDisplays.modelMecochirus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderEryon.getScaler();
+		return RenderMecochirus.getScaler();
 	}
 
 }

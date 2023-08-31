@@ -4,7 +4,9 @@ package net.lepidodendron.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.render.entity.RenderKayentatherium;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
+import net.lepidodendron.entity.render.entity.RenderTritylodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -151,14 +153,14 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPseudotherium.TEXTURE;
+		return RenderKayentatherium.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPseudotherium;
+		return RenderDisplays.modelKayentatherium;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPseudotherium.getScaler();
+		return RenderKayentatherium.getScaler();
 	}
 
 }

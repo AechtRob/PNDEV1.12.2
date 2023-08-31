@@ -367,9 +367,20 @@ public class ModelMecochirus extends AdvancedModelBase {
     }
     
     public void renderStaticFloor(float f) {
-
-        this.body.offsetZ = -0.04F;
-        this.body.offsetY = 0.09F;
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(armL2, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(armL3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(armL4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(armR2, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(armR3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(armR4, 0.2F, 0.0F, 0.0F);
+        this.body.offsetY = 0.12F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }

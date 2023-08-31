@@ -641,14 +641,26 @@ public class ModelEchinochimaera extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.root.offsetY = -0.13F;
-        this.root.offsetX = -0.06F;
-        this.root.render(0.01F);
+        this.body.offsetY = -0.01F;
+        this.body.offsetX = 0.01F;
+        this.body.offsetZ = 0.13F;
+        this.malejaw.rotateAngleX = (float) Math.toRadians(22.5);
+        this.body.rotateAngleX = (float) Math.toRadians(0);
+        this.body.rotateAngleZ = (float) Math.toRadians(0);
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tailmale, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tailmale2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tailmale3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tailmale4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tailfemale, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tailfemale2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tailfemale3, 0.0F, -0.5F, 0.0F);
+        this.root.offsetY = -0.2F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
