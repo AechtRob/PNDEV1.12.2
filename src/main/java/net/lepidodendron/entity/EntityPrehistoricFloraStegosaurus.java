@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderStegosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -34,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -84,6 +84,25 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	@Override
 	public int getRoarLength() {
 		return 44;
+	} //Idle
+
+	@Override
+	public int getNoiseLength() {
+		return 44;
+	} //Roar
+
+	@Override
+	public int getHurtLength() {
+		return 44;
+	} //Hurt uses roar
+
+	@Override
+	public int getTalkInterval() {
+		return 360;
+	}
+
+	@Override
+	public int getRoarInterval() {return 900;
 	}
 
 	@Override
@@ -119,11 +138,6 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
-	}
-
-	@Override
-	public int getTalkInterval() {
-		return 80;
 	}
 
 	@Override
@@ -258,21 +272,27 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public SoundEvent getRoarSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_roar"));
+	}
+
+	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_death"));
 	}
 
 	@Override

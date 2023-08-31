@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderKentrosaurus;
+import net.lepidodendron.entity.render.entity.RenderGigantspinosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 
 	@Override
 	public int getRoarLength() {
-		return 24;
+		return 40;
 	}
 
 	@Override
@@ -260,7 +260,7 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:gigantspinosaurus_idle"));
 	}
 
 	@Override
@@ -421,14 +421,14 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderKentrosaurus.TEXTURE;
+		return RenderGigantspinosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelKentrosaurus;
+		return RenderDisplays.modelGigantspinosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderKentrosaurus.getScaler();
+		return RenderGigantspinosaurus.getScaler();
 	}
 
 

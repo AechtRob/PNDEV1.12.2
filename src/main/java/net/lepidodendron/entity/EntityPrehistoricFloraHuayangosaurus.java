@@ -265,7 +265,7 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:huayangosaurus_idle"));
 	}
 
 	@Override

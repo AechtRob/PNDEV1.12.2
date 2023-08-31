@@ -150,7 +150,7 @@ public class ModelHaplophrentis extends AdvancedModelBase {
                 if (ee.getIsMoving()) {
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 } else {
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 }
             }
             else {
@@ -519,6 +519,7 @@ public class ModelHaplophrentis extends AdvancedModelBase {
             yy = 0;
             zz = 0;
         }
+        zz = 0;
         this.base.rotationPointX = this.base.rotationPointX + (float)(xx);
         this.base.rotationPointY = this.base.rotationPointY - (float)(yy);
         this.base.rotationPointZ = this.base.rotationPointZ + (float)(zz);

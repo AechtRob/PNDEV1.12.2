@@ -264,7 +264,7 @@ public class EntityPrehistoricFloraTuojiangosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:tuojiangosaurus_idle"));
 	}
 
 	@Override

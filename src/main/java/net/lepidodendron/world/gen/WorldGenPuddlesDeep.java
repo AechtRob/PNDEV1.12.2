@@ -39,6 +39,22 @@ public class WorldGenPuddlesDeep extends WorldGenerator
                 worldIn.setBlockState(blockpos.down().west().north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
                 worldIn.setBlockState(blockpos.down().east().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
                 worldIn.setBlockState(blockpos.down().west().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).east(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).west(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).east().north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).west().north(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).east().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                if (worldIn.rand.nextInt(4) == 0)
+                    worldIn.setBlockState(blockpos.down(2).west().south(), Blocks.FLOWING_WATER.getDefaultState(), 2);
 
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault && worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_pleuromeia_beds")) {
                     if (rand.nextInt(300) == 0) {

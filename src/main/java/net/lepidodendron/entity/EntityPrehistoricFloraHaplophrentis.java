@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	public boolean getMovingOnLand() {
 		int animCycle = 28;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=10 && tickAnim < 24)) {
+		if (tickAnim >=7 && tickAnim < 27) {
 			return true;
 		}
 		else {
