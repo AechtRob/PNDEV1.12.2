@@ -52,6 +52,17 @@ public class ItemSpawnEggDragonfly extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -13421546 ;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -2105950 ;
+		}
+
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]";
 		}
