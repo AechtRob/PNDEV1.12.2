@@ -35,6 +35,8 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -327,6 +329,16 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 10;
+		}
+
+		@Override
+		@Nullable
+		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
+		{
+			if (worldIn.getBlockState(new BlockPos(start)).getBlock() == this) {
+				return null;
+			}
+			return super.collisionRayTrace(blockState, worldIn, pos, start, end);
 		}
 
 		@Override

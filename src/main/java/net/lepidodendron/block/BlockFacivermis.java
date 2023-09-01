@@ -39,6 +39,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -311,6 +313,16 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
+		}
+
+		@Override
+		@Nullable
+		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
+		{
+			if (worldIn.getBlockState(new BlockPos(start)).getBlock() == this) {
+				return null;
+			}
+			return super.collisionRayTrace(blockState, worldIn, pos, start, end);
 		}
 
 		@Override
