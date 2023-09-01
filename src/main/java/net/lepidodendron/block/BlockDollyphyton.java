@@ -118,13 +118,6 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		@Nullable
-		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
-		{
-			return null;
-		}
-
-		@Override
 		public boolean hasTileEntity(IBlockState state) {
 			return true;
 		}

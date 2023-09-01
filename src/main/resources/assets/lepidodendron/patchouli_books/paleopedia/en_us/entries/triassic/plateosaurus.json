@@ -20,17 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_plateosaurus",
 			"type": "text",
-			"text": "Plateosaurus is a genus of Plateosaurid Sauropodomorph from the Late Triassic of Europe and Greenland.\nAlthough in the recent past known from remains assigned to many species, today Plateosaurus is only recognised from three, many others since being reassigned to other genera inside the group, like the South American Plateosaurus finds being reassigned to Mussaurus."
+			"text": "Plateosaurus is a genus of Plateosaurid Sauropodomorph from the Late Triassic of Europe and Greenland. Although in the recent past known from remains assigned to many species, today Plateosaurus is only recognised from three, many others since being reassigned to other genera inside the group, like the South American Plateosaurus finds being reassigned to Mussaurus."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_plateosaurus",
 			"type": "text",
-			"text": "Plateosaurus was a large bipedal herbivore that measured in its adult stage between 4-10 m in length.\nThe animal, like other members of its group, had a long neck ending in a small head and a long tail; the arms of Plateosaurus were short but ended in powerful hands adapted for grasping while the legs, with the lower part of them proportionally larger than the top, were consistent with an animal able to run surprisingly fast for its body size."
+			"text": "Plateosaurus was a large bipedal herbivore that measured in its adult stage between 4-10 m in length. The animal, like other members of its group, had a long neck ending in a small head and a long tail; the arms of Plateosaurus were short but ended in powerful hands adapted for grasping while the legs, with the lower part of them proportionally larger than the top, were consistent with an animal able to run surprisingly fast for its body size."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_plateosaurus",
 			"type": "text",
-			"text": "The head was long and rectangular, hosting a series of leaf shaped teeth specifically adapted for a herbivorous diet, with a jaw capable of delivering very strong biteforces.\nThe animal was discovered for the first time in 1834 by Johann Friedrich Engelhard and named by Christian Erich Hermann von Meyer, from which the scientific name of the once type species P. engelhardti came from, now considered to be undiagnostic."
+			"text": "The head was long and rectangular, hosting a series of leaf shaped teeth specifically adapted for a herbivorous diet, with a jaw capable of delivering very strong biteforces. The animal was discovered for the first time in 1834 by Johann Friedrich Engelhard and named by Christian Erich Hermann von Meyer, from which the scientific name of the once type species P. engelhardti came from, now considered to be undiagnostic."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_plateosaurus",
@@ -40,7 +40,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_plateosaurus",
 			"type": "text",
-			"text": "Due to this confusing history, Plateosaurus has been known under many names in the past, a wide range of Junior synonyms now for the most part invalid.\nWith more than 100 skeletons known today, several of which almost complete, Plateosauru is one of the better known dinosaurs to science and boasts the title of the third oldest valid dinosaur to be named."
+			"text": "Due to this confusing history, Plateosaurus has been known under many names in the past, a wide range of Junior synonyms now for the most part invalid. With more than 100 skeletons known today, several of which almost complete, Plateosauru is one of the better known dinosaurs to science and boasts the title of the third oldest valid dinosaur to be named."
 		},
 		{
 			"type": "lepidodendron:diet",

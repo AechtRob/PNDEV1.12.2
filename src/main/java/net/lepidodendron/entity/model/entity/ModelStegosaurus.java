@@ -6109,7 +6109,7 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
 
 
-        this.setRotateAngle(upperbody, upperbody.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-360))*1), upperbody.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75+250))*1.5), upperbody.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(upperbody, upperbody.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-360))*1), upperbody.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-250))*1.5), upperbody.rotateAngleZ + (float) Math.toRadians(0));
 
 
 
@@ -6181,22 +6181,22 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 2) {
             xx = 0 + (((tickAnim - 0) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 2) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 0) / 2) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
         }
         else if (tickAnim >= 2 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 2) / 1) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 2) / 1) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 2) / 1) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 2) / 1) * (0-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 3) / 2) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 3) / 2) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 5) / 2) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 5) / 2) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
         }
         else if (tickAnim >= 7 && tickAnim < 13) {
@@ -6206,22 +6206,22 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 13 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 13) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 13) / 2) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 13) / 2) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 13) / 2) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 17) {
             xx = 0 + (((tickAnim - 15) / 2) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 15) / 2) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 15) / 2) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 15) / 2) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 17) / 1) * (0-(0)));
-            yy = 0 + (((tickAnim - 17) / 1) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 17) / 1) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 17) / 1) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 20) {
             xx = 0 + (((tickAnim - 18) / 2) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 18) / 2) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 18) / 2) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 18) / 2) * (0-(0)));
         }
         else {
@@ -6302,22 +6302,22 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 2) {
             xx = 0 + (((tickAnim - 0) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 2) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 0) / 2) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
         }
         else if (tickAnim >= 2 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 2) / 1) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 2) / 1) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 2) / 1) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 2) / 1) * (0-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 3) / 2) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 3) / 2) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 5) / 2) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 5) / 2) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
         }
         else if (tickAnim >= 7 && tickAnim < 13) {
@@ -6327,22 +6327,22 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 13 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 13) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 13) / 2) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 13) / 2) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 13) / 2) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 17) {
             xx = 0 + (((tickAnim - 15) / 2) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 15) / 2) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 15) / 2) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 15) / 2) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 17) / 1) * (0-(0)));
-            yy = 0 + (((tickAnim - 17) / 1) * (-0.275-(0)));
+            yy = 0 + (((tickAnim - 17) / 1) * (-0.1-(0)));
             zz = 0 + (((tickAnim - 17) / 1) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 20) {
             xx = 0 + (((tickAnim - 18) / 2) * (0-(0)));
-            yy = -0.275 + (((tickAnim - 18) / 2) * (0-(-0.275)));
+            yy = -0.1 + (((tickAnim - 18) / 2) * (0-(-0.1)));
             zz = 0 + (((tickAnim - 18) / 2) * (0-(0)));
         }
         else {
@@ -6353,15 +6353,31 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         this.body.rotationPointX = this.body.rotationPointX + (float)(xx);
         this.body.rotationPointY = this.body.rotationPointY - (float)(yy);
         this.body.rotationPointZ = this.body.rotationPointZ + (float)(zz);
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(xx), tail2.rotateAngleY + (float) Math.toRadians(yy), tail2.rotateAngleZ + (float) Math.toRadians(zz));
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*6), tail3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*5));
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0), tail4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*7), tail4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*5));
-        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-850))*8), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*7));
-        this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(0), tail6.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*10), tail6.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*9));
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0), neck.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-360))*3), neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75+360))*2));
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(0), neck2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*2), neck2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*5));
-        this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(xx), neck3.rotateAngleY + (float) Math.toRadians(yy), neck3.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-360))*-3), tail2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*-5), tail2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*-5));
+
+
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*6), tail3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*5));
+
+
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0), tail4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*7), tail4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*5));
+
+
+        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-850))*8), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*7));
+
+
+        this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(0), tail6.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*10), tail6.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*9));
+
+
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0), neck.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-360))*3), neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75+360))*2));
+
+
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(0), neck2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*2), neck2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*5));
+
+
+        this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-360))*-3), neck3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*-5), neck3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*270/0.75-750))*-5));
 
 
 
@@ -6436,45 +6452,35 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
             yy = 2.7 + (((tickAnim - 8) / 10) * (0-(2.7)));
             zz = 0 + (((tickAnim - 8) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 18 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 18) / 1) * (0-(0)));
-            yy = 0 + (((tickAnim - 18) / 1) * (-0.26-(0)));
-            zz = 0 + (((tickAnim - 18) / 1) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 18) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 18) / 5) * (-0.075-(0)));
+            zz = 0 + (((tickAnim - 18) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 19 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 19) / 4) * (0-(0)));
-            yy = -0.26 + (((tickAnim - 19) / 4) * (-0.01-(-0.26)));
-            zz = 0 + (((tickAnim - 19) / 4) * (0-(0)));
+        else if (tickAnim >= 23 && tickAnim < 26) {
+            xx = 0 + (((tickAnim - 23) / 3) * (0-(0)));
+            yy = -0.075 + (((tickAnim - 23) / 3) * (0.25-(-0.075)));
+            zz = 0 + (((tickAnim - 23) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 24) {
-            xx = 0 + (((tickAnim - 23) / 1) * (0-(0)));
-            yy = -0.01 + (((tickAnim - 23) / 1) * (-0.37-(-0.01)));
-            zz = 0 + (((tickAnim - 23) / 1) * (0-(0)));
+        else if (tickAnim >= 26 && tickAnim < 29) {
+            xx = 0 + (((tickAnim - 26) / 3) * (0-(0)));
+            yy = 0.25 + (((tickAnim - 26) / 3) * (-0.075-(0.25)));
+            zz = 0 + (((tickAnim - 26) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 24 && tickAnim < 27) {
-            xx = 0 + (((tickAnim - 24) / 3) * (0-(0)));
-            yy = -0.37 + (((tickAnim - 24) / 3) * (-0.12-(-0.37)));
-            zz = 0 + (((tickAnim - 24) / 3) * (0-(0)));
+        else if (tickAnim >= 29 && tickAnim < 33) {
+            xx = 0 + (((tickAnim - 29) / 4) * (0-(0)));
+            yy = -0.075 + (((tickAnim - 29) / 4) * (0.25-(-0.075)));
+            zz = 0 + (((tickAnim - 29) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 27 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 27) / 1) * (0-(0)));
-            yy = -0.12 + (((tickAnim - 27) / 1) * (-0.48-(-0.12)));
-            zz = 0 + (((tickAnim - 27) / 1) * (0-(0)));
+        else if (tickAnim >= 33 && tickAnim < 37) {
+            xx = 0 + (((tickAnim - 33) / 4) * (0-(0)));
+            yy = 0.25 + (((tickAnim - 33) / 4) * (-0.075-(0.25)));
+            zz = 0 + (((tickAnim - 33) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 28 && tickAnim < 31) {
-            xx = 0 + (((tickAnim - 28) / 3) * (0-(0)));
-            yy = -0.48 + (((tickAnim - 28) / 3) * (-0.23-(-0.48)));
-            zz = 0 + (((tickAnim - 28) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 31 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 31) / 2) * (0-(0)));
-            yy = -0.23 + (((tickAnim - 31) / 2) * (-0.6-(-0.23)));
-            zz = 0 + (((tickAnim - 31) / 2) * (0-(0)));
-        }
-        else if (tickAnim >= 33 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 33) / 7) * (0-(0)));
-            yy = -0.6 + (((tickAnim - 33) / 7) * (0.7-(-0.6)));
-            zz = 0 + (((tickAnim - 33) / 7) * (0-(0)));
+        else if (tickAnim >= 37 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 37) / 3) * (0-(0)));
+            yy = -0.075 + (((tickAnim - 37) / 3) * (0.7-(-0.075)));
+            zz = 0 + (((tickAnim - 37) / 3) * (0-(0)));
         }
         else {
             xx = 0;
@@ -6606,45 +6612,40 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(backleftleg, backleftleg.rotateAngleX + (float) Math.toRadians(xx), backleftleg.rotateAngleY + (float) Math.toRadians(yy), backleftleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 0 + (((tickAnim - 0) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 2) * (0.04-(0)));
-            zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 3) * (-0.075-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 4) {
-            xx = 0 + (((tickAnim - 2) / 2) * (0-(0)));
-            yy = 0.04 + (((tickAnim - 2) / 2) * (0.49-(0.04)));
-            zz = 0 + (((tickAnim - 2) / 2) * (0-(0)));
+        else if (tickAnim >= 3 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 3) / 5) * (0-(0)));
+            yy = -0.075 + (((tickAnim - 3) / 5) * (0.3-(-0.075)));
+            zz = 0 + (((tickAnim - 3) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 4 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 4) / 1) * (0-(0)));
-            yy = 0.49 + (((tickAnim - 4) / 1) * (0.04-(0.49)));
-            zz = 0 + (((tickAnim - 4) / 1) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 11) {
+            xx = 0 + (((tickAnim - 8) / 3) * (0-(0)));
+            yy = 0.3 + (((tickAnim - 8) / 3) * (-0.075-(0.3)));
+            zz = 0 + (((tickAnim - 8) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 5) / 3) * (0-(0)));
-            yy = 0.04 + (((tickAnim - 5) / 3) * (0.69-(0.04)));
-            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+        else if (tickAnim >= 11 && tickAnim < 14) {
+            xx = 0 + (((tickAnim - 11) / 3) * (0-(0)));
+            yy = -0.075 + (((tickAnim - 11) / 3) * (0.325-(-0.075)));
+            zz = 0 + (((tickAnim - 11) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 8 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 8) / 2) * (0-(0)));
-            yy = 0.69 + (((tickAnim - 8) / 2) * (0.54-(0.69)));
-            zz = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+        else if (tickAnim >= 14 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 14) / 4) * (0-(0)));
+            yy = 0.325 + (((tickAnim - 14) / 4) * (-0.075-(0.325)));
+            zz = 0 + (((tickAnim - 14) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 10 && tickAnim < 13) {
-            xx = 0 + (((tickAnim - 10) / 3) * (0-(0)));
-            yy = 0.54 + (((tickAnim - 10) / 3) * (0.79-(0.54)));
-            zz = 0 + (((tickAnim - 10) / 3) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 18) / 5) * (0-(0)));
+            yy = -0.075 + (((tickAnim - 18) / 5) * (1.9-(-0.075)));
+            zz = 0 + (((tickAnim - 18) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 13 && tickAnim < 18) {
-            xx = 0 + (((tickAnim - 13) / 5) * (0-(0)));
-            yy = 0.79 + (((tickAnim - 13) / 5) * (0.7-(0.79)));
-            zz = 0 + (((tickAnim - 13) / 5) * (0-(0)));
-        }
-        else if (tickAnim >= 18 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 18) / 10) * (0-(0)));
-            yy = 0.7 + (((tickAnim - 18) / 10) * (2.7-(0.7)));
-            zz = 0 + (((tickAnim - 18) / 10) * (0-(0)));
+        else if (tickAnim >= 23 && tickAnim < 28) {
+            xx = 0 + (((tickAnim - 23) / 5) * (0-(0)));
+            yy = 1.9 + (((tickAnim - 23) / 5) * (2.7-(1.9)));
+            zz = 0 + (((tickAnim - 23) / 5) * (0-(0)));
         }
         else if (tickAnim >= 28 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 28) / 12) * (0-(0)));
@@ -6759,12 +6760,12 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 18) {
-            xx = 1 + (((tickAnim - 0) / 18) * (-12-(1)));
+            xx = 1 + (((tickAnim - 0) / 18) * (-14-(1)));
             yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 28) {
-            xx = -12 + (((tickAnim - 18) / 10) * (17.91-(-12)));
+            xx = -14 + (((tickAnim - 18) / 10) * (17.91-(-14)));
             yy = 0 + (((tickAnim - 18) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 18) / 10) * (0-(0)));
         }
@@ -6788,13 +6789,18 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-            yy = -1 + (((tickAnim - 0) / 5) * (-0.47-(-1)));
+            yy = -1 + (((tickAnim - 0) / 5) * (-0.6-(-1)));
             zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 18) {
-            xx = 0 + (((tickAnim - 5) / 13) * (0-(0)));
-            yy = -0.47 + (((tickAnim - 5) / 13) * (-0.9-(-0.47)));
-            zz = 0 + (((tickAnim - 5) / 13) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 5) / 8) * (0-(0)));
+            yy = -0.6 + (((tickAnim - 5) / 8) * (-0.57-(-0.6)));
+            zz = 0 + (((tickAnim - 5) / 8) * (0-(0)));
+        }
+        else if (tickAnim >= 13 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 13) / 5) * (0-(0)));
+            yy = -0.57 + (((tickAnim - 13) / 5) * (-0.9-(-0.57)));
+            zz = 0 + (((tickAnim - 13) / 5) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 18) / 22) * (0-(0)));
@@ -6841,40 +6847,30 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(frontrightleg2, frontrightleg2.rotateAngleX + (float) Math.toRadians(xx), frontrightleg2.rotateAngleY + (float) Math.toRadians(yy), frontrightleg2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 4) {
-            xx = 0 + (((tickAnim - 0) / 4) * (0-(0)));
-            yy = -1 + (((tickAnim - 0) / 4) * (-0.26-(-1)));
-            zz = 0 + (((tickAnim - 0) / 4) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+            yy = -1 + (((tickAnim - 0) / 3) * (-0.545-(-1)));
+            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 4 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 4) / 2) * (0-(0)));
-            yy = -0.26 + (((tickAnim - 4) / 2) * (-0.37-(-0.26)));
-            zz = 0 + (((tickAnim - 4) / 2) * (0-(0)));
+        else if (tickAnim >= 3 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
+            yy = -0.545 + (((tickAnim - 3) / 2) * (-0.345-(-0.545)));
+            zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 6) / 2) * (0-(0)));
-            yy = -0.37 + (((tickAnim - 6) / 2) * (-0.12-(-0.37)));
-            zz = 0 + (((tickAnim - 6) / 2) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            yy = -0.345 + (((tickAnim - 5) / 5) * (-0.25-(-0.345)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 8 && tickAnim < 11) {
-            xx = 0 + (((tickAnim - 8) / 3) * (0-(0)));
-            yy = -0.12 + (((tickAnim - 8) / 3) * (-0.48-(-0.12)));
-            zz = 0 + (((tickAnim - 8) / 3) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 16) {
+            xx = 0 + (((tickAnim - 10) / 6) * (0-(0)));
+            yy = -0.25 + (((tickAnim - 10) / 6) * (-0.54-(-0.25)));
+            zz = 0 + (((tickAnim - 10) / 6) * (0-(0)));
         }
-        else if (tickAnim >= 11 && tickAnim < 13) {
-            xx = 0 + (((tickAnim - 11) / 2) * (0-(0)));
-            yy = -0.48 + (((tickAnim - 11) / 2) * (-0.23-(-0.48)));
-            zz = 0 + (((tickAnim - 11) / 2) * (0-(0)));
-        }
-        else if (tickAnim >= 13 && tickAnim < 14) {
-            xx = 0 + (((tickAnim - 13) / 1) * (0-(0)));
-            yy = -0.23 + (((tickAnim - 13) / 1) * (-0.6-(-0.23)));
-            zz = 0 + (((tickAnim - 13) / 1) * (0-(0)));
-        }
-        else if (tickAnim >= 14 && tickAnim < 22) {
-            xx = 0 + (((tickAnim - 14) / 8) * (0-(0)));
-            yy = -0.6 + (((tickAnim - 14) / 8) * (-1.425-(-0.6)));
-            zz = 0 + (((tickAnim - 14) / 8) * (0-(0)));
+        else if (tickAnim >= 16 && tickAnim < 22) {
+            xx = 0 + (((tickAnim - 16) / 6) * (0-(0)));
+            yy = -0.54 + (((tickAnim - 16) / 6) * (-1.425-(-0.54)));
+            zz = 0 + (((tickAnim - 16) / 6) * (0-(0)));
         }
         else if (tickAnim >= 22 && tickAnim < 24) {
             xx = 0 + (((tickAnim - 22) / 2) * (0-(0)));
@@ -6973,15 +6969,15 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 27) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 27) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 32 && tickAnim < 38) {
-            xx = 50 + (((tickAnim - 32) / 6) * (12.12-(50)));
-            yy = 0 + (((tickAnim - 32) / 6) * (0-(0)));
-            zz = 0 + (((tickAnim - 32) / 6) * (0-(0)));
+        else if (tickAnim >= 32 && tickAnim < 36) {
+            xx = 50 + (((tickAnim - 32) / 4) * (16.12-(50)));
+            yy = 0 + (((tickAnim - 32) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 32) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 38 && tickAnim < 40) {
-            xx = 12.12 + (((tickAnim - 38) / 2) * (20-(12.12)));
-            yy = 0 + (((tickAnim - 38) / 2) * (0-(0)));
-            zz = 0 + (((tickAnim - 38) / 2) * (0-(0)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = 16.12 + (((tickAnim - 36) / 4) * (20-(16.12)));
+            yy = 0 + (((tickAnim - 36) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 36) / 4) * (0-(0)));
         }
         else {
             xx = 0;
@@ -6991,34 +6987,34 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(frontrightleg4, frontrightleg4.rotateAngleX + (float) Math.toRadians(xx), frontrightleg4.rotateAngleY + (float) Math.toRadians(yy), frontrightleg4.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 0) / 6) * (0-(0)));
-            yy = 0.1 + (((tickAnim - 0) / 6) * (0.48-(0.1)));
-            zz = 0.1 + (((tickAnim - 0) / 6) * (0.08-(0.1)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0.3 + (((tickAnim - 0) / 5) * (-0.375-(0.3)));
+            zz = 0.1 + (((tickAnim - 0) / 5) * (0-(0.1)));
         }
-        else if (tickAnim >= 6 && tickAnim < 11) {
-            xx = 0 + (((tickAnim - 6) / 5) * (0-(0)));
-            yy = 0.48 + (((tickAnim - 6) / 5) * (0.68-(0.48)));
-            zz = 0.08 + (((tickAnim - 6) / 5) * (0.05-(0.08)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 0 + (((tickAnim - 5) / 6) * (0-(0)));
+            yy = -0.375 + (((tickAnim - 5) / 6) * (0.15-(-0.375)));
+            zz = 0 + (((tickAnim - 5) / 6) * (0-(0)));
         }
         else if (tickAnim >= 11 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 11) / 4) * (0-(0)));
-            yy = 0.68 + (((tickAnim - 11) / 4) * (0.51-(0.68)));
-            zz = 0.05 + (((tickAnim - 11) / 4) * (0.03-(0.05)));
+            yy = 0.15 + (((tickAnim - 11) / 4) * (0.175-(0.15)));
+            zz = 0 + (((tickAnim - 11) / 4) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 15) / 3) * (0-(0)));
-            yy = 0.51 + (((tickAnim - 15) / 3) * (0.33-(0.51)));
-            zz = 0.03 + (((tickAnim - 15) / 3) * (0.01-(0.03)));
+            yy = 0.175 + (((tickAnim - 15) / 3) * (0-(0.175)));
+            zz = 0 + (((tickAnim - 15) / 3) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 18) / 4) * (0-(0)));
-            yy = 0.33 + (((tickAnim - 18) / 4) * (0-(0.33)));
-            zz = 0.01 + (((tickAnim - 18) / 4) * (0-(0.01)));
+            yy = 0 + (((tickAnim - 18) / 4) * (-0.1-(0)));
+            zz = 0 + (((tickAnim - 18) / 4) * (0-(0)));
         }
         else if (tickAnim >= 22 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 22) / 18) * (0-(0)));
-            yy = 0 + (((tickAnim - 22) / 18) * (0.35-(0)));
+            yy = -0.1 + (((tickAnim - 22) / 18) * (0.35-(-0.1)));
             zz = 0 + (((tickAnim - 22) / 18) * (0.1-(0)));
         }
         else {
@@ -7033,20 +7029,20 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 11 + (((tickAnim - 0) / 6) * (12.59-(11)));
-            yy = 0 + (((tickAnim - 0) / 6) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 6) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 11 + (((tickAnim - 0) / 5) * (12.59-(11)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 13) {
-            xx = 12.59 + (((tickAnim - 6) / 7) * (3-(12.59)));
-            yy = 0 + (((tickAnim - 6) / 7) * (0-(0)));
-            zz = 0 + (((tickAnim - 6) / 7) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 12.59 + (((tickAnim - 5) / 6) * (3-(12.59)));
+            yy = 0 + (((tickAnim - 5) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 6) * (0-(0)));
         }
-        else if (tickAnim >= 13 && tickAnim < 18) {
-            xx = 3 + (((tickAnim - 13) / 5) * (-20-(3)));
-            yy = 0 + (((tickAnim - 13) / 5) * (0-(0)));
-            zz = 0 + (((tickAnim - 13) / 5) * (0-(0)));
+        else if (tickAnim >= 11 && tickAnim < 18) {
+            xx = 3 + (((tickAnim - 11) / 7) * (-20-(3)));
+            yy = 0 + (((tickAnim - 11) / 7) * (0-(0)));
+            zz = 0 + (((tickAnim - 11) / 7) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 40) {
             xx = -20 + (((tickAnim - 18) / 22) * (11-(-20)));
@@ -7061,55 +7057,40 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(frontleftleg2, frontleftleg2.rotateAngleX + (float) Math.toRadians(xx), frontleftleg2.rotateAngleY + (float) Math.toRadians(yy), frontleftleg2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 0) / 6) * (0-(0)));
-            yy = -1.35 + (((tickAnim - 0) / 6) * (-0.41-(-1.35)));
-            zz = 0 + (((tickAnim - 0) / 6) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = -1.35 + (((tickAnim - 0) / 5) * (-0.41-(-1.35)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 18) {
-            xx = 0 + (((tickAnim - 6) / 12) * (0-(0)));
-            yy = -0.41 + (((tickAnim - 6) / 12) * (0-(-0.41)));
-            zz = 0 + (((tickAnim - 6) / 12) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 5) / 13) * (0-(0)));
+            yy = -0.41 + (((tickAnim - 5) / 13) * (0-(-0.41)));
+            zz = 0 + (((tickAnim - 5) / 13) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 18) / 4) * (0-(0)));
-            yy = 0 + (((tickAnim - 18) / 4) * (-0.26-(0)));
+            yy = 0 + (((tickAnim - 18) / 4) * (-0.2-(0)));
             zz = 0 + (((tickAnim - 18) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 22 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 22) / 1) * (0-(0)));
-            yy = -0.26 + (((tickAnim - 22) / 1) * (-0.01-(-0.26)));
-            zz = 0 + (((tickAnim - 22) / 1) * (0-(0)));
+        else if (tickAnim >= 22 && tickAnim < 27) {
+            xx = 0 + (((tickAnim - 22) / 5) * (0-(0)));
+            yy = -0.2 + (((tickAnim - 22) / 5) * (-0.61-(-0.2)));
+            zz = 0 + (((tickAnim - 22) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 24) {
-            xx = 0 + (((tickAnim - 23) / 1) * (0-(0)));
-            yy = -0.01 + (((tickAnim - 23) / 1) * (-0.37-(-0.01)));
-            zz = 0 + (((tickAnim - 23) / 1) * (0-(0)));
+        else if (tickAnim >= 27 && tickAnim < 32) {
+            xx = 0 + (((tickAnim - 27) / 5) * (0-(0)));
+            yy = -0.61 + (((tickAnim - 27) / 5) * (-0.8-(-0.61)));
+            zz = 0 + (((tickAnim - 27) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 24 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 24) / 4) * (0-(0)));
-            yy = -0.37 + (((tickAnim - 24) / 4) * (-0.12-(-0.37)));
-            zz = 0 + (((tickAnim - 24) / 4) * (0-(0)));
+        else if (tickAnim >= 32 && tickAnim < 36) {
+            xx = 0 + (((tickAnim - 32) / 4) * (0-(0)));
+            yy = -0.8 + (((tickAnim - 32) / 4) * (-1.285-(-0.8)));
+            zz = 0 + (((tickAnim - 32) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 28 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 28) / 0) * (0-(0)));
-            yy = -0.12 + (((tickAnim - 28) / 0) * (-0.48-(-0.12)));
-            zz = 0 + (((tickAnim - 28) / 0) * (0-(0)));
-        }
-        else if (tickAnim >= 28 && tickAnim < 32) {
-            xx = 0 + (((tickAnim - 28) / 4) * (0-(0)));
-            yy = -0.48 + (((tickAnim - 28) / 4) * (-0.23-(-0.48)));
-            zz = 0 + (((tickAnim - 28) / 4) * (0-(0)));
-        }
-        else if (tickAnim >= 32 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 32) / 1) * (0-(0)));
-            yy = -0.23 + (((tickAnim - 32) / 1) * (-0.6-(-0.23)));
-            zz = 0 + (((tickAnim - 32) / 1) * (0-(0)));
-        }
-        else if (tickAnim >= 33 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 33) / 7) * (0-(0)));
-            yy = -0.6 + (((tickAnim - 33) / 7) * (-1.35-(-0.6)));
-            zz = 0 + (((tickAnim - 33) / 7) * (0-(0)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 36) / 4) * (0-(0)));
+            yy = -1.285 + (((tickAnim - 36) / 4) * (-1.35-(-1.285)));
+            zz = 0 + (((tickAnim - 36) / 4) * (0-(0)));
         }
         else {
             xx = 0;
@@ -7184,24 +7165,24 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 3) / 10) * (0-(0)));
         }
         else if (tickAnim >= 13 && tickAnim < 18) {
-            xx = 46.36 + (((tickAnim - 13) / 5) * (12.04-(46.36)));
+            xx = 46.36 + (((tickAnim - 13) / 5) * (7.79-(46.36)));
             yy = 0 + (((tickAnim - 13) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 13) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 18 && tickAnim < 20) {
-            xx = 12.04 + (((tickAnim - 18) / 2) * (20-(12.04)));
-            yy = 0 + (((tickAnim - 18) / 2) * (0-(0)));
-            zz = 0 + (((tickAnim - 18) / 2) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 22) {
+            xx = 7.79 + (((tickAnim - 18) / 4) * (18-(7.79)));
+            yy = 0 + (((tickAnim - 18) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 18) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 29) {
-            xx = 20 + (((tickAnim - 20) / 9) * (5.8536-(20)));
-            yy = 0 + (((tickAnim - 20) / 9) * (0.20406-(0)));
-            zz = 0 + (((tickAnim - 20) / 9) * (-1.98957-(0)));
+        else if (tickAnim >= 22 && tickAnim < 31) {
+            xx = 18 + (((tickAnim - 22) / 9) * (5.8536-(18)));
+            yy = 0 + (((tickAnim - 22) / 9) * (0.20406-(0)));
+            zz = 0 + (((tickAnim - 22) / 9) * (-1.98957-(0)));
         }
-        else if (tickAnim >= 29 && tickAnim < 40) {
-            xx = 5.8536 + (((tickAnim - 29) / 11) * (-11.25-(5.8536)));
-            yy = 0.20406 + (((tickAnim - 29) / 11) * (0-(0.20406)));
-            zz = -1.98957 + (((tickAnim - 29) / 11) * (0-(-1.98957)));
+        else if (tickAnim >= 31 && tickAnim < 40) {
+            xx = 5.8536 + (((tickAnim - 31) / 9) * (-11.25-(5.8536)));
+            yy = 0.20406 + (((tickAnim - 31) / 9) * (0-(0.20406)));
+            zz = -1.98957 + (((tickAnim - 31) / 9) * (0-(-1.98957)));
         }
         else {
             xx = 0;
@@ -7216,45 +7197,35 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 0) / 3) * (0.1-(0)));
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 3) / 17) * (0-(0)));
-            yy = 0.1 + (((tickAnim - 3) / 17) * (0.1-(0.1)));
-            zz = 0 + (((tickAnim - 3) / 17) * (0.1-(0)));
+        else if (tickAnim >= 3 && tickAnim < 22) {
+            xx = 0 + (((tickAnim - 3) / 19) * (0-(0)));
+            yy = 0.1 + (((tickAnim - 3) / 19) * (0.025-(0.1)));
+            zz = 0 + (((tickAnim - 3) / 19) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 20) / 3) * (0-(0)));
-            yy = 0.1 + (((tickAnim - 20) / 3) * (0.49-(0.1)));
-            zz = 0.1 + (((tickAnim - 20) / 3) * (0.08-(0.1)));
+        else if (tickAnim >= 22 && tickAnim < 25) {
+            xx = 0 + (((tickAnim - 22) / 3) * (0-(0)));
+            yy = 0.025 + (((tickAnim - 22) / 3) * (0.4-(0.025)));
+            zz = 0 + (((tickAnim - 22) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 26) {
-            xx = 0 + (((tickAnim - 23) / 3) * (0-(0)));
-            yy = 0.49 + (((tickAnim - 23) / 3) * (1.07-(0.49)));
-            zz = 0.08 + (((tickAnim - 23) / 3) * (0.07-(0.08)));
+        else if (tickAnim >= 25 && tickAnim < 28) {
+            xx = 0 + (((tickAnim - 25) / 3) * (0-(0)));
+            yy = 0.4 + (((tickAnim - 25) / 3) * (0.5-(0.4)));
+            zz = 0 + (((tickAnim - 25) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 26 && tickAnim < 29) {
-            xx = 0 + (((tickAnim - 26) / 3) * (0-(0)));
-            yy = 1.07 + (((tickAnim - 26) / 3) * (0.59-(1.07)));
-            zz = 0.07 + (((tickAnim - 26) / 3) * (0.06-(0.07)));
+        else if (tickAnim >= 28 && tickAnim < 31) {
+            xx = 0 + (((tickAnim - 28) / 3) * (0-(0)));
+            yy = 0.5 + (((tickAnim - 28) / 3) * (0.7-(0.5)));
+            zz = 0 + (((tickAnim - 28) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 29 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 29) / 4) * (0-(0)));
-            yy = 0.59 + (((tickAnim - 29) / 4) * (0.63-(0.59)));
-            zz = 0.06 + (((tickAnim - 29) / 4) * (0.04-(0.06)));
+        else if (tickAnim >= 31 && tickAnim < 36) {
+            xx = 0 + (((tickAnim - 31) / 5) * (0-(0)));
+            yy = 0.7 + (((tickAnim - 31) / 5) * (0.45-(0.7)));
+            zz = 0 + (((tickAnim - 31) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 33 && tickAnim < 34) {
-            xx = 0 + (((tickAnim - 33) / 1) * (0-(0)));
-            yy = 0.63 + (((tickAnim - 33) / 1) * (0.72-(0.63)));
-            zz = 0.04 + (((tickAnim - 33) / 1) * (0.03-(0.04)));
-        }
-        else if (tickAnim >= 34 && tickAnim < 37) {
-            xx = 0 + (((tickAnim - 34) / 3) * (0-(0)));
-            yy = 0.72 + (((tickAnim - 34) / 3) * (0.42-(0.72)));
-            zz = 0.03 + (((tickAnim - 34) / 3) * (0.02-(0.03)));
-        }
-        else if (tickAnim >= 37 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 37) / 3) * (0-(0)));
-            yy = 0.42 + (((tickAnim - 37) / 3) * (0-(0.42)));
-            zz = 0.02 + (((tickAnim - 37) / 3) * (0-(0.02)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 36) / 4) * (0-(0)));
+            yy = 0.45 + (((tickAnim - 36) / 4) * (0-(0.45)));
+            zz = 0 + (((tickAnim - 36) / 4) * (0-(0)));
         }
         else {
             xx = 0;
@@ -7301,45 +7272,15 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
             yy = -0.9 + (((tickAnim - 0) / 18) * (-0.8-(-0.9)));
             zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
         }
-        else if (tickAnim >= 18 && tickAnim < 21) {
-            xx = 0 + (((tickAnim - 18) / 3) * (0-(0)));
-            yy = -0.8 + (((tickAnim - 18) / 3) * (-0.51-(-0.8)));
-            zz = 0 + (((tickAnim - 18) / 3) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 29) {
+            xx = 0 + (((tickAnim - 18) / 11) * (0-(0)));
+            yy = -0.8 + (((tickAnim - 18) / 11) * (-0.25-(-0.8)));
+            zz = 0 + (((tickAnim - 18) / 11) * (0-(0)));
         }
-        else if (tickAnim >= 21 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 21) / 2) * (0-(0)));
-            yy = -0.51 + (((tickAnim - 21) / 2) * (-0.11-(-0.51)));
-            zz = 0 + (((tickAnim - 21) / 2) * (0-(0)));
-        }
-        else if (tickAnim >= 23 && tickAnim < 26) {
-            xx = 0 + (((tickAnim - 23) / 3) * (0-(0)));
-            yy = -0.11 + (((tickAnim - 23) / 3) * (0.49-(-0.11)));
-            zz = 0 + (((tickAnim - 23) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 26 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 26) / 2) * (0-(0)));
-            yy = 0.49 + (((tickAnim - 26) / 2) * (0.08-(0.49)));
-            zz = 0 + (((tickAnim - 26) / 2) * (0-(0)));
-        }
-        else if (tickAnim >= 28 && tickAnim < 31) {
-            xx = 0 + (((tickAnim - 28) / 3) * (0-(0)));
-            yy = 0.08 + (((tickAnim - 28) / 3) * (0.72-(0.08)));
-            zz = 0 + (((tickAnim - 28) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 31 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 31) / 2) * (0-(0)));
-            yy = 0.72 + (((tickAnim - 31) / 2) * (0.36-(0.72)));
-            zz = 0 + (((tickAnim - 31) / 2) * (0-(0)));
-        }
-        else if (tickAnim >= 33 && tickAnim < 36) {
-            xx = 0 + (((tickAnim - 33) / 3) * (0-(0)));
-            yy = 0.36 + (((tickAnim - 33) / 3) * (0.04-(0.36)));
-            zz = 0 + (((tickAnim - 33) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 36 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 36) / 4) * (0-(0)));
-            yy = 0.04 + (((tickAnim - 36) / 4) * (-0.9-(0.04)));
-            zz = 0 + (((tickAnim - 36) / 4) * (0-(0)));
+        else if (tickAnim >= 29 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 29) / 11) * (0-(0)));
+            yy = -0.25 + (((tickAnim - 29) / 11) * (-0.9-(-0.25)));
+            zz = 0 + (((tickAnim - 29) / 11) * (0-(0)));
         }
         else {
             xx = 0;
@@ -7354,130 +7295,102 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
 
         this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+50))*-1), tail.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*-3), tail.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+50))*-1));
 
-        if (tickAnim >= 0 && tickAnim < 1) {
-            xx = 0 + (((tickAnim - 0) / 1) * (0-(0)));
-            yy = -0.1 + (((tickAnim - 0) / 1) * (-0.25-(-0.1)));
-            zz = 0 + (((tickAnim - 0) / 1) * (0-(0)));
-        }
-        else if (tickAnim >= 1 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 1) / 18) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 1) / 18) * (0-(-0.25)));
-            zz = 0 + (((tickAnim - 1) / 18) * (0-(0)));
-        }
-        else if (tickAnim >= 19 && tickAnim < 22) {
-            xx = 0 + (((tickAnim - 19) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 19) / 3) * (-0.45-(0)));
-            zz = 0 + (((tickAnim - 19) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 22 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 22) / 1) * (0-(0)));
-            yy = -0.45 + (((tickAnim - 22) / 1) * (0-(-0.45)));
-            zz = 0 + (((tickAnim - 22) / 1) * (0-(0)));
-        }
-        else if (tickAnim >= 23 && tickAnim < 36) {
-            xx = 0 + (((tickAnim - 23) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 23) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 23) / 13) * (0-(0)));
-        }
-        else if (tickAnim >= 36 && tickAnim < 39) {
-            xx = 0 + (((tickAnim - 36) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 36) / 3) * (-0.25-(0)));
-            zz = 0 + (((tickAnim - 36) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 39 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 39) / 1) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 39) / 1) * (0-(-0.25)));
-            zz = 0 + (((tickAnim - 39) / 1) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.tail.rotationPointX = this.tail.rotationPointX + (float)(xx);
-        this.tail.rotationPointY = this.tail.rotationPointY - (float)(yy);
-        this.tail.rotationPointZ = this.tail.rotationPointZ + (float)(zz);
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(xx), tail2.rotateAngleY + (float) Math.toRadians(yy), tail2.rotateAngleZ + (float) Math.toRadians(zz));
+
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-170))*-1), tail2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-170))*2.5), tail2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-170))*-3));
+
+
         this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+190))*2.5), tail3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+190))*-3));
+
+
         this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0), tail4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+200))*3.5), tail4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+200))*-5));
+
+
         this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+220))*3), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+220))*-5));
+
+
         this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(0), tail6.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+250))*1), tail6.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+250))*-1));
+
+
         this.setRotateAngle(body2, body2.rotateAngleX + (float) Math.toRadians(-2.25+Math.sin((Math.PI/180)*(135/0.75-10))*2), body2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*-1), body2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+180))*1));
-        this.setRotateAngle(upperbody, upperbody.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-360))*1), upperbody.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+250))*2), upperbody.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-120))*1));
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-10))), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+55))*1.5));
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360+10))*1), neck2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*1), neck2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*1));
-        this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-195))*1), neck3.rotateAngleY + (float) Math.toRadians(0), neck3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-150))*1));
-        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
-        this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(0), body.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-55))*1), body.rotateAngleZ + (float) Math.toRadians(0));
 
         if (tickAnim >= 0 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            yy = -0.1 + (((tickAnim - 0) / 3) * (-0.5-(-0.1)));
+            yy = 0 + (((tickAnim - 0) / 3) * (-0.15-(0)));
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            yy = -0.5 + (((tickAnim - 3) / 2) * (0-(-0.5)));
-            zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
+        else if (tickAnim >= 3 && tickAnim < 7) {
+            xx = 0 + (((tickAnim - 3) / 4) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 3) / 4) * (0-(-0.15)));
+            zz = 0 + (((tickAnim - 3) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 5) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 5) / 3) * (-0.5-(0)));
-            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 7) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 7) / 3) * (-0.15-(0)));
+            zz = 0 + (((tickAnim - 7) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 8 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 8) / 2) * (0-(0)));
-            yy = -0.5 + (((tickAnim - 8) / 2) * (0-(-0.5)));
-            zz = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 10) / 3) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 10) / 3) * (0-(-0.15)));
+            zz = 0 + (((tickAnim - 10) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 10 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
-            yy = 0 + (((tickAnim - 10) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+        else if (tickAnim >= 13 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 13) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 13) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 13) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 20) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 20) / 3) * (-0.1-(0)));
-            zz = 0 + (((tickAnim - 20) / 3) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 21) {
+            xx = 0 + (((tickAnim - 18) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 18) / 3) * (-0.15-(0)));
+            zz = 0 + (((tickAnim - 18) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 23) / 2) * (0-(0)));
-            yy = -0.1 + (((tickAnim - 23) / 2) * (-0.5-(-0.1)));
-            zz = 0 + (((tickAnim - 23) / 2) * (0-(0)));
+        else if (tickAnim >= 21 && tickAnim < 24) {
+            xx = 0 + (((tickAnim - 21) / 3) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 21) / 3) * (0-(-0.15)));
+            zz = 0 + (((tickAnim - 21) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 25 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 25) / 3) * (0-(0)));
-            yy = -0.5 + (((tickAnim - 25) / 3) * (0-(-0.5)));
-            zz = 0 + (((tickAnim - 25) / 3) * (0-(0)));
+        else if (tickAnim >= 24 && tickAnim < 28) {
+            xx = 0 + (((tickAnim - 24) / 4) * (0-(0)));
+            yy = 0 + (((tickAnim - 24) / 4) * (-0.15-(0)));
+            zz = 0 + (((tickAnim - 24) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 28 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 28) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 28) / 2) * (-0.5-(0)));
-            zz = 0 + (((tickAnim - 28) / 2) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 30) / 3) * (0-(0)));
-            yy = -0.5 + (((tickAnim - 30) / 3) * (0-(-0.5)));
-            zz = 0 + (((tickAnim - 30) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 33 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 33) / 7) * (0-(0)));
-            yy = 0 + (((tickAnim - 33) / 7) * (0-(0)));
-            zz = 0 + (((tickAnim - 33) / 7) * (0-(0)));
+        else if (tickAnim >= 28 && tickAnim < 31) {
+            xx = 0 + (((tickAnim - 28) / 3) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 28) / 3) * (0-(-0.15)));
+            zz = 0 + (((tickAnim - 28) / 3) * (0-(0)));
         }
         else {
             xx = 0;
             yy = 0;
             zz = 0;
         }
-        this.body.rotationPointX = this.body.rotationPointX + (float)(xx);
-        this.body.rotationPointY = this.body.rotationPointY - (float)(yy);
-        this.body.rotationPointZ = this.body.rotationPointZ + (float)(zz);
+        this.body2.rotationPointX = this.body2.rotationPointX + (float)(xx);
+        this.body2.rotationPointY = this.body2.rotationPointY - (float)(yy);
+        this.body2.rotationPointZ = this.body2.rotationPointZ + (float)(zz);
 
+
+
+        this.setRotateAngle(upperbody, upperbody.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-360))*1), upperbody.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+50))*2), upperbody.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-120))*1));
+
+
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-10))), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+55))*1.5));
+
+
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360+10))*1), neck2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*1), neck2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*1));
+
+
+        this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-195))*1), neck3.rotateAngleY + (float) Math.toRadians(0), neck3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-150))*1));
+
+
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(0), body.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-55))*1), body.rotateAngleZ + (float) Math.toRadians(0));
+        this.body.rotationPointX = this.body.rotationPointX + (float)(0);
+        this.body.rotationPointY = this.body.rotationPointY - (float)(0);
+        this.body.rotationPointZ = this.body.rotationPointZ + (float)(0);
 
 
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(-2+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-65))), jaw.rotateAngleY + (float) Math.toRadians(0), jaw.rotateAngleZ + (float) Math.toRadians(0));
-
 
     }
 

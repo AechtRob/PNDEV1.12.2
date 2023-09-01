@@ -7453,5 +7453,30 @@
         "stream": false
       }
     ]
+  },
+
+  "cryolophosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cryolophosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cryolophosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cryolophosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "cryolophosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cryolophosaurus_hurt01",
+        "stream": false
+      }
+    ]
   }
 }
