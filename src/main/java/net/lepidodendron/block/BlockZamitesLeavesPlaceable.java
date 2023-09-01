@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -68,7 +69,7 @@ public class BlockZamitesLeavesPlaceable extends ElementsLepidodendronMod.ModEle
 		OreDictionary.registerOre("treeLeaves", BlockZamitesLeavesPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter, IBennettites {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		
 		public BlockCustom() {

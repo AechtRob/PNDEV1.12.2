@@ -30,6 +30,7 @@ public class LepidodendronConfig {
     public static boolean sulphuricAcidInfinite = false;
     public static boolean giveBook = true;
     public static boolean submarineNightvision = true;
+    public static boolean doGrazeGrief = true;
 
     public static boolean genFossil = true;
     public static boolean genStone = true;
@@ -470,6 +471,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "fixApples", fixApples);
         prop.setComment("Make apples drop exclusively from apple trees [default: true]");
         fixApples = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global Mobs", "doGrazeGrief", doGrazeGrief);
+        prop.setComment("Allow Prehistoric Nature creatures to destroy blocks when grazing [default: true]");
+        doGrazeGrief = prop.getBoolean();
         propOrder.add(prop.getName());
         
         prop = cfg.get("Global Mobs", "blockSkeletonHorse", blockSkeletonHorse);

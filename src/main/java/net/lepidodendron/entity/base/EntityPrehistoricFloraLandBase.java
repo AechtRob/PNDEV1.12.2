@@ -5,9 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraMegalosaurus;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -152,38 +152,41 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public boolean isDrinking()
     {
+
+        BlockPos entityPos = Functions.getEntityBlockPos(this);
+        
         if (this.drinksWater()) {
             boolean test = (this.getPFDrinking() <= 0
                     && !world.isRemote
                     && !this.getIsFast()
-                    && !this.getIsMoving()
+                    //&& !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
                     && !this.isReallyInWater()
                     &&
-                        (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
-                        || this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
-                        || this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
-                        || this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
+                        (this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(entityPos.east().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(entityPos.west().down()).getMaterial() == Material.WATER
                         )
                 );
             if (test) {
                 //Which one is water?
                 EnumFacing facing = null;
-                if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
+                if (this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.WATER) {
                     facing = EnumFacing.NORTH;
                 }
-                else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
+                else if (this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.WATER) {
                     facing = EnumFacing.SOUTH;
                 }
-                else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
+                else if (this.world.getBlockState(entityPos.east().down()).getMaterial() == Material.WATER) {
                     facing = EnumFacing.EAST;
                 }
-                else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
+                else if (this.world.getBlockState(entityPos.west().down()).getMaterial() == Material.WATER) {
                     facing = EnumFacing.WEST;
                 }
                 if (facing != null) {
-                    this.setDrinkingFrom(this.getPosition().offset(facing));
+                    this.setDrinkingFrom(entityPos.offset(facing));
                     this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
                 }
             }
@@ -195,34 +198,34 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             boolean test = (this.getPFDrinking() <= 0
                     && !world.isRemote
                     && !this.getIsFast()
-                    && !this.getIsMoving()
+                    //&& !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
                     && !this.isReallyInWater()
-                    && (this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
-                    || this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS)
+                    && (this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GROUND
+                    || this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GRASS)
             );
             if (test) {
                 //Which one is grazeable?
                 facing = null;
-                if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GROUND
-                    || this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GRASS) {
+                if (this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.GROUND
+                    || this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.GRASS) {
                     facing = EnumFacing.NORTH;
                 }
-                else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GROUND
-                        || this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GRASS) {
+                else if (this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.GROUND
+                        || this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.GRASS) {
                     facing = EnumFacing.SOUTH;
                 }
-                else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GROUND
-                        || this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GRASS) {
+                else if (this.world.getBlockState(entityPos.east().down()).getMaterial() == Material.GROUND
+                        || this.world.getBlockState(entityPos.east().down()).getMaterial() == Material.GRASS) {
                     facing = EnumFacing.EAST;
                 }
-                else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GROUND
-                        || this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GRASS) {
+                else if (this.world.getBlockState(entityPos.west().down()).getMaterial() == Material.GROUND
+                        || this.world.getBlockState(entityPos.west().down()).getMaterial() == Material.GRASS) {
                     facing = EnumFacing.WEST;
                 }
                 if (facing != null) {
-                    this.setDrinkingFrom(this.getPosition().offset(facing));
+                    this.setDrinkingFrom(entityPos.offset(facing));
                     this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
                 }
             }
@@ -467,12 +470,16 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public void onLivingUpdate()
     {
-        this.renderYawOffset = this.rotationYaw;
 
-        if (this instanceof EntityPrehistoricFloraMegalosaurus)
-        if (this.getAnimation() == ((EntityPrehistoricFloraMegalosaurus)this).HURT_ANIMATION) {
-            int lll = 1;
+        if (this.getAnimation() == DRINK_ANIMATION) {
+            this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
         }
+
+        if (this.getAnimation() == GRAZE_ANIMATION) {
+            this.faceBlock(this.getGrazingFrom(), 10F, 10F);
+        }
+
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
             if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
@@ -503,6 +510,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
             }
+
         }
 
         if (!this.world.isRemote) {

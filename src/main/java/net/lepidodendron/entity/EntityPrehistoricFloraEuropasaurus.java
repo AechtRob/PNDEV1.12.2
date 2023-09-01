@@ -10,9 +10,11 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -20,6 +22,8 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -235,96 +239,177 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		if (!world.getBlockState(pos.offset(facing)).getBlock().isPassable(world, pos.offset(facing))) {
+		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
 			return false;
 		}
-		if (!world.getBlockState(pos.offset(facing).up()).getBlock().isPassable(world, pos.offset(facing).up())) {
+		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
 			return false;
 		}
-		if (!world.getBlockState(pos.offset(facing).up(2)).getBlock().isPassable(world, pos.offset(facing).up(2))) {
-			return false;
-		}
-		if (!world.getBlockState(pos.offset(facing).up(3)).getBlock().isPassable(world, pos.offset(facing).up(3))) {
+		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
 			return false;
 		}
 
-		if (!world.getBlockState(pos.offset(facing).offset(facing)).getBlock().isPassable(world, pos.offset(facing).offset(facing))) {
+		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
 			return false;
 		}
-		if (!world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().isPassable(world, pos.offset(facing).offset(facing).up())) {
+		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
 			return false;
 		}
-		if (!world.getBlockState(pos.offset(facing).offset(facing).up(2)).getBlock().isPassable(world, pos.offset(facing).offset(facing).up(2))) {
-			return false;
-		}
-		if (!world.getBlockState(pos.offset(facing).offset(facing).up(3)).getBlock().isPassable(world, pos.offset(facing).offset(facing).up(3))) {
+		if (world.getBlockState(pos.offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
 			return false;
 		}
 
-		if (!world.getBlockState(pos.offset(facing).offset(facing).offset(facing)).getBlock().isPassable(world, pos.offset(facing).offset(facing).offset(facing))) {
+		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing)))) {
 			return false;
 		}
-		if (!world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()).getBlock().isPassable(world, pos.offset(facing).offset(facing).offset(facing).up())) {
+		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()))) {
 			return false;
 		}
-		if (!world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)).getBlock().isPassable(world, pos.offset(facing).offset(facing).offset(facing).up(2))) {
-			return false;
-		}
-		if (!world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(3)).getBlock().isPassable(world, pos.offset(facing).offset(facing).offset(facing).up(3))) {
+		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
 			return false;
 		}
 		return true;
 	}
 
+	@Override
 	public boolean isDrinking()
 	{
 		if (getJuvenile()) {
 			return false;
 		}
+		
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
 		boolean test = (this.getPFDrinking() <= 0
 			&& !world.isRemote
 			&& !this.getIsFast()
-			&& !this.getIsMoving()
+			//&& !this.getIsMoving()
 			&& this.DRINK_ANIMATION.getDuration() > 0
 			&& this.getAnimation() == NO_ANIMATION
 			&& !this.isReallyInWater()
 			&&
 			(
-				(this.world.getBlockState(this.getPosition().north(3).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, this.getPosition(), EnumFacing.NORTH))
+				(this.world.getBlockState(entityPos.north(3).down()).getMaterial() == Material.WATER
+				&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-				|| (this.world.getBlockState(this.getPosition().south(3).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, this.getPosition(), EnumFacing.SOUTH))
+				|| (this.world.getBlockState(entityPos.south(3).down()).getMaterial() == Material.WATER
+				&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-				|| (this.world.getBlockState(this.getPosition().east(3).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, this.getPosition(), EnumFacing.EAST))
+				|| (this.world.getBlockState(entityPos.east(3).down()).getMaterial() == Material.WATER
+				&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-				|| (this.world.getBlockState(this.getPosition().west(3).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, this.getPosition(), EnumFacing.WEST))
+				|| (this.world.getBlockState(entityPos.west(3).down()).getMaterial() == Material.WATER
+				&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 			)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(this.getPosition().north(3).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(this.getPosition().south(3).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(this.getPosition().east(3).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(this.getPosition().west(3).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(this.getPosition().offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
 		return test;
+	}
+
+	private boolean isBlockGrazable(IBlockState state) {
+		return (state.getMaterial() == Material.LEAVES || state.getMaterial() == Material.PLANTS);
+	}
+
+	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
+		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(3)))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(3)))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean isGrazing()
+	{
+		if (getJuvenile() || !this.isPFAdult()) {
+			return false;
+		}
+		
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test2 = false;
+		boolean test = (this.getPFGrazing() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.GRAZE_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+					(isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(3)))
+						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
+
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(3).up(3)))
+						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
+
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(3)))
+						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
+
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(3)))
+						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+				)
+		);
+		if (test) {
+			//Which one is grazable?
+			EnumFacing facing = null;
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(3)))) {
+				facing = EnumFacing.NORTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(3).up(3)))) {
+				facing = EnumFacing.SOUTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(3)))) {
+				facing = EnumFacing.EAST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(3)))) {
+				facing = EnumFacing.WEST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+					test2 = true;
+				}
+			}
+			if (facing != null && test && test2) {
+				this.setGrazingFrom(entityPos.up(3).offset(facing).offset(facing).offset(facing));
+				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
+			}
+		}
+		return test && test2;
 	}
 
 	@Override
@@ -387,12 +472,16 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			}
 		}
 
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
 		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
+			if (LepidodendronConfig.doGrazeGrief && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
+				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
+				world.destroyBlock(this.getGrazingFrom(), true);
+				float itemHealth = 0.5F; //Default minimal nutrition
+				if (item.getItem() instanceof ItemFood) {
+					itemHealth = ((ItemFood) item.getItem()).getHealAmount(item);
+				}
+				this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
+			}
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 16 && this.getAttackTarget() != null) {

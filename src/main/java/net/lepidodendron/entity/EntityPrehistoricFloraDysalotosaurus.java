@@ -5,13 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderDysalotosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -109,7 +107,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -147,46 +145,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	@Override
 	public int getDrinkCooldown() {
 		return 400;
-	}
-
-	@Override
-	public boolean isDrinking()
-	{
-		boolean test = (this.getPFDrinking() <= 0
-				&& !world.isRemote
-				&& !this.getIsFast()
-				&& !this.getIsMoving()
-				&& this.DRINK_ANIMATION.getDuration() > 0
-				&& this.getAnimation() == NO_ANIMATION
-				&& !this.isReallyInWater()
-				&&
-				(this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
-						|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
-						|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
-						|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
-				)
-		);
-		if (test) {
-			//Which one is water?
-			EnumFacing facing = null;
-			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.NORTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.SOUTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.EAST;
-			}
-			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.WEST;
-			}
-			if (facing != null) {
-				this.setDrinkingFrom(this.getPosition().offset(facing));
-				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-			}
-		}
-		return test;
 	}
 
 	@Override

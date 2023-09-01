@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHyperodapedon extends RenderLiving<EntityPrehistoricFloraHyperodapedon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hyperodapedon.png");
 
-    public static float getScaler() {return 0.8f;}
+    public static float getScaler() {return 0.54f;}
 
     public RenderHyperodapedon(RenderManager mgr) {
         super(mgr, new ModelHyperodapedon(), 0.0f);
