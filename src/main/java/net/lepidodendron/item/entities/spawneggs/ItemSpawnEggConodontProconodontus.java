@@ -54,12 +54,12 @@ public class ItemSpawnEggConodontProconodontus extends ElementsLepidodendronMod.
 
 		@Override
 		public int eggPrimaryColour() {
-			return -1280218;
+			return -5846855;
 		}
 
 		@Override
 		public int eggSecondaryColour() {
-			return -5846855;
+			return -2762004;
 		}
 
 		@Override

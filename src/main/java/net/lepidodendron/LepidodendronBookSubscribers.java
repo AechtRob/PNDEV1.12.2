@@ -231,6 +231,9 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs into mosses, selaginella and rotten wood";
 				}
 			}
+			else if (((EntityPrehistoricFloraLandBase) entity).isNestMound()) {
+				nestString = " lays eggs into mounds in blocks";
+			}
 			else {
 				nestString = " lays eggs in water";
 			}
@@ -245,6 +248,12 @@ public class LepidodendronBookSubscribers {
 				}
 				else if (((EntityPrehistoricFloraAgeableBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
+				}
+				else if (((EntityPrehistoricFloraAgeableBase) entity).isNestMound()) {
+					nestString = " lays eggs into mounds in blocks";
+				}
+				else if (((EntityPrehistoricFloraAgeableBase) entity).hasNest()) {
+					nestString = " requires a nest to lay into";
 				}
 				else {
 					nestString = " lays eggs in water";

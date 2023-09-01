@@ -338,7 +338,7 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CHUNERPETON_LOOT;
+		return LepidodendronMod.MARMORERPETON_LOOT;
 	}
 
 	//Rendering taxidermy:

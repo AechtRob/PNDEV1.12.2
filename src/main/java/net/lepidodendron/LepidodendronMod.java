@@ -1912,6 +1912,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation HALDANODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/haldanodon"));
 	public static final int ENTITY_TRITYLODON = 753;
 	public static final ResourceLocation TRITYLODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tritylodon"));
+	public static final ResourceLocation TRITYLODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tritylodon_young"));
 	public static final int ENTITY_MARMORERPETON = 754;
 	public static final ResourceLocation MARMORERPETON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/marmorerpeton"));
 	public static final int ENTITY_CELTEDENS = 755;

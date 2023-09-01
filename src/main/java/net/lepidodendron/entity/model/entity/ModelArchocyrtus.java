@@ -142,6 +142,7 @@ public class ModelArchocyrtus extends AdvancedModelBase {
 
         EntityPrehistoricFloraInsectFlyingBase ee = (EntityPrehistoricFloraInsectFlyingBase) e;
         if (ee.flyProgress != 0 && ee.getAttachmentPos() == null) { //flying pose
+            this.mouth.setScale(1,1,1);
             this.setRotateAngle(WingR, (float)Math.toRadians(19.0625), (float)Math.toRadians(69.5931), (float)Math.toRadians(56.1714));
             this.setRotateAngle(WingL, (float)Math.toRadians(19.0625), -(float)Math.toRadians(69.5931), -(float)Math.toRadians(56.1714));
             this.setRotateAngle(Body2, -0.1309F, 0.0F, 0.0F);
@@ -170,7 +171,8 @@ public class ModelArchocyrtus extends AdvancedModelBase {
             this.walk(legR3,1.2F * modifier, 0.15F, false, 1,0, f2, 1F);
 
         } else {
-            this.setRotateAngle(mouth, (float)Math.toRadians(82.5), (float)Math.toRadians(0), (float)Math.toRadians(0));
+            this.mouth.setScale(0,0,0);
+            //this.setRotateAngle(mouth, (float)Math.toRadians(82.5), (float)Math.toRadians(0), (float)Math.toRadians(0));
         }
     }
 }

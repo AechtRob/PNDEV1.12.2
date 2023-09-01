@@ -104,39 +104,7 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	public ItemStack getPickedResult(RayTraceResult target)
 	{
 		if (target.entityHit instanceof EntityPrehistoricFloraDragonfly) {
-			EntityPrehistoricFloraDragonfly Dragonfly = (EntityPrehistoricFloraDragonfly) target.entityHit;
-			switch (Dragonfly.getPNType()) {
-				case DRAGONFLY1: default:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly1.block, 1);
-
-				case DRAGONFLY2:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly2.block, 1);
-
-				case DRAGONFLY3:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly3.block, 1);
-
-				case DRAGONFLY4:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly4.block, 1);
-
-				case DRAGONFLY5:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly5.block, 1);
-
-				case DRAGONFLY6:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly6.block, 1);
-
-				case DRAGONFLY7:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly7.block, 1);
-
-				case DRAGONFLY8:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly8.block, 1);
-
-				case DRAGONFLY9:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly9.block, 1);
-
-				case DRAGONFLY10:
-					return new ItemStack(ItemSpawnEggDragonflyDragonfly10.block, 1);
-
-			}
+			return new ItemStack(ItemSpawnEggDragonfly.block, 1);
 		}
 		return ItemStack.EMPTY;
 	}

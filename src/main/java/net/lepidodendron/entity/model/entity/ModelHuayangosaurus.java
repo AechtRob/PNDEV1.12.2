@@ -3724,22 +3724,22 @@ public class ModelHuayangosaurus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 3) / 5) * (-7.5-(0)));
+            xx = 0 + (((tickAnim - 3) / 5) * (7.5-(0)));
             yy = 0 + (((tickAnim - 3) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 3) / 5) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 13) {
-            xx = -7.5 + (((tickAnim - 8) / 5) * (-7.5-(-7.5)));
+            xx = 7.5 + (((tickAnim - 8) / 5) * (15-(7.5)));
             yy = 0 + (((tickAnim - 8) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 5) * (0-(0)));
         }
         else if (tickAnim >= 13 && tickAnim < 20) {
-            xx = -7.5 + (((tickAnim - 13) / 7) * (5-(-7.5)));
+            xx = 15 + (((tickAnim - 13) / 7) * (10-(15)));
             yy = 0 + (((tickAnim - 13) / 7) * (0-(0)));
             zz = 0 + (((tickAnim - 13) / 7) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 24) {
-            xx = 5 + (((tickAnim - 20) / 4) * (0-(5)));
+            xx = 10 + (((tickAnim - 20) / 4) * (0-(10)));
             yy = 0 + (((tickAnim - 20) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 20) / 4) * (0-(0)));
         }
@@ -3765,17 +3765,17 @@ public class ModelHuayangosaurus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 8 && tickAnim < 12) {
             xx = -5 + (((tickAnim - 8) / 4) * (-5.0547-(-5)));
-            yy = 0 + (((tickAnim - 8) / 4) * (4.82922-(0)));
+            yy = 0 + (((tickAnim - 8) / 4) * (2.8292-(0)));
             zz = 0 + (((tickAnim - 8) / 4) * (-1.29717-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 18) {
-            xx = -5.0547 + (((tickAnim - 12) / 6) * (0.18348-(-5.0547)));
-            yy = 4.82922 + (((tickAnim - 12) / 6) * (-5.94229-(4.82922)));
+            xx = -5.0547 + (((tickAnim - 12) / 6) * (5-(-5.0547)));
+            yy = 2.8292 + (((tickAnim - 12) / 6) * (-3.9423-(2.8292)));
             zz = -1.29717 + (((tickAnim - 12) / 6) * (0.88642-(-1.29717)));
         }
         else if (tickAnim >= 18 && tickAnim < 20) {
-            xx = 0.18348 + (((tickAnim - 18) / 2) * (2.5-(0.18348)));
-            yy = -5.94229 + (((tickAnim - 18) / 2) * (0-(-5.94229)));
+            xx = 5 + (((tickAnim - 18) / 2) * (2.5-(5)));
+            yy = -3.9423 + (((tickAnim - 18) / 2) * (0-(-3.9423)));
             zz = 0.88642 + (((tickAnim - 18) / 2) * (0-(0.88642)));
         }
         else if (tickAnim >= 20 && tickAnim < 24) {
@@ -3805,22 +3805,22 @@ public class ModelHuayangosaurus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 8 && tickAnim < 12) {
             xx = -5 + (((tickAnim - 8) / 4) * (3.20114-(-5)));
-            yy = 0 + (((tickAnim - 8) / 4) * (10.82156-(0)));
+            yy = 0 + (((tickAnim - 8) / 4) * (5.8216-(0)));
             zz = 0 + (((tickAnim - 8) / 4) * (2.78058-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 18) {
-            xx = 3.20114 + (((tickAnim - 12) / 6) * (1.85671-(3.20114)));
-            yy = 10.82156 + (((tickAnim - 12) / 6) * (-17.3439-(10.82156)));
+            xx = 3.20114 + (((tickAnim - 12) / 6) * (-22-(3.20114)));
+            yy = 5.8216 + (((tickAnim - 12) / 6) * (1.3439-(5.8216)));
             zz = 2.78058 + (((tickAnim - 12) / 6) * (0.72036-(2.78058)));
         }
         else if (tickAnim >= 18 && tickAnim < 20) {
-            xx = 1.85671 + (((tickAnim - 18) / 2) * (0-(1.85671)));
-            yy = -17.3439 + (((tickAnim - 18) / 2) * (-12.5-(-17.3439)));
+            xx = -22 + (((tickAnim - 18) / 2) * (-30-(-22)));
+            yy = 1.3439 + (((tickAnim - 18) / 2) * (-7.5-(1.3439)));
             zz = 0.72036 + (((tickAnim - 18) / 2) * (0-(0.72036)));
         }
         else if (tickAnim >= 20 && tickAnim < 24) {
-            xx = 0 + (((tickAnim - 20) / 4) * (0-(0)));
-            yy = -12.5 + (((tickAnim - 20) / 4) * (0-(-12.5)));
+            xx = -30 + (((tickAnim - 20) / 4) * (0-(-30)));
+            yy = -7.5 + (((tickAnim - 20) / 4) * (0-(-7.5)));
             zz = 0 + (((tickAnim - 20) / 4) * (0-(0)));
         }
         else {

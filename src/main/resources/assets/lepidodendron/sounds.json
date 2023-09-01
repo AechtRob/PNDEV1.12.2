@@ -7341,5 +7341,78 @@
         "stream": false
       }
     ]
+  },
+
+
+  "stegosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stegosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stegosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stegosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "stegosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stegosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stegosaurus_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "stegosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stegosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "stegosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stegosaurus_roar01",
+        "stream": false
+      }
+    ]
+  },
+
+  "gigantspinosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gigantspinosaurus_living01",
+        "stream": false
+      }
+    ]
+  },
+
+  "huayangosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:huayangosaurus_living01",
+        "stream": false
+      }
+    ]
+  },
+
+  "tuojiangosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tuojiangosaurus_living01",
+        "stream": false
+      }
+    ]
   }
 }

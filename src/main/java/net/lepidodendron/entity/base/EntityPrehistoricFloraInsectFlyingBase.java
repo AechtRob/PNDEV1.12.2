@@ -985,7 +985,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
 
         public boolean shouldExecute() {
-            if(EntityPrehistoricFloraInsectFlyingBase.this.sitCooldown == 0) {
+            if (EntityPrehistoricFloraInsectFlyingBase.this.sitCooldown == 0) {
                 for(int i = 0; i < 15; i++){
                     BlockPos randomPos = new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this).add(rand.nextInt(17) - 8, rand.nextInt(11) - 5, rand.nextInt(17) - 8);
                     if ((!world.isAirBlock(randomPos)) && (world.getBlockState(randomPos).getMaterial() != Material.WATER) && (world.getBlockState(randomPos).getMaterial() != Material.LAVA)) {

@@ -140,12 +140,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public boolean placesNest() {
-		return true;
-	}
-
-	@Override
-	public boolean isNestMound() {
+	public boolean hasNest() {
 		return true;
 	}
 

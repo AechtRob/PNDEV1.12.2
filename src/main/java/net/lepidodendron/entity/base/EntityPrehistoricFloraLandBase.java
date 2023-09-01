@@ -49,12 +49,16 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     private static final DataParameter<Integer> PFDRINKING = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.VARINT);
     private static final DataParameter<Optional<BlockPos>> DRINKINGFROM = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
+    private static final DataParameter<Integer> PFGRAZING = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Optional<BlockPos>> GRAZINGFROM = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
+
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
     private int jumpTicks;
     public Animation EAT_ANIMATION;
     public Animation DRINK_ANIMATION;
+    public Animation GRAZE_ANIMATION;
     private int inPFLove;
 
     public EntityPrehistoricFloraLandBase(World world) {
@@ -74,12 +78,14 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         }
         EAT_ANIMATION = Animation.create(this.getEatLength());
         DRINK_ANIMATION = Animation.create(this.getDrinkLength());
+        GRAZE_ANIMATION = Animation.create(this.getGrazeLength());
     }
 
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setIsDrinking(rand.nextInt(1000));
+        this.setIsGrazing(rand.nextInt(1000));
         return livingdata;
     }
 
@@ -88,6 +94,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         super.entityInit();
         this.dataManager.register(PFDRINKING, 0);
         this.dataManager.register(DRINKINGFROM, Optional.absent());
+        this.dataManager.register(PFGRAZING, 0);
+        this.dataManager.register(GRAZINGFROM, Optional.absent());
         this.setScaleForAge(false);
     }
 
@@ -98,6 +106,15 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public void setDrinkingFrom(@Nullable BlockPos pos) {
         this.dataManager.set(DRINKINGFROM, Optional.fromNullable(pos));
+    }
+
+    @Nullable
+    public BlockPos getGrazingFrom() {
+        return (BlockPos) ((Optional) this.dataManager.get(GRAZINGFROM)).orNull();
+    }
+
+    public void setGrazingFrom(@Nullable BlockPos pos) {
+        this.dataManager.set(GRAZINGFROM, Optional.fromNullable(pos));
     }
 
     public boolean canSwim() {
@@ -116,15 +133,21 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     {
         super.writeEntityToNBT(compound);
         compound.setInteger("drinking", this.getPFDrinking());
+        compound.setInteger("grazing", this.getPFGrazing());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setIsDrinking(compound.getInteger("drinking"));
+        this.setIsGrazing(compound.getInteger("grazing"));
     }
 
     public boolean drinksWater() {
         return true;
+    }
+
+    public boolean isGrazing() {
+        return false;
     }
 
     public boolean isDrinking()
@@ -250,6 +273,15 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return this.dataManager.get(PFDRINKING);
     }
 
+    public void setIsGrazing(int val)
+    {
+        this.dataManager.set(PFGRAZING, val);
+    }
+
+    public int getPFGrazing() {
+        return this.dataManager.get(PFGRAZING);
+    }
+
     @Override
     public void selectNavigator () {
         if (this.isSwimmingInWater() && this.canSwim()) {
@@ -277,9 +309,13 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return 0;
     }
 
+    public int getGrazeLength() {
+        return 0;
+    }
+
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+        return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
     }
 
     @Override
@@ -290,6 +326,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         }
         this.getNavigator().clearPath();
         this.setDrinkingFrom(null);
+        this.setGrazingFrom(null);
         return super.attackEntityFrom(ds, i);
     }
 
@@ -381,7 +418,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             //if (this.getAnimation() == DRINK_ANIMATION) {
             //    System.err.println("Anim tick " + this.getAnimationTick());
             //}
-            if (this.isDrinking() && this.getAnimation() != DRINK_ANIMATION) {
+            if (this.isDrinking() && this.getAnimation() != DRINK_ANIMATION && this.getAnimation() != GRAZE_ANIMATION) {
                 //System.err.println("Is drinking");
                 this.setAnimation(DRINK_ANIMATION);
                 //this.setIsDrinking(rand.nextInt(800) + 700);
@@ -394,14 +431,37 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setDrinkingFrom(null);
                 this.setAnimation(NO_ANIMATION);
             }
-            //if (this.getDrinkingFrom() != null) {
-            //    this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-            //}
+
+            if (this.isGrazing() && this.getAnimation() != DRINK_ANIMATION && this.getAnimation() != GRAZE_ANIMATION) {
+                //System.err.println("Is grazing");
+                this.setAnimation(GRAZE_ANIMATION);
+                //this.setIsDrinking(rand.nextInt(800) + 700);
+            }
+
+            if (this.getAnimation() == GRAZE_ANIMATION && this.getAnimationTick() >= GRAZE_ANIMATION.getDuration() - 1) {
+                int i = Math.max((int)Math.round(getGrazeCooldown()/2), 1);
+                this.setIsGrazing(rand.nextInt(i) + i);
+                this.getNavigator().clearPath();
+                this.setGrazingFrom(null);
+                this.setAnimation(NO_ANIMATION);
+            }
+
+            if (this.getDrinkingFrom() != null) {
+                this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+            }
+
+            if (this.getGrazingFrom() != null) {
+                this.faceBlock(this.getGrazingFrom(), 10F, 10F);
+            }
         }
 
     }
 
     public int getDrinkCooldown() {
+        return 1400;
+    }
+
+    public int getGrazeCooldown() {
         return 1400;
     }
 
@@ -454,7 +514,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             --this.jumpTicks;
         }
 
-        if (this.newPosRotationIncrements > 0 && !this.canPassengerSteer() && this.getAnimation() != DRINK_ANIMATION) {
+        if (this.newPosRotationIncrements > 0 && !this.canPassengerSteer() && this.getAnimation() != DRINK_ANIMATION && this.getAnimation() != GRAZE_ANIMATION) {
             double d0 = this.posX + (this.interpTargetX - this.posX) / (double) this.newPosRotationIncrements;
             double d1 = this.posY + (this.interpTargetY - this.posY) / (double) this.newPosRotationIncrements;
             double d2 = this.posZ + (this.interpTargetZ - this.posZ) / (double) this.newPosRotationIncrements;
@@ -576,6 +636,11 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         if (this.getPFDrinking() > 0)
         {
             this.setIsDrinking(this.getPFDrinking() - 1);
+        }
+
+        if (this.getPFGrazing() > 0)
+        {
+            this.setIsGrazing(this.getPFGrazing() - 1);
         }
 
         if (this.getMateable() < 0) {
@@ -839,7 +904,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
                 float turn = (EntityBase.getMaxTurnDistancePerTick());
                 float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
-                if (this.EntityBase.getAnimation() != DRINK_ANIMATION) {
+                if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION) {
                     this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
                 }
                 //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
@@ -909,7 +974,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                if (this.EntityBase.getAnimation() != DRINK_ANIMATION) {
+                if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION) {
                     this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 20.0F);
                 }
                 float speed = getAISpeedSwimmingLand();

@@ -24,11 +24,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemSpawnEggDragonflyDragonfly2 extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_dragonfly_dragonfly2")
+public class ItemSpawnEggDragonfly extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_dragonfly")
 	public static final Item block = null;
-	public ItemSpawnEggDragonflyDragonfly2(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dragonfly_dragonfly2_raw);
+	public ItemSpawnEggDragonfly(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.dragonfly_dragonfly1_raw);
 	}
 
 	@Override
@@ -39,18 +39,28 @@ public class ItemSpawnEggDragonflyDragonfly2 extends ElementsLepidodendronMod.Mo
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_dragonfly_dragonfly2", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_dragonfly", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_dragonfly_dragonfly2");
-			setRegistryName("spawn_egg_dragonfly_dragonfly2");
+			setTranslationKey("pf_spawn_egg_dragonfly");
+			setRegistryName("spawn_egg_dragonfly");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
-			this.variant = "dragonfly2";
 		}
+
+		@Override
+		public int eggPrimaryColour() {
+			return -13421546 ;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -2105950 ;
+		}
+
 
 		@Override
 		public String getPeriod() {
@@ -77,7 +87,7 @@ public class ItemSpawnEggDragonflyDragonfly2 extends ElementsLepidodendronMod.Mo
 				if (net.minecraftforge.event.ForgeEventFactory.doSpecialSpawn(entityliving, worldIn, (float) x, (float) y, (float) z, null)) return null;
 				entityliving.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
 				worldIn.spawnEntity(entity);
-				((EntityPrehistoricFloraDragonfly)entityliving).setPNType(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(this.variant));
+				((EntityPrehistoricFloraDragonfly)entityliving).setPNType(EntityPrehistoricFloraDragonfly.Type.byId(itemRand.nextInt(10) + 1));
 				entityliving.playLivingSound();
 			}
 			return entity;
