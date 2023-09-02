@@ -130,11 +130,11 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getTalkInterval() {
-		return 360;
+		return 800;
 	}
 
 	@Override
-	public int getRoarInterval() {return 900;
+	public int getRoarInterval() {return 1600;
 	}
 
 	@Override
@@ -215,7 +215,7 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_roar"));
 	}
 
 	@Override

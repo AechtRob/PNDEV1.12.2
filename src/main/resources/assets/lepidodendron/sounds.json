@@ -7478,5 +7478,13 @@
         "stream": false
       }
     ]
+  },
+  "cryolophosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cryolophosaurus_roar01",
+        "stream": false
+      }
+    ]
   }
 }
