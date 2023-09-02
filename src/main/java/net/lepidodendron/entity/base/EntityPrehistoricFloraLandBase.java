@@ -456,6 +456,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             if (this.getGrazingFrom() != null) {
                 this.faceBlock(this.getGrazingFrom(), 10F, 10F);
             }
+
+            if (this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
+                this.faceEntity(this.getGrappleTarget(), 10F, 10F);
+            }
         }
 
     }
@@ -661,18 +665,25 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             this.findGrappleTarget();
         }
 
-        if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+        if (this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
             this.faceEntity(this.getGrappleTarget(), 10, 10);
             launchGrapple();
-            if (this.getOneHit()) {
-                this.setGrappleTarget(null);
+            if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+                EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+                grappleTarget.setGrappleTarget(null);
+                grappleTarget.willGrapple = false;
             }
+            this.setGrappleTarget(null);
+            this.willGrapple = false;
+        }
+        else if (this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
+            this.faceEntity(this.getGrappleTarget(), 10, 10);
         }
 
     }
 
     public int headbutTick() {
-        return 10;
+        return -1;
     }
 
     @Override

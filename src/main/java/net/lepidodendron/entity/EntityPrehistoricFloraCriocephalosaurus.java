@@ -282,15 +282,12 @@ public class EntityPrehistoricFloraCriocephalosaurus extends EntityPrehistoricFl
 
 			this.getGrappleTarget().addVelocity(0, 0.065, 0);
 
-			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
-				grappleTarget.setGrappleTarget(null);
-				grappleTarget.willGrapple = false;
-			}
-			this.setGrappleTarget(null);
-			this.willGrapple = false;
-
 		}
+	}
+
+	@Override
+	public int headbutTick() {
+		return 10;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

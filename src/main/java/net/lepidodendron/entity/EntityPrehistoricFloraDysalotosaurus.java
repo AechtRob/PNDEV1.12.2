@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		}
 		List<EntityPrehistoricFloraDysalotosaurus> Dysalotosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraDysalotosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 		for (EntityPrehistoricFloraDysalotosaurus currentDysalotosaurus : Dysalotosaurus) {
-			if (currentDysalotosaurus.isPFAdult() && this.isPFAdult() && currentDysalotosaurus != this && !currentDysalotosaurus.willGrapple) {
+			if (currentDysalotosaurus.isPFAdult() && this.isPFAdult() && currentDysalotosaurus != this && (!currentDysalotosaurus.willGrapple) && this.canEntityBeSeen(currentDysalotosaurus)) {
 				this.setGrappleTarget(currentDysalotosaurus);
 				currentDysalotosaurus.willGrapple=true;
 				this.willGrapple = true;
@@ -92,33 +92,18 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public static String getPeriod() {return "Jurassic";}
 
 	@Override
-	public int getAttackLength() {
-		return 20;
-	}
-
-	@Override
-	public int getRoarLength() {
-		return 20;
-	}
-
-	@Override
 	public float getAISpeedLand() {
 		float speedBase = 0.335F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == LOOK_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.65F;
 		}
 		return speedBase;
-	}
-
-	@Override
-	public int getTalkInterval() {
-		return 80;
 	}
 
 	@Override
@@ -129,22 +114,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
-	}
-
-
-	@Override
-	public boolean drinksWater() {
-		return true; //drinks, does not graze
-	}
-
-	@Override
-	public int getDrinkLength() {
-		return 90;  //drinks, does not graze
-	}
-
-	@Override
-	public int getDrinkCooldown() {
-		return 400;
 	}
 
 	@Override
