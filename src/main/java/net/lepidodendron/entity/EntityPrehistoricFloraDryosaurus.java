@@ -292,12 +292,12 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getGrazeLength() {
-		return 90;  //grazes, does not drink
+		return 90;
 	}
 
 	@Override
 	public int getGrazeCooldown() {
-		return 1600;
+		return 2400;
 	}
 
 	@Override
