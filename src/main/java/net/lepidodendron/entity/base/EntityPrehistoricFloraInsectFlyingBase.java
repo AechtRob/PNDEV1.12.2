@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBaseAI;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
@@ -1000,10 +1001,44 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 }
             }
 
-            target = EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.rand);
+            if (EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraArchocyrtus) {
+                target = getBennetiteTarget(false);
+            }
+            else {
+                target = EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.rand);
+            }
             Material material = world.getBlockState(new BlockPos(target)).getMaterial();
             Material material1 = world.getBlockState(new BlockPos(target).up()).getMaterial();
             return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) && !EntityPrehistoricFloraInsectFlyingBase.this.isSitting() && EntityPrehistoricFloraInsectFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target).add(0.5D, 0.5D, 0.5D)) && EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(4) == 0 && EntityPrehistoricFloraInsectFlyingBase.this.getAttachmentPos() == null;
+        }
+
+        public BlockPos getBennetiteTarget(boolean shorter) {
+            int i = 0;
+            if (shorter) {
+                i = 2;
+            }
+            int xPos = -8 + i;
+            while (xPos <= 8 - i) {
+                int yPos = -8 + i;
+                while (yPos <= 8 - i) {
+                    int zPos = -8 + i;
+                    while (zPos <= 8 - i) {
+                        if (world.getBlockState(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().add(xPos, yPos, zPos)).getBlock() instanceof IBennettites) {
+                            if (shorter) {
+                                return new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3);
+                            }
+                            return new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4);
+                        }
+                        zPos ++;
+                    }
+                    yPos++;
+                }
+                xPos++;
+            }
+            if (shorter) {
+                return EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.rand);
+            }
+            return EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.rand);
         }
 
         public boolean shouldContinueExecuting() {
@@ -1012,7 +1047,12 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         public void updateTask() {
             if (!EntityPrehistoricFloraInsectFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target))) {
-                target = EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.rand);
+                if (EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraArchocyrtus) {
+                    target = getBennetiteTarget(true);
+                }
+                else {
+                    target = EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.rand);
+                }
             }
             if (EntityPrehistoricFloraInsectFlyingBase.this.world.isAirBlock(target) || isGoingToAttach) {
                 if (!EntityPrehistoricFloraInsectFlyingBase.this.isFlying()) {

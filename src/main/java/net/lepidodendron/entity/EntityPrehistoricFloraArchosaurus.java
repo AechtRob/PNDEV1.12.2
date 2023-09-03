@@ -107,7 +107,7 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.77F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;

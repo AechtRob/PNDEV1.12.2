@@ -79,12 +79,12 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 80;
+		return 60;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 60;
+		return 80;
 	} //Roar
 
 	@Override
@@ -113,11 +113,11 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.37F;
+		float speedBase = 0.40F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -130,11 +130,11 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getTalkInterval() {
-		return 360;
+		return 800;
 	}
 
 	@Override
-	public int getRoarInterval() {return 900;
+	public int getRoarInterval() {return 1600;
 	}
 
 	@Override
@@ -233,7 +233,7 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:cryolophosaurus_hurt"));
 	}
 
 	@Override

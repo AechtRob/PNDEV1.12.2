@@ -165,8 +165,6 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 	public boolean panics() {
 		return true;
 	}
-
-	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {

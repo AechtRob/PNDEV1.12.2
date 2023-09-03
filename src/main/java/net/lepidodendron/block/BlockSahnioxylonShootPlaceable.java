@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -73,7 +74,7 @@ public class BlockSahnioxylonShootPlaceable extends ElementsLepidodendronMod.Mod
 		OreDictionary.registerOre("treeLeaves", BlockSahnioxylonShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IBennettites {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_sahnioxylon_shoot");

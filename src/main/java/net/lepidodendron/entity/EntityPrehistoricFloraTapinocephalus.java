@@ -152,7 +152,10 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	
+	@Override
+	public int headbutTick() {
+		return 10;
+	}
 
 	@Override
 	public boolean findGrappleTarget() {
@@ -282,14 +285,6 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 			this.getGrappleTarget().knockBack(this, 0.4F, d1, d0);
 
 			this.getGrappleTarget().addVelocity(0, 0.065, 0);
-
-			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
-				grappleTarget.setGrappleTarget(null);
-				grappleTarget.willGrapple = false;
-			}
-			this.setGrappleTarget(null);
-			this.willGrapple = false;
 
 		}
 	}

@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraCriocephalosaurus extends EntityPrehistoricFl
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -282,15 +282,12 @@ public class EntityPrehistoricFloraCriocephalosaurus extends EntityPrehistoricFl
 
 			this.getGrappleTarget().addVelocity(0, 0.065, 0);
 
-			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
-				grappleTarget.setGrappleTarget(null);
-				grappleTarget.willGrapple = false;
-			}
-			this.setGrappleTarget(null);
-			this.willGrapple = false;
-
 		}
+	}
+
+	@Override
+	public int headbutTick() {
+		return 10;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

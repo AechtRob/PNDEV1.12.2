@@ -3534,6 +3534,7 @@ helper.pf_terrestrial.name=Terrestrial
 helper.pf_variants_note.name=Note: Click the spawn egg again onto the mob to cycle through its variants
 item.acid_bath_item.name=Acid Bath
 item.agathis_door_item.name=Agathis Door
+item.pf_roots.name=Roots
 item.apple_door_item.name=Apple Door
 item.araucarioxylon_door_item.name=Araucarioxylon Door
 item.araucarites_door_item.name=Araucaria Door

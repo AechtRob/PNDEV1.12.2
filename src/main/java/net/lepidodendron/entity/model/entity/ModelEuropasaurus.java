@@ -468,10 +468,30 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        if (tickAnim >= 0 && tickAnim < 107) {
-            xx = 0 + (((tickAnim - 0) / 107) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 107) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 107) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 0) / 13) * (-10-(0)));
+            yy = 0 + (((tickAnim - 0) / 13) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 13) * (0-(0)));
+        }
+        else if (tickAnim >= 13 && tickAnim < 27) {
+            xx = -10 + (((tickAnim - 13) / 14) * (0-(-10)));
+            yy = 0 + (((tickAnim - 13) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 13) / 14) * (0-(0)));
+        }
+        else if (tickAnim >= 27 && tickAnim < 88) {
+            xx = 0 + (((tickAnim - 27) / 61) * (0-(0)));
+            yy = 0 + (((tickAnim - 27) / 61) * (0-(0)));
+            zz = 0 + (((tickAnim - 27) / 61) * (0-(0)));
+        }
+        else if (tickAnim >= 88 && tickAnim < 98) {
+            xx = 0 + (((tickAnim - 88) / 10) * (-10-(0)));
+            yy = 0 + (((tickAnim - 88) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 88) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 98 && tickAnim < 107) {
+            xx = -10 + (((tickAnim - 98) / 9) * (0-(-10)));
+            yy = 0 + (((tickAnim - 98) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 98) / 9) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1234,32 +1254,32 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
         if (tickAnim >= 0 && tickAnim < 23) {
             xx = 0 + (((tickAnim - 0) / 23) * (0-(0)));
             yy = 0 + (((tickAnim - 0) / 23) * (-0.2-(0)));
-            zz = 0 + (((tickAnim - 0) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 23) * (-5-(0)));
         }
         else if (tickAnim >= 23 && tickAnim < 33) {
             xx = 0 + (((tickAnim - 23) / 10) * (0-(0)));
             yy = -0.2 + (((tickAnim - 23) / 10) * (0.7-(-0.2)));
-            zz = 0 + (((tickAnim - 23) / 10) * (0-(0)));
+            zz = -5 + (((tickAnim - 23) / 10) * (-5-(-5)));
         }
         else if (tickAnim >= 33 && tickAnim < 45) {
             xx = 0 + (((tickAnim - 33) / 12) * (0-(0)));
             yy = 0.7 + (((tickAnim - 33) / 12) * (0.7-(0.7)));
-            zz = 0 + (((tickAnim - 33) / 12) * (0-(0)));
+            zz = -5 + (((tickAnim - 33) / 12) * (-5-(-5)));
         }
         else if (tickAnim >= 45 && tickAnim < 78) {
             xx = 0 + (((tickAnim - 45) / 33) * (0-(0)));
             yy = 0.7 + (((tickAnim - 45) / 33) * (0.7-(0.7)));
-            zz = 0 + (((tickAnim - 45) / 33) * (0-(0)));
+            zz = -5 + (((tickAnim - 45) / 33) * (-5-(-5)));
         }
         else if (tickAnim >= 78 && tickAnim < 88) {
             xx = 0 + (((tickAnim - 78) / 10) * (0-(0)));
             yy = 0.7 + (((tickAnim - 78) / 10) * (-0.2-(0.7)));
-            zz = 0 + (((tickAnim - 78) / 10) * (0-(0)));
+            zz = -5 + (((tickAnim - 78) / 10) * (-5-(-5)));
         }
         else if (tickAnim >= 88 && tickAnim < 107) {
             xx = 0 + (((tickAnim - 88) / 19) * (0-(0)));
             yy = -0.2 + (((tickAnim - 88) / 19) * (0-(-0.2)));
-            zz = 0 + (((tickAnim - 88) / 19) * (0-(0)));
+            zz = -5 + (((tickAnim - 88) / 19) * (0-(-5)));
         }
         else {
             xx = 0;
@@ -1449,14 +1469,29 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+            xx = 0 + (((tickAnim - 0) / 10) * (10-(0)));
             yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 10 && tickAnim < 107) {
-            xx = 0 + (((tickAnim - 10) / 97) * (0-(0)));
-            yy = 0 + (((tickAnim - 10) / 97) * (0-(0)));
-            zz = 0 + (((tickAnim - 10) / 97) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 23) {
+            xx = 10 + (((tickAnim - 10) / 13) * (0-(10)));
+            yy = 0 + (((tickAnim - 10) / 13) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 13) * (0-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 85) {
+            xx = 0 + (((tickAnim - 23) / 62) * (0-(0)));
+            yy = 0 + (((tickAnim - 23) / 62) * (0-(0)));
+            zz = 0 + (((tickAnim - 23) / 62) * (0-(0)));
+        }
+        else if (tickAnim >= 85 && tickAnim < 94) {
+            xx = 0 + (((tickAnim - 85) / 9) * (10-(0)));
+            yy = 0 + (((tickAnim - 85) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 85) / 9) * (0-(0)));
+        }
+        else if (tickAnim >= 94 && tickAnim < 107) {
+            xx = 10 + (((tickAnim - 94) / 13) * (0-(10)));
+            yy = 0 + (((tickAnim - 94) / 13) * (0-(0)));
+            zz = 0 + (((tickAnim - 94) / 13) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1518,27 +1553,11 @@ public class ModelEuropasaurus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 10) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 10) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 22 && tickAnim < 31) {
-            xx = 0 + (((tickAnim - 22) / 9) * (3-(0)));
-            yy = 0 + (((tickAnim - 22) / 9) * (0-(0)));
-            zz = 0 + (((tickAnim - 22) / 9) * (0-(0)));
+        else if (tickAnim >= 22 && tickAnim < 0) {
+            xx = 0 + (((tickAnim - 22) / -22) * (-(0)));
+            yy = 0 + (((tickAnim - 22) / -22) * (-(0)));
+            zz = 0 + (((tickAnim - 22) / -22) * (-(0)));
         }
-        else if (tickAnim >= 31 && tickAnim < 73) {
-            xx = 3 + (((tickAnim - 31) / 42) * (3-(3)));
-            yy = 0 + (((tickAnim - 31) / 42) * (0-(0)));
-            zz = 0 + (((tickAnim - 31) / 42) * (0-(0)));
-        }
-        else if (tickAnim >= 73 && tickAnim < 107) {
-            xx = 3 + (((tickAnim - 73) / 34) * (0-(3)));
-            yy = 0 + (((tickAnim - 73) / 34) * (0-(0)));
-            zz = 0 + (((tickAnim - 73) / 34) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(FootL, FootL.rotateAngleX + (float) Math.toRadians(xx), FootL.rotateAngleY + (float) Math.toRadians(yy), FootL.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
 

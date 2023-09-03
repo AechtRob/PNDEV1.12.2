@@ -1095,7 +1095,9 @@
         "stream": false
       }
     ]
-  },"estemmenosuchus_idle": {
+  },
+  
+  "estemmenosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:estemmenosuchus_living01",
@@ -7411,6 +7413,76 @@
     "sounds": [
       {
         "name": "lepidodendron:tuojiangosaurus_living01",
+        "stream": false
+      }
+    ]
+  },
+
+  "yuxisaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yuxisaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yuxisaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yuxisaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "yuxisaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yuxisaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yuxisaurus_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "yuxisaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yuxisaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "cryolophosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cryolophosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cryolophosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cryolophosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "cryolophosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cryolophosaurus_hurt01",
+        "stream": false
+      }
+    ]
+  },
+  "cryolophosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cryolophosaurus_roar01",
         "stream": false
       }
     ]

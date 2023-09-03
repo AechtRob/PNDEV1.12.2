@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.9F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;

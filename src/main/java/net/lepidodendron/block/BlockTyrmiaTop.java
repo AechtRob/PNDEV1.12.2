@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -59,7 +60,7 @@ public class BlockTyrmiaTop extends ElementsLepidodendronMod.ModElement {
 		//		new ModelResourceLocation("lepidodendron:tyrmia_top", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter, IBennettites {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_tyrmia_top");

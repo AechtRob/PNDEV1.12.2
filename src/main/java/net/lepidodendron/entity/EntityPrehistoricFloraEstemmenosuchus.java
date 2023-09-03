@@ -117,7 +117,7 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
+		return this.getEntityBoundingBox().grow(2.5F + size, 2.0F + size, 2.5F + size);
 	}
 
 	protected void initEntityAI() {
@@ -128,12 +128,11 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F, 8));
-		tasks.addTask(8, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.15));
-		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 100));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(12, new EntityLookIdleAI(this));
+		tasks.addTask(7, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.15));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 100));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
@@ -283,20 +282,17 @@ public class EntityPrehistoricFloraEstemmenosuchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public int headbutTick() {
+		//Here to prevent the grapple timing out
+		return this.ATTACK_ANIMATION.getDuration() - 1;
+	}
+
+	@Override
 	public void launchGrapple() {
 		if (this.getGrappleTarget() != null) {
 			if (!this.world.isRemote) {
 				this.playSound(this.getRoarSound(), this.getSoundVolume(), 1);
 			}
-
-			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
-				grappleTarget.setGrappleTarget(null);
-				grappleTarget.willGrapple = false;
-			}
-			this.setGrappleTarget(null);
-			this.willGrapple = false;
-
 		}
 	}
 

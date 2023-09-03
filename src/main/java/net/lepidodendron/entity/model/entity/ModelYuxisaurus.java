@@ -4694,7 +4694,7 @@ public class ModelYuxisaurus extends AdvancedModelBaseExtended {
             yy = 1.5 + (((tickAnim - 27) / -27) * (-(1.5)));
             zz = 0 + (((tickAnim - 27) / -27) * (-(0)));
         }
-       
+
     }
 
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {

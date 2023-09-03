@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
@@ -53,7 +54,7 @@ public class BlockSahnioxylonFlower extends ElementsLepidodendronMod.ModElement 
 		//		new ModelResourceLocation("lepidodendron:sahnioxylon_leaves_worldgen", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IBennettites {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		
 		public BlockCustom() {

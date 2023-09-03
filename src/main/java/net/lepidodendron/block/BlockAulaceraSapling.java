@@ -29,7 +29,6 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -99,13 +98,6 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public CustomTrigger getModTrigger() {
 			return ModTriggers.CLICK_AULACERA;
-		}
-
-		@Override
-		@Nullable
-		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
-		{
-			return null;
 		}
 
 		@Override

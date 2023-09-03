@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -73,7 +74,7 @@ public class BlockPterophyllumShootPlaceable extends ElementsLepidodendronMod.Mo
 		OreDictionary.registerOre("treeLeaves", BlockPterophyllumShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter, IBennettites {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_pterophyllum_shoot");

@@ -319,7 +319,10 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
 		{
-			return null;
+			if (worldIn.getBlockState(new BlockPos(start)).getBlock() == this) {
+				return null;
+			}
+			return super.collisionRayTrace(blockState, worldIn, pos, start, end);
 		}
 
 		@Override
