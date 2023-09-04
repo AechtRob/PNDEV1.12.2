@@ -61,7 +61,12 @@ public class EntityMateAIInsectCrawlingFlyingBase extends EntityAIBase
         this.animal.getNavigator().tryMoveToEntityLiving(this.targetMate, this.moveSpeed);
         ++this.spawnBabyDelay;
 
-        if (this.spawnBabyDelay >= 60 && this.animal.getDistanceSq(this.targetMate) < 9.0D)
+        double breedDist = 9.0D * this.animal.width;
+        if ((this.animal.width > 1) || (this.targetMate.width > 1)) {
+            breedDist = Math.pow((double)(3F + (((this.animal.width + this.targetMate.width)/2F) - 1F)), 2D);
+        }
+
+        if (this.spawnBabyDelay >= 60 && this.animal.getDistanceSq(this.targetMate) < breedDist)
         {
             this.spawnBaby();
         }
