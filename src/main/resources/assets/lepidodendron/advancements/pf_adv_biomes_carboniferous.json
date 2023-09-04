@@ -129,6 +129,12 @@
 			"conditions": {
 				"biome": "lepidodendron:carboniferous_swamp_river_border"
 			}
+		},
+		"carboniferous_cold_woodland": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_cold_woodland"
+			}
 		}
 	},
 	"requirements": [
@@ -176,6 +182,9 @@
 		],
 		[
 			"carboniferous_cold_savanna"
+		],
+		[
+			"carboniferous_cold_woodland"
 		]
 	]
 }

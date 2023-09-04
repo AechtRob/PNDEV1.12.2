@@ -28,7 +28,7 @@ public class StructureSpawnDawnRedwood extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimDawnRedwood))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genDawnRedwood && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genDawnRedwood && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -89,7 +89,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLeptopterisEpiphyte))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimCretaceous

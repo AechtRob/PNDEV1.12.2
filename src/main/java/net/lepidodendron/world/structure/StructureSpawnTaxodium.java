@@ -28,7 +28,7 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimTaxodium))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genTaxodium && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genTaxodium && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

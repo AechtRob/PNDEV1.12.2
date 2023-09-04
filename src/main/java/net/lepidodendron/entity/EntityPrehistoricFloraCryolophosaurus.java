@@ -121,9 +121,7 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
-			speedBase = speedBase / 0.75F;
-			speedBase = 1.18F;
+			speedBase = 0.85F;
 		}
 		return speedBase;
 	}

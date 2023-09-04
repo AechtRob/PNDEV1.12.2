@@ -28,7 +28,7 @@ public class StructureSpawnPodocarp extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPodocarp))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genPodocarp && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPodocarp && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

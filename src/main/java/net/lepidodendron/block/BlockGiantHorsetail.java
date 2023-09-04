@@ -86,7 +86,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if ((LepidodendronConfig.dimCarboniferous == dimID
 			|| dimID == LepidodendronConfig.dimPermian

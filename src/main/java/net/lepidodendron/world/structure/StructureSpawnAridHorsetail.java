@@ -28,7 +28,7 @@ public class StructureSpawnAridHorsetail extends ElementsLepidodendronMod.ModEle
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAridHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAridHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAridHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

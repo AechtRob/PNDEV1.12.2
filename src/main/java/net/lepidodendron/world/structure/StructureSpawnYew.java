@@ -28,7 +28,7 @@ public class StructureSpawnYew extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimYew))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genYew && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genYew && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

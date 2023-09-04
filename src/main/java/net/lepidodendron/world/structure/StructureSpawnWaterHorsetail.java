@@ -28,7 +28,7 @@ public class StructureSpawnWaterHorsetail extends ElementsLepidodendronMod.ModEl
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWaterHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genWaterHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genWaterHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

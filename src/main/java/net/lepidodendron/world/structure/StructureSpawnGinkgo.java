@@ -28,7 +28,7 @@ public class StructureSpawnGinkgo extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimGinkgo))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genGinkgo && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genGinkgo && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

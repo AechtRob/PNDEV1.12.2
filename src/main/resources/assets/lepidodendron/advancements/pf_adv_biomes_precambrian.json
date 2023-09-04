@@ -34,6 +34,12 @@
 				"biome": "lepidodendron:hadean_smelts"
 			}
 		},
+		"hadean_craters": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:hadean_craters"
+			}
+		},
 		"hadean_smelts_helper": {
 			"trigger": "minecraft:location",
 			"conditions": {
@@ -167,6 +173,9 @@
 		],
 		[
 			"hadean_lava"
+		],
+		[
+			"hadean_craters"
 		],
 		[
 			"hadean_smelts",

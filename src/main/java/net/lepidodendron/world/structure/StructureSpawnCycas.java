@@ -29,7 +29,7 @@ public class StructureSpawnCycas extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCycas))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genCycas && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genCycas && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

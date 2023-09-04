@@ -183,6 +183,30 @@
 			"conditions": {
 				"biome": "lepidodendron:triassic_desert_pleuromeia_beds"
 			}
+		},
+		"triassic_woodland": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_woodland"
+			}
+		},
+		"triassic_woodland_field": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_woodland_field"
+			}
+		},
+		"triassic_woodland_polje": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "triassic_woodland_polje:triassic_desert_pleuromeia_beds"
+			}
+		},
+		"triassic_woodland_polje_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "triassic_woodland_polje:triassic_woodland_polje_edge"
+			}
 		}
 	},
 	"requirements": [
@@ -257,6 +281,16 @@
 		],
 		[
 			"triassic_xeric_scrubland"
+		],
+		[
+			"triassic_woodland"
+		],
+		[
+			"triassic_woodland_field",
+			"triassic_woodland_polje_edge"
+		],
+		[
+			"triassic_woodland_polje"
 		]
 	]
 }

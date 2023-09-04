@@ -154,6 +154,7 @@ public class LepidodendronConfig {
     public static boolean doPropagation = true;
     public static boolean doPropagationVanilla = false;
     public static boolean genAllPlants = false;
+    public static boolean genAllPlantsModern = false;
 
     public static int waterHibbertopterus = 2;
     public static int waterLimnoscelis = 10;
@@ -830,6 +831,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "genAllPlants", genAllPlants);
         prop.setComment("If set to true then all plants from this mod will generate in the overworld, no matter how you set them in their own config section. You can still block them from biomes and dimensions in their individual settings. This setting does not affect algae. [default: false]");
         genAllPlants = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "genAllPlantsModern", genAllPlantsModern);
+        prop.setComment("If set to true then all plants from this mod will generate in the overworld, if they are still alive today, no matter how you set them in their own config section. You can still block them from biomes and dimensions in their individual settings. This setting does not affect algae. [default: false]");
+        genAllPlantsModern = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "spreadPlants", spreadPlants);

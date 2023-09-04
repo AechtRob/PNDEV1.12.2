@@ -29,7 +29,7 @@ public class StructureSpawnIsoetes extends ElementsLepidodendronMod.ModElement {
 		boolean alwaysSpawn = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimIsoetes))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genIsoetes && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genIsoetes && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

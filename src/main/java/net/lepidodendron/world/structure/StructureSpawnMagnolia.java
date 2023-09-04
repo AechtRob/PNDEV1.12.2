@@ -28,7 +28,7 @@ public class StructureSpawnMagnolia extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMagnolia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genMagnolia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMagnolia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

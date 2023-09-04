@@ -31,7 +31,7 @@ public class StructureSpawnAmentotaxus extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAmentotaxus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAmentotaxus && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAmentotaxus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

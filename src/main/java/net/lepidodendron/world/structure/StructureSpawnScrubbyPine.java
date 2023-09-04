@@ -28,7 +28,7 @@ public class StructureSpawnScrubbyPine extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimScrubbyPine))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genScrubbyPine && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genScrubbyPine && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

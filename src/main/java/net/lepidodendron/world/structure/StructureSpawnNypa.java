@@ -28,7 +28,7 @@ public class StructureSpawnNypa extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNypa))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genNypa && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genNypa && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

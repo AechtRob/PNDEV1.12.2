@@ -95,7 +95,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genFernEpiphyteOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genFernEpiphyte && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genFernEpiphyte && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			biomeCriteria = false;
 
 		if (biome instanceof BiomeCarboniferous)

@@ -28,7 +28,7 @@ public class StructureSpawnHoopAraucaria extends ElementsLepidodendronMod.ModEle
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHoopAraucaria))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genHoopAraucaria && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genHoopAraucaria && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

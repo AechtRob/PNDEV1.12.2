@@ -28,7 +28,7 @@ public class StructureSpawnMightyOak extends ElementsLepidodendronMod.ModElement
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMightyOak))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genMightyOak && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMightyOak && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -28,7 +28,7 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAgathis))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAgathis && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAgathis && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

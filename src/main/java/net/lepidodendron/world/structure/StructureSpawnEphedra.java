@@ -28,7 +28,7 @@ public class StructureSpawnEphedra extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEphedra))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genEphedra && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genEphedra && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
