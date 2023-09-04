@@ -6428,14 +6428,6 @@
       {
         "name": "lepidodendron:panguraptor_living06",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:panguraptor_living07",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:panguraptor_living08",
-        "stream": false
       }
     ]
   },
@@ -6463,6 +6455,18 @@
     "sounds": [
       {
         "name": "lepidodendron:panguraptor_death",
+        "stream": false
+      }
+    ]
+  },
+  "panguraptor_attack": {
+    "sounds": [
+      {
+        "name": "lepidodendron:panguraptor_attack01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:panguraptor_attack02",
         "stream": false
       }
     ]

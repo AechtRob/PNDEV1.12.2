@@ -4,6 +4,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.Path;
@@ -76,14 +77,17 @@ public class AttackAI extends EntityAIBase {
            // }
             this.entity.getNavigator().tryMoveToEntityLiving(target, this.speed);
 
-            if (this.entity.getAttackTarget() != null) {
-                if (this.entity.getNavigator().getPathToEntityLiving(target) == null) {
-                    this.entity.setAttackTarget(null);
-                    this.entity.setOneHit(false);
-                }
-                else if (this.entity.getNavigator().getPath().getFinalPathPoint().visited && !isDirectPathBetweenPoints(this.entity.getPositionVector(), target.getPositionVector())) {
-                    this.entity.setAttackTarget(null);
-                    this.entity.setOneHit(false);
+            if (this.entity.getAttackTarget() != null && this.entity.getMoveHelper().action != EntityMoveHelper.Action.JUMPING) {
+                if ((!isDirectPathBetweenPoints(this.entity.getPositionVector(), target.getPositionVector())) && (!this.entity.getAttackBoundingBox().intersects(target.getEntityBoundingBox()))) {
+                    if (this.entity.getNavigator().getPathToEntityLiving(target) == null) {
+                        this.entity.setAttackTarget(null);
+                        this.entity.setOneHit(false);
+                    } else if (this.entity.getNavigator().getPath() != null) {
+                        if (this.entity.getNavigator().getPath().getFinalPathPoint().visited) {
+                            this.entity.setAttackTarget(null);
+                            this.entity.setOneHit(false);
+                        }
+                    }
                 }
             }
 

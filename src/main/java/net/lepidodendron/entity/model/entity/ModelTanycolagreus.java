@@ -3632,7 +3632,7 @@ public class ModelTanycolagreus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION || ee.getAnimation() == ee.HURT_ANIMATION) { //The actual roar/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         

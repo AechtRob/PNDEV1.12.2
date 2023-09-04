@@ -687,6 +687,15 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     }
 
     @Override
+    protected float getJumpUpwardsMotion()
+    {
+        if (this.getIsFast()) {
+            return 0.45F;
+        }
+        return 0.42F;
+    }
+
+    @Override
     public void travel(float strafe, float vertical, float forward) {
         float f4;
         if (this.isServerWorld()) {

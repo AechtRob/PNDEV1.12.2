@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
@@ -839,6 +840,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         this.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase)this).HURT_ANIMATION);
                     }
+                    else if (this instanceof EntityPrehistoricFloraPanguraptor) {
+                        this.setAnimation(((EntityPrehistoricFloraPanguraptor)this).HURT_ANIMATION);
+                    }
                     else {
                         this.setAnimation(ROAR_ANIMATION);
                     }
@@ -1075,7 +1079,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 //            this.warnCooldown --;
 //        }
 
-        if (this.getWarnTarget() != null && !world.isRemote) {
+        if (this.getWarnTarget() != null && (!world.isRemote) && this.getAttackTarget() == null) {
             if (this.warnCooldown > 0) {
                 this.warnCooldown --;
             }
