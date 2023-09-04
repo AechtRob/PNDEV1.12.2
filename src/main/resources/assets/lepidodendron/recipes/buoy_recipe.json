@@ -1,0 +1,34 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:torch"
+    },
+    "3": {
+      "item": "minecraft:iron_bars"
+    },
+    "5": {
+      "item": "minecraft:iron_bars"
+    },
+    "6": {
+      "item": "minecraft:iron_bars"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "8": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:buoy_item",
+    "count": 1
+  }
+}
