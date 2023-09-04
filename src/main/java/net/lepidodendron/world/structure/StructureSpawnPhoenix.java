@@ -30,7 +30,7 @@ public class StructureSpawnPhoenix extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPhoenix))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genPhoenix && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPhoenix && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -28,7 +28,7 @@ public class StructureSpawnBunya extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAraucariaBidwilli))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAraucariaBidwilli && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAraucariaBidwilli && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

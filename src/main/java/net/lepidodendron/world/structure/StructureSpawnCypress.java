@@ -28,7 +28,7 @@ public class StructureSpawnCypress extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCypress))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genCypress && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genCypress && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

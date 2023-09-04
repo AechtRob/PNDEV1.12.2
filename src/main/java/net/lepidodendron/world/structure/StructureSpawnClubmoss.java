@@ -28,7 +28,7 @@ public class StructureSpawnClubmoss extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimClubmoss))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genClubmoss && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genClubmoss && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

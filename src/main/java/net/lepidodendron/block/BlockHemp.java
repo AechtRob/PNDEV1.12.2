@@ -83,7 +83,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHemp))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genHemp && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genHemp && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (LepidodendronConfig.dimCretaceous == dimID)
 			dimensionCriteria = true;

@@ -29,7 +29,7 @@ public class StructureSpawnStiffCycad extends ElementsLepidodendronMod.ModElemen
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimStiffCycad))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genStiffCycad && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genStiffCycad && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

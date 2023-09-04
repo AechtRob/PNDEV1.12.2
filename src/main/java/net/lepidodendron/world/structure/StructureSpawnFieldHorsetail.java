@@ -28,7 +28,7 @@ public class StructureSpawnFieldHorsetail extends ElementsLepidodendronMod.ModEl
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimFieldHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genFieldHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genFieldHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

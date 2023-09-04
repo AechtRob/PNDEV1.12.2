@@ -28,7 +28,7 @@ public class StructureSpawnCinnamonFern extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCinnamonFern))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genCinnamonFern && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genCinnamonFern && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

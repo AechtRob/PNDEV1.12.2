@@ -28,7 +28,7 @@ public class StructureSpawnSciadopitys extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSciadopitys))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSciadopitys && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSciadopitys && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

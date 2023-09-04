@@ -94,7 +94,7 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genTmesipterisOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genTmesipteris && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genTmesipteris && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			biomeCriteria = false;
 
 		if (biome instanceof BiomeCarboniferous)

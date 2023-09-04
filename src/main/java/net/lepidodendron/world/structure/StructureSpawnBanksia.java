@@ -30,7 +30,7 @@ public class StructureSpawnBanksia extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBanksia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genBanksia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genBanksia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

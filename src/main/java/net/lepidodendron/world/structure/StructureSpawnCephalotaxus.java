@@ -28,7 +28,7 @@ public class StructureSpawnCephalotaxus extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCephalotaxus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genCephalotaxus && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genCephalotaxus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

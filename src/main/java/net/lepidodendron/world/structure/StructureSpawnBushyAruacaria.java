@@ -28,7 +28,7 @@ public class StructureSpawnBushyAruacaria extends ElementsLepidodendronMod.ModEl
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBushyAraucaria))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genBushyAraucaria && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genBushyAraucaria && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -29,7 +29,7 @@ public class StructureSpawnProtea extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimProtea))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genProtea && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genProtea && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

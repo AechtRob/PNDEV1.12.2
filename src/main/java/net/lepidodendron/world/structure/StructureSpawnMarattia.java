@@ -30,7 +30,7 @@ public class StructureSpawnMarattia extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMarattia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genMarattia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMarattia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

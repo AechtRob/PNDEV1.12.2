@@ -29,7 +29,7 @@ public class StructureSpawnSwampHorsetail extends ElementsLepidodendronMod.ModEl
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSwampHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSwampHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSwampHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

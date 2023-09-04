@@ -28,7 +28,7 @@ public class StructureSpawnBristlecone extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBristlecone))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genBristlecone && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genBristlecone && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

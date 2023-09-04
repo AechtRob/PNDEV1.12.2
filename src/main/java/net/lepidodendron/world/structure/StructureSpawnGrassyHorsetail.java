@@ -28,7 +28,7 @@ public class StructureSpawnGrassyHorsetail extends ElementsLepidodendronMod.ModE
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimGrassyHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genGrassyHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genGrassyHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

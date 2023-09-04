@@ -29,7 +29,7 @@ public class StructureSpawnDioon extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimDioon))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genDioon && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genDioon && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

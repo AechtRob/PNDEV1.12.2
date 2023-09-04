@@ -28,7 +28,7 @@ public class StructureSpawnBeech extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBeech))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genBeech && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genBeech && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

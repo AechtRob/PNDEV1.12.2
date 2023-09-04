@@ -28,7 +28,7 @@ public class StructureSpawnWollemi extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWollemi))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genWollemi && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genWollemi && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

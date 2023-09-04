@@ -28,7 +28,7 @@ public class StructureSpawnArtocarpus extends ElementsLepidodendronMod.ModElemen
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimArtocarpus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genArtocarpus && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genArtocarpus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

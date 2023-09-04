@@ -32,7 +32,7 @@ public class StructureSpawnTreefernSilver extends ElementsLepidodendronMod.ModEl
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSilverTreefern))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSilverTreefern && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSilverTreefern && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

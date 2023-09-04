@@ -28,7 +28,7 @@ public class StructureSpawnLiriodendron extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLiriodendron))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genLiriodendron && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genLiriodendron && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
