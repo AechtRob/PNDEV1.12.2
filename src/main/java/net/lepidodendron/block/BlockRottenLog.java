@@ -212,6 +212,29 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			super.breakBlock(world, pos, state);
 		}
 
+		@Nullable
+		public static EntityItem hasBigEggs(String eggRenderType, World world, BlockPos pos) {
+			if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCasineria.block, (int) (1)));
+			}
+//				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_drepanosaurus")) {
+//					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsDrepanosaurus.block, (int) (1)));
+//				}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHylonomus.block, (int) (1)));
+			}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsLabidosaurus.block, (int) (1)));
+			}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsWeigeltisaurus.block, (int) (1)));
+			}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCeltedens.block, (int) (1)));
+			}
+			return null;
+		}
+
 		public void SpawnEggs(World world, BlockPos pos) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -224,27 +247,9 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 
 			EntityItem entityToSpawn = null;
 			if (!eggRenderType.equals("")) {
-				if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCasineria.block, (int) (1)));
-				}
-//				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_drepanosaurus")) {
-//					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsDrepanosaurus.block, (int) (1)));
-//				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHylonomus.block, (int) (1)));
-				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsLabidosaurus.block, (int) (1)));
-				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsWeigeltisaurus.block, (int) (1)));
-				}
-				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCeltedens.block, (int) (1)));
-				}
-				else {
+				entityToSpawn = hasBigEggs(eggRenderType, world, pos);
+				if (entityToSpawn == null) {
 					Block blockSpawn = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(eggRenderType)).getDefaultState().getBlock();
-					//System.err.println("Block " + blockSpawn);
 					if (blockSpawn != null) {
 						if (!(blockSpawn instanceof BlockInsectEggs)) { //Do not spawn insect eggs - these need collecting
 							entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(blockSpawn, (int) (1)));
@@ -256,7 +261,6 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			if (!world.isRemote && entityToSpawn != null) {
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
-				//System.err.println("Spawned " + entityToSpawn);
 			}
 		}
 

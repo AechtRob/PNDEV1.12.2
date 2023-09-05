@@ -6,9 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
@@ -18,7 +16,6 @@ import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -31,11 +28,12 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.JsonToNBT;
+import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -45,6 +43,7 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.storage.AnvilChunkLoader;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -651,33 +650,118 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos) {
-        worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-            @Override
-            public String getName() {
-                return "";
+
+        if (worldIn.isRemote) {
+            return;
+        }
+
+        String s = mobToSpawn;
+
+        String variantStr = "";
+        if (s.indexOf("@") >= 0) {
+            variantStr = s.substring(s.indexOf("@") + 1);
+            s = s.substring(0,s.indexOf("@"));
+        }
+
+        BlockPos pos = new BlockPos(xpos, ypos,zpos);
+
+        if (!worldIn.isBlockLoaded(pos))
+        {
+            return;
+        }
+
+        NBTTagCompound nbttagcompound = new NBTTagCompound();
+        if (!nbtStr.trim().equalsIgnoreCase(""))
+        {
+            String s1 = nbtStr;
+
+            try
+            {
+                nbttagcompound = JsonToNBT.getTagFromJson(s1);
+            }
+            catch (NBTException nbtexception)
+            {
+                return;
+            }
+        }
+
+        nbttagcompound.setString("id", s);
+        Entity entity = AnvilChunkLoader.readWorldEntityPos(nbttagcompound, worldIn, xpos, ypos, zpos, true);
+        if (entity == null)
+        {
+            return;
+        }
+        else {
+            //System.err.println("Rand: " + ((world.rand.nextFloat() - 0.5F)/10F));
+            entity.setLocationAndAngles(xpos, ypos, zpos, MathHelper.wrapDegrees(worldIn.rand.nextFloat() * 360.0F), 0.0F);
+
+            if (entity instanceof EntityLiving) {
+                ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
             }
 
-            @Override
-            public boolean canUseCommand(int permission, String command) {
-                return true;
+            //Exceptions for variants:
+            if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) entity;
+                palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraPalaeodictyopteraNymph && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraPalaeodictyopteraNymph palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyopteraNymph) entity;
+                palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyopteraNymph.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraDragonfly && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraDragonfly dragonfly = (EntityPrehistoricFloraDragonfly) entity;
+                dragonfly.setPNType(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraDragonflyNymph && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraDragonflyNymph dragonfly = (EntityPrehistoricFloraDragonflyNymph) entity;
+                dragonfly.setPNType(EntityPrehistoricFloraDragonflyNymph.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraMegasecoptera && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraMegasecoptera dragonfly = (EntityPrehistoricFloraMegasecoptera) entity;
+                dragonfly.setPNType(EntityPrehistoricFloraMegasecoptera.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraTitanoptera && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) entity;
+                titanoptera.setPNType(EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraTitanopteraNymph && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraTitanopteraNymph titanoptera = (EntityPrehistoricFloraTitanopteraNymph) entity;
+                titanoptera.setPNType(EntityPrehistoricFloraTitanopteraNymph.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraKalligrammatid && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraKalligrammatid kalligrammatid = (EntityPrehistoricFloraKalligrammatid) entity;
+                kalligrammatid.setPNType(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraNotostracan && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraNotostracan notostracan = (EntityPrehistoricFloraNotostracan) entity;
+                notostracan.setPNType(EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variantStr));
+            } else if (entity instanceof EntityPrehistoricFloraLacewing && !variantStr.equalsIgnoreCase("")) {
+                EntityPrehistoricFloraLacewing lacewing = (EntityPrehistoricFloraLacewing) entity;
+                lacewing.setPNType(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variantStr));
             }
+        }
 
-            @Override
-            public World getEntityWorld() {
-                return worldIn;
-            }
 
-            @Override
-            public MinecraftServer getServer() {
-                return worldIn.getMinecraftServer();
-            }
 
-            @Override
-            public boolean sendCommandFeedback() {
-                return false;
-            }
-
-        }, "pf_summon " + mobToSpawn + " " + xpos + " " + ypos + " " + zpos + " " + nbtStr);
+//        worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+//            @Override
+//            public String getName() {
+//                return "";
+//            }
+//
+//            @Override
+//            public boolean canUseCommand(int permission, String command) {
+//                return true;
+//            }
+//
+//            @Override
+//            public World getEntityWorld() {
+//                return worldIn;
+//            }
+//
+//            @Override
+//            public MinecraftServer getServer() {
+//                return worldIn.getMinecraftServer();
+//            }
+//
+//            @Override
+//            public boolean sendCommandFeedback() {
+//                return false;
+//            }
+//
+//        }, "pf_summon " + mobToSpawn + " " + xpos + " " + ypos + " " + zpos + " " + nbtStr);
     }
 
     public static String getHabitat() {

@@ -16,7 +16,7 @@ public class RenderEdestus extends RenderLiving<EntityPrehistoricFloraEdestus> {
     }
 
     public static float getScaler() {
-        return  1.52F;
+        return  1.65F;
     }
 
     @Override

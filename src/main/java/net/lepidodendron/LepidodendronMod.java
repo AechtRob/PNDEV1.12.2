@@ -8,7 +8,6 @@ import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.util.Summoner;
 import net.lepidodendron.world.lootconditions.EntityInBiomes;
 import net.lepidodendron.world.lootconditions.EntityInDimensionID;
 import net.lepidodendron.world.lootconditions.EntityInDimensionName;
@@ -2092,7 +2091,7 @@ public class LepidodendronMod {
 	public void serverLoad(FMLServerStartingEvent event) {
 		elements.getElements().forEach(element -> element.serverLoad(event));
 		proxy.serverLoad(event);
-		event.registerServerCommand(new Summoner());
+		//event.registerServerCommand(new Summoner());
 	}
 
 	@SubscribeEvent

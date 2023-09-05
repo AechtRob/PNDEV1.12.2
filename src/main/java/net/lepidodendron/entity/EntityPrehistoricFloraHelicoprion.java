@@ -41,10 +41,10 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraHelicoprion(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(1.4F, 0.90F);
 		minWidth = 0.1F;
-		maxWidth = 0.9F;
-		maxHeight = 0.9F;
+		maxWidth = 1.4F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 42.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

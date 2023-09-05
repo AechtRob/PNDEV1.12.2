@@ -7,7 +7,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsDragonfly;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;

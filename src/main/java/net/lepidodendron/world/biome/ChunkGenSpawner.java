@@ -18,10 +18,8 @@ import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -1163,34 +1161,36 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
+                                                                        EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, spawnPos.getX() + ((world.rand.nextFloat() - 0.5F)/10F), (spawnPos.getY() + offsetter), spawnPos.getZ() + ((world.rand.nextFloat() - 0.5F)/10F));
+
                                                                         //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
-                                                                        world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-                                                                            @Override
-                                                                            public String getName() {
-                                                                                return "";
-                                                                            }
-
-                                                                            @Override
-                                                                            public boolean canUseCommand(int permission, String command) {
-                                                                                return true;
-                                                                            }
-
-                                                                            @Override
-                                                                            public World getEntityWorld() {
-                                                                                return world;
-                                                                            }
-
-                                                                            @Override
-                                                                            public MinecraftServer getServer() {
-                                                                                return world.getMinecraftServer();
-                                                                            }
-
-                                                                            @Override
-                                                                            public boolean sendCommandFeedback() {
-                                                                                return false;
-                                                                            }
-
-                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + offsetter) + " " + spawnPos.getZ() + " " + nbtStr);
+//                                                                        world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+//                                                                            @Override
+//                                                                            public String getName() {
+//                                                                                return "";
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public boolean canUseCommand(int permission, String command) {
+//                                                                                return true;
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public World getEntityWorld() {
+//                                                                                return world;
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public MinecraftServer getServer() {
+//                                                                                return world.getMinecraftServer();
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public boolean sendCommandFeedback() {
+//                                                                                return false;
+//                                                                            }
+//
+//                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + offsetter) + " " + spawnPos.getZ() + " " + nbtStr);
                                                                     }
 
                                                                     //System.err.println("Spawned in " + world.getBiome(spawnPos).getBiomeName() + " at locID " + locationID + " " + mobToSpawn + " at " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ());
