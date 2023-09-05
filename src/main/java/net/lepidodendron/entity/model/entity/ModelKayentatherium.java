@@ -341,7 +341,7 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
         this.setRotateAngle(Rightfrontfoot, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(Leftfrontfoot, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(Lowerjawbase, 0.2F, 0.0F, 0.0F);
-        this.root.offsetY = -0.125F;
+        this.root.offsetY = -0.13F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

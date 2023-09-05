@@ -330,7 +330,7 @@ public class ModelTritylodon extends AdvancedModelBaseExtended {
         this.setRotateAngle(Tailend, 0.1F, 0.4F, 0.0F);
         this.setRotateAngle(Rightfrontfoot, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(Leftfrontfoot, -0.2F, 0.0F, 0.0F);
-        this.root.offsetY = -0.09F;
+        this.root.offsetY = 0.01F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

@@ -150,6 +150,8 @@ public class EntityPrehistoricFloraAngelina extends EntityPrehistoricFloraTrilob
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.ANGELINA_LOOT;
 	}
+
+	public static double offsetCase(@Nullable String variant) { return 0.34; }
 	public static double offsetWall(@Nullable String variant) {
 		return -0.45;
 	}

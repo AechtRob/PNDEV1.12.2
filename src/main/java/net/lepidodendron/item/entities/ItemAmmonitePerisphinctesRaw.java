@@ -41,7 +41,7 @@ public class ItemAmmonitePerisphinctesRaw extends ElementsLepidodendronMod.ModEl
 		OreDictionary.registerOre("pndietNautiloid", ItemAmmonitePerisphinctesRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_ammonite_perisphinctes_raw");
