@@ -305,6 +305,11 @@ public class ModelPricyclopyge extends AdvancedModelBase {
         this.Smalltrilo.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.Smalltrilo.offsetY = -0.05F;
+        this.Smalltrilo.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

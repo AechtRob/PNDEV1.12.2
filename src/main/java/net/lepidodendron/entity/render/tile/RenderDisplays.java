@@ -77,6 +77,7 @@ public class RenderDisplays {
     public static final ModelCenoceras modelCenoceras = new ModelCenoceras();
     public static final ModelChasmataspis modelChasmataspis = new ModelChasmataspis();
     public static final ModelCastorocauda modelCastorocauda = new ModelCastorocauda();
+    public static final ModelCarolinites modelCarolinites = new ModelCarolinites();
     public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
     public static final ModelDapedium modelDapedium = new ModelDapedium();
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
@@ -190,6 +191,7 @@ public class RenderDisplays {
     public static final ModelMacrosemius modelMacrosemius = new ModelMacrosemius();
     public static final ModelMicrocleidus modelMicrocleidus = new ModelMicrocleidus();
     public static final ModelMecochirus modelMecochirus = new ModelMecochirus();
+    public static final ModelMegistaspis modelMegistaspis = new ModelMegistaspis();
     public static final ModelNeeyambaspis modelNeeyambaspis = new ModelNeeyambaspis();
     public static final ModelNerepisacanthus modelNerepisacanthus = new ModelNerepisacanthus();
     public static final ModelNothosaurus modelNothosaurus = new ModelNothosaurus();
@@ -242,6 +244,8 @@ public class RenderDisplays {
     public static final ModelPlectronoceras modelPlectronoceras = new ModelPlectronoceras();
     public static final ModelProtospinax modelProtospinax = new ModelProtospinax();
     public static final ModelParnaibaia modelParnaibaia = new ModelParnaibaia();
+    public static final ModelAmmonite_Perisphinctes modelAmmonitePerisphinctes = new ModelAmmonite_Perisphinctes();
+    public static final ModelPlatypeltoides modelPlatypeltoides = new ModelPlatypeltoides();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
@@ -282,6 +286,8 @@ public class RenderDisplays {
     public static final ModelSiderops modelSiderops= new ModelSiderops();
     public static final ModelScheenstia modelScheenstia= new ModelScheenstia();
     public static final ModelSpiroceras modelSpiroceras= new ModelSpiroceras();
+    public static final ModelSteurbautichthys modelSteurbautichthys= new ModelSteurbautichthys();
+    public static final ModelSymphysops modelSymphysops= new ModelSymphysops();
     public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
     public static final ModelTanycolagreus modelTanycolagreus = new ModelTanycolagreus();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();

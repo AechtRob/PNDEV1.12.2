@@ -337,17 +337,20 @@ public class ModelPlatypeltoides extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Asaphellus.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.Drotops.offsetZ = 0.1F;
-        this.Asaphellus.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Asaphellus, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Thorax1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Pygidium, 0.0F, 0.0F, 0.0F);
+        this.Asaphellus.offsetY = 0.055F;
+        this.Asaphellus.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.Asaphellus.offsetY = -0.05F;
+        this.Asaphellus.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
