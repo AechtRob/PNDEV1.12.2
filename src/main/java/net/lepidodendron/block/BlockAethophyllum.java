@@ -112,7 +112,8 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_xeric_scrubland")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_lakeland"))
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_lakeland")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field"))
 			biomeCriteria = true;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland"))
