@@ -1640,6 +1640,15 @@ public class LepidodendronConfigPlants {
     public static int minheightWielandiella = 1;
     public static int maxheightWielandiella = 100;
     public static double multiplierWielandiella = 1;
+    
+    public static boolean genEoginkgoites = false;
+    public static String[] genEoginkgoitesBlacklistBiomes = new String[0];
+    public static String[] genEoginkgoitesOverrideBiomes = new String[0];
+    public static int[] dimEoginkgoites = new int[]{0};
+    public static int minheightEoginkgoites = 1;
+    public static int maxheightEoginkgoites = 100;
+    public static double multiplierEoginkgoites = 1;
+    
     public static boolean genWoodHorsetail = false;
     public static String[] genWoodHorsetailBlacklistBiomes = new String[0];
     public static String[] genWoodHorsetailOverrideBiomes = new String[0];
@@ -8123,6 +8132,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Tyrmia", "multiplierTyrmia", multiplierTyrmia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTyrmia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Eoginkgoites", "genEoginkgoites", genEoginkgoites);
+        prop.setComment("Set to true to generate Eoginkgoites naturally [default: false]");
+        genEoginkgoites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "genEoginkgoitesBlacklistBiomes", genEoginkgoitesBlacklistBiomes);
+        prop.setComment("List of biomes Eoginkgoites are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genEoginkgoitesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "genEoginkgoitesOverrideBiomes", genEoginkgoitesOverrideBiomes);
+        prop.setComment("List of biomes Eoginkgoites are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genEoginkgoitesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Eoginkgoites", "dimEoginkgoites", dimEoginkgoites);
+        prop.setComment("List of dimension IDs Eoginkgoites can generate in [default: 0]");
+        dimEoginkgoites = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "minheightEoginkgoites", minheightEoginkgoites);
+        prop.setComment("Minimum height that Eoginkgoites can generate (1 to 250) [default: 1]");
+        minheightEoginkgoites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "maxheightEoginkgoites", maxheightEoginkgoites);
+        prop.setComment("Maximum height that Eoginkgoites can generate (1 to 250, or set to 0 for unlimited) [default: 100]");
+        maxheightEoginkgoites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "multiplierEoginkgoites", multiplierEoginkgoites);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierEoginkgoites = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Wielandiella", "genWielandiella", genWielandiella);
