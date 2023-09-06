@@ -3,13 +3,17 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -47,11 +51,11 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:aethophyllum")
+public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:nataligma")
 	public static final Block block = null;
-	public BlockAethophyllum(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.aethophyllum);
+	public BlockNataligma(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.nataligma);
 	}
 
 	@Override
@@ -64,43 +68,36 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:aethophyllum", "inventory"));
+				new ModelResourceLocation("lepidodendron:nataligma", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:aethophyllum", BlockAethophyllum.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockAethophyllum.block);
-		OreDictionary.registerOre("plant", BlockAethophyllum.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nataligma", BlockNataligma.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockNataligma.block);
+		OreDictionary.registerOre("plant", BlockNataligma.block);
 	}
+
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAethophyllum))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNataligma))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAethophyllum && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genNataligma && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
-		if ((dimID == LepidodendronConfig.dimTriassic)
-		) {
+		if (LepidodendronConfig.dimTriassic == dimID)
 			dimensionCriteria = true;
-		}
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAethophyllumBlacklistBiomes))) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genNataligmaBlacklistBiomes))) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
 				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
-				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -108,21 +105,28 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genAethophyllumOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genNataligmaOverrideBiomes))
+			biomeCriteria = true;
+		if (LepidodendronConfig.dimTriassic == dimID)
 			biomeCriteria = true;
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_xeric_scrubland")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_lakeland"))
-			biomeCriteria = true;
+		boolean heightCheck = false;
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland"))
-			biomeCriteria = false;
+		if (biome instanceof BiomeTriassic)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierAethophyllum;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierNataligma;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -131,12 +135,22 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 				GenChance = 15;
 		}
 
-		int maxheight = LepidodendronConfigPlants.maxheightAethophyllum;
-		int minheight = LepidodendronConfigPlants.minheightAethophyllum;
+		if (LepidodendronConfig.dimTriassic == dimID) {
+			GenChance = 10;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field")) {
+				GenChance = 40;
+			}
+		}
+
+		int maxheight = LepidodendronConfigPlants.maxheightNataligma;
+		int minheight = LepidodendronConfigPlants.minheightNataligma;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
+		if (heightCheck) {
+			minheight = world.getSeaLevel() + 2;
+		}
 		final int maxH = maxheight;
 		final int minH = minheight;
 			
@@ -144,15 +158,16 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			final boolean heightChecker = heightCheck;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
-					for (int i = 0; i < 10; ++i) {
+					for (int i = 0; i < 8; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && world.isAirBlock(blockpos1.up(2)) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0) ) {
-							int j = 1 + random.nextInt(random.nextInt(4) + 2);
-							j = Math.max(3, j);
-							int heightCheck = 3;
+						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0) ) {
+							int j = 1 + random.nextInt(random.nextInt(5) + 1);
+							j = Math.max(2, j);
+							int heightCheck = 2;
 							boolean spaceCheck = true;
 							for (int k = 1; k <= j; ++k) {
 								if (((BlockCustomFlower) block).canBlockStay(world, blockpos1)
@@ -166,14 +181,11 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 							j = heightCheck;
 							for (int k = 0; k <= j; ++k) {
 								if (((BlockCustomFlower) block).canBlockStay(world, blockpos1)) {
-									if (k <= (j - 2)) {
-										world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2); 
-									}									
-									if (k == (j - 1)) {
-										world.setBlockState(blockpos1.up(k), BlockAethophyllum2.block.getDefaultState(), 2);
+									if (k <= (j - 1)) {
+										world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2);
 									}
 									if (k == j) {
-										world.setBlockState(blockpos1.up(k), BlockAethophyllum3.block.getDefaultState(), 2);
+										world.setBlockState(blockpos1.up(k), BlockNataligmaTop.block.getDefaultState(), 2);
 									}
 								}
 							}
@@ -184,46 +196,41 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
+
+		public static final PropertyBool BASE = PropertyBool.create("base");
+		public static final PropertyBool LOWER = PropertyBool.create("lower");
+		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
+		
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			setHardness(0.2F);
-			setResistance(0.2F);
+			setHardness(0.5F);
+			setResistance(0.5F);
 			setLightLevel(0F);
-			setTranslationKey("pf_aethophyllum");
-			setRegistryName("aethophyllum");
+			setTranslationKey("pf_nataligma");
+			setRegistryName("nataligma");
+			this.setDefaultState(this.blockState.getBaseState().withProperty(BASE, false).withProperty(LOWER, false).withProperty(AGE, Integer.valueOf(0)));
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_AETHOPHYLLUM;
-		}
-
-
-		@Override
-		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 100;
-		}
-
-		@Override
-		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
+			return ModTriggers.CLICK_NATALIGMA;
 		}
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
-				&&
+					&&
 					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
-					|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
-					|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
-					|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
-				)
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					)
 			) {
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockAethophyllum.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				worldIn.spawnEntity(entityToSpawn);
 			}
@@ -241,18 +248,22 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 				drops.add(new ItemStack(Blocks.AIR));
 			}
 		}
-
+		
 		@Override
-		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
-		}
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos){
 
-		@Nullable
-		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-		{
-			return NULL_AABB;
-		}
+	    	Block U1 = worldIn.getBlockState(pos.up()).getBlock();
+			Block U2 = worldIn.getBlockState(pos.up(2)).getBlock();
+			Block U3 = worldIn.getBlockState(pos.up(3)).getBlock();
 
+	        return state.withProperty(BASE, ((U1 == this) && (U2 == this))).withProperty(LOWER, ((U1 == this) && (U2 != this)));
+	    }
+
+	    @Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{AGE, BASE, LOWER});
+		}
+			
 		@Override
 		protected boolean canSilkHarvest()
 	    {
@@ -270,10 +281,41 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public boolean canPlaceBlockAt(World world, BlockPos pos) {
-			Block block2 = world.getBlockState(pos.down()).getBlock();
-			return (block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this) || block2 == block);
-		}
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+	    {
+	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
+	    }
+
+	    @Override
+	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+	    {
+	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
+	    }
+
+		@Override
+	    public boolean canBlockStay(World worldIn, BlockPos pos)
+	    {
+	        return canPlaceBlockAt(worldIn, pos);
+	    }
+	    
+		@Override
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+	    {
+	        IBlockState state = worldIn.getBlockState(pos.down());
+	        Block block = state.getBlock();
+
+		    if (block == this)
+		    {
+		    	return true;
+	        }
+	        if (block.canSustainPlant(state, worldIn, pos.down(), EnumFacing.UP, this))
+	        {
+	            return true;
+	        }
+	        else {
+				return false;
+			}
+	    }
 
 		@SideOnly(Side.CLIENT)
 		public int colorMultiplier(IBlockAccess p_149720_1_, BlockPos pos, int pass) {
@@ -284,27 +326,20 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 		public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 			if (world.getBlockState(pos.down()).getBlock() == block || this.checkForDrop(world, pos, state)) {
 				if (world.isAirBlock(pos.up())) {
-					world.setBlockState(pos.up(), BlockAethophyllum2.block.getDefaultState(), 2);
-				}
-				if ((world.isAirBlock(pos.up(2))) && (world.getBlockState(pos.up()).getBlock() == BlockAethophyllum2.block)) {
-					world.setBlockState(pos.up(2), BlockAethophyllum3.block.getDefaultState(), 2);
+					world.setBlockState(pos.up(), BlockNataligmaTop.block.getDefaultState(), 2);
 				}
 				else {
-					if ((world.isAirBlock(pos.up(3))) && ((world.getBlockState(pos.up())).getBlock() == BlockAethophyllum2.block)
-						&& ((world.getBlockState(pos.up(2))).getBlock() == BlockAethophyllum3.block)) {
+					if ((world.isAirBlock(pos.up(2))) && ((world.getBlockState(pos.up())).getBlock() == BlockNataligmaTop.block)) {
 						int l;
 						for (l = 1; world.getBlockState(pos.down(l)).getBlock() == this; ++l);
-						if (l < 4) {
+						if (l < 3) {
 							int i1 = (Integer) state.getValue(AGE);
 							if (i1 == 15) {
 								//world.setBlockToAir(pos.up(2));
 								world.setBlockState(pos.up(), this.getDefaultState());
 								world.setBlockState(pos, state.withProperty(AGE, 0), 4);
 								//if (world.isAirBlock(pos.up(2))) {
-									world.setBlockState(pos.up(2), BlockAethophyllum2.block.getDefaultState(), 2);
-								//}
-								//if (world.isAirBlock(pos.up(3))) {
-									world.setBlockState(pos.up(3), BlockAethophyllum3.block.getDefaultState(), 2);
+									world.setBlockState(pos.up(2), BlockNataligmaTop.block.getDefaultState(), 2);
 								//}
 							} else {
 								world.setBlockState(pos, state.withProperty(AGE, i1 + 1), 4);
@@ -315,27 +350,48 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		@Override
-	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
-	    	if (world.isAirBlock(pos.up()) && world.isAirBlock(pos.up(2))) {
-				world.setBlockState(pos.up(), BlockAethophyllum2.block.getDefaultState(), 3);
-				world.setBlockState(pos.up(2), BlockAethophyllum3.block.getDefaultState(), 3);
-	    	}
-			super.onBlockAdded(world, pos, state);
-	    }
-
 	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Coniferous shrub");
+				tooltip.add("Type: Gnetophyte plant");
 				tooltip.add("Periods: Triassic");
-				tooltip.add("Note: An unusual herbaceous conifer");
-				tooltip.add("Propagation: fruit/cone");
-			}
+				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 60;
+		}
+	    
+	    @Override
+	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+	    	if (world.isAirBlock(pos.up())) {
+				world.setBlockState(pos.up(), BlockNataligmaTop.block.getDefaultState(), 3);
+			}
+			super.onBlockAdded(world, pos, state);
+	    }
+
+		@Override
+		public Block planted() {
+			return BlockNataligma.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return null;
+		}
 	}
 	
 	public boolean shouldGenerateInDimension(int id, int[] dims) {

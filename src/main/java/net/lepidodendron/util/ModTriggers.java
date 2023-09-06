@@ -295,6 +295,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
     public static final CustomTrigger CLICK_MEDULLOSALES = new CustomTrigger("pf_book_medullosales");
+    public static final CustomTrigger CLICK_NATALIGMA = new CustomTrigger("pf_book_nataligma");
     public static final CustomTrigger CLICK_MIRABILIS = new CustomTrigger("pf_book_mirabilis");
     public static final CustomTrigger CLICK_MONKEY_PUZZLE_ARAUCARIA = new CustomTrigger("pf_book_monkey_puzzle_araucaria");
     public static final CustomTrigger CLICK_MONKEYPUZZLE = new CustomTrigger("pf_book_monkeypuzzle");
@@ -1580,6 +1581,7 @@ public class ModTriggers
             CLICK_MARATTIA,
             CLICK_MEDULLOSALES,
             CLICK_MIRABILIS,
+            CLICK_NATALIGMA,
             CLICK_MONKEY_PUZZLE_ARAUCARIA,
             CLICK_MONKEYPUZZLE,
             CLICK_NAMACALATHUS,

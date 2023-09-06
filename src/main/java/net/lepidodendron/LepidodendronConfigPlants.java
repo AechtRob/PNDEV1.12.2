@@ -2144,6 +2144,15 @@ public class LepidodendronConfigPlants {
     public static int minheightEremopteris = 1;
     public static int maxheightEremopteris = 90;
     public static double multiplierEremopteris = 1;
+
+    public static boolean genNataligma = false;
+    public static String[] genNataligmaBlacklistBiomes = new String[0];
+    public static String[] genNataligmaOverrideBiomes = new String[0];
+    public static int[] dimNataligma = new int[]{0};
+    public static int minheightNataligma = 1;
+    public static int maxheightNataligma = 0;
+    public static double multiplierNataligma = 1;
+    
     public static boolean genHemp = false;
     public static String[] genHempBlacklistBiomes = new String[0];
     public static String[] genHempOverrideBiomes = new String[0];
@@ -9295,6 +9304,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Pseudobornia", "multiplierPseudobornia", multiplierPseudobornia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierPseudobornia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Nataligma", "genNataligma", genNataligma);
+        prop.setComment("Set to true to generate Nataligma naturally [default: false]");
+        genNataligma = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "genNataligmaBlacklistBiomes", genNataligmaBlacklistBiomes);
+        prop.setComment("List of biomes Nataligma are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genNataligmaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "genNataligmaOverrideBiomes", genNataligmaOverrideBiomes);
+        prop.setComment("List of biomes Nataligma are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genNataligmaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Nataligma", "dimNataligma", dimNataligma);
+        prop.setComment("List of dimension IDs Nataligma can generate in [default: 0]");
+        dimNataligma = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "minheightNataligma", minheightNataligma);
+        prop.setComment("Minimum height that Nataligma can generate (1 to 250) [default: 1]");
+        minheightNataligma = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "maxheightNataligma", maxheightNataligma);
+        prop.setComment("Maximum height that Nataligma can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightNataligma = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "multiplierNataligma", multiplierNataligma);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierNataligma = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Eremopteris", "genEremopteris", genEremopteris);

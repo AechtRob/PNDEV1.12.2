@@ -384,7 +384,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockVoltzia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPagiophyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHirmeriellaSapling.block).toString(),
-                ForgeRegistries.ITEMS.getKey(ItemIraniaItem.block).toString()
+                ForgeRegistries.ITEMS.getKey(ItemIraniaItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockNataligma.block).toString()
+
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsTriassic);
         return resLoc;
