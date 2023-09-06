@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_phillipsia",
 			"type": "text",
-			"text": ""
+			"text": "Trilobites had long been on the decline before the Great Dying. However, it was the Great Dying that would seal the extinction of this iconic Paleozoic group of arthropods. Among the last trilobites was Phillipsia which lived from the Carboniferous to Permian. Phillipsia had gentle genal spines and large holochroal eyes. They were small, only eight centimeters in length at max. Even then, they large for Carboniferous and Permian trilobites."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phillipsia",
+			"type": "text",
+			"text": "They inherited the last gifts of their long-lasting dynasty. Today, they are scattered across rocks, fossils from a bygone era."
 		},
 		{
 			"type": "lepidodendron:diet",

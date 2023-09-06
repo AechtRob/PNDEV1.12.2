@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_clarkeiteuthis",
 			"type": "text",
-			"text": ""
+			"text": "Clarkeiteuthis is a cephalopod from the Posidonia Shale that lived in the Early Jurassic. It was once considered as a species of phragmoteuthid belemnoid Phragmoteuthis, but was later redescribed as a diploberiid belemnoid. It is a very well preserved belmenoid, with various specimens showing its ten hooked arms and some specimens showing the mantle and ink sacs. Some fossil specimens are known with Leptolepis on its arms, suggesting that it was a common prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_clarkeiteuthis",
+			"type": "text",
+			"text": "Clarkeiteuthis was likely not an active swimmer and would've ambushed prey in short bursts of speed."
 		},
 		{
 			"type": "lepidodendron:diet",

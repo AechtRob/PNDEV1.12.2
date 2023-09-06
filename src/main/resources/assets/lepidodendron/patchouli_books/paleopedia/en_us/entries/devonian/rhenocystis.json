@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_rhenocystis",
 			"type": "text",
-			"text": ""
+			"text": "Rhenocystis is an Anomalocystoid Mitrate from the Lower Devonian. As typical of this group of enigmatic echinoderms, its body plan and biomechanics are difficult to deduce from its bizarre appearance. Like extant echinoderms, it possessed an external skeleton of calcite plates. It had a long flattened body with two spikes. At the opposite end is a long spiny tail. Based upon ichnofossils, it is known that Rhenocystis would've drawn it's body forwards using the tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhenocystis",
+			"type": "text",
+			"text": "The dorsal side would point upwards and would drag across the sea floor."
 		},
 		{
 			"type": "lepidodendron:diet",

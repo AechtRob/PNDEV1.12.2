@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
 			"type": "text",
-			"text": ""
+			"text": "Mazothairos is a Palaeodictyopteran from the Pennsylvanian Epoch of the Carboniferous. It was discovered in the Mazon Creek fossil beds Illinois. Although it is only known from one very fragmentary fossil, it's estimated to have a 56 centimeter wingspan. This would've put alongside with Meganeura and Meganeuropsis as one of the largest flying insects ever."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
+			"type": "text",
+			"text": "Due to the fragmentary nature of the holotype specimen, much of what is assumed for Mazothairos comes from general knowledge of Palaeodictyopterans. This includes much of the anatomy as based on the incomplete fossil, it is uncertain the extent that the distinctive prothoracic winglets were present in Mazothairos."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,0 +1,46 @@
+{
+	"name": "Eocaecilia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eocaecilia_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_eocaecilia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eocaecilia",
+			"title": "Eocaecilia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic(br2)>Amphibia $(br)>Gymnophiona"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/eocaecilia.png"],
+			"title": "E. micropodia",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocaecilia",
+			"type": "text",
+			"text": "Eocaecilia is the earliest Caecilian known from a whole body fossil. It is known from Kayenta Formation of Arizona, United States and lived during the Early Jurassic. It possessed a 15 cm long serpentine body like modern members of its order, but Eocaecilia retains short limbs while modern Caecilians are limbless. Also unlike modern Caecilians, Eocaecilia had slightly better vision though it was already well on the way to lose it."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eocaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eocaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eocaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eocaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eocaecilia"
+		}
+	]
+}

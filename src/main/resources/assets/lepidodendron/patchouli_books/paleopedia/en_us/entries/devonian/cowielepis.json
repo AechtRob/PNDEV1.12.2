@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cowielepis",
 			"type": "text",
-			"text": ""
+			"text": "Cowielepis is a Birkeniiform from the early Devonian. Like other Birkeniiforms, this anaspid fish had a compressed body and a row of median dorsal hooked-shapes scales. It is described from three fossils from Cowie harbor, Stonehaven, Scotland. Cowielepis' head is covered in a series of plates and its body is covered in rod shaped scales arranged in a chevron-like pattern. This Anaspid was the first to be found with paired ventrolateral fins."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cowielepis",
+			"type": "text",
+			"text": "It lived in a fluvio-lacustrine environment."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ciurcopterus",
 			"type": "text",
-			"text": ""
+			"text": "Ciurcopterus is a basal Pterygotid Eurypterid. Compared to other early Pterygotids, Ciurcopterus is relatively large but is massively dwarfed by its later relatives. It is short and wide with a flattened telson, a characteristic feature of its family. Pterygotids also have robust chelicerae, but these have not been preserved in Ciurcopterus. Although it has all the features that define it as a Pterygotid,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ciurcopterus",
+			"type": "text",
+			"text": "its appendages are more similar to that of the primitive Pterygotioid Slimonia. It lived in the Late Silurian of North America in shallow, stromatolite-abundant environments."
 		},
 		{
 			"type": "lepidodendron:diet",
