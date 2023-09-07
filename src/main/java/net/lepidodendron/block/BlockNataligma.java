@@ -132,13 +132,13 @@ public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
-				GenChance = 15;
+				GenChance = 25;
 		}
 
 		if (LepidodendronConfig.dimTriassic == dimID) {
-			GenChance = 10;
+			GenChance = 25;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field")) {
-				GenChance = 40;
+				GenChance = 92;
 			}
 		}
 
