@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
 			"type": "text",
-			"text": ""
+			"text": "Panacanthocaris belongs to the unusual and mysterious Branchiopod order of Kazacharthra. It lived in Late Triassic and Early Jurassic of Kazakhstan and China. It was first described by Tchernyshev in 1940 who drew the carapace of Panacanthocaris upsidedown with the mandibular bulge pointing towards the body instead of forwards. Kazacharthrans are unique and easily recognizeable for their spiny irregular carapaces and"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
+			"type": "text",
+			"text": "for the many old questions left unanswered about their ecology and biology."
 		},
 		{
 			"type": "lepidodendron:diet",
