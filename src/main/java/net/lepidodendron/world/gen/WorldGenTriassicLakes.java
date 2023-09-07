@@ -208,7 +208,7 @@ public class WorldGenTriassicLakes extends WorldGenerator
                 }
             }
 
-            ChunkGenSpawner.executeProcedure(false, worldIn, spawnPos, rand, null, true);
+            ChunkGenSpawner.executeProcedure(worldIn, spawnPos, rand, null, true, true);
             return true;
         }
     }

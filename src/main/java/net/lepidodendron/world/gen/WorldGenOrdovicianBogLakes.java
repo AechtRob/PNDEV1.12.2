@@ -156,7 +156,7 @@ public class WorldGenOrdovicianBogLakes extends WorldGenerator
                 }
             }
 
-            ChunkGenSpawner.executeProcedure(false, worldIn, spawnPos, rand, null, true, true);
+            ChunkGenSpawner.executeProcedure(worldIn, spawnPos, rand, null, true, true);
             return true;
         }
     }

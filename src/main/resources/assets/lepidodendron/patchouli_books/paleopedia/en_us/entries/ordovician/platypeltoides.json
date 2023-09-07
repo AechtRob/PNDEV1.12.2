@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_platypeltoides",
 			"type": "text",
-			"text": ""
+			"text": "Platypeltoides is a diverse genus of trilobite from the Ordovician. Platypeltoides cuervoae was originally assigned to the genus of Asaphellus, but modern research has reassigned it as a species of Platypeltoides. It lived in the Lower Fezouata Formation of what is modern day the Anti-Atlas Range of Morocco. Platypeltoides cuervoae immediately strikes the eye with it's unusually wide clothes hanger shaped cephalon."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platypeltoides",
+			"type": "text",
+			"text": "Fossils of Platypeltoides have also been discovered showing it having short and stubby antenna."
 		},
 		{
 			"type": "lepidodendron:diet",
