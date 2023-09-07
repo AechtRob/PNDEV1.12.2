@@ -283,7 +283,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return -2;
+		return -1.90;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
