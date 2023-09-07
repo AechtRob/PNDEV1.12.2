@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",
 			"type": "text",
-			"text": "Mastodonsaurus was a genus of temnospondyl found across Europe. This amphibian, being one of the largest ever, was a bottom-dwelling ambush predator, using its large head to swallow up anything it could, including fish, other temnospondyls, and rarely even archosaurs that strayed too close to the water’s edge. Mass grave sites of this animal have been found, created when the ponds or swamps this animal lived in dried up, making the heavy, aquatic amphibians dehydrate and crush themselves under their own weight."
+			"text": "Mastodonsaurus was a genus of temnospondyl found across Europe. This amphibian, being one of the largest ever, was a bottom-dwelling ambush predator, using its large head to swallow up anything it could, including fish, other temnospondyls, and rarely even archosaurs that strayed too close to the water’s edge."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",
+			"type": "text",
+			"text": "Mass grave sites of this animal have been found, created when the ponds or swamps this animal lived in dried up, making the heavy, aquatic amphibians dehydrate and crush themselves under their own weight."
 		},
 		{
 			"type": "lepidodendron:diet",

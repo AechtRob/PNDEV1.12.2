@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lonchidion",
 			"type": "text",
-			"text": "Lonchidion was genus of hybodont shark that lived throughout Mesozoic, Triassic to Cretaceous. Mostly known from teeth and fin spines, it was probably small hybodont with length tens of centimeters. Most of the fossil records are known from strata thought to have been deposited in freshwater environments. Lonchidon is not only one of the longest survived hybodonts, it is also the last survived hybodont until end of the Cretaceous period. Fossils are also known from Hell Creek, which is famous for Tyrannosaurus and Triceratops. "
+			"text": "Lonchidion was genus of hybodont shark that lived throughout Mesozoic, Triassic to Cretaceous. Mostly known from teeth and fin spines, it was probably small hybodont with length tens of centimeters. Most of the fossil records are known from strata thought to have been deposited in freshwater environments. Lonchidon is not only one of the longest survived hybodonts,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lonchidion",
+			"type": "text",
+			"text": "it is also the last survived hybodont until end of the Cretaceous period. Fossils are also known from Hell Creek, which is famous for Tyrannosaurus and Triceratops."
 		},
 		{
 			"type": "lepidodendron:diet",

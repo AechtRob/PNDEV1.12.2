@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_teleocrater",
 			"type": "text",
-			"text": "Teleocrater is a Triassic Aphanosaurian archosaur. With a total length of about 2 m, Teleocrater is characterized by its long neck. Contrary to what is thought from its small sauropod-like appearance, Teleocrater is carnivorous animal with sharp teeth. Aphanosauria is important in considering the evolution of dinosaurs and pterosaurs. Aphanosauria is the only avemetatarsalian known to have branched from a common ancestor of Ornithodira, a group that includes dinosaurs (including birds) and pterosaurs. Unlike most ornithodirans, Teleocrater is not good at running, given its hind leg anatomy."
+			"text": "Teleocrater is a Triassic Aphanosaurian archosaur. With a total length of about 2 m, Teleocrater is characterized by its long neck. Contrary to what is thought from its small sauropod-like appearance, Teleocrater is carnivorous animal with sharp teeth. Aphanosauria is important in considering the evolution of dinosaurs and pterosaurs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teleocrater",
+			"type": "text",
+			"text": "Aphanosauria is the only avemetatarsalian known to have branched from a common ancestor of Ornithodira, a group that includes dinosaurs (including birds) and pterosaurs. Unlike most ornithodirans, Teleocrater is not good at running, given its hind leg anatomy."
 		},
 		{
 			"type": "lepidodendron:diet",

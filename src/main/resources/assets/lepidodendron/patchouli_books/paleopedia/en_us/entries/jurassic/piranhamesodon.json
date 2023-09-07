@@ -28,11 +28,6 @@
 			"text": "Despite being known from one single specimen, the fish's hunting behaviour has since been identified in several other fossils preserving fish with nibbled fins and damaged tissues seemingly matching this predator's bite. These fossils, in conjunction with its dentition and shape, were the origin of the aggressive mimicry hypothesis."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
-		},
-		{
 			"type": "lepidodendron:diet",
 			"mob": "lepidodendron:prehistoric_flora_piranhamesodon"
 		},

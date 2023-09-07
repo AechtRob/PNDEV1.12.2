@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_xinpusaurus",
 			"type": "text",
-			"text": "Xinpusaurus was a Triassic thalattosaur whose fossils have been found in China. It was relatively large, growing up to around 1m in length. They were durophagus animals, meaning they preyed on bivalves and the like, largely in part due to their unique pointy head shape. They had a long rostrum which varied in size among individuals that had an unknown purpose. One specimen of Xinpusaurus was found inside the belly of a Guizhouichthyosaurus, which had choked on the large animal and died as a result."
+			"text": "Xinpusaurus was a Triassic thalattosaur whose fossils have been found in China. It was relatively large, growing up to around 1m in length. They were durophagus animals, meaning they preyed on bivalves and the like, largely in part due to their unique pointy head shape. They had a long rostrum which varied in size among individuals that had an unknown purpose."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xinpusaurus",
+			"type": "text",
+			"text": "One specimen of Xinpusaurus was found inside the belly of a Guizhouichthyosaurus, which had choked on the large animal and died as a result."
 		},
 		{
 			"type": "lepidodendron:diet",

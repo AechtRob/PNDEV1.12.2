@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_guiyu",
 			"type": "text",
-			"text": "One thing that makes Guiyu especially interesting is that even though it was a bony fish, it predated the split between ray-finned fish (Actinopterygii) and lobe-finned fish (Sarcopterygii).$(br)$(br)$(br)$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "One thing that makes Guiyu especially interesting is that even though it was a bony fish, it predated the split between ray-finned fish (Actinopterygii) and lobe-finned fish (Sarcopterygii)."
 		},
 		{
 			"type": "lepidodendron:diet",
