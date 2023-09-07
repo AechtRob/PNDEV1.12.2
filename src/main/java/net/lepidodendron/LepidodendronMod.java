@@ -2010,8 +2010,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation TANYCOLAGREUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanycolagreus_young"));
 
 	public static final int ENTITY_PLATYSUCHUS = 792;
-	public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
-	public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
+	//public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
+	//public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
 
 	public static final int ENTITY_SUBMARINE = 793;
 
