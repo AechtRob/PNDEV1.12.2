@@ -334,7 +334,7 @@ public class ModelClarkeiteuthis extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         //this.body.offsetY = 1.3F;
         this.body.rotateAngleY = (float) Math.toRadians(180);
-        //this.body.offsetZ = -1F;
+        this.body.offsetZ = 0.5F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.arm1, this.armb1};
         AdvancedModelRendererExtended[] tentacle2 = {this.arm2, this.armb2};
@@ -373,7 +373,7 @@ public class ModelClarkeiteuthis extends AdvancedModelBaseExtended {
         if (e.isInWater()) {
             float bobSpeed = 0.1F;
             this.bobExtended(body, bobSpeed, 0.5F, false, 0.1F, f2, 2);
-            this.body.offsetZ = this.moveBoxExtended(speed, 0.50F, false, 3, f2, 1);
+            this.body.offsetZ = this.moveBoxExtended(speed, 0.50F, false, 3, f2, 1) + 1.25F;
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
