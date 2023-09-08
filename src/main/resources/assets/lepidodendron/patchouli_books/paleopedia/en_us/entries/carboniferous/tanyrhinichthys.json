@@ -20,7 +20,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",
 			"type": "text",
-			"text": ""
+			"text": "Tanyrhinichthys mcallisteri is a species of Actinopterygian fish from the Late Carboniferous of North America. The animal, measuring around 20 cm, was part of a radiation of long snouted aquatic animals that took place in the Pennsylvanian of North America, alongside other animals such as Bandringa and the small Phanerorhynchus. Originally interpreted as a Ram-feeder, along the likes of extant esocid fishes like pike, the animal was thought to have"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",
+			"type": "text",
+			"text": "been a predator who would wait for prey using its fusiform body, homocercal caudal fin and posteriorly placed dorsal and anal fins to strike in short but exceptionally quick bursts of speed. However, after further study of this animal, more and more differences in the anatomy of this fish would prove it unlikely for this animal to have hunted in a similar fashion; the asymmetry of the placement of its fins and peculiar head shape would make it hard,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",
+			"type": "text",
+			"text": "in fact, for this creature to lunge at high speeds in a similar way to modern day pikes, ruling out the ambush predator hypothesis and making way to our current interpretation of this animal's mode of life. Today we believe Tanyrhinichthys to have been a benthic-cruising predator not too dissimilar to Sturgeons, hypothesis backed up by the wealth of shared anatomical characteristics the two animals have,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",
+			"type": "text",
+			"text": "including the shape of the tail and placement of the fins. Furthermore, it has been hypothesized that the fossa present in the animal's snout may have been home to further sensory organs such as electroreceptors, which would've aided the animal in feeding if it indeed was a sturgeon-like predator; unfortunately the lack of well preserved enough specimens leaves us with only skeletal elements to study in the snout of this animal,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",
+			"type": "text",
+			"text": "making it impossible to make sure of the presence of such organs. Despite the many similarities with Sturgeons, however, the two animals remain distinct in the mode of capture, Sturgeons sucking up prey while this animal biting."
 		},
 		{
 			"type": "lepidodendron:diet",

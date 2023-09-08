@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudorhina",
 			"type": "text",
-			"text": ""
+			"text": "Pseudorhina is a Jurassic to Early Cretaceous Squatiniforme. It had a resemblance to modern angel sharks with a flattened body and wing like fins. All species of Pseudorhina are known exclusively from western Europe and many are known only from teeth. Several preserved flattened body fossils have also been unearthed from Germany and France."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudorhina",
+			"type": "text",
+			"text": "Pseudorhina is unique among fossil angel sharks because of the presence of preserved body fossils whereas most other angel sharks are only known from teeth."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tritylodon",
 			"type": "text",
-			"text": ""
+			"text": "Tritylodon was a genus of tritylodontid cynodont therapsids that lived during the Early Jurassic (around 200 - 182.7 million years ago). Its name means \"three-cusped tooth\". The remains of this 30 cm (12 inch) long animal have been found at the Elliot Formation in South Africa, and at the Hanson Formation in Antarctica."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tritylodon",
+			"type": "text",
+			"text": "The anatomy of its shoulders, limbs and large front incisors indicated that it was a digger and most likely a burrower, while the rest of its teeth suggested that it was herbivorous (seemingly digging up and processing plants with the aforementioned incisors)."
 		},
 		{
 			"type": "lepidodendron:diet",
