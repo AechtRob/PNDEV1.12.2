@@ -1,20 +1,20 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:gyrodus_raw"
+			"item": "lepidodendron:elephantoceras_raw"
 		  },
 		"title": {
-			"translate": "advancements.pf_adv_book_gyrodus.title"
+			"translate": "advancements.pf_adv_book_elephantoceras.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_gyrodus.description"
+			"translate": "advancements.pf_adv_book_elephantoceras.description"
 		}
 	},
 	"parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_gyrodus"
+			"trigger": "pf_book_elephantoceras"
 		}
 	}
 }

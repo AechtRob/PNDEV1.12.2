@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_geosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Geosaurus is a Late Jurassic to Early Cretaceous Metriorhynchid. The genus name Geosaurus was coined in 1824 and being such an old genus, Geosaurus has experienced radical taxonomic changes. Geosaurus currently consists of three valid species, being G. giganteus the type species, G. grandis, and G. lapparenti."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_geosaurus",
+			"type": "text",
+			"text": "In the Solnhofen Limestone, Geosaurus would've been sharing its environment with Dakosaurus, Cricosaurus, and Rhacheosaurus, indicating that there would've been strong niche partitioning."
 		},
 		{
 			"type": "lepidodendron:diet",

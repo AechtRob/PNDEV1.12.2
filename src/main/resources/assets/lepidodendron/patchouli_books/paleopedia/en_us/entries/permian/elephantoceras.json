@@ -1,7 +1,7 @@
 {
 	"name": "Elephantoceras",
 	"read_by_default": true,
-	"icon": "lepidodendron:items/shell_elephantoceras",
+	"icon": "lepidodendron:shell_elephantoceras",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_elephantoceras",
 	"pages": [

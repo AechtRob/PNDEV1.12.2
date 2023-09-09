@@ -1,5 +1,5 @@
 {
-	"name": "Orthid",
+	"name": "Orthid Brachiopod",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/orthid_icon.png",
 	"category": "lepidodendron:cambrian_static",
@@ -7,7 +7,7 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_orthid",
-			"title": "Orthid",
+			"title": "Orthid Brachiopod",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Orthida"
 		},

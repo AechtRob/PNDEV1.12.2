@@ -26,6 +26,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
@@ -320,7 +321,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntityAcidBathUp extends TileEntityLockableLoot implements ITickable {
+	public static class TileEntityAcidBathUp extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
 		protected int trayheight;
@@ -1493,5 +1494,20 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
+
+		@Override
+		public int[] getSlotsForFace(EnumFacing side) {
+			return new int[] {0,1,2,3,4}; //5-8 are the processing slots
+		}
+
+		@Override
+		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+			return index == 0;
+		}
+
+		@Override
+		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+			return index != 5 & index != 6 & index != 7 & index != 8;
+		}
 	}
 }

@@ -30,7 +30,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lessemsaurus",
 			"type": "text",
-			"text": "Lessemsaurids were particularly large among their peers and probably paved the way for the later titanic sauropods of the Jurassic and Cretaceous. Although the relation between lessemsaurids and sauropods is unclear, its still quite clear they were close if not directly related. Lessemsaurus was described in 1999 by Argentinean Palaeontologist José Fernando Bonaparte, first attributed to a family of sauropods called Melanorosauridae, now demonstrated to not be Monophyletic."
+			"text": "Lessemsaurids were particularly large among their peers and probably paved the way for the later titanic sauropods of the Jurassic and Cretaceous. Although the relation between lessemsaurids and sauropods is unclear, its still quite clear they were close if not directly related. Lessemsaurus was described in 1999 by Argentinean Palaeontologist José Fernando Bonaparte, first attributed to a family of sauropods called Melanorosauridae"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lessemsaurus",
+			"type": "text",
+			"text": "now demonstrated to not be Monophyletic."
 		},
 		{
 			"type": "lepidodendron:diet",

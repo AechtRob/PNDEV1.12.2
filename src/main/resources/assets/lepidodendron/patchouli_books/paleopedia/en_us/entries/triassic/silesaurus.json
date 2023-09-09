@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_silesaurus",
 			"type": "text",
-			"text": "Silesaurus opolensis was a species of silesaurid dinosauriform (though not a true dinosaur) that lived during the Late Triassic (around 224 - 209 million years ago). Its remains have been found in the Keuper Claystone of Krasiejów, Poland. This lightly built, likely fast-moving animal was initially thought to have been herbivorous, but later research on coprolites attributed to this animal suggest that it may actually have been an insectivore. In these coprolites, a new beetle named Triamyxa coprolithica, was discovered and described."
+			"text": "Silesaurus opolensis was a species of silesaurid dinosauriform (though not a true dinosaur) that lived during the Late Triassic (around 224 - 209 million years ago). Its remains have been found in the Keuper Claystone of Krasiejów, Poland. This lightly built, likely fast-moving animal was initially thought to have been herbivorous, but later research on coprolites attributed to this animal suggest that it may actually have been an insectivore."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silesaurus",
+			"type": "text",
+			"text": "In these coprolites, a new beetle named Triamyxa coprolithica, was discovered and described."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -30,7 +30,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
 			"type": "text",
-			"text": "It had large eyes which curved around the prosomal shield, resulting in a wide field of view, which may have allowed it to spot and ambush prey on the seafloor. The Big Hill Formation represents a shallow lagoonal environment which likely acted as a sheltered habitat that Hoplitaspis utilized while molting. Many of the specimens known from this location are thought to be shed exoskeletons and individuals that had recently undergone ecdysis. The name Hoplitaspis means \"hoplite shield\", for the ancient Greek soldiers known as hoplites."
+			"text": "It had large eyes which curved around the prosomal shield, resulting in a wide field of view, which may have allowed it to spot and ambush prey on the seafloor. The Big Hill Formation represents a shallow lagoonal environment which likely acted as a sheltered habitat that Hoplitaspis utilized while molting. Many of the specimens known from this location are thought to be shed exoskeletons and individuals that had recently undergone ecdysis."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
+			"type": "text",
+			"text": "The name Hoplitaspis means \"hoplite shield\", for the ancient Greek soldiers known as hoplites."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1440,6 +1440,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightWachtlerina = 0;
     public static double multiplierWachtlerina = 1;
 
+    public static boolean genDechellyia = false;
+    public static String[] genDechellyiaBlacklistBiomes = new String[0];
+    public static String[] genDechellyiaOverrideBiomes = new String[0];
+    public static int[] dimDechellyia = new int[]{0};
+    public static int minheightDechellyia = 1;
+    public static int maxheightDechellyia = 0;
+    public static double multiplierDechellyia = 1;
+
     public static boolean genThucydia = false;
     public static String[] genThucydiaBlacklistBiomes = new String[0];
     public static String[] genThucydiaOverrideBiomes = new String[0];
@@ -9701,6 +9709,33 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Pseudovoltzia", "multiplierPseudovoltzia", multiplierPseudovoltzia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierPseudovoltzia = prop.getDouble();
+
+        prop = cfg.get("WorldGen Dechellyia", "genDechellyia", genDechellyia);
+        prop.setComment("Set to true to generate Dechellyia naturally [default: false]");
+        genDechellyia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "genDechellyiaBlacklistBiomes", genDechellyiaBlacklistBiomes);
+        prop.setComment("List of biomes Dechellyia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDechellyiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "genDechellyiaOverrideBiomes", genDechellyiaOverrideBiomes);
+        prop.setComment("List of biomes Dechellyia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDechellyiaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Dechellyia", "dimDechellyia", dimDechellyia);
+        prop.setComment("List of dimension IDs Dechellyia can generate in [default: 0]");
+        dimDechellyia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "minheightDechellyia", minheightDechellyia);
+        prop.setComment("Minimum height that Dechellyia can generate (1 to 250) [default: 1]");
+        minheightDechellyia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "maxheightDechellyia", maxheightDechellyia);
+        prop.setComment("Maximum height that Dechellyia can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightDechellyia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "multiplierDechellyia", multiplierDechellyia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDechellyia = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Wachtlerina", "genWachtlerina", genWachtlerina);

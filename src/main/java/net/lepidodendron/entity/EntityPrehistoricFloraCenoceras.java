@@ -30,10 +30,10 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 
 	public EntityPrehistoricFloraCenoceras(World world) {
 		super(world);
-		setSize(0.3F, 0.25F);
+		setSize(0.324F, 0.375F);
 		minWidth = 0.07F;
-		maxWidth = 0.3F;
-		maxHeight = 0.25F;
+		maxWidth = 0.325F;
+		maxHeight = 0.375F;
 		maxHealthAgeable = 3.0D;
 	}
 

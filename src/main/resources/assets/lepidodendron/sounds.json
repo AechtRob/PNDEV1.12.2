@@ -7490,5 +7490,42 @@
         "stream": false
       }
     ]
+  },
+
+  "tritylodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tritylodon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tritylodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tritylodon_living03",
+        "stream": false
+      }
+    ]
+  },
+  "tritylodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tritylodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tritylodon_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "tritylodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tritylodon_death",
+        "stream": false
+      }
+    ]
   }
 }
