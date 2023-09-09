@@ -198,22 +198,22 @@ public class EntityPrehistoricFloraMesturus extends EntityPrehistoricFloraFishBa
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.39;
+		return 0.59;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.59;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.03;
+		return -0.13;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 0.1F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
+		return 0.04;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
+		return -0.05F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

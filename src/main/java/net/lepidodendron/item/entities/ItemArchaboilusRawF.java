@@ -36,7 +36,7 @@ public class ItemArchaboilusRawF extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaboilus@female", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaboilus@female", ItemArchaboilusRawF.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemArchaboilusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemArchaboilusRaw.block);
 	}

@@ -196,16 +196,48 @@ public class ModelPycnophlebia extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.main.offsetZ = -0.1F;
-        this.main.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.0F, 0.8F, -0.5F);
+        this.setRotateAngle(rightleg, 0.0F, -0.8F, 0.5F);
+        this.setRotateAngle(leftantennae, 0.0F, 0.2F, 0.2F);
+        this.setRotateAngle(rightantennae, 0.0F, -0.2F, -0.2F);
+        this.setRotateAngle(lefthindwing, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(righthindwing, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(leftwing, 0.1F, -1.5F, 0.0F);
+        this.setRotateAngle(rightwing, 0.1F, 1.5F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing2, 0.2F, 0.0F, 0.0F);
+        this.main.offsetY = -0.21F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftantennae, 0.0F, 0.2F, 0.2F);
+        this.setRotateAngle(rightantennae, 0.0F, -0.2F, -0.2F);
+        this.setRotateAngle(lefthindwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthindwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.0F);
+        this.main.offsetY = 0.18F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(lefthindwing, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(righthindwing, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.6F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.0F);
+        this.main.offsetY = 0.15F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

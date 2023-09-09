@@ -41,19 +41,13 @@ public class ItemArchaboilusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pnfurnaceBug", ItemArchaboilusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemArchaboilusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
-			super();
+			super(1, 0.05f, false);
 			setTranslationKey("pf_archaboilus_raw");
 			setRegistryName("archaboilus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
-		}
-
-		@Nullable
-		@Override
-		public String getMobStr() {
-			return "lepidodendron:archaboilus";
 		}
 
 		@Nullable

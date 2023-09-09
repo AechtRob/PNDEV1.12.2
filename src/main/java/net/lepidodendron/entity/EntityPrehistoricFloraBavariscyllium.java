@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderBavariscyllium;
 import net.lepidodendron.entity.render.entity.RenderSqualoraja;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -320,33 +321,33 @@ public class EntityPrehistoricFloraBavariscyllium extends EntityPrehistoricFlora
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.55;
+		return 0.3;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.05;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
+		return 0.03F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.5F;
+		return 0.0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderSqualoraja.TEXTURE;
+		return RenderBavariscyllium.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelSqualoraja;
+		return RenderDisplays.modelBavariscyllium;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderSqualoraja.getScaler();
+		return RenderBavariscyllium.getScaler();
 	}
 
 }
