@@ -402,10 +402,10 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.85;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;

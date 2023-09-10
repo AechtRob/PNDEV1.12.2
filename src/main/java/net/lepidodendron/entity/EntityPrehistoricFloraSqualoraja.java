@@ -487,9 +487,6 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		if (variant.equalsIgnoreCase("female")) {
-			return RenderSqualoraja.TEXTURE_F;
-		}
 		return RenderSqualoraja.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -497,9 +494,6 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 		return RenderDisplays.modelSqualoraja;
 	}
 	public static float getScaler(@Nullable String variant) {
-		if (variant.equalsIgnoreCase("female")) {
-			return RenderSqualoraja.getScaler() * 0.75F;
-		}
 		return RenderSqualoraja.getScaler();
 	}
 
