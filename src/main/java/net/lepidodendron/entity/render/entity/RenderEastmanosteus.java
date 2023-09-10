@@ -30,7 +30,7 @@ public class RenderEastmanosteus extends RenderLiving<EntityPrehistoricFloraEast
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEastmanosteus entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

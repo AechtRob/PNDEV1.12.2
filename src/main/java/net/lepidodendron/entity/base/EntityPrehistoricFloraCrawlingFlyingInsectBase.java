@@ -7,9 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraTitanoptera;
-import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
-import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
@@ -352,7 +350,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.tasks.addTask(2, new AIWanderInsect());
         this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
         this.tasks.addTask(4, new EntityLookIdleAI(this));
-
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraCrawlingFlyingInsectBaseAI(this));
     }
 
     @Override

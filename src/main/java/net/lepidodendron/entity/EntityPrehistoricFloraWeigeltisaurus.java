@@ -226,6 +226,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 		tasks.addTask(3, new LandWanderNestInBlockAI(this));
 		tasks.addTask(4, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
 		tasks.addTask(5, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override

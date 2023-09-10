@@ -93,16 +93,16 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 
 	public enum Type
 	{
-		DRAGONFLY1(1, "DRAGONFLY1"),
-		DRAGONFLY2(2, "DRAGONFLY2"),
-		DRAGONFLY3(3, "DRAGONFLY3"),
-		DRAGONFLY4(4, "DRAGONFLY4"),
-		DRAGONFLY5(5, "DRAGONFLY5"),
-		DRAGONFLY6(6, "DRAGONFLY6"),
-		DRAGONFLY7(7, "DRAGONFLY7"),
-		DRAGONFLY8(8, "DRAGONFLY8"),
-		DRAGONFLY9(9, "DRAGONFLY9"),
-		DRAGONFLY10(10, "DRAGONFLY10")
+		DRAGONFLY1(1, "dragonfly1"),
+		DRAGONFLY2(2, "dragonfly2"),
+		DRAGONFLY3(3, "dragonfly3"),
+		DRAGONFLY4(4, "dragonfly4"),
+		DRAGONFLY5(5, "dragonfly5"),
+		DRAGONFLY6(6, "dragonfly6"),
+		DRAGONFLY7(7, "dragonfly7"),
+		DRAGONFLY8(8, "dragonfly8"),
+		DRAGONFLY9(9, "dragonfly9"),
+		DRAGONFLY10(10, "dragonfly10")
 		;
 	
 		private final String name;

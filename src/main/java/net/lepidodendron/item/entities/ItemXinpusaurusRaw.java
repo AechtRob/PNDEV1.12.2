@@ -32,7 +32,7 @@ public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus@male", ItemXinpusaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus@gendered", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("pnfurnaceAmphibian", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemXinpusaurusRaw.block);
@@ -53,7 +53,7 @@ public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 
 		@Nullable
 		public String getVariantStr() {
-			return "male";
+			return "gendered";
 		}
 	}
 }

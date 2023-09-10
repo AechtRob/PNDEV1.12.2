@@ -1,0 +1,61 @@
+{
+	"name": "Gasosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gasosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_gasosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gasosaurus",
+			"title": "Gasosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Avetheropoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gasosaurus.png"],
+			"title": "G. constructus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
+			"type": "text",
+			"text": "Gasosaurus is Tetanuran theropod from the Middle to Late Jurassic of the Sichuan Province, the genus name translates to “Gasoline Lizard” which references the fact that the holotype was found by a gasoline company during the construction of a gas facility. The holotype contains 23 vertebrae, both humeri, and multiple bones of the left leg; along with this, a couple teeth were attributed to it as the paratype."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
+			"type": "text",
+			"text": "It is known from a single species, G. constructus, described in 1985 where since, paleontologists have had problems classifying it any further than within Tetanurae which is the clade that contains most known theropods. Even with the uncertain classification, it makes Gasosaurus one of the oldest genera within its clade. Gasosaurus is part of the paleobiota of the Lower Shaximiao Formation which was a typical terrestrial freshwater environment"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
+			"type": "text",
+			"text": "that had salinity increases during more arid parts of the year. Based on paleoenvironmental studies, it is suggested that the formation contained a large perennial lake that turned into a number of small short-lived lakes within a large alluvial plain whenever water levels became lower. Over the length of the time that the Shaximiao Formation covers, the climate was semihumid to semiarid and became drier and cooler over time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
+			"type": "text",
+			"text": "It was a fairly small theropod, estimated to be around 3.5 to 4 meters in length and weighing around 150kg, although some estimates go as high as 400kg, as there are so few remains by which to make concrete estimates."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gasosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gasosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gasosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gasosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gasosaurus"
+		}
+	]
+}
