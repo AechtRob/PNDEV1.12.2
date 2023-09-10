@@ -344,10 +344,33 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(Neckback, 0.169820528229565F, 0.0F, 0.0F);
-        this.Hips.offsetX = 0.14F;
-        this.Hips.offsetZ = -0.14F;
-        this.Hips.offsetY = -0.135F;
+        this.setRotateAngle(Hips, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.08F, -0.05F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.2F, -0.1F, 0.02F);
+        this.setRotateAngle(Neck, -0.05F, 0.0F, -0.01F);
+        this.setRotateAngle(Head, -0.08F, -0.05F, -0.15F);
+        this.setRotateAngle(Lowerjaw, 0.47F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftarm1, 0.3F, -0.1F, -0.05F);
+        this.setRotateAngle(Leftarm2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftarm3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightarm1, 0.5F, 0.15F, 0.05F);
+        this.setRotateAngle(Rightarm2, -1.15F, -0.05F, 0.1F);
+        this.setRotateAngle(Rightarm3, 1.25F, -0.1F, 0.0F);
+        this.setRotateAngle(Leftleg1, 0.3F, -0.1F, 0.0F);
+        this.setRotateAngle(Leftleg2, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg4, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.02F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.2F, -0.2F, 0.0F);
+        this.Hips.offsetY = 0.099F;
+        this.Hips.offsetX = 0.02F;
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }

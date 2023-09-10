@@ -195,17 +195,19 @@ public class ModelMesturus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Mesturus.render(f5);
     }
-
     public void renderStaticWall(float f) {
-        this.Mesturus.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.Mesturus.offsetY = -0.13F;
-        this.Mesturus.offsetX = -0.06F;
-        this.Mesturus.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(Mesturus, -0.15F, 0.0F, -0.1F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.2F, 0.0F);
+        this.Mesturus.offsetY = -0.4F;
+        this.Mesturus.render(0.018f);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

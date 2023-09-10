@@ -27,6 +27,8 @@ public class RenderDisplays {
     public static final ModelAnaethalion modelAnaethalion = new ModelAnaethalion();
     public static final ModelAngelina modelAngelina = new ModelAngelina();
     public static final ModelAdamanteryon modelAdamanteryon = new ModelAdamanteryon();
+    public static final ModelAngustidontus modelAngustidontus = new ModelAngustidontus();
+    public static final ModelArchaboilus modelArchaboilus = new ModelArchaboilus();
     public static final ModelBalhuticaris modelBalhuticaris = new ModelBalhuticaris();
     public static final ModelBandringa modelBandringa = new ModelBandringa();
     public static final ModelBarameda modelBarameda = new ModelBarameda();
@@ -41,6 +43,7 @@ public class RenderDisplays {
     public static final ModelBungartius modelBungartius = new ModelBungartius();
     public static final ModelBunostegos modelBunostegos = new ModelBunostegos();
     public static final ModelBobosaurus modelBobosaurus = new ModelBobosaurus();
+    public static final ModelBavariscyllium modelBavariscyllium = new ModelBavariscyllium();
     public static final ModelCacops modelCacops = new ModelCacops();
     public static final ModelCampbellodus modelCampbellodus = new ModelCampbellodus();
     public static final ModelCamuropiscis modelCamuropiscis = new ModelCamuropiscis();
@@ -246,6 +249,7 @@ public class RenderDisplays {
     public static final ModelParnaibaia modelParnaibaia = new ModelParnaibaia();
     public static final ModelAmmonite_Perisphinctes modelAmmonitePerisphinctes = new ModelAmmonite_Perisphinctes();
     public static final ModelPlatypeltoides modelPlatypeltoides = new ModelPlatypeltoides();
+    public static final ModelPycnophlebia modelPycnophlebia = new ModelPycnophlebia();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();

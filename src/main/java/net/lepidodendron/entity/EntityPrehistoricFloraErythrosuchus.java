@@ -310,16 +310,16 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 		return 1;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return -0.02;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.4F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return -0.05;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.4F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
