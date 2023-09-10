@@ -1,0 +1,66 @@
+{
+	"name": "Cryolophosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cryolophosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cryolophosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"title": "Cryolophosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Neotheropoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cryolophosaurus.png"],
+			"title": "C. ellioti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": "Cryolophosaurus ellioti (meaning \"Elliot's cold crested lizard\") was a species of theropod dinosaur that lived during the Early Jurassic (during the Pliensbachian stage, around 186 - 162 million years ago). Its remains were found at the Hanson Formation in Antarctica (in 1991 by palaeontologist Dr. William Hammer and geologist David Elliot), making it the first carnivorous non-avian dinosaur to have been excavated from the frozen continent."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": "The material thus far excavated consists of a skull, a femur, and some other assorted bones. A fairly large theropod (the largest known from its time), Cryolophosaurus is mainly known from the remains of a presumed subadult, which measured around 6-7 metres (approx. 19 - 23 feet) long and roughly 350 - 465 kg (or 771 - 1025 lbs) in weight."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": "If the specimen is a subadult, then an adult of this species may have been a little bigger, though it's unclear by exactly how much. Due to somewhat limited material, its classification has varied over the years: The femur suggests a more basal theropod such as a dilophosaurid, while features of the skull suggest a more derived theropod such as a tetanuran, a ceratosaur, an abelisaurid, or even an allosauroid."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": "It is currently considered a derived neotheropod, close to Averostra. The animal's most distinctive feature was the strange, pompadour-like bony crest on top of its head, that may have been used for display, species recognition, or some similar purpose. Cryolophosaurus was a carnivore, perhaps even the apex predator of its ecosystem given its large size. Other animals found in this ecosystem included tritylodontid mammaliaforms,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
+			"type": "text",
+			"text": "the basal sauropodomorph Glacialisaurus (along with two other, yet unnamed small sauropodomorphs), unnamed coelophysoid theropods, and a crow-sized unnamed dimorphodontid pterosaur. Any number of these animals may have been prey, and based on broken juvenile teeth found among the bones, it seems Cryolophosaurus wasn't above scavenging its own dead either."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cryolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cryolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cryolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cryolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cryolophosaurus"
+		}
+	]
+}
