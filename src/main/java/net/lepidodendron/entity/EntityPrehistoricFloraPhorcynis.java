@@ -197,15 +197,9 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		switch (this.getPNType()) {
-			case MALE:
-			default:
-				return LepidodendronMod.PHORCYNIS_LOOT;
-
-			case FEMALE:
-				return LepidodendronMod.PHORCYNIS_LOOT_F;
-		}
+		return LepidodendronMod.PHORCYNIS_LOOT;
 	}
+
 	@Override
 	public boolean isSmall() {
 		return true;

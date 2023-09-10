@@ -187,23 +187,9 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			switch (this.getPNType()) {
-				case MALE:
-				default:
-					return LepidodendronMod.XINPUSAURUS_LOOT_YOUNG;
-
-				case FEMALE:
-					return LepidodendronMod.XINPUSAURUS_LOOT_F_YOUNG;
-			}
+			return LepidodendronMod.XINPUSAURUS_LOOT_YOUNG;
 		}
-		switch (this.getPNType()) {
-			case MALE:
-			default:
-				return LepidodendronMod.XINPUSAURUS_LOOT;
-
-			case FEMALE:
-				return LepidodendronMod.XINPUSAURUS_LOOT_F;
-		}
+		return LepidodendronMod.XINPUSAURUS_LOOT;
 	}
 
 	@Override
