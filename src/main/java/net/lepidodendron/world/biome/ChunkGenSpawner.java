@@ -1129,20 +1129,16 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         nbtStr = arrSplit[rand.nextInt(arrSplit.length)];
                                                                     }
 
-                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0 && doAgeVar) {
+                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                         EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
                                                                         int adultAge = ageableBase.getAdultAge();
-                                                                        if (adultAge > 0) {
-                                                                            int spawnAge = rand.nextInt(adultAge) + 1;
-                                                                            nbtStr = "{AgeTicks:" + spawnAge + "}";
+                                                                        if (rand.nextInt(20) == 0 && doAgeVar) {
+                                                                            if (adultAge > 0) {
+                                                                                nbtStr = "{AgeTicks:" + rand.nextInt(adultAge) + 1 + "}";
+                                                                            }
                                                                         }
-                                                                    }
-                                                                    else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0 && doAgeVar) {
-                                                                        EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
-                                                                        int adultAge = ageableBase.getAdultAge();
-                                                                        if (adultAge > 0) {
-                                                                            int spawnAge = rand.nextInt(adultAge) + 1;
-                                                                            nbtStr = "{AgeTicks:" + spawnAge + "}";
+                                                                        else {
+                                                                            nbtStr = "{AgeTicks:" + adultAge + "}";
                                                                         }
                                                                     }
                                                                     else if (mobToSpawn.startsWith("fossil:")) {
