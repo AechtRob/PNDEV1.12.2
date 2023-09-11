@@ -1974,7 +1974,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_GLYPTOPS = 781;
 	public static final ResourceLocation GLYPTOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glyptops"));
 	public static final int ENTITY_KAYENTACHELYS = 782;
-	public static final ResourceLocation KAYENTACHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kayentachelys"));
+	//public static final ResourceLocation KAYENTACHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kayentachelys"));
 	public static final int ENTITY_THALASSEMYS = 783;
 	public static final ResourceLocation THALASSEMYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys"));
 	public static final ResourceLocation THALASSEMYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys_young"));
@@ -1995,8 +1995,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation TUOJIANGOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tuojiangosaurus"));
 	public static final ResourceLocation TUOJIANGOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tuojiangosaurus_young"));
 	public static final int ENTITY_DIANDONGOSUCHUS = 788;
-	public static final ResourceLocation DIANDONGOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus"));
-	public static final ResourceLocation DIANDONGOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus_young"));
+	//public static final ResourceLocation DIANDONGOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus"));
+	//public static final ResourceLocation DIANDONGOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus_young"));
 	public static final int ENTITY_YUXISAURUS = 789;
 	public static final ResourceLocation YUXISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yuxisaurus"));
 	public static final ResourceLocation YUXISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yuxisaurus_young"));
