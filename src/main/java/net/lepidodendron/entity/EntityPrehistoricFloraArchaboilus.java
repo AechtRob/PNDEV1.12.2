@@ -8,7 +8,6 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsArchaboilus;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderArchaboilus;
-import net.lepidodendron.entity.render.entity.RenderPycnophlebia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -266,9 +265,9 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
 			ResourceLocation resourcelocation = LepidodendronMod.ARCHABOILUS_LOOT_JAR;
-			if (this.getPNType() == Type.FEMALE) {
-				resourcelocation = LepidodendronMod.ARCHABOILUS_LOOT_JAR_F;
-			}
+//			if (this.getPNType() == Type.FEMALE) {
+//				resourcelocation = LepidodendronMod.ARCHABOILUS_LOOT_JAR_F;
+//			}
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))

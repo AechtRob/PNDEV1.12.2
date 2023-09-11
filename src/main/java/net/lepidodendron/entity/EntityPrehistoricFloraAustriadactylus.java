@@ -177,8 +177,6 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;

@@ -27,9 +27,10 @@ public class RenderKujdanowiaspis extends RenderLiving<EntityPrehistoricFloraKuj
     protected void applyRotations(EntityPrehistoricFloraKujdanowiaspis entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraKujdanowiaspis entity, float f) {
-        float scale = this.getScaler();
+        float scale = this.getScaler() * entity.getAgeScale();
         if (scale < 0.1f) {
             scale = 0.1f;
         }

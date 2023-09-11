@@ -36,7 +36,7 @@ public class ItemTitanopteraGigatitanRaw extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_titanoptera_gigatitan", ItemTitanopteraGigatitanRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_titanoptera@gigatitan", ItemTitanopteraGigatitanRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemTitanopteraGigatitanRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemTitanopteraGigatitanRaw.block);
 	}

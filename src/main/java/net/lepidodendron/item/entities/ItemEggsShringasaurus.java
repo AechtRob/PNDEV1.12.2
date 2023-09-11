@@ -56,7 +56,7 @@ public class ItemEggsShringasaurus extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public String getMobString() {
-			return LepidodendronMod.MODID + ":prehistoric_flora_shringasaurus";
+			return LepidodendronMod.MODID + ":prehistoric_flora_shringasaurus@gendered";
 		}
 	}
 

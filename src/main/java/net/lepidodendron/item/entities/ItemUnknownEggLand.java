@@ -148,6 +148,12 @@ public class ItemUnknownEggLand extends ElementsLepidodendronMod.ModElement {
 
 							if (itemstack.getTagCompound().hasKey("PNType")) {
 								String type = itemstack.getTagCompound().getString("PNType");
+								if (type.equalsIgnoreCase("gendered")) {
+									type = "male";
+									if (worldIn.rand.nextInt(2) == 0) {
+										type = "female";
+									}
+								}
 								if (entity instanceof EntityPrehistoricFloraAgeableBase) {
 									nbtStr = "{PNType:\"" + type + "\",AgeTicks:0}";
 								}

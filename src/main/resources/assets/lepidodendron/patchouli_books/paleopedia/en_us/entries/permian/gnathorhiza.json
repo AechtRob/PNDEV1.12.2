@@ -2,14 +2,14 @@
 	"name": "Gnathorhiza",
 	"read_by_default": true,
 	"icon": "lepidodendron:gnathorhiza_raw",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gnathorhiza",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_gnathorhiza",
 			"title": "Gnathorhiza",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic (but Permian only in the mod)$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_gnathorhiza",
 			"type": "text",
-			"text": "Gnathorhiza is a prehistoric lungfish from the Carboniferous to Early Triassic periods. It had a long and slender body with a pair of long fins which it may have used to help it walk underwater and potentially on land for brief periods."
+			"text": "Gnathorhiza is a prehistoric lungfish from the Carboniferous to Early Triassic periods. It had a long and slender body with a pair of long fins which it may have used to help it walk underwater and potentially on land for brief periods. It only spawns in the Permian by default in the mod."
 		},
 		{
 			"type": "lepidodendron:diet",

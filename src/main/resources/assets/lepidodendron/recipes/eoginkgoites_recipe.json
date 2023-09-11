@@ -5,7 +5,7 @@
     {
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:spore_collection_envelope",
-      "nbt": {"plant":"lepidodendron:baikalophyllum", "offsetY":1}
+	  "nbt": {"plant":"lepidodendron:eoginkgoites", "offsetY":1}
     },
     {
       "type": "forge:ore_dict",
@@ -13,7 +13,7 @@
     }
   ],
   "result": {
-    "item": "lepidodendron:baikalophyllum",
+    "item": "lepidodendron:eoginkgoites",
     "count": 1
   }
 }

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:sabal_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:sabal_nut",
+    "count": 1
+  }
+}

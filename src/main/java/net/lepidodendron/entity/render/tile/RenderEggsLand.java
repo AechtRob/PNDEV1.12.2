@@ -62,6 +62,10 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
             if (tileEntity != null) {
                 if (tileEntity.getTileData().hasKey("creature")) {
                     creatureType = tileEntity.getTileData().getString("creature");
+                    int i = creatureType.indexOf("@");
+                    if (i >= 1) {
+                        creatureType = creatureType.substring(0, creatureType.indexOf("@"));
+                    }
                 }
             }
             if (!creatureType.equals("")) {
@@ -116,7 +120,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
             GlStateManager.disableCull();
             GlStateManager.enableRescaleNormal();
             if (eggType == 10) {
-                GlStateManager.translate(x + 0.5F, y + 1.0F, z + 0.5F);
+                GlStateManager.translate(x + 0.5F, y + 0.9F, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.50F, 0.50F, 0.50F);
             }

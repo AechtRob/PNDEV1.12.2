@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraVancleavea extends EntityPrehistoricFloraSwim
 
 	@Override
 	public boolean isSmall() {
-		return getAgeScale() < 0.2;
+		return getAgeScale() < 0.50;
 	}
 
 

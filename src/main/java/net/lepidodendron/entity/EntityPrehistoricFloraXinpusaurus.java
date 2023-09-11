@@ -359,7 +359,12 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraXinpusaurus(this.world);
+		EntityPrehistoricFloraXinpusaurus entityOut = new EntityPrehistoricFloraXinpusaurus(this.world);
+		entityOut.setPNType(Type.MALE);
+		if (this.rand.nextInt(2) == 0) {
+			entityOut.setPNType(Type.FEMALE);
+		}
+		return entityOut;
 	}
 
 	//Rendering taxidermy:

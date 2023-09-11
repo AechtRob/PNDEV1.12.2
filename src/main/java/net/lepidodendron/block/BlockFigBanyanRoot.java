@@ -57,7 +57,7 @@ public class BlockFigBanyanRoot extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:fig_banyan_sapling", BlockFigBanyanRoot.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:fig_sapling_banyan", BlockFigBanyanRoot.block);
 		OreDictionary.registerOre("logWood", BlockFigBanyanRoot.block);
 	}
 

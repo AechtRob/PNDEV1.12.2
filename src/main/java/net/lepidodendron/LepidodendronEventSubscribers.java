@@ -12,6 +12,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -484,8 +485,22 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
+	@SubscribeEvent //Let eggs drop their right items:
+	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
+		if ((!event.getWorld().isRemote)) {
+			if (event.getPlayer() != null) {
+				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {
+					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), BlockEggs.BlockCustom.getEggItemStack(event.getWorld(), event.getPos()));
+					entityToSpawn.setPickupDelay(10);
+					event.getWorld().spawnEntity(entityToSpawn);
+				}
+			}
+		}
+	}
+
 	@SubscribeEvent //Vanilla plants drops modifications: replace saplings with seeds etc.
 	public void onBlockHarvest(BlockEvent.HarvestDropsEvent event) {
+
 		if (!LepidodendronConfig.doPropagationVanilla && !LepidodendronConfig.fixApples) {
 			return;
 		}

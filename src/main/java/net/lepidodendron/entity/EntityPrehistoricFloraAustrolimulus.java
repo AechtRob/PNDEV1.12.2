@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraAustrolimulus extends EntityPrehistoricFloraW
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override

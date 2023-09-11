@@ -24,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
 		}
 	]
 }

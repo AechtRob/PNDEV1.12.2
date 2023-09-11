@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hindeodus",
 			"title": "Hindeodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Anchignathodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian - Triassic$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Anchignathodontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hindeodus",
 			"type": "text",
-			"text": "Hindeodus is a genus of conodont lived in Carboniferous to earliest Triassic. It is well-studied conodont that is known from mostly complete teeth rows."
+			"text": "Hindeodus is a genus of conodont lived in Carboniferous to earliest Triassic. It is a well-studied conodont that is known from mostly complete teeth rows."
 		},
 		{
 			"type": "lepidodendron:diet",

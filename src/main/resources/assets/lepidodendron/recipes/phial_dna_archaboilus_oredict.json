@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNlepidodendron:prehistoric_flora_archaboilus@male"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_archaboilus@gendered"
  },
  {
  "item": "lepidodendron:phial_empty"

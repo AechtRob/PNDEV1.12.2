@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnGerrothorax;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -102,12 +101,6 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 	public int getRoarLength() {
 		return 120;
 	}
-
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraGerrothorax(this.world);
-	}
-
 
 	@Override
 	public boolean dropsEggs() {

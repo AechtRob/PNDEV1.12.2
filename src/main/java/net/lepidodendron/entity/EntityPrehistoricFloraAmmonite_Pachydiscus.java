@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraAmmonite_Pachydiscus extends EntityPrehistori
 
 	@Override
 	public boolean isSmall() {
-		return this.getAdultAge() < 0.5;
+		return this.getAgeScale() < 0.5;
 	}
 
 	public static String getPeriod() {return "Cretaceous";}
@@ -78,8 +78,6 @@ public class EntityPrehistoricFloraAmmonite_Pachydiscus extends EntityPrehistori
 	public String[] getFoodOreDicts() {
 		return DietString.FISHFOOD;
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {
