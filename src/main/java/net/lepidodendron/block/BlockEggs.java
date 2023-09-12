@@ -289,7 +289,7 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 
 			if (incubation >= this.getIncubation(worldIn, pos)) {
 
-				String nbtStr = "[AgeTicks:0}";
+				String nbtStr = "{AgeTicks:0}";
 
 				String creatureType = new Object() {
 					public String getValue(BlockPos pos1, String tag) {
