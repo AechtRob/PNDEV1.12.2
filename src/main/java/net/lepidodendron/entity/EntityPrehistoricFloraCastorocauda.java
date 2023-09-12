@@ -94,6 +94,9 @@ public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHa
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.315f;
 		}
+		if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 1.6F;
+		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -188,13 +191,13 @@ public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHa
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:haldanodon_idle"));
+				.getObject(new ResourceLocation("lepidodendron:castorocauda_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:haldanodon_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:castorocauda_hurt"));
 	}
 
 	//@Override
@@ -205,7 +208,7 @@ public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHa
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:haldanodon_death"));
+				.getObject(new ResourceLocation("lepidodendron:castorocauda_death"));
 	}
 
 	//@Override
