@@ -1511,6 +1511,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightProtognetum = 0;
     public static double multiplierProtognetum = 1;
 
+    public static boolean genDrewria = false;
+    public static String[] genDrewriaBlacklistBiomes = new String[0];
+    public static String[] genDrewriaOverrideBiomes = new String[0];
+    public static int[] dimDrewria = new int[]{0};
+    public static int minheightDrewria = 1;
+    public static int maxheightDrewria = 0;
+    public static double multiplierDrewria = 1;
+
     public static boolean genAnemoneFlower = false;
     public static String[] genAnemoneFlowerBlacklistBiomes = new String[0];
     public static String[] genAnemoneFlowerOverrideBiomes = new String[0];
@@ -7758,6 +7766,35 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Daisy", "multiplierDaisy", multiplierDaisy);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierDaisy = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Drewria", "genDrewria", genDrewria);
+        prop.setComment("Set to true to generate Drewria naturally [default: false]");
+        genDrewria = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "genDrewriaBlacklistBiomes", genDrewriaBlacklistBiomes);
+        prop.setComment("List of biomes Drewria are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDrewriaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "genDrewriaOverrideBiomes", genDrewriaOverrideBiomes);
+        prop.setComment("List of biomes Drewria are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDrewriaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "dimDrewria", dimDrewria);
+        prop.setComment("List of dimension IDs Drewria can generate in [default: 0]");
+        dimDrewria = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "minheightDrewria", minheightDrewria);
+        prop.setComment("Minimum height that Drewria can generate (1 to 250) [default: 1]");
+        minheightDrewria = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "maxheightDrewria", maxheightDrewria);
+        prop.setComment("Maximum height that Drewria can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightDrewria = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "multiplierDrewria", multiplierDrewria);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDrewria = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Protognetum", "genProtognetum", genProtognetum);
