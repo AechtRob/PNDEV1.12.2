@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.EntityPrehistoricFloraGephyrostegus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -97,6 +98,9 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 }
                 else {
                     double chooser = this.waterPreference;
+                    if (this.PrehistoricFloraAmphibianBase.getLaying() && this.PrehistoricFloraAmphibianBase instanceof EntityPrehistoricFloraGephyrostegus) {
+                        chooser = 1;
+                    }
                     if (Math.random() > chooser) { //Equal chance of land or water, but sometimes stay still if it's not doing the water thing
                         if (!this.mustUpdate && (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) && this.executionChance > 0)
                         {

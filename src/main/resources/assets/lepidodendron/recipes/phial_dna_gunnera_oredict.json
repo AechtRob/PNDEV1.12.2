@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNlepidodendron:gunnera"
+ "ore": "plantdnaPNlepidodendron:gunnera_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:gunnera"}}
+ "nbt": {"PFPlant":{"id":"lepidodendron:gunnera_sapling"}}
  }
 }

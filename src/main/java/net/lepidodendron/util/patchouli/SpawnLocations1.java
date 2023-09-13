@@ -103,15 +103,15 @@ public class SpawnLocations1 implements IComponentProcessor {
             }
         }
         if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_websteroprion")) {
-            if (biomeID == "lepidodendron:devonian_creek_coastal"
-                || biomeID == "lepidodendron:devonian_forest"
-                || biomeID == "lepidodendron:devonian_ocean"
-                || biomeID == "lepidodendron:devonian_ocean_dead_reef"
-                || biomeID == "lepidodendron:devonian_ocean_deep"
-                || biomeID == "lepidodendron:devonian_ocean_deep_rocky"
-                || biomeID == "lepidodendron:devonian_reef"
-                || biomeID == "lepidodendron:devonian_reef_transition"
-                || biomeID == "lepidodendron:devonian_beach")
+            if (biomeID.equalsIgnoreCase("lepidodendron:devonian_creek_coastal")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_forest")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef_transition")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_beach"))
             {
                 spawns = true;
             }
