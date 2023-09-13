@@ -688,7 +688,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         if (!variantStr.equalsIgnoreCase("")) {
-            nbttagcompound.setString("PNType", "\"" + variantStr + "\"");
+            nbttagcompound.setString("PNType", variantStr);
         }
 
         nbttagcompound.setString("id", s);

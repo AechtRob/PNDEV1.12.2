@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsPycnophlebia;
 import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.render.entity.RenderEchinochimaera;
 import net.lepidodendron.entity.render.entity.RenderPycnophlebia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -248,9 +247,6 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
 			ResourceLocation resourcelocation = LepidodendronMod.PYCNOPHLEBIA_LOOT_JAR;
-			if (this.getPNType() == Type.FEMALE) {
-				resourcelocation = LepidodendronMod.PYCNOPHLEBIA_LOOT_JAR_F;
-			}
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))

@@ -1948,7 +1948,7 @@ public class LepidodendronMod {
 	//public static final ResourceLocation ARCHABOILUS_LOOT_JAR_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaboilus_jar_f"));
 	public static final int ENTITY_PYCNOPHLEBIA = 772;
 	public static final ResourceLocation PYCNOPHLEBIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pycnophlebia_jar"));
-	public static final ResourceLocation PYCNOPHLEBIA_LOOT_JAR_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pycnophlebia_jar_f"));
+	//public static final ResourceLocation PYCNOPHLEBIA_LOOT_JAR_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pycnophlebia_jar_f"));
 	public static final int ENTITY_LAIDLERIA = 773;
 	public static final ResourceLocation LAIDLERIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/laidleria"));
 	public static final ResourceLocation LAIDLERIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/laidleria_young"));
