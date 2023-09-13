@@ -829,6 +829,15 @@ public class LepidodendronConfigPlants {
     public static int minheightLepidopteris = 1;
     public static int maxheightLepidopteris = 95;
     public static double multiplierLepidopteris = 1;
+
+    public static boolean genPtilozamites = false;
+    public static String[] genPtilozamitesBlacklistBiomes = new String[0];
+    public static String[] genPtilozamitesOverrideBiomes = new String[0];
+    public static int[] dimPtilozamites = new int[]{0};
+    public static int minheightPtilozamites = 1;
+    public static int maxheightPtilozamites = 0;
+    public static double multiplierPtilozamites = 1;
+    
     public static boolean genGlenopteris = false;
     public static String[] genGlenopterisBlacklistBiomes = new String[0];
     public static String[] genGlenopterisOverrideBiomes = new String[0];
@@ -5426,6 +5435,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Walchia", "multiplierWalchia", multiplierWalchia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierWalchia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Ptilozamites", "genPtilozamites", genPtilozamites);
+        prop.setComment("Set to true to generate Ptilozamites naturally [default: false]");
+        genPtilozamites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ptilozamites", "genPtilozamitesBlacklistBiomes", genPtilozamitesBlacklistBiomes);
+        prop.setComment("List of biomes Ptilozamites are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPtilozamitesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ptilozamites", "genPtilozamitesOverrideBiomes", genPtilozamitesOverrideBiomes);
+        prop.setComment("List of biomes Ptilozamites are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPtilozamitesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Ptilozamites", "dimPtilozamites", dimPtilozamites);
+        prop.setComment("List of dimension IDs Ptilozamites can generate in [default: 0]");
+        dimPtilozamites = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ptilozamites", "minheightPtilozamites", minheightPtilozamites);
+        prop.setComment("Minimum height that Ptilozamites can generate (1 to 250) [default: 1]");
+        minheightPtilozamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ptilozamites", "maxheightPtilozamites", maxheightPtilozamites);
+        prop.setComment("Maximum height that Ptilozamites can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightPtilozamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ptilozamites", "multiplierPtilozamites", multiplierPtilozamites);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPtilozamites = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Lepidopteris", "genLepidopteris", genLepidopteris);

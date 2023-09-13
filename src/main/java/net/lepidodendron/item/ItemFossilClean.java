@@ -1001,6 +1001,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_potanichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_primaeval_grass_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sea_grass_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_ptilozamites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_primocandelabrum_1_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_primocandelabrum_2_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_prionosuchus_clean", "inventory"),

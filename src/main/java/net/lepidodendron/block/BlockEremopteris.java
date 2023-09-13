@@ -222,6 +222,11 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(BASE, false).withProperty(LOWER, false).withProperty(AGE, Integer.valueOf(0)));
 		}
 
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
@@ -295,11 +300,6 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
 	    }
 
-	    @Override
-	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-	    {
-	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
-	    }
 
 		@Override
 	    public boolean canBlockStay(World worldIn, BlockPos pos)

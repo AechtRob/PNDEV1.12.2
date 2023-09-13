@@ -64,6 +64,11 @@ public class BlockNataligmaTop extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("nataligma_top");
 		}
 
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
