@@ -407,9 +407,9 @@ public class ModelCastorocauda extends AdvancedModelBaseExtended {
                 return;
             }
 
-            float speed = masterSpeed / 0.965F;
+            float speed = masterSpeed / 0.565F;
             if (doco.getIsFast()) {
-                speed = speed * 1.5F;
+                speed = speed * 1.85F;
             }
 
 
@@ -459,7 +459,7 @@ public class ModelCastorocauda extends AdvancedModelBaseExtended {
             this.chainWave(Tail, (speed * 0.6F), -0.20F, 6.2F, f2, 1F);
             this.chainSwing(Tail, (speed * 0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
-            this.Hips.offsetZ = this.moveBoxExtended(speed * 2 * speedmodifier, (float) Math.toRadians(1.2), false, 1.5F, f2, 1);
+            this.Hips.offsetZ = this.moveBoxExtended(speed * 2 * speedmodifier, 0.02F, false, 1.5F, f2, 1);
         } else { //swimming
             this.setRotateAngle(Bodyfront, 0.0424F, 0.0F, 0.0F);
             this.setRotateAngle(Bodymiddle, 0.1852F, 0.0F, 0.0F);

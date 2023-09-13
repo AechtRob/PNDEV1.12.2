@@ -7490,5 +7490,91 @@
         "stream": false
       }
     ]
+  },
+
+  "tritylodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tritylodon_living01",
+        "stream": false
+      }
+    ]
+  },
+  "tritylodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tritylodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tritylodon_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "tritylodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tritylodon_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "castorocauda_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:castorocauda_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_living06",
+        "stream": false
+      }
+    ]
+  },
+  "castorocauda_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:castorocauda_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:castorocauda_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "castorocauda_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:castorocauda_death",
+        "stream": false
+      }
+    ]
   }
 }

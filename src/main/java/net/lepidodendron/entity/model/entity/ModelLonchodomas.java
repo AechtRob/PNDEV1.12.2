@@ -2,7 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraLochmanolenellus;
+import net.lepidodendron.entity.EntityPrehistoricFloraLonchodomas;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -170,7 +170,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
         AdvancedModelRenderer[] legsL = {this.LLeg1, this.LLeg2, this.LLeg3};
         AdvancedModelRenderer[] legsR = {this.RLeg1, this.RLeg2, this.RLeg3};
-        if (((EntityPrehistoricFloraLochmanolenellus) e).getIsMoving()) {
+        if (((EntityPrehistoricFloraLonchodomas) e).getIsMoving()) {
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
 

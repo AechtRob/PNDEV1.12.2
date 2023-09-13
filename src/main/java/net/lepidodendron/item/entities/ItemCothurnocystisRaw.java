@@ -35,7 +35,7 @@ public class ItemCothurnocystisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCothurnocystis", ItemCothurnocystisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cothurnocystis", ItemCothurnocystisRaw.block);
 		OreDictionary.registerOre("pnfurnaceSeafood", ItemCothurnocystisRaw.block);
 		OreDictionary.registerOre("pndietCrinoid", ItemCothurnocystisRaw.block);
 	}

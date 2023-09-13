@@ -18,10 +18,8 @@ import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -46,11 +44,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
     }
 
 
-    public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen) {
-        executeProcedure(onlyWater, world, pos, rand, mobList, worldGen, false);
+    public static void executeProcedure(World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen) {
+        executeProcedure(world, pos, rand, mobList, worldGen, false);
     }
 
-    public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen, boolean genLakes) {
+    public static void executeProcedure(World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen, boolean genLakes) {
 
         double spawnDensity = LepidodendronConfig.spawnerDensity;
         if (spawnDensity < 0.0) {
@@ -122,9 +120,6 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             String mobToSpawn;
             String nbtStr = "";
             int locationID = 1;
-            if (onlyWater) {
-                locationID = 4;
-            }
             boolean errFound;
             boolean posCheck;
             int strPos1;
@@ -147,9 +142,6 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             int var4 = rand.nextInt(var3); //Pick a mob from the list
             errFound = false;
             String checkEntity = var2[var4].trim();
-            if (onlyWater) {
-                checkEntity = var2[var4].trim() + ":4";
-            }
 
             strPos1 = 0;
             strPos2 = 0;
@@ -1137,20 +1129,16 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         nbtStr = arrSplit[rand.nextInt(arrSplit.length)];
                                                                     }
 
-                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0 && doAgeVar) {
+                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                         EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
                                                                         int adultAge = ageableBase.getAdultAge();
-                                                                        if (adultAge > 0) {
-                                                                            int spawnAge = rand.nextInt(adultAge) + 1;
-                                                                            nbtStr = "{AgeTicks:" + spawnAge + "}";
+                                                                        if (rand.nextInt(20) == 0 && doAgeVar) {
+                                                                            if (adultAge > 0) {
+                                                                                nbtStr = "{AgeTicks:" + rand.nextInt(adultAge) + 1 + "}";
+                                                                            }
                                                                         }
-                                                                    }
-                                                                    else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0 && doAgeVar) {
-                                                                        EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
-                                                                        int adultAge = ageableBase.getAdultAge();
-                                                                        if (adultAge > 0) {
-                                                                            int spawnAge = rand.nextInt(adultAge) + 1;
-                                                                            nbtStr = "{AgeTicks:" + spawnAge + "}";
+                                                                        else {
+                                                                            nbtStr = "{AgeTicks:" + adultAge + "}";
                                                                         }
                                                                     }
                                                                     else if (mobToSpawn.startsWith("fossil:")) {
@@ -1163,34 +1151,36 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
+                                                                        EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, spawnPos.getX() + ((world.rand.nextFloat() - 0.5F)/10F), (spawnPos.getY() + offsetter), spawnPos.getZ() + ((world.rand.nextFloat() - 0.5F)/10F));
+
                                                                         //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
-                                                                        world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-                                                                            @Override
-                                                                            public String getName() {
-                                                                                return "";
-                                                                            }
-
-                                                                            @Override
-                                                                            public boolean canUseCommand(int permission, String command) {
-                                                                                return true;
-                                                                            }
-
-                                                                            @Override
-                                                                            public World getEntityWorld() {
-                                                                                return world;
-                                                                            }
-
-                                                                            @Override
-                                                                            public MinecraftServer getServer() {
-                                                                                return world.getMinecraftServer();
-                                                                            }
-
-                                                                            @Override
-                                                                            public boolean sendCommandFeedback() {
-                                                                                return false;
-                                                                            }
-
-                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + offsetter) + " " + spawnPos.getZ() + " " + nbtStr);
+//                                                                        world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+//                                                                            @Override
+//                                                                            public String getName() {
+//                                                                                return "";
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public boolean canUseCommand(int permission, String command) {
+//                                                                                return true;
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public World getEntityWorld() {
+//                                                                                return world;
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public MinecraftServer getServer() {
+//                                                                                return world.getMinecraftServer();
+//                                                                            }
+//
+//                                                                            @Override
+//                                                                            public boolean sendCommandFeedback() {
+//                                                                                return false;
+//                                                                            }
+//
+//                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + offsetter) + " " + spawnPos.getZ() + " " + nbtStr);
                                                                     }
 
                                                                     //System.err.println("Spawned in " + world.getBiome(spawnPos).getBiomeName() + " at locID " + locationID + " " + mobToSpawn + " at " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ());

@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraDraconichthys extends EntityPrehistoricFloraA
 	public EntityPrehistoricFloraDraconichthys(World world) {
 		super(world);
 		setSize(0.5F, 0.5F);
-		minWidth = 0.2F;
+		minWidth = 0.15F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 20.0D;
@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraDraconichthys extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.40;
+		return this.getAgeScale() < 0.6660;
 	}
 
 	public static String getPeriod() {return "Devonian";}

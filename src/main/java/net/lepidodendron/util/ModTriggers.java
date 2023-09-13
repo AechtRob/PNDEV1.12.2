@@ -221,6 +221,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DICTYOPHYLLUM = new CustomTrigger("pf_book_dictyophyllum");
     public static final CustomTrigger CLICK_DINOMISCHUS = new CustomTrigger("pf_book_dinomischus");
     public static final CustomTrigger CLICK_DIOON = new CustomTrigger("pf_book_dioon");
+    public static final CustomTrigger CLICK_EOGINKGOITES = new CustomTrigger("pf_book_eoginkgoites");
     public static final CustomTrigger CLICK_DOLLYPHYTON = new CustomTrigger("pf_book_dollyphyton");
     public static final CustomTrigger CLICK_ECHMATOCRINUS = new CustomTrigger("pf_book_echmatocrinus");
     public static final CustomTrigger CLICK_EDWARDSIPHYTON = new CustomTrigger("pf_book_edwardsiphyton");
@@ -295,6 +296,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
     public static final CustomTrigger CLICK_MEDULLOSALES = new CustomTrigger("pf_book_medullosales");
+    public static final CustomTrigger CLICK_NATALIGMA = new CustomTrigger("pf_book_nataligma");
     public static final CustomTrigger CLICK_MIRABILIS = new CustomTrigger("pf_book_mirabilis");
     public static final CustomTrigger CLICK_MONKEY_PUZZLE_ARAUCARIA = new CustomTrigger("pf_book_monkey_puzzle_araucaria");
     public static final CustomTrigger CLICK_MONKEYPUZZLE = new CustomTrigger("pf_book_monkeypuzzle");
@@ -427,6 +429,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_VENTOGYRUS = new CustomTrigger("pf_book_ventogyrus");
     public static final CustomTrigger CLICK_WACHTLERIA = new CustomTrigger("pf_book_wachtleria");
     public static final CustomTrigger CLICK_WACHTLERINA = new CustomTrigger("pf_book_wachtlerina");
+    public static final CustomTrigger CLICK_DECHELLYIA = new CustomTrigger("pf_book_dechellyia");
     public static final CustomTrigger CLICK_WALCHIA = new CustomTrigger("pf_book_walchia");
     public static final CustomTrigger CLICK_WATER_HORSETAIL = new CustomTrigger("pf_book_water_horsetail");
     public static final CustomTrigger CLICK_WATTIEZA = new CustomTrigger("pf_book_wattieza");
@@ -1507,6 +1510,7 @@ public class ModTriggers
             CLICK_DICTYOPHYLLUM,
             CLICK_DINOMISCHUS,
             CLICK_DIOON,
+            CLICK_EOGINKGOITES,
             CLICK_DOLLYPHYTON,
             CLICK_ECHMATOCRINUS,
             CLICK_EDWARDSIPHYTON,
@@ -1580,6 +1584,7 @@ public class ModTriggers
             CLICK_MARATTIA,
             CLICK_MEDULLOSALES,
             CLICK_MIRABILIS,
+            CLICK_NATALIGMA,
             CLICK_MONKEY_PUZZLE_ARAUCARIA,
             CLICK_MONKEYPUZZLE,
             CLICK_NAMACALATHUS,
@@ -1711,6 +1716,7 @@ public class ModTriggers
             CLICK_VENTOGYRUS,
             CLICK_WACHTLERIA,
             CLICK_WACHTLERINA,
+            CLICK_DECHELLYIA,
             CLICK_WALCHIA,
             CLICK_WATER_HORSETAIL,
             CLICK_WATTIEZA,

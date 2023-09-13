@@ -36,7 +36,7 @@ public class ItemClarkinaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_clarkina", ItemClarkinaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_conodont@clarkina", ItemClarkinaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemClarkinaRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemClarkinaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemClarkinaRaw.block);

@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_huiyingogramma",
 			"type": "text",
-			"text": "Kalligrammatids are large insects that diversified in the Cretaceous, which were extremely butterfly-like looking. However it is not related to butterflies at all, it is a neuropteran insect (lacewing) instead. Not only its appearance, but also its ecology resembled to that of butterflies. Most kalligrammatids had proboscis-like mouthparts, and they would used it to suck nectars from flowers, although mostly from gymnosperm. They would be important pollinators at that time, just like modern butterflies. Huiyingogramma is a genus of kalligrammatid lacewing from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. It had stripes and single large eyespot on its forewings."
+			"text": "Kalligrammatids are large insects that diversified in the Cretaceous, which were extremely butterfly-like looking. However it is not related to butterflies at all, it is a neuropteran insect (lacewing) instead. Not only its appearance, but also its ecology resembled to that of butterflies. Most kalligrammatids had proboscis-like mouthparts, and they would used it to suck nectars from flowers, although mostly from gymnosperms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_huiyingogramma",
+			"type": "text",
+			"text": "They would be important pollinators at that time, just like modern butterflies. Huiyingogramma is a genus of kalligrammatid lacewing from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. It had stripes and single large eyespot on its forewings."
 		},
 		{
 			"type": "lepidodendron:diet",

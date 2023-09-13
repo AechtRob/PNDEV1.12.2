@@ -7,8 +7,10 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -42,6 +44,15 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 		maxWidth = 0.2F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 7.0D;
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		NBTTagCompound propaguleNBT = new NBTTagCompound();
+		propaguleNBT.setString("PNType", "gendered");
+		stack.setTagCompound(propaguleNBT);
+		return stack;
 	}
 
 	@Override

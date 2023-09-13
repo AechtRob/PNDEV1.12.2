@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraKeichousaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraKeichousaurus(this.world);
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}

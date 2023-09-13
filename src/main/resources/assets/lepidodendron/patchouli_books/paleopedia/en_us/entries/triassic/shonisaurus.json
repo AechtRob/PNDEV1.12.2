@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_shonisaurus",
 			"type": "text",
-			"text": "Shonisaurus was a genus of predatory shastasaurid ichthyosaur that lived during the Late Triassic in what is now Nevada, USA. Its name means \"lizard from the Shoshone Mountains\", where its fossils were found. The fossils are thought to have been preserved in oxygen-poor deep sea sediments. Measuring 13 - 15 metres long and weighing a whopping 16-30 metric tons, Shonisaurus was not only one of the largest ichthyosaurs and one of the largest marine reptiles, its immense length and bulk even put its size on par with that of many of the larger modern whales!"
+			"text": "Shonisaurus was a genus of predatory shastasaurid ichthyosaur that lived during the Late Triassic in what is now Nevada, USA. Its name means \"lizard from the Shoshone Mountains\", where its fossils were found. The fossils are thought to have been preserved in oxygen-poor deep sea sediments. Measuring 13 - 15 metres long and weighing a whopping 16-30 metric tons, Shonisaurus was not only one of the largest ichthyosaurs"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shonisaurus",
+			"type": "text",
+			"text": "and one of the largest marine reptiles, its immense length and bulk even put its size on par with that of many of the larger modern whales!"
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,0 +1,46 @@
+{
+	"name": "Gigantspinosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gigantspinosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_gigantspinosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gigantspinosaurus",
+			"title": "Gigantspinosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Stegosauria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gigantspinosaurus.png"],
+			"title": "G. sichuanensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gigantspinosaurus",
+			"type": "text",
+			"text": "Gigantspinosaurus is a Late Jurassic Stegosaurian from the Shaximiao Formation of Sichuan, China. This animal is characterized by its big, broad, and wing-shaped parascapular spines. It gew to around 4 m in length. Its head is relatively large and skin impressions showing small polygonal scales have been found. It shared an environment with many other genera of Stegosaurians. Shaximiao is very rich in Stegosaurian diversity."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gigantspinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gigantspinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gigantspinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gigantspinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gigantspinosaurus"
+		}
+	]
+}

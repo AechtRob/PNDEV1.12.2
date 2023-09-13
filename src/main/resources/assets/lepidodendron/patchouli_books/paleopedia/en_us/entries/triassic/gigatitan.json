@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 			"type": "text",
-			"text": "Gigatitan was a genus of titanopteran insect that lived during the Middle to Late Triassic in what is now the Madygen Formation of Kyrgyzstan. Like most titanopterans, it was a mantis-like predator that caught smaller prey using its enlarged, spiny forelimbs. Despite its large wings, its relatively heavy weight may have limited it to gliding rather than truly \"flying\". Distinctive stripes along its wings used for warning displays indicate it was active during the day."
+			"text": "Gigatitan was a genus of titanopteran insect that lived during the Middle to Late Triassic in what is now the Madygen Formation of Kyrgyzstan. Like most titanopterans, it was a mantis-like predator that caught smaller prey using its enlarged, spiny forelimbs. Despite its large wings, its relatively heavy weight may have limited it to gliding rather than truly \"flying\"."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
+			"type": "text",
+			"text": "Distinctive stripes along its wings used for warning displays indicate it was active during the day."
 		},
 		{
 			"type": "lepidodendron:diet",

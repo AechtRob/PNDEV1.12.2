@@ -198,16 +198,16 @@ public class EntityPrehistoricFloraCongopycnodus extends EntityPrehistoricFloraF
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.39;
+		return 0.59;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.03;
+		return -0.02;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.02F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;

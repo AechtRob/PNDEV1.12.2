@@ -36,7 +36,7 @@ public class ItemDragonfly4Raw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dragonfly@dragonfly1", ItemDragonfly4Raw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dragonfly@dragonfly4", ItemDragonfly4Raw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemDragonfly4Raw.block);
 		OreDictionary.registerOre("pndietBug", ItemDragonfly4Raw.block);
 	}

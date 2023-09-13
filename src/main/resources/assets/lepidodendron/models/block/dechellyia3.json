@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/dechellyia_3_e",
+"w":"lepidodendron:blocks/dechellyia_3_w"
+}
+}

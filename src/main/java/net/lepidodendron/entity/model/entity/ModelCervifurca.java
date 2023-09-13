@@ -342,7 +342,7 @@ public class ModelCervifurca extends AdvancedModelBase {
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         float speed = 0.2F;
         if (!e.isInWater()) {
-            speed = 0.3F;
+            speed = 1.2F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
 
@@ -371,9 +371,9 @@ public class ModelCervifurca extends AdvancedModelBase {
             this.flap(rightpelvic, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
 
             if (!e.isInWater()) {
-                this.root.rotateAngleZ = (float) Math.toRadians(90);
-                //this.root.offsetY = 1.25F;
-                this.bob(root, -speed, 5F, false, f2, 1);
+                //this.root.rotateAngleZ = (float) Math.toRadians(90);
+                this.root.offsetY = 0.07F;
+                this.bob(root, -speed, 2F, false, f2, 1);
             }
         }
     }

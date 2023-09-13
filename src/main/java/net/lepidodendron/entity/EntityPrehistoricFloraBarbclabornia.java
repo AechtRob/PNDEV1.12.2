@@ -3,19 +3,24 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockEggsBarbclabornia;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderBarbclabornia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -229,6 +234,34 @@ public class EntityPrehistoricFloraBarbclabornia extends EntityPrehistoricFloraA
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+		//Lay eggs perhaps:
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+				&& (BlockEggsBarbclabornia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockEggsBarbclabornia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockEggsBarbclabornia.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockEggsBarbclabornia.block.canPlaceBlockAt(world, this.getPosition().down()))
+		){
+			//if (Math.random() > 0.5) {
+			this.setTicks(-50); //Flag this as stationary for egg-laying
+			//}
+		}
+
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+			//Is stationary for egg-laying:
+			//System.err.println("Test2");
+			IBlockState eggs = BlockEggsBarbclabornia.block.getDefaultState();
+			if (BlockEggsBarbclabornia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsBarbclabornia.block.canPlaceBlockAt(world, this.getPosition())) {
+				world.setBlockState(this.getPosition(), eggs);
+				this.setLaying(false);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			}
+			if (BlockEggsBarbclabornia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsBarbclabornia.block.canPlaceBlockAt(world, this.getPosition().down())) {
+				world.setBlockState(this.getPosition().down(), eggs);
+				this.setLaying(false);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			}
+			this.setTicks(0);
+		}
 	}
 
 	@Nullable

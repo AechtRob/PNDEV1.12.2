@@ -131,14 +131,16 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					}.getValue(new BlockPos(target), "egg");
 
 					if (!eggRenderType.equalsIgnoreCase("")) {
-						strPhial = eggRenderType;
-						collected = true;
-						IBlockState state = worldIn.getBlockState(target);
-						TileEntity te = worldIn.getTileEntity(target);
-						if (te != null) {
-							te.getTileData().removeTag("egg");
+						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, worldIn, new BlockPos(target)) == null) {
+							strPhial = eggRenderType;
+							collected = true;
+							IBlockState state = worldIn.getBlockState(target);
+							TileEntity te = worldIn.getTileEntity(target);
+							if (te != null) {
+								te.getTileData().removeTag("egg");
+							}
+							worldIn.notifyBlockUpdate(target, state, state, 3);
 						}
-						worldIn.notifyBlockUpdate(target, state, state, 3);
 					}
 				}
 

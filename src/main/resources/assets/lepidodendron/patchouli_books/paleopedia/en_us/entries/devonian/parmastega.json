@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_parmastega",
 			"type": "text",
-			"text": "Parmastega is a genus of primitive fish-like amphibian, and the oldest known stegocephalian, being known 30 million years earlier that the earliest tetrapod footprints. The animal had a very characteristic alligator-like head, with its eyes placed above the rest of its body with the nostrils being placed underwater to allow water to pass through its gills. These adaptations suggest it was a shoreline predator who ambushed anything that got too close. This leaves one unanswered question: What did it eat? Hypotheses range from it hunting other early undiscovered tetrapods to resting semiaquatic eurypterids."
+			"text": "Parmastega is a genus of primitive fish-like amphibian, and the oldest known stegocephalian, being known 30 million years earlier that the earliest tetrapod footprints. The animal had a very characteristic alligator-like head, with its eyes placed above the rest of its body with the nostrils being placed underwater to allow water to pass through its gills. These adaptations suggest it was a shoreline predator who ambushed anything that got too close."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parmastega",
+			"type": "text",
+			"text": "This leaves one unanswered question: What did it eat? Hypotheses range from it hunting other early undiscovered tetrapods to resting semiaquatic eurypterids."
 		},
 		{
 			"type": "lepidodendron:diet",

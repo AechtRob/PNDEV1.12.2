@@ -355,17 +355,20 @@ public class ModelMegistaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.Drotops.offsetZ = 0.1F;
-        this.body.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.05F, 0.0F);
+        this.body.offsetY = 0.055F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetY = -0.05F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

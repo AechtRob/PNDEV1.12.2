@@ -36,7 +36,7 @@ public class ItemProconodontusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_proconodontus", ItemProconodontusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_conodont@proconodontus", ItemProconodontusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemProconodontusRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemProconodontusRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemProconodontusRaw.block);

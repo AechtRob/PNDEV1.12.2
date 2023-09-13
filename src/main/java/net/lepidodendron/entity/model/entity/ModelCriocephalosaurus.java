@@ -262,11 +262,13 @@ public class ModelCriocephalosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
-        this.neck1.offsetY = -0.02F;
+        this.neck1.offsetY = -0.085F;
         this.neck1.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
 //        this.setRotateAngle(tail1, 0.06370451936226872F, 0.21223203437934937F, 0.0F);
 //        this.setRotateAngle(Rightfrontfoot, 0.1485275233394591F, 0.4881685797985891F, 0.0F);
@@ -297,7 +299,7 @@ public class ModelCriocephalosaurus extends AdvancedModelBaseExtended {
 //        this.Hips.offsetX = 0.13F;
 //        this.Hips.offsetZ = -0.13F;
 //        this.Hips.offsetY = -0.155F;
-//        this.Hips.render(0.01F);
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
 

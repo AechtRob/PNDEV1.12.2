@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:nataligma_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:nataligma_seed",
+    "count": 1
+  }
+}

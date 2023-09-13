@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderAngustidontus;
 import net.lepidodendron.entity.render.entity.RenderAnomalocaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -273,14 +274,14 @@ public class EntityPrehistoricFloraAngustidontus extends EntityPrehistoricFloraA
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderAnomalocaris.TEXTURE;
+		return RenderAngustidontus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAnomalocaris;
+		return RenderDisplays.modelAngustidontus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderAnomalocaris.getScaler();
+		return RenderAngustidontus.getScaler();
 	}
 }
 

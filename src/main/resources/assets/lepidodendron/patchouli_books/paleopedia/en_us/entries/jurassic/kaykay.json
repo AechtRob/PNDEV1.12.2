@@ -1,0 +1,46 @@
+{
+	"name": "Kaykay",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kaykay_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_kaykay",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kaykay",
+			"title": "Kaykay",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Teleosteomorpha $(br)>Pachycormiformes $(br)>Pachycormidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/kaykay.png"],
+			"title": "K. lafken",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kaykay",
+			"type": "text",
+			"text": "Kaykay was a large predatory Pachycormid from the Tithonian Stage of Argentina. It's general body shape, long scythe-like fins, and small scales resembles that of modern predatory fish like tuna and sailfish. A Kaykay specimen has been discovered with another fish within its stomach cavity. Kaykay is one of the best preserved Pachycormids and is important to our understanding of this group."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kaykay"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kaykay"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kaykay"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kaykay"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kaykay"
+		}
+	]
+}

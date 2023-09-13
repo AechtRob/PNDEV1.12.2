@@ -33,9 +33,9 @@ public class EntityPrehistoricFloraClarkeiteuthis extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraClarkeiteuthis(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.4F, 0.3F);
 		minWidth = 0.07F;
-		maxWidth = 0.5F;
+		maxWidth = 0.4F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {

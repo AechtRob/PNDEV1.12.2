@@ -266,8 +266,8 @@ public class ModelHelicoprion extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Bodyfront.offsetY = 0.5F;
-        this.Bodyfront.offsetZ = 1.1F;
+        this.Bodyfront.offsetY = 1.0F;
+        this.Bodyfront.offsetZ = 0.6F;
 
         AdvancedModelRenderer[] fishTail = {this.Bodymiddle, this.Bodyend, this.Tailbase, this.Tailmiddle, this.Tailendmiddle, this.Tailend};
         ((EntityPrehistoricFloraHelicoprion)e).tailBuffer.applyChainSwingBuffer(fishTail);

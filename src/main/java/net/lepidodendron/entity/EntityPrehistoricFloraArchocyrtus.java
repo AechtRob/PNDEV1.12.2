@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsProtozygoptera;
+import net.lepidodendron.block.BlockInsectEggsArchocyrtus;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 
 	@Override
 	public IBlockState getEggBlockState() {
-		return BlockInsectEggsProtozygoptera.block.getDefaultState();
+		return BlockInsectEggsArchocyrtus.block.getDefaultState();
 	}
 
 	@Override

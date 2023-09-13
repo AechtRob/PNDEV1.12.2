@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.2;
+		return this.getAgeScale() < 0.4;
 	}
 
 	public static String getPeriod() {return "Devonian";}

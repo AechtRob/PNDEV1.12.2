@@ -175,6 +175,7 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) { return 0.34; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
@@ -225,6 +226,5 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 	public static float getScaler(@Nullable String variant) {
 		return RenderPricyclopyge.getScaler();
 	}
-
 }
 

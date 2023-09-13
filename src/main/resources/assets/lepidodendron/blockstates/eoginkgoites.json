@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:eoginkgoites_inventory"
+    },
+    "normal": {
+      "model": "lepidodendron:eoginkgoites"
+    }
+  }
+}

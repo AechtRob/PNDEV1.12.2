@@ -7,6 +7,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderCometicercus;
+import net.lepidodendron.entity.render.entity.RenderPricyclopyge;
+import net.lepidodendron.entity.render.entity.RenderSymphysops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -175,29 +177,30 @@ public class EntityPrehistoricFloraSymphysops extends EntityPrehistoricFloraFish
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) { return 0.34; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.6;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.6;
+		return 0.4;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
@@ -216,15 +219,14 @@ public class EntityPrehistoricFloraSymphysops extends EntityPrehistoricFloraFish
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCometicercus.TEXTURE;
+		return RenderSymphysops.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCometicercus;
+		return RenderDisplays.modelSymphysops;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderCometicercus.getScaler();
+		return RenderSymphysops.getScaler();
 	}
-
 }
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ischyodus",
 			"title": "Ischyodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Miocene(br2)>Chondrichthyes $(br)>Chimaeriformes $(br)>Callorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Miocene$(br2)>Chondrichthyes $(br)>Chimaeriformes $(br)>Callorhynchidae"
 		},
 		{
 			"type": "image",

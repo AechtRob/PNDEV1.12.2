@@ -30,7 +30,7 @@ public class RenderHelicoprion extends RenderLiving<EntityPrehistoricFloraHelico
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHelicoprion entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

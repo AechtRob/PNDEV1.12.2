@@ -339,8 +339,16 @@ public class ModelAngelina extends AdvancedModelBase {
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Angelina, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(Thorax1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Thorax1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Thorax3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax4, 0.0F, 0.1F, 0.0F);
         this.Angelina.offsetY = 0.055F;
+        this.Angelina.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.Angelina.offsetY = -0.05F;
         this.Angelina.render(0.01F);
         resetToDefaultPose();
     }

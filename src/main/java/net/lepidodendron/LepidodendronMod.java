@@ -8,7 +8,6 @@ import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.util.Summoner;
 import net.lepidodendron.world.lootconditions.EntityInBiomes;
 import net.lepidodendron.world.lootconditions.EntityInDimensionID;
 import net.lepidodendron.world.lootconditions.EntityInDimensionName;
@@ -1199,9 +1198,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation VANCLEAVEA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vancleavea_young"));
 	public static final int ENTITY_XINPUSAURUS = 464;
 	public static final ResourceLocation XINPUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus"));
-	public static final ResourceLocation XINPUSAURUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus_f"));
+	//public static final ResourceLocation XINPUSAURUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus_f"));
 	public static final ResourceLocation XINPUSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus_young"));
-	public static final ResourceLocation XINPUSAURUS_LOOT_F_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus_young_f"));
+	//public static final ResourceLocation XINPUSAURUS_LOOT_F_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus_young_f"));
 	public static final int ENTITY_AUSTRIADACTYLUS = 465;
 	public static final ResourceLocation AUSTRIADACTYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/austriadactylus"));
 	public static final ResourceLocation AUSTRIADACTYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/austriadactylus_young"));
@@ -1728,7 +1727,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PSEUDORHINA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudorhina"));
 	public static final int ENTITY_PHORCYNIS = 697;
 	public static final ResourceLocation PHORCYNIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phorcynis"));
-	public static final ResourceLocation PHORCYNIS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phorcynis_f"));
+	//public static final ResourceLocation PHORCYNIS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phorcynis_f"));
 	public static final int ENTITY_HOMOEOSAURUS = 698;
 	public static final ResourceLocation HOMOEOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/homoeosaurus"));
 	public static final int ENTITY_CHUNERPETON = 699;
@@ -1946,7 +1945,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation TRIOPS3_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/triops3"));
 	public static final int ENTITY_ARCHABOILUS = 771;
 	public static final ResourceLocation ARCHABOILUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaboilus_jar"));
-	public static final ResourceLocation ARCHABOILUS_LOOT_JAR_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaboilus_jar_f"));
+	//public static final ResourceLocation ARCHABOILUS_LOOT_JAR_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaboilus_jar_f"));
 	public static final int ENTITY_PYCNOPHLEBIA = 772;
 	public static final ResourceLocation PYCNOPHLEBIA_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pycnophlebia_jar"));
 	public static final ResourceLocation PYCNOPHLEBIA_LOOT_JAR_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pycnophlebia_jar_f"));
@@ -1975,7 +1974,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_GLYPTOPS = 781;
 	public static final ResourceLocation GLYPTOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glyptops"));
 	public static final int ENTITY_KAYENTACHELYS = 782;
-	public static final ResourceLocation KAYENTACHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kayentachelys"));
+	//public static final ResourceLocation KAYENTACHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kayentachelys"));
 	public static final int ENTITY_THALASSEMYS = 783;
 	public static final ResourceLocation THALASSEMYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys"));
 	public static final ResourceLocation THALASSEMYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys_young"));
@@ -1996,8 +1995,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation TUOJIANGOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tuojiangosaurus"));
 	public static final ResourceLocation TUOJIANGOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tuojiangosaurus_young"));
 	public static final int ENTITY_DIANDONGOSUCHUS = 788;
-	public static final ResourceLocation DIANDONGOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus"));
-	public static final ResourceLocation DIANDONGOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus_young"));
+	//public static final ResourceLocation DIANDONGOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus"));
+	//public static final ResourceLocation DIANDONGOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diandongosuchus_young"));
 	public static final int ENTITY_YUXISAURUS = 789;
 	public static final ResourceLocation YUXISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yuxisaurus"));
 	public static final ResourceLocation YUXISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yuxisaurus_young"));
@@ -2011,8 +2010,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation TANYCOLAGREUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanycolagreus_young"));
 
 	public static final int ENTITY_PLATYSUCHUS = 792;
-	public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
-	public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
+	//public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
+	//public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
 
 	public static final int ENTITY_SUBMARINE = 793;
 
@@ -2092,7 +2091,7 @@ public class LepidodendronMod {
 	public void serverLoad(FMLServerStartingEvent event) {
 		elements.getElements().forEach(element -> element.serverLoad(event));
 		proxy.serverLoad(event);
-		event.registerServerCommand(new Summoner());
+		//event.registerServerCommand(new Summoner());
 	}
 
 	@SubscribeEvent

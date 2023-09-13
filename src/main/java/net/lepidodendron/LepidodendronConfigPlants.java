@@ -1440,6 +1440,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightWachtlerina = 0;
     public static double multiplierWachtlerina = 1;
 
+    public static boolean genDechellyia = false;
+    public static String[] genDechellyiaBlacklistBiomes = new String[0];
+    public static String[] genDechellyiaOverrideBiomes = new String[0];
+    public static int[] dimDechellyia = new int[]{0};
+    public static int minheightDechellyia = 1;
+    public static int maxheightDechellyia = 0;
+    public static double multiplierDechellyia = 1;
+
     public static boolean genThucydia = false;
     public static String[] genThucydiaBlacklistBiomes = new String[0];
     public static String[] genThucydiaOverrideBiomes = new String[0];
@@ -1502,6 +1510,14 @@ public class LepidodendronConfigPlants {
     public static int minheightProtognetum = 1;
     public static int maxheightProtognetum = 0;
     public static double multiplierProtognetum = 1;
+
+    public static boolean genDrewria = false;
+    public static String[] genDrewriaBlacklistBiomes = new String[0];
+    public static String[] genDrewriaOverrideBiomes = new String[0];
+    public static int[] dimDrewria = new int[]{0};
+    public static int minheightDrewria = 1;
+    public static int maxheightDrewria = 0;
+    public static double multiplierDrewria = 1;
 
     public static boolean genAnemoneFlower = false;
     public static String[] genAnemoneFlowerBlacklistBiomes = new String[0];
@@ -1640,6 +1656,15 @@ public class LepidodendronConfigPlants {
     public static int minheightWielandiella = 1;
     public static int maxheightWielandiella = 100;
     public static double multiplierWielandiella = 1;
+    
+    public static boolean genEoginkgoites = false;
+    public static String[] genEoginkgoitesBlacklistBiomes = new String[0];
+    public static String[] genEoginkgoitesOverrideBiomes = new String[0];
+    public static int[] dimEoginkgoites = new int[]{0};
+    public static int minheightEoginkgoites = 1;
+    public static int maxheightEoginkgoites = 100;
+    public static double multiplierEoginkgoites = 1;
+    
     public static boolean genWoodHorsetail = false;
     public static String[] genWoodHorsetailBlacklistBiomes = new String[0];
     public static String[] genWoodHorsetailOverrideBiomes = new String[0];
@@ -2144,6 +2169,15 @@ public class LepidodendronConfigPlants {
     public static int minheightEremopteris = 1;
     public static int maxheightEremopteris = 90;
     public static double multiplierEremopteris = 1;
+
+    public static boolean genNataligma = false;
+    public static String[] genNataligmaBlacklistBiomes = new String[0];
+    public static String[] genNataligmaOverrideBiomes = new String[0];
+    public static int[] dimNataligma = new int[]{0};
+    public static int minheightNataligma = 1;
+    public static int maxheightNataligma = 0;
+    public static double multiplierNataligma = 1;
+    
     public static boolean genHemp = false;
     public static String[] genHempBlacklistBiomes = new String[0];
     public static String[] genHempOverrideBiomes = new String[0];
@@ -7734,6 +7768,35 @@ public class LepidodendronConfigPlants {
         multiplierDaisy = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Drewria", "genDrewria", genDrewria);
+        prop.setComment("Set to true to generate Drewria naturally [default: false]");
+        genDrewria = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "genDrewriaBlacklistBiomes", genDrewriaBlacklistBiomes);
+        prop.setComment("List of biomes Drewria are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDrewriaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "genDrewriaOverrideBiomes", genDrewriaOverrideBiomes);
+        prop.setComment("List of biomes Drewria are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDrewriaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "dimDrewria", dimDrewria);
+        prop.setComment("List of dimension IDs Drewria can generate in [default: 0]");
+        dimDrewria = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "minheightDrewria", minheightDrewria);
+        prop.setComment("Minimum height that Drewria can generate (1 to 250) [default: 1]");
+        minheightDrewria = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "maxheightDrewria", maxheightDrewria);
+        prop.setComment("Maximum height that Drewria can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightDrewria = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drewria", "multiplierDrewria", multiplierDrewria);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDrewria = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Protognetum", "genProtognetum", genProtognetum);
         prop.setComment("Set to true to generate Protognetum naturally [default: false]");
         genProtognetum = prop.getBoolean();
@@ -8114,6 +8177,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Tyrmia", "multiplierTyrmia", multiplierTyrmia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTyrmia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Eoginkgoites", "genEoginkgoites", genEoginkgoites);
+        prop.setComment("Set to true to generate Eoginkgoites naturally [default: false]");
+        genEoginkgoites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "genEoginkgoitesBlacklistBiomes", genEoginkgoitesBlacklistBiomes);
+        prop.setComment("List of biomes Eoginkgoites are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genEoginkgoitesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "genEoginkgoitesOverrideBiomes", genEoginkgoitesOverrideBiomes);
+        prop.setComment("List of biomes Eoginkgoites are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genEoginkgoitesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Eoginkgoites", "dimEoginkgoites", dimEoginkgoites);
+        prop.setComment("List of dimension IDs Eoginkgoites can generate in [default: 0]");
+        dimEoginkgoites = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "minheightEoginkgoites", minheightEoginkgoites);
+        prop.setComment("Minimum height that Eoginkgoites can generate (1 to 250) [default: 1]");
+        minheightEoginkgoites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "maxheightEoginkgoites", maxheightEoginkgoites);
+        prop.setComment("Maximum height that Eoginkgoites can generate (1 to 250, or set to 0 for unlimited) [default: 100]");
+        maxheightEoginkgoites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Eoginkgoites", "multiplierEoginkgoites", multiplierEoginkgoites);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierEoginkgoites = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Wielandiella", "genWielandiella", genWielandiella);
@@ -9297,6 +9388,34 @@ public class LepidodendronConfigPlants {
         multiplierPseudobornia = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Nataligma", "genNataligma", genNataligma);
+        prop.setComment("Set to true to generate Nataligma naturally [default: false]");
+        genNataligma = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "genNataligmaBlacklistBiomes", genNataligmaBlacklistBiomes);
+        prop.setComment("List of biomes Nataligma are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genNataligmaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "genNataligmaOverrideBiomes", genNataligmaOverrideBiomes);
+        prop.setComment("List of biomes Nataligma are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genNataligmaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Nataligma", "dimNataligma", dimNataligma);
+        prop.setComment("List of dimension IDs Nataligma can generate in [default: 0]");
+        dimNataligma = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "minheightNataligma", minheightNataligma);
+        prop.setComment("Minimum height that Nataligma can generate (1 to 250) [default: 1]");
+        minheightNataligma = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "maxheightNataligma", maxheightNataligma);
+        prop.setComment("Maximum height that Nataligma can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightNataligma = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nataligma", "multiplierNataligma", multiplierNataligma);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierNataligma = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Eremopteris", "genEremopteris", genEremopteris);
         prop.setComment("Set to true to generate Eremopteris naturally [default: false]");
         genEremopteris = prop.getBoolean();
@@ -9627,6 +9746,33 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Pseudovoltzia", "multiplierPseudovoltzia", multiplierPseudovoltzia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierPseudovoltzia = prop.getDouble();
+
+        prop = cfg.get("WorldGen Dechellyia", "genDechellyia", genDechellyia);
+        prop.setComment("Set to true to generate Dechellyia naturally [default: false]");
+        genDechellyia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "genDechellyiaBlacklistBiomes", genDechellyiaBlacklistBiomes);
+        prop.setComment("List of biomes Dechellyia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDechellyiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "genDechellyiaOverrideBiomes", genDechellyiaOverrideBiomes);
+        prop.setComment("List of biomes Dechellyia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDechellyiaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Dechellyia", "dimDechellyia", dimDechellyia);
+        prop.setComment("List of dimension IDs Dechellyia can generate in [default: 0]");
+        dimDechellyia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "minheightDechellyia", minheightDechellyia);
+        prop.setComment("Minimum height that Dechellyia can generate (1 to 250) [default: 1]");
+        minheightDechellyia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "maxheightDechellyia", maxheightDechellyia);
+        prop.setComment("Maximum height that Dechellyia can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightDechellyia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dechellyia", "multiplierDechellyia", multiplierDechellyia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDechellyia = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Wachtlerina", "genWachtlerina", genWachtlerina);

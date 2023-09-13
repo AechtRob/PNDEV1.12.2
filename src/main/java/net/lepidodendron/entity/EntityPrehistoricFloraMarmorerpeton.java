@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnChunerpeton;
+import net.lepidodendron.block.BlockAmphibianSpawnMarmorerpeton;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
@@ -294,10 +294,10 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition().down()))
+				&& (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition().down()))
 		){
 			//if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
@@ -307,13 +307,13 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
-			IBlockState eggs = BlockAmphibianSpawnChunerpeton.block.getDefaultState();
-			if (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition())) {
+			IBlockState eggs = BlockAmphibianSpawnMarmorerpeton.block.getDefaultState();
+			if (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			}
-			if (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition().down())) {
+			if (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition().down())) {
 				world.setBlockState(this.getPosition().down(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);

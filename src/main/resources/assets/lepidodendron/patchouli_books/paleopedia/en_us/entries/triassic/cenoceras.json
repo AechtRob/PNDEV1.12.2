@@ -1,0 +1,51 @@
+{
+	"name": "Cenoceras",
+	"read_by_default": true,
+	"icon": "lepidodendron:shell_cenoceras",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cenoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cenoceras",
+			"title": "Cenoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Nautilida $(br)>Nautilidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cenoceras.png"],
+			"title": "C. intermedium",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cenoceras",
+			"type": "text",
+			"text": "Cenoceras is a Nautilid extending from the Carnian Age of the Upper Triassic to the Callovian Age of the Middle Jurassic. They were nektonic carnivores with a shell diameter measuring up to about 30 cm. Although it has a similar enough appearance to the modern nautilus, Cenoceras is also known from shallow sea deposits. Cenoceras have been discovered in various places across the world, including Canada, Saudi Arabia, Russia, Europe, Australia, and New Zealand."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cenoceras",
+			"type": "text",
+			"text": "It was one of the most widespread genera of Nautiloid during the Jurassic."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cenoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cenoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cenoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cenoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cenoceras"
+		}
+	]
+}

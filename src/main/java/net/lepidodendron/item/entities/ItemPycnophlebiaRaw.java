@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -40,13 +41,19 @@ public class ItemPycnophlebiaRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pnfurnaceBug", ItemPycnophlebiaRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemPycnophlebiaRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
-			super(1, 0.05f, false);
+			super();
 			setTranslationKey("pf_pycnophlebia_raw");
 			setRegistryName("pycnophlebia_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_pycnophlebia";
 		}
 
 		@Nullable

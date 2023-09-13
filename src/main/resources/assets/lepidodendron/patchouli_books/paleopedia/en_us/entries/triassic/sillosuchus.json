@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sillosuchus",
 			"type": "text",
-			"text": "Sillosuchus is a genus of shuvosaurid archosaur from the Late Triassic of South America. Although their closest living relatives are crocodilians, they were bipedal and lightly armored, superficially resembling dinosaurs. Sillosuchus and related animals like Effigia were also toothless and beaked herbivores. Sillosuchus was named after Dr. William Sill. Sillosuchus was a poposaurid which was an unusual group of reptiles, which also included carnivorous members like Poposaurus."
+			"text": "Sillosuchus is a genus of shuvosaurid archosaur from the Late Triassic of South America. Although their closest living relatives are crocodilians, they were bipedal and lightly armored, superficially resembling dinosaurs. Sillosuchus and related animals like Effigia were also toothless and beaked herbivores. Sillosuchus was named after Dr. William Sill."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sillosuchus",
+			"type": "text",
+			"text": "Sillosuchus was a poposaurid which was an unusual group of reptiles, which also included carnivorous members like Poposaurus."
 		},
 		{
 			"type": "lepidodendron:diet",

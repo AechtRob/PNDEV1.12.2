@@ -5,7 +5,6 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
@@ -27,8 +26,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
-
-import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraKayentachelys extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
@@ -294,9 +291,9 @@ public class EntityPrehistoricFloraKayentachelys extends EntityPrehistoricFloraS
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.KAYENTACHELYS_LOOT;
-	}
+//	@Nullable
+//	protected ResourceLocation getLootTable() {
+//		return LepidodendronMod.KAYENTACHELYS_LOOT;
+//	}
 
 }

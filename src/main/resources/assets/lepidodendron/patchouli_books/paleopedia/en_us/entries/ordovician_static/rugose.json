@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_rugosa",
 			"type": "text",
-			"text": "Rugose corals are more closely related to modern corals than Tabulate corals were. They were important reef organisms from the mid Ordovician until their extinction at the end of the Permian period, with a peak in abundance and diversity during the Devonian. While some species were small and colonial, others were larger and more solitary, each contained within its cone-shaped outer calcite skeleton. These corals had tentacles to help them catch prey and they generally ate micro-organisms."
+			"text": "Rugose corals are more closely related to modern corals than Tabulate corals were. They were important reef organisms from the mid Ordovician until their extinction at the end of the Permian period, with a peak in abundance and diversity during the Devonian. While some species were small and colonial, others were larger and more solitary, each contained within its cone-shaped outer calcite skeleton."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rugosa",
+			"type": "text",
+			"text": "These corals had tentacles to help them catch prey and they generally ate micro-organisms."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rugosa",

@@ -1,0 +1,46 @@
+{
+	"name": "Morrolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/morrolepis_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_morrolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_morrolepis",
+			"title": "Morrolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Coccolepididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/morrolepis.png"],
+			"title": "M. schaefferi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_morrolepis",
+			"type": "text",
+			"text": "Morrolepis was a small fish that lived in the Jurassic and very early Cretaceous. The type specimen was found in the famous Morrison Formation is about 20cm long. Other remains thought to be Coccolepis have been found in Cretaceous rocks in England and Jurassic rocks in Kazahkstan."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_morrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_morrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_morrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_morrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_morrolepis"
+		}
+	]
+}

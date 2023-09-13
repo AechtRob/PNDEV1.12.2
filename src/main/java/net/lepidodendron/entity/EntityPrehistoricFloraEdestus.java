@@ -39,10 +39,10 @@ public class EntityPrehistoricFloraEdestus extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraEdestus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(0.90F, 0.90F);
 		minWidth = 0.1F;
-		maxWidth = 0.9F;
-		maxHeight = 0.9F;
+		maxWidth = 0.90F;
+		maxHeight = 0.90F;
 		maxHealthAgeable = 42.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

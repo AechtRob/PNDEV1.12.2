@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_meganeurites",
 			"type": "text",
-			"text": ""
+			"text": "Meganeurites is a griffinfly from the Carboniferous of France. The head of Meganeura has not found, and previous reconstructions had to speculate based off  the poorly preserved head of Erasipteroides. There was a fossil of Meganeulura that supposedly preserved the head but it was likely forged. However, this would change when a paper published in 2018 about Meganeurites gave the first look into the head morphology of griffinflies."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_meganeurites",
+			"type": "text",
+			"text": "It would turn out that griffinflies had large connected eyes and anatomy similar to that of dragonflies. They possessed three ocelli in the middle of the head in an angular arrangement which functioned as horizon detectors helping the griffinflies balance their bodies during flight. Importantly, the head preserves robust mandibles with sharp teeth that solidified the idea that griffinflies would have been hawking predators."
 		},
 		{
 			"type": "lepidodendron:diet",

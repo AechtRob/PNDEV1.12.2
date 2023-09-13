@@ -87,7 +87,7 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 				if (net.minecraftforge.event.ForgeEventFactory.doSpecialSpawn(entityliving, worldIn, (float) x, (float) y, (float) z, null)) return null;
 				entityliving.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
 				worldIn.spawnEntity(entity);
-				((EntityPrehistoricFloraNotostracan)entityliving).setPNType(EntityPrehistoricFloraNotostracan.Type.byId(itemRand.nextInt(3) + 2));
+				((EntityPrehistoricFloraNotostracan)entityliving).setPNType(EntityPrehistoricFloraNotostracan.Type.byId(itemRand.nextInt(3) + 1));
 				entityliving.playLivingSound();
 			}
 			return entity;

@@ -5,7 +5,6 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnWhatcheeria;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -31,8 +30,6 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
-
-import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
@@ -268,12 +265,12 @@ public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFlor
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.DIANDONGOSUCHUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.DIANDONGOSUCHUS_LOOT;
-	}
+//	@Nullable
+//	protected ResourceLocation getLootTable() {
+//		 		if (!this.isPFAdult()) {
+//			return LepidodendronMod.DIANDONGOSUCHUS_LOOT_YOUNG;
+//		}
+//		return LepidodendronMod.DIANDONGOSUCHUS_LOOT;
+//	}
 
 }

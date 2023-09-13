@@ -134,11 +134,6 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 
-		@Override
-		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
-		{
-		}
-
 		@SideOnly(Side.CLIENT)
 		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
@@ -293,8 +288,31 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 			//System.err.println("actual timer: " + incubation + " limit: " + this.getIncubation(worldIn, pos));
 
 			if (incubation >= this.getIncubation(worldIn, pos)) {
+
+				String nbtStr = "{AgeTicks:0}";
+
+				String creatureType = new Object() {
+					public String getValue(BlockPos pos1, String tag) {
+						TileEntity tileEntity = worldIn.getTileEntity(pos1);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getString(tag);
+						return "";
+					}
+				}.getValue(pos, "PNType");
+
+				String creatureTypeVariant = getEggOwnerVariant(worldIn, pos);
+				if (creatureTypeVariant != null) {
+					if (creatureTypeVariant.equalsIgnoreCase("gendered")) {
+						creatureTypeVariant = "male";
+						if (worldIn.rand.nextInt(2) == 0) {
+							creatureTypeVariant = "female";
+						}
+					}
+					nbtStr = "{PNType:\"" + creatureTypeVariant + "\",AgeTicks:0}";
+				}
+
 				if (!(worldIn.isRemote)) {
-					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggOwner(worldIn, pos)).toString(), "{AgeTicks:0}", (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
+					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggOwner(worldIn, pos)).toString(), nbtStr, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
 				}
 				worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
@@ -319,10 +337,35 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 			}.getValue(pos, "creature");
 
 			if (!creatureType.equals("")) {
+				int i = creatureType.indexOf("@");
+				if (i >= 1) {
+					creatureType = creatureType.substring(0, creatureType.indexOf("@"));
+				}
 				//Get the mob:
 				Class<? extends Entity> clazz = findEntity(creatureType);
 				if (clazz != null) {
 					return findEntity(creatureType);
+				}
+			}
+			return null;
+		}
+
+		@Nullable
+		public static String getEggOwnerVariant(World world, BlockPos pos) {
+			//Get the matching entity for the nbt applied:
+			String creatureType = new Object() {
+				public String getValue(BlockPos pos1, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos1);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(pos, "creature");
+
+			if (!creatureType.equals("")) {
+				int i = creatureType.indexOf("@");
+				if (i >= 1) {
+					return creatureType.substring(creatureType.indexOf("@") + 1);
 				}
 			}
 			return null;

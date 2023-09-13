@@ -20,7 +20,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_typhloesus",
 			"type": "text",
-			"text": ""
+			"text": "Typhloesus is a very interesting and enigmatic creature. Discovered from the Bear Gulch Limestone, it was originally thought to have been the first conodont discovered in the area. As it turned out, the conodont teeth discovered were actually part of the gut content of what would be dubbed the “alien goldfish”. It was described in 1973 by Simon Conway Morris in which more of the unusual anatomy of this creature was investigated."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_typhloesus",
+			"type": "text",
+			"text": "It was determined to not be a chordate. Other features, such as the hind fin supported by two sets of right angle struts as well as the internal anatomy were noted. The large mouth attached to a long foregut which reached a large midgut. Lacking an anus, Tylphloesus had a blind gut. It had a peculiar organ named the ferrodiscus. It is composed of two discs located beneath the midgut."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_typhloesus",
+			"type": "text",
+			"text": "The exact function of this organ is unknown, but its high iron concentration suggests some relation towards respiration. On 21 September, 2022, a paper was published under Morris as well as Jean-Bernard Caron which identified a radula-like structure on the ventral side of the foregut. This provided evidence that Typhloesus may have belonged to the phylum of mollusca."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_typhloesus",
+			"type": "text",
+			"text": "Despite continued ambiguity on the phylogeny of Typhloesus, it is now believed that if it were a mollusk, it’s relationship may be closer to pterotracheoid gastropods. Regardless, the “alien goldfish” still puzzles us to this day."
 		},
 		{
 			"type": "lepidodendron:diet",

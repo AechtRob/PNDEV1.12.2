@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
 import net.minecraft.block.material.Material;
@@ -10,11 +11,15 @@ import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -132,6 +137,22 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+
+        if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
+            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+                if (!world.isRemote) {
+                    this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
+                    TileEntity te = world.getTileEntity(this.getPosition());
+                    if (te != null) {
+                        te.getTileData().setString("creature", getEntityId(this));
+                    }
+                    this.setNestLocation(this.getPosition());
+                }
+                SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            }
+        }
+
         //this.renderYawOffset = this.rotationYaw;
     }
 

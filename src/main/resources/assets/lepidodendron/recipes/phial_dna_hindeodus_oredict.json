@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNlepidodendron:prehistoric_flora_hindeodus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_conodont@hindeodus"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_hindeodus"}}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_conodont@hindeodus"}}
  }
 }

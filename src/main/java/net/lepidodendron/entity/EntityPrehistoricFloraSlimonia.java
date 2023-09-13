@@ -1,7 +1,6 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
@@ -15,7 +14,6 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
@@ -212,9 +210,9 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
-		}
+//		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+//			launchAttack();
+//		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
@@ -305,12 +303,12 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		//tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new SwimmingBottomWalkingSwimBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(3, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
 		tasks.addTask(4, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 //		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

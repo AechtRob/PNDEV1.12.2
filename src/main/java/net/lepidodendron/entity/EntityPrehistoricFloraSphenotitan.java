@@ -10,10 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -51,6 +48,17 @@ public class EntityPrehistoricFloraSphenotitan extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getEggType() {
+		return 0; //small
+	}
+
+	@Nullable
+	@Override
+	public EntityAgeable createChild(EntityAgeable ageable) {
+		return null;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -61,6 +69,11 @@ public class EntityPrehistoricFloraSphenotitan extends EntityPrehistoricFloraLan
 	public static String getPeriod() {return "late Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Reptile";}
+
+	@Override
+	public boolean hasNest() {
+		return true;
+	}
 
     @Override
 	public String getTexture() {

@@ -1,0 +1,46 @@
+{
+	"name": "Jamoytius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/jamoytius_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_jamoytius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jamoytius",
+			"title": "Jamoytius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata $(br)>Jamoytiiformes $(br)>Jamoytiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/jamoytius.png"],
+			"title": "J. kerwoodi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jamoytius",
+			"type": "text",
+			"text": "Jamoytius is a 27 cm long eel-like jawless fish from the Patrick Burn Formation of Scotland. It lived in the Early Silurian. Old reconstructions of Jamoytius depict it with side fins extending down the body. Research has revealed those fins to be artifacts of deformation during the process of preservation. It is the oldest known vertebrate with camera-like eyes. Lacking teeth and any dentition in its mouth, it is believed it would've either been a filter feeder or ate detritus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jamoytius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jamoytius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jamoytius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jamoytius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jamoytius"
+		}
+	]
+}

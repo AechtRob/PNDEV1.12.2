@@ -4385,6 +4385,12 @@ public class RenderHandler {
                 return new RenderMeganeurites(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMeganeuritesNymph.class, new IRenderFactory<EntityPrehistoricFloraMeganeuritesNymph>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMeganeuritesNymph> createRenderFor(RenderManager manager) {
+                return new RenderMeganeuritesNymph(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTrachymetopon.class, new IRenderFactory<EntityPrehistoricFloraTrachymetopon>() {
             @Override
             public Render<? super EntityPrehistoricFloraTrachymetopon> createRenderFor(RenderManager manager) {

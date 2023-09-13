@@ -490,6 +490,8 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
+        Eastmanosteus.offsetZ = -0.3F;
+
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5, this.Tail, this.Tail2};
         ((EntityPrehistoricFloraEastmanosteus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 

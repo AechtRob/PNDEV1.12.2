@@ -1,0 +1,51 @@
+{
+	"name": "Olenellus",
+	"read_by_default": true,
+	"icon": "lepidodendron:olenellus_raw",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_olenellus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_olenellus",
+			"title": "Olenellus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Olenellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/olenellus.png"],
+			"title": "Olenellus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_olenellus",
+			"type": "text",
+			"text": "Olenellus is a genus of Redlichiid Trilobite from the Cambrian Stage 4. It is an abundant North American trilobite and is utilized to subdivide the Cambrian. It was typically an average sized trilobite though some species grew relatively large. It was incredibly flat with genal spines extending as far back as the 6th thoracic segment. Its eyes emerged from the back of the glabella. The genus is well diverse and also unique, with varying arrangements of pleural spines."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_olenellus",
+			"type": "text",
+			"text": "Many species have a long pleural spine in the third thoracic segment and others have multiple spines it highly reduced spines."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_olenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_olenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_olenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_olenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_olenellus"
+		}
+	]
+}

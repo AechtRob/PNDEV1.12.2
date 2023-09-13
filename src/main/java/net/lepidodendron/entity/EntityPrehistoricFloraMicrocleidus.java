@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraMicrocleidus extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.30;
 	}
 
 	public static String getPeriod() {return "Jurassic";}

@@ -29,7 +29,7 @@ public class RenderLibys extends RenderLiving<EntityPrehistoricFloraLibys> {
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLibys entity, float f) {
-        float scale = this.getScaler();
+        float scale = this.getScaler() * entity.getAgeScale();;
         if (scale < 0.1f) {
             scale = 0.1f;
         }

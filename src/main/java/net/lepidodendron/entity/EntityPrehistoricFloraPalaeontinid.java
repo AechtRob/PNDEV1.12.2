@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraPalaeontinid extends EntityPrehistoricFloraIn
 
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	@Override

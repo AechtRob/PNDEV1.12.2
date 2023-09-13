@@ -42,6 +42,7 @@ public class ItemMicrobrachiusRawF extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pnfurnaceFish", ItemMicrobrachiusRawF.block);
 		OreDictionary.registerOre("pndietFish", ItemMicrobrachiusRawF.block);
 	}
+
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);

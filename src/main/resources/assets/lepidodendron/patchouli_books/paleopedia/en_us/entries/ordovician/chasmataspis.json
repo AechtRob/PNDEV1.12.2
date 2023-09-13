@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_chasmataspis",
 			"type": "text",
-			"text": ""
+			"text": "Chasmataspis was a chelicerate arthropod from the Early Ordovician of what is now Tennessee. It was described in 1958 by Kenneth Caster and HK Brooks from several specimens found in rocks near the Douglas Dam. It was the first discovered member of the order Chasmataspidida, a group of extinct arthropods that bears significant resemblance to both eurypterids and xiphosurans. At the time, sea scorpions and horseshoe crabs were thought to be closely related, with Chasmataspis"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chasmataspis",
+			"type": "text",
+			"text": "sister to both. However, more recent studies have called into question the monophyletic nature of this group, and it is currently unclear whether chasmataspids are close to eurypterids, xiphosurans, both, or neither. Like these other chelicerates, Chasmatasis was largely or entirely aquatic, and is thought to have been a marine bottom dweller. Chasmataspis was relatively small, with specimens found between approximately 5 and 10 centimeters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chasmataspis",
+			"type": "text",
+			"text": "The cephalothorax was protected by a broad, semicircular shield with edges developed into spines. The name Chasmataspis is defined by the authors to mean “dam shield,” likely in reference to the location of discovery and the physical appearance. However, the Greek “chasma” typically refers to an opening or expanse, similar to the modern English \"chasm\", and as such the intended name is not a literal translation of the Greek used."
 		},
 		{
 			"type": "lepidodendron:diet",

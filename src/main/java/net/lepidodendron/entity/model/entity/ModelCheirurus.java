@@ -2,7 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraCheloniellon;
+import net.lepidodendron.entity.EntityPrehistoricFloraCheirurus;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -201,7 +201,7 @@ public class ModelCheirurus extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyF = {this.segment,this.segment2,this.segment3,this.segment4};
 
         if (isAtBottom) {
-            if (((EntityPrehistoricFloraCheloniellon) e).getIsMoving()) {
+            if (((EntityPrehistoricFloraCheirurus) e).getIsMoving()) {
                 this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
                 this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
                 this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);

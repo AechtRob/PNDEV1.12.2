@@ -1,0 +1,46 @@
+{
+	"name": "Spathobatis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/spathobatis_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_spathobatis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spathobatis",
+			"title": "Spathobatis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chondrichthyes $(br)>Rhinopristiformes $(br)>Rhinobatidae?"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/spathobatis.png"],
+			"title": "S. bugesiacus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spathobatis",
+			"type": "text",
+			"text": "Spathobatis is a batoid from the Middle Jurassic of Germany. It had a body shape similar to guitarfish, although its classification among the rhinobatids is questionable. It was highly specialized for seafloor life, with a mouth on the bottom of its body and eyes on top. Its flattened teeth were specialized for eating shellfish and it also had a longer nose that could be used for probing the seafloor for food."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spathobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spathobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spathobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spathobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spathobatis"
+		}
+	]
+}

@@ -25,12 +25,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",
 			"type": "text",
-			"text": "The skull, if seen from above, looked vaguely triangular in shape, with the area towards the back (called the temporal region) being short and perfectly suited for the attachment of strong muscles the animal would've used to chew. As with the top of the skull, the jaw too was adapted to host strong muscles, giving this animal an exceptionally powerful bite. Although unclear if Cynognathus had any kind of fur or just a thick layer of skin, small holes at the top of the snout hint at the presence of a network of vascular canals and nervous ends, in mammals seen in coincidence with the presence of whiskers."
+			"text": "The skull, if seen from above, looked vaguely triangular in shape, with the area towards the back (called the temporal region) being short and perfectly suited for the attachment of strong muscles the animal would've used to chew. As with the top of the skull, the jaw too was adapted to host strong muscles, giving this animal an exceptionally powerful bite. Although unclear if Cynognathus had any kind of fur or just a thick layer of skin,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",
 			"type": "text",
-			"text": "The animal was first described in 1894 by British palaeontologist Harry Govier Seeley upon remains from the African continent and originally assigned to three different species. Subsequent finds in South America led to the description of further species and a landslide of junior synonims. This classification wasn't meant to last, however, as in 1972 the remains were found to all be from one single species exhibiting a large range of intraspecific variation and ontogenetic stages."
+			"text": " small holes at the top of the snout hint at the presence of a network of vascular canals and nervous ends, in mammals seen in coincidence with the presence of whiskers. The animal was first described in 1894 by British palaeontologist Harry Govier Seeley upon remains from the African continent and originally assigned to three different species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cynognathus",
+			"type": "text",
+			"text": "Subsequent finds in South America led to the description of further species and a landslide of junior synonims. This classification wasn't meant to last, however, as in 1972 the remains were found to all be from one single species exhibiting a large range of intraspecific variation and ontogenetic stages."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -18,6 +18,7 @@ public class AttackAI extends EntityAIBase {
     private final double speed;
     private final boolean memory;
     private Path currentPath;
+    protected int ticksAI;
 
     public AttackAI(EntityPrehistoricFloraAgeableBase entity, double speed, boolean memory, int attackLength) {
         this.entity = entity;
@@ -42,11 +43,21 @@ public class AttackAI extends EntityAIBase {
             return false;
         }
         this.currentPath = this.entity.getNavigator().getPathToEntityLiving(target);
+
+        if (this.currentPath != null) {
+            this.ticksAI = 600;
+        }
+
         return this.currentPath != null;
     }
 
     @Override
     public boolean shouldContinueExecuting() {
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.entity.getNavigator().clearPath();
+            return false;
+        }
         EntityLivingBase entity = this.entity.getAttackTarget();
         return this.entity.getWillHunt() && entity != null && (entity.isEntityAlive() && (!this.memory ? !this.entity.getNavigator().noPath() : this.entity.isWithinHomeDistanceFromPosition(entity.getPosition())));
     }

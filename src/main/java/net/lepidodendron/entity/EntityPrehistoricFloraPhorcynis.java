@@ -11,11 +11,13 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderPhorcynis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -61,6 +63,15 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		NBTTagCompound propaguleNBT = new NBTTagCompound();
+		propaguleNBT.setString("PNType", "gendered");
+		stack.setTagCompound(propaguleNBT);
+		return stack;
+	}
+
+	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(PHORCYNIS_TYPE, 0);
@@ -68,7 +79,7 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 
 	@Override
 	public byte breedPNVariantsMatch() {
-		return -1;
+		return 0;
 	}
 
 	@Override
@@ -197,15 +208,9 @@ public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeab
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		switch (this.getPNType()) {
-			case MALE:
-			default:
-				return LepidodendronMod.PHORCYNIS_LOOT;
-
-			case FEMALE:
-				return LepidodendronMod.PHORCYNIS_LOOT_F;
-		}
+		return LepidodendronMod.PHORCYNIS_LOOT;
 	}
+
 	@Override
 	public boolean isSmall() {
 		return true;

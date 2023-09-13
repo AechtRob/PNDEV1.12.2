@@ -4,12 +4,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.entity.base.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -448,34 +446,37 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                                                             SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
                                                             world.playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
+                                                            EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+
+
                                                             //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
-                                                            world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-                                                                @Override
-                                                                public String getName() {
-                                                                    return "";
-                                                                }
-
-                                                                @Override
-                                                                public boolean canUseCommand(int permission, String command) {
-                                                                    return true;
-                                                                }
-
-                                                                @Override
-                                                                public World getEntityWorld() {
-                                                                    return world;
-                                                                }
-
-                                                                @Override
-                                                                public MinecraftServer getServer() {
-                                                                    return world.getMinecraftServer();
-                                                                }
-
-                                                                @Override
-                                                                public boolean sendCommandFeedback() {
-                                                                    return false;
-                                                                }
-
-                                                            }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + (pos.getY()) + " " + pos.getZ() + " " + nbtStr);
+//                                                            world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+//                                                                @Override
+//                                                                public String getName() {
+//                                                                    return "";
+//                                                                }
+//
+//                                                                @Override
+//                                                                public boolean canUseCommand(int permission, String command) {
+//                                                                    return true;
+//                                                                }
+//
+//                                                                @Override
+//                                                                public World getEntityWorld() {
+//                                                                    return world;
+//                                                                }
+//
+//                                                                @Override
+//                                                                public MinecraftServer getServer() {
+//                                                                    return world.getMinecraftServer();
+//                                                                }
+//
+//                                                                @Override
+//                                                                public boolean sendCommandFeedback() {
+//                                                                    return false;
+//                                                                }
+//
+//                                                            }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + (pos.getY()) + " " + pos.getZ() + " " + nbtStr);
                                                         }
                                                         //System.err.println("Spawned in " + world.getBiome(spawnPos).getBiomeName() + " at locID " + locationID + " " + mobToSpawn + " at " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ());
                                                     }

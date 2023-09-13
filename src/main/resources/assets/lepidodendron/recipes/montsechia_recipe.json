@@ -1,0 +1,17 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:montsechia_seeds"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:montsechia_item",
+    "count": 1
+  }
+}

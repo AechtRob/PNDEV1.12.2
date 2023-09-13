@@ -35,7 +35,7 @@ public class RenderStethacanthus extends RenderLiving<EntityPrehistoricFloraStet
     protected void preRenderCallback(EntityPrehistoricFloraStethacanthus entity, float f) {
         float scale = this.getScaler() * entity.getAgeScale();
         if (entity.getPNType() == EntityPrehistoricFloraStethacanthus.Type.FEMALE) {
-            scale = this.getScaler() * 0.6F;
+            scale = this.getScaler() * entity.getAgeScale() * 0.6F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

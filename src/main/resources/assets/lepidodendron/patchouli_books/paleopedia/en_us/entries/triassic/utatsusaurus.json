@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_utatsusaurus",
 			"type": "text",
-			"text": ""
+			"text": "Utatsusaurus is a genus of ichthyopterygian described from the Early Triassic strata in Miyagi Prefecture in Japan. Additional materials are also described from British Colombia in Canada. It is one of the earliest ichthyopterygian ever known. It had relatively thin snout and small teeth. Having many of cylindal presacral vertebrae suggest it may swam like eel. It is coexisted to other fauna like ammonites,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_utatsusaurus",
+			"type": "text",
+			"text": "thylacocephalans and the earliest belemnites, with that importance that fossil site (Osawa Formation) is considered as natural monument in Japan."
 		},
 		{
 			"type": "lepidodendron:diet",

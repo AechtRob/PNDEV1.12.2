@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_smok",
 			"type": "text",
-			"text": "Smok lived in what is now Poland, in an ecosystem of seasonally wet forests surrounding an extensive inland shallow sea. It was probably an apex predator of its ecosystem during the late Triassic. Its remains are incompletely known; they indicate an archosaur creature rather like Pseudosuchian Rauisuchians such as Postosuchus, but with some characteristics intriguingly close to forebears of Theropod dinosaurs: the meaning of these ambiguities is not yet resolved. The name \"Smok\" comes from a word meaning \"dragon\" in Slavic languages"
+			"text": "Smok lived in what is now Poland, in an ecosystem of seasonally wet forests surrounding an extensive inland shallow sea. It was probably an apex predator of its ecosystem during the late Triassic. Its remains are incompletely known; they indicate an archosaur creature rather like Pseudosuchian Rauisuchians such as Postosuchus, but with some characteristics intriguingly close to forebears of Theropod dinosaurs:"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_smok",
+			"type": "text",
+			"text": "the meaning of these ambiguities is not yet resolved. The name \"Smok\" comes from a word meaning \"dragon\" in Slavic languages."
 		},
 		{
 			"type": "lepidodendron:diet",

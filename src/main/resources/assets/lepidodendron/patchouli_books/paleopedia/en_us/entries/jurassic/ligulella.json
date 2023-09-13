@@ -38,11 +38,6 @@
 			"text": "in a third paper by the same author, this little animal found itself to be collocated in an entire order for itself. The second species of Ligulella has since been synonymized into the first making Ligulella sluysi the only known genus and species inside the Ligulelliformes order."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ligulella",
-			"type": "text",
-			"text": ""
-		},
-		{
 			"type": "lepidodendron:diet",
 			"mob": "lepidodendron:prehistoric_flora_ligulella"
 		},

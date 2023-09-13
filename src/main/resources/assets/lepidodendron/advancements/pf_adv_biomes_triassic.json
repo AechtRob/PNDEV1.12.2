@@ -199,13 +199,13 @@
 		"triassic_woodland_polje": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "triassic_woodland_polje:triassic_desert_pleuromeia_beds"
+				"biome": "lepidodendron:triassic_woodland_polje"
 			}
 		},
 		"triassic_woodland_polje_edge": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "triassic_woodland_polje:triassic_woodland_polje_edge"
+				"biome": "lepidodendron:triassic_woodland_polje_edge"
 			}
 		}
 	},

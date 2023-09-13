@@ -1,0 +1,46 @@
+{
+	"name": "Macrosemius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/macrosemius_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_macrosemius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_macrosemius",
+			"title": "Macrosemius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Macrosemiiformes $(br)>Macrosemiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/macrosemius.png"],
+			"title": "M. rostratus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macrosemius",
+			"type": "text",
+			"text": "Macrosemius is a Jurassic ray finned fish from the Solnhofen of Germany. It could grow up to 30 cm long and had characteristic nubbed teeth. macroseIt was first described in 1843 by Louis Agassiz and was noted for multiple unique features in its skull and had small rhomboid scales. Like other macrosemiids, it was an inhabitant of shallow reefs and lagoons."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_macrosemius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_macrosemius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_macrosemius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_macrosemius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_macrosemius"
+		}
+	]
+}
