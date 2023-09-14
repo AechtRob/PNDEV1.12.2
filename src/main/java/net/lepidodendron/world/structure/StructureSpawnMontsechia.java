@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenAmborella;
+import net.lepidodendron.block.BlockMontsechia;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -17,41 +17,44 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement {
-	public StructureSpawnAmborella(ElementsLepidodendronMod instance) {
-		super(instance, 48);
+public class StructureSpawnMontsechia extends ElementsLepidodendronMod.ModElement {
+	public StructureSpawnMontsechia(ElementsLepidodendronMod instance) {
+		super(instance, 49);
 	}
 
 	@Override
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAmborella))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMontsechia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAmborella && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genMontsechia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAmborellaBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genMontsechiaBlacklistBiomes))) {
+			biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genAmborellaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genMontsechiaOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 40000;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierAmborella;
+		int GenChance = 21000;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierMontsechia;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -61,7 +64,7 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 		}
 		
 		if ((random.nextInt(1000000) + 1) <= GenChance) {
-			int count = random.nextInt(1) + 1;
+			int count = random.nextInt(5) + 1;
 			for (int a = 0; a < count; a++) {
 				int i = i2 + random.nextInt(16) + 8;
 				int k = k2 + random.nextInt(16) + 8;
@@ -90,21 +93,17 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 				int j = height;
 				//IBlockState blockAt = world.getBlockState(new BlockPos(i, j + 1, k));
 				boolean blockCriteria = false;
-				//Check if this is snow OVER a valid block:
-				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.SNOW)
-				{
-					j = j - 1;
+
+				//Allow to spawn in/on water only:
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.WATER) {
+					blockCriteria = true;
 				}
-				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GRASS)
-					blockCriteria = true;
-				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND)
-					blockCriteria = true;
-					
+				
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfigPlants.maxheightAmborella;
-				int minheight = LepidodendronConfigPlants.minheightAmborella;
+				int maxheight = LepidodendronConfigPlants.maxheightMontsechia;
+				int minheight = LepidodendronConfigPlants.minheightMontsechia;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -114,35 +113,34 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 				if (j > maxheight && maxheight != 0)
 					continue;
 					
+
+				if (!canSurviveAt(world, new BlockPos(i, j + 1, k)))
+					continue;
+
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAmborellaBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genMontsechiaBlacklistBiomes))) {
+					biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genAmborellaOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genMontsechiaOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
+
 				if (world.isRemote)
 					return;
-				//Template template = ((WorldServer) world).getStructureTemplateManager().getTemplate(world.getMinecraftServer(),
-				//		new ResourceLocation("lepidodendron", "spawnvoid"));
-				//if (template == null)
-				//	return;
-				//Rotation rotation = Rotation.NONE;
-				//Mirror mirror = Mirror.NONE;
+				
 				BlockPos spawnTo = new BlockPos(i, j + 1, k);
-				//IBlockState iblockstate = world.getBlockState(spawnTo);
-				//world.notifyBlockUpdate(spawnTo, iblockstate, iblockstate, 3);
-				//template.addBlocksToWorldChunk(world, spawnTo, new PlacementSettings().setRotation(rotation).setMirror(mirror)
-				//		.setChunk((ChunkPos) null).setReplacedBlock((Block) null).setIgnoreStructureBlock(false).setIgnoreEntities(false));
 				int x = spawnTo.getX();
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
@@ -152,20 +150,15 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
-					if ((world.canSeeSky(spawnTo)) || 
-					(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
-					&& world.canSeeSky(spawnTo.up()))) {
-						world.setBlockToAir(spawnTo);
-						world.setBlockToAir(spawnTo.up());
-					}
-					ProcedureWorldGenAmborella.executeProcedure($_dependencies);
+					
+					world.setBlockState(spawnTo, BlockMontsechia.block.getDefaultState(), 3);
+					//System.err.println("Spawned " + i + " " + j + " " + k);
 				}
 
 			}
 		}
 	}
 
-	
 		public boolean shouldGenerateInDimension(int id, int[] dims) {
 		int[] var2 = dims;
 		int var3 = dims.length;
@@ -201,6 +194,21 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
         }
 
         return false;
+    }
+
+    public boolean canSurviveAt(World worldIn, BlockPos pos) {
+		if (worldIn.getBlockState(pos.down()).getMaterial() != Material.WATER) 
+    	{
+    		return false;
+    	}
+
+    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
+    	{
+    		return false;
+    	}
+
+    	return true;
+    	 
     }
 	
 }

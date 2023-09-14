@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenAmborella;
+import net.lepidodendron.procedure.ProcedureWorldGenFig;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -17,8 +17,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement {
-	public StructureSpawnAmborella(ElementsLepidodendronMod instance) {
+public class StructureSpawnFig extends ElementsLepidodendronMod.ModElement {
+	public StructureSpawnFig(ElementsLepidodendronMod instance) {
 		super(instance, 48);
 	}
 
@@ -26,32 +26,34 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAmborella))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimFig))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAmborella && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genFig && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAmborellaBlacklistBiomes))) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genFigBlacklistBiomes))) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
-				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
+				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genAmborellaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genFigOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 40000;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierAmborella;
+		int GenChance = 19000;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierFig;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -103,8 +105,8 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfigPlants.maxheightAmborella;
-				int minheight = LepidodendronConfigPlants.minheightAmborella;
+				int maxheight = LepidodendronConfigPlants.maxheightFig;
+				int minheight = LepidodendronConfigPlants.minheightFig;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -116,17 +118,19 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAmborellaBlacklistBiomes))) {
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genFigBlacklistBiomes))) {
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
-						biomeCriteria = true;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
+						biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
+						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genAmborellaOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genFigOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -158,7 +162,7 @@ public class StructureSpawnAmborella extends ElementsLepidodendronMod.ModElement
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					ProcedureWorldGenAmborella.executeProcedure($_dependencies);
+					ProcedureWorldGenFig.executeProcedure($_dependencies);
 				}
 
 			}
