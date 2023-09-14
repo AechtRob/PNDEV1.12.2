@@ -1439,6 +1439,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightPseudovoltzia = 0;
     public static double multiplierPseudovoltzia = 1;
 
+    public static boolean genVoltzia = false;
+    public static String[] genVoltziaBlacklistBiomes = new String[0];
+    public static String[] genVoltziaOverrideBiomes = new String[0];
+    public static int[] dimVoltzia = new int[]{0};
+    public static int minheightVoltzia = 1;
+    public static int maxheightVoltzia = 0;
+    public static double multiplierVoltzia = 1;
+
     public static boolean genAmentotaxus = false;
     public static String[] genAmentotaxusBlacklistBiomes = new String[0];
     public static String[] genAmentotaxusOverrideBiomes = new String[0];
@@ -9935,6 +9943,33 @@ public class LepidodendronConfigPlants {
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierScrubbyPine = prop.getDouble();
         propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Voltzia", "genVoltzia", genVoltzia);
+        prop.setComment("Set to true to generate Voltzia naturally [default: false]");
+        genVoltzia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Voltzia", "genVoltziaBlacklistBiomes", genVoltziaBlacklistBiomes);
+        prop.setComment("List of biomes Voltzia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genVoltziaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Voltzia", "genVoltziaOverrideBiomes", genVoltziaOverrideBiomes);
+        prop.setComment("List of biomes Voltzia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genVoltziaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Voltzia", "dimVoltzia", dimVoltzia);
+        prop.setComment("List of dimension IDs Voltzia can generate in [default: 0]");
+        dimVoltzia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Voltzia", "minheightVoltzia", minheightVoltzia);
+        prop.setComment("Minimum height that Voltzia can generate (1 to 250) [default: 1]");
+        minheightVoltzia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Voltzia", "maxheightVoltzia", maxheightVoltzia);
+        prop.setComment("Maximum height that Voltzia can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightVoltzia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Voltzia", "multiplierVoltzia", multiplierVoltzia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierVoltzia = prop.getDouble();
         
         prop = cfg.get("WorldGen Pseudovoltzia", "genPseudovoltzia", genPseudovoltzia);
         prop.setComment("Set to true to generate Pseudovoltzia naturally [default: false]");
