@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_criocephalosaurus",
 			"type": "text",
-			"text": "Criocephalosaurus"
+			"text": "Criocephalosaurus was a dinocephalian from the Middle Permian of what is now southern Africa. It was described in 1928 by Robert Broom based on a skull cap found in the Abrahamskraal Formation of South Africa. Additional specimens have since been found, including some in the overlying Teekloof Formation and the Madumabisa Mudstone Formation of Zimbabwe. It is a close relative of the better known Moschops and Tapinocephalus,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_criocephalosaurus",
+			"type": "text",
+			"text": "and currently the latest known dinocephalian in the fossil record. Criocephalosaurus is distinct from its relatives in the presence of an extended, thickened skull, which may have been adapted for head-butting. This is a behavior which has been suggested in other dinocephalians, though the anatomy of Criocephalosaurus appears to be even more greatly suited for it."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_criocephalosaurus",
+			"type": "text",
+			"text": "It was a large bodied animal at around 4-5 meters, and likely an herbivore. The name Criocephalosaurus means “ram head lizard,” though this was not the original name used for the genus. It was first described as Criocephalus, a name which was discovered to be preoccupied by a beetle and the genus was renamed in 2002."
 		},
 		{
 			"type": "lepidodendron:diet",

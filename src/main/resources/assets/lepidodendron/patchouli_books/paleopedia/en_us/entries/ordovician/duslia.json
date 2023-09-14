@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_duslia",
 			"type": "text",
-			"text": ""
+			"text": "Duslia is a creature from the Ordovician of the Czech Republic and Morocco. Being one of the few examples of a non-trilobite member of the Artiopods, Duslia itself is fairly enigmatic, though currently being placed within Cheloniellida. It was fairly large, of a circular-shape, soft bodied, comprised of several body-segments, and was completely blind, lacking any eyes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_duslia",
+			"type": "text",
+			"text": "The only fossil evidence of potential sensory structures being preserved are hair-like protrusions that run alongside the outer edges of the body and segments, which may have been sensory (or perhaps defensive) organs, giving the creature a somewhat frilly look."
 		},
 		{
 			"type": "lepidodendron:diet",
