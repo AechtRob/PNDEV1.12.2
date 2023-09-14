@@ -52,7 +52,7 @@ public class StructureSpawnVoltzia extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 48000;
+		int GenChance = 28000;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierVoltzia;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));

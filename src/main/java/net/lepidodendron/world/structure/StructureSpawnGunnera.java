@@ -5,9 +5,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.block.BlockIraniaLand;
-import net.lepidodendron.block.BlockIraniaWater;
 import net.lepidodendron.block.BlockPrimevalGrassLand;
+import net.lepidodendron.procedure.ProcedureWorldGenGunnera;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,8 +18,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
-	public StructureSpawnIrania(ElementsLepidodendronMod instance) {
+public class StructureSpawnGunnera extends ElementsLepidodendronMod.ModElement {
+	public StructureSpawnGunnera(ElementsLepidodendronMod instance) {
 		super(instance, 49);
 	}
 
@@ -28,19 +27,17 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimIrania))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimGunnera))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genIrania && (!LepidodendronConfig.genAllPlants))
+		if (!LepidodendronConfigPlants.genGunnera && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genIraniaBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genGunneraBlacklistBiomes))) {
 			biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
-				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -48,13 +45,13 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genIraniaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genGunneraOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 20000;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierIrania;
+		int GenChance = 50000;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierGunnera;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -92,8 +89,8 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 				}
 				int j = height;
 		
-				int maxheight = LepidodendronConfigPlants.maxheightIrania;
-				int minheight = LepidodendronConfigPlants.minheightIrania;
+				int maxheight = LepidodendronConfigPlants.maxheightGunnera;
+				int minheight = LepidodendronConfigPlants.minheightGunnera;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -111,10 +108,8 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 				//System.err.println("Cheking biomes...");
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genIraniaBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genGunneraBlacklistBiomes))) {
 					biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
-						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -122,7 +117,7 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genIraniaOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genGunneraOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -146,13 +141,7 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					//System.err.println("Trying to spawn: " + i + " " + (j+1) + " " + k);
-					if (canSurviveAt(world, spawnTo)) {
-						world.setBlockState(spawnTo, BlockIraniaWater.block.getDefaultState(), 3);
-					}
-					else { //It must be the land version:
-						world.setBlockState(spawnTo, BlockIraniaLand.block.getDefaultState(), 3);
-					}
+					ProcedureWorldGenGunnera.executeProcedure($_dependencies);
 				}
 
 			}
