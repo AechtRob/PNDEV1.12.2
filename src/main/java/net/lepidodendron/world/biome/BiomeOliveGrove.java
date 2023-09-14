@@ -49,7 +49,7 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 
 	static class BiomeGenCustom extends BiomeSavanna {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Olive Grove").setBaseHeight(0.11F).setHeightVariation(0.0F));
+			super(new BiomeProperties("Olive Grove"));
 			setRegistryName("olivegrove");
 			decorator.treesPerChunk = 5000;
 			decorator.flowersPerChunk = 16;
