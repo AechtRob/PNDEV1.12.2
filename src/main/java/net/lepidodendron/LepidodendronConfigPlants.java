@@ -1313,6 +1313,13 @@ public class LepidodendronConfigPlants {
     public static int minheightSkaaripteris = 1;
     public static int maxheightSkaaripteris = 90;
     public static double multiplierSkaaripteris = 1;
+    public static boolean genChiropteris = false;
+    public static String[] genChiropterisBlacklistBiomes = new String[0];
+    public static String[] genChiropterisOverrideBiomes = new String[0];
+    public static int[] dimChiropteris = new int[]{0};
+    public static int minheightChiropteris = 1;
+    public static int maxheightChiropteris = 90;
+    public static double multiplierChiropteris = 1;
     public static boolean genNeuropteridium = false;
     public static String[] genNeuropteridiumBlacklistBiomes = new String[0];
     public static String[] genNeuropteridiumOverrideBiomes = new String[0];
@@ -7333,6 +7340,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Skaaripteris", "multiplierSkaaripteris", multiplierSkaaripteris);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierSkaaripteris = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Chiropteris", "genChiropteris", genChiropteris);
+        prop.setComment("Set to true to generate Chiropteris naturally [default: false]");
+        genChiropteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Chiropteris", "genChiropterisBlacklistBiomes", genChiropterisBlacklistBiomes);
+        prop.setComment("List of biomes Chiropteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genChiropterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Chiropteris", "genChiropterisOverrideBiomes", genChiropterisOverrideBiomes);
+        prop.setComment("List of biomes Chiropteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genChiropterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Chiropteris", "dimChiropteris", dimChiropteris);
+        prop.setComment("List of dimension IDs Chiropteris can generate in [default: 0]");
+        dimChiropteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Chiropteris", "minheightChiropteris", minheightChiropteris);
+        prop.setComment("Minimum height that Chiropteris can generate (1 to 250) [default: 1]");
+        minheightChiropteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Chiropteris", "maxheightChiropteris", maxheightChiropteris);
+        prop.setComment("Maximum height that Chiropteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightChiropteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Chiropteris", "multiplierChiropteris", multiplierChiropteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierChiropteris = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Neuropteridium", "genNeuropteridium", genNeuropteridium);

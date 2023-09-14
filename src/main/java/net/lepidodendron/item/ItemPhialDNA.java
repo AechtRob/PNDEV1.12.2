@@ -15,6 +15,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:phial_dna")
@@ -68,6 +70,14 @@ public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 				else if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
+
+					if (I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim()
+							.equalsIgnoreCase("entity." + getDNAStr(resourcelocation) + ".name")) {
+						//This didn't translate properly, try using a capital letter:
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("entity." + upperCase(getDNAStr(resourcelocation)) + ".name").trim();
+					}
 					return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
 							+ ": "
 							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();
@@ -94,6 +104,19 @@ public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 			}
 
 			return super.getItemStackDisplayName(stack);
+		}
+
+		@Nullable
+		public static String upperCase(@Nullable String string) {
+			if (string == null) {
+				return null;
+			}
+			if (string.length() <= 1) {
+				return string.toUpperCase();
+			}
+			else {
+				return string.substring(0, 1).toUpperCase() + string.substring(1);
+			}
 		}
 
 		public String getTranslationKey(ItemStack stack)

@@ -299,7 +299,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZygopterisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPhasmatocycasSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPermian);
         return resLoc;
@@ -388,7 +389,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockNataligma.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockEoginkgoites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDechellyia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString()
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsTriassic);
@@ -493,7 +495,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockPagiophyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHirmeriellaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDayvaultia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsJurassic);
         return resLoc;

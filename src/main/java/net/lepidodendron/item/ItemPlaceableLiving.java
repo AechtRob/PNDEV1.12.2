@@ -84,6 +84,13 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 				else if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
+					if (I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim()
+							.equalsIgnoreCase("entity." + getDNAStr(resourcelocation) + ".name")) {
+						//This didn't translate properly, try using a capital letter:
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("entity." + ItemPhialDNA.ItemCustom.upperCase(getDNAStr(resourcelocation)) + ".name").trim();
+					}
 					return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
 							+ ": "
 							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();
