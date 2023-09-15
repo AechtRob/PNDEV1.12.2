@@ -58,6 +58,7 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean ediacaran = (this.algae == BlockTawuia.block);
 		boolean seagrass = (this.algae == BlockSeaGrass.block);
 		boolean mosacaulis = (this.algae == BlockMosacaulis.block);
+		boolean algalfrond = (this.algae == BlockTuanshanzia.block);
 		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
 		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
 		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
@@ -65,20 +66,21 @@ public class AlgaeGenerator extends WorldGenerator
 		if (ediacaran) {dimCheck = LepidodendronConfigPlants.dimEdiacaran;}
 		if (seagrass) {dimCheck = LepidodendronConfigPlants.dimSeagrass;}
 		if (mosacaulis) {dimCheck = LepidodendronConfigPlants.dimMosacaulis;}
+		if (algalfrond) {dimCheck = LepidodendronConfigPlants.dimAlgalFrond;}
 		if (shouldGenerateInDimension(dimID, dimCheck))
 		dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
-			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
+		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
 			|| (dimID == LepidodendronConfig.dimPrecambrian && (!rugosas) && (!cystoids) && (!anemones) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimCarboniferous && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimPermian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimTriassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimJurassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimCretaceous && (!cystoids) && (!ediacaran) && (!rugosas))
-			|| (dimID == LepidodendronConfig.dimPaleogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimNeogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimPleistocene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis))
+			|| (dimID == LepidodendronConfig.dimCarboniferous && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimPermian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimTriassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimJurassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimCretaceous && (!cystoids) && (!ediacaran) && (!rugosas) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimPaleogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimNeogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
+			|| (dimID == LepidodendronConfig.dimPleistocene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
 			) {
 			dimensionCriteria = true;
 		}

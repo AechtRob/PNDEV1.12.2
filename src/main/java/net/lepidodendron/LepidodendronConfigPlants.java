@@ -83,6 +83,13 @@ public class LepidodendronConfigPlants {
     public static int minheightCalycanthus = 1;
     public static int maxheightCalycanthus = 90;
     public static double multiplierCalycanthus = 1;
+    public static boolean genJerseyanthus = false;
+    public static String[] genJerseyanthusBlacklistBiomes = new String[0];
+    public static String[] genJerseyanthusOverrideBiomes = new String[0];
+    public static int[] dimJerseyanthus = new int[]{0};
+    public static int minheightJerseyanthus = 1;
+    public static int maxheightJerseyanthus = 90;
+    public static double multiplierJerseyanthus = 1;
     public static boolean genIlicium = false;
     public static String[] genIliciumBlacklistBiomes = new String[0];
     public static String[] genIliciumOverrideBiomes = new String[0];
@@ -752,7 +759,7 @@ public class LepidodendronConfigPlants {
     public static double multiplierCooksonia = 1;
     public static boolean spreadCooksonia = true;
 
-    public static boolean genSeagrass = false;
+    public static boolean genSeagrass = true;
     public static String[] genSeagrassBlacklistBiomes = new String[0];
     public static String[] genSeagrassOverrideBiomes = new String[0];
     public static int[] dimSeagrass = new int[]{0};
@@ -915,6 +922,20 @@ public class LepidodendronConfigPlants {
     public static int minheightBaikalophyllum = 1;
     public static int maxheightBaikalophyllum = 85;
     public static double multiplierBaikalophyllum = 1;
+    public static boolean genZingiberopsis = false;
+    public static String[] genZingiberopsisBlacklistBiomes = new String[0];
+    public static String[] genZingiberopsisOverrideBiomes = new String[0];
+    public static int[] dimZingiberopsis = new int[]{0};
+    public static int minheightZingiberopsis = 1;
+    public static int maxheightZingiberopsis = 85;
+    public static double multiplierZingiberopsis = 1;
+    public static boolean genRehezamites = false;
+    public static String[] genRehezamitesBlacklistBiomes = new String[0];
+    public static String[] genRehezamitesOverrideBiomes = new String[0];
+    public static int[] dimRehezamites = new int[]{0};
+    public static int minheightRehezamites = 1;
+    public static int maxheightRehezamites = 85;
+    public static double multiplierRehezamites = 1;
     public static boolean genBaiera = false;
     public static String[] genBaieraBlacklistBiomes = new String[0];
     public static String[] genBaieraOverrideBiomes = new String[0];
@@ -990,6 +1011,14 @@ public class LepidodendronConfigPlants {
     public static int minheightDictyophyllum = 1;
     public static int maxheightDictyophyllum = 90;
     public static double multiplierDictyophyllum = 1;
+
+    public static boolean genBotrychiopsis = false;
+    public static String[] genBotrychiopsisBlacklistBiomes = new String[0];
+    public static String[] genBotrychiopsisOverrideBiomes = new String[0];
+    public static int[] dimBotrychiopsis = new int[]{0};
+    public static int minheightBotrychiopsis = 1;
+    public static int maxheightBotrychiopsis = 90;
+    public static double multiplierBotrychiopsis = 1;
 
     public static boolean genOtozamites = false;
     public static String[] genOtozamitesBlacklistBiomes = new String[0];
@@ -1230,6 +1259,13 @@ public class LepidodendronConfigPlants {
     public static int minheightMicrovictoria = 1;
     public static int maxheightMicrovictoria = 90;
     public static double multiplierMicrovictoria = 1;
+    public static boolean genNuphar = false;
+    public static String[] genNupharBlacklistBiomes = new String[0];
+    public static String[] genNupharOverrideBiomes = new String[0];
+    public static int[] dimNuphar = new int[]{0};
+    public static int minheightNuphar = 1;
+    public static int maxheightNuphar = 90;
+    public static double multiplierNuphar = 1;
     public static boolean genBolbitis = false;
     public static String[] genBolbitisBlacklistBiomes = new String[0];
     public static String[] genBolbitisOverrideBiomes = new String[0];
@@ -1419,6 +1455,7 @@ public class LepidodendronConfigPlants {
     public static int minheightNeuropteridium = 1;
     public static int maxheightNeuropteridium = 90;
     public static double multiplierNeuropteridium = 1;
+    
     public static boolean genNilssoniocladusRedwood = false;
     public static boolean genNilssoniocladusAgathis = false;
     public static boolean genNilssoniocladusMonkeyPuzzleAraucaria = false;
@@ -1427,6 +1464,14 @@ public class LepidodendronConfigPlants {
     public static String[] genNilssoniocladusBlacklistBiomes = new String[0];
     public static String[] genNilssoniocladusOverrideBiomes = new String[0];
     public static int[] dimNilssoniocladus = new int[]{0};
+
+    public static boolean genAtliRedwood = false;
+    public static boolean genAtliThuja = false;
+    public static boolean genAtliBisonia = false;
+    public static String[] genAtliBlacklistBiomes = new String[0];
+    public static String[] genAtliOverrideBiomes = new String[0];
+    public static int[] dimAtli = new int[]{0};
+    
     public static boolean genLygodiumBushyAraucaria = false;
     public static boolean genLygodiumPodozamites = false;
     public static String[] genLygodiumBlacklistBiomes = new String[0];
@@ -1691,6 +1736,30 @@ public class LepidodendronConfigPlants {
     public static int maxheightOrites = 0;
     public static double multiplierOrites = 1;
 
+    public static boolean genDrimys = false;
+    public static String[] genDrimysBlacklistBiomes = new String[0];
+    public static String[] genDrimysOverrideBiomes = new String[0];
+    public static int[] dimDrimys = new int[]{0};
+    public static int minheightDrimys = 80;
+    public static int maxheightDrimys = 0;
+    public static double multiplierDrimys = 1;
+
+    public static boolean genLomatia = false;
+    public static String[] genLomatiaBlacklistBiomes = new String[0];
+    public static String[] genLomatiaOverrideBiomes = new String[0];
+    public static int[] dimLomatia = new int[]{0};
+    public static int minheightLomatia = 80;
+    public static int maxheightLomatia = 0;
+    public static double multiplierLomatia = 1;
+
+    public static boolean genBuckthorn = false;
+    public static String[] genBuckthornBlacklistBiomes = new String[0];
+    public static String[] genBuckthornOverrideBiomes = new String[0];
+    public static int[] dimBuckthorn = new int[]{0};
+    public static int minheightBuckthorn = 80;
+    public static int maxheightBuckthorn = 0;
+    public static double multiplierBuckthorn = 1;
+
     public static boolean genButtercup = false;
     public static String[] genButtercupBlacklistBiomes = new String[0];
     public static String[] genButtercupOverrideBiomes = new String[0];
@@ -1756,6 +1825,13 @@ public class LepidodendronConfigPlants {
     public static int minheightMaple = 1;
     public static int maxheightMaple = 110;
     public static double multiplierMaple = 1;
+    public static boolean genLiquidambar = false;
+    public static String[] genLiquidambarBlacklistBiomes = new String[0];
+    public static String[] genLiquidambarOverrideBiomes = new String[0];
+    public static int[] dimLiquidambar = new int[]{0};
+    public static int minheightLiquidambar = 1;
+    public static int maxheightLiquidambar = 110;
+    public static double multiplierLiquidambar = 1;
     
     public static boolean genBisonia = false;
     public static String[] genBisoniaBlacklistBiomes = new String[0];
@@ -2033,6 +2109,7 @@ public class LepidodendronConfigPlants {
     public static String[] genAlgalFrondBlacklistBiomes = new String[0];
     public static String[] genAlgalFrondOverrideBiomes = new String[0];
     public static int weightAlgalFrond = 100;
+    public static int[] dimAlgalFrond = new int[0];
     public static String[] genRedLeafyAlgaeBlacklistBiomes = new String[0];
     public static String[] genRedLeafyAlgaeOverrideBiomes = new String[0];
     public static int weightRedLeafyAlgae = 100;
@@ -2380,6 +2457,42 @@ public class LepidodendronConfigPlants {
     public static String[] genTmesipterisBlacklistBiomes = new String[0];
     public static String[] genTmesipterisOverrideBiomes = new String[0];
     public static double multiplierTmesipteris = 1;
+
+    public static int[] dimAristolochia = new int[]{0};
+    public static boolean genAristolochia = false;
+    public static String[] genAristolochiaBlacklistBiomes = new String[0];
+    public static String[] genAristolochiaOverrideBiomes = new String[0];
+    public static double multiplierAristolochia = 1;
+
+    public static int[] dimHops = new int[]{0};
+    public static boolean genHops = false;
+    public static String[] genHopsBlacklistBiomes = new String[0];
+    public static String[] genHopsOverrideBiomes = new String[0];
+    public static double multiplierHops = 1;
+
+    public static int[] dimHedera = new int[]{0};
+    public static boolean genHedera = false;
+    public static String[] genHederaBlacklistBiomes = new String[0];
+    public static String[] genHederaOverrideBiomes = new String[0];
+    public static double multiplierHedera = 1;
+
+    public static int[] dimVitis = new int[]{0};
+    public static boolean genVitis = false;
+    public static String[] genVitisBlacklistBiomes = new String[0];
+    public static String[] genVitisOverrideBiomes = new String[0];
+    public static double multiplierVitis = 1;
+
+    public static int[] dimActinidea = new int[]{0};
+    public static boolean genActinidea = false;
+    public static String[] genActinideaBlacklistBiomes = new String[0];
+    public static String[] genActinideaOverrideBiomes = new String[0];
+    public static double multiplierActinidea = 1;
+
+    public static int[] dimYam = new int[]{0};
+    public static boolean genYam = false;
+    public static String[] genYamBlacklistBiomes = new String[0];
+    public static String[] genYamOverrideBiomes = new String[0];
+    public static double multiplierYam = 1;
 
     public static int[] dimFernEpiphyte = new int[]{0};
     public static boolean genFernEpiphyte = false;
@@ -2814,9 +2927,9 @@ public class LepidodendronConfigPlants {
         prop.setComment("Percentage chance that Green Leafy Algae generates in a suitable chunk (0 to 100) [default: 100]");
         weightGreenLeafyAlgae = prop.getInt();
         propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Algae-Sponges", "genAlgalFrondBlacklistBiomes", genAlgalFrondBlacklistBiomes);
-        prop.setComment("List of biomes Frondose Archaic Algae are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genAlgalFrondBlacklistBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Algae-Sponges", "dimAlgalFrond", dimAlgalFrond);
+        prop.setComment("List of dimension IDs Frondose Archaic Algae can generate in [default: empty]");
+        dimAlgalFrond = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Algae-Sponges", "genAlgalFrondOverrideBiomes", genAlgalFrondOverrideBiomes);
         prop.setComment("List of biomes Frondose Archaic Algae are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
@@ -2826,6 +2939,12 @@ public class LepidodendronConfigPlants {
         prop.setComment("Percentage chance that Frondose Archaic Algae generate in a suitable chunk (0 to 100) [default: 100]");
         weightAlgalFrond = prop.getInt();
         propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Algae-Sponges", "weightAlgalFrond", weightAlgalFrond);
+        prop.setComment("Percentage chance that Frondose Archaic Algae generate in a suitable chunk (0 to 100) [default: 100]");
+        weightAlgalFrond = prop.getInt();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Algae-Sponges", "genRedAlgaeMatBlacklistBiomes", genRedAlgaeMatBlacklistBiomes);
         prop.setComment("List of biomes Red Algae Mats are blacklisted from, in the format: modid:biomeid [default: empty]");
         genRedAlgaeMatBlacklistBiomes = prop.getStringList();
@@ -3434,6 +3553,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Ilicium", "multiplierIlicium", multiplierIlicium);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierIlicium = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Jerseyanthus", "genJerseyanthus", genJerseyanthus);
+        prop.setComment("Set to true to generate Jerseyanthus naturally [default: false]");
+        genJerseyanthus = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jerseyanthus", "genJerseyanthusBlacklistBiomes", genJerseyanthusBlacklistBiomes);
+        prop.setComment("List of biomes Jerseyanthus are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genJerseyanthusBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jerseyanthus", "genJerseyanthusOverrideBiomes", genJerseyanthusOverrideBiomes);
+        prop.setComment("List of biomes Jerseyanthus are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genJerseyanthusOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Jerseyanthus", "dimJerseyanthus", dimJerseyanthus);
+        prop.setComment("List of dimension IDs Jerseyanthus can generate in [default: 0]");
+        dimJerseyanthus = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jerseyanthus", "minheightJerseyanthus", minheightJerseyanthus);
+        prop.setComment("Minimum height that Jerseyanthus can generate (1 to 250) [default: 1]");
+        minheightJerseyanthus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jerseyanthus", "maxheightJerseyanthus", maxheightJerseyanthus);
+        prop.setComment("Maximum height that Jerseyanthus can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightJerseyanthus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jerseyanthus", "multiplierJerseyanthus", multiplierJerseyanthus);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierJerseyanthus = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Calycanthus", "genCalycanthus", genCalycanthus);
@@ -5496,7 +5643,7 @@ public class LepidodendronConfigPlants {
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Seagrass", "genSeagrass", genSeagrass);
-        prop.setComment("Set to true to generate Seagrass naturally [default: false]");
+        prop.setComment("Set to true to generate Seagrass naturally [default: true]");
         genSeagrass = prop.getBoolean();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Seagrass", "genSeagrassBlacklistBiomes", genSeagrassBlacklistBiomes);
@@ -6055,6 +6202,62 @@ public class LepidodendronConfigPlants {
         multiplierBaikalophyllum = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Zingiberopsis", "genZingiberopsis", genZingiberopsis);
+        prop.setComment("Set to true to generate Zingiberopsis naturally [default: false]");
+        genZingiberopsis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Zingiberopsis", "genZingiberopsisBlacklistBiomes", genZingiberopsisBlacklistBiomes);
+        prop.setComment("List of biomes Zingiberopsis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genZingiberopsisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Zingiberopsis", "genZingiberopsisOverrideBiomes", genZingiberopsisOverrideBiomes);
+        prop.setComment("List of biomes Zingiberopsis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genZingiberopsisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Zingiberopsis", "dimZingiberopsis", dimZingiberopsis);
+        prop.setComment("List of dimension IDs Zingiberopsis can generate in [default: 0]");
+        dimZingiberopsis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Zingiberopsis", "minheightZingiberopsis", minheightZingiberopsis);
+        prop.setComment("Minimum height that Zingiberopsis can generate (1 to 250) [default: 1]");
+        minheightZingiberopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Zingiberopsis", "maxheightZingiberopsis", maxheightZingiberopsis);
+        prop.setComment("Maximum height that Zingiberopsis can generate (1 to 250, or set to 0 for unlimited) [default: 85]");
+        maxheightZingiberopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Zingiberopsis", "multiplierZingiberopsis", multiplierZingiberopsis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierZingiberopsis = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Rehezamites", "genRehezamites", genRehezamites);
+        prop.setComment("Set to true to generate Rehezamites naturally [default: false]");
+        genRehezamites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Rehezamites", "genRehezamitesBlacklistBiomes", genRehezamitesBlacklistBiomes);
+        prop.setComment("List of biomes Rehezamites are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genRehezamitesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Rehezamites", "genRehezamitesOverrideBiomes", genRehezamitesOverrideBiomes);
+        prop.setComment("List of biomes Rehezamites are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genRehezamitesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Rehezamites", "dimRehezamites", dimRehezamites);
+        prop.setComment("List of dimension IDs Rehezamites can generate in [default: 0]");
+        dimRehezamites = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Rehezamites", "minheightRehezamites", minheightRehezamites);
+        prop.setComment("Minimum height that Rehezamites can generate (1 to 250) [default: 1]");
+        minheightRehezamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Rehezamites", "maxheightRehezamites", maxheightRehezamites);
+        prop.setComment("Maximum height that Rehezamites can generate (1 to 250, or set to 0 for unlimited) [default: 85]");
+        maxheightRehezamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Rehezamites", "multiplierRehezamites", multiplierRehezamites);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierRehezamites = prop.getDouble();
+        propOrder.add(prop.getName());
+
         boolean changed = false;
         if (cfg.hasChanged()) {
             cfg.save();
@@ -6376,6 +6579,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Claytosmunda", "multiplierClaytosmunda", multiplierClaytosmunda);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierClaytosmunda = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Botrychiopsis", "genBotrychiopsis", genBotrychiopsis);
+        prop.setComment("Set to true to generate Botrychiopsis naturally [default: false]");
+        genBotrychiopsis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Botrychiopsis", "genBotrychiopsisBlacklistBiomes", genBotrychiopsisBlacklistBiomes);
+        prop.setComment("List of biomes Botrychiopsis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genBotrychiopsisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Botrychiopsis", "genBotrychiopsisOverrideBiomes", genBotrychiopsisOverrideBiomes);
+        prop.setComment("List of biomes Botrychiopsis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genBotrychiopsisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Botrychiopsis", "dimBotrychiopsis", dimBotrychiopsis);
+        prop.setComment("List of dimension IDs Botrychiopsis can generate in [default: 0]");
+        dimBotrychiopsis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Botrychiopsis", "minheightBotrychiopsis", minheightBotrychiopsis);
+        prop.setComment("Minimum height that Botrychiopsis can generate (1 to 250) [default: 1]");
+        minheightBotrychiopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Botrychiopsis", "maxheightBotrychiopsis", maxheightBotrychiopsis);
+        prop.setComment("Maximum height that Botrychiopsis can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightBotrychiopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Botrychiopsis", "multiplierBotrychiopsis", multiplierBotrychiopsis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierBotrychiopsis = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Dictyophyllum", "genDictyophyllum", genDictyophyllum);
@@ -7249,6 +7480,35 @@ public class LepidodendronConfigPlants {
         multiplierNelumbo = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Nuphar", "genNuphar", genNuphar);
+        prop.setComment("Set to true to generate Nuphar naturally [default: false]");
+        genNuphar = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nuphar", "genNupharBlacklistBiomes", genNupharBlacklistBiomes);
+        prop.setComment("List of biomes Nuphar are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genNupharBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nuphar", "genNupharOverrideBiomes", genNupharOverrideBiomes);
+        prop.setComment("List of biomes Nuphar are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genNupharOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nuphar", "dimNuphar", dimNuphar);
+        prop.setComment("List of dimension IDs Nuphar can generate in [default: 0]");
+        dimNuphar = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nuphar", "minheightNuphar", minheightNuphar);
+        prop.setComment("Minimum height that Nuphar can generate (1 to 250) [default: 1]");
+        minheightNuphar = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nuphar", "maxheightNuphar", maxheightNuphar);
+        prop.setComment("Maximum height that Nuphar can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightNuphar = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Nuphar", "multiplierNuphar", multiplierNuphar);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierNuphar = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Microvictoria", "genMicrovictoria", genMicrovictoria);
         prop.setComment("Set to true to generate Microvictoria naturally [default: false]");
         genMicrovictoria = prop.getBoolean();
@@ -7930,6 +8190,30 @@ public class LepidodendronConfigPlants {
         dimNilssoniocladus = prop.getIntList();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Atli", "genAtliRedwood", genAtliRedwood);
+        prop.setComment("Set to true to generate Atli naturally on Redwood trees [default: false]");
+        genAtliRedwood = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Atli", "genAtliThuja", genAtliThuja);
+        prop.setComment("Set to true to generate Atli naturally on Thuja trees [default: false]");
+        genAtliThuja = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Atli", "genAtliBisonia", genAtliBisonia);
+        prop.setComment("Set to true to generate Atli naturally on Bisonia trees [default: false]");
+        genAtliBisonia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Atli", "genAtliBlacklistBiomes", genAtliBlacklistBiomes);
+        prop.setComment("List of biomes Atli are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAtliBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Atli", "genAtliOverrideBiomes", genAtliOverrideBiomes);
+        prop.setComment("List of biomes Atli are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAtliOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Atli", "dimAtli", dimAtli);
+        prop.setComment("List of dimension IDs Atli can generate in [default: 0]");
+        dimAtli = prop.getIntList();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Palaeognetaleana", "genPalaeognetaleanaGangamopteris", genPalaeognetaleanaGangamopteris);
         prop.setComment("Set to true to generate Palaeognetaleana naturally on Gangamopteris trees [default: false]");
         genPalaeognetaleanaGangamopteris = prop.getBoolean();
@@ -8309,6 +8593,93 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Telopea", "multiplierTelopea", multiplierTelopea);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTelopea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Lomatia", "genLomatia", genLomatia);
+        prop.setComment("Set to true to generate Lomatia naturally [default: false]");
+        genLomatia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lomatia", "genLomatiaBlacklistBiomes", genLomatiaBlacklistBiomes);
+        prop.setComment("List of biomes Lomatia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genLomatiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lomatia", "genLomatiaOverrideBiomes", genLomatiaOverrideBiomes);
+        prop.setComment("List of biomes Lomatia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genLomatiaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lomatia", "dimLomatia", dimLomatia);
+        prop.setComment("List of dimension IDs Lomatia can generate in [default: 0]");
+        dimLomatia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lomatia", "minheightLomatia", minheightLomatia);
+        prop.setComment("Minimum height that Lomatia can generate (1 to 250) [default: 80]");
+        minheightLomatia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lomatia", "maxheightLomatia", maxheightLomatia);
+        prop.setComment("Maximum height that Lomatia can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightLomatia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lomatia", "multiplierLomatia", multiplierLomatia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierLomatia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Buckthorn", "genBuckthorn", genBuckthorn);
+        prop.setComment("Set to true to generate Buckthorn naturally [default: false]");
+        genBuckthorn = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Buckthorn", "genBuckthornBlacklistBiomes", genBuckthornBlacklistBiomes);
+        prop.setComment("List of biomes Buckthorn are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genBuckthornBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Buckthorn", "genBuckthornOverrideBiomes", genBuckthornOverrideBiomes);
+        prop.setComment("List of biomes Buckthorn are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genBuckthornOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Buckthorn", "dimBuckthorn", dimBuckthorn);
+        prop.setComment("List of dimension IDs Buckthorn can generate in [default: 0]");
+        dimBuckthorn = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Buckthorn", "minheightBuckthorn", minheightBuckthorn);
+        prop.setComment("Minimum height that Buckthorn can generate (1 to 250) [default: 80]");
+        minheightBuckthorn = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Buckthorn", "maxheightBuckthorn", maxheightBuckthorn);
+        prop.setComment("Maximum height that Buckthorn can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightBuckthorn = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Buckthorn", "multiplierBuckthorn", multiplierBuckthorn);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierBuckthorn = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Drimys", "genDrimys", genDrimys);
+        prop.setComment("Set to true to generate Drimys naturally [default: false]");
+        genDrimys = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drimys", "genDrimysBlacklistBiomes", genDrimysBlacklistBiomes);
+        prop.setComment("List of biomes Drimys are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDrimysBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drimys", "genDrimysOverrideBiomes", genDrimysOverrideBiomes);
+        prop.setComment("List of biomes Drimys are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDrimysOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drimys", "dimDrimys", dimDrimys);
+        prop.setComment("List of dimension IDs Drimys can generate in [default: 0]");
+        dimDrimys = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drimys", "minheightDrimys", minheightDrimys);
+        prop.setComment("Minimum height that Drimys can generate (1 to 250) [default: 80]");
+        minheightDrimys = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drimys", "maxheightDrimys", maxheightDrimys);
+        prop.setComment("Maximum height that Drimys can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightDrimys = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drimys", "multiplierDrimys", multiplierDrimys);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDrimys = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Orites", "genOrites", genOrites);
@@ -8712,6 +9083,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Bisonia", "multiplierBisonia", multiplierBisonia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierBisonia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Liquidambar", "genLiquidambar", genLiquidambar);
+        prop.setComment("Set to true to generate Liquidambar trees naturally [default: false]");
+        genLiquidambar = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Liquidambar", "genLiquidambarBlacklistBiomes", genLiquidambarBlacklistBiomes);
+        prop.setComment("List of biomes Liquidambar trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genLiquidambarBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Liquidambar", "genLiquidambarOverrideBiomes", genLiquidambarOverrideBiomes);
+        prop.setComment("List of biomes Liquidambar trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genLiquidambarOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Liquidambar", "dimLiquidambar", dimLiquidambar);
+        prop.setComment("List of dimension IDs Liquidambar trees can generate in [default: 0]");
+        dimLiquidambar = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Liquidambar", "minheightLiquidambar", minheightLiquidambar);
+        prop.setComment("Minimum height that Liquidambar trees can generate (1 to 250) [default: 1]");
+        minheightLiquidambar = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Liquidambar", "maxheightLiquidambar", maxheightLiquidambar);
+        prop.setComment("Maximum height that Liquidambar trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightLiquidambar = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Liquidambar", "multiplierLiquidambar", multiplierLiquidambar);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierLiquidambar = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Maple", "genMaple", genMaple);
@@ -10103,7 +10502,7 @@ public class LepidodendronConfigPlants {
         multiplierPalaeostachya = prop.getDouble();
 
         propOrder.add(prop.getName());prop = cfg.get("WorldGen Callistophytales (Climbing)", "genCallistophytalesLepidodendron", genCallistophytalesLepidodendron);
-        prop.setComment("Set to true to generate Callistophytales naturally on Lepidodendron trees [default: false]");
+        prop.setComment("Set to true to generate Callistophytales naturally on Lepidodendron trees[default: false]");
         genCallistophytalesLepidodendron = prop.getBoolean();
         propOrder.add(prop.getName());
         propOrder.add(prop.getName());prop = cfg.get("WorldGen Callistophytales (Climbing)", "genCallistophytalesLepidophloios", genCallistophytalesLepidophloios);
@@ -10888,6 +11287,132 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lyginopteris", "dimLyginopteris", dimLyginopteris);
         prop.setComment("List of dimension IDs Lyginopteris can generate in [default: 0]");
         dimLyginopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Aristolochia", "dimAristolochia", dimAristolochia);
+        prop.setComment("List of dimension IDs Aristolochia can generate in [default: 0]");
+        dimAristolochia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Aristolochia", "genAristolochia", genAristolochia);
+        prop.setComment("Set to true to generate Aristolochia naturally [default: false]");
+        genAristolochia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Aristolochia", "genAristolochiaBlacklistBiomes", genAristolochiaBlacklistBiomes);
+        prop.setComment("List of biomes Aristolochia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAristolochiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Aristolochia", "genAristolochiaOverrideBiomes", genAristolochiaOverrideBiomes);
+        prop.setComment("List of biomes Aristolochia are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genAristolochiaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Aristolochia", "multiplierAristolochia", multiplierAristolochia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAristolochia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Hops", "dimHops", dimHops);
+        prop.setComment("List of dimension IDs Hops can generate in [default: 0]");
+        dimHops = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hops", "genHops", genHops);
+        prop.setComment("Set to true to generate Hops naturally [default: false]");
+        genHops = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hops", "genHopsBlacklistBiomes", genHopsBlacklistBiomes);
+        prop.setComment("List of biomes Hops are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genHopsBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hops", "genHopsOverrideBiomes", genHopsOverrideBiomes);
+        prop.setComment("List of biomes Hops are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genHopsOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hops", "multiplierHops", multiplierHops);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierHops = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Hedera", "dimHedera", dimHedera);
+        prop.setComment("List of dimension IDs Hedera can generate in [default: 0]");
+        dimHedera = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hedera", "genHedera", genHedera);
+        prop.setComment("Set to true to generate Hedera naturally [default: false]");
+        genHedera = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hedera", "genHederaBlacklistBiomes", genHederaBlacklistBiomes);
+        prop.setComment("List of biomes Hedera are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genHederaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hedera", "genHederaOverrideBiomes", genHederaOverrideBiomes);
+        prop.setComment("List of biomes Hedera are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genHederaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Hedera", "multiplierHedera", multiplierHedera);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierHedera = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Vitis", "dimVitis", dimVitis);
+        prop.setComment("List of dimension IDs Vitis can generate in [default: 0]");
+        dimVitis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Vitis", "genVitis", genVitis);
+        prop.setComment("Set to true to generate Vitis naturally [default: false]");
+        genVitis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Vitis", "genVitisBlacklistBiomes", genVitisBlacklistBiomes);
+        prop.setComment("List of biomes Vitis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genVitisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Vitis", "genVitisOverrideBiomes", genVitisOverrideBiomes);
+        prop.setComment("List of biomes Vitis are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genVitisOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Vitis", "multiplierVitis", multiplierVitis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierVitis = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Actinidea", "dimActinidea", dimActinidea);
+        prop.setComment("List of dimension IDs Actinidea can generate in [default: 0]");
+        dimActinidea = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Actinidea", "genActinidea", genActinidea);
+        prop.setComment("Set to true to generate Actinidea naturally [default: false]");
+        genActinidea = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Actinidea", "genActinideaBlacklistBiomes", genActinideaBlacklistBiomes);
+        prop.setComment("List of biomes Actinidea are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genActinideaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Actinidea", "genActinideaOverrideBiomes", genActinideaOverrideBiomes);
+        prop.setComment("List of biomes Actinidea are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genActinideaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Actinidea", "multiplierActinidea", multiplierActinidea);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierActinidea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Yam", "dimYam", dimYam);
+        prop.setComment("List of dimension IDs Yams can generate in [default: 0]");
+        dimYam = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Yam", "genYam", genYam);
+        prop.setComment("Set to true to generate Yams naturally [default: false]");
+        genYam = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Yam", "genYamBlacklistBiomes", genYamBlacklistBiomes);
+        prop.setComment("List of biomes Yams are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genYamBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Yam", "genYamOverrideBiomes", genYamOverrideBiomes);
+        prop.setComment("List of biomes Yams are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genYamOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Yam", "multiplierYam", multiplierYam);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierYam = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Tmesipteris", "dimTmesipteris", dimTmesipteris);

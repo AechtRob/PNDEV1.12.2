@@ -262,6 +262,7 @@ public class ProcedureWorldGenRedwoodSmall extends ElementsLepidodendronMod.ModE
 			}
 
 			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusRedwood, SaplingSpawn);
+		ProcedureSpawnAtli.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAtliRedwood, SaplingSpawn);
 			
 			
 	}

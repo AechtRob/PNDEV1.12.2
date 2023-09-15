@@ -70,7 +70,8 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public int getGrassColorAtPos(BlockPos pos) {
-			return -6248566;
+			return -6902674;
+			//return -6311807;
 		}
 
 		@Override

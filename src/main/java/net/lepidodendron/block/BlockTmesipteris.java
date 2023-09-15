@@ -78,7 +78,6 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockTmesipteris.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 			

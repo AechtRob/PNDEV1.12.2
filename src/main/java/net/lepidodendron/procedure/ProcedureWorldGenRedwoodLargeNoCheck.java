@@ -400,7 +400,7 @@ public class ProcedureWorldGenRedwoodLargeNoCheck extends ElementsLepidodendronM
 			}
 
 			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusRedwood, SaplingSpawn);
-			
+			ProcedureSpawnAtli.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAtliRedwood, SaplingSpawn);
 		}
 	}
 }

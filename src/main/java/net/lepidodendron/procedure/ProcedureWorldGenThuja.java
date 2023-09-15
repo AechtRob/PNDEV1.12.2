@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockThujaLeaves;
 import net.lepidodendron.block.BlockThujaLog;
 import net.minecraft.block.material.Material;
@@ -41,6 +42,7 @@ public class ProcedureWorldGenThuja extends ElementsLepidodendronMod.ModElement 
 		int yy = (int) dependencies.get("y");
 		int zz = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		double TrunkHeight = 0;
 		double counter = 0;
 		int randomiser = 0;
@@ -185,7 +187,7 @@ public class ProcedureWorldGenThuja extends ElementsLepidodendronMod.ModElement 
 				limbEastWest(world, x - randomiser, (int) ((y + counter - 1) - randomiser2), z, rand, -1, false);
 			}
 
-
+			ProcedureSpawnAtli.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAtliThuja, SaplingSpawn);
 		}
 	}
 
@@ -928,5 +930,6 @@ public class ProcedureWorldGenThuja extends ElementsLepidodendronMod.ModElement 
 			}
 
 		}
+
 	}
 }
