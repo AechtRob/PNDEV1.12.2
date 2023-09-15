@@ -125,6 +125,13 @@ public class LepidodendronConfigPlants {
     public static int minheightRedwood = 1;
     public static int maxheightRedwood = 110;
     public static double multiplierRedwood = 1;
+    public static boolean genThuja = false;
+    public static String[] genThujaBlacklistBiomes = new String[0];
+    public static String[] genThujaOverrideBiomes = new String[]{"minecraft:mutated_redwood_taiga_hills"};
+    public static int[] dimThuja = new int[]{0};
+    public static int minheightThuja = 1;
+    public static int maxheightThuja = 110;
+    public static double multiplierThuja = 1;
     public static boolean genWollemi = false;
     public static String[] genWollemiBlacklistBiomes = new String[0];
     public static String[] genWollemiOverrideBiomes = new String[]{"minecraft:mutated_mesa", "minecraft:mutated_mesa_rock", "minecraft:mutated_mesa_clear_rock"};
@@ -510,7 +517,7 @@ public class LepidodendronConfigPlants {
     public static String[] genCedarBlacklistBiomes = new String[0];
     public static String[] genCedarOverrideBiomes = new String[0];
     public static int[] dimCedar = new int[]{0};
-    public static int minheightCedar = 1;
+    public static int minheightCedar = 80;
     public static int maxheightCedar = 120;
     public static double multiplierCedar = 1;
     public static int podzolCedar = 6;
@@ -2221,6 +2228,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightBrachyphyllum = 110;
     public static double multiplierBrachyphyllum = 1;
 
+    public static boolean genAridPine = false;
+    public static String[] genAridPineBlacklistBiomes = new String[0];
+    public static String[] genAridPineOverrideBiomes = new String[0];
+    public static int[] dimAridPine = new int[]{0};
+    public static int minheightAridPine = 1;
+    public static int maxheightAridPine = 110;
+    public static double multiplierAridPine = 1;
+
     public static boolean genHirmeriella = false;
     public static String[] genHirmeriellaBlacklistBiomes = new String[0];
     public static String[] genHirmeriellaOverrideBiomes = new String[0];
@@ -3561,6 +3576,34 @@ public class LepidodendronConfigPlants {
         multiplierGlossophyllum = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Thuja", "genThuja", genThuja);
+        prop.setComment("Set to true to generate Thuja trees naturally [default: false]");
+        genThuja = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Thuja", "genThujaBlacklistBiomes", genThujaBlacklistBiomes);
+        prop.setComment("List of biomes Thuja trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genThujaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Thuja", "genThujaOverrideBiomes", genThujaOverrideBiomes);
+        prop.setComment("List of biomes Thuja trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: \"minecraft:mutated_redwood_taiga_hills\"]");
+        genThujaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Thuja", "dimThuja", dimThuja);
+        prop.setComment("List of dimension IDs Thuja trees can generate in [default: 0]");
+        dimThuja = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Thuja", "minheightThuja", minheightThuja);
+        prop.setComment("Minimum height that Thuja trees can generate (1 to 250) [default: 1]");
+        minheightThuja = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Thuja", "maxheightThuja", maxheightThuja);
+        prop.setComment("Maximum height that Thuja trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightThuja = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Thuja", "multiplierThuja", multiplierThuja);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierThuja = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Redwood", "genRedwood", genRedwood);
         prop.setComment("Set to true to generate Redwood trees naturally [default: false]");
         genRedwood = prop.getBoolean();
@@ -4656,7 +4699,7 @@ public class LepidodendronConfigPlants {
         dimCedar = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Cedar", "minheightCedar", minheightCedar);
-        prop.setComment("Minimum height that Cedar trees can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Cedar trees can generate (1 to 250) [default: 80]");
         minheightAraucarioxylon = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Cedar", "maxheightCedar", maxheightCedar);
@@ -9707,6 +9750,35 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Hirmeriella", "multiplierHirmeriella", multiplierHirmeriella);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierHirmeriella = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Arid Pine", "genAridPine", genAridPine);
+        prop.setComment("Set to true to generate Arid Pine trees naturally [default: false]");
+        genAridPine = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arid Pine", "genAridPineBlacklistBiomes", genAridPineBlacklistBiomes);
+        prop.setComment("List of biomes Arid Pine trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAridPineBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arid Pine", "genAridPineOverrideBiomes", genAridPineOverrideBiomes);
+        prop.setComment("List of biomes Arid Pine trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAridPineOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arid Pine", "dimAridPine", dimAridPine);
+        prop.setComment("List of dimension IDs Arid Pine trees can generate in [default: 0]");
+        dimAridPine = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arid Pine", "minheightAridPine", minheightAridPine);
+        prop.setComment("Minimum height that Arid Pine trees can generate (1 to 250) [default: 1]");
+        minheightAridPine = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arid Pine", "maxheightAridPine", maxheightAridPine);
+        prop.setComment("Maximum height that Arid Pine trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightAridPine = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arid Pine", "multiplierAridPine", multiplierAridPine);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAridPine = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Brachyphyllum", "genBrachyphyllum", genBrachyphyllum);
