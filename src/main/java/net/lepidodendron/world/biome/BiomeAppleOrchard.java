@@ -91,6 +91,9 @@ public class BiomeAppleOrchard extends ElementsLepidodendronMod.ModElement {
 				{
 					DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.PAEONIA);
 				}
+				else {
+					return;
+				}
 
 				for (int k = 0; k < 5; ++k)
 				{

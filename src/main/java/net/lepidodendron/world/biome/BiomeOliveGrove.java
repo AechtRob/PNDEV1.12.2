@@ -7,13 +7,15 @@ import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeSavanna;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -22,7 +24,7 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:olivegrove")
 	public static final BiomeGenCustom biome = null;
 	public BiomeOliveGrove(ElementsLepidodendronMod instance) {
-		super(instance, 6);
+		super(instance, 7);
 	}
 
 	protected static final WorldGenDaisy DAISY_GENERATOR = new WorldGenDaisy();
@@ -30,6 +32,8 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 	protected static final WorldGenAnemone ANEMONE_GENERATOR = new WorldGenAnemone();
 	protected static final WorldGenCobble COBBLE_GENERATOR = new WorldGenCobble();
 	protected static final WorldGenMossStone MOSSY_COBBLE_GENERATOR = new WorldGenMossStone();
+	protected static final WorldGenCoarseDirt DIRT_GENERATOR = new WorldGenCoarseDirt();
+	protected static final WorldGenOliveGroveGrassPath PATH_GENERATOR = new WorldGenOliveGroveGrassPath();
 
 	@Override
 	public void initElements() {
@@ -41,19 +45,19 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 		BiomeManager.addSpawnBiome(biome);
 		int i = 0;
 		if (LepidodendronConfig.biomeOlive) {
-			i = 2;
+			i = 1;
 		}
 		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(biome, i));
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SAVANNA);
 	}
 
-	static class BiomeGenCustom extends BiomeSavanna {
+	static class BiomeGenCustom extends Biome {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Olive Grove"));
+			super(new BiomeProperties("Olive Grove").setBaseHeight(0.11F).setHeightVariation(0.0F).setTemperature(1.2F).setRainfall(0.0F).setRainDisabled());
 			setRegistryName("olivegrove");
 			decorator.treesPerChunk = 5000;
 			decorator.flowersPerChunk = 16;
-			decorator.grassPerChunk = 6;
+			decorator.grassPerChunk = 4;
 			decorator.deadBushPerChunk = 0;
 			decorator.mushroomsPerChunk = 1;
 			decorator.bigMushroomsPerChunk = 0;
@@ -61,6 +65,12 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 			decorator.cactiPerChunk = 0;
 			decorator.sandPatchesPerChunk = 0;
 			decorator.gravelPatchesPerChunk = 0;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public int getGrassColorAtPos(BlockPos pos) {
+			return -6248566;
 		}
 
 		@Override
@@ -71,9 +81,17 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 192; ++i)
+				{
+					int j = pos.getX() + rand.nextInt(16) + 8;
+					int k = pos.getZ() + rand.nextInt(16) + 8;
+					int l = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k), worldIn).getY();
+					PATH_GENERATOR.generate(worldIn, rand, new BlockPos(j, l + 1, k));
+				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 8; ++i)
+				for (int i = 0; i < 15; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -82,12 +100,21 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 12; ++i)
+				for (int i = 0; i < 10; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					MOSSY_COBBLE_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 8; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DIRT_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -127,9 +154,18 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 		{
 			for (int i = 0; i < p_185378_4_; ++i)
 			{
-				DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.PAEONIA);
 
-				for (int k = 0; k < 5; ++k)
+				int j = p_185378_2_.nextInt(6);
+				if (j == 0)
+				{
+					DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.PAEONIA);
+				}
+				else
+				{
+					DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.GRASS);
+				}
+
+				for (int k = 0; k < 10; ++k)
 				{
 					int l = p_185378_2_.nextInt(16) + 8;
 					int i1 = p_185378_2_.nextInt(16) + 8;
