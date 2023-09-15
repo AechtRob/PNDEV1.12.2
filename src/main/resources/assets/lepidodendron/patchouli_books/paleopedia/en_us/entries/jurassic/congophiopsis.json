@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_congophiopsis",
 			"type": "text",
-			"text": ""
+			"text": "Congophiopsis is an Ophiopsid fish from the Middle Jurassic. It inhabited the Stanleyville Formation of Kisangani, Democratic Republic of Congo. It was originally described as being part of the genus Ophiopsis in 1950. However, Congophiopsis was distinguished as its own separate genus in 2014. It possesses a uniquely shaped first infraorbital which is among the two features that distinguish Congophiopsis' generic validity."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congophiopsis",
+			"type": "text",
+			"text": "Its phylogenetic relationship to other Ophiopsids show it as being in-between the plesiomorphic Phiopsis and more apomorphic members of the family."
 		},
 		{
 			"type": "lepidodendron:diet",

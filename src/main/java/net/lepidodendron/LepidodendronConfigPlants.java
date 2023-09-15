@@ -1068,6 +1068,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightTodites = 90;
     public static double multiplierTodites = 1;
 
+    public static boolean genGordonopteris = false;
+    public static String[] genGordonopterisBlacklistBiomes = new String[0];
+    public static String[] genGordonopterisOverrideBiomes = new String[0];
+    public static int[] dimGordonopteris = new int[]{0};
+    public static int minheightGordonopteris = 1;
+    public static int maxheightGordonopteris = 90;
+    public static double multiplierGordonopteris = 1;
+
     public static boolean genCladophlebis = false;
     public static String[] genCladophlebisBlacklistBiomes = new String[0];
     public static String[] genCladophlebisOverrideBiomes = new String[0];
@@ -6775,6 +6783,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Tongchuanophyllum", "multiplierTongchuanophyllum", multiplierTongchuanophyllum);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTongchuanophyllum = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Gordonopteris", "genGordonopteris", genGordonopteris);
+        prop.setComment("Set to true to generate Gordonopteris naturally [default: false]");
+        genGordonopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Gordonopteris", "genGordonopterisBlacklistBiomes", genGordonopterisBlacklistBiomes);
+        prop.setComment("List of biomes Gordonopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genGordonopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Gordonopteris", "genGordonopterisOverrideBiomes", genGordonopterisOverrideBiomes);
+        prop.setComment("List of biomes Gordonopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genGordonopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Gordonopteris", "dimGordonopteris", dimGordonopteris);
+        prop.setComment("List of dimension IDs Gordonopteris can generate in [default: 0]");
+        dimGordonopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Gordonopteris", "minheightGordonopteris", minheightGordonopteris);
+        prop.setComment("Minimum height that Gordonopteris can generate (1 to 250) [default: 1]");
+        minheightGordonopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Gordonopteris", "maxheightGordonopteris", maxheightGordonopteris);
+        prop.setComment("Maximum height that Gordonopteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightGordonopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Gordonopteris", "multiplierGordonopteris", multiplierGordonopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierGordonopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Todites", "genTodites", genTodites);

@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_trachymetopon",
 			"type": "text",
-			"text": ""
+			"text": "Trachymetopon is the largest coelacanthiform alongside the famous Mawsonia. It has been known from finds across Europe, but a basisphenoid found in Switzerland belonged to an individual that is estimated to have been about 5 meters long! The animal is also known from a full specimen in Germany and some fragments in France. Swimming in the Jurassic European oceans, Trachymetopon is among the few exclusively marine mawsoniids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trachymetopon",
+			"type": "text",
+			"text": "The vast majority of  Mawsoniids lived in either freshwater or brackish water environments."
 		},
 		{
 			"type": "lepidodendron:diet",
