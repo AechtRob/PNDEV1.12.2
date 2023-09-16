@@ -19,8 +19,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
@@ -38,7 +36,6 @@ import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -76,26 +73,6 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 	}
-
-	@SubscribeEvent //Replace pincorrect phials:
-	public void onAddToInventory(PlayerContainerEvent event) {
-		Container container = event.getContainer();
-		List<Slot> itemSlots = container.inventorySlots;
-
-		for (Slot currentSlot : itemSlots) {
-			ItemStack currentItemStack = container.getSlot(currentSlot.slotNumber).getStack();
-			if (!currentItemStack.isEmpty()) {
-				if (currentItemStack.getItem() == ItemPhialFull.block) {
-					if (!currentItemStack.hasTagCompound()) {
-						int i = currentItemStack.getCount();
-						ItemStack newStack = new ItemStack(ItemPhial.block, i);
-						container.putStackInSlot(currentSlot.slotNumber, newStack);
-					}
-				}
-			}
-		}
-	}
-
 
 	@SubscribeEvent //Spawn Hadean meteors
 	public void meteors(WorldTickEvent event) {
