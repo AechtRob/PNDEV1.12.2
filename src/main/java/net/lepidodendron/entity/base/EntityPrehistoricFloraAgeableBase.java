@@ -691,9 +691,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             nbttagcompound.setString("PNType", variantStr);
         }
 
-        if (s.substring(0, 10).equalsIgnoreCase("minecraft:")) {
+        //if (s.substring(0, 10).equalsIgnoreCase("minecraft:")) {
             nbttagcompound.setBoolean("PersistenceRequired", true);
-        }
+        //}
 
         nbttagcompound.setString("id", s);
         Entity entity = AnvilChunkLoader.readWorldEntityPos(nbttagcompound, worldIn, xpos, ypos, zpos, true);
