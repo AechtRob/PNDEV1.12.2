@@ -19,6 +19,8 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
@@ -36,6 +38,7 @@ import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -74,45 +77,24 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-//	@SubscribeEvent //Replace petrified plants and incorrect phials:
-//	public void petrifieds(PlayerContainerEvent event) {
-//		Container container = event.getContainer();
-//		List<Slot> itemSlots = container.inventorySlots;
-//
-//		for (Slot currentSlot : itemSlots) {
-//			ItemStack currentItemStack = container.getSlot(currentSlot.slotNumber).getStack();
-//			if (!currentItemStack.isEmpty()) {
-//				if (currentItemStack.getItem() instanceof ItemPetrified) {
-//					int i = currentItemStack.getCount();
-//					Item itemPetrified = ((ItemPetrified) currentItemStack.getItem()).getPlantStack().getItem();
-//					String stringPetrified = itemPetrified.getRegistryName().toString();
-//					ItemStack newStack = new ItemStack(ItemFossilClean.block, i);
-//					NBTTagCompound plantNBT = new NBTTagCompound();
-//					plantNBT.setString("id", stringPetrified);
-//					NBTTagCompound stackNBT = new NBTTagCompound();
-//					stackNBT.setTag("PFPlant", plantNBT);
-//					newStack.setTagCompound(stackNBT);
-//					container.putStackInSlot(currentSlot.slotNumber, newStack);
-//				}
-//				if (currentItemStack.getItem() == ItemPhialFull.block) {
-//					if (currentItemStack.hasTagCompound()) {
-//						if (!ItemPhialFull.ItemCustom.isBlockFromItemStack(currentItemStack)) {
-//							int i = currentItemStack.getCount();
-//							ItemStack newStack = new ItemStack(ItemPhial.block, i);
-//							container.putStackInSlot(currentSlot.slotNumber, newStack);
-//						} else {
-//							return;
-//						}
-//					}
-//					else {
-//						int i = currentItemStack.getCount();
-//						ItemStack newStack = new ItemStack(ItemPhial.block, i);
-//						container.putStackInSlot(currentSlot.slotNumber, newStack);
-//					}
-//				}
-//			}
-//		}
-//	}
+	@SubscribeEvent //Replace pincorrect phials:
+	public void onAddToInventory(PlayerContainerEvent event) {
+		Container container = event.getContainer();
+		List<Slot> itemSlots = container.inventorySlots;
+
+		for (Slot currentSlot : itemSlots) {
+			ItemStack currentItemStack = container.getSlot(currentSlot.slotNumber).getStack();
+			if (!currentItemStack.isEmpty()) {
+				if (currentItemStack.getItem() == ItemPhialFull.block) {
+					if (!currentItemStack.hasTagCompound()) {
+						int i = currentItemStack.getCount();
+						ItemStack newStack = new ItemStack(ItemPhial.block, i);
+						container.putStackInSlot(currentSlot.slotNumber, newStack);
+					}
+				}
+			}
+		}
+	}
 
 
 	@SubscribeEvent //Spawn Hadean meteors

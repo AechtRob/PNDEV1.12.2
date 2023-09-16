@@ -1502,6 +1502,13 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				else if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
+					if (I18n.translateToLocal("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim()
+							.equalsIgnoreCase("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")) {
+						//This didn't translate properly, try using a capital letter:
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("entity." + ItemPhialDNA.ItemCustom.upperCase(ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation)) + ".name").trim();
+					}
 					return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
 							+ ": "
 							+ I18n.translateToLocal("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();
