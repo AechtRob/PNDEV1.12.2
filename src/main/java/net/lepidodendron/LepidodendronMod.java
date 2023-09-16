@@ -1970,14 +1970,14 @@ public class LepidodendronMod {
 	//public static final int ENTITY_STROBILOPTERUS = 779;
 	//public static final ResourceLocation STROBILOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/strobilopterus"));
 	public static final int ENTITY_XINJIANGCHELYS = 780;
-	public static final ResourceLocation XINJIANGCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinjiangchelys"));
+	//public static final ResourceLocation XINJIANGCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinjiangchelys"));
 	public static final int ENTITY_GLYPTOPS = 781;
-	public static final ResourceLocation GLYPTOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glyptops"));
+	//public static final ResourceLocation GLYPTOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glyptops"));
 	public static final int ENTITY_KAYENTACHELYS = 782;
 	//public static final ResourceLocation KAYENTACHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kayentachelys"));
 	public static final int ENTITY_THALASSEMYS = 783;
-	public static final ResourceLocation THALASSEMYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys"));
-	public static final ResourceLocation THALASSEMYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys_young"));
+	//public static final ResourceLocation THALASSEMYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys"));
+	//public static final ResourceLocation THALASSEMYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thalassemys_young"));
 
 	public static final int ENTITY_GIGANTSPINOSAURUS = 784;
 	public static final ResourceLocation GIGANTSPINOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gigantspinosaurus"));

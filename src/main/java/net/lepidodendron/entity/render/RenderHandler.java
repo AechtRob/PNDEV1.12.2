@@ -4948,6 +4948,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsDaohugoucossus.TileEntityCustom.class, new RenderEggsDaohugoucossus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsPycnophlebia.TileEntityCustom.class, new RenderEggsPycnophlebia());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsArchaboilus.TileEntityCustom.class, new RenderEggsArchaboilus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsArchocyrtus.TileEntityCustom.class, new RenderEggsArchocyrtus());
 
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRottenLog.TileEntityCustom.class, new RenderRottenLog());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDollyphyton.TileEntityCustom.class, new RenderDollyphyton());
