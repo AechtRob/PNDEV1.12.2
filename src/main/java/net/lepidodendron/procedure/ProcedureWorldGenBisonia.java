@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockBisoniaLeaves;
 import net.lepidodendron.block.BlockBisoniaLog;
 import net.minecraft.block.Block;
@@ -41,7 +42,7 @@ public class ProcedureWorldGenBisonia extends ElementsLepidodendronMod.ModElemen
     private static double scaleWidth = 0.25D;
     private static int trunkSize = 1;
 
-	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {
+	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight, boolean SaplingSpawn, boolean bottom) {
 		
 		//This is now a redevelopment of vanilla giant oak code (WorldGenBigTree):
 		
@@ -69,7 +70,11 @@ public class ProcedureWorldGenBisonia extends ElementsLepidodendronMod.ModElemen
             //return true;
         }
 
-	}
+        if (bottom) {
+            ProcedureSpawnAtli.executeProcedure(position.getX(), position.getY(), position.getZ(), world, LepidodendronConfigPlants.genAtliBisonia, SaplingSpawn);
+        }
+
+    }
 
 	/**
      * Generates a list of leaf nodes for the tree, to be populated by generateLeaves.

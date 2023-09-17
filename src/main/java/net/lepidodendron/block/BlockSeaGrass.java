@@ -135,7 +135,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
+		for (int i = 0; i < (int) 20 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;

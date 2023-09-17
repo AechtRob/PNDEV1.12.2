@@ -61,6 +61,11 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 	}
 
 	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -115,7 +120,7 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new AmphibianWander(this, NO_ANIMATION, 0.95, 60));
+		tasks.addTask(2, new AmphibianWander(this, NO_ANIMATION, 1.0, 60));
 		tasks.addTask(3, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(3, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(3, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

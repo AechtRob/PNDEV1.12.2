@@ -74,47 +74,6 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-//	@SubscribeEvent //Replace petrified plants and incorrect phials:
-//	public void petrifieds(PlayerContainerEvent event) {
-//		Container container = event.getContainer();
-//		List<Slot> itemSlots = container.inventorySlots;
-//
-//		for (Slot currentSlot : itemSlots) {
-//			ItemStack currentItemStack = container.getSlot(currentSlot.slotNumber).getStack();
-//			if (!currentItemStack.isEmpty()) {
-//				if (currentItemStack.getItem() instanceof ItemPetrified) {
-//					int i = currentItemStack.getCount();
-//					Item itemPetrified = ((ItemPetrified) currentItemStack.getItem()).getPlantStack().getItem();
-//					String stringPetrified = itemPetrified.getRegistryName().toString();
-//					ItemStack newStack = new ItemStack(ItemFossilClean.block, i);
-//					NBTTagCompound plantNBT = new NBTTagCompound();
-//					plantNBT.setString("id", stringPetrified);
-//					NBTTagCompound stackNBT = new NBTTagCompound();
-//					stackNBT.setTag("PFPlant", plantNBT);
-//					newStack.setTagCompound(stackNBT);
-//					container.putStackInSlot(currentSlot.slotNumber, newStack);
-//				}
-//				if (currentItemStack.getItem() == ItemPhialFull.block) {
-//					if (currentItemStack.hasTagCompound()) {
-//						if (!ItemPhialFull.ItemCustom.isBlockFromItemStack(currentItemStack)) {
-//							int i = currentItemStack.getCount();
-//							ItemStack newStack = new ItemStack(ItemPhial.block, i);
-//							container.putStackInSlot(currentSlot.slotNumber, newStack);
-//						} else {
-//							return;
-//						}
-//					}
-//					else {
-//						int i = currentItemStack.getCount();
-//						ItemStack newStack = new ItemStack(ItemPhial.block, i);
-//						container.putStackInSlot(currentSlot.slotNumber, newStack);
-//					}
-//				}
-//			}
-//		}
-//	}
-
-
 	@SubscribeEvent //Spawn Hadean meteors
 	public void meteors(WorldTickEvent event) {
 		boolean spawnShower = false;

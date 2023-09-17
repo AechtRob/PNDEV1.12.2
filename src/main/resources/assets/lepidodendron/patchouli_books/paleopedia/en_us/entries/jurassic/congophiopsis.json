@@ -1,0 +1,51 @@
+{
+	"name": "Congophiopsis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/congophiopsis_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_congophiopsis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_congophiopsis",
+			"title": "Congophiopsis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Neopterygii $(br)>Ionoscopiformes $(br)>Ophiopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/congophiopsis.png"],
+			"title": "C. lepersonnei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congophiopsis",
+			"type": "text",
+			"text": "Congophiopsis is an Ophiopsid fish from the Middle Jurassic. It inhabited the Stanleyville Formation of Kisangani, Democratic Republic of Congo. It was originally described as being part of the genus Ophiopsis in 1950. However, Congophiopsis was distinguished as its own separate genus in 2014. It possesses a uniquely shaped first infraorbital which is among the two features that distinguish Congophiopsis' generic validity."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_congophiopsis",
+			"type": "text",
+			"text": "Its phylogenetic relationship to other Ophiopsids show it as being in-between the plesiomorphic Phiopsis and more apomorphic members of the family."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_congophiopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_congophiopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_congophiopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_congophiopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_congophiopsis"
+		}
+	]
+}

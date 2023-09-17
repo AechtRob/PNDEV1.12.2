@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ptilozamites"},
+      {"model": "lepidodendron:ptilozamites1"},
+      {"model": "lepidodendron:ptilozamites2"},
+      {"model": "lepidodendron:ptilozamites_seed"},
+      {"model": "lepidodendron:ptilozamites1_seed"}
+    ]
+  }
+}

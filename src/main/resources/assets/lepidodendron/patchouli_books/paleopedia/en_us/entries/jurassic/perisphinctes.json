@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_perisphinctes",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_perisphinctes",
+	"turnin": "lepidodendron:pf_adv_book_ammonite_perisphinctes",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_perisphinctes",
+			"trigger": "lepidodendron:pf_adv_book_ammonite_perisphinctes",
 			"title": "Perisphinctes",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Perisphinctidae"
@@ -18,7 +18,7 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_perisphinctes",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_perisphinctes",
 			"type": "text",
 			"text": "Perisphinctes is an extinct genus of ammnonite cephalopod, which lived during the Middle to Late Jurassic period. The shells of this genus have been found across the world, from Antarctica, the United Kingdom, Russia, Japan and Ethiopia to name a few. Due to this wide distribution, they are commonly used as index fossils."
 		},

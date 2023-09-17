@@ -59,6 +59,11 @@ public class BlockEremopterisTop extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("eremopteris_top");
 		}
 
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {

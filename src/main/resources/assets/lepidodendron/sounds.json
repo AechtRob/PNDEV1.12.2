@@ -7497,6 +7497,14 @@
       {
         "name": "lepidodendron:tritylodon_living01",
         "stream": false
+      },
+      {
+        "name": "lepidodendron:tritylodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tritylodon_living03",
+        "stream": false
       }
     ]
   },

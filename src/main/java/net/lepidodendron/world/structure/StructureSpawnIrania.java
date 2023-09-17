@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockIraniaLand;
 import net.lepidodendron.block.BlockIraniaWater;
+import net.lepidodendron.block.BlockPrimevalGrassLand;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +30,7 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimIrania))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genIrania && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genIrania && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
@@ -39,6 +40,8 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genIraniaBlacklistBiomes))) {
 			biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
@@ -50,7 +53,7 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 28000;
+		int GenChance = 20000;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierIrania;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
@@ -102,7 +105,7 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 					
 
 				if ((!canSurviveAt(world, new BlockPos(i, j + 1, k)))
-					&& (!BlockIraniaLand.BlockCustom.canSurviveAt(world, new BlockPos(i, j + 1, k))))
+					&& (!BlockPrimevalGrassLand.BlockCustom.canSurviveAt(world, new BlockPos(i, j + 1, k))))
 					continue;
 
 				//System.err.println("Cheking biomes...");
@@ -111,6 +114,8 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genIraniaBlacklistBiomes))) {
 					biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+						biomeCriteria = true;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
@@ -144,11 +149,9 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 					//System.err.println("Trying to spawn: " + i + " " + (j+1) + " " + k);
 					if (canSurviveAt(world, spawnTo)) {
 						world.setBlockState(spawnTo, BlockIraniaWater.block.getDefaultState(), 3);
-						BlockIraniaWater.BlockCustom.onBlockAddedWorldgen(world, spawnTo, BlockIraniaWater.block.getDefaultState());
 					}
 					else { //It must be the land version:
 						world.setBlockState(spawnTo, BlockIraniaLand.block.getDefaultState(), 3);
-						BlockIraniaLand.BlockCustom.onBlockAddedWorldgen(world, spawnTo, BlockIraniaLand.block.getDefaultState());
 					}
 				}
 

@@ -305,12 +305,6 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 	        return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.60D, 1.0D, 0.60D);
 	    }
 
-	    @Override
-	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-	    {
-	        return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 1.0D, 0.6D);
-	    }
-
 		@Override
 	    public boolean canBlockStay(World worldIn, BlockPos pos)
 	    {

@@ -88,8 +88,31 @@ public class BlockMosacaulis extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+
+		boolean dimensionCriteria = false;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMosacaulis))
+			dimensionCriteria = true;
+		if (!LepidodendronConfigPlants.genMosacaulis && !LepidodendronConfig.genAllPlants)
+			dimensionCriteria = false;
+		if (dimID == LepidodendronConfig.dimCretaceous) {
+			dimensionCriteria = true;
+		}
+		if (!dimensionCriteria)
+			return;
 
 		int weight = LepidodendronConfigPlants.weightMosacaulis;
 		if (dimID == LepidodendronConfig.dimCretaceous) {
@@ -103,7 +126,7 @@ public class BlockMosacaulis extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genMosacaulisBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genMosacaulisBlacklistBiomes) || LepidodendronConfig.genAllPlants) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))

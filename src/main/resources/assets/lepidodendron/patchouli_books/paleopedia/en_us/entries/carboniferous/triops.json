@@ -14,13 +14,28 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/triops.png"],
-			"title": "Notostraca",
+			"title": "Tadpole Shrimp",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_triops",
 			"type": "text",
-			"text": ""
+			"text": "Tadpole shrimp are crustaceans belonging to the order Notostraca. They have existed in a largely similar form since the end of the Devonian, and are found throughout the world today. They are small animals, rarely larger than 5 centimeters, with a wide, rounded carapace and a pair of long tails. Tadpole shrimp are commonly found in shallow or temporary bodies of water, and are well-adapted for ephemeral conditions. In many species, eggs are capable"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_triops",
+			"type": "text",
+			"text": "of lying dormant in dry conditions until water returns. They can survive in this state of diapause for many years, or even decades. Thus, despite being fully aquatic, notostracans can survive in environments as dry as the Mojave Desert and the Australian Outback. They are omnivorous and feed on plant material, arthropods, and even small fish. Despite a superficial resemblance to horseshoe crabs, they are most closely related to fairy"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_triops",
+			"type": "text",
+			"text": "shrimp, clam shrimp, and water fleas, all of which are similarly adapted for ephemeral freshwater environments. Interestingly, this group of crustaceans, the branchiopods, are more closely related to insects than to malacostracan crustaceans such as crabs and true shrimp. It has thus been suggested that insects and branchiopods such as tadpole shrimp may have a shared origin in ancient freshwater habitats,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_triops",
+			"type": "text",
+			"text": "though a proposed relationship between insects and marine remipedes complicates this conclusion."
 		},
 		{
 			"type": "lepidodendron:diet",

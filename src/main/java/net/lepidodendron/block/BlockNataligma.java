@@ -27,7 +27,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -213,6 +212,11 @@ public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(BASE, false).withProperty(LOWER, false).withProperty(AGE, Integer.valueOf(0)));
 		}
 
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
@@ -279,18 +283,6 @@ public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
 		public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
 			return EnumPlantType.Plains;
 		}
-
-		@Override
-		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-	    {
-	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
-	    }
-
-	    @Override
-	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-	    {
-	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
-	    }
 
 		@Override
 	    public boolean canBlockStay(World worldIn, BlockPos pos)

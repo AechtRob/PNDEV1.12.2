@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
 			"type": "text",
-			"text": ""
+			"text": "Proterosuchus fergusi was described by Robert Broom in 1903, and its name means \"Fergus' First Crocodile\". It lived during the early Triassic period in what is today South Africa. It was one of the earliest members of the crocodylomorphs known, although it is unclear whether it lived terrestrially or semi-aquatically like modern crocodiles."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
+			"type": "text",
+			"text": "Although it seems adapted for some aspects of semi-aquatic hunting, it appears to have lived in an arid environment and is thought to have fed on a generalist carnivorous diet, including land creatures and fish. It grew up to 3.5 or 4m long."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostega",
 			"type": "text",
-			"text": " "
+			"text": "Acanthostega lived during the late Devonian period, and was one of the earliest-known tetrapods. Its name means \"spiny roof\". It was around 60cm long and was still fish-like, and could not have lived much of a terrestrial life. The front fins had been adapted with eight webbed, digit-like structures on each \"hand\". However, it is thought that the structure of the limbs would have meant actual walking on land would have been impossible as they could not"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostega",
+			"type": "text",
+			"text": "move into weight-bearing positions. Likewise, while it possessed air-breathing lungs as well as gills, the shape of the chest implies that it would have had difficulty breathing without water supporting its rib cage (perhaps it could flop and drag itself around a little bit in an emergency). We think that Acanthostega probably lived in shallow, marginal, plant-filled ecosystems,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostega",
+			"type": "text",
+			"text": "where its limbs would be used for pulling through the plants and reeds, searching for small creatures to eat. It is possible that Acanthostega is actually a \"backwards-step\", evolving from some more land-suited early fish-like tetrapods back into a purely aquatic lifestyle."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -25,6 +25,7 @@ public class LepidodendronConfig {
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
+    public static boolean biomeOlive = true;
     public static boolean machinesRF = false;
     public static boolean sulphuricAcidGrief = true;
     public static boolean sulphuricAcidInfinite = false;
@@ -52,7 +53,6 @@ public class LepidodendronConfig {
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
-    public static double genInsectsFromPlants = 0.2;
     public static double doShoalingFlockingFactor = 1.0;
     
     public static boolean doShrinkBiomes = true;
@@ -86,7 +86,6 @@ public class LepidodendronConfig {
     public static boolean doSpawnsPrehistoricFloraDefault = true;
     public static boolean doSpawnsFossilsArcheology = false;
     public static boolean doSpawnsReborn = false;
-
 
     public static boolean doMultiplyMobs = false;
 
@@ -135,20 +134,6 @@ public class LepidodendronConfig {
     public static String[] revStaticsPaleogene = new String[0];
     public static String[] revStaticsNeogene = new String[0];
     public static String[] revStaticsPleistocene = new String[0];
-
-    public static String[] insectBreakMobsPrecambrian = new String[0];
-    public static String[] insectBreakMobsCambrian = new String[0];
-    public static String[] insectBreakMobsOrdovician = new String[0];
-    public static String[] insectBreakMobsSilurian = new String[0];
-    public static String[] insectBreakMobsDevonian = new String[0];
-    public static String[] insectBreakMobsCarboniferous = new String[0];
-    public static String[] insectBreakMobsPermian = new String[0];
-    public static String[] insectBreakMobsTriassic = new String[0];
-    public static String[] insectBreakMobsJurassic = new String[0];
-    public static String[] insectBreakMobsCretaceous = new String[0];
-    public static String[] insectBreakMobsPaleogene = new String[0];
-    public static String[] insectBreakMobsNeogene = new String[0];
-    public static String[] insectBreakMobsPleistocene = new String[0];
 
     public static boolean showTooltips = true;
     public static boolean doPropagation = true;
@@ -494,79 +479,6 @@ public class LepidodendronConfig {
         blockMobsFAExceptions = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global Mobs", "genInsectsFromPlants", genInsectsFromPlants);
-        prop.setComment("Defines how likely it that insects or arthropods drop from plants when broken (0.0 to 1.0) [default: 0.2]");
-        genInsectsFromPlants = prop.getDouble();
-        propOrder.add(prop.getName());
-
-
-
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsPrecambrian", insectBreakMobsPrecambrian);
-        prop.setComment("List of creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsPrecambrian = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsCambrian", insectBreakMobsCambrian);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsCambrian = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsOrdovician", insectBreakMobsOrdovician);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsOrdovician = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsSilurian", insectBreakMobsSilurian);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsSilurian = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsDevonian", insectBreakMobsDevonian);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsDevonian = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsCarboniferous", insectBreakMobsCarboniferous);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsCarboniferous = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsPermian", insectBreakMobsPermian);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsPermian = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsTriassic", insectBreakMobsTriassic);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsTriassic = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsJurassic", insectBreakMobsJurassic);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsJurassic = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsCretaceous", insectBreakMobsCretaceous);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsCretaceous = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsPaleogene", insectBreakMobsPaleogene);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsPaleogene = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsNeogene", insectBreakMobsNeogene);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsNeogene = prop.getStringList();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("Global Mobs", "insectBreakMobsPleistocene", insectBreakMobsPleistocene);
-        prop.setComment("List of static creatures from OTHER mods which can spawn from breaking plants: modid:entityid [default: empty]");
-        insectBreakMobsPleistocene = prop.getStringList();
-        propOrder.add(prop.getName());
-        
 
         
         prop = cfg.get("Global World-Gen", "doShoalingFlocking", doShoalingFlocking);
@@ -602,10 +514,10 @@ public class LepidodendronConfig {
         prop.setComment("Ageable mobs will behave as adults once they are at least this percentage of full age (hunting, dropping eggs, etc.). This does nto affect models/textures. [default: 75]");
         adultAge = prop.getInt();
         propOrder.add(prop.getName());
-        prop = cfg.get("Global Mobs", "doMultiplyMobs", doMultiplyMobs);
-        prop.setComment("Mobs will try to multiply every 1-2 days even without breeding them [default: false]");
-        doMultiplyMobs = prop.getBoolean();
-        propOrder.add(prop.getName());
+//        prop = cfg.get("Global Mobs", "doMultiplyMobs", doMultiplyMobs);
+//        prop.setComment("Mobs will try to multiply every 1-2 days even without breeding them [default: false]");
+//        doMultiplyMobs = prop.getBoolean();
+//        propOrder.add(prop.getName());
         prop = cfg.get("Global Mobs", "breedCooldown", breedCooldown);
         prop.setComment("Number of game ticks after breeding that it takes to be able to breed the same creature again (20 ticks = 1 real-world second). [default: 6000]");
         breedCooldown = prop.getInt();
@@ -737,6 +649,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "biomeApple", biomeApple);
         prop.setComment("Set to false to disable the world-gen of this mod's overworld apple orchards. [default: true]");
         biomeApple = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "biomeOlive", biomeOlive);
+        prop.setComment("Set to false to disable the world-gen of this mod's overworld olive groves. [default: true]");
+        biomeOlive = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "machinesRF", machinesRF);

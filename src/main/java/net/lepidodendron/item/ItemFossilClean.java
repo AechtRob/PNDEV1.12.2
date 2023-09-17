@@ -158,7 +158,6 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lacewing_laccosmylus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lacewing_cretapsychops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lacewing_bellinympha_clean", "inventory"),
-				//new ModelResourceLocation("lepidodendron:fossils/fossil_dragonfly_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dragonfly_dragonfly_random_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_megateuthis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_passaloteuthis_clean", "inventory"),
@@ -211,7 +210,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_elephantoceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_promexyele_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_papilionichthys_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_rainerichthys_gendered_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rainerichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_orcanopterus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_onychopterella_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_strobilopterus_clean", "inventory"),
@@ -948,6 +947,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeontinid_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_palaeostachya_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pambikalbae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_pandan_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_panderichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_panderodus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pantylus_clean", "inventory"),
@@ -1000,7 +1000,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_postosuchus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_potanichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_primaeval_grass_item_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_sea_grass_item_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_sea_grass_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_ptilozamites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_primocandelabrum_1_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_primocandelabrum_2_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_prionosuchus_clean", "inventory"),
@@ -1121,6 +1122,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_silver_treefern_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_siphusauctum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_skaaripteris_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_chiropteris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_botrychiopsis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_smilosuchus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_smok_clean", "inventory"),
@@ -1196,6 +1198,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_titanoptera_mesotitan_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tmesipteris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_todites_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_gordonopteris_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tokummia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tongchuanophyllum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_torvosaurus_clean", "inventory"),
@@ -1499,6 +1502,13 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				else if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
+					if (I18n.translateToLocal("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim()
+							.equalsIgnoreCase("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name")) {
+						//This didn't translate properly, try using a capital letter:
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("entity." + ItemPhialDNA.ItemCustom.upperCase(ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation)) + ".name").trim();
+					}
 					return I18n.translateToLocal("item.pf_fossil_clean_full.name").trim()
 							+ ": "
 							+ I18n.translateToLocal("entity." + ItemPlaceableLiving.ItemCustom.getDNAStr(resourcelocation) + ".name").trim();

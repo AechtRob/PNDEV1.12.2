@@ -1,0 +1,51 @@
+{
+	"name": "Trachymetopon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/trachymetopon_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_trachymetopon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trachymetopon",
+			"title": "Trachymetopon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Sarcopterygii $(br)>Actinistia $(br)>Coelacanthiformes $(br)>Mawsoniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/trachymetopon.png"],
+			"title": "T. liasicum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trachymetopon",
+			"type": "text",
+			"text": "Trachymetopon is the largest coelacanthiform alongside the famous Mawsonia. It has been known from finds across Europe, but a basisphenoid found in Switzerland belonged to an individual that is estimated to have been about 5 meters long! The animal is also known from a full specimen in Germany and some fragments in France. Swimming in the Jurassic European oceans, Trachymetopon is among the few exclusively marine mawsoniids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trachymetopon",
+			"type": "text",
+			"text": "The vast majority of  Mawsoniids lived in either freshwater or brackish water environments."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trachymetopon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trachymetopon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trachymetopon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trachymetopon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trachymetopon"
+		}
+	]
+}

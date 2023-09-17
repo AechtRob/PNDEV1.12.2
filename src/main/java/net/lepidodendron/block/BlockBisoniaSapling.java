@@ -170,7 +170,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 			for (ii = 0; ii < TrunkHeight; ii++) {
 				ProcedureTreeLog.executeProcedure(pos.getX(), pos.getY() + ii, pos.getZ(), world, BlockBisoniaLog.block, EnumFacing.NORTH);
 			}
-			ProcedureWorldGenBisonia.executeProcedure(world, pos.up(ii), TreeHeight - TrunkHeight);
+			ProcedureWorldGenBisonia.executeProcedure(world, pos.up(ii), TreeHeight - TrunkHeight, true, true);
 			//Also side branch things:
 			boolean north = false;
 			boolean east = false;
@@ -212,7 +212,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							zz --;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.EAST);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						north = true;
 						break;
 
@@ -236,7 +236,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							xx ++;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.UP);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						east = true;
 						break;
 
@@ -260,7 +260,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							zz ++;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.EAST);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						south = true;
 						break;
 
@@ -284,7 +284,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							xx --;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.UP);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						west = true;
 						break;
 				}

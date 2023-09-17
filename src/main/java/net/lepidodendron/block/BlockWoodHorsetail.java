@@ -283,6 +283,10 @@ public class BlockWoodHorsetail extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
 			//System.err.println("Light at " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " is " + worldIn.getBlockState(pos.down()).getLightValue());
 
 			double getLight = worldIn.getLight(pos);

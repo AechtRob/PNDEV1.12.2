@@ -257,6 +257,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_GLOSSOPHYLLUM = new CustomTrigger("pf_book_glossophyllum");
     public static final CustomTrigger CLICK_GLOSSOPTERIS = new CustomTrigger("pf_book_glossopteris");
     public static final CustomTrigger CLICK_GOGIA = new CustomTrigger("pf_book_gogia");
+    public static final CustomTrigger CLICK_GORDONOPTERIS = new CustomTrigger("pf_book_gordonopteris");
     public static final CustomTrigger CLICK_GRASSY_HORSETAIL = new CustomTrigger("pf_book_grassy_horsetail");
     public static final CustomTrigger CLICK_GRYPANIA = new CustomTrigger("pf_book_grypania");
     public static final CustomTrigger CLICK_GUANGDEDENDRON = new CustomTrigger("pf_book_guangdedendron");
@@ -360,6 +361,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PSEUDOBORNIA = new CustomTrigger("pf_book_pseudobornia");
     public static final CustomTrigger CLICK_PSEUDOVOLTZIA = new CustomTrigger("pf_book_pseudovoltzia");
     public static final CustomTrigger CLICK_PSILOPHYTON = new CustomTrigger("pf_book_psilophyton");
+    public static final CustomTrigger CLICK_PTILOZAMITES = new CustomTrigger("pf_book_ptilozamites");
     public static final CustomTrigger CLICK_PTERIDINIUM = new CustomTrigger("pf_book_pteridinium");
     public static final CustomTrigger CLICK_PTEROPHYLLUM = new CustomTrigger("pf_book_pterophyllum");
     public static final CustomTrigger CLICK_PTILOPHYLLUM = new CustomTrigger("pf_book_ptilophyllum");
@@ -390,6 +392,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SIPHUSAUCTUM = new CustomTrigger("pf_book_siphusauctum");
     public static final CustomTrigger CLICK_SKAARIPTERIS = new CustomTrigger("pf_book_skaaripteris");
     public static final CustomTrigger CLICK_BOTRYCHIOPSIS = new CustomTrigger("pf_book_botrychiopsis");
+    public static final CustomTrigger CLICK_CHIROPTERIS = new CustomTrigger("pf_book_chiropteris");
     public static final CustomTrigger CLICK_SPACIINODUM = new CustomTrigger("pf_book_spaciinodum");
     public static final CustomTrigger CLICK_SPHENOBAIERA = new CustomTrigger("pf_book_sphenobaiera");
     public static final CustomTrigger CLICK_SPHENOPTERIS = new CustomTrigger("pf_book_sphenopteris");
@@ -1546,6 +1549,7 @@ public class ModTriggers
             CLICK_GLOSSOPHYLLUM,
             CLICK_GLOSSOPTERIS,
             CLICK_GOGIA,
+            CLICK_GORDONOPTERIS,
             CLICK_GRASSY_HORSETAIL,
             CLICK_GRYPANIA,
             CLICK_GUANGDEDENDRON,
@@ -1647,6 +1651,7 @@ public class ModTriggers
             CLICK_PSEUDOBORNIA,
             CLICK_PSEUDOVOLTZIA,
             CLICK_PSILOPHYTON,
+            CLICK_PTILOZAMITES,
             CLICK_PTERIDINIUM,
             CLICK_PTEROPHYLLUM,
             CLICK_PTILOPHYLLUM,
@@ -1677,6 +1682,7 @@ public class ModTriggers
             CLICK_SIPHUSAUCTUM,
             CLICK_SKAARIPTERIS,
             CLICK_BOTRYCHIOPSIS,
+            CLICK_CHIROPTERIS,
             CLICK_SPACIINODUM,
             CLICK_SPHENOBAIERA,
             CLICK_SPHENOPTERIS,

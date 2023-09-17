@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_strudops",
 			"type": "text",
-			"text": ""
+			"text": "Strudops is a Late Devonian tadpole shrimp from the Bois-des-Mouches Formation and currently the oldest known definitive notostracan. It was described by Lagebro et al. in 2015 from shale in Strud, Belgium. These rocks are thought to represent floodplain sediments which slowly accumulated in the bottom of brackish or freshwater ponds which experienced seasonal flooding and drying. Thus, like modern notostracans, they may have been adapted to survive periods of drought by"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_strudops",
+			"type": "text",
+			"text": "producing eggs capable of dormancy until water returned. They were similar in appearance to living tadpole shrimp, though smaller than most extant species at a maximum of about 3 centimeters, with a proportionally larger abdomen. Unlike modern notostracans, which have three eyes, Strudops only preserves a single central structure on the dorsal surface of the carapace, which may be an eye, though poor preservation makes this identification uncertain."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_strudops",
+			"type": "text",
+			"text": "The name means “Strud eye,” in reference to the location it was found and the presence of the central dorsal structure, as well as sharing a suffix with the related extant genus Triops."
 		},
 		{
 			"type": "lepidodendron:diet",
