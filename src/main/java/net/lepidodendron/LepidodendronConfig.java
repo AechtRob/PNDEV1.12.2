@@ -31,6 +31,7 @@ public class LepidodendronConfig {
     public static boolean sulphuricAcidInfinite = false;
     public static boolean giveBook = true;
     public static boolean submarineNightvision = true;
+    public static boolean submarineInvisibility = true;
     public static boolean doGrazeGrief = true;
 
     public static boolean genFossil = true;
@@ -669,6 +670,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "submarineNightvision", submarineNightvision);
         prop.setComment("Players have night-vision when in a submarine. [default: true]");
         submarineNightvision = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "submarineInvisibility", submarineInvisibility);
+        prop.setComment("Players are made invisible when in a submarine, and so can't' be attacked by mobs. [default: true]");
+        submarineInvisibility = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "sulphuricAcidGrief", sulphuricAcidGrief);

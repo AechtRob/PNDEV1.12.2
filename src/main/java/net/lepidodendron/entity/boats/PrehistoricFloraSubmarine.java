@@ -902,6 +902,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                 if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
                     player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
                 }
+                if (((!player.isPotionActive(MobEffects.INVISIBILITY))|| player.getActivePotionEffect(MobEffects.INVISIBILITY).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineInvisibility) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 201, 0, false, false));
+                }
             }
         }
     }

@@ -473,7 +473,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 		}
 
 		if (this.getAnimation() == GRAZE_ANIMATION) {
-			if (LepidodendronConfig.doGrazeGrief && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
+			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);
 				float itemHealth = 0.5F; //Default minimal nutrition
