@@ -75,6 +75,19 @@ public class EntityPrehistoricFloraBishanopliosaurus extends EntityPrehistoricFl
 
 	@Override
 	public void playLivingSound() {
+		if (!this.isReallyInWater()) {
+			return;
+		}
+		if (this.getAnimation() != null) {
+			SoundEvent soundevent = this.getAmbientSound();
+			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+				this.setAnimation(ROAR_ANIMATION);
+				if (soundevent != null)
+				{
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
 	}
 
 	@Override

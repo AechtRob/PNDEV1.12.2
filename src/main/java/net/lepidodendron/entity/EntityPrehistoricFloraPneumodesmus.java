@@ -195,7 +195,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();
-		if (LepidodendronConfig.doGrazeGrief && (this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
+		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
 			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
