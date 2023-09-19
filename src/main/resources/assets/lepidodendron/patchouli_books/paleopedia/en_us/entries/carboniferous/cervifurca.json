@@ -1,0 +1,61 @@
+{
+	"name": "Cervifurca",
+	"read_by_default": true,
+	"icon": "lepidodendron:cervifurca_raw",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_cervifurca",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cervifurca",
+			"title": "Cervifurca",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Iniopterygiformes$(br)>Iniopterygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cervifurca.png"],
+			"title": "C. nasuta",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cervifurca",
+			"type": "text",
+			"text": "Cervifurca nasuta is a species of Iniopterygian from the Late Carboniferous of North America. This poorly documented species of Iniopterygian is most recognizable by the unique shape of the body, which was flattened and round, quite unusual among members of it's group. Compared to other Iniopterygians, Cervifurca also had unusually small pectoral fins, which seem to indicate a less active swimming style and potentially hinting at this creature potentially being demersal, living close and against the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cervifurca",
+			"type": "text",
+			"text": "Not only this animal had a flattened appearance that indicate said lifestyle, but the eyes, positioned dorsolaterally, would've given this animal a more upturned field of view, allowing it to see what swam above it to an extent. In the past this animal was represented with two horn-like protrusions jutting out of the front of the head; this interpretation is now known to be erroneous as the two peduncles acted as support for a soft tissue snout, giving this animal less of a forked head look and more of a flattened shark face."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cervifurca",
+			"type": "text",
+			"text": "Further evidence of this animal's benthic lifestyle is the preservation of the specimens themselves, who were found preserved in dorsal view, in a similar fashion to Batoids and other inhabitants of the benthos known in the fossil record. The animal possessed rather small pelvic fins onto which attached disproportionally long Pterygodia, which wouldn't have been of much use to swim."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cervifurca",
+			"type": "text",
+			"text": "Cervifurca was first discovered in 1997 by Rainer Zangerl and described on specimens found in the Excello Shale in Indiana; the original fossils were recovered by Rainer and his wife during excavations in 1982-83."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cervifurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cervifurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cervifurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cervifurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cervifurca"
+		}
+	]
+}

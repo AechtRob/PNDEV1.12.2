@@ -2,7 +2,7 @@
 	"name": "Orthocormus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/orthocormus_icon.png",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_orthocormus",
 	"pages": [
 		{
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_orthocormus",
 			"type": "text",
-			"text": ""
+			"text": "Orthocormus is a pachycormid fish from the Jurassic period. It was a medium sized fast pursuit predator. Its slim body shape and elongated tail help it swim faster when chasing down prey. Three species of Orthocormus are described, the largest of which, O. cornutus, is just over a meter long. Fossils have been found all over Europe, including the famous Solnhofen Limestone."
 		},
 		{
 			"type": "lepidodendron:diet",
