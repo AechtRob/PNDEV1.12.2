@@ -69,7 +69,37 @@ public class RenderDragonfly extends RenderLivingBaseVariantModels<EntityPrehist
     }
 
     public static float getOffset(EntityPrehistoricFloraDragonfly.Type variant) {
-        return 0.16F;
+        switch (variant) {
+            case DRAGONFLY1: default:
+                return 0.16F;
+
+            case DRAGONFLY2:
+                return 0.16F;
+
+            case DRAGONFLY3:
+                return 0.16F;
+
+            case DRAGONFLY4:
+                return 0.16F;
+
+            case DRAGONFLY5:
+                return 0.16F;
+
+            case DRAGONFLY6:
+                return 0.16F;
+
+            case DRAGONFLY7:
+                return 0.16F;
+
+            case DRAGONFLY8:
+                return 0.16F;
+
+            case DRAGONFLY9:
+                return 0.16F;
+
+            case DRAGONFLY10:
+                return 0.16F;
+        }
     }
 
     @Override
@@ -105,7 +135,37 @@ public class RenderDragonfly extends RenderLivingBaseVariantModels<EntityPrehist
     }
 
     public static float getScaler(EntityPrehistoricFloraDragonfly.Type variant) {
-        return 0.285F;
+        switch (variant) {
+            case DRAGONFLY1: default:
+                return 0.285F;
+
+            case DRAGONFLY2:
+                return 0.285F;
+
+            case DRAGONFLY3:
+                return 0.285F;
+
+            case DRAGONFLY4:
+                return 0.285F;
+
+            case DRAGONFLY5:
+                return 0.285F;
+
+            case DRAGONFLY6:
+                return 0.285F;
+
+            case DRAGONFLY7:
+                return 0.285F;
+
+            case DRAGONFLY8:
+                return 0.285F;
+
+            case DRAGONFLY9:
+                return 0.285F;
+
+            case DRAGONFLY10:
+                return 0.285F;
+        }
     }
 
     @Override

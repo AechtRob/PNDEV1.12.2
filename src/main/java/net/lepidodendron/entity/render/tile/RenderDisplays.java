@@ -101,6 +101,7 @@ public class RenderDisplays {
     public static final ModelDuslia modelDuslia = new ModelDuslia();
     public static final ModelDocodon modelDocodon = new ModelDocodon();
     public static final ModelDendrocystites modelDendrocystites = new ModelDendrocystites();
+    public static final ModelDragonfly modelDragonfly = new ModelDragonfly();
     public static final ModelEastmanosteus modelEastmanosteus = new ModelEastmanosteus();
     public static final ModelEdaphosaurus modelEdaphosaurus = new ModelEdaphosaurus();
     public static final ModelElginia modelElginia = new ModelElginia();

@@ -9,8 +9,13 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
+import net.lepidodendron.entity.render.entity.RenderConodont;
+import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -471,5 +476,162 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			this.setPNType(EntityPrehistoricFloraConodont.Type.getTypeFromString(compound.getString("PNType")));
 		}
 	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM: default:
+				return 0.30;
 
+			case CLYDAGNATHUS:
+				return 0.27;
+
+			case PROCONODONTUS:
+				return 0.34;
+
+			case OZARKODINA:
+				return 0.30;
+
+			case IOWAGNATHUS:
+				return 0.30;
+
+			case HINDEODUS:
+				return 0.31;
+
+			case CLARKINA:
+				return 0.38;
+
+			case MISIKELLA:
+				return 0.41;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM: default:
+				return 0.30;
+
+			case CLYDAGNATHUS:
+				return 0.27;
+
+			case PROCONODONTUS:
+				return 0.34;
+
+			case OZARKODINA:
+				return 0.30;
+
+			case IOWAGNATHUS:
+				return 0.30;
+
+			case HINDEODUS:
+				return 0.31;
+
+			case CLARKINA:
+				return 0.38;
+
+			case MISIKELLA:
+				return 0.41;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.95;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.06;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM:
+			default:
+				return RenderConodont.TEXTURE_PROMISSUM;
+
+			case CLYDAGNATHUS:
+				return RenderConodont.TEXTURE_CLYDAGNATHUS;
+
+			case PROCONODONTUS:
+				return RenderConodont.TEXTURE_PROCONODONTUS;
+
+			case OZARKODINA:
+				return RenderConodont.TEXTURE_OZARKODINA;
+
+			case IOWAGNATHUS:
+				return RenderConodont.TEXTURE_IOWAGNATHUS;
+
+			case HINDEODUS:
+				return RenderConodont.TEXTURE_HINDEODUS;
+
+			case CLARKINA:
+				return RenderConodont.TEXTURE_CLARKINA;
+
+			case MISIKELLA:
+				return RenderConodont.TEXTURE_MISIKELLA;
+
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM:
+			default:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
+
+			case CLYDAGNATHUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case PROCONODONTUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case OZARKODINA:
+				return RenderDisplays.modelPalaeodictyopteraLarge;
+
+			case IOWAGNATHUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case HINDEODUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case CLARKINA:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
+
+			case MISIKELLA:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderConodont.getScaler(EntityPrehistoricFloraConodont.Type.getTypeFromString(variant));
+	}
 }
