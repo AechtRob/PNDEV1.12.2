@@ -276,7 +276,30 @@ public class EntityPrehistoricFloraChunerpeton extends EntityPrehistoricFloraSwi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
+
+		if (!this.world.isRemote) {
+			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
+				this.setBottomFlag(true);
+				this.setBottomCooldown(300 + rand.nextInt(600));
+			}
+			if (this.isAtBottom() && (this.getBottomFlag())) {
+				this.setBottomCooldown(this.getBottomCooldown() - 1);
+			}
+			if (this.getBottomCooldown() < 0) {
+				this.setBottomCooldown(0);
+			}
+			if (this.getBottomCooldown() <= 0 && this.getBottomFlag()) {
+				this.setBottomFlag(false);
+				this.setSwimCooldown(200 + rand.nextInt(300));
+			}
+			if (!(this.getBottomFlag())) {
+				this.setSwimCooldown(this.getSwimCooldown() - 1);
+			}
+			if (this.getSwimCooldown() <= 0) {
+				this.setSwimCooldown(0);
+			}
+
+		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
