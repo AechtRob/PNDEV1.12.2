@@ -97,7 +97,7 @@ public class SpawnerConfigsTriassic {
     public static String[] dimTriassicMobsRiverFA = new String[0];
     public static String[] dimTriassicMobsXericForestFA = new String[0];
     public static String[] dimTriassicMobsXericShrublandFA = new String[0];
-    public static String[] dimTriassicMobsLakelandFA = new String[]{"fossil:fossil.henodus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:5:15:3"};
+    public static String[] dimTriassicMobsLakelandFA = new String[0];
     public static String[] dimTriassicMobsVolcanicHillsFA = new String[0];
     public static String[] dimTriassicMobsFloodedForestFA = new String[]{"fossil:fossil.henodus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:5:15:3"};
     public static String[] dimTriassicMobsCoolForestFA = new String[0];
@@ -116,11 +116,11 @@ public class SpawnerConfigsTriassic {
     public static String[] dimTriassicMobsRiverReborn = new String[0];
     public static String[] dimTriassicMobsXericForestReborn = new String[0];
     public static String[] dimTriassicMobsXericShrublandReborn = new String[0];
-    public static String[] dimTriassicMobsLakelandReborn = new String[]{"rebornmod:entities.postosuchus:1:1:1"};
+    public static String[] dimTriassicMobsLakelandReborn = new String[0];
     public static String[] dimTriassicMobsVolcanicHillsReborn = new String[]{"rebornmod:entities.postosuchus:1:1:1"};
     public static String[] dimTriassicMobsFloodedForestReborn = new String[0];
-    public static String[] dimTriassicMobsCoolForestReborn = new String[]{"rebornmod:entities.herrerasaurus:2:10:1", "rebornmod:entities.mussaurus:2:16:1"};
-    public static String[] dimTriassicMobsMossMeadowReborn = new String[]{"rebornmod:entities.herrerasaurus:2:5:1"};
+    public static String[] dimTriassicMobsCoolForestReborn = new String[]{"rebornmod:entities.herrerasaurus:2:10:1"};
+    public static String[] dimTriassicMobsMossMeadowReborn = new String[0];
     public static String[] dimTriassicMobsDesertReborn = new String[0];
     public static String[] dimTriassicMobsDunesReborn = new String[0];
     public static String[] dimTriassicMobsPlateauReborn = new String[0];

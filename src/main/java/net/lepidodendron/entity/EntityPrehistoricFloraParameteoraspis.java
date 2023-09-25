@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderParameteoraspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -54,11 +53,6 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		maxWidth = 0.8F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 10.0D;
-	}
-
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraParameteoraspis(this.world);
 	}
 
 	@Override
