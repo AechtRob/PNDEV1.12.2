@@ -1914,6 +1914,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
     }
 
     public static void FigRoots(World world, int x, int y, int z, int height) {
+        if (height < 2) {
+            return;
+        }
         BlockPos topPos = new BlockPos((int) x, (int) (y), (int) z);
         Random rand = new Random();
         if (rand.nextInt(32) != 0) {
