@@ -18,7 +18,7 @@ public class WorldGenOliveGroveGrassPath extends WorldGenerator
 
         for (int i = 0; i < 12; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(2) - rand.nextInt(2), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(2) - rand.nextInt(2));
 
             if ((!worldIn.provider.isNether() || position.getY() < 254) && worldIn.isAirBlock(position)
             	&& (
