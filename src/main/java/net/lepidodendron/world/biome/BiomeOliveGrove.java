@@ -55,7 +55,7 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Olive Grove").setBaseHeight(0.11F).setHeightVariation(0.0F).setTemperature(1.2F).setRainfall(0.0F).setRainDisabled());
 			setRegistryName("olivegrove");
-			decorator.treesPerChunk = 5000;
+			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 16;
 			decorator.grassPerChunk = 4;
 			decorator.deadBushPerChunk = 0;
@@ -67,6 +67,9 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 			decorator.gravelPatchesPerChunk = 0;
 		}
 
+		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
+		protected static final WorldGenOliveTreeInGrove OLIVE_TREE = new WorldGenOliveTreeInGrove();
+
 		@SideOnly(Side.CLIENT)
 		@Override
 		public int getGrassColorAtPos(BlockPos pos) {
@@ -74,14 +77,26 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 			//return -6311807;
 		}
 
+		@SideOnly(Side.CLIENT)
+		@Override
+		public int getFoliageColorAtPos(BlockPos pos) {
+			return -6571113;
+			//return -6311807;
+		}
+
 		@Override
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-			return new WorldGenOliveTreeInGrove(false);
+			return NULL_TREE;
 		}
 
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.TREE))
+				{
+					OLIVE_TREE.generate(worldIn, rand, pos);
+				}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 192; ++i)
 				{

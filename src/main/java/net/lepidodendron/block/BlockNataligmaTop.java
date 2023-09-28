@@ -72,7 +72,7 @@ public class BlockNataligmaTop extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_EREMOPTERIS;
+			return ModTriggers.CLICK_NATALIGMA;
 		}
 
 		@Override
