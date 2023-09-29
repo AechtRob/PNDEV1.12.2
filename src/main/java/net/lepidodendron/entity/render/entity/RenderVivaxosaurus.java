@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderVivaxosaurus extends RenderLiving<EntityPrehistoricFloraVivaxosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vivaxosaurus.png");
+    public static float getScaler() {
+        return 0.63f;
+    }
 
     public RenderVivaxosaurus(RenderManager mgr) {
         super(mgr, new ModelVivaxosaurus(), 0.5f);
@@ -27,7 +30,7 @@ public class RenderVivaxosaurus extends RenderLiving<EntityPrehistoricFloraVivax
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraVivaxosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.30F;
     }
