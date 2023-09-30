@@ -290,7 +290,8 @@ public class ModelRayonnocerasShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.root.offsetY = -1.5F;
+        this.root.offsetY = -1.3F;
+        this.shellbase.rotateAngleX = -(float) Math.toRadians(2.5);
         this.root.render(0.1f);
     }
 

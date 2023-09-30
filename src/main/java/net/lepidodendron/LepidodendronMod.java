@@ -2032,6 +2032,18 @@ public class LepidodendronMod {
 
 	public static final int GUI_BATTERY_SUBMARINE_ID = 801;
 	public static final int ENTITY_DRAGONFLY_NYMPH = 802;
+	public static final int ENTITY_TORVOSAURUS = 803;
+	public static final ResourceLocation TORVOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/torvosaurus"));
+	public static final ResourceLocation TORVOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/torvosaurus_young"));
+
+	public static final int ENTITY_YANGCHUANOSAURUS = 804;
+	public static final ResourceLocation YANGCHUANOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yangchuanosaurus"));
+	public static final ResourceLocation YANGCHUANOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yangchuanosaurus_young"));
+
+	public static final int ENTITY_GLACIALISAURUS = 805;
+	public static final ResourceLocation GLACIALISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glacialisaurus"));
+	public static final ResourceLocation GLACIALISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glacialisaurus_young"));
+
 
 
 	@Mod.EventHandler

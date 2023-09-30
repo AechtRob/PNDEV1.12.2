@@ -238,7 +238,8 @@ public class ModelEndocerasShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.root.offsetY = -1.5F;
+        this.root.offsetY = -1.36F;
+        this.root.rotateAngleX = (float) Math.toRadians(2.5);
         this.root.render(0.1f);
     }
 
