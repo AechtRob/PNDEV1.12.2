@@ -40,6 +40,8 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
 	public Animation STAND_ANIMATION;
+	public Animation A_GRAZE_ANIMATION;
+	public Animation RELAX_ANIMATION;
 	private int standCooldown;
 	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
@@ -53,6 +55,8 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		maxHealthAgeable = 70.0D;
 		STAND_ANIMATION = Animation.create(this.getStandLength());
 		NOISE_ANIMATION = Animation.create(20);
+		A_GRAZE_ANIMATION = Animation.create(100);
+		RELAX_ANIMATION = Animation.create(140);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -73,7 +77,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, GRAZE_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, GRAZE_ANIMATION, A_GRAZE_ANIMATION, RELAX_ANIMATION};
 	}
 
 	@Override

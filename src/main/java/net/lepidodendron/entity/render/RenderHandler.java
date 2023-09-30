@@ -4814,6 +4814,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraYangchuanosaurus.class, new IRenderFactory<EntityPrehistoricFloraYangchuanosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraYangchuanosaurus> createRenderFor(RenderManager manager) {
+                return new RenderYangchuanosaurus(manager);
+            }
+        });
+
 
 
 

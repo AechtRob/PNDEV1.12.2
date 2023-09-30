@@ -4065,6 +4065,12 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 4061;
     public static final int zosterophyllum_spore = 4062;
     public static final int advancement_placeholder = 4063;
+    public static final int yangchuanosaurus_raw = 4064;
+    public static final int torvosaurus_raw = 4065;
+    public static final int glacialisaurus_raw = 4066;
+    public static final int eggs_yangchuanosaurus = 4067;
+    public static final int eggs_torvosaurus = 4068;
+    public static final int eggs_glacialisaurus = 4069;
 
 
 }
