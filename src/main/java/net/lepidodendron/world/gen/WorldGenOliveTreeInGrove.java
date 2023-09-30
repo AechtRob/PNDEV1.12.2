@@ -25,6 +25,11 @@ public class WorldGenOliveTreeInGrove extends WorldGenerator
                 positionTree = position.add(xPos, 0, zPos);
                 if (positionTree.getX() % 15 == 0 && positionTree.getZ() % 15 == 0 && rand.nextInt(94) != 0
                     && worldIn.getBiome(positionTree) == BiomeOliveGrove.biome) {
+                    //Chance of tree offset:
+                    positionTree = positionTree.add(rand.nextInt(3) - 1, 0, rand.nextInt(3) - 1);
+                    if (rand.nextInt(3) == 0) {
+                        positionTree = positionTree.add(rand.nextInt(3) - 1, 0, rand.nextInt(3) - 1);
+                    }
                     //Gen a tree here:
                     positionTree = ChunkGenSpawner.getTopSolidBlock(positionTree, worldIn).up();
                     BlockPos down = positionTree.down();
