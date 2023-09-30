@@ -228,6 +228,7 @@ public class ModelDeirocerasShell extends AdvancedModelBase {
         this.resetToDefaultPose();
         this.shellbase.offsetY = 0.5F;
         this.shellbase.offsetZ = 4.5F;
+        this.shellbase.rotateAngleX = -(float) Math.toRadians(2.5);
         this.shellbase.render(0.1f);
     }
 
