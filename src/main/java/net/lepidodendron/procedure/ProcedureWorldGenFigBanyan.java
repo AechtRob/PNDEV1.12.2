@@ -166,7 +166,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+            if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+            }
 
             if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
                 //Laterals either in our axis or perpendicular:
@@ -200,7 +202,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                     else {
                         //Diagonal:
@@ -233,7 +237,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
                 else {
@@ -269,7 +275,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
 
                     if (Math.random() >= 0.25) {
@@ -290,7 +298,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                         //Add prop trunk:
                         topPos = new BlockPos((int) x - BranchLatCount, (int) (y + branchpos), (int) z - BranchSegment);
                         propCounter = 0;
-                        while ((topPos.down(propCounter).getY() > 0) 
+                        while ((topPos.down(propCounter).getY() > 0)
                                 && (world.getBlockState(topPos.down(propCounter)).getBlock().canBeReplacedByLeaves(world.getBlockState(topPos.down(propCounter)), world, topPos.down(propCounter))
                                 || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.VINE)
                                 || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.SNOW)
@@ -303,7 +311,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
             }
@@ -357,8 +367,10 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-            
+            if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+            }
+
             if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
                 //Laterals either in our axis or perpendicular:
                 if (Math.random() >= 0.5) {
@@ -391,8 +403,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                     else {
                         //Diagonal:
@@ -425,8 +438,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
                 else {
@@ -462,8 +476,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
 
                     if (Math.random() >= 0.25) {
@@ -497,8 +512,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
             }
@@ -552,8 +568,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+            if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+            }
 
             if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
                 //Laterals either in our axis or perpendicular:
@@ -587,8 +604,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                     else {
                         //Diagonal:
@@ -621,8 +639,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
                 else {
@@ -658,8 +677,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
 
                     if (Math.random() >= 0.25) {
@@ -693,8 +713,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
             }
@@ -747,8 +768,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+            if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+            }
 
             if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
                 //Laterals either in our axis or perpendicular:
@@ -782,8 +804,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                     else {
                         //Diagonal:
@@ -816,8 +839,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
 
 
                         //Diagonal:
@@ -850,8 +874,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
 
                     }
                 }
@@ -888,8 +913,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
 
                     if (Math.random() >= 0.25) {
@@ -923,8 +949,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
-
+                        if (propCounter < TrunkHeight + 5 ) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, Math.random() > 0.85);
+                        }
                     }
                 }
             }
@@ -1096,7 +1123,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            }
         }
 
         if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
@@ -1132,7 +1161,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
                 } else {
                     //Diagonal:
@@ -1166,7 +1197,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
                 }
             } else {
@@ -1203,7 +1236,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
                 }
 
@@ -1239,7 +1274,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
                 }
             }
@@ -1301,7 +1338,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            }
         }
 
         if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
@@ -1337,7 +1376,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 } else {
@@ -1372,7 +1413,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1410,7 +1453,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1447,7 +1492,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1510,7 +1557,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            }
         }
 
         if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
@@ -1546,7 +1595,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 } else {
@@ -1581,7 +1632,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1619,7 +1672,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1656,7 +1711,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1718,7 +1775,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                 //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                 propCounter = propCounter + 1;
             }
-            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+            }
         }
 
         if (Math.random() > 0.3 && branchpos > 4 && LateralPosV != 0) {
@@ -1754,7 +1813,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 } else {
@@ -1789,7 +1850,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                     //Diagonal:
@@ -1823,7 +1886,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
@@ -1861,7 +1926,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
                 }
 
@@ -1897,7 +1964,9 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                             //ProcedureTreeLog.executeProcedure((int) x, (int) y + branchpos -  counter, (int) z, world, BlockCordaitesLog.block, EnumFacing.NORTH);
                             propCounter = propCounter + 1;
                         }
-                        FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        if (propCounter < TrunkHeight + 5) { //Only add a prop if the terrain is reasonable:
+                            FigProp(propCounter, topPos.getX(), topPos.getY() - (propCounter - 1), topPos.getZ(), world, false);
+                        }
                     }
 
                 }
