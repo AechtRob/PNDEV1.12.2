@@ -4820,6 +4820,18 @@ public class RenderHandler {
                 return new RenderYangchuanosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGlacialisaurus.class, new IRenderFactory<EntityPrehistoricFloraGlacialisaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGlacialisaurus> createRenderFor(RenderManager manager) {
+                return new RenderGlacialisaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTorvosaurus.class, new IRenderFactory<EntityPrehistoricFloraTorvosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTorvosaurus> createRenderFor(RenderManager manager) {
+                return new RenderTorvosaurus(manager);
+            }
+        });
 
 
 

@@ -33,27 +33,35 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
-public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public Animation STAND_ANIMATION;
+	public Animation IDLE2_ANIMATION;
+	public Animation IDLE1_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraYangchuanosaurus(World world) {
+	private Random rand = new Random();
+
+	public EntityPrehistoricFloraTorvosaurus(World world) {
 		super(world);
-		setSize(1.75F, 3F);
+		setSize(1.8F, 3.2F);
+		stepHeight = 2;
 		minWidth = 0.20F;
-		maxWidth = 1.75F;
-		maxHeight = 3F;
-		maxHealthAgeable = 96.0D;
-		STAND_ANIMATION = Animation.create(80);
+		maxWidth = 1.8F;
+		maxHeight = 3.2F;
+		maxHealthAgeable = 112.0D;
+		IDLE1_ANIMATION = Animation.create(103);
+		IDLE2_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+
 
 	@Override
 	public void onUpdate() {
@@ -61,6 +69,11 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+	}
+
+	@Override
+	protected float getJumpUpwardsMotion() {
+		return 0.6F;
 	}
 
 	@Override
@@ -73,7 +86,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, IDLE1_ANIMATION, HURT_ANIMATION, IDLE2_ANIMATION};
 	}
 	public static String getPeriod() {return "Jurassic";}
 
@@ -82,15 +95,15 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		return 40;
 	}
 
-	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM = IDLE1 =  BOOMINGCALL, NOISE_ANIM = THREAT, IDLESCRATCH = SCRATCH
+	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM =  Noise, NOISE_ANIM = Hiss, IDLE1 = Sniff, IDLE2 = Yawn
 	@Override
 	public int getRoarLength() {
-		return 80;
+		return 40;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
+		return 40;
 	} //Roar
 
 	@Override
@@ -222,25 +235,25 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:torvosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:torvosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:torvosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:torvosaurus_death"));
 	}
 
 	@Override
@@ -256,14 +269,25 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
+		int next = rand.nextInt(10);
 		//Sometimes stand up and look around:
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
+			if(next < 5) {
+				this.setAnimation(IDLE1_ANIMATION);
+				this.standCooldown = 2000;
+			} else {
+				this.setAnimation(IDLE2_ANIMATION);
+				this.standCooldown = 2000;
+			}
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+		if (this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if (this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
@@ -333,9 +357,9 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.YANGCHUANOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.TORVOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.YANGCHUANOSAURUS_LOOT;
+		return LepidodendronMod.TORVOSAURUS_LOOT;
 	}
 
 	//Rendering taxidermy:
