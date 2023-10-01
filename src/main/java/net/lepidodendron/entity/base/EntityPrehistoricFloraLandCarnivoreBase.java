@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPrehistoricFloraLandBase {
 
     public int roarSoundTime;
-    public Animation NOISE_ANIMATION; //Additional roaring
+    public static Animation NOISE_ANIMATION; //Additional roaring
     public Animation HURT_ANIMATION;
 
     public EntityPrehistoricFloraLandCarnivoreBase(World world) {

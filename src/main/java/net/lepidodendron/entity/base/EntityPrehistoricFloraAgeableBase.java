@@ -75,7 +75,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public double maxHealthAgeable;
     private int animationTick;
     public Animation ATTACK_ANIMATION;
-    public Animation ROAR_ANIMATION;
+    public static Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
     public Animation MAKE_NEST_ANIMATION;
     private Animation currentAnimation;

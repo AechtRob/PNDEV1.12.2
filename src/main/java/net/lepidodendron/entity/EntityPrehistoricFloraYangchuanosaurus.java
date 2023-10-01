@@ -11,11 +11,8 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -225,25 +222,25 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
 	}
 
 	@Override
