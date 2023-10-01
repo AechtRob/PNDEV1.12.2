@@ -47,10 +47,10 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraYangchuanosaurus(World world) {
 		super(world);
-		setSize(3F, 2.5F);
+		setSize(1.75F, 3F);
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
-		maxHeight = 2.2F;
+		maxHeight = 3F;
 		maxHealthAgeable = 96.0D;
 		STAND_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -225,25 +225,25 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
 	}
 
 	@Override

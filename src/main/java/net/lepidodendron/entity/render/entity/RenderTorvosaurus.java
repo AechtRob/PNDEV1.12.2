@@ -12,7 +12,7 @@ public class RenderTorvosaurus extends RenderLiving<EntityPrehistoricFloraTorvos
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/torvosaurus.png");
 
     public RenderTorvosaurus(RenderManager mgr) {
-        super(mgr, new ModelTorvosaurus(), 0.3f);
+        super(mgr, new ModelTorvosaurus(), 0.65f);
     }
 
     public static float getScaler() {
@@ -33,7 +33,7 @@ public class RenderTorvosaurus extends RenderLiving<EntityPrehistoricFloraTorvos
     protected void preRenderCallback(EntityPrehistoricFloraTorvosaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        this.shadowSize = entity.width * scale * 0.65F;
     }
 
 }
