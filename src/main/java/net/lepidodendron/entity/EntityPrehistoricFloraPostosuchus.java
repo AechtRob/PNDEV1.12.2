@@ -37,7 +37,6 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraPostosuchus(World world) {
@@ -164,29 +163,6 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 		return 500;
 	}
 
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			//if (rand.nextInt(6) != 0) {
-				SoundEvent soundevent = this.getAmbientAmbientSound();
-				if (soundevent != null && (!this.getIsSneaking())) {
-					if (this.getAnimation() == NO_ANIMATION) {
-						this.setAnimation(NOISE_ANIMATION);
-						//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-						this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-					}
-				}
-			//}
-		}
-	}
-
 	@Override
 	public int getAdultAge() {
 		return 56000;
@@ -249,12 +225,12 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:postosuchus_idle"));
 	}
 
-	public SoundEvent getAmbientAmbientSound() {
+	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:postosuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
 	}
 
 	@Override
@@ -278,7 +254,6 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {

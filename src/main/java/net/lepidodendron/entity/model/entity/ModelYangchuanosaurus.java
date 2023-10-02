@@ -3490,7 +3490,7 @@ public class ModelYangchuanosaurus extends AdvancedModelBaseExtended {
         }
         this.setRotateAngle(Lelftleg5, Lelftleg5.rotateAngleX + (float) Math.toRadians(xx), Lelftleg5.rotateAngleY + (float) Math.toRadians(yy), Lelftleg5.rotateAngleZ + (float) Math.toRadians(zz));
     }
-    public void animRoar(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraYangchuanosaurus entity = (EntityPrehistoricFloraYangchuanosaurus) entitylivingbaseIn;
 
         int animCycle = 80;
@@ -3874,7 +3874,8 @@ public class ModelYangchuanosaurus extends AdvancedModelBaseExtended {
         this.Throatpouchback.rotationPointY = this.Throatpouchback.rotationPointY - (float)(yy);
         this.Throatpouchback.rotationPointZ = this.Throatpouchback.rotationPointZ + (float)(zz);
     }
-    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+
+    public void animRoar(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraYangchuanosaurus entity = (EntityPrehistoricFloraYangchuanosaurus) entitylivingbaseIn;
 
         int animCycle = 80;
