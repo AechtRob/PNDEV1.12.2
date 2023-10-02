@@ -71,6 +71,13 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == STAND_ANIMATION
+			 	|| animation == DRINK_ANIMATION
+				|| animation == GRAZE_ANIMATION;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -84,6 +91,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		this.standCooldown = rand.nextInt(2000);
 		return livingdata;
 	}
+
 	@Override
 	public int getEggType() {
 		return 2; //large
@@ -104,6 +112,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	public int getDrinkCooldown() {
 		return 600;
 	}
+
 	@Override
 	public int getDrinkLength() {
 		return 60;
@@ -117,10 +126,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	@Override
 	public int getGrazeCooldown() {
 		return 2400;
-	}
-
-	public int getStandLength() {
-		return 220; //6 seconds
 	}
 
 	@Override
@@ -252,8 +257,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -295,9 +298,11 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	{
 		this.dataManager.set(JUVENILE, val);
 	}
+
 	public boolean getJuvenile() {
 		return this.dataManager.get(JUVENILE);
 	}
+
 	@Override
 	public boolean isDrinking()
 	{
@@ -495,12 +500,12 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 			}
 		}
 
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+		}
+
+		if (this.getAnimation() == GRAZE_ANIMATION) {
+			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
@@ -519,8 +524,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
-
-
 
 	@Override
 	public void launchAttack() {

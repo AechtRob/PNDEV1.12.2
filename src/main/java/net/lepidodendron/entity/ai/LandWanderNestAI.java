@@ -61,9 +61,9 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
                 return false;
             }
 
-            if (LandBase.getAnimation() == LandBase.DRINK_ANIMATION) {
-                return false;
-            }
+           if (LandBase.isAnimationDirectionLocked(this.PrehistoricFloraAgeableBase.getAnimation())) {
+               return false;
+           }
 
             if (this.PrehistoricFloraAgeableBase instanceof EntityPrehistoricFloraPlateosaurus) {
                 EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.PrehistoricFloraAgeableBase;

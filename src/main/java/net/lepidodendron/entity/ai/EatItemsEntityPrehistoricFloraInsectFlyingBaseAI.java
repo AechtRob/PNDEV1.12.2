@@ -61,6 +61,7 @@ public class EatItemsEntityPrehistoricFloraInsectFlyingBaseAI extends EntityAIBa
                 this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
+                this.targetItem.setPickupDelay(10);
             }
         }
         if (this.entity.getNavigator().noPath()) {

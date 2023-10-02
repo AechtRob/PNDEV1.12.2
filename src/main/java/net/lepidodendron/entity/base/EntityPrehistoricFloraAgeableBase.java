@@ -6,7 +6,9 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
@@ -14,6 +16,7 @@ import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -21,6 +24,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -75,7 +79,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public double maxHealthAgeable;
     private int animationTick;
     public Animation ATTACK_ANIMATION;
-    public static Animation ROAR_ANIMATION;
+    public Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
     public Animation MAKE_NEST_ANIMATION;
     private Animation currentAnimation;
@@ -101,6 +105,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    public void playStepSoundPublic() {
+        Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
+        BlockPos pos = this.getPosition();
+
+        SoundType soundtype = blockIn.getSoundType(world.getBlockState(pos), world, pos, new EntityCow(this.world));
+        SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
+        if (this.world.getBlockState(pos.up()).getBlock() == Blocks.SNOW_LAYER)
+        {
+            soundtype = Blocks.SNOW_LAYER.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundtype.getStepSound(), SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+        else if (!blockIn.getDefaultState().getMaterial().isLiquid())
+        {
+            this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
     }
 
     public boolean noMossEggs() {
@@ -155,7 +176,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public int warnCooldownTime() {
-        return 60; //how long between warning and attack
+        return 120; //how long between warning and attack
     }
 
     public void setWarnCooldown(int cooldown) {
@@ -561,6 +582,30 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public void setShoalLeader(@Nullable EntityPrehistoricFloraAgeableBase leader) {
         this.shoalLeader = leader;
+    }
+
+    public int getFootstepOffset() {
+        return 0;
+    }
+
+    public int getWalkCycleLength() {
+        return 0;
+    }
+
+    public int tetrapodWalkFootstepOffset() {
+        return 0;
+    }
+
+    public int getRunFootstepOffset() {
+        return 0;
+    }
+
+    public int getRunCycleLength() {
+        return 0;
+    }
+
+    public int tetrapodRunFootstepOffset() {
+        return 0;
     }
 
     public int getTickOffset() {
@@ -1103,13 +1148,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public void playLivingSound() {
-        //super.playLivingSound();
         if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
             if (!this.world.isRemote) {
-            //if (this.getAnimation() == NO_ANIMATION) {
-                //this.setAnimation(ROAR_ANIMATION);
-                this.setAnimation(ROAR_ANIMATION);
-                //System.err.println("Playing roar sound on remote: " + (world.isRemote));
+                if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
+                    this.setAnimation(EntityPrehistoricFloraLandCarnivoreBase.NOISE_ANIMATION);
+                }
+                else {
+                    this.setAnimation(ROAR_ANIMATION);
+                }
                 super.playLivingSound();
             }
        }

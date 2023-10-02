@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
@@ -39,17 +38,15 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     public boolean shouldExecute()
     {
 
-        if (entity.getAnimation() == entity.DRINK_ANIMATION) {
-            return false;
-        }
-        if (!(entity.getAISpeedLand() > 0)) {
-            return false;
-        }
-        if (entity instanceof EntityPrehistoricFloraPlateosaurus) {
-            EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) entity;
-            if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
                 return false;
             }
+        }
+
+        if (!(entity.getAISpeedLand() > 0)) {
+            return false;
         }
 
         if (!this.mustUpdate)
@@ -108,7 +105,16 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        return !this.entity.getNavigator().noPath();
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
+                this.entity.getNavigator().clearPath();
+                return false;
+            }
+        }
+
+        return
+                !this.entity.getNavigator().noPath();
     }
 
     public void startExecuting()
