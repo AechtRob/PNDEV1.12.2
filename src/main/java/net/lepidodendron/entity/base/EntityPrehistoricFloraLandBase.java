@@ -81,6 +81,12 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         GRAZE_ANIMATION = Animation.create(this.getGrazeLength());
     }
 
+    public boolean isAnimationDirectionLocked(Animation animation) {
+        //If it must not rotate or change its look angle while it is happening
+        //This is used primarily to stop certain AI for pathfinding or targeting happening
+        return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION;
+    }
+
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
@@ -418,13 +424,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         super.onEntityUpdate();
 
         if (!world.isRemote) {
-            //if (this.getAnimation() == DRINK_ANIMATION) {
-            //    System.err.println("Anim tick " + this.getAnimationTick());
-            //}
             if (this.isDrinking() && this.getAnimation() != DRINK_ANIMATION && this.getAnimation() != GRAZE_ANIMATION) {
-                //System.err.println("Is drinking");
                 this.setAnimation(DRINK_ANIMATION);
-                //this.setIsDrinking(rand.nextInt(800) + 700);
             }
 
             if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() >= DRINK_ANIMATION.getDuration() - 1) {
@@ -436,9 +437,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             }
 
             if (this.isGrazing() && this.getAnimation() != DRINK_ANIMATION && this.getAnimation() != GRAZE_ANIMATION) {
-                //System.err.println("Is grazing");
                 this.setAnimation(GRAZE_ANIMATION);
-                //this.setIsDrinking(rand.nextInt(800) + 700);
             }
 
             if (this.getAnimation() == GRAZE_ANIMATION && this.getAnimationTick() >= GRAZE_ANIMATION.getDuration() - 1) {
@@ -515,6 +514,43 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 }
             }
 
+        }
+
+        if (this.getIsMoving() && !this.isSneaking()) {
+            if (this.getIsFast()) {
+                int animCycle = this.getRunCycleLength();
+                if (animCycle > 0) {
+                    double tickAnim = (this.ticksExisted + this.getTickOffset() + this.getRunFootstepOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset() + this.getRunFootstepOffset()) / (double) animCycle) * (double) animCycle);
+                    if (this.tetrapodRunFootstepOffset() != 0) {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D
+                            || Math.floor(tickAnim) == this.tetrapodRunFootstepOffset() || Math.floor(tickAnim) == (animCycle / 2D) + this.tetrapodRunFootstepOffset()) {
+                            playStepSoundPublic();
+                        }
+                    }
+                    else {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D) {
+                            playStepSoundPublic();
+                        }
+                    }
+                }
+            }
+            else {
+                int animCycle = this.getWalkCycleLength();
+                if (animCycle > 0) {
+                    double tickAnim = (this.ticksExisted + this.getTickOffset() + this.getFootstepOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset() + this.getFootstepOffset()) / (double) animCycle) * (double) animCycle);
+                    if (this.tetrapodWalkFootstepOffset() != 0) {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D
+                                || Math.floor(tickAnim) == this.tetrapodRunFootstepOffset() || Math.floor(tickAnim) == (animCycle / 2D) + this.tetrapodRunFootstepOffset()) {
+                            playStepSoundPublic();
+                        }
+                    }
+                    else {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D) {
+                            playStepSoundPublic();
+                        }
+                    }
+                }
+            }
         }
 
         if (!this.world.isRemote) {

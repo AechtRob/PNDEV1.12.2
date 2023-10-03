@@ -11,11 +11,8 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -56,6 +53,26 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 25;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
 	}
 
 	@Override
@@ -138,11 +155,6 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public int getTalkInterval() {
 		return 360;
-	}
-
-	//this is the time in between roars
-	@Override
-	public int getRoarInterval() {return 900;
 	}
 
 	//This is how many ticks it takes for a young mob to become an adult

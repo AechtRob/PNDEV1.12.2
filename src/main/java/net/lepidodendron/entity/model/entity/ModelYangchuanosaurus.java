@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraYangchuanosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -3491,7 +3490,7 @@ public class ModelYangchuanosaurus extends AdvancedModelBaseExtended {
         }
         this.setRotateAngle(Lelftleg5, Lelftleg5.rotateAngleX + (float) Math.toRadians(xx), Lelftleg5.rotateAngleY + (float) Math.toRadians(yy), Lelftleg5.rotateAngleZ + (float) Math.toRadians(zz));
     }
-    public void animRoar(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraYangchuanosaurus entity = (EntityPrehistoricFloraYangchuanosaurus) entitylivingbaseIn;
 
         int animCycle = 80;
@@ -3875,7 +3874,8 @@ public class ModelYangchuanosaurus extends AdvancedModelBaseExtended {
         this.Throatpouchback.rotationPointY = this.Throatpouchback.rotationPointY - (float)(yy);
         this.Throatpouchback.rotationPointZ = this.Throatpouchback.rotationPointZ + (float)(zz);
     }
-    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+
+    public void animRoar(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraYangchuanosaurus entity = (EntityPrehistoricFloraYangchuanosaurus) entitylivingbaseIn;
 
         int animCycle = 80;
@@ -5995,13 +5995,13 @@ public class ModelYangchuanosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
-            animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.STAND_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim
+            animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.STAND_ANIMATION) {
             animScratch(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         

@@ -64,6 +64,26 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 10;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
 	public int getEatTick() {return 12;}
 
 	@Override
@@ -131,10 +151,6 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public int getTalkInterval() {
 		return 360;
-	}
-
-	@Override
-	public int getRoarInterval() {return 900;
 	}
 
 	@Override

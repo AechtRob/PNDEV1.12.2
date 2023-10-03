@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraTorvosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraTorvosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -5579,16 +5578,16 @@ public class ModelTorvosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
-            animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.IDLE1_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim
+            animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.IDLE1_ANIMATION) {
             animSniff(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.IDLE2_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.IDLE2_ANIMATION) {
             animYawn(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         

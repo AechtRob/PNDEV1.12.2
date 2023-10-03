@@ -102,25 +102,20 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());
                     ageableBase.setAttackTarget(null);
+                    ageableBase.getNavigator().clearPath(); //Stop it moving
                     ageableBase.faceEntity(this.closestLivingEntity, 10, 10);
-                    //ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
-
                     ageableBase.getLookHelper().setLookPositionWithEntity(this.closestLivingEntity, 10.0F, (float)ageableBase.getVerticalFaceSpeed());
-                    //ageableBase.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
 
+                    SoundEvent soundevent = null;
                     if (ageableBase instanceof EntityPrehistoricFloraLandCarnivoreBase) {
-                        SoundEvent soundevent = ((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).getRoarSound();
-                        if (soundevent != null) {
-                            ageableBase.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).NOISE_ANIMATION);
-                            ageableBase.playSound(soundevent, 1, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
-                        }
+                        soundevent = ((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).getRoarSound();
                     }
                     else {
-                        SoundEvent soundevent = ageableBase.getAmbientSoundPublic();
-                        if (soundevent != null) {
-                            ageableBase.setAnimation(ageableBase.ROAR_ANIMATION);
-                            ageableBase.playSound(soundevent, 1, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
-                        }
+                        soundevent = ageableBase.getAmbientSoundPublic();
+                    }
+                    if (soundevent != null) {
+                        ageableBase.setAnimation(ageableBase.ROAR_ANIMATION);
+                        ageableBase.playSound(soundevent, 1, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
                     }
                     return true;
                 }

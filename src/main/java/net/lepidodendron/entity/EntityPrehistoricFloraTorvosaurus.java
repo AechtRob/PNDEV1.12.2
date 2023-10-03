@@ -61,7 +61,25 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 		}
 	}
 
+	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
 
+	@Override
+	public int getFootstepOffset() {
+		return 25;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
 
 	@Override
 	public void onUpdate() {
@@ -148,11 +166,6 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 	@Override
 	public int getTalkInterval() {
 		return 360;
-	}
-
-	//this is the time in between roars
-	@Override
-	public int getRoarInterval() {return 900;
 	}
 
 	//This is how many ticks it takes for a young mob to become an adult

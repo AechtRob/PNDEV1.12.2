@@ -55,6 +55,26 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public int getWalkCycleLength() {
+		return 40;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 5;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 15;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -129,10 +149,6 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	@Override
 	public int getTalkInterval() {
 		return 800;
-	}
-
-	@Override
-	public int getRoarInterval() {return 1600;
 	}
 
 	@Override
