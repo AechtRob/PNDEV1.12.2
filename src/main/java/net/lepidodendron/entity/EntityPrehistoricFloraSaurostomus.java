@@ -7,6 +7,9 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderSaurostomus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -212,14 +215,14 @@ public class EntityPrehistoricFloraSaurostomus extends EntityPrehistoricFloraAge
 		return 1.4F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 1.3;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.99;
+		return 1.3;
 	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {return -0.09;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return -0.2;}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.9F;
+		return 0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
@@ -227,16 +230,16 @@ public class EntityPrehistoricFloraSaurostomus extends EntityPrehistoricFloraAge
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.3F;
 	}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderKaykay.TEXTURE;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelKaykay;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderKaykay.getScaler();
-//	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderSaurostomus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelSaurostomus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderSaurostomus.getScaler();
+	}
 }
 
