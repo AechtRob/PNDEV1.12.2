@@ -13,7 +13,7 @@ public class RenderPseudotherium extends RenderLiving<EntityPrehistoricFloraPseu
 
     public static float getScaler() {return 0.15f;}
     public RenderPseudotherium(RenderManager mgr) {
-        super(mgr, new ModelPseudotherium(), 0.325f);
+        super(mgr, new ModelPseudotherium(), 0f);
     }
 
     @Override

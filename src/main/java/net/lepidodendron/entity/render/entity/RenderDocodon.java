@@ -13,7 +13,7 @@ public class RenderDocodon extends RenderLiving<EntityPrehistoricFloraDocodon> {
 
     public static float getScaler() {return 0.2f;}
     public RenderDocodon(RenderManager mgr) {
-        super(mgr, new ModelDocodon(), 0.14f);
+        super(mgr, new ModelDocodon(), 0f);
     }
 
     @Override

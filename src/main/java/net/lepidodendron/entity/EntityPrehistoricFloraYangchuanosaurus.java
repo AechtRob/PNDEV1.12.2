@@ -11,11 +11,8 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -47,15 +44,35 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraYangchuanosaurus(World world) {
 		super(world);
-		setSize(3F, 2.5F);
+		setSize(1.75F, 3F);
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
-		maxHeight = 2.2F;
+		maxHeight = 3F;
 		maxHealthAgeable = 96.0D;
 		STAND_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 25;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
 	}
 
 	@Override
@@ -140,11 +157,6 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		return 360;
 	}
 
-	//this is the time in between roars
-	@Override
-	public int getRoarInterval() {return 900;
-	}
-
 	//This is how many ticks it takes for a young mob to become an adult
 	@Override
 	public int getAdultAge() {
@@ -225,25 +237,25 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
 	}
 
 	@Override

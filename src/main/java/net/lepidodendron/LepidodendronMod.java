@@ -2044,6 +2044,30 @@ public class LepidodendronMod {
 	public static final ResourceLocation GLACIALISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glacialisaurus"));
 	public static final ResourceLocation GLACIALISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/glacialisaurus_young"));
 
+	public static final int ENTITY_MYMOORAPELTA = 806;
+	public static final ResourceLocation MYRMOORAPELTA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mymoorapelta"));
+	public static final ResourceLocation MYMOORAPELTA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mymoorapelta_young"));
+
+	public static final int ENTITY_DICRAEOSAURUS = 807;
+	public static final ResourceLocation DICRAEOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dicraeosaurus"));
+	public static final ResourceLocation DICRAEOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dicraeosaurus_young"));
+
+	public static final int ENTITY_DILOPHOSAURUS = 808;
+	public static final ResourceLocation DILOPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dilophosaurus"));
+	public static final ResourceLocation DILOPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dilophosaurus_young"));
+
+	public static final int ENTITY_CAMARASAURUS = 809;
+	public static final ResourceLocation CAMARASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/camarasaurus"));
+	public static final ResourceLocation CAMARASAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/camarasaurus_young"));
+
+	public static final int ENTITY_PROCERATOSAURUS = 810;
+	public static final ResourceLocation PROCERATOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proceratosaurus"));
+	public static final ResourceLocation PROCERATOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proceratosaurus_young"));
+
+	public static final int ENTITY_ALLOSAURUS = 811;
+	public static final ResourceLocation ALLOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/allosaurus"));
+	public static final ResourceLocation ALLOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/allosaurus_young"));
+
 
 
 	@Mod.EventHandler

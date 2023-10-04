@@ -7645,5 +7645,63 @@
         "stream": false
       }
     ]
+  },
+
+
+  "yangchuanosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "yangchuanosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "yangchuanosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "yangchuanosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_roar01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_roar02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_roar03",
+        "stream": false
+      }
+    ]
   }
 }

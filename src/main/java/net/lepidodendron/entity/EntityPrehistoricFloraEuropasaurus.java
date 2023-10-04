@@ -66,6 +66,36 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 6;
+	}
+
+	@Override
+	public int tetrapodWalkFootstepOffset() {
+		return 15;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 30;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
+	public int tetrapodRunFootstepOffset() {
+		return 5;
+	}
+
+	@Override
 	public int getGrazeLength() {
 		return 106;
 	}

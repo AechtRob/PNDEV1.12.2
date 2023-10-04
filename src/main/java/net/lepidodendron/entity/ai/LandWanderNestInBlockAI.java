@@ -47,7 +47,7 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
     @Override
     public boolean shouldExecute() {
 
-        if (!(this.PrehistoricFloraLandBase.laysEggs() && this.PrehistoricFloraLandBase.getCanBreed())) {
+        if (!(this.PrehistoricFloraLandBase.laysEggs() && this.PrehistoricFloraLandBase.getLaying())) {
             return false;
         }
 
@@ -55,9 +55,14 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
             return false;
         }
 
-        if (PrehistoricFloraLandBase.getAnimation() == PrehistoricFloraLandBase.DRINK_ANIMATION) {
+        if (PrehistoricFloraLandBase.isAnimationDirectionLocked(PrehistoricFloraLandBase.getAnimation())) {
             return false;
         }
+
+        if (!(PrehistoricFloraLandBase.getAISpeedLand() > 0)) {
+            return false;
+        }
+
         //System.err.println("Ticks: " + this.PrehistoricFloraLandBase.getTicks());
 
         int xx;

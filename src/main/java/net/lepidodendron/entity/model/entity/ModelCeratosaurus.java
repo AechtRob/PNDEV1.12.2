@@ -1491,6 +1491,7 @@ public class ModelCeratosaurus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraCeratosaurus entity = (EntityPrehistoricFloraCeratosaurus) entitylivingbaseIn;
         int animCycle = 50;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+
         double xx = 0;
         double yy = 0;
         double zz = 0;
@@ -4961,10 +4962,10 @@ public class ModelCeratosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim
             animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         

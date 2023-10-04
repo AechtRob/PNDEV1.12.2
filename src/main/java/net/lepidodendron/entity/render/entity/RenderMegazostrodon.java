@@ -12,7 +12,7 @@ public class RenderMegazostrodon extends RenderLiving<EntityPrehistoricFloraMega
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megazostrodon.png");
 
     public RenderMegazostrodon(RenderManager mgr) {
-        super(mgr, new ModelMorganucodon(), 0.325f);
+        super(mgr, new ModelMorganucodon(), 0f);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class RenderMegazostrodon extends RenderLiving<EntityPrehistoricFloraMega
     protected void preRenderCallback(EntityPrehistoricFloraMegazostrodon entity, float f) {
         float scale = entity.getAgeScale(); //This is smaller than Morganucodon
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.125F;
+        //this.shadowSize = entity.width * scale * 0.125F;
     }
 
 }

@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -18,7 +19,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -49,6 +49,12 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == ROAR_ANIMATION //warning a player
+				|| animation == DRINK_ANIMATION;
 	}
 
 	@Override
@@ -146,8 +152,6 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		return speedBase;
 	}
 
-
-
 	@Override
 	public int getTalkInterval() {
 		return 260;
@@ -202,8 +206,6 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		return ArrayUtils.addAll(DietString.MEAT);
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -244,7 +246,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:smok_roar"));
+				.getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
 	}
 
 	@Override
@@ -256,18 +258,11 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
+
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
 		}

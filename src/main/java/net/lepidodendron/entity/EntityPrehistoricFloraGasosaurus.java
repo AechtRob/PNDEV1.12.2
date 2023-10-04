@@ -55,6 +55,26 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 25;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -131,10 +151,6 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public int getTalkInterval() {
 		return 360;
-	}
-
-	@Override
-	public int getRoarInterval() {return 900;
 	}
 
 	@Override

@@ -36,11 +36,12 @@ public class EntityMateAIAgeableBase extends EntityAIBase
     {
         //Lay eggs perhaps:
         if (this.animal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.animal;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.animal;
+            if (LandBase.isAnimationDirectionLocked(this.animal.getAnimation())) {
                 return false;
             }
         }
+
         if (!this.animal.isInLove())
         {
             return false;

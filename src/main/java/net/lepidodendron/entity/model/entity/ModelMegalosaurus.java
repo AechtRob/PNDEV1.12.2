@@ -518,7 +518,7 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
         else {
             if (!EntityMegalosaurus.isReallyInWater()) {
 
-                if (f3 == 0.0F || !EntityMegalosaurus.getIsMoving()) {
+                if (f3 == 0.0F || !EntityMegalosaurus.getIsMoving()) { //Is moving at all
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                     this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
 
@@ -4595,11 +4595,11 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
-            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //Warn/roar
             animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //Ambient
+            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         
     }
