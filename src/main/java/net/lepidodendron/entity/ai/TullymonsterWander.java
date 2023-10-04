@@ -68,14 +68,14 @@ public class TullymonsterWander extends AnimationAINoAnimation<EntityPrehistoric
                 this.PrehistoricFloraTullimonstrum.getNavigator().clearPath();
             }
             if (this.PrehistoricFloraTullimonstrum.getNavigator().noPath()) {
-                BlockPos vec3 = this.findWaterTarget();
+                Vec3d vec3 = this.findWaterTarget();
                 if (vec3 != null) {
                     double feedAdj = 0.5d;
                     if (this.PrehistoricFloraTullimonstrum.isHungry()) {feedAdj = -1D;}
-                    double Xoffset = this.PrehistoricFloraTullimonstrum.posX - this.PrehistoricFloraTullimonstrum.getPosition().getX();
-                    double Zoffset = this.PrehistoricFloraTullimonstrum.posZ - this.PrehistoricFloraTullimonstrum.getPosition().getZ();
+//                    double Xoffset = this.PrehistoricFloraTullimonstrum.posX - this.PrehistoricFloraTullimonstrum.getPosition().getX();
+//                    double Zoffset = this.PrehistoricFloraTullimonstrum.posZ - this.PrehistoricFloraTullimonstrum.getPosition().getZ();
 
-                    this.PrehistoricFloraTullimonstrum.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + feedAdj, vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraTullimonstrum.getNavigator().tryMoveToXYZ(vec3.x, vec3.y + feedAdj, vec3.z, 1.0);
                     //System.err.println("Vector target: " + (vec3.getX() + 0.5D) + " " + (vec3.getY() + feedAdj) + " " + (vec3.getZ() + 0.5D));
                     return true;
                 }
@@ -95,31 +95,31 @@ public class TullymonsterWander extends AnimationAINoAnimation<EntityPrehistoric
         return false;
     }
 
-    public BlockPos findWaterTarget() {
+    public Vec3d findWaterTarget() {
         Random rand = this.PrehistoricFloraTullimonstrum.getRNG();
         if (this.PrehistoricFloraTullimonstrum.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                BlockPos randPos = this.PrehistoricFloraTullimonstrum.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
-                BlockPos randPosVar = randPos;
+                Vec3d randPos = this.PrehistoricFloraTullimonstrum.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
+                Vec3d randPosVar = randPos;
                 //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraTullimonstrum.getPosition().getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraTullimonstrum.world.getBlockState(randPos).getMaterial() == Material.WATER && this.PrehistoricFloraTullimonstrum.isDirectPathBetweenPoints(this.PrehistoricFloraTullimonstrum.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5))) {
+                if (this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTullimonstrum.isDirectPathBetweenPoints(this.PrehistoricFloraTullimonstrum.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
                     if (this.PrehistoricFloraTullimonstrum.isHungry()) {
                         int ii = 0;
-                        while ((randPos.down(ii).getY() > 1) && this.PrehistoricFloraTullimonstrum.world.getBlockState(randPos.down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.down(ii);
+                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                            randPosVar = randPos.add(0,-ii,0);
                             ii = ii + 1;
                         }
                         randPos = randPosVar;
                     }
-                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                    if (!(randPos.y < 1 || randPos.y >= 254)) {
                         return randPos;
                     }
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraTullimonstrum.getAttackTarget());
-            if (this.PrehistoricFloraTullimonstrum.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraTullimonstrum.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
         }

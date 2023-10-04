@@ -5,6 +5,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
@@ -54,12 +55,12 @@ public class SlitheringWanderBottom extends AnimationAINoAnimation<EntityPrehist
             Path path = this.PrehistoricFloraSlitheringWaterBase.getNavigator().getPath();
             if (this.PrehistoricFloraSlitheringWaterBase.getNavigator().noPath()) {
 
-                BlockPos vec3 = this.findWaterTarget();
+                Vec3d vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    double Xoffset = this.PrehistoricFloraSlitheringWaterBase.posX - this.PrehistoricFloraSlitheringWaterBase.getPosition().getX();
-                    double Zoffset = this.PrehistoricFloraSlitheringWaterBase.posZ - this.PrehistoricFloraSlitheringWaterBase.getPosition().getZ();
+//                    double Xoffset = this.PrehistoricFloraSlitheringWaterBase.posX - this.PrehistoricFloraSlitheringWaterBase.getPosition().getX();
+//                    double Zoffset = this.PrehistoricFloraSlitheringWaterBase.posZ - this.PrehistoricFloraSlitheringWaterBase.getPosition().getZ();
 
-                    this.PrehistoricFloraSlitheringWaterBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraSlitheringWaterBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y , vec3.z, 1.0);
 
                     return true;
                 }
@@ -84,33 +85,34 @@ public class SlitheringWanderBottom extends AnimationAINoAnimation<EntityPrehist
         return true;
     }
 
-    public BlockPos findWaterTarget() {
+    public Vec3d findWaterTarget() {
         Random rand = this.PrehistoricFloraSlitheringWaterBase.getRNG();
         if (this.PrehistoricFloraSlitheringWaterBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                BlockPos randPos = this.PrehistoricFloraSlitheringWaterBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
+                Vec3d randPos = this.PrehistoricFloraSlitheringWaterBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Use targets which are at the bottom:
-                BlockPos randPosVar = randPos;
-                if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(randPos).getMaterial() == Material.WATER && !isAtBottom(randPos)) {
+                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                Vec3d randPosVar = randPos;
+                if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
                     int ii = 0;
-                    while ((randPos.down(ii).getY() > 1) && this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(randPos.down(ii)).getMaterial() == Material.WATER) {
-                        randPosVar = randPos.down(ii);
+                    while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                        randPosVar = randPos.add(0,-ii,0);
                         ii = ii + 1;
                     }
                     randPos = randPosVar;
                 }
 
                 //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(randPos).getMaterial() == Material.WATER) {
-                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER) {
+                    if (!(randPos.y < 1 || randPos.y >= 254)) {
                         return randPos;
                     }
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraSlitheringWaterBase.getAttackTarget());
-            if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraSlitheringWaterBase.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
         }

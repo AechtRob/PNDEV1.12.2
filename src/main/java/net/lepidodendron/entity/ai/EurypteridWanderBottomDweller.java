@@ -60,12 +60,12 @@ public class EurypteridWanderBottomDweller extends AnimationAINoAnimation<Entity
             }
             if (this.PrehistoricFloraEurypteridBase.getNavigator().noPath()) {
 
-                BlockPos vec3 = this.findWaterTarget();
+                Vec3d vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    double Xoffset = this.PrehistoricFloraEurypteridBase.posX - this.PrehistoricFloraEurypteridBase.getPosition().getX();
-                    double Zoffset = this.PrehistoricFloraEurypteridBase.posZ - this.PrehistoricFloraEurypteridBase.getPosition().getZ();
+//                    double Xoffset = this.PrehistoricFloraEurypteridBase.posX - this.PrehistoricFloraEurypteridBase.getPosition().getX();
+//                    double Zoffset = this.PrehistoricFloraEurypteridBase.posZ - this.PrehistoricFloraEurypteridBase.getPosition().getZ();
 
-                    this.PrehistoricFloraEurypteridBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())-1D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraEurypteridBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y , vec3.z, 1.0);
                     //System.err.println("Movetotarget: " + vec3.getX() + " " + vec3.getY() + " " + vec3.getZ());
                     return true;
                 }
@@ -95,39 +95,40 @@ public class EurypteridWanderBottomDweller extends AnimationAINoAnimation<Entity
         return true;
     }
 
-    public BlockPos findWaterTarget() {
+    public Vec3d findWaterTarget() {
         Random rand = this.PrehistoricFloraEurypteridBase.getRNG();
         if (this.PrehistoricFloraEurypteridBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                BlockPos randPos = this.PrehistoricFloraEurypteridBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
+                Vec3d randPos = this.PrehistoricFloraEurypteridBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Prefer targets which are at the bottom:
-                BlockPos randPosVar = randPos;
-                if (this.PrehistoricFloraEurypteridBase.world.getBlockState(randPos).getMaterial() == Material.WATER && !isAtBottom(randPos) && Math.random() < 0.90) {
+                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                Vec3d randPosVar = randPos;
+                if (this.PrehistoricFloraEurypteridBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.90) {
                     int ii = 0;
-                    while ((randPos.down(ii).getY() > 1) && this.PrehistoricFloraEurypteridBase.world.getBlockState(randPos.down(ii)).getMaterial() == Material.WATER) {
-                        randPosVar = randPos.down(ii);
+                    while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraEurypteridBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                        randPosVar = randPos.add(0, -ii, 0);
                         ii = ii + 1;
                     }
                     //About half the time float over the bottom:
                     randPos = randPosVar;
                     if (Math.random() > 0.5) {
-                        randPos = randPosVar.up();
+                        randPos = randPosVar.add(0,1,0);
                     }
                 }
 
                 //System.err.println("Path to target " + this.PrehistoricFloraEurypteridBase.isDirectPathBetweenPoints(this.PrehistoricFloraEurypteridBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5)));
                 //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraEurypteridBase.world.getBlockState(randPos).getMaterial() == Material.WATER && this.PrehistoricFloraEurypteridBase.isDirectPathBetweenPoints(this.PrehistoricFloraEurypteridBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5))) {
+                if (this.PrehistoricFloraEurypteridBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraEurypteridBase.isDirectPathBetweenPoints(this.PrehistoricFloraEurypteridBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
                     //System.err.println("Movetotarget1: " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
-                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                    if (!(randPos.y < 2 || randPos.y >= 254)) {
                         return randPos;
                     }
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraEurypteridBase.getAttackTarget());
-            if (this.PrehistoricFloraEurypteridBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraEurypteridBase.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraEurypteridBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 //System.err.println("Movetotarget1: " + blockpos1.getX() + " " + blockpos1.getY() + " " + blockpos1.getZ());
                 return blockpos1;
             }

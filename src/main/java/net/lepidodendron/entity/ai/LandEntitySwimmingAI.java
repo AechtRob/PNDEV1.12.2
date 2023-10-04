@@ -37,13 +37,13 @@ public class LandEntitySwimmingAI extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        BlockPos vec3 = this.findTarget();
+        Vec3d vec3 = this.findTarget();
 
         if (vec3 != null && (this.entity.isSwimmingInWater() || this.entity.isInLava())) {
-            double Xoffset = this.entity.posX - this.entity.getPosition().getX();
-            double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
+//            double Xoffset = this.entity.posX - this.entity.getPosition().getX();
+//            double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
 
-            this.entity.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY()) + 0.5D, vec3.getZ() + 0.5D + Zoffset, this.speed);
+            this.entity.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, this.speed);
             this.mustUpdate = false;
             return true;
         }
@@ -62,27 +62,29 @@ public class LandEntitySwimmingAI extends EntityAIBase
         }
     }
 
-    public BlockPos findTarget() {
-        BlockPos blockpos1;
+    public Vec3d findTarget() {
+        Vec3d blockpos1;
         if (this.entity.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d vec3d = RandomPositionGenerator.getLandPos(this.entity, 10, 7);
+                vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                 if (vec3d != null) {
-                    blockpos1 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
-                    if (!(blockpos1.getY() < 1 || blockpos1.getY() >= 254)) {
-                        return blockpos1;
+                    //blockpos1 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
+                    if (!(vec3d.y < 1 || vec3d.y >= 254)) {
+                        return vec3d;
                     }
                 }
             }
             Vec3d vec3d = RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
             if (vec3d != null) {
-                blockpos1 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
+                //blockpos1 = new Blo(vec3d.x, vec3d.y, vec3d.z);
                 //Get the top layer if this is water:
-                if (this.entity.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
-                    blockpos1 = new BlockPos(blockpos1.getX(), this.entity.getPosition().getY(), blockpos1.getZ());
-                }
-                if (!(blockpos1.getY() < 1 || blockpos1.getY() >= 254)) {
-                    return blockpos1;
+                if (this.entity.world.getBlockState(new BlockPos(vec3d)).getMaterial() == Material.WATER) {
+//                    blockpos1 = new BlockPos(new BlockPos(blockpos1).getX(), this.entity.getPosition().getY(), new BlockPos(blockpos1).getZ());
+//                }
+                    if (!(vec3d.y < 1 || vec3d.y >= 254)) {
+                        return vec3d;
+                    }
                 }
             }
         }

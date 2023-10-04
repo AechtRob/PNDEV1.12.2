@@ -68,14 +68,12 @@ public class BandringaWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 this.PrehistoricFloraBandringa.getNavigator().clearPath();
             }
             if (this.PrehistoricFloraBandringa.getNavigator().noPath()) {
-                BlockPos vec3 = this.findWaterTarget();
+                Vec3d vec3 = this.findWaterTarget();
                 if (vec3 != null) {
                     double feedAdj = 0.5d;
                     if (this.PrehistoricFloraBandringa.isHungry()) {feedAdj = -1D;}
-                    double Xoffset = this.PrehistoricFloraBandringa.posX - this.PrehistoricFloraBandringa.getPosition().getX();
-                    double Zoffset = this.PrehistoricFloraBandringa.posZ - this.PrehistoricFloraBandringa.getPosition().getZ();
 
-                    this.PrehistoricFloraBandringa.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + feedAdj, vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraBandringa.getNavigator().tryMoveToXYZ(vec3.x, vec3.y + feedAdj, vec3.z, 1.0);
                     //System.err.println("Vector target: " + (vec3.getX() + 0.5D) + " " + (vec3.getY() + feedAdj) + " " + (vec3.getZ() + 0.5D));
                     return true;
                 }
@@ -95,31 +93,31 @@ public class BandringaWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         return false;
     }
 
-    public BlockPos findWaterTarget() {
+    public Vec3d findWaterTarget() {
         Random rand = this.PrehistoricFloraBandringa.getRNG();
         if (this.PrehistoricFloraBandringa.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                BlockPos randPos = this.PrehistoricFloraBandringa.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
-                BlockPos randPosVar = randPos;
+                Vec3d randPos = this.PrehistoricFloraBandringa.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
+                Vec3d randPosVar = randPos;
                 //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraBandringa.getPosition().getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraBandringa.world.getBlockState(randPos).getMaterial() == Material.WATER && this.PrehistoricFloraBandringa.isDirectPathBetweenPoints(this.PrehistoricFloraBandringa.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5))) {
+                if (this.PrehistoricFloraBandringa.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraBandringa.isDirectPathBetweenPoints(this.PrehistoricFloraBandringa.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.x))) {
                     if (this.PrehistoricFloraBandringa.isHungry()) {
                         int ii = 0;
-                        while ((randPos.down(ii).getY() > 1) && this.PrehistoricFloraBandringa.world.getBlockState(randPos.down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.down(ii);
+                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraBandringa.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                            randPosVar = randPos.add(0, -ii, 0);
                             ii = ii + 1;
                         }
                         randPos = randPosVar;
                     }
-                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                    if (!(randPos.y < 1 || randPos.y >= 254)) {
                         return randPos;
                     }
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraBandringa.getAttackTarget());
-            if (this.PrehistoricFloraBandringa.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraBandringa.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraBandringa.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
         }
