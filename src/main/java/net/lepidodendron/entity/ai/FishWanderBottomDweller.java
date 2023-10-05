@@ -127,7 +127,9 @@ public class FishWanderBottomDweller extends AnimationAINoAnimation<EntityPrehis
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraFishBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Prefer targets which are at the bottom:
-                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                if (!(randPos.y < 1 || randPos.y >= 254)) {
+                    randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                }
                 Vec3d randPosVar = randPos;
                 if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos).down(this.bottomdistance)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos).down(this.bottomdistance)) && Math.random() < 0.85) {
                     int ii = 0;

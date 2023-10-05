@@ -187,8 +187,8 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
         if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
             for (int i = 0; i < 16; i++) {
                 Vec3d vec3d = this.entity.getRNG().nextFloat() >= this.probability ? RandomPositionGenerator.getLandPos(this.entity, 10, 7) : RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
-                vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                 if (vec3d != null) {
+                    vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                     blockpos1 = new BlockPos(vec3d);
                     if ((this.PrehistoricFloraAmphibianBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER)
                             || (isNearWater(this.entity, blockpos1, this.PrehistoricFloraAmphibianBase.WaterDist()))

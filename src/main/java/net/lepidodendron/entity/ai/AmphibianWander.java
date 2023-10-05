@@ -153,7 +153,9 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 for (int i = 0; i < 10; i++) {
                     Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                     //Prefer targets which are at the bottom:
-                    randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                    if (!(randPos.y < 1 || randPos.y >= 254)) {
+                        randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                    }
                     Vec3d randPosVar = randPos;
                     if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.85) {
                         int ii = 0;
@@ -252,8 +254,8 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
             for (int i = 0; i < 16; i++) {
                 Vec3d vec3d = this.entity.getRNG().nextFloat() >= this.probability ? RandomPositionGenerator.getLandPos(this.entity, 10, 7) : RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
-                vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                 if (vec3d != null) {
+                    vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                     blockpos1 = new Vec3d(vec3d.x, vec3d.y, vec3d.z);
                     if ((this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER)
                             || (isNearWater(this.entity, new BlockPos(blockpos1), this.PrehistoricFloraAmphibianBase.WaterDist()))

@@ -91,7 +91,9 @@ public class SlitheringWanderBottom extends AnimationAINoAnimation<EntityPrehist
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraSlitheringWaterBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Use targets which are at the bottom:
-                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                if (!(randPos.y < 1 || randPos.y >= 254)) {
+                    randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                }
                 Vec3d randPosVar = randPos;
                 if (this.PrehistoricFloraSlitheringWaterBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
                     int ii = 0;

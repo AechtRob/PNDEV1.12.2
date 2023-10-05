@@ -101,7 +101,9 @@ public class EurypteridWanderBottomDweller extends AnimationAINoAnimation<Entity
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraEurypteridBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Prefer targets which are at the bottom:
-                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                if (!(randPos.y < 1 || randPos.y >= 254)) {
+                    randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                }
                 Vec3d randPosVar = randPos;
                 if (this.PrehistoricFloraEurypteridBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.90) {
                     int ii = 0;

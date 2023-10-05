@@ -151,7 +151,9 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
             for (int i = 0; i < dist; i++) {
                 Vec3d randPos = this.PrehistoricFloraWalkingAmphibianBase.getPositionVector().add(rand.nextInt(dist) - (int) (dist/2), rand.nextInt(dist) - (int) (dist/2), rand.nextInt(dist) - (int) (dist/2));
                 //Use targets which are at the bottom:
-                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                if (!(randPos.y < 1 || randPos.y >= 254)) {
+                    randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                }
                 Vec3d randPosVar = randPos;
                 if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
                     int ii = 0;

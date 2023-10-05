@@ -37,15 +37,18 @@ public class LandEntitySwimmingAI extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        Vec3d vec3 = this.findTarget();
+        //Vec3d vec3 = this.findTarget();
 
-        if (vec3 != null && (this.entity.isSwimmingInWater() || this.entity.isInLava())) {
+        if ((this.entity.isSwimmingInWater() || this.entity.isInLava())) {
 //            double Xoffset = this.entity.posX - this.entity.getPosition().getX();
 //            double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
 
-            this.entity.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, this.speed);
-            this.mustUpdate = false;
-            return true;
+            Vec3d vec3 = this.findTarget();
+            if (vec3 != null) {
+                this.entity.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, this.speed);
+                this.mustUpdate = false;
+                return true;
+            }
         }
 
         return false;
@@ -67,8 +70,8 @@ public class LandEntitySwimmingAI extends EntityAIBase
         if (this.entity.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d vec3d = RandomPositionGenerator.getLandPos(this.entity, 10, 7);
-                vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                 if (vec3d != null) {
+                    vec3d = new Vec3d(vec3d.x, Math.floor(vec3d.y), vec3d.z);
                     //blockpos1 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
                     if (!(vec3d.y < 1 || vec3d.y >= 254)) {
                         return vec3d;
