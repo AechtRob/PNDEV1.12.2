@@ -248,11 +248,11 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.5;
+		return 0.0;
 	}
 
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2.2;
+		return 0.0;
 	}
 
 	public static double lowerfrontlineoffset(@Nullable String variant) {
