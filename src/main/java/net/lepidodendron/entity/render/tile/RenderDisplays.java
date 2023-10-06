@@ -295,6 +295,7 @@ public class RenderDisplays {
     public static final ModelSpiroceras modelSpiroceras= new ModelSpiroceras();
     public static final ModelSteurbautichthys modelSteurbautichthys= new ModelSteurbautichthys();
     public static final ModelSymphysops modelSymphysops= new ModelSymphysops();
+    public static final ModelSongaichthys modelSongaichthys= new ModelSongaichthys();
     public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
     public static final ModelTanycolagreus modelTanycolagreus = new ModelTanycolagreus();
     public static final ModelTanystropheus modelTanystropheus = new ModelTanystropheus();
