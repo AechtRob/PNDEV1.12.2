@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.util.PathNavigateGliding;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
@@ -331,7 +332,8 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 			if (this.isReallyInWater() &&
 					(world.getBlockState(posEyes).getMaterial() == Material.WATER
 							|| world.getBlockState(posEyes).getMaterial() == Material.LAVA
-							|| world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN)
+							|| world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
+							|| world.getBlockState(posEyes).getMaterial() == MaterialLatex.LATEX)
 			) {
 				this.motionY = 0.2D;
 			}

@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.ItemBottleOfLatex;
 import net.lepidodendron.item.ItemBottleOfResin;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -74,7 +75,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.WOOD);
 			setTranslationKey("pf_resin_extractor");
 			setSoundType(SoundType.WOOD);
 			setHardness(5F);
@@ -154,6 +155,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction,
 			float hitX, float hitY, float hitZ) {
 			int mb = 0;
+			int type = 0;
 			boolean Bucketable = false;
 			boolean Bottleable = false;
 			try {
@@ -167,25 +169,46 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				}.getValue(pos, "mb"));
 			} catch (Exception e) {
 			}
+			try {
+				type = (int) (new Object() {
+					public int getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getInteger(tag);
+						return -1;
+					}
+				}.getValue(pos, "type"));
+			} catch (Exception e) {
+			}
 			if (mb >= 1000) {Bucketable = true;}
 			if (mb >= 333) {Bottleable = true;}
 			if (entity.getHeldItemMainhand().getItem() == new ItemStack(Items.GLASS_BOTTLE, (int) (1)).getItem() && Bottleable) {
 				SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				entity.inventory.clearMatchingItems(new ItemStack(Items.GLASS_BOTTLE, (int) (1)).getItem(), -1, (int) 1, null);
-				ItemStack _setstack = new ItemStack(ItemBottleOfResin.block, (int) (1));
+				ItemStack _setstack = new ItemStack(Items.GLASS_BOTTLE, (int) (1));
+				if (type == 1) {
+					_setstack = new ItemStack(ItemBottleOfResin.block, (int) (1));
+				}
+				if (type == 2) {
+					_setstack = new ItemStack(ItemBottleOfLatex.block, (int) (1));
+				}
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(entity, _setstack);
 				//New fill level:
 				mb = mb - 333;
-				if (mb < 0) {
+				if (mb <= 0) {
 					mb = 0;
 				}
 				if (!world.isRemote) {
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					IBlockState _bs = world.getBlockState(pos);
-					if (_tileEntity != null)
+					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", mb);
+					}
+					if (!(mb > 0)) {
+						_tileEntity.getTileData().setInteger("type", 0);
+					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
 				world.updateComparatorOutputLevel(pos,this);
@@ -195,19 +218,29 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				entity.inventory.clearMatchingItems(new ItemStack(Items.BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_resin"), 1000));
+				ItemStack _setstack = new ItemStack(Items.BUCKET, (int) (1));
+				if (type == 1) {
+					_setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_resin"), 1000));
+				}
+				if (type == 2) {
+					_setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_latex"), 1000));
+				}
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(entity, _setstack);
 				//New fill level:
 				mb = mb - 1000;
-				if (mb < 0) {
+				if (mb <= 0) {
 					mb = 0;
 				}
 				if (!world.isRemote) {
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					IBlockState _bs = world.getBlockState(pos);
-					if (_tileEntity != null)
+					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", mb);
+					}
+					if (!(mb > 0)) {
+						_tileEntity.getTileData().setInteger("type", 0);
+					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
 				world.updateComparatorOutputLevel(pos,this);
@@ -326,8 +359,10 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			super.onBlockAdded(worldIn, pos, state);
 			//Set the ticker to 1200:
 			TileEntity _tileEntity = worldIn.getTileEntity(pos);
-			if (_tileEntity != null)
+			if (_tileEntity != null) {
 				_tileEntity.getTileData().setInteger("tickEachMinute", 1200);
+				_tileEntity.getTileData().setInteger("type", 0);
+			}
 		}
 
 		@Override
@@ -341,6 +376,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 
 		private int tickEachMinute;
 		private int mb;
+		private int type;
 
 		@Override
 		public void update() {
@@ -351,42 +387,58 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				//A minute has counted down:
 				if (this.world.getBlockState(this.getPos()).getBlock() == BlockResinExtractor.block) {
 					IBlockState state = this.world.getBlockState(this.getPos());
-					if (isBlockActive(world, pos, state.getValue(BlockResinExtractor.BlockCustom.FACING))) {
+					Block extractable = isBlockActive(world, pos, state.getValue(BlockResinExtractor.BlockCustom.FACING));
+					if (extractable != null) {
+						boolean test = type == 0 || (extractable == BlockResin.block && type == 1) || (extractable == BlockLatex.block && type == 2);
+						if (test) {
+							int mb = 0;
 
-						int mb = 0;
+							try {
+								mb = (int) (new Object() {
+									public int getValue(BlockPos pos, String tag) {
+										TileEntity tileEntity = world.getTileEntity(pos);
+										if (tileEntity != null)
+											return tileEntity.getTileData().getInteger(tag);
+										return -1;
+									}
+								}.getValue(pos, "mb"));
+							} catch (Exception e) {
+							}
 
-						try {
-							mb = (int) (new Object() {
-								public int getValue(BlockPos pos, String tag) {
-									TileEntity tileEntity = world.getTileEntity(pos);
-									if (tileEntity != null)
-										return tileEntity.getTileData().getInteger(tag);
-									return -1;
+							//New fill level:
+							if (mb <= 0) {
+								mb = 0;
+								type = 0;
+							}
+							mb = Math.min(mb + 55, 2000);
+							if (mb >= 2000) {
+								IBlockState _bs = world.getBlockState(pos);
+								if (this.type == 1) {
+									world.setBlockState(pos, BlockResinExtractorFull.block.getDefaultState().withProperty(BlockResinExtractorFull.BlockCustom.FACING, _bs.getValue(BlockResinExtractor.BlockCustom.FACING)));
 								}
-							}.getValue(pos, "mb"));
-						} catch (Exception e) {
-						}
+								if (this.type == 2) {
+									world.setBlockState(pos, BlockResinExtractorFullLatex.block.getDefaultState().withProperty(BlockResinExtractorFullLatex.BlockCustom.FACING, _bs.getValue(BlockResinExtractor.BlockCustom.FACING)));
+								}
+							} else if (!world.isRemote) {
+								TileEntity _tileEntity = world.getTileEntity(pos);
+								IBlockState _bs = world.getBlockState(pos);
+								if (_tileEntity != null) {
+									_tileEntity.getTileData().setInteger("mb", mb);
+									if (extractable == BlockResin.block) {
+										_tileEntity.getTileData().setInteger("type", 1);
+										this.type = 1;
+									}
+									if (extractable == BlockLatex.block) {
+										_tileEntity.getTileData().setInteger("type", 2);
+										this.type = 2;
+									}
+								}
+								world.notifyBlockUpdate(pos, _bs, _bs, 3);
+							}
 
-						//New fill level:
-						if (mb < 0) {
-							mb = 0;
 						}
-						mb = Math.min(mb + 55, 2000);
-						if (mb >= 2000) {
-							IBlockState _bs = world.getBlockState(pos);
-							world.setBlockState(pos, BlockResinExtractorFull.block.getDefaultState().withProperty(BlockResinExtractorFull.BlockCustom.FACING, _bs.getValue(BlockResinExtractor.BlockCustom.FACING)));
-						}
-						else if (!world.isRemote) {
-							TileEntity _tileEntity = world.getTileEntity(pos);
-							IBlockState _bs = world.getBlockState(pos);
-							if (_tileEntity != null)
-								_tileEntity.getTileData().setInteger("mb", mb);
-							world.notifyBlockUpdate(pos, _bs, _bs, 3);
-						}
-
+						world.updateComparatorOutputLevel(pos, this.world.getBlockState(this.getPos()).getBlock());
 					}
-					world.updateComparatorOutputLevel(pos,this.world.getBlockState(this.getPos()).getBlock());
-
 				}
 
 				//We have ticked the extractor now, so we can now reset the timer again:
@@ -395,7 +447,8 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 
 		}
 
-		public boolean isBlockActive(World world, BlockPos pos, EnumFacing facing) {
+		@Nullable
+		public Block isBlockActive(World world, BlockPos pos, EnumFacing facing) {
 			//On a valid log which is "planted" and of sufficient height:
 			BlockPos position = pos;
 			if (facing == EnumFacing.NORTH) {
@@ -416,33 +469,45 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			//Is the block "growing"?
 			if (
 					(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
-							&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
-							&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
-							&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
+						&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
+						&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
+						&& (world.getBlockState(position.down()).getMaterial() != Material.CLAY)
+						&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
 			) {
-				return false;
+				return null;
 			}
 			//Is the block sufficiently high to look tree-ish?
 			int i = 1;
 			while (i <= 4) {
 				if (world.getBlockState(position.up(i)).getBlock() != block) {
-					return false;
+					return null;
 				}
 				i += 1;
 			}
-			//Is this a resinable block?
+			//Is this a an extractable block?
 			try {
 				if (
 						block.getPickBlock(blockstate, null, world, position, null) != null
 				) {
 					if (OreDictionary.containsMatch(false, OreDictionary.getOres("logResin"),
 							block.getPickBlock(blockstate, null, world, position, null))) {
-						return true;
+						return BlockResin.block;
 					}
 				}
 			} catch (Exception e) {
 			}
-			return false;
+			try {
+				if (
+						block.getPickBlock(blockstate, null, world, position, null) != null
+				) {
+					if (OreDictionary.containsMatch(false, OreDictionary.getOres("logLatex"),
+							block.getPickBlock(blockstate, null, world, position, null))) {
+						return BlockLatex.block;
+					}
+				}
+			} catch (Exception e) {
+			}
+			return null;
 		}
 
 		@Override
@@ -454,6 +519,9 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			if (compound.hasKey("mb")) {
 				this.mb = compound.getInteger("mb");
 			}
+			if (compound.hasKey("type")) {
+				this.type = compound.getInteger("type");
+			}
 		}
 
 		@Override
@@ -461,6 +529,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			compound.setInteger("tickEachMinute", this.tickEachMinute);
 			compound.setInteger("mb", this.mb);
+			compound.setInteger("type", this.type);
 			return compound;
 		}
 

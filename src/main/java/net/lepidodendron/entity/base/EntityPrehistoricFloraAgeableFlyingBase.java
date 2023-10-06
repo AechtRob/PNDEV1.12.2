@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -302,6 +303,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 && (world.getBlockState(this.getFlyTarget()).getMaterial() != Material.WATER)
                 && (world.getBlockState(this.getFlyTarget()).getMaterial() != Material.LAVA)
                 && (world.getBlockState(this.getFlyTarget()).getMaterial() != MaterialResin.RESIN)
+                && (world.getBlockState(this.getFlyTarget()).getMaterial() != MaterialLatex.LATEX)
                 && (!(world.getBlockState(this.getFlyTarget()).getBlock() instanceof BlockFluidBase))
             )
         );

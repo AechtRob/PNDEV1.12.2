@@ -8,6 +8,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -742,7 +743,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             if (this.isReallyInWater() &&
                     (world.getBlockState(posEyes).getMaterial() == Material.WATER
                         || world.getBlockState(posEyes).getMaterial() == Material.LAVA
-                        || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN)
+                        || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
+                        || world.getBlockState(posEyes).getMaterial() == MaterialLatex.LATEX)
             ) {
                 this.motionY = 0.2D;
             }

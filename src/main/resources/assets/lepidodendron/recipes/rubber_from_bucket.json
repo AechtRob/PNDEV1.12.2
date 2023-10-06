@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:sulphur"
+    },
+    {
+      "item": "lepidodendron:sulphur"
+    },
+    {
+      "item": "lepidodendron:sulphur"
+    },
+    {
+      "type": "minecraft:item_nbt",
+      "item": "forge:bucketFilled",
+      "nbt": {
+        "FluidName": "pn_latex",
+        "Amount": 1000
+      }
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:rubber",
+    "count": 6
+  }
+}

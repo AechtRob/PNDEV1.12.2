@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:bottle_of_resin"
+    },
+    {
+      "item": "lepidodendron:bottle_of_resin"
+    },
+    {
+      "item": "lepidodendron:bottle_of_resin"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "type": "minecraft:item_nbt",
+    "item": "forge:bucketFilled",
+    "nbt": {
+      "FluidName": "pn_resin",
+      "Amount": 1000
+    },
+    "count": 1
+  }
+}

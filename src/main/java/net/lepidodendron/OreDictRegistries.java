@@ -79,6 +79,46 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		} catch (Exception e) {
 		}
 
+		var2 = LepidodendronConfig.genLogLatex;
+		var3 = var2.length;
+
+		try {
+			for (Object block : Block.REGISTRY) {
+				//String name = Block.REGISTRY.getNameForObject((Block)block).toString();
+				if (true) {
+					;
+					//outstream.write(name);
+					//outstream.newLine();
+					//System.err.println("BLOCK FOUND: " + name);
+
+					for (int var4 = 0; var4 < var3; ++var4) {
+						String checkBlock = var2[var4];
+						//Is there a metadata tag? If so, keep it and strip it out of the string:
+						int strPos = checkBlock.indexOf(":", checkBlock.indexOf(":") + 1);
+						//System.err.println("ORGBLOCK: " + checkBlock);
+						//System.err.println("SECOND COLON: " + strPos);
+						if (strPos > 0) {
+							meta = (int) Integer.parseInt(checkBlock.substring(strPos + 1));
+							checkBlock = checkBlock.substring(0, strPos);
+							//System.err.println("REVBLOCK: " + checkBlock + " meta: " + meta);
+						} else {
+							meta = -1;
+						}
+
+						if (checkBlock.equalsIgnoreCase(Block.REGISTRY.getNameForObject((Block) block).toString())) {
+							if (meta == -1) {
+								OreDictionary.registerOre("logLatex", new ItemStack((Block) block, (int) (1)));
+							} else {
+								OreDictionary.registerOre("logLatex", new ItemStack((Block) block, (int) (1), meta));
+							}
+						}
+
+					}
+				}
+			}
+		} catch (Exception e) {
+		}
+
 		var2 = LepidodendronConfig.genPlantPrehistoric;
 		var3 = var2.length;
 

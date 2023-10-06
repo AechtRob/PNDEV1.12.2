@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.item.ItemBottleOfResin;
+import net.lepidodendron.item.ItemBottleOfLatex;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -37,17 +37,17 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:resin_extractor_full")
+public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:resin_extractor_full_latex")
 	public static final Block block = null;
 
-	public BlockResinExtractorFull(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.resin_extractor_full);
+	public BlockResinExtractorFullLatex(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.resin_extractor_full_latex);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("resin_extractor_full"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("resin_extractor_full_latex"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -56,7 +56,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 
 		public BlockCustom() {
 			super(Material.WOOD);
-			setTranslationKey("pf_resin_extractor_full");
+			setTranslationKey("pf_resin_extractor_full_latex");
 			setSoundType(SoundType.WOOD);
 			setHardness(5F);
 			setResistance(5F);
@@ -108,7 +108,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 				SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				entity.inventory.clearMatchingItems(new ItemStack(Items.GLASS_BOTTLE, (int) (1)).getItem(), -1, (int) 1, null);
-				ItemStack _setstack = new ItemStack(ItemBottleOfResin.block, (int) (1));
+				ItemStack _setstack = new ItemStack(ItemBottleOfLatex.block, (int) (1));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(entity, _setstack);
 				//New fill level:
@@ -118,7 +118,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1667);
-						_tileEntity.getTileData().setInteger("type", 1);
+						_tileEntity.getTileData().setInteger("type", 2);
 					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
@@ -130,7 +130,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 				SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				entity.inventory.clearMatchingItems(new ItemStack(Items.BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_resin"), 1000));
+				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_latexn"), 1000));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(entity, _setstack);
 				//New fill level:
@@ -140,7 +140,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1000);
-						_tileEntity.getTileData().setInteger("type", 1);
+						_tileEntity.getTileData().setInteger("type", 2);
 					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
@@ -174,13 +174,13 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			super.harvestBlock(worldIn, player, pos, state, te, stack);
-			worldIn.setBlockState(pos, FluidRegistry.getFluid("pn_resin").getBlock().getDefaultState());
+			worldIn.setBlockState(pos, FluidRegistry.getFluid("pn_latex").getBlock().getDefaultState());
 		}
 
 		@Override
 		public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {
 			super.onExplosionDestroy(worldIn, pos, explosionIn);
-			worldIn.setBlockState(pos, FluidRegistry.getFluid("pn_resin").getBlock().getDefaultState());
+			worldIn.setBlockState(pos, FluidRegistry.getFluid("pn_latex").getBlock().getDefaultState());
 		}
 
 		@Override
@@ -265,7 +265,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 			//Flood if left too long and uncovered!
 			if (isBlockActive(world, pos, state.getValue(FACING))) {
 				if ((Math.random() > 0.85) && world.isAirBlock(pos.up())) {
-					world.setBlockState(pos.up(), FluidRegistry.getFluid("pn_resin").getBlock().getDefaultState());
+					world.setBlockState(pos.up(), FluidRegistry.getFluid("pn_latex").getBlock().getDefaultState());
 				}
 			}
 		}
@@ -306,12 +306,12 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 				}
 				i += 1;
 			}
-			//Is this a resinable block?
+			//Is this a latexable block?
 			try {
 				if (
 					block.getPickBlock(blockstate, null, world, position, null) != null
 				) {
-					if (OreDictionary.containsMatch(false, OreDictionary.getOres("logResin"),
+					if (OreDictionary.containsMatch(false, OreDictionary.getOres("logLatex"),
 							block.getPickBlock(blockstate, null, world, position, null))) {
 						return true;
 					}

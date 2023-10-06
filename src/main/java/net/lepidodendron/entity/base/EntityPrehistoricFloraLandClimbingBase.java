@@ -3,6 +3,7 @@ package net.lepidodendron.entity.base;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -275,6 +276,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                 && state.getMaterial() != Material.WATER
                 && state.getMaterial() != Material.LAVA
                 && state.getMaterial() != MaterialResin.RESIN
+                && state.getMaterial() != MaterialLatex.LATEX
                 && (!(state.getBlock() instanceof BlockFluidBase))
                 && (!(state.getBlock() instanceof BlockLiquid))
             )
@@ -388,6 +390,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                 if (!(state.getMaterial() != Material.WATER
                     && state.getMaterial() != Material.LAVA
                     && state.getMaterial() != MaterialResin.RESIN
+                    && state.getMaterial() != MaterialLatex.LATEX
                     && (!(state.getBlock() instanceof BlockFluidBase))
                     && (!(state.getBlock() instanceof BlockLiquid)))) {
                     setIsClimbing(false);
@@ -527,7 +530,8 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             if (this.isReallyInWater() &&
                 (world.getBlockState(posEyes).getMaterial() == Material.WATER
                 || world.getBlockState(posEyes).getMaterial() == Material.LAVA
-                || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN)
+                || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
+                || world.getBlockState(posEyes).getMaterial() == MaterialLatex.LATEX)
             ) {
                 this.motionY = 0.2D;
             }
