@@ -23,11 +23,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraft.village.MerchantRecipe;
+import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
@@ -37,6 +40,7 @@ import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.village.MerchantTradeOffersEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
@@ -46,6 +50,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 import java.util.Random;
@@ -689,8 +694,89 @@ public class LepidodendronEventSubscribers {
 
 		}
 
+		if (OreDictionary.containsMatch(false, OreDictionary.getOres("logResin"),
+				event.getItemStack())) {
+			List<String> tt = event.getToolTip();
+			try {
+				tt.add(I18n.translateToLocal("helper.pf_resinable.name"));
+			} catch (Throwable throwable) {
+				//Do nothing - it's all good
+			}
+		}
+
+		if (OreDictionary.containsMatch(false, OreDictionary.getOres("logLatex"),
+				event.getItemStack())) {
+			List<String> tt = event.getToolTip();
+			try {
+				tt.add(I18n.translateToLocal("helper.pf_latexable.name"));
+			} catch (Throwable throwable) {
+				//Do nothing - it's all good
+			}
+		}
+
 	}
 
+	@SubscribeEvent //Add portal fossil trades
+	public void onEvent(MerchantTradeOffersEvent event) {
+		int i = -1;
+		if ((!event.getList().isEmpty()) && (!event.getMerchant().getWorld().isRemote)) {
+			MerchantRecipeList MerchantRecipeFinal = (MerchantRecipeList) event.getList().clone();
+			for (MerchantRecipe recipe: event.getList()) {
+				i ++;
+				if (recipe.getItemToSell().getItem() == ItemFossilClean.block) {
+					if (!recipe.getItemToSell().hasTagCompound()) {
+						MerchantRecipeFinal.remove(i);
+
+						ItemStack stackPrototaxites = new ItemStack(ItemFossilClean.block, 1);
+						NBTTagCompound plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:prototaxites");
+						NBTTagCompound stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackPrototaxites.setTagCompound(stackNBT);
+						MerchantRecipe recipePrototaxites = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackPrototaxites);
+						MerchantRecipeFinal.add(recipePrototaxites);
+
+						ItemStack stackArchaeopteris = new ItemStack(ItemFossilClean.block, 1);
+						plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:archaeopteris_sapling");
+						stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackArchaeopteris.setTagCompound(stackNBT);
+						MerchantRecipe recipeArchaeopteris = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackArchaeopteris);
+						MerchantRecipeFinal.add(recipeArchaeopteris);
+
+						ItemStack stackCalamites = new ItemStack(ItemFossilClean.block, 1);
+						plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:calamites_sapling");
+						stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackCalamites.setTagCompound(stackNBT);
+						MerchantRecipe recipeCalamites = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackCalamites);
+						MerchantRecipeFinal.add(recipeCalamites);
+
+						ItemStack stackGlossopteris = new ItemStack(ItemFossilClean.block, 1);
+						plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:glossopterissapling");
+						stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackGlossopteris.setTagCompound(stackNBT);
+						MerchantRecipe recipeGlossopteris = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackGlossopteris);
+						MerchantRecipeFinal.add(recipeGlossopteris);
+
+						ItemStack stackDicroidium = new ItemStack(ItemFossilClean.block, 1);
+						plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:dicroidium_f_sapling");
+						stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackDicroidium.setTagCompound(stackNBT);
+						MerchantRecipe recipeDicroidium = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackDicroidium);
+						MerchantRecipeFinal.add(recipeDicroidium);
+					}
+				}
+			}
+			event.setList(MerchantRecipeFinal);
+		}
+	}
 
 	@SubscribeEvent //Make obsidian variants
 	public void onEvent(BlockEvent.FluidPlaceBlockEvent event) {
