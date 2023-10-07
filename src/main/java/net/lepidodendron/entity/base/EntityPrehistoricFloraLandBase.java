@@ -640,6 +640,19 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     this.setAttackTarget(null);
                 }
             }
+            if (this.getWarnTarget() != null) {
+                if (this.getWarnTarget().isDead) {
+                    this.setWarnTarget(null);
+                }
+                if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
+                    this.setWarnTarget(null);
+                }
+            }
+            if (this.getRevengeTarget() != null) {
+                if (this.getRevengeTarget().isDead) {
+                    this.setRevengeTarget(null);
+                }
+            }
             if (this.getEatTarget() != null) {
                 if (this.getEatTarget().isDead) {
                     this.setEatTarget(null);
@@ -648,6 +661,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             if (this.isSwimmingInWater()) {
                 this.setAttackTarget(null);
                 this.setEatTarget(null);
+                this.setWarnTarget(null);
+                this.setRevengeTarget(null);
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
 

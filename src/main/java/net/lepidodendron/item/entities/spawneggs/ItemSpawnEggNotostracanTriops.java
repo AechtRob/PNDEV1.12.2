@@ -69,7 +69,7 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public String getHabitat() {
-			return "Marine";
+			return "Freshwater/Marine";
 		}
 
 		@Override

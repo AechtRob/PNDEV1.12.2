@@ -71,7 +71,7 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                 return false;
             }
 
-            if (ageableBase.getWarnTarget() != null) {
+            if (ageableBase.getWarnTarget() != null && ageableBase.getAttackTarget() != ageableBase.getWarnTarget()) {
                 if (!isDirectPathBetweenPoints(ageableBase.getPositionVector(), ageableBase.getWarnTarget().getPositionVector())) {
                     ageableBase.setWarnTarget(null);
                     ageableBase.setWarnCooldown(0);

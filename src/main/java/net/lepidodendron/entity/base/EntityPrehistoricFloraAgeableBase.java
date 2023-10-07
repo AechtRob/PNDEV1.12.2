@@ -1230,11 +1230,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
-                this.setAttackTarget(this.getWarnTarget());
-                this.setIsFast(true);
-                this.setOneHit(true);
-                this.setWarnTarget(null);
-                this.setWarnCooldown(0);
+                if (this.getDistance(this.getWarnTarget()) <= 16) {
+                    this.setAttackTarget(this.getWarnTarget());
+                    this.setOneHit(true);
+                    this.setWarnCooldown(0);
+                }
+                else {
+                    this.setWarnTarget(null);
+                    this.setWarnCooldown(0);
+                }
             }
         }
 
@@ -1302,6 +1306,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         EntityLivingBase attackTarget = this.getAttackTarget();
         if (attackTarget != null ) {
             if (attackTarget instanceof EntityPlayer && LepidodendronConfig.attackPlayerAlways) {
+                this.setWillHunt(true);
+            }
+            else if (attackTarget instanceof EntityPlayer && this.getWarnTarget() == attackTarget) {
                 this.setWillHunt(true);
             }
             else {
