@@ -1103,6 +1103,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_rutiodon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sacabambaspis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sahnioxylon_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_ticoa_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_saivodus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sanmiguelia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sapling_clean", "inventory"),

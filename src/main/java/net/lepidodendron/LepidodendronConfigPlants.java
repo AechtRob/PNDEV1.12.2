@@ -461,6 +461,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightSahnioxylon = 120;
     public static double multiplierSahnioxylon = 1;
 
+    public static boolean genTicoa = false;
+    public static String[] genTicoaBlacklistBiomes = new String[0];
+    public static String[] genTicoaOverrideBiomes = new String[0];
+    public static int[] dimTicoa = new int[]{0};
+    public static int minheightTicoa = 1;
+    public static int maxheightTicoa = 120;
+    public static double multiplierTicoa = 1;
+
     public static boolean genAridHorsetail = false;
     public static String[] genAridHorsetailBlacklistBiomes = new String[0];
     public static String[] genAridHorsetailOverrideBiomes = new String[0];
@@ -4616,6 +4624,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Zamites", "multiplierZamites", multiplierZamites);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierZamites = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Ticoa", "genTicoa", genTicoa);
+        prop.setComment("Set to true to generate Ticoa naturally [default: false]");
+        genTicoa = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ticoa", "genTicoaBlacklistBiomes", genTicoaBlacklistBiomes);
+        prop.setComment("List of biomes Ticoa are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genTicoaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ticoa", "genTicoaOverrideBiomes", genTicoaOverrideBiomes);
+        prop.setComment("List of biomes Ticoa are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genTicoaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Ticoa", "dimTicoa", dimTicoa);
+        prop.setComment("List of dimension IDs Ticoa can generate in [default: 0]");
+        dimTicoa = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ticoa", "minheightTicoa", minheightTicoa);
+        prop.setComment("Minimum height that Ticoa can generate (1 to 250) [default: 1]");
+        minheightTicoa = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ticoa", "maxheightTicoa", maxheightTicoa);
+        prop.setComment("Maximum height that Ticoa can generate (1 to 250, or set to 0 for unlimited) [default: 120]");
+        maxheightTicoa = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Ticoa", "multiplierTicoa", multiplierTicoa);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierTicoa = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Sahnioxylon", "genSahnioxylon", genSahnioxylon);

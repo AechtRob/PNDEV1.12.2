@@ -378,6 +378,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SABAL = new CustomTrigger("pf_book_sabal");
     public static final CustomTrigger CLICK_NYPA = new CustomTrigger("pf_book_nypa");
     public static final CustomTrigger CLICK_SAHNIOXYLON = new CustomTrigger("pf_book_sahnioxylon");
+    public static final CustomTrigger CLICK_TICOA = new CustomTrigger("pf_book_ticoa");
     public static final CustomTrigger CLICK_SANMIGUELIA = new CustomTrigger("pf_book_sanmiguelia");
     public static final CustomTrigger CLICK_LEPIDODENDRON = new CustomTrigger("pf_book_lepidodendron");
     public static final CustomTrigger CLICK_LEPIDOPHLOIOS = new CustomTrigger("pf_book_lepidophloios");
@@ -1708,6 +1709,7 @@ public class ModTriggers
             CLICK_SABAL,
             CLICK_NYPA,
             CLICK_SAHNIOXYLON,
+            CLICK_TICOA,
             CLICK_SANMIGUELIA,
             CLICK_LEPIDODENDRON,
             CLICK_LEPIDOPHLOIOS,
