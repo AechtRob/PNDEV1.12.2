@@ -45,14 +45,14 @@ public class WorldGenPseudoctenis extends WorldGenerator
             else {
                 boolean waterCriteria = false;
                 //Is there water nearby?
-                int xct = -5;
+                int xct = -3;
                 int yct;
                 int zct;
-                while ((xct < 6) && (!waterCriteria)) {
-                    yct = -6;
-                    while ((yct <= 1) && (!waterCriteria)) {
-                        zct = -5;
-                        while ((zct < 6) && (!waterCriteria)) {
+                while ((xct < 4) && (!waterCriteria)) {
+                    yct = -4;
+                    while ((yct <= 2) && (!waterCriteria)) {
+                        zct = -3;
+                        while ((zct < 4) && (!waterCriteria)) {
                             if ((worldIn.getBlockState(position.add(xct, yct, zct))).getMaterial() == Material.WATER) {
                                 waterCriteria = true;
                             }

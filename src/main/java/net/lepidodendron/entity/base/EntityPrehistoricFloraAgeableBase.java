@@ -24,7 +24,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -111,15 +110,18 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
         BlockPos pos = this.getPosition();
 
-        SoundType soundtype = blockIn.getSoundType(world.getBlockState(pos), world, pos, new EntityCow(this.world));
+        SoundType soundtype = null;
         SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
-        if (this.world.getBlockState(pos.up()).getBlock() == Blocks.SNOW_LAYER)
+        SoundEvent soundeventSnow = SoundEvents.BLOCK_SNOW_STEP;
+        if (this.world.getBlockState(pos).getBlock() == Blocks.SNOW_LAYER
+            || this.world.getBlockState(pos.down()).getBlock() == Blocks.SNOW)
         {
             soundtype = Blocks.SNOW_LAYER.getSoundType();
-            this.getEntityWorld().playSound(null, this.getPosition(), soundtype.getStepSound(), SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+            this.getEntityWorld().playSound(null, this.getPosition(), soundeventSnow, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
         }
         else if (!blockIn.getDefaultState().getMaterial().isLiquid())
         {
+            soundtype = Blocks.DIRT.getSoundType();
             this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
         }
     }
