@@ -1977,6 +1977,13 @@ public class LepidodendronConfigPlants {
     public static int minheightHermanophyton = 1;
     public static int maxheightHermanophyton = 120;
     public static double multiplierHermanophyton = 1;
+    public static boolean genPseudoctenis = false;
+    public static String[] genPseudoctenisBlacklistBiomes = new String[0];
+    public static String[] genPseudoctenisOverrideBiomes = new String[0];
+    public static int[] dimPseudoctenis = new int[]{0};
+    public static int minheightPseudoctenis = 1;
+    public static int maxheightPseudoctenis = 120;
+    public static double multiplierPseudoctenis = 1;
     public static boolean genUmaltolepis = false;
     public static String[] genUmaltolepisBlacklistBiomes = new String[0];
     public static String[] genUmaltolepisOverrideBiomes = new String[0];
@@ -9623,6 +9630,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Hermanophyton", "multiplierHermanophyton", multiplierHermanophyton);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierHermanophyton = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Pseudoctenis", "genPseudoctenis", genPseudoctenis);
+        prop.setComment("Set to true to generate Pseudoctenis naturally [default: false]");
+        genPseudoctenis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pseudoctenis", "genPseudoctenisBlacklistBiomes", genPseudoctenisBlacklistBiomes);
+        prop.setComment("List of biomes Pseudoctenis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPseudoctenisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pseudoctenis", "genPseudoctenisOverrideBiomes", genPseudoctenisOverrideBiomes);
+        prop.setComment("List of biomes Pseudoctenis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPseudoctenisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Pseudoctenis", "dimPseudoctenis", dimPseudoctenis);
+        prop.setComment("List of dimension IDs Pseudoctenis can generate in [default: 0]");
+        dimPseudoctenis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pseudoctenis", "minheightPseudoctenis", minheightPseudoctenis);
+        prop.setComment("Minimum height that Pseudoctenis can generate (1 to 250) [default: 1]");
+        minheightPseudoctenis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pseudoctenis", "maxheightPseudoctenis", maxheightPseudoctenis);
+        prop.setComment("Maximum height that Pseudoctenis can generate (1 to 250, or set to 0 for unlimited) [default: 120]");
+        maxheightPseudoctenis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Pseudoctenis", "multiplierPseudoctenis", multiplierPseudoctenis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPseudoctenis = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Ladinia", "genLadinia", genLadinia);

@@ -265,6 +265,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HAPSIDOPHYLLAS = new CustomTrigger("pf_book_hapsidophyllas");
     public static final CustomTrigger CLICK_HELICOCYSTIS = new CustomTrigger("pf_book_helicocystis");
     public static final CustomTrigger CLICK_HERMANOPHYTON = new CustomTrigger("pf_book_hermanophyton");
+    public static final CustomTrigger CLICK_PSEUDOCTENIS = new CustomTrigger("pf_book_pseudoctenis");
     public static final CustomTrigger CLICK_HERPETOGASTER = new CustomTrigger("pf_book_herpetogaster");
     public static final CustomTrigger CLICK_HIRONOIA = new CustomTrigger("pf_book_hironoia");
     public static final CustomTrigger CLICK_HYMENAEA = new CustomTrigger("pf_book_hymenaea");
@@ -1598,6 +1599,7 @@ public class ModTriggers
             CLICK_HAPSIDOPHYLLAS,
             CLICK_HELICOCYSTIS,
             CLICK_HERMANOPHYTON,
+            CLICK_PSEUDOCTENIS,
             CLICK_HERPETOGASTER,
             CLICK_HIRONOIA,
             CLICK_HYMENAEA,
