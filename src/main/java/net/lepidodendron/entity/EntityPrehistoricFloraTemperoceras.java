@@ -27,7 +27,7 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 
 	public EntityPrehistoricFloraTemperoceras(World world) {
 		super(world);
-		setSize(0.3F, 0.25F);
+		setSize(0.5F, 0.3F);
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;

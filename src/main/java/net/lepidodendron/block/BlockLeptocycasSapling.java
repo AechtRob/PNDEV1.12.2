@@ -206,7 +206,7 @@ public class BlockLeptocycasSapling extends ElementsLepidodendronMod.ModElement 
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad");
-				tooltip.add("Periods: late Triassic");
+				tooltip.add("Periods: Triassic");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

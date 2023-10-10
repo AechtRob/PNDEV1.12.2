@@ -424,7 +424,7 @@ public class ModelOrthrozanclus extends AdvancedModelBase {
     }
     public void renderStaticFloor(float f) {
         this.Orthozanclus.rotateAngleY = (float) Math.toRadians(90);
-        this.Orthozanclus.offsetY = 0.14F;
+        this.Orthozanclus.offsetY = 0.0F;
         this.Orthozanclus.render(0.015F);
         resetToDefaultPose();
     }

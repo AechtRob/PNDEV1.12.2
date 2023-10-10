@@ -206,7 +206,7 @@ public class BlockPtilophyllumSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales shrub");
-				tooltip.add("Periods: late Triassic - Jurassic - Cretaceous [- Paleoegene (Oligocene)?]");
+				tooltip.add("Periods: Triassic - Jurassic - Cretaceous - Paleoegene (Oligocene (?))");
 				tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

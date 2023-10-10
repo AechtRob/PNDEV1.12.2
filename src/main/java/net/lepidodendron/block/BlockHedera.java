@@ -454,7 +454,7 @@ public class BlockHedera extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering-plant vine");
-	        	tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene");
+	        	tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene");
 	        	tooltip.add("Propagation: fruit");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

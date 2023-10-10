@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMooreoceras;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -34,6 +35,12 @@ public class EntityPrehistoricFloraMooreoceras extends EntityPrehistoricFloraNau
 		maxHeight = 0.25F;
 		maxHealthAgeable = 10.0D;
 	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
 
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox()

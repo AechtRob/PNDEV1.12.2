@@ -251,7 +251,7 @@ public class BlockLesleya extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Undetermined cyacadophyte");
-				tooltip.add("Periods: late Carboniferous - Permian");
+				tooltip.add("Periods: Carboniferous - Permian");
 				tooltip.add("Propagation: fruit/cone");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

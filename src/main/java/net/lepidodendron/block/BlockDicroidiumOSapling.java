@@ -216,7 +216,7 @@ public class BlockDicroidiumOSapling extends ElementsLepidodendronMod.ModElement
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant tree");
-	        	tooltip.add("Periods: [late Permian? -] Triassic - early Jurassic (?)");
+	        	tooltip.add("Periods: [Permian (?) -] Triassic - Jurassic (?)");
 	        	tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

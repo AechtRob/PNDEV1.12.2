@@ -1,103 +1,59 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenOlive;
+import net.lepidodendron.procedure.ProcedureWorldGenOliveDead;
+import net.lepidodendron.world.biome.BiomeOliveGrove;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class WorldGenOliveTreeInGrove extends WorldGenAbstractTree
+public class WorldGenOliveTreeInGrove extends WorldGenerator
 {
 
-    public WorldGenOliveTreeInGrove(boolean notify)
-    {
-        super(notify);
-    }
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        //position is the chunk coordinate:
+        //iterate over all blocks in the chunk:
+        boolean flag = false;
+        BlockPos positionTree = position;
+        for (int xPos = 8; xPos < 24; xPos++) {
+            for (int zPos = 8; zPos < 24; zPos++) {
+                positionTree = position.add(xPos, 0, zPos);
+                if (positionTree.getX() % 15 == 0 && positionTree.getZ() % 15 == 0 && rand.nextInt(94) != 0
+                    && worldIn.getBiome(positionTree) == BiomeOliveGrove.biome) {
+                    //Chance of tree offset:
+                    positionTree = positionTree.add(rand.nextInt(3) - 1, 0, rand.nextInt(3) - 1);
+                    if (rand.nextInt(3) == 0) {
+                        positionTree = positionTree.add(rand.nextInt(3) - 1, 0, rand.nextInt(3) - 1);
+                    }
+                    //Gen a tree here:
+                    positionTree = ChunkGenSpawner.getTopSolidBlock(positionTree, worldIn).up();
+                    BlockPos down = positionTree.down();
+                    IBlockState state = worldIn.getBlockState(down);
+                    boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling) Blocks.SAPLING);
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
-    {
-        int i = rand.nextInt(3) + 5;
-
-        //if (this.useExtraRandomHeight)
-        //{
-        //    i += rand.nextInt(7);
-       // }
-
-        boolean flag = true;
-
-        if (position.getY() >= 1 && position.getY() + i + 1 <= 256)
-        {
-            for (int j = position.getY(); j <= position.getY() + 1 + i; ++j)
-            {
-                int k = 1;
-
-                if (j == position.getY())
-                {
-                    k = 0;
-                }
-
-                if (j >= position.getY() + 1 + i - 2)
-                {
-                    k = 2;
-                }
-
-                BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-
-                for (int l = position.getX() - k; l <= position.getX() + k && flag; ++l)
-                {
-                    for (int i1 = position.getZ() - k; i1 <= position.getZ() + k && flag; ++i1)
-                    {
-                        if (j >= 0 && j < worldIn.getHeight())
-                        {
-                            if (!this.isReplaceable(worldIn, blockpos$mutableblockpos.setPos(l, j, i1)))
-                            {
-                                flag = false;
-                            }
+                    if (positionTree.getY() >= worldIn.getSeaLevel() - 4 && isSoil && positionTree.getY() < worldIn.getHeight() - 1) {
+                        java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                        $_dependencies.put("x", positionTree.getX());
+                        $_dependencies.put("y", positionTree.getY());
+                        $_dependencies.put("z", positionTree.getZ());
+                        $_dependencies.put("world", worldIn);
+                        if (rand.nextInt(40) == 0) {
+                            ProcedureWorldGenOliveDead.executeProcedure($_dependencies);
                         }
-                        else
-                        {
-                            flag = false;
+                        else {
+                            ProcedureWorldGenOlive.executeProcedure($_dependencies);
                         }
+                        flag = true;
                     }
                 }
             }
-
-            if (!flag)
-            {
-                return false;
-            }
-            else
-            {
-                BlockPos down = position.down();
-                IBlockState state = worldIn.getBlockState(down);
-                boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
-
-                if (position.getX() % 15 != 0 || position.getZ() % 15 != 0) {
-                    return false;
-                }
-
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
-                {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-                    $_dependencies.put("x", position.getX());
-                    $_dependencies.put("y", position.getY());
-                    $_dependencies.put("z", position.getZ());
-                    $_dependencies.put("world", worldIn);
-					ProcedureWorldGenOlive.executeProcedure($_dependencies);
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
         }
-        else
-        {
-            return false;
-        }
+        return flag;
     }
+
 }

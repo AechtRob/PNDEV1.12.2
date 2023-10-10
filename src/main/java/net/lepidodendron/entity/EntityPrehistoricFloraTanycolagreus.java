@@ -9,7 +9,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderTanycolagreus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -36,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraLandBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -63,9 +63,6 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public int getEatTick() {return 12;}
-
-	@Override
 	public int getEggType() {
 		return 1; //large
 	}
@@ -81,11 +78,6 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 	public int getRoarLength() {
 		return 30;
 	} //Idle
-
-	@Override
-	public int getNoiseLength() {
-		return 30;
-	} //Roar
 
 	@Override
 	public boolean hasNest() {
@@ -134,10 +126,6 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public int getRoarInterval() {return 900;
-	}
-
-	@Override
 	public int getAdultAge() {
 		return 128000;
 	}
@@ -172,14 +160,13 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
-		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(4, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -214,15 +201,14 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public SoundEvent getRoarSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tanycolagreus_roar"));
-	}
-
-	@Override
 	public SoundEvent getAmbientSound() {
+		if (this.rand.nextInt(4) == 0) {
+			return (SoundEvent) SoundEvent.REGISTRY
+					.getObject(new ResourceLocation("lepidodendron:tanycolagreus_roar"));
+		}
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:tanycolagreus_idle"));
+
 	}
 
 	@Override

@@ -2,12 +2,13 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderStegosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -34,12 +35,14 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLandBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
+	public int ambientSoundTime;
+	public Animation NOISE_ANIMATION; //An additional noise (roar) for less common animations
 
 	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thagomized", this);
 
@@ -53,6 +56,59 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		NOISE_ANIMATION = Animation.create(this.getRoarLength());
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 40;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 0;
+	}
+
+	@Override
+	public int tetrapodWalkFootstepOffset() {
+		return 1;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
+	public int tetrapodRunFootstepOffset() {
+		return 1;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
+		{
+			this.ambientSoundTime = -this.getAmbientTalkInterval();
+			SoundEvent soundevent = this.getRoarSound();
+			if (soundevent != null)
+			{
+				if (this.getAnimation() == NO_ANIMATION) {
+					this.setAnimation(NOISE_ANIMATION);
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
 	}
 
 	@Override
@@ -87,22 +143,12 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	} //Idle
 
 	@Override
-	public int getNoiseLength() {
-		return 44;
-	} //Roar
-
-	@Override
-	public int getHurtLength() {
-		return 44;
-	} //Hurt uses roar
-
-	@Override
 	public int getTalkInterval() {
 		return 360;
 	}
 
-	@Override
-	public int getRoarInterval() {return 900;
+	public int getAmbientTalkInterval() {
+		return 900;
 	}
 
 	@Override
@@ -271,7 +317,6 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
 
-	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:stegosaurus_roar"));

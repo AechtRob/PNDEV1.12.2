@@ -206,7 +206,7 @@ public class BlockMedullosalesSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant small tree");
-				tooltip.add("Periods: Carboniferous - early Permian");
+				tooltip.add("Periods: Carboniferous - Permian");
 				tooltip.add("Propagation: seeds");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

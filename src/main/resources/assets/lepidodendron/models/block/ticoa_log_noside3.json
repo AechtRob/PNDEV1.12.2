@@ -1,0 +1,29 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/ticoa_log",
+		"particle": "lepidodendron:blocks/ticoa_log",
+		"inside": "lepidodendron:blocks/ticoa_log"
+	},
+	"elements": [
+		{
+			"from": [5, 5, 5],
+			"to": [11, 11, 11],
+			"faces": {
+				"north": {"uv": [5, 5, 11, 11], "texture": "#inside"}
+			}
+		},
+		{
+			"from": [5, 5, 4],
+			"to": [11, 11, 5],
+			"faces": {
+				"north": {"uv": [5, 5, 11, 11], "texture": "#texture"},
+				"east": {"uv": [12, 5, 13, 11], "texture": "#texture"},
+				"west": {"uv": [3, 5, 4, 11], "texture": "#texture"},
+				"up": {"uv": [5, 3, 11, 4], "texture": "#texture"},
+				"down": {"uv": [5, 12, 11, 13], "texture": "#texture"}
+			}
+		}
+	]
+}

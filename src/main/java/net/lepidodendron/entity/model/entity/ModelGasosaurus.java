@@ -3697,10 +3697,10 @@ public class ModelGasosaurus extends AdvancedModelBaseExtended {
 //        else if (ee.getAnimation() == ee.LAY_ANIMATION) {
 //            //animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
 //        }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION || ee.getAnimation() == ee.HURT_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION || ee.getAnimation() == ee.HURT_ANIMATION) { //The actual roar/anim
             animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         

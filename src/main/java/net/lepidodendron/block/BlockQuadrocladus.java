@@ -283,7 +283,7 @@ public class BlockQuadrocladus extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous shrub");
-	        	tooltip.add("Periods: late Permian - early Triassic");
+	        	tooltip.add("Periods: Permian - Triassic");
 	        	tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -206,7 +206,7 @@ public class BlockJerseyanthusSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering shrub");
-				tooltip.add("Periods: Cretaceous");
+				tooltip.add("Periods: late Cretaceous");
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

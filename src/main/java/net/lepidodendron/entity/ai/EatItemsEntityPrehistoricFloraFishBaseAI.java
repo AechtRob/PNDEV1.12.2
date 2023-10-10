@@ -47,6 +47,7 @@ public class EatItemsEntityPrehistoricFloraFishBaseAI extends EntityAIBase {
             if (this.targetItem != null && !this.targetItem.cannotPickup()) {
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
+                this.targetItem.setPickupDelay(10);
             }
         }
         if (this.entity.getNavigator().noPath()) {

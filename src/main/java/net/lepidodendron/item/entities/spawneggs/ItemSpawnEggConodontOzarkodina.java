@@ -69,7 +69,7 @@ public class ItemSpawnEggConodontOzarkodina extends ElementsLepidodendronMod.Mod
 
 		@Override
 		public String getHabitat() {
-			return "Terrestrial";
+			return "Marine";
 		}
 
 		@Override

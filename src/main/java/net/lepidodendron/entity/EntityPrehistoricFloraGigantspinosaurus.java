@@ -106,7 +106,7 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.250F;
+		float speedBase = 0.320F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -402,10 +402,10 @@ public class EntityPrehistoricFloraGigantspinosaurus extends EntityPrehistoricFl
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.85;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;

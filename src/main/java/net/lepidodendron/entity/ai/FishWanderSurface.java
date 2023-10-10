@@ -65,12 +65,12 @@ public class FishWanderSurface extends AnimationAINoAnimation<EntityPrehistoricF
                 this.PrehistoricFloraFishBase.getNavigator().clearPath();
             }
             if (this.PrehistoricFloraFishBase.getNavigator().noPath()) {
-                BlockPos vec3 = this.findWaterTarget();
+                Vec3d vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    double Xoffset = this.PrehistoricFloraFishBase.posX - this.PrehistoricFloraFishBase.getPosition().getX();
-                    double Zoffset = this.PrehistoricFloraFishBase.posZ - this.PrehistoricFloraFishBase.getPosition().getZ();
+//                    double Xoffset = this.PrehistoricFloraFishBase.posX - this.PrehistoricFloraFishBase.getPosition().getX();
+//                    double Zoffset = this.PrehistoricFloraFishBase.posZ - this.PrehistoricFloraFishBase.getPosition().getZ();
 
-                    this.PrehistoricFloraFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraFishBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, 1.0);
 
                     return true;
                 }
@@ -100,36 +100,36 @@ public class FishWanderSurface extends AnimationAINoAnimation<EntityPrehistoricF
         return true;
     }
 
-    public BlockPos findWaterTarget() {
+    public Vec3d findWaterTarget() {
         Random rand = this.PrehistoricFloraFishBase.getRNG();
         if (this.PrehistoricFloraFishBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                BlockPos randPos = this.PrehistoricFloraFishBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
+                Vec3d randPos = this.PrehistoricFloraFishBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Prefer targets which are at the top:
-                BlockPos randPosVar = randPos;
-                if (this.PrehistoricFloraFishBase.world.getBlockState(randPos).getMaterial() == Material.WATER && !isAtTop(randPos) && Math.random() < 0.90) {
+                Vec3d randPosVar = randPos;
+                if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtTop(new BlockPos(randPos)) && Math.random() < 0.90) {
                     int ii = 0;
-                    while ((randPos.up(ii).getY() > 1) && this.PrehistoricFloraFishBase.world.getBlockState(randPos.up(ii)).getMaterial() == Material.WATER) {
-                        randPosVar = randPos.up(ii);
+                    while ((new BlockPos(randPos).up(ii).getY() > 1) && this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos).up(ii)).getMaterial() == Material.WATER) {
+                        randPosVar = randPos.add(0, ii,0);
                         ii = ii + 1;
                     }
-                    //About half the time float over the block:
-                    randPos = randPosVar;
-                    if (Math.random() > 0.5) {
-                        randPos = randPosVar.up();
-                    }
+//                    //About half the time float over the block:
+//                    randPos = randPosVar;
+//                    if (Math.random() > 0.5) {
+//                        randPos = randPosVar.up();
+//                    }
                 }
 
-                if (this.PrehistoricFloraFishBase.world.getBlockState(randPos).getMaterial() == Material.WATER && this.PrehistoricFloraFishBase.isDirectPathBetweenPoints(this.PrehistoricFloraFishBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5))) {
-                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraFishBase.isDirectPathBetweenPoints(this.PrehistoricFloraFishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                    if (!(randPos.y < 1 || randPos.y >= 254)) {
                         return randPos;
                     }
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraFishBase.getAttackTarget());
-            if (this.PrehistoricFloraFishBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraFishBase.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
         }

@@ -7584,5 +7584,124 @@
         "stream": false
       }
     ]
+  },
+
+  "rhomaleosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhomaleosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "rhomaleosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhomaleosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhomaleosaurus_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "rhomaleosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhomaleosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+
+  "yangchuanosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "yangchuanosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "yangchuanosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "yangchuanosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yangchuanosaurus_roar01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_roar02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yangchuanosaurus_roar03",
+        "stream": false
+      }
+    ]
   }
 }

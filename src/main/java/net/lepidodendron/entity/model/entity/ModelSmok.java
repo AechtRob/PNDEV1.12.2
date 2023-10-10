@@ -2136,9 +2136,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
         animator.setAnimation(e.NOISE_ANIMATION);
         animator.startKeyframe(8);
         animator.rotate(neck1, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(neck2, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(head1, (float) Math.toRadians(-50), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(jaw1, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(neck2, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(head1, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(jaw1, (float) Math.toRadians(17), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(8);
         animator.resetKeyframe(9);

@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
@@ -43,14 +42,7 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
 
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.getAnimation() == LandBase.DRINK_ANIMATION) {
-                return false;
-            }
-        }
-
-        if (this.entity instanceof EntityPrehistoricFloraPlateosaurus) {
-            EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.entity;
-            if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
+            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
                 return false;
             }
         }
@@ -78,6 +70,7 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
                 this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
+                this.targetItem.setPickupDelay(10);
             }
         }
         //A helper for things flying above their targets:
@@ -87,6 +80,7 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
                     this.entity.setEatTarget(null);
                     this.entity.eatItem(this.targetItem.getItem());
                     this.targetItem.getItem().shrink(1);
+                    this.targetItem.setPickupDelay(10);
                 }
             }
         }

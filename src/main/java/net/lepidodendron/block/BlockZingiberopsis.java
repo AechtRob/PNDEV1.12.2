@@ -176,7 +176,7 @@ public class BlockZingiberopsis extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
-	        	tooltip.add("Periods: Cretaceous - Paleogene");
+	        	tooltip.add("Periods: late Cretaceous - Paleogene (Eocene)");
 	        	tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

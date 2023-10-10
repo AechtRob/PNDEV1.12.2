@@ -55,7 +55,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.WOOD);
 			setTranslationKey("pf_resin_extractor_full");
 			setSoundType(SoundType.WOOD);
 			setHardness(5F);
@@ -116,8 +116,10 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 					IBlockState _bs = world.getBlockState(pos);
 					world.setBlockState(pos, BlockResinExtractor.block.getDefaultState().withProperty(FACING, _bs.getValue(FACING)));
 					TileEntity _tileEntity = world.getTileEntity(pos);
-					if (_tileEntity != null)
+					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1667);
+						_tileEntity.getTileData().setInteger("type", 1);
+					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
 				world.updateComparatorOutputLevel(pos,BlockResinExtractor.block);
@@ -136,8 +138,10 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 					IBlockState _bs = world.getBlockState(pos);
 					world.setBlockState(pos, BlockResinExtractor.block.getDefaultState().withProperty(FACING, _bs.getValue(FACING)));
 					TileEntity _tileEntity = world.getTileEntity(pos);
-					if (_tileEntity != null)
+					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1000);
+						_tileEntity.getTileData().setInteger("type", 1);
+					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
 				world.updateComparatorOutputLevel(pos,BlockResinExtractor.block);
@@ -289,6 +293,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 				(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
 				&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
 				&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
+				&& (world.getBlockState(position.down()).getMaterial() != Material.CLAY)
 				&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
 			) {
 				return false;

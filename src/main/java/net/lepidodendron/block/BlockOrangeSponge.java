@@ -591,7 +591,7 @@ public class BlockOrangeSponge extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Sponge");
-				tooltip.add("Periods: [Tonian(?) - Cryogenian(?) - Ediacaran(?) -] Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");}
+				tooltip.add("Periods: [Tonian (?) - Cryogenian (?) - Ediacaran (?) -] Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

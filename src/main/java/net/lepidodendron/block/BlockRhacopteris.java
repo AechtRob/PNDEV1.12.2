@@ -268,7 +268,7 @@ public class BlockRhacopteris extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant shrub");
-				tooltip.add("Periods: [late Devonian(?) -] Carboniferous [- early Permian(?)]");
+				tooltip.add("Periods: [Devonian(?) -] Carboniferous [- Permian(?)]");
 				tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

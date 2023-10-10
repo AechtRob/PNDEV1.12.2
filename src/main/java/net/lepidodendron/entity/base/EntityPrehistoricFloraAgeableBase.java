@@ -6,7 +6,9 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
@@ -14,6 +16,7 @@ import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -103,6 +106,26 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
     }
 
+    public void playStepSoundPublic() {
+        Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
+        BlockPos pos = this.getPosition();
+
+        SoundType soundtype = null;
+        SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
+        SoundEvent soundeventSnow = SoundEvents.BLOCK_SNOW_STEP;
+        if (this.world.getBlockState(pos).getBlock() == Blocks.SNOW_LAYER
+            || this.world.getBlockState(pos.down()).getBlock() == Blocks.SNOW)
+        {
+            soundtype = Blocks.SNOW_LAYER.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundeventSnow, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+        else if (!blockIn.getDefaultState().getMaterial().isLiquid())
+        {
+            soundtype = Blocks.DIRT.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+    }
+
     public boolean noMossEggs() {
         return false;
     }
@@ -155,7 +178,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public int warnCooldownTime() {
-        return 60; //how long between warning and attack
+        return 120; //how long between warning and attack
     }
 
     public void setWarnCooldown(int cooldown) {
@@ -561,6 +584,30 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public void setShoalLeader(@Nullable EntityPrehistoricFloraAgeableBase leader) {
         this.shoalLeader = leader;
+    }
+
+    public int getFootstepOffset() {
+        return 0;
+    }
+
+    public int getWalkCycleLength() {
+        return 0;
+    }
+
+    public int tetrapodWalkFootstepOffset() {
+        return 0;
+    }
+
+    public int getRunFootstepOffset() {
+        return 0;
+    }
+
+    public int getRunCycleLength() {
+        return 0;
+    }
+
+    public int tetrapodRunFootstepOffset() {
+        return 0;
     }
 
     public int getTickOffset() {
@@ -1103,13 +1150,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public void playLivingSound() {
-        //super.playLivingSound();
         if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
             if (!this.world.isRemote) {
-            //if (this.getAnimation() == NO_ANIMATION) {
-                //this.setAnimation(ROAR_ANIMATION);
-                this.setAnimation(ROAR_ANIMATION);
-                //System.err.println("Playing roar sound on remote: " + (world.isRemote));
+                if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
+                    this.setAnimation(EntityPrehistoricFloraLandCarnivoreBase.NOISE_ANIMATION);
+                }
+                else {
+                    this.setAnimation(ROAR_ANIMATION);
+                }
                 super.playLivingSound();
             }
        }
@@ -1184,11 +1232,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
-                this.setAttackTarget(this.getWarnTarget());
-                this.setIsFast(true);
-                this.setOneHit(true);
-                this.setWarnTarget(null);
-                this.setWarnCooldown(0);
+                if (this.getDistance(this.getWarnTarget()) <= 16) {
+                    this.setAttackTarget(this.getWarnTarget());
+                    this.setOneHit(true);
+                    this.setWarnCooldown(0);
+                }
+                else {
+                    this.setWarnTarget(null);
+                    this.setWarnCooldown(0);
+                }
             }
         }
 
@@ -1256,6 +1308,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         EntityLivingBase attackTarget = this.getAttackTarget();
         if (attackTarget != null ) {
             if (attackTarget instanceof EntityPlayer && LepidodendronConfig.attackPlayerAlways) {
+                this.setWillHunt(true);
+            }
+            else if (attackTarget instanceof EntityPlayer && this.getWarnTarget() == attackTarget) {
                 this.setWillHunt(true);
             }
             else {

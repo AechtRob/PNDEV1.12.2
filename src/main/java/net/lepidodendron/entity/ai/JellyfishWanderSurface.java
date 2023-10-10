@@ -66,12 +66,12 @@ public class JellyfishWanderSurface extends AnimationAINoAnimation<EntityPrehist
                 this.PrehistoricFloraJellyfishBase.getNavigator().clearPath();
             }
             if (this.PrehistoricFloraJellyfishBase.getNavigator().noPath()) {
-                BlockPos vec3 = this.findWaterSurfaceTarget();
+                Vec3d vec3 = this.findWaterSurfaceTarget();
                 if (vec3 != null) {
-                    double Xoffset = this.entity.posX - this.entity.getPosition().getX();
-                    double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
+//                    double Xoffset = this.entity.posX - this.entity.getPosition().getX();
+//                    double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
 
-                    this.PrehistoricFloraJellyfishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraJellyfishBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, 1.0);
 
                     return true;
                 }
@@ -90,17 +90,17 @@ public class JellyfishWanderSurface extends AnimationAINoAnimation<EntityPrehist
         return false;
     }
 
-    public BlockPos findWaterSurfaceTarget() {
+    public Vec3d findWaterSurfaceTarget() {
         Random rand = this.PrehistoricFloraJellyfishBase.getRNG();
         if (this.PrehistoricFloraJellyfishBase.getAttackTarget() == null) {
             for (int i = 0; i < 12; i++) {
-                BlockPos randPos = this.PrehistoricFloraJellyfishBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(3) - 1, rand.nextInt(17) - 8);
+                Vec3d randPos = this.PrehistoricFloraJellyfishBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(3) - 1, rand.nextInt(17) - 8);
                 boolean surfaceCheck = false;
-                if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(randPos.up())) {
+                if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(new BlockPos(randPos).up())) {
                     surfaceCheck = true;
                 }
                 if (!surfaceCheck) {
-                    IBlockState state = this.PrehistoricFloraJellyfishBase.world.getBlockState(randPos.up());
+                    IBlockState state = this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).up());
                     if (state.getMaterial() != Material.WATER) {
                         surfaceCheck = true;
                     }
@@ -110,9 +110,9 @@ public class JellyfishWanderSurface extends AnimationAINoAnimation<EntityPrehist
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraJellyfishBase.getAttackTarget());
-            if (this.PrehistoricFloraJellyfishBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraJellyfishBase.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
         }

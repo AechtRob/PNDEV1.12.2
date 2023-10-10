@@ -65,12 +65,12 @@ public class NautiloidWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 this.PrehistoricFloraNautiloidBase.getNavigator().clearPath();
             }
             if (this.PrehistoricFloraNautiloidBase.getNavigator().noPath()) {
-                BlockPos vec3 = this.findWaterTarget();
+                Vec3d vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    double Xoffset = this.PrehistoricFloraNautiloidBase.posX - this.PrehistoricFloraNautiloidBase.getPosition().getX();
-                    double Zoffset = this.PrehistoricFloraNautiloidBase.posZ - this.PrehistoricFloraNautiloidBase.getPosition().getZ();
+//                    double Xoffset = this.PrehistoricFloraNautiloidBase.posX - this.PrehistoricFloraNautiloidBase.getPosition().getX();
+//                    double Zoffset = this.PrehistoricFloraNautiloidBase.posZ - this.PrehistoricFloraNautiloidBase.getPosition().getZ();
 
-                    this.PrehistoricFloraNautiloidBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
+                    this.PrehistoricFloraNautiloidBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, 1.0);
 
                     this.ticksAI = 600;
                     return true;
@@ -97,22 +97,22 @@ public class NautiloidWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         return false;
     }
 
-    public BlockPos findWaterTarget() {
+    public Vec3d findWaterTarget() {
         Random rand = this.PrehistoricFloraNautiloidBase.getRNG();
         if (this.PrehistoricFloraNautiloidBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                BlockPos randPos = this.PrehistoricFloraNautiloidBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
+                Vec3d randPos = this.PrehistoricFloraNautiloidBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
                 //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraFishBase.getPosition().getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraNautiloidBase.world.getBlockState(randPos).getMaterial() == Material.WATER && this.PrehistoricFloraNautiloidBase.isDirectPathBetweenPoints(this.PrehistoricFloraNautiloidBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5))) {
-                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                if (this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraNautiloidBase.isDirectPathBetweenPoints(this.PrehistoricFloraNautiloidBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                    if (!(randPos.y < 1 || randPos.y >= 254)) {
                         return randPos;
                     }
                 }
             }
         } else {
-            BlockPos blockpos1;
-            blockpos1 = new BlockPos(this.PrehistoricFloraNautiloidBase.getAttackTarget());
-            if (this.PrehistoricFloraNautiloidBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+            Vec3d blockpos1;
+            blockpos1 = this.PrehistoricFloraNautiloidBase.getAttackTarget().getPositionVector();
+            if (this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
         }
