@@ -212,7 +212,7 @@ public class BlockSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte tree");
-				tooltip.add("Periods: Carboniferous - Permian [- early Triassic?]");
+				tooltip.add("Periods: Carboniferous - Permian [- Triassic (?)]");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

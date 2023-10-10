@@ -206,7 +206,7 @@ public class BlockRattanSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Climbing palm");
-				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 				tooltip.add("Note: Must be planted against a climbable surface");
 				tooltip.add("Propagation: fruit/cone");
 			}

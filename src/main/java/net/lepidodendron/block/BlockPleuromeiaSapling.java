@@ -217,7 +217,7 @@ public class BlockPleuromeiaSapling extends ElementsLepidodendronMod.ModElement 
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte shrub");
-				tooltip.add("Periods: early Triassic");
+				tooltip.add("Periods: Triassic");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

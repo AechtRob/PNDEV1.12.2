@@ -206,7 +206,7 @@ public class BlockSphenobaieraSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgoale tree");
-				tooltip.add("Periods: [late Permian? -] Triassic - Jurassic - Cretaceous");
+				tooltip.add("Periods: [Permian (?) -] Triassic - Jurassic - late Cretaceous");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

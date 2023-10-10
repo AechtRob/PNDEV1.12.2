@@ -404,7 +404,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering water plant");
-	        tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+	        tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 	        tooltip.add("Note: planted under water");
 	        tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);

@@ -206,7 +206,7 @@ public class BlockNilssoniocladusSapling extends ElementsLepidodendronMod.ModEle
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Climbing cycad");
-				tooltip.add("Periods: Jurassic - Cretaceous");
+				tooltip.add("Periods: Jurassic - late Cretaceous");
 				tooltip.add("Note: Must be planted against a climbable surface");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);

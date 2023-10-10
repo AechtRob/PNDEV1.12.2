@@ -206,7 +206,7 @@ public class BlockNoeggerathialesSapling extends ElementsLepidodendronMod.ModEle
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Spore-bearing woody plant (Progymnosperm)");
-				tooltip.add("Periods: [late Carboniferous -] Permian");
+				tooltip.add("Periods: [Carboniferous -] Permian");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

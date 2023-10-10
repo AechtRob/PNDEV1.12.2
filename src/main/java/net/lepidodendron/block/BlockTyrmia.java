@@ -280,7 +280,7 @@ public class BlockTyrmia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales shrub");
-	        tooltip.add("Periods: Cretaceous");
+	        tooltip.add("Periods: early Cretaceous");
 	        tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

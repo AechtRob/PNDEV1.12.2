@@ -336,7 +336,7 @@ public class BlockSublepidodendron extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte shrub");
-	        	tooltip.add("Periods: late Devonian - early Carboniferous");
+	        	tooltip.add("Periods: Devonian - Carboniferous");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

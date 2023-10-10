@@ -352,7 +352,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
-				tooltip.add("Periods: early Devonian");
+				tooltip.add("Periods: Devonian");
 				tooltip.add("Note: requires water proximity and spreads to surrounding gravel, grass and dirt");
 				tooltip.add("Propagation: spores");
 			}

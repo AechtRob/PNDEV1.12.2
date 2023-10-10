@@ -206,7 +206,7 @@ public class BlockLyginopterisSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Climbing Seed-Plant");
-				tooltip.add("Periods: late Carboniferous");
+				tooltip.add("Periods: Carboniferous");
 				tooltip.add("Note: Must be planted against a climbable surface");
 				tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
