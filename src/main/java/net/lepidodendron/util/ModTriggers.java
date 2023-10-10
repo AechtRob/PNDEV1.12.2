@@ -230,6 +230,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EMPLECTOPTERIS = new CustomTrigger("pf_book_emplectopteris");
     public static final CustomTrigger CLICK_ENCBLUE = new CustomTrigger("pf_book_encblue");
     public static final CustomTrigger CLICK_EPHEDRA = new CustomTrigger("pf_book_ephedra");
+    public static final CustomTrigger CLICK_WELWITSCHIA = new CustomTrigger("pf_book_welwitschia");
     public static final CustomTrigger CLICK_DREWRIA = new CustomTrigger("pf_book_drewria");
     public static final CustomTrigger CLICK_PROTOGNETUM = new CustomTrigger("pf_book_protognetum");
     public static final CustomTrigger CLICK_DAYVAULTIA = new CustomTrigger("pf_book_dayvaultia");
@@ -1565,6 +1566,7 @@ public class ModTriggers
             CLICK_EMPLECTOPTERIS,
             CLICK_ENCBLUE,
             CLICK_EPHEDRA,
+            CLICK_WELWITSCHIA,
             CLICK_DREWRIA,
             CLICK_PROTOGNETUM,
             CLICK_DAYVAULTIA,

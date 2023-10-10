@@ -671,6 +671,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTicoaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPseudoctenis.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockWelwitschia.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling"
