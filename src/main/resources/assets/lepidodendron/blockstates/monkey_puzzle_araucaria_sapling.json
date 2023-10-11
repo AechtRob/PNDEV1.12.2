@@ -1,6 +1,6 @@
 {
     "variants": {
-        "stage=0": { "model": "lepidodendron:monkeypuzzle_sapling" },
-        "stage=1": { "model": "lepidodendron:monkeypuzzle_sapling" }
+        "stage=0": { "model": "lepidodendron:monkey_puzzle_sapling" },
+        "stage=1": { "model": "lepidodendron:monkey_puzzle_sapling" }
     }
 }

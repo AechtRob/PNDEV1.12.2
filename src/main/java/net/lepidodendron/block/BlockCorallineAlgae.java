@@ -217,7 +217,6 @@ public class BlockCorallineAlgae extends ElementsLepidodendronMod.ModElement {
 	    	}
 
 	    	return true;
-	    	 
 	    }
 		
 		@Override
