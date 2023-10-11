@@ -251,6 +251,7 @@ public class ModelSlimonia extends AdvancedModelBase {
         this.setRotateAngle(tergite10, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tergite11, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tergite12, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.05F;
         this.body.offsetY = -0.05F;
         this.body.render(0.01F);
         resetToDefaultPose();
