@@ -322,6 +322,7 @@ public class RenderDisplays {
     public static final ModelUrosthenes modelUrosthenes = new ModelUrosthenes();
     public static final ModelUtatsusaurus modelUtatsusaurus = new ModelUtatsusaurus();
     public static final ModelUarbryichthys modelUarbryichthys = new ModelUarbryichthys();
+    public static final ModelUrsactis modelUrsactis = new ModelUrsactis();
     public static final ModelVachonisia modelVachonisia = new ModelVachonisia();
     public static final ModelVampyronassa modelVampyronassa = new ModelVampyronassa();
     public static final ModelWarneticaris modelWarneticaris = new ModelWarneticaris();
