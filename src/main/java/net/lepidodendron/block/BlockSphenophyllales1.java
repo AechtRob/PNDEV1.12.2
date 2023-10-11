@@ -157,7 +157,7 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail/sphenophyte plant");
-	        	tooltip.add("Periods: late Devonian - Carboniferous");
+	        	tooltip.add("Periods: Devonian - Carboniferous");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

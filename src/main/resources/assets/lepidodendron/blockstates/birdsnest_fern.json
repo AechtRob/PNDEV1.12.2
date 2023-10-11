@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:birdsnest_fern"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:birdsnest_fern_inventory"
+    }
+  }
+}

@@ -66,6 +66,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_KELP = new CustomTrigger("pf_book_kelp");
     public static final CustomTrigger CLICK_ZINGIBEROPSIS = new CustomTrigger("pf_book_zingiberopsis");
     public static final CustomTrigger CLICK_GANSUFRUCTUS = new CustomTrigger("pf_book_gansufructus");
+    public static final CustomTrigger CLICK_SANTANIELLA = new CustomTrigger("pf_book_santaniella");
+    public static final CustomTrigger CLICK_SINOHERBA = new CustomTrigger("pf_book_sinoherba");
     public static final CustomTrigger CLICK_CHLORANTHUS = new CustomTrigger("pf_book_chloranthus");
     public static final CustomTrigger CLICK_BUTTERCUP = new CustomTrigger("pf_book_buttercup");
     public static final CustomTrigger CLICK_TELOPEA = new CustomTrigger("pf_book_telopea");
@@ -299,6 +301,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
+    public static final CustomTrigger CLICK_BIRDSNEST_FERN = new CustomTrigger("pf_book_birdsnest_fern");
     public static final CustomTrigger CLICK_MEDULLOSALES = new CustomTrigger("pf_book_medullosales");
     public static final CustomTrigger CLICK_NATALIGMA = new CustomTrigger("pf_book_nataligma");
     public static final CustomTrigger CLICK_MIRABILIS = new CustomTrigger("pf_book_mirabilis");
@@ -369,6 +372,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PTEROPHYLLUM = new CustomTrigger("pf_book_pterophyllum");
     public static final CustomTrigger CLICK_PTILOPHYLLUM = new CustomTrigger("pf_book_ptilophyllum");
     public static final CustomTrigger CLICK_QUADROCLADUS = new CustomTrigger("pf_book_quadrocladus");
+    public static final CustomTrigger CLICK_SINOCARPUS = new CustomTrigger("pf_book_sinocarpus");
     public static final CustomTrigger CLICK_QUASISTROBUS = new CustomTrigger("pf_book_quasistrobus");
     public static final CustomTrigger CLICK_REDWOOD = new CustomTrigger("pf_book_redwood");
     public static final CustomTrigger CLICK_RELLIMIA = new CustomTrigger("pf_book_rellimia");
@@ -393,6 +397,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SELAGINELLA = new CustomTrigger("pf_book_selaginella");
     public static final CustomTrigger CLICK_SIGILLARIA = new CustomTrigger("pf_book_sigillaria");
     public static final CustomTrigger CLICK_SILVER_TREEFERN = new CustomTrigger("pf_book_silver_treefern");
+    public static final CustomTrigger CLICK_BURNISHED_TREEFERN = new CustomTrigger("pf_book_burnished_treefern");
     public static final CustomTrigger CLICK_SIPHUSAUCTUM = new CustomTrigger("pf_book_siphusauctum");
     public static final CustomTrigger CLICK_SKAARIPTERIS = new CustomTrigger("pf_book_skaaripteris");
     public static final CustomTrigger CLICK_BOTRYCHIOPSIS = new CustomTrigger("pf_book_botrychiopsis");
@@ -1401,6 +1406,8 @@ public class ModTriggers
             CLICK_KELP,
             CLICK_ZINGIBEROPSIS,
             CLICK_GANSUFRUCTUS,
+            CLICK_SANTANIELLA,
+            CLICK_SINOHERBA,
             CLICK_CHLORANTHUS,
             CLICK_BUTTERCUP,
             CLICK_TELOPEA,
@@ -1633,6 +1640,7 @@ public class ModTriggers
             CLICK_MAPLE,
             CLICK_GUNNERA,
             CLICK_MARATTIA,
+            CLICK_BIRDSNEST_FERN,
             CLICK_MEDULLOSALES,
             CLICK_MIRABILIS,
             CLICK_NATALIGMA,
@@ -1703,6 +1711,7 @@ public class ModTriggers
             CLICK_PTEROPHYLLUM,
             CLICK_PTILOPHYLLUM,
             CLICK_QUADROCLADUS,
+            CLICK_SINOCARPUS,
             CLICK_QUASISTROBUS,
             CLICK_REDWOOD,
             CLICK_RELLIMIA,
@@ -1727,6 +1736,7 @@ public class ModTriggers
             CLICK_SELAGINELLA,
             CLICK_SIGILLARIA,
             CLICK_SILVER_TREEFERN,
+            CLICK_BURNISHED_TREEFERN,
             CLICK_SIPHUSAUCTUM,
             CLICK_SKAARIPTERIS,
             CLICK_BOTRYCHIOPSIS,
