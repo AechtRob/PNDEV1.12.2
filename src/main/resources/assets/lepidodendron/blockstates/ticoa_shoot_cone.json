@@ -1,7 +1,6 @@
 {
   "variants": {
-  	"normal":
-      {"model": "lepidodendron:ticoa_shoot"},
+  	"normal": {"model": "lepidodendron:ticoa_shoot_seed"},
     "inventory": {
       "model": "lepidodendron:ticoa_shoot_inventory"
     }

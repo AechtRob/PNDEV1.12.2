@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.item.ItemTicoaCone;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -23,6 +24,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -34,21 +36,22 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockTicoaShoot extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:ticoa_shoot_worldgen")
+public class BlockTicoaShootCone extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:ticoa_shoot_cone")
 	public static final Block block = null;
-	public BlockTicoaShoot(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.ticoa_shoot_worldgen);
+	public BlockTicoaShootCone(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.ticoa_shoot);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("ticoa_shoot_worldgen"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("ticoa_shoot_cone"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -62,7 +65,7 @@ public class BlockTicoaShoot extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_ticoa_shoot_worldgen");
+			setTranslationKey("pf_ticoa_shoot_cone");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.2F);
 			setResistance(0.2F);
@@ -75,7 +78,7 @@ public class BlockTicoaShoot extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_CYCAS;
+			return ModTriggers.CLICK_TICOA;
 		}
 
 		@Override
@@ -220,9 +223,10 @@ public class BlockTicoaShoot extends ElementsLepidodendronMod.ModElement {
 					}
 				}
 				else if (Math.random()>0.8 && Math.random()>0.8) {
-					worldIn.setBlockState(pos, BlockTicoaShootCone.block.getDefaultState(), 3);
+					worldIn.setBlockState(pos, BlockTicoaShoot.block.getDefaultState(), 3);
 				}
 			}
+
 		}
 
 		@Override
@@ -237,5 +241,29 @@ public class BlockTicoaShoot extends ElementsLepidodendronMod.ModElement {
 	        return true;
 	    }
 
+
+		@Override
+		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+		{
+			if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
+			{
+				return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
+			}
+			else {
+				if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+					ItemStack stackSeed = new ItemStack(ItemTicoaCone.block, (int) (1));
+					stackSeed.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
+					if (Math.random() > 0.95) {
+						world.destroyBlock(pos, false);
+					}
+					else {
+						world.setBlockState(pos, BlockTicoaShoot.block.getDefaultState());
+					}
+					return true;
+				}
+				return true;
+			}
+		}
 	}
 }
