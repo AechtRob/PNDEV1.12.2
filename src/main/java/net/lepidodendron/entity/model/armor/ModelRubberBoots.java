@@ -15,7 +15,7 @@ public class ModelRubberBoots extends ModelBiped {
         this.textureHeight = 32;
         this.boot_main = new ModelRenderer(this, 0, 4);
         this.boot_main.setRotationPoint(1.90F, 12.0F, 0.0F);
-        this.boot_main.addBox(-4.0F, -6.0F, -2.0F, 4, 6, 4, 0.01F);
+        this.boot_main.addBox(-4.0F, -6.0F, -2.0F, 4, 6, 4, 0.15F);
         this.boot_foot_middle = new ModelRenderer(this, 0, 0);
         this.boot_foot_middle.setRotationPoint(0.0F, -2.009999990463257F, -1.7999999523162842F);
         this.boot_foot_middle.addBox(-3.5F, 0.0F, -2.0F, 3, 2, 2, 0.0F);
@@ -23,7 +23,7 @@ public class ModelRubberBoots extends ModelBiped {
 
         this.boot_main_right = new ModelRenderer(this, 0, 4);
         this.boot_main_right.setRotationPoint(-1.90F, 12.0F, 0.0F);
-        this.boot_main_right.addBox(-0.0F, -6.0F, -2.0F, 4, 6, 4, 0.01F);
+        this.boot_main_right.addBox(-0.0F, -6.0F, -2.0F, 4, 6, 4, 0.15F);
         this.boot_foot_middle_right = new ModelRenderer(this, 0, 0);
         this.boot_foot_middle_right.setRotationPoint(0.0F, -2.009999990463257F, -1.7999999523162842F);
         this.boot_foot_middle_right.addBox(0.5F, 0.0F, -2.0F, 3, 2, 2, 0.0F);
