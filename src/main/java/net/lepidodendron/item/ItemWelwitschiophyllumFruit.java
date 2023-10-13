@@ -18,11 +18,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemWelwitschiaFruit extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:welwitschia_fruit")
+public class ItemWelwitschiophyllumFruit extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:welwitschiophyllum_fruit")
 	public static final Item block = null;
-	public ItemWelwitschiaFruit(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.welwitschia_fruit);
+	public ItemWelwitschiophyllumFruit(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.welwitschiophyllum_fruit);
 	}
 
 	@Override
@@ -33,20 +33,20 @@ public class ItemWelwitschiaFruit extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("pndietFruit", ItemWelwitschiaFruit.block);
+		OreDictionary.registerOre("pndietFruit", ItemWelwitschiophyllumFruit.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:welwitschia_fruit", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:welwitschiophyllum_fruit", "inventory"));
 	}
 
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(1, 0.2f, false);
-			setTranslationKey("pf_welwitschia_fruit");
-			setRegistryName("welwitschia_fruit");
+			setTranslationKey("pf_welwitschiophyllum_fruit");
+			setRegistryName("welwitschiophyllum_fruit");
 			setAlwaysEdible();
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setMaxStackSize(64);

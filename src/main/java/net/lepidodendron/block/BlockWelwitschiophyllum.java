@@ -6,7 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemWelwitschiaFruit;
+import net.lepidodendron.item.ItemWelwitschiophyllumFruit;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -43,11 +43,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockWelwitschia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:welwitschia")
+public class BlockWelwitschiophyllum extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:welwitschiophyllum")
 	public static final Block block = null;
-	public BlockWelwitschia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.welwitschia);
+	public BlockWelwitschiophyllum(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.welwitschiophyllum);
 	}
 
 	@Override
@@ -60,15 +60,15 @@ public class BlockWelwitschia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:welwitschia", "inventory"));
+				new ModelResourceLocation("lepidodendron:welwitschiophyllum", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:welwitschia", BlockWelwitschia.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockWelwitschia.block);
-		OreDictionary.registerOre("plant", BlockWelwitschia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:welwitschiophyllum", BlockWelwitschiophyllum.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockWelwitschiophyllum.block);
+		OreDictionary.registerOre("plant", BlockWelwitschiophyllum.block);
 	}
 
 
@@ -79,19 +79,19 @@ public class BlockWelwitschia extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_welwitschia");
-			setRegistryName("welwitschia");
+			setTranslationKey("pf_welwitschiophyllum");
+			setRegistryName("welwitschiophyllum");
 		}
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0,0,0,1,1,1);
+			return new AxisAlignedBB(0,0,0,1,1.5,1);
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_WELWITSCHIA;
+			return ModTriggers.CLICK_WELWITSCHIOPHYLLUM;
 		}
 
 		@Override
@@ -127,9 +127,9 @@ public class BlockWelwitschia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				drops.add(new ItemStack(ItemWelwitschiaFruit.block, (int) (1)));
+				drops.add(new ItemStack(ItemWelwitschiophyllumFruit.block, (int) (1)));
 				if (Math.random() > 0.66) {
-					drops.add(new ItemStack(ItemWelwitschiaFruit.block, (int) (1)));
+					drops.add(new ItemStack(ItemWelwitschiophyllumFruit.block, (int) (1)));
 				}
 			}
 			else {
@@ -155,7 +155,7 @@ public class BlockWelwitschia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Gnetophyte plant");
-	        	tooltip.add("Periods: late Cretaceous (?) - Paleogene - Neogene - Pleistocene [- present]");
+	        	tooltip.add("Periods: early Cretaceous");
 	        	tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

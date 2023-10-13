@@ -233,6 +233,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ENCBLUE = new CustomTrigger("pf_book_encblue");
     public static final CustomTrigger CLICK_EPHEDRA = new CustomTrigger("pf_book_ephedra");
     public static final CustomTrigger CLICK_WELWITSCHIA = new CustomTrigger("pf_book_welwitschia");
+    public static final CustomTrigger CLICK_WELWITSCHIOPHYLLUM = new CustomTrigger("pf_book_welwitschiophyllum");
     public static final CustomTrigger CLICK_DREWRIA = new CustomTrigger("pf_book_drewria");
     public static final CustomTrigger CLICK_PROTOGNETUM = new CustomTrigger("pf_book_protognetum");
     public static final CustomTrigger CLICK_DAYVAULTIA = new CustomTrigger("pf_book_dayvaultia");
@@ -478,6 +479,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PIETZSCHIA = new CustomTrigger("pf_book_pietzschia");
     public static final CustomTrigger CLICK_FLABELLOPTERIS = new CustomTrigger("pf_book_flabellopteris");
     public static final CustomTrigger CLICK_KTALENIA = new CustomTrigger("pf_book_ktalenia");
+    public static final CustomTrigger CLICK_TODEA = new CustomTrigger("pf_book_todea");
 
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
@@ -1574,6 +1576,7 @@ public class ModTriggers
             CLICK_ENCBLUE,
             CLICK_EPHEDRA,
             CLICK_WELWITSCHIA,
+            CLICK_WELWITSCHIOPHYLLUM,
             CLICK_DREWRIA,
             CLICK_PROTOGNETUM,
             CLICK_DAYVAULTIA,
@@ -1815,6 +1818,7 @@ public class ModTriggers
             CLICK_PIETZSCHIA,
             CLICK_FLABELLOPTERIS,
             CLICK_KTALENIA,
+            CLICK_TODEA,
         
             //Grouped ones:
             CLICK_BLASTOID,
