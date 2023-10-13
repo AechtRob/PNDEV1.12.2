@@ -2,7 +2,9 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.block.BlockBirdsnestFern;
 import net.lepidodendron.block.BlockFernEpiphyte;
+import net.lepidodendron.block.BlockLeptopteris;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -36,17 +38,52 @@ public class FernEpiphyteGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
     	boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimFernEpiphyte))
-			dimensionCriteria = true;
-		if (
-			(dimID == LepidodendronConfig.dimCarboniferous)
-			|| (dimID == LepidodendronConfig.dimPermian)
-			|| (dimID == LepidodendronConfig.dimTriassic)
-			|| (dimID == LepidodendronConfig.dimJurassic)
+		if (this.FernEpiphyte == BlockFernEpiphyte.block) {
+			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimFernEpiphyte)) {
+				dimensionCriteria = true;
+			}
+			if (
+					(dimID == LepidodendronConfig.dimCarboniferous)
+							|| (dimID == LepidodendronConfig.dimPermian)
+							|| (dimID == LepidodendronConfig.dimTriassic)
+							|| (dimID == LepidodendronConfig.dimJurassic)
+							|| (dimID == LepidodendronConfig.dimCretaceous)
+							|| (dimID == LepidodendronConfig.dimPaleogene)
+							|| (dimID == LepidodendronConfig.dimNeogene)
+							|| (dimID == LepidodendronConfig.dimPleistocene)
 			)
 			{
 				dimensionCriteria = true;
 			}
+		}
+		if (this.FernEpiphyte == BlockLeptopteris.block) {
+			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLeptopterisEpiphyte)) {
+				dimensionCriteria = true;
+			}
+			if (
+					(dimID == LepidodendronConfig.dimJurassic)
+							|| (dimID == LepidodendronConfig.dimCretaceous)
+							|| (dimID == LepidodendronConfig.dimPaleogene)
+							|| (dimID == LepidodendronConfig.dimNeogene)
+							|| (dimID == LepidodendronConfig.dimPleistocene)
+			)
+			{
+				dimensionCriteria = true;
+			}
+		}
+		if (this.FernEpiphyte == BlockBirdsnestFern.block) {
+			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBirdsnestFern)) {
+				dimensionCriteria = true;
+			}
+			if (
+					(dimID == LepidodendronConfig.dimCretaceous)
+							|| (dimID == LepidodendronConfig.dimPaleogene)
+							|| (dimID == LepidodendronConfig.dimNeogene)
+							|| (dimID == LepidodendronConfig.dimPleistocene)
+			) {
+				dimensionCriteria = true;
+			}
+		}
 		if (!dimensionCriteria)
 			return true;
 
@@ -57,8 +94,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
             int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
 
             if (k >= worldIn.getSeaLevel() && this.FernEpiphyte.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
-            	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
-					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
+            	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
 				//figure out a position and facing to place this at!
 				for (EnumFacing enumfacing : FACING.getAllowedValues())
@@ -68,13 +104,22 @@ public class FernEpiphyteGenerator extends WorldGenerator
 		        	if (enumfacing == EnumFacing.SOUTH) {pos = new BlockPos(j, k, l - 1);}
 		        	if (enumfacing == EnumFacing.EAST) {pos = new BlockPos(j - 1, k, l);}
 		        	if (enumfacing == EnumFacing.WEST) {pos = new BlockPos(j + 1, k, l);}
+					if (enumfacing == EnumFacing.UP) {pos = new BlockPos(j, k - 1, l);}
 
-		            if (BlockFernEpiphyte.BlockCustom.canPlaceAt(worldIn, new BlockPos(j, k, l), enumfacing)
-		            	&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD)
-		            {
-		                worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
-		                return true;
-		            }
+					if (this.FernEpiphyte == BlockFernEpiphyte.block) { //NSEW only
+						if ( BlockFernEpiphyte.BlockCustom.canPlaceAt(worldIn, new BlockPos(j, k, l), enumfacing)
+								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
+							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+							return true;
+						}
+					}
+					else { //NSEWU
+						if (this.FernEpiphyte.canPlaceBlockOnSide(worldIn, pos, enumfacing)
+								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
+							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+							return true;
+						}
+					}
 		        }
             }
         }

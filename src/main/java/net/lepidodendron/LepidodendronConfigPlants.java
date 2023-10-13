@@ -2567,6 +2567,12 @@ public class LepidodendronConfigPlants {
     public static String[] genLeptopterisEpiphyteOverrideBiomes = new String[0];
     public static double multiplierLeptopterisEpiphyte = 1;
 
+    public static int[] dimBirdsnestFern = new int[]{0};
+    public static boolean genBirdsnestFern = false;
+    public static String[] genBirdsnestFernBlacklistBiomes = new String[0];
+    public static String[] genBirdsnestFernOverrideBiomes = new String[0];
+    public static double multiplierBirdsnestFern = 1;
+
     public static int[] dimMossWood = new int[]{0};
     public static boolean genMossWood = false;
     public static String[] genMossWoodBlacklistBiomes = new String[0];
@@ -11746,6 +11752,27 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Epiphytic Fern", "multiplierFernEpiphyte", multiplierFernEpiphyte);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierFernEpiphyte = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Birdsnest Fern", "dimBirdsnestFern", dimBirdsnestFern);
+        prop.setComment("List of dimension IDs Birdsnest Ferns can generate in [default: 0]");
+        dimBirdsnestFern = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Birdsnest Fern", "genBirdsnestFern", genBirdsnestFern);
+        prop.setComment("Set to true to generate Birdsnest Ferns naturally [default: false]");
+        genBirdsnestFern = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Birdsnest Fern", "genBirdsnestFernBlacklistBiomes", genBirdsnestFernBlacklistBiomes);
+        prop.setComment("List of biomes Birdsnest Ferns are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genBirdsnestFernBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Birdsnest Fern", "genBirdsnestFernOverrideBiomes", genBirdsnestFernOverrideBiomes);
+        prop.setComment("List of biomes Birdsnest Ferns are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genBirdsnestFernOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Birdsnest Fern", "multiplierBirdsnestFern", multiplierBirdsnestFern);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierBirdsnestFern = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Epiphytic Leptopteris", "dimLeptopterisEpiphyte", dimLeptopterisEpiphyte);
