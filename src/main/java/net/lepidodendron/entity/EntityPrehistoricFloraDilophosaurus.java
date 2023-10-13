@@ -34,24 +34,25 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
-	public Animation SCRATCH_RIGHT_ANIMATION;
+
+	public Animation CLEAN_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraYangchuanosaurus(World world) {
+	public EntityPrehistoricFloraDilophosaurus(World world) {
 		super(world);
-		setSize(1.75F, 3F);
-		minWidth = 0.20F;
-		maxWidth = 1.75F;
-		maxHeight = 3F;
-		maxHealthAgeable = 96.0D;
-		STAND_ANIMATION = Animation.create(80);
-		SCRATCH_RIGHT_ANIMATION = Animation.create(80);
+		setSize(0.99F, 1.5F);
+		minWidth = 0.50F;
+		maxWidth = 0.99F;
+		maxHeight = 1.5F;
+		maxHealthAgeable = 36.0D;
+		STAND_ANIMATION = Animation.create(120);
+		CLEAN_ANIMATION = Animation.create(83);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -69,7 +70,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getRunCycleLength() {
-		return 20;
+		return 15;
 	}
 
 	@Override
@@ -90,12 +91,12 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getEggType() {
-		return 2; //large
+		return 1; //large
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_RIGHT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, CLEAN_ANIMATION};
 	}
 	public static String getPeriod() {return "Jurassic";}
 
@@ -104,16 +105,15 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		return 40;
 	}
 
-
 	@Override
 	public int getRoarLength() {
 		return 80;
-	} //Idle
+	} //Warn
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
-	} //Roar
+		return 40;
+	} //Noise
 
 	@Override
 	public boolean hasNest() {
@@ -122,7 +122,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getAttackLength() {
-		return 30;
+		return 20;
 	}
 
 	@Override
@@ -141,7 +141,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.445F;
+		float speedBase = 0.4F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -231,7 +231,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -239,25 +239,25 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:dilophosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:dilophosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:dilophosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:dilophosaurus_death"));
 	}
 
 	@Override
@@ -273,14 +273,14 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Sometimes stand up and look around:
+		//Alert animation
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(100);
 			if (next < 50) {
 				this.setAnimation(STAND_ANIMATION);
 			} else {
-				this.setAnimation(SCRATCH_RIGHT_ANIMATION);
+				this.setAnimation(CLEAN_ANIMATION);
 			}
 			this.standCooldown = 3000;
 		}
@@ -355,9 +355,9 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.YANGCHUANOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.DILOPHOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.YANGCHUANOSAURUS_LOOT;
+		return LepidodendronMod.DILOPHOSAURUS_LOOT;
 	}
 
 	//Rendering taxidermy:

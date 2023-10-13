@@ -34,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -43,13 +43,13 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	public Animation SCRATCH_RIGHT_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraYangchuanosaurus(World world) {
+	public EntityPrehistoricFloraSinraptor(World world) {
 		super(world);
-		setSize(1.75F, 3F);
+		setSize(1.75F, 2F);
 		minWidth = 0.20F;
-		maxWidth = 1.75F;
-		maxHeight = 3F;
-		maxHealthAgeable = 96.0D;
+		maxWidth = 1.5F;
+		maxHeight = 2F;
+		maxHealthAgeable = 76.0D;
 		STAND_ANIMATION = Animation.create(80);
 		SCRATCH_RIGHT_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -104,7 +104,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		return 40;
 	}
 
-
+	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM = IDLE1 =  BOOMINGCALL, NOISE_ANIM = THREAT, IDLESCRATCH = SCRATCH
 	@Override
 	public int getRoarLength() {
 		return 80;
@@ -141,7 +141,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.445F;
+		float speedBase = 0.35F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -282,11 +282,11 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 			} else {
 				this.setAnimation(SCRATCH_RIGHT_ANIMATION);
 			}
-			this.standCooldown = 3000;
+			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 3000;
+			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
