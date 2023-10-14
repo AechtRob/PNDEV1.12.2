@@ -1,0 +1,8 @@
+{
+  "parent":"lepidodendron:block/3x3_6pointedplant",
+  "textures": {
+    "c": "lepidodendron:blocks/todea_b_c",
+    "w": "lepidodendron:blocks/todea_b_w",
+    "e": "lepidodendron:blocks/todea_b_e"
+  }
+}
