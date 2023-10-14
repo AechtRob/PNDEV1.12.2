@@ -27,6 +27,10 @@ public class LepidodendronConfig {
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
     public static boolean biomeOlive = true;
+    public static boolean digsiteGen = true;
+    public static String[] digsiteBiomeBlacklist = new String[0];
+    public static int[] digsiteDimensionWhiteList = new int[]{0};
+    public static int digsiteRarity = 50;
     public static boolean machinesRF = false;
     public static boolean sulphuricAcidGrief = true;
     public static boolean sulphuricAcidInfinite = false;
@@ -656,6 +660,25 @@ public class LepidodendronConfig {
         prop.setComment("Set to false to disable the world-gen of this mod's overworld apple orchards. [default: true]");
         biomeApple = prop.getBoolean();
         propOrder.add(prop.getName());
+
+
+        prop = cfg.get("Global World-Gen", "digsiteGen", digsiteGen);
+        prop.setComment("Set to false to disable the world-gen of this mod's fossil digsites. [default: true]");
+        digsiteGen = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "digsiteBiomeBlacklist", digsiteBiomeBlacklist);
+        prop.setComment("A list of biomes digsites are blacklisted from. [default: empty]");
+        digsiteBiomeBlacklist = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "digsiteDimensionWhiteList", digsiteDimensionWhiteList);
+        prop.setComment("A list of dimensions IDs digsites can generate in. [default: 0]");
+        digsiteDimensionWhiteList = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lepidodendron", "digSiteRarity", digsiteRarity);
+        prop.setComment("One in this many chunks will try to generate a digsite (note, most attempts will fail due to unsuitable terrain) [default: 50]");
+        digsiteRarity = prop.getInt();
+        propOrder.add(prop.getName());
+
 
         prop = cfg.get("Global World-Gen", "biomeOlive", biomeOlive);
         prop.setComment("Set to false to disable the world-gen of this mod's overworld olive groves. [default: true]");
