@@ -37,7 +37,7 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
             return newInfo;
         } else if (blockInfoIn.blockState.getBlock() == Blocks.BED) {
             NBTTagCompound tag = blockInfoIn.tileentityData == null ? new NBTTagCompound() : blockInfoIn.tileentityData;
-            tag.setInteger("color", 0);
+            tag.setInteger("color", 7);
             Template.BlockInfo newInfo = new Template.BlockInfo(pos, blockInfoIn.blockState, tag);
             return newInfo;
         }
@@ -80,6 +80,10 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
 
         }
 
+        if (blockstateIn.getBlock() == Blocks.WOOL) {
+            return Blocks.WOOL.getStateFromMeta(12);
+        }
+
         Biome biome = world.getBiome(pos);
         if (blockstateIn.getBlock() == Blocks.DIRT) {
             if (biome.topBlock.getMaterial() == Material.GRASS
@@ -107,9 +111,29 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
             return biome.fillerBlock;
         }
 
+        if (blockstateIn.getBlock() == Blocks.STONE) {
+            if (biome.topBlock == Blocks.SAND.getStateFromMeta(0)) {
+                return Blocks.SANDSTONE.getStateFromMeta(0);
+            }
+            if (biome.topBlock == Blocks.SAND.getStateFromMeta(1)) {
+                return Blocks.SANDSTONE.getStateFromMeta(1);
+            }
+            if (biome.topBlock == BlockSandBlack.block) {
+                return BlockSandstoneBlack.block.getDefaultState();
+            }
+            if (biome.topBlock == BlockSandPangaean.block) {
+                return BlockSandstonePangaean.block.getDefaultState();
+            }
+            if (biome.topBlock == BlockSandWhite.block) {
+                return BlockSandstoneWhite.block.getDefaultState();
+            }
+            if (biome.topBlock == BlockSandPaleoproterozoic.block) {
+                return BlockSandstonePaleoproterozoic.block.getDefaultState();
+            }
+            return biome.topBlock;
+        }
+
         return blockstateIn;
     }
-
-
 
 }
