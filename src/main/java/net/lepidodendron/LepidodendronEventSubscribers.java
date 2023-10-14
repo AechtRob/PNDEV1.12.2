@@ -57,7 +57,7 @@ import java.util.Random;
 
 public class LepidodendronEventSubscribers {
 
-	@SubscribeEvent //Give the Palaeopedia on first join:
+  @SubscribeEvent //Give the Palaeopedia on first join:
 	public void playerJoined(EntityJoinWorldEvent event) {
 		if (!LepidodendronConfig.giveBook) {
 			return;

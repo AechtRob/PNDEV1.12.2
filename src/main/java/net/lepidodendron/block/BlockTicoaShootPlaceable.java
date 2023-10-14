@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -19,11 +18,12 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -73,7 +73,7 @@ public class BlockTicoaShootPlaceable extends ElementsLepidodendronMod.ModElemen
 		OreDictionary.registerOre("treeLeaves", BlockTicoaShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_ticoa_shoot");
@@ -89,13 +89,18 @@ public class BlockTicoaShootPlaceable extends ElementsLepidodendronMod.ModElemen
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_TICOA;
+			return ModTriggers.CLICK_CYCAS;
 		}
 
 		@Override
 		@Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 			return NULL_AABB;
+		}
+
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(0,0,0,1,1.8,1);
 		}
 
 		@Override
@@ -155,12 +160,12 @@ public class BlockTicoaShootPlaceable extends ElementsLepidodendronMod.ModElemen
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
+			return 100;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 30;
+			return 60;
 		}
 
 		@Override
@@ -175,18 +180,15 @@ public class BlockTicoaShootPlaceable extends ElementsLepidodendronMod.ModElemen
 
 		@Override
 		protected int getSaplingDropChance(IBlockState state) {
-			return 5;
+			return 1;
 		}
 
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
-			if (LepidodendronConfig.doPropagation) {
-				// Drop air and use the spores method instead:
-				return new ItemStack(Blocks.AIR, (int) (1)).getItem();
-			}
-			else {
+			if (!LepidodendronConfig.doPropagation) {
 				return Item.getItemFromBlock(BlockTicoaSapling.block);
 			}
+			return null;
 		}
 
 		public boolean isLeaves(IBlockState state, IBlockAccess world, BlockPos pos) {
@@ -203,6 +205,19 @@ public class BlockTicoaShootPlaceable extends ElementsLepidodendronMod.ModElemen
         public ItemStack getSilkTouchDrop(IBlockState state)  {
             return new ItemStack(BlockTicoaShootPlaceable.block, (int) (1));
         }
+
+		@Override
+		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+			super.harvestBlock(worldIn, player, pos, state, te, stack);
+			if (Math.random() > 0.66 && !LepidodendronConfig.doPropagation) {
+				//Spawn another sapling:
+				if (!worldIn.isRemote) {
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockTicoaSapling.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
+				}
+			}
+		}
 		
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
@@ -221,14 +236,5 @@ public class BlockTicoaShootPlaceable extends ElementsLepidodendronMod.ModElemen
 	        return true;
 	    }
 
-		@Override
-		public Block planted() {
-			return BlockTicoaSapling.block;
-		}
-
-		@Override
-		public int offsetY() {
-			return 1;
-		}
 	}
 }

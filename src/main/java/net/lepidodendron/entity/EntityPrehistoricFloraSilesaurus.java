@@ -154,7 +154,7 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT), DietString.ROOTS);
+		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT), DietString.ROOTS), DietString.BUG);
 	}
 
 	@Override

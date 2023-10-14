@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:burnished_treefern_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:burnished_treefern_shoot_inventory"
+    }
+  }
+}

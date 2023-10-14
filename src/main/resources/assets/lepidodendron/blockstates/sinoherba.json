@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sinoherba"},
+      {"model": "lepidodendron:sinoherba_var"}
+    ]
+  }
+}

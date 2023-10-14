@@ -1036,19 +1036,36 @@ public class ModelUrsactis extends AdvancedModelBase {
         //this.head.render(f5 * 0.25F);
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetX = -0.F;
-        this.head.offsetY = -0F;
-        this.head.offsetZ = 0.0F;
+    public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.0F, 0.0F);
+        this.head.offsetZ = -0.02F;
+        this.head.offsetY = -0.2F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = -0.05F;
+        this.head.render(0.01F);
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
