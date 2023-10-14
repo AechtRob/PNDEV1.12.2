@@ -16,7 +16,7 @@ public class RenderDilophosaurus extends RenderLiving<EntityPrehistoricFloraDilo
     }
 
     public static float getScaler() {
-        return 0.48F;
+        return 1;
     }
 
     @Override

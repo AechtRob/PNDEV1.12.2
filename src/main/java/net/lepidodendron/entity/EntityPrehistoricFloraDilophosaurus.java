@@ -46,13 +46,13 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraDilophosaurus(World world) {
 		super(world);
-		setSize(0.99F, 1.5F);
+		setSize(0.98F, 1.9F);
 		minWidth = 0.50F;
-		maxWidth = 0.99F;
-		maxHeight = 1.5F;
+		maxWidth = 0.98F;
+		maxHeight = 1.9F;
 		maxHealthAgeable = 36.0D;
 		STAND_ANIMATION = Animation.create(120);
-		CLEAN_ANIMATION = Animation.create(83);
+		CLEAN_ANIMATION = Animation.create(65);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -141,7 +141,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.4F;
+		float speedBase = 0.38F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
