@@ -48,6 +48,11 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		return "Triassic - Jurassic";
 	}
 
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
+
 	//public static String getHabitat() {
 	//	return "Terrestrial mammaliaform";
 	//}

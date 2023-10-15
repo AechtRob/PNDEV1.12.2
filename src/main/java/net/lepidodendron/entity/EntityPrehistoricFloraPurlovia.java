@@ -52,6 +52,11 @@ public class EntityPrehistoricFloraPurlovia extends EntityPrehistoricFloraDiicto
 		return false;
 	}
 
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
+
 	public float getAISpeedLand() {
 		float speedBase = 0.475F;
 		if (this.getTicks() < 0) {

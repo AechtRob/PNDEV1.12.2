@@ -50,6 +50,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 		}
 	}
 
+
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
@@ -183,6 +184,10 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 	@Override
 	public int getDrinkCooldown() {
 		return 400;
+	}
+	@Override
+	public int getEatLength() {
+		return 10;
 	}
 
 	private boolean isBlockGrazable(IBlockState state) {

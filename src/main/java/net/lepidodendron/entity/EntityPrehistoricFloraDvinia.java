@@ -64,6 +64,10 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 	public Animation getGrappleAnimation() {
 		return this.LOOK_ANIMATION;
 	}
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
 
 	@Override
 	public boolean findGrappleTarget() {

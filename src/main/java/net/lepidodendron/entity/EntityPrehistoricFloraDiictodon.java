@@ -72,6 +72,11 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
+	public int getDrinkLength() {
+		return 45;
+	}
+
+	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.hasAlarm()
@@ -123,7 +128,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.348F;
+		float speedBase = 0.22F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

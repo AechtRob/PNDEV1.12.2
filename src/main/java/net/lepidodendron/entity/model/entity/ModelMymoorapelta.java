@@ -674,6 +674,7 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.Tail4};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.head};
+        entityYuxi.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (entityYuxi.getAnimation() == entityYuxi.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
