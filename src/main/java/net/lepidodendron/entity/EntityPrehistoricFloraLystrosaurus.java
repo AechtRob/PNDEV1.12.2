@@ -48,6 +48,11 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 		return 1; //medium
 	}
 
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
+
 	public static String getPeriod() {return "late Permian - early Triassic";}
 
 	//public static String getHabitat() {

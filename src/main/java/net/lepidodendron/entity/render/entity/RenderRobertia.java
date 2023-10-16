@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRobertia;
 import net.lepidodendron.entity.model.entity.ModelDiictodon;
+import net.lepidodendron.entity.model.entity.ModelRobertia;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -16,7 +17,7 @@ public class RenderRobertia extends RenderLiving<EntityPrehistoricFloraRobertia>
     }
 
     public RenderRobertia(RenderManager mgr) {
-        super(mgr, new ModelDiictodon(), 0.5f);
+        super(mgr, new ModelRobertia(), 0.5f);
     }
 
     @Override
