@@ -94,7 +94,7 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
                 return Blocks.SANDSTONE.getStateFromMeta(0);
             }
             if (biome.topBlock == Blocks.SAND.getStateFromMeta(1)) {
-                return Blocks.SANDSTONE.getStateFromMeta(1);
+                return Blocks.RED_SANDSTONE.getStateFromMeta(0);
             }
             if (biome.topBlock == BlockSandBlack.block) {
                 return BlockSandstoneBlack.block.getDefaultState();
@@ -116,7 +116,7 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
                 return Blocks.SANDSTONE.getStateFromMeta(0);
             }
             if (biome.topBlock == Blocks.SAND.getStateFromMeta(1)) {
-                return Blocks.SANDSTONE.getStateFromMeta(1);
+                return Blocks.RED_SANDSTONE.getStateFromMeta(0);
             }
             if (biome.topBlock == BlockSandBlack.block) {
                 return BlockSandstoneBlack.block.getDefaultState();
