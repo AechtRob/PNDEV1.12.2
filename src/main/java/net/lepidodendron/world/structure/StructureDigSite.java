@@ -809,7 +809,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 				for (BlockPos digPos : DigArray) {
 					BlockPos addPos = getTopBlockForDig(digPos, world);
 					IBlockState digFossil = fossilOre;
-					if ((BiomeDictionary.hasType(world.getBiome(addPos), BiomeDictionary.Type.MESA))) {
+					if ((BiomeDictionary.hasType(world.getBiome(addPos), BiomeDictionary.Type.MESA)) && random.nextInt(3) == 0) {
 						int facing = world.rand.nextInt(3);
 						switch (facing) {
 							case 0: default:
