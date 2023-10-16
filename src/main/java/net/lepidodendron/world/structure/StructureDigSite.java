@@ -947,7 +947,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						while (zpos <= zz) {
 							BlockPos checkPos = new BlockPos(tentPos.getX() + xpos, 0, tentPos.getZ() + zpos);
 							TentArrayNew.add(checkPos);
-							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 								$_dependencies.put("Tent", Boolean.valueOf(false));
 								$_dependencies.put("TentArray", TentArray);
 								return $_dependencies;
@@ -981,7 +981,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						while (zpos <= zz) {
 							BlockPos checkPos = new BlockPos(tentPos.getX() - xpos, 0, tentPos.getZ() + zpos);
 							TentArrayNew.add(checkPos);
-							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 								$_dependencies.put("Tent", Boolean.valueOf(false));
 								$_dependencies.put("TentArray", TentArray);
 								return $_dependencies;
@@ -1014,7 +1014,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						while (zpos >= 0) {
 							BlockPos checkPos = new BlockPos(tentPos.getX() - xpos, 0, tentPos.getZ() - zpos);
 							TentArrayNew.add(checkPos);
-							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 								$_dependencies.put("Tent", Boolean.valueOf(false));
 								$_dependencies.put("TentArray", TentArray);
 								return $_dependencies;
@@ -1047,7 +1047,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						while (zpos >= 0) {
 							BlockPos checkPos = new BlockPos(tentPos.getX() + xpos, 0, tentPos.getZ() - zpos);
 							TentArrayNew.add(checkPos);
-							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+							if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 								$_dependencies.put("Tent", Boolean.valueOf(false));
 								$_dependencies.put("TentArray", TentArray);
 								return $_dependencies;
@@ -1085,7 +1085,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos <= zz) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() + xpos, 0, tentPos.getZ() + zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1118,7 +1118,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos <= zz) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() - xpos, 0, tentPos.getZ() + zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1151,7 +1151,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos >= 0) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() - xpos, 0, tentPos.getZ() - zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1184,7 +1184,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos >= 0) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() + xpos, 0, tentPos.getZ() - zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1223,7 +1223,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos <= zz) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() + xpos, 0, tentPos.getZ() + zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1256,7 +1256,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos <= zz) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() - xpos, 0, tentPos.getZ() + zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1289,7 +1289,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos >= 0) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() - xpos, 0, tentPos.getZ() - zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1322,7 +1322,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							while (zpos >= 0) {
 								BlockPos checkPos = new BlockPos(tentPos.getX() + xpos, 0, tentPos.getZ() - zpos);
 								TentArrayNew.add(checkPos);
-								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1) {
+								if (getTopBlockForDig(checkPos, world).getY() < doorY - 1 || !isTentable(new BlockPos(checkPos.getX(), doorY, checkPos.getZ()), world)) {
 									$_dependencies.put("Tent", Boolean.valueOf(false));
 									$_dependencies.put("TentArray", TentArray);
 									return $_dependencies;
@@ -1337,7 +1337,6 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 							xpos++;
 						}
 						break;
-
 				}
 				break;
 
@@ -1417,6 +1416,16 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		}
 		if (state.getValue(BlockFence.SOUTH)) {
 			return (state.getValue(BlockFence.NORTH) && (!state.getValue(BlockFence.EAST)) && (!state.getValue(BlockFence.WEST)));
+		}
+		return false;
+	}
+
+	public static boolean isTentable(BlockPos pos, World world) {
+		if (world.getBlockState(pos).getMaterial() == Material.ICE || world.getBlockState(pos).getMaterial() == Material.PACKED_ICE) {
+			return false;
+		}
+		if (world.getBlockState(pos).isSideSolid(world, pos, EnumFacing.UP)) {
+			return true;
 		}
 		return false;
 	}

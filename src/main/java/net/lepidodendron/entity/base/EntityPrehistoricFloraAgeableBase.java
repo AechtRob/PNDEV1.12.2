@@ -134,6 +134,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return 0;
     }
 
+    public float getUnSneakRange() {
+        return this.getSneakRange() * 0.5F;
+    }
+
     @Override
     public void onUpdate() {
         if (!this.updateBlocked) {
@@ -1069,11 +1073,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
                 //If this is hunting and is not close enough, sneak up:
                 float distEntity = this.getDistancePrey(this.getAttackTarget());
-                if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
                     this.setIsSneaking(true);
                 }
                 if (this.getIsSneaking() &&
-                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity <= (this.getSneakRange() * 0.5)
+                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity < this.getUnSneakRange()
                 ) {
                     this.setIsSneaking(false);
                 }
