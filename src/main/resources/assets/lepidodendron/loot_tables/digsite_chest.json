@@ -3,8 +3,8 @@
     {
       "name": "digsite_chest",
       "rolls": {
-        "min": 1,
-        "max": 3
+        "min": 3,
+        "max": 4
       },
       "entries": [
         {
@@ -38,7 +38,17 @@
             }
           ],
           "weight": 10
-        },
+        }
+      ]
+    },
+
+    {
+      "name": "digsite_chest_treasure",
+      "rolls": {
+        "min": 1,
+        "max": 3
+      },
+      "entries": [
         {
           "type": "item",
           "name": "minecraft:diamond",
