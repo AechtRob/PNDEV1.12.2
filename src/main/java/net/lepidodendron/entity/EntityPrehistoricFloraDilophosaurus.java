@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getFootstepOffset() {
-		return 25;
+		return 18;
 	}
 
 	@Override

@@ -44,6 +44,10 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
+		if (!LepidodendronConfig.genFossil) {
+			return;
+		}
+
 		List<BlockPos> FenceArray = new ArrayList<>();
 		List<BlockPos> DigArray = new ArrayList<>();
 		List<BlockPos> EdgeArray = new ArrayList<>();

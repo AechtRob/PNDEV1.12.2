@@ -297,7 +297,7 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 				boolean roots = false;
 				for (int ii = 4; ii < i; ii++) {
 					EntityItem entityToSpawn = new EntityItem(world, this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY() + 1, this.getDrinkingFrom().getZ() + 0.5, stack);
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay(20);
 					entityToSpawn.addVelocity((world.rand.nextInt(3) - 1) * 0.05F,(world.rand.nextInt(3) + 1) * 0.05F,(world.rand.nextInt(3) - 1) * 0.05F);
 					world.spawnEntity(entityToSpawn);
 					roots = true;

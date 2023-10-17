@@ -14,7 +14,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -59,10 +58,12 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 	public int getDrinkLength() {
 		return 45;
 	}
+
 	@Override
 	public int getEatLength() {
 		return 40;
 	}
+
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
@@ -79,15 +80,10 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 
 
 	private boolean isBlockGrazable(IBlockState state) {
-		return (state.getMaterial() == Material.GROUND);
+		return (state.getMaterial() == Material.GROUND
+		|| state.getMaterial() == Material.GRASS );
 	}
 
-	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
-			return false;
-		}
-		return true;
-	}
 
 	@Override
 	public boolean isDrinking()
@@ -99,7 +95,6 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
-		boolean test2 = false;
 		boolean test = (this.getPFDrinking() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -109,53 +104,20 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 				&& !this.isReallyInWater()
 				&&
 				(
-						(isBlockGrazable(this.world.getBlockState(entityPos.north().down()))
-								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.south().down()))
-								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.east().down()))
-								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.west().down()))
-								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+						isBlockGrazable(this.world.getBlockState(entityPos.down()))
 				)
 		);
 		if (test) {
-			//Which one is Grazable?
-			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north().down()))) {
-				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south().down()))) {
-				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east().down()))) {
-				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west().down()))) {
-				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
-					test2 = true;
-				}
-			}
-			if (facing != null && test && test2) {
-				this.setDrinkingFrom(entityPos.offset(facing).down());
-				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-			}
+			this.setDrinkingFrom(entityPos.down());
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
-		return test && test2;
+		return test;
 
+	}
+
+	@Override
+	public boolean drinksWater() {
+		return false;
 	}
 
 	@Override
@@ -169,7 +131,7 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 				boolean roots = false;
 				for (int ii = 4; ii < i; ii++) {
 					EntityItem entityToSpawn = new EntityItem(world, this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY() + 1, this.getDrinkingFrom().getZ() + 0.5, stack);
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay(20);
 					entityToSpawn.addVelocity((world.rand.nextInt(3) - 1) * 0.05F,(world.rand.nextInt(3) + 1) * 0.05F,(world.rand.nextInt(3) - 1) * 0.05F);
 					world.spawnEntity(entityToSpawn);
 					roots = true;

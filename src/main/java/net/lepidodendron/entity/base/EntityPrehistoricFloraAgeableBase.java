@@ -106,6 +106,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
     }
 
+    public int warnDistance() {
+        return 16;
+    }
+
     public void playStepSoundPublic() {
         Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
         BlockPos pos = this.getPosition();
@@ -1236,7 +1240,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
-                if (this.getDistance(this.getWarnTarget()) <= 16) {
+                if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
                     this.setAttackTarget(this.getWarnTarget());
                     this.setOneHit(true);
                     this.setWarnCooldown(0);

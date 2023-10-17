@@ -10,6 +10,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDiictodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -19,11 +21,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -276,6 +282,25 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
+
+		if (this.getAnimation() == DRINK_ANIMATION && this.getClass() == EntityPrehistoricFloraDiictodon.class) {
+			if ((!world.isRemote) && this.getAnimationTick() == Math.round(this.getAnimation().getDuration() * 0.75F)) {
+				ItemStack stack = new ItemStack(ItemRoots.block, 1);
+				int i = this.rand.nextInt(8);
+				boolean roots = false;
+				for (int ii = 4; ii < i; ii++) {
+					EntityItem entityToSpawn = new EntityItem(world, this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY() + 1, this.getDrinkingFrom().getZ() + 0.5, stack);
+					entityToSpawn.setPickupDelay(20);
+					entityToSpawn.addVelocity((world.rand.nextInt(3) - 1) * 0.05F,(world.rand.nextInt(3) + 1) * 0.05F,(world.rand.nextInt(3) - 1) * 0.05F);
+					world.spawnEntity(entityToSpawn);
+					roots = true;
+				}
+				if (roots) {
+					world.playSound(null, this.getDrinkingFrom(), SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+				}
+			}
+		}
+
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -686,6 +711,51 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 			return world.getBiome(pos).topBlock;
 		}
 		return oldBurrowState;
+	}
+
+	private boolean isBlockGrazable(IBlockState state) {
+		return (state.getMaterial() == Material.GROUND
+				|| state.getMaterial() == Material.GRASS );
+	}
+
+
+	@Override
+	public boolean isDrinking()
+	{
+		if (this.getClass() != EntityPrehistoricFloraDiictodon.class) {
+			return false;
+		}
+
+		//Is GRAZING!
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+						isBlockGrazable(this.world.getBlockState(entityPos.down()))
+				)
+		);
+		if (test) {
+			this.setDrinkingFrom(entityPos.down());
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+		}
+		return test;
+
+	}
+
+	@Override
+	public boolean drinksWater() {
+		return false;
 	}
 
 	//Rendering taxidermy:
