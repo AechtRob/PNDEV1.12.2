@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/eggs_large",
+  "parent": "lepidodendron:block/eggs_small",
   "textures": {
     "texture": "lepidodendron:entities/eggs_yuxisaurus"
   }

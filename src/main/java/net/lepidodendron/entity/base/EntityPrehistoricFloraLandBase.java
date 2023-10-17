@@ -192,7 +192,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 else if (this.world.getBlockState(entityPos.west().down()).getMaterial() == Material.WATER) {
                     facing = EnumFacing.WEST;
                 }
-                if (facing != null) {
+                if (facing != null
+                        && !this.world.getBlockState(entityPos.offset(facing)).causesSuffocation()) {
                     this.setDrinkingFrom(entityPos.offset(facing));
                     this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
                 }
@@ -209,6 +210,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
                     && !this.isReallyInWater()
+                    && !this.world.getBlockState(entityPos.offset(facing)).causesSuffocation()
                     && (this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GROUND
                     || this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GRASS)
             );

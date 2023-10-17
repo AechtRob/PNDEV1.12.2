@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 		return true;
 	}
 
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
+
 	public float getAISpeedLand() {
 		float speedBase = 0.445F;
 		if (this.getTicks() < 0) {

@@ -542,7 +542,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 //TODO make override so noise cant play at the same time as idles
 	@Override
 	public void onEntityUpdate() {
-		int next = rand.nextInt(10);
+
 		super.onEntityUpdate();
 		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
 		{
@@ -552,6 +552,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 			{
 				//Random sound animations
 				if (this.getAnimation() == NO_ANIMATION) {
+					int next = rand.nextInt(10);
 					if(next > 7) {
 						this.setAnimation(NOISE_ANIMATION);
 					} else if(next > 4 && next <= 7){
@@ -568,6 +569,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 			//random idle animations
 			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				int next = rand.nextInt(10);
 				if (next < 5) {
 					this.setAnimation(STAND_ANIMATION);
 				} else {

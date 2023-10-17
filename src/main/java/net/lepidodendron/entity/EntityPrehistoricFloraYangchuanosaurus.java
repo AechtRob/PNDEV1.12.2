@@ -40,6 +40,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
+	public Animation SCRATCH_RIGHT_ANIMATION;
 	private int standCooldown;
 
 	public EntityPrehistoricFloraYangchuanosaurus(World world) {
@@ -50,6 +51,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		maxHeight = 3F;
 		maxHealthAgeable = 96.0D;
 		STAND_ANIMATION = Animation.create(80);
+		SCRATCH_RIGHT_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -93,7 +95,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_RIGHT_ANIMATION};
 	}
 	public static String getPeriod() {return "Jurassic";}
 
@@ -102,7 +104,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		return 40;
 	}
 
-	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM = IDLE1 =  BOOMINGCALL, NOISE_ANIM = THREAT, IDLESCRATCH = SCRATCH
+
 	@Override
 	public int getRoarLength() {
 		return 80;
@@ -274,12 +276,17 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 		//Sometimes stand up and look around:
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
+			int next = rand.nextInt(100);
+			if (next < 50) {
+				this.setAnimation(STAND_ANIMATION);
+			} else {
+				this.setAnimation(SCRATCH_RIGHT_ANIMATION);
+			}
+			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 

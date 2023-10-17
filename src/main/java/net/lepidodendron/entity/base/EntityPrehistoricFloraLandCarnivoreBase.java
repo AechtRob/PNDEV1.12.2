@@ -112,5 +112,4 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
                 .getObject(new ResourceLocation(null));
     }
 
-
 }

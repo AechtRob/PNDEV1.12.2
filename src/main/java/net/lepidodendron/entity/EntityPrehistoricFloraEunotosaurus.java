@@ -42,6 +42,11 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 			tailBuffer = new ChainBuffer();
 		}
 	}
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
+
 
 	@Override
 	public void onUpdate() {

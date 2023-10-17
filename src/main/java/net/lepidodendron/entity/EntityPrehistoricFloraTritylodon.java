@@ -86,6 +86,10 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiic
 		return LepidodendronMod.TRITYLODON_LOOT;
 	}
 
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
 
 	//Rendering taxidermy:
 	//--------------------

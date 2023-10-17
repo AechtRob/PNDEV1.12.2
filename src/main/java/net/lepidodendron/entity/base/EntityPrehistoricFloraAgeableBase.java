@@ -106,6 +106,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
     }
 
+    public int warnDistance() {
+        return 16;
+    }
+
     public void playStepSoundPublic() {
         Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
         BlockPos pos = this.getPosition();
@@ -132,6 +136,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public float getSneakRange() {
         return 0;
+    }
+
+    public float getUnSneakRange() {
+        return this.getSneakRange() * 0.5F;
     }
 
     @Override
@@ -1069,11 +1077,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
                 //If this is hunting and is not close enough, sneak up:
                 float distEntity = this.getDistancePrey(this.getAttackTarget());
-                if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
                     this.setIsSneaking(true);
                 }
                 if (this.getIsSneaking() &&
-                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity <= (this.getSneakRange() * 0.5)
+                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity < this.getUnSneakRange()
                 ) {
                     this.setIsSneaking(false);
                 }
@@ -1232,7 +1240,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
-                if (this.getDistance(this.getWarnTarget()) <= 16) {
+                if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
                     this.setAttackTarget(this.getWarnTarget());
                     this.setOneHit(true);
                     this.setWarnCooldown(0);
