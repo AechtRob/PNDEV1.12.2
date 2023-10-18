@@ -1,5 +1,8 @@
 package net.lepidodendron.pfvillagers.village;
 
+import net.lepidodendron.block.BlockLamp;
+import net.lepidodendron.block.BlockZirconGlassGreenhouseWood;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -143,6 +146,17 @@ public class PalaeobotanisthouseBlocks implements ITemplateProcessor {
             if (blockstateIn.getBlock() == Blocks.OAK_FENCE) {
                 return Blocks.ACACIA_FENCE.getDefaultState();
             }
+        }
+
+        if (blockstateIn.getBlock() == Blocks.TORCH && Functions.decoLoaded()) {
+            EnumFacing facing = blockstateIn.getValue(BlockTorch.FACING);
+            if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
+                return BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, facing);
+            }
+        }
+
+        if (blockstateIn.getBlock() == Blocks.GLASS) {
+            return BlockZirconGlassGreenhouseWood.block.getDefaultState();
         }
 
         return blockstateIn;

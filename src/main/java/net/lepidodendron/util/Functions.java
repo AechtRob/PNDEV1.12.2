@@ -30,4 +30,8 @@ public class Functions {
         return new BlockPos(getEntityCentre(entity));
     }
 
+    public static boolean decoLoaded() {
+        return true;
+    }
+
 }

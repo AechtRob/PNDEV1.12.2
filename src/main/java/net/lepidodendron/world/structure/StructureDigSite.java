@@ -4,11 +4,14 @@ package net.lepidodendron.world.structure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
+import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockLadder;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
@@ -37,6 +40,9 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		super(instance, 44);
 	}
 
+	private boolean palaeontolgists;
+	private boolean palaeobotanists;
+
 	@Override
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
@@ -51,6 +57,8 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		List<BlockPos> FenceArray = new ArrayList<>();
 		List<BlockPos> DigArray = new ArrayList<>();
 		List<BlockPos> EdgeArray = new ArrayList<>();
+		this.palaeobotanists = false;
+		this.palaeontolgists = false;
 
 		//Check dimID and check Config for spawning of these structures:
 		if (!shouldGenerateInDimension(dimID, LepidodendronConfig.digsiteDimensionWhiteList)) {
@@ -850,21 +858,21 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 			//Chunk 1:
 			if (tent1 && generated) {
-				setTents(world, new BlockPos(x1, 0, z1), FenceArray, DigArray, EdgeArray);
+				setTents(world, new BlockPos(x1, 0, z1), FenceArray, DigArray, EdgeArray, fossilOre);
 			}
 			if (tent2 && generated) {
-				setTents(world, new BlockPos(x2, 0, z2), FenceArray, DigArray, EdgeArray);
+				setTents(world, new BlockPos(x2, 0, z2), FenceArray, DigArray, EdgeArray, fossilOre);
 			}
 			if (tent3 && generated) {
-				setTents(world, new BlockPos(x3, 0, z3), FenceArray, DigArray, EdgeArray);
+				setTents(world, new BlockPos(x3, 0, z3), FenceArray, DigArray, EdgeArray, fossilOre);
 			}
 			if (tent4 && generated) {
-				setTents(world, new BlockPos(x4, 0, z4), FenceArray, DigArray, EdgeArray);
+				setTents(world, new BlockPos(x4, 0, z4), FenceArray, DigArray, EdgeArray, fossilOre);
 			}
 		}
 	}
 
-	public void setTents (World world, BlockPos pos, List<BlockPos> FenceArray, List<BlockPos> DigArray, List<BlockPos> EdgeArray) {
+	public void setTents (World world, BlockPos pos, List<BlockPos> FenceArray, List<BlockPos> DigArray, List<BlockPos> EdgeArray, IBlockState fossilOre) {
 		List<BlockPos> TentArray = new ArrayList<>();
 		int tentMax = 0;
 		int tryMax = 0;
@@ -879,7 +887,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 			else {
 				tentIndex = world.rand.nextInt(6);
 			}
-			Map<String, Object> tentTry = setTent(world, spawnPos, tentIndex, FenceArray, DigArray, EdgeArray, TentArray);
+			Map<String, Object> tentTry = setTent(world, spawnPos, tentIndex, FenceArray, DigArray, EdgeArray, TentArray, fossilOre);
 			TentArray = (List<BlockPos>)tentTry.get("TentArray");
 			if ((boolean)tentTry.get("Tent")) {
 				tentMax++;
@@ -894,7 +902,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 //		}
 	}
 
-	public Map<String, Object> setTent(World world, BlockPos pos, int indTent, List<BlockPos> FenceArray, List<BlockPos> DigArray, List<BlockPos> EdgeArray, List<BlockPos> TentArray) {
+	public Map<String, Object> setTent(World world, BlockPos pos, int indTent, List<BlockPos> FenceArray, List<BlockPos> DigArray, List<BlockPos> EdgeArray, List<BlockPos> TentArray, IBlockState fossilOre) {
 		java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 		List<BlockPos> TentArrayNew = new ArrayList<>();
 
@@ -928,6 +936,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		int zpos = 0;
 		BlockPos tentPos;
 		int doorY;
+		BlockPos villagerPos = pos;
 
 		switch (indTent) {
 
@@ -936,6 +945,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 				case 0: default:
 
 					doorY = getTopBlockForDig(pos.add(1,0,-1), world).getY();
+					villagerPos = new BlockPos(pos.getX() + 1, doorY + 1, pos.getZ() + 2);
 					pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 					xx = 2; //east
 					zz = 4; //south
@@ -970,6 +980,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 				case 1: //90 degrees
 
 					doorY = getTopBlockForDig(pos.add(1,0,1), world).getY();
+					villagerPos = new BlockPos(pos.getX() - 2, doorY + 1, pos.getZ() + 1);
 					pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 					xx = 4; //east
 					zz = 2; //south
@@ -1003,6 +1014,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 				case 2:
 					doorY = getTopBlockForDig(pos.add(-1,0,1), world).getY();
+					villagerPos = new BlockPos(pos.getX() - 1, doorY + 1, pos.getZ() - 2);
 					pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 					xx = 2; //east
 					zz = 4; //south
@@ -1036,6 +1048,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 				case 3:
 					doorY = getTopBlockForDig(pos.add(-1,0,-1), world).getY();
+					villagerPos = new BlockPos(pos.getX() + 2, doorY + 1, pos.getZ() - 1);
 					pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 					xx = 4; //east
 					zz = 2; //south
@@ -1074,6 +1087,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 				switch (rotation.ordinal()) {
 					case 0: default:
 						doorY = getTopBlockForDig(pos.add(2,0,-1), world).getY();
+						villagerPos = new BlockPos(pos.getX() + 2, doorY + 1, pos.getZ() + 2);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 4; //east
 						zz = 6; //south
@@ -1107,6 +1121,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 					case 1: //90 degrees
 						doorY = getTopBlockForDig(pos.add(1,0,2), world).getY();
+						villagerPos = new BlockPos(pos.getX() - 2, doorY + 1, pos.getZ() + 2);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 6; //east
 						zz = 4; //south
@@ -1140,6 +1155,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 					case 2:
 						doorY = getTopBlockForDig(pos.add(-2,0,1), world).getY();
+						villagerPos = new BlockPos(pos.getX() - 2, doorY + 1, pos.getZ() - 2);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 4; //east
 						zz = 6; //south
@@ -1173,6 +1189,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 					case 3:
 						doorY = getTopBlockForDig(pos.add(-1,0,-2), world).getY();
+						villagerPos = new BlockPos(pos.getX() + 2, doorY + 1, pos.getZ() - 2);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 6; //east
 						zz = 4; //south
@@ -1212,6 +1229,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 				switch (rotation.ordinal()) {
 					case 0: default:
 						doorY = getTopBlockForDig(pos.add(3,0,-1), world).getY();
+						villagerPos = new BlockPos(pos.getX() + 3, doorY + 1, pos.getZ() + 2);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 6; //east
 						zz = 8; //south
@@ -1245,6 +1263,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 					case 1: //90 degrees
 						doorY = getTopBlockForDig(pos.add(1,0,3), world).getY();
+						villagerPos = new BlockPos(pos.getX() - 2, doorY + 1, pos.getZ() + 3);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 8; //east
 						zz = 6; //south
@@ -1278,6 +1297,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 					case 2:
 						doorY = getTopBlockForDig(pos.add(-3,0,1), world).getY();
+						villagerPos = new BlockPos(pos.getX() - 3, doorY + 1, pos.getZ() - 2);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 6; //east
 						zz = 8; //south
@@ -1311,6 +1331,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 					case 3:
 						doorY = getTopBlockForDig(pos.add(-1,0,-3), world).getY();
+						villagerPos = new BlockPos(pos.getX() + 2, doorY + 1, pos.getZ() - 3);
 						pos = new BlockPos(pos.getX(), doorY, pos.getZ());
 						xx = 8; //east
 						zz = 6; //south
@@ -1358,7 +1379,30 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		world.notifyBlockUpdate(spawnTo, iblockstate, iblockstate, 3);
 		PlacementSettings settings = new PlacementSettings().setChunk(null).setIgnoreStructureBlock(false).setIgnoreEntities(false).setRotation(rotation).setMirror(Mirror.NONE);
 
-		template.addBlocksToWorld(world, spawnTo, new StructureDigSiteProcessTents(spawnTo, settings), settings, 2);
+		template.addBlocksToWorld(world, spawnTo, new StructureDigSiteProcessTents(spawnTo, settings, fossilOre, world.rand.nextInt(15), world.rand.nextInt(15), world.rand.nextInt(15)), settings, 2);
+
+		EntityVillager villager = new EntityVillager(world);
+		if (!this.palaeontolgists) {
+			villager.setProfession(VillagerPalaeontologist.PALAEONTOLOGIST_PROFESSION);
+			this.palaeontolgists = true;
+		}
+		else if (!this.palaeobotanists) {
+			villager.setProfession(VillagerPalaeobotanist.PALAEOBOTANIST_PROFESSION);
+			this.palaeobotanists = true;
+		}
+		else {
+			if (world.rand.nextInt(14) == 0) {
+				villager.setProfession(VillagerPalaeontologist.PALAEONTOLOGIST_PROFESSION);
+			}
+			else if (world.rand.nextInt(14) == 0) {
+				villager.setProfession(VillagerPalaeobotanist.PALAEOBOTANIST_PROFESSION);
+			}
+			else {
+				villager.setProfession(5);
+			}
+		}
+		villager.setLocationAndAngles(villagerPos.getX() + 0.5D, villagerPos.getY() + 0.5D, villagerPos.getZ() + 0.5D, 0, 0);
+		world.spawnEntity(villager);
 
 		$_dependencies.put("Tent", Boolean.valueOf(true));
 		boolean result = TentArray.addAll(TentArrayNew);

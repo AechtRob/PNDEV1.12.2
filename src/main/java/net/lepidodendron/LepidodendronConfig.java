@@ -28,6 +28,9 @@ public class LepidodendronConfig {
     public static boolean biomeApple = true;
     public static boolean biomeOlive = true;
     public static boolean digsiteGen = true;
+    public static int digsiteTentColour = 12;
+    public static int digsiteBedColour = 7;
+    public static int digsiteCarpetColour = 8;
     public static String[] digsiteBiomeBlacklist = new String[0];
     public static int[] digsiteDimensionWhiteList = new int[]{0};
     public static int digsiteRarity = 50;
@@ -665,6 +668,18 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "digsiteGen", digsiteGen);
         prop.setComment("Set to false to disable the world-gen of this mod's fossil digsites. [default: true]");
         digsiteGen = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "digsiteTentColour", digsiteTentColour);
+        prop.setComment("Change to a different metadata number to use a different colour of wool, or use -1 for a random single colour or -2 for completely random patchwork. [default: 12]");
+        digsiteTentColour = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "digsiteBedColour", digsiteBedColour);
+        prop.setComment("Change to a different metadata number to use a different colour of bed, or use -1 for a random single colour. [default: 7]");
+        digsiteBedColour = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "digsiteCarpetColour", digsiteCarpetColour);
+        prop.setComment("Change to a different metadata number to use a different colour of bed, or use -1 for a random single colour or -2 for completely random patchwork. [default: 8]");
+        digsiteCarpetColour = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "digsiteBiomeBlacklist", digsiteBiomeBlacklist);
         prop.setComment("A list of biomes digsites are blacklisted from. [default: empty]");

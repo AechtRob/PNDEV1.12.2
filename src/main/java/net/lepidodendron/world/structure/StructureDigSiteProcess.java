@@ -1,6 +1,5 @@
 package net.lepidodendron.world.structure;
 
-import net.lepidodendron.block.BlockFossilPrecambrian;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,11 +28,6 @@ public class StructureDigSiteProcess implements ITemplateProcessor {
     }
 
     protected IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, IBlockState fossil) {
-
-        if (blockstateIn.getBlock() == BlockFossilPrecambrian.block) {
-            return fossil;
-        }
-
         return blockstateIn;
     }
 
