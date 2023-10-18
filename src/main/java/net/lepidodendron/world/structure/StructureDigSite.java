@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockLadder;
 import net.minecraft.block.BlockLiquid;
@@ -783,31 +784,36 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 					if (world.getBlockState(getTopBlockForDig(fencePos, world).up()).getBlock() == BlockPandanFence.block) {
 						BlockPos addPos = getTopBlockForDig(fencePos, world).up();
 						if (lights == 0) {
-							world.setBlockState(addPos.up(), BlockPandanFence.block.getDefaultState());
-							world.setBlockState(addPos.up(2), BlockPandanFence.block.getDefaultState());
-							if (world.getBlockState(addPos.up(3).north()).getBlock().isReplaceable(world, addPos.up(3).north())) {
-								world.setBlockState(addPos.up(3).north(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+							if (Functions.decoLoaded()) {
+								world.setBlockState(addPos.up(), BlockPandanFence.block.getDefaultState());
+								world.setBlockState(addPos.up(2), BlockPandanFence.block.getDefaultState());
+								if (world.getBlockState(addPos.up(3).north()).getBlock().isReplaceable(world, addPos.up(3).north())) {
+									world.setBlockState(addPos.up(3).north(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+								}
+								if (world.getBlockState(addPos.up(3).east()).getBlock().isReplaceable(world, addPos.up(3).east())) {
+									world.setBlockState(addPos.up(3).east(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+								}
+								if (world.getBlockState(addPos.up(3).south()).getBlock().isReplaceable(world, addPos.up(3).south())) {
+									world.setBlockState(addPos.up(3).south(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+								}
+								if (world.getBlockState(addPos.up(3).west()).getBlock().isReplaceable(world, addPos.up(3).west())) {
+									world.setBlockState(addPos.up(3).west(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+								}
+								if (world.getBlockState(addPos.up(2).north()).getBlock().isReplaceable(world, addPos.up(2).north())) {
+									world.setBlockState(addPos.up(2).north(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+								}
+								if (world.getBlockState(addPos.up(2).east()).getBlock().isReplaceable(world, addPos.up(2).east())) {
+									world.setBlockState(addPos.up(2).east(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+								}
+								if (world.getBlockState(addPos.up(2).south()).getBlock().isReplaceable(world, addPos.up(2).south())) {
+									world.setBlockState(addPos.up(2).south(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+								}
+								if (world.getBlockState(addPos.up(2).west()).getBlock().isReplaceable(world, addPos.up(2).west())) {
+									world.setBlockState(addPos.up(2).west(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+								}
 							}
-							if (world.getBlockState(addPos.up(3).east()).getBlock().isReplaceable(world, addPos.up(3).east())) {
-								world.setBlockState(addPos.up(3).east(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
-							}
-							if (world.getBlockState(addPos.up(3).south()).getBlock().isReplaceable(world, addPos.up(3).south())) {
-								world.setBlockState(addPos.up(3).south(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
-							}
-							if (world.getBlockState(addPos.up(3).west()).getBlock().isReplaceable(world, addPos.up(3).west())) {
-								world.setBlockState(addPos.up(3).west(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
-							}
-							if (world.getBlockState(addPos.up(2).north()).getBlock().isReplaceable(world, addPos.up(2).north())) {
-								world.setBlockState(addPos.up(2).north(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
-							}
-							if (world.getBlockState(addPos.up(2).east()).getBlock().isReplaceable(world, addPos.up(2).east())) {
-								world.setBlockState(addPos.up(2).east(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
-							}
-							if (world.getBlockState(addPos.up(2).south()).getBlock().isReplaceable(world, addPos.up(2).south())) {
-								world.setBlockState(addPos.up(2).south(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
-							}
-							if (world.getBlockState(addPos.up(2).west()).getBlock().isReplaceable(world, addPos.up(2).west())) {
-								world.setBlockState(addPos.up(2).west(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+							else {
+								world.setBlockState(addPos.up(), Blocks.TORCH.getDefaultState());
 							}
 						}
 					}

@@ -31,7 +31,7 @@ public class Functions {
     }
 
     public static boolean decoLoaded() {
-        return true;
+        return false;
     }
 
 }
