@@ -6,9 +6,10 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.entity.*;
-import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
-import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
+import net.lepidodendron.entity.EntityPrehistoricFloraTitanoptera;
+import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -17,12 +18,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -32,10 +33,7 @@ import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
@@ -49,7 +47,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -60,25 +58,88 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private static final DataParameter<Integer> FLYCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> WANDERCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
-    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
     private int inPFLove;
     private boolean laying;
+    private EntityItem eatTarget;
 
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
         this.enablePersistence();
-        this.selectNavigator();
-        this.getNavigator().getNodeProcessor().setCanSwim(false);
+        if (world != null) {
+            this.selectNavigator();
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    public void eatItem(ItemStack stack) {
+        if (stack != null && stack.getItem() != null) {
+            float itemHealth = 0.5F; //Default minimal nutrition
+            if (stack.getItem() instanceof ItemFood) {
+                itemHealth = ((ItemFood) stack.getItem()).getHealAmount(stack);
+            }
+            this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
+            stack.shrink(1);
+
+            if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+                SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
+                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            }
+        }
+    }
+
+    @Nullable
+    public EntityItem getEatTarget()
+    {
+        return this.eatTarget;
+    }
+
+    public void setEatTarget(@Nullable EntityItem entityItem)
+    {
+        this.eatTarget = entityItem;
+    }
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack)
+    {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
+            return EnumCreatureAttributePN.INVERTEBRATE;
+        }
+        return EnumCreatureAttributePN.VERTEBRATE;
+    }
+
+    @Override
+    public boolean isChild()
+    {
+        return false;
+    }
+
     public boolean hasPNVariants() {
         return false;
+    }
+
+    /**
+     * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+     * -1 = the variants must be different to breed
+     * 0 = the variants can be either different or the same to breed
+     * 1 = the variants must be the same to breed
+     */
+    public byte breedPNVariantsMatch() {
+        return 0;
     }
 
     public static String getHabitat() {
@@ -153,7 +214,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(FLYCOOLDOWN, 0);
         this.dataManager.register(WANDERCOOLDOWN, 0);
-        this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
     }
@@ -189,7 +249,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        this.setIsFemale(rand.nextInt(2) == 0);
         this.setTicks(0);
         this.setMateable(0);
         return livingdata;
@@ -258,7 +317,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.setFlyCooldown(compound.getInteger("FlyCooldown"));
         this.setWanderCooldown(compound.getInteger("WanderCooldown"));
         compound.setInteger("TickOffset", this.getTickOffset());
-        this.setIsFemale(compound.getBoolean("female"));
         this.setTicks(compound.getInteger("Ticks"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.laying = compound.getBoolean("laying");
@@ -270,7 +328,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         compound.setInteger("FlyCooldown", this.getFlyCooldown());
         compound.setInteger("WanderCooldown", this.getWanderCooldown());
         compound.setInteger("Ticks", this.getTicks());
-        compound.setBoolean("female", this.getIsFemale());
         compound.setInteger("TickOffset", this.getTickOffset());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setBoolean("laying", this.laying);
@@ -280,14 +337,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private Animation animation = NO_ANIMATION;
 
     public static final Animation ANIMATION_WANDER = Animation.create(20);
-
-    @Override
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return (
-                (OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-        );
-    }
 
     //@Override
     //protected void updateAITasks()
@@ -300,7 +349,8 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
         this.tasks.addTask(2, new AIWanderInsect());
         this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
-        this.tasks.addTask(4, new EntityAILookIdle(this));
+        this.tasks.addTask(4, new EntityLookIdleAI(this));
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraCrawlingFlyingInsectBaseAI(this));
     }
 
     @Override
@@ -311,14 +361,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     public abstract String getTexture();
 
     public String tagEgg () {return "";}
-
-    public boolean getIsFemale() {
-        return this.dataManager.get(ISFEMALE);
-    }
-
-    public void setIsFemale(boolean female) {
-        this.dataManager.set(ISFEMALE, female);
-    }
 
     @Override
     protected void applyEntityAttributes() {
@@ -557,6 +599,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     @Override
     public void onLivingUpdate() {
+        this.renderYawOffset = this.rotationYaw;
 
         if (this.inPFLove > 0)
         {

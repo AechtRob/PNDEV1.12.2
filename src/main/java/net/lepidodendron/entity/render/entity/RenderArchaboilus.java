@@ -22,7 +22,7 @@ public class RenderArchaboilus extends RenderLiving<EntityPrehistoricFloraArchab
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraArchaboilus entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraArchaboilus.Type.FEMALE) {
             return RenderArchaboilus.TEXTURE_F;
         }
         return RenderArchaboilus.TEXTURE;

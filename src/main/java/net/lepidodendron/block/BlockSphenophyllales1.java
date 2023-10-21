@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -68,7 +71,7 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends SeedSporeBushBase {
+	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -78,6 +81,12 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_sphenophyllales_1");
 			setRegistryName("sphenophyllales_1");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SPHENOPHYLLALES;
 		}
 
 		@Override
@@ -148,7 +157,7 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail/sphenophyte plant");
-	        	tooltip.add("Periods: late Devonian - Carboniferous");
+	        	tooltip.add("Periods: Devonian - Carboniferous");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -1,7 +1,7 @@
 {
 	"name": "Eretmorhipis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eretmorhipis_icon.png",
+	"icon": "paleopedia:textures/items/eretmorhipis_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_eretmorhipis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eretmorhipis",
 			"title": "Eretmorhipis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Shallow Ocean$(br2)>Reptilia$(br)>Hupehsuchia$(br)>Hupehsuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Hupehsuchia$(br)>Hupehsuchidae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eretmorhipis",
 			"type": "text",
-			"text": "Eretmorhipis is a small marine reptile from the Triassic period. The animal was rather bizarre, possessing a disproportionately small head with even smaller eyes, a strange fin morphology possessing six fingers, and several dome shaped osteoderms running down the length of the animal's back. Recent studies also reveal that the animal would have had a keratinized platypus-like beak in life, allowing it to lay on the seabed and sift through the sediment, with the help of a whale-like throat pouch"
+			"text": "Eretmorhipis is a small marine reptile from the Triassic period. The animal was rather bizarre, possessing a disproportionately small head with even smaller eyes, a strange fin morphology possessing six fingers, and several dome shaped osteoderms running down the length of the animal's back. Recent studies also reveal that the animal would have had a keratinized platypus-like beak in life,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eretmorhipis",
 			"type": "text",
-			"text": "$(l)Eats:$() Algae$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "allowing it to lay on the seabed and sift through the sediment, with the help of a whale-like throat pouch."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eretmorhipis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eretmorhipis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eretmorhipis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eretmorhipis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eretmorhipis"
 		}
 	]
 }

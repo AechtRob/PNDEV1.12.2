@@ -1,0 +1,51 @@
+{
+	"name": "Laidleria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/laidleria_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_laidleria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_laidleria",
+			"title": "Laidleria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Amphibia $(br)>Temnospondyli $(br)>Plagiosauroidea $(br)>Laidleriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/laidleria.png"],
+			"title": "L. gracilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laidleria",
+			"type": "text",
+			"text": "Laidleria's fossil was found in sediments dated to some time within the early to mid-Triassic period, coming from modern day South Africa. It was a fairly small temnospondyl amphibian, growing to somewhere in the region of 30-40cm in length, with a very flat body and skull, and with sprawling legs. The single fossil known has been studied since 1957 and presented researchers with some difficulty in interpreting,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laidleria",
+			"type": "text",
+			"text": "partly due to the position it was fossilised in and partly to less than perfect preservation of some parts. The latest major work on it dates from 1998. It possessed a light covering of armour-like scutes on its back. Its exact taxonomic positioning is still uncertain."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_laidleria"
+		}
+	]
+}

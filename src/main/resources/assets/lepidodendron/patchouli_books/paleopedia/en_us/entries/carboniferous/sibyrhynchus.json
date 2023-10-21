@@ -1,0 +1,46 @@
+{
+	"name": "Sibyrhynchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sibyrhynchus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_sibyrhynchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sibyrhynchus",
+			"title": "Sibyrhynchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Iniopterygia $(br)>Sibyrhynchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/sibyrhynchus.png"],
+			"title": "S. denisoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sibyrhynchus",
+			"type": "text",
+			"text": "Sibyrhynchus was a genus of Iniopterygian Chondrichthian from the Late Carboniferous of North America. Quite large among its kind, reaching up to 45 cm in length, Sibyrhynchus was among the largest of the known members of the Iniopterygia. Among the many peculiarities of this animal, there are some pretty visible plate-like growths along the upper margin of its mouth and a long, spear-like tooth jutting out from the very tip of its jaw."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sibyrhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sibyrhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sibyrhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sibyrhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sibyrhynchus"
+		}
+	]
+}

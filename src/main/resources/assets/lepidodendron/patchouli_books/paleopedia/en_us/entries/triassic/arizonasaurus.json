@@ -1,7 +1,7 @@
 {
 	"name": "Arizonasaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/arizonasaurus_icon.png",
+	"icon": "paleopedia:textures/items/arizonasaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_arizonasaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arizonasaurus",
 			"title": "Arizonasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Canyons and Creeks$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Other relatives of this animal, although further removed, are Poposaurus, Sillosuchus and Lotosaurus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_arizonasaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arizonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arizonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arizonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arizonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arizonasaurus"
 		}
 	]
 }

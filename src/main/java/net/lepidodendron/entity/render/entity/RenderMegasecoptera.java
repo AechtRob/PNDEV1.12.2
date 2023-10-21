@@ -3,46 +3,21 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegasecoptera;
 import net.lepidodendron.entity.model.entity.ModelSylvohymen;
-import net.minecraft.client.Minecraft;
+import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMegasecoptera extends RenderLiving<EntityPrehistoricFloraMegasecoptera> {
+public class RenderMegasecoptera extends RenderLivingBaseVariantModels<EntityPrehistoricFloraMegasecoptera> {
     private static final ResourceLocation TEXTURE_SYLVOHYMEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megasecoptera_sylvohymen.png");
-    public static final ModelBase MODEL_SYLVOHYMEN = new ModelSylvohymen();
 
     public RenderMegasecoptera(RenderManager mgr) {
-        super(mgr, new ModelSylvohymen(), 0.0f);
-    }
-
-    @Override
-    protected void renderModel(EntityPrehistoricFloraMegasecoptera entitylivingbaseIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor)
-    {
-        boolean flag = this.isVisible(entitylivingbaseIn);
-        boolean flag1 = !flag && !entitylivingbaseIn.isInvisibleToPlayer(Minecraft.getMinecraft().player);
-
-        if (flag || flag1)
-        {
-            if (!this.bindEntityTexture(entitylivingbaseIn))
-            {
-                return;
-            }
-
-            if (flag1)
-            {
-                GlStateManager.enableBlendProfile(GlStateManager.Profile.TRANSPARENT_MODEL);
-            }
-
-            this.getEntityModel(entitylivingbaseIn).render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor);
-
-            if (flag1)
-            {
-                GlStateManager.disableBlendProfile(GlStateManager.Profile.TRANSPARENT_MODEL);
-            }
-        }
+        super(mgr,
+                new ModelSylvohymen(),
+                new ModelBase[]{new ModelSylvohymen()},
+                0.0f);
+        this.addLayer(new LayerMegasecopteraWing(this));
     }
 
     @Override
@@ -53,13 +28,22 @@ public class RenderMegasecoptera extends RenderLiving<EntityPrehistoricFloraMega
         }
     }
 
-    public ModelBase getEntityModel(EntityPrehistoricFloraMegasecoptera entity) {
+    public ModelBase getModelFromArray(EntityPrehistoricFloraMegasecoptera entity) {
         switch (entity.getPNType()) {
             case SYLVOHYMEN: default:
-                return MODEL_SYLVOHYMEN;
+                return this.mainModelArray[0];
 
         }
     }
+
+    public static float getOffset(EntityPrehistoricFloraMegasecoptera.Type variant) {
+        switch (variant) {
+            case SYLVOHYMEN: default:
+                return 0.07F;
+
+        }
+    }
+
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraMegasecoptera entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
@@ -69,43 +53,43 @@ public class RenderMegasecoptera extends RenderLiving<EntityPrehistoricFloraMega
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.15F, 0.1F, 0.0F);
+                GlStateManager.translate(this.getOffset(entityLiving.getPNType()), 0.1F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case WEST:
-                GlStateManager.translate(-0.15F, 0.1F, 0.0F);
+                GlStateManager.translate(-this.getOffset(entityLiving.getPNType()), 0.1F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.1F, -0.15F);
+                GlStateManager.translate(0.0F, 0.1F, -this.getOffset(entityLiving.getPNType()));
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.1F, 0.15F);
+                GlStateManager.translate(0.0F, 0.1F, this.getOffset(entityLiving.getPNType()));
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.5F + this.getOffset(entityLiving.getPNType()), 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+        }
+    }
+
+
+    public static float getScaler(EntityPrehistoricFloraMegasecoptera.Type variant) {
+        switch (variant) {
+            case SYLVOHYMEN:
+            default:
+                return 0.305F;
+
         }
     }
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMegasecoptera entity, float f) {
-        float scaler = 1F;
-        switch (entity.getPNType()) {
-            case SYLVOHYMEN: default:
-                scaler = 0.34F;
-                break;
-
-        }
-        float scale = 1.0F * scaler;
-//        if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
-//            scale = Math.min() 0.8F * scaler;
-//        }
+        float scale = 1.0F * getScaler(entity.getPNType());
         GlStateManager.scale(scale, scale, scale);
     }
 

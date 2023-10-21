@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemAmentotaxusBerries;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -42,6 +45,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAmentotaxus extends ElementsLepidodendronMod.ModElement {
@@ -73,7 +77,7 @@ public class BlockAmentotaxus extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockAmentotaxus.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_amentotaxus");
@@ -84,6 +88,23 @@ public class BlockAmentotaxus extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_AMENOTAXUS;
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			if (worldIn.rand.nextInt(4) == 0) {
+				worldIn.setBlockState(pos, BlockAmentotaxusBerries.block.getDefaultState(), 3);
+				worldIn.setBlockState(pos.up(), BlockAmentotaxus2Berries.block.getDefaultState(), 3);
+				worldIn.setBlockState(pos.up(2), BlockAmentotaxus3Berries.block.getDefaultState(), 3);
+				worldIn.setBlockState(pos.up(3), BlockAmentotaxus4Berries.block.getDefaultState(), 3);
+			}
+			super.updateTick(worldIn, pos, state, rand);
 		}
 
 		@Override
@@ -269,19 +290,10 @@ public class BlockAmentotaxus extends ElementsLepidodendronMod.ModElement {
 	    }
 
 	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
-			if (world.rand.nextInt(8) == 0) {
-				world.setBlockState(pos, BlockAmentotaxusBerries.block.getDefaultState(), 3);
-				world.setBlockState(pos.up(), BlockAmentotaxus2Berries.block.getDefaultState(), 3);
-				world.setBlockState(pos.up(2), BlockAmentotaxus3Berries.block.getDefaultState(), 3);
-				world.setBlockState(pos.up(3), BlockAmentotaxus4Berries.block.getDefaultState(), 3);
-				super.onBlockAdded(world, pos, state);
-			}
-			else {
-				world.setBlockState(pos.up(), BlockAmentotaxus2.block.getDefaultState(), 3);
-				world.setBlockState(pos.up(2), BlockAmentotaxus3.block.getDefaultState(), 3);
-				world.setBlockState(pos.up(3), BlockAmentotaxus4.block.getDefaultState(), 3);
-				super.onBlockAdded(world, pos, state);
-			}
+			world.setBlockState(pos.up(), BlockAmentotaxus2.block.getDefaultState(), 3);
+			world.setBlockState(pos.up(2), BlockAmentotaxus3.block.getDefaultState(), 3);
+			world.setBlockState(pos.up(3), BlockAmentotaxus4.block.getDefaultState(), 3);
+			super.onBlockAdded(world, pos, state);
 	    }
 
 	    @SideOnly(Side.CLIENT)

@@ -37,9 +37,8 @@ public class ItemMegarachneRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megarachne", ItemMegarachneRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemMegarachneRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMegarachneRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMegarachneRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemMegarachneRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemMegarachneRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

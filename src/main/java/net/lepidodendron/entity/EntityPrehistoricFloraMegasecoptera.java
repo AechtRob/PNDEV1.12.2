@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMegasecoptera;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMegasecopteraSylvohymen;
 import net.minecraft.block.state.IBlockState;
@@ -27,6 +28,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -49,6 +51,11 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -59,9 +66,26 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraMegasecoptera)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -349,6 +373,11 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 }

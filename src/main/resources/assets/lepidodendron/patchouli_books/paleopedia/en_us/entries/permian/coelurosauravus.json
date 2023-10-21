@@ -1,7 +1,7 @@
 {
 	"name": "Coelurosauravus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/coelurosauravus_icon.png",
+	"icon": "paleopedia:textures/items/coelurosauravus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_coelurosauravus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_coelurosauravus",
 			"title": "Coelurosauravus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>Reptilia$(br)>Weigeltisauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Weigeltisauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Coelurosauravus is a famous gliding reptile from the Permian period. It had rod like ossifications that projected outwards from the body which were not extensions of the ribs but instead newly developed bones and there was skin that connected these bones to form a sort of wing on either side of its body, in between its arms and legs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_coelurosauravus",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_coelurosauravus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_coelurosauravus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_coelurosauravus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_coelurosauravus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_coelurosauravus"
 		}
 	]
 }

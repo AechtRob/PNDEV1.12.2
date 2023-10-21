@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypeSilurian;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
@@ -79,6 +82,7 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_eucalyptocrinites", BlockCrinoidEucalyptocrinites.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidEucalyptocrinites.block);
 	}
 
 
@@ -191,7 +195,7 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidEucalyptocrinites.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 		private static int crinoidheight;
@@ -209,6 +213,12 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
         	this.setTickRandomly(true);
 			setTranslationKey("pf_crinoid_eucalyptocrinites");
 			setRegistryName("crinoid_eucalyptocrinites");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CRINOID_EUCALYPTOCRINITES;
 		}
 
 		@Override

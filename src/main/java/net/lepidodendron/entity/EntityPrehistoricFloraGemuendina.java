@@ -5,20 +5,19 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderGemuendina;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -33,6 +32,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -189,13 +189,12 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraAgea
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -351,7 +350,7 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraAgea
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (!getBuried()) {this.renderYawOffset = this.rotationYaw;}
+		//if (!getBuried()) {//this.renderYawOffset = this.rotationYaw;}
 
 		if (!this.world.isRemote) {
 

@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -26,6 +29,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAnkyropterisStemNW extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:ankyropteris_stem_nw")
@@ -46,7 +51,7 @@ public class BlockAnkyropterisStemNW extends ElementsLepidodendronMod.ModElement
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:ankyropteris_stem_nw", "inventory"));
 	//}
-	public static class BlockCustom extends SeedSporeFacingBlockBase {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter {
 	
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool JOINED = PropertyBool.create("joined");
@@ -61,6 +66,12 @@ public class BlockAnkyropterisStemNW extends ElementsLepidodendronMod.ModElement
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ANKYROPTERIS;
 		}
 
 		@Override

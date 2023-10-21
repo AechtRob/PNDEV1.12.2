@@ -31,9 +31,8 @@ public class ItemFurcaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_furca", ItemFurcaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemFurcaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemFurcaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemFurcaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemFurcaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemFurcaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

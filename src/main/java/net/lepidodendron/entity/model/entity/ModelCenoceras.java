@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -310,8 +309,12 @@ public class ModelCenoceras extends AdvancedModelBaseExtended {
         this.shell.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.shell.rotateAngleY = (float) Math.toRadians(90);
-        this.shell.offsetY = -0.45F;
+        this.shell.offsetY = -0.2F;
+        this.shell.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.shell.offsetY = 0.1F;
         this.shell.render(0.01F);
         resetToDefaultPose();
     }
@@ -325,6 +328,7 @@ public class ModelCenoceras extends AdvancedModelBaseExtended {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+        float zOffset = 0.35F;
 
         this.resetToDefaultPose();
         //this.Shell1.offsetY = 1.25F;
@@ -381,11 +385,12 @@ public class ModelCenoceras extends AdvancedModelBaseExtended {
 
         if (e.isInWater()) {
             this.bob(shell, 0.1F, 2.0F, false, f2, 2);
-            this.shell.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 3, f2, 1);
+            this.shell.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 3, f2, 1) + zOffset;
         }
         else {
             this.shell.rotateAngleZ = (float) Math.toRadians(90);
             this.shell.offsetY = 0.08F;
+            this.shell.offsetZ = zOffset;
         }
 
     }

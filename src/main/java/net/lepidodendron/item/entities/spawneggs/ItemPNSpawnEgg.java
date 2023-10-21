@@ -44,6 +44,14 @@ public class ItemPNSpawnEgg extends Item {
         super.addInformation(stack, player, tooltip, advanced);
     }
 
+    public int eggPrimaryColour() {
+        return 0;
+    }
+
+    public int eggSecondaryColour() {
+        return 0;
+    }
+
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {

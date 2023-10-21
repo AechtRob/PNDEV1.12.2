@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.boats.EntitySubmarine;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.util.ResourceLocation;
 
-public class LayerSubmarineEmissive implements LayerRendererBoat<EntitySubmarine>
+public class LayerSubmarineEmissive implements LayerRendererBoat<PrehistoricFloraSubmarine>
 {
     private final RenderSubmarine SubmarineRenderer;
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_submarine_glow.png");
@@ -18,7 +18,7 @@ public class LayerSubmarineEmissive implements LayerRendererBoat<EntitySubmarine
     }
 
     @Override
-    public void doRenderLayer(EntitySubmarine submarineIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
+    public void doRenderLayer(PrehistoricFloraSubmarine submarineIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
     {
         if (!submarineIn.isInvisible())
         {

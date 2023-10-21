@@ -5,11 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeSilurian;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -50,6 +48,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -79,6 +78,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:tabulata_block_2", BlockTabulata_Block2.block);
+		OreDictionary.registerOre("pndietCoral", BlockTabulata_Block2.block);
 	}
 
 	@Override
@@ -208,8 +208,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (blockpos1.getY() < world.getSeaLevel()
-								&& (world.getBlockState(blockpos1).getBlock() == Blocks.WATER
-								|| world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER)
+								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
 								&& !world.isAirBlock(blockpos1.east())
@@ -297,7 +296,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool WATER = PropertyBool.create("water");
@@ -313,6 +312,12 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(WATER, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_TABULATA;
 		}
 
 		@SideOnly(Side.CLIENT)

@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraAmpyx;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -169,19 +170,18 @@ public class ModelAmpyx extends AdvancedModelBase {
 
         AdvancedModelRenderer[] legsL = {this.LLeg1, this.LLeg2, this.LLeg3};
         AdvancedModelRenderer[] legsR = {this.RLeg1, this.RLeg2, this.RLeg3};
-
-        this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-        this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-
+        if (((EntityPrehistoricFloraAmpyx)e).getIsMoving()) {
+            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+            this.flap(LLeg1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+            this.flap(RLeg1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.flap(LLeg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+        }
         this.swing(AntennaeLeft, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(AntennaeRight, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
-
-        this.flap(LLeg1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-        this.flap(RLeg1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-        this.flap(LLeg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
 
     }
 }

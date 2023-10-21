@@ -1,0 +1,31 @@
+{
+	"name": "Pachydiscus",
+	"read_by_default": true,
+	"icon": "lepidodendron:shell_pachydiscus",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
+			"title": "Pachydiscus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous - Paleogene$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Pachydiscidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pachydiscus.png"],
+			"title": "P. neubergicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
+			"type": "text",
+			"text": "Pachydiscus is a genus of ammonite from the Late Cretaceous with records in the earliest Paleocene Epoch. This ammonite was quite large, with some species reaching a diameter of 40 cm or more and it had a worldwide distribution. It is one of the few ammonites to have been recorded surviving the K-Pg Extinction event that killed off the dinosaurs, however like all other surviving ammonites it did not survive for long and died out not long after the beginning of the Cenozoic."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

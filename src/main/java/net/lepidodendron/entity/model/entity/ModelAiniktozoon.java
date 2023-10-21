@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -355,7 +354,7 @@ public class ModelAiniktozoon extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bones.render(f5 * 0.33F);
+        this.bones.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -379,7 +378,7 @@ public class ModelAiniktozoon extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bones.offsetY = 1.0F;
+        //this.bones.offsetY = 1.0F;
 
         AdvancedModelRenderer[] Tail = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12, this.tail};
         AdvancedModelRenderer[] finsL = {this.legL, this.legL2, this.legL3};

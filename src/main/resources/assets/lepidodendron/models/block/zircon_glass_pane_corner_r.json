@@ -1,0 +1,47 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"edge": "lepidodendron:blocks/zircon_glass_pane_top",
+		"particle": "lepidodendron:blocks/zircon_glass",
+		"pane": "lepidodendron:blocks/zircon_glass"
+	},
+	"elements": [
+		{
+			"from": [9, 0, 7],
+			"to": [14, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6, 0, 1, 16], "texture": "#pane"},
+				"south": {"uv": [1, 0, 6, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 9, 7], "rotation": 90, "texture": "#edge"},
+				"down": {"uv": [7, 0, 9, 7], "rotation": 270, "texture": "#edge"}
+			}
+		},
+		{
+			"from": [15, 0, 9],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [16, 0, 9, 16], "texture": "#pane"},
+				"south": {"uv": [7, 0, 8, 16], "texture": "#edge"},
+				"west": {"uv": [9, 0, 16, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 8, 7], "rotation": 180, "texture": "#edge"},
+				"down": {"uv": [7, 0, 8, 7], "rotation": 180, "texture": "#edge"}
+			}
+		},
+		{
+			"from": [14, 0, 7],
+			"to": [16, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [7, 0, 9, 16], "texture": "#edge"},
+				"east": {"uv": [7, 0, 9, 16], "texture": "#edge"},
+				"south": {"uv": [7, 0, 9, 16], "texture": "#edge"},
+				"west": {"uv": [7, 0, 9, 16], "texture": "#edge"},
+				"up": {"uv": [7, 0, 9, 2], "rotation": 90, "texture": "#edge"},
+				"down": {"uv": [7, 0, 9, 2], "rotation": 270, "texture": "#edge"}
+			}
+		}
+	]
+}

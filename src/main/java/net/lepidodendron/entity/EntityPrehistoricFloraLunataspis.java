@@ -4,13 +4,11 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteSwimBase;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteSwimBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderSwim;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -18,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -32,6 +31,11 @@ public class EntityPrehistoricFloraLunataspis extends EntityPrehistoricFloraTril
 	public EntityPrehistoricFloraLunataspis(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -81,8 +85,13 @@ public class EntityPrehistoricFloraLunataspis extends EntityPrehistoricFloraTril
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteSwimBase(this, 1));
 		tasks.addTask(1, new TrilobiteWanderSwim(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteSwimBase(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteSwimBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISHFOOD, DietString.CRUSTACEAN), DietString.ALGAE);
 	}
 
 	@Override
@@ -97,7 +106,7 @@ public class EntityPrehistoricFloraLunataspis extends EntityPrehistoricFloraTril
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override
@@ -135,7 +144,7 @@ public class EntityPrehistoricFloraLunataspis extends EntityPrehistoricFloraTril
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {

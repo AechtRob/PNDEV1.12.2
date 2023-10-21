@@ -3,17 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AttackAI;
-import net.lepidodendron.entity.ai.EatFishItemsAI;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.EurypteridWander;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -21,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -68,18 +62,16 @@ public class EntityPrehistoricFloraBushizheia extends EntityPrehistoricFloraEury
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new EurypteridWander(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
+
+	
 
 	@Override
 	public boolean isAIDisabled() {

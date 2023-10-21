@@ -1,7 +1,7 @@
 {
 	"name": "Poposaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/poposaurus_icon.png",
+	"icon": "paleopedia:textures/items/poposaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_poposaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_poposaurus",
 			"title": "Poposaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Volcanic Hills$(br2)>Pseudosuchia$(br)>Poposauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Poposauridae"
 		},
 		{
 			"type": "image",
@@ -25,17 +25,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_poposaurus",
 			"type": "text",
-			"text": "Particularly interesting in Poposaurus is its way of walking, similar in many aspects to Theropod dinosaurs but independently evolved. Both these groups, in fact, were obligate bipeds with their legs sitting below the body."
+			"text": "Particularly interesting in Poposaurus is its way of walking, similar in many aspects to Theropod dinosaurs but independently evolved. Both these groups, in fact, were obligate bipeds with their legs sitting below the body. In 2011 an in-depth study was conducted on the leg bones of Poposaurus, allowing us to reconstruct their muscle structure and proving,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_poposaurus",
 			"type": "text",
-			"text": "In 2011 an in-depth study was conducted on the leg bones of Poposaurus, allowing us to reconstruct their muscle structure and proving, once again, how this animal, more closely related with a crocodile than a bird, was uncannily close in muscle anatomy to that of the latter, although having some muscles unique to its crocodilian ancestry. The same study also proposed Poposaurus to have practiced cuirassal breathing, meaning he used a series of muscles in the abdomen to breathe."
+			"text": "once again, how this animal, more closely related with a crocodile than a bird, was uncannily close in muscle anatomy to that of the latter, although having some muscles unique to its crocodilian ancestry. The same study also proposed Poposaurus to have practiced cuirassal breathing, meaning he used a series of muscles in the abdomen to breathe."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_poposaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_poposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_poposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_poposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_poposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_poposaurus"
 		}
 	]
 }

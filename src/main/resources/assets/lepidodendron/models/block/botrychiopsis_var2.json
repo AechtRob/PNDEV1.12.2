@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/botrychiopsis_var2",
+    "particle": "lepidodendron:blocks/botrychiopsis_var2"
+  }
+}

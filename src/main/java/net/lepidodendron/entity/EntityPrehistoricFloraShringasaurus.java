@@ -15,26 +15,29 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -46,6 +49,8 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	private int inPFLove;
 	private int PFdrinking;
 
+	private static final DataParameter<Integer> SHRINGASAURUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraShringasaurus.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraShringasaurus(World world) {
 		super(world);
 		setSize(0.82F, 1.05F);
@@ -55,6 +60,163 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(SHRINGASAURUS_TYPE, 0);
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraShringasaurus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraShringasaurus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraShringasaurus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraShringasaurus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraShringasaurus.Type.byId(rand.nextInt(EntityPrehistoricFloraShringasaurus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraShringasaurus.Type type)
+	{
+		this.dataManager.set(SHRINGASAURUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraShringasaurus.Type getPNType()
+	{
+		return EntityPrehistoricFloraShringasaurus.Type.byId(((Integer)this.dataManager.get(SHRINGASAURUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraShringasaurus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.SHRINGASAURUS_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.SHRINGASAURUS_LOOT_F_YOUNG;
+			}
+		}
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.SHRINGASAURUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.SHRINGASAURUS_LOOT_F;
 		}
 	}
 
@@ -115,12 +277,12 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.365F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -158,12 +320,18 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
+		tasks.addTask(7, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 	@Override
@@ -171,14 +339,7 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -231,16 +392,8 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
@@ -258,7 +411,9 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
 				this.setRevengeTarget(null);
+				this.setWarnTarget(null);
 			}
+			this.setOneHit(false);
 		}
 	}
 
@@ -300,13 +455,6 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.SHRINGASAURUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.SHRINGASAURUS_LOOT;
-	}
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
@@ -350,6 +498,9 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderShringasaurus.TEXTURE_F;
+		}
 		return RenderShringasaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -357,6 +508,9 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 		return RenderDisplays.modelShringasaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderShringasaurus.getScaler() * 0.85F;
+		}
 		return RenderShringasaurus.getScaler();
 	}
 

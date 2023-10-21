@@ -1,7 +1,7 @@
 {
 	"name": "Gerrothorax",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gerrothorax_icon.png",
+	"icon": "paleopedia:textures/items/gerrothorax_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_gerrothorax",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gerrothorax",
 			"title": "Gerrothorax",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakeland$(br2)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Plagiosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Plagiosauridae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_gerrothorax",
 			"type": "text",
-			"text": "Gerrothorax is a genus of Triassic temnospondyl. Reaching about a meter, this animal is characterized by a very flat body. It had gills and was completely aquatic, and is thought to have been able to adapt to environments such as lakes, ponds and rivers, as well as slightly saltier environments. Its mouth can be opened up to about 50 degrees, and it was an ambush hunter. This genus is known only from one species, and despite its strange morphology, it survived for 35 million years."
+			"text": "Gerrothorax is a genus of Triassic temnospondyl. Reaching about a meter, this animal is characterized by a very flat body. It had gills and was completely aquatic, and is thought to have been able to adapt to environments such as lakes, ponds and rivers, as well as slightly saltier environments. Its mouth can be opened up to about 50 degrees, and it was an ambush hunter."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gerrothorax",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "This genus is known only from one species, and despite its strange morphology, it survived for 35 million years."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gerrothorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gerrothorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gerrothorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gerrothorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gerrothorax"
 		}
 	]
 }

@@ -1,7 +1,7 @@
 {
 	"name": "Purlovia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/purlovia_icon.png",
+	"icon": "paleopedia:textures/items/purlovia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_purlovia",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_purlovia",
 			"title": "Purlovia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Therapsida$(br)>Therocephalia$(br)>Nanictidopidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Therocephalia$(br)>Nanictidopidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Purlovia is a therocephalian from the Permian period. It was an herbivorous animal that possessed canine teeth. Its lower jaw is robust and upward curving. Its fossils have been found in Russia."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_purlovia",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_purlovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_purlovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_purlovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_purlovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_purlovia"
 		}
 	]
 }

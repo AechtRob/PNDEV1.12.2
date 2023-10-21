@@ -1,7 +1,7 @@
 {
 	"name": "Turrisaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/turrisaspis_icon.png",
+	"icon": "paleopedia:textures/items/turrisaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_turrisaspis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_turrisaspis",
 			"title": "Turrisaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest$(br2)>Arthrodira$(br)>Groenlandaspidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Groenlandaspidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Turrisaspis is a placoderm with a head shield that had a single sharp spine at the top of its head, with ridges along the spine. It is known from fragments from the Upper Devonian of Pennsylvania."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_turrisaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_turrisaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_turrisaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_turrisaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_turrisaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_turrisaspis"
 		}
 	]
 }

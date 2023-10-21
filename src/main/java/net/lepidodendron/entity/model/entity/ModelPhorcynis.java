@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhorcynis;
-import net.lepidodendron.entity.EntityPrehistoricFloraSqualoraja;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -255,15 +254,23 @@ public class ModelPhorcynis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.body.rotateAngleX = (float) Math.toRadians(90);
-        this.body.rotateAngleZ = (float) Math.toRadians(90);
+        this.body.rotateAngleX = (float) Math.toRadians(0);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetX = -0.02F;
-        this.body.offsetZ = -0.01F;
+        this.body.offsetZ = -0.05F;
         this.body.offsetY = -0.245F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.3F, 0.0F);
+        this.body.offsetY = -0.14F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -302,8 +309,8 @@ public class ModelPhorcynis extends AdvancedModelBase {
             this.flap(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.swing(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if(ee.getIsMoving()|| e.isInWater()) { //if moving, slap fins
-                this.flap(frontleftfin, speed * 2.5F, 0.4F, true, -3, 0, f2, 1);
-                this.flap(frontrightfin, speed* 2.5F, -0.4F, true, -3, 0, f2, 1);
+                this.flap(frontleftfin, speed * 2.5F, 0.3F, false, 0, 0, f2, 1);
+                this.flap(frontrightfin, speed* 2.5F, -0.3F, false, 0, 0, f2, 1);
                 this.chainWave(fishTail, speed* 2.5F, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed* 2.5F, 0.25F, -3, f2, 1);
             }
@@ -311,8 +318,8 @@ public class ModelPhorcynis extends AdvancedModelBase {
             else{ //if not accelerating swing fins instead
                 //this.swing(leftFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -0, -0.5F, f2, 1);
                 //this.swing(rightFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -3, 0.5F, f2, 1);
-                this.flap(frontleftfin, (speed), 0.25F, true, -3, 0, f2, 1);
-                this.flap(frontrightfin, (speed), -0.25F, true, -3, 0, f2, 1);
+                this.flap(frontleftfin, (speed), 0.25F, false, -3, 0, f2, 1);
+                this.flap(frontrightfin, (speed), -0.25F, false, -3, 0, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed, 0.3F, -3, f2, 1);
             }

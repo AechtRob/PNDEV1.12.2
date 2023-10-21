@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemCaryosyntripsRaw extends ElementsLepidodendronMod.ModElement {
@@ -35,17 +38,28 @@ public class ItemCaryosyntripsRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_caryosyntrips", ItemCaryosyntripsRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemCaryosyntripsRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemCaryosyntripsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemCaryosyntripsRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemCaryosyntripsRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemCaryosyntripsRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
-			super(2, 0.1f, false);
+			super();
 			setTranslationKey("pf_caryosyntrips_raw");
 			setRegistryName("caryosyntrips_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_caryosyntrips";
+		}
+
+		@Nullable
+		@Override
+		public String getVariantStr() {
+			return null;
 		}
 	}
 }

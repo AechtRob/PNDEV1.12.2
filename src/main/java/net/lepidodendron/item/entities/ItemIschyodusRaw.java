@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemIschyodusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:ischyodus_raw")
@@ -34,10 +36,10 @@ public class ItemIschyodusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ischyodus", ItemIschyodusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ischyodus@male", ItemIschyodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemIschyodusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemIschyodusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemIschyodusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemIschyodusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemIschyodusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
@@ -46,6 +48,11 @@ public class ItemIschyodusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("ischyodus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "male";
 		}
 	}
 }

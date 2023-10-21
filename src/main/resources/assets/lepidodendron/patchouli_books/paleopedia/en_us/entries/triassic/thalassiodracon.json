@@ -1,0 +1,46 @@
+{
+	"name": "Thalassiodracon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/thalassiodracon_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_thalassiodracon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thalassiodracon",
+			"title": "Thalassiodracon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Pliosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/thalassiodracon.png"],
+			"title": "T. hawkinsi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thalassiodracon",
+			"type": "text",
+			"text": "Thalassiodracon was around from the Late Triassic to Early Jurassic and has only been found in England. It is known from a number of complete skeletons. It was thought to belong to the genus Plesiosaurus, but has since moved to its own after an examining the skull and could be ancestral to Pliosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thalassiodracon"
+		}
+	]
+}

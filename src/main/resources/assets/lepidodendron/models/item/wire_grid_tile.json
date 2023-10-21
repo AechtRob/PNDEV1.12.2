@@ -1,0 +1,22 @@
+{
+  "parent": "lepidodendron:block/wire_grid_slab",
+  "display": {
+    "thirdperson": {
+      "rotation": [
+        170,
+        -45,
+        15
+      ],
+      "translation": [
+        0,
+        0.5,
+        -2.75
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    }
+  }
+}

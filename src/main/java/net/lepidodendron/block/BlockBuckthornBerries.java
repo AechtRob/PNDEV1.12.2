@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemBuckthornBerries;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -32,12 +35,10 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -63,17 +64,17 @@ public class BlockBuckthornBerries extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:buckthorn", BlockBuckthornBerries.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockBuckthornBerries.block);
-		OreDictionary.registerOre("plant", BlockBuckthornBerries.block);
-	}
+//	@Override
+//	public void init(FMLInitializationEvent event) {
+//		super.init(event);
+//		OreDictionary.registerOre("plantdnaPNlepidodendron:buckthorn", BlockBuckthornBerries.block);
+//		OreDictionary.registerOre("plantPrehistoric", BlockBuckthornBerries.block);
+//		OreDictionary.registerOre("plant", BlockBuckthornBerries.block);
+//	}
 
 	public static final PropertyBool VAR = PropertyBool.create("var");
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_buckthorn_berries");
@@ -84,6 +85,12 @@ public class BlockBuckthornBerries extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BUCKTHORN;
 		}
 
 		@Override

@@ -319,6 +319,20 @@ public class EntityPNBoat extends EntityBoat
                 return ItemPagiophyllumBoatItem.block;
             case HIRMERIELLA:
                 return ItemHirmeriellaBoatItem.block;
+            case FIG:
+                return ItemFigBoatItem.block;
+            case GOLDEN_LARCH:
+                return ItemGoldenLarchBoatItem.block;
+            case ARID_PINE:
+                return ItemAridPineBoatItem.block;
+            case OLIVE:
+                return ItemOliveBoatItem.block;
+            case CEDAR:
+                return ItemCedarBoatItem.block;
+            case THUJA:
+                return ItemThujaBoatItem.block;
+            case LIQUIDAMBAR:
+                return ItemLiquidambarBoatItem.block;
 
         }
     }
@@ -457,6 +471,20 @@ public class EntityPNBoat extends EntityBoat
                 return BlockPagiophyllumPlanks.block;
             case HIRMERIELLA:
                 return BlockHirmeriellaPlanks.block;
+            case FIG:
+                return BlockFigPlanks.block;
+            case GOLDEN_LARCH:
+                return BlockGoldenLarchPlanks.block;
+            case ARID_PINE:
+                return BlockAridPinePlanks.block;
+            case OLIVE:
+                return BlockOlivePlanks.block;
+            case CEDAR:
+                return BlockCedarPlanks.block;
+            case THUJA:
+                return BlockThujaPlanks.block;
+            case LIQUIDAMBAR:
+                return BlockLiquidambarPlanks.block;
 
         }
     }
@@ -1320,7 +1348,14 @@ public class EntityPNBoat extends EntityBoat
         BISONIA(62, "bisonia"),
         EMBOTHRIUM(63, "embothrium"),
         PAGIOPHYLLUM(64, "pagiophyllum"),
-        HIRMERIELLA(65, "hirmeriella")
+        HIRMERIELLA(65, "hirmeriella"),
+        FIG(66, "fig"),
+        GOLDEN_LARCH(67, "golden_larch"),
+        OLIVE(68, "olive"),
+        CEDAR(69, "cedar"),
+        ARID_PINE(70, "arid_pine"),
+        THUJA(71, "arid_pine"),
+        LIQUIDAMBAR(71, "liquidambar")
         ;
 
         private final String name;

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pikaia",
 			"title": "Pikaia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Chordata$(br)>Pikaiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Pikaiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pikaia is a primitive chordate from the middle Cambrian that resembled a lancelet and may have swam like an eel. It had a series of short appendages near the front of its body and gills on either side of its head. It also exhibited a tail fin."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pikaia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pikaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pikaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pikaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pikaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pikaia"
 		}
 	]
 }

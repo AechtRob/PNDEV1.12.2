@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -50,7 +53,7 @@ public class BlockRellimiaSpore extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:rellimia_spore", "inventory"));
 	//}
 
-	public static class BlockCustomFlower extends SeedSporeBushBase {
+	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -60,6 +63,12 @@ public class BlockRellimiaSpore extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_rellimia_spore");
 			setRegistryName("rellimia_spore");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_RELLIMIA;
 		}
 
 		@Override

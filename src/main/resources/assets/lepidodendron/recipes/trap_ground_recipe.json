@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "34 ",
+    "67 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_bars"
+    },
+    "1": {
+      "item": "minecraft:iron_bars"
+    },
+    "3": {
+      "item": "minecraft:iron_bars"
+    },
+    "4": {
+      "item": "minecraft:iron_bars"
+    },
+    "6": {
+      "item": "minecraft:iron_bars"
+    },
+    "7": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:trap_ground",
+    "count": 1
+  }
+}

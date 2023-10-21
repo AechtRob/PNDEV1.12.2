@@ -29,7 +29,7 @@ public class StructureSpawnEncblue extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBlueCycad))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genBlueCycad && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genBlueCycad && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

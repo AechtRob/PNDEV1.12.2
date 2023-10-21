@@ -1,7 +1,7 @@
 {
 	"name": "Yinlong",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/yinlong_icon.png",
+	"icon": "paleopedia:textures/items/yinlong_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_yinlong",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yinlong",
 			"title": "Yinlong",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Yinlong is a basal ceratopsian described from the Shishugou Formation, Xinjiang, China. Known from a whole preserved body, it was small bipedal herbivore, and did not have any horns or frills. Considering gastroliths, it probably had a diet close to other early ceratopsians such as Psittacosaurus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_yinlong",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yinlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yinlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yinlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yinlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yinlong"
 		}
 	]
 }

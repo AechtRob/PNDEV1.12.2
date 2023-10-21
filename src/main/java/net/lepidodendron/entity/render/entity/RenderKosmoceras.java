@@ -29,7 +29,7 @@ public class RenderKosmoceras extends RenderLiving<EntityPrehistoricFloraKosmoce
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraKosmoceras entity, float f) {
-        float scale = this.getScaler();
+        float scale = this.getScaler() * entity.getAgeScale();
         if (scale < 0.1f) {
             scale = 0.1f;
         }

@@ -17,10 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -33,7 +30,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -108,15 +105,15 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.33F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.5F;
+			speedBase = speedBase * 1.9F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;
@@ -157,24 +154,23 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(5, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+//		this.targetTasks.addTask(4, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(5, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -226,14 +222,10 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -291,7 +283,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return -2;
+		return -1.90;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.8;
@@ -318,16 +310,16 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 		return 1;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return -0.02;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.4F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return -0.05;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.4F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

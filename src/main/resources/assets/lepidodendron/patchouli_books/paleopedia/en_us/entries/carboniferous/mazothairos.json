@@ -1,0 +1,51 @@
+{
+	"name": "Mazothairos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mazothairos_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
+			"title": "Mazothairos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta $(br)>Palaeodictyoptera $(br)>Homoiopteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/mazothairos.png"],
+			"title": "M. enormis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
+			"type": "text",
+			"text": "Mazothairos is a Palaeodictyopteran from the Pennsylvanian Epoch of the Carboniferous. It was discovered in the Mazon Creek fossil beds Illinois. Although it is only known from one very fragmentary fossil, it's estimated to have a 56 centimeter wingspan. This would've put alongside with Meganeura and Meganeuropsis as one of the largest flying insects ever."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_mazothairos",
+			"type": "text",
+			"text": "Due to the fragmentary nature of the holotype specimen, much of what is assumed for Mazothairos comes from general knowledge of Palaeodictyopterans. This includes much of the anatomy as based on the incomplete fossil, it is uncertain the extent that the distinctive prothoracic winglets were present in Mazothairos."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@mazothairos"
+		}
+	]
+}

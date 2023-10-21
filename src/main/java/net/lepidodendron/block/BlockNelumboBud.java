@@ -145,6 +145,7 @@ public class BlockNelumboBud extends ElementsLepidodendronMod.ModElement {
 				if (!this.canBlockStay(world, pos, state))
 		        {
 		            world.destroyBlock(pos, false);
+					return;
 		        }
 		        
 			}

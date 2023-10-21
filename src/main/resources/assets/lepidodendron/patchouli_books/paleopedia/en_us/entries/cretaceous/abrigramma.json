@@ -1,0 +1,46 @@
+{
+	"name": "Abrigramma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_abrigramma_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_abrigramma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_abrigramma",
+			"title": "Abrigramma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/abrigramma.png"],
+			"title": "A. calophleba",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_abrigramma",
+			"type": "text",
+			"text": "Abrigramma is a genus of kalligrammatid lacewing described from Yixian Formation, Early Cretaceous of Liaoning, China. It had large forewings that can completely hide smaller hindwings. Simple dark eyespots may be present in wings although it is hard to identify."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@abrigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@abrigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@abrigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@abrigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@abrigramma"
+		}
+	]
+}

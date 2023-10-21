@@ -1,0 +1,46 @@
+{
+	"name": "Microcleidus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/microcleidus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_microcleidus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_microcleidus",
+			"title": "Microcleidus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Microcleididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/microcleidus.png"],
+			"title": "M. homalospondylus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microcleidus",
+			"type": "text",
+			"text": "Microcleidus was a Jurassic Plesiosaur that had a long neck with 40 vertebrae and a short tail with 28, the largest individual being 5.1m. Remains have been found in Britain, France, Luxembourg and Germany."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_microcleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_microcleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_microcleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_microcleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_microcleidus"
+		}
+	]
+}

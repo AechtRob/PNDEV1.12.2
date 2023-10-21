@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -11,17 +12,13 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderSmok;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -32,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -52,6 +49,12 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == ROAR_ANIMATION //warning a player
+				|| animation == DRINK_ANIMATION;
 	}
 
 	@Override
@@ -83,20 +86,6 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	@Override
 	public boolean isNestMound() {
 		return true;
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
-					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
-						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
-					&& world.isAirBlock(pos));
-		}
-		return match;
 	}
 
 	public boolean testLay(World world, BlockPos pos) {
@@ -149,7 +138,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.430F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -162,8 +151,6 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		}
 		return speedBase;
 	}
-
-
 
 	@Override
 	public int getTalkInterval() {
@@ -206,21 +193,19 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(9, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		//this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -261,7 +246,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:smok_roar"));
+				.getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
 	}
 
 	@Override
@@ -273,24 +258,13 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
+
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

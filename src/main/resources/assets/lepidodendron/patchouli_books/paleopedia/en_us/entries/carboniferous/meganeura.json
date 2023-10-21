@@ -1,7 +1,7 @@
 {
 	"name": "Meganeura",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/meganeura_icon.png",
+	"icon": "paleopedia:textures/items/meganeura_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_meganeura",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_meganeura",
 			"title": "Meganeura",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Insecta$(br)>Meganisoptera$(br)>Meganeuridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Meganisoptera$(br)>Meganeuridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Meganeura is a carnivorous giant extinct 'griffinfly' from the late Carboniferous period. It had a wingspan ranging up to just under a meter long. It may have grown to such large proportions due to high oxygen levels and a lack of predators in its time. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_meganeura",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Moss/Log Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_meganeura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_meganeura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_meganeura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_meganeura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_meganeura"
 		}
 	]
 }

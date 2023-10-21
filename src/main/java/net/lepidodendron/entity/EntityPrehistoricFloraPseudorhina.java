@@ -7,16 +7,20 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderSqualoraja;
+import net.lepidodendron.entity.render.entity.RenderPseudorhina;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -25,10 +29,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -41,17 +46,164 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 	int bottomCooldown;
 	boolean bottomFlag;
 
+	private static final DataParameter<Integer> PSEUDORHINA_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPseudorhina.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraPseudorhina(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraPseudorhina.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraPseudorhina.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.9F, 0.35F);
 		minWidth = 0.2F;
 		maxWidth = 0.9F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
+	@Override
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		NBTTagCompound propaguleNBT = new NBTTagCompound();
+		propaguleNBT.setString("PNType", "gendered");
+		stack.setTagCompound(propaguleNBT);
+		return stack;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(PSEUDORHINA_TYPE, 0);
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 0;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraPseudorhina)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraPseudorhina)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraPseudorhina.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraPseudorhina.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraPseudorhina.Type.byId(rand.nextInt(EntityPrehistoricFloraPseudorhina.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraPseudorhina.Type type)
+	{
+		this.dataManager.set(PSEUDORHINA_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraPseudorhina.Type getPNType()
+	{
+		return EntityPrehistoricFloraPseudorhina.Type.byId(((Integer)this.dataManager.get(PSEUDORHINA_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraPseudorhina.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
 
 	@Override
 	public boolean isSmall() {
@@ -112,22 +264,20 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-				//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
+
+	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -181,7 +331,7 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 7 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -219,9 +369,17 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		super.onEntityUpdate();
 	}
 
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.PSEUDORHINA_LOOT;
+//		switch (this.getPNType()) {
+//			case MALE:
+//			default:
+				return LepidodendronMod.PSEUDORHINA_LOOT;
+
+//			case FEMALE:
+//				return LepidodendronMod.PSEUDORHINA_LOOT_F;
+//		}
 	}
 
 	@Override
@@ -326,33 +484,33 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.55;
+		return 0.3;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.33;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.05;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
+		return 0.3F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.5F;
+		return 0.0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderSqualoraja.TEXTURE;
+		return RenderPseudorhina.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelSqualoraja;
+		return RenderDisplays.modelPseudorhina;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderSqualoraja.getScaler();
+		return RenderPseudorhina.getScaler();
 	}
 
 }

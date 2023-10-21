@@ -6,23 +6,18 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnChunerpeton;
+import net.lepidodendron.block.BlockAmphibianSpawnMarmorerpeton;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderPederpes;
+import net.lepidodendron.entity.render.entity.RenderMarmorerpeton;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -40,7 +35,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -132,34 +127,34 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
 	}
 
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 1, 20));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(5, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
-		//this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		//this.targetTasks.addTask(2, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		//this.targetTasks.addTask(2, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraPalaeodictyopteraNymph.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.8, 20, 6));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(5, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		//this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+//		//this.targetTasks.addTask(2, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		//this.targetTasks.addTask(2, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraPalaeodictyopteraNymph.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-						|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.BUG);
 	}
+
+
 
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
@@ -283,7 +278,30 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+
+		if (!this.world.isRemote) {
+			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
+				this.setBottomFlag(true);
+				this.setBottomCooldown(300 + rand.nextInt(600));
+			}
+			if (this.isAtBottom() && (this.getBottomFlag())) {
+				this.setBottomCooldown(this.getBottomCooldown() - 1);
+			}
+			if (this.getBottomCooldown() < 0) {
+				this.setBottomCooldown(0);
+			}
+			if (this.getBottomCooldown() <= 0 && this.getBottomFlag()) {
+				this.setBottomFlag(false);
+				this.setSwimCooldown(200 + rand.nextInt(300));
+			}
+			if (!(this.getBottomFlag())) {
+				this.setSwimCooldown(this.getSwimCooldown() - 1);
+			}
+			if (this.getSwimCooldown() <= 0) {
+				this.setSwimCooldown(0);
+			}
+
+		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -299,10 +317,10 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition().down()))
+				&& (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition().down()))
 		){
 			//if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
@@ -312,13 +330,13 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
-			IBlockState eggs = BlockAmphibianSpawnChunerpeton.block.getDefaultState();
-			if (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition())) {
+			IBlockState eggs = BlockAmphibianSpawnMarmorerpeton.block.getDefaultState();
+			if (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			}
-			if (BlockAmphibianSpawnChunerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnChunerpeton.block.canPlaceBlockAt(world, this.getPosition().down())) {
+			if (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition().down())) {
 				world.setBlockState(this.getPosition().down(), eggs);
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
@@ -343,7 +361,7 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CHUNERPETON_LOOT;
+		return LepidodendronMod.MARMORERPETON_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -369,10 +387,10 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 		return 0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.1;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.07;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.14;
@@ -388,13 +406,13 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPederpes.TEXTURE;
+		return RenderMarmorerpeton.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPederpes;
+		return RenderDisplays.modelMarmorerpeton;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPederpes.getScaler();
+		return RenderMarmorerpeton.getScaler();
 	}
 }

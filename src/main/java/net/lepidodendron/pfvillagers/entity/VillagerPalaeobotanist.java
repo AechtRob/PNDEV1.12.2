@@ -24,6 +24,15 @@ import java.util.Random;
 public class VillagerPalaeobotanist {
     public static final VillagerRegistry.VillagerProfession PALAEOBOTANIST_PROFESSION = new VillagerRegistry.VillagerProfession("lepidodendron:palaeobotanist", "lepidodendron:textures/entities/villager_palaeobotanist.png", "lepidodendron:textures/entities/villager_palaeobotanist_zombie.png");
 
+//    public static final NBTTagCompound DicroidiumNBT;
+//    static {
+//        try {
+//            DicroidiumNBT = JsonToNBT.getTagFromJson("{\"PFPlant\": {\"id\":\"lepidodendron:dicroidium_f_sapling\"}}");
+//        } catch (NBTException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+
     public static void register() {
         VillagerRegistry.VillagerCareer palaeoCareer = new VillagerRegistry.VillagerCareer(PALAEOBOTANIST_PROFESSION, "palaeobotanist");
 
@@ -78,7 +87,10 @@ public class VillagerPalaeobotanist {
         palaeoCareer.addTrade(4, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(16, 16)));
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemCollectionEnvelope.block, new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemBottleOfLatex.block, new EntityVillager.PriceInfo(1, 1)));
 
+        //The cleaned fossil item here gets overridden in the EventHandler to be the actual fossils needed:
+        palaeoCareer.addTrade(5, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemFossilClean.block, 1), new EntityVillager.PriceInfo(2, 2)));
         palaeoCareer.addTrade(5, new ListEnchantedBookForEmeralds(Enchantments.TIME_REVERSAL, new EntityVillager.PriceInfo(16, 16)));
 
         MapGenStructureIO.registerStructureComponent(VillageComponentPalaeobotanistHouse.class, "palaeobotanisthouse");

@@ -30,7 +30,7 @@ public class StructureSpawnSelaginella extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSelaginella))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSelaginella && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSelaginella && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

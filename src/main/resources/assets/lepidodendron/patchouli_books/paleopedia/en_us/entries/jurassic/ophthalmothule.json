@@ -1,0 +1,46 @@
+{
+	"name": "Ophthalmothule",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ophthalmothule_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_ophthalmothule",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ophthalmothule",
+			"title": "Ophthalmothule",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Cryptoclididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ophthalmothule.png"],
+			"title": "O. cryostea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ophthalmothule",
+			"type": "text",
+			"text": "Ophthalmothule was found on the island of Spitsbergen in Norway. It was about 5 metres long and lived about 145 million years ago at the end of the Jurassic. It had large eye sockets which means it probably hunted in deep water or at night."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ophthalmothule"
+		}
+	]
+}

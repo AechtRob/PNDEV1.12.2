@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemMacrotaeniopterisCone;
 import net.lepidodendron.item.ItemMacrotaeniopterisItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.SoundType;
@@ -51,7 +54,7 @@ public class BlockMacrotaeniopterisFruiting extends ElementsLepidodendronMod.Mod
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
-	public static class BlockCustom extends BlockLilyPad {
+	public static class BlockCustom extends BlockLilyPad implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -63,6 +66,12 @@ public class BlockMacrotaeniopterisFruiting extends ElementsLepidodendronMod.Mod
 			setTickRandomly(true);
 			setTranslationKey("pf_macrotaeniopteris_fruiting");
 			setRegistryName("macrotaeniopteris_fruiting");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MACROTAENIOPTERIS;
 		}
 
 		@Override

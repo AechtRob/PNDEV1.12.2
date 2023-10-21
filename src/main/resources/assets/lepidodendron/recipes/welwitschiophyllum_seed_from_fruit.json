@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:welwitschiophyllum_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:welwitschiophyllum_seed",
+    "count": 1
+  }
+}

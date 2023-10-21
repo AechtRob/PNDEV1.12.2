@@ -6,28 +6,31 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderStethacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -36,6 +39,8 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+
+	private static final DataParameter<Integer> STETHACANTHUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraStethacanthus.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraStethacanthus(World world) {
 		super(world);
@@ -46,6 +51,172 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		NBTTagCompound propaguleNBT = new NBTTagCompound();
+		propaguleNBT.setString("PNType", "gendered");
+		stack.setTagCompound(propaguleNBT);
+		return stack;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(STETHACANTHUS_TYPE, 0);
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraStethacanthus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraStethacanthus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraStethacanthus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraStethacanthus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraStethacanthus.Type.byId(rand.nextInt(EntityPrehistoricFloraStethacanthus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraStethacanthus.Type type)
+	{
+		this.dataManager.set(STETHACANTHUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraStethacanthus.Type getPNType()
+	{
+		return EntityPrehistoricFloraStethacanthus.Type.byId(((Integer)this.dataManager.get(STETHACANTHUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraStethacanthus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.STETHACANTHUS_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.STETHACANTHUS_LOOT_F_YOUNG;
+			}
+		}
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.STETHACANTHUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.STETHACANTHUS_LOOT_F;
 		}
 	}
 
@@ -112,28 +283,26 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.1D, 0, true));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+//		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+//		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-						|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
+
 
 	@Override
 	public boolean isAIDisabled() {
@@ -192,7 +361,7 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -218,17 +387,9 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.STETHACANTHUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.STETHACANTHUS_LOOT;
-	}
-
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.46; }
+	public static double offsetCase(@Nullable String variant) { return 0.46; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.08;
@@ -269,6 +430,9 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderStethacanthus.TEXTURE_F;
+		}
 		return RenderStethacanthus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -276,6 +440,9 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		return RenderDisplays.modelStethacanthus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderStethacanthus.getScaler() * 0.6F;
+		}
 		return RenderStethacanthus.getScaler();
 	}
 

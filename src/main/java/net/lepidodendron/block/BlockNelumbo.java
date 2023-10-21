@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -74,7 +77,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.WATER);
 			setTranslationKey("pf_nelumbo");
@@ -87,6 +90,13 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
 		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NELUMBO;
+		}
+
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
@@ -394,7 +404,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering water plant");
-	        tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+	        tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 	        tooltip.add("Note: planted under water");
 	        tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);

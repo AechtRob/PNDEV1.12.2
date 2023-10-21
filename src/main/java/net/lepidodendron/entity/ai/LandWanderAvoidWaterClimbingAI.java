@@ -38,6 +38,9 @@ public class LandWanderAvoidWaterClimbingAI extends EntityAIBase
     public boolean shouldExecute()
     {
 
+        if (!(entity.getAISpeedLand() > 0)) {
+            return false;
+        }
         if (entity.getAnimation() == entity.DRINK_ANIMATION) {
             return false;
         }
@@ -103,9 +106,9 @@ public class LandWanderAvoidWaterClimbingAI extends EntityAIBase
     {
         //System.err.println(this.getClass() + " " + this.entity.getNavigator() + " move to " + this.x + " " + this.y + " " + this.z);
 
-        double Xoffset = this.entity.posX - this.entity.getPosition().getX();
-        double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
-        this.entity.getNavigator().tryMoveToXYZ(this.x + Xoffset, this.y, this.z + Zoffset, this.speed);
+//        double Xoffset = this.entity.posX - this.entity.getPosition().getX();
+//        double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
+        this.entity.getNavigator().tryMoveToXYZ(this.x, this.y, this.z, this.speed);
     }
 
     public void makeUpdate()

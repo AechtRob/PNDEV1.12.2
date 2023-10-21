@@ -393,7 +393,7 @@ public class ModelBunostegos extends AdvancedModelBaseExtended {
     }
     public void renderStaticWall(float f) {
         this.neck.rotateAngleY = (float) Math.toRadians(0);
-        this.setRotateAngle(neck, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(neck, 0.2F, -0.0F, 0.0F);
         this.setRotateAngle(head, 0.0F, 0.0F, -0.1F);
         this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         this.neck.offsetY = -0.04F;

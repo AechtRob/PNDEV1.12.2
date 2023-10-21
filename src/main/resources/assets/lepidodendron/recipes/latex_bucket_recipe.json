@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:bottle_of_latex"
+    },
+    {
+      "item": "lepidodendron:bottle_of_latex"
+    },
+    {
+      "item": "lepidodendron:bottle_of_latex"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "type": "minecraft:item_nbt",
+    "item": "forge:bucketFilled",
+    "nbt": {
+      "FluidName": "pn_latex",
+      "Amount": 1000
+    },
+    "count": 1
+  }
+}

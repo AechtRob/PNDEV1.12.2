@@ -1,0 +1,46 @@
+{
+	"name": "Megateuthis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megateuthis_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_megateuthis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megateuthis",
+			"title": "Megateuthis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Belemnoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/megateuthis.png"],
+			"title": "M. gigantea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megateuthis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		}
+	]
+}

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockCrinoidScyphocrinus;
 import net.lepidodendron.block.BlockCrinoidScyphocrinusFloat;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.Functions;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -15,7 +16,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -60,6 +60,7 @@ public class ItemCrinoidScyphocrinusItem extends ElementsLepidodendronMod.ModEle
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_scyphocrinus_item", ItemCrinoidScyphocrinusItem.block);
+		OreDictionary.registerOre("pndietCrinoid", ItemCrinoidScyphocrinusItem.block);
 	}
 
 	public static class ItemCustom extends Item {
@@ -153,10 +154,15 @@ public class ItemCrinoidScyphocrinusItem extends ElementsLepidodendronMod.ModEle
     }
 
 	public static boolean isWaterBlock(World world, BlockPos pos) { //Different logic this time! We do need actual water blocks, not merely material
-		if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
-				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
-			return true;
-		}
-		return false;
+//		if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
+//				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
+//			return true;
+//		}
+//		if (((world.getBlockState(pos).getBlock() instanceof BlockFluidBase)
+//				|| (world.getBlockState(pos).getBlock() instanceof BlockLiquid))
+//				&& world.getBlockState(pos).getMaterial() == Material.WATER) {
+//			return true;
+//		}
+		return Functions.isWater(world, pos);
 	}
 }

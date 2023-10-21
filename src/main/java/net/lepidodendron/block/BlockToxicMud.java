@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -21,6 +22,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -35,6 +37,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -78,11 +81,34 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
+		@Override
+		public float getSlipperiness(IBlockState state, IBlockAccess world, BlockPos pos, @Nullable Entity entity) {
+			if (entity != null) {
+				if (entity instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entity;
+					if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+						if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+							return 0.6F;
+						}
+					}
+				}
+			}
+			return super.getSlipperiness(state, world, pos, entity);
+		}
+
 		//@Override
 		public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
 		{
 			//System.err.println(((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET));
 
+			if (entityIn instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) entityIn;
+				if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+					if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+						return;
+					}
+				}
+			}
 			if (entityIn instanceof EntityPlayer)
 			{
 				if ((((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == Items.AIR)

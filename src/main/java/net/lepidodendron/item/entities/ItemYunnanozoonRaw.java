@@ -31,8 +31,8 @@ public class ItemYunnanozoonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_yunnanozoon", ItemYunnanozoonRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemYunnanozoonRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemYunnanozoonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemYunnanozoonRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemYunnanozoonRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemYunnanozoonRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

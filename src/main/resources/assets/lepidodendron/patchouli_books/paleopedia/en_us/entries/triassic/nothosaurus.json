@@ -1,7 +1,7 @@
 {
 	"name": "Nothosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/nothosaurus_icon.png",
+	"icon": "paleopedia:textures/items/nothosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_nothosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nothosaurus",
 			"title": "Nothosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Sauropterygia$(br)>Nothosauroidea$(br)>Nothosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropterygia$(br)>Nothosauroidea$(br)>Nothosauridae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_nothosaurus",
 			"type": "text",
-			"text": "Nothosaurus is a widespread genus of Sauropterygian reptile from the Triassic of North America, Europe and China.\nPerhaps the most known among its peers, this large marine predator had short but powerful limbs ending in webbed toes and a strong tail, clear adaptations to an aquatic lifestyle."
+			"text": "Nothosaurus is a widespread genus of Sauropterygian reptile from the Triassic of North America, Europe and China. Perhaps the most known among its peers, this large marine predator had short but powerful limbs ending in webbed toes and a strong tail, clear adaptations to an aquatic lifestyle."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nothosaurus",
 			"type": "text",
-			"text": "Between 1-4 m long, with a few specimens potentially larger from Germany and Italy, the Nothosaurus could resemble another group of marine reptiles to the inexperienced eye such as the plesiosaurs, to which they were not related to.\nThe animal is often compared ecologically to a seal, as both are aquatic predators that feed on fish; However, the comparisons between the two end there."
+			"text": "Between 1-4 m long, with a few specimens potentially larger from Germany and Italy, the Nothosaurus could resemble another group of marine reptiles to the inexperienced eye such as the plesiosaurs, to which they were not related to. The animal is often compared ecologically to a seal, as both are aquatic predators that feed on fish; However, the comparisons between the two end there."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nothosaurus",
@@ -40,12 +40,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_nothosaurus",
 			"type": "text",
-			"text": "the first being named in 1834 from Germany and the most recent being described in 2014 from China.\nThe same year as the latest described species was named, a study was conducted on all known Nothosaurus and relatives to test their relations and discovered the genus was probably polyphyletic, meaning some of the animals we call Nothosaurus today might change name in the future as we revisit the fossils of these animals."
+			"text": "the first being named in 1834 from Germany and the most recent being described in 2014 from China. The same year as the latest described species was named, a study was conducted on all known Nothosaurus and relatives to test their relations and discovered the genus was probably polyphyletic, meaning some of the animals we call Nothosaurus today might change name in the future as we revisit the fossils of these animals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_nothosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nothosaurus"
 		}
 	]
 }

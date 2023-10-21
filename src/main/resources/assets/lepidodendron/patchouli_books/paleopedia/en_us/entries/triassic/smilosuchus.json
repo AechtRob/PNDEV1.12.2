@@ -1,7 +1,7 @@
 {
 	"name": "Smilosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/smilosuchus_icon.png",
+	"icon": "paleopedia:textures/items/smilosuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_smilosuchus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_smilosuchus",
 			"title": "Smilosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakes, Canyons and Creeks, Flooded$(br2)>Pseudosuchia$(br)>Phytosauria$(br)>Parasuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Phytosauria$(br)>Parasuchidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Smilosuchus was a genus of phytosaur that lived during the Late Triassic in what is now North America. Like other phytosaurs, this massive predator led a semi-aquatic lifestyle very similar to that of a modern crocodile (a classic case of convergent evolution). The jaws of Smilosuchus had two distinct types of teeth: Enlarged tusks at the front of the mouth for impaling prey, and more bladelike teeth further back in the mouth for slicing flesh. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_smilosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_smilosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_smilosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_smilosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_smilosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_smilosuchus"
 		}
 	]
 }

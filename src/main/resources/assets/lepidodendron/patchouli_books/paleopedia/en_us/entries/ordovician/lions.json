@@ -1,7 +1,7 @@
 {
 	"name": "Lion's Mane Jelly",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lions_icon.png",
+	"icon": "paleopedia:textures/items/lions_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish6",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish6",
 			"title": "Lion's Mane Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jellyfish in modern forms have existed since at least the Cambrian period, and in very similar forms before even then. This exact species is a modern species but entirely similar to what has existed since ancient times. The lion's mane jellyfish is a large arctic jellyfish that lives in the northern Atlantic and Pacific Oceans as well as the North Sea and the English Channel. It uses its stinging tentacles to capture and eat prey such as fish, zooplankton and smaller jellyfish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jellyfish6",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish6"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish6"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish6"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish6"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish6"
 		}
 	]
 }

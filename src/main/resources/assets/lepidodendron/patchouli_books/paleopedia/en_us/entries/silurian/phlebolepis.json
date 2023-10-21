@@ -1,0 +1,46 @@
+{
+	"name": "Phlebolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phlebolepis_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_phlebolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phlebolepis",
+			"title": "Phlebolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Agnatha $(br)>Thelodonti $(br)>Phlebolepidiformes $(br)>Phlebolepididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/phlebolepis.png"],
+			"title": "P. elegans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phlebolepis",
+			"type": "text",
+			"text": "Phlebolepis was a small, jawless thelodont that lived during the Late Silurian. Its remains have been found across much of northern Europe as well as in Russia, with particularly whole specimens having been found in Estonia."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phlebolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phlebolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phlebolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phlebolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phlebolepis"
+		}
+	]
+}

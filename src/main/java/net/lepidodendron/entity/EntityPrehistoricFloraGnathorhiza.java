@@ -6,7 +6,8 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AmphibianWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAmphibian;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -18,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -49,7 +51,7 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 		return true;
 	}
 
-	public static String getPeriod() {return "Permian - Triassic";}
+	public static String getPeriod() {return "[Carboniferous -] Permian [- Triassic]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -122,7 +124,12 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
-		this.targetTasks.addTask(0, new EatFishFoodAIAmphibian(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -175,7 +182,7 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {

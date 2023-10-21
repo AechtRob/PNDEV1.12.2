@@ -5,25 +5,24 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.ShoalTrilobiteBottomAI;
-import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.render.entity.RenderPlectronoceras;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFloraTrilobiteBottomBase {
 
@@ -41,6 +40,11 @@ public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFlora
 		setSize(0.2F, 0.2F);
 		JUMP_ANIMATION = Animation.create(this.getJumpLength());
 
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	public int getJumpLength() {
@@ -131,8 +135,13 @@ public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFlora
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
 		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -185,7 +194,7 @@ public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		if(this.jumpCooldown > 0) {
 			this.jumpCooldown--;
 		}
@@ -212,4 +221,65 @@ public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFlora
 		return LepidodendronMod.PLECTRONOCERAS_LOOT;
 	}
 
+	public static double offsetWall(@Nullable String variant) {
+		return -0.7;
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1;
+	}
+
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.5F;
+	}
+
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.5F;}
+
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.5F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderPlectronoceras.TEXTURE;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelPlectronoceras;
+	}
+
+	public static float getScaler(@Nullable String variant) {return RenderPlectronoceras.getScaler();}
 }

@@ -37,6 +37,8 @@ public class ItemDiplacanthusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diplacanthus", ItemDiplacanthusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemDiplacanthusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemDiplacanthusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemDiplacanthusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

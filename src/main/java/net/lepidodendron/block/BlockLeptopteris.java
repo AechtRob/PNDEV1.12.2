@@ -2,9 +2,12 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.FernEpiphyteGenerator;
 import net.minecraft.block.Block;
@@ -32,6 +35,8 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -82,6 +87,23 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+		boolean dimensionCriteria = false;
+		boolean isNetherType = false;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLeptopterisEpiphyte))
+			dimensionCriteria = true;
+		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+			dimensionCriteria = false;
+		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene
+		) {
+			dimensionCriteria = true;
+		}
+
+		if (!dimensionCriteria)
+			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
@@ -93,10 +115,9 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
+
 		if (matchBiome(biome, LepidodendronConfigPlants.genLeptopterisEpiphyteOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && !LepidodendronConfig.genAllPlants)
-			biomeCriteria = false;
 
 		if (biome instanceof BiomeJurassic)
 		{
@@ -104,9 +125,10 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
 				biomeCriteria = true;
 			}
@@ -136,6 +158,17 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public static boolean matchBiome(Biome biome, String[] biomesList) {
 
@@ -162,7 +195,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -178,6 +211,12 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 			setTickRandomly(true);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_LEPTOPTERIS;
 		}
 
 		@Override
@@ -350,6 +389,36 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public int offsetY() {
 			return 1;
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			super.updateTick(worldIn, pos, state, rand);
+			if (!canPlaceBlockOnSide(worldIn, pos, state.getValue(FACING))) {
+				worldIn.destroyBlock(pos, true);
+			}
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+			this.updateTick(worldIn, pos, state, worldIn.rand);
+		}
+
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+
+			long i = MathHelper.getCoordinateRandom(pos.getX(), pos.getY(), pos.getZ());
+			switch (state.getValue(FACING)) {
+				case UP: case DOWN: default:
+					return new Vec3d(((double) ((float) (i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D, 0.0D, ((double) ((float) (i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+
+				case NORTH: case SOUTH:
+					return new Vec3d(((double) ((float) (i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, 0.0D);
+
+				case EAST: case WEST:
+					return new Vec3d(0.0D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, ((double) ((float) (i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+			}
 		}
 	}
 }

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.entities.ItemBivalveRaw;
 import net.lepidodendron.util.*;
@@ -28,7 +29,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -83,6 +83,8 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_orthid", BlockBrachiopodOrthid.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodOrthid.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBrachiopodOrthid.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBrachiopodOrthid.block);
 	}
 
 	@Override
@@ -248,7 +250,7 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER || world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER) {
+						if (Functions.isWater(world, blockpos1)) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth
@@ -353,7 +355,7 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable , IAdvancementGranter {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -368,6 +370,12 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BRACHIOPOD_ORTHID;
 		}
 
 		@Override

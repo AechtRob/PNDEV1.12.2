@@ -1,0 +1,46 @@
+{
+	"name": "Tuojiangosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tuojiangosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_tuojiangosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tuojiangosaurus",
+			"title": "Tuojiangosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Stegosauria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/tuojiangosaurus.png"],
+			"title": "T. multispinus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tuojiangosaurus",
+			"type": "text",
+			"text": "Known from the Shaxiaomao Formation in China, this animal was large, coming in at around 6.5 meters. This animal was a basal stegosaur, as seen by its parascapular spines, a feature lost in derived stegosaurs such as Stegosaurus and Dacentrurus. The limbs of Tuojiangosaurus, in comparison to other Stegosaurians, are rather short. In the Stegosaurian dense ecosystem of Shaxiaomao, Tuojiangosaurus would've specialized in low-lying ground vegetation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tuojiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tuojiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tuojiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tuojiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tuojiangosaurus"
+		}
+	]
+}

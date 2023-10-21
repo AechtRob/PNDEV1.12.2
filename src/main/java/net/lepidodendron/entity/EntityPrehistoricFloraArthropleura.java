@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.*;
@@ -17,8 +18,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -28,7 +27,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -57,7 +55,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 	@Override
 	public boolean canJar() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -90,7 +88,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.375f * (float)Math.max(0.6, this.getAgeScale());
 	}
 
@@ -118,18 +116,17 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new LandWanderAvoidWaterAI(this, 1.0D, 5));
-		tasks.addTask(3, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return DietString.PLANTS;
 	}
+
+	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -199,11 +196,11 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();
-		if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
+		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
 			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)

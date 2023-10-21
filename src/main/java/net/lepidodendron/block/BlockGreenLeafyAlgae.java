@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -36,9 +39,11 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -50,6 +55,12 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 	public static final Block block = null;
 	public BlockGreenLeafyAlgae(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.green_leafy_algae);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("itemAlgae", BlockGreenLeafyAlgae.block);
 	}
 
 	@Override
@@ -186,7 +197,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
         return false;
     }
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -201,6 +212,12 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }

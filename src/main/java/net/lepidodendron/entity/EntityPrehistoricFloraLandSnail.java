@@ -3,19 +3,19 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.block.BlockDollyphyton;
 import net.lepidodendron.block.BlockEdwardsiphyton;
 import net.lepidodendron.block.BlockSelaginella;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemLandSnail;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
@@ -29,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -48,6 +48,11 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -81,7 +86,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.07f;
 	}
 
@@ -109,13 +114,13 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemMoss"), stack));
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MOSS, DietString.FUNGI);
 	}
 
 	@Override
@@ -161,11 +166,11 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();
-		if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
+		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
 			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)

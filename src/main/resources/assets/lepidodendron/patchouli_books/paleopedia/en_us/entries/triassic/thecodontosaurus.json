@@ -1,7 +1,7 @@
 {
 	"name": "Thecodontosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/thecodontosaurus_icon.png",
+	"icon": "paleopedia:textures/items/thecodontosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_thecodontosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thecodontosaurus",
 			"title": "Thecodontosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Volcanic Islands$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Thecodontosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Thecodontosauridae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_thecodontosaurus",
 			"type": "text",
-			"text": "Despite being rather small compared to contemporary mainland relatives, Thecodontosaurus was actually a giant within the Mendip Archipelago of what is modern day England. The otherwise small size of this basal sauropodamorph is an instance of insular dwarfism. Thecodontosaurus was exclusive bipedal and a fast runner. Though Thecodontosaurus was mostly herbivorous, it is also possible that it also possessed more omnivorous traits."
+			"text": "Despite being rather small compared to contemporary mainland relatives, Thecodontosaurus was actually a giant within the Mendip Archipelago of what is modern day England. The otherwise small size of this basal sauropodamorph is an instance of insular dwarfism. Thecodontosaurus was exclusive bipedal and a fast runner."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thecodontosaurus",
 			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"text": "Though Thecodontosaurus was mostly herbivorous, it is also possible that it also possessed more omnivorous traits."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thecodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thecodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thecodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thecodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thecodontosaurus"
 		}
 	]
 }

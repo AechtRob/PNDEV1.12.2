@@ -1,7 +1,7 @@
 {
 	"name": "Lochmanolenellus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lochmanolenellus_icon.png",
+	"icon": "paleopedia:textures/items/lochmanolenellus_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lochmanolenellus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lochmanolenellus",
 			"title": "Lochmanolenellus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Trilobita$(br)>Redlichiida$(br)>Biceratopsidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Biceratopsidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lochmanolenellus was a Cambrian bottom dwelling trilobite which had a pentangular cephalon and lived by scourging the sea floor for food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lochmanolenellus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lochmanolenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lochmanolenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lochmanolenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lochmanolenellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lochmanolenellus"
 		}
 	]
 }

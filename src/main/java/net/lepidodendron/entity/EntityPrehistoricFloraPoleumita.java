@@ -3,14 +3,16 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemPoleumita;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -23,7 +25,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -41,15 +43,16 @@ public class EntityPrehistoricFloraPoleumita extends EntityPrehistoricFloraTrilo
 	}
 
 	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));
-	}
+	
 
 	public static String getPeriod() {return "Silurian";}
 
@@ -93,7 +96,12 @@ public class EntityPrehistoricFloraPoleumita extends EntityPrehistoricFloraTrilo
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
 		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.ALGAE);
 	}
 
 	@Override
@@ -146,7 +154,7 @@ public class EntityPrehistoricFloraPoleumita extends EntityPrehistoricFloraTrilo
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {

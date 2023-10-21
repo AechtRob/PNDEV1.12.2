@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -68,7 +71,7 @@ public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends SeedSporeBushBase {
+	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -78,6 +81,12 @@ public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_sphenopteris");
 			setRegistryName("sphenopteris");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SPHENOPTERIS;
 		}
 
 		@Override
@@ -140,7 +149,7 @@ public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant");
-	        	tooltip.add("Periods: late Devonian - Carboniferous - [Permian -] Triassic - Jurassic - Cretaceous");
+	        	tooltip.add("Periods: Devonian - Carboniferous - [Permian -] Triassic - Jurassic - late Cretaceous");
 	        	tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

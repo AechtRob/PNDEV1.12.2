@@ -426,6 +426,7 @@ public class ModelMontecaris extends AdvancedModelBase {
         float speed = 0.4F;
         if (!e.isInWater()) {
             speed = 0.7F;
+            this.body.offsetY = 1.08F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.flap(antennaL, 0.3F, -0.2F, true, 0f, 0.2f, f2, 1F);

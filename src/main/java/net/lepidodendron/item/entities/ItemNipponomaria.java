@@ -51,9 +51,9 @@ public class ItemNipponomaria extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_nipponomaria", ItemNipponomaria.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemNipponomaria.block);
-		OreDictionary.registerOre("foodMeat", ItemNipponomaria.block);
 		OreDictionary.registerOre("itemShellfish", ItemNipponomaria.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemNipponomaria.block);
+		OreDictionary.registerOre("pndietShellfish", ItemNipponomaria.block);
 	}
 
 

@@ -2,10 +2,10 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraHelmetia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -303,20 +303,22 @@ public class ModelHelmetia extends AdvancedModelBase {
         AdvancedModelRenderer[] legsR = {this.RLeg1, this.RLeg2, this.RLeg3, this.RLeg4, this.RLeg5, this.RLeg6};
 
         if (isAtBottom) {
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.2F, 0.2F, -3, f2, 1);
-            this.flap(LLeg1, 0.5F, -0.5F, false, 0, -0.25F, f2, 0.3F);
-            this.flap(RLeg1, 0.5F, 0.5F, false, 0, 0.25F, f2, 0.3F);
-            this.flap(LLeg2, 0.5F, -0.5F, false, 1.0F, -0.25F, f2, 0.3F);
-            this.flap(RLeg2, 0.5F, 0.5F, false, 1.0F, 0.25F, f2, 0.3F);
-            this.flap(LLeg3, 0.5F, -0.5F, false, 2.0F, -0.25F, f2, 0.3F);
-            this.flap(RLeg3, 0.5F, 0.5F, false, 2.0F, 0.25F, f2, 0.3F);
-            this.flap(LLeg4, 0.5F, -0.5F, false, 3.0F, -0.25F, f2, 0.3F);
-            this.flap(RLeg4, 0.5F, 0.5F, false, 3.0F, 0.25F, f2, 0.3F);
-            this.flap(LLeg5, 0.5F, -0.5F, false, 4.0F, -0.25F, f2, 0.3F);
-            this.flap(RLeg5, 0.5F, 0.5F, false, 4.0F, 0.25F, f2, 0.3F);
-            this.flap(LLeg6, 0.5F, -0.5F, false, 5.0F, -0.25F, f2, 0.3F);
-            this.flap(RLeg6, 0.5F, 0.5F, false, 5.0F, 0.25F, f2, 0.3F);
+            if (((EntityPrehistoricFloraHelmetia) e).getIsMoving()) {
+                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.2F, 0.2F, -3, f2, 1);
+                this.flap(LLeg1, 0.5F, -0.5F, false, 0, -0.25F, f2, 0.3F);
+                this.flap(RLeg1, 0.5F, 0.5F, false, 0, 0.25F, f2, 0.3F);
+                this.flap(LLeg2, 0.5F, -0.5F, false, 1.0F, -0.25F, f2, 0.3F);
+                this.flap(RLeg2, 0.5F, 0.5F, false, 1.0F, 0.25F, f2, 0.3F);
+                this.flap(LLeg3, 0.5F, -0.5F, false, 2.0F, -0.25F, f2, 0.3F);
+                this.flap(RLeg3, 0.5F, 0.5F, false, 2.0F, 0.25F, f2, 0.3F);
+                this.flap(LLeg4, 0.5F, -0.5F, false, 3.0F, -0.25F, f2, 0.3F);
+                this.flap(RLeg4, 0.5F, 0.5F, false, 3.0F, 0.25F, f2, 0.3F);
+                this.flap(LLeg5, 0.5F, -0.5F, false, 4.0F, -0.25F, f2, 0.3F);
+                this.flap(RLeg5, 0.5F, 0.5F, false, 4.0F, 0.25F, f2, 0.3F);
+                this.flap(LLeg6, 0.5F, -0.5F, false, 5.0F, -0.25F, f2, 0.3F);
+                this.flap(RLeg6, 0.5F, 0.5F, false, 5.0F, 0.25F, f2, 0.3F);
+            }
             this.bob(Helmetia, 0.0F, 0.0F, false, f2, 1);
         }
         else {

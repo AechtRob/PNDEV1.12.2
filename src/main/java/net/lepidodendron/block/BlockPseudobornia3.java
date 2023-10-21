@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -46,7 +49,7 @@ public class BlockPseudobornia3 extends ElementsLepidodendronMod.ModElement {
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:pseudobornia_3", "inventory"));
 	//}
-	public static class BlockCustomFlower extends SeedSporeReedBase {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(null);
@@ -55,6 +58,12 @@ public class BlockPseudobornia3 extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_pseudobornia_3");
 			setRegistryName("pseudobornia_3");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PSEUDOBORNIA;
 		}
 
 		@Override

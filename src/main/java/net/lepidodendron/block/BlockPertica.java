@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -69,7 +72,7 @@ public class BlockPertica extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends BlockBush {
+	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
@@ -78,6 +81,12 @@ public class BlockPertica extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_pertica");
 			setRegistryName("pertica");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PERTICA;
 		}
 
 		@Override
@@ -158,7 +167,7 @@ public class BlockPertica extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
-	        tooltip.add("Periods: early-mid Devonian");
+	        tooltip.add("Periods: Devonian");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

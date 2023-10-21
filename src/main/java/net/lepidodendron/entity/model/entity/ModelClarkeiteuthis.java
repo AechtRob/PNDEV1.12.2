@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -297,16 +296,30 @@ public class ModelClarkeiteuthis extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.body.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(body, 1.55F, 0.0F, 0.0F);
+        this.body.offsetY = -0.18F;
+        this.body.offsetX = 0.0F;
+        this.body.offsetZ = -0.35F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(finL, 0.0F, 0.0F, -0.9F);
+        this.setRotateAngle(finR, 0.0F, 0.0F, 0.9F);
+        this.body.offsetY = -0.5F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(finL, 0.0F, 0.3F, 0.3F);
+        this.setRotateAngle(finR, 0.0F, 0.3F, -0.3F);
+        this.body.offsetY = 0.09F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -321,7 +334,7 @@ public class ModelClarkeiteuthis extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         //this.body.offsetY = 1.3F;
         this.body.rotateAngleY = (float) Math.toRadians(180);
-        //this.body.offsetZ = -1F;
+        this.body.offsetZ = 0.5F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.arm1, this.armb1};
         AdvancedModelRendererExtended[] tentacle2 = {this.arm2, this.armb2};
@@ -360,7 +373,7 @@ public class ModelClarkeiteuthis extends AdvancedModelBaseExtended {
         if (e.isInWater()) {
             float bobSpeed = 0.1F;
             this.bobExtended(body, bobSpeed, 0.5F, false, 0.1F, f2, 2);
-            this.body.offsetZ = this.moveBoxExtended(speed, 0.50F, false, 3, f2, 1);
+            this.body.offsetZ = this.moveBoxExtended(speed, 0.50F, false, 3, f2, 1) + 1.25F;
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);

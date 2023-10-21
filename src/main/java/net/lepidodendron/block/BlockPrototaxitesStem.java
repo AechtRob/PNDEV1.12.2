@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemPrototaxitesChunk;
 import net.lepidodendron.procedure.ProcedureTreeLog;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -35,6 +38,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -58,7 +62,7 @@ public class BlockPrototaxitesStem extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockCustom.SPORES).build());
 
 	}
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 	public static final PropertyInteger SECTION = PropertyInteger.create("section", 0, 4);
 	public static final PropertyBool SPORES = PropertyBool.create("spores");
@@ -75,6 +79,12 @@ public class BlockPrototaxitesStem extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(null);
 			setTickRandomly(true);
         	this.setDefaultState(this.blockState.getBaseState().withProperty(SECTION, 0).withProperty(SPORES, false).withProperty(GROUND, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PROTOTAXITES;
 		}
 
 		@Override

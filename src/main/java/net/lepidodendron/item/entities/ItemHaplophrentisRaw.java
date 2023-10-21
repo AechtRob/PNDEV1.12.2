@@ -35,9 +35,9 @@ public class ItemHaplophrentisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_haplophrentis", ItemHaplophrentisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemHaplophrentisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHaplophrentisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHaplophrentisRaw.block);
+		OreDictionary.registerOre("itemShellfish", ItemHaplophrentisRaw.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemHaplophrentisRaw.block);
+		OreDictionary.registerOre("pndietShellfish", ItemHaplophrentisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

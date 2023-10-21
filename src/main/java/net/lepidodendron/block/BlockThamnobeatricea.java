@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -24,6 +27,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -68,10 +73,11 @@ public class BlockThamnobeatricea extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:thamnobeatricea_sapling", BlockThamnobeatricea.block);
-		OreDictionary.registerOre("sponge", BlockThamnobeatricea.block);
+		OreDictionary.registerOre("itemSponge", BlockThamnobeatricea.block);
+		OreDictionary.registerOre("pndietSponge", BlockThamnobeatricea.block);
 	}
 
-	public static class BlockCustom extends Block implements IShearable {
+	public static class BlockCustom extends Block implements IShearable, IAdvancementGranter {
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
     public static final PropertyBool EAST = PropertyBool.create("east");
@@ -91,6 +97,22 @@ public class BlockThamnobeatricea extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronStatic.tab);
 			
         	this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(UP, Boolean.valueOf(false)).withProperty(DOWN, Boolean.valueOf(false)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_THAMNOBEATRICEA;
+		}
+
+		@Override
+		@Nullable
+		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
+		{
+			if (worldIn.getBlockState(new BlockPos(start)).getBlock() == this) {
+				return null;
+			}
+			return super.collisionRayTrace(blockState, worldIn, pos, start, end);
 		}
 
 		@Override

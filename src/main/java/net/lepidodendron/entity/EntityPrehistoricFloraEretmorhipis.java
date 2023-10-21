@@ -11,9 +11,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -23,7 +20,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -110,10 +107,10 @@ public class EntityPrehistoricFloraEretmorhipis extends EntityPrehistoricFloraAg
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.2, 5, true, 0));
-		this.targetTasks.addTask(0, new EatAlgaeItemsAI(this, 1F));
-		//this.targetTasks.addTask(0, new EatMeatItemsAI(this));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(5, new EntityAILookIdle(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1F));
+		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		//this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -127,12 +124,8 @@ public class EntityPrehistoricFloraEretmorhipis extends EntityPrehistoricFloraAg
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.ALGAE);
 	}
 
 	@Override
@@ -186,14 +179,10 @@ public class EntityPrehistoricFloraEretmorhipis extends EntityPrehistoricFloraAg
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

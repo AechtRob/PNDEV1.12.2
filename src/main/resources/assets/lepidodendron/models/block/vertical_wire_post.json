@@ -1,0 +1,27 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/vertical_wire",
+		"particle": "lepidodendron:blocks/vertical_wire"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 7.5],
+			"to": [8, 16, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -0.5]},
+			"faces": {
+				"east": {"uv": [9, 0, 8, 16], "texture": "#0"},
+				"west": {"uv": [8, 0, 9, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 0, 8],
+			"to": [8.5, 16, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.5, 0, 0]},
+			"faces": {
+				"north": {"uv": [8, 0, 9, 16], "texture": "#0"},
+				"south": {"uv": [9, 0, 8, 16], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraHolonema;
 import net.lepidodendron.entity.EntityPrehistoricFloraWuttagoonaspis;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;

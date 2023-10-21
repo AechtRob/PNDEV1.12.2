@@ -2,12 +2,14 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderKentrosaurus;
+import net.lepidodendron.entity.render.entity.RenderStegosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -17,16 +19,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -35,7 +31,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -45,17 +41,74 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
+	public int ambientSoundTime;
+	public Animation NOISE_ANIMATION; //An additional noise (roar) for less common animations
+
+	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thagomized", this);
 
 	public EntityPrehistoricFloraStegosaurus(World world) {
 		super(world);
-		setSize(0.9F, 1.3F);
-		minWidth = 0.12F;
-		maxWidth = 0.9F;
-		maxHeight = 1.3F;
-		maxHealthAgeable = 50.0D;
+		setSize(2F, 2.5F);
+		minWidth = 0.3F;
+		maxWidth = 2F;
+		maxHeight = 2.5F;
+		maxHealthAgeable = 65.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		NOISE_ANIMATION = Animation.create(this.getRoarLength());
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 40;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 0;
+	}
+
+	@Override
+	public int tetrapodWalkFootstepOffset() {
+		return 1;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
+	public int tetrapodRunFootstepOffset() {
+		return 1;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
+		{
+			this.ambientSoundTime = -this.getAmbientTalkInterval();
+			SoundEvent soundevent = this.getRoarSound();
+			if (soundevent != null)
+			{
+				if (this.getAnimation() == NO_ANIMATION) {
+					this.setAnimation(NOISE_ANIMATION);
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
 	}
 
 	@Override
@@ -86,12 +139,21 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getRoarLength() {
-		return 24;
+		return 44;
+	} //Idle
+
+	@Override
+	public int getTalkInterval() {
+		return 360;
+	}
+
+	public int getAmbientTalkInterval() {
+		return 900;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 70;
 	}
 
 	@Override
@@ -109,24 +171,19 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	protected float getAISpeedLand() {
-		float speedBase = 0.330F;
+	public float getAISpeedLand() {
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == ATTACK_ANIMATION) {
+			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.8F;
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
-	}
-
-	@Override
-	public int getTalkInterval() {
-		return 80;
 	}
 
 	@Override
@@ -157,31 +214,26 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1));
+		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
-
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("foodInsect"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
 	}
-
 
 	@Override
 	public boolean drinksWater() {
@@ -190,7 +242,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getDrinkLength() {
-		return 50;  //grazes, does not drink
+		return 80;  //grazes, does not drink
 	}
 
 	@Override
@@ -260,27 +312,32 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(30.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
 
+	public SoundEvent getRoarSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_roar"));
+	}
+
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kentrosaurus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kentrosaurus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:kentrosaurus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:stegosaurus_death"));
 	}
 
 	@Override
@@ -299,7 +356,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		super.onLivingUpdate();
 
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
@@ -319,13 +376,24 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 			if (this.getAttackBoundingBoxForDamage().intersects(this.getAttackTarget().getEntityBoundingBox())) {
 				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 				this.getAttackTarget().addVelocity(0, 0.1, 0);
-				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+				boolean b = this.getAttackTarget().attackEntityFrom(THAGOMIZED, (float) iattributeinstance.getAttributeValue());
 				if (this.getOneHit()) {
 					this.setAttackTarget(null);
 					this.setRevengeTarget(null);
+					this.setWarnTarget(null);
 				}
+				this.setOneHit(false);
 			}
 		}
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(6.0, 9.00, 6.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 
@@ -399,10 +467,10 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.85;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
@@ -411,21 +479,21 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		return -0.3;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 1.2;
+		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.1;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderKentrosaurus.TEXTURE;
+		return RenderStegosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelKentrosaurus;
+		return RenderDisplays.modelStegosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderKentrosaurus.getScaler();
+		return RenderStegosaurus.getScaler();
 	}
 
 

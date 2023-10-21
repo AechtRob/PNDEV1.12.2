@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -387,7 +386,7 @@ public class ModelCarcinosoma extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.0F;
+        this.body.offsetY = -0.4F;
 
         float speedMultiplier = 1F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
@@ -491,7 +490,7 @@ public class ModelCarcinosoma extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.0F;
+                //this.body.offsetY = 0.0F;
                 this.bob(body, -speed * 1.5F, 2F, false, f2, 1);
                 this.chainSwing(fishBody, speed, 0.1F, -2, f2, 1);
             }

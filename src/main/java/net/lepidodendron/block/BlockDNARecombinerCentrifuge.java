@@ -8,6 +8,8 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNACentrifuge;
 import net.lepidodendron.item.ItemDNARecombiner;
+import net.lepidodendron.item.ItemPhial;
+import net.lepidodendron.item.ItemPhialDNA;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -768,6 +770,11 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
 			return !this.isLocked() && isItemValidForSlot(index, itemStackIn);
+		}
+
+		@Override
+		public boolean isItemValidForSlot(int index, ItemStack stack) {
+			return (stack.getItem() == ItemPhialDNA.block || stack.getItem() == ItemPhial.block);
 		}
 
 		@Override

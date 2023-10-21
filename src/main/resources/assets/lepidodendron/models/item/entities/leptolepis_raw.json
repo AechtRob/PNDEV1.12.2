@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:leptolepis_icon"
+    "layer0": "paleopedia:items/leptolepis_icon"
   },
   "display": {
     "ground": {

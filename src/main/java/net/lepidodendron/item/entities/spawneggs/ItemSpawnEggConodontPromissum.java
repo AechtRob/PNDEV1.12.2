@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSpawnEggConodontPromissum extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_promissum")
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_conodont_promissum")
 	public static final Item block = null;
 	public ItemSpawnEggConodontPromissum(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.promissum_raw);
@@ -39,17 +39,27 @@ public class ItemSpawnEggConodontPromissum extends ElementsLepidodendronMod.ModE
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_promissum", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_promissum", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_promissum");
-			setRegistryName("spawn_egg_promissum");
+			setTranslationKey("pf_spawn_egg_conodont_promissum");
+			setRegistryName("spawn_egg_conodont_promissum");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "promissum";
+		}
+
+		@Override
+		public int eggPrimaryColour() {
+			return -12301749;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -1;
 		}
 
 		@Override

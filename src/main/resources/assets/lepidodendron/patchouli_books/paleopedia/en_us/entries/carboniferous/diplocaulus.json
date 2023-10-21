@@ -1,7 +1,7 @@
 {
 	"name": "Diplocaulus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/diplocaulus_icon.png",
+	"icon": "paleopedia:textures/items/diplocaulus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_diplocaulus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diplocaulus",
 			"title": "Diplocaulus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Swamps$(br2)>Lepospondyli$(br)>Nectridea$(br)>Diplocaulidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Lepospondyli$(br)>Nectridea$(br)>Diplocaulidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Diplocaulus is an amphibian from the Carboniferous-Permian which sported a distinct boomerang shaped head. It reached up to 1.5m long and was likely mostly aquatic. Its tail would have been its main force of locomotion."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_diplocaulus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus"
 		}
 	]
 }

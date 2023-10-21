@@ -2,9 +2,9 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraEoredlichia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEoredlichia extends AdvancedModelBase {
@@ -254,24 +254,27 @@ public class ModelEoredlichia extends AdvancedModelBase {
         AdvancedModelRenderer[] legsR = {this.legR, this.legR2, this.legR3, this.legR4, this.legR5};
         AdvancedModelRenderer[] bodyF = {this.body1, this.body2, this.body3, this.body4, this.body5};
 
-        this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-        this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+        if (((EntityPrehistoricFloraEoredlichia) e).getIsMoving()) {
+            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+
+            this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+            this.flap(legR, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+            this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+
+            this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 1.0F);
+            this.chainWave(bodyF, 0.1F, 0.05f, -3, f2, 0.1F);
+        }
 
         this.swing(antennaL, 0.4F, -0.22F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaL2, 0.4F, 0.22F, false, 0, 0.1F, f2, 0.8F);
 
-        this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-        this.flap(legR, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-        this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-        this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-        this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-        this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-        this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-        this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-        this.flap(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-        this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-
-        this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 1.0F);
-        this.chainWave(bodyF, 0.1F, 0.05f, -3, f2, 0.1F);
     }
 }

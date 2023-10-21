@@ -5,19 +5,14 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -25,12 +20,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -55,11 +47,6 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{HOP_ANIMATION, DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
-	}
-
-	@Override
-	public boolean canJar() {
-		return true;
 	}
 
 	@Override
@@ -111,12 +98,12 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.585F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F; //Is drinking
 		}
 		if (!this.isHopping()) {
@@ -213,7 +200,12 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(8, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override
@@ -221,13 +213,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -279,19 +265,9 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
+
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		if (this.getHopPhaseHopping() == 1 && this.getIsMoving()) {
@@ -304,22 +280,10 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 
 	}
 
-
 	public boolean testLay(World world, BlockPos pos) {
 		return (
 				nestBlockMatch(world, pos)
 		);
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
-					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
-					&& world.isAirBlock(pos));
-		}
-		return match;
 	}
 
 	@Override
@@ -342,25 +306,6 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 			return LepidodendronMod.SCLEROMOCHLUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.SCLEROMOCHLUS_LOOT;
-	}
-
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.SCLEROMOCHLUS_LOOT_JAR;
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
-
 	}
 
 }

@@ -29,7 +29,7 @@ public class StructureSpawnSpinyCycad extends ElementsLepidodendronMod.ModElemen
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSpinyCycad))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSpinyCycad && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSpinyCycad && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

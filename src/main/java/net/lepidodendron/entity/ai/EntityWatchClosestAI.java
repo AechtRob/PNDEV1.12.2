@@ -1,6 +1,8 @@
 package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicates;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -13,6 +15,7 @@ public class EntityWatchClosestAI extends EntityAIBase
     protected EntityLiving entity;
     protected Entity closestEntity;
     protected float maxDistance;
+    private boolean noSpin;
     private int lookTime;
     private final float chance;
     protected Class <? extends Entity > watchedClass;
@@ -24,6 +27,17 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.maxDistance = maxDistance;
         this.chance = 0.02F;
         this.setMutexBits(2);
+        this.noSpin = false;
+    }
+
+    public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, boolean nospinIn)
+    {
+        this.entity = entityIn;
+        this.watchedClass = watchTargetClass;
+        this.maxDistance = maxDistance;
+        this.chance = 0.02F;
+        this.setMutexBits(2);
+        this.noSpin = nospinIn;
     }
 
     public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, float chanceIn)
@@ -33,13 +47,35 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.maxDistance = maxDistance;
         this.chance = chanceIn;
         this.setMutexBits(2);
+        this.noSpin = false;
+    }
+
+    public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, float chanceIn, boolean nospinIn)
+    {
+        this.entity = entityIn;
+        this.watchedClass = watchTargetClass;
+        this.maxDistance = maxDistance;
+        this.chance = chanceIn;
+        this.setMutexBits(2);
+        this.noSpin = nospinIn;
     }
 
     public boolean shouldExecute()
     {
+        if (noSpin && this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+            if (!((EntityPrehistoricFloraAgeableBase)this.entity).getIsMoving()) {
+                return false;
+            }
+        }
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+            if (landbase.getAnimation() != landbase.NO_ANIMATION) {
+                return false;
+            }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.entity;
+            if (flybase.isReallyFlying()) {
                 return false;
             }
         }

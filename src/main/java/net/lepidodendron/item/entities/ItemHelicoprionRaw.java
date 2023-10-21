@@ -38,8 +38,8 @@ public class ItemHelicoprionRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_helicoprion", ItemHelicoprionRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHelicoprionRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHelicoprionRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHelicoprionRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemHelicoprionRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemHelicoprionRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

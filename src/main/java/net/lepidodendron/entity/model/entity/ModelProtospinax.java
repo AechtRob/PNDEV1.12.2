@@ -4,8 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeocarcharias;
-import net.lepidodendron.entity.EntityPrehistoricFloraPhorcynis;
 import net.lepidodendron.entity.EntityPrehistoricFloraProtospinax;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
@@ -169,13 +167,22 @@ public class ModelProtospinax extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.base.rotateAngleX = (float) Math.toRadians(90);
         this.base.rotateAngleZ = (float) Math.toRadians(90);
-        this.base.offsetX = -0.02F;
-        this.base.offsetZ = -0.01F;
+        this.setRotateAngle(dorsalfinleft, 0.0F, -0.1F, -0.05F);
+        this.setRotateAngle(dorsalfinright, 0.0F, 0.1F, 0.05F);
+        this.base.offsetX = -0.1F;
+        this.base.offsetZ = 0.06F;
         this.base.offsetY = -0.245F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.4F, 0.0F);
+        this.base.offsetY = -0.13F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
 

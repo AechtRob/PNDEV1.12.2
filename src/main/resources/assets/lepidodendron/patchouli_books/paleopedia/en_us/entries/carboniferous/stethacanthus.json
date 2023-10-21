@@ -1,7 +1,7 @@
 {
 	"name": "Stethacanthus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/stethacanthus_icon.png",
+	"icon": "paleopedia:textures/items/stethacanthus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_stethacanthus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stethacanthus",
 			"title": "Stethacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)$(l)Habitat:$() Ocean$(br2)>Chondrichthyes $(br)>Symmoriiformes $(br)>Stethacanthidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chondrichthyes $(br)>Symmoriiformes $(br)>Stethacanthidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "as well as part of the forehead. It's worth noting that these structures were only present in males, suggesting they served some purpose relating to courtship, perhaps either as display or as an aid in mating. The relatively small body fins and teeth of Stethacanthus suggest that it may have been a bottom-dweller."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_stethacanthus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stethacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stethacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stethacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stethacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stethacanthus"
 		}
 	]
 }

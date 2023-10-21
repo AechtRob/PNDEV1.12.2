@@ -3,25 +3,23 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -40,11 +38,16 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
     }
 
     @Override
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        return EnumCreatureAttributePN.INVERTEBRATE;
+    }
+
+    @Override
     public boolean isSmall() {
         return true;
     }
 
-    public static String getPeriod() {return "Ediacaran";}
+    public static String getPeriod() {return "Neoproterozoic (Ediacaran)";}
 
     //public static String getHabitat() {return "Aquatic";}
 
@@ -55,7 +58,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
 
     @Override
     public boolean dropsEggs() {
-        return false;
+        return true;
     }
 
     //Arbitrary for jellyfish as there is no specific AI animation:
@@ -64,6 +67,12 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
     protected void initEntityAI() {
         tasks.addTask(0, new EntityMateAIJellyfishBase(this, 1));
         tasks.addTask(1, new JellyfishWander(this, ANIMATION_JELLYFISH_WANDER));
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraJellyfishBaseAI(this));
+    }
+
+    @Override
+    public String[] getFoodOreDicts() {
+        return DietString.FISHFOOD;
     }
 
     @Override
@@ -155,7 +164,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     public void onEntityUpdate()
@@ -171,22 +180,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
         }
 
         super.onEntityUpdate();
-        //Drop an egg perhaps:
-        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
-            if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownPlanula.block, (int) (1));
-                if (!itemstack.hasTagCompound()) {
-                    itemstack.setTagCompound(new NBTTagCompound());
-                }
-                String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-                itemstack.getTagCompound().setString("creature", stringEgg);
-                EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-                entityToSpawn.setPickupDelay(10);
-                this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                world.spawnEntity(entityToSpawn);
-            }
-            this.setTicks(0);
-        }
+
     }
 
     public int getRotationDegree() {

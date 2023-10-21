@@ -291,11 +291,23 @@ public class ModelPricyclopyge extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Smalltrilo.render(f5);
     }
-    public void renderStaticDisplayCase(float f) {
-        resetToDefaultPose();
+        public void renderStaticSuspended(float f) {
+            this.setRotateAngle(Smalltrilo, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(Thorax1, 0.0F, 0.0F, 0.0F);
+            this.Smalltrilo.offsetY = -0.14F;
+            this.Smalltrilo.render(0.01F);
+            resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(Smalltrilo, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Thorax1, 0.0F, 0.0F, 0.0F);
+        this.Smalltrilo.offsetY = -0.14F;
+        this.Smalltrilo.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.Smalltrilo.offsetY = -0.05F;
+        this.Smalltrilo.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

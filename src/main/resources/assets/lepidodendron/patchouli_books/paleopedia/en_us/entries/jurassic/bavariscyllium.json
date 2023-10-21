@@ -1,0 +1,46 @@
+{
+	"name": "Bavariscyllium",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bavariscyllium_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_bavariscyllium",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bavariscyllium",
+			"title": "Bavariscyllium",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chondrichthyes $(br)>Carcharhiniformes $(br)>Scyliorhinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bavariscyllium.png"],
+			"title": "B. tischlingeri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bavariscyllium",
+			"type": "text",
+			"text": "Bavariscyllium is a catshark known from the Late Jurassic of Bavaria, Germany. It is known from a single species, described in 2005 which comprises of a whole body specimen. The exact locale the specimen is from is not known, and the specimen was donated by Helmut Tischlinger, for which the species is named after."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bavariscyllium"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bavariscyllium"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bavariscyllium"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bavariscyllium"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bavariscyllium"
+		}
+	]
+}

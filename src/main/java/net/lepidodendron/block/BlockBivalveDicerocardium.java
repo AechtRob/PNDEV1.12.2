@@ -20,7 +20,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -42,6 +41,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +74,8 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_dicerocardium", BlockBivalveDicerocardium.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveDicerocardium.block);
 	}
 
 	@Override
@@ -171,7 +173,8 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
 				biomeCriteria = true;
 			}
 			else {
@@ -212,7 +215,7 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(6) - random.nextInt(6), 0, random.nextInt(6) - random.nextInt(6));
-						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER || world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER) {
+						if (Functions.isWater(world, blockpos1)) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth
@@ -299,6 +302,12 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_dicerocardium");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_DICEROCARDIUM;
 		}
 
 		@Override

@@ -1,0 +1,17 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:pandan_seeds"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:pandan_sapling",
+    "count": 1
+  }
+}

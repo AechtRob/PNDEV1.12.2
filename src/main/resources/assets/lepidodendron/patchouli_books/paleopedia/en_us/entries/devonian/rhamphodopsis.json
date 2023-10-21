@@ -1,7 +1,7 @@
 {
 	"name": "Rhamphodopsis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/rhamphodopsis_icon.png",
+	"icon": "paleopedia:textures/items/rhamphodopsis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_rhamphodopsis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhamphodopsis",
 			"title": "Rhamphodopsis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Swamp, Wattieza Forest$(br2)>Ptyctodontida$(br)>Ptyctodontidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ptyctodontida$(br)>Ptyctodontidae"
 		},
 		{
 			"type": "image",
@@ -28,14 +28,24 @@
 			"text": " Two species of Rhamphodopsis have been described. R. thrieplandi, who was much smaller and had shorter spikes, and R. trispinatus, which was much more robust and larger than its contemporary."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_rhamphodopsis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_rhamphodopsis",
-			"type": "text",
-			"text": ""
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
 		}
 	]
 }

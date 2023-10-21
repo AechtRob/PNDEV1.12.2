@@ -1,7 +1,7 @@
 {
 	"name": "Pneumodesmus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pneumodesmus_icon.png",
+	"icon": "paleopedia:textures/items/pneumodesmus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pneumodesmus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pneumodesmus",
 			"title": "Pneumodesmus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Myriapoda$(br)>Archipolypoda$(br)$(o)>incertae sedis"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Myriapoda$(br)>Archipolypoda$(br)$(o)>incertae sedis"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pneumodesmus is a prehistoric myriapod known from a single specimen found in Scotland. It looked similar to modern myriapods and had a long body and slender legs. Although it resembled a millipede, it did not belong to the same branch as modern millipedes and it is the oldest known myriapod, as well as one of the first oxygen breathing animals on land."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pneumodesmus",
-			"type": "text",
-			"text": "$(l)Eats:$() Moss$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Eggs on Moss$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pneumodesmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pneumodesmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pneumodesmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pneumodesmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pneumodesmus"
 		}
 	]
 }

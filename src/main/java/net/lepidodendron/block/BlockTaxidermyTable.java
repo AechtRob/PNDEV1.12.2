@@ -327,6 +327,28 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 						}
 						if (stackProcessing1.getItem() instanceof ItemGlassCaseDisplayItem) {
 							PNVariant = ((ItemGlassCaseDisplayItem)stackProcessing1.getItem()).getVariantStr();
+							if (PNVariant != null) {
+								if (PNVariant.equalsIgnoreCase("gendered")) {
+									if (world.rand.nextInt(2) == 0) {
+										PNVariant = "male";
+									} else {
+										PNVariant = "female";
+									}
+								}
+							}
+						}
+						if (stackProcessing1.getItem() instanceof ItemPNTaxidermyItem) {
+							PNVariant = ((ItemPNTaxidermyItem)stackProcessing1.getItem()).getVariantStr();
+							if (PNVariant != null) {
+								if (PNVariant.equalsIgnoreCase("gendered")) {
+									if (world.rand.nextInt(2) == 0) {
+										PNVariant = "male";
+									}
+									else {
+										PNVariant = "female";
+									}
+								}
+							}
 						}
 					}
 

@@ -1,7 +1,7 @@
 {
 	"name": "Panderichthys",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/panderichthys_icon.png",
+	"icon": "paleopedia:textures/items/panderichthys_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_panderichthys",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panderichthys",
 			"title": "Panderichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Swamps$(br2)>Elpistostegalia$(br)>Panderichthyidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Elpistostegalia$(br)>Panderichthyidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Panderichthys is a sarcopterygian fish that is associated with the transition from water to land. However, it is possible that Panderichthys was not a direct ancestor to tetrapods due to possible tetrapod tracks before its appearance. It still exhibits traits from both fish and tetrapods such as its limbs being more tetrapod like and exhibiting the intermediate form of digits on its fins."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_panderichthys",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_panderichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_panderichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_panderichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_panderichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_panderichthys"
 		}
 	]
 }

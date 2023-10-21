@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_semionotus",
 			"title": "Semionotus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() Marine, Freshwater$(br2)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Semionotus was a ray finned fish that lived from the Late Triassic to Early Jurassic. It has been found throughout the Northern Pangaea and many of its fossils have been found together suggesting they were quite common. It is a staple fish in many aquatic environments and they would have been prey to other larger fish and reptiles. Its name comes from the Greek 'semion,' meaning mark and 'notos,' meaning back"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_semionotus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_semionotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_semionotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_semionotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_semionotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_semionotus"
 		}
 	]
 }

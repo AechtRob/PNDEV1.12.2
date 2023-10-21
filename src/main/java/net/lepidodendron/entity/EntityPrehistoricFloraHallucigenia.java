@@ -5,13 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
-import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -23,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -42,6 +41,11 @@ public class EntityPrehistoricFloraHallucigenia extends EntityPrehistoricFloraTr
 		super(world);
 		setSize(0.3F, 0.3F);
 		LOOK_ANIMATION = Animation.create(170);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -130,8 +134,13 @@ public class EntityPrehistoricFloraHallucigenia extends EntityPrehistoricFloraTr
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
 		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishFoodAITrilobiteBottomBase(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -146,7 +155,7 @@ public class EntityPrehistoricFloraHallucigenia extends EntityPrehistoricFloraTr
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override
@@ -184,7 +193,7 @@ public class EntityPrehistoricFloraHallucigenia extends EntityPrehistoricFloraTr
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//if (this.getAnimation() != NO_ANIMATION) {
 			//animationTick++;

@@ -3,12 +3,9 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEocarcinus;
-import net.lepidodendron.entity.EntityPrehistoricFloraHupehsuchus;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 
 public class ModelEocarcinus extends AdvancedModelBase {
@@ -375,9 +372,13 @@ public class ModelEocarcinus extends AdvancedModelBase {
     }
     
     public void renderStaticFloor(float f) {
-
-        this.body.offsetZ = -0.04F;
-        this.body.offsetY = 0.09F;
+        this.setRotateAngle(clawR, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(clawR2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(clawR3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL3, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = 0.12F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
@@ -395,13 +396,14 @@ public class ModelEocarcinus extends AdvancedModelBase {
         EntityPrehistoricFloraEocarcinus ee = (EntityPrehistoricFloraEocarcinus) entitylivingbaseIn;
 
         if (ee.isInWater()) {
-            if(ee.getIsMoving()) {
+            if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            }
+            else {
             }
 
         }
         else {
-
         }
 
 
@@ -801,7 +803,20 @@ public class ModelEocarcinus extends AdvancedModelBase {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        //this.resetToDefaultPose();
+        EntityPrehistoricFloraEocarcinus ee = (EntityPrehistoricFloraEocarcinus) e;
+        if (ee.isInWater()) {
+            if (ee.getIsMoving()) {
+                //Do the BB animation
+            }
+            else {
+                this.swing(antennaL, 0.3F, -0.2F, false, 0, -0.1F, f2, 0.8F);
+                this.swing(antennaR, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+            }
+        }
+        else {
+            this.swing(antennaL, 0.3F, -0.2F, false, 0, -0.1F, f2, 0.8F);
+            this.swing(antennaR, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        }
 
     }
 }

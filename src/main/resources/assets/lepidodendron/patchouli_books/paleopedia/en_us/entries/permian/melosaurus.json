@@ -1,7 +1,7 @@
 {
 	"name": "Melosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/melosaurus_icon.png",
+	"icon": "paleopedia:textures/items/melosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_melosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_melosaurus",
 			"title": "Melosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Rivers$(br2)>Amphibia$(br)>Temnospondyli$(br)>Melosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Melosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Melosaurus uralensis was a genus of temnospondyl related to Prionosuchus. This amphibian had a characteristic flattened head, similar to modern-day alligators, but it also had short limbs with reduced bones, as well as a long, flattened tail. All of these adaptations reveal that this weird amphibian was an aquatic ambush predator, lying at the bottom of lakes and ponds waiting for its next meal, mostly fish and small tetrapods, to come to it"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_melosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_melosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_melosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_melosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_melosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_melosaurus"
 		}
 	]
 }

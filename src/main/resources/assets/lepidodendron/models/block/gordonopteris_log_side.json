@@ -1,0 +1,22 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/gordonopteris_log",
+		"particle": "lepidodendron:blocks/gordonopteris_log",
+		"inside": "lepidodendron:blocks/gordonopteris_log"
+	},
+	"elements": [
+		{
+			"from": [5, 5, 0],
+			"to": [11, 11, 6],
+			"faces": {
+				"down":  { "texture": "#texture" },
+				"up":    { "texture": "#texture" },
+				"north": { "texture": "#texture", "cullface":"north" },
+				"west":  { "texture": "#texture" },
+				"east":  { "texture": "#texture" },
+				"south": { "texture": "#texture", "cullface":"south" }
+			}
+		}
+	]
+}

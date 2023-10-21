@@ -301,7 +301,7 @@ public class ModelAnteosaurus extends AdvancedModelBaseExtended {
     }
         public void renderStaticWall(float f) {
             this.Neck.rotateAngleY = (float) Math.toRadians(0);
-            this.setRotateAngle(Neck, -0.2F, -0.3F, 0.0F);
+            this.setRotateAngle(Neck, -0.2F, -0.0F, 0.0F);
             this.setRotateAngle(Head, 0.00F, 0.0F, 0.0F);
             this.setRotateAngle(Upperjawback, 0.3F, 0.0F, 0.0F);
             this.setRotateAngle(Lowerjawbase, 0.7F, 0.0F, 0.0F);

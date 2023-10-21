@@ -379,19 +379,31 @@ public class ModelPanacanthocaris extends AdvancedModelBase {
         //this.head.render(f5 * 0.25F);
         this.Body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Body.rotateAngleY = (float) Math.toRadians(90);
-        this.Body.offsetX = -0.F;
-        this.Body.offsetY = -0F;
-        this.Body.offsetZ = 0.0F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.08F, 0.0F, 0.3F);
+        this.setRotateAngle(thorax1, 0.2F, 0.1F, 0.1F);
+        this.setRotateAngle(thorax2, 0.2F, 0.2F, 0.1F);
+        this.setRotateAngle(thorax3, 0.2F, -0.2F, 0.1F);
+        this.setRotateAngle(abdomen, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(telson, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(uropodL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(uropodR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(antennaR, 0.0F, 0.1F, -0.4F);
+        this.setRotateAngle(bone, 0.0F, 0.1F, 0.4F);
+        this.Body.offsetY = -0.14F;
         this.Body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(90);
+        this.Body.rotateAngleZ = (float) Math.toRadians(180);
+        this.setRotateAngle(antennaR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetY = -0.25F;
+        this.Body.offsetX = -0.02F;
+        this.Body.offsetZ = -0.02F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -417,18 +429,41 @@ public class ModelPanacanthocaris extends AdvancedModelBase {
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(fishTail, speed, 0.3F, -3, f2, 0.7F);
+            this.chainSwing(fishTail, speed*0.5F, 0.175F, -3, f2, 0.7F);
             this.swing(uropodL, speed, 0.05F, false, 0, 0, f2, 1F);
             this.swing(uropodR, speed, 0.05F, true, 0, -0, f2, 1F);
             this.chainSwing(legsL, speed, 0.1F, -3, f2, 0.7F);
             this.chainSwing(legsR, speed, 0.1F, -3, f2, 0.7F);
-            this.swing(bone, speed, 0.35F, true, 0, -0F, f2, 0.3F);
-            this.swing(antennaR, speed, -0.35F, true, 0, -0F, f2, 0.3F);
-            this.swing(Body, speed, 0.15F, true, 0, 0, f2, 1);
+            this.swing(bone, speed, 0.55F, true, 0, -0F, f2, 0.3F);
+            this.swing(bone2, speed, 1.25F, true, 3, -0.5F, f2, 0.3F);
+            this.swing(antennaR, speed, -0.55F, true, 0, -0F, f2, 0.3F);
+            this.swing(antennaR_2, speed, -1.25F, true, 3, 0.5F, f2, 0.3F);
+            //this.swing(Body, speed, 0.15F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Body.rotateAngleZ = (float) Math.toRadians(90);
                 //this.Body.offsetY = 1.07F;
                 this.bob(Body, -speed, 5F, false, f2, 1);
+            }
+            else {
+                float degreeFin = 0.16F;
+                this.flap(thoracopod1L, 0.65F, -degreeFin, false, 0, -0.5F, f2, 0.7F);
+                this.flap(thoracopod1R, 0.65F, degreeFin, false, 0, 0.5F, f2, 0.7F);
+                this.flap(thoracopod2L, 0.65F, -degreeFin, false, 0.5F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod2R, 0.65F, degreeFin, false, 0.5F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod3L, 0.65F, -degreeFin, false, 1.5F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod3R, 0.65F, degreeFin, false, 1.5F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod4L, 0.65F, -degreeFin, false, 2.0F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod4R, 0.65F, degreeFin, false, 2.0F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod5L, 0.65F, -degreeFin, false, 2.5F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod5R, 0.65F, degreeFin, false, 2.5F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod6L, 0.65F, -degreeFin, false, 3.0F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod6R, 0.65F, degreeFin, false, 3.0F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod7L, 0.65F, -degreeFin, false, 3.5F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod7R, 0.65F, degreeFin, false, 3.5F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod8L, 0.65F, -degreeFin, false, 4.0F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod8R, 0.65F, degreeFin, false, 4.0F, 0.5F, f2, 0.7F);
+                this.flap(thoracopod9L, 0.65F, -degreeFin, false, 4.5F, -0.5F, f2, 0.7F);
+                this.flap(thoracopod9R, 0.65F, degreeFin, false, 4.5F, 0.5F, f2, 0.7F);
             }
         }
     }

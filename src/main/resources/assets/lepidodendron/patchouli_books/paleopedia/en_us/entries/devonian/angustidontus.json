@@ -1,0 +1,61 @@
+{
+	"name": "Angustidontus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/angustidontus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_angustidontus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_angustidontus",
+			"title": "",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda $(br)>Malacostraca $(br)>Angustidontida $(br)>Angustidontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/angustidontus.png"],
+			"title": "A. seriatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_angustidontus",
+			"type": "text",
+			"text": "Angustidontus was a malacostracan crustacean which lived across what is now Europe and North America during the Late Devonian and Early Carboniferous. It was described by Chalmer Cooper in 1936 based on the discovery of the large, raptorial limbs. However, these were originally mistaken for the jaw of an actinopterygian fish, which is reflected in the genus name, meaning “thin teeth.” The identity of these limbs was long debated, with placement as widely varied as eurypterid"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_angustidontus",
+			"type": "text",
+			"text": "chelicerae and fish gill rakers. Specimens of Angustidontus have been commonly found in environments shared by the thylacocephalan Concavicaris, and some researchers suggested that they may be different parts of the same organism. However, discovery of full body specimens of Angustidontus revealed it to be different from any of these prior hypotheses, and today it is understood to be a member of the crustacean class Malacostraca,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_angustidontus",
+			"type": "text",
+			"text": "which includes a variety of well-known organisms such as crabs, shrimp, and isopods. It was small, at no longer than 10 cm in total length, including limbs. The limbs, which were once mistaken for jaws, are now interpreted as raptorial structures, likely used for predatory feeding. Specimens have been found to contain small fragments of fossil material that may include shells or beaks of mollusks; likely prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_angustidontus",
+			"type": "text",
+			"text": "It has also been suggested that conodonts could have served as prey due to their occurrence in similar environments. Angustidontus is thought to have lived in an open pelagic environment due to concurrence with other known pelagic species of conodonts, cephalopods and thylacocephalans."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_angustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_angustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_angustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_angustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_angustidontus"
+		}
+	]
+}

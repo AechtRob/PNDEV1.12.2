@@ -4,14 +4,15 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemEchinodermEggsArchaeocidaris;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -22,6 +23,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -36,6 +38,11 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraArchaeocidaris(World world) {
 		super(world, 0);//Does not slither
 		setSize(0.26F, 0.2F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -59,13 +66,12 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.ALGAE);
 	}
 
 	@Override

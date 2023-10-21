@@ -32,7 +32,7 @@ public class RenderGreererpeton extends RenderLiving<EntityPrehistoricFloraGreer
     protected void preRenderCallback(EntityPrehistoricFloraGreererpeton entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.275F;
+        this.shadowSize = entity.width * scale * 0.6F;
     }
 
 }

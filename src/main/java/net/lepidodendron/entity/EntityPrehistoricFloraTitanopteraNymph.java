@@ -3,15 +3,18 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.ai.LandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
@@ -21,15 +24,14 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -56,6 +58,8 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 		maxHeight = getHitBoxSize()[1];
 		maxHealthAgeable = 2.0D;
 	}
+
+	
 
 	//*****************************************************
 	//Insect variant managers:
@@ -121,32 +125,27 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 
 	}
 
-	public ResourceLocation getFreezeLoot() {
-		switch (this.getPNType()) {
-			case CLATROTITAN: default:
-				return LepidodendronMod.TITANOPTERA_NYMPH_LOOT;
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraTitanopteraNymph) {
+			EntityPrehistoricFloraTitanopteraNymph titanopteraNymph = (EntityPrehistoricFloraTitanopteraNymph) target.entityHit;
+			switch (titanopteraNymph.getPNType()) {
+				case CLATROTITAN: default:
+					return new ItemStack(ItemSpawnEggTitanopteraClatrotitan.block, 1);
 
-			case GIGATITAN:
-				return LepidodendronMod.TITANOPTERA_NYMPH_LOOT;
+				case GIGATITAN:
+					return new ItemStack(ItemSpawnEggTitanopteraGigatitan.block, 1);
 
-			case MESOTITAN:
-				return LepidodendronMod.TITANOPTERA_NYMPH_LOOT;
+				case MESOTITAN:
+					return new ItemStack(ItemSpawnEggTitanopteraMesotitan.block, 1);
+
+			}
 		}
+		return ItemStack.EMPTY;
 	}
 
-	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case CLATROTITAN: default:
-				return LepidodendronMod.BUG_LOOT;
 
-			case GIGATITAN:
-				return LepidodendronMod.BUG_LOOT;
-
-			case MESOTITAN:
-				return LepidodendronMod.BUG_LOOT;
-
-		}
-	}
 
 //	public float getFlySpeed() {
 //		switch (this.getPNType()) {
@@ -195,25 +194,14 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return getStandardLoot();
+		return null;
 	}
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
 	{
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			ResourceLocation resourcelocation = getFreezeLoot();
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", this.getPNType().getName());
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				variantNBT.setString("PNDisplaycase", stringEgg);
-				itemstack.setTagCompound(variantNBT);
-				this.entityDropItem(itemstack, 0.0F);
-			}
+			return;
 		}
 		else {
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
@@ -303,7 +291,7 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.36f;
 	}
 
@@ -330,7 +318,7 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	protected void initEntityAI() {
 		tasks.addTask(0, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(1, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
 	}
 
 	@Override
@@ -383,7 +371,7 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 	}
 
@@ -419,5 +407,11 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	public boolean testLay(World world, BlockPos pos) {
 		return false;
 	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
+	}
+
 
 }

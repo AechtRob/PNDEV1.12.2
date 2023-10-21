@@ -31,8 +31,8 @@ public class ItemVetulicolaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_vetulicola", ItemVetulicolaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemVetulicolaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemVetulicolaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemVetulicolaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemVetulicolaRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemVetulicolaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

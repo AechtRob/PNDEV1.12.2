@@ -37,8 +37,8 @@ public class ItemPermotarbusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_trigonotarbid_permotarbus", ItemPermotarbusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPermotarbusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPermotarbusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemPermotarbusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemPermotarbusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

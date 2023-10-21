@@ -2,9 +2,10 @@
 package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.entity.boats.EntitySubmarine;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -20,6 +21,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -27,6 +29,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -56,6 +59,24 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("submarine_boat_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.maxStackSize = 1;
+		}
+
+		@Override
+		public String getItemStackDisplayName(ItemStack stack)
+		{
+
+			DecimalFormat df = new DecimalFormat("###.#");
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("rf")) {
+					if (LepidodendronConfig.machinesRF) {
+						return super.getItemStackDisplayName(stack) + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+					}
+					else {
+						return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
+					}
+				}
+			}
+			return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_no_battery.name");
 		}
 
 		@Override
@@ -116,8 +137,13 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 				{
 					Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
 					boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
-					EntitySubmarine entityPNsubmarine = new EntitySubmarine(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
+					PrehistoricFloraSubmarine entityPNsubmarine = new PrehistoricFloraSubmarine(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
 					entityPNsubmarine.rotationYaw = playerIn.rotationYaw;
+					if (itemstack.hasTagCompound()) {
+						if (itemstack.getTagCompound().hasKey("rf")) {
+							entityPNsubmarine.setRF(itemstack.getTagCompound().getInteger("rf"));
+						}
+					}
 
 					if (!worldIn.getCollisionBoxes(entityPNsubmarine, entityPNsubmarine.getEntityBoundingBox().grow(-0.1D)).isEmpty())
 					{

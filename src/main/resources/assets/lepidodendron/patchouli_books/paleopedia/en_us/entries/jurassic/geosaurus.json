@@ -1,0 +1,51 @@
+{
+	"name": "Geosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/geosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_geosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_geosaurus",
+			"title": "Geosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - early Cretaceous$(br2)>Pseudosuchia $(br)>Crocodylomorpha $(br)>Thalattosuchia $(br)>Metriorhynchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/geosaurus.png"],
+			"title": "G. giganteus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_geosaurus",
+			"type": "text",
+			"text": "Geosaurus is a Late Jurassic to Early Cretaceous Metriorhynchid. The genus name Geosaurus was coined in 1824 and being such an old genus, Geosaurus has experienced radical taxonomic changes. Geosaurus currently consists of three valid species, being G. giganteus the type species, G. grandis, and G. lapparenti."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_geosaurus",
+			"type": "text",
+			"text": "In the Solnhofen Limestone, Geosaurus would've been sharing its environment with Dakosaurus, Cricosaurus, and Rhacheosaurus, indicating that there would've been strong niche partitioning."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_geosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_geosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_geosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_geosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_geosaurus"
+		}
+	]
+}

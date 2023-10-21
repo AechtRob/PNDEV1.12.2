@@ -1,7 +1,7 @@
 {
 	"name": "Concavicaris",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/concavicaris_icon.png",
+	"icon": "paleopedia:textures/items/concavicaris_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_concavicaris",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_concavicaris",
 			"title": "Concavicaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Reefs$(br2)>Thylacocephala$(br)>Concavicarida"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Thylacocephala$(br)>Concavicarida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Concavicaris is thylacocephalan from the Devonian to Carboniferous. Multiple famous fossil sites such as Cleveland Shale and Gogo Formation have record of this genus. Some specimens are known from the gut of Cladoselache, showing it probably had an important role in the foodchain."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_concavicaris",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_concavicaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_concavicaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_concavicaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_concavicaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_concavicaris"
 		}
 	]
 }

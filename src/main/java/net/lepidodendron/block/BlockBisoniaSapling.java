@@ -4,9 +4,12 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.procedure.ProcedureWorldGenBisonia;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -77,7 +80,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -86,6 +89,12 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
         	setResistance(1F);
 			setTranslationKey("pf_bisonia_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BISONIA;
 		}
 
 		@Override
@@ -161,7 +170,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 			for (ii = 0; ii < TrunkHeight; ii++) {
 				ProcedureTreeLog.executeProcedure(pos.getX(), pos.getY() + ii, pos.getZ(), world, BlockBisoniaLog.block, EnumFacing.NORTH);
 			}
-			ProcedureWorldGenBisonia.executeProcedure(world, pos.up(ii), TreeHeight - TrunkHeight);
+			ProcedureWorldGenBisonia.executeProcedure(world, pos.up(ii), TreeHeight - TrunkHeight, true, true);
 			//Also side branch things:
 			boolean north = false;
 			boolean east = false;
@@ -203,7 +212,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							zz --;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.EAST);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						north = true;
 						break;
 
@@ -227,7 +236,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							xx ++;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.UP);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						east = true;
 						break;
 
@@ -251,7 +260,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							zz ++;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.EAST);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						south = true;
 						break;
 
@@ -275,7 +284,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 							xx --;
 							ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBisoniaLog.block, EnumFacing.UP);
 						}
-						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3);
+						ProcedureWorldGenBisonia.executeProcedure(world, new BlockPos(xx, yy + 1, zz), rand.nextInt(4) + 3, true, false);
 						west = true;
 						break;
 				}
@@ -331,7 +340,7 @@ public class BlockBisoniaSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene");
+				tooltip.add("Periods: Cretaceous");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

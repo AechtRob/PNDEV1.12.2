@@ -4,8 +4,12 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -70,7 +74,7 @@ public class BlockPtilophyllumShootPlaceable extends ElementsLepidodendronMod.Mo
 		OreDictionary.registerOre("treeLeaves", BlockPtilophyllumShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter, IBennettites {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_ptilophyllum_shoot");
@@ -81,6 +85,12 @@ public class BlockPtilophyllumShootPlaceable extends ElementsLepidodendronMod.Mo
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PTILOPHYLLUM;
 		}
 
 		@Override

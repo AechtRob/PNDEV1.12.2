@@ -2,8 +2,11 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -18,6 +21,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -41,6 +45,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -72,6 +77,7 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:coral_carnation", BlockCoralCarnation.block);
 		OreDictionary.registerOre("coral", BlockCoralCarnation.block);
+		OreDictionary.registerOre("pndietCoral", BlockCoralCarnation.block);
 	}
 
 
@@ -113,7 +119,7 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks) {
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand) {
 				biomeCriteria = true;
 			}
 			else {
@@ -164,7 +170,7 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
         return false;
     }
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -179,6 +185,12 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CORAL;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -442,6 +454,16 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
 			}
 	    	return false;
 	    }
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Coral");
+				tooltip.add("Periods: Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
+				super.addInformation(stack, player, tooltip, advanced);
+			}
+		}
 
 	}
 }

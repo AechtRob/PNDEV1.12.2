@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
@@ -28,6 +29,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -51,6 +53,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -81,7 +84,8 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:pink_sponge", BlockPinkSponge.block);
-		OreDictionary.registerOre("sponge", BlockPinkSponge.block);
+		OreDictionary.registerOre("itemSponge", BlockPinkSponge.block);
+		OreDictionary.registerOre("pndietSponge", BlockPinkSponge.block);
 	}
 
 
@@ -203,7 +207,8 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
 				biomeCriteria = true;
 			}
 			else {
@@ -269,7 +274,7 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
         return false;
     }
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -284,6 +289,12 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SPONGE;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -555,6 +566,15 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
 			}
 	    	return false;
 	    }
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Marine Sponge");
+				tooltip.add("Periods: [Tonian (?) - Cryogenian (?) - Ediacaran (?) -] Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");}
+			super.addInformation(stack, player, tooltip, advanced);
+		}
 
 	}
 }

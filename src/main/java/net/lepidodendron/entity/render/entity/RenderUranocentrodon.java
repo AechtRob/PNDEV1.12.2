@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderUranocentrodon extends RenderLiving<EntityPrehistoricFloraUranocentrodon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uranocentrodon.png");
+    public static float getScaler() {
+        return 0.50F;
+    }
 
     public RenderUranocentrodon(RenderManager mgr) {
         super(mgr, new ModelUranocentrodon(), 0.65F);
@@ -27,7 +30,7 @@ public class RenderUranocentrodon extends RenderLiving<EntityPrehistoricFloraUra
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraUranocentrodon entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

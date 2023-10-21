@@ -47,7 +47,7 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
     @Override
     public boolean shouldExecute() {
 
-        if (!(this.PrehistoricFloraLandBase.laysEggs() && this.PrehistoricFloraLandBase.getCanBreed())) {
+        if (!(this.PrehistoricFloraLandBase.laysEggs() && this.PrehistoricFloraLandBase.getLaying())) {
             return false;
         }
 
@@ -55,9 +55,14 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
             return false;
         }
 
-        if (PrehistoricFloraLandBase.getAnimation() == PrehistoricFloraLandBase.DRINK_ANIMATION) {
+        if (PrehistoricFloraLandBase.isAnimationDirectionLocked(PrehistoricFloraLandBase.getAnimation())) {
             return false;
         }
+
+        if (!(PrehistoricFloraLandBase.getAISpeedLand() > 0)) {
+            return false;
+        }
+
         //System.err.println("Ticks: " + this.PrehistoricFloraLandBase.getTicks());
 
         int xx;
@@ -66,7 +71,7 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
         BlockPos vec3 = null;
 
         Path path = this.PrehistoricFloraLandBase.getNavigator().getPath();
-        if (!this.PrehistoricFloraLandBase.getNavigator().noPath() && path != null) {
+        if ((!this.PrehistoricFloraLandBase.getNavigator().noPath()) && path != null) {
             xx = this.PrehistoricFloraLandBase.getNavigator().getPath().getFinalPathPoint().x;
             yy = this.PrehistoricFloraLandBase.getNavigator().getPath().getFinalPathPoint().y;
             zz = this.PrehistoricFloraLandBase.getNavigator().getPath().getFinalPathPoint().z;
@@ -84,7 +89,7 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
             double Xoffset = this.PrehistoricFloraLandBase.posX - this.PrehistoricFloraLandBase.getPosition().getX();
             double Zoffset = this.PrehistoricFloraLandBase.posZ - this.PrehistoricFloraLandBase.getPosition().getZ();
 
-            this.PrehistoricFloraLandBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY()) + 0.5D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
+            this.PrehistoricFloraLandBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
             return true;
         }
 

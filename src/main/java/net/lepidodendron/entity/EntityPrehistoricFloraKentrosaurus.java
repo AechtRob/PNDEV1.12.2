@@ -17,16 +17,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -35,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -45,6 +39,8 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
+
+	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thagomized", this);
 
 	public EntityPrehistoricFloraKentrosaurus(World world) {
 		super(world);
@@ -109,13 +105,13 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.330F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == ATTACK_ANIMATION) {
+			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -157,26 +153,22 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1));
+		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
-
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("foodInsect"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT), DietString.SEED);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -299,7 +291,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		super.onLivingUpdate();
 
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
@@ -319,11 +311,13 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			if (this.getAttackBoundingBoxForDamage().intersects(this.getAttackTarget().getEntityBoundingBox())) {
 				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 				this.getAttackTarget().addVelocity(0, 0.1, 0);
-				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+				boolean b = this.getAttackTarget().attackEntityFrom(THAGOMIZED, (float) iattributeinstance.getAttributeValue());
 				if (this.getOneHit()) {
 					this.setAttackTarget(null);
 					this.setRevengeTarget(null);
+					this.setWarnTarget(null);
 				}
+				this.setOneHit(false);
 			}
 		}
 	}

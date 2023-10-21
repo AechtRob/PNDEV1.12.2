@@ -1,7 +1,7 @@
 {
 	"name": "Shringasaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/shringasaurus_icon.png",
+	"icon": "paleopedia:textures/items/shringasaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_shringasaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_shringasaurus",
 			"title": "Shringasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Canyons and Creeks$(br2)>Archosauromorpha$(br)>Crocopoda$(br)>Allokotosauria$(br)>Azendohsauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauromorpha$(br)>Crocopoda$(br)>Allokotosauria$(br)>Azendohsauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Shringasaurus indicus is a species of Archosaurimorphs reptile from the Middle Triassic of India. Known only from one mass burial site in what is now the Denwa Formation, the remains of a group of these animals, mostly fragmentary, are all we have of this unusual herbivorous animal.The various bones and skulls in particular, allowed us to observe potential sexual dimorphism and ontogeny in the shape and size of the set of horns sitting atop the eyes of these peculiar animals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_shringasaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shringasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shringasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shringasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shringasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shringasaurus"
 		}
 	]
 }

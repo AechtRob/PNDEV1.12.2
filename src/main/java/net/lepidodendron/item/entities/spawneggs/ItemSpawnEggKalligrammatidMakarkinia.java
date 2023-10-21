@@ -53,6 +53,16 @@ public class ItemSpawnEggKalligrammatidMakarkinia extends ElementsLepidodendronM
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -12311540;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -14477820;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Cretaceous";
 		}

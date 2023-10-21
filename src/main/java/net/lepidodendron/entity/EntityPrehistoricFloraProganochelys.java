@@ -11,18 +11,13 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderProganochelys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -33,7 +28,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -124,13 +119,13 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.285F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == HIDE_ANIMATION) {
+			|| this.getAnimation() == HIDE_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -168,25 +163,17 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 		//tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(3, new LandWanderNestInBlockAI(this));
 		tasks.addTask(4, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(7, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
-		}
-
-//	@Override
-//	public boolean panics() {
-//		return true;
-//	}
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(7, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -237,14 +224,10 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-			    this.setAttackTarget(null);
-			    this.setRevengeTarget(null);
-            }
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -257,17 +240,6 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 		return (
 				nestBlockMatch(world, pos)
 		);
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
-					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
-					&& world.isAirBlock(pos));
-		}
-		return match;
 	}
 
 	@Override

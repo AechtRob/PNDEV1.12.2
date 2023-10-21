@@ -4,19 +4,21 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -36,6 +38,11 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	}
 
 	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -43,12 +50,17 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	public boolean getMovingOnLand() {
 		int animCycle = 28;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >=0 && tickAnim < 20)) {
+		if (tickAnim >=7 && tickAnim < 27) {
 			return true;
 		}
 		else {
 			return false;
 		}
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 400;
 	}
 
 	public static String getPeriod() {return "Cambrian";}
@@ -108,14 +120,13 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		//tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) 0.5F));
-		tasks.addTask(2, new WalkingAmphibianWander(this, NO_ANIMATION, 1, 0));
-		//tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(1, new WalkingAmphibianWander(this, NO_ANIMATION, 1, 0));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemFishFood.block;
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -168,7 +179,7 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}

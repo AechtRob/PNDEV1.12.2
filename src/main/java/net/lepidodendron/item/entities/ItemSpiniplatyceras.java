@@ -51,9 +51,9 @@ public class ItemSpiniplatyceras extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_spiniplatyceras", ItemSpiniplatyceras.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSpiniplatyceras.block);
-		OreDictionary.registerOre("foodMeat", ItemSpiniplatyceras.block);
 		OreDictionary.registerOre("itemShellfish", ItemSpiniplatyceras.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemSpiniplatyceras.block);
+		OreDictionary.registerOre("pndietShellfish", ItemSpiniplatyceras.block);
 	}
 
 

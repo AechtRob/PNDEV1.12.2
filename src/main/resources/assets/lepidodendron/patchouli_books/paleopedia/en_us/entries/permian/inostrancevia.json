@@ -1,7 +1,7 @@
 {
 	"name": "Inostrancevia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/inostrancevia_icon.png",
+	"icon": "paleopedia:textures/items/inostrancevia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_inostrancevia",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_inostrancevia",
 			"title": "Inostrancevia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Inostrancevia is a large gorgonopsid from the late Permian period. It was an apex predator with saber tooth like canines and it could grow up to 3m in length. Its fossils have been found in the Arkhangelsk Oblast of Russia."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_inostrancevia",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_inostrancevia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_inostrancevia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_inostrancevia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_inostrancevia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_inostrancevia"
 		}
 	]
 }

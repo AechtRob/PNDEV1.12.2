@@ -4,11 +4,18 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
+import net.lepidodendron.entity.render.entity.RenderConodont;
+import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -20,6 +27,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
@@ -27,6 +35,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +64,21 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
 	}
 
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		if (!stack.hasTagCompound()) {
+			NBTTagCompound compound = new NBTTagCompound();
+			stack.setTagCompound(compound);
+		}
+		stack.getTagCompound().setString("PNType", this.getPNType().getName());
+		return stack;
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
 	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
@@ -66,9 +90,26 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraConodont)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraConodont)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraConodont)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -101,7 +142,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		}
 	}
 
-
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}
@@ -270,7 +311,12 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -321,12 +367,6 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	}
 
 	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
-	}
-
-	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(CONODONT_TYPE, 0);
@@ -336,8 +376,30 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setPNType(EntityPrehistoricFloraConodont.Type.byId(rand.nextInt(EntityPrehistoricFloraConodont.Type.values().length) + 1));
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		return livingdata;
 	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
+	}
+
+	protected void setSizer(float width, float height)
+	{
+		if (width != this.width || height != this.height)
+		{
+			float f = this.width;
+			this.width = width;
+			this.height = height;
+			if (this.width < f) {
+				double d0 = (double) width / 2.0D;
+				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+			}
+		}
+	}
+
 	public void setPNType(Type type)
 	{
 		this.dataManager.set(CONODONT_TYPE, Integer.valueOf(type.ordinal()));
@@ -398,7 +460,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_conodont_" + this.getPNType().getName() + ".name");
 		}
 	}
 
@@ -414,5 +476,162 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			this.setPNType(EntityPrehistoricFloraConodont.Type.getTypeFromString(compound.getString("PNType")));
 		}
 	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM: default:
+				return 0.30;
 
+			case CLYDAGNATHUS:
+				return 0.27;
+
+			case PROCONODONTUS:
+				return 0.34;
+
+			case OZARKODINA:
+				return 0.30;
+
+			case IOWAGNATHUS:
+				return 0.30;
+
+			case HINDEODUS:
+				return 0.31;
+
+			case CLARKINA:
+				return 0.38;
+
+			case MISIKELLA:
+				return 0.41;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM: default:
+				return 0.30;
+
+			case CLYDAGNATHUS:
+				return 0.27;
+
+			case PROCONODONTUS:
+				return 0.34;
+
+			case OZARKODINA:
+				return 0.30;
+
+			case IOWAGNATHUS:
+				return 0.30;
+
+			case HINDEODUS:
+				return 0.31;
+
+			case CLARKINA:
+				return 0.38;
+
+			case MISIKELLA:
+				return 0.41;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.95;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.06;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM:
+			default:
+				return RenderConodont.TEXTURE_PROMISSUM;
+
+			case CLYDAGNATHUS:
+				return RenderConodont.TEXTURE_CLYDAGNATHUS;
+
+			case PROCONODONTUS:
+				return RenderConodont.TEXTURE_PROCONODONTUS;
+
+			case OZARKODINA:
+				return RenderConodont.TEXTURE_OZARKODINA;
+
+			case IOWAGNATHUS:
+				return RenderConodont.TEXTURE_IOWAGNATHUS;
+
+			case HINDEODUS:
+				return RenderConodont.TEXTURE_HINDEODUS;
+
+			case CLARKINA:
+				return RenderConodont.TEXTURE_CLARKINA;
+
+			case MISIKELLA:
+				return RenderConodont.TEXTURE_MISIKELLA;
+
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
+			case PROMISSUM:
+			default:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
+
+			case CLYDAGNATHUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case PROCONODONTUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case OZARKODINA:
+				return RenderDisplays.modelPalaeodictyopteraLarge;
+
+			case IOWAGNATHUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case HINDEODUS:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case CLARKINA:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
+
+			case MISIKELLA:
+				return RenderDisplays.modelPalaeodictyopteraMedium;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderConodont.getScaler(EntityPrehistoricFloraConodont.Type.getTypeFromString(variant));
+	}
 }

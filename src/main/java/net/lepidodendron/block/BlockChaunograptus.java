@@ -4,7 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockShulkerBox;
 import net.minecraft.block.SoundType;
@@ -81,9 +85,10 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:chaunograptus", BlockChaunograptus.block);
+		OreDictionary.registerOre("pndietEncruster", BlockChaunograptus.block);
 	}
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.WATER);
 			setLightOpacity(3);
@@ -92,6 +97,12 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
 			this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CHAUNOGRAPTUS;
 		}
 
 		@Override
@@ -186,8 +197,7 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 		public boolean canAttachTo(World world, BlockPos pos, EnumFacing facing)
 		{
 			//Is under water?
-			if (!((world.getBlockState(pos.up()).getBlock() == Blocks.WATER
-				|| world.getBlockState(pos.up()).getBlock() == Blocks.FLOWING_WATER
+			if (!((Functions.isWater(world, pos.up())
 				|| world.getBlockState(pos.up()).getBlock() == BlockChaunograptus.block)
 				&& !world.isAirBlock(pos.north())
 				&& !world.isAirBlock(pos.south())

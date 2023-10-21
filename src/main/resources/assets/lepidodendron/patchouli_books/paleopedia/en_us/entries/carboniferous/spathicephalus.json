@@ -1,7 +1,7 @@
 {
 	"name": "Spathicephalus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/spathicephalus_icon.png",
+	"icon": "paleopedia:textures/items/spathicephalus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_spathicephalus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spathicephalus",
 			"title": "Spathicephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)$(l)Habitat:$() Swamps$(br2)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
+			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Spathicephalus is an early stem tetrapod from the Carboniferous period and is thought to have fed on aquatic invertebrates through filter feeding and suction feeding."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spathicephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spathicephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spathicephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spathicephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spathicephalus"
 		}
 	]
 }

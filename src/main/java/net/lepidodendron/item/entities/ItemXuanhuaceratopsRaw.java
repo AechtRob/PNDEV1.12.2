@@ -31,7 +31,8 @@ public class ItemXuanhuaceratopsRaw extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xuanhuaceratops", ItemXuanhuaceratopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXuanhuaceratopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemXuanhuaceratopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemXuanhuaceratopsRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemXuanhuaceratopsRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

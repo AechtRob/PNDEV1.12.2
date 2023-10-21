@@ -1,7 +1,7 @@
 {
 	"name": "Draconichthys",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/draconichthys_icon.png",
+	"icon": "paleopedia:textures/items/draconichthys_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_draconichthys",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_draconichthys",
 			"title": "Draconichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Selenosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Selenosteidae"
 		},
 		{
 			"type": "image",
@@ -28,14 +28,24 @@
 			"text": "closest relatives by its large, pronged gnathal plates (i.e. the bony plates placoderms had instead of true teeth). The sharp, tooth-like appearance of these prongs suggests that this animal was a predator, that used them to hold captured prey still and prevent it from wriggling free."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_draconichthys",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_draconichthys"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_draconichthys",
-			"type": "text",
-			"text": ""
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_draconichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_draconichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_draconichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_draconichthys"
 		}
 	]
 }

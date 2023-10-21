@@ -3,7 +3,8 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.minecraft.block.material.Material;
@@ -11,13 +12,16 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -35,6 +39,8 @@ public class EntityPrehistoricFloraItalophlebiaNymph extends EntityPrehistoricFl
 		maxHeight = 0.2F;
 		maxHealthAgeable = 2.0D;
 	}
+
+
 
 	@Override
 	public boolean isSmall() {
@@ -71,7 +77,13 @@ public class EntityPrehistoricFloraItalophlebiaNymph extends EntityPrehistoricFl
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EurypteridWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -122,11 +134,18 @@ public class EntityPrehistoricFloraItalophlebiaNymph extends EntityPrehistoricFl
 
 	}
 
-	//@Override
-	//public net.minecraft.util.SoundEvent getAmbientSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_idle"));
-	//}
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		ResourceLocation name = EntityList.getKey(EntityPrehistoricFloraItalophlebia.class);
+		if (name != null && EntityList.ENTITY_EGGS.containsKey(name))
+		{
+			ItemStack stack = new ItemStack(net.minecraft.init.Items.SPAWN_EGG);
+			net.minecraft.item.ItemMonsterPlacer.applyEntityIdToItemStack(stack, name);
+			return stack;
+		}
+		return ItemStack.EMPTY;
+	}
 
 	@Override
 	public SoundEvent getAmbientSound() {

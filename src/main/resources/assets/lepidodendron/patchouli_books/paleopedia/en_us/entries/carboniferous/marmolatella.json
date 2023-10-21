@@ -1,0 +1,46 @@
+{
+	"name": "Marmolatella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/marmolatella_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_marmolatella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_marmolatella",
+			"title": "Marmolatella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Jurassic$(br2)>Mollusca $(br)>Gastropoda $(br)>Cycloneritida $(br)>Delphinulopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/marmolatella.png"],
+			"title": "Marmolatella sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_marmolatella",
+			"type": "text",
+			"text": "Marmolatella is a medium-sized sea snail known from the Americas, Europe, and Asia. It's temporal range extends from at least the Carboniferous to the Jurassic. However, there is also a chance that Marmolatella could've stretched back farther to the Devonian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_marmolatella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_marmolatella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_marmolatella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_marmolatella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_marmolatella"
+		}
+	]
+}

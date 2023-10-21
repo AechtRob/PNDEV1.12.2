@@ -1,7 +1,7 @@
 {
 	"name": "Thrinacodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/thrinacodus_icon.png",
+	"icon": "paleopedia:textures/items/thrinacodus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_thrinacodus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thrinacodus",
 			"title": "Thrinacodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Chondrichthyes$(br)>Thrinacodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Thrinacodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Thrinacodus gracia is a species of elongated basal shark related to modern day frilled sharks. Being from the Carboniferous, this makes Thrinacodus one of the earliest known appearances of Frilled Sharks, alongside Phoebodus"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_thrinacodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thrinacodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thrinacodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thrinacodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thrinacodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thrinacodus"
 		}
 	]
 }

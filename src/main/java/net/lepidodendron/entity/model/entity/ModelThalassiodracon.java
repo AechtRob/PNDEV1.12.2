@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraMicrocleidus;
 import net.lepidodendron.entity.EntityPrehistoricFloraThalassiodracon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
@@ -247,13 +246,34 @@ public class ModelThalassiodracon extends AdvancedModelBaseExtended {
     }
         public void renderStaticWall(float f) {
             this.Hips.rotateAngleY = (float) Math.toRadians(0);
-            this.Hips.offsetY = -0.04F;
-            this.Hips.offsetX = 0.0F;
-            this.Hips.offsetZ = 0.0F;
+            this.Hips.rotateAngleZ = (float) Math.toRadians(90);
+            this.Hips.rotateAngleX = (float) Math.toRadians(90);
+            this.Hips.offsetY = -0.19F;
+            this.Hips.offsetX = 0.05F;
+            this.Hips.offsetZ = -0.54F;
             this.Hips.render(0.01F);
             resetToDefaultPose();
         }
         public void renderStaticFloor(float f) {
+            this.setRotateAngle(Tail4, 0.2182F, 0.0F, 0.0F);
+            this.setRotateAngle(Tail3, 0.1745F, 0.0F, 0.0F);
+            this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(Tail1, 0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(Neck6, -0.1745F, 0.0F, 0.0F);
+            this.setRotateAngle(Neck4, -0.1745F, 0.0F, 0.0F);
+            this.setRotateAngle(Neck2, -0.0873F, 0.0F, 0.0F);
+            this.setRotateAngle(Hips, 0.0F, 0.0F, 0.2182F);
+            this.setRotateAngle(Lowerjaw, 0.3927F, 0.0F, 0.0F);
+            this.setRotateAngle(Bodymiddle, 0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(head, -0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.0873F, -0.1745F);
+            this.setRotateAngle(Leftfrontflipper1, 0.0F, -0.0873F, 0.2182F);
+            this.setRotateAngle(cube_r1, 0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(Bodyfront, -0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(Righthindflipper1, 0.0F, 0.0873F, 0.1745F);
+            this.setRotateAngle(Lefthindflipper1, 0.0F, -0.0873F, -0.1745F);
+            this.Hips.offsetY = -0.3F;
+            this.Hips.render(0.01F);
             resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {

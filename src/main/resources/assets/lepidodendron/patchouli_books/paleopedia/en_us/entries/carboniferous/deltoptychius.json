@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_deltoptychius",
 			"title": "Deltoptychius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Chimaeriformes$(br)>Deltoptychiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)Chondrichthyes$(br)>Chimaeriformes$(br)>Deltoptychiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Deltoptychius is a cartilaginous fish from the Carboniferous. It had a similar appearance to modern day chimaeras, having a long whip like tail and large pectoral fins which it used to glide through the water. It may have lived in deeper water environments due to its large eyes and it probably hunted shellfish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_deltoptychius",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_deltoptychius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_deltoptychius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_deltoptychius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_deltoptychius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_deltoptychius"
 		}
 	]
 }

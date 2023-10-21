@@ -1,0 +1,51 @@
+{
+	"name": "Stegosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stegosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_stegosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stegosaurus",
+			"title": "Stegosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Stegosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/stegosaurus.png"],
+			"title": "S. stenops",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stegosaurus",
+			"type": "text",
+			"text": "Stegosaurus is an extinct genus of Ornithischian Dinosaur, hailing from the Late Jurassic Period. This genus is well known for by its distinctive kite-shaped upright osteoderm plates along its back and its four Thagomizers at the end of its tail. It is unknown how the plates were used in life, either as display structures for mates, to intimidate predators, or for thermoregulation. The use of the thagomizers though are easier to figure out,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stegosaurus",
+			"type": "text",
+			"text": "being used as a defensive weapon, like a spiked club. This has been backed up by fossil evidence of a thagomizer puncturing an Allosaurus' tail vertebra, aswell as studies done to the thagomizers of alot of Stegosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stegosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stegosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stegosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stegosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stegosaurus"
+		}
+	]
+}

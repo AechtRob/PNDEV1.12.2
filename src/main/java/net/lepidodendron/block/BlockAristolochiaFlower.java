@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemAristolochiaFlower;
 import net.lepidodendron.item.ItemAristolochiaSeeds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.ITileEntityProvider;
@@ -28,6 +31,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -62,13 +66,19 @@ public class BlockAristolochiaFlower extends ElementsLepidodendronMod.ModElement
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
 
-	public static class BlockCustom extends BlockVine implements ITileEntityProvider {
+	public static class BlockCustom extends BlockVine implements ITileEntityProvider, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
 			setTranslationKey("pf_aristolochia_flower");
 			setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         	setTickRandomly(true);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ARISTOLOCHIA;
 		}
 
 		@Override
@@ -459,5 +469,9 @@ public class BlockAristolochiaFlower extends ElementsLepidodendronMod.ModElement
 			this.readFromNBT(tag);
 		}
 
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 1, 1));
+		}
 	}
 }

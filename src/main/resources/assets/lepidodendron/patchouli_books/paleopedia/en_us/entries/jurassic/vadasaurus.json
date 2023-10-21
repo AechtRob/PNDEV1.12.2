@@ -1,0 +1,46 @@
+{
+	"name": "Vadasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/vadasaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_vadasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vadasaurus",
+			"title": "Vadasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()Jurassic $(br2)>Reptilia$(br)>Rhynchocephalia$(br2)>Sphenodontia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/vadasaurus.png"],
+			"title": "Vadasaurus herzogi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vadasaurus",
+			"type": "text",
+			"text": "Vadasaurus is a unique Rhynchocephalian due to its anatomical features which point towards a semi-aquatic lifestyle. It is related to marine Rhynchocephalians and may represent a transitional form. It possessed a heavier ribcage and grastralia which may have functioned as a ballast when swimming. Furthermore, Vadasaurus did not develop fully ossified forelimbs which is more evidence that Vadasaurus would've been spending some time in the water."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vadasaurus"
+		}
+	]
+}

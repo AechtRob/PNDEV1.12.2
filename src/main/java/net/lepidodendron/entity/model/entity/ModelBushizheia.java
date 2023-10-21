@@ -2,10 +2,10 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraBushizheia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -143,7 +143,7 @@ public class ModelBushizheia extends AdvancedModelBase {
         this.swing(Head_limbR, speed * 3F, 0.3F, false, 0, 0.3F, f2, 0.5F);
 
         if (isAtBottom && e.isInWater()) {
-            if (f3 != 0.0) {
+            if (((EntityPrehistoricFloraBushizheia)e).getIsMoving()) {
                 this.chainWave(legsL, 0.9F, 0.2F, -3, f2, 1);
                 this.chainWave(legsR, 0.9F, 0.2F, -3, f2, 1);
                 this.flap(LegL, 0.9F, -0.3F, false, 0, -0.3F, f2, 0.3F);

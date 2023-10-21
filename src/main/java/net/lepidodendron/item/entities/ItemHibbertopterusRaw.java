@@ -37,9 +37,8 @@ public class ItemHibbertopterusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hibbertopterus", ItemHibbertopterusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemHibbertopterusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHibbertopterusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHibbertopterusRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemHibbertopterusRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemHibbertopterusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

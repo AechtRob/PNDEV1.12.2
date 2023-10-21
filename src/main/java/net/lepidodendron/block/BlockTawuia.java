@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -72,6 +75,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:tawuia", BlockTawuia.block);
+		OreDictionary.registerOre("pndietMicrobial", BlockTawuia.block);
 	}
 
 
@@ -149,7 +153,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -164,6 +168,17 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_TAWUIA;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -442,8 +457,8 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Undetermined multicellular organism");
-				tooltip.add("Periods: Paleoproterozoic - Mesoproterozoic - Neoproterozoic - Ediacaran");
+				tooltip.add("Type: Undetermined multicellular organism, possibly microbial");
+				tooltip.add("Periods: Paleoproterozoic (Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

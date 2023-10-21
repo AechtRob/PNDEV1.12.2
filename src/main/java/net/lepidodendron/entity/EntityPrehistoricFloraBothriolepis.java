@@ -6,14 +6,13 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -54,7 +53,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -109,14 +108,15 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
+
+	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -173,7 +173,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 

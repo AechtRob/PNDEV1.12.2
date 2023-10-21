@@ -106,16 +106,25 @@ public class ModelSyringocrinus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.main.offsetZ = -0.08F;
-        this.main.render(0.021F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.main.rotateAngleX = (float) Math.toRadians(90);
+        this.main.offsetY = -0.3F;
+        this.main.offsetX = 0.0F;
+        this.main.offsetZ = -0.36F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.03F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.07F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.09F, 0.0F);
+        this.main.offsetY = 0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -152,7 +161,6 @@ public class ModelSyringocrinus extends AdvancedModelBase {
             //this.finR2.flap(speed * 6, (float)Math.toRadians(25), false, 0, (float)Math.toRadians(25), f2, 1F);
 
             this.arm.swing(speed/5, 0.1F, false, 0, 0, f2, 1F);
-
 
             this.swing(main, speed, 0.06F, true, 0, 0, f2, 1);
 

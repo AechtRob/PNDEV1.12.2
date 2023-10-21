@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:montsechia"},
+      {"model": "lepidodendron:montsechia", "y": 90 },
+      {"model": "lepidodendron:montsechia", "y": 180 },
+      {"model": "lepidodendron:montsechia", "y": 270 }
+    ]
+  }
+}

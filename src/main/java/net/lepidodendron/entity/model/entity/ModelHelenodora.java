@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHelenodora;
-import net.lepidodendron.entity.EntityPrehistoricFloraMicrodictyon;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -261,16 +260,16 @@ public class ModelHelenodora extends AdvancedModelBase {
         this.body5.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, 0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.15F, 0.0F);
-        this.setRotateAngle(body3, 0.2F, -0.2F, 0.5F);
-        this.setRotateAngle(body4, 0.2F, 0.2F, -0.5F);
-        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body7, 0.0F, -0.12F, 0.0F);
-        this.setRotateAngle(body8, 0.0F, -0.12F, 0.0F);
-        this.setRotateAngle(body9, 0.0F, -0.13F, 0.0F);
-        this.setRotateAngle(body10, 0.0F, -0.15F, 0.0F);
-        this.body5.offsetY = -0.5F;
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.15F, 0.0F);
+        this.body5.offsetY = 0.065F;
         this.body5.render(0.01F);
         resetToDefaultPose();
     }

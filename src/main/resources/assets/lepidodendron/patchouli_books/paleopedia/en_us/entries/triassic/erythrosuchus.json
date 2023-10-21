@@ -1,7 +1,7 @@
 {
 	"name": "Erythrosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/erythrosuchus_icon.png",
+	"icon": "paleopedia:textures/items/erythrosuchus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_erythrosuchus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_erythrosuchus",
 			"title": "Erythrosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Scrubland, Desert$(br2)>Crocopoda$(br)>Archosauriformes$(br)>Erythrosuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Crocopoda$(br)>Archosauriformes$(br)>Erythrosuchidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Erythrosuchus africanus was an early archosauriform reptile that lived during the Early Triassic in what is now the Karoo Basin of South Africa. Thought to have been the largest terrestrial predator of its time, this carnivore measured around 5 metres in length, a fifth of which was taken up by the animal's 1 metre long skull armed with sharp, conical teeth."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_erythrosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erythrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erythrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erythrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erythrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erythrosuchus"
 		}
 	]
 }

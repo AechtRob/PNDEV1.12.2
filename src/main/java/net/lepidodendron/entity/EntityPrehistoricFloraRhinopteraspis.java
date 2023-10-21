@@ -4,12 +4,9 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.ai.ShoalFishBaseAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderLeptolepis;
+import net.lepidodendron.entity.render.entity.RenderRhinopteraspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -20,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -104,7 +102,12 @@ public class EntityPrehistoricFloraRhinopteraspis extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
 		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -157,7 +160,7 @@ public class EntityPrehistoricFloraRhinopteraspis extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
@@ -194,7 +197,7 @@ public class EntityPrehistoricFloraRhinopteraspis extends EntityPrehistoricFlora
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.9;
+		return 0.4;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
@@ -213,14 +216,14 @@ public class EntityPrehistoricFloraRhinopteraspis extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderLeptolepis.TEXTURE;
+		return RenderRhinopteraspis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelLeptolepis;
+		return RenderDisplays.modelRhinopteraspis;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderLeptolepis.getScaler();
+		return RenderRhinopteraspis.getScaler();
 	}
 
 

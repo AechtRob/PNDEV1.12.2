@@ -1,7 +1,7 @@
 {
 	"name": "Metoposaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/metoposaurus_icon.png",
+	"icon": "paleopedia:textures/items/metoposaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_metoposaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_metoposaurus",
 			"title": "Metoposaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Canyons, Flooded Forest, Lakeland$(br2)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Metoposauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Metoposauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Metoposaurus is Triassic temnospondyl averaging length about 2 m. Characterized by a flattened skull, it was a common predator in Triassic freshwaters. Some previously described species were moved to genera like Anachisma, and Metoposaurus itself includes only contains three species. It likely went underground during dry season. M. krasiejowensis had five fingers on its front leg, which is unique for temnospondyls."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_metoposaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_metoposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_metoposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_metoposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_metoposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_metoposaurus"
 		}
 	]
 }

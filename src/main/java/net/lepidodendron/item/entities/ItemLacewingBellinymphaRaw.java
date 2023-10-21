@@ -39,9 +39,9 @@ public class ItemLacewingBellinymphaRaw extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemLacewingBellinymphaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLacewingBellinymphaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLacewingBellinymphaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@bellinympha", ItemLacewingBellinymphaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingBellinymphaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingBellinymphaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
@@ -56,13 +56,13 @@ public class ItemLacewingBellinymphaRaw extends ElementsLepidodendronMod.ModElem
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_lacewing";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "bellinympha";
 		}
 	}
 }

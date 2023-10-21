@@ -1,11 +1,11 @@
 
 package net.lepidodendron.entity;
 
-import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,13 +18,12 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -79,22 +78,31 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraDragonflyNymph) {
+			return new ItemStack(ItemSpawnEggDragonfly.block, 1);
+		}
+		return ItemStack.EMPTY;
+	}
+
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}
 
 	public enum Type
 	{
-		DRAGONFLY1(1, "DRAGONFLY1"),
-		DRAGONFLY2(2, "DRAGONFLY2"),
-		DRAGONFLY3(3, "DRAGONFLY3"),
-		DRAGONFLY4(4, "DRAGONFLY4"),
-		DRAGONFLY5(5, "DRAGONFLY5"),
-		DRAGONFLY6(6, "DRAGONFLY6"),
-		DRAGONFLY7(7, "DRAGONFLY7"),
-		DRAGONFLY8(8, "DRAGONFLY8"),
-		DRAGONFLY9(9, "DRAGONFLY9"),
-		DRAGONFLY10(10, "DRAGONFLY10")
+		DRAGONFLY1(1, "dragonfly1"),
+		DRAGONFLY2(2, "dragonfly2"),
+		DRAGONFLY3(3, "dragonfly3"),
+		DRAGONFLY4(4, "dragonfly4"),
+		DRAGONFLY5(5, "dragonfly5"),
+		DRAGONFLY6(6, "dragonfly6"),
+		DRAGONFLY7(7, "dragonfly7"),
+		DRAGONFLY8(8, "dragonfly8"),
+		DRAGONFLY9(9, "dragonfly9"),
+		DRAGONFLY10(10, "dragonfly10")
 		;
 	
 		private final String name;
@@ -146,42 +154,6 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 	
 	}
 
-	public ResourceLocation getFreezeLoot() {
-		switch (this.getPNType()) {
-			case DRAGONFLY1: default:
-				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY2:
-				return LepidodendronMod.PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY3:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY4:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY5:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY6:
-				return LepidodendronMod.PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY7:
-				return LepidodendronMod.PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY8:
-				return LepidodendronMod.PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT_JAR;
-
-			case DRAGONFLY9:
-			case DRAGONFLY10:
-				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT_JAR;
-		}
-	}
-
-	public ResourceLocation getStandardLoot() {
-		return LepidodendronMod.BUG_LOOT;
-	}
-
 	public float getFlySpeed() {
 		return 3f;
 	}
@@ -222,29 +194,7 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return getStandardLoot();
-	}
-
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			ResourceLocation resourcelocation = getFreezeLoot();
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", this.getPNType().getName());
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				variantNBT.setString("PNDisplaycase", stringEgg);
-				itemstack.setTagCompound(variantNBT);
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
+		return null;
 	}
 
 	@Override
@@ -326,7 +276,12 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EurypteridWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override

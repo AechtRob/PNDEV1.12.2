@@ -8,20 +8,21 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnLaidleria;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.*;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.util.PathNavigateAmphibian;
+import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -34,11 +35,11 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimmingAmphibianBase {
 	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLaidleria.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLaidleria.class, DataSerializers.VARINT);
 	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraLaidleria.class, DataSerializers.BOOLEAN);
@@ -50,13 +51,83 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraLaidleria(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		if (world != null) {
+			//this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelperBase();
+			//this.navigator = new PathNavigateSwimmer(this, world);
+			if (this.isInWater()) {
+				this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+				this.navigator = new PathNavigateSwimmer(this, world);
+				this.isWaterNavigator = true;
+				this.isSeekingWater = false;
+			} else {
+				if (isNearWater(this, this.getPosition())) {
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibian(this, world);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = false;
+				} else {//Find water!
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibianFindWater(this, world);
+					this.setPathPriority(PathNodeType.WATER, 10F);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = true;
+				}
+			}
+		}
 		setSize(0.5F, 0.2F);
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Override
+	public void selectNavigator () {
+		if (this.isInWater() && !this.isWaterNavigator) {
+			this.moveHelper = new EntityPrehistoricFloraLaidleria.SwimmingMoveHelper();
+			this.navigator = new PathNavigateSwimmer(this, world);
+			this.isWaterNavigator = true;
+			this.isSeekingWater = false;
+			this.navigator.clearPath();
+			//System.err.println("Navigator changed to " + this.navigator);
+		}
+		else {
+			if (!this.isInWater() && isNearWater(this, this.getPosition()) && (this.isWaterNavigator || this.isSeekingWater)) {
+				this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+				this.navigator = new PathNavigateAmphibian(this, world);
+				this.isWaterNavigator = false;
+				this.isSeekingWater = false;
+				this.navigator.clearPath();
+				//System.err.println("Navigator changed to " + this.navigator);
+			}
+			else {//Find water!
+				if (!this.isInWater() && !isNearWater(this, this.getPosition()) && (this.isWaterNavigator || !this.isSeekingWater)) {
+					this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+					this.navigator = new PathNavigateAmphibianFindWater(this, world);
+					this.setPathPriority(PathNodeType.WATER, 10F);
+					this.isWaterNavigator = false;
+					this.isSeekingWater = true;
+					this.navigator.clearPath();
+					//System.err.println("Navigator changed to " + this.navigator);
+				}
+			}
+		}
+	}
+
+	@Override
+	protected float getAISpeedSwimmingAmphibian() {
+		if (this.isReallyInWater()) {
+			if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+				return 0;
+			}
+			return 0.232f;
+		}
+		return 0.156F;
+	}
+
+	@Override
+	public int WaterDist() {
+		return 6;
 	}
 
 	@Override
@@ -103,12 +174,6 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraLaidleria(this.world);
-	}
-
-
-	@Override
 	public boolean dropsEggs() {
 		return false;
 	}
@@ -128,13 +193,13 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 		return 128000;
 	}
 
-	@Override
-	protected float getAISpeedFish() {
-		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
-			return 0;
-		}
-		return 0.232f;
-	}
+//	@Override
+//	protected float getAISpeedFish() {
+//		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+//			return 0;
+//		}
+//		return 0.232f;
+//	}
 
 	@Override
 	protected void entityInit() {
@@ -192,10 +257,10 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 		this.dataManager.set(BOTTOM_FLAG, flag);
 	}
 
-	@Override
-	protected boolean isSlowAtBottom() {
-		return true;
-	}
+//	@Override
+//	protected boolean isSlowAtBottom() {
+//		return true;
+//	}
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
@@ -209,21 +274,17 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.85F, 300));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					|| stack.getItem() == ItemFishFood.block
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
 
 	@Override
@@ -280,7 +341,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 7 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -478,7 +539,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraAgeab
 				float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
 				this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 10.0F);
-				float speed = getAISpeedFish();
+				float speed = getAISpeedSwimmingAmphibian();
 				this.EntityBase.setAIMoveSpeed(speed);
 
 				if (this.EntityBase.isAtBottom()) {

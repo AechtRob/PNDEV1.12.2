@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCiurcopterus;
-import net.lepidodendron.entity.EntityPrehistoricFloraSlimonia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -397,6 +396,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Ciurcopterus.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.Ciurcopterus.rotateAngleY = (float) Math.toRadians(360);
         this.setRotateAngle(Body, 1.5F, 0.0F, -0.25F);
@@ -406,6 +406,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(TergiteA1, 0.1F, 0.0F, 0.0F);
@@ -421,6 +422,7 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -435,11 +437,8 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.offsetY = -0.25F;
         this.Ciurcopterus.offsetZ = 0.1F;
 
-
         AdvancedModelRenderer[] fishBody = {this.TergiteA1, this.TergiteA2, this.TergiteA3, this.TergiteA4, this.TergiteA5, this.TergiteA6, this.Telson};
         AdvancedModelRenderer[] fishTail = {this.TergiteA6, this.Telson};
-
-
 
         //mouthparts:
         this.walk(cheliceraL, 0.35F, -0.15F, false, 0, -0.1F, f2, 0.6F);
@@ -454,8 +453,8 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         EntityPrehistoricFloraCiurcopterus ciurc = (EntityPrehistoricFloraCiurcopterus) e;
 
 
-        if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {//on land
-            if(!ciurc.getIsMoving()) {
+        if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
+            if ((!ciurc.getIsMoving()) && ciurc.isReallyInWater()) {
                 this.chainWave(fishBody, speed, 0.02F, -0.2F, f2, 0.2F);
                 this.chainSwing(fishTail, speed, 0.05F, -0.6F, f2, 0.6F);
                 this.chainWave(fishTail, speed, 0.05F, -0.6F, f2, 0.6F);
@@ -473,40 +472,55 @@ public class ModelCiurcopterus extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                // this.body.offsetY = 0.2F;
-                //this.bob(body, -speed * 1.5F, 2F, false, f2, 1);
-                this.chainSwing(fishBody, speed, 0.01F, -2, f2, 1);
+                this.bob(Ciurcopterus, -speed * 5.0F, 2F, false, f2, 1);
+                this.chainSwing(fishBody, speed * 3.0F, 0.05F, -2, f2, 1);
             }
         }
     }
+
     @Override
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
         EntityPrehistoricFloraCiurcopterus ee = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         //Swimming pose:
-
-        if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
-            //Walk pose:
-
-                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-
-        } else {
-            if ((ee.getAnimation() != ee.SWIM_ANIMATION)) {
-                if (ee.getIsFast()) {
-                    animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-
+        if (ee.isReallyInWater()) {
+            if (ee.getIsMoving()) {
+                if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
+                    //Walk pose:
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 } else {
-                    animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    if ((ee.getAnimation() != ee.SWIM_ANIMATION)) {
+                        if (ee.getIsFast()) {
+                            animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                        } else {
+                            animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
+                        }
+                    }
+                }
+            }
+            else { //in water but not moving:
+                if (ee.getAnimation() != ee.UNSWIM_ANIMATION && ee.getAnimation() != ee.SWIM_ANIMATION) {
+                    if (ee.isReallySwimming()) {
+                        //Swim static pose:
+                        animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+                    } else {
+                        //Walk static pose:
+                        animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+                    }
                 }
             }
         }
 
     }
 
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraCiurcopterus entity = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         int animCycle = 30;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;
@@ -853,10 +867,14 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.setRotateAngle(TergiteA6, TergiteA6.rotateAngleX + (float) Math.toRadians(2+Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-180))*0.8), TergiteA6.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-90))*0.8), TergiteA6.rotateAngleZ + (float) Math.toRadians(0));
         this.setRotateAngle(Telson, Telson.rotateAngleX + (float) Math.toRadians(3+Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-240))), Telson.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/30D)*1.5D)*120/0.5-150))), Telson.rotateAngleZ + (float) Math.toRadians(0));
     }
-    public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+
+    public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraCiurcopterus entity = (EntityPrehistoricFloraCiurcopterus) entitylivingbaseIn;
         int animCycle = 20;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;

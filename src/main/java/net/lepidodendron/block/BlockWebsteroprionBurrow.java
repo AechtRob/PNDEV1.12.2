@@ -5,10 +5,14 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprion;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprionHole;
 import net.lepidodendron.item.entities.ItemEggsWebsteroprion;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -170,8 +174,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 					for (int i = 0; i < 6; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (blockpos1.getY() < world.getSeaLevel()
-								&& (world.getBlockState(blockpos1).getBlock() == Blocks.WATER
-								|| world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER)
+								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
 								&& !world.isAirBlock(blockpos1.east())
@@ -259,7 +262,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 		return false;
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.WATER);
@@ -271,6 +274,12 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 			setLightOpacity(3);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(OCCUPIED, true));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_WEBSTEROPRION;
 		}
 
 		@Override

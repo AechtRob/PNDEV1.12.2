@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -53,6 +54,16 @@ public class ItemSpawnEggPalaeodictyopteraDelitzschala extends ElementsLepidoden
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -10702793;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10583218;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Carboniferous";
 		}
@@ -78,10 +89,25 @@ public class ItemSpawnEggPalaeodictyopteraDelitzschala extends ElementsLepidoden
 				entityliving.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
 				worldIn.spawnEntity(entity);
 				((EntityPrehistoricFloraPalaeodictyoptera)entityliving).setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(this.variant));
+				this.setSizer((EntityPrehistoricFloraPalaeodictyoptera)entityliving, ((EntityPrehistoricFloraPalaeodictyoptera)entityliving).getHitBoxSize()[0], ((EntityPrehistoricFloraPalaeodictyoptera)entityliving).getHitBoxSize()[1]);
 				entityliving.playLivingSound();
 			}
 			return entity;
 
+		}
+
+		protected void setSizer(EntityPrehistoricFloraPalaeodictyoptera entity, float width, float height)
+		{
+			if (width != entity.width || height != entity.height)
+			{
+				float f = entity.width;
+				entity.width = width;
+				entity.height = height;
+				if (entity.width < f) {
+					double d0 = (double) width / 2.0D;
+					entity.setEntityBoundingBox(new AxisAlignedBB(entity.posX - d0, entity.posY, entity.posZ - d0, entity.posX + d0, entity.posY + (double) entity.height, entity.posZ + d0));
+				}
+			}
 		}
 	}
 }

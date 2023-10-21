@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemMetopacanthusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:metopacanthus_raw")
@@ -34,10 +36,10 @@ public class ItemMetopacanthusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_metopacanthus", ItemMetopacanthusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_metopacanthus@male", ItemMetopacanthusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMetopacanthusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMetopacanthusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMetopacanthusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemMetopacanthusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemMetopacanthusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
@@ -47,6 +49,11 @@ public class ItemMetopacanthusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("metopacanthus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "male";
 		}
 	}
 }

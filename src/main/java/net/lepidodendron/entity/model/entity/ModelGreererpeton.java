@@ -4,10 +4,8 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGreererpeton;
-import net.lepidodendron.entity.EntityPrehistoricFloraTiktaalik;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -321,13 +319,31 @@ public class ModelGreererpeton extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-
-    public void renderStaticPlinth(float f) {
-        this.LowerJaw.rotateAngleX = (float) Math.toRadians(23);
-        this.Hips.render(0.01F);
-    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.1F, 0.08F, 0.0F);
+        this.setRotateAngle(Tail, -0.05F, 0.02F, 0.02F);
+        this.setRotateAngle(Tail2, -0.07F, 0.05F, 0.04F);
+        this.setRotateAngle(Tail3, 0.02F, -0.08F, 0.06F);
+        this.setRotateAngle(Tail4, 0.05F, -0.09F, 0.08F);
+        this.setRotateAngle(UpperLegR, 0.0F, 0.9F, -0.5F);
+        this.setRotateAngle(LowerLegR, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.0F, -0.9F, 0.5F);
+        this.setRotateAngle(LowerLegL, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.05F, -0.08F, -0.02F);
+        this.setRotateAngle(Body, 0.09F, 0.1F, -0.03F);
+        this.setRotateAngle(Chest, 0.03F, 0.0F, -0.04F);
+        this.setRotateAngle(Head, 0.0F, 0.07F, 0.0F);
+        this.setRotateAngle(UpperArmR, -0.0F, 0.9F, -0.5F);
+        this.setRotateAngle(LowerArmR, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, 0.0F, -0.9F, 0.5F);
+        this.setRotateAngle(LowerArmL, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.14F;
         this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -370,13 +386,6 @@ public class ModelGreererpeton extends AdvancedModelBaseExtended {
             this.setRotateAngle(FootL, -(float)Math.toRadians(2.7647), -(float)Math.toRadians(-25.0981), -(float)Math.toRadians(-5.4974));
             this.setRotateAngle(FootR, -(float)Math.toRadians(2.7647), (float)Math.toRadians(-25.0981), -(float)Math.toRadians(-5.4974));
 
-
-
-
-
-
-
-
             if (f3 == 0.0F || !greer.getIsMoving()) {
                 return;
             }
@@ -387,12 +396,12 @@ public class ModelGreererpeton extends AdvancedModelBaseExtended {
             this.chainSwingExtended(LeftLeg, speed, 0.2F,0F,3.0F, f2, 0.7F);
             this.chainSwingExtended(RightLeg, speed , -0.2F,0F,0, f2, 0.7F);
 
-            this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(Tail, speed * 1.2F, 0.3F, -3, f2, 0.8F);
-            this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
+            this.chainWave(Tail, speed * 2, 0.05F, -3, f2, 1);
+            this.chainSwing(Tail, speed * 1.2F * 2, 0.3F, -3, f2, 0.8F);
+            this.chainSwing(Torso, speed * 2, 0.1F, -3, f2, 1);
         }
         else {
-            speed = speed *0.5F;
+            speed = speed * 0.5F;
             if (greer.getIsFast()) {
                 speed = speed * 1.33F;
             }

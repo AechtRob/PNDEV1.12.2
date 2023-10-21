@@ -4,15 +4,20 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsProtozygoptera;
+import net.lepidodendron.block.*;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -40,6 +45,21 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 	public EntityPrehistoricFloraArchocyrtus(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
+	}
+
+	@Override
+	public boolean laysInBlock() {
+		return true;
+	}
+
+	@Override
+	public String tagEgg () {
+		return "insect_eggs_archocyrtus";
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.PLANTS;
 	}
 
 	public void onEntityUpdate() {
@@ -104,7 +124,7 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 
 	@Override
 	public IBlockState getEggBlockState() {
-		return BlockInsectEggsProtozygoptera.block.getDefaultState();
+		return BlockInsectEggsArchocyrtus.block.getDefaultState();
 	}
 
 	@Override
@@ -218,6 +238,49 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
 
+	}
+
+	public static final PropertyDirection FACING = BlockDirectional.FACING;
+
+	@Override
+	public boolean testLay(World world, BlockPos pos) {
+		if (
+				world.getBlockState(pos).getBlock() == BlockRottenLog.block
+						|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
+						|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
+						|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
+						|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
+		) {
+			String eggRenderType = new Object() {
+				public String getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos(pos), "egg");
+			if (eggRenderType.equals("")) {
+				//There is a space, is the orientation correct?
+				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
+					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
+					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
+							&& faceshape != BlockFaceShape.SOLID)) {
+						//This is solid for laying:
+						return true;
+					}
+				}
+				else {
+					//Is it upward-facing?
+					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					if (facing == EnumFacing.UP) {
+						//This is OK for laying mosses
+						return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 }

@@ -1,0 +1,120 @@
+{
+  "pools": [
+    {
+      "name": "digsite_chest",
+      "rolls": {
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "forge:bucketFilled",
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{\"FluidName\":\"pn_sulfuric_acid\", \"Amount\": 1000}"
+            },
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "weight": 30
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bread",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 5
+              }
+            }
+          ],
+          "weight": 10
+        }
+      ]
+    },
+
+    {
+      "name": "digsite_chest_treasure",
+      "rolls": {
+        "min": 1,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ],
+          "weight": 1
+        }
+      ]
+    },
+
+    {"name": "digsite_chest_tools",
+    "rolls": {
+      "min": 2,
+      "max": 3
+    },
+    "entries": [
+        {
+          "type": "item",
+          "name": "lepidodendron:fossil_cambrian",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 5
+              }
+            }
+          ],
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "lepidodendron:fossil_hammer",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ],
+          "weight": 30
+        }
+      ]
+    }
+  ]
+}

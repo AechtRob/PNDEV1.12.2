@@ -30,9 +30,9 @@ public class ItemWiwaxiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_wiwaxia", ItemWiwaxiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemWiwaxiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWiwaxiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemWiwaxiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemWiwaxiaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemWiwaxiaRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

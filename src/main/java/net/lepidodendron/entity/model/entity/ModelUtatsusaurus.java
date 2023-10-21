@@ -3,8 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraCymbospondylus;
-import net.lepidodendron.entity.EntityPrehistoricFloraMixosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraUtatsusaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
@@ -372,14 +370,14 @@ public class ModelUtatsusaurus extends AdvancedModelBaseExtended {
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);
 
-        animator.setAnimation(e.ROAR_ANIMATION);
-        animator.startKeyframe(5);
-        animator.move(this.head, 0,0,-0.2F);
-        animator.rotate(this.head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(5);
-        animator.resetKeyframe(2);
+//        animator.setAnimation(e.ROAR_ANIMATION);
+//        animator.startKeyframe(5);
+//        animator.move(this.head, 0,0,-0.2F);
+//        animator.rotate(this.head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//        animator.rotate(this.jaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//        animator.endKeyframe();
+//        animator.setStaticKeyframe(5);
+//        animator.resetKeyframe(2);
 
     }
 }

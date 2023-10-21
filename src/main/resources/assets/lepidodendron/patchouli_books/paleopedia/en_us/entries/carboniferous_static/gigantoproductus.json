@@ -1,13 +1,13 @@
 {
-	"name": "Gigantoproductus",
+	"name": "Gigantoproductus Brachiopod",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gigantoproductus_icon.png",
+	"icon": "paleopedia:textures/items/gigantoproductus_icon.png",
 	"category": "lepidodendron:carboniferous_static",
 	"turnin": "lepidodendron:pf_adv_book_brachiopod_gigantoproductus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_gigantoproductus",
-			"title": "Gigantoproductus",
+			"title": "Gigantoproductus Brachiopod",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Strophomenata$(br)>Productida$(br)>Monticuliferidae"
 		},

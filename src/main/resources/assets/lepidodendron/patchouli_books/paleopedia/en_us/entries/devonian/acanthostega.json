@@ -1,7 +1,7 @@
 {
 	"name": "Acanthostega",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/acanthostega_icon.png",
+	"icon": "paleopedia:textures/items/acanthostega_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_acanthostega",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthostega",
 			"title": "Acanthostega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Stegocephalia$(br)>Acanthostegidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Stegocephalia$(br)>Acanthostegidae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,37 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostega",
 			"type": "text",
-			"text": " "
+			"text": "Acanthostega lived during the late Devonian period, and was one of the earliest-known tetrapods. Its name means \"spiny roof\". It was around 60cm long and was still fish-like, and could not have lived much of a terrestrial life. The front fins had been adapted with eight webbed, digit-like structures on each \"hand\". However, it is thought that the structure of the limbs would have meant actual walking on land would have been impossible as they could not"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostega",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn-like Eggs underwater$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "move into weight-bearing positions. Likewise, while it possessed air-breathing lungs as well as gills, the shape of the chest implies that it would have had difficulty breathing without water supporting its rib cage (perhaps it could flop and drag itself around a little bit in an emergency). We think that Acanthostega probably lived in shallow, marginal, plant-filled ecosystems,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostega",
+			"type": "text",
+			"text": "where its limbs would be used for pulling through the plants and reeds, searching for small creatures to eat. It is possible that Acanthostega is actually a \"backwards-step\", evolving from some more land-suited early fish-like tetrapods back into a purely aquatic lifestyle."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acanthostega"
 		}
 	]
 }

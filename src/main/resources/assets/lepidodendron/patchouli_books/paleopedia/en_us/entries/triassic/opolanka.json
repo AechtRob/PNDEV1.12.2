@@ -1,7 +1,7 @@
 {
 	"name": "Opolanka",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/opolanka_icon.png",
+	"icon": "paleopedia:textures/items/opolanka_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_opolanka",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_opolanka",
 			"title": "Opolanka",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Arthropoda$(br)>Crustacea$(br)>Cyclida"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Cyclida"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Subsequently they were classified as limulids, xiphosurans, branchiurans and even true crabs.Today their classification is still unclear, some interpreting them as crustaceans, some as something completely different.Opolanka is known from lacustrine sediments, making it a freshwater animal."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_opolanka",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_opolanka"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_opolanka"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_opolanka"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_opolanka"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_opolanka"
 		}
 	]
 }

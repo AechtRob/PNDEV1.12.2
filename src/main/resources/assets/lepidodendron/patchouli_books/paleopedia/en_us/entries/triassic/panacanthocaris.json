@@ -1,0 +1,51 @@
+{
+	"name": "Panacanthocaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/panacanthocaris_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_panacanthocaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_panacanthocaris",
+			"title": "Panacanthocaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Crustacea $(br)>Branchiopoda $(br)>Kazacharthra $(br)>Ketmeniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/panacanthocaris.png"],
+			"title": "P. ketmenia",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
+			"type": "text",
+			"text": "Panacanthocaris belongs to the unusual and mysterious Branchiopod order of Kazacharthra. It lived in Late Triassic and Early Jurassic of Kazakhstan and China. It was first described by Tchernyshev in 1940 who drew the carapace of Panacanthocaris upsidedown with the mandibular bulge pointing towards the body instead of forwards. Kazacharthrans are unique and easily recognizeable for their spiny irregular carapaces and"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
+			"type": "text",
+			"text": "for the many old questions left unanswered about their ecology and biology."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_panacanthocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_panacanthocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_panacanthocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_panacanthocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_panacanthocaris"
+		}
+	]
+}

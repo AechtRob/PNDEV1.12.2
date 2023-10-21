@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:stanocephalosaurus_item"
+			"item": "lepidodendron:stanocephalosaurus_raw"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_stanocephalosaurus.title"

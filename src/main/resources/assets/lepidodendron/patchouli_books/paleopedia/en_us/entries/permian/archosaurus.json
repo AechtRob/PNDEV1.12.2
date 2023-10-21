@@ -1,7 +1,7 @@
 {
 	"name": "Archosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/archosaurus_icon.png",
+	"icon": "paleopedia:textures/items/archosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_archosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archosaurus",
 			"title": "Archosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Reptilia$(br)>Proterosuchia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Proterosuchia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Archosaurus is a carnivorous archosauriforme from the late Permian period. Its skull is known and it had an oddly shaped nose which hanged over the end of its lower jaw. It was one of the oldest Archosaurs and it gives its name to the group which would contain the dinosaurs but is not actually classified within the group."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_archosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archosaurus"
 		}
 	]
 }

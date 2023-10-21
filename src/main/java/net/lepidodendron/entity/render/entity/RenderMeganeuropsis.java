@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuropsis;
 import net.lepidodendron.entity.model.entity.ModelMeganeuropsis;
 import net.minecraft.client.renderer.GlStateManager;
@@ -22,36 +21,38 @@ public class RenderMeganeuropsis extends RenderLiving<EntityPrehistoricFloraMega
         return RenderMeganeuropsis.TEXTURE;
     }
     public static float getScaler() {
-        return 1* 0.29f;
+        return 1 * 0.29f;
     }
     @Override
     protected void applyRotations(EntityPrehistoricFloraMeganeuropsis entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        float getOffset = 0.249F;
+
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.40F, 0.05F, 0.0F);
+                GlStateManager.translate(getOffset, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case WEST:
-                GlStateManager.translate(-0.40F, 0.05F, 0.0F);
+                GlStateManager.translate(-getOffset, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.40F);
+                GlStateManager.translate(0.0F, 0.05F, -getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.0F, 0.40F);
+                GlStateManager.translate(0.0F, 0.0F, getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.5F + getOffset, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
@@ -59,9 +60,6 @@ public class RenderMeganeuropsis extends RenderLiving<EntityPrehistoricFloraMega
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMeganeuropsis entity, float f) {
         float scale = this.getScaler();
-        if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
-            scale = 0.6F;
-        }
         GlStateManager.scale(scale, scale, scale);
     }
 

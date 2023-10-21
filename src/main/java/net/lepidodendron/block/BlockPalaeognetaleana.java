@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemPalaeognetaleanaFruit;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.SoundType;
@@ -72,7 +75,7 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemMossForStone", BlockPalaeognetaleana.block);
 	}
 
-	public static class BlockCustom extends BlockVine {
+	public static class BlockCustom extends BlockVine implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
@@ -80,6 +83,12 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 			setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         	setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PALAEOGNETALEANA;
 		}
 
 		protected BlockStateContainer createBlockState()
@@ -129,7 +138,7 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Gnetophyte vine");
-				tooltip.add("Periods: Permian [- Triassic (?) - Jurassic (?) - Cretaceous (?) - Paleogene (?) - Neogene (?) - Pleistocene (?) - present (?)]]");
+				tooltip.add("Periods: Permian");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

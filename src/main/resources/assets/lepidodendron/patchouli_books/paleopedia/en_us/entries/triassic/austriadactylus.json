@@ -1,7 +1,7 @@
 {
 	"name": "Austriadactylus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/austriadactylus_icon.png",
+	"icon": "paleopedia:textures/items/austriadactylus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_austriadactylus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_austriadactylus",
 			"title": "Austriadactylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Mountains, Oceans, Canyons$(br2)>Pterosauria$(br)>Preondactylia"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pterosauria$(br)>Preondactylia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Austriadactylus cristatus was a  basal pterosaur that lived during the Late Triassic of Austria. The specific name \"cristatus\" refers to the short, 2cm tall crest running down the pterosaur's snout. Unlike other basal pterosaurs, the tail of this pterosaur didn't have stiffening, rod-like vertebral extensions, making it unusually flexible."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_austriadactylus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_austriadactylus"
 		}
 	]
 }

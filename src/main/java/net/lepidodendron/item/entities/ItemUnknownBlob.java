@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -23,11 +22,13 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemUnknownBlob extends ElementsLepidodendronMod.ModElement {
@@ -42,30 +43,36 @@ public class ItemUnknownBlob extends ElementsLepidodendronMod.ModElement {
 		elements.items.add(() -> new ItemCustom());
 	}
 
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemUnknownBlob.block);
+	}
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_generic_blob", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_generic_blob", "inventory"));
 
-		ModelBakery.registerItemVariants(block,
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_dickinsonia", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yorgia", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_parvancorina", "inventory")
-		);
-
-		ModelLoader.setCustomMeshDefinition(block, stack -> {
-			String stringEgg = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("creature") : null);
-			if (stringEgg != null) {
-				stringEgg = stringEgg.replace(LepidodendronMod.MODID.toString() + ":", "lepidodendron:entities/egg_");
-				//System.err.println("stringEgg " + stringEgg);
-				try {
-					return new ModelResourceLocation(stringEgg, "inventory");
-				} catch (Throwable throwable) {
-					return new ModelResourceLocation("lepidodendron:entities/eggs_generic_blob_unknown", "inventory");
-				}
-			}
-			return new ModelResourceLocation("lepidodendron:entities/eggs_generic_blob_unknown", "inventory");
-		});
+//		ModelBakery.registerItemVariants(block,
+//				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_dickinsonia", "inventory"),
+//				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_yorgia", "inventory"),
+//				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_parvancorina", "inventory")
+//		);
+//
+//		ModelLoader.setCustomMeshDefinition(block, stack -> {
+//			String stringEgg = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("creature") : null);
+//			if (stringEgg != null) {
+//				stringEgg = stringEgg.replace(LepidodendronMod.MODID.toString() + ":", "lepidodendron:entities/egg_");
+//				//System.err.println("stringEgg " + stringEgg);
+//				try {
+//					return new ModelResourceLocation(stringEgg, "inventory");
+//				} catch (Throwable throwable) {
+//					return new ModelResourceLocation("lepidodendron:entities/eggs_generic_blob_unknown", "inventory");
+//				}
+//			}
+//			return new ModelResourceLocation("lepidodendron:entities/eggs_generic_blob_unknown", "inventory");
+//		});
 	}
 
 	public static class ItemCustom extends Item {

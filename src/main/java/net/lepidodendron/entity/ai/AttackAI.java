@@ -4,6 +4,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.Path;
@@ -17,6 +18,7 @@ public class AttackAI extends EntityAIBase {
     private final double speed;
     private final boolean memory;
     private Path currentPath;
+    protected int ticksAI;
 
     public AttackAI(EntityPrehistoricFloraAgeableBase entity, double speed, boolean memory, int attackLength) {
         this.entity = entity;
@@ -41,11 +43,21 @@ public class AttackAI extends EntityAIBase {
             return false;
         }
         this.currentPath = this.entity.getNavigator().getPathToEntityLiving(target);
+
+        if (this.currentPath != null) {
+            this.ticksAI = 600;
+        }
+
         return this.currentPath != null;
     }
 
     @Override
     public boolean shouldContinueExecuting() {
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.entity.getNavigator().clearPath();
+            return false;
+        }
         EntityLivingBase entity = this.entity.getAttackTarget();
         return this.entity.getWillHunt() && entity != null && (entity.isEntityAlive() && (!this.memory ? !this.entity.getNavigator().noPath() : this.entity.isWithinHomeDistanceFromPosition(entity.getPosition())));
     }
@@ -75,6 +87,22 @@ public class AttackAI extends EntityAIBase {
                 //ee.setIsFast(true);
            // }
             this.entity.getNavigator().tryMoveToEntityLiving(target, this.speed);
+
+            if (this.entity.getAttackTarget() != null && this.entity.getMoveHelper().action != EntityMoveHelper.Action.JUMPING) {
+                if ((!isDirectPathBetweenPoints(this.entity.getPositionVector(), target.getPositionVector())) && (!this.entity.getAttackBoundingBox().intersects(target.getEntityBoundingBox()))) {
+                    if (this.entity.getNavigator().getPathToEntityLiving(target) == null) {
+                        this.entity.setAttackTarget(null);
+                        this.entity.setOneHit(false);
+                    } else if (this.entity.getNavigator().getPath() != null) {
+                        if (this.entity.getNavigator().getPath().getFinalPathPoint().visited) {
+                            this.entity.setAttackTarget(null);
+                            this.entity.setOneHit(false);
+                        }
+                    }
+                }
+            }
+
+
         }
         if (this.entity.getAttackBoundingBox().intersects(target.getEntityBoundingBox())
             && isDirectPathBetweenPoints(this.entity.getPositionVector(), target.getPositionVector())) {

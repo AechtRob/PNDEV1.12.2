@@ -1,7 +1,7 @@
 {
 	"name": "Xuanhuaceratops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/xuanhuaceratops_icon.png",
+	"icon": "paleopedia:textures/items/xuanhuaceratops_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_xuanhuaceratops",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_xuanhuaceratops",
 			"title": "Xuanhuaceratops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Xuanhuaceratops is a basal ceratopsian described from Houcheng Formation, Hebei, China. It is only known from a fragmentary skull and some postcranial materials. Its name was originally invalidly described in 1985, but validated in 2006."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_xuanhuaceratops",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xuanhuaceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xuanhuaceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xuanhuaceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xuanhuaceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xuanhuaceratops"
 		}
 	]
 }

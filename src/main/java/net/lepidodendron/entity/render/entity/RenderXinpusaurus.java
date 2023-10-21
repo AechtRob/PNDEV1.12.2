@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpusaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus_f.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus_f.png");
 
     public RenderXinpusaurus(RenderManager mgr) {
         super(mgr, new ModelXinpusaurus(), 0.0f);
@@ -22,7 +22,7 @@ public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpus
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraXinpusaurus entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraXinpusaurus.Type.FEMALE) {
             return RenderXinpusaurus.TEXTURE_F;
         }
         return RenderXinpusaurus.TEXTURE;
@@ -37,7 +37,7 @@ public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpus
         float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;
-        } else if (entity.getIsFemale()) {
+        } else if (entity.getPNType() == EntityPrehistoricFloraXinpusaurus.Type.FEMALE) {
             scale = scale * (0.85F/0.7F);
         }
 

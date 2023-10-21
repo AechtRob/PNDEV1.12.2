@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelChinlea extends AdvancedModelBase {
@@ -306,10 +305,10 @@ public class ModelChinlea extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.head.rotateAngleZ = (float) Math.toRadians(90);
-            //this.head.offsetY = 1.05F;
-            this.bob(head, -speed * 1.9F, 2.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * 1.7F, 0.28F, -0.55, f2, 0.4F * still);
+            this.head.offsetY = -0.175F;
+            this.bob(head, -speed * 2.9F, 2.5F, false, f2, 1);
+            this.chainWave(fishTail, speed * 3.7F, 0.028F, -0.2, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * 2.7F, 0.28F, -0.55, f2, 0.4F * still);
 
         }
 

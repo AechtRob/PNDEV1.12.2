@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acadoaradoxides",
 			"title": "Acadoparadoxides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Acadoparadoxides is a redlichiid trilobite, closely related to the more well known Paradoxides. They are fast moving epifaunal carnivores living on the ocean floor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_acadoaradoxides",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acadoaradoxides"
 		}
 	]
 }

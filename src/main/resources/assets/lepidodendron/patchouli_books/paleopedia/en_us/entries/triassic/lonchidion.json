@@ -1,7 +1,7 @@
 {
 	"name": "Lonchidion",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lonchidion_icon.png",
+	"icon": "paleopedia:textures/items/lonchidion_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_lonchidion",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lonchidion",
 			"title": "Lonchidion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)$(l)Habitat:$() Rivers$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Lonchidiidae"
+			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Lonchidiidae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lonchidion",
 			"type": "text",
-			"text": "Lonchidion was genus of hybodont shark that lived throughout Mesozoic, Triassic to Cretaceous. Mostly known from teeth and fin spines, it was probably small hybodont with length tens of centimeters. Most of the fossil records are known from strata thought to have been deposited in freshwater environments. Lonchidon is not only one of the longest survived hybodonts, it is also the last survived hybodont until end of the Cretaceous period. Fossils are also known from Hell Creek, which is famous for Tyrannosaurus and Triceratops. "
+			"text": "Lonchidion was genus of hybodont shark that lived throughout Mesozoic, Triassic to Cretaceous. Mostly known from teeth and fin spines, it was probably small hybodont with length tens of centimeters. Most of the fossil records are known from strata thought to have been deposited in freshwater environments. Lonchidon is not only one of the longest survived hybodonts,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lonchidion",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "it is also the last survived hybodont until end of the Cretaceous period. Fossils are also known from Hell Creek, which is famous for Tyrannosaurus and Triceratops."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lonchidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lonchidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lonchidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lonchidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lonchidion"
 		}
 	]
 }

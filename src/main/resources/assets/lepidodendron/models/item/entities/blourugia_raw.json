@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:blourugia_icon"
+    "layer0": "paleopedia:items/blourugia_icon"
   }
 }

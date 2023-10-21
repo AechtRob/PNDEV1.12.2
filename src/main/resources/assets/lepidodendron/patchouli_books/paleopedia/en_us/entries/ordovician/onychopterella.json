@@ -1,0 +1,51 @@
+{
+	"name": "Onychopterella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/onychopterella_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_onychopterella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_onychopterella",
+			"title": "Onychopterella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Eurypterida $(br)>Onychopterelloidea $(br)>Onychopterellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/onychopterella.png"],
+			"title": "O. kokomoensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onychopterella",
+			"type": "text",
+			"text": "Onychopterella is a Eurypterid known from the United States and South Africa. With length only about 16 cm, it was quite small. Its lifestyle was mainly benthic although it was also able to swim. This genus is known from fossil sites with different periods, like Ordovician Soom Shale and Silurian Kokomo. It had a rounded squarish head with a fat body and thinner tail. Its eyes were reniform and its legs were unspecialized and lacked spines save for the distal end."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onychopterella",
+			"type": "text",
+			"text": "Onychopterella has some astoundingly well-preserved specimens which allowed scientists to examine the gastrointestinal tract, internal leg musculature, and book lungs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_onychopterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_onychopterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_onychopterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_onychopterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_onychopterella"
+		}
+	]
+}

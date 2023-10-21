@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.procedure.ProcedureWorldGenProtea1;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -66,7 +69,7 @@ public class BlockProteaSapling1 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:protea_1_sapling", BlockProteaSapling1.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:protea_sapling_1", BlockProteaSapling1.block);
 		OreDictionary.registerOre("treeSapling", BlockProteaSapling1.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockProteaSapling1.block);
 		OreDictionary.registerOre("plant", BlockProteaSapling1.block);
@@ -76,7 +79,7 @@ public class BlockProteaSapling1 extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -85,6 +88,12 @@ public class BlockProteaSapling1 extends ElementsLepidodendronMod.ModElement {
         	setResistance(1F);
 			setTranslationKey("pf_protea_sapling_1");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PROTEA_1;
 		}
 
 		@Override
@@ -197,7 +206,7 @@ public class BlockProteaSapling1 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering shrub");
-				tooltip.add("Periods: [late Cretaceous(?) -] Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: [late Cretaceous (?) -] Paleogene - Neogene - Pleistocene [- present]");
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

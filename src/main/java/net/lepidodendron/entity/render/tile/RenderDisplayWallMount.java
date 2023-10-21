@@ -6,7 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.entity.render.entity.*;
+import net.lepidodendron.entity.render.entity.RenderTorpedaspis;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -4879,6 +4879,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
         String stringDNA = (blockNBT.getString("id"));
         if (stringDNA != null) {
+            //int ii = stringDNA.indexOf("@");
+            if (stringDNA.indexOf("@") >= 1) {
+                stringDNA = stringDNA.substring(0, stringDNA.indexOf("@"));
+            }
             classOut = findEntity(stringDNA);
         }
         return classOut;

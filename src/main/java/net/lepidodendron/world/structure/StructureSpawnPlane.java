@@ -28,7 +28,7 @@ public class StructureSpawnPlane extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPlane))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genPlane && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPlane && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

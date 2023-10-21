@@ -4,9 +4,9 @@ package net.lepidodendron.item.entities;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.minecraft.item.Item;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -38,8 +38,8 @@ public class ItemAetheolepisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_aetheolepis", ItemAetheolepisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAetheolepisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAetheolepisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAetheolepisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemAetheolepisRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemAetheolepisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

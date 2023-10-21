@@ -4,14 +4,16 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.render.entity.RenderOrthrozanclus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -19,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -33,6 +36,11 @@ public class EntityPrehistoricFloraOrthrozanclus extends EntityPrehistoricFloraS
 	public EntityPrehistoricFloraOrthrozanclus(World world) {
 		super(world, 20);
 		setSize(0.12F, 0.12F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -56,7 +64,12 @@ public class EntityPrehistoricFloraOrthrozanclus extends EntityPrehistoricFloraS
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -88,7 +101,7 @@ public class EntityPrehistoricFloraOrthrozanclus extends EntityPrehistoricFloraS
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.36; }
+	public static double offsetCase(@Nullable String variant) { return 0.36; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

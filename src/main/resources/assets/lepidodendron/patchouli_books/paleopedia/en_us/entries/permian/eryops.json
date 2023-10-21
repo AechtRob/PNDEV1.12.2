@@ -1,7 +1,7 @@
 {
 	"name": "Eryops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eryops_icon.png",
+	"icon": "paleopedia:textures/items/eryops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eryops",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eryops",
 			"title": "Eryops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br)>Temnospondyli$(br)>Eryopidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Temnospondyli$(br)>Eryopidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eryops is a large temnospondyl from the Permian period. It grew to a little over 2 meters long and it had a large broad skull and a large body with a relatively short tail. It was an apex predator capable of competing with the synapsid predators of its time. It was a semi aquatic animal that would have inhabited the rivers and streams and preyed on fish and aquatic tetrapods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eryops",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eryops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eryops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eryops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eryops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eryops"
 		}
 	]
 }

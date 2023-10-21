@@ -1,7 +1,7 @@
 {
 	"name": "Rautiania",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/rautiania_icon.png",
+	"icon": "paleopedia:textures/items/rautiania_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_rautiania",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rautiania",
 			"title": "Rautiania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands$(br2)>Reptilia$(br)>Weigeltisauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Weigeltisauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Rautiania was a gliding reptile from the Permian period. Its fossils have been found in Russia and they were largely adapted for life in the canopies of forests."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_rautiania",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rautiania"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rautiania"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rautiania"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rautiania"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rautiania"
 		}
 	]
 }

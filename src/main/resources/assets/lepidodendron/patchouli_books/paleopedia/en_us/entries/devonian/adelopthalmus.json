@@ -1,7 +1,7 @@
 {
 	"name": "Adelophthalmus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/adelophthalmus_icon.png",
+	"icon": "paleopedia:textures/items/adelophthalmus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_adelophthalmus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_adelophthalmus",
 			"title": "Adelophthalmus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Permian$(br2)$(l)Habitat:$() Freshwater and Reefs$(br2)>Eurypterida$(br)>Adelophthalmidae"
+			"text": "$(l)Temporal Range:$() Devonian-Permian$(br2)>Eurypterida$(br)>Adelophthalmidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Adelophthalmus is one of the longest surviving eurypterids, spanning four continents and living from the Devonian to the Permian periods, going extinct in the early Permian. They were very small compared to the apex predator eurypterids during the Devonian and Silurian periods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_adelophthalmus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_adelophthalmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_adelophthalmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_adelophthalmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_adelophthalmus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_adelophthalmus"
 		}
 	]
 }

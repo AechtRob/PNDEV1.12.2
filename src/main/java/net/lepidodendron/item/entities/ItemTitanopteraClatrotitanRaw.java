@@ -36,9 +36,9 @@ public class ItemTitanopteraClatrotitanRaw extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_titanoptera_clatrotitan", ItemTitanopteraClatrotitanRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemTitanopteraClatrotitanRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTitanopteraClatrotitanRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_titanoptera@clatrotitan", ItemTitanopteraClatrotitanRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemTitanopteraClatrotitanRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemTitanopteraClatrotitanRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

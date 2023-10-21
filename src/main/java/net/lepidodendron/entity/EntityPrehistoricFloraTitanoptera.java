@@ -4,14 +4,13 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
-import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
-import net.lepidodendron.item.entities.ItemBugRaw;
-import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -30,6 +29,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -65,9 +70,26 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraTitanoptera)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraTitanoptera)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraTitanoptera)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
@@ -265,7 +287,7 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	@Override
 	public ItemStack getPickedResult(RayTraceResult target)
 	{
-		if (target.entityHit instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+		if (target.entityHit instanceof EntityPrehistoricFloraTitanoptera) {
 			EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) target.entityHit;
 			switch (titanoptera.getPNType()) {
 				case CLATROTITAN: default:
@@ -312,14 +334,17 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 		this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
 		this.tasks.addTask(2, new EntityPrehistoricFloraCrawlingFlyingInsectBase.AIWanderInsect());
 		this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
-		this.tasks.addTask(4, new EntityAILookIdle(this));
+		this.tasks.addTask(4, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraCrawlingFlyingInsectBaseAI(this));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemBugRaw.block;
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
+
+
+
 
 	@Override
 	public int getTalkInterval() {

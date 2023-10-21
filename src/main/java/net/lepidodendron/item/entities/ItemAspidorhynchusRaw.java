@@ -6,12 +6,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -38,8 +38,8 @@ public class ItemAspidorhynchusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_aspidorhynchus", ItemAspidorhynchusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAspidorhynchusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAspidorhynchusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAspidorhynchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemAspidorhynchusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemAspidorhynchusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

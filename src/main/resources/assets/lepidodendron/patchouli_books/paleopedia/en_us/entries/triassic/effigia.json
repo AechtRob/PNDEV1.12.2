@@ -1,7 +1,7 @@
 {
 	"name": "Effigia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/effigia_icon.png",
+	"icon": "paleopedia:textures/items/effigia_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_effigia",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_effigia",
 			"title": "Effigia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xerics$(br2)>Pseudosuchia$(br)>Suchia$(br)>Poposauroidea$(br)>Shuvosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Suchia$(br)>Poposauroidea$(br)>Shuvosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Effigia okeeffeae was a species of shuvosaurid archosaur that lived during the Late Triassic in what is now New Mexico. This lightly built, toothless biped superficially resembled the much later ornithomimid dinosaurs, though this is a case of convergent evolution. It is thought to have fed by nipping and shearing vegetation using its sharp beak."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_effigia",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_effigia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_effigia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_effigia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_effigia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_effigia"
 		}
 	]
 }

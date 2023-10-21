@@ -1,0 +1,51 @@
+{
+	"name": "Duslia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/duslia_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_duslia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_duslia",
+			"title": "Duslia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Artiopoda $(br)>Vicissicaudata $(br)>Cheloniellida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/duslia.png"],
+			"title": "D. insignis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_duslia",
+			"type": "text",
+			"text": "Duslia is a creature from the Ordovician of the Czech Republic and Morocco. Being one of the few examples of a non-trilobite member of the Artiopods, Duslia itself is fairly enigmatic, though currently being placed within Cheloniellida. It was fairly large, of a circular-shape, soft bodied, comprised of several body-segments, and was completely blind, lacking any eyes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_duslia",
+			"type": "text",
+			"text": "The only fossil evidence of potential sensory structures being preserved are hair-like protrusions that run alongside the outer edges of the body and segments, which may have been sensory (or perhaps defensive) organs, giving the creature a somewhat frilly look."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_duslia"
+		}
+	]
+}

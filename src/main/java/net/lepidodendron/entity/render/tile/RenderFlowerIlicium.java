@@ -58,6 +58,7 @@ public class RenderFlowerIlicium extends TileEntitySpecialRenderer<BlockIliciumF
         GlStateManager.enableRescaleNormal();
         GlStateManager.alphaFunc(516, 0.1f);
         GlStateManager.enableBlend();
+        GlStateManager.disableCull();
         RenderHelper.enableStandardItemLighting();
         GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
         GlStateManager.pushMatrix();
@@ -102,6 +103,7 @@ public class RenderFlowerIlicium extends TileEntitySpecialRenderer<BlockIliciumF
         }
 
         GlStateManager.popMatrix();
+        GlStateManager.enableCull();
         GlStateManager.disableRescaleNormal();
         GlStateManager.disableBlend();
     }

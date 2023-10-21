@@ -1,0 +1,53 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {"model": "lepidodendron:birdsnest_fern_side", "y": 180}
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {"model": "lepidodendron:birdsnest_fern_side", "y": 270}
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {"model": "lepidodendron:birdsnest_fern_side"}
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {"model": "lepidodendron:birdsnest_fern_side", "y": 90}
+      ]
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": {
+        "model": "lepidodendron:birdsnest_fern"
+      }
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": {
+        "model": "lepidodendron:birdsnest_fern",
+        "x": 180
+      }
+    }
+  ]
+}

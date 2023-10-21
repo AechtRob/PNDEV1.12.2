@@ -37,6 +37,8 @@ public class ItemAcanthodesRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acanthodes", ItemAcanthodesRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAcanthodesRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemAcanthodesRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemAcanthodesRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

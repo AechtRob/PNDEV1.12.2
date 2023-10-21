@@ -1,0 +1,46 @@
+{
+	"name": "Villebrunaster",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/villebrunaster_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_villebrunaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_villebrunaster",
+			"title": "Villebrunaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata $(br)>Asterozoa $(br)>Somasteroidea $(br)>Villebrunasteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/villebrunaster.png"],
+			"title": "V. fezouataensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_villebrunaster",
+			"type": "text",
+			"text": "Villebrunaster is a starfish-like animal known from the Ordovician of Morocco and France. It had five arms which are evenly spread out in a pentagonal shape. Phylogenetic analysis indicates that Villebrunaster was the oldest and earliest diverging asterozoan."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_villebrunaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_villebrunaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_villebrunaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_villebrunaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_villebrunaster"
+		}
+	]
+}

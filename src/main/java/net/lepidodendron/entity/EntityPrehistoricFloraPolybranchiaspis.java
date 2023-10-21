@@ -4,7 +4,8 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
@@ -20,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -88,7 +90,12 @@ public class EntityPrehistoricFloraPolybranchiaspis extends EntityPrehistoricFlo
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.ALGAE);
 	}
 
 	@Override
@@ -114,7 +121,7 @@ public class EntityPrehistoricFloraPolybranchiaspis extends EntityPrehistoricFlo
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -141,7 +148,7 @@ public class EntityPrehistoricFloraPolybranchiaspis extends EntityPrehistoricFlo
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
@@ -162,56 +169,57 @@ public class EntityPrehistoricFloraPolybranchiaspis extends EntityPrehistoricFlo
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.POLYBRANCHIASPIS_LOOT;
 	}
+
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
+	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
-	public static double upperfrontverticallinedepth() {
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.4;
 	}
-	public static double upperbackverticallinedepth() {
+	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
-	public static double upperfrontlineoffset() {
+	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperfrontlineoffsetperpendiular() {
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double upperbacklineoffset() {
+	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double upperbacklineoffsetperpendiular() {
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
-	public static double lowerfrontverticallinedepth() {
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbackverticallinedepth() {
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerfrontlineoffset() {
+	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerfrontlineoffsetperpendiular() {
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
-	public static double lowerbacklineoffset() {
+	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
-	public static double lowerbacklineoffsetperpendiular() {
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay() {
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
 		return RenderPolybranchiaspis.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay() {
+	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelPolybranchiaspis;
 	}
-	public static float getScaler() {
+	public static float getScaler(@Nullable String variant) {
 		return RenderPolybranchiaspis.getScaler();
 	}
 

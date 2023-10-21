@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraCalvapilosa;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCalvapilosa extends AdvancedModelBase {
@@ -100,7 +99,7 @@ public class ModelCalvapilosa extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.15F);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -124,7 +123,7 @@ public class ModelCalvapilosa extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 1.28F;
+        //this.body.offsetY = 1.28F;
 
         EntityPrehistoricFloraCalvapilosa ee = (EntityPrehistoricFloraCalvapilosa) e;
 

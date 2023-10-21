@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.procedure.ProcedureWorldGenThamnobeatricea;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -68,7 +71,8 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:thamnobeatricea_sapling", BlockThamnobeatriceaSapling.block);
-		OreDictionary.registerOre("sponge", BlockThamnobeatriceaSapling.block);
+		OreDictionary.registerOre("itemSponge", BlockThamnobeatriceaSapling.block);
+		OreDictionary.registerOre("pndietSponge", BlockThamnobeatriceaSapling.block);
 	}
 
 
@@ -77,7 +81,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	protected static final AxisAlignedBB BUSH_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.6000000238418579D, 0.699999988079071D);
 
-	public static class BlockCustom extends Block implements IPlantable {
+	public static class BlockCustom extends Block implements IPlantable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.WATER);
 			setSoundType(SoundType.PLANT);
@@ -88,6 +92,12 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 			setTranslationKey("pf_thamnobeatricea_sapling");
 			this.setTickRandomly(true);
 			setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(STAGE, Integer.valueOf(0)));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_THAMNOBEATRICEA;
 		}
 
 		@Override
@@ -213,7 +223,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sponge");
+				tooltip.add("Type: Marine Sponge");
 				tooltip.add("Periods: Ordovician");
 				tooltip.add("Propagation: n/a");
 			}

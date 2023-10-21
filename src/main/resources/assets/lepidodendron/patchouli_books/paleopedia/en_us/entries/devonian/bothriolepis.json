@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bothriolepis",
 			"title": "Bothriolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian.$(br2)$(l)Habitat:$() Ocean, Reef, Floodpain, Brackish, Forest$(br2)>Antiarchi$(br)>Bothriolepididae"
+			"text": "$(l)Temporal Range:$() Devonian.$(br2)>Antiarchi$(br)>Bothriolepididae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "The pectoral fins of the were modified into large spike-like protrusions, but the use of these spikes aren’t known, and its hypothesized that they could have been used to disturb sediment or lift the animal off the ground. Specimens of this animal have been found preserving soft tissue, showing the gills, digestive system, and even rudimentary lungs, suggesting that Bothriolepis could breathe air!"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bothriolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bothriolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bothriolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bothriolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bothriolepis"
 		}
 	]
 }

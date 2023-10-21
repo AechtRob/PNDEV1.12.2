@@ -4,9 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostomatops;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -38,7 +36,8 @@ public class ItemAcanthostomatopsRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acanthostomatops", ItemAcanthostomatopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAcanthostomatopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthostomatopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemAcanthostomatopsRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemAcanthostomatopsRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

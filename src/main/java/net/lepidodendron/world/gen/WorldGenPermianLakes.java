@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockLavaRock;
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
 import net.lepidodendron.block.BlockPrehistoricGroundSandPangaean;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -38,6 +39,7 @@ public class WorldGenPermianLakes extends WorldGenerator
             position = position.down(4);
             boolean[] aboolean = new boolean[2048];
             int i = rand.nextInt(4) + 4;
+            BlockPos spawnPos = position;
 
             for (int j = 0; j < i; ++j)
             {
@@ -195,6 +197,7 @@ public class WorldGenPermianLakes extends WorldGenerator
                 }
             }
 
+            ChunkGenSpawner.executeProcedure(worldIn, spawnPos, rand, null, true, true);
             return true;
         }
     }

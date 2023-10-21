@@ -7,20 +7,21 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.ai.attributes.IAttributeInstance;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -28,7 +29,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -72,6 +73,101 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public boolean drinksWater() {
+		return false; //grazes, does not drink
+	}
+
+	@Override
+	public int getDrinkLength() {
+		return 40;
+	}
+
+	@Override
+	public int getDrinkCooldown() {
+		return 400;
+	}
+
+	private boolean isBlockGrazable(IBlockState state) {
+		return (state.getMaterial() == Material.GROUND);
+	}
+
+	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
+		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean isDrinking()
+	{
+		//Is GRAZING!
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test2 = false;
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+					(isBlockGrazable(this.world.getBlockState(entityPos.north().down()))
+					&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
+
+					|| (isBlockGrazable(this.world.getBlockState(entityPos.south().down()))
+					&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
+
+					|| (isBlockGrazable(this.world.getBlockState(entityPos.east().down()))
+					&& isGrazable(this.world, entityPos, EnumFacing.EAST))
+
+					|| (isBlockGrazable(this.world.getBlockState(entityPos.west().down()))
+					&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+				)
+		);
+		if (test) {
+			//Which one is Grazable?
+			EnumFacing facing = null;
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north().down()))) {
+				facing = EnumFacing.NORTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.2D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south().down()))) {
+				facing = EnumFacing.SOUTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.2D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east().down()))) {
+				facing = EnumFacing.EAST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west().down()))) {
+				facing = EnumFacing.WEST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.2D) {
+					test2 = true;
+				}
+			}
+			if (facing != null && test && test2) {
+				this.setDrinkingFrom(entityPos.offset(facing).down());
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test && test2;
+
+	}
+
+	@Override
 	public boolean dropsEggs() {
 		return false;
 	}
@@ -81,7 +177,7 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.485F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -125,11 +221,16 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.ROOTS, DietString.PLANTS);
 	}
 
 	@Override
@@ -137,15 +238,6 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -196,27 +288,32 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
+
+		if (this.getAnimation() == DRINK_ANIMATION) {
+			if ((!world.isRemote) && this.getAnimationTick() == Math.round(this.getAnimation().getDuration() * 0.75F)) {
+				ItemStack stack = new ItemStack(ItemRoots.block, 1);
+				int i = this.rand.nextInt(8);
+				boolean roots = false;
+				for (int ii = 4; ii < i; ii++) {
+					EntityItem entityToSpawn = new EntityItem(world, this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY() + 1, this.getDrinkingFrom().getZ() + 0.5, stack);
+					entityToSpawn.setPickupDelay(20);
+					entityToSpawn.addVelocity((world.rand.nextInt(3) - 1) * 0.05F,(world.rand.nextInt(3) + 1) * 0.05F,(world.rand.nextInt(3) - 1) * 0.05F);
+					world.spawnEntity(entityToSpawn);
+					roots = true;
+				}
+				if (roots) {
+					world.playSound(null, this.getDrinkingFrom(), SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+				}
+			}
+		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	@Override
-	public void launchAttack() {
-		if (this.getAttackTarget() != null) {
-			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttackTarget().addVelocity(0, 0.1, 0);
-			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
-		}
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

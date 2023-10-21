@@ -18,11 +18,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -33,7 +32,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -43,7 +42,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
+	public Animation HURT_ANIMATION;
 
 	public EntityPrehistoricFloraPanguraptor(World world) {
 		super(world);
@@ -52,7 +51,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		maxWidth = 0.6F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 15.0D;
-		NOISE_ANIMATION = Animation.create(20);
+		HURT_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -73,7 +72,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, HURT_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, ROAR_ANIMATION};
 	}
 
 	@Override
@@ -81,14 +80,13 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return 80;
 	}
 
-	@Override
-	public int getEatLength() {
-		return 20;
+	public int getRoarLength() {
+		return 30;
 	}
 
 	@Override
-	public int getRoarLength() {
-		return 40;
+	public int getEatLength() {
+		return 20;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -102,7 +100,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 18;
 	}
 
 	@Override
@@ -120,16 +118,16 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.270F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 4F;
+			speedBase = speedBase * 2.5F;
 		}
 		return speedBase;
 	}
@@ -137,28 +135,6 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	@Override
 	public int getTalkInterval() {
 		return 400;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
 	}
 
 	@Override
@@ -181,18 +157,25 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		tasks.addTask(3, new EntityAILeapAtTarget(this, 0.0F));
+		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(5, new PanicAI(this, 1.0));
+		tasks.addTask(6, new LandWanderNestAI(this));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
+//		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT, DietString.BUG);
 	}
 
 	@Override
@@ -200,13 +183,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -232,11 +209,6 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	            .getObject(new ResourceLocation("lepidodendron:panguraptor_idle"));
 	}
 
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:panguraptor_idle"));
-	}
-
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
@@ -247,6 +219,11 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:panguraptor_death"));
+	}
+
+	public SoundEvent getAttackSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:panguraptor_attack"));
 	}
 
 	@Override
@@ -263,18 +240,20 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+
+		if ((!world.isRemote) && this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5) {
+			SoundEvent soundevent = this.getAttackSound();
+			if (soundevent != null)
+			{
+				this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			}
 		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
+		if (this.getAnimation() == ATTACK_ANIMATION) {
+			if (this.getAttackTarget() != null) {
+				this.faceEntity(this.getAttackTarget(), 10F, 10F);
+			}
+			if (this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
+				launchAttack();
 			}
 		}
 

@@ -36,9 +36,8 @@ public class ItemOnychopterellaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_onychopterella", ItemOnychopterellaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemOnychopterellaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemOnychopterellaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemOnychopterellaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemOnychopterellaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemOnychopterellaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

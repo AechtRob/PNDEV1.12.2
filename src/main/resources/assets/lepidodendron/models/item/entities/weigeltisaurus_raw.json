@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:weigeltisaurus_icon"
+    "layer0": "paleopedia:items/weigeltisaurus_icon"
   }
 }

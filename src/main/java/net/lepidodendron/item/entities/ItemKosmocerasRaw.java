@@ -37,9 +37,8 @@ public class ItemKosmocerasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kosmoceras", ItemKosmocerasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemKosmocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKosmocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKosmocerasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemKosmocerasRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemKosmocerasRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -1,0 +1,46 @@
+{
+	"name": "Daohugoucossus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/daohugoucossus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_daohugoucossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_daohugoucossus",
+			"title": "Daohugoucossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Hemiptera $(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/daohugoucossus.png"],
+			"title": "D. lii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daohugoucossus",
+			"type": "text",
+			"text": "Daohugoucossus is a genus of \"giant cicada\" palaeontinid, from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. It had large-sized wings with preserved patterning, and probably had a similar ecology to living cicada."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_daohugoucossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_daohugoucossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_daohugoucossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_daohugoucossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_daohugoucossus"
+		}
+	]
+}

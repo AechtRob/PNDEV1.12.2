@@ -2,10 +2,10 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraIsotelus;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -471,32 +471,34 @@ public class ModelIsotelus extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyF = {this.Thorax1, this.Thorax2, this.Thorax3, this.Thorax4, this.Thorax5, this.Pygidium};
 
         if (isAtBottom) {
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            this.flap(LegLeft1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-            this.flap(LegRight1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-            this.flap(LegLeft2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft8, 0.5F, -0.5F, true, 7.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight8, 0.5F, 0.5F, true, 7.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft9, 0.5F, -0.5F, true, 8.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight9, 0.5F, 0.5F, true, 8.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft10, 0.5F, -0.5F, true, 9.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight10, 0.5F, 0.5F, true, 9.0F, 0.5F, f2, 0.3F);
-            this.flap(LegLeft11, 0.5F, -0.5F, true, 10.0F, -0.5F, f2, 0.3F);
-            this.flap(LegRight11, 0.5F, 0.5F, true, 10.0F, 0.5F, f2, 0.3F);
-            this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 1.0F);
-            this.chainWave(bodyF, 0.1F, 0.0f, -3, f2, 0F);
+            if (((EntityPrehistoricFloraIsotelus) e).getIsMoving()) {
+                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+                this.flap(LegLeft1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+                this.flap(LegRight1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+                this.flap(LegLeft2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft8, 0.5F, -0.5F, true, 7.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight8, 0.5F, 0.5F, true, 7.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft9, 0.5F, -0.5F, true, 8.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight9, 0.5F, 0.5F, true, 8.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft10, 0.5F, -0.5F, true, 9.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight10, 0.5F, 0.5F, true, 9.0F, 0.5F, f2, 0.3F);
+                this.flap(LegLeft11, 0.5F, -0.5F, true, 10.0F, -0.5F, f2, 0.3F);
+                this.flap(LegRight11, 0.5F, 0.5F, true, 10.0F, 0.5F, f2, 0.3F);
+                this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 1.0F);
+                this.chainWave(bodyF, 0.1F, 0.0f, -3, f2, 0F);
+            }
             this.bob(Isotelus, 0.0F, 0.0F, true, f2, 1);
         } else {
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraProganochelys;
 import net.lepidodendron.entity.EntityPrehistoricFloraYuxisaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
@@ -719,10 +718,40 @@ public class ModelYuxisaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
+        this.chest.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.rightArm.setScale(0,0,0);
+        this.leftArm.setScale(0,0,0);
+        this.rightArm.scaleChildren = true;
+        this.leftArm.scaleChildren = true;
+        this.chest.offsetY = -0.05F;
+        this.chest.offsetX = 0.0F;
+        this.chest.offsetZ = 0.15F;
+        this.chest.render(0.01F);
+        this.rightArm.setScale(1,1,1);
+        this.leftArm.setScale(1,1,1);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, 1.05F, 0.15F, -0.1F);
+        this.setRotateAngle(leftArm2, -1.75F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm3, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.4F, 0.15F, 0.1F);
+        this.setRotateAngle(rightLeg2, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.05F, 0.1F, 0.05F);
+        this.setRotateAngle(tail3, -0.05F, 0.1F, 0.07F);
+        this.setRotateAngle(tail4, -0.05F, 0.1F, 0.09F);
+        this.setRotateAngle(tail5, -0.05F, 0.1F, 0.12F);
+        this.setRotateAngle(head, 0.3F, -0.3F, 0.0F);
+        this.root.offsetY = -0.146F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -745,6 +774,7 @@ public class ModelYuxisaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.head};
+        entityYuxi.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (entityYuxi.getAnimation() == entityYuxi.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
@@ -4665,7 +4695,7 @@ public class ModelYuxisaurus extends AdvancedModelBaseExtended {
             yy = 1.5 + (((tickAnim - 27) / -27) * (-(1.5)));
             zz = 0 + (((tickAnim - 27) / -27) * (-(0)));
         }
-       
+
     }
 
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {

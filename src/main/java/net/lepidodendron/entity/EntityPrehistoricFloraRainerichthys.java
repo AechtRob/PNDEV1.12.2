@@ -4,11 +4,11 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWanderBottomDweller;
-import net.lepidodendron.entity.ai.ShoalFishBaseAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderRainerichthys;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -18,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -65,7 +66,7 @@ public class EntityPrehistoricFloraRainerichthys extends EntityPrehistoricFloraF
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.4f;
+		return 0.38f;
 	}
 
 	@Override
@@ -102,7 +103,12 @@ public class EntityPrehistoricFloraRainerichthys extends EntityPrehistoricFloraF
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
 		tasks.addTask(2, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -128,7 +134,7 @@ public class EntityPrehistoricFloraRainerichthys extends EntityPrehistoricFloraF
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -155,7 +161,7 @@ public class EntityPrehistoricFloraRainerichthys extends EntityPrehistoricFloraF
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
@@ -173,5 +179,54 @@ public class EntityPrehistoricFloraRainerichthys extends EntityPrehistoricFloraF
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.RAINERICHTHYS_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return -1.5;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderRainerichthys.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelRainerichthys;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderRainerichthys.getScaler();
+	}
 }

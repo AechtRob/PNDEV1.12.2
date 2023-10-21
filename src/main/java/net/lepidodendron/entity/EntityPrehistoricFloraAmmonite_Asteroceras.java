@@ -2,16 +2,11 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWander;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemNautiloidEggsAsteroceras;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -40,6 +35,11 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 	}
 
 	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
+	@Override
 	public boolean canShoal() {
 		return (!(this.getAlarmCooldown() > 0));
 	}
@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -86,8 +86,13 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
-        this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override
@@ -112,25 +117,11 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
-			//if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsAsteroceras.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-				this.setLaying(false);
-			//}
-			this.setTicks(0);
-		}
-
-
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemNautiloidEggsAsteroceras.block, (int) (1));
 	}
 
 	@Override

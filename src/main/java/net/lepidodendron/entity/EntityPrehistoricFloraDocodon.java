@@ -2,7 +2,8 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.render.entity.RenderPseudotherium;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.render.entity.RenderDocodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.DamageSource;
@@ -12,6 +13,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -28,10 +30,12 @@ public class EntityPrehistoricFloraDocodon extends EntityPrehistoricFloraMorganu
 
 	public static String getPeriod() {return "Jurassic";}
 
-	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.BUG, DietString.MEAT), DietString.FRUIT);
+	}
 
-
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.26F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -119,14 +123,14 @@ public class EntityPrehistoricFloraDocodon extends EntityPrehistoricFloraMorganu
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPseudotherium.TEXTURE;
+		return RenderDocodon.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPseudotherium;
+		return RenderDisplays.modelDocodon;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPseudotherium.getScaler();
+		return RenderDocodon.getScaler();
 	}
 
 }

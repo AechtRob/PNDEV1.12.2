@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMeganeura;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelMeganeuropsis extends AdvancedModelBase {

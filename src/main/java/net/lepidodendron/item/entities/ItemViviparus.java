@@ -51,9 +51,9 @@ public class ItemViviparus extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_viviparus", ItemViviparus.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemViviparus.block);
-		OreDictionary.registerOre("foodMeat", ItemViviparus.block);
 		OreDictionary.registerOre("itemShellfish", ItemViviparus.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemViviparus.block);
+		OreDictionary.registerOre("pndietShellfish", ItemViviparus.block);
 	}
 
 

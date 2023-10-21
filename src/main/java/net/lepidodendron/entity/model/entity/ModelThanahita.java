@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraHallucigenia;
 import net.lepidodendron.entity.EntityPrehistoricFloraThanahita;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

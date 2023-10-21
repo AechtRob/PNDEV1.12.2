@@ -203,7 +203,7 @@ public class StructureAraucarioxylonSpawn extends ElementsLepidodendronMod.ModEl
 	}
 
 	
-		public boolean shouldGenerateInDimension(int id, int[] dims) {
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
 		int[] var2 = dims;
 		int var3 = dims.length;
 		for (int var4 = 0; var4 < var3; ++var4) {

@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -79,7 +82,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:selaginella", "inventory"));
 	}
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -101,6 +104,17 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 			this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, true));
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SELAGINELLA;
 		}
 
 		@Override
@@ -1411,7 +1425,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Proto-plant / moss");
+				tooltip.add("Type: Mat-forming Lycophyte plant");
 	        tooltip.add("Periods: Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
 	        tooltip.add("Note: spreads to surrounding block faces and over liquids.");
 	        tooltip.add("Propagation: spores");}

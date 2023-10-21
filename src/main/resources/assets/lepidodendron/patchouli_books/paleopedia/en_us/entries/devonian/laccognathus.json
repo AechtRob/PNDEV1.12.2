@@ -1,7 +1,7 @@
 {
 	"name": "Laccognathus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/laccognathus_icon.png",
+	"icon": "paleopedia:textures/items/laccognathus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_laccognathus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_laccognathus",
 			"title": "Laccognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish, Swamp, Forest$(br2)>Porolepiformes$(br)>Holoptychiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Porolepiformes$(br)>Holoptychiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Laccognathus was a lobe finned fish with short dorsoventrally flattened heads. Large areas of its skin was stretched out over solid plates of bone, and the bone was composed of dense fibers that meant that exchange of oxygen through the skin was not likely by Laccognathus. It is suggested that Laccognathus could have moved onto land for short periods of time to traverse different bodies of water."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_laccognathus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_laccognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_laccognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_laccognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_laccognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_laccognathus"
 		}
 	]
 }

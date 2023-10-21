@@ -1,7 +1,7 @@
 {
 	"name": "Megarachne",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/megarachne_icon.png",
+	"icon": "paleopedia:textures/items/megarachne_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_megarachne",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megarachne",
 			"title": "Megarachne",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Freshwater$(br2)>Eurypterida$(br)>Mycteropoidea$(br)>Mycteroptidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Eurypterida$(br)>Mycteropoidea$(br)>Mycteroptidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Megarachne, once thought to be a giant spider, is actually a eurypterid or sea scorpion from the Late Carboniferous period. It was relatively large and was a freshwater predator, hunting and preying on small invertebrates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megarachne",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megarachne"
 		}
 	]
 }

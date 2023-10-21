@@ -51,9 +51,9 @@ public class ItemMaclurina extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_maclurina", ItemMaclurina.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMaclurina.block);
-		OreDictionary.registerOre("foodMeat", ItemMaclurina.block);
 		OreDictionary.registerOre("itemShellfish", ItemMaclurina.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemMaclurina.block);
+		OreDictionary.registerOre("pndietShellfish", ItemMaclurina.block);
 	}
 
 	public static class ItemCustom extends Item {

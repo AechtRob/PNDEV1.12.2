@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -77,7 +80,7 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	
-	public static class BlockCustom extends SeedSporeBlockBase {
+	public static class BlockCustom extends SeedSporeBlockBase implements IAdvancementGranter {
 	    
 		public BlockCustom() {
 			super(Material.WATER);
@@ -89,6 +92,12 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(3);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BOLBITIS;
 		}
 
 		@Override
@@ -251,7 +260,7 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Water Fern");
-				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: early Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 				tooltip.add("Note: planted 2-3 blocks under water");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:ticoa_sapling" },
+        "stage=1": { "model": "lepidodendron:ticoa_sapling" }
+    }
+}

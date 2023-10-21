@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -266,20 +265,19 @@ public class ModelHadronector extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.main.offsetY = -0.13F;
-        this.main.offsetX = -0.06F;
+        this.main.offsetZ = -0.32F;
+        this.main.offsetY = -0.18F;
+        this.main.offsetX = -0.0F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(main, 0.7418F, (float) Math.toRadians(90), 0.0F);
-        this.setRotateAngle(cube_r1, -0.5585F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, -0.8552F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r3, 1.2741F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.9599F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r5, 0.9774F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r6, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.main.offsetY = -0.14F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

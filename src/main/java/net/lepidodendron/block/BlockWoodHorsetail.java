@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -38,6 +41,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -72,7 +76,7 @@ public class BlockWoodHorsetail extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("leavesHorsetail", BlockWoodHorsetail.block);
 	}
 
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -89,6 +93,12 @@ public class BlockWoodHorsetail extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_wood_horsetail");
 			setRegistryName("wood_horsetail");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_WOOD_HORSETAIL;
 		}
 
 		@Override
@@ -273,6 +283,10 @@ public class BlockWoodHorsetail extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
 			//System.err.println("Light at " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " is " + worldIn.getBlockState(pos.down()).getLightValue());
 
 			double getLight = worldIn.getLight(pos);

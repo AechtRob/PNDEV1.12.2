@@ -10,19 +10,13 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -35,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +49,26 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 25;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
 	}
 
 	@Override
@@ -82,12 +96,12 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 30;
 	} //Idle
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 20;
 	} //Roar
 
 	@Override
@@ -115,8 +129,8 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		return true;
 	}
 
-	protected float getAISpeedLand() {
-		float speedBase = 0.35F;
+	public float getAISpeedLand() {
+		float speedBase = 0.305F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -134,10 +148,6 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 	@Override
 	public int getTalkInterval() {
 		return 360;
-	}
-
-	@Override
-	public int getRoarInterval() {return 900;
 	}
 
 	@Override
@@ -180,23 +190,23 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
+
+	
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -255,11 +265,10 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 	public void onLivingUpdate() {
 
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
 			if (this.getAnimationTick() == 18) {
-				launchAttack();
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
@@ -268,10 +277,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 				}
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				if (this.getOneHit()) {
-					this.setAttackTarget(null);
-					this.setRevengeTarget(null);
-				}
+				launchAttack();
 			}
 		}
 
@@ -354,15 +360,15 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		return 0.2;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderMegalosaurus.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelMegalosaurus;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderMegalosaurus.getScaler();
-	}
+//	@SideOnly(Side.CLIENT)
+//	public static ResourceLocation textureDisplay(@Nullable String variant) {
+//		return RenderMegalosaurus.TEXTURE;
+//	}
+//	@SideOnly(Side.CLIENT)
+//	public static ModelBase modelDisplay(@Nullable String variant) {
+//		return RenderDisplays.modelMegalosaurus;
+//	}
+//	public static float getScaler(@Nullable String variant) {
+//		return RenderMegalosaurus.getScaler();
+//	}
 }

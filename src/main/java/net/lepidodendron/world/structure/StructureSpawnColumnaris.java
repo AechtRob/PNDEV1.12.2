@@ -28,7 +28,7 @@ public class StructureSpawnColumnaris extends ElementsLepidodendronMod.ModElemen
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAraucariaColumnaris))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAraucariaColumnaris && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAraucariaColumnaris && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

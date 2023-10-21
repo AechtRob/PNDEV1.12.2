@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockStromatolite;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -91,8 +92,8 @@ public class WorldGenStromatoliteReefCambrian extends WorldGenerator
                     while (zct <= (startRadius + 3)) {
                         BlockPos pos1 = position.add(xct, yct, zct);
                         //System.err.println("Testing block: " + pos1.getX() + " " + pos1.getY() + " " + pos1.getZ());
-                        if ((worldIn.getBlockState(pos1).getBlock() == Blocks.WATER || (worldIn.getBlockState(pos1).getBlock() == Blocks.FLOWING_WATER))
-                                && (worldIn.getBlockState(pos1.up()).getBlock() == Blocks.WATER || (worldIn.getBlockState(pos1.up()).getBlock() == Blocks.FLOWING_WATER)))
+                        if ((Functions.isWater(worldIn, pos1))
+                                && (Functions.isWater(worldIn, pos1.up())))
                         {
                             //System.err.println("Block is water: " + pos1.getX() + " " + pos1.getY() + " " + pos1.getZ());
                             //figure out a position and facing to place this at!

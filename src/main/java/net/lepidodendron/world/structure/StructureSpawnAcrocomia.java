@@ -30,7 +30,7 @@ public class StructureSpawnAcrocomia extends ElementsLepidodendronMod.ModElement
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAcrocomia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAcrocomia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAcrocomia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

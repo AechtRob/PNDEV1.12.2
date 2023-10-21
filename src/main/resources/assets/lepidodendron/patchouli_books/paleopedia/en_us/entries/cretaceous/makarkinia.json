@@ -1,0 +1,46 @@
+{
+	"name": "Makarkinia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_makarkinia_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_makarkinia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_makarkinia",
+			"title": "Makarkinia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/makarkinia.png"],
+			"title": "M. kerneri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_makarkinia",
+			"type": "text",
+			"text": "Makarkinia is a genus of kalligrammatid lacewing described from Crato Formation, Early Cretaceous of Brazil. It is the largest member of kalligrammatidae with a wingspan close to 30 cm. Although fossils are fragmentary, at least some species are identified to have eyespots."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@makarkinia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@makarkinia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@makarkinia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@makarkinia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@makarkinia"
+		}
+	]
+}

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arandaspis",
 			"title": "Arandaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean & Bryozoan Reef$(br2)>Pteraspidomorphi$(br)>Arandaspididae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Pteraspidomorphi$(br)>Arandaspididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Arandaspis is a primitive jawless fish whose name comes from a local aboriginal tribe, the Aranda(also called the Arrernte). It was about 15cm long and had a streamlined body covered in rows of armored scutes. The front of the body and head were protected by hard plates with openings for eyes, nostrils and gills. It was probably a filter feeder."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_arandaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arandaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arandaspis"
 		}
 	]
 }

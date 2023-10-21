@@ -7,19 +7,16 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderVadasaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -31,7 +28,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -76,15 +73,10 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 	}
 
 	@Override
-	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
 	public boolean breathesAir() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean dropsEggs() {
 		return false;
@@ -92,6 +84,16 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 
 	@Override
 	public boolean laysEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
 		return true;
 	}
 
@@ -108,25 +110,9 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 	}
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
+		return (
+				nestBlockMatch(world, pos)
+		);
 	}
 
 	@Override
@@ -153,26 +139,23 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new LandWanderNestAI(this));
+		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
 		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.65, 90));
-		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(6, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(6, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
-		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
@@ -259,19 +242,16 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
+
 
 	@Override
 	public void onEntityUpdate() {
@@ -295,6 +275,58 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.VADASAURUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.75;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.005;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.01F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderVadasaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelVadasaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderVadasaurus.getScaler();
 	}
 
 }

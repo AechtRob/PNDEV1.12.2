@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -74,7 +77,7 @@ public class BlockMarattia extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockMarattia.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_marattia");
@@ -85,6 +88,12 @@ public class BlockMarattia extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(1);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MARATTIA;
 		}
 
 		@Override
@@ -259,7 +268,7 @@ public class BlockMarattia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern");
-	        tooltip.add("Periods: late Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+	        tooltip.add("Periods: Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

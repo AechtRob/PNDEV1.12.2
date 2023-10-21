@@ -1,7 +1,7 @@
 {
 	"name": "Thrinaxodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/thrinaxodon_icon.png",
+	"icon": "paleopedia:textures/items/thrinaxodon_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_thrinaxodon",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thrinaxodon",
 			"title": "Thrinaxodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Temperate Forest, Moss Meadow$(br2)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Thrinaxodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Thrinaxodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Thrinaxodon is a cynodont that lived just after the P-T mass extincation event. Its survival was likely due to its burrowing habit. It displayed a sprawling posture and it was medium sized, possibly covered in hair and was carnivorous. There is also a famous specimen discovered in a burrow together with a Broomistega."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_thrinaxodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thrinaxodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thrinaxodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thrinaxodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thrinaxodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thrinaxodon"
 		}
 	]
 }

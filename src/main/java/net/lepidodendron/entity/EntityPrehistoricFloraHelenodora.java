@@ -3,37 +3,34 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.block.BlockAncientMoss;
-import net.lepidodendron.block.BlockDollyphyton;
-import net.lepidodendron.block.BlockEdwardsiphyton;
-import net.lepidodendron.block.BlockSelaginella;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.*;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
-import net.lepidodendron.entity.render.entity.RenderGyrosteus;
 import net.lepidodendron.entity.render.entity.RenderHelenodora;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.entities.ItemLandSnail;
-import net.minecraft.block.Block;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -55,10 +52,14 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}
-
 
 	public static String getPeriod() {
 		return "Carboniferous";
@@ -87,7 +88,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.1f;
 	}
 
@@ -115,12 +116,13 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack) {
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemMoss"), stack));
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MOSS);
 	}
 
 	@Override
@@ -162,15 +164,19 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemUnknownEggLand.block, (int) (1));
+	}
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();
-		if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
+		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
 				&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
 				|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
 				|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
@@ -182,12 +188,35 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 
 	}
 
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
+	{
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.HELENODORA_LOOT;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
+			{
+				NBTTagCompound variantNBT = new NBTTagCompound();
+				variantNBT.setString("PNType", "");
+				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+				variantNBT.setString("PNDisplaycase", stringEgg);
+				itemstack.setTagCompound(variantNBT);
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		}
+		else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
 
+	}
+
+	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return null;
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 	public static double offsetWall(@Nullable String variant) {
@@ -219,11 +248,11 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	}
 
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.5;
+		return 0.0;
 	}
 
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2.2;
+		return 0.0;
 	}
 
 	public static double lowerfrontlineoffset(@Nullable String variant) {

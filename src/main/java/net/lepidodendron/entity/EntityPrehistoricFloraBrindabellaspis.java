@@ -6,17 +6,16 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderBrindabellaspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -112,14 +111,15 @@ public class EntityPrehistoricFloraBrindabellaspis extends EntityPrehistoricFlor
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1, 0));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
+
+	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -171,7 +171,7 @@ public class EntityPrehistoricFloraBrindabellaspis extends EntityPrehistoricFlor
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 

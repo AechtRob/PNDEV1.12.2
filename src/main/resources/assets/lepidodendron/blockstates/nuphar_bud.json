@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "var=false": {
+      "model": "lepidodendron:nuphar_bud_1"
+    },
+    "var=true": {
+      "model": "lepidodendron:nuphar_bud_2"
+    }
+  }
+}

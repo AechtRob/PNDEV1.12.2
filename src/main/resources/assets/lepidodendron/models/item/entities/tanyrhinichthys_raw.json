@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/tanyrhinichthys_raw"
+    "layer0": "paleopedia:items/tanyrhinichthys_icon"
   }
 }

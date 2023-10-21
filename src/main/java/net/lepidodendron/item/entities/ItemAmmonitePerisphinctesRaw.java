@@ -37,12 +37,11 @@ public class ItemAmmonitePerisphinctesRaw extends ElementsLepidodendronMod.ModEl
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_perisphinctes", ItemAmmonitePerisphinctesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAmmonitePerisphinctesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAmmonitePerisphinctesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmmonitePerisphinctesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemAmmonitePerisphinctesRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemAmmonitePerisphinctesRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_ammonite_perisphinctes_raw");

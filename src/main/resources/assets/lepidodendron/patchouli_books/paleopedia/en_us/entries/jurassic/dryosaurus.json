@@ -1,7 +1,7 @@
 {
 	"name": "Dryosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dryosaurus_icon.png",
+	"icon": "paleopedia:textures/items/dryosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_dryosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dryosaurus",
 			"title": "Dryosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Dryosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Dryosauridae"
 		},
 		{
 			"type": "image",
@@ -28,14 +28,24 @@
 			"text": "In the past Valdosaurus and Dysalotosaurus were considered to be synonyms of Dryosaurus but, with further research, this hypothesis was widely discredited. Unlike its african cousin Dysalotosaurus, the legs of Dryosaurus were not adapted for running as much as they were for walking, trait that could be due to the more forested environments they lived in, where running wasn't as efficient."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dryosaurus"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
-			"type": "text",
-			"text": ""
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dryosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dryosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dryosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dryosaurus"
 		}
 	]
 }

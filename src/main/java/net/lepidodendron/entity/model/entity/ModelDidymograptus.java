@@ -77,7 +77,7 @@ public class ModelDidymograptus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.full.render(f5 * 0.36F);
+        this.full.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -91,7 +91,7 @@ public class ModelDidymograptus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.full.offsetY = 0.9F;
+        //this.full.offsetY = 0.9F;
 
         AdvancedModelRenderer[] Right = {this.right, this.boneR};
         AdvancedModelRenderer[] Left = {this.left, this.boneL};
@@ -105,6 +105,15 @@ public class ModelDidymograptus extends AdvancedModelBase {
 
             this.chainWave(Right, 0.12F, 0.15F, 1F, f2, 0.5F);
             this.chainWave(Left, 0.12F, 0.15F, -1F, -f2, -0.5F);
+        }
+
+        if (!e.isInWater()) {
+            this.resetToDefaultPose();
+            this.full.rotateAngleZ = (float) Math.toRadians(90);
+            this.full.offsetY = 0.0F;
+            this.full.scaleChildren = true;
+            this.full.setScaleX(0.2F);
+            this.full.setScaleZ(1.2F);
         }
     }
 }

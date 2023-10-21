@@ -8,20 +8,16 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderPostosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -32,24 +28,23 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraPostosuchus(World world) {
 		super(world);
-		setSize(0.85F, 1.82F);
+		setSize(0.95F, 1.92F);
 		minWidth = 0.12F;
-		maxWidth = 0.85F;
-		maxHeight = 1.82F;
+		maxWidth = 0.95F;
+		maxHeight = 1.92F;
 		maxHealthAgeable = 60.0D;
 		NOISE_ANIMATION = Animation.create(25);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -80,20 +75,6 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
-					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
-						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
-					&& world.isAirBlock(pos));
-		}
-		return match;
-	}
-
 	public boolean testLay(World world, BlockPos pos) {
 		return (
 				nestBlockMatch(world, pos)
@@ -106,13 +87,19 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == ROAR_ANIMATION //warning a player
+			|| animation == DRINK_ANIMATION;
+	}
+
+	@Override
 	public int getDrinkLength() {
 		return 60;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 40;
 	}
 
 	@Override
@@ -131,7 +118,7 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 30;
 	}
 
 	@Override
@@ -149,46 +136,31 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	protected float getAISpeedLand() {
-		float speedBase = 0.580F;
+	public float getAISpeedLand() {
+		float speedBase = 0.3750F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			return 0.0F; //Is drinking
 		}
-		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+		if (this.getIsSneaking()) {
+			speedBase = speedBase * 0.5F;
+		}
+		else if (this.getIsFast()) {
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
 	}
 
 	@Override
-	public int getTalkInterval() {
-		return 500;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 160;
+	public float getSneakRange() {
+		return 8;
 	}
 
 	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			//if (rand.nextInt(6) != 0) {
-				SoundEvent soundevent = this.getAmbientAmbientSound();
-				if (soundevent != null) {
-					if (this.getAnimation() == NO_ANIMATION) {
-						this.setAnimation(NOISE_ANIMATION);
-						//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-						this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-					}
-				}
-			//}
-		}
+	public int getTalkInterval() {
+		return 500;
 	}
 
 	@Override
@@ -218,21 +190,19 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(9, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		//this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -255,12 +225,12 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:postosuchus_idle"));
 	}
 
-	public SoundEvent getAmbientAmbientSound() {
+	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:postosuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
 	}
 
 	@Override
@@ -284,24 +254,13 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
+
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

@@ -1,7 +1,7 @@
 {
 	"name": "Neeyambaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/neeyambaspis_icon.png",
+	"icon": "paleopedia:textures/items/neeyambaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_neeyambaspis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_neeyambaspis",
 			"title": "Neeyambaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish$(br2)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Like its cousin, this animal too had pits at the base of the head hinting they might've possessed pectoral fins growing from the base of the shield. Due to the potential presence of these fins and a few characters of the headshield, Pituriaspids have been placed closer to Osteostracans compared to Galeaspids, although how they are related to each other is still unclear."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_neeyambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_neeyambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_neeyambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_neeyambaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_neeyambaspis"
 		}
 	]
 }

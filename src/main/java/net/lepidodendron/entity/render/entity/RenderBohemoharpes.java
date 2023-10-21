@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderBohemoharpes extends RenderLiving<EntityPrehistoricFloraBohemoharpes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bohemoharpes.png");
 
+    public static float getScaler() {
+        return 0.3F * 0.65F;
+    }
+
     public RenderBohemoharpes(RenderManager mgr) {
         super(mgr, new ModelBohemoharpes(), 0.0f);
     }
@@ -26,7 +30,7 @@ public class RenderBohemoharpes extends RenderLiving<EntityPrehistoricFloraBohem
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBohemoharpes entity, float f) {
-        float scale = 0.65F;
+        float scale = this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

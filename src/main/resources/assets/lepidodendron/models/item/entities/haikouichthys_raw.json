@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:haikouichthys_icon"
+    "layer0": "paleopedia:items/haikouichthys_icon"
   },
   "display": {
     "ground": {

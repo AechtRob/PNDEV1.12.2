@@ -1,7 +1,7 @@
 {
 	"name": "Ctenospondylus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ctenospondylus_icon.png",
+	"icon": "paleopedia:textures/items/ctenospondylus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ctenospondylus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ctenospondylus",
 			"title": "Ctenospondylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest, Wetlands$(br2)>Synapsida$(br)>Sphenacodontidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Sphenacodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ctenospondylus is a sphenacodontid from the Permian period. It had a much shorter sail than Dimetrodon but it would have competed with Dimetrodon for food in its environment. Ctenospondylus could grow up to 3 meters long."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ctenospondylus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ctenospondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ctenospondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ctenospondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ctenospondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ctenospondylus"
 		}
 	]
 }

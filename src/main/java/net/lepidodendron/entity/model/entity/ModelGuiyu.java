@@ -227,7 +227,7 @@ public class ModelGuiyu extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Guiyu.rotateAngleY = (float) Math.toRadians(90);
-        this.Guiyu.offsetY = -0.13F;
+        this.Guiyu.offsetY = -0.20F;
         this.Guiyu.offsetX = -0.06F;
         this.Guiyu.render(0.01F);
         resetToDefaultPose();

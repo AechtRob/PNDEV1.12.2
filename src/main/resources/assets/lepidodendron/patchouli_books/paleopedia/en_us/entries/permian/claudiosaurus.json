@@ -1,7 +1,7 @@
 {
 	"name": "Claudiosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/claudiosaurus_icon.png",
+	"icon": "paleopedia:textures/items/claudiosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_claudiosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_claudiosaurus",
 			"title": "Claudiosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Beaches$(br2)>Reptilia$(br)>Eosuchia$(br)>Claudiosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Eosuchia$(br)>Claudiosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Claudiosaurus is a diapsid reptile from the Permian period. It had a longer body and tail and grew up to 60 cm in length. They were also adapted for aquatic life and probably spent most of their time in the water, coming onto land sometimes only to lay its eggs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_claudiosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_claudiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_claudiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_claudiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_claudiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_claudiosaurus"
 		}
 	]
 }

@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAngustidontus;
-import net.lepidodendron.entity.EntityPrehistoricFloraAnomalocaris;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -383,14 +382,18 @@ public class ModelAngustidontus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bone.render(f5);
     }
-
-    public void renderStaticDisplayCase(float f) {
-        this.bone.offsetZ = -0.15F;
-        this.bone.offsetY = -0.13F;
-        this.bone.render(0.018f);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone, 0.1F, 0.0F, 0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.2F, 0.1F, 0.0F);
+        this.bone.offsetY = -0.4F;
+        this.bone.render(0.018f);
         resetToDefaultPose();
     }
 

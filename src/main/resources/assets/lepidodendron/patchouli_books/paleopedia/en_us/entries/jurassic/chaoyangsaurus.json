@@ -1,7 +1,7 @@
 {
 	"name": "Chaoyangsaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/chaoyangsaurus_icon.png",
+	"icon": "paleopedia:textures/items/chaoyangsaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_chaoyangsaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_chaoyangsaurus",
 			"title": "Chaoyangsaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Chaoyangsaurus is a basal ceratopsian described from Tuchengzi Formation, Liaoning, China. Only known from a skull and some postcranial elements, it was a smaller chaoyangsaurid with skull around 14 cm."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_chaoyangsaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangsaurus"
 		}
 	]
 }

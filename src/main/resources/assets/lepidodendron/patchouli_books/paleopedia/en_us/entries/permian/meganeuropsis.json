@@ -1,7 +1,7 @@
 {
 	"name": "Meganeuropsis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/meganeuropsis_icon.png",
+	"icon": "paleopedia:textures/items/meganeuropsis_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_meganeuropsis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_meganeuropsis",
 			"title": "Meganeuropsis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands$(br2)>Insecta$(br)>Odonatoptera$(br)>Meganisoptera$(br)>Meganeuridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Insecta$(br)>Odonatoptera$(br)>Meganisoptera$(br)>Meganeuridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Meganeuropsis is a large griffinfly from the Permian period. It was related to the famous Meganeura of the Carboniferous but was larger. However, it was very similar in shape. Its fossils have been found in the United States."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_meganeuropsis",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_meganeuropsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_meganeuropsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_meganeuropsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_meganeuropsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_meganeuropsis"
 		}
 	]
 }

@@ -1,7 +1,7 @@
 {
 	"name": "Brindabellaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/brindabellaspis_icon.png",
+	"icon": "paleopedia:textures/items/brindabellaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_brindabellaspis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brindabellaspis",
 			"title": "Brindabellaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reefs$(br2)>Brindabellaspida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Brindabellaspida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Brindabellaspis is a basal placoderm from the Early Devonian Taemas-Wee Jasper Reef in Australia. It was a slender fish characterized by a shovel like snout with which it may have used to disrupt the sediment when searching for food. It is now thought to be one of the closest fish to the first placoderms because of similarities between its brain and those of agnathans."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_brindabellaspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brindabellaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brindabellaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brindabellaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brindabellaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brindabellaspis"
 		}
 	]
 }

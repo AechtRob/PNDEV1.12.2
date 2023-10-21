@@ -266,7 +266,7 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.17F);
+        this.body.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

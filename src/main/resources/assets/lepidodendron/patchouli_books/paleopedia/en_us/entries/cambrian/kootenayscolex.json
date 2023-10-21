@@ -1,0 +1,46 @@
+{
+	"name": "Kootenayscolex",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kootenayscolex_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_kootenayscolex",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kootenayscolex",
+			"title": "Kootenayscolex",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Annelida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/kootenayscolex.png"],
+			"title": "K. barbarensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kootenayscolex",
+			"type": "text",
+			"text": "Kootenayscolex was discovered in the Cambrian Burgess Shale in 2018. It is thuoght to have been an annelid worm, which lived in the sea. It has many bristles along its sides, probably to aid movment. They grew up to around 3cm long, and are thought to have sifted the sediments on the sea floor, filtering them for food."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kootenayscolex"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kootenayscolex"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kootenayscolex"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kootenayscolex"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kootenayscolex"
+		}
+	]
+}

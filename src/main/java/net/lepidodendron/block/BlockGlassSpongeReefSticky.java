@@ -3,6 +3,9 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -28,10 +31,13 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -40,6 +46,12 @@ public class BlockGlassSpongeReefSticky extends ElementsLepidodendronMod.ModElem
 	public static final Block block = null;
 	public BlockGlassSpongeReefSticky(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.glass_sponge_reef);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pndietSponge", BlockGlassSpongeReefSticky.block);
 	}
 
 	@Override
@@ -57,7 +69,7 @@ public class BlockGlassSpongeReefSticky extends ElementsLepidodendronMod.ModElem
 				new ModelResourceLocation("lepidodendron:glass_sponge_reef_sticky", "inventory"));
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.CORAL);
@@ -68,6 +80,12 @@ public class BlockGlassSpongeReefSticky extends ElementsLepidodendronMod.ModElem
 			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_REEF_GLASS_SPONGE;
 		}
 
 		/*

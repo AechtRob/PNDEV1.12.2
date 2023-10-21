@@ -1,7 +1,7 @@
 {
 	"name": "Tomlinsonus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/tomlinsonus_icon.png",
+	"icon": "paleopedia:textures/items/tomlinsonus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_tomlinsonus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tomlinsonus",
 			"title": "Tomlinsonus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Tomlinsonus is a marrellomorph that walked on stilted legs from the Ordovician period. It had spines on its body that each had little spines along them, making it look like feathers. They had a head shield with 2 curved horns and segmented bodies similar to other arthropods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tomlinsonus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tomlinsonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tomlinsonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tomlinsonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tomlinsonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tomlinsonus"
 		}
 	]
 }

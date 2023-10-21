@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_platycaraspis",
 			"title": "Microphymaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Lagoon$(br2)>Galeaspida$(br)>Dayongaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Galeaspida$(br)>Dayongaspidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Microphymaspis was a jawless fish from the Silurian with a very unique headshield. Like other galeaspids, which all had weird looking headshields, Microphymaspis also had a hole on the top of its head, which was not its actual mouth. It probably was an active swimmer, and searched for food on the seafloor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_platycaraspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_platycaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_platycaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_platycaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_platycaraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_platycaraspis"
 		}
 	]
 }

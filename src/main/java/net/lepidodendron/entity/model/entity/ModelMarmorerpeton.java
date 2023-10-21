@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraChunerpeton;
 import net.lepidodendron.entity.EntityPrehistoricFloraMarmorerpeton;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
@@ -264,13 +263,32 @@ public class ModelMarmorerpeton extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-
-    public void renderStaticPlinth(float f) {
-        this.Jaw.rotateAngleX = (float) Math.toRadians(23);
-        this.Hips.render(0.01F);
+    public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(Chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.Body.offsetY = -0.04F;
+        this.Body.offsetX = 0.0F;
+        this.Body.offsetZ = 0.0F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Chest, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.Hips.offsetZ = -0.06F;
+        this.Hips.offsetY = 0.055F;
         this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

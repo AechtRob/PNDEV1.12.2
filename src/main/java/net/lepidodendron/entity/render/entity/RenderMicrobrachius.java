@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMicrobrachius extends RenderLiving<EntityPrehistoricFloraMicrobrachius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microbrachius_male.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microbrachius_female.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microbrachius_female.png");
 
     public static float getScaler() {
         return 0.7F * 0.295F;
@@ -21,7 +21,7 @@ public class RenderMicrobrachius extends RenderLiving<EntityPrehistoricFloraMicr
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMicrobrachius entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraMicrobrachius.Type.FEMALE) {
             return RenderMicrobrachius.TEXTURE_F;
         }
         return RenderMicrobrachius.TEXTURE;

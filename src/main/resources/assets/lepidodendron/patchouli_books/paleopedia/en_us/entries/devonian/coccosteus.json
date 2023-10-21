@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_coccosteus",
 			"title": "Coccosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Ocean, Brackish, Forest, Floodplain, Vale$(br2)>Arthrodira$(br)>Coccosteidae"
+			"text": "$(l)Temporal Range: $()Devonian$(br2)>Arthrodira$(br)>Coccosteidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Coccosteus' name comes from the Greek 'kokkos' meaning berry and 'osteon' meaning bone. It was about 24 centimeters in length, and some subspecies may have been freshwater species. Coccosteus had an internal joint between its neck and skull which allowed the mouth to open wider, possibly allowing it to eat larger prey"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_coccosteus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_coccosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_coccosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_coccosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_coccosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_coccosteus"
 		}
 	]
 }

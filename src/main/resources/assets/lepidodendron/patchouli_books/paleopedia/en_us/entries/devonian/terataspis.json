@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_terataspis",
 			"title": "Terataspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean, Dead Reef$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Terataspis was a large trilobite that lived in shallow seas. It was very spiny, with its entire body covered in spines and tubercles of varying sizes. Its thorax comprised of around 11 segments. Terataspis was probably a detritivore that preyed on small burrowing animals like worms."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_terataspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_terataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_terataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_terataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_terataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_terataspis"
 		}
 	]
 }

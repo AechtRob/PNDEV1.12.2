@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north", "extended": false
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "east", "extended": false
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south", "extended": false
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall"
+      }
+    },
+    {
+      "when": {
+        "facing": "west", "extended": false
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north", "extended": true
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall_extended",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "east", "extended": true
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall_extended",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south", "extended": true
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall_extended"
+      }
+    },
+    {
+      "when": {
+        "facing": "west", "extended": true
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor_wall_extended",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor"
+      }
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": {
+        "model": "lepidodendron:lamp_outdoor", "x": 180
+      }
+    }
+  ]
+}

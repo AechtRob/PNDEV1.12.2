@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:laurus_fruit"
+      "item": "lepidodendron:laurus_fruit"
     }
   ],
   "result": {

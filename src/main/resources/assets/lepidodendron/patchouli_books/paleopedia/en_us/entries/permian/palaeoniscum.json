@@ -1,7 +1,7 @@
 {
 	"name": "Palaeoniscum",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/palaeoniscum_icon.png",
+	"icon": "paleopedia:textures/items/palaeoniscum_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeoniscum",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeoniscum",
 			"title": "Palaeoniscum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Interestingly enough, although the correct name for the animal is Palaeoniscum, several authors since its description started referring to it using the incorrectly spelled Palaeoniscus instead, error that has been trascribed from paper to paper over the years by several people, seemingly going unnoticed for quite a long time."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeoniscum",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeoniscum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeoniscum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeoniscum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeoniscum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeoniscum"
 		}
 	]
 }

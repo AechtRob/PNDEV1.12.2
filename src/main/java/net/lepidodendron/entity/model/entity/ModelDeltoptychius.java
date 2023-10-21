@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraDeltoptychius;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -325,7 +324,7 @@ public class ModelDeltoptychius extends AdvancedModelBase {
                 this.flap(leftFrontFin, speed * 2.5F, 0.4F, true, -3, 0, f2, 1);
                 this.flap(rightFrontFin, speed* 2.5F, -0.4F, true, -3, 0, f2, 1);
                 this.chainWave(fishTail, speed* 2.5F, 0.05F, -3, f2, 1);
-                this.chainSwing(fishTail, speed* 2.5F, 0.25F, -3, f2, 1);
+                this.chainSwing(fishTail, speed* 2.5F * 0.5F, 0.25F, -3, f2, 1);
             }
 
             else { //if not accelerating swing fins instead
@@ -334,7 +333,7 @@ public class ModelDeltoptychius extends AdvancedModelBase {
                 this.flap(leftFrontFin, (speed), 0.25F, true, -3, 0, f2, 1);
                 this.flap(rightFrontFin, (speed), -0.25F, true, -3, 0, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-                this.chainSwing(fishTail, speed, 0.3F, -3, f2, 1);
+                this.chainSwing(fishTail, speed, 0.3F * 0.5F, -3, f2, 1);
             }
 
 

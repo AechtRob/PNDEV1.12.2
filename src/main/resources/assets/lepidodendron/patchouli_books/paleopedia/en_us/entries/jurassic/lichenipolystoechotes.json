@@ -1,0 +1,46 @@
+{
+	"name": "Lichenipolystoechotes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lacewing_lichenipolystoechotes_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_lacewing_lichenipolystoechotes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lacewing_lichenipolystoechotes",
+			"title": "Lichenipolystoechotes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Neuroptera $(br)>Ithonidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/lichenipolystoechotes.png"],
+			"title": "L. ramimaculatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lacewing_lichenipolystoechotes",
+			"type": "text",
+			"text": "Lichenipolystoechotes is a genus of lacewing from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. Its wing preserved complex pattern, analysis that compares its wing pattern and lichen fossils from same formation suggests it is early example of lichen mimesis. It probably used lichens to hide from predators. It would help lichen by eating insects that tried to eat lichens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes"
+		}
+	]
+}

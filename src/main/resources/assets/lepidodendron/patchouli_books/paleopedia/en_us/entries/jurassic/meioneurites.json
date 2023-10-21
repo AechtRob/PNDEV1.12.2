@@ -1,0 +1,46 @@
+{
+	"name": "Meioneurites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_meioneurites_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_meioneurites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_meioneurites",
+			"title": "Meioneurites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/meioneurites.png"],
+			"title": "M. schlosseri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_meioneurites",
+			"type": "text",
+			"text": "Meioneurites is a genus of kalligrammatid lacewing known multiple sites in Jurassic-Cretaceous, such as Solnhofen limestone in Germany. M. spectabilis from Karabastau Formation, Upper Jurassic of Kazakhstan, preserved head structure of this insect well, showing antennae and mouthparts."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@meioneurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@meioneurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@meioneurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@meioneurites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@meioneurites"
+		}
+	]
+}

@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockAmentotaxus;
+import net.lepidodendron.block.BlockAmentotaxus2;
+import net.lepidodendron.block.BlockAmentotaxus3;
+import net.lepidodendron.block.BlockAmentotaxus4;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,7 +31,7 @@ public class StructureSpawnAmentotaxus extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAmentotaxus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAmentotaxus && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAmentotaxus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

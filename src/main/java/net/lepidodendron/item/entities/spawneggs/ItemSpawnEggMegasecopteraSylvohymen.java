@@ -53,6 +53,16 @@ public class ItemSpawnEggMegasecopteraSylvohymen extends ElementsLepidodendronMo
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -14408671;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -11580633;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Permian";
 		}

@@ -14,7 +14,9 @@ public class RenderArchoblattina extends RenderLiving<EntityPrehistoricFloraArch
     public RenderArchoblattina(RenderManager mgr) {
         super(mgr, new ModelArchoblattina(), 0.0f);
     }
-
+    public static float getScaler() {
+        return 1.25F * 0.165f;
+    }
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraArchoblattinaInsect entity) {
         return RenderArchoblattina.TEXTURE;
@@ -27,7 +29,8 @@ public class RenderArchoblattina extends RenderLiving<EntityPrehistoricFloraArch
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraArchoblattinaInsect entity, float f) {
-        GlStateManager.scale(1.55, 1.55, 1.55);
+        float scale = getScaler();
+        GlStateManager.scale(scale, scale, scale);
     }
 
 }

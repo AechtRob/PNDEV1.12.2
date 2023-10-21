@@ -36,10 +36,9 @@ public class ItemStrudopsRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_strudops", ItemStrudopsRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemStrudopsRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemStrudopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemStrudopsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_notostracan@strudops", ItemStrudopsRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemStrudopsRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemStrudopsRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

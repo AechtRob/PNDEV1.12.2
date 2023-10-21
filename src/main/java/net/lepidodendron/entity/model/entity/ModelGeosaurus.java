@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraDakosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraGeosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
@@ -313,10 +312,52 @@ public class ModelGeosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-    public void renderStaticWall(float f) {
+        public void renderStaticWall(float f) {
+            this.Body.rotateAngleX = (float) Math.toRadians(20);
+            this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(Neck, 0.0F, -0.2F, 0.0F);
+            this.setRotateAngle(Head, 0.0F, 0.28F, 0.0F);
+            this.setRotateAngle(Lowerjaw, 0.2F, 0.0F, 0.0F);
+            this.Body2.setScale(0,0,0);
+            this.Body2.setScale(0,0,0);
+            this.Body2.scaleChildren = true;
+            this.Body.offsetY = -0.18F;
+            this.Body.offsetX = 0.0F;
+            this.Body.offsetZ = -0.45F;
+            this.Body.render(0.01F);
+            this.Body2.setScale(1,1,1);
+            this.Body2.setScale(1,1,1);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.1F, -0.1F, -0.15F);
+        this.setRotateAngle(Body2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, -0.15F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, -0.15F, 0.1F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.5F, 0.15F, -0.45F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(Neck, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.25F, 0.0F);
+        this.Body.offsetY = -0.14F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetY = 0.05F;
         this.Body.render(0.01F);
         resetToDefaultPose();
     }
@@ -346,12 +387,38 @@ public class ModelGeosaurus extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] BL = {this.Rightthigh, this.Rightshin, this.Righthindfoot};
         //AdvancedModelRenderer[] BR = {this.Leftthigh, this.Leftshin, this.Lefthindfoot};
 
-        if (!Dako.isReallyInWater()) { //will never happen as it should not be on land
-            //this.leftarm.rotateAngleZ = (float) Math.toRadians(15.6125);
-            //this.rightarm3.rotateAngleZ = (float) Math.toRadians(-18.662);
+        AdvancedModelRenderer[] fishTail = {this.Body4, this.Tail, this.Tail2, this.Tail3, this.Tail4};
+        AdvancedModelRenderer[] finPectoralLeft = {this.UpperArmL, this.HandL};
+        AdvancedModelRenderer[] finPectoralRight = {this.UpperArmR, this.HandR};
+        AdvancedModelRenderer[] finPelvicLeft = {this.UpperLegL, this.LowerLegL, this.FootL};
+        AdvancedModelRenderer[] finPelvicRight = {this.UpperLegR, this.LowerLegR, this.FootR};
 
-            //this.leftleg.rotateAngleX = -(float) Math.toRadians(22.9232);
-            //this.rightleg3.rotateAngleX = -(float) Math.toRadians(22.9232);
+        if (!Dako.isReallyInWater()) { //will never happen as it should not be on land
+            float speed = 0.3F;
+            float outOfWater = 1.45f;
+
+            this.Body.bob(speed, 0.35F, false, f2, 1F);
+
+            this.chainWave(fishTail, speed * outOfWater, 0.05F * outOfWater, -3, f2, 1);
+            this.chainSwing(fishTail, speed * outOfWater, 0.15F * outOfWater, -2.5, f2, 1);
+            this.swing(Body, speed * outOfWater, 0.21F * outOfWater, true, 0, 0, f2, 1);
+
+            this.chainWave(finPectoralLeft, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainSwingExtended(finPectoralLeft, speed * outOfWater, 0.8F * outOfWater, 0.5F, 3, f2, 1);
+            this.chainFlap(finPectoralLeft, speed * outOfWater, 0.15F * outOfWater, -0.8, f2, 1);
+
+            this.chainWave(finPectoralRight, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainSwing(finPectoralRight, speed * outOfWater, -0.8F * outOfWater, 0.5F, f2, 1);
+            this.chainFlap(finPectoralRight, speed * outOfWater, -0.15F * outOfWater, 0.8, f2, 1);
+
+            this.chainWave(finPelvicLeft, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainSwing(finPelvicLeft, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainFlap(finPelvicLeft, speed * outOfWater, 0.10F * outOfWater, -0.5, f2, 1);
+
+            this.chainWave(finPelvicRight, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainSwingExtended(finPelvicRight, speed * outOfWater, -0.20F * outOfWater, 0.3F, 3, f2, 1);
+            this.chainFlap(finPelvicRight, speed * outOfWater, -0.10F * outOfWater, 0.5, f2, 1);
+
         }
     }
     @Override
@@ -361,12 +428,14 @@ public class ModelGeosaurus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraGeosaurus ee = (EntityPrehistoricFloraGeosaurus) entitylivingbaseIn;
 
         if (ee.isReallyInWater()) {
-
                 if (ee.getIsFast()) { //Running
                     animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 } else { //Walking
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
+        }
+        else {
+            //Do the LL one defined above
         }
         if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

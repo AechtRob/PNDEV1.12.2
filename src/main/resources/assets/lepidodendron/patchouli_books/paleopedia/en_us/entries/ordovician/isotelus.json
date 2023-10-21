@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_isotelus",
 			"title": "Isotelus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean, Sponge, Bryozoan Reef$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Isotelus was a common asaphid trilobite and the rex species is currently the world's largest trilobite found as a complete fossil. Isotelus was a bottom feeder who probably used its limbs to sift through the sand for potential prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_isotelus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_isotelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_isotelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_isotelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_isotelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_isotelus"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_janassa",
 			"title": "Janassa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Janassidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Janassidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Janassa is a superficially skate looking holocephalian from the Carbonierous. It was likely a benthic feeder and its teeth shape suggests that it crushed and ate shellfish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_janassa",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_janassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_janassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_janassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_janassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_janassa"
 		}
 	]
 }

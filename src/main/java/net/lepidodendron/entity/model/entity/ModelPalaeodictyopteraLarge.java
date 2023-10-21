@@ -193,12 +193,32 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-
-    public void renderStatic(float f) {
-       this.body.render(0.01f);
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
+        this.body.offsetY = -0.07F;
+        this.body.render(0.01f);
+    }
+    public void renderStaticWall(float f) {
+        this.body.offsetY = -0.14F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.0F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }

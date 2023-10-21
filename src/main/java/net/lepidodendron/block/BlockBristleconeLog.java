@@ -40,7 +40,7 @@ public class BlockBristleconeLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:bristlecone_sapling", BlockBristleconeLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:bristlecone_sapling", BlockBristleconeLog.block);
 		OreDictionary.registerOre("logWood", BlockBristleconeLog.block);
 	}
 

@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -14,13 +17,14 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -32,6 +36,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockRattanStem extends ElementsLepidodendronMod.ModElement {
@@ -62,7 +68,7 @@ public class BlockRattanStem extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemRope", BlockRattanStem.block);
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 	
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool TOPSHOOT = PropertyBool.create("topshoot");
@@ -77,6 +83,20 @@ public class BlockRattanStem extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(TOPSHOOT, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_RATTAN;
+		}
+
+		@Override
+		public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
+			super.onEntityCollision(world, pos, state, entity);
+			if (entity instanceof EntityPlayer) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
+			if (entity instanceof EntityVillager) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
+			if (entity instanceof EntityMob) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
 		}
 
 		@Override

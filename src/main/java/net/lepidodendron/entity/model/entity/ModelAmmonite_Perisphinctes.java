@@ -246,13 +246,25 @@ public class ModelAmmonite_Perisphinctes extends AdvancedModelBaseExtended {
         updateDefaultPose();
     }
 
+    public void renderAll(float f) {
+        this.resetToDefaultPose();
+        this.Shell1.offsetY = -1.5F;
+        this.Shell1.render(0.1f);
+    }
+
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Shell1.render(f5);
     }
     public void renderStaticFloor(float f) {
         this.Shell1.rotateAngleY = (float) Math.toRadians(90);
-        this.Shell1.offsetY = -0.45F;
+        this.Shell1.offsetY = -0.1F;
+        this.Shell1.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.Shell1.rotateAngleY = (float) Math.toRadians(90);
+        this.Shell1.offsetY = 0.0F;
         this.Shell1.render(0.01F);
         resetToDefaultPose();
     }

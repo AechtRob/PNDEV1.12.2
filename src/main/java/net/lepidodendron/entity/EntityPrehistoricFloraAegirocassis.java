@@ -3,19 +3,18 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWander;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderAegirocassis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemEggsAegirocassis;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -65,7 +64,7 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -116,13 +115,14 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 0.3, 1));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
+
 
 	@Override
 	public boolean isAIDisabled() {
@@ -174,22 +174,16 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemEggsAegirocassis.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-				this.setLaying(false);
-			}
-			this.setTicks(0);
-		}
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemEggsAegirocassis.block, (int) (1));
 	}
 
 	@Nullable

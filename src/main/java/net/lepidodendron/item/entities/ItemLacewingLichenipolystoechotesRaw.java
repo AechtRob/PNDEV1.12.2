@@ -39,9 +39,9 @@ public class ItemLacewingLichenipolystoechotesRaw extends ElementsLepidodendronM
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemLacewingLichenipolystoechotesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLacewingLichenipolystoechotesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLacewingLichenipolystoechotesRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@lichenipolystoechotes", ItemLacewingLichenipolystoechotesRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingLichenipolystoechotesRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingLichenipolystoechotesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
@@ -56,13 +56,13 @@ public class ItemLacewingLichenipolystoechotesRaw extends ElementsLepidodendronM
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_lacewing";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "lichenipolystoechotes";
 		}
 	}
 }

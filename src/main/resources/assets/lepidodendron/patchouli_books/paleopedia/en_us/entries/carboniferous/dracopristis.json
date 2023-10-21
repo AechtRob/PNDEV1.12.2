@@ -1,7 +1,7 @@
 {
 	"name": "Dracopristis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dracopristis_icon.png",
+	"icon": "paleopedia:textures/items/dracopristis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_dracopristis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dracopristis",
 			"title": "Dracopristis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Euselachii$(br)>Ctenacanthiformes"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Euselachii$(br)>Ctenacanthiformes"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dracopristis is a ctenacanthiform shark from the Carboniferous period. Its name means Dragon Shark. It had 12 rows of short teeth and it had spines on its dorsal fins. It was around 2 meters long and it likely hunted small fish and crustaceans, being an ambush hunter."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dracopristis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dracopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dracopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dracopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dracopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dracopristis"
 		}
 	]
 }

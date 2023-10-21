@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemGerarusRaw extends ElementsLepidodendronMod.ModElement {
@@ -36,17 +39,29 @@ public class ItemGerarusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gerarus", ItemGerarusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGerarusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGerarusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemGerarusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemGerarusRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
-			super(1, 0.05f, false);
+			super();
 			setTranslationKey("pf_gerarus_raw");
 			setRegistryName("gerarus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_gerarus";
+		}
+
+		@Nullable
+		@Override
+		public String getVariantStr() {
+			return null;
 		}
 	}
 }

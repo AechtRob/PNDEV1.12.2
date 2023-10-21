@@ -1,7 +1,7 @@
 {
 	"name": "Eosaurichthys",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eosaurichthys_icon.png",
+	"icon": "paleopedia:textures/items/eosaurichthys_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eosaurichthys",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eosaurichthys",
 			"title": "Eosaurichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
+			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eosaurichthys is a potentially dubious genus of Actinopterygian fish. Similar to the larger Saurichthys, Eosaurichthys is a long and slender predatory fish, characterized by a long snout full of conical teeth, a powerful body ending in a lunate tail and the caudal positioning of dorsal and anal fins to improve speed and stability in water. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eosaurichthys",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eosaurichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eosaurichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eosaurichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eosaurichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eosaurichthys"
 		}
 	]
 }

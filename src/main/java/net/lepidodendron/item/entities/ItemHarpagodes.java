@@ -51,9 +51,9 @@ public class ItemHarpagodes extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_harpagodes", ItemHarpagodes.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHarpagodes.block);
-		OreDictionary.registerOre("foodMeat", ItemHarpagodes.block);
 		OreDictionary.registerOre("itemShellfish", ItemHarpagodes.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemHarpagodes.block);
+		OreDictionary.registerOre("pndietShellfish", ItemHarpagodes.block);
 	}
 
 

@@ -1,7 +1,7 @@
 {
 	"name": "Enoploura",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/enoploura_icon.png",
+	"icon": "paleopedia:textures/items/enoploura_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_enoploura",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_enoploura",
 			"title": "Enoploura",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Stylophora$(br)>Mitrata$(br)>Anomalocystitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Stylophora$(br)>Mitrata$(br)>Anomalocystitidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Enoploura is an enigmatic echinoderm from the Ordovician period. It had a thin tail and a flattened body with little fins at the point where the body meets the tail. The way it moves in life is still debated."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_enoploura",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_enoploura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_enoploura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_enoploura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_enoploura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_enoploura"
 		}
 	]
 }

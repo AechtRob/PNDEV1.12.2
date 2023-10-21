@@ -1,7 +1,7 @@
 {
 	"name": "Tiktaalik",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/tiktaalik_icon.png",
+	"icon": "paleopedia:textures/items/tiktaalik_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_tiktaalik",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tiktaalik",
 			"title": "Tiktaalik",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest, Floodplain, Swamp$(br2)>Chordata$(br)>Stegocephalia"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Stegocephalia"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Based on the fossil remains and where they were found we think Tiktaalik lived in oxygen poor shallow freshwater systems, where larger animals had trouble swimming and where it could hunt smaller animals coming in to feed on the abundant leaves falling in the water from the newly developed deciduous flora of the times, occasionally being able to venture on land for brief periods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tiktaalik",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tiktaalik"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tiktaalik"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tiktaalik"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tiktaalik"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tiktaalik"
 		}
 	]
 }

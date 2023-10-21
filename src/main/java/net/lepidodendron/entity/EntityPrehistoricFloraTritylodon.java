@@ -2,83 +2,94 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.render.entity.RenderPseudotherium;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.render.entity.RenderTritylodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraMorganucodon {
+public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiictodon {
 
 	public EntityPrehistoricFloraTritylodon(World world) {
 		super(world);
-		setSize(0.7F, 0.5F);
+		setSize(0.5F, 0.3F);
 		minWidth = 0.12F;
-		maxWidth = 0.7F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 9.0D;
+		maxWidth = 0.5F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 8.0D;
+	}
+
+	public boolean hasAlarm() {
+		return false;
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
-
-	@Override
-	public boolean hasLargeBurrow() {
-		return true;
-	}
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.26F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 1.75F;
 		}
 		return speedBase;
-	}
-
-
-	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:morganucodon_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:tritylodon_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:morganucodon_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:tritylodon_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:morganucodon_death"));
+	            .getObject(new ResourceLocation("lepidodendron:tritylodon_death"));
 	}
 
+	@Override
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:tritylodon_idle"));
+	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.TRITYLODON_LOOT_YOUNG;
+		}
 		return LepidodendronMod.TRITYLODON_LOOT;
 	}
 
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
 
 	//Rendering taxidermy:
 	//--------------------
@@ -123,14 +134,14 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraMorg
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPseudotherium.TEXTURE;
+		return RenderTritylodon.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPseudotherium;
+		return RenderDisplays.modelTritylodon;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPseudotherium.getScaler();
+		return RenderTritylodon.getScaler();
 	}
 
 }

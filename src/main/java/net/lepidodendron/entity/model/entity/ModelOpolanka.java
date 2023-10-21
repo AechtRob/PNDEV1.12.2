@@ -2,9 +2,9 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraOpolanka;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOpolanka extends AdvancedModelBase {
@@ -201,9 +201,21 @@ public class ModelOpolanka extends AdvancedModelBase {
 
         AdvancedModelRenderer[] legsL = {this.legL1, this.legL2, this.legL3, this.legL4, this.legL5};
         AdvancedModelRenderer[] legsR = {this.legR1, this.legR2, this.legR3, this.legR4, this.legR5};
+        if (((EntityPrehistoricFloraOpolanka) e).getIsMoving()) {
+            this.chainFlap(legsL, 0.5F, 0.2F, -3, f2, 1);
+            this.chainFlap(legsR, 0.5F, 0.2F, -3, f2, 1);
 
-        this.chainFlap(legsL, 0.5F, 0.2F, -3, f2, 1);
-        this.chainFlap(legsR, 0.5F, 0.2F, -3, f2, 1);
+            this.swing(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+            this.swing(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.swing(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+            this.swing(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+            this.swing(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+            this.swing(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+            this.swing(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+            this.swing(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.swing(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+            this.swing(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+        }
 
         this.swing(antennaL1, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaR1, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
@@ -211,17 +223,6 @@ public class ModelOpolanka extends AdvancedModelBase {
         this.swing(antennaR2, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
         this.swing(antennaL3, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaR3, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
-
-        this.swing(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-        this.swing(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-        this.swing(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-        this.swing(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-        this.swing(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-        this.swing(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-        this.swing(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-        this.swing(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-        this.swing(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-        this.swing(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
 
     }
 }

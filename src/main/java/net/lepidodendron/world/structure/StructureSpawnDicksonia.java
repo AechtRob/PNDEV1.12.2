@@ -32,7 +32,7 @@ public class StructureSpawnDicksonia extends ElementsLepidodendronMod.ModElement
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimDicksonia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genDicksonia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genDicksonia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

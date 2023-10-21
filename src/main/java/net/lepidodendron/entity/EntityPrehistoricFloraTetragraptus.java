@@ -3,9 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -17,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class EntityPrehistoricFloraTetragraptus extends EntityPrehistoricFloraJellyfishBase {
 
@@ -29,6 +33,11 @@ public class EntityPrehistoricFloraTetragraptus extends EntityPrehistoricFloraJe
     public EntityPrehistoricFloraTetragraptus(World world) {
         super(world);
         setSize(0.2F, 0.4F);
+    }
+
+    @Override
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        return EnumCreatureAttributePN.INVERTEBRATE;
     }
 
     @Override
@@ -51,7 +60,14 @@ public class EntityPrehistoricFloraTetragraptus extends EntityPrehistoricFloraJe
     protected void initEntityAI() {
         tasks.addTask(0, new EntityMateAIJellyfishBase(this, 1));
         tasks.addTask(1, new JellyfishWander(this, ANIMATION_JELLYFISH_WANDER));
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraJellyfishBaseAI(this));
     }
+
+    @Override
+    public String[] getFoodOreDicts() {
+        return ArrayUtils.addAll(DietString.FISHFOOD);
+    }
+
 
     @Override
     public String getTexture() {
@@ -142,7 +158,7 @@ public class EntityPrehistoricFloraTetragraptus extends EntityPrehistoricFloraJe
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     public void onEntityUpdate()

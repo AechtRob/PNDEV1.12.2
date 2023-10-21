@@ -4,11 +4,15 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanStrudops;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanTriops;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -27,6 +31,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -43,12 +48,31 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	private static final float[] TRIOPS2_SIZE = new float[]{0.3F, 0.2F};
 	private static final float[] TRIOPS3_SIZE = new float[]{0.3F, 0.2F};
 
-
 	private static final DataParameter<Integer> NOTOSTRACA_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraNotostracan.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraNotostracan(World world) {
 		super(world);
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
+	}
+
+	public ItemStack getPropagule() {
+		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
+		if (!stack.hasTagCompound()) {
+			NBTTagCompound compound = new NBTTagCompound();
+			stack.setTagCompound(compound);
+		}
+		stack.getTagCompound().setString("PNType", this.getPNType().getName());
+		return stack;
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
 	}
 
 	@Override
@@ -62,8 +86,20 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraNotostracan)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			Type typeThis = this.getPNType();
+			Type typeThat = ((EntityPrehistoricFloraNotostracan) otherAnimal).getPNType();
+			if (typeThis == Type.STRUDOPS) {
+				if (((EntityPrehistoricFloraNotostracan) otherAnimal).getPNType() != this.getPNType()) {
+					return false;
+				}
+			}
+			else {
+				//Triops:
+				if (typeThat == Type.STRUDOPS) {
+					return false;
+				}
+			}
 		}
 		return this.isInLove() && otherAnimal.isInLove();
 	}
@@ -85,7 +121,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		}
 	}
 
-
+	@Override
 	public boolean hasPNVariants() {
 		return true;
 	}
@@ -145,6 +181,11 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 			return values()[0];
 		}
 
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	public float[] getHitBoxSize() {
@@ -226,7 +267,12 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -237,11 +283,6 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	@Override
 	public String getTexture() {
 		return this.getTexture();
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override
@@ -279,7 +320,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	@Override

@@ -195,6 +195,9 @@ public class GUITaxidermyTable extends ElementsLepidodendronMod.ModElement {
                     if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
                         return ItemStack.EMPTY;
                     }
+                    if (index == 1 && playerIn instanceof EntityPlayerMP && itemstack.getItem() == ItemTaxidermyDisplayItem.block) {
+                        ModTriggers.TAXIDERMY.trigger((EntityPlayerMP) playerIn);
+                    }
                     slot.onSlotChange(itemstack1, itemstack);
                 } else if (!this.mergeItemStack(itemstack1, 0, 4, false)) {
                     if (index < 4 + 27) {

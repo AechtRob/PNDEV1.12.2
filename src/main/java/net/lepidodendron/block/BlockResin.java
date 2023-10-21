@@ -46,8 +46,6 @@ public class BlockResin extends ElementsLepidodendronMod.ModElement {
 			@Override
 			public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 				super.onEntityCollision(world, pos, state, entity);
-				//System.err.println("Entity Y: " + (double) entity.posY);
-				//System.err.println("Fluid Y: " + (double) pos.getY());
 				if ((double) entity.posY < ((double) pos.getY() + 0.59)) {
 					entity.setInWeb();
 				}

@@ -53,7 +53,7 @@ public class BlockMacroneuropterisLog extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:macroneuropteris_sapling", BlockMacroneuropterisLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:macroneuropteris_sapling", BlockMacroneuropterisLog.block);
 		OreDictionary.registerOre("logWood", BlockMacroneuropterisLog.block);
 	}
 

@@ -5,14 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderDysalotosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -68,7 +65,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		}
 		List<EntityPrehistoricFloraDysalotosaurus> Dysalotosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraDysalotosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 		for (EntityPrehistoricFloraDysalotosaurus currentDysalotosaurus : Dysalotosaurus) {
-			if (currentDysalotosaurus.isPFAdult() && this.isPFAdult() && currentDysalotosaurus != this && !currentDysalotosaurus.willGrapple) {
+			if (currentDysalotosaurus.isPFAdult() && this.isPFAdult() && currentDysalotosaurus != this && (!currentDysalotosaurus.willGrapple) && this.canEntityBeSeen(currentDysalotosaurus)) {
 				this.setGrappleTarget(currentDysalotosaurus);
 				currentDysalotosaurus.willGrapple=true;
 				this.willGrapple = true;
@@ -95,33 +92,18 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public static String getPeriod() {return "Jurassic";}
 
 	@Override
-	public int getAttackLength() {
-		return 20;
-	}
-
-	@Override
-	public int getRoarLength() {
-		return 20;
-	}
-
-	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.335F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == LOOK_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.65F;
 		}
 		return speedBase;
-	}
-
-	@Override
-	public int getTalkInterval() {
-		return 80;
 	}
 
 	@Override
@@ -132,62 +114,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
-	}
-
-
-	@Override
-	public boolean drinksWater() {
-		return true; //drinks, does not graze
-	}
-
-	@Override
-	public int getDrinkLength() {
-		return 90;  //drinks, does not graze
-	}
-
-	@Override
-	public int getDrinkCooldown() {
-		return 400;
-	}
-
-	@Override
-	public boolean isDrinking()
-	{
-		boolean test = (this.getPFDrinking() <= 0
-				&& !world.isRemote
-				&& !this.getIsFast()
-				&& !this.getIsMoving()
-				&& this.DRINK_ANIMATION.getDuration() > 0
-				&& this.getAnimation() == NO_ANIMATION
-				&& !this.isReallyInWater()
-				&&
-				(this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
-						|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
-						|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
-						|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
-				)
-		);
-		if (test) {
-			//Which one is water?
-			EnumFacing facing = null;
-			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.NORTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.SOUTH;
-			}
-			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.EAST;
-			}
-			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.WEST;
-			}
-			if (facing != null) {
-				this.setDrinkingFrom(this.getPosition().offset(facing));
-				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-			}
-		}
-		return test;
 	}
 
 	@Override
@@ -226,19 +152,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_chatter"));
-	}
-
-	@Override
-	public void launchAttack() {
-		if (this.getAttackTarget() != null) {
-			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttackTarget().addVelocity(0, 0.1, 0);
-			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
-		}
 	}
 
 	@Nullable

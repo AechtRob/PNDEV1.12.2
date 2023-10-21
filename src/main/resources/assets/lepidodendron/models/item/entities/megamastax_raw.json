@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:megamastax_icon"
+    "layer0": "paleopedia:items/megamastax_icon"
   }
 }

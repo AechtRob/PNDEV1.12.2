@@ -1,0 +1,46 @@
+{
+	"name": "Hurdia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hurdia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_hurdia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hurdia",
+			"title": "Hurdia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/hurdia.png"],
+			"title": "H. victoria",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hurdia",
+			"type": "text",
+			"text": "Hurdia is a medium sized radiodont from the Cambrian period. It was a filter feeder and bore a passing resemblance to its larger cousin, Aegirocassis from the Ordovician. Its stubby frontal appendages were used to bring food into its mouth. Its gills were on its trunk segments."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hurdia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hurdia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hurdia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hurdia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hurdia"
+		}
+	]
+}

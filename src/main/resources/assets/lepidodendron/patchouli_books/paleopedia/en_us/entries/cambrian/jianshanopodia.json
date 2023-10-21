@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jianshanopodia",
 			"title": "Jianshanopodia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuary$(br2)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jianshanopodia is a cambrian lobopodian with frontal grasping appendages and many pairs of spiny legs. It likely crawled along the sea floor in search of food, but it could have swam as well when needed."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jianshanopodia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jianshanopodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jianshanopodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jianshanopodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jianshanopodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jianshanopodia"
 		}
 	]
 }

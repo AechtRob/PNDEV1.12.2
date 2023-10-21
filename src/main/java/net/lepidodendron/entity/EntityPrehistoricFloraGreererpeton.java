@@ -9,7 +9,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnGreererpeton;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderGreererpeton;
@@ -20,13 +19,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -39,7 +33,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -56,7 +50,7 @@ public class EntityPrehistoricFloraGreererpeton extends EntityPrehistoricFloraSw
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -126,27 +120,24 @@ public class EntityPrehistoricFloraGreererpeton extends EntityPrehistoricFloraSw
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.6, 20));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(5, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(5, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
@@ -233,7 +224,7 @@ public class EntityPrehistoricFloraGreererpeton extends EntityPrehistoricFloraSw
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -299,53 +290,48 @@ public class EntityPrehistoricFloraGreererpeton extends EntityPrehistoricFloraSw
 		return LepidodendronMod.GREERERPETON_LOOT;
 	}
 
-	//Rendering taxidermy:
-	//--------------------
-	/*
-	public static double offsetPlinth() { return 0.58; }
-
 	public static double offsetWall(@Nullable String variant) {
-		return 0.01;
+		return -0.45;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return -0.3;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 0.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.15;
+		return 0.35;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.35;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.01;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.3;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.1;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderDisplays.TEXTURE_GREERERPETON;
+		return RenderGreererpeton.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
@@ -354,6 +340,4 @@ public class EntityPrehistoricFloraGreererpeton extends EntityPrehistoricFloraSw
 	public static float getScaler(@Nullable String variant) {
 		return RenderGreererpeton.getScaler();
 	}
-
-	 */
 }

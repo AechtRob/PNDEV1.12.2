@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -254,9 +253,13 @@ public class ModelSpiroceras extends AdvancedModelBaseExtended {
         this.Shell1.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.Shell1.rotateAngleY = (float) Math.toRadians(90);
-        this.Shell1.offsetY = -0.45F;
-        this.Shell1.render(0.01F);
+        this.root.offsetY = -0.2F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.root.offsetY = 0.1F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
 

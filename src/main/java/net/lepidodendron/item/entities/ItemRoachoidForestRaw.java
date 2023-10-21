@@ -37,8 +37,8 @@ public class ItemRoachoidForestRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_roachoid_forest", ItemRoachoidForestRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemRoachoidForestRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemRoachoidForestRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemRoachoidForestRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemRoachoidForestRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

@@ -1,7 +1,7 @@
 {
 	"name": "Homoioptera",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/homoioptera_icon.png",
+	"icon": "paleopedia:textures/items/homoioptera_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_homoioptera",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_homoioptera",
 			"title": "Homoioptera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Homoiopteridae"
+			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Homoiopteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Homoioptera is a palaeodictyopteran from the Late Carboniferous of Europe. It was a medium sized insect with a wingspawn up to 20cm. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_homoioptera",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera"
 		}
 	]
 }

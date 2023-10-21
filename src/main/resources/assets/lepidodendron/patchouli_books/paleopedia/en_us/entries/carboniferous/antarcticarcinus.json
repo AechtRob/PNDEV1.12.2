@@ -1,7 +1,7 @@
 {
 	"name": "Antarcticarcinus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/antarcticarcinus_icon.png",
+	"icon": "paleopedia:textures/items/antarcticarcinus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_antarcticarcinus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_antarcticarcinus",
 			"title": "Antarcticarcinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Cold Sea$(br2)>Euthycarcinoidea$(br)>Euthycarcinida"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Euthycarcinoidea$(br)>Euthycarcinida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Antarcticarcinus is a euthycarcinoid from the Carboniferous period. It is distinguished by a pair of spines extending from its carapace and it could probably traverse onto land for short periods of time."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_antarcticarcinus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_antarcticarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_antarcticarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_antarcticarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_antarcticarcinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_antarcticarcinus"
 		}
 	]
 }

@@ -3,6 +3,7 @@ package net.lepidodendron.entity.base;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -45,7 +46,9 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     public EntityPrehistoricFloraLandClimbingBase(World world) {
         super(world);
-        this.selectNavigator();
+        if (world != null) {
+            this.selectNavigator();
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -240,7 +243,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         return super.attackEntityFrom(ds, i);
     }
 
-    protected abstract float getAISpeedLand();
+    public abstract float getAISpeedLand();
 
     @Override
     public boolean isOnLadder() {
@@ -260,6 +263,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     public void onLivingUpdate() {
 
         if (!world.isRemote) {
+
             if (this.getClimbingCooldown() > 0) {
                 this.setClimbingCooldown(this.getClimbingCooldown() - 1);
             }
@@ -272,6 +276,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                 && state.getMaterial() != Material.WATER
                 && state.getMaterial() != Material.LAVA
                 && state.getMaterial() != MaterialResin.RESIN
+                && state.getMaterial() != MaterialLatex.LATEX
                 && (!(state.getBlock() instanceof BlockFluidBase))
                 && (!(state.getBlock() instanceof BlockLiquid))
             )
@@ -283,6 +288,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     default: {
                         if (this.motionZ <=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH)) {
                             this.motionZ = -0.2;
+                            this.faceBlock(this.getPosition().north(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -291,6 +297,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.SOUTH);
+                            this.faceBlock(this.getPosition().north(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -299,6 +306,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 1: {
                         if (this.motionZ >=0 && !this.collidedHorizontally && this.isBlockClimbable(world,new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH)) {
                             this.motionZ = 0.2;
+                            this.faceBlock(this.getPosition().south(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -307,6 +315,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.NORTH);
+                            this.faceBlock(this.getPosition().south(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -315,6 +324,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 2: {
                         if (this.motionX >=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST)) {
                             this.motionX = 0.2;
+                            this.faceBlock(this.getPosition().east(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -323,6 +333,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.WEST);
+                            this.faceBlock(this.getPosition().east(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -331,6 +342,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 3: {
                         if (this.motionX <=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST)) {
                             this.motionX = -0.2;
+                            this.faceBlock(this.getPosition().west(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
@@ -339,6 +351,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                         if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.EAST);
+                            this.faceBlock(this.getPosition().west(), 10f, 10F);
                             this.setStartingToClimb(false);
                         }
                         break;
@@ -377,6 +390,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                 if (!(state.getMaterial() != Material.WATER
                     && state.getMaterial() != Material.LAVA
                     && state.getMaterial() != MaterialResin.RESIN
+                    && state.getMaterial() != MaterialLatex.LATEX
                     && (!(state.getBlock() instanceof BlockFluidBase))
                     && (!(state.getBlock() instanceof BlockLiquid)))) {
                     setIsClimbing(false);
@@ -438,6 +452,9 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         }
 
         if (this.getIsClimbing()) {
+
+            this.faceBlock(this.getPosition().offset(getClimbFacing().getOpposite()), 10, 10);
+
             switch (getClimbFacing()) {
                 case NORTH:
                 default:
@@ -494,7 +511,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             }
         }
         else {
-            this.renderYawOffset = this.rotationYaw;
+            //this.renderYawOffset = this.rotationYaw;
         }
 
         super.onLivingUpdate();
@@ -513,7 +530,8 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             if (this.isReallyInWater() &&
                 (world.getBlockState(posEyes).getMaterial() == Material.WATER
                 || world.getBlockState(posEyes).getMaterial() == Material.LAVA
-                || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN)
+                || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
+                || world.getBlockState(posEyes).getMaterial() == MaterialLatex.LATEX)
             ) {
                 this.motionY = 0.2D;
             }

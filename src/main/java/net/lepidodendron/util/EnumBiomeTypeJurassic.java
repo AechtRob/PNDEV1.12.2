@@ -12,8 +12,10 @@ public enum EnumBiomeTypeJurassic implements IStringSerializable {
     Rocks("rocks"),
     Ginkgo("ginkgo"),
     Mudflats("mudflats"),
-    Redwood("redwood"),
-    Sandbanks("sandbanks"),
+    Coniferous("coniferous"),
+    IslandSand("island_sandy"), //Jurassic Sandy Islands
+    IslandWhite("island_sandy_white"), //Jurassic White Sandy Islands
+    IslandRock("island_rocky"), //Jurassic Rocky Islands
     Taiga("taiga"),
     Mire("mire"),
     Lake("lake"),

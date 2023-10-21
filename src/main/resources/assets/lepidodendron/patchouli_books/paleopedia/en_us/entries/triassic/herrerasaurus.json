@@ -1,7 +1,7 @@
 {
 	"name": "Herrerasaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/herrerasaurus_icon.png",
+	"icon": "paleopedia:textures/items/herrerasaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_herrerasaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_herrerasaurus",
 			"title": "Herrerasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Moss Meadow, Temperate Forest$(br2)>Dinosauria$(br)>Saurischia$(br)>Herrerasauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Herrerasauridae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "where early dinosaurimorphs could’ve had body covering, however this may be subject to change as our knowledge on these incredible animals develops further."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_herrerasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_herrerasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_herrerasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_herrerasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_herrerasaurus"
 		}
 	]
 }

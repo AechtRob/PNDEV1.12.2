@@ -38,7 +38,8 @@ public class ItemIchthyostegaRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ichthyostega", ItemIchthyostegaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemIchthyostegaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemIchthyostegaRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemIchthyostegaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemIchthyostegaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

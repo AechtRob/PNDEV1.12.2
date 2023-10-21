@@ -1,0 +1,46 @@
+{
+	"name": "Vampyronassa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/vampyronassa_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_vampyronassa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vampyronassa",
+			"title": "Vampyronassa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Vampyromorphida $(br)>Vampyroteuthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/vampyronassa.png"],
+			"title": "V. rhodanica",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vampyronassa",
+			"type": "text",
+			"text": "Vampyronassa is a Jurassic squid known from the La Voulte region of France. It was one of the first vampire squids and had a length about 10 centimeters. It had eight arms with suckers flanked by cirri. Vampyronassa's name means 'vampire fish trap' referencing the way its arms looked. Similar to modern vampire squids, they lacked an ink sack."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vampyronassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vampyronassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vampyronassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vampyronassa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vampyronassa"
+		}
+	]
+}

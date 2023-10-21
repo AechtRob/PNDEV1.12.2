@@ -1,9 +1,8 @@
 
 package net.lepidodendron.entity;
 
-import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.minecraft.block.material.Material;
@@ -11,7 +10,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -22,9 +20,6 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import javax.annotation.Nullable;
 
@@ -50,6 +45,8 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		maxHeight = getHitBoxSize()[1];
 		maxHealthAgeable = 5.0D;
 	}
+
+	
 
 	//*****************************************************
 	//Insect variant managers:
@@ -121,68 +118,6 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 	
 	}
 
-	public ResourceLocation getFreezeLoot() {
-		switch (this.getPNType()) {
-			case DELITZSCHALA: default:
-				return LepidodendronMod.PALAEODICTYOPTERA_DELITZSCHALA_NYMPH_LOOT_JAR;
-
-			case DUNBARIA:
-				return LepidodendronMod.PALAEODICTYOPTERA_DUNBARIA_NYMPH_LOOT_JAR;
-
-			case HOMALONEURA:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMALONEURA_NYMPH_LOOT_JAR;
-
-			case HOMOIOPTERA:
-				return LepidodendronMod.PALAEODICTYOPTERA_HOMOIOPTERA_NYMPH_LOOT_JAR;
-
-			case LITHOMANTIS:
-				return LepidodendronMod.PALAEODICTYOPTERA_LITHOMANTIS_NYMPH_LOOT_JAR;
-
-			case LYCOCERCUS:
-				return LepidodendronMod.PALAEODICTYOPTERA_LYCOCERCUS_NYMPH_LOOT_JAR;
-
-			case SINODUNBARIA:
-				return LepidodendronMod.PALAEODICTYOPTERA_SINODUNBARIA_NYMPH_LOOT_JAR;
-
-			case STENODICTYA:
-				return LepidodendronMod.PALAEODICTYOPTERA_STENODICTYA_NYMPH_LOOT_JAR;
-
-			case MAZOTHAIROS:
-				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_NYMPH_LOOT_JAR;
-		}
-	}
-
-	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case DELITZSCHALA: default:
-				return LepidodendronMod.BUG_LOOT;
-
-			case DUNBARIA:
-				return LepidodendronMod.BUG_LOOT;
-
-			case HOMALONEURA:
-				return LepidodendronMod.BUG_LOOT;
-
-			case HOMOIOPTERA:
-				return LepidodendronMod.BUG_LOOT;
-
-			case LITHOMANTIS:
-				return LepidodendronMod.BUG_LOOT;
-
-			case LYCOCERCUS:
-				return LepidodendronMod.BUG_LOOT;
-
-			case SINODUNBARIA:
-				return LepidodendronMod.BUG_LOOT;
-
-			case STENODICTYA:
-				return LepidodendronMod.BUG_LOOT;
-
-			case MAZOTHAIROS:
-				return LepidodendronMod.BUG_LOOT;
-		}
-	}
-
 	public float getFlySpeed() {
 		switch (this.getPNType()) {
 			case DELITZSCHALA: default:
@@ -247,29 +182,7 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return getStandardLoot();
-	}
-
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			ResourceLocation resourcelocation = getFreezeLoot();
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", this.getPNType().getName());
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				variantNBT.setString("PNDisplaycase", stringEgg);
-				itemstack.setTagCompound(variantNBT);
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
+		return null;
 	}
 
 	@Override
@@ -351,7 +264,12 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EurypteridWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override
@@ -478,5 +396,7 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 			}
 		}
 	}
+
+
 
 }

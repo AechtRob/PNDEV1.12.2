@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemArchaboilusRaw extends ElementsLepidodendronMod.ModElement {
@@ -34,17 +37,28 @@ public class ItemArchaboilusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaboilus", ItemArchaboilusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArchaboilusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaboilus@gendered", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemArchaboilusRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemArchaboilusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
-			super(1, 0.05f, false);
+			super();
 			setTranslationKey("pf_archaboilus_raw");
 			setRegistryName("archaboilus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:archaboilus";
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "gendered";
 		}
 	}
 }

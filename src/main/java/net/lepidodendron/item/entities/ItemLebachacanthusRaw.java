@@ -38,8 +38,8 @@ public class ItemLebachacanthusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lebachacanthus", ItemLebachacanthusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemLebachacanthusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLebachacanthusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLebachacanthusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemLebachacanthusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemLebachacanthusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

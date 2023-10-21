@@ -1,0 +1,516 @@
+{
+  "variants": {
+    "age=0,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=1,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=2,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=3,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=4,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=5,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=6,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=7,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=8,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=9,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=10,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=11,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=12,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=13,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=14,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=15,base=false,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+	"age=0,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=1,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=2,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=3,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=4,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=5,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=6,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=7,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=8,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=9,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=10,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=11,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=12,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=13,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=14,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=15,base=true,lower=false": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+"age=0,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=1,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=2,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=3,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=4,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=5,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=6,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=7,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=8,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=9,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=10,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=11,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=12,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=13,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=14,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=15,base=true,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+"age=0,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=1,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=2,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=3,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=4,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=5,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=6,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=7,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=8,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=9,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=10,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=11,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=12,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=13,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=14,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ],
+    "age=15,base=false,lower=true": [
+      {
+      "model": "lepidodendron:nataligma"
+      },
+      {
+        "model": "lepidodendron:nataligma_var"
+      }
+    ]
+  }
+}

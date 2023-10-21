@@ -32,7 +32,7 @@ public class StructureSpawnNelumbo extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNelumbo))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genNelumbo && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genNelumbo && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

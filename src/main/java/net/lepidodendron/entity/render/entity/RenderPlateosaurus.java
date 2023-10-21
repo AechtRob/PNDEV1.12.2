@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPlateosaurus extends RenderLiving<EntityPrehistoricFloraPlateosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plateosaurus.png");
 
-    public static float getScaler() {return 1.15f * 0.875F;}
+    public static float getScaler() {return 0.88F;}
 
     public RenderPlateosaurus(RenderManager mgr) {
         super(mgr, new ModelPlateosaurus(), 0.5f);

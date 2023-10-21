@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -48,7 +49,9 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     public EntityPrehistoricFloraAgeableFlyingBase(World world) {
         super(world);
-        this.selectNavigator();
+        if (world != null) {
+            this.selectNavigator();
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -271,6 +274,14 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
             this.motionY *= 0.6D;
         }
 
+        if (this.isReallyFlying()) {
+            float angle = (float) (Math.atan2(this.motionZ, this.motionX) * 180.0D / Math.PI) - 90.0F;
+            float rotation = MathHelper.wrapDegrees(angle - this.rotationYaw);
+            this.prevRotationYaw = this.rotationYaw;
+            this.rotationYaw += rotation;
+            //this.renderYawOffset = this.rotationYaw;
+        }
+
         if (this.isReallyFlying() && getAttackTarget() == null) {
             if (this.getFlyTarget() != null && this.isReallyFlying()) {
                 if (!isTargetInAir() || !this.isReallyFlying()) {
@@ -292,6 +303,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 && (world.getBlockState(this.getFlyTarget()).getMaterial() != Material.WATER)
                 && (world.getBlockState(this.getFlyTarget()).getMaterial() != Material.LAVA)
                 && (world.getBlockState(this.getFlyTarget()).getMaterial() != MaterialResin.RESIN)
+                && (world.getBlockState(this.getFlyTarget()).getMaterial() != MaterialLatex.LATEX)
                 && (!(world.getBlockState(this.getFlyTarget()).getBlock() instanceof BlockFluidBase))
             )
         );
@@ -346,10 +358,9 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     public void setTargetedFlight() {
         double bbLength = this.getEntityBoundingBox().getAverageEdgeLength() * 2.5D;
-        double maxDist = Math.max(3, bbLength * bbLength);
+        double maxDist = Math.max(6, bbLength * bbLength);
         if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
-
                 double xPos = this.getFlyTarget().getX() + 0.5D - posX;
                 double yPos = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;
                 double zPos = this.getFlyTarget().getZ() + 0.5D - posZ;
@@ -361,6 +372,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 moveForward = (float) this.getAISpeedFly();
                 prevRotationYaw = rotationYaw;
                 rotationYaw += rotation;
+                //renderYawOffset = rotationYaw;
             }
             else {
                 this.setFlyTarget(null);

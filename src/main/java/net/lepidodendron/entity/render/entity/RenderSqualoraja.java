@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSqualoraja extends RenderLiving<EntityPrehistoricFloraSqualoraja> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/squaloraja.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/squaloraja_f.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/squaloraja_f.png");
 
     public static float getScaler() {
         return 0.7F * 0.38F;
@@ -21,7 +21,7 @@ public class RenderSqualoraja extends RenderLiving<EntityPrehistoricFloraSqualor
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSqualoraja entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraSqualoraja.Type.FEMALE) {
             return RenderSqualoraja.TEXTURE_F;
         }
         return RenderSqualoraja.TEXTURE;
@@ -33,9 +33,9 @@ public class RenderSqualoraja extends RenderLiving<EntityPrehistoricFloraSqualor
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSqualoraja entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (entity.getIsFemale()) {
-            scale = this.getScaler() *0.75F;
+        float scale = this.getScaler() * entity.getAgeScale();
+        if (entity.getPNType() == EntityPrehistoricFloraSqualoraja.Type.FEMALE) {
+            scale = this.getScaler() * 0.75F;
         }
         if (scale < 0.1f) {
             scale = 0.1f;

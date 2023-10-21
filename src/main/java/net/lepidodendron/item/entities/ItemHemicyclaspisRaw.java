@@ -38,8 +38,8 @@ public class ItemHemicyclaspisRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hemicyclaspis", ItemHemicyclaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHemicyclaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemHemicyclaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemHemicyclaspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemHemicyclaspisRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemHemicyclaspisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

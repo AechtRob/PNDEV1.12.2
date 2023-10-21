@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPycnophlebia;
-import net.lepidodendron.entity.model.entity.ModelArchaboilus;
 import net.lepidodendron.entity.model.entity.ModelPycnophlebia;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -23,7 +22,7 @@ public class RenderPycnophlebia extends RenderLiving<EntityPrehistoricFloraPycno
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPycnophlebia entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraPycnophlebia.Type.FEMALE) {
             return RenderPycnophlebia.TEXTURE_F;
         }
         return RenderPycnophlebia.TEXTURE;

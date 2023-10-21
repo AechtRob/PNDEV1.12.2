@@ -1,7 +1,7 @@
 {
 	"name": "Land Snail",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/land_snail_icon.png",
+	"icon": "paleopedia:textures/items/land_snail_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_snail_land",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_snail_land",
 			"title": "Land Snail",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)$(l)Habitat:$() Terrestrial$(br2)>Gastropoda$(br)>Heterobranchia"
+			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Gastropoda$(br)>Heterobranchia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Some snails lived on land and didnt spend any time at all in the water where they originated. These are such snails, which are common all over the place and all over the world."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_snail_land",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Punch"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_snail_land"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_snail_land"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_snail_land"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_snail_land"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_snail_land"
 		}
 	]
 }

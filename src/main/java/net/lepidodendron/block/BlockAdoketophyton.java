@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -74,7 +77,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockAdoketophyton.block);
 	}
 
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -349,12 +352,17 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
-				tooltip.add("Periods: early Devonian");
+				tooltip.add("Periods: Devonian");
 				tooltip.add("Note: requires water proximity and spreads to surrounding gravel, grass and dirt");
 				tooltip.add("Propagation: spores");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ADOKETOPHYTON;
+		}
 	}
 }

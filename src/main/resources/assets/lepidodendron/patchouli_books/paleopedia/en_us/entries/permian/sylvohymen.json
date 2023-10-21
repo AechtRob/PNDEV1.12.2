@@ -1,0 +1,56 @@
+{
+	"name": "Sylvohymen",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megasecoptera_sylvohymen_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_sylvohymen",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sylvohymen",
+			"title": "Sylvohymen",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Insecta $(br)>Megasecoptera $(br)>Bardohymenidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/sylvohymen.png"],
+			"title": "S. sibiricus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sylvohymen",
+			"type": "text",
+			"text": "Sylvohymen was a megasecopteran palaeodictyopteroid insect originally described from a wing found in the Early Permian Wellington Formation of Oklahoma, with additional species described from Germany and Russia. Like other megasecopterans, the mouth of Sylvohymen would have consisted of a piercing stylet, likely used to consume plant juices. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sylvohymen",
+			"type": "text",
+			"text": "Additionally, it lacked prothoracic winglets, as megasecopterans lost this feature characteristic of their palaeodictyopteran relatives. The four remaining wings are strongly petiolate, reducing to a thin stem as they near the body. In at least one species, each segment of the thorax possessed a small pair of hollow spines close to the midline. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sylvohymen",
+			"type": "text",
+			"text": "It was a decently large insect with a wingspan nearing 13 centimeters, comparable to the largest dragonflies alive today, but much smaller than some other palaeodictyopterans. The name Sylvohymen means “forest membrane,” likely in reference to the presumed habitat and the structure of the wing."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megasecoptera@sylvohymen"
+		}
+	]
+}

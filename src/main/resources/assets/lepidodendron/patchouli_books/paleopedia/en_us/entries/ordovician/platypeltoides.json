@@ -1,0 +1,51 @@
+{
+	"name": "Platypeltoides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/platypeltoides_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_platypeltoides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_platypeltoides",
+			"title": "Platypeltoides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Asaphida $(br)>Nileidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/platypeltoides.png"],
+			"title": "P. cuervoae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platypeltoides",
+			"type": "text",
+			"text": "Platypeltoides is a diverse genus of trilobite from the Ordovician. Platypeltoides cuervoae was originally assigned to the genus of Asaphellus, but modern research has reassigned it as a species of Platypeltoides. It lived in the Lower Fezouata Formation of what is modern day the Anti-Atlas Range of Morocco. Platypeltoides cuervoae immediately strikes the eye with it's unusually wide clothes hanger shaped cephalon."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platypeltoides",
+			"type": "text",
+			"text": "Fossils of Platypeltoides have also been discovered showing it having short and stubby antenna."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_platypeltoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_platypeltoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_platypeltoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_platypeltoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_platypeltoides"
+		}
+	]
+}

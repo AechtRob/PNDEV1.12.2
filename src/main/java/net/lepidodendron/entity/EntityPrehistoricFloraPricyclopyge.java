@@ -4,12 +4,9 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.ai.ShoalFishBaseAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderCometicercus;
+import net.lepidodendron.entity.render.entity.RenderPricyclopyge;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -20,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -34,6 +32,11 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 	public EntityPrehistoricFloraPricyclopyge(World world) {
 		super(world);
 		setSize(0.25F, 0.15F);
+	}
+
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override
@@ -104,7 +107,12 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
 		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -115,11 +123,6 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 	@Override
 	public String getTexture() {
 		return this.getTexture();
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override
@@ -157,7 +160,7 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
@@ -172,29 +175,30 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) { return 0.34; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.6;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.6;
+		return 0.4;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
@@ -213,15 +217,14 @@ public class EntityPrehistoricFloraPricyclopyge extends EntityPrehistoricFloraFi
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCometicercus.TEXTURE;
+		return RenderPricyclopyge.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCometicercus;
+		return RenderDisplays.modelPricyclopyge;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderCometicercus.getScaler();
+		return RenderPricyclopyge.getScaler();
 	}
-
 }
 

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:hops"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_hops.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_hops.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_hops"
+		}
+	}
+}

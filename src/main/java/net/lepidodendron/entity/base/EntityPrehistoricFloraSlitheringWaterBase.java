@@ -5,8 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateWaterBottomNoJump;
-import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -41,10 +42,11 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -62,6 +64,44 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.BOOLEAN);
 
 	private int inPFLove;
+
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
+			return EnumCreatureAttributePN.INVERTEBRATE;
+		}
+		return EnumCreatureAttributePN.VERTEBRATE;
+	}
+
+	public boolean hasPNVariants() {
+		return false;
+	}
+
+	/**
+	 * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+	 * -1 = the variants must be different to breed
+	 * 0 = the variants can be either different or the same to breed
+	 * 1 = the variants must be the same to breed
+	 */
+	public byte breedPNVariantsMatch() {
+		return 0;
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		for (String oreDict : this.getFoodOreDicts()) {
+			if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean isChild()
+	{
+		return false;
+	}
 
 	@Override
 	public boolean isRiding() {
@@ -87,12 +127,6 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public String getBucketMessage() {
 		return "is too grown up to fit into a bucket";
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
 	}
 
 	@Override
@@ -368,7 +402,8 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	@Override
 	public void onLivingUpdate() {
-		//this.renderYawOffset = this.rotationYaw;
+		this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 		//Updated from vanilla to disable jumping and limit rotations
 		if (this.jumpTicks > 0)
 		{

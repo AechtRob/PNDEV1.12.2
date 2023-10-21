@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "paleopedia:elephantoceras_icon"
+    "all": "lepidodendron:items/shell_elephantoceras"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:block/special_fence_corner_l",
+  "textures": {
+    "fence": "lepidodendron:blocks/wire_mesh_fence"
+  }
+}

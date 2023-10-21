@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -74,7 +77,7 @@ public class BlockCaytoniales2 extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockCaytoniales2.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_caytoniales_2");
@@ -85,6 +88,12 @@ public class BlockCaytoniales2 extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CAYTONIALES;
 		}
 
 		@Override
@@ -259,7 +268,7 @@ public class BlockCaytoniales2 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant shrub");
-	        tooltip.add("Periods: Triassic - Jurassic - Cretaceous");
+	        tooltip.add("Periods: Triassic - Jurassic - late Cretaceous");
 	        tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

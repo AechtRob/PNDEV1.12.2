@@ -53,6 +53,16 @@ public class ItemSpawnEggKalligrammatidOregramma extends ElementsLepidodendronMo
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -8098740;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -11781084;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Cretaceous";
 		}

@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraAngelina;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -336,17 +337,20 @@ public class ModelAngelina extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Angelina.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.Drotops.offsetZ = 0.1F;
-        this.Angelina.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Angelina, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Thorax1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Thorax3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax4, 0.0F, 0.1F, 0.0F);
+        this.Angelina.offsetY = 0.055F;
+        this.Angelina.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.Angelina.offsetY = -0.05F;
+        this.Angelina.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -371,24 +375,22 @@ public class ModelAngelina extends AdvancedModelBase {
         this.swing(AntennaeLeft, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(AntennaeRight, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
 
-        if (f3 != 0) {
+        if (((EntityPrehistoricFloraAngelina)e).getIsMoving()) {
             this.chainSwing(bodyF, 0.1F, 0.06F, -3, f2, 1.0F);
+            this.flap(LLeg1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+            this.flap(RLeg1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+            this.flap(LLeg2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
+            this.flap(LLeg7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
+            this.flap(RLeg7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
         }
-
-        this.flap(LLeg1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-        this.flap(RLeg1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-        this.flap(LLeg2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg5, 0.5F, -0.5F, true, 4.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg5, 0.5F, 0.5F, true, 4.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg6, 0.5F, -0.5F, true, 5.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg6, 0.5F, 0.5F, true, 5.0F, 0.5F, f2, 0.3F);
-        this.flap(LLeg7, 0.5F, -0.5F, true, 6.0F, -0.5F, f2, 0.3F);
-        this.flap(RLeg7, 0.5F, 0.5F, true, 6.0F, 0.5F, f2, 0.3F);
-
     }
 }

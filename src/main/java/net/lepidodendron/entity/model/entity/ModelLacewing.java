@@ -2,10 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
 import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -127,16 +124,41 @@ public class ModelLacewing extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.offsetZ = -0.1F;
-        this.body.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        public void renderStaticSuspended(float f) {
+            this.setRotateAngle(body, 0.0F, 0.0F, 0.3F);
+            this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
+            this.setRotateAngle(hindwingR, 0.0F, 0.0F, -0.2F);
+            this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
+            this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
+            this.body.offsetY = 0.0F;
+            this.body.render(0.01f);
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
+        this.body.offsetY = -0.3F;
+        this.body.render(0.01f);
+    }
+
+    public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(antennaR, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(antennaL, 0.0F, -0.2F, 0.0F);
+        this.body.offsetY = -0.3F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

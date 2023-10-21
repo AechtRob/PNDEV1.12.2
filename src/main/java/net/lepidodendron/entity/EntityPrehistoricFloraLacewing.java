@@ -4,10 +4,14 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.item.ItemLacewingEggsItem;
-import net.lepidodendron.item.entities.ItemBugRaw;
+import net.lepidodendron.entity.render.entity.RenderLacewing;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -19,6 +23,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -26,6 +31,9 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -52,7 +60,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
 	}
 
-
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
 
 	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
@@ -65,41 +76,57 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraLacewing)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
-//	@Override
-//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-//			//Cycle the variants:
-//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeodictyoptera")) {
-//				if (!player.capabilities.isCreativeMode)
-//				{
-//					player.getHeldItem(hand).shrink(1);
-//				}
-//				int type = this.getPNType().ordinal();
-//				type = type + 1;
-//				if (type > Type.values().length) {
-//					type = 0;
-//				}
-//				this.setPNType(Type.byId(type));
-//
-//				float f = this.width;
-//				this.width = getHitBoxSize()[0];
-//				this.height = getHitBoxSize()[1];
-//				if (this.width != f) {
-//					double d0 = (double) width / 2.0D;
-//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-//				}
-//			}
-//		}
-//
-//		return super.processInteract(player, hand);
-//	}
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraLacewing) {
+			EntityPrehistoricFloraLacewing Lacewing = (EntityPrehistoricFloraLacewing) target.entityHit;
+			switch (Lacewing.getPNType()) {
+				case AETHEOGRAMMA: default:
+					return new ItemStack(ItemSpawnEggLacewingAetheogramma.block, 1);
+
+				case CRETAPSYCHOPS:
+					return new ItemStack(ItemSpawnEggLacewingCretapsychops.block, 1);
+
+				case LACCOSMYLUS:
+					return new ItemStack(ItemSpawnEggLacewingLaccosmylus.block, 1);
+
+				case LICHENIPOLYSTOECHOTES:
+					return new ItemStack(ItemSpawnEggLacewingLichenipolystoechotes.block, 1);
+
+				case BELLINYMPHA:
+					return new ItemStack(ItemSpawnEggLacewingBellinympha.block, 1);
+
+				case GRAMMOLINGIA:
+					return new ItemStack(ItemSpawnEggLacewingGrammolingia.block, 1);
+
+			}
+		}
+		return ItemStack.EMPTY;
+	}
 
 	@Override
 	public boolean hasPNVariants() {
@@ -242,11 +269,141 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		return getStandardLoot();
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemBugRaw.block;
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA: default:
+				return 0.0;
+
+			case CRETAPSYCHOPS:
+				return 0.0;
+
+			case LACCOSMYLUS:
+				return 0.0;
+
+			case LICHENIPOLYSTOECHOTES:
+				return 0.0;
+
+			case BELLINYMPHA:
+				return 0.0;
+
+			case GRAMMOLINGIA:
+				return 0.0;
+		}
 	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA: default:
+				return 0.0;
+
+			case CRETAPSYCHOPS:
+				return 0.0;
+
+			case LACCOSMYLUS:
+				return 0.0;
+
+			case LICHENIPOLYSTOECHOTES:
+				return 0.0;
+
+			case BELLINYMPHA:
+				return 0.0;
+
+			case GRAMMOLINGIA:
+				return 0.0;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.75;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA:
+			default:
+				return RenderLacewing.TEXTURE_AETHEOGRAMMA;
+
+			case CRETAPSYCHOPS:
+				return RenderLacewing.TEXTURE_CRETAPSYCHOPS;
+
+			case LACCOSMYLUS:
+				return RenderLacewing.TEXTURE_LACCOSMYLUS;
+
+			case LICHENIPOLYSTOECHOTES:
+				return RenderLacewing.TEXTURE_LICHENIPOLYSTOECHOTES;
+
+			case BELLINYMPHA:
+				return RenderLacewing.TEXTURE_BELLINYMPHA;
+
+			case GRAMMOLINGIA:
+				return RenderLacewing.TEXTURE_GRAMMOLINGIA;
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA:
+			default:
+				return RenderDisplays.modelLacewing;
+
+			case CRETAPSYCHOPS:
+				return RenderDisplays.modelLacewing;
+
+			case LACCOSMYLUS:
+				return RenderDisplays.modelLacewing;
+
+			case LICHENIPOLYSTOECHOTES:
+				return RenderDisplays.modelLacewing;
+
+			case BELLINYMPHA:
+				return RenderDisplays.modelLacewing;
+
+			case GRAMMOLINGIA:
+				return RenderDisplays.modelLacewing;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderLacewing.getScaler(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant));
+	}
+
+	
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
@@ -341,9 +498,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	@Override
 	public ItemStack getDroppedEggItemStack() {
-		ItemStack stack = new ItemStack(ItemLacewingEggsItem.block, (int) (1));
+		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
 		NBTTagCompound variantNBT = new NBTTagCompound();
 		variantNBT.setString("PNType", this.getPNType().getName());
+		variantNBT.setString("creature", "lepidodendron:prehistoric_fora_lacewing");
 		stack.setTagCompound(variantNBT);
 		return stack;
 	}
@@ -436,7 +594,12 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:kalligrammatid_flight");
+		return new ResourceLocation("lepidodendron:lacewing_flight");
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 }

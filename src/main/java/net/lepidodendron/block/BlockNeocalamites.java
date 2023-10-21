@@ -2,10 +2,13 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemNeocalamitesItem;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -233,7 +236,7 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 	
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
@@ -242,6 +245,12 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_neocalamites");
 			setRegistryName("neocalamites");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_NEOCALAMITES;
 		}
 
 		@Override
@@ -458,7 +467,7 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        tooltip.add("Periods: [late Carboniferous -] Permian - early Triassic");
+	        tooltip.add("Periods: [Carboniferous -] Permian - Triassic");
 	        tooltip.add("Note: Can be planted in water or on land");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);

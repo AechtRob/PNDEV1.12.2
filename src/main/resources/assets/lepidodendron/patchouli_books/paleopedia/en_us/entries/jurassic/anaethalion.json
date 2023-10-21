@@ -1,0 +1,56 @@
+{
+	"name": "Anaethalion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anaethalion_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_anaethalion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anaethalion",
+			"title": "Anaethalion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Elopiformes $(br)>Anaethalionidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/anaethalion.png"],
+			"title": "A. angustus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anaethalion",
+			"type": "text",
+			"text": "Anaethalion is a genus of Elopomorph fish from the Late Jurassic of Europe. This fish possessed an elongated body, measuring around 15 cm in length, a large head full of small teeth and a lunate tail; its body was covered by small, imbricated, cycloid scales, some of which crenulated along their posterior margin."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anaethalion",
+			"type": "text",
+			"text": "The first fossils from the animal were discovered in the famous Solnhofen deposits and were described as under the genus Clupea in 1818. Later described under Caturus in the late 1830s and then under the genus Aethalion in 1842. Some other members of its genus were placed under Leptolepis by other authors before Anaethalion was coined in 1938 due to Aethalion being a preoccupied name, already taken by a bug."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anaethalion",
+			"type": "text",
+			"text": "Anaethalion is considered today as one of the most basal among the Elopomorphs, the same group containing extant Elopiformes, Albuliformes, Anguilliformes, Saccopharyngiformes and Gonorynchiformes. Being contained in its own family alongside of close relatives like Eichstaettia, Anaethalion as a genus is now potentially considered paraphyletic and some of the species now under it might be renamed in the future."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anaethalion"
+		}
+	]
+}

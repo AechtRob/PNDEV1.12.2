@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phragmoceras",
 			"title": "Phragmoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Discosorida$(br)>Phragmoceratidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Discosorida$(br)>Phragmoceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Phragmoceras is a genus of nautiloids from the Silurian period. It had a light bulb like shell that didnt look very circular but was also not straight. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_phragmoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phragmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phragmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phragmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phragmoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phragmoceras"
 		}
 	]
 }

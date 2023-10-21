@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSpawnEggConodontClydagnathus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_clydagnathus")
+	@GameRegistry.ObjectHolder("lepidodendron:spawn_egg_conodont_clydagnathus")
 	public static final Item block = null;
 	public ItemSpawnEggConodontClydagnathus(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.clydagnathus_raw);
@@ -39,17 +39,27 @@ public class ItemSpawnEggConodontClydagnathus extends ElementsLepidodendronMod.M
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_clydagnathus", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_clydagnathus", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
 		String variant;
 		public ItemCustom() {
-			setTranslationKey("pf_spawn_egg_clydagnathus");
-			setRegistryName("spawn_egg_clydagnathus");
+			setTranslationKey("pf_spawn_egg_conodont_clydagnathus");
+			setRegistryName("spawn_egg_conodont_clydagnathus");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "clydagnathus";
+		}
+
+		@Override
+		public int eggPrimaryColour() {
+			return -900335;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -10271193;
 		}
 
 		@Override

@@ -3,7 +3,9 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockDNARecombinerCentrifuge;
+import net.lepidodendron.block.BlockDNARecombinerForge;
+import net.lepidodendron.block.BlockDNARecombinerRail;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;

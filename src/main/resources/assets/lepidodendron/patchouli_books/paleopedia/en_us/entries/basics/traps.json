@@ -1,0 +1,32 @@
+{
+	"name": "Creature Traps",
+	"icon": "lepidodendron:trap_air",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Creature Traps",
+			"text": "You can use traps to help catch some of the creatures in the mod. There are three traps: for land-living invertebrates, like insects; for ground-living animals; and for water animals. If you place a trap in a biome and bait it it will be able to catch creatures whose diets match the bait. If there are no available creatures, the trap will tell you:"
+		},
+		{
+			"type": "text",
+			"text": "try using a different bait, or else move to a different biome. Once the trap has caught something, you can release it automatically by applying a redstone signal to the trap (eg. a button or lever, etc), or you can click the trap with a jar, cage or bucket to catch the mob as appropriate. A full trap also powers a comparator output."
+		},
+		{
+			"type": "text",
+			"text": "If you need some way to mark the position of your water traps, you can use the buoy to float above them on the surface."
+		},
+		{
+			"type": "crafting",
+			"text": "",
+			"recipe": "lepidodendron:trap_air_recipe",
+			"recipe2": "lepidodendron:trap_ground_recipe"
+		},
+		{
+			"type": "crafting",
+			"text": "",
+			"recipe": "lepidodendron:trap_water_recipe",
+			"recipe2": "lepidodendron:buoy_recipe"
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"name": "Omnidens",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/omnidens_icon.png",
+	"icon": "paleopedia:textures/items/omnidens_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_omnidens",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_omnidens",
 			"title": "Omnidens",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Panarthropoda"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Panarthropoda"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Omnidens is a large arthropod like animal that would have resembled a gilled lobopodian. It is only known from mouth parts but is speculated to have grown up to 1.5 meters in length and probably resembled Pambdelurion in life."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_omnidens",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_omnidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_omnidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_omnidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_omnidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_omnidens"
 		}
 	]
 }

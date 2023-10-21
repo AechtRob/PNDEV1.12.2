@@ -193,17 +193,22 @@ public class ModelRhinopteraspis extends AdvancedModelBase {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetX = -0.05F;
+        this.root.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(root, 0.2F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.0F;
+        this.root.offsetX = -0.0F;
         this.root.offsetY = -0.23F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetY = -0.6F;
-        this.root.offsetX = -0.04F;
-        this.root.offsetZ = 0.0F;
+        this.setRotateAngle(root, 0.0F, 0.0F, -0.15F);
+        this.setRotateAngle(head, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.12F, 0.0F);
+        this.setRotateAngle(tail3, 0.15F, 0.14F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, 0.16F, 0.0F);
+        this.root.offsetY = -0.15F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
@@ -225,14 +230,14 @@ public class ModelRhinopteraspis extends AdvancedModelBase {
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
         float speed = 0.3F;
         if (!e.isInWater()) {
-            speed = 0.7F;
+            speed = 0.8F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
             this.swing(root, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.root.rotateAngleZ = (float) Math.toRadians(90);
-                //this.root.offsetY = -0.25F;
+                this.root.offsetY = -0.30F;
                 this.bob(root, -speed, 5F, false, f2, 1);
             }
         }

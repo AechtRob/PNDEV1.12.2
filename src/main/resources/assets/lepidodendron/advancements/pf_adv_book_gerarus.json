@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:wing_gerarus"
+			"item": "lepidodendron:gerarus_raw"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_gerarus.title"

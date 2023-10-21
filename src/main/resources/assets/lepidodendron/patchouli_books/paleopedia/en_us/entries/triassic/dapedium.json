@@ -1,7 +1,7 @@
 {
 	"name": "Dapedium",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dapedium_icon.png",
+	"icon": "paleopedia:textures/items/dapedium_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_dapedium",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dapedium",
 			"title": "Dapedium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Dapediiformes$(br)>Dapediidae"
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Actinopterygii$(br)>Dapediiformes$(br)>Dapediidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dapedium is a bony fish native to the Late Triassic-Early Jurassic periods. This laterally flattened fish was covered by ganoid scales and possessed a short and robust tail, made to allow the animal to suddenly change direction while swimming. Its teeth were adapted to chew hard foods like shells and corals and the jaw was specifically adapted to allow extroflection, allowing the animal to open the mouth wide and swallow larger foods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dapedium",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dapedium"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dapedium"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dapedium"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dapedium"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dapedium"
 		}
 	]
 }

@@ -10,10 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -26,7 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -90,7 +87,7 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.315F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -98,7 +95,7 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.46F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;
@@ -134,26 +131,22 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
-		}
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.ALGAE);
+	}
 
 	@Override
 	public boolean panics() {
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -205,14 +198,10 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-			    this.setAttackTarget(null);
-			    this.setRevengeTarget(null);
-            }
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

@@ -3,7 +3,7 @@ package net.lepidodendron.item.entities.spawneggs;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.entity.EntityPrehistoricFloraConodont;
+import net.lepidodendron.entity.EntityPrehistoricFloraNotostracan;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -43,13 +43,23 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
-		String variant;
+		//String variant;
 		public ItemCustom() {
 			setTranslationKey("pf_spawn_egg_notostracan_triops");
 			setRegistryName("spawn_egg_notostracan_triops");
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
-			this.variant = "notostracan_triops";
+			//this.variant = "notostracan_triops";
+		}
+
+		@Override
+		public int eggPrimaryColour() {
+			return -10530510;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12371420;
 		}
 
 		@Override
@@ -59,7 +69,7 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public String getHabitat() {
-			return "Marine";
+			return "Freshwater/Marine";
 		}
 
 		@Override
@@ -77,7 +87,7 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 				if (net.minecraftforge.event.ForgeEventFactory.doSpecialSpawn(entityliving, worldIn, (float) x, (float) y, (float) z, null)) return null;
 				entityliving.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
 				worldIn.spawnEntity(entity);
-				((EntityPrehistoricFloraConodont)entityliving).setPNType(EntityPrehistoricFloraConodont.Type.getTypeFromString(this.variant));
+				((EntityPrehistoricFloraNotostracan)entityliving).setPNType(EntityPrehistoricFloraNotostracan.Type.byId(itemRand.nextInt(3) + 1));
 				entityliving.playLivingSound();
 			}
 			return entity;

@@ -35,9 +35,9 @@ public class ItemEurhinosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eurhinosaurus", ItemEurhinosaurusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemEurhinosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEurhinosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemEurhinosaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemEurhinosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemEurhinosaurusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

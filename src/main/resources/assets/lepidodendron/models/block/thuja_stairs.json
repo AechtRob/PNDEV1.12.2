@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/thuja_planks",
+    "top": "lepidodendron:blocks/thuja_planks",
+    "side": "lepidodendron:blocks/thuja_planks"
+  }
+}

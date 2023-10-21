@@ -1,7 +1,7 @@
 {
 	"name": "Pseudotherium",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pseudotherium_icon.png",
+	"icon": "paleopedia:textures/items/pseudotherium_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_pseudotherium",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudotherium",
 			"title": "Pseudotherium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Moss Meadow$(br2)>Therapsida$(br)>Cynodontia$(br)>Mammaliamorpha"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Therapsida$(br)>Cynodontia$(br)>Mammaliamorpha"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pseudotherium argentinus (whose name means \"Almost-but-not a Mammal, from Argentina\") was a species of mammaliaform cynodont that lived during the Late Triassic in what is now the famous Ischigualasto Formation of Argentina. It sported a prominent saggital crest running along the top of its skull, anchoring large jaw muscles that likely gave it a powerful bite. Its canine teeth are thin and curved, with unique ridges on either side running down their length."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pseudotherium",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pseudotherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pseudotherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pseudotherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pseudotherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pseudotherium"
 		}
 	]
 }

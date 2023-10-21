@@ -1,7 +1,7 @@
 {
 	"name": "Saltriovenator",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/saltriovenator_icon.png",
+	"icon": "paleopedia:textures/items/saltriovenator_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_saltriovenator",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_saltriovenator",
 			"title": "Saltriovenator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
 		},
 		{
 			"type": "image",
@@ -28,14 +28,24 @@
 			"text": "Originally discovered in 1996, the animal would remain unnamed, aside form the unofficial name \"Saltriosaur\", up until 2018, when it was formally described. The remains of the animal are not incredibly complete, which lead to several interpretations of the potential life appearance it might have had."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_saltriovenator"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
-			"type": "text",
-			"text": ""
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_saltriovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_saltriovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_saltriovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_saltriovenator"
 		}
 	]
 }

@@ -30,9 +30,8 @@ public class ItemYawunikRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_yawunik", ItemYawunikRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemYawunikRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemYawunikRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemYawunikRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemYawunikRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemYawunikRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

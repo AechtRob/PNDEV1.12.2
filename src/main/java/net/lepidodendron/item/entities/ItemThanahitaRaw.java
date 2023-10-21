@@ -37,9 +37,9 @@ public class ItemThanahitaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_thanahita", ItemThanahitaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemThanahitaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemThanahitaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemThanahitaRaw.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemThanahitaRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemThanahitaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

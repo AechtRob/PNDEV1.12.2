@@ -1,7 +1,7 @@
 {
 	"name": "Kentrosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/kentrosaurus_icon.png",
+	"icon": "paleopedia:textures/items/kentrosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_kentrosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kentrosaurus",
 			"title": "Kentrosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Stegosauria$(br)>Stegosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Stegosauria$(br)>Stegosauridae"
 		},
 		{
 			"type": "image",
@@ -25,17 +25,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kentrosaurus",
 			"type": "text",
-			"text": " The name Kentrosaurus means \"prickle lizard\", and with multiple long, paired bony spikes running down its entire tail as well as a pair of long shoulder spikes, it's easy to see how it got its name. There are seemingly two distinct morphs of Kentrosaurus (one with slightly more robust femurs, and one with slightly more gracile femurs), perhaps suggesting they may have been sexually dimorphic."
+			"text": "The name Kentrosaurus means \"prickle lizard\", and with multiple long, paired bony spikes running down its entire tail as well as a pair of long shoulder spikes, it's easy to see how it got its name. There are seemingly two distinct morphs of Kentrosaurus (one with slightly more robust femurs, and one with slightly more gracile femurs), perhaps suggesting they may have been sexually dimorphic."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kentrosaurus",
 			"type": "text",
-			"text": " The ratio of these variants is around 2:1 in favour of the robust morph, implying that if this is indeed a case of sexual dimorphism, then the robust ones were likely the females."
+			"text": "The ratio of these variants is around 2:1 in favour of the robust morph, implying that if this is indeed a case of sexual dimorphism, then the robust ones were likely the females."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kentrosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kentrosaurus"
 		}
 	]
 }

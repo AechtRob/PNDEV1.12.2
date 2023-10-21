@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:rattan_fruit_bunch"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:rattan_fruit",
+    "count": 3
+  }
+}

@@ -1,0 +1,46 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"1": "lepidodendron:blocks/yam_1",
+		"particle": "lepidodendron:blocks/yam_1_ground",
+		"vine": "lepidodendron:blocks/yam_1_ground"
+	},
+	"elements": [
+		{
+			"from": [0, 15.2, 0],
+			"to": [16, 15.2, 16],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "texture": "#1", "tintindex": 0},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#1", "tintindex": 0}
+			}
+		},
+		{
+			"from": [15.2, 0, 0],
+			"to": [15.2, 16, 16],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 0, 15.2],
+			"to": [16, 16, 15.2],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 0, 0.8],
+			"to": [16, 16, 0.8],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0}
+			}
+		}
+	]
+}

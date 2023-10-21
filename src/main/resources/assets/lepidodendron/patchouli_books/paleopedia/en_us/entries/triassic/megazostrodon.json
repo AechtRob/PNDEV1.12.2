@@ -1,7 +1,7 @@
 {
 	"name": "Megazostrodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/megazostrodon_icon.png",
+	"icon": "paleopedia:textures/items/megazostrodon_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_megazostrodon",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megazostrodon",
 			"title": "Megazostrodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() Desert, Mountains$(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Megazostrodontidae"
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Megazostrodontidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "thanks to a more accelerated metabolism compared to their reptilian contemporaries, which would use their surrounding environment instead. Discovered in 1966 for the first time in South Africa and described in 1968 by A.W. Crompton and F.A. Jenkins Jr, the animal was first thought to be a true mammal, hypothesis now discredited by more in depth studies of the animal and its relationships with true mammals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megazostrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megazostrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megazostrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megazostrodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megazostrodon"
 		}
 	]
 }

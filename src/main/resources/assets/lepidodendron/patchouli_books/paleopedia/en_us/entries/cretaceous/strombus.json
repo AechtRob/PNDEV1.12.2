@@ -1,0 +1,46 @@
+{
+	"name": "Strombus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/strombus_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_strombus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_strombus",
+			"title": "Strombus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Caenogastropoda $(br)>Littorinimorpha $(br)>Strombidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/strombus.png"],
+			"title": "Strombus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_strombus",
+			"type": "text",
+			"text": "Strombus is a popular medium-sized sea snail belonging to the family of Strombidae (true conchs). Strombus is an extant snail, with living species in the modern day such as the West Indian fighting conch and the queen conch. However, Strombus fossils can be found as far back as the Cretaceous. Strombus have a modified sickle-shaped operculum on their foot which they utilized to hop across the ocean floor."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_strombus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_strombus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_strombus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_strombus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_strombus"
+		}
+	]
+}

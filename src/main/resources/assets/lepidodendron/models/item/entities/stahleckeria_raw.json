@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:stahleckeria_icon"
+    "layer0": "lepidodendron:items/entities/stahleckeria_raw"
   }
 }

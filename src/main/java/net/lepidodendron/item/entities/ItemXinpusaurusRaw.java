@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:xinpusaurus_raw")
@@ -30,9 +32,10 @@ public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus", ItemXinpusaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus@gendered", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXinpusaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemXinpusaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemXinpusaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemXinpusaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -46,6 +49,11 @@ public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("xinpusaurus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "gendered";
 		}
 	}
 }

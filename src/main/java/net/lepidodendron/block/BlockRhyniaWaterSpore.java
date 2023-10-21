@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemRhyniaItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
@@ -62,7 +65,7 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:archaefructus", "inventory"));
 	//}
 
-	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -79,6 +82,12 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_rhynia_water_spore");
 			setRegistryName("rhynia_water_spore");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_RHYNIA;
 		}
 
 		@Override

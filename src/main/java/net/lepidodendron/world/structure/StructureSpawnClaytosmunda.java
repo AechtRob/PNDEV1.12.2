@@ -28,7 +28,7 @@ public class StructureSpawnClaytosmunda extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimClaytosmunda))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genClaytosmunda && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genClaytosmunda && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -1,7 +1,7 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockLavaRock;
-import net.lepidodendron.block.BlockPrehistoricGroundSandRed;
+import net.lepidodendron.block.*;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -37,6 +37,7 @@ public class WorldGenTriassicLakes extends WorldGenerator
             position = position.down(4);
             boolean[] aboolean = new boolean[2048];
             int i = rand.nextInt(4) + 4;
+            BlockPos spawnPos = position;
 
             for (int j = 0; j < i; ++j)
             {
@@ -104,9 +105,22 @@ public class WorldGenTriassicLakes extends WorldGenerator
                             if (i4 >= 4) {
                                 worldIn.setBlockState(position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
-                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
+                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
+                                    || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block) {
                                     //fix for floating plants and half-plants:
                                     worldIn.setBlockToAir(position.add(l1, i4, i3).up());
+                                }
+                                blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up(2)).getBlock();
+                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
+                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block) {
+                                    //fix for floating plants and half-plants:
+                                    worldIn.setBlockToAir(position.add(l1, i4, i3).up(2));
+                                }
+                                blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up(3)).getBlock();
+                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
+                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block) {
+                                    //fix for floating plants and half-plants:
+                                    worldIn.setBlockToAir(position.add(l1, i4, i3).up(3));
                                 }
                             }
                             else {
@@ -194,6 +208,7 @@ public class WorldGenTriassicLakes extends WorldGenerator
                 }
             }
 
+            ChunkGenSpawner.executeProcedure(worldIn, spawnPos, rand, null, true, true);
             return true;
         }
     }

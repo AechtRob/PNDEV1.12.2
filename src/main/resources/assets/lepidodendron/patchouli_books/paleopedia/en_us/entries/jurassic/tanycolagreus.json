@@ -1,0 +1,46 @@
+{
+	"name": "Tanycolagreus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tanycolagreus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_tanycolagreus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tanycolagreus",
+			"title": "Tanycolagreus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Tyrannosauroidea?"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/tanycolagreus.png"],
+			"title": "T. topwilsoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanycolagreus",
+			"type": "text",
+			"text": "Tanycolagreus is a Late Jurassic Therapod found in North America. Described in 2005 by Kenneth Carpenter. It measures in at around 3.3 meters long and has been estimated at 120 kg. This therapod is one of the largest Coelurosaurs that have been found in the Morrison formation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tanycolagreus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tanycolagreus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tanycolagreus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tanycolagreus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tanycolagreus"
+		}
+	]
+}

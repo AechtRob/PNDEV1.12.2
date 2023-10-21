@@ -28,7 +28,7 @@ public class StructureSpawnMonkeyPuzzleAruacaria extends ElementsLepidodendronMo
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMonkeyPuzzleAraucaria))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genMonkeyPuzzleAraucaria && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMonkeyPuzzleAraucaria && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

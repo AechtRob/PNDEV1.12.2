@@ -9,12 +9,12 @@ import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -38,6 +38,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -57,13 +58,20 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 
 	public EntityPrehistoricFloraWebsteroprion(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
-		this.navigator = new PathNavigateWaterBottom(this, world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraWebsteroprion.WanderMoveHelper();
+			this.navigator = new PathNavigateWaterBottom(this, world);
+		}
 		setSize(0.6F, 0.6F);
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
 		maxHealthAgeable = 12D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -194,10 +202,17 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		tasks.addTask(0, new WaterLeapAtTargetAI(this, 0.1F));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new WebsteroprionWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new WebsteroprionEatItemsAI(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		//this.targetTasks.addTask(0, new WebsteroprionEatItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 10F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		//this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.MEAT, DietString.FISH), DietString.CRUSTACEAN), DietString.NAUTILOID);
 	}
 
 	@Override
@@ -441,7 +456,7 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		this.world.profiler.endSection();
 
 		if (!getBuried()) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 
 		if (!this.world.isRemote) {

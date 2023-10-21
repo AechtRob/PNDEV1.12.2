@@ -155,8 +155,8 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 				}
 				i = rand.nextInt(9);
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
-				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":eggs_hylonomus";}
-				if (i == 2) {stringEgg = LepidodendronMod.MODID + ":eggs_casineria";}
+				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":prehistoric_flora_hylonomus";}
+				if (i == 2) {stringEgg = LepidodendronMod.MODID + ":prehistoric_flora_casineria";}
 				if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_gerarus";}
 				if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_archoblattina";}
 				if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
@@ -178,7 +178,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 							stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";
 						}
 						if (i == 2) {
-							stringEgg = LepidodendronMod.MODID + ":insect_eggs_labidosaurus";
+							stringEgg = LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus";
 						}
 						if (i == 3) {
 							stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";
@@ -203,10 +203,10 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 							stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";
 						}
 						if (i == 2) {
-							stringEgg = LepidodendronMod.MODID + ":insect_eggs_labidosaurus";
+							stringEgg = LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus";
 						}
 						if (i == 3) {
-							stringEgg = LepidodendronMod.MODID + ":insect_eggs_weigeltisaurus";
+							stringEgg = LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus";
 						}
 						if (i == 4) {
 							stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";
@@ -303,7 +303,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 				}
 			}
 
-			if (dimID == LepidodendronConfig.dimJurassic) {
+			if (dimID == LepidodendronConfig.dimJurassic) { //Add Celtedens
 				Biome biome = worldIn.getBiome(pos);
 				if (biome instanceof BiomeJurassic) {
 					BiomeJurassic biomeJurassic = (BiomeJurassic) biome;

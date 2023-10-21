@@ -1,7 +1,7 @@
 {
 	"name": "Scleromochlus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/scleromochlus_icon.png",
+	"icon": "paleopedia:textures/items/scleromochlus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_scleromochlus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scleromochlus",
 			"title": "Scleromochlus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Desert Dunes$(br2)>Archosauriformes$(br)>Eucrocopoda$(br)>Scleromochlidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauriformes$(br)>Eucrocopoda$(br)>Scleromochlidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Scleromochlus is a lizard like archosauriform from the Late Triassic that would have been able to hop around. It had long hind legs suggesting that it may have been capable of four legged and 2 legged locomotion. Scleromochlus is also debated on its role in pterosaur evolution."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_scleromochlus",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scleromochlus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scleromochlus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scleromochlus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scleromochlus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scleromochlus"
 		}
 	]
 }

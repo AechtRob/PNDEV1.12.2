@@ -1,7 +1,7 @@
 {
 	"name": "Heliopeltis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/heliopeltis_icon.png",
+	"icon": "paleopedia:textures/items/heliopeltis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_heliopeltis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_heliopeltis",
 			"title": "Heliopeltis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Corynexochida$(br)>Styginidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Trilobita$(br)>Corynexochida$(br)>Styginidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Heliopeltis is a genus of trilobite from the Devonian period of Morocco. It had many long spines that protruded from its body and head. These spines were much longer than its actual body, sometimes being more than twice the length."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_heliopeltis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heliopeltis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heliopeltis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heliopeltis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heliopeltis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heliopeltis"
 		}
 	]
 }

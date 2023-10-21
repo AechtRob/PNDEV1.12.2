@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:burnished_treefern_log"
+    },
+    "4": {
+      "item": "lepidodendron:burnished_treefern_log"
+    },
+    "5": {
+      "item": "lepidodendron:burnished_treefern_log"
+    },
+    "6": {
+      "item": "lepidodendron:burnished_treefern_log"
+    },
+    "7": {
+      "item": "lepidodendron:burnished_treefern_log"
+    },
+    "8": {
+      "item": "lepidodendron:burnished_treefern_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:burnished_treefern_pallisade",
+    "count": 4
+  }
+}

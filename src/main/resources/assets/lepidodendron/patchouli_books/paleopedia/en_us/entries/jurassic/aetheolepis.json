@@ -1,7 +1,7 @@
 {
 	"name": "Aetheolepis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/aetheolepis_icon.png",
+	"icon": "paleopedia:textures/items/aetheolepis_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_aetheolepis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aetheolepis",
 			"title": "Aetheolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Archaeomaenidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Archaeomaenidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "an analysis of the head anatomy and the shape of its scales reveals it to be closer to animals like Aphnelepis instead, even though the body shape is not as similar. Aetheolepis was described in 1895 by Arthur Smith Woodward on the basis of fossils from the Talbragar fossil site, famous for its terrestrial fossils."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_aetheolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aetheolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aetheolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aetheolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aetheolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aetheolepis"
 		}
 	]
 }

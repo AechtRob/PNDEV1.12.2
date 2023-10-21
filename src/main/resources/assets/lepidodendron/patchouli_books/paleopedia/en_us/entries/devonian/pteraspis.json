@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pteraspis",
 			"title": "Pteraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean, Forest, Floodplain, Wet Meadow$(br2)>Pteraspidomorphi$(br)>Pteraspidiformes$(br)>Pteraspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Pteraspidomorphi$(br)>Pteraspidiformes$(br)>Pteraspididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pteraspis was an agnathan(jawless) fish from the Devonian with protective armor covering its upper body and head. At the tip of its head was also a pointed protrusion as well as wing-like protrusions on the sides of its body. Pteraspis was very streamlined, making it a good swimmer and it is thought to have fed off plankton just under the ocean surface."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pteraspis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pteraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pteraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pteraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pteraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pteraspis"
 		}
 	]
 }

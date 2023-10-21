@@ -16,10 +16,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -32,7 +29,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -48,8 +44,8 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		super(world);
 		setSize(1.1F, 1.3F);
 		minWidth = 0.18F;
-		maxWidth = 1.1F;
-		maxHeight = 1.3F;
+		maxWidth = 1.2F;
+		maxHeight = 1.4F;
 		maxHealthAgeable = 50.0D;
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -109,7 +105,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		return true;
 	}
 	
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.415F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -121,7 +117,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.37F;
+			speedBase = speedBase * 2.00F;
 		}
 		return speedBase;
 	}
@@ -162,24 +158,23 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.85));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this,1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2D));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(5, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2D));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2D));
+//		this.targetTasks.addTask(4, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(5, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2D));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return DietString.MEAT;
 	}
+
 
 	@Override
 	public boolean findGrappleTarget() {
@@ -262,20 +257,16 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int headbutTick() {
-		return (200 - 30) + 10;
+		return 180;
 	}
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
@@ -316,14 +307,6 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 			this.getGrappleTarget().knockBack(this, 0.4F, d1, d0);
 
 			this.getGrappleTarget().addVelocity(0, 0.065, 0);
-
-			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
-				grappleTarget.setGrappleTarget(null);
-				grappleTarget.willGrapple = false;
-			}
-			this.setGrappleTarget(null);
-			this.willGrapple = false;
 
 		}
 	}

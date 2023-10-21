@@ -1,7 +1,7 @@
 {
 	"name": "Progonoblattina",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/archoblattina_icon.png",
+	"icon": "paleopedia:textures/items/archoblattina_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_archoblattina",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archoblattina",
 			"title": "Progonoblattina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arthropoda$(br)>Insecta$(br)>Blattodea$(br)>Archimylacridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Blattodea$(br)>Archimylacridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Progonoblattina is a prehistoric roach from the Carboniferous. It had a flattened body with heavily veined wings and they probably laid their eggs into moss, soil or other crevices."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_archoblattina",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archoblattina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archoblattina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archoblattina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archoblattina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archoblattina"
 		}
 	]
 }

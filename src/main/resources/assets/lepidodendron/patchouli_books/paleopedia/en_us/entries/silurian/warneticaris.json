@@ -1,7 +1,7 @@
 {
 	"name": "Warneticaris",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/warneticaris_icon.png",
+	"icon": "paleopedia:textures/items/warneticaris_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_warneticaris",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_warneticaris",
 			"title": "Warneticaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Crinoid Garden$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Warneticaris is phyllocarid crustacean known mostly from Silurian. With a tail spine reaching 20cm, it is the largerst phyllocarid ever known, estimating this animal reached near a meter. Although it was once considered to be synonymous with Schugurocaris, its morphology is closer to Ceratiocaris."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_warneticaris",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_warneticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_warneticaris"
 		}
 	]
 }

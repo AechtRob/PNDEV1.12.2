@@ -1,7 +1,7 @@
 {
 	"name": "Glaurung",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/glaurung_icon.png",
+	"icon": "paleopedia:textures/items/glaurung_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_glaurung",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_glaurung",
 			"title": "Glaurung",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands$(br2)>Reptilia$(br)>Weigeltisauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Weigeltisauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Glaurung is a weigeltisaurid from the Permian period. Similar to its more famous relative Coelurosauravus, it had wings that were attached to the sides of its body. In life it lived near a large inland sea in Northern Europe and its environment was considered to be semi arid."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_glaurung",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_glaurung"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_glaurung"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_glaurung"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_glaurung"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_glaurung"
 		}
 	]
 }

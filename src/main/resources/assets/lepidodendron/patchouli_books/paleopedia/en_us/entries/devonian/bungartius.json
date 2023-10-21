@@ -1,7 +1,7 @@
 {
 	"name": "Bungartius",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/bungartius_icon.png",
+	"icon": "paleopedia:textures/items/bungartius_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_bungartius",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bungartius",
 			"title": "Bungartius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Arthrodira$(br)>Bungartiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Bungartiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Bungartius is relatively large-sized placoderm known from Devonian Cleveland Shale, same locality that have famous Dunkleosteus and Cladoselache. It is characterized by having scissor-like shaped plate which used as tooth. Using that, it was probably able to crush not only common prey like fish, but also hard-shelled animals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_bungartius",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bungartius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bungartius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bungartius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bungartius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bungartius"
 		}
 	]
 }

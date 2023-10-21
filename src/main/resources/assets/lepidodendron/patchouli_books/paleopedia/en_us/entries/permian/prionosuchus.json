@@ -1,7 +1,7 @@
 {
 	"name": "Prionosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/prionosuchus_icon.png",
+	"icon": "paleopedia:textures/items/prionosuchus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_prionosuchus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_prionosuchus",
 			"title": "Prionosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Archegosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Archegosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Prionosuchus is a massive temnospondyl from the Early Permian period. It was a giant croc like amphibian with an elongated snout and teeth designed for shredding. They would have been aquatic ambush predators, lying in wait for fish or other aquatic animals to pass overhead. It had a tail that was adapted for swimming and it also had a long body and short legs. Its fossils have been found in northeastern Brazil."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_prionosuchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_prionosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_prionosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_prionosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_prionosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_prionosuchus"
 		}
 	]
 }

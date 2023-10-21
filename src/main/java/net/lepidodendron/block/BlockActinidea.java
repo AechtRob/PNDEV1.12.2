@@ -1,10 +1,12 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.gen.VineGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.SoundType;
@@ -28,8 +30,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -76,7 +82,110 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemMossForStone", BlockActinidea.block);
 	}
 
-	public static class BlockCustom extends BlockVine {
+	@Override
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+
+		boolean dimensionCriteria = false;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimActinidea))
+			dimensionCriteria = true;
+//		if (dimID == LepidodendronConfig.dimCarboniferous
+//				|| dimID == LepidodendronConfig.dimPermian
+//				|| dimID == LepidodendronConfig.dimTriassic
+//				|| dimID == LepidodendronConfig.dimJurassic)
+//		{
+//			dimensionCriteria = true;
+//		}
+		if (!dimensionCriteria)
+			return;
+
+		boolean biomeCriteria = false;
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		if (!matchBiome(biome, LepidodendronConfigPlants.genActinideaBlacklistBiomes)) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+		}
+		if (matchBiome(biome, LepidodendronConfigPlants.genActinideaOverrideBiomes))
+			biomeCriteria = true;
+		if (!LepidodendronConfigPlants.genActinidea && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+			biomeCriteria = false;
+
+
+//		if (biome instanceof BiomeJurassic)
+//		{
+//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
+//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
+//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
+//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
+//				biomeCriteria = true;
+//			}
+//			else {
+//				biomeCriteria = false;
+//			}
+//		}
+
+		if (!biomeCriteria)
+			return;
+
+		int GenChance = 30;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierActinidea;
+		if (GenMultiplier < 0) {GenMultiplier = 0;}
+		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
+		//Is this a transformed biome?
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
+			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
+			GenChance = Math.min(GenChance * 10, 100);
+		}
+
+		for (int i = 0; i < (int) GenChance; i++) {
+			int l6 = chunkX + random.nextInt(16) + 8;
+			int i11 = random.nextInt(128);
+			int l14 = chunkZ + random.nextInt(16) + 8;
+			(new VineGenerator((BlockVine) block)).generate(world, random, new BlockPos(l6, i11, l14));
+		}
+	}
+
+	public static boolean matchBiome(Biome biome, String[] biomesList) {
+
+		//String regName = biome.getRegistryName().toString();
+
+		String[] var2 = biomesList;
+		int var3 = biomesList.length;
+
+		for(int var4 = 0; var4 < var3; ++var4) {
+			String checkBiome = var2[var4];
+			if (!checkBiome.contains(":")) {
+				//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
+				if (checkBiome.equalsIgnoreCase(
+						biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
+				)) {
+					return true;
+				}
+			}
+			if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static class BlockCustom extends BlockVine implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
@@ -85,6 +194,13 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
         	setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
 		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ACTINIDEA;
+		}
+
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
@@ -339,7 +455,7 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering-plant vine");
-	        	tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene");
+	        	tooltip.add("Periods: Paleogene (Eocene) - Neogene - Pleistocene");
 	        	tooltip.add("Propagation: fruit");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

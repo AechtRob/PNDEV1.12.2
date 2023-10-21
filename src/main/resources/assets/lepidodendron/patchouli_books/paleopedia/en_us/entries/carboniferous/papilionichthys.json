@@ -1,0 +1,46 @@
+{
+	"name": "Papilionichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/papilionichthys_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_papilionichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_papilionichthys",
+			"title": "Papilionichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Iniopterygia $(br)>Iniopterygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/papilionichthys.png"],
+			"title": "P. stahlae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_papilionichthys",
+			"type": "text",
+			"text": "Papilionichthys, the \"Butterfly fish\" of the Carboniferous! This small animal was described alongside the larger Rainerichthys and is an Iniopterygid from the Carboniferous (they didn't exist in other periods). This is the smallest among the members of the group in the mod."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_papilionichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_papilionichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_papilionichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_papilionichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_papilionichthys"
+		}
+	]
+}

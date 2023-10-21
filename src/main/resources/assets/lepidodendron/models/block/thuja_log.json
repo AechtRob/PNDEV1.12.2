@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/thuja_log_end",
+    "up": "lepidodendron:blocks/thuja_log_end",
+    "north": "lepidodendron:blocks/thuja_log",
+    "east": "lepidodendron:blocks/thuja_log",
+    "south": "lepidodendron:blocks/thuja_log",
+    "west": "lepidodendron:blocks/thuja_log",
+    "particle": "lepidodendron:blocks/thuja_log_end"
+  }
+}

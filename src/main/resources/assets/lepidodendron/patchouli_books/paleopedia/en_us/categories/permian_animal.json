@@ -1,7 +1,7 @@
 {
     "name": "Permian Animals",
     "description": "Animals of the Permian",
-    "icon": "paleopedia:textures/dimetrodon_icon.png",
+    "icon": "paleopedia:textures/items/dimetrodon_icon.png",
     "parent": "lepidodendron:permian",
     "sortnum": 1
 }

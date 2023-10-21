@@ -51,9 +51,9 @@ public class ItemEuspira extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_euspira", ItemEuspira.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemEuspira.block);
-		OreDictionary.registerOre("foodMeat", ItemEuspira.block);
 		OreDictionary.registerOre("itemShellfish", ItemEuspira.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemEuspira.block);
+		OreDictionary.registerOre("pndietShellfish", ItemEuspira.block);
 	}
 
 	public static class ItemCustom extends Item {

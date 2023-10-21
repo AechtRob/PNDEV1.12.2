@@ -107,7 +107,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-			if (state.getValue(FACING) == EnumFacing.UP) {
+			if (state.getValue(FACING) == EnumFacing.UP || state.getValue(FACING) == EnumFacing.DOWN) {
 				TileEntity tileEntity = worldIn.getTileEntity((pos));
 				if (tileEntity != null && tileEntity.hasWorld()) {
 					if (tileEntity instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {

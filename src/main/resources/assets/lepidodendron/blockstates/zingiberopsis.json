@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:zingiberopsis"},
+      {"model": "lepidodendron:zingiberopsis_var"},
+      {"model": "lepidodendron:zingiberopsis_rot"},
+      {"model": "lepidodendron:zingiberopsis_var_rot"}
+    ]
+  }
+}

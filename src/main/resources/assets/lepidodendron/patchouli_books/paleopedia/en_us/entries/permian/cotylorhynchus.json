@@ -1,7 +1,7 @@
 {
 	"name": "Cotylorhynchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cotylorhynchus_icon.png",
+	"icon": "paleopedia:textures/items/cotylorhynchus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_cotylorhynchus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cotylorhynchus",
 			"title": "Cotylorhynchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Synapsida$(br)>Caseasauria$(br)>Caseidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Caseasauria$(br)>Caseidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cotylorhynchus is a large herbivorous synapsid that lived during the Middle Permian period. It had a massive body and a disproportionately small head with a long fat tail. They could grow to lengths of up to 4.8m."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cotylorhynchus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cotylorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cotylorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cotylorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cotylorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cotylorhynchus"
 		}
 	]
 }

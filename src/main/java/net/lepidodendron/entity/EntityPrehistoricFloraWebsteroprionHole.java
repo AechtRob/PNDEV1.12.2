@@ -7,7 +7,10 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockWebsteroprionBurrow;
-import net.lepidodendron.entity.ai.WebsteroprionEatItemsAIHole;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraWebsteroprionHoleAI;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -27,12 +30,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.List;
 
-public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implements IAnimatedEntity {
+public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implements IAnimatedEntity, IPrehistoricDiet {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -51,6 +55,16 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 		super(world);
 		setSize(0.99F, 0.99F);
 		this.targetSorter = new EntityPrehistoricFloraWebsteroprionHole.PlayerSorter(this);
+	}
+
+	@Override
+	public boolean isChild()
+	{
+		return false;
+	}
+
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -162,6 +176,11 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 	//}
 
 	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.MEAT, DietString.FISH), DietString.CRUSTACEAN), DietString.NAUTILOID);
+	}
+
+	@Override
 	public void playLivingSound() {
 	}
 
@@ -183,7 +202,7 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 	protected void initEntityAI() {
 		//No attack AI to run
 		//tasks.addTask(0, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		this.targetTasks.addTask(0, new WebsteroprionEatItemsAIHole(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraWebsteroprionHoleAI(this));;
 	}
 
 	@Override

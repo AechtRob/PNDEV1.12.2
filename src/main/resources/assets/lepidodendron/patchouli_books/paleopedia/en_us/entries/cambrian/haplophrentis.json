@@ -1,0 +1,51 @@
+{
+	"name": "Haplophrentis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/haplophrentis_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_haplophrentis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_haplophrentis",
+			"title": "Haplophrentis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Lophotrochozoa $(br)>Hyolitha $(br)>Hyolithida $(br)>Hyolithidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/haplophrentis.png"],
+			"title": "H. reesei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haplophrentis",
+			"type": "text",
+			"text": "Haploprhentis is a small, shelled creature from the Cambrian of the modern northern American continent. It lived in association with many other well-known Cambrian animals of the Greater Phyllopod Bed and Burgess Shale. It was not a very common member of the communities there. It was a small creature up to around 4.5cm long, and is possibly related to brachiopods or other molluscs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haplophrentis",
+			"type": "text",
+			"text": "It was a small creature up to around 4.5cm long, and is possibly related to brachiopods or other molluscs. It was a filter feeder and possessed arm-like structures which could be used to elevate the shell opening diagonally, and perhaps also used to push the creature around on the sea-floor. Its name means \"single wall\", in reference to the shell possessing only a single wall inside it."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_haplophrentis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_haplophrentis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_haplophrentis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_haplophrentis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_haplophrentis"
+		}
+	]
+}

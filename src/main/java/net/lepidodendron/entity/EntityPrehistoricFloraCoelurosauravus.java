@@ -4,18 +4,15 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockLeafLitter;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
+import net.lepidodendron.entity.ai.DietString;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -36,11 +33,6 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 		maxHealthAgeable = 5.0D;
 	}
 
-	@Override
-	public boolean canJar() {
-		return true;
-	}
-
 	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Gliding Reptile";}
@@ -56,14 +48,14 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.377F;
 	}
 
 	@Override
 	public boolean testLay(World world, BlockPos pos) {
 		return (
-				nestBlockMatch(world, pos)
+				this.nestBlockMatch(world, pos)
 		);
 	}
 
@@ -71,7 +63,11 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 	public boolean nestBlockMatch(World world, BlockPos pos) {
 		boolean match = false;
 		if (!match) {
-			match = ((world.getBlockState(pos.down()).getBlock() == BlockLeafLitter.block)
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
 					&& world.isAirBlock(pos));
 		}
 		return match;
@@ -83,22 +79,8 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.COELUROSAURAVUS_LOOT_JAR;
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
-
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 }

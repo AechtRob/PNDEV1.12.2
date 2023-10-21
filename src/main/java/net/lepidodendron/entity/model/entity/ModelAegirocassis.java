@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelAegirocassis extends AdvancedModelBase {
@@ -88,8 +87,8 @@ public class ModelAegirocassis extends AdvancedModelBase {
     private final AdvancedModelRenderer segment11;
 
     public ModelAegirocassis() {
-        this.textureWidth = 128;
-        this.textureHeight = 128;
+        this.textureWidth = 95;
+        this.textureHeight = 95;
 
         this.body = new AdvancedModelRenderer(this);
         this.body.setRotationPoint(0.0F, 24.0F, 0.0F);
@@ -174,6 +173,7 @@ public class ModelAegirocassis extends AdvancedModelBase {
         this.appendageR = new AdvancedModelRenderer(this);
         this.appendageR.setRotationPoint(-2.0F, 1.0F, -13.0F);
         this.headbase.addChild(appendageR);
+        this.appendageR.cubeList.add(new ModelBox(appendageR, 6, 77, -1.5F, 1.0F, -1.0F, 3, 4, 0, 0.0F, false));
         this.appendageR.cubeList.add(new ModelBox(appendageR, 62, 35, -1.5F, -1.0F, -7.0F, 2, 2, 7, 0.0F, false));
 
         this.shaftR = new AdvancedModelRenderer(this);
@@ -204,6 +204,7 @@ public class ModelAegirocassis extends AdvancedModelBase {
         this.appendageL = new AdvancedModelRenderer(this);
         this.appendageL.setRotationPoint(2.0F, 1.0F, -13.0F);
         this.headbase.addChild(appendageL);
+        this.appendageL.cubeList.add(new ModelBox(appendageL, 0, 77, -1.5F, 1.0F, -1.0F, 3, 4, 0, 0.0F, false));
         this.appendageL.cubeList.add(new ModelBox(appendageL, 19, 64, -0.5F, -1.0F, -7.0F, 2, 2, 7, 0.0F, false));
 
         this.shaftL = new AdvancedModelRenderer(this);

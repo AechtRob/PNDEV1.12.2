@@ -6,9 +6,10 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGreenAlgaeMat;
 import net.lepidodendron.block.BlockRedAlgaeMat;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.entity.util.ShoalingHelper;
-import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -41,11 +42,12 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -63,11 +65,51 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     public EntityPrehistoricFloraTrilobiteBottomBase(World world) {
         super(world);
         this.enablePersistence();
-        this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
-        this.navigator = new PathNavigateWaterBottom(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraTrilobiteBottomBase.WanderMoveHelper();
+            this.navigator = new PathNavigateWaterBottom(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    public boolean hasPNVariants() {
+        return false;
+    }
+
+    /**
+     * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+     * -1 = the variants must be different to breed
+     * 0 = the variants can be either different or the same to breed
+     * 1 = the variants must be the same to breed
+     */
+    public byte breedPNVariantsMatch() {
+        return 0;
+    }
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack)
+    {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isChild()
+    {
+        return false;
+    }
+
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
+            return EnumCreatureAttributePN.INVERTEBRATE;
+        }
+        return EnumCreatureAttributePN.VERTEBRATE;
     }
 
     @Override
@@ -133,15 +175,6 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
 
     public String getBucketMessage() {
         return "is too grown up to fit into a bucket";
-    }
-
-    @Override
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
-               // ((OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-            //|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishcooked"), stack)));
-        //return stack.getItem() == ItemFishFood.block;
     }
 
     public void eatItem(ItemStack stack) {
@@ -351,6 +384,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
 
     @Override
     public void onLivingUpdate() {
+        this.renderYawOffset = this.rotationYaw;
         //Updated from vanilla to allow underwater jumping:
         if (this.jumpTicks > 0)
         {

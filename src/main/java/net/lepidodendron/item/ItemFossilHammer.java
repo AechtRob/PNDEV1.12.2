@@ -1,10 +1,8 @@
 package net.lepidodendron.item;
 
 import com.google.common.collect.Multimap;
-import com.google.common.collect.Sets;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.*;
 import net.lepidodendron.block.BlockFossil;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
@@ -18,8 +16,8 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -50,23 +48,9 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
         ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:fossil_hammer", "inventory"));
     }
 
-    private static class ItemToolCustom extends ItemTool {
+    private static class ItemToolCustom extends ItemPickaxe {
         protected ItemToolCustom() {
-            super(ToolMaterial.IRON, Sets.newHashSet(
-                    BlockFossilPrecambrian.block,
-                    BlockFossilCambrian.block,
-                    BlockFossilOrdovician.block,
-                    BlockFossilSilurian.block,
-                    BlockFossilDevonian.block,
-                    BlockFossilCarboniferous.block,
-                    BlockFossilPermian.block,
-                    BlockFossilTriassic.block,
-                    BlockFossilJurassic.block,
-                    BlockFossilCretaceous.block,
-                    BlockFossilPaleogene.block,
-                    BlockFossilNeogene.block,
-                    BlockFossilPleistocene.block
-            ));
+            super(ToolMaterial.IRON);
             setMaxDamage(500);
             setMaxStackSize(1);
             this.efficiency = 4.0F;
@@ -107,9 +91,9 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
             return (state.getBlock() instanceof BlockFossil);
         }
 
-        public boolean canHarvestBlock(IBlockState blockIn)
-        {
-            return blockIn.getBlock() instanceof BlockFossil;
+        @Override
+        public int getHarvestLevel(ItemStack stack, String toolClass, @Nullable EntityPlayer player, @Nullable IBlockState blockState) {
+            return 2;
         }
 
         @Override

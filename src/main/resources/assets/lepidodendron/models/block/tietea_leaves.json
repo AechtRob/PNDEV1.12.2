@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
 		"e": "lepidodendron:blocks/tietea_leaf_b_e",

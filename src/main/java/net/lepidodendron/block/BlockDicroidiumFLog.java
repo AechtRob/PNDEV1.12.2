@@ -42,7 +42,7 @@ public class BlockDicroidiumFLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:dicroidium_f_sapling", BlockDicroidiumFLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:dicroidium_f_sapling", BlockDicroidiumFLog.block);
 		OreDictionary.registerOre("logWood", BlockDicroidiumFLog.block);
 	}
 

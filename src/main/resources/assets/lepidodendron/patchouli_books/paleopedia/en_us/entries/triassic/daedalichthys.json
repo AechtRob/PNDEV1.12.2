@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_daedalichthys",
 			"title": "Daedalichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Palaeonisciformes"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Palaeonisciformes"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "This discovery, seemingly unremarkable to us, allowed for a series of easily identifiable characters to be discovered, ones we now use to more easily pinpoint this animal group without much doubt in its classification."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_daedalichthys",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_daedalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_daedalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_daedalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_daedalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_daedalichthys"
 		}
 	]
 }

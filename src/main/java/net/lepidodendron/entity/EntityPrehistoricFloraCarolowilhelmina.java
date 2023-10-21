@@ -1,29 +1,31 @@
 
 package net.lepidodendron.entity;
 
+import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderCarolowilhelmina;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -109,14 +111,15 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1, 0));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1, 0));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
 	}
 
 	@Override
@@ -143,6 +146,8 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(12.0D);
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -169,8 +174,28 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
+
+		//System.err.println(this.getAnimationTick());
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
+	}
+
+	@Override
+	public boolean attackEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+
+	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
 	public void onEntityUpdate() {

@@ -1,7 +1,7 @@
 {
 	"name": "Urosthenes",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/urosthenes_icon.png",
+	"icon": "paleopedia:textures/items/urosthenes_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_urosthenes",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_urosthenes",
 			"title": "Urosthenes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Palaeonisciformes"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Urosthenes latus is the second species under the genus to be described. Different from its cousin, Urosthenes had a short and round body with large and veil-like fins almost symmetrical in shape. The ventral fins were moved close to the face and also were quite large compared to the body, similarly to the Dorsal and Anal fins. Contrary to most other archaic Actinopterygians, Urosthenes had very thin scales."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_urosthenes",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_urosthenes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_urosthenes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_urosthenes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_urosthenes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_urosthenes"
 		}
 	]
 }

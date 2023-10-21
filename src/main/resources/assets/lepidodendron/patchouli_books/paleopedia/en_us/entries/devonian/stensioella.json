@@ -1,7 +1,7 @@
 {
 	"name": "Stensioella",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/stensioella_icon.png",
+	"icon": "paleopedia:textures/items/stensioella_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_stensioella",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stensioella",
 			"title": "Stensioella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Stensioellida$(br)>Stensioellidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Stensioellida$(br)>Stensioellidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Stensioella is a fish of uncertain placement. It is debated whether or not the animal was a placoderm and it had some resemblences to later holocephalians. They had wing like fins and were likely bottom dwelling fish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_stensioella",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stensioella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stensioella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stensioella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stensioella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stensioella"
 		}
 	]
 }

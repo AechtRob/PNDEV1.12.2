@@ -10,6 +10,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDiictodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -19,14 +21,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +38,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -72,6 +75,11 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 
 	public boolean hasLargeBurrow() {
 		return false;
+	}
+
+	@Override
+	public int getDrinkLength() {
+		return 45;
 	}
 
 	@Override
@@ -125,12 +133,12 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		return true;
 	}
 
-	protected float getAISpeedLand() {
-		float speedBase = 0.348F;
+	public float getAISpeedLand() {
+		float speedBase = 0.22F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -174,11 +182,17 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		tasks.addTask(5, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1.5));
+		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 20));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(12, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1.5));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.ROOTS, DietString.BUG), DietString.SEED);
 	}
 
 	@Override
@@ -186,14 +200,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -274,14 +281,29 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
+
+		if (this.getAnimation() == DRINK_ANIMATION && this.getClass() == EntityPrehistoricFloraDiictodon.class) {
+			if ((!world.isRemote) && this.getAnimationTick() == Math.round(this.getAnimation().getDuration() * 0.75F)) {
+				ItemStack stack = new ItemStack(ItemRoots.block, 1);
+				int i = this.rand.nextInt(8);
+				boolean roots = false;
+				for (int ii = 4; ii < i; ii++) {
+					EntityItem entityToSpawn = new EntityItem(world, this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY() + 1, this.getDrinkingFrom().getZ() + 0.5, stack);
+					entityToSpawn.setPickupDelay(20);
+					entityToSpawn.addVelocity((world.rand.nextInt(3) - 1) * 0.05F,(world.rand.nextInt(3) + 1) * 0.05F,(world.rand.nextInt(3) - 1) * 0.05F);
+					world.spawnEntity(entityToSpawn);
+					roots = true;
+				}
+				if (roots) {
+					world.playSound(null, this.getDrinkingFrom(), SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+				}
+			}
+		}
+
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -639,25 +661,25 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		if (oldBurrowState.getBlock() == Blocks.STRUCTURE_VOID) {
 			return Blocks.STRUCTURE_VOID.getDefaultState();
 		}
-		if (oldBurrowState == Blocks.SAND.getStateFromMeta(0) || oldBurrowState == BlockSandWavy.block) {
+		if (oldBurrowState == Blocks.SAND.getStateFromMeta(0) || oldBurrowState == BlockSandWavy.block.getDefaultState()) {
 			return BlockSandSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == Blocks.SAND.getStateFromMeta(1) || oldBurrowState == BlockSandRedWavy.block) {
+		else if (oldBurrowState == Blocks.SAND.getStateFromMeta(1) || oldBurrowState == BlockSandRedWavy.block.getDefaultState()) {
 			return BlockSandRedSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == Blocks.GRAVEL || oldBurrowState == BlockGravelWavy.block) {
+		else if (oldBurrowState == Blocks.GRAVEL.getDefaultState() || oldBurrowState == BlockGravelWavy.block.getDefaultState()) {
 			return BlockGravelSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandPangaean.block.getDefaultState() || oldBurrowState == BlockSandPangaeanWavy.block) {
+		else if (oldBurrowState == BlockSandPangaean.block.getDefaultState() || oldBurrowState == BlockSandPangaeanWavy.block.getDefaultState()) {
 			return BlockSandPangaeanSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block) {
+		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block.getDefaultState()) {
 			return BlockSandBlackSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block) {
+		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block.getDefaultState()) {
 			return BlockSandWhiteSticky.block.getDefaultState();
 		}
-		else if (oldBurrowState == BlockSandPaleoproterozoic.block.getDefaultState() || oldBurrowState == BlockSandPaleoproterozoicWavy.block) {
+		else if (oldBurrowState == BlockSandPaleoproterozoic.block.getDefaultState() || oldBurrowState == BlockSandPaleoproterozoicWavy.block.getDefaultState()) {
 			return BlockSandPaleoproterozoicSticky.block.getDefaultState();
 		}
 		else if (world.isAirBlock(pos) ||
@@ -665,30 +687,75 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 				&& oldBurrowState.getMaterial() != Material.GROUND
 				&& oldBurrowState.getMaterial() != Material.CLAY)
 				) {
-			if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(0) || world.getBiome(pos).topBlock == BlockSandWavy.block) {
+			if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(0) || world.getBiome(pos).topBlock == BlockSandWavy.block.getDefaultState()) {
 				return BlockSandSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(1) || world.getBiome(pos).topBlock == BlockSandRedWavy.block) {
+			else if (world.getBiome(pos).topBlock == Blocks.SAND.getStateFromMeta(1) || world.getBiome(pos).topBlock == BlockSandRedWavy.block.getDefaultState()) {
 				return BlockSandRedSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == Blocks.GRAVEL || world.getBiome(pos).topBlock == BlockGravelWavy.block) {
+			else if (world.getBiome(pos).topBlock == Blocks.GRAVEL.getDefaultState() || world.getBiome(pos).topBlock == BlockGravelWavy.block.getDefaultState()) {
 				return BlockGravelSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandPangaean.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPangaeanWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandPangaean.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPangaeanWavy.block.getDefaultState()) {
 				return BlockSandPangaeanSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandBlack.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandBlackWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandBlack.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandBlackWavy.block.getDefaultState()) {
 				return BlockSandBlackSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandWhite.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandWhiteWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandWhite.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandWhiteWavy.block.getDefaultState()) {
 				return BlockSandWhiteSticky.block.getDefaultState();
 			}
-			else if (world.getBiome(pos).topBlock == BlockSandPaleoproterozoic.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPaleoproterozoicWavy.block) {
+			else if (world.getBiome(pos).topBlock == BlockSandPaleoproterozoic.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPaleoproterozoicWavy.block.getDefaultState()) {
 				return BlockSandPaleoproterozoicSticky.block.getDefaultState();
 			}
 			return world.getBiome(pos).topBlock;
 		}
 		return oldBurrowState;
+	}
+
+	private boolean isBlockGrazable(IBlockState state) {
+		return (state.getMaterial() == Material.GROUND
+				|| state.getMaterial() == Material.GRASS );
+	}
+
+
+	@Override
+	public boolean isDrinking()
+	{
+		if (this.getClass() != EntityPrehistoricFloraDiictodon.class) {
+			return false;
+		}
+
+		//Is GRAZING!
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+						isBlockGrazable(this.world.getBlockState(entityPos.down()))
+				)
+		);
+		if (test) {
+			this.setDrinkingFrom(entityPos.down());
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+		}
+		return test;
+
+	}
+
+	@Override
+	public boolean drinksWater() {
+		return false;
 	}
 
 	//Rendering taxidermy:

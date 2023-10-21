@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -117,7 +118,8 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
 				biomeCriteria = true;
 			}
 			else {
@@ -151,7 +153,12 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
 			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_creek")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_creek_fog")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
 			GenChance = 192;
 		}
 
@@ -189,7 +196,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 	}
 
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -206,6 +213,12 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			}
 			setTranslationKey("pf_green_filamentous_algae");
 			setRegistryName("green_filamentous_algae");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ALGAE;
 		}
 
 		@Override

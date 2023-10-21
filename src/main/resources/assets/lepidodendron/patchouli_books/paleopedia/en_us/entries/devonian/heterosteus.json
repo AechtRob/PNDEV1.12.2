@@ -1,7 +1,7 @@
 {
 	"name": "Heterosteus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/heterosteus_icon.png",
+	"icon": "paleopedia:textures/items/heterosteus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_heterosteus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_heterosteus",
 			"title": "Heterosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Swamp, Wattieza Forest$(br2)>Brachythoraci$(br)>Heterosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Brachythoraci$(br)>Heterosteidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Heterosteus is a giant mainly freshwater placoderm, growing up to nearly 6 meters. It was a bottom dwelling, filter feeder which likely did not spend most of its time swimming, but rather slowly sifting through the sediments."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_heterosteus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food/Fish$(br)$(l)Breeds with:$() Fish Food/Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heterosteus"
 		}
 	]
 }

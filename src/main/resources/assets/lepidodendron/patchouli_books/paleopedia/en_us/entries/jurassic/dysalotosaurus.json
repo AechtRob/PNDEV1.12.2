@@ -1,7 +1,7 @@
 {
 	"name": "Dysalotosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dysalotosaurus_icon.png",
+	"icon": "paleopedia:textures/items/dysalotosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_dysalotosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dysalotosaurus",
 			"title": "Dysalotosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Dryosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Ornithischia$(br)>Dryosauridae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Of incredible interest were signs of Paleopathologies in some of its bones, making it among the oldest known evidence of viral infections in the fossil record. Thanks to the wealth of fossil material of the animal, we can estimate that it lived for around 20 years and reached sexual maturity at 10; it was also Omnivorous for the first part of their lives before switching to full herbivory in adulthood."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dysalotosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dysalotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dysalotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dysalotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dysalotosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dysalotosaurus"
 		}
 	]
 }

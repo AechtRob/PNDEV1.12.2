@@ -30,6 +30,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -104,7 +106,7 @@ public class BlockEmbothriumFlower extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			return EnumBlockRenderType.MODEL;
 		}
 
 		@Override
@@ -290,7 +292,22 @@ public class BlockEmbothriumFlower extends ElementsLepidodendronMod.ModElement {
 	        }
 	    }
 
-	    
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			long i = MathHelper.getCoordinateRandom(pos.getX(), pos.getY(), pos.getZ());
+			switch (state.getValue(FACING)) {
+				case UP: case DOWN: default:
+					return new Vec3d(((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D, 0.0D, ((double)((float)(i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+
+				case NORTH: case SOUTH:
+					return new Vec3d(((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, 0);
+
+				case EAST: case WEST:
+					return new Vec3d(0, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, ((double)((float)(i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+
+			}
+		}
 	}
 
 	public static class TileEntityCustom extends TileEntity {

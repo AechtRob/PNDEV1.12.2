@@ -1,0 +1,61 @@
+{
+	"name": "Hoplitaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hoplitaspis_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_hoplitaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hoplitaspis",
+			"title": "Hoplitaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Dekatriata $(br)>Chasmataspidida $(br)>Diploaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/hoplitaspis.png"],
+			"title": "H. hiawathai",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
+			"type": "text",
+			"text": "Hoplitaspis was a Late Ordovician chasmataspid arthropod described in 2017 from the Big Hill Formation of Michigan. It is the earliest known diploaspidid, a group of chasmataspids which were similar in appearance to eurypterids, and has morphology intermediate between the earlier Chasmataspis and later diploaspidids. It is also the largest known Chasmataspid, at around 30 centimeters. The physical similarity of diploaspidids to eurypterids"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
+			"type": "text",
+			"text": "has called into question the monophyletic nature of Chasmataspidida, as the earlier Chasmataspis bears more similarity to horseshoe crabs. However, recent cladistic studies have maintained the monophyletic nature of this group, with Hoplitaspis helping to unite them. Possessing swimming paddles convergent with those of eurypterids, Hoplitaspis is thought to have been an active marine predator."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
+			"type": "text",
+			"text": "It had large eyes which curved around the prosomal shield, resulting in a wide field of view, which may have allowed it to spot and ambush prey on the seafloor. The Big Hill Formation represents a shallow lagoonal environment which likely acted as a sheltered habitat that Hoplitaspis utilized while molting. Many of the specimens known from this location are thought to be shed exoskeletons and individuals that had recently undergone ecdysis."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
+			"type": "text",
+			"text": "The name Hoplitaspis means \"hoplite shield\", for the ancient Greek soldiers known as hoplites."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hoplitaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hoplitaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hoplitaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hoplitaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hoplitaspis"
+		}
+	]
+}

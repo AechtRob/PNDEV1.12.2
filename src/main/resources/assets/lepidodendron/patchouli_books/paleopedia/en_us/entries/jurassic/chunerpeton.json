@@ -1,0 +1,51 @@
+{
+	"name": "Chunerpeton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chunerpeton_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_chunerpeton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chunerpeton",
+			"title": "Chunerpeton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Amphibia $(br)>Caudata $(br)>Urodela $(br)>Cryptobranchoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/chunerpeton.png"],
+			"title": "C. tianyiensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chunerpeton",
+			"type": "text",
+			"text": "Chunerpeton is a Cryptobranchoid salamander from the Middle to Late Jurassic. It's known from the Daohugou Bed in Inner Mongolia, China. It was 18 cm in length and was neotenic, retaining external gills into adulthood. Phylogenetic studies have restored it as a  stem-group caudatan, outside the crown group of modern salamanders. Once, they were considered to belong to Cryptobranchidae including modern giant salamanders, but are now placed in the basal"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chunerpeton",
+			"type": "text",
+			"text": "suborder of Cryptobranchoidea or primitive salamanders. Like Jeholotriton, Chunerpeton was neotenic and has external gills."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chunerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chunerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chunerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chunerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chunerpeton"
+		}
+	]
+}

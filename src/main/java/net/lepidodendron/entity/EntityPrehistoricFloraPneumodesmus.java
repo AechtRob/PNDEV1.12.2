@@ -3,10 +3,10 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.minecraft.block.BlockDirectional;
@@ -14,7 +14,6 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,7 +30,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -100,7 +99,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.35f;
 	}
 
@@ -128,14 +127,16 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
-		tasks.addTask(3, new EntityAILookIdle(this));
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemMoss"), stack));
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.MOSS);
 	}
+
+	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -190,11 +191,11 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();
-		if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
+		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
 			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)

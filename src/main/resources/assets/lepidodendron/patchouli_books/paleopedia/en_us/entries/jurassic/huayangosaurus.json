@@ -1,0 +1,51 @@
+{
+	"name": "Huayangosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/huayangosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_huayangosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_huayangosaurus",
+			"title": "Huayangosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Stegosauria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/huayangosaurus.png"],
+			"title": "H. taibaii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_huayangosaurus",
+			"type": "text",
+			"text": "Huayangosaurus is a genus of stegosaurian dinosaur from the middle Jurassic of the Lower Shaxiaomao Formation. The name Huayangosaurus is derived from Huayang an alternate name for Sichuan and Saurus meaning lizard. Huayangosaurus lived during the Bathonian to Callovian stages, around 165 million years ago."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_huayangosaurus",
+			"type": "text",
+			"text": "Huayangosaurus looked rather unusual for a Stegosaurian with its long forelimbs and wide head. Huayangosaurus shows more basal Stegosaurian anatomy, retaining the thyreophoran flank row of osteoderms that end in a parascapular spine at the shoulder."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_huayangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_huayangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_huayangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_huayangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_huayangosaurus"
+		}
+	]
+}

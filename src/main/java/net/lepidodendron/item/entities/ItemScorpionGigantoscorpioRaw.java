@@ -30,8 +30,8 @@ public class ItemScorpionGigantoscorpioRaw extends ElementsLepidodendronMod.ModE
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpion_gigantoscorpio", ItemScorpionGigantoscorpioRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemScorpionGigantoscorpioRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemScorpionGigantoscorpioRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemScorpionGigantoscorpioRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemScorpionGigantoscorpioRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)

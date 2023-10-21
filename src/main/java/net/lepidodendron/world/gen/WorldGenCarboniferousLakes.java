@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCarboniferousMud;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -22,7 +23,7 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        for (position = position.add(-8, 0, -8); position.getY() > 5 && worldIn.isAirBlock(position); position = position.down())
+       for (position = position.add(-8, 0, -8); position.getY() > 5 && worldIn.isAirBlock(position); position = position.down())
         {
             ;
         }
@@ -36,7 +37,7 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
             position = position.down(4);
             boolean[] aboolean = new boolean[2048];
             int i = rand.nextInt(4) + 4;
-
+            BlockPos spawnPos = position;
             for (int j = 0; j < i; ++j)
             {
                 double d0 = rand.nextDouble() * 6.0D + 3.0D;
@@ -189,6 +190,7 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
                 }
             }
 
+            ChunkGenSpawner.executeProcedure(worldIn, spawnPos, rand, null, true, true);
             return true;
         }
     }

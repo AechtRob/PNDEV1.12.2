@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "block/cube",
 	"textures": {
 		"0": "lepidodendron:blocks/acrocomia_fruit_b",

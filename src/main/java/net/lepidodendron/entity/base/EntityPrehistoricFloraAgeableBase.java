@@ -5,17 +5,20 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockCageSmall;
-import net.lepidodendron.block.BlockMobSpawn;
-import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -23,15 +26,17 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.JsonToNBT;
+import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -41,24 +46,26 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.storage.AnvilChunkLoader;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable implements IAnimatedEntity  {
+public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
 
     private static final DataParameter<Integer> AGETICKS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> HUNTING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> ISFAST = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> ISSNEAKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
-    private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
@@ -90,11 +97,49 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
         this.enablePersistence();
-        this.setScaleForAge(false);
+        if (worldIn != null) {
+            this.setScaleForAge(false);
+        }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    public int warnDistance() {
+        return 16;
+    }
+
+    public void playStepSoundPublic() {
+        Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
+        BlockPos pos = this.getPosition();
+
+        SoundType soundtype = null;
+        SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
+        SoundEvent soundeventSnow = SoundEvents.BLOCK_SNOW_STEP;
+        if (this.world.getBlockState(pos).getBlock() == Blocks.SNOW_LAYER
+            || this.world.getBlockState(pos.down()).getBlock() == Blocks.SNOW)
+        {
+            soundtype = Blocks.SNOW_LAYER.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundeventSnow, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+        else if (!blockIn.getDefaultState().getMaterial().isLiquid())
+        {
+            soundtype = Blocks.DIRT.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+    }
+
+    public boolean noMossEggs() {
+        return false;
+    }
+
+    public float getSneakRange() {
+        return 0;
+    }
+
+    public float getUnSneakRange() {
+        return this.getSneakRange() * 0.5F;
     }
 
     @Override
@@ -118,6 +163,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
+    /**
+     * If there are variants, do they need to match, not match, or not care about matches in order to breed?
+     * -1 = the variants must be different to breed
+     * 0 = the variants can be either different or the same to breed
+     * 1 = the variants must be the same to breed
+    */
+    public byte breedPNVariantsMatch() {
+        return 0;
+    }
+
     public ItemStack getPropagule() {
         return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
@@ -131,7 +186,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public int warnCooldownTime() {
-        return 60; //how long between warning and attack
+        return 120; //how long between warning and attack
     }
 
     public void setWarnCooldown(int cooldown) {
@@ -316,6 +371,18 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean nestBlockMatch(World world, BlockPos pos) {
+        if (this.isNestMound()) {
+            boolean match = false;
+            if (!match) {
+                match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+                        || world.getBlockState(pos.down()).getMaterial() == Material.GRASS
+                        || world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+                        || (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+                        && world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
+                        && world.isAirBlock(pos));
+            }
+            return match;
+        }
         return false;
     }
 
@@ -402,6 +469,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return EnumCreatureAttribute.UNDEFINED;
     }
 
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {
+            return EnumCreatureAttributePN.INVERTEBRATE;
+        }
+        return EnumCreatureAttributePN.VERTEBRATE;
+    }
+
     @Override
     protected boolean canDespawn() {
         return false;
@@ -412,10 +486,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.entityInit();
         this.dataManager.register(AGETICKS, getAdultAge() - 1);
         this.dataManager.register(MATEABLE, 0);
-        this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
         this.dataManager.register(TICKS, 0);
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
+        this.dataManager.register(ISSNEAKING, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
@@ -451,11 +525,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             EntityLivingBase ee = this.getAttackTarget();
             if (ee.isRiding() && this.breaksBoat()) {
                 Entity boat = ee.getRidingEntity();
-                if (boat instanceof EntityBoat) {
+                if (boat instanceof EntityBoat && (!(boat instanceof PrehistoricFloraSubmarine))) {
                     boat.setDead();
                     this.playSound(SoundEvents.ENTITY_ZOMBIE_BREAK_DOOR_WOOD, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 }
             }
+            if (this.getOneHit()) {
+                this.setAttackTarget(null);
+                this.setRevengeTarget(null);
+                this.setWarnTarget(null);
+            }
+            this.setOneHit(false);
         }
     }
 
@@ -514,6 +594,30 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.shoalLeader = leader;
     }
 
+    public int getFootstepOffset() {
+        return 0;
+    }
+
+    public int getWalkCycleLength() {
+        return 0;
+    }
+
+    public int tetrapodWalkFootstepOffset() {
+        return 0;
+    }
+
+    public int getRunFootstepOffset() {
+        return 0;
+    }
+
+    public int getRunCycleLength() {
+        return 0;
+    }
+
+    public int tetrapodRunFootstepOffset() {
+        return 0;
+    }
+
     public int getTickOffset() {
         return this.dataManager.get(TICKOFFSET);
     }
@@ -553,6 +657,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.set(ISFAST, isFast);
     }
 
+    public boolean getIsSneaking() {
+        return this.dataManager.get(ISSNEAKING);
+    }
+
+    public void setIsSneaking(boolean isSneaking) {
+        this.dataManager.set(ISSNEAKING, isSneaking);
+    }
+
     public boolean getIsMoving() {
         return this.dataManager.get(ISMOVING);
     }
@@ -575,10 +687,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setAgeTicks(this.getAdultAge() - 1);
         this.setMateable(0);
-        this.setIsFemale(rand.nextInt(2) == 0);
         this.setTicks(0);
         this.setTickOffset(rand.nextInt(1000));
         this.setIsFast(false);
+        this.setIsSneaking(false);
         this.setWillHunt(false);
         //this.heal(this.getMaxHealth());
         //this.setNoAI(false);
@@ -593,33 +705,130 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos) {
-        worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-            @Override
-            public String getName() {
-                return "";
+
+        if (worldIn.isRemote) {
+            return;
+        }
+
+        String s = mobToSpawn;
+
+        String variantStr = "";
+        if (s.indexOf("@") >= 0) {
+            variantStr = s.substring(s.indexOf("@") + 1);
+            s = s.substring(0,s.indexOf("@"));
+        }
+
+        BlockPos pos = new BlockPos(xpos, ypos,zpos);
+
+        if (!worldIn.isBlockLoaded(pos))
+        {
+            return;
+        }
+
+        NBTTagCompound nbttagcompound = new NBTTagCompound();
+        boolean flag = false;
+        if (!nbtStr.trim().equalsIgnoreCase(""))
+        {
+            String s1 = nbtStr;
+
+            try
+            {
+                nbttagcompound = JsonToNBT.getTagFromJson(s1);
+                flag = true;
+            }
+            catch (NBTException nbtexception)
+            {
+                return;
+            }
+        }
+
+        if (!variantStr.equalsIgnoreCase("")) {
+            nbttagcompound.setString("PNType", variantStr);
+        }
+
+        //if (s.substring(0, 10).equalsIgnoreCase("minecraft:")) {
+            nbttagcompound.setBoolean("PersistenceRequired", true);
+        //}
+
+        nbttagcompound.setString("id", s);
+        Entity entity = AnvilChunkLoader.readWorldEntityPos(nbttagcompound, worldIn, xpos, ypos, zpos, true);
+        if (entity == null)
+        {
+            return;
+        }
+        else {
+            //System.err.println("Rand: " + ((world.rand.nextFloat() - 0.5F)/10F));
+            entity.setLocationAndAngles(xpos, ypos, zpos, MathHelper.wrapDegrees(worldIn.rand.nextFloat() * 360.0F), 0.0F);
+            nbttagcompound = entity.writeToNBT(nbttagcompound);
+
+            if (entity instanceof EntityLiving) {
+                ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
+                entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
             }
 
-            @Override
-            public boolean canUseCommand(int permission, String command) {
-                return true;
-            }
+            //Exceptions for variants:
+//            if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) entity;
+//                palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraPalaeodictyopteraNymph && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraPalaeodictyopteraNymph palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyopteraNymph) entity;
+//                palaeodictyoptera.setPNType(EntityPrehistoricFloraPalaeodictyopteraNymph.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraDragonfly && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraDragonfly dragonfly = (EntityPrehistoricFloraDragonfly) entity;
+//                dragonfly.setPNType(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraDragonflyNymph && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraDragonflyNymph dragonfly = (EntityPrehistoricFloraDragonflyNymph) entity;
+//                dragonfly.setPNType(EntityPrehistoricFloraDragonflyNymph.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraMegasecoptera && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraMegasecoptera dragonfly = (EntityPrehistoricFloraMegasecoptera) entity;
+//                dragonfly.setPNType(EntityPrehistoricFloraMegasecoptera.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraTitanoptera && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraTitanoptera titanoptera = (EntityPrehistoricFloraTitanoptera) entity;
+//                titanoptera.setPNType(EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraTitanopteraNymph && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraTitanopteraNymph titanoptera = (EntityPrehistoricFloraTitanopteraNymph) entity;
+//                titanoptera.setPNType(EntityPrehistoricFloraTitanopteraNymph.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraKalligrammatid && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraKalligrammatid kalligrammatid = (EntityPrehistoricFloraKalligrammatid) entity;
+//                kalligrammatid.setPNType(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraNotostracan && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraNotostracan notostracan = (EntityPrehistoricFloraNotostracan) entity;
+//                notostracan.setPNType(EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variantStr));
+//            } else if (entity instanceof EntityPrehistoricFloraLacewing && !variantStr.equalsIgnoreCase("")) {
+//                EntityPrehistoricFloraLacewing lacewing = (EntityPrehistoricFloraLacewing) entity;
+//                lacewing.setPNType(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variantStr));
+//            }
+        }
 
-            @Override
-            public World getEntityWorld() {
-                return worldIn;
-            }
 
-            @Override
-            public MinecraftServer getServer() {
-                return worldIn.getMinecraftServer();
-            }
 
-            @Override
-            public boolean sendCommandFeedback() {
-                return false;
-            }
-
-        }, "pf_summon " + mobToSpawn + " " + xpos + " " + ypos + " " + zpos + " " + nbtStr);
+//        worldIn.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+//            @Override
+//            public String getName() {
+//                return "";
+//            }
+//
+//            @Override
+//            public boolean canUseCommand(int permission, String command) {
+//                return true;
+//            }
+//
+//            @Override
+//            public World getEntityWorld() {
+//                return worldIn;
+//            }
+//
+//            @Override
+//            public MinecraftServer getServer() {
+//                return worldIn.getMinecraftServer();
+//            }
+//
+//            @Override
+//            public boolean sendCommandFeedback() {
+//                return false;
+//            }
+//
+//        }, "pf_summon " + mobToSpawn + " " + xpos + " " + ypos + " " + zpos + " " + nbtStr);
     }
 
     public static String getHabitat() {
@@ -667,10 +876,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.writeEntityToNBT(compound);
         compound.setInteger("AgeTicks", this.getAgeTicks());
         compound.setInteger("Ticks", this.getTicks());
-        compound.setBoolean("female", this.getIsFemale());
         compound.setInteger("TickOffset", this.getTickOffset());
         compound.setBoolean("willHunt", this.getWillHunt());
         compound.setBoolean("isFast", this.getIsFast());
+        compound.setBoolean("isSneaking", this.getIsSneaking());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
@@ -687,10 +896,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.readEntityFromNBT(compound);
         this.setAgeTicks(compound.getInteger("AgeTicks"));
         this.setTicks(compound.getInteger("Ticks"));
-        this.setIsFemale(compound.getBoolean("female"));
         this.setTickOffset(compound.getInteger("TickOffset"));
         this.setWillHunt(compound.getBoolean("willHunt"));
         this.setIsFast(compound.getBoolean("isFast"));
+        this.setIsSneaking(compound.getBoolean("isSneaking"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
@@ -703,14 +912,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         } else {
             this.dataManager.set(NEST_BLOCK_POS, Optional.absent());
         }
-    }
-
-    public boolean getIsFemale() {
-        return this.dataManager.get(ISFEMALE);
-    }
-
-    public void setIsFemale(boolean female) {
-        this.dataManager.set(ISFEMALE, female);
     }
 
     @Override
@@ -770,8 +971,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
                     if (this.world.getBlockState(blockpos$pooledmutableblockpos).causesSuffocation())
                     {
-                        blockpos$pooledmutableblockpos.release();
+                        //blockpos$pooledmutableblockpos.release();
                         isReallySuffocating = true;
+                        break;
                     }
                 }
             }
@@ -788,6 +990,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getAnimation() == NO_ANIMATION) {
                     if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         this.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase)this).HURT_ANIMATION);
+                    }
+                    else if (this instanceof EntityPrehistoricFloraPanguraptor) {
+                        this.setAnimation(((EntityPrehistoricFloraPanguraptor)this).HURT_ANIMATION);
                     }
                     else {
                         this.setAnimation(ROAR_ANIMATION);
@@ -854,6 +1059,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+        this.renderYawOffset = this.rotationYaw;
 
         if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
@@ -867,6 +1073,26 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 }
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+
+            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
+                //If this is hunting and is not close enough, sneak up:
+                float distEntity = this.getDistancePrey(this.getAttackTarget());
+                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+                    this.setIsSneaking(true);
+                }
+                if (this.getIsSneaking() &&
+                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity < this.getUnSneakRange()
+                ) {
+                    this.setIsSneaking(false);
+                }
+            }
+            else {
+                this.setIsSneaking(false);
+            }
+
+            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
+                this.setSneaking(false);
+            }
 
         }
 
@@ -904,6 +1130,19 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
     }
 
+    public float getDistancePrey(Entity entityIn)
+    {
+        double entityX = this.getEntityBoundingBox().minX + ((this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX)/2.0D);
+        double entityZ = this.getEntityBoundingBox().minZ + ((this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ)/2.0D);
+        double preyX = entityIn.getEntityBoundingBox().minX + ((entityIn.getEntityBoundingBox().maxX - entityIn.getEntityBoundingBox().minX)/2.0D);
+        double preyZ = entityIn.getEntityBoundingBox().minZ + ((entityIn.getEntityBoundingBox().maxZ - entityIn.getEntityBoundingBox().minZ)/2.0D);
+
+        float f = (float)(entityX - preyX);
+        float f1 = (float)(this.posY - entityIn.posY);
+        float f2 = (float)(entityZ - preyZ);
+        return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2);
+    }
+
     public int grappleChance() {
         return 500;
     }
@@ -919,13 +1158,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public void playLivingSound() {
-        //super.playLivingSound();
-        if (this.getAnimation() == NO_ANIMATION) {
+        if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
             if (!this.world.isRemote) {
-            //if (this.getAnimation() == NO_ANIMATION) {
-                //this.setAnimation(ROAR_ANIMATION);
-                this.setAnimation(ROAR_ANIMATION);
-                //System.err.println("Playing roar sound on remote: " + (world.isRemote));
+                if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
+                    this.setAnimation(EntityPrehistoricFloraLandCarnivoreBase.NOISE_ANIMATION);
+                }
+                else {
+                    this.setAnimation(ROAR_ANIMATION);
+                }
                 super.playLivingSound();
             }
        }
@@ -987,21 +1227,28 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.alarmCooldown --;
         }
 
-        if (this.warnCooldown > 0) {
-            this.warnCooldown --;
-        }
+//        if (this.warnCooldown > 0) {
+//            this.warnCooldown --;
+//        }
 
-        if (this.getWarnTarget() != null && !world.isRemote) {
+        if (this.getWarnTarget() != null && (!world.isRemote) && this.getAttackTarget() == null) {
+            if (this.warnCooldown > 0) {
+                this.warnCooldown --;
+            }
             this.faceEntity(this.getWarnTarget(), 10, 10);
             //this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
             this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
-                this.setAttackTarget(this.getWarnTarget());
-                this.setIsFast(true);
-                this.setOneHit(true);
-                this.setWarnTarget(null);
-                this.setWarnCooldown(0);
+                if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
+                    this.setAttackTarget(this.getWarnTarget());
+                    this.setOneHit(true);
+                    this.setWarnCooldown(0);
+                }
+                else {
+                    this.setWarnTarget(null);
+                    this.setWarnCooldown(0);
+                }
             }
         }
 
@@ -1025,8 +1272,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         int i = this.getAgeTicks();
-        //Do not grow entities which are in cages:
-        if (this.isEntityAlive() && world.getBlockState(this.getPosition()).getBlock() != BlockCageSmall.block && !this.world.isRemote)
+        //Do not grow entities which are in cages, etc:
+        Block blockIn = world.getBlockState(this.getPosition()).getBlock();
+        if (this.isEntityAlive()
+                && blockIn != BlockCageSmall.block
+                && blockIn != BlockGlassJar.block
+                && blockIn != BlockTrapAirTop.block
+                && blockIn != BlockTrapGround.block
+                && blockIn != BlockTrapWater.block
+                && !this.world.isRemote)
         {
             ++i;
             //throttle at limit:
@@ -1062,6 +1316,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         EntityLivingBase attackTarget = this.getAttackTarget();
         if (attackTarget != null ) {
             if (attackTarget instanceof EntityPlayer && LepidodendronConfig.attackPlayerAlways) {
+                this.setWillHunt(true);
+            }
+            else if (attackTarget instanceof EntityPlayer && this.getWarnTarget() == attackTarget) {
                 this.setWillHunt(true);
             }
             else {
@@ -1107,7 +1364,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
@@ -1132,6 +1389,31 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         else { //It must be moss or wood:
                             te.getTileData().setString("egg", this.getEggNBT());
                         }
+                    }
+                    IBlockState state = world.getBlockState(nestPos);
+                    world.notifyBlockUpdate(nestPos, state, state, 3);
+                    this.setLaying(false);
+                }
+                this.setTicks(0);
+            }
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > 0
+            ) {
+                //if (Math.random() > 0.5) {
+                this.setTicks(-50); //Flag this as stationary for egg-laying
+                this.setAnimation(LAY_ANIMATION);
+                //}
+            }
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -30 && this.getTicks() < 0) {
+                //Is stationary for egg-laying and this is a totten-log lay
+                //System.err.println("Laying an egg in it");
+
+                //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                if (this.testLay(world, this.getPosition().down()) && world.getBlockState(this.getPosition().down()).getBlock() == BlockRottenLog.block) {
+                    BlockPos nestPos = this.getPosition().down();
+                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                    TileEntity te = world.getTileEntity(nestPos);
+                    if (te != null) {
+                        te.getTileData().setString("egg", this.getEggNBT());
                     }
                     IBlockState state = world.getBlockState(nestPos);
                     world.notifyBlockUpdate(nestPos, state, state, 3);
@@ -1190,9 +1472,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
                 //System.err.println("setting attack anim");
                 this.setAnimation(ATTACK_ANIMATION);
-                if (this.getAnimation() == ATTACK_ANIMATION && !world.isRemote) {
+                //if (this.getAnimation() == ATTACK_ANIMATION && !world.isRemote) {
                     //System.err.println("is attacking");
-                }
+                //}
                 SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
                 this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
@@ -1379,6 +1661,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public boolean isBreedingItem(ItemStack stack)
     {
+        for (String oreDict : this.getFoodOreDicts()) {
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), stack)) {
+                return true;
+            }
+        }
         return false;
     }
 

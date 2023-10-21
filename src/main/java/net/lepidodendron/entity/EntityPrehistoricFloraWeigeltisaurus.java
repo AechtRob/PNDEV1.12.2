@@ -4,17 +4,14 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockRottenLog;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.LandWanderAvoidWaterClimbingAI;
-import net.lepidodendron.entity.ai.LandWanderNestInBlockAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.util.PathNavigateGliding;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
-import net.lepidodendron.item.entities.ItemBugRaw;
+import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
@@ -27,11 +24,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.MobEffects;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -46,13 +41,11 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -81,16 +74,16 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
 		}
-	}
-
-	@Override
-	public boolean canJar() {
-		return true;
 	}
 
 	public int getRoarLength() {
@@ -136,7 +129,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	//public static String getHabitat() {return "Gliding Reptile";}
 
 	public boolean getIsFlying() {
-		return this.dataManager.get(ISFLYING);
+		return (Boolean)this.dataManager.get(ISFLYING).booleanValue();
 	}
 
 	public void setIsFlying(boolean isFlying) {
@@ -166,7 +159,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		return 0.375F;
 	}
 
@@ -233,13 +226,13 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 		tasks.addTask(2, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new LandWanderNestInBlockAI(this));
 		tasks.addTask(4, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
-		tasks.addTask(5, new EntityAILookIdle(this));
+		tasks.addTask(5, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemBugRaw.block;
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override
@@ -339,7 +332,8 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 			if (this.isReallyInWater() &&
 					(world.getBlockState(posEyes).getMaterial() == Material.WATER
 							|| world.getBlockState(posEyes).getMaterial() == Material.LAVA
-							|| world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN)
+							|| world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
+							|| world.getBlockState(posEyes).getMaterial() == MaterialLatex.LATEX)
 			) {
 				this.motionY = 0.2D;
 			}
@@ -674,25 +668,6 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 			}
 			return null;
 		}
-	}
-
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.WEIGELTISAURUS_JAR_LOOT;
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
-
 	}
 
 }

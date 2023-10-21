@@ -4,6 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IBennettites;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -55,7 +59,7 @@ public class BlockSahnioxylonShootTop extends ElementsLepidodendronMod.ModElemen
 		//		new ModelResourceLocation("lepidodendron:sahnioxylon_shoot_top", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IBennettites {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_sahnioxylon_shoot_top");
@@ -66,6 +70,12 @@ public class BlockSahnioxylonShootTop extends ElementsLepidodendronMod.ModElemen
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SAHNIOXYLON;
 		}
 
 		@Override

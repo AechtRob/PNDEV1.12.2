@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tegopelte",
 			"title": "Tegopelte",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Trilobitomorpha$(br)>Conciliterga"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)Arthropoda$(br)>Trilobitomorpha$(br)>Conciliterga"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Tegopelte is a soft bodied arthropod from the middle Cambrian whose trackways are also known. It was a flat animal that lived along the seafloor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tegopelte",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tegopelte"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tegopelte"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tegopelte"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tegopelte"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tegopelte"
 		}
 	]
 }

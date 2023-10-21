@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:drewria_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:drewria_seed",
+    "count": 1
+  }
+}

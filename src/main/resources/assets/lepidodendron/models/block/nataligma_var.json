@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/nataligma_var",
+    "particle": "lepidodendron:blocks/nataligma_var"
+  }
+}

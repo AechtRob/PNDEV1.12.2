@@ -1,0 +1,11 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:welwitschiophyllum_inventory"
+    },
+    "normal": [
+      {"model": "lepidodendron:welwitschiophyllum"},
+      {"model": "lepidodendron:welwitschiophyllum_var"}
+    ]
+  }
+}

@@ -1,19 +1,19 @@
 {
-	"name": "Saurichthys",
+	"name": "Saurichthys (marine)",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/saurichthys_icon.png",
+	"icon": "paleopedia:textures/items/saurichthys_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_saurichthys",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_saurichthys",
-			"title": "Saurichthys",
+			"title": "Saurichthys (marine)",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine, Freshwater$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/saurichthys_marine.png", "paleopedia:textures/saurichthys_freshwater.png"],
+			"images": ["paleopedia:textures/saurichthys_marine.png"],
 			"title": "Saurichthys sp.",
 			"text": ""
 		},
@@ -25,17 +25,37 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
 			"type": "text",
-			"text": "  The anal and dorsal fins were moved towards the end of the body to make full use of the propulsion created by the tail while the skin was left bare of scales if not for a few spots along the back.  The shape of the body, reminiscent of that of modern day pikes, lead to the hypothesis that this animal must’ve been an ambush predator able of quick bursts of speed, a particularly "
+			"text": "The anal and dorsal fins were moved towards the end of the body to make full use of the propulsion created by the tail while the skin was left bare of scales if not for a few spots along the back.  The shape of the body, reminiscent of that of modern day pikes, lead to the hypothesis that this animal must’ve been an ambush predator able of quick bursts of speed, a particularly "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
 			"type": "text",
-			"text": "puzzling issue as animals like those usually require specific environments to survive, making their range more specific rather than general, in full opposition to the almost cosmopolitan range of Saurichthys.  Saurichthys is among the earliest known cases of viviparity in actinopterygian fishes, with specimens from Monte San Giorgio (famous Triassic fossil locality from Switzerland and Italy) preserving pregnant females and their unborn embryos."
+			"text": "puzzling issue as animals like those usually require specific environments to survive, making their range more specific rather than general, in full opposition to the almost cosmopolitan range of Saurichthys.  Saurichthys is among the earliest known cases of viviparity in actinopterygian fishes, with specimens from Monte San Giorgio (famous Triassic fossil locality from Switzerland and Italy)"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "preserving pregnant females and their unborn embryos."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_saurichthys_marine"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_saurichthys_marine"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_saurichthys_marine"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_saurichthys_marine"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_saurichthys_marine"
 		}
 	]
 }

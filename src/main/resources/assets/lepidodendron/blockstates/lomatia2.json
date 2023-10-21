@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:lomatia_2"}
+    ],
+    "flowers=false": {
+      "model": "lepidodendron:lomatia_2"
+    },
+    "flowers=true": {
+      "model": "lepidodendron:lomatia_2_flower"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+	"name": "Leviathania",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/leviathania_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_leviathania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_leviathania",
+			"title": "Leviathania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca $(br)>Gastropoda $(br)>Purpurinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/leviathania.png"],
+			"title": "L. gigantea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leviathania",
+			"type": "text",
+			"text": "Leviathania is among the largest Jurassic snails, growing up to 40 cm in length. Leviathania belongs to the now extinct family of Purpurinidae. Leviathania have been found across Europe, namely Portugal, Spain, Germany, and Ukraine. They are speculated to be omnivorous, feeding on detritis and algae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_leviathania"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_leviathania"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_leviathania"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_leviathania"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_leviathania"
+		}
+	]
+}

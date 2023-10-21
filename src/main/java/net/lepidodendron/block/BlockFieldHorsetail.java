@@ -5,9 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -75,7 +78,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("leavesHorsetail", BlockFieldHorsetail.block);
 	}
 
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -92,6 +95,12 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_field_horsetail");
 			setRegistryName("field_horsetail");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_FIELD_HORSETAIL;
 		}
 
 		@Override
@@ -232,7 +241,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 					if (world.canSeeSky(targetBlock) && Math.random() > (1-(spread/100)) && (targetBlock != pos) && (world.isAirBlock(targetBlock)) && (canSurviveAt(world, targetBlock))) {
 						world.setBlockState(targetBlock, BlockFieldHorsetail.block.getDefaultState(), 3);	
 					}
-					//Perhaps the original plant also dies back now, but only if there another plant within 2 blocks (else TODO:he colony dies!):
+					//Perhaps the original plant also dies back now, but only if there another plant within 2 blocks (else the colony dies!):
 					boolean YouAreNotAloneNooneIsAlone = false;
 					int xct = -2;
 					int yct;
@@ -295,6 +304,11 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
+
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
 
 			double getLight = worldIn.getLight(pos);
 	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))

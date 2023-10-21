@@ -1,7 +1,7 @@
 {
 	"name": "Pulmonoscorpius",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/pulmonoscorpius_icon.png",
+	"icon": "paleopedia:textures/items/pulmonoscorpius_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_scorpion_pulmonoscorpius",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scorpion_pulmonoscorpius",
 			"title": "Pulmonoscorpius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Pulmonoscorpius is an extinct large scorpion from the middle Carboniferous period. Its name comes from the latin 'pulmonis' meaning lung, and Greek 'skorpios,' a scorpion. Pulmonoscorpius had a body plan similar to extant scorpions and is thought to have preyed on smaller arthropods."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_scorpion_pulmonoscorpius",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Carried on Back$(br)$(l)Method of Obtaining:$() Kill female for Babies"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius"
 		}
 	]
 }

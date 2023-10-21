@@ -1,16 +1,25 @@
 package net.lepidodendron.util;
 
 import net.lepidodendron.block.BlockSorterFossil;
+import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.IHopper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityHopper;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -70,10 +79,12 @@ public class FossilSorterHooks
     {
         EnumFacing hopperFacing = BlockHopper.getFacing(hopper.getBlockMetadata());
         Pair<IItemHandler, Object> destinationResultFront = getItemHandler(hopper, hopperFacing);
+        Pair<IItemHandler, Object> destinationResultBack = getItemHandler(hopper, hopperFacing.rotateY().rotateY());
         Pair<IItemHandler, Object> destinationResultLeft = getItemHandler(hopper, hopperFacing.getOpposite().rotateY());
         Pair<IItemHandler, Object> destinationResultRight = getItemHandler(hopper, hopperFacing.rotateY());
         Pair<IItemHandler, Object> destinationResultDown = getItemHandler(hopper, EnumFacing.DOWN);
         boolean frontStop = false;
+        boolean backStop = false;
         boolean leftStop = false;
         boolean rightStop = false;
         boolean downStop = false;
@@ -94,16 +105,121 @@ public class FossilSorterHooks
                     if (!hopper.getStackInSlot(i).isEmpty() ) {
                         if (hopper.getStackInSlot(i).hasTagCompound()) {
                             if (hopper.getStackInSlot(i).getTagCompound().hasKey("PFMob")) {
-                                ItemStack originalSlotContents = hopper.getStackInSlot(i).copy();
-                                ItemStack insertStack = hopper.decrStackSize(i, 1);
-                                ItemStack remainder = putStackInInventoryAllSlots(hopper, destination, itemHandler, insertStack);
-
-                                if (remainder.isEmpty()) {
-                                    returnResult = true;
-                                    frontStop = true;
+                                NBTTagCompound blockNBT = (NBTTagCompound) hopper.getStackInSlot(i).getTagCompound().getTag("PFMob");
+                                String resourcelocation = (blockNBT.getString("id"));
+                                if (resourcelocation.indexOf("@") > 0) {
+                                    resourcelocation = resourcelocation.substring(0, resourcelocation.indexOf("@"));
                                 }
-                                else {
-                                    hopper.setInventorySlotContents(i, originalSlotContents);
+                                //Is this an arthropod though?
+                                Class<? extends Entity> entityClass;
+                                boolean isArthropod = false;
+                                EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resourcelocation));
+                                if (ee != null) {
+                                    EntityLiving entity = (EntityLiving) ee.newInstance(hopper.getWorld());
+                                    isArthropod = entity.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD;
+                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                        isArthropod = ((EntityPrehistoricFloraAgeableBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+                                        isArthropod = ((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraFishBase) {
+                                        isArthropod = ((EntityPrehistoricFloraFishBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                                        isArthropod = ((EntityPrehistoricFloraInsectFlyingBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+                                        isArthropod = ((EntityPrehistoricFloraJellyfishBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+                                        isArthropod = ((EntityPrehistoricFloraSlitheringWaterBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+                                        isArthropod = ((EntityPrehistoricFloraTrilobiteBottomBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    } else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+                                        isArthropod = ((EntityPrehistoricFloraTrilobiteSwimBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                    }
+                                    if (entity != null) {
+                                        entity.setDead();
+                                    }
+                                }
+                                if (!isArthropod) {
+                                    ItemStack originalSlotContents = hopper.getStackInSlot(i).copy();
+                                    ItemStack insertStack = hopper.decrStackSize(i, 1);
+                                    ItemStack remainder = putStackInInventoryAllSlots(hopper, destination, itemHandler, insertStack);
+
+                                    if (remainder.isEmpty()) {
+                                        returnResult = true;
+                                        frontStop = true;
+                                    } else {
+                                        hopper.setInventorySlotContents(i, originalSlotContents);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (destinationResultBack != null){
+            IItemHandler itemHandler = destinationResultBack.getKey();
+            Object destination = destinationResultBack.getValue();
+            if (isFull(itemHandler))
+            {
+                backStop = true;
+            }
+            else
+            {
+                for (int i = 0; i < hopper.getSizeInventory() && !backStop; ++i)
+                {
+
+                    if (!hopper.getStackInSlot(i).isEmpty() ) {
+                        if (hopper.getStackInSlot(i).hasTagCompound()) {
+                            if (hopper.getStackInSlot(i).getTagCompound().hasKey("PFMob")) {
+                                NBTTagCompound blockNBT = (NBTTagCompound) hopper.getStackInSlot(i).getTagCompound().getTag("PFMob");
+                                String resourcelocation = (blockNBT.getString("id"));
+                                if (resourcelocation.indexOf("@") > 0) {
+                                    resourcelocation = resourcelocation.substring(0, resourcelocation.indexOf("@"));
+                                }
+                                //Is this an arthropod though?
+                                Class<? extends Entity> entityClass;
+                                EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resourcelocation));
+                                if (ee != null) {
+                                    EntityLiving entity = (EntityLiving) ee.newInstance(hopper.getWorld());
+                                    //Is this an arthropod though?
+                                    boolean isArthropod = false;
+                                    ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resourcelocation));
+                                    if (ee != null) {
+                                        entity = (EntityLiving) ee.newInstance(hopper.getWorld());
+                                        isArthropod = entity.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD;
+                                        if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                            isArthropod = ((EntityPrehistoricFloraAgeableBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+                                            isArthropod = ((EntityPrehistoricFloraCrawlingFlyingInsectBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraFishBase) {
+                                            isArthropod = ((EntityPrehistoricFloraFishBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                                            isArthropod = ((EntityPrehistoricFloraInsectFlyingBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+                                            isArthropod = ((EntityPrehistoricFloraJellyfishBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+                                            isArthropod = ((EntityPrehistoricFloraSlitheringWaterBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+                                            isArthropod = ((EntityPrehistoricFloraTrilobiteBottomBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        } else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+                                            isArthropod = ((EntityPrehistoricFloraTrilobiteSwimBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
+                                        }
+                                        if (entity != null) {
+                                            entity.setDead();
+                                        }
+                                    }
+                                    if (isArthropod) {
+                                        ItemStack originalSlotContents = hopper.getStackInSlot(i).copy();
+                                        ItemStack insertStack = hopper.decrStackSize(i, 1);
+                                        ItemStack remainder = putStackInInventoryAllSlots(hopper, destination, itemHandler, insertStack);
+
+                                        if (remainder.isEmpty()) {
+                                            returnResult = true;
+                                            backStop = true;
+                                        } else {
+                                            hopper.setInventorySlotContents(i, originalSlotContents);
+                                        }
+                                    }
                                 }
                             }
                         }

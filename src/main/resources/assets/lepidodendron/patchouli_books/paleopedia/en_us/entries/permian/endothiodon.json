@@ -1,7 +1,7 @@
 {
 	"name": "Endothiodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/endothiodon_icon.png",
+	"icon": "paleopedia:textures/items/endothiodon_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_endothiodon",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_endothiodon",
 			"title": "Endothiodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Arid, Temperate Glossopteris$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Endothiodontidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Endothiodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Endothiodon was a common and widespread, fairly large-sized, dicynodont during the late Permian. It was herbivorous and lacked the tusks of related animals, instead having its front jaw modified into a beak for shearing plant matter. There were several species which all lived in the southern half of Pangaea."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_endothiodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_endothiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_endothiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_endothiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_endothiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_endothiodon"
 		}
 	]
 }

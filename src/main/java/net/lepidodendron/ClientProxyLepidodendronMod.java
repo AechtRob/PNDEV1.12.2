@@ -2,20 +2,28 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockZirconGlass;
 import net.lepidodendron.entity.render.RenderHandler;
+import net.lepidodendron.item.entities.spawneggs.ItemPNSpawnEgg;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
@@ -33,6 +41,9 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 
 		ClientRegistry.registerKeyBinding(keyB);
 		ClientRegistry.registerKeyBinding(keyBoatDown);
+		ClientRegistry.registerKeyBinding(keyBoatUp);
+		ClientRegistry.registerKeyBinding(keyBoatStrafeLeft);
+		ClientRegistry.registerKeyBinding(keyBoatStrafeRight);
 
 		//Bind the biome water colour to the glass block so its water-repair thing picks up the right colour:
 		BlockColors blockColors = Minecraft.getMinecraft().getBlockColors();
@@ -43,6 +54,17 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 				return worldIn != null && pos != null ? BiomeColorHelper.getWaterColorAtPos(worldIn, pos) : -1;
 			}
 		}, BlockZirconGlass.block);
+
+		ItemColors itemColors = Minecraft.getMinecraft().getItemColors();
+		for (Item item : ForgeRegistries.ITEMS) {
+			if (item instanceof ItemPNSpawnEgg) {
+				itemColors.registerItemColorHandler(new IItemColor() {
+					public int colorMultiplier(ItemStack stack, int tintIndex) {
+						return tintIndex == 0 ? ((ItemPNSpawnEgg)item).eggPrimaryColour() : ((ItemPNSpawnEgg)item).eggSecondaryColour();
+					}
+				}, item);
+			}
+		}
 
 	}
 
@@ -60,4 +82,8 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 	public void serverLoad(FMLServerStartingEvent event) {
 	}
 
+	@Override
+	public void registerItemRenderer(Item item, int meta, String id) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+	}
 }

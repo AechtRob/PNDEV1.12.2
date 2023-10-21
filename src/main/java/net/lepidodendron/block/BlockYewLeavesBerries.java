@@ -4,27 +4,28 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockLeavesPF;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemYewBerries;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -34,6 +35,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
+import java.util.Random;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -67,7 +71,9 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("treeLeaves", BlockYewLeavesBerries.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves {
+	public static final PropertyBool FRUITS = PropertyBool.create("fruits");
+
+	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_yew_leaves_berries");
@@ -77,62 +83,13 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(1);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true).withProperty(FRUITS, true));
 		}
 
+		@Nullable
 		@Override
-		public BlockPlanks.EnumType getWoodType(int meta) {
-			return null;
-		}
-
-		@Override
-		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(this, 1));
-		}
-
-		@Override
-		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE});
-		}
-
-		public IBlockState getStateFromMeta(int meta) {
-			return this.getDefaultState().withProperty(DECAYABLE, (meta & 1) != 0).withProperty(CHECK_DECAY, (meta & 2) != 0);
-		}
-
-		public int getMetaFromState(IBlockState state) {
-			int i = 0;
-			if (!(Boolean) state.getValue(DECAYABLE))
-				i |= 1;
-			if ((Boolean) state.getValue(CHECK_DECAY))
-				i |= 2;
-			return i;
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-
-		@Override
-		public boolean isOpaqueCube(IBlockState state) {
-			return false;
-		}
-
-		@Override
-		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
-		}
-
-		@Override
-		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 30;
-		}
-
-		@Override
-		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.FOLIAGE;
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_YEW;
 		}
 
 		@Override
@@ -146,10 +103,23 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			if (worldIn.rand.nextInt(4) == 0) {
+				if (!(state.getValue(FRUITS))) {
+					worldIn.setBlockState(pos, this.getDefaultState().withProperty(DECAYABLE, state.getValue(DECAYABLE)).withProperty(CHECK_DECAY, state.getValue(CHECK_DECAY)).withProperty(FRUITS, true));
+				}
+			}
+			super.updateTick(worldIn, pos, state, rand);
+		}
+
+		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
 				// Use the seeds method instead:
-				return new ItemStack(ItemYewBerries.block, (int) (1)).getItem();
+				if (state.getValue(FRUITS)) {
+					return new ItemStack(ItemYewBerries.block, (int) (1)).getItem();
+				}
+				return new ItemStack(Items.AIR, (int) (1)).getItem();
 			}
 			else {
 				return Item.getItemFromBlock(BlockYewSapling.block);
@@ -157,28 +127,80 @@ public class BlockYewLeavesBerries extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		@SideOnly(Side.CLIENT)
-	    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-	    {
-	    	return true;
-	    }
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+			return this.getDefaultState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false).withProperty(FRUITS, false);
+		}
 
-	    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
-        if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-	        {
-	            return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-	        }
-	        else {
-	        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{CHECK_DECAY, DECAYABLE, FRUITS});
+		}
+
+		public IBlockState getStateFromMeta(int meta) {
+			if (meta == 1) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true).withProperty(FRUITS, true);
+			}
+			if (meta == 2) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true).withProperty(FRUITS, false);
+			}
+			if (meta == 3) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, false).withProperty(FRUITS, false);
+			}
+			if (meta == 4) {
+				return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, false).withProperty(FRUITS, true);
+			}
+			if (meta == 5) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, false).withProperty(FRUITS, false);
+			}
+			if (meta == 6) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, false).withProperty(FRUITS, true);
+			}
+			if (meta == 7) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, true).withProperty(FRUITS, true);
+			}
+			if (meta == 8) {
+				return this.getDefaultState().withProperty(DECAYABLE, false).withProperty(CHECK_DECAY, true).withProperty(FRUITS, false);
+			}
+			return this.getDefaultState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true).withProperty(FRUITS, true);
+		}
+
+		public int getMetaFromState(IBlockState state) {
+			int i = 5;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 1;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 2;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 3;
+			if ((Boolean) state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 4;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 5;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) !state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 6;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) state.getValue(FRUITS))
+				i = 7;
+			if ((Boolean) !state.getValue(DECAYABLE) && (Boolean) state.getValue(CHECK_DECAY) && (Boolean) !state.getValue(FRUITS))
+				i = 8;
+			return i;
+		}
+
+		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation) {
+				return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
+			}
+			else if (state.getValue(FRUITS)) {
+				if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
 					ItemStack stackSeed = new ItemStack(ItemYewBerries.block, (int) (1));
 					stackSeed.setCount(1);
 					ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-					world.setBlockState(pos, BlockYewLeaves.block.getDefaultState(), 3);
+					world.setBlockState(pos, BlockYewLeavesBerries.block.getDefaultState().withProperty(DECAYABLE, state.getValue(DECAYABLE)).withProperty(CHECK_DECAY, state.getValue(CHECK_DECAY)).withProperty(FRUITS, false), 3);
 					return true;
 				}
-	        	return true;
-	        }
-	    }
+				return true;
+			}
+			return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
+		}
+
 	}
 }

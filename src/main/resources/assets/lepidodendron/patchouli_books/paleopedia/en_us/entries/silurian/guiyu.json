@@ -1,0 +1,51 @@
+{
+	"name": "Guiyu",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/guiyu_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_guiyu",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_guiyu",
+			"title": "Guiyu",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Sarcopterygii"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/guiyu.png"],
+			"title": "G. oneiros",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guiyu",
+			"type": "text",
+			"text": "One of the earliest articulated bony fish ever discovered, Guiyu oneiros was a species of basal bony fish that lived during the Late Silurian (around 425.6 million years ago). This remarkable fish (the name of which is a mix of Mandarin Chinese and Latin, and translates to \"dream ghost fish\") is part of the Xiaoxiang fauna, an impressively well documented ancient marine ecosystem, with remains being found in the Kuanti Formation in China."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guiyu",
+			"type": "text",
+			"text": "One thing that makes Guiyu especially interesting is that even though it was a bony fish, it predated the split between ray-finned fish (Actinopterygii) and lobe-finned fish (Sarcopterygii)."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_guiyu"
+		}
+	]
+}

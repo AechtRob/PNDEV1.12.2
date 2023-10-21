@@ -6,15 +6,10 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -26,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -47,6 +42,11 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 			tailBuffer = new ChainBuffer();
 		}
 	}
+	@Override
+	public int getEatLength() {
+		return 10;
+	}
+
 
 	@Override
 	public void onUpdate() {
@@ -58,47 +58,10 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 
 	@Override
 	public int getEggType() {
-		return 1; //medium
-	}
-
-	@Override
-	public boolean placesNest() {
-		return true;
-	}
-
-	@Override
-	public boolean isNestMound() {
-		return true;
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
-					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
-						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
-					&& world.isAirBlock(pos));
-		}
-		return match;
-	}
-
-	public boolean testLay(World world, BlockPos pos) {
-		return (
-				nestBlockMatch(world, pos)
-		);
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Permian";}
-
-	//public static String getHabitat() {return "Terrestrial Synapsid";}
-
-	@Override
-	public boolean hasNest() {
-		return true;
-	}
 
 	@Override
 	public int getAttackLength() {
@@ -120,8 +83,8 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 		return true;
 	}
 
-	protected float getAISpeedLand() {
-		float speedBase = 0.15F;
+	public float getAISpeedLand() {
+		float speedBase = 0.25F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -161,24 +124,16 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 		tasks.addTask(6, new LandWanderNestInBlockAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
 
 	@Override
-	public boolean panics() {
-		return true;
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.BUG);
 	}
 	
 	@Override
@@ -226,19 +181,14 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

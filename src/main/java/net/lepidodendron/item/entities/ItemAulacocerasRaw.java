@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -36,9 +35,8 @@ public class ItemAulacocerasRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_aulacoceras", ItemAulacocerasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAulacocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAulacocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAulacocerasRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemAulacocerasRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemAulacocerasRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

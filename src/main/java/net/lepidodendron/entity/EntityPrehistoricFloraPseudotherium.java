@@ -2,19 +2,14 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -36,7 +31,7 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.521F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -83,21 +78,7 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 		return LepidodendronMod.PSEUDOTHERIUM_LOOT;
 	}
 
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.PSEUDOTHERIUM_JAR_LOOT;
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build())) {
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		} else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
 
-	}
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {

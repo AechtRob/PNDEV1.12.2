@@ -1,7 +1,7 @@
 {
 	"name": "Barameda",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/barameda_icon.png",
+	"icon": "paleopedia:textures/items/barameda_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_barameda",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_barameda",
 			"title": "Barameda",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamp$(br2)>Sarcopterygii$(br)>Rhizodontida$(br)>Rhizodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Sarcopterygii$(br)>Rhizodontida$(br)>Rhizodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Barameda was a genus of freshwater rhizodont lobe-finned fish that lived during the Early Carboniferous. Its remains have been found in the ancient river deposits of what is now the Snowy Plains Formation of Victoria, Australia. Like most other rhizodonts, its wide pectoral fins suggest that it was a benthic lay-in-ambush predator."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_barameda",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_barameda"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_barameda"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_barameda"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_barameda"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_barameda"
 		}
 	]
 }

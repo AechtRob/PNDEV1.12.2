@@ -1,7 +1,7 @@
 {
 	"name": "Ichthyostega",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ichthyostega_icon.png",
+	"icon": "paleopedia:textures/items/ichthyostega_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ichthyostega",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ichthyostega",
 			"title": "Ichthyostega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest, Floodplain, Savannah, Vale$(br2)>Stegocephalia$(br)>Ichthyostegidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Stegocephalia$(br)>Ichthyostegidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ichthyostega was one of the first tetrapods in the fossil record. It possessed lungs and limbs to help it navigate through the shallow waters. Ichthyostega had a fish like spinal structure though its appearance resembled a salamander. On land, it likely dragged itself around similar to the movements of a mudskipper on land."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ichthyostega",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichthyostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichthyostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichthyostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichthyostega"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichthyostega"
 		}
 	]
 }

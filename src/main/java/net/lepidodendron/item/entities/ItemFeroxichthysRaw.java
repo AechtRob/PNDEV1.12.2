@@ -35,10 +35,10 @@ public class ItemFeroxichthysRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_falcatus", ItemFeroxichthysRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_feroxichthys", ItemFeroxichthysRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFeroxichthysRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemFeroxichthysRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemFeroxichthysRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemFeroxichthysRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemFeroxichthysRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

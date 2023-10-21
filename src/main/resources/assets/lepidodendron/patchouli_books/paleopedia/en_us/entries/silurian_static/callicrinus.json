@@ -1,5 +1,5 @@
 {
-	"name": "Callicrinus",
+	"name": "Calliocrinus",
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_callicrinus",
 	"category": "lepidodendron:silurian_static",
@@ -7,20 +7,20 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_crinoid_callicrinus",
-			"title": "Callicrinus",
+			"title": "Calliocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Eucalyptocrinitidae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Eucalyptocrinitidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/Callicrinus.png"],
-			"title": "Callicrinus sp.",
+			"title": "Calliocrinus sp.",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_callicrinus",
 			"type": "text",
-			"text": "Callicrinus is a tall stalked crinoid from the Silurian period. It likely lived as a suspension feeder, eating plankton in the surrounding waters."
+			"text": "Calliocrinus is a group of tall stalked crinoids from the Silurian and Devonian period, with uncertain earlier records. It likely lived as a suspension feeder, eating plankton in the surrounding waters."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_callicrinus",

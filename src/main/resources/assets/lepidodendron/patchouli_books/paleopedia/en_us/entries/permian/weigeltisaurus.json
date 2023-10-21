@@ -1,7 +1,7 @@
 {
 	"name": "Weigeltisaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/weigeltisaurus_icon.png",
+	"icon": "paleopedia:textures/items/weigeltisaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_weigeltisaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_weigeltisaurus",
 			"title": "Weigeltisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest$(br2)>Reptilia$(br)>Weigeltisauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Weigeltisauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Weigeltisaurus is a genus of gliding reptile from the Permian period. Like its relatives, it had bones protruding from the sides of its body which it used to glide from tree to tree."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_weigeltisaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_weigeltisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_weigeltisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_weigeltisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_weigeltisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_weigeltisaurus"
 		}
 	]
 }

@@ -1,0 +1,31 @@
+{
+	"name": "Parapuzosia",
+	"read_by_default": true,
+	"icon": "lepidodendron:shell_parapuzosia",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
+			"title": "Parapuzosia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/parapuzosia.png"],
+			"title": "P. daubreei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
+			"type": "text",
+			"text": "Parapuzosia is a genus of ammonite from the Late Cretaceous of Africa, Europe and North America. These ammonites are quite large, with many species reaching diameters of more than 1 meter, and the largest species reaching around 2 meters. Its shell was mostly flat with some slightly rounded edges. It had distinct primary and secondary ribbing."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

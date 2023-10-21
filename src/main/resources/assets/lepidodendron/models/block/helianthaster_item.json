@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "paleopedia:helianthaster_icon"
+    "all": "paleopedia:items/helianthaster_icon"
   }
 }

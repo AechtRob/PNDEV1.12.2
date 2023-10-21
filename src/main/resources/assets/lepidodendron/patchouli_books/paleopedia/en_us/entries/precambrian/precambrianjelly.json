@@ -1,7 +1,7 @@
 {
 	"name": "Precambrian Jellyfish",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/precambrianjelly_icon.png",
+	"icon": "paleopedia:textures/items/precambrianjelly_icon.png",
 	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish_precambrian",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish_precambrian",
 			"title": "Precambrian Jellyfish",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Cnidaria"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jellyfish are one of the oldest animals on earth, next to sponges, and evidence has shown that some types of jellyfish existed in the Ediacaran period. They likely looked similar to modern day jellyfish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jellyfish_precambrian",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish_precambrian"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish_precambrian"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish_precambrian"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish_precambrian"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish_precambrian"
 		}
 	]
 }

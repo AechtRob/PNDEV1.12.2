@@ -1,7 +1,8 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.block.BlockDNARecombinerForge;
-import net.lepidodendron.entity.model.tile.*;
+import net.lepidodendron.entity.model.tile.ModelDNARecombinerForgeFog;
+import net.lepidodendron.entity.model.tile.ModelDNARecombinerForgeOligopool;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -145,7 +146,15 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
                     GlStateManager.enableBlend();
                     GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
                     Random rand = new Random();
-                    GlStateManager.color(1.0F + ((rand.nextFloat()/10F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/10F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/10F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/10F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/10F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/10F) * (float)entity.getFogDensity()), (float) entity.getFogDensity());
+
+                    //Get the animation duration:
+                    float a = (float)BlockDNARecombinerForge.TileEntityDNARecombinerForge.processTickTime;
+                    float aTick = (float)tee.getProcessTick();
+                    float fraction = (float)Math.abs(Math.sin(Math.PI * 4 * (aTick/a)));
+
+                    //System.err.println("fraction: " + fraction);
+
+                    GlStateManager.color(1.0F + ((fraction * 0.333F) * (float)entity.getFogDensity()), 1.0F + ((fraction * 0.333F) * (float)entity.getFogDensity()), 1.0F + ((fraction * 0.333F) * (float)entity.getFogDensity()), (float) entity.getFogDensity());
                     modelDNARecombinerForgeFog.renderAll(1.25f);
                     GlStateManager.disableBlend();
                     //GlStateManager.disableAlpha();

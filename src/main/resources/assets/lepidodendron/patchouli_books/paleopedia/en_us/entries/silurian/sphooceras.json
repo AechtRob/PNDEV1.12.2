@@ -1,7 +1,7 @@
 {
 	"name": "Sphooceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sphooceras_icon.png",
+	"icon": "paleopedia:textures/items/sphooceras_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_sphooceras",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sphooceras",
 			"title": "Sphooceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Crinoid Garden$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Sphooceratidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Sphooceratidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "These characters alongside preserved muscle placement, the uncalcified connecting rings and rarely preserved but seen radula make Sphooceras fascinatingly modern among the cephalopods of the time, lending believability to the idea that they were closer to coleoids than nautiloids, making their separation from the latter legitimate."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_sphooceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sphooceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sphooceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sphooceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sphooceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sphooceras"
 		}
 	]
 }

@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
 		"up": "lepidodendron:blocks/calamites_branch_end",

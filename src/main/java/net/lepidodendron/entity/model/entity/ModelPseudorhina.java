@@ -5,8 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPseudorhina;
-import net.lepidodendron.entity.EntityPrehistoricFloraSqualoraja;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -205,15 +203,33 @@ public class ModelPseudorhina extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.main.rotateAngleX = (float) Math.toRadians(90);
-        this.main.rotateAngleZ = (float) Math.toRadians(90);
-        this.main.offsetX = -0.02F;
-        this.main.offsetZ = -0.01F;
+        this.main.rotateAngleX = (float) Math.toRadians(0);
+        this.main.rotateAngleY = (float) Math.toRadians(70);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.1F, 0.0F);
+        this.main.offsetX = -0.0F;
+        this.main.offsetZ = -0.14F;
         this.main.offsetY = -0.245F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, -0.05F, 0.0F);
+        this.setRotateAngle(tail5, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -0.2F);
+        this.main.offsetY = -0.14F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -228,7 +244,7 @@ public class ModelPseudorhina extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.main.offsetZ = -0.5F;
-        EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
+        EntityPrehistoricFloraPseudorhina ee = (EntityPrehistoricFloraPseudorhina) e;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] leftwings = {this.leftwing, this.leftwing2};
@@ -238,6 +254,8 @@ public class ModelPseudorhina extends AdvancedModelBase {
             speed = 0.7F * 0.5F;
         } else if (!ee.getIsMoving()) {
             speed = 0.7F * 0.13F;
+        } else if (ee.isAtBottom()){
+            speed = speed * 0.2F;
         }
 
 

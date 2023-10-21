@@ -37,8 +37,8 @@ public class ItemMeganeuritesRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_meganeurites", ItemMeganeuritesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMeganeuritesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMeganeuritesRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemMeganeuritesRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemMeganeuritesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

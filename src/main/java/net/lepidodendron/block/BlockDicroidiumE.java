@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -79,7 +82,7 @@ public class BlockDicroidiumE extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger VAR = PropertyInteger.create("var", 0, 2);
 	
-	public static class BlockCustom extends SeedSporeLeavesBase {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_dicroidium_e");
@@ -90,6 +93,12 @@ public class BlockDicroidiumE extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(VAR, 0).withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_DICROIDIUM_E;
 		}
 
 		@Override
@@ -297,7 +306,7 @@ public class BlockDicroidiumE extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant tree");
-				tooltip.add("Periods: [late Permian? -] Triassic");
+				tooltip.add("Periods: [Permian (?) -] Triassic");
 				tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

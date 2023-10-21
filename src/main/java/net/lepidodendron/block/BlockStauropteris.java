@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -31,6 +34,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -63,7 +67,7 @@ public class BlockStauropteris extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends SeedSporeBushBase {
+	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -73,6 +77,12 @@ public class BlockStauropteris extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_stauropteris");
 			setRegistryName("stauropteris");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_STAUROPTERIS;
 		}
 
 		@Override
@@ -128,7 +138,7 @@ public class BlockStauropteris extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern plant");
-	        tooltip.add("Periods: late Devonian - late Carboniferous");
+	        tooltip.add("Periods: Devonian - Carboniferous");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

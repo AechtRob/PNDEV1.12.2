@@ -5,14 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EatFishItemsAI;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderParameteoraspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -20,7 +18,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -32,6 +29,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -46,18 +44,15 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraParameteoraspis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraParameteoraspis.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(maxWidth, maxHeight);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraParameteoraspis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
+		setSize(0.8F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 23.0D;
-	}
-
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraParameteoraspis(this.world);
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override
@@ -106,8 +101,6 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		return true;
 	}
 
-
-
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
@@ -119,14 +112,12 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.ALGAE);
 	}
 
 	@Override
@@ -181,7 +172,7 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 7 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -309,10 +300,10 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		return 0.03;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
@@ -327,19 +318,19 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.09;
+		return 0.00;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.09;
+		return 0.00;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.4F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0F;

@@ -1,13 +1,13 @@
 {
-	"name": "Spiriferid",
+	"name": "Spiriferid Brachiopod",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/spiriferid_icon.png",
+	"icon": "paleopedia:textures/items/spiriferid_icon.png",
 	"category": "lepidodendron:ordovician_static",
 	"turnin": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
-			"title": "Spiriferid",
+			"title": "Spiriferid Brachiopod",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician-Jurassic$(br2)$(l)Habitat:$() $(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Spiriferida"
 		},

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cheloniellon",
 			"title": "Cheloniellon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Artiopoda$(br)>Cheloniellida$(br)>Cheloniellidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Artiopoda$(br)>Cheloniellida$(br)>Cheloniellidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Cheloniellon was a small flat bodied arthropod from the lower Devonian period. It had an exoskeleton that comprised of 11 segments and had laterally expanded appendages underneath the exoskeleton segments. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cheloniellon",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cheloniellon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cheloniellon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cheloniellon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cheloniellon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cheloniellon"
 		}
 	]
 }

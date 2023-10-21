@@ -1,7 +1,7 @@
 {
 	"name": "Sinodunbaria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sinodunbaria_icon.png",
+	"icon": "paleopedia:textures/items/sinodunbaria_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_sinodunbaria",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_sinodunbaria",
 			"title": "Sinodunbaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Sinodunbaria is a spilapterid palaeodictyopteran insect from the Carboniferous period. They were found in Tupo Formation and lived in more temperate zones."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_sinodunbaria",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria"
 		}
 	]
 }

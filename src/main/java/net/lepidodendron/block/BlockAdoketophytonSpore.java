@@ -5,7 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -55,7 +58,7 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				//new ModelResourceLocation("lepidodendron:adoketophyton_spore", "inventory"));
 	}
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -308,6 +311,12 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 		@Override
 		public Item blockItem() {
 			return null;
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ADOKETOPHYTON;
 		}
 	}
 }

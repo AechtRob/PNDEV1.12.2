@@ -9,9 +9,9 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMyriacantherpestes extends RenderLiving<EntityPrehistoricFloraMyriacantherpestes> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/myriacantherpestes.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/myriacantherpestes.png");
 
-    public static float getScaler() { return 0.335f; }
+    public static float getScaler() { return 0.28f; }
 
     public RenderMyriacantherpestes(RenderManager mgr) {
         super(mgr, new ModelMyriacantherpestes(), 0.0f);

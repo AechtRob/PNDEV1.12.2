@@ -1,7 +1,7 @@
 {
 	"name": "Dvinosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dvinosaurus_icon.png",
+	"icon": "paleopedia:textures/items/dvinosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dvinosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dvinosaurus",
 			"title": "Dvinosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria$(br)>Dvinosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria$(br)>Dvinosauridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Dvinosaurus is a freshwater amphibious temnospondyl that lived in the Late Permian period. It was found near the northern Dvina River, where it gets its name. It had a short head and a long body and tail and its diet was comprised mostly of fish. It is thought to have fed by ambushing its prey from the riverbeds."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dvinosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dvinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dvinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dvinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dvinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dvinosaurus"
 		}
 	]
 }

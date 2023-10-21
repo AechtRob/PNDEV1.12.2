@@ -39,7 +39,7 @@ public class ItemSpawnEggConodontIowagnathus extends ElementsLepidodendronMod.Mo
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_iowagnathus", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_conodont_iowagnathus", "inventory"));
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
@@ -50,6 +50,16 @@ public class ItemSpawnEggConodontIowagnathus extends ElementsLepidodendronMod.Mo
 			setCreativeTab(CreativeTabs.MISC);
 			setMaxStackSize(64);
 			this.variant = "iowagnathus";
+		}
+
+		@Override
+		public int eggPrimaryColour() {
+			return -3829209;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12833240;
 		}
 
 		@Override

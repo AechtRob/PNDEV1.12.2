@@ -1,0 +1,46 @@
+{
+	"name": "Ithigramma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_ithigramma_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
+			"title": "Ithigramma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ithigramma.png"],
+			"title": "I. multinervia",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
+			"type": "text",
+			"text": "Ithigramma is a genus of kalligrammatid lacewing described from Yixian Formation, Early Cretaceous of Liaoning, China. It had simple dark spots on each wings, unlike other kalligrammatids that had complex eyespots."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@ithigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@ithigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@ithigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@ithigramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@ithigramma"
+		}
+	]
+}

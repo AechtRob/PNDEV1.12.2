@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gonioceras",
 			"title": "Gonioceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Sponge Forest$(br2)>Nautiloidea$(br)>Actinocerida$(br)>Gonioceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Nautiloidea$(br)>Actinocerida$(br)>Gonioceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gonioceras is a nautiloid with a broad, low shell, flattened ventralliy and convexly rounded. The flattened shell suggests that Gonioceras may have been a benthic organism. It may have slowly swam around near the seafloor in search of food."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gonioceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gonioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gonioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gonioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gonioceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gonioceras"
 		}
 	]
 }

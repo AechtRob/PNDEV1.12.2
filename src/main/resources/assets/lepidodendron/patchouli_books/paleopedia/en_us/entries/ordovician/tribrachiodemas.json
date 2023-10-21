@@ -1,0 +1,46 @@
+{
+	"name": "Tribrachiodemas",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tribrachiodemas_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_tribrachiodemas",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tribrachiodemas",
+			"title": "Tribrachiodemas",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata $(br)>Holothuroidea $(br)>Aspidochirotida $(br)>Synallactidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/tribrachiodemas.png"],
+			"title": "T. ordovicicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tribrachiodemas",
+			"type": "text",
+			"text": "Tribrachiodemas represents the oldest member of Aspidochirotid sea cucumbers. Like most fossil sea cucumbers, it's primarily known from body wall ossicles. Morphologically, it is similar to the modern genera of Synallactes and Bathyplotes. Tribrachiodemas is known from Sweden and lived in the Late Ordivician."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tribrachiodemas"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tribrachiodemas"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tribrachiodemas"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tribrachiodemas"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tribrachiodemas"
+		}
+	]
+}

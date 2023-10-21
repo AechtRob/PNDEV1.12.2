@@ -1,0 +1,66 @@
+{
+	"name": "Cordaticaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cordaticaris_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_cordaticaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cordaticaris",
+			"title": "Cordaticaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cordaticaris.png"],
+			"title": "C. striatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordaticaris",
+			"type": "text",
+			"text": "Cordaticaris striatus is a species of Hurdiid Radiodont from the Middle Cambrian of China. Hurdiid radiodonts are known for their large and impressive tripartite cephalic carapaces and Cordaticaris is a prime example of such structures. The animal is known from a series of cephalic armour pieces, including a large heart shaped central element, the frontal appendages,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordaticaris",
+			"type": "text",
+			"text": "oral cone and pieces of its trunk recovered from the Sikou section of the Zhangxia Formation near Linyi City, Shandong. The central element of this animal's shell was ornamented with more than 20 rows of microscopic tubercles, which would stop at its ventral margin. While Hurdiid cephalic carapaces can usually be divided into two classes based on shape,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordaticaris",
+			"type": "text",
+			"text": "Cordaticaris showcases a condition unlike the others known so far, having a mix of the two morphologies, which suggests this animal's ecology to be different from the two previously known morphotypes. The shape of the oral cone in this animal, moreover, debunked the long standing idea that Amplectobeloids and Hurdiids could be distinguished by the presence of node bearing plates in the oral cone,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordaticaris",
+			"type": "text",
+			"text": "feature present in Cordaticaris and in contrast with other Hurdiids, either developed separately or hinting at it being an ancestral shared feature. The potentially 30 cm long animal remains today unclear in its lifestyle; due to the unique shape and number of the endites in its frontal appendages, we are unsure on what type of filter feeding it might have specialized in."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordaticaris",
+			"type": "text",
+			"text": "Due to this unique mix of traits, the placement of this animal in the Hurdiid tree is not easy and will surely continue to remain challenging until more animals like it are discovered."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cordaticaris"
+		}
+	]
+}

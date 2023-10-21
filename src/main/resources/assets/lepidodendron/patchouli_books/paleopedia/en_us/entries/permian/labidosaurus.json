@@ -1,7 +1,7 @@
 {
 	"name": "Labidosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/labidosaurus_icon.png",
+	"icon": "paleopedia:textures/items/labidosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_labidosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_labidosaurus",
 			"title": "Labidosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br2)>Reptilia$(br)>Captorhinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Captorhinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Labidosaurus was an omnivorous captorhinid reptile that lived during the Early Permian in what is now Texas and Oklahoma. One fossil of Labidosaurus, described in 2011, shows the earliest known example of an infection in a land vertebrate: A bone infection seemingly caused by a broken tooth in the lower jaw being exposed to bacteria."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_labidosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_labidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_labidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_labidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_labidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_labidosaurus"
 		}
 	]
 }

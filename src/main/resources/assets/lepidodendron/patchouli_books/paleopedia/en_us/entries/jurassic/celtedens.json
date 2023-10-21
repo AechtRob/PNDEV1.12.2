@@ -1,0 +1,51 @@
+{
+	"name": "Celtedens",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/celtedens_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_celtedens",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_celtedens",
+			"title": "Celtedens",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Amphibia $(br)>Allocaudata $(br)>Albanerpetontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/celtedens.png"],
+			"title": "C. megacephalus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_celtedens",
+			"type": "text",
+			"text": "Celtedens is an amphibian that belongs to the extinct family of Albanerpetontid. Although they look like salamanders, Abanerpetonids have differing characteristics such as scales and ballistic tongues. They may have also breathed through their skin. Their biology suggests that they would sit still and wait for prey, striking when the opportunity arises. Albanerpetontids actually existed as close back as the Pleistocene before they went extinct. Celtedens itself is mainly known from the Early"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_celtedens",
+			"type": "text",
+			"text": "Cretaceous of Europe, but unnamed remains are also known from the Late Jurassic."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_celtedens"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_celtedens"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_celtedens"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_celtedens"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_celtedens"
+		}
+	]
+}

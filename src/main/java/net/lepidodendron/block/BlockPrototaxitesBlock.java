@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -14,13 +15,17 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -31,6 +36,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -59,6 +65,7 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		OreDictionary.registerOre("plantdnaPNlepidodendron:prototaxites", BlockPrototaxitesBlock.block);
 		OreDictionary.registerOre("itemFungus", BlockPrototaxitesBlock.block);
+		OreDictionary.registerOre("pndietFungus", BlockPrototaxitesBlock.block);
 	}
 
 	public static class BlockCustom extends Block {
@@ -74,6 +81,21 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setDefaultSlipperiness(0.75f);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH));
+		}
+
+		@Override
+		public float getSlipperiness(IBlockState state, IBlockAccess world, BlockPos pos, @Nullable Entity entity) {
+			if (entity != null) {
+				if (entity instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entity;
+					if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+						if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+							return 0.6F;
+						}
+					}
+				}
+			}
+			return super.getSlipperiness(state, world, pos, entity);
 		}
 
 		@Override

@@ -1,0 +1,46 @@
+{
+	"name": "Sophogramma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_sophogramma_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
+			"title": "Sophogramma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/sophogramma.png"],
+			"title": "S. lii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_sophogramma",
+			"type": "text",
+			"text": "Sophogramma is a genus of kalligrammatid lacewing described from multiple sites in Cretaceous, such as Yixian Formation, Early Cretaceous of Liaoning, China. Unlike other kalligrammatids, Sophogramma had mandibulate mouthparts."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@sophogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@sophogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@sophogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@sophogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@sophogramma"
+		}
+	]
+}

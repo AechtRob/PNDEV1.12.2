@@ -1,0 +1,46 @@
+{
+	"name": "Oregramma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalligrammatid_oregramma_icon.png",
+	"category": "lepidodendron:cretaceous_animal",
+	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
+			"title": "Oregramma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/oregramma.png"],
+			"title": "O. illecebrosa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalligrammatid_oregramma",
+			"type": "text",
+			"text": "Oregramma is a genus of kalligrammatid lacewing described from Yixian Formation, Early Cretaceous of Liaoning, China. O. illecebrosa is one of the best preserved kalligrammatid, showing its color pattern on wings."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@oreogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@oreogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@oreogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@oreogramma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalligrammatid@oreogramma"
+		}
+	]
+}

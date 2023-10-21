@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -77,7 +80,7 @@ public class BlockKeraphyton extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger VAR = PropertyInteger.create("var", 0,4);
 
-	public static class BlockCustomFlower extends BlockLeaves {
+	public static class BlockCustomFlower extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			super();
 			setSoundType(SoundType.PLANT);
@@ -88,6 +91,12 @@ public class BlockKeraphyton extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_keraphyton");
 			setRegistryName("keraphyton");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(VAR, 0).withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_KERAPHYTON;
 		}
 
 		@Override
@@ -276,7 +285,7 @@ public class BlockKeraphyton extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Iridopteridales proto-plant/horsetail");
-	        	tooltip.add("Periods: late Devonian");
+	        	tooltip.add("Periods: Devonian");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -2,8 +2,9 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraConodont;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
-import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.model.entity.ModelClydagnathus;
+import net.lepidodendron.entity.model.entity.ModelProconodontus;
+import net.lepidodendron.entity.model.entity.ModelPromissum;
 import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
@@ -92,13 +93,13 @@ public class RenderConodont extends RenderLivingBaseVariantModels<EntityPrehisto
                 return 0.18F;
 
             case CLYDAGNATHUS:
-                return 0.15F;
+                return 0.17F;
 
             case PROCONODONTUS:
                 return 0.12F;
 
             case OZARKODINA:
-                return 0.20F;
+                return 0.16F;
 
             case IOWAGNATHUS:
                 return 0.24F;

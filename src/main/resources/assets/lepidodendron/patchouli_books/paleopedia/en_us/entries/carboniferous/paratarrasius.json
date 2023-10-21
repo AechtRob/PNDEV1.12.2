@@ -1,7 +1,7 @@
 {
 	"name": "Paratarrasius",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/paratarrasius_icon.png",
+	"icon": "paleopedia:textures/items/paratarrasius_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_paratarrasius",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paratarrasius",
 			"title": "Paratarrasius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Tarrasiiformes$(br)>Tarrasiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Actinopterygii$(br)>Tarrasiiformes$(br)>Tarrasiidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Paratarrasius is a ray finned fish from the Carboniferous and is one of the Bear Gulch fauna. It had a snake shaped body and was incredibly small, only growing up to 10cm in length. It also had a tetrapod like spine, however it was not a related to other lobe finned fishes and this is just considered an extreme case of convergent evolution."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_paratarrasius",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paratarrasius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paratarrasius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paratarrasius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paratarrasius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paratarrasius"
 		}
 	]
 }

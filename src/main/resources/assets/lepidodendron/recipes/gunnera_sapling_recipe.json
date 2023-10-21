@@ -1,9 +1,11 @@
 {
   "group": "lepidodendron",
-  "type": "minecraft:crafting_shapeless",
+  "type": "forge:ore_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:gunnera_seeds"
+      "type": "minecraft:item_nbt",
+      "item": "lepidodendron:spore_collection_envelope",
+      "nbt": {"plant":"lepidodendron:gunnera_sapling", "offsetY":1}
     },
     {
       "type": "forge:ore_dict",

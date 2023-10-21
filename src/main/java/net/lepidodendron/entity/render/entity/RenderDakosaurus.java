@@ -12,7 +12,7 @@ public class RenderDakosaurus extends RenderLiving<EntityPrehistoricFloraDakosau
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dakosaurus.png");
 
     public RenderDakosaurus(RenderManager mgr) {
-        super(mgr, new ModelDakosaurus(), 0.5f);
+        super(mgr, new ModelDakosaurus(), 0.4f);
     }
     public static float getScaler() {return 0.78f; }
 
@@ -31,7 +31,7 @@ public class RenderDakosaurus extends RenderLiving<EntityPrehistoricFloraDakosau
     protected void preRenderCallback(EntityPrehistoricFloraDakosaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = entity.width * scale * 0.40F;
     }
 
 }

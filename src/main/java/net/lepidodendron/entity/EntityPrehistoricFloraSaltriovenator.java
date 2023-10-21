@@ -20,10 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -36,7 +33,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -56,6 +53,26 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 50;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 25;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 20;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
 	}
 
 	@Override
@@ -116,7 +133,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.435F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -135,10 +152,6 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 	@Override
 	public int getTalkInterval() {
 		return 360;
-	}
-
-	@Override
-	public int getRoarInterval() {return 900;
 	}
 
 	@Override
@@ -181,23 +194,23 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
+
+	
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -261,11 +274,10 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 	public void onLivingUpdate() {
 
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
 			if (this.getAnimationTick() == 18) {
-				launchAttack();
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
@@ -274,10 +286,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 				}
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				if (this.getOneHit()) {
-					this.setAttackTarget(null);
-					this.setRevengeTarget(null);
-				}
+				launchAttack();
 			}
 		}
 

@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -26,6 +27,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -43,6 +45,11 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	}
 
 	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FISH), DietString.MEAT), DietString.ROTTEN);
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}
@@ -52,7 +59,10 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
 		return 0.285F;
 	}
 
@@ -73,7 +83,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	public IBlockState getEggBlockState() {
-		return BlockInsectEggsPalaeodictyoptera.block.getDefaultState();
+		return BlockInsectEggsArchoblattina.block.getDefaultState();
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -162,15 +172,15 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	public int defaultWanderCooldown() {
-		return 0;
+		return 200;
 	}
 
 	@Override
-	protected float getAISpeedInsect() {
+	protected float getAISpeedInsect() { //Flying
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return 2.086f;
+		return 1.486f;
 	}
 
 	@Override

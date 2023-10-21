@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:paramblypterus_icon"
+    "layer0": "paleopedia:items/paramblypterus_icon"
   }
 }

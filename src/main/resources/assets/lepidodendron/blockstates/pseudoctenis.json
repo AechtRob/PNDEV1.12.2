@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pseudoctenis"},
+      {"model": "lepidodendron:pseudoctenis", "y": 90},
+      {"model": "lepidodendron:pseudoctenis", "y": 180},
+      {"model": "lepidodendron:pseudoctenis", "y": 270}
+    ],
+    "inventory": {
+      "model": "lepidodendron:pseudoctenis_inventory"
+    }
+  }
+}

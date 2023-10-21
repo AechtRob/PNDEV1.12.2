@@ -1,0 +1,46 @@
+{
+	"name": "Acanthodes",
+	"read_by_default": true,
+	"icon": "lepidodendron:acanthodes_raw",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_acanthodes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acanthodes",
+			"title": "Acanthodes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian $(br2)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/acanthodes.png"],
+			"title": "Acanthodes sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthodes",
+			"type": "text",
+			"text": "Acanthodes was a small early shark, sometimes dubbed a spiny shark. It was most prevalent in the Carboniferous and Early Permian. The fish inhabited the oceans and lakes and likely would have been hunted by larger predatory fish like chondrichthyans. Acanthodes possessed no teeth so it was presumed to have been a filter feeder."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acanthodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acanthodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acanthodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acanthodes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acanthodes"
+		}
+	]
+}

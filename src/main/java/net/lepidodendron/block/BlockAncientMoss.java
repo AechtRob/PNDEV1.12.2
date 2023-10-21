@@ -2,10 +2,9 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -135,7 +134,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
 				biomeCriteria = true;
 			}
 			else {
@@ -188,7 +187,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -209,6 +208,12 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MOSS;
 		}
 
 		@Override

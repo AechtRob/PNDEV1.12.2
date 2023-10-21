@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -74,7 +77,7 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockZosterophyllum.block);
 	}
 
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -91,6 +94,12 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_zosterophyllum");
 			setRegistryName("zosterophyllum");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_ZOSTEROPHYLLUM;
 		}
 
 		@Override
@@ -350,7 +359,7 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
-	        tooltip.add("Periods: late Silurian - early Devonian");
+	        tooltip.add("Periods: Silurian - Devonian");
 	        tooltip.add("Note: requires water proximity and spreads to surrounding gravel, sand and dirt");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);

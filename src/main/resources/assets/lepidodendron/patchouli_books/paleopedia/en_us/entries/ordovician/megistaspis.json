@@ -1,0 +1,46 @@
+{
+	"name": "Megistaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megistaspis_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_megistaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megistaspis",
+			"title": "Megistaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Asaphida $(br)>Asaphidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/megistaspis.png"],
+			"title": "M. hammondi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megistaspis",
+			"type": "text",
+			"text": "Megistaspis is an Australian, Asian, European, North American, and South American trilobite genus from the Ordivician. It was a fast benthic detritovore of the sea floor. Many fossils of this animal have been found including various fossils preserving the antenna. These fossils show that Megistaspis had thin medium length antenna that projected forwards and curved to the sides. Its small elevated eyes and flat body indicate that it possibly had a shallow infaunal life habit."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megistaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megistaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megistaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megistaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megistaspis"
+		}
+	]
+}

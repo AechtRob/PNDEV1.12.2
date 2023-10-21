@@ -40,7 +40,7 @@ public class BlockHirmeriellaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:hirmeriella_sapling", BlockHirmeriellaLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:hirmeriella_sapling", BlockHirmeriellaLog.block);
 		OreDictionary.registerOre("logWood", BlockHirmeriellaLog.block);
 	}
 

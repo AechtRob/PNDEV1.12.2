@@ -38,7 +38,8 @@ public class ItemTanystropheusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tanystropheus", ItemTanystropheusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTanystropheusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemTanystropheusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemTanystropheusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemTanystropheusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

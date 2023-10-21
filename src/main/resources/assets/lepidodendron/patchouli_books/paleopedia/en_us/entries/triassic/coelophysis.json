@@ -1,7 +1,7 @@
 {
 	"name": "Coelophysis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/coelophysis_icon.png",
+	"icon": "paleopedia:textures/items/coelophysis_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_coelophysis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_coelophysis",
 			"title": "Coelophysis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Desert, Flooded, Mountains, Xeric$(br2)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Once considered to be a cannibal due to small bones from alleged juveniles in the stomach cavity, we now know this to be untrue as most of the remains interpreted to be juveniles were instead of small non dinosaurian reptiles like Hesperosuchus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_coelophysis",
-			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_coelophysis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_coelophysis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_coelophysis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_coelophysis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_coelophysis"
 		}
 	]
 }

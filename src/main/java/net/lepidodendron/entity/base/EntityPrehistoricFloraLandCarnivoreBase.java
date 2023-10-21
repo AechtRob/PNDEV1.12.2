@@ -16,8 +16,7 @@ import javax.annotation.Nullable;
 
 public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPrehistoricFloraLandBase {
 
-    public int roarSoundTime;
-    public Animation NOISE_ANIMATION; //Additional roaring
+    public static Animation NOISE_ANIMATION; //Ambient noises (roar is re-purposed for warning)
     public Animation HURT_ANIMATION;
 
     public EntityPrehistoricFloraLandCarnivoreBase(World world) {
@@ -40,12 +39,27 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
     }
 
     @Override
+    public boolean isAnimationDirectionLocked(Animation animation) {
+        return animation == ROAR_ANIMATION; //warning a player
+    }
+
+    @Override
     public int getTalkInterval() {
         return 400;
     }
 
-    public int getRoarInterval() {
-        return 160;
+    @Override
+    public void playLivingSound() {
+        if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
+            if (!this.world.isRemote) {
+                this.setAnimation(NOISE_ANIMATION);
+                SoundEvent soundevent = this.getAmbientSound();
+                if (soundevent != null)
+                {
+                    this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+                }
+            }
+        }
     }
 
     @Override
@@ -56,10 +70,8 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
                 itemHealth = ((ItemFood) stack.getItem()).getHealAmount(stack);
             }
             this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
-            //stack.shrink(1);
             if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
                 this.setAnimation(EAT_ANIMATION);
-                //stack.shrink(1);
             }
         }
     }
@@ -67,7 +79,6 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        //this.setBiteTicks(0);
         return livingdata;
     }
 
@@ -83,22 +94,11 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
                 this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
         }
-        else if (this.isEntityAlive() && this.rand.nextInt(1000) < this.roarSoundTime++ && !this.world.isRemote)
-        {
-            this.roarSoundTime = -this.getRoarInterval();
-            if (this.getAttackTarget() != null) {
-                this.roarSoundTime = -Math.max(this.getNoiseLength (), rand.nextInt((int)Math.round((double)this.getRoarInterval() / 2D)));
-            }
-            SoundEvent soundevent = this.getRoarSound();
-            if (soundevent != null)
-            {
-                if (this.getAnimation() == NO_ANIMATION) {
-                    this.setAnimation(NOISE_ANIMATION);
-                    //System.err.println("Playing noise sound on remote: " + (world.isRemote));
-                    this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-                }
-            }
+
+        if (this.getAnimation() == ROAR_ANIMATION && this.getWarnTarget() != null) {
+            this.faceEntity(this.getWarnTarget(), 10, 10);
         }
+
     }
 
     public SoundEvent getRoarSound() { //Roar
@@ -111,6 +111,5 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
         return (SoundEvent) SoundEvent.REGISTRY
                 .getObject(new ResourceLocation(null));
     }
-
 
 }

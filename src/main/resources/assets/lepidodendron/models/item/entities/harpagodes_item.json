@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/harpagodes_item"
+    "layer0": "paleopedia:items/harpagodes_icon"
   }
 }

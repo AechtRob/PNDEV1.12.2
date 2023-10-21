@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:zenaspis_icon"
+    "layer0": "paleopedia:items/zenaspis_icon"
   }
 }

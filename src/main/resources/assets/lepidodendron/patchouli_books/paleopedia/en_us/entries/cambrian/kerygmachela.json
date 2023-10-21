@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kerygmachela",
 			"title": "Kerygmachela",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Lobopodia$(br)>Dinocaridida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Lobopodia$(br)>Dinocaridida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Kerygmachela is a gilled lobopodian from northern Greenland. Its appendages were shaped like a grappler and it probably ate very small prey given that its mouth was relatively small."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_kerygmachela",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kerygmachela"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kerygmachela"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kerygmachela"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kerygmachela"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kerygmachela"
 		}
 	]
 }

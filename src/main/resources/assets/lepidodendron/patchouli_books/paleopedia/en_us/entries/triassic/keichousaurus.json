@@ -1,7 +1,7 @@
 {
 	"name": "Keichousaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/keichousaurus_icon.png",
+	"icon": "paleopedia:textures/items/keichousaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_keichousaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_keichousaurus",
 			"title": "Keichousaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Sauropterygia$(br)>Nothosauroidea$(br)>Keichousauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Sauropterygia$(br)>Nothosauroidea$(br)>Keichousauridae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "Keichousaurus was described in 1958 by famous late chinese Palaeontologist Yang Zhongjian, one of the most important vertebrate palaeontologists of the country, often attributed as the \"father\" of the subject within his nation."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_keichousaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_keichousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_keichousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_keichousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_keichousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_keichousaurus"
 		}
 	]
 }

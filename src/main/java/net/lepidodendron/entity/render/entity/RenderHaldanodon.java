@@ -13,7 +13,7 @@ public class RenderHaldanodon extends RenderLiving<EntityPrehistoricFloraHaldano
 
     public static float getScaler() {return 0.25f;}
     public RenderHaldanodon(RenderManager mgr) {
-        super(mgr, new ModelHaldanodon(), 0.14f);
+        super(mgr, new ModelHaldanodon(), 0f);
     }
 
     @Override

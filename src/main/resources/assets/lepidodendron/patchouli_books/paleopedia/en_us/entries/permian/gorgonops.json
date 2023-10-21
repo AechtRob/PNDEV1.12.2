@@ -1,7 +1,7 @@
 {
 	"name": "Gorgonops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gorgonops_icon.png",
+	"icon": "paleopedia:textures/items/gorgonops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gorgonops",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gorgonops",
 			"title": "Gorgonops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gorgonops is a Permian gorgonopsid. Its fossils were found in South Africa and it was a medium sized animal. It had saber like front teeth and it had legs which supported the body from below, giving it more effective locomotion and increasing its speed, helping it chase down prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gorgonops",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gorgonops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gorgonops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gorgonops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gorgonops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gorgonops"
 		}
 	]
 }

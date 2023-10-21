@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.entities.ItemBivalveRaw;
 import net.minecraft.block.Block;
@@ -27,7 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-	public abstract class BlockBivalve extends Block implements net.minecraftforge.common.IShearable {
+	public abstract class BlockBivalve extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 	public static final Block block = null;
@@ -46,11 +47,10 @@ import java.util.Random;
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
 	}
 
-
-		@Override
-		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
-		}
+	@Override
+	public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+		return true;
+	}
 
 	@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
 

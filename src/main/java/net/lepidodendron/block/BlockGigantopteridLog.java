@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -65,7 +68,7 @@ public class BlockGigantopteridLog extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
     public static final PropertyBool EAST = PropertyBool.create("east");
@@ -89,7 +92,11 @@ public class BlockGigantopteridLog extends ElementsLepidodendronMod.ModElement {
         	this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(UP, Boolean.valueOf(false)).withProperty(DOWN, Boolean.valueOf(false)).withProperty(ATTACHMENT, Boolean.valueOf(false)));
 		}
 
-
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GIGANTOPTERID;
+		}
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
@@ -151,36 +158,36 @@ public class BlockGigantopteridLog extends ElementsLepidodendronMod.ModElement {
 	        {
 	            state = state.getActualState(worldIn, pos);
 	        }
-	
+
 	        float f = 0.1875F;
 	        float f1 = 0.8125F;
 	        addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.8125D, 0.8125D));
-	
+
 	        if (((Boolean)state.getValue(WEST)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0D, 0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(EAST)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.8125D, 0.1875D, 0.1875D, 1.0D, 0.8125D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(UP)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.8125D, 0.1875D, 0.8125D, 1.0D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(DOWN)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.0D, 0.1875D, 0.8125D, 0.1875D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(NORTH)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.0D, 0.8125D, 0.8125D, 0.1875D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(SOUTH)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.8125D, 0.8125D, 0.8125D, 1.0D));

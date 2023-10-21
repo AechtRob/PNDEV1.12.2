@@ -84,6 +84,13 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 				else if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
+					if (I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim()
+							.equalsIgnoreCase("entity." + getDNAStr(resourcelocation) + ".name")) {
+						//This didn't translate properly, try using a capital letter:
+						return I18n.translateToLocal("item.pf_phial_dna_full.name").trim()
+								+ ": "
+								+ I18n.translateToLocal("entity." + ItemPhialDNA.ItemCustom.upperCase(getDNAStr(resourcelocation)) + ".name").trim();
+					}
 					return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()
 							+ ": "
 							+ I18n.translateToLocal("entity." + getDNAStr(resourcelocation) + ".name").trim();
@@ -261,7 +268,22 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 			String stringDNA = (blockNBT.getString("id"));
 			if (stringDNA.indexOf("@") >= 0) {
-				return stringDNA.substring(stringDNA.indexOf("@") + 1);
+				String varStr = stringDNA.substring(stringDNA.indexOf("@") + 1);
+				if (varStr.equalsIgnoreCase("triops_random")) {
+					varStr = "triops" + (itemRand.nextInt(3) + 1);
+				}
+				if (varStr.equalsIgnoreCase("dragonfly_random")) {
+					varStr = "dragonfly" + (itemRand.nextInt(10) + 1);
+				}
+				if (varStr.equalsIgnoreCase("gendered")) {
+					if (itemRand.nextInt(2) == 0) {
+						varStr = "male";
+					}
+					else {
+						varStr = "female";
+					}
+				}
+				return varStr;
 			}
 			return "";
 		}
@@ -390,9 +412,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						if (item != null) {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
-							//if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-							//	itemstack.shrink(1);
-							//}
+							if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
+								itemstack.shrink(1);
+							}
 							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
 								//if (!playerIn.isCreative()) {
 									//itemstack.shrink(1);

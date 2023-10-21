@@ -7,10 +7,9 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderCaturus;
+import net.lepidodendron.entity.render.entity.RenderTyphloesus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -27,6 +26,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -42,13 +42,19 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
 	public ItemStack getPropagule() {
 		return new ItemStack(ItemUnknownPlanula.block, (int) (1));
 	}
+
 	@Override
 	public boolean canShoal() {
 		return false;
@@ -125,15 +131,15 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable<>(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		//this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable<>(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemFishFood.block;
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
 	}
 
 	@Override
@@ -187,7 +193,7 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		//System.err.println(this.getAnimationTick());
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
@@ -195,6 +201,7 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
+
 	}
 
 	@Override
@@ -252,41 +259,41 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 	}
 
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 0.4F;
 	}
 
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.10F;
+		return 0.0F;
 	}
 
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.285;
+		return 0.0;
 	}
 
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.00F;
+		return 0.0F;
 	}
 
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.105;
+		return 0.0;
 	}
 
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.01F;
+		return 0.2F;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCaturus.TEXTURE;
+		return RenderTyphloesus.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCaturus;
+		return RenderDisplays.modelTyphloesus;
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderCaturus.getScaler();
+		return RenderTyphloesus.getScaler();
 	}
 
 }

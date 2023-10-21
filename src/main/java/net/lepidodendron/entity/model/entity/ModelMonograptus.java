@@ -176,5 +176,14 @@ public class ModelMonograptus extends AdvancedModelBase {
             this.Floatingpiece.setScale(1 , (1 + bouncer), 1);
             this.Floatingpiece.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
         }
+
+        if (!e.isInWater()) {
+            this.resetToDefaultPose();
+            this.Floatingpiece.rotateAngleZ = (float) Math.toRadians(90);
+            this.Floatingpiece.offsetY = 1.47F;
+            this.Floatingpiece.scaleChildren = true;
+            this.Floatingpiece.setScaleX(0.2F);
+            this.Floatingpiece.setScaleZ(1.2F);
+        }
     }
 }

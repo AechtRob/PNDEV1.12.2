@@ -70,7 +70,7 @@ public class BlockAmphibianSpawnLaidleria extends ElementsLepidodendronMod.ModEl
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeTriassic) {
 				BiomeTriassic biomeP = (BiomeTriassic) biome;
-				if (biomeP.getBiomeType() == EnumBiomeTypeTriassic.River || biomeP.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
+				if (biomeP.getBiomeType() == EnumBiomeTypeTriassic.Desert) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

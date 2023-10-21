@@ -1,7 +1,7 @@
 {
 	"name": "Xenacanthus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/xenacanthus_icon.png",
+	"icon": "paleopedia:textures/items/xenacanthus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_xenacanthus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_xenacanthus",
 			"title": "Xenacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Swamps/Marsh$(br2)>Chondrichthyes$(br)>Selachimorpha$(br)>Xenacanthida$(br)>Xenacanthidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)>Chondrichthyes$(br)>Selachimorpha$(br)>Xenacanthida$(br)>Xenacanthidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Xenacanthus is a genus of widespread xenacanth shark, being found from the early Carboniferous and surviving all the way up to the Triassic! Xenacanthus had a long, snakelike body and a single barbed dorsal fin which extended the length of the body."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_xenacanthus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xenacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xenacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xenacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xenacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xenacanthus"
 		}
 	]
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:drimys_2"}
+    ],
+    "flowers=false": {
+      "model": "lepidodendron:drimys_2"
+    },
+    "flowers=true": {
+      "model": "lepidodendron:drimys_2_flower"
+    }
+  }
+}

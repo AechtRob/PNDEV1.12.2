@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraLaccognathus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLaccognathus extends AdvancedModelBase {

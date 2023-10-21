@@ -53,6 +53,16 @@ public class ItemSpawnEggKalligrammatidApochrysogramma extends ElementsLepidoden
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -11716553 ;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -9546154;
+		}
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

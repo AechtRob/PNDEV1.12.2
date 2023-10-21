@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:chain_link_block"
+    },
+    "1": {
+      "item": "lepidodendron:chain_link_block"
+    },
+    "2": {
+      "item": "lepidodendron:chain_link_block"
+    },
+    "3": {
+      "item": "lepidodendron:chain_link_block"
+    },
+    "4": {
+      "item": "lepidodendron:chain_link_block"
+    },
+    "5": {
+      "item": "lepidodendron:chain_link_block"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:chain_link_tile",
+    "count": 16
+  }
+}

@@ -4,9 +4,14 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.item.ItemKalligrammatidEggsItem;
+import net.lepidodendron.entity.render.entity.RenderKalligrammatid;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -18,6 +23,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -25,6 +31,9 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -56,6 +65,11 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
 	public boolean canMateWith(EntityAnimal otherAnimal)
 	{
 		if (otherAnimal == this)
@@ -66,41 +80,69 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		{
 			return false;
 		}
-		else if (((EntityPrehistoricFloraKalligrammatid)otherAnimal).getPNType() != this.getPNType()) {
-			return false;
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraKalligrammatid)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraKalligrammatid)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
 		}
+
 		return this.isInLove() && otherAnimal.isInLove();
 	}
 
-//	@Override
-//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-//			//Cycle the variants:
-//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeodictyoptera")) {
-//				if (!player.capabilities.isCreativeMode)
-//				{
-//					player.getHeldItem(hand).shrink(1);
-//				}
-//				int type = this.getPNType().ordinal();
-//				type = type + 1;
-//				if (type > Type.values().length) {
-//					type = 0;
-//				}
-//				this.setPNType(Type.byId(type));
-//
-//				float f = this.width;
-//				this.width = getHitBoxSize()[0];
-//				this.height = getHitBoxSize()[1];
-//				if (this.width != f) {
-//					double d0 = (double) width / 2.0D;
-//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-//				}
-//			}
-//		}
-//
-//		return super.processInteract(player, hand);
-//	}
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraKalligrammatid) {
+			EntityPrehistoricFloraKalligrammatid Kalligrammatid = (EntityPrehistoricFloraKalligrammatid) target.entityHit;
+			switch (Kalligrammatid.getPNType()) {
+				case KALLIGRAMMA: default:
+					return new ItemStack(ItemSpawnEggKalligrammatidKalligramma.block, 1);
+
+				case APOCHRYSOGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidApochrysogramma.block, 1);
+
+				case HUIYINGOGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidHuiyingogramma.block, 1);
+
+				case LIASSOPSYCHOPS:
+					return new ItemStack(ItemSpawnEggKalligrammatidLiassopsychops.block, 1);
+
+				case MEIONEURITES:
+					return new ItemStack(ItemSpawnEggKalligrammatidMeioneurites.block, 1);
+
+				case ABRIGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidAbrigramma.block, 1);
+
+				case ITHIGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidIthigramma.block, 1);
+
+				case OREGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidOregramma.block, 1);
+
+				case MAKARKINIA:
+					return new ItemStack(ItemSpawnEggKalligrammatidMakarkinia.block, 1);
+
+				case SOPHOGRAMMA:
+					return new ItemStack(ItemSpawnEggKalligrammatidSophogramma.block, 1);
+
+			}
+		}
+		return ItemStack.EMPTY;
+	}
 
 	@Override
 	public boolean hasPNVariants() {
@@ -281,6 +323,176 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		return getStandardLoot();
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA: default:
+				return 0.0;
+
+			case APOCHRYSOGRAMMA:
+				return 0.0;
+
+			case LIASSOPSYCHOPS:
+				return 0.0;
+
+			case MEIONEURITES:
+				return 0.0;
+
+			case ABRIGRAMMA:
+				return 0.0;
+
+			case ITHIGRAMMA:
+				return 0.0;
+
+			case OREGRAMMA:
+				return 0.0;
+
+			case MAKARKINIA:
+				return 0.0;
+
+			case SOPHOGRAMMA:
+				return 0.0;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA: default:
+				return 0.0;
+
+			case APOCHRYSOGRAMMA:
+				return 0.0;
+
+			case LIASSOPSYCHOPS:
+				return 0.0;
+
+			case MEIONEURITES:
+				return 0.0;
+
+			case ABRIGRAMMA:
+				return 0.0;
+
+			case ITHIGRAMMA:
+				return 0.0;
+
+			case OREGRAMMA:
+				return 0.0;
+
+			case MAKARKINIA:
+				return 0.0;
+
+			case SOPHOGRAMMA:
+				return 0.0;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.75;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA:
+			default:
+				return RenderKalligrammatid.TEXTURE_KALLIGRAMMA;
+
+			case APOCHRYSOGRAMMA:
+				return RenderKalligrammatid.TEXTURE_APOCHRYSOGRAMMA;
+
+			case LIASSOPSYCHOPS:
+				return RenderKalligrammatid.TEXTURE_LIASSOPSYCHOPS;
+
+			case MEIONEURITES:
+				return RenderKalligrammatid.TEXTURE_MEIONEURITES;
+
+			case ABRIGRAMMA:
+				return RenderKalligrammatid.TEXTURE_ABRIGRAMMA;
+
+			case ITHIGRAMMA:
+				return RenderKalligrammatid.TEXTURE_ITHIGRAMMA;
+
+			case OREGRAMMA:
+				return RenderKalligrammatid.TEXTURE_OREGRAMMA;
+
+			case MAKARKINIA:
+				return RenderKalligrammatid.TEXTURE_MAKARKINIA;
+
+			case SOPHOGRAMMA:
+				return RenderKalligrammatid.TEXTURE_SOPHOGRAMMA;
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
+			case KALLIGRAMMA:
+			default:
+				return RenderDisplays.modelKalligrammatid;
+
+			case APOCHRYSOGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case LIASSOPSYCHOPS:
+				return RenderDisplays.modelKalligrammatid;
+
+			case MEIONEURITES:
+				return RenderDisplays.modelKalligrammatid;
+
+			case ABRIGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case ITHIGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case OREGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case MAKARKINIA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case SOPHOGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderKalligrammatid.getScaler(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant));
+	}
+
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
 	{
@@ -374,9 +586,10 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 	@Override
 	public ItemStack getDroppedEggItemStack() {
-		ItemStack stack = new ItemStack(ItemKalligrammatidEggsItem.block, (int) (1));
+		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
 		NBTTagCompound variantNBT = new NBTTagCompound();
 		variantNBT.setString("PNType", this.getPNType().getName());
+		variantNBT.setString("creature", "lepidodendron:prehistoric_fora_kalligrammatid");
 		stack.setTagCompound(variantNBT);
 		return stack;
 	}
@@ -472,4 +685,8 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		return new ResourceLocation("lepidodendron:kalligrammatid_flight");
 	}
 
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS);
+	}
 }

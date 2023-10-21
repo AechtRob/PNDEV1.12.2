@@ -39,7 +39,8 @@ public class ItemPlacodusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_placodus", ItemPlacodusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPlacodusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPlacodusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemPlacodusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemPlacodusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

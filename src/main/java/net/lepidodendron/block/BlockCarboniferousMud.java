@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -13,8 +14,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -25,6 +28,8 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockCarboniferousMud extends ElementsLepidodendronMod.ModElement {
@@ -83,16 +88,39 @@ public class BlockCarboniferousMud extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public float getSlipperiness(IBlockState state, IBlockAccess world, BlockPos pos, @Nullable Entity entity) {
+			if (entity != null) {
+				if (entity instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entity;
+					if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+						if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+							return 0.6F;
+						}
+					}
+				}
+			}
+			return super.getSlipperiness(state, world, pos, entity);
+		}
+
+		@Override
 		public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
 		{
+			super.onEntityWalk(worldIn, pos, entityIn);
 			if ((entityIn instanceof EntityPlayer || entityIn instanceof EntityVillager) && Math.abs(entityIn.motionY) < 0.1D && !entityIn.isSneaking())
 			{
+				if (entityIn instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entityIn;
+					if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+						if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+							return;
+						}
+					}
+				}
 				double d0 = 0.4D + Math.abs(entityIn.motionY) * 0.2D;
 				entityIn.motionX *= d0;
 				entityIn.motionZ *= d0;
-			}
 
-			super.onEntityWalk(worldIn, pos, entityIn);
+			}
 		}
 	}
 }

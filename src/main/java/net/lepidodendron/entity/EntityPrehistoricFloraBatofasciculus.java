@@ -3,9 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -34,6 +37,11 @@ public class EntityPrehistoricFloraBatofasciculus extends EntityPrehistoricFlora
     }
 
     @Override
+    public EnumCreatureAttributePN getPNCreatureAttribute() {
+        return EnumCreatureAttributePN.INVERTEBRATE;
+    }
+
+    @Override
     public ItemStack getPropagule() {
         return new ItemStack(ItemUnknownPlanula.block, (int) (1));
     }
@@ -58,6 +66,12 @@ public class EntityPrehistoricFloraBatofasciculus extends EntityPrehistoricFlora
     protected void initEntityAI() {
         tasks.addTask(0, new EntityMateAIJellyfishBase(this, 1));
         tasks.addTask(1, new JellyfishWander(this, ANIMATION_JELLYFISH_WANDER));
+        this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraJellyfishBaseAI(this));
+    }
+
+    @Override
+    public String[] getFoodOreDicts() {
+        return DietString.FISHFOOD;
     }
 
     @Override
@@ -149,7 +163,7 @@ public class EntityPrehistoricFloraBatofasciculus extends EntityPrehistoricFlora
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     @Override

@@ -1,0 +1,46 @@
+{
+	"name": "Promexyele",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/promexyele_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_promexyele",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_promexyele",
+			"title": "Promexyele",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Iniopterygia $(br)>Iniopterygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/promexyele.png"],
+			"title": "P. peyeri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_promexyele",
+			"type": "text",
+			"text": "Promexyele is an Iniopterygid fish from the Carboniferous. This bizarre looking fish is easily recognized by the hard, spike covered front section of its dorsally placed pectoral fins and the rows of diagonal inward facing teeth in its mouth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_promexyele"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_promexyele"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_promexyele"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_promexyele"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_promexyele"
+		}
+	]
+}

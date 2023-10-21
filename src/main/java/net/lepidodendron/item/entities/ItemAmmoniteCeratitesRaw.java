@@ -37,9 +37,8 @@ public class ItemAmmoniteCeratitesRaw extends ElementsLepidodendronMod.ModElemen
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_ceratites", ItemAmmoniteCeratitesRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAmmoniteCeratitesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAmmoniteCeratitesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmmoniteCeratitesRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemAmmoniteCeratitesRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemAmmoniteCeratitesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {

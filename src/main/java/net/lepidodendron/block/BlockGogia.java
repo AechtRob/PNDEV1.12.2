@@ -5,8 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -78,6 +82,7 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:gogia", BlockGogia.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockGogia.block);
 	}
 
 
@@ -164,8 +169,7 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (blockpos1.getY() < world.getSeaLevel()
-								&& (world.getBlockState(blockpos1).getBlock() == Blocks.WATER
-								|| world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER)
+								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
 								&& !world.isAirBlock(blockpos1.east())
@@ -284,7 +288,7 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -299,6 +303,12 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GOGIA;
 		}
 
 		@Override

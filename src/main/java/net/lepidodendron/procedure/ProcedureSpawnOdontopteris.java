@@ -3,6 +3,8 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -29,8 +31,9 @@ public class ProcedureSpawnOdontopteris extends ElementsLepidodendronMod.ModElem
 				dimensionCriteria = false;
 			if (dimID == LepidodendronConfig.dimCarboniferous)
 				dimensionCriteria = true;
+
+			Biome biome = world.getBiome(new BlockPos(x, y, z));
 			if (dimensionCriteria && !SaplingSpawn) {
-				Biome biome = world.getBiome(new BlockPos(x, y, z));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genOdontopterisBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
@@ -40,12 +43,20 @@ public class ProcedureSpawnOdontopteris extends ElementsLepidodendronMod.ModElem
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
-				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genOdontopterisOverrideBiomes))
-					biomeCriteria = true;
+					}
+					if (matchBiome(biome, LepidodendronConfigPlants.genOdontopterisOverrideBiomes)) {
+						biomeCriteria = true;
+					}
 				}
 				if (dimID == LepidodendronConfig.dimCarboniferous)
 					biomeCriteria = true;
+
+				if (biome instanceof BiomeCarboniferous) {
+					if (((BiomeCarboniferous)biome).getBiomeType() == EnumBiomeTypeCarboniferous.Savanna) {
+						biomeCriteria = false;
+					}
+				}
+
 				if (biomeCriteria && !SaplingSpawn) {
 					//Try one spot at the foot of the tree:
 					//{

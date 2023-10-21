@@ -2,11 +2,9 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -88,7 +86,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genHorsetail && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if ((LepidodendronConfig.dimCarboniferous == dimID
 			|| dimID == LepidodendronConfig.dimPermian
@@ -151,7 +149,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills) {
 				biomeCriteria = true;
 			}
-			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")) {
+			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_woodland")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -183,9 +182,12 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
-                || biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks
+                || biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -249,6 +251,13 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
 			GenChance = 256;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")) {
+			GenChance = 64;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
+			GenChance = 30;
+		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
 			GenChance = 256;
 		}
@@ -308,7 +317,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
@@ -317,6 +326,12 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_giant_horsetail");
 			setRegistryName("giant_horsetail");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_GIANT_HORSETAIL;
 		}
 
 		@Override

@@ -1,0 +1,46 @@
+{
+	"name": "Siderops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/siderops_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_siderops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_siderops",
+			"title": "Siderops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Amphibia $(br)>Temnospondyli $(br)>Stereospondyli $(br)>Chigutisauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/siderops.png"],
+			"title": "S. kehli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siderops",
+			"type": "text",
+			"text": "Siderops is a chigutisaurid temnospondyl from Evergreen Formation in Australia. Although most temnospondyls went extinct in the Late Triassic, Siderops was one of the late-surviving members from Early Jurassic, and remains are pretty complete. With length over 2.6 m, it was probably massive predator that hunted prey with its large fangs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_siderops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_siderops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_siderops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_siderops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_siderops"
+		}
+	]
+}

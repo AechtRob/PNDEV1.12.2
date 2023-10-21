@@ -1,0 +1,51 @@
+{
+	"name": "Phillipsia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phillipsia_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_phillipsia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phillipsia",
+			"title": "Phillipsia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Trilobita $(br)>Proetida $(br)>Phillipsiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/phillipsia.png"],
+			"title": "Phillipsia sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phillipsia",
+			"type": "text",
+			"text": "Trilobites had long been on the decline before the Great Dying. However, it was the Great Dying that would seal the extinction of this iconic Paleozoic group of arthropods. Among the last trilobites was Phillipsia which lived from the Carboniferous to Permian. Phillipsia had gentle genal spines and large holochroal eyes. They were small, only eight centimeters in length at max. Even then, they large for Carboniferous and Permian trilobites."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phillipsia",
+			"type": "text",
+			"text": "They inherited the last gifts of their long-lasting dynasty. Today, they are scattered across rocks, fossils from a bygone era."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phillipsia"
+		}
+	]
+}

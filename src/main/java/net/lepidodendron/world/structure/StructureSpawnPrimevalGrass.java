@@ -29,7 +29,7 @@ public class StructureSpawnPrimevalGrass extends ElementsLepidodendronMod.ModEle
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPrimaevalGrass))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genPrimaevalGrass && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPrimaevalGrass && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

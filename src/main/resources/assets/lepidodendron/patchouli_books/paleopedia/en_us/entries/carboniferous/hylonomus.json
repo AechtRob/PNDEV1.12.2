@@ -1,7 +1,7 @@
 {
 	"name": "Hylonomus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/hylonomus_icon.png",
+	"icon": "paleopedia:textures/items/hylonomus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_hylonomus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hylonomus",
 			"title": "Hylonomus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)$(l)Habitat:$() Terrestrial$(br2)>Reptilia$(br)>Romeriida"
+			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)>Reptilia$(br)>Romeriida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Hylonomus was a small reptilian animal from the Late Carboniferous period. Its fossils have been found in moss stumps supposing that these animals may have taken shelter in the logs, gotten trapped, and died as a result."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hylonomus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hylonomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hylonomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hylonomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hylonomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hylonomus"
 		}
 	]
 }

@@ -15,6 +15,10 @@ public class RenderEdestus extends RenderLiving<EntityPrehistoricFloraEdestus> {
         super(mgr, new ModelEdestus(), 0.5f);
     }
 
+    public static float getScaler() {
+        return  1.65F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEdestus entity) {
         return RenderEdestus.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderEdestus extends RenderLiving<EntityPrehistoricFloraEdestus> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEdestus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

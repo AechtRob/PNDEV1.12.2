@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:diskagma"},
+      {"model": "lepidodendron:diskagma_var"}
+    ]
+  }
+}

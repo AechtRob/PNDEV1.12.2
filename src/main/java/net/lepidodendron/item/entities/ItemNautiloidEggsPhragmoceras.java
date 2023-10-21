@@ -4,7 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraCyrtoceras;
+import net.lepidodendron.entity.EntityPrehistoricFloraPhragmoceras;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -23,9 +23,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemNautiloidEggsPhragmoceras extends ElementsLepidodendronMod.ModElement {
@@ -33,6 +35,12 @@ public class ItemNautiloidEggsPhragmoceras extends ElementsLepidodendronMod.ModE
 	public static final Item block = null;
 	public ItemNautiloidEggsPhragmoceras(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.eggs_phragmoceras);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pnfurnaceSeafood", ItemNautiloidEggsPhragmoceras.block);
 	}
 
 	@Override
@@ -77,7 +85,7 @@ public class ItemNautiloidEggsPhragmoceras extends ElementsLepidodendronMod.ModE
 
 					if (iblockstate.getMaterial() == Material.WATER) {
 						if (!(worldIn.isRemote)) {
-							EntityPrehistoricFloraCyrtoceras.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraCyrtoceras.class).toString(), "{AgeTicks:0}", blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+							EntityPrehistoricFloraPhragmoceras.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraPhragmoceras.class).toString(), "{AgeTicks:0}", blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 						}
 						if (!playerIn.capabilities.isCreativeMode) {
 							itemstack.shrink(1);

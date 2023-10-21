@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:sibyrhynchus_icon"
+    "layer0": "paleopedia:items/sibyrhynchus_icon"
   }
 }

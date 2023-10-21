@@ -1,6 +1,7 @@
 
 package net.lepidodendron.entity;
 
+import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
@@ -11,22 +12,23 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.*;
+import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -35,6 +37,8 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+
+	private static final DataParameter<Integer> XINPUSAURUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraXinpusaurus.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraXinpusaurus(World world) {
 		super(world);
@@ -46,8 +50,146 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	}
 
 	@Override
-	public void entityInit() {
+	protected void entityInit() {
 		super.entityInit();
+		this.dataManager.register(XINPUSAURUS_TYPE, 0);
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 0;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraXinpusaurus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraXinpusaurus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraXinpusaurus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraXinpusaurus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraXinpusaurus.Type.byId(rand.nextInt(EntityPrehistoricFloraXinpusaurus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraXinpusaurus.Type type)
+	{
+		this.dataManager.set(XINPUSAURUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraXinpusaurus.Type getPNType()
+	{
+		return EntityPrehistoricFloraXinpusaurus.Type.byId(((Integer)this.dataManager.get(XINPUSAURUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraXinpusaurus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.XINPUSAURUS_LOOT_YOUNG;
+		}
+		return LepidodendronMod.XINPUSAURUS_LOOT;
 	}
 
 	@Override
@@ -113,10 +255,11 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.2, 5, true, 0));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(5, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatShellfishItemsAI(this, 1));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(5, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 10F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 		//this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -129,12 +272,8 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("itemShellfish"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.SHELLFISH);
 	}
 
 	@Override
@@ -188,14 +327,10 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -222,17 +357,14 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.XINPUSAURUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.XINPUSAURUS_LOOT;
-	}
-
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraXinpusaurus(this.world);
+		EntityPrehistoricFloraXinpusaurus entityOut = new EntityPrehistoricFloraXinpusaurus(this.world);
+		entityOut.setPNType(Type.MALE);
+		if (this.rand.nextInt(2) == 0) {
+			entityOut.setPNType(Type.FEMALE);
+		}
+		return entityOut;
 	}
 
 	//Rendering taxidermy:
@@ -278,6 +410,9 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderXinpusaurus.TEXTURE_F;
+		}
 		return RenderXinpusaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -285,6 +420,9 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return RenderDisplays.modelXinpusaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderXinpusaurus.getScaler() * (0.85F/0.7F);
+		}
 		return RenderXinpusaurus.getScaler();
 	}
 

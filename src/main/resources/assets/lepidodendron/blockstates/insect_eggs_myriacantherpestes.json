@@ -1,25 +1,25 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste"}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes"}
     ],
     "facing=north": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste", "x": 90}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes", "x": 90}
     ],
     "facing=east": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste", "x": 90, "y": 90}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes", "x": 90, "y": 90}
     ],
     "facing=south": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste", "x": 90, "y": 180}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes", "x": 90, "y": 180}
     ],
   "facing=west": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste", "x": 90, "y": 270}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes", "x": 90, "y": 270}
     ],
   "facing=up": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste"}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes"}
     ],
     "facing=down": [
-      {"model": "lepidodendron:insect_eggs_myriacantherpeste", "x": 180}
+      {"model": "lepidodendron:insect_eggs_myriacantherpestes", "x": 180}
     ]
   }
 }

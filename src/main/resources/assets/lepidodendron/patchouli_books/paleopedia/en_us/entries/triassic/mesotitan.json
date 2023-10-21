@@ -1,7 +1,7 @@
 {
 	"name": "Mesotitan",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/mesotitan_icon.png",
+	"icon": "paleopedia:textures/items/mesotitan_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 			"title": "Mesotitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Canyons, Temperate Forest$(br2)>Insecta$(br)>Orthoptera$(br)>Mesotitanidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Insecta$(br)>Orthoptera$(br)>Mesotitanidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Mesotitan is genus of Triassic titanopteran insect that is known from Australia and Kyrgyzstan. Known from poorly preserved fossil with width about 15 cm, it was large insect that is comparable with other large titanopterans like Gigatitan. Sometimes genus Clatrotitan is treated as synonymous with Mesotitan, however some studies deny that."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
-			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@mesotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@mesotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@mesotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@mesotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_titanoptera@mesotitan"
 		}
 	]
 }

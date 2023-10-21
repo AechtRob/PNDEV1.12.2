@@ -1,7 +1,7 @@
 {
 	"name": "Barrel Jelly",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/barrel_icon.png",
+	"icon": "paleopedia:textures/items/barrel_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish4",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish4",
 			"title": "Barrel Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Jellyfish in modern forms have existed since at least the Cambrian period, and in very similar forms before even then. This exact species is a modern species but entirely similar to what has existed since ancient times. The barrel jellyfish is a jellyfish commonly found in the northeast Atlantic, Black Sea, Mediterranean Sea, and Sea of Azov. It is moderately venomous bout not as much as other jellyfish species. It does not pose a serious threat to humans."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jellyfish4",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish4"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish4"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish4"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish4"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish4"
 		}
 	]
 }

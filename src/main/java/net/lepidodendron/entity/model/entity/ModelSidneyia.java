@@ -2,9 +2,9 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraSidneyia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelSidneyia extends AdvancedModelBase {
@@ -208,54 +208,56 @@ public class ModelSidneyia extends AdvancedModelBase {
         AdvancedModelRenderer[] legsR = {this.legR1, this.legR2, this.legR3, this.legR4, this.legR5};
         AdvancedModelRenderer[] tailF = {this.tail, this.tail2};
 
-        this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-        this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-        this.chainWave(tailF, 0.25F, 0.2F, -1.5, f2, 1);
-        this.chainSwing(tailF, 1.0F, 0.2F, -1.5, f2, 1);
+        if (((EntityPrehistoricFloraSidneyia) e).getIsMoving()) {
+            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+            this.chainWave(tailF, 0.25F, 0.2F, -1.5, f2, 1);
+            this.chainSwing(tailF, 1.0F, 0.2F, -1.5, f2, 1);
+
+            this.flap(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+            this.flap(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+            this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+            this.flap(legL6, 0.5F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+            this.flap(legR6, 0.5F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+            this.flap(legL7, 0.5F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
+            this.flap(legR7, 0.5F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
+            this.flap(legL8, 0.5F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
+            this.flap(legR8, 0.5F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
+            this.flap(legL9, 0.5F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
+            this.flap(legR9, 0.5F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
+
+            this.walk(legL1, 0.5F, -0.25F, false, 0, -0.25F, f2, 0.3F);
+            this.walk(legR1, 0.5F, 0.25F, false, 0, 0.25F, f2, 0.3F);
+            this.walk(legL2, 0.5F, -0.25F, false, 1.0F, -0.25F, f2, 0.3F);
+            this.walk(legR2, 0.5F, 0.25F, false, 1.0F, 0.25F, f2, 0.3F);
+            this.walk(legL3, 0.5F, -0.25F, false, 2.0F, -0.25F, f2, 0.3F);
+            this.walk(legR3, 0.5F, 0.25F, false, 2.0F, 0.25F, f2, 0.3F);
+            this.walk(legL4, 0.5F, -0.25F, false, 3.0F, -0.25F, f2, 0.3F);
+            this.walk(legR4, 0.5F, 0.25F, false, 3.0F, 0.25F, f2, 0.3F);
+            this.walk(legL5, 0.5F, -0.25F, false, 4.0F, -0.25F, f2, 0.3F);
+            this.walk(legR5, 0.5F, 0.25F, false, 4.0F, 0.25F, f2, 0.3F);
+            this.walk(legL6, 0.5F, -0.25F, false, 5.0F, -0.25F, f2, 0.3F);
+            this.walk(legR6, 0.5F, 0.25F, false, 5.0F, 0.25F, f2, 0.3F);
+            this.walk(legL7, 0.5F, -0.25F, false, 6.0F, -0.25F, f2, 0.3F);
+            this.walk(legR7, 0.5F, 0.25F, false, 6.0F, 0.25F, f2, 0.3F);
+            this.walk(legL8, 0.5F, -0.25F, false, 7.0F, -0.25F, f2, 0.3F);
+            this.walk(legR8, 0.5F, 0.25F, false, 7.0F, 0.25F, f2, 0.3F);
+            this.walk(legL9, 0.5F, -0.25F, false, 8.0F, -0.25F, f2, 0.3F);
+            this.walk(legR9, 0.5F, 0.25F, false, 8.0F, 0.25F, f2, 0.3F);
+
+        }
 
         this.swing(antennaeL, 0.5F, -0.2F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaeR, 0.5F, 0.2F, false, 0, 0.1F, f2, 0.8F);
 
         this.walk(antennaeL, 2.0F, -0.1F, false, 0, -0.05F, f2, 0.8F);
         this.walk(antennaeR, 2.0F, 0.1F, false, 0, 0.05F, f2, 0.8F);
-
-        this.flap(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-        this.flap(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-        this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-        this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-        this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-        this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-        this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-        this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-        this.flap(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-        this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-        this.flap(legL6, 0.5F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-        this.flap(legR6, 0.5F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-        this.flap(legL7, 0.5F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
-        this.flap(legR7, 0.5F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
-        this.flap(legL8, 0.5F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
-        this.flap(legR8, 0.5F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
-        this.flap(legL9, 0.5F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
-        this.flap(legR9, 0.5F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
-
-        this.walk(legL1, 0.5F, -0.25F, false, 0, -0.25F, f2, 0.3F);
-        this.walk(legR1, 0.5F, 0.25F, false, 0, 0.25F, f2, 0.3F);
-        this.walk(legL2, 0.5F, -0.25F, false, 1.0F, -0.25F, f2, 0.3F);
-        this.walk(legR2, 0.5F, 0.25F, false, 1.0F, 0.25F, f2, 0.3F);
-        this.walk(legL3, 0.5F, -0.25F, false, 2.0F, -0.25F, f2, 0.3F);
-        this.walk(legR3, 0.5F, 0.25F, false, 2.0F, 0.25F, f2, 0.3F);
-        this.walk(legL4, 0.5F, -0.25F, false, 3.0F, -0.25F, f2, 0.3F);
-        this.walk(legR4, 0.5F, 0.25F, false, 3.0F, 0.25F, f2, 0.3F);
-        this.walk(legL5, 0.5F, -0.25F, false, 4.0F, -0.25F, f2, 0.3F);
-        this.walk(legR5, 0.5F, 0.25F, false, 4.0F, 0.25F, f2, 0.3F);
-        this.walk(legL6, 0.5F, -0.25F, false, 5.0F, -0.25F, f2, 0.3F);
-        this.walk(legR6, 0.5F, 0.25F, false, 5.0F, 0.25F, f2, 0.3F);
-        this.walk(legL7, 0.5F, -0.25F, false, 6.0F, -0.25F, f2, 0.3F);
-        this.walk(legR7, 0.5F, 0.25F, false, 6.0F, 0.25F, f2, 0.3F);
-        this.walk(legL8, 0.5F, -0.25F, false, 7.0F, -0.25F, f2, 0.3F);
-        this.walk(legR8, 0.5F, 0.25F, false, 7.0F, 0.25F, f2, 0.3F);
-        this.walk(legL9, 0.5F, -0.25F, false, 8.0F, -0.25F, f2, 0.3F);
-        this.walk(legR9, 0.5F, 0.25F, false, 8.0F, 0.25F, f2, 0.3F);
-
     }
 }

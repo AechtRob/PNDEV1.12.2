@@ -2,10 +2,10 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraHungioides;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -605,32 +605,31 @@ public class ModelHungioides extends AdvancedModelBase {
         float weight = -0.5F;
 
         if (isAtBottom) {
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            this.flap(LLeg1, 0.5F, -0.5F, false, 0, -weight, f2, 0.3F);
-            this.flap(RLeg1, 0.5F, 0.5F, false, 0, weight, f2, 0.3F);
-            this.flap(LLeg2, 0.5F, -0.5F, false, 1.0F, -weight, f2, 0.3F);
-            this.flap(RLeg2, 0.5F, 0.5F, false, 1.0F, weight, f2, 0.3F);
-            this.flap(LLeg3, 0.5F, -0.5F, false, 2.0F, -weight, f2, 0.3F);
-            this.flap(RLeg3, 0.5F, 0.5F, false, 2.0F, weight, f2, 0.3F);
-            this.flap(LLeg4, 0.5F, -0.5F, false, 3.0F, -weight, f2, 0.3F);
-            this.flap(Rleg4, 0.5F, 0.5F, false, 3.0F, weight, f2, 0.3F);
-            this.flap(LLeg5, 0.5F, -0.5F, false, 4.0F, -weight, f2, 0.3F);
-            this.flap(RLeg5, 0.5F, 0.5F, false, 4.0F, weight, f2, 0.3F);
-            this.flap(LLeg6, 0.5F, -0.5F, false, 5.0F, -weight, f2, 0.3F);
-            this.flap(RLeg6, 0.5F, 0.5F, false, 5.0F, weight, f2, 0.3F);
-            this.flap(LLeg7, 0.5F, -0.5F, false, 6.0F, -weight, f2, 0.3F);
-            this.flap(RLeg7, 0.5F, 0.5F, false, 6.0F, weight, f2, 0.3F);
-            this.flap(LLeg8, 0.5F, -0.5F, false, 7.0F, -weight, f2, 0.3F);
-            this.flap(RLeg8, 0.5F, 0.5F, false, 7.0F, weight, f2, 0.3F);
-            this.flap(LLeg9, 0.5F, -0.5F, false, 8.0F, -weight, f2, 0.3F);
-            this.flap(RLeg9, 0.5F, 0.5F, false, 8.0F, weight, f2, 0.3F);
-            this.flap(LLeg10, 0.5F, -0.5F, false, 9.0F, -weight, f2, 0.3F);
-            this.flap(RLeg10, 0.5F, 0.5F, false, 9.0F, weight, f2, 0.3F);
-            this.flap(LLeg11, 0.5F, -0.5F, false, 10.0F, -weight, f2, 0.3F);
-            this.flap(RLeg12, 0.5F, 0.5F, false, 10.0F, weight, f2, 0.3F);
-
-            if (f3 != 0) {
+            if (((EntityPrehistoricFloraHungioides) e).getIsMoving()) {
+                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+                this.flap(LLeg1, 0.5F, -0.5F, false, 0, -weight, f2, 0.3F);
+                this.flap(RLeg1, 0.5F, 0.5F, false, 0, weight, f2, 0.3F);
+                this.flap(LLeg2, 0.5F, -0.5F, false, 1.0F, -weight, f2, 0.3F);
+                this.flap(RLeg2, 0.5F, 0.5F, false, 1.0F, weight, f2, 0.3F);
+                this.flap(LLeg3, 0.5F, -0.5F, false, 2.0F, -weight, f2, 0.3F);
+                this.flap(RLeg3, 0.5F, 0.5F, false, 2.0F, weight, f2, 0.3F);
+                this.flap(LLeg4, 0.5F, -0.5F, false, 3.0F, -weight, f2, 0.3F);
+                this.flap(Rleg4, 0.5F, 0.5F, false, 3.0F, weight, f2, 0.3F);
+                this.flap(LLeg5, 0.5F, -0.5F, false, 4.0F, -weight, f2, 0.3F);
+                this.flap(RLeg5, 0.5F, 0.5F, false, 4.0F, weight, f2, 0.3F);
+                this.flap(LLeg6, 0.5F, -0.5F, false, 5.0F, -weight, f2, 0.3F);
+                this.flap(RLeg6, 0.5F, 0.5F, false, 5.0F, weight, f2, 0.3F);
+                this.flap(LLeg7, 0.5F, -0.5F, false, 6.0F, -weight, f2, 0.3F);
+                this.flap(RLeg7, 0.5F, 0.5F, false, 6.0F, weight, f2, 0.3F);
+                this.flap(LLeg8, 0.5F, -0.5F, false, 7.0F, -weight, f2, 0.3F);
+                this.flap(RLeg8, 0.5F, 0.5F, false, 7.0F, weight, f2, 0.3F);
+                this.flap(LLeg9, 0.5F, -0.5F, false, 8.0F, -weight, f2, 0.3F);
+                this.flap(RLeg9, 0.5F, 0.5F, false, 8.0F, weight, f2, 0.3F);
+                this.flap(LLeg10, 0.5F, -0.5F, false, 9.0F, -weight, f2, 0.3F);
+                this.flap(RLeg10, 0.5F, 0.5F, false, 9.0F, weight, f2, 0.3F);
+                this.flap(LLeg11, 0.5F, -0.5F, false, 10.0F, -weight, f2, 0.3F);
+                this.flap(RLeg12, 0.5F, 0.5F, false, 10.0F, weight, f2, 0.3F);
                 this.chainSwing(bodyF, 0.1F, 0.06F, -3, f2, 1.0F);
             }
 

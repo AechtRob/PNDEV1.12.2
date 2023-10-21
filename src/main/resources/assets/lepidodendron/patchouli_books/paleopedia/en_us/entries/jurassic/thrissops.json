@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thrissops",
 			"title": "Thrissops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Actinopterygii$(br)>Ichthyodectiformes"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Ichthyodectiformes"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Particularly stunning about Thrissops is the preservation of the patterning in some of their fossils, which demonstrated these animals had a spotted pattern going down its body, the density of the spots was higher on the front area of its body compared to the back of it."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_thrissops",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thrissops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thrissops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thrissops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thrissops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thrissops"
 		}
 	]
 }

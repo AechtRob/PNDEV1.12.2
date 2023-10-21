@@ -2,6 +2,7 @@
 	"ambientocclusion": false,
 	"textures": {
 		"0": "lepidodendron:blocks/pandan_leaf",
+		"1": "lepidodendron:blocks/pandan_flower",
 		"particle": "lepidodendron:blocks/pandan_leaf"
 	},
 	"elements": [
@@ -778,6 +779,58 @@
 				"east": {"uv": [6, 0, 9, 4], "texture": "#0"},
 				"west": {"uv": [6, 0, 9, 4], "texture": "#0"}
 			}
+		},
+		{
+			"from": [8, -10, -8],
+			"to": [8, 6, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, -10, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [8, -10, -8],
+			"to": [8, 6, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, -10, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [8, -10, 8],
+			"to": [24, 6, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, -10, 8]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 0, 16], "rotation": 90, "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 16], "rotation": 270, "texture": "#1"}
+			}
+		},
+		{
+			"from": [8, -10, 8],
+			"to": [8, 6, 24],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, -10, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"east": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 0, 16], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 16], "rotation": 180, "texture": "#1"}
+			}
 		}
 	],
 	"groups": [
@@ -810,6 +863,10 @@
 			"origin": [3.02512, 21.01043, 8],
 			"color": 0,
 			"children": [66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85]
-		}
+		},
+		86,
+		87,
+		88,
+		89
 	]
 }

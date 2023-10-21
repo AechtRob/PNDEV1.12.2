@@ -2,10 +2,10 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraAlacaris;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -355,7 +355,7 @@ public class ModelAlacaris extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyF = {this.body4,this.body5,this.body6,this.body7};
 
         if (isAtBottom) {
-            if (f3 != 0.0) {
+            if (((EntityPrehistoricFloraAlacaris)e).getIsMoving()) {
                 this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
                 this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
                 this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);

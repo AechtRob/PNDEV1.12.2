@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsProtozygoptera;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
@@ -24,6 +25,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -81,11 +83,6 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 	@Override
 	public boolean canJar() {
 		return true;
-	}
-
-	@Override
-	public ResourceLocation FlightSound() {
-		return null;
 	}
 
 	public static String getPeriod() {return "mid Carboniferous - Permian";}
@@ -220,4 +217,13 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 
 	}
 
+	@Override
+	public ResourceLocation FlightSound() {
+		return new ResourceLocation("lepidodendron:dragonfly_flight");
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
+	}
 }

@@ -2,8 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraMarmolatella;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraStrombus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

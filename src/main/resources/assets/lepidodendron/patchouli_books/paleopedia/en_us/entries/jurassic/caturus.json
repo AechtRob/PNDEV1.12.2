@@ -1,7 +1,7 @@
 {
 	"name": "Strobilodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/caturus_icon.png",
+	"icon": "paleopedia:textures/items/caturus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_caturus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_caturus",
 			"title": "Strobilodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Amiiformes$(br)>Caturidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Amiiformes$(br)>Caturidae"
 		},
 		{
 			"type": "image",
@@ -33,9 +33,24 @@
 			"text": "Although large species described from Owadow-Brzezinki Quarry in Poland was also identified as Caturus giganteus, it was fragmentary so hard to identify."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_caturus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caturus"
 		}
 	]
 }

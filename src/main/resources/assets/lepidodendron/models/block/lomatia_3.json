@@ -1,0 +1,8 @@
+{
+  "parent":"lepidodendron:block/3x3_6pointedplant",
+  "textures": {
+    "c": "lepidodendron:blocks/lomatia_3_c",
+    "w": "lepidodendron:blocks/lomatia_3_w",
+    "e": "lepidodendron:blocks/lomatia_3_e"
+  }
+}

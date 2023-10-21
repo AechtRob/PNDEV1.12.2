@@ -1,7 +1,7 @@
 {
 	"name": "Mastodonsaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/mastodonsaurus_icon.png",
+	"icon": "paleopedia:textures/items/mastodonsaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_mastodonsaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mastodonsaurus",
 			"title": "Mastodonsaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Amphibia$(br)>Temnospondyli$(br)>Capitosauria$(br)>Mastodonsauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Amphibia$(br)>Temnospondyli$(br)>Capitosauria$(br)>Mastodonsauridae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",
 			"type": "text",
-			"text": "Mastodonsaurus was a genus of temnospondyl found across Europe. This amphibian, being one of the largest ever, was a bottom-dwelling ambush predator, using its large head to swallow up anything it could, including fish, other temnospondyls, and rarely even archosaurs that strayed too close to the water’s edge. Mass grave sites of this animal have been found, created when the ponds or swamps this animal lived in dried up, making the heavy, aquatic amphibians dehydrate and crush themselves under their own weight."
+			"text": "Mastodonsaurus was a genus of temnospondyl found across Europe. This amphibian, being one of the largest ever, was a bottom-dwelling ambush predator, using its large head to swallow up anything it could, including fish, other temnospondyls, and rarely even archosaurs that strayed too close to the water’s edge."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "Mass grave sites of this animal have been found, created when the ponds or swamps this animal lived in dried up, making the heavy, aquatic amphibians dehydrate and crush themselves under their own weight."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mastodonsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mastodonsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mastodonsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mastodonsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mastodonsaurus"
 		}
 	]
 }

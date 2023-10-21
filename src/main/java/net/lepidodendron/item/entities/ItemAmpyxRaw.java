@@ -35,10 +35,10 @@ public class ItemAmpyxRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ampyx", ItemAmpyxRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAmpyxRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAmpyxRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmpyxRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemAmpyxRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemAmpyxRaw.block);
 	}
+
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);

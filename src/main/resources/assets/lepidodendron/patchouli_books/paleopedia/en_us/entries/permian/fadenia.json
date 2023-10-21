@@ -1,7 +1,7 @@
 {
-	"name": "Fadenia (Permo-Triassic)",
+	"name": "Fadenia sp.",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/fadenia_icon.png",
+	"icon": "paleopedia:textures/items/fadenia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_fadenia_permotriassic",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_fadenia_permotriassic",
 			"title": "Fadenia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
+			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "These Fadenia are species of Caseodonts which lived during the Permian to Triassic periods. They were much smaller than their Carboniferous relative and they only grew to about 1.6-2 meters long, and had a tooth whorl similar to other caseodonts. They mainly inhabited marine environments and probably actively hunted."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_fadenia_permotriassic",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_permotriassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_permotriassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_permotriassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_permotriassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fadenia_permotriassic"
 		}
 	]
 }

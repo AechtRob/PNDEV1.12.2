@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "inventory": [
+      { "model": "lepidodendron:atli_shoot_inventory" }
+    ],
+    "normal": [
+      { "model": "lepidodendron:atli_shoot" }
+    ],
+    "facing=north": [
+      { "model": "lepidodendron:atli_shoot", "x": 90 }
+    ],
+    "facing=east": [
+      { "model": "lepidodendron:atli_shoot","x": 90, "y": 90 }
+    ],
+    "facing=south": [
+      { "model": "lepidodendron:atli_shoot", "x": 90, "y": 180 }
+    ],
+    "facing=west": [
+      { "model": "lepidodendron:atli_shoot", "x": 90, "y": 270 }
+    ],
+    "facing=up": [
+      { "model": "lepidodendron:atli_shoot" }
+    ],
+    "facing=down": [
+      { "model": "lepidodendron:atli_shoot", "x": 180 }
+    ]
+  }
+}

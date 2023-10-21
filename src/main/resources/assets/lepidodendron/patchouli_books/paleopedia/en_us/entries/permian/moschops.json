@@ -1,7 +1,7 @@
 {
 	"name": "Moschops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/moschops_icon.png",
+	"icon": "paleopedia:textures/items/moschops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_moschops",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_moschops",
 			"title": "Moschops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Arid, Glossopteris$(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Moschops is a therapsid from the Permian period. They had tough heads which they could have used to head butt each other. Its legs were sprawled out to its sides and they had heavily-built jaw muscles which they could use to break down tough vegetation."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_moschops",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_moschops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_moschops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_moschops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_moschops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_moschops"
 		}
 	]
 }

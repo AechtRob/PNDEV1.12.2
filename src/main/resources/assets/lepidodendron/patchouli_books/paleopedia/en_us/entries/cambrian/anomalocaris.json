@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anomalocaris",
 			"title": "Anomalocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean & Reef$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarididae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Anomalocaris, meaning 'abnormal shrimp,' was a Cambrian radiodont, and was originally known from fossilized parts of the mouth and appendages. It is thought to be one of the earliest apex predators. Anomalocaris had a disk-like mouth, known as an oral cone, which many radiodonts possessed. Its appendages were also used for grasping prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_anomalocaris",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anomalocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anomalocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anomalocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anomalocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anomalocaris"
 		}
 	]
 }

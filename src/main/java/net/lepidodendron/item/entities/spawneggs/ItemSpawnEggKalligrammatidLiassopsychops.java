@@ -53,6 +53,17 @@ public class ItemSpawnEggKalligrammatidLiassopsychops extends ElementsLepidodend
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -5993396;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -3691927;
+		}
+
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

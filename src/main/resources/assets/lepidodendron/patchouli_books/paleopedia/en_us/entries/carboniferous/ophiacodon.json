@@ -1,7 +1,7 @@
 {
 	"name": "Ophiacodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ophiacodon_icon.png",
+	"icon": "paleopedia:textures/items/ophiacodon_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_ophiacodon",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ophiacodon",
 			"title": "Ophiacodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Swamps$(br2)>Synapsida$(br)>Ophiacodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Synapsida$(br)>Ophiacodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ophiacodon was a medium sized predatory synapsid that lived in the Carboniferous and Permian. They were terrestrial animals and their jaws were adapted for eating smaller prey and fish."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ophiacodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ophiacodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ophiacodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ophiacodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ophiacodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ophiacodon"
 		}
 	]
 }

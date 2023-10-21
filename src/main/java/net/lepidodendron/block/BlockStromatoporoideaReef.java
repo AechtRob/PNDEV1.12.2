@@ -3,7 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockFalling;
@@ -30,10 +33,13 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -50,6 +56,12 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("pndietSponge", BlockStromatoporoideaReef.block);
+	}
+
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	@SideOnly(Side.CLIENT)
@@ -59,7 +71,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 				new ModelResourceLocation("lepidodendron:stromatoporoidea_reef", "inventory"));
 	}
 
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.CORAL);
@@ -71,6 +83,12 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_REEF_STROMATOPOROIDEA;
 		}
 
 		@Override

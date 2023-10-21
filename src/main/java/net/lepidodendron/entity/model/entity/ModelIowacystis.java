@@ -118,16 +118,28 @@ public class ModelIowacystis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.Root.offsetZ = -0.08F;
-        this.Root.render(0.021F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.Root.rotateAngleX = (float) Math.toRadians(90);
+        this.Root.offsetY = -0.2F;
+        this.Root.offsetX = 0.0F;
+        this.Root.offsetZ = -0.34F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Tail, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.13F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail4, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail5, -0.13F, -0.13F, 0.0F);
+        this.setRotateAngle(Arm, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Arm2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Arm3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Arm4, 0.0F, -0.1F, 0.0F);
+        this.Root.offsetY = 0.08F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

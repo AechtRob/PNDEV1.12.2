@@ -1,20 +1,13 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.render.entity.RenderPseudotherium;
+import net.lepidodendron.entity.render.entity.RenderKayentatherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -22,7 +15,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -47,12 +40,12 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.26F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -71,20 +64,18 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		tasks.addTask(5, new PanicAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1));
-		this.targetTasks.addTask(2, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(12, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack) {
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-				//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("foodInsect"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FRUIT, DietString.PLANTS), DietString.SEED);
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -160,14 +151,14 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderPseudotherium.TEXTURE;
+		return RenderKayentatherium.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelPseudotherium;
+		return RenderDisplays.modelKayentatherium;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderPseudotherium.getScaler();
+		return RenderKayentatherium.getScaler();
 	}
 
 }

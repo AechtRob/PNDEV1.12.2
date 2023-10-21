@@ -37,9 +37,8 @@ public class ItemLunataspisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lunataspis", ItemLunataspisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemLunataspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemLunataspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemLunataspisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemLunataspisRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemLunataspisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

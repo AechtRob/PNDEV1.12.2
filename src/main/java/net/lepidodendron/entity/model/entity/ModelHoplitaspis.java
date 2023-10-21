@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHoplitaspis;
-import net.lepidodendron.entity.EntityPrehistoricFloraSlimonia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -177,11 +176,33 @@ public class ModelHoplitaspis extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
-
     public void renderStaticWall(float f) {
+        this.Root.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.0F, 0.0F);
+        this.Root.offsetY = -0.16F;
+        this.Root.offsetX = 0.0F;
+        this.Root.offsetZ = -0.29F;
+        this.Root.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Head, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, -0.08F, 0.0F);
+        this.setRotateAngle(Tail6, 0.0F, -0.08F, 0.0F);
+        this.Root.offsetY = 0.06F;
+        this.Root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -317,8 +317,33 @@ public class ModelOrthocormus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
-
     public void renderStaticWall(float f) {
+        this.Root.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(TailFin, 0.0F, 0.1F, 0.0F);
+        this.Root.offsetY = -0.18F;
+        this.Root.offsetX = 0.0F;
+        this.Root.offsetZ = -0.27F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Head, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Maxilla, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.F, -0.1F, 0.0F);
+        this.setRotateAngle(TailFin, 0.0F, -0.05F, 0.0F);
+        this.Root.offsetY = -0.25F;
+        this.Root.render(0.01F);
         resetToDefaultPose();
     }
 

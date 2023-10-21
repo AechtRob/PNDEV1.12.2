@@ -1,7 +1,7 @@
 {
 	"name": "Spiniplatyceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/spiniplatyceras_icon.png",
+	"icon": "paleopedia:textures/items/spiniplatyceras_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_spiniplatyceras",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spiniplatyceras",
 			"title": "Spiniplatyceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Platyceratidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Gastropoda$(br)>Platyceratidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Spiniplatyceras is a genus of spined platycerid marine snails from the Devonian. From a distance, it may look like a sea urchin with its many long spikes on its shell."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_spiniplatyceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Punch"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spiniplatyceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spiniplatyceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spiniplatyceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spiniplatyceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spiniplatyceras"
 		}
 	]
 }

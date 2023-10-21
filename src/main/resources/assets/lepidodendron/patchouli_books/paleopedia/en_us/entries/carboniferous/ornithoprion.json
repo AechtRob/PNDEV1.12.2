@@ -1,7 +1,7 @@
 {
 	"name": "Ornithoprion",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ornithoprion_icon.png",
+	"icon": "paleopedia:textures/items/ornithoprion_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_ornithoprion",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ornithoprion",
 			"title": "Ornithoprion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Eugeneodontida$(br)>Caseodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ornithoprion is a Carboniferous Eugeneodont that was characterized by its elongated jaw. It had a small 10 cenimeter skull and was scaled to be able to grow up to around half a meter in length. These small Eugeneodonts still had the characteristic tooth whorl that their larger relatives, like Helicoprion possessed.  The discovery of Ornithorpion helped established the aspects of eugeneodont skull anatomy."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ornithoprion",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ornithoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ornithoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ornithoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ornithoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ornithoprion"
 		}
 	]
 }

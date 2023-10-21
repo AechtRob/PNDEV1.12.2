@@ -1,0 +1,51 @@
+{
+	"name": "Belonostomus kochii",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/belonostomus_jurassic_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+			"title": "Belonostomus kochii",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Aspidorhynchiformes $(br)>Aspidorhynchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/belonostomus_jurassic.png"],
+			"title": "B. kochii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+			"type": "text",
+			"text": "Belonostomus is a genus of Aspidorhynchid fish that existed worldwide between the Late Jurassic and the Paleocene. Usually not longer than 50 cm long, the animal was a very widespread predator characterized by its long body and rostrum. B. kochii is but one of the several Jurassic species described from the famous locality of Solnhofen and its limestones; alongside it at least another three species come from the same area,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belonostomus_jurassic",
+			"type": "text",
+			"text": "mostly differentiated by the size and shape of their rostra."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_jurassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_jurassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_jurassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_jurassic"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_jurassic"
+		}
+	]
+}

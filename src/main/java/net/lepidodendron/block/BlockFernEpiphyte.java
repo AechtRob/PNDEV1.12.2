@@ -2,12 +2,10 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -34,6 +32,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -97,7 +97,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genFernEpiphyteOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genFernEpiphyte && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genFernEpiphyte && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			biomeCriteria = false;
 
 		if (biome instanceof BiomeCarboniferous)
@@ -141,7 +141,8 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
 				biomeCriteria = true;
 			}
@@ -202,7 +203,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
         return false;
     }
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -217,6 +218,22 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			setTickRandomly(true);
 		}
 
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_FERN_EPIPHYTE;
+		}
+
+		@Override
+		@javax.annotation.Nullable
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+			return NULL_AABB;
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
@@ -317,12 +334,6 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
 		}
 
-		@Nullable
-		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-		{
-			return NULL_AABB;
-		}
-
 		@Override
 		public int getMetaFromState(IBlockState state) {
 			return ((EnumFacing) state.getValue(FACING)).getIndex();
@@ -415,6 +426,22 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public int offsetY() {
 			return 1;
+		}
+
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+
+			long i = MathHelper.getCoordinateRandom(pos.getX(), pos.getY(), pos.getZ());
+			switch (state.getValue(FACING)) {
+				case UP: case DOWN: default:
+					return new Vec3d(((double) ((float) (i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D, 0.0D, ((double) ((float) (i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+
+				case NORTH: case SOUTH:
+					return new Vec3d(((double) ((float) (i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, 0.0D);
+
+				case EAST: case WEST:
+					return new Vec3d(0.0D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, ((double) ((float) (i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+			}
 		}
 	}
 }

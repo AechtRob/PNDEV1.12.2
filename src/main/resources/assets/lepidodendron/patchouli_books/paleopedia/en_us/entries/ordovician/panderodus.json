@@ -1,7 +1,7 @@
 {
 	"name": "Panderodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/panderodus_icon.png",
+	"icon": "paleopedia:textures/items/panderodus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_panderodus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panderodus",
 			"title": "Panderodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() (O)Bryozoan, (S)Marine Sponge Forest, (D)Dead Reef$(br2)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Panderodus is a Conodont that originated in the Ordivician and died out in the Late Devonian period. Due to the discovery of rare conodont body fossils, it was revealed that Panderodus had a thicker body compared to the more slender bodies of other conodonts. They were also macrophagous predators, meaning they attacked larger prey and studies have shown that they were venomous."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_panderodus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_panderodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_panderodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_panderodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_panderodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_panderodus"
 		}
 	]
 }

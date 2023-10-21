@@ -1,0 +1,46 @@
+{
+	"name": "Sokkaejaecystis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sokkaejaecystis_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_sokkaejaecystis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sokkaejaecystis",
+			"title": "Sokkaejaecystis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Echinodermata $(br)>Stylophora $(br)>Cornuta"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/sokkaejaecystis.png"],
+			"title": "S. serrata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sokkaejaecystis",
+			"type": "text",
+			"text": "Sokkaejaecystis is a member of the extinct Cornuta class of echinoderms. It lived during the late Cambrian period in what is now South Korea. It is thought to have been at least partially mobile based on characteristics seen in other Cornutans. It was first described in 2005."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sokkaejaecystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sokkaejaecystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sokkaejaecystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sokkaejaecystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sokkaejaecystis"
+		}
+	]
+}

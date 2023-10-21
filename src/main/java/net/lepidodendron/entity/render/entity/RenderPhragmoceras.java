@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPhragmoceras extends RenderLiving<EntityPrehistoricFloraPhragmoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phragmoceras.png");
+    public static float getScaler() {
+        return 0.17F;
+    }
 
     public RenderPhragmoceras(RenderManager mgr) {
         super(mgr, new ModelPhragmoceras(), 0f);
@@ -27,7 +30,7 @@ public class RenderPhragmoceras extends RenderLiving<EntityPrehistoricFloraPhrag
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPhragmoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0F;
     }

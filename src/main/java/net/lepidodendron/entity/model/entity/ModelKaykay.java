@@ -390,7 +390,7 @@ public class ModelKaykay extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Kaykay.rotateAngleZ = -(float) Math.toRadians(90);
-            this.Kaykay.offsetY = -0.35F;
+            this.Kaykay.offsetY = -0.48F;
             this.Kaykay.offsetX = 0.7F;
             this.bob(Kaykay, -speed * 3.2F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 2.7F, 0.028F, -0.2, f2, 0.8F * still);

@@ -47,7 +47,8 @@ public class ItemCaptorhinusTail extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_captorhinus", ItemCaptorhinusTail.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCaptorhinusTail.block);
-		OreDictionary.registerOre("foodMeat", ItemCaptorhinusTail.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemCaptorhinusTail.block);
+		OreDictionary.registerOre("pndietMeat", ItemCaptorhinusTail.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {

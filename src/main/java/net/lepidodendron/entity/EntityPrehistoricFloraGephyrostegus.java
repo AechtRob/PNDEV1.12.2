@@ -4,29 +4,24 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockAmphibianSpawnGephyrostegus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderGephyrostegus;
-import net.lepidodendron.entity.render.entity.RenderGyrosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.entities.ItemBugRaw;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -37,11 +32,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -53,7 +48,7 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 5.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -68,22 +63,8 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public int getEggType() {
-		return 1; //medium
-	}
-
-	public static String getPeriod() {return "Carboniferous";}
-
-	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
-
-	@Override
-	public boolean hasNest() {
+	public boolean isSmall() {
 		return true;
-	}
-
-	@Override
-	public String getTexture() {
-		return this.getTexture();
 	}
 
 	@Override
@@ -93,21 +74,38 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 
 	@Override
 	public boolean laysEggs() {
-		return true;
+		return false;
 	}
 
-	protected float getAISpeedLand() {
+	public static String getPeriod() {return "Carboniferous";}
+
+	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
+
+	@Override
+	public String getTexture() {
+		return this.getTexture();
+	}
+	
+	public float getAISpeedSwimmingAmphibian() {
 		float speedBase = 0.285F;
 		if (this.getTicks() < 0) {
+			//System.err.println("Laying");
 			return 0.0F; //Is laying eggs
-		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
-			return 0.0F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.46F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public int WaterDist() {
+		return 0;
+	}
+
+	@Override
+	public boolean isNearWater(Entity e, BlockPos pos) {
+		return true;
 	}
 
 	@Override
@@ -134,18 +132,24 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(2, new AttackAI(this, 1.6D, false, this.getAttackLength()));
+		tasks.addTask(3, new PanicAI(this, 1.0));
+		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.0, 20));
+		//tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 60));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(7, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override
@@ -153,11 +157,7 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemBugRaw.block;
-	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -204,47 +204,24 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
+
+
+	@Override
+	public boolean canBreatheUnderwater() {
+		return true;
+	}
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-			    this.setAttackTarget(null);
-			    this.setRevengeTarget(null);
-            }
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
-	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	@Override
@@ -260,49 +237,83 @@ public class EntityPrehistoricFloraGephyrostegus extends EntityPrehistoricFloraL
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		//Lay eggs perhaps:
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+				&& (BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockAt(world, this.getPosition().down()))
+		){
+			//if (Math.random() > 0.5) {
+			this.setTicks(-50); //Flag this as stationary for egg-laying
+			//}
+		}
+
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+			//Is stationary for egg-laying:
+			//System.err.println("Test2");
+			IBlockState eggs = BlockAmphibianSpawnGephyrostegus.block.getDefaultState();
+			if (BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockAt(world, this.getPosition())) {
+				world.setBlockState(this.getPosition(), eggs);
+				this.setLaying(false);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			}
+			if (BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnGephyrostegus.block.canPlaceBlockAt(world, this.getPosition().down())) {
+				world.setBlockState(this.getPosition().down(), eggs);
+				this.setLaying(false);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			}
+			this.setTicks(0);
+		}
+	}
+	
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.GEPHYROSTEGUS_LOOT;
 	}
 	public static double offsetWall(@Nullable String variant) {
-		return -1.36;
+		return -0.45;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
+		return 0.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 1.4F;
+		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 2.5;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 2.2;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.15;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 2.0F;
+		return -1.9;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.15;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.5F;
+		return 1.8;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

@@ -1,7 +1,7 @@
 {
 	"name": "Diictodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/diictodon_icon.png",
+	"icon": "paleopedia:textures/items/diictodon_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_diictodon",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diictodon",
 			"title": "Diictodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Diictodon is a dicynodont from the Late Permian period. These animals were burrowers and had tusks in their mouths that they would use to help dig out burrows and eat plants. They could grow up to half a meter long and their burrows were found to be spiral shaped."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_diictodon",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest (Burrow)"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diictodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diictodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diictodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diictodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diictodon"
 		}
 	]
 }

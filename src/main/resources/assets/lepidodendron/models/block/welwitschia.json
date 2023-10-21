@@ -1,0 +1,91 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/welwitschia_c",
+		"1": "lepidodendron:blocks/welwitschia_e",
+		"2": "lepidodendron:blocks/welwitschia_w",
+		"particle": "lepidodendron:blocks/welwitschia_c"
+	},
+	"elements": [
+		{
+			"name": "c",
+			"from": [0, 0, 8.1],
+			"to": [16, 16, 8.1],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "se",
+			"from": [16, 0, 8.11],
+			"to": [32, 16, 8.11],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "nw",
+			"from": [-16, 0, 8.12],
+			"to": [0, 16, 8.12],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "sw",
+			"from": [7.88, 0, 16],
+			"to": [7.88, 16, 32],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "ne",
+			"from": [7.89, 0, -16],
+			"to": [7.89, 16, 0],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "c",
+			"from": [7.9, 0, 0],
+			"to": [7.9, 16, 16],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		},
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [3, 4, 5]
+		}
+	]
+}

@@ -37,9 +37,8 @@ public class ItemPassaloteuthisRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_passaloteuthis", ItemPassaloteuthisRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPassaloteuthisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPassaloteuthisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPassaloteuthisRaw.block);
+		OreDictionary.registerOre("pnfurnaceCalamari", ItemPassaloteuthisRaw.block);
+		OreDictionary.registerOre("pndietNautiloid", ItemPassaloteuthisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

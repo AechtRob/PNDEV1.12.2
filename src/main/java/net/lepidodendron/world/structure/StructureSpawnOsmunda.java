@@ -28,7 +28,7 @@ public class StructureSpawnOsmunda extends ElementsLepidodendronMod.ModElement {
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimOsmunda))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genOsmunda && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genOsmunda && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

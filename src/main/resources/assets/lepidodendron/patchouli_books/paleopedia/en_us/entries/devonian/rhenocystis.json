@@ -1,0 +1,51 @@
+{
+	"name": "Rhenocystis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhenocystis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_rhenocystis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhenocystis",
+			"title": "Rhenocystis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Echinodermata $(br)>Stylophora $(br)>Mitrata"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rhenocystis.png"],
+			"title": "R. latipedunculata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhenocystis",
+			"type": "text",
+			"text": "Rhenocystis is an Anomalocystoid Mitrate from the Lower Devonian. As typical of this group of enigmatic echinoderms, its body plan and biomechanics are difficult to deduce from its bizarre appearance. Like extant echinoderms, it possessed an external skeleton of calcite plates. It had a long flattened body with two spikes. At the opposite end is a long spiny tail. Based upon ichnofossils, it is known that Rhenocystis would've drawn it's body forwards using the tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhenocystis",
+			"type": "text",
+			"text": "The dorsal side would point upwards and would drag across the sea floor."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhenocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhenocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhenocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhenocystis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhenocystis"
+		}
+	]
+}

@@ -30,8 +30,10 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
     public EntityPrehistoricFloraNautiloidBase(World world) {
         super(world);
         //this.spawnableBlock = Blocks.WATER;
-        this.moveHelper = new EntityPrehistoricFloraNautiloidBase.SwimmingMoveHelper();
-        this.navigator = new PathNavigateSwimmer(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraNautiloidBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmer(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -163,7 +165,7 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     public void onEntityUpdate()

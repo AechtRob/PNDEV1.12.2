@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_grypania",
 			"title": "Grypania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Palaeoproterozoic-Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)Domain:$(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Rhyacian - Orosirian - Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)Domain:$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "image",

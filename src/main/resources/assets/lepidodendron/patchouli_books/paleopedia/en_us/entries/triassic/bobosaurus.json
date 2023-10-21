@@ -1,0 +1,66 @@
+{
+	"name": "Bobosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bobosaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_bobosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bobosaurus",
+			"title": "Bobosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Pistosauria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bobosaurus.png"],
+			"title": "B. forojuliensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": "Bobosaurus is a species of Pistosaurian Sauropterygian from the Late Triassic of Italy. The more than 3 m long animal is known from one single specimen recovered from the Rio del Lago Formation. In the past, two specimens were attributed to the species, one being the holotype, still recognized today, the other being a single vertebra now believed to have been of Simosaurus, at the time unknown in the area."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": "While incomplete, the known remains of Bobosaurus include a large section of the spine, a piece of the snout and teeth, partial remains of the pelvic girdle and some bones of the forelimbs and hindlimbs. Unique to Bobosaurus were the proportions of the long bones in the limbs, which made its flippers particularly long compared to the animal's other proportions."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": "The vertebrae of Bobosaurus were characterized by their visibly large neural spines, which created what looked like a sail on top of the animal. The stiffened body and the presence of these large neural spines made it hard for this animal to bend its body in any important fashion, hinting at a mostly flipper-powered movement."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": "Dalla Vecchia hypothesized Bobosaurus to have been a surface swimmer, preferring shallow water environments, hypothesis supported by the shallow nature of the paleoenvironment it was found in; other authors, however, hypothesized Bobosaurus to have been a deeper water animal, justifying the extremely low amount of known specimens"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
+			"type": "text",
+			"text": "in the digsite by proposing the known one to have been carried onto the area by water currents after death. Despite all this, Bobosaurus remains an important puzzle piece in the early evolution and diversification of Pistosauria and non Placodont Sauropterygians on the road towards Plesiosauria."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bobosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bobosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bobosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bobosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bobosaurus"
+		}
+	]
+}

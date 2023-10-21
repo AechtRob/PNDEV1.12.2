@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "var=false": {
+      "model": "lepidodendron:nuphar_flower_2"
+    },
+    "var=true": {
+      "model": "lepidodendron:nuphar_flower_1"
+    }
+  }
+}

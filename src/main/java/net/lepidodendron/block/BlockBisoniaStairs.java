@@ -10,9 +10,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockBisoniaStairs extends ElementsLepidodendronMod.ModElement {
@@ -26,6 +28,12 @@ public class BlockBisoniaStairs extends ElementsLepidodendronMod.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("bisonia_stairs"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("stairWood", BlockBisoniaStairs.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -1,7 +1,7 @@
 {
 	"name": "Didymograptus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/didymograptus_icon.png",
+	"icon": "paleopedia:textures/items/didymograptus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_didymograptus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_didymograptus",
 			"title": "Didymograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Graptolithinia"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Graptolithinia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Didymograptus is a species of graptolite with for rows of cups. They have been found in many countries all over the world. Didymograptus lived by floating around the sea and eating micro organisms that passed."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_didymograptus",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food(Unrealistic)$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_didymograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_didymograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_didymograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_didymograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_didymograptus"
 		}
 	]
 }

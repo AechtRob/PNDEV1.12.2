@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsItalophlebia;
+import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
@@ -24,6 +25,7 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -85,7 +87,7 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return null;
+		return new ResourceLocation("lepidodendron:dragonfly_flight");
 	}
 
 	public static String getPeriod() {return "late Triassic";}
@@ -218,6 +220,11 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
 
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 }

@@ -4,7 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -68,6 +72,7 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_traumatocrinus", BlockCrinoidTraumatocrinus.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidTraumatocrinus.block);
 	}
 
 
@@ -79,7 +84,7 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
 	//Generation is done as a structure on floating wood!
 	//-------------------------------------------------------
 	
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 		private static int crinoidheight;
@@ -97,6 +102,12 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
         	this.setTickRandomly(true);
 			setTranslationKey("pf_crinoid_traumatocrinus");
 			setRegistryName("crinoid_traumatocrinus");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_CRINOID_TRAUMATOCRINUS;
 		}
 
 		@Override
@@ -272,11 +283,11 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
 		}
 
 		public boolean isWaterBlock(World world, BlockPos pos) { //Different logic this time! We do need actual water blocks, not merely material
-			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
-				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
-					return true;
-			}
-	    	return false;
+//			if ((world.getBlockState(pos).getBlock() == Blocks.WATER)
+//				|| (world.getBlockState(pos).getBlock() == Blocks.FLOWING_WATER)) {
+//					return true;
+//			}
+	    	return Functions.isWater(world, pos);
 	    }
 
 	    

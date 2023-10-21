@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:arid_pine_slab_double"
+    }
+  }
+}

@@ -7,7 +7,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNAForge;
-import net.lepidodendron.item.*;
+import net.lepidodendron.item.ItemDNARecombiner;
+import net.lepidodendron.item.ItemOligoPool;
+import net.lepidodendron.item.ItemPhialDNA;
+import net.lepidodendron.item.ItemPlaceableLiving;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -241,7 +244,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		protected boolean isProcessing;
 		public int processTick;
 		public boolean hatchShut;
-		private int processTickTime = 600; //30 seconds to process
+		public static int processTickTime = 600; //30 seconds to process
 		private int minEnergyNeeded = 500;
 
 		public double oligoExtend;
@@ -716,6 +719,10 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+		public int getProcessTick() {
+			return this.processTick;
 		}
 
 	}

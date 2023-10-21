@@ -40,7 +40,7 @@ public class BlockHironoiaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:hironoia_sapling", BlockHironoiaLog.block);
+		//OreDictionary.registerOre("plantdnaPNlepidodendron:hironoia_sapling", BlockHironoiaLog.block);
 		OreDictionary.registerOre("logWood", BlockHironoiaLog.block);
 	}
 

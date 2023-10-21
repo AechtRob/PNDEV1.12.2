@@ -1,7 +1,7 @@
 {
 	"name": "Ascoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ascoceras_icon.png",
+	"icon": "paleopedia:textures/items/ascoceras_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ascoceras",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ascoceras",
 			"title": "Ascoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean$(br2)>Cephalopoda$(br)>Orthoceratoidea$(br)>Ascocerida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Orthoceratoidea$(br)>Ascocerida"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Ascoceras is a unique orthoceratoid cephalopod from the Ordivician to Silurian. It is most known for its ontogeny. Juvenile Ascoceras sport a long and circular shell that sheds apart as the creature grows. For this reason, the juvenile shell is known as a deciduous conch. A fully mature ascoceroid conch consists of dorsal chambers. Ascoceras are found across Europe and North America."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ascoceras",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ascoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ascoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ascoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ascoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ascoceras"
 		}
 	]
 }

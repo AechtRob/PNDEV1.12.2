@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderShringasaurus extends RenderLiving<EntityPrehistoricFloraShringasaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shringasaurus_m.png");
-    private static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shringasaurus_f.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shringasaurus_f.png");
 
     public static float getScaler() {
         return 0.617f;
@@ -22,7 +22,7 @@ public class RenderShringasaurus extends RenderLiving<EntityPrehistoricFloraShri
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraShringasaurus entity) {
-        if (entity.getIsFemale()) {
+        if (entity.getPNType() == EntityPrehistoricFloraShringasaurus.Type.FEMALE) {
             return RenderShringasaurus.TEXTURE_F;
         }
         return RenderShringasaurus.TEXTURE;
@@ -35,8 +35,8 @@ public class RenderShringasaurus extends RenderLiving<EntityPrehistoricFloraShri
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraShringasaurus entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
-        if (entity.getIsFemale()) {
+        float scale = entity.getAgeScale() * getScaler();
+        if (entity.getPNType() == EntityPrehistoricFloraShringasaurus.Type.FEMALE) {
             scale = scale * 0.85F;
         }
         GlStateManager.scale(scale, scale, scale);

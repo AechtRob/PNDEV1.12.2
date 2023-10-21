@@ -1,0 +1,46 @@
+{
+	"name": "Dakosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dakosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dakosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dakosaurus",
+			"title": "Dakosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Reptilia $(br)>Crocodylomorpha $(br)>Thalattosuchia $(br)>Metriorhynchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/dakosaurus.png"],
+			"title": "D. maximus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dakosaurus",
+			"type": "text",
+			"text": "Dakosaurus is a thalattosuchian marine crocodylian from the Jurassic and Cretaceous periods. It is known from relatively complete specimens and has been found all over the world. Its remains were originally attributed to Megalosaurus, due to the similarly shaped teeth. Dakosaurus had a long tail and tail fluke, adapted for fast swimming in order to hunt prey, which is complemented by its strong jaws."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dakosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dakosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dakosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dakosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dakosaurus"
+		}
+	]
+}

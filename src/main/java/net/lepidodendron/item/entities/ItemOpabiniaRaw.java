@@ -37,9 +37,8 @@ public class ItemOpabiniaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_opabinia", ItemOpabiniaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemOpabiniaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemOpabiniaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemOpabiniaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemOpabiniaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemOpabiniaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

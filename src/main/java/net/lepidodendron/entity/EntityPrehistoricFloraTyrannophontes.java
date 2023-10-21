@@ -3,20 +3,16 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AttackAI;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.EurypteridWander;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.render.entity.RenderTyrannophontes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -24,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -40,6 +37,11 @@ public class EntityPrehistoricFloraTyrannophontes extends EntityPrehistoricFlora
 		maxWidth = 0.25F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -70,14 +72,13 @@ public class EntityPrehistoricFloraTyrannophontes extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new EurypteridWander(this, NO_ANIMATION));
-		tasks.addTask(3, new EntityAILookIdle(this));
-
+		tasks.addTask(3, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -221,7 +222,7 @@ public class EntityPrehistoricFloraTyrannophontes extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.19; }
+	public static double offsetCase(@Nullable String variant) { return 0.19; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:items/aristolochia_flower",
+    "particle": "lepidodendron:items/aristolochia_flower"
+  }
+}

@@ -28,7 +28,7 @@ public class StructureSpawnNothofagus extends ElementsLepidodendronMod.ModElemen
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNothofagus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genNothofagus && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genNothofagus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

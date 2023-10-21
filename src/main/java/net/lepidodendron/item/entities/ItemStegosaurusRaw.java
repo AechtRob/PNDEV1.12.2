@@ -31,7 +31,8 @@ public class ItemStegosaurusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_stegosaurus", ItemStegosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemStegosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemStegosaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemStegosaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemStegosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

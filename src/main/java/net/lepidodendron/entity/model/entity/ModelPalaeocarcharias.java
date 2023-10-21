@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeocarcharias;
-import net.lepidodendron.entity.EntityPrehistoricFloraPhorcynis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -188,16 +187,22 @@ public class ModelPalaeocarcharias extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.main.rotateAngleX = (float) Math.toRadians(90);
         this.main.rotateAngleZ = (float) Math.toRadians(90);
-        this.main.offsetX = -0.02F;
+        this.main.offsetX = -0.07F;
         this.main.offsetZ = -0.01F;
         this.main.offsetY = -0.245F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        resetToDefaultPose();
-    }
-
+            this.setRotateAngle(main, 0.0F, 0.0F, 0.1F);
+            this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+            this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+            this.setRotateAngle(tail3, 0.1F, -0.3F, 0.0F);
+            this.setRotateAngle(tail4, 0.2F, -0.3F, 0.0F);
+            this.main.offsetY = -0.14F;
+            this.main.render(0.01F);
+            resetToDefaultPose();
+        }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

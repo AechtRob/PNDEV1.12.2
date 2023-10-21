@@ -4,8 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeVineBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
@@ -71,7 +74,7 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemMossForStone", BlockLygodium.block);
 	}
 
-	public static class BlockCustom extends SeedSporeVineBase {
+	public static class BlockCustom extends SeedSporeVineBase implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
@@ -79,6 +82,12 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 			setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         	setTickRandomly(true);
 			setCreativeTab(TabLepidodendronPlants.tab);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_LYGODIUM;
 		}
 
 		protected BlockStateContainer createBlockState()

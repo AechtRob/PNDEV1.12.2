@@ -5,13 +5,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemDragonflyEggsItem;
-import net.lepidodendron.item.ItemPalaeodictyopteraEggsItem;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -82,10 +77,10 @@ public class BlockInsectEggsDragonfly extends ElementsLepidodendronMod.ModElemen
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeJurassic) {
-				BiomeJurassic biomeC = (BiomeJurassic) biome;
-				if (biomeC.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-						|| biomeC.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
-					int ii = random.nextInt(8);
+				BiomeJurassic biomeJ = (BiomeJurassic) biome;
+				if (biomeJ.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
+						|| biomeJ.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
+					int ii = random.nextInt(10);
 					String variant = null;
 					switch (ii) {
 						case 0: default:

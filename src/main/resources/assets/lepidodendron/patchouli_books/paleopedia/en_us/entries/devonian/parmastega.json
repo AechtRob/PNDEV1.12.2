@@ -1,7 +1,7 @@
 {
 	"name": "Parmastega",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/parmastega_icon.png",
+	"icon": "paleopedia:textures/items/parmastega_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_parmastega",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_parmastega",
 			"title": "Parmastega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish$(br2)>Stegocephalia"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Stegocephalia"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_parmastega",
 			"type": "text",
-			"text": "Parmastega is a genus of primitive fish-like amphibian, and the oldest known stegocephalian, being known 30 million years earlier that the earliest tetrapod footprints. The animal had a very characteristic alligator-like head, with its eyes placed above the rest of its body with the nostrils being placed underwater to allow water to pass through its gills. These adaptations suggest it was a shoreline predator who ambushed anything that got too close. This leaves one unanswered question: What did it eat? Hypotheses range from it hunting other early undiscovered tetrapods to resting semiaquatic eurypterids."
+			"text": "Parmastega is a genus of primitive fish-like amphibian, and the oldest known stegocephalian, being known 30 million years earlier that the earliest tetrapod footprints. The animal had a very characteristic alligator-like head, with its eyes placed above the rest of its body with the nostrils being placed underwater to allow water to pass through its gills. These adaptations suggest it was a shoreline predator who ambushed anything that got too close."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_parmastega",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "This leaves one unanswered question: What did it eat? Hypotheses range from it hunting other early undiscovered tetrapods to resting semiaquatic eurypterids."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parmastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parmastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parmastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parmastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parmastega"
 		}
 	]
 }

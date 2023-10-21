@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraDocodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
@@ -323,7 +322,44 @@ public class ModelHaldanodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.Chest.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(Chest, 0.0F, 0.0F, -0.0F);
+        this.UpperArmR.setScale(0,0,0);
+        this.UpperArmL.setScale(0,0,0);
+        this.UpperArmR.scaleChildren = true;
+        this.UpperArmL.scaleChildren = true;
+        this.Chest.offsetY = 0.0F;
+        this.Chest.offsetX = 0.0F;
+        this.Chest.offsetZ = 0.1F;
+        this.Chest.render(0.01F);
+        this.UpperArmR.setScale(1,1,1);
+        this.UpperArmL.setScale(1,1,1);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(Chest, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail1, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 2.9F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 2.9F, 0.0F, 0.0F);
+        this.root.offsetY = 0.0F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

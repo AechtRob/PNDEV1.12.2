@@ -37,9 +37,8 @@ public class ItemSynophalosRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_synophalos", ItemSynophalosRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemSynophalosRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSynophalosRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemSynophalosRaw.block);
+		OreDictionary.registerOre("pnfurnaceScampi", ItemSynophalosRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemSynophalosRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

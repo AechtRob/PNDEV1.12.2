@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:calvapilosa_icon"
+    "layer0": "paleopedia:items/calvapilosa_icon"
   },
   "display": {
     "ground": {

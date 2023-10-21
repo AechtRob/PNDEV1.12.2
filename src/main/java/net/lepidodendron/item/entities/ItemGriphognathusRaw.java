@@ -37,8 +37,8 @@ public class ItemGriphognathusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_griphognathus", ItemGriphognathusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGriphognathusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGriphognathusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGriphognathusRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemGriphognathusRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemGriphognathusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

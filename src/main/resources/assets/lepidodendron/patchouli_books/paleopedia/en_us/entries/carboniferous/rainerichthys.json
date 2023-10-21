@@ -1,0 +1,46 @@
+{
+	"name": "Rainerichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rainerichthys_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_rainerichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rainerichthys",
+			"title": "Rainerichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Iniopterygia $(br)>Iniopterygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rainerichthys.png"],
+			"title": "R. zangerli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rainerichthys",
+			"type": "text",
+			"text": "Rainerichthys, is a Carboniferous Iniopterygian fish that had a specialized bottom jaw whorl. Like its other iniopterygian cousins, it looked superficially like flying fish, though it would not have \"flown\" out of the water. This entire group is limited to the carboniferous."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rainerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rainerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rainerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rainerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rainerichthys"
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"name": "Proterogyrinus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/proterogyrinus_icon.png",
+	"icon": "paleopedia:textures/items/proterogyrinus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_proterogyrinus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_proterogyrinus",
 			"title": "Proterogyrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Embolomeri$(br)>Proterogyrinidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Embolomeri$(br)>Proterogyrinidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Proterogyrinus is an embolomere amphibian from the middle Carboniferous period. It was capable of coming onto land and hunt, however it was more adapted for the water and would have spent more time in water than out."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_proterogyrinus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_proterogyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_proterogyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_proterogyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_proterogyrinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_proterogyrinus"
 		}
 	]
 }

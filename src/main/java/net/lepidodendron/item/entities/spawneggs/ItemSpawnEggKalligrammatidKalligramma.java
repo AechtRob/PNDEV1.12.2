@@ -4,7 +4,6 @@ package net.lepidodendron.item.entities.spawneggs;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -52,6 +51,17 @@ public class ItemSpawnEggKalligrammatidKalligramma extends ElementsLepidodendron
 			setMaxStackSize(64);
 			this.variant = "kalligramma";
 		}
+
+		@Override
+		public int eggPrimaryColour() {
+			return -11254740 ;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -3359564;
+		}
+
 
 		@Override
 		public String getPeriod() {

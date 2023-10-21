@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:gordonopteris_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:gordonopteris_shoot_inventory"
+    }
+  }
+}

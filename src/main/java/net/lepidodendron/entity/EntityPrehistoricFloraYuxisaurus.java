@@ -7,9 +7,8 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderProganochelys;
+import net.lepidodendron.entity.render.entity.RenderYuxisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -19,22 +18,18 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -55,8 +50,18 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 		maxHeight = 1F;
 		maxHealthAgeable = 25.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
 	}
 
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
+	}
 	@Override
 	public int getEatLength() {
 		return 20;
@@ -147,26 +152,23 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public boolean placesNest() {
+	public boolean hasNest() {
 		return true;
 	}
 
-	@Override
-	public boolean isNestMound() {
-		return true;
-	}
-
-	protected float getAISpeedLand() {
-		float speedBase = 0.25F;
+	public float getAISpeedLand() {
+		float speedBase = 0.310F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == HIDE_ANIMATION) {
+			|| this.getAnimation() == HIDE_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.9F;
+			speedBase = speedBase * 2.47F;
+			speedBase = speedBase / 0.85F;
+			speedBase = 0.6F;
 		}
 		return speedBase;
 	}
@@ -196,29 +198,27 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		//tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		//tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(3, new LandWanderNestInBlockAI(this));
-		tasks.addTask(4, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(7, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
+		tasks.addTask(3, new LandWanderNestAI(this));
+		tasks.addTask(4, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(5, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT);
+	}
 
 //	@Override
 //	public boolean panics() {
 //		return true;
 //	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -308,20 +308,20 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation(""));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:yuxisaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("entity.generic.hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:yuxisaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("entity.generic.death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:yuxisaurus_death"));
 	}
 
 	@Override
@@ -338,7 +338,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
+			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
@@ -347,10 +347,6 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
-			if (this.getOneHit()) {
-			    this.setAttackTarget(null);
-			    this.setRevengeTarget(null);
-            }
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -360,20 +356,25 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	public boolean testLay(World world, BlockPos pos) {
-		return (
-				nestBlockMatch(world, pos)
-		);
-	}
+		//System.err.println("Testing laying conditions");
+		BlockPos posNest = pos;
+		if (isLayableNest(world, posNest)) {
+			String eggRenderType = new Object() {
+				public String getValue(BlockPos posNest, String tag) {
+					TileEntity tileEntity = world.getTileEntity(posNest);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos(posNest), "egg");
 
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
-					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
-					&& world.isAirBlock(pos));
+			//System.err.println("eggRenderType " + eggRenderType);
+
+			if (eggRenderType.equals("")) {
+				return true;
+			}
 		}
-		return match;
+		return false;
 	}
 
 	@Override
@@ -441,16 +442,16 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderProganochelys.TEXTURE;
+		return RenderYuxisaurus.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelProganochelys;
+		return RenderDisplays.modelYuxisaurus;
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderProganochelys.getScaler();
+		return RenderYuxisaurus.getScaler();
 	}
 
 

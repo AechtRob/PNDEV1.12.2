@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:cordaticaris_icon"
+    "layer0": "paleopedia:items/cordaticaris_icon"
   }
 }

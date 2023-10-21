@@ -1,0 +1,46 @@
+{
+	"name": "Symphysops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/symphysops_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_symphysops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_symphysops",
+			"title": "Symphysops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Asaphida $(br)>Cyclopygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/symphysops.png"],
+			"title": "S. stevaninae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_symphysops",
+			"type": "text",
+			"text": "Symphysops is immediately recognizable from its fused eyes. Hence giving it the name Symphysops or \"together eyes\". It had a rather cosmopolitan distribution and is often found swimming alongside other swimming trilobites such as Carolinites. There is a central forward horn coming from the glabella which is more pronounced in some individuals more than others."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_symphysops"
+		}
+	]
+}

@@ -376,7 +376,7 @@ public class ProcedureWorldGenEmbothrium extends ElementsLepidodendronMod.ModEle
     static void generateTrunk()
     {
         BlockPos blockpos = basePos;
-        BlockPos blockpos1 = basePos.up(height);
+        BlockPos blockpos1 = basePos.up(height + 2);
         Block block = BlockEmbothriumLog.block;
         limb(blockpos, blockpos1, block);
 

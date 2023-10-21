@@ -2,17 +2,14 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWander;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemNautiloidEggsKosmoceras;
+import net.lepidodendron.entity.render.entity.RenderSpiroceras;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemNautiloidEggsSpiroceras;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -21,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -40,6 +38,11 @@ public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNaut
 	}
 
 	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -50,7 +53,7 @@ public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNaut
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -72,14 +75,13 @@ public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNaut
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -104,17 +106,11 @@ public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNaut
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsSpiroceras.block, (int) (1));
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			this.setTicks(0);
-		}
+	}
 
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemNautiloidEggsSpiroceras.block, (int) (1));
 	}
 
 	@Override
@@ -132,5 +128,54 @@ public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNaut
 
 	//Rendering taxidermy:
 	//--------------------
-
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.65;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderSpiroceras.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelSpiroceras;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderSpiroceras.getScaler();
+	}
 }

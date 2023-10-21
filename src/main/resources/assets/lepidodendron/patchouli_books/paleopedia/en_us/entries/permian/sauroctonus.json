@@ -1,7 +1,7 @@
 {
 	"name": "Sauroctonus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/sauroctonus_icon.png",
+	"icon": "paleopedia:textures/items/sauroctonus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_sauroctonus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sauroctonus",
 			"title": "Sauroctonus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Sauroctonus is a genus of gorgonopsid from the Late Permian period. They had a pair of canines on both the upper and lower jaws and the lower jaw formed a kind of chin. Sauroctonus was not as specialized as other gorgonopsids like Rubidgea and Inostrancevia and they also had very mammalian features despite not being an ancestor to mammals."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_sauroctonus",
-			"type": "text",
-			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sauroctonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sauroctonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sauroctonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sauroctonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sauroctonus"
 		}
 	]
 }

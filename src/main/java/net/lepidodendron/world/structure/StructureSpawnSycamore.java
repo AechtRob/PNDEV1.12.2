@@ -28,7 +28,7 @@ public class StructureSpawnSycamore extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSycamore))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSycamore && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSycamore && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

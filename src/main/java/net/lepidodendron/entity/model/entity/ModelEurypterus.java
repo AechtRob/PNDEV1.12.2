@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -110,7 +109,7 @@ public class ModelEurypterus extends AdvancedModelBase {
         //this.Bodyfront.render(0.5F);
         this.leg2R_r1.defaultRotationZ = -0.6109F;
         this.leg2L_r1.defaultRotationZ = 0.6109F;
-        this.body.render(f5 * 0.3F);
+        this.body.render(f5);
 
     }
 
@@ -136,7 +135,7 @@ public class ModelEurypterus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.0F;
+        //this.body.offsetY = 1.0F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.tail_end};
@@ -196,7 +195,7 @@ public class ModelEurypterus extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.0F;
+                this.body.offsetY = 1.0F - 1.0F;
                 this.bob(body, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
                 this.chainSwing(fishTail, speed, tailVdegree, -3, f2, 1);

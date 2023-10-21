@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pseudoctenis_cone"},
+      {"model": "lepidodendron:pseudoctenis_cone", "y": 90},
+      {"model": "lepidodendron:pseudoctenis_cone", "y": 180},
+      {"model": "lepidodendron:pseudoctenis_cone", "y": 270}
+    ]
+  }
+}

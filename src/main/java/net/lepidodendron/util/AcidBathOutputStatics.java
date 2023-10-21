@@ -110,6 +110,7 @@ public class AcidBathOutputStatics {
     public static String[] getPrecambrianCleanedFossilsStatics() {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockArkarua.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockArborea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBomakellia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBradgatia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBurykhia.block).toString(),
@@ -138,7 +139,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockNamapoikia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAusia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockGrypania.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockGrypania.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockHorodyskia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDiskagma.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTuanshanzia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
         return resLoc;
@@ -575,6 +579,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockRedSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWhiteSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYellowSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGlassSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTentaculita.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveCream.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGrey.block).toString(),
@@ -633,6 +638,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockRedSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWhiteSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYellowSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGlassSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveCream.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGrey.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveTall.block).toString(),
@@ -684,6 +690,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockRedSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWhiteSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYellowSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGlassSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveCream.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGrey.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveTall.block).toString(),
@@ -724,6 +731,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockAnemone8.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAnemone9.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBlueSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGlassSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBranchedSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrownSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDarkOrangeSponge.block).toString(),
@@ -779,6 +787,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockDarkPinkSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockOrangeSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPinkSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGlassSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWhiteSponge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockYellowSponge.block).toString(),

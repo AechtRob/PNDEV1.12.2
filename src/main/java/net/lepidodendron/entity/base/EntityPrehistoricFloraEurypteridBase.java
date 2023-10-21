@@ -32,8 +32,10 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
     public EntityPrehistoricFloraEurypteridBase(World world) {
         super(world);
         //this.spawnableBlock = Blocks.WATER;
-        this.moveHelper = new EntityPrehistoricFloraEurypteridBase.SwimmingMoveHelper();
-        this.navigator = new PathNavigateSwimmer(this, world);
+        if (world != null) {
+            this.moveHelper = new EntityPrehistoricFloraEurypteridBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmer(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -139,6 +141,7 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
     public boolean isReallyInWater() {
         return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
     }
+
     public boolean isCollidingRim() {
         if (this.isReallyInWater()) {
             //System.err.println("collided");
@@ -167,7 +170,7 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
+        //this.renderYawOffset = this.rotationYaw;
     }
 
     public void onEntityUpdate()

@@ -4,7 +4,8 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
@@ -89,7 +90,12 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new FishWanderSurface(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override
@@ -142,7 +148,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {
@@ -156,7 +162,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.26; }
+	public static double offsetCase(@Nullable String variant) { return 0.26; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:todea"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_todea.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_todea.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_todea"
+		}
+	}
+}

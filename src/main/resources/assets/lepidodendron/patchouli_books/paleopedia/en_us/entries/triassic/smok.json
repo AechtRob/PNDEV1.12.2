@@ -1,7 +1,7 @@
 {
 	"name": "Smok",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/smok_icon.png",
+	"icon": "paleopedia:textures/items/smok_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_smok",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_smok",
 			"title": "Smok",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Flooded Forest$(br2)>Reptilia$(br)>Archosauria ?"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Archosauria ?"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_smok",
 			"type": "text",
-			"text": "Smok lived in what is now Poland, in an ecosystem of seasonally wet forests surrounding an extensive inland shallow sea. It was probably an apex predator of its ecosystem during the late Triassic. Its remains are incompletely known; they indicate an archosaur creature rather like Pseudosuchian Rauisuchians such as Postosuchus, but with some characteristics intriguingly close to forebears of Theropod dinosaurs: the meaning of these ambiguities is not yet resolved. The name \"Smok\" comes from a word meaning \"dragon\" in Slavic languages"
+			"text": "Smok lived in what is now Poland, in an ecosystem of seasonally wet forests surrounding an extensive inland shallow sea. It was probably an apex predator of its ecosystem during the late Triassic. Its remains are incompletely known; they indicate an archosaur creature rather like Pseudosuchian Rauisuchians such as Postosuchus, but with some characteristics intriguingly close to forebears of Theropod dinosaurs:"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_smok",
 			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"text": "the meaning of these ambiguities is not yet resolved. The name \"Smok\" comes from a word meaning \"dragon\" in Slavic languages."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_smok"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_smok"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_smok"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_smok"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_smok"
 		}
 	]
 }

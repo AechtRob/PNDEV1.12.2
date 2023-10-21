@@ -1,7 +1,7 @@
 {
 	"name": "Foreyia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/foreyia_icon.png",
+	"icon": "paleopedia:textures/items/foreyia_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_foreyia",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_foreyia",
 			"title": "Foreyia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinistia$(br)>Latimeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinistia$(br)>Latimeriidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Foreyia was a bizarre coelacanth that lived during the Middle Triassic. It is named after coelacanth researcher Peter L. Forey, and Max Kuhn who prepared many fossils from the region of Switzerland where this Foreyia was discovered. Despite being in the same family as the modern coelacanth (Latimeriidae), Foreyia's anatomy was rather unusual by comparison: Its head was proportionately enormous, its upper jaw was beak-like, and it had an underbite."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_foreyia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_foreyia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_foreyia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_foreyia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_foreyia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_foreyia"
 		}
 	]
 }

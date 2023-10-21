@@ -2,8 +2,11 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
@@ -112,7 +115,9 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 
 		if (biome instanceof BiomeJurassic) {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -137,6 +142,14 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
 			GenChance = 256;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")) {
+			GenChance = 12;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
+			GenChance = 92;
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;
@@ -190,7 +203,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends BlockReed implements IAdvancementGranter {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
@@ -199,6 +212,12 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			setLightLevel(0F);
 			setTranslationKey("pf_jurassic_horsetail");
 			setRegistryName("jurassic_horsetail");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_JURASSIC_HORSETAIL;
 		}
 
 		@Override

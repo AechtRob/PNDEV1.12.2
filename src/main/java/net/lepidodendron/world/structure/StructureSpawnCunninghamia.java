@@ -28,7 +28,7 @@ public class StructureSpawnCunninghamia extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCunninghamia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genCunninghamia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genCunninghamia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -99,7 +99,12 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
 		tasks.addTask(2, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return DietString.FISHFOOD;
 	}
 
 	@Override
@@ -152,7 +157,7 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	public void onEntityUpdate() {

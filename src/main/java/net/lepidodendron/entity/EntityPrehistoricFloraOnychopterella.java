@@ -1,48 +1,50 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockEurypteridEggsOnychopterella;
-import net.lepidodendron.block.BlockEurypteridEggsSlimonia;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
-import net.lepidodendron.entity.render.entity.RenderSlimonia;
+import net.lepidodendron.entity.render.entity.RenderOnychopterella;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
 
+	public Animation SWIM_ANIMATION;
+	public Animation UNSWIM_ANIMATION;
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+
+	private static final DataParameter<Boolean> SWIMMINGPN = EntityDataManager.createKey(EntityPrehistoricFloraOnychopterella.class, DataSerializers.BOOLEAN);
+	//Needs to be here because it is not loaded in time to be accessed by the client if it's on the parent class!
 
 	public EntityPrehistoricFloraOnychopterella(World world) {
 		super(world);
@@ -51,22 +53,164 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 		maxWidth = 0.7F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 12.0D;
+		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
+		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
 	}
 
+	//an array of all the animations
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
+	}
+
+	//a stricter check on if the animal is swimming, (It is not doing its transition animation)
+	public boolean isReallySwimming() {
+		return (this.getIsSwimming()) && (this.getAnimation() != this.SWIM_ANIMATION);
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (!this.world.isRemote && !this.isReallySwimming()) {
+			this.setIsSwimming(true);
+			this.setAnimation(SWIM_ANIMATION);
+			this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+		}
+
+		return super.attackEntityFrom(source, amount);
+	}
+
+	public void onEntityUpdate() {
+
+		int i = this.getAir();
+		super.onEntityUpdate();
+
+		if (this.isEntityAlive() && !isInWater()) {
+			--i;
+			this.setAir(i);
+
+			if (this.getAir() == -20) {
+				this.setAir(0);
+				this.attackEntityFrom(DamageSource.DROWN, 2.0F);
+			}
+		} else {
+			this.setAir(300);
+		}
+
+		if (!world.isRemote) {
+
+			if (!this.isReallyInWater()) {
+				this.setIsSwimming(false);
+				this.setWalkTick(1);
+			}
+			else {
+
+				if (this.getSwimTick() > 0) {
+					this.setSwimTick(this.getSwimTick() - this.rand.nextInt(3));
+					if (this.getSwimTick() < 0) {
+						this.setSwimTick(0);
+					}
+				}
+				if (this.getWalkTick() > 0) {
+					this.setWalkTick(this.getWalkTick() - this.rand.nextInt(3));
+					if (this.getWalkTick() < 0) {
+						this.setWalkTick(0);
+					}
+				}
+
+				if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
+					this.setIsSwimming(false);
+					this.setAnimation(UNSWIM_ANIMATION);
+					this.setWalkTick(this.walkLength() + this.UNSWIM_ANIMATION.getDuration());
+				}
+
+				if ((!(this.getWalkTick() > 0)) && !this.getIsSwimming()) {
+					this.setIsSwimming(true);
+					this.setAnimation(SWIM_ANIMATION);
+					this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
+				}
+			}
+
+			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
+
+			//Lay eggs perhaps:
+			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+					&& (BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+					|| BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+					&& (BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition())
+					|| BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition().down()))
+			) {
+				//if (Math.random() > 0.5) {
+				this.setTicks(-50); //Flag this as stationary for egg-laying
+				//}
+			}
+
+			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+				//Is stationary for egg-laying:
+				//System.err.println("Test2");
+				IBlockState eggs = BlockEurypteridEggsOnychopterella.block.getDefaultState();
+				if (BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition())) {
+					world.setBlockState(this.getPosition(), eggs);
+					this.setLaying(false);
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				}
+				if (BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition().down())) {
+					world.setBlockState(this.getPosition().down(), eggs);
+					this.setLaying(false);
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				}
+				this.setTicks(0);
+			}
+		}
+
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(SWIMMINGPN, false);
+		this.setScaleForAge(false);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setIsSwimming(false);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setBoolean("pfswimming", this.getIsSwimming());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setIsSwimming(compound.getBoolean("pfswimming"));
+	}
+
+	//checks if the animal is actually swimming
+	@Override
+	public boolean getIsSwimming() {
+		return (Boolean)this.dataManager.get(SWIMMINGPN);
+	}
+
+	//sets the animal isSwimming variable to true if the data manager detects that the animal is swimming
+	@Override
+	public void setIsSwimming(boolean isSwimming) {
+		this.dataManager.set(SWIMMINGPN, isSwimming);
+	}
+
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
-		}
+//		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+//			launchAttack();
+//		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
@@ -106,7 +250,7 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 	}
 
 	public static String getPeriod() {
-		return "Silurian";
+		return "Ordovician - Silurian";
 	}
 
 	//public static String getHabitat() {return "Aquatic";}
@@ -143,21 +287,19 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new SwimmingBottomWalkingSwimBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(2, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
-		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(4, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+//		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack) {
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-				//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
 
 	@Override
@@ -175,39 +317,6 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition().down()))
-		) {
-			//if (Math.random() > 0.5) {
-			this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
-		}
-
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockEurypteridEggsOnychopterella.block.getDefaultState();
-			if (BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			if (BlockEurypteridEggsOnychopterella.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEurypteridEggsOnychopterella.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
-		}
-	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
@@ -266,13 +375,13 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderSlimonia.TEXTURE;
+		return RenderOnychopterella.TEXTURE;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelSlimonia;
+		return RenderDisplays.modelOnychopterella;
 	}
 
-	public static float getScaler(@Nullable String variant) {return RenderSlimonia.getScaler();}
+	public static float getScaler(@Nullable String variant) {return RenderOnychopterella.getScaler();}
 }

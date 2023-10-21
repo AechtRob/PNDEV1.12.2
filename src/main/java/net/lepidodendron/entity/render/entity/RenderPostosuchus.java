@@ -24,6 +24,10 @@ public class RenderPostosuchus extends RenderLiving<EntityPrehistoricFloraPostos
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraPostosuchus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+        if (entityLiving.getAnimation() == entityLiving.DRINK_ANIMATION) {
+             //rotationYaw = -180;
+               int l = 0;
+        }
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 

@@ -1,7 +1,7 @@
 {
 	"name": "Vivaxosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/vivaxosaurus_icon.png",
+	"icon": "paleopedia:textures/items/vivaxosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_vivaxosaurus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vivaxosaurus",
 			"title": "Vivaxosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Vivaxosaurus is a dicynodont from the late Permian of Russia. It lived alongside animals like Scutosaurus, Dvinia and the apex predator, Inostrancevia. It had a robust body and it had two tusks in its mouth. Other than the tusks, it was completely toothless, instead it had a beak which it would break up vegetation with."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_vivaxosaurus",
-			"type": "text",
-			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vivaxosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vivaxosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vivaxosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vivaxosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vivaxosaurus"
 		}
 	]
 }

@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -552,7 +551,16 @@ public class ModelHurdia extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(body, 0.01F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.02F, 0.01F, 0.0F);
+        this.setRotateAngle(body3, 0.03F, 0.02F, 0.0F);
+        this.setRotateAngle(body4, 0.04F, 0.03F, 0.0F);
+        this.setRotateAngle(body5, 0.05F, 0.04F, 0.0F);
+        this.setRotateAngle(body6, 0.06F, 0.05F, 0.0F);
+        this.setRotateAngle(body7, 0.07F, 0.06F, 0.0F);
+        this.setRotateAngle(body8, 0.08F, 0.07F, 0.0F);
+        this.main.offsetY = -0.13F;
+        this.main.render(0.018f);
         resetToDefaultPose();
     }
 

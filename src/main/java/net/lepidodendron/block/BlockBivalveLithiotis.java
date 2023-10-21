@@ -20,7 +20,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -42,6 +41,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +74,8 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_lithiotis", BlockBivalveLithiotis.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveLithiotis.block);
+		OreDictionary.registerOre("pnfurnaceSeafood", BlockBivalveLithiotis.block);
+		OreDictionary.registerOre("pndietShellfish", BlockBivalveLithiotis.block);
 	}
 
 
@@ -86,6 +88,9 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimJurassic
 		) {
 			dimensionCriteria = true;
+		}
+		else {
+			dimensionCriteria = false;
 		}
 		if (!dimensionCriteria)
 			return;
@@ -172,7 +177,7 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks) {
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand) {
 				biomeCriteria = true;
 			}
 			else {
@@ -213,7 +218,7 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(6) - random.nextInt(6), 0, random.nextInt(6) - random.nextInt(6));
-						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER || world.getBlockState(blockpos1).getBlock() == Blocks.FLOWING_WATER) {
+						if (Functions.isWater(world, blockpos1)) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth
@@ -300,6 +305,12 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_bivalve_lithiotis");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_BIVALVE_LITHIOTIS;
 		}
 
 		@Override

@@ -53,6 +53,17 @@ public class ItemSpawnEggLacewingLaccosmylus extends ElementsLepidodendronMod.Mo
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -10076344;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -5670013;
+		}
+
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

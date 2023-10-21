@@ -3,16 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAI;
-import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.render.entity.RenderTrachymetopon;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -22,6 +20,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -34,10 +33,10 @@ public class EntityPrehistoricFloraTrachymetopon extends EntityPrehistoricFloraA
 	public EntityPrehistoricFloraTrachymetopon(World world) {
 		super(world);
 		setSize(1.5F, 1.5F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 1.5F;
-		maxHealthAgeable = 21.0D;
+		maxHealthAgeable = 40.0D;
 	}
 
 	@Override
@@ -60,11 +59,7 @@ public class EntityPrehistoricFloraTrachymetopon extends EntityPrehistoricFloraA
 		return this.getAgeScale() < 0.35;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemFishFood.block;
-	}
+	
 
 	public static String getPeriod() {return "Jurassic";}
 
@@ -117,8 +112,14 @@ public class EntityPrehistoricFloraTrachymetopon extends EntityPrehistoricFloraA
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		}
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
+	}
+
 
 	@Override
 	public boolean isAIDisabled() {
@@ -180,5 +181,53 @@ public class EntityPrehistoricFloraTrachymetopon extends EntityPrehistoricFloraA
 		}
 		return LepidodendronMod.TRACHYMETOPON_LOOT;
 	}
-
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.4;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.35;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -1.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.2;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 1.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderTrachymetopon.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelTrachymetopon;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderTrachymetopon.getScaler();
+	}
 }

@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderArctinurus extends RenderLiving<EntityPrehistoricFloraArctinurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arctinurus.png");
+    public static float getScaler() {
+        return 0.3F * 0.78F;
+    }
 
     public RenderArctinurus(RenderManager mgr) {
         super(mgr, new ModelArctinurus(), 0.2f);
@@ -27,7 +30,7 @@ public class RenderArctinurus extends RenderLiving<EntityPrehistoricFloraArctinu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraArctinurus entity, float f) {
-        float scale = 0.78F;
+        float scale = this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

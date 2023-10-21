@@ -53,6 +53,17 @@ public class ItemSpawnEggKalligrammatidMeioneurites extends ElementsLepidodendro
 		}
 
 		@Override
+		public int eggPrimaryColour() {
+			return -14935012;
+		}
+
+		@Override
+		public int eggSecondaryColour() {
+			return -12037088;
+		}
+
+
+		@Override
 		public String getPeriod() {
 			return "Jurassic";
 		}

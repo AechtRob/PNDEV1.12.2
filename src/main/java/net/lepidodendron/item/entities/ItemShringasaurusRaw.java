@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemShringasaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:shringasaurus_raw")
@@ -36,9 +38,10 @@ public class ItemShringasaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_shringasaurus", ItemShringasaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_shringasaurus@male", ItemShringasaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemShringasaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemShringasaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemShringasaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemShringasaurusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
@@ -48,6 +51,11 @@ public class ItemShringasaurusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("shringasaurus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "male";
 		}
 	}
 }

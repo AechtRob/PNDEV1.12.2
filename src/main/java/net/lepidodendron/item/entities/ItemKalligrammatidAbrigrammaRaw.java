@@ -39,9 +39,9 @@ public class ItemKalligrammatidAbrigrammaRaw extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis", ItemKalligrammatidAbrigrammaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemKalligrammatidAbrigrammaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemKalligrammatidAbrigrammaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kalligrammatid@abrigramma", ItemKalligrammatidAbrigrammaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemKalligrammatidAbrigrammaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemKalligrammatidAbrigrammaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
@@ -56,13 +56,13 @@ public class ItemKalligrammatidAbrigrammaRaw extends ElementsLepidodendronMod.Mo
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_palaeodictyoptera";
+			return "lepidodendron:prehistoric_flora_kalligrammatid";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "lithomantis";
+			return "abrigramma";
 		}
 	}
 }

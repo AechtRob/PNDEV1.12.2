@@ -1,0 +1,28 @@
+{
+	"name": "Submarine",
+	"icon": "lepidodendron:submarine_boat_item",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Submarine",
+			"text": "The submarine can be used to explore underwater. To move the submarine you will be told the keystrokes to use when you enter it. They can be changed in your GUI.$(br2)The submarine requires a battery to function. To add the battery, click it onto the submarine if you are outside, or else you can use the upper-right control panel inside the submarine itself to"
+		},
+		{
+			"type": "text",
+			"text": "add or remove a battery. The upper-left control panel will tell you the current battery power remaining. By default the battery does not drain.$(br2)If you switch on the need for RF power to machines in the mod config, the battery will first need to be charged and will slowly drain as it is used. The submarine in this case will stop working when the battery is flat!"
+		},
+		{
+			"type": "crafting",
+			"title": "Submarine and battery",
+			"recipe": "lepidodendron:submarine_recipe",
+			"recipe2": "lepidodendron:submarine_battery"
+		},
+		{
+			"type": "image",
+			"images":["paleopedia:textures/submarine.png"],
+			"title": "Submarine",
+			"text": ""
+		}
+	]
+}

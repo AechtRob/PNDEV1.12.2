@@ -1,7 +1,7 @@
 {
 	"name": "Hibbertopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/hibbertopterus_icon.png",
+	"icon": "paleopedia:textures/items/hibbertopterus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_hibbertopterus",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hibbertopterus",
 			"title": "Hibbertopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Brackish, Swamp$(br2)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Hibbertopterus is the largest stylonurid eurypterid which could have also moved onto land for brief periods of time, likely in search of more food options. Because its pincers were weak, it is suggested that Hibbertopterus was only able to prey on animals smaller than itself, probably by sweeping up animals it detected when it passes over them."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_hibbertopterus",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Egg Blocks$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hibbertopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hibbertopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hibbertopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hibbertopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hibbertopterus"
 		}
 	]
 }

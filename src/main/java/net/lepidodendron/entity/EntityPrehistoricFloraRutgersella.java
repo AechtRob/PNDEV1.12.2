@@ -4,11 +4,16 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.entity.render.entity.RenderRutgersella;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -17,6 +22,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -32,6 +38,11 @@ public class EntityPrehistoricFloraRutgersella extends EntityPrehistoricFloraSli
 	public EntityPrehistoricFloraRutgersella(World world) {
 		super(world, 26);
 		setSize(0.3F, 0.15F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -55,7 +66,12 @@ public class EntityPrehistoricFloraRutgersella extends EntityPrehistoricFloraSli
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityAILookIdle(this));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -85,9 +101,59 @@ public class EntityPrehistoricFloraRutgersella extends EntityPrehistoricFloraSli
 		return LepidodendronMod.RUTGERSELLA_LOOT;
 	}
 
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -1.2;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 1.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderRutgersella.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelRutgersella;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderRutgersella.getScaler();
+	}
 	@Override
 	public void onLivingUpdate() {
-		//this.renderYawOffset = this.rotationYaw;
+		////this.renderYawOffset = this.rotationYaw;
 		//Updated from vanilla to disable jumping
 		//Adjusted from base so that mob rotates properly and faces forwards
 		if (this.jumpTicks > 0)

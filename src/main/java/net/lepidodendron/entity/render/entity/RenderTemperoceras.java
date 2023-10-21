@@ -15,6 +15,8 @@ public class RenderTemperoceras extends RenderLiving<EntityPrehistoricFloraTempe
         super(mgr, new ModelTemperoceras(), 0.1f);
     }
 
+    public static float getScaler() {return 0.3F;}
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTemperoceras entity) {
         return RenderTemperoceras.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderTemperoceras extends RenderLiving<EntityPrehistoricFloraTempe
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTemperoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

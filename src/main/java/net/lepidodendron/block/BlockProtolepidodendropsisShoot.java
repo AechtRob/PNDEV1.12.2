@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -55,7 +58,7 @@ public class BlockProtolepidodendropsisShoot extends ElementsLepidodendronMod.Mo
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).build());
 	}
 
-	public static class BlockCustom extends SeedSporeBlockBase {
+	public static class BlockCustom extends SeedSporeBlockBase implements IAdvancementGranter {
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 
@@ -70,6 +73,12 @@ public class BlockProtolepidodendropsisShoot extends ElementsLepidodendronMod.Mo
 			setCreativeTab(null);
 			setTickRandomly(true);
         	this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, 0));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_PROTOLEPIDODENDROPSIS;
 		}
 
 		@Override

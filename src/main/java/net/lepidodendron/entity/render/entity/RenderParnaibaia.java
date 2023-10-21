@@ -12,7 +12,7 @@ public class RenderParnaibaia extends RenderLiving<EntityPrehistoricFloraParnaib
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parnaibaia.png");
 
     public static float getScaler() {
-        return 0.7F * 0.38F;
+        return 0.7F * 0.42F;
     }
     public RenderParnaibaia(RenderManager mgr) {
         super(mgr, new ModelParnaibaia(), 0.0f);

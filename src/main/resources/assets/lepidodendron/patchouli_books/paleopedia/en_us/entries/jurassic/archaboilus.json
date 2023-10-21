@@ -1,0 +1,46 @@
+{
+	"name": "Archaboilus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaboilus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_archaboilus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaboilus",
+			"title": "Archaboilus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Orthoptera $(br)>Tettigoniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/archaboilus.png"],
+			"title": "A. musicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaboilus",
+			"type": "text",
+			"text": "Archaboilus is a genus of hagloid orthopteran known from Jurassic Eurasia. Fossilized wing of A. musicus from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China, was examined and its sounds have been reconstructed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaboilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaboilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaboilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaboilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaboilus"
+		}
+	]
+}

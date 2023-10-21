@@ -3,10 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemEchinodermEggsCothurnocystis;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -17,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -32,7 +35,12 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 1.0D;
+		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
@@ -100,13 +108,12 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		//tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) 0.5F));
 		tasks.addTask(2, new WalkingAmphibianWander(this, NO_ANIMATION, 1, 0));
-		//tasks.addTask(3, new EntityAILookIdle(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return stack.getItem() == ItemFishFood.block;
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -159,7 +166,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 	}
 
 	@Override

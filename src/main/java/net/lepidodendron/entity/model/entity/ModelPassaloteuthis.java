@@ -1,7 +1,5 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraMegateuthis;
-import net.lepidodendron.entity.EntityPrehistoricFloraPassaloteuthis;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -235,16 +233,53 @@ public class ModelPassaloteuthis extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.body.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arms, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arms2, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = 0.0F;
+        this.body.offsetZ = 0.0F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(finL, 0.0F, 0.F, 0.0F);
+        this.setRotateAngle(arm, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arms, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm2, -0.2F, 0.0F, -0.7F);
+        this.setRotateAngle(arms2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm3, -0.2F, 0.0F, -1.5F);
+        this.setRotateAngle(arms3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm4, -0.2F, 0.0F, -2.5F);
+        this.setRotateAngle(arms4, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm5, -0.2F, 0.0F, 3.2F);
+        this.setRotateAngle(arms5, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm6, -0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(arms6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm7, -0.2F, 0.0F, 0.7F);
+        this.setRotateAngle(arms7, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm8, -0.2F, 0.0F, 1.5F);
+        this.setRotateAngle(arms8, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm9, -0.2F, 0.0F, 2.5F);
+        this.setRotateAngle(arms9, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm10, -0.2F, 0.0F, -3.2F);
+        this.setRotateAngle(arms10, -0.2F, 0.0F, 0.0F);
+        this.body.offsetY = -0.14F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(finL, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(finR, 0.0F, 0.0F, -0.4F);
+        this.body.offsetY = 0.09F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

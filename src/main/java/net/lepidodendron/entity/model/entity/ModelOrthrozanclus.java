@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrthrozanclus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOrthrozanclus extends AdvancedModelBase {
@@ -425,7 +424,7 @@ public class ModelOrthrozanclus extends AdvancedModelBase {
     }
     public void renderStaticFloor(float f) {
         this.Orthozanclus.rotateAngleY = (float) Math.toRadians(90);
-        this.Orthozanclus.offsetY = 0.14F;
+        this.Orthozanclus.offsetY = 0.0F;
         this.Orthozanclus.render(0.015F);
         resetToDefaultPose();
     }

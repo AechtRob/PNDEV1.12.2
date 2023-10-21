@@ -1,0 +1,6 @@
+{
+ "parent": "lepidodendron:block/bridge_fence_down",
+ "textures": {
+ "wood": "lepidodendron:blocks/golden_larch_planks"
+ }
+}

@@ -1,7 +1,7 @@
 {
 	"name": "Lasanius",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lasanius_icon.png",
+	"icon": "paleopedia:textures/items/lasanius_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lasanius",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lasanius",
 			"title": "Lasanius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Lagoon$(br2)>Anaspida$(br)>Birkeniiformes$(br)>Lasaniidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Anaspida$(br)>Birkeniiformes$(br)>Lasaniidae"
 		},
 		{
 			"type": "image",
@@ -43,9 +43,24 @@
 			"text": "In 1958 Lasanius was reconstructed as an active swimmer using its hypocercal tail to swim vertically head down so that it could use its mouth to suck up food directly from the muddy seafloor."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lasanius",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lasanius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lasanius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lasanius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lasanius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lasanius"
 		}
 	]
 }

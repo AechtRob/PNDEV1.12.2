@@ -4,9 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraBavariscyllium;
 import net.lepidodendron.entity.EntityPrehistoricFloraParacestracion;
-import net.lepidodendron.entity.EntityPrehistoricFloraProtospinax;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -215,17 +213,18 @@ public class ModelParacestracion extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-
     public void renderStaticWall(float f) {
-        this.main.rotateAngleX = (float) Math.toRadians(90);
-        this.main.rotateAngleZ = (float) Math.toRadians(90);
-        this.main.offsetX = -0.02F;
-        this.main.offsetZ = -0.01F;
-        this.main.offsetY = -0.245F;
-        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.2F, 0.3F, -0.1F);
+        this.setRotateAngle(body, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.4F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.5F, 0.0F);
+        this.main.offsetY = -0.28F;
+        this.main.render(0.018f);
         resetToDefaultPose();
     }
 
@@ -264,8 +263,8 @@ public class ModelParacestracion extends AdvancedModelBase {
             this.flap(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.swing(backleftfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if(ee.getIsMoving()|| e.isInWater()) { //if moving, slap fins
-                this.flap(frontleftfin, speed * 2.5F, 0.4F, true, -3, 0, f2, 1);
-                this.flap(frontrightfin, speed* 2.5F, -0.4F, true, -3, 0, f2, 1);
+                this.flap(frontleftfin, speed * 2.5F, 0.4F, false, -0, -0.5F, f2, 1);
+                this.flap(frontrightfin, speed* 2.5F, -0.4F, false, -0, 0.5F, f2, 1);
                 this.chainWave(fishTail, speed* 2.5F, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed* 2.5F, 0.25F, -3, f2, 1);
             }
@@ -273,8 +272,8 @@ public class ModelParacestracion extends AdvancedModelBase {
             else{ //if not accelerating swing fins instead
                 //this.swing(leftFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -0, -0.5F, f2, 1);
                 //this.swing(rightFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -3, 0.5F, f2, 1);
-                this.flap(frontleftfin, (speed), 0.25F, true, -3, 0, f2, 1);
-                this.flap(frontrightfin, (speed), -0.25F, true, -3, 0, f2, 1);
+                this.flap(frontleftfin, (speed), 0.25F, false, -0, -0.5F, f2, 1);
+                this.flap(frontrightfin, (speed), -0.25F, false, -0, 0.5F, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed, 0.3F, -3, f2, 1);
             }

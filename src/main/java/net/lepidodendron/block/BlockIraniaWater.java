@@ -4,7 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemIraniaItem;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.SoundType;
@@ -51,7 +54,7 @@ public class BlockIraniaWater extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyBool VAR = PropertyBool.create("var");
 
-	public static class BlockCustom extends BlockLilyPad {
+	public static class BlockCustom extends BlockLilyPad implements IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -63,6 +66,12 @@ public class BlockIraniaWater extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_irania");
 			setRegistryName("irania");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(VAR, false));
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_IRANIA;
 		}
 
 		@Override

@@ -1,7 +1,7 @@
 {
 	"name": "Lituites",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/lituites_icon.png",
+	"icon": "paleopedia:textures/items/lituites_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_lituites",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lituites",
 			"title": "Lituites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean, Sponge, Bryozoan Reef$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Tarphycerida$(br)>Lituitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Tarphycerida$(br)>Lituitidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Lituites is a nautiloid from the Middle Ordovician period that possessed a straight shell with a coil at the end of it. Its shell was coiled in early growth stages but later becomes uncoiled."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_lituites",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lituites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lituites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lituites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lituites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lituites"
 		}
 	]
 }

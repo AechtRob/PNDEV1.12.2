@@ -2,10 +2,10 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraPhantaspis;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -204,22 +204,24 @@ public class ModelPhantaspis extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyF = {this.Cephalon,this.Thorax};
 
         if (isAtBottom) {
-            this.chainWave(legsL, 0.5F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.5F, 0.2F, -3, f2, 1);
-            this.flap(CephalicLegL, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-            this.flap(CephalicLegR, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-            this.flap(CephaicLegL2, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-            this.flap(CephalicLegR2, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-            this.flap(LegL1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
-            this.flap(LegR1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
-            this.flap(LegL2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(LegL3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(LegL4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
-            this.chainSwing(bodyF, 0.1F, 0.02F, -3, f2, 0.5F);
-            this.chainWave(bodyF, 0.1F, 0.02f, -3, f2, 0F);
+            if (((EntityPrehistoricFloraPhantaspis) e).getIsMoving()) {
+                this.chainWave(legsL, 0.5F, 0.2F, -3, f2, 1);
+                this.chainWave(legsR, 0.5F, 0.2F, -3, f2, 1);
+                this.flap(CephalicLegL, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+                this.flap(CephalicLegR, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+                this.flap(CephaicLegL2, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+                this.flap(CephalicLegR2, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+                this.flap(LegL1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+                this.flap(LegR1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+                this.flap(LegL2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
+                this.flap(LegR2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
+                this.flap(LegL3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
+                this.flap(LegR3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
+                this.flap(LegL4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
+                this.flap(LegR4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
+                this.chainSwing(bodyF, 0.1F, 0.02F, -3, f2, 0.5F);
+                this.chainWave(bodyF, 0.1F, 0.02f, -3, f2, 0F);
+            }
             this.bob(Group, 0.0F, 0.0F, false, f2, 1);
         }
         else {

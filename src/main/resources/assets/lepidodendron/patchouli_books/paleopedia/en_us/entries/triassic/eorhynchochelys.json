@@ -1,7 +1,7 @@
 {
 	"name": "Eorhynchochelys",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/eorhynchochelys_icon.png",
+	"icon": "paleopedia:textures/items/eorhynchochelys_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_eorhynchochelys",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eorhynchochelys",
 			"title": "Eorhynchochelys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Pantestudines"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Pantestudines"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Eorhynchochelys sinensis was an early relative of turtles, that lived during the Late Triassic in what is now southwestern China. It lived in coastal waters, likely foraging on land as well as in the sea, using its powerful limbs to scour through the mud for food. Although it lacks the signature shell of more familiar turtles, its skull was very turtle-like, complete with a beak."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eorhynchochelys",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eorhynchochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eorhynchochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eorhynchochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eorhynchochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eorhynchochelys"
 		}
 	]
 }

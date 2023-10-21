@@ -2,9 +2,12 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -202,7 +205,7 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends SeedSporeReedBase {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
 
 		public static final PropertyBool BASE = PropertyBool.create("base");
 		public static final PropertyBool LOWER = PropertyBool.create("lower");
@@ -217,6 +220,17 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_eremopteris");
 			setRegistryName("eremopteris");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(BASE, false).withProperty(LOWER, false).withProperty(AGE, Integer.valueOf(0)));
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_EREMOPTERIS;
 		}
 
 		@Override
@@ -286,11 +300,6 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
 	    }
 
-	    @Override
-	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-	    {
-	        return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 1.0D, 0.65D);
-	    }
 
 		@Override
 	    public boolean canBlockStay(World worldIn, BlockPos pos)

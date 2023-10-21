@@ -37,4 +37,5 @@ public class RenderBelonostomusJurassic extends RenderLiving<EntityPrehistoricFl
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }
+
 }

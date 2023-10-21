@@ -1,7 +1,7 @@
 {
 	"name": "Gemmactena",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gemmactena_icon.png",
+	"icon": "paleopedia:textures/items/gemmactena_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gemmactena",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gemmactena",
 			"title": "Gemmactena",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuary$(br2)>Ctenophora$(br)>Scleroctenophora"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ctenophora$(br)>Scleroctenophora"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Gemmactena is an ancient comb jelly from the Cambrian period. It lived in a manner similar to modern comb jellies. They are predators, with their diet likely consisting of microscopic organisms."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gemmactena",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gemmactena"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gemmactena"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gemmactena"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gemmactena"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gemmactena"
 		}
 	]
 }

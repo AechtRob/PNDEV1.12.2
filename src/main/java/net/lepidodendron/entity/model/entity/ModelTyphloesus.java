@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraTyphloesus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
@@ -107,13 +106,22 @@ public class ModelTyphloesus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-    
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.head.rotateAngleX = (float) Math.toRadians(90);
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = 0.0F;
+        this.head.offsetZ = 0.03F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.08F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.10F, 0.0F);
+        this.head.offsetY = -0.14F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
     
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
@@ -125,7 +133,7 @@ public class ModelTyphloesus extends AdvancedModelBase {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+        //this.resetToDefaultPose();
 
        //this.head.offsetY = 1.0F;
 
@@ -206,7 +214,7 @@ public class ModelTyphloesus extends AdvancedModelBase {
             zz = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
         }
         this.Foregut.offsetX = (float) Math.toRadians(xx);
-        this.Foregut.offsetY = (float) Math.toRadians(yy);
+        this.Foregut.offsetY = -(float) Math.toRadians(yy);
         this.Foregut.offsetZ = (float) Math.toRadians(zz);
 
         if (tickAnim >= 0 && tickAnim < 2) {
@@ -230,8 +238,14 @@ public class ModelTyphloesus extends AdvancedModelBase {
             zz = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
         }
         this.Radula.offsetX = (float) Math.toRadians(xx);
-        this.Radula.offsetY = (float) Math.toRadians(yy);
+        this.Radula.offsetY = -(float) Math.toRadians(yy);
         this.Radula.offsetZ = (float) Math.toRadians(zz);
+
+    }
+
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        EntityPrehistoricFloraTyphloesus e = (EntityPrehistoricFloraTyphloesus) entity;
+        animator.update(entity);
 
     }
 

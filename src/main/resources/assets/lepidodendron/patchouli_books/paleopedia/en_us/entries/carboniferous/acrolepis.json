@@ -1,7 +1,7 @@
 {
 	"name": "Acrolepis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/acrolepis_icon.png",
+	"icon": "paleopedia:textures/items/acrolepis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_acrolepis",
 	"pages": [
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acrolepis",
 			"title": "Acrolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Near-Shore and Freshwater$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Acrolepidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Acrolepidae"
 		},
 		{
 			"type": "image",
@@ -23,9 +23,24 @@
 			"text": "Acrolepis is a bony fish whose name means 'tip scale.' It was a large piscivore and was an apex predatory in its locality. They ate mainly Palaeonisciforme fish and used their teeth to hold prey in place and tear out the edible parts into smaller pieces for consumption."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_acrolepis",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acrolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acrolepis"
 		}
 	]
 }

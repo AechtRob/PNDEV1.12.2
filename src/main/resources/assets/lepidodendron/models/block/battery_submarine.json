@@ -1,0 +1,37 @@
+{
+	"parent": "block/cube_all",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/battery_submarine_bottom",
+		"1": "lepidodendron:blocks/battery_submarine_side",
+		"2": "lepidodendron:blocks/battery_submarine_top",
+		"3": "lepidodendron:blocks/battery_submarine_rf",
+		"particle": "lepidodendron:blocks/battery_submarine_bottom"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 15, 6],
+			"to": [10, 17, 10],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 2], "texture": "#3"},
+				"east": {"uv": [0, 0, 4, 2], "texture": "#3"},
+				"south": {"uv": [0, 0, 4, 2], "texture": "#3"},
+				"west": {"uv": [0, 0, 4, 2], "texture": "#3"},
+				"up": {"uv": [5, 6, 9, 10], "texture": "#3"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#3"}
+			}
+		}
+	]
+}

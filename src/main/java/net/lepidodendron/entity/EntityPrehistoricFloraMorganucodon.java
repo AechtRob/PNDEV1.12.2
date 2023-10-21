@@ -5,21 +5,15 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -29,11 +23,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -52,13 +44,13 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		maxHealthAgeable = 8.0D;
 	}
 
-	@Override
-	public boolean canJar() {
-		return true;
-	}
-
 	public static String getPeriod() {
 		return "Triassic - Jurassic";
+	}
+
+	@Override
+	public int getEatLength() {
+		return 10;
 	}
 
 	//public static String getHabitat() {
@@ -95,12 +87,12 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		return true;
 	}
 
-	protected float getAISpeedLand() {
+	public float getAISpeedLand() {
 		float speedBase = 0.621F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -138,13 +130,20 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		tasks.addTask(5, new PanicAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
-		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.0));
-		this.targetTasks.addTask(2, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(12, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		//this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.0));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.BUG, DietString.MEAT);
 	}
 
 	@Override
@@ -152,10 +151,7 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		return true;
 	}
 
-	@Override
-	public boolean isBreedingItem(ItemStack stack) {
-		return stack.getItem() == ItemBugRaw.block;
-	}
+	
 
 
 	@Override
@@ -208,27 +204,14 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			this.launchAttack();
+			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	@Override
-	public void launchAttack() {
-		if (this.getAttackTarget() != null) {
-			IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttackTarget().addVelocity(0, 0.1, 0);
-			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
-		}
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -277,19 +260,4 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		return LepidodendronMod.MORGANUCODON_LOOT;
 	}
 
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.MORGANUCODON_JAR_LOOT;
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build())) {
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		} else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
-
-	}
 }
