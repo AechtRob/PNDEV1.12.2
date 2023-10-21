@@ -215,7 +215,7 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Platylomaspis.render(f5 * 0.165F);
+        this.Platylomaspis.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -240,7 +240,7 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Platylomaspis.offsetY = 1.25F;
+        //this.Platylomaspis.offsetY = 1.25F;
 
         EntityPrehistoricFloraPlatylomaspis ee = (EntityPrehistoricFloraPlatylomaspis) e;
 
@@ -294,7 +294,7 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
             this.swing(Platylomaspis, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Platylomaspis.offsetY = 1.25F;
+                this.Platylomaspis.offsetY = 1.25F - 1.25F;
                 this.bob(Platylomaspis, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -2.5, f2, 1);
             }

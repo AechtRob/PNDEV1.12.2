@@ -3088,12 +3088,12 @@ public class ModelDilophosaurus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 0) / 40) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+30))*9.9-(0)));
+            xx = 0 + (((tickAnim - 0) / 40) * (-102.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+30))*9.9-(0)));
             yy = 0 + (((tickAnim - 0) / 40) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 40) * (0-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 80) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+30))*9.9 + (((tickAnim - 40) / 40) * (0-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+30))*9.9)));
+            xx = -102.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+30))*9.9 + (((tickAnim - 40) / 40) * (0-(-102.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+30))*9.9)));
             yy = 0 + (((tickAnim - 40) / 40) * (0-(0)));
             zz = 0 + (((tickAnim - 40) / 40) * (0-(0)));
         }
@@ -3363,7 +3363,6 @@ public class ModelDilophosaurus extends AdvancedModelBaseExtended {
             zz = 0;
         }
         this.setRotateAngle(Tail5, Tail5.rotateAngleX + (float) Math.toRadians(xx), Tail5.rotateAngleY + (float) Math.toRadians(yy), Tail5.rotateAngleZ + (float) Math.toRadians(zz));
-
     }
 
     public void animClean(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {

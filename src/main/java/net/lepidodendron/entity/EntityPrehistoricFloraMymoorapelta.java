@@ -45,9 +45,9 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraMymoorapelta(World world) {
 		super(world);
-		setSize(1.5F, 0.99F);
+		setSize(0.99F, 0.99F);
 		minWidth = 0.3F;
-		maxWidth = 1.5F;
+		maxWidth = 0.99F;
 		maxHeight = 0.99F;
 		maxHealthAgeable = 28.0D;
 		ALERT_ANIMATION = Animation.create(100);

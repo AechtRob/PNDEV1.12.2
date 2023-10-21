@@ -568,11 +568,11 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 			//random idle animations
 			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-				if (next < 5) {
-					this.setAnimation(STAND_ANIMATION);
-				} else {
+				//if (next < 5) {
 					this.setAnimation(SCRATCH_ANIMATION);
-				}
+				//} else {
+					//this.setAnimation(SCRATCH_ANIMATION);
+				//}
 				this.standCooldown = 2000;
 			}
 			if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {

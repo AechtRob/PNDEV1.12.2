@@ -1,11 +1,15 @@
 package net.lepidodendron.world.structure;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockChest;
+import net.minecraft.block.BlockTorch;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -20,24 +24,78 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
 
     public final float chance;
     public final Random random;
+    public final IBlockState fossilState;
+    public final int colourTent;
+    public final int colourBed;
+    public final int colourCarpet;
 
-    public StructureDigSiteProcessTents(BlockPos pos, PlacementSettings settings) {
+    public StructureDigSiteProcessTents(BlockPos pos, PlacementSettings settings, IBlockState fossilStateIn, int colourTentIn, int colourBedIn, int colourCarpetIn) {
         this.chance = settings.getIntegrity();
         this.random = settings.getRandom(pos);
+        this.fossilState = fossilStateIn;
+        this.colourTent = colourTentIn;
+        this.colourBed = colourBedIn;
+        this.colourCarpet = colourCarpetIn;
     }
 
     @Nullable
+    @Override
     public Template.BlockInfo processBlock(World worldIn, BlockPos pos, Template.BlockInfo blockInfoIn) {
         if (blockInfoIn.blockState.getBlock() instanceof BlockChest) {
             Random rand = new Random(worldIn.getSeed() + pos.toLong());
             NBTTagCompound tag = blockInfoIn.tileentityData == null ? new NBTTagCompound() : blockInfoIn.tileentityData;
-            tag.setString("LootTable", "lepidodendron:digsite_chest");
+            if (this.fossilState.getBlock() == BlockFossilPrecambrian.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_precambrian");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilCambrian.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_cambrian");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilOrdovician.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_ordovician");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilSilurian.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_silurian");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilDevonian.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_devonian");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilCarboniferous.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_carboniferous");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilPermian.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_permian");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilTriassic.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_triassic");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilJurassic.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_jurassic");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilCretaceous.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_cretaceous");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilPaleogene.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_paleogene");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilNeogene.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_neogene");
+            }
+            else if (this.fossilState.getBlock() == BlockFossilPleistocene.block) {
+                tag.setString("LootTable", "lepidodendron:digsite_chest_pleistocene");
+            }
             tag.setLong("LootTableSeed", rand.nextLong());
             Template.BlockInfo newInfo = new Template.BlockInfo(pos, blockInfoIn.blockState, tag);
             return newInfo;
         } else if (blockInfoIn.blockState.getBlock() == Blocks.BED) {
             NBTTagCompound tag = blockInfoIn.tileentityData == null ? new NBTTagCompound() : blockInfoIn.tileentityData;
-            tag.setInteger("color", 7);
+            int colour = LepidodendronConfig.digsiteBedColour;
+            if (colour < -1 || colour > 15) {
+                colour = 7;
+            }
+            if (colour == -1) {
+                colour = this.colourBed;
+            }
+            tag.setInteger("color", colour);
             Template.BlockInfo newInfo = new Template.BlockInfo(pos, blockInfoIn.blockState, tag);
             return newInfo;
         }
@@ -47,7 +105,7 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
 
     protected IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, World world, BlockPos pos) {
 
-        if (blockstateIn.getBlock() == BlockAnemone1Dead.block) {
+        if (blockstateIn.getBlock() == Blocks.FLOWER_POT) {
             int i = random.nextInt(9);
             switch (i) {
                 case 0: default:
@@ -80,8 +138,39 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
 
         }
 
+        if (blockstateIn.getBlock() == Blocks.TORCH && Functions.decoLoaded()) {
+            EnumFacing facing = blockstateIn.getValue(BlockTorch.FACING);
+            if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
+                return BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, facing);
+            }
+        }
+
+        int colour = LepidodendronConfig.digsiteTentColour;
+        if (colour < -2 || colour > 15) {
+            colour = 12;
+        }
+        if (colour == -1) {
+            colour = this.colourTent;
+        }
+        if (colour == -2) {
+            colour = world.rand.nextInt(15);
+        }
         if (blockstateIn.getBlock() == Blocks.WOOL) {
-            return Blocks.WOOL.getStateFromMeta(12);
+            return Blocks.WOOL.getStateFromMeta(colour);
+        }
+
+        colour = LepidodendronConfig.digsiteCarpetColour;
+        if (colour < -2 || colour > 15) {
+            colour = 8;
+        }
+        if (colour == -1) {
+            colour = this.colourCarpet;
+        }
+        if (colour == -2) {
+            colour = world.rand.nextInt(15);
+        }
+        if (blockstateIn.getBlock() == Blocks.CARPET) {
+            return Blocks.CARPET.getStateFromMeta(colour);
         }
 
         Biome biome = world.getBiome(pos);
@@ -135,5 +224,5 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
 
         return blockstateIn;
     }
-
+    
 }
