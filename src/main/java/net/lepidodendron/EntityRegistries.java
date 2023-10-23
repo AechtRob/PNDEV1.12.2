@@ -860,12 +860,14 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_camarasaurus", EntityPrehistoricFloraCamarasaurus.class, LepidodendronMod.ENTITY_CAMARASAURUS, 156,-12899290,-10118553);
         registerEntity("prehistoric_flora_sinraptor", EntityPrehistoricFloraSinraptor.class, LepidodendronMod.ENTITY_SINRAPTOR, 156,-13094098,-9575933);
 //        registerEntity("prehistoric_flora_gargoyleosaurus", EntityPrehistoricFloraGargoyleosaurus.class, LepidodendronMod.ENTITY_GARGOYLEOSAURUS, 156,-12899290,-10118553);
-//        registerEntity("prehistoric_flora_allosaurus", EntityPrehistoricFloraAllosaurus.class, LepidodendronMod.ENTITY_ALLOSAURUS, 156,-12899290,-10118553);
+        registerEntity("prehistoric_flora_allosaurus", EntityPrehistoricFloraAllosaurus.class, LepidodendronMod.ENTITY_ALLOSAURUS, 156,-12899290,-10118553);
 //        registerEntity("prehistoric_flora_miragaia", EntityPrehistoricFloraMiragaia.class, LepidodendronMod.ENTITY_MIRAGAIA, 156,-12899290,-10118553);
 //        registerEntity("prehistoric_flora_chilesaurus", EntityPrehistoricFloraChilesaurus.class, LepidodendronMod.ENTITY_CHILESAURUS, 156,-12899290,-10118553);
-//        registerEntity("prehistoric_flora_limusaurus", EntityPrehistoricFloraLimusaurus.class, LepidodendronMod.ENTITY_LIMUSAURUS, 156,-12899290,-10118553);
+        registerEntity("prehistoric_flora_limusaurus", EntityPrehistoricFloraLimusaurus.class, LepidodendronMod.ENTITY_LIMUSAURUS, 64,-12899290,-10118553);
 //        registerEntity("prehistoric_flora_elaphrosaurus", EntityPrehistoricFloraElaphrosaurus.class, LepidodendronMod.ENTITY_ELAPHROSAURUS, 156,-12899290,-10118553);
-
+        registerEntity("prehistoric_flora_apatosaurus", EntityPrehistoricFloraApatosaurus.class, LepidodendronMod.ENTITY_APATOSAURUS, 156,-12899290,-10118553);
+//        registerEntity("prehistoric_flora_camptosaurus", EntityPrehistoricFloraCamptosaurus.class, LepidodendronMod.ENTITY_CAMPTOSAURUS, 156,-12899290,-10118553);
+//        registerEntity("prehistoric_flora_dubreuillosaurus", EntityPrehistoricFloraDubreuillosaurus.class, LepidodendronMod.ENTITY_DUBREUILLOSAURUS, 156,-12899290,-10118553);
 
 
 
