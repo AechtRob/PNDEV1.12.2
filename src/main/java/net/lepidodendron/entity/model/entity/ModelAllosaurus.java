@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAllosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraAllosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -71,7 +70,6 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer Tail4;
     private final AdvancedModelRenderer Tail5;
     private final AdvancedModelRenderer Tail6;
-    private final AdvancedModelRenderer bb_main;
 
     private ModelAnimator animator;
 
@@ -81,7 +79,7 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
 
         this.Root = new AdvancedModelRenderer(this);
         this.Root.setRotationPoint(0.0F, -5.0F, -1.0F);
-
+        //this.Root.offsetY =
 
         this.Hips = new AdvancedModelRenderer(this);
         this.Hips.setRotationPoint(0.0F, -1.8F, 1.0F);
@@ -437,10 +435,6 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Tail6, -0.2182F, 0.0F, 0.0F);
         this.Tail6.cubeList.add(new ModelBox(Tail6, 0, 91, -1.0F, -1.5F, 0.0F, 2, 3, 12, 0.0F, false));
 
-        this.bb_main = new AdvancedModelRenderer(this);
-        this.bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.bb_main.cubeList.add(new ModelBox(bb_main, -133, -133, 18.0F, -1.0F, -50.0F, 1, 1, 134, 0.0F, false));
-
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
@@ -448,13 +442,14 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5);
+        this.Root.render(f5);
     }
 
     public void renderStaticWall(float f) {
 
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
 
         resetToDefaultPose();
@@ -493,7 +488,7 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
         }
         else {
             if (!EntityAllosaurus.isReallyInWater()) {
-                this.Root.offsetY = -10F;
+                //this.Root.offsetY = -10F;
 
                 if (f3 == 0.0F || !EntityAllosaurus.getIsMoving()) {
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
