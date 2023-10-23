@@ -216,7 +216,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @SideOnly(Side.CLIENT)
     public AxisAlignedBB getRenderBoundingBox()
     {
-        if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+        if (LepidodendronConfig.renderBigMobsProperly && (this.getMaxWidth() * this.getAgeScale()) > 1F) {
             return this.getEntityBoundingBox().grow(1.0, 0.25, 1.0);
         }
         return this.getEntityBoundingBox();
@@ -844,7 +844,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         //System.err.println("AgeScale: " + this.getAgeScale());
         //System.err.println("width: " + (this.getAgeScale() * this.maxWidth));
         //System.err.println("height: " + (this.getAgeScale() * this.maxHeight));
-        this.setSizer(this.getAgeScale() * this.maxWidth, this.getAgeScale() * this.maxHeight);
+        this.setSizer(this.getAgeScale() * this.getMaxWidth(), this.getAgeScale() * this.getMaxHeight());
+    }
+
+    public float getMaxWidth() {
+        return this.maxWidth;
+    }
+
+    public float getMaxHeight() {
+        return this.maxHeight;
     }
 
     //Taken from the Entity class, not the EntityAgeable class
@@ -867,7 +875,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.getAgeTicks() >= this.getAdultAge()) {
             return 1F;
         }
-        return Math.max((this.minWidth/this.maxWidth), (step * (float)this.getAgeTicks()));
+        return Math.max((this.minWidth/this.getMaxWidth()), (step * (float)this.getAgeTicks()));
     }
 
     //@Override
