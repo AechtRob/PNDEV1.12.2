@@ -4863,22 +4863,18 @@ public class RenderHandler {
                 return new RenderApatosaurus(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLimusaurus.class, new IRenderFactory<EntityPrehistoricFloraLimusaurus>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraLimusaurus> createRenderFor(RenderManager manager) {
-                return new RenderLimusaurus(manager);
-        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnurognathid.class, new IRenderFactory<EntityPrehistoricFloraAnurognathid>() {
             @Override
             public Render<? super EntityPrehistoricFloraAnurognathid> createRenderFor(RenderManager manager) {
                 return new RenderAnurognathid(manager);
             }
         });
-        
-        
-        
-        
-        
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLimusaurus.class, new IRenderFactory<EntityPrehistoricFloraLimusaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLimusaurus> createRenderFor(RenderManager manager) {
+                return new RenderLimusaurus(manager);
+            }
+        });
         
         
         RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {
