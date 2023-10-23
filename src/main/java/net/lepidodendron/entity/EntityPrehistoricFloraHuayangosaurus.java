@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 

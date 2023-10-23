@@ -1319,6 +1319,11 @@ public class ModTriggers
     public static final CustomTrigger CLICK_YI = new CustomTrigger("pf_book_yi");
     public static final CustomTrigger CLICK_YANGCHUANOSAURUS = new CustomTrigger("pf_book_yangchuanosaurus");
     public static final CustomTrigger CLICK_ANUROGNATHUS = new CustomTrigger("pf_book_anurognathus");
+    public static final CustomTrigger CLICK_SINOMACROPS = new CustomTrigger("pf_book_sinomacrops");
+    public static final CustomTrigger CLICK_BATRACHOGNATHUS = new CustomTrigger("pf_book_batrachognathus");
+    public static final CustomTrigger CLICK_CASCOCAUDA = new CustomTrigger("pf_book_cascocauda");
+    public static final CustomTrigger CLICK_DENDRORHYNCHOIDES = new CustomTrigger("pf_book_dendrorhynchoides");
+    public static final CustomTrigger CLICK_JEHOLOPTERUS = new CustomTrigger("pf_book_jeholopterus");
     public static final CustomTrigger CLICK_DIMORPHODON = new CustomTrigger("pf_book_dimorphodon");
     public static final CustomTrigger CLICK_ARCHAEOPTERYX = new CustomTrigger("pf_book_archaeopteryx");
     public static final CustomTrigger CLICK_COMPSOGNATHUS = new CustomTrigger("pf_book_compsognathus");
@@ -1335,7 +1340,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CUMNORIA = new CustomTrigger("pf_book_cumnoria");
     public static final CustomTrigger CLICK_UTEODON = new CustomTrigger("pf_book_uteodon");
     public static final CustomTrigger CLICK_SINRAPTOR = new CustomTrigger("pf_book_sinraptor");
-    public static final CustomTrigger CLICK_JEHOLOPTERUS = new CustomTrigger("pf_book_jeholopterus");
     public static final CustomTrigger CLICK_MIRAGAIA = new CustomTrigger("pf_book_miragaia");
     public static final CustomTrigger CLICK_DORYGNATHUS = new CustomTrigger("pf_book_dorygnathus");
     public static final CustomTrigger CLICK_ELAPHROSAURUS = new CustomTrigger("pf_book_elaphrosaurus");
@@ -2651,6 +2655,11 @@ public class ModTriggers
             CLICK_YI,
             CLICK_YANGCHUANOSAURUS,
             CLICK_ANUROGNATHUS,
+            CLICK_SINOMACROPS,
+            CLICK_BATRACHOGNATHUS,
+            CLICK_CASCOCAUDA,
+            CLICK_DENDRORHYNCHOIDES,
+            CLICK_JEHOLOPTERUS,
             CLICK_DIMORPHODON,
             CLICK_ARCHAEOPTERYX,
             CLICK_COMPSOGNATHUS,

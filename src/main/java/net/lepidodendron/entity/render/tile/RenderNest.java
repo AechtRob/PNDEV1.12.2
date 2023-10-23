@@ -116,14 +116,27 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                 }
             }
 
+            String creatureType = "";
+            int i = eggRenderType.indexOf("@");
+            if (i >= 1) {
+                creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
+                eggRenderType = eggRenderType.substring(0, eggRenderType.indexOf("@"));
+            }
+
             if (!eggRenderType.equalsIgnoreCase("")) {
                 EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
                 if (ee != null) {
                     Entity entityEggs = ee.newInstance(world);
                     if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
                         EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
-                        TEXTURE_EGG = entityBase.getEggTexture();
-                        eggType = entityBase.getEggType();
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
+                        }
+                        else {
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
+                        }
                         if (entityBase.isNestMound()) {
                             eggType = -1;
                         }
@@ -135,7 +148,12 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                     GlStateManager.pushMatrix();
                     GlStateManager.disableCull();
                     GlStateManager.enableRescaleNormal();
-                    GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
+                    if (world.getBlockState(pos).getValue(BlockNest.BlockCustom.BIRD)) {
+                        GlStateManager.translate(x + 0.5F, y + 1.400F, z + 0.5F);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
+                    }
                     GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
 

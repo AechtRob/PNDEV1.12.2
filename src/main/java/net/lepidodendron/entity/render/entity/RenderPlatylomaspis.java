@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraPhragmoceras;
-import net.lepidodendron.entity.EntityPrehistoricFloraPiranhamesodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlatylomaspis;
 import net.lepidodendron.entity.model.entity.ModelPlatylomaspis;
 import net.minecraft.client.renderer.GlStateManager;

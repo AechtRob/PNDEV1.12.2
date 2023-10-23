@@ -3,7 +3,6 @@ package net.lepidodendron;
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
-import net.lepidodendron.item.armor.ArmorInit;
 import net.lepidodendron.item.crafting.RecipeCookedMeatsandSeeds;
 import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
@@ -2074,23 +2073,27 @@ public class LepidodendronMod {
 	public static final int ENTITY_SINRAPTOR = 813;
 	public static final ResourceLocation SINRAPTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinraptor"));
 	public static final ResourceLocation SINRAPTOR_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinraptor_young"));
-
-	public static final int ENTITY_CHILESAURUS = 814;
-	public static final ResourceLocation CHILESAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus"));
-	public static final ResourceLocation CHILESAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus_young"));
-
+	public static final int ENTITY_ANUROGNATHID = 814;
+	public static final ResourceLocation AGNURONATHID_ANUROGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anurognathus"));
+	public static final ResourceLocation AGNURONATHID_BATRACHOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/batrachognathus"));
+	public static final ResourceLocation AGNURONATHID_CASCOCAUDA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cascocauda"));
+	public static final ResourceLocation AGNURONATHID_DENDRORHYNCHOIDES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dendrorhynchoides"));
+	public static final ResourceLocation AGNURONATHID_JEHOLOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/jeholopterus"));
+	public static final ResourceLocation AGNURONATHID_SINOMACROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinomacrops"));
 	public static final int ENTITY_LIMUSAURUS = 815;
 	public static final ResourceLocation LIMUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/limusaurus"));
 	public static final ResourceLocation LIMUSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/limusaurus_young"));
-
 	public static final int ENTITY_APATOSAURUS = 816;
 	public static final ResourceLocation APATOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/apatosaurus"));
 	public static final ResourceLocation APATOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/apatosaurus_young"));
-
 	public static final int ENTITY_CAMPTOSAURUS = 817;
 	public static final ResourceLocation CAMPTOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/camptosaurus"));
 	public static final ResourceLocation CAMPTOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/camptosaurus_young"));
+	public static final int ENTITY_CHILESAURUS = 818;
+	public static final ResourceLocation CHILESAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus"));
+	public static final ResourceLocation CHILESAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus_young"));
 
+  
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

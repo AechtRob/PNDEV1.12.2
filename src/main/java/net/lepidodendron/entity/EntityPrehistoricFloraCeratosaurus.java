@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	public int getEatTick() {return 12;}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 

@@ -1088,7 +1088,6 @@ public class AcidBathOutputMobs {
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPterodactylus.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraGuanlong.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraYi.class)).getRegistryName().toString(),
-//                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathus.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraDimorphodon.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraArchaeopteryx.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCompsognathus.class)).getRegistryName().toString(),
@@ -1103,10 +1102,15 @@ public class AcidBathOutputMobs {
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCumnoria.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraUteodon.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraSinraptor.class)).getRegistryName().toString(),
-//                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraJeholopterus.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraMiragaia.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraDorygnathus.class)).getRegistryName().toString(),
 //                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraElaphrosaurus.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathid.class)).getRegistryName().toString() + "@anurognathus",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathid.class)).getRegistryName().toString() + "@batrachognathus",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathid.class)).getRegistryName().toString() + "@cascocauda",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathid.class)).getRegistryName().toString() + "@dendrorhynchoides",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathid.class)).getRegistryName().toString() + "@jeholopterus",
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnurognathid.class)).getRegistryName().toString() + "@sinomacrops"
 
 
         };

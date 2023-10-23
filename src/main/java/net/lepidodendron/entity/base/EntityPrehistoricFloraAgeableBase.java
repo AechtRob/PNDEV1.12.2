@@ -336,7 +336,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
-    public ResourceLocation getEggTexture() {
+    public ResourceLocation getEggTexture(@Nullable String variantIn) {
         String entityString = this.getEntityString();
         entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
         ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
@@ -346,7 +346,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return resourceLocation;
     }
 
-    public int getEggType() { //0-3
+    public int getEggType(@Nullable String variantIn) { //0-3
         return 0; //Default to small eggs
     }
 
@@ -855,7 +855,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             float f = this.width;
             this.width = width;
             this.height = height;
-            if (this.width < f) {
+            if (this.width != f) {
                 double d0 = (double) width / 2.0D;
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
@@ -1424,7 +1424,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
     }
 
-    public static String getEntityId(Entity entity) {
+    public String getEntityId(Entity entity) {
         String mobid = "";
         net.minecraftforge.fml.common.registry.EntityEntry entry =
                 net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
@@ -1536,7 +1536,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
                     this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
-                    if (this.motionX != 0 || this.motionZ != 0) {
+                    if (this.motionX != 0 || this.motionZ != 0 ) {
                         this.setIsMoving(true);
                     }
                     else {
