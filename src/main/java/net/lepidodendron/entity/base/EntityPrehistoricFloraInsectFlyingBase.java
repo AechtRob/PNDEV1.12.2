@@ -47,6 +47,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
@@ -97,6 +99,17 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             }
         }
         return false;
+    }
+
+    @Override
+    public float getEyeHeight() {
+        return 0.15F;
+    }
+
+    @Override
+    public BlockPos getPosition()
+    {
+        return new BlockPos(this.posX, this.posY + this.getEyeHeight(), this.posZ);
     }
 
     @Override
@@ -437,7 +450,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             float f = this.width;
             this.width = width;
             this.height = height;
-            if (this.width < f) {
+            if (this.width != f) {
                 double d0 = (double) width / 2.0D;
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
@@ -1013,6 +1026,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
 
         public BlockPos getBennetiteTarget(boolean shorter) {
+            List<BlockPos> blockList = new ArrayList<>();
             int i = 0;
             if (shorter) {
                 i = 2;
@@ -1025,15 +1039,18 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     while (zPos <= 8 - i) {
                         if (world.getBlockState(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().add(xPos, yPos, zPos)).getBlock() instanceof IBennettites) {
                             if (shorter) {
-                                return new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3);
+                                blockList.add(new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3));
                             }
-                            return new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4);
+                            blockList.add(new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4));
                         }
                         zPos ++;
                     }
                     yPos++;
                 }
                 xPos++;
+            }
+            if (!blockList.isEmpty()) {
+                return (blockList.get(world.rand.nextInt(blockList.size())));
             }
             if (shorter) {
                 return EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.rand);

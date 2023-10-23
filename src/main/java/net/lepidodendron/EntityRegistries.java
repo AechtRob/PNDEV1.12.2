@@ -865,7 +865,7 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_chilesaurus", EntityPrehistoricFloraChilesaurus.class, LepidodendronMod.ENTITY_CHILESAURUS, 156,-12899290,-10118553);
 //        registerEntity("prehistoric_flora_limusaurus", EntityPrehistoricFloraLimusaurus.class, LepidodendronMod.ENTITY_LIMUSAURUS, 156,-12899290,-10118553);
 //        registerEntity("prehistoric_flora_elaphrosaurus", EntityPrehistoricFloraElaphrosaurus.class, LepidodendronMod.ENTITY_ELAPHROSAURUS, 156,-12899290,-10118553);
-
+        registerEntityNoEgg("prehistoric_flora_anurognathid", EntityPrehistoricFloraAnurognathid.class, LepidodendronMod.ENTITY_ANUROGNATHID, 48);
 
 
 

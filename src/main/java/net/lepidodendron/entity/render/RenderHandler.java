@@ -4851,6 +4851,12 @@ public class RenderHandler {
                 return new RenderSinraptor(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnurognathid.class, new IRenderFactory<EntityPrehistoricFloraAnurognathid>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAnurognathid> createRenderFor(RenderManager manager) {
+                return new RenderAnurognathid(manager);
+            }
+        });
         
         
         

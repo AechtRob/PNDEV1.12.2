@@ -57,46 +57,54 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
         World world = entity.getWorld();
         if (entity != null && entity.hasWorld()) {
 
+            String eggRenderType = "";
             String creatureType = "";
             TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
             if (tileEntity != null) {
                 if (tileEntity.getTileData().hasKey("creature")) {
-                    creatureType = tileEntity.getTileData().getString("creature");
-                    int i = creatureType.indexOf("@");
+                    eggRenderType = tileEntity.getTileData().getString("creature");
+                    int i = eggRenderType.indexOf("@");
                     if (i >= 1) {
-                        creatureType = creatureType.substring(0, creatureType.indexOf("@"));
+                        creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
+                        eggRenderType = eggRenderType.substring(0, eggRenderType.indexOf("@"));
                     }
                 }
             }
-            if (!creatureType.equals("")) {
-                if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
+            if (!eggRenderType.equals("")) {
+                if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
                     TEXTURE_EGG = TEXTURE_HYLONOMUS_EGG;
                     eggType = 10; //rotten wood
                 }
-                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
+                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
                     TEXTURE_EGG = TEXTURE_LABIDOSAURUS_EGG;
                     eggType = 10; //rotten wood
                 }
-                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
+                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
                     TEXTURE_EGG = TEXTURE_CASINERIA_EGG;
                     eggType = 10; //rotten wood
                 }
-                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
+                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
                     TEXTURE_EGG = TEXTURE_WEIGELTISAURUS_EGG;
                     eggType = 10; //rotten wood
                 }
-                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
+                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
                     TEXTURE_EGG = TEXTURE_CELTEDENS_EGG;
                     eggType = 10; //rotten wood
                 }
                 else {
-                    EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(creatureType));
+                    EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
                     if (ee != null) {
                         Entity entityEggs = ee.newInstance(world);
                         if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
                             EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
-                            TEXTURE_EGG = entityBase.getEggTexture();
-                            eggType = entityBase.getEggType();
+                            if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                                TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                                eggType = entityBase.getEggType(creatureType);
+                            }
+                            else {
+                                TEXTURE_EGG = entityBase.getEggTexture(null);
+                                eggType = entityBase.getEggType(null);
+                            }
                         }
                         else {
                             //Something has gone wrong!

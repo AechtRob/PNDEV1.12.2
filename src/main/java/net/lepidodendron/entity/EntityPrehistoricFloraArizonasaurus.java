@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 	//public static String getHabitat() {return "Terrestrial Archosaur";}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //medium
 	}
 

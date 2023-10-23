@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 0; //small
 	}
 

@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 0; //small
 	}
 

@@ -8,8 +8,6 @@ import net.lepidodendron.block.BlockInsectEggsDragonfly;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerDragonflyWing;
-import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
-import net.lepidodendron.entity.render.entity.RenderConodont;
 import net.lepidodendron.entity.render.entity.RenderDragonfly;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;

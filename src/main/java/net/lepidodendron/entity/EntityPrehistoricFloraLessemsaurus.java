@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 3; //huge
 	}
 

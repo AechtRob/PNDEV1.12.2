@@ -387,7 +387,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 			float f = this.width;
 			this.width = width;
 			this.height = height;
-			if (this.width < f) {
+			if (this.width != f) {
 				double d0 = (double) width / 2.0D;
 				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
 			}

@@ -9,9 +9,7 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
 import net.lepidodendron.entity.render.entity.RenderConodont;
-import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
@@ -393,7 +391,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			float f = this.width;
 			this.width = width;
 			this.height = height;
-			if (this.width < f) {
+			if (this.width != f) {
 				double d0 = (double) width / 2.0D;
 				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
 			}

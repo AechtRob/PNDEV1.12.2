@@ -90,7 +90,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	public int getEatTick() {return 12;}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //large
 	}
 
