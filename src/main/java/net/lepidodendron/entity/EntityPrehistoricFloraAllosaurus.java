@@ -51,10 +51,10 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraAllosaurus(World world) {
 		super(world);
-		setSize(1.75F, 3F);
+		setSize(1.75F, 2.3F);
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
-		maxHeight = 2F;
+		maxHeight = 2.3F;
 		maxHealthAgeable = 96.0D;
 		STAND_ANIMATION = Animation.create(110);
 		LOOK_RIGHT_ANIMATION = Animation.create(110);
@@ -285,14 +285,18 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 		//Sometimes stand up and look around:
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			int animRand = rand.nextInt(20);
+			int animRand = rand.nextInt(25);
 
 			if(animRand < 5){
 				this.setAnimation(SNIFF_ANIMATION);
-			} else if (animRand < 14){
+			} else if (animRand < 10){
 				this.setAnimation(LOOKDOWNLEFT_ANIMATION);
-			} else {
+			} else if (animRand < 15){
 				this.setAnimation(LOOKDOWNRIGHT_ANIMATION);
+			} else if (animRand < 20) {
+				this.setAnimation(LOOK_RIGHT_ANIMATION);
+			} else {
+				this.setAnimation(STAND_ANIMATION);
 			}
 
 			this.standCooldown = 3000;

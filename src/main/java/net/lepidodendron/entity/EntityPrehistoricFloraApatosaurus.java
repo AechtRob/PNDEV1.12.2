@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -52,14 +53,17 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	public Animation TAIL_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
-		setSize(5.5F, 4F);
+		setSize(4F, 4F);
 		minWidth = 0.8F;
-		maxWidth = 5.5F;
+		maxWidth = 4F;
 		maxHeight = 4F;
 		maxHealthAgeable = 200.0D;
+		TAIL_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -67,7 +71,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getWalkCycleLength() {
-		return 50;
+		return 40;
 	}
 
 	@Override
@@ -82,7 +86,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getRunCycleLength() {
-		return 30;
+		return 35;
 	}
 
 	@Override
@@ -97,7 +101,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getGrazeLength() {
-		return 106;
+		return 80;
 	}
 
 	@Override
@@ -128,6 +132,11 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TAIL_ANIMATION};
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -155,7 +164,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 60;
 	}
 
 	@Override
@@ -179,13 +188,13 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.24F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
 			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
-			|| this.getAnimation() == GRAZE_ANIMATION) {
+			|| this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == TAIL_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -493,7 +502,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(22.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(30.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -596,7 +605,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 6.00, 3.0);
+			return this.getEntityBoundingBox().grow(15.0, 15.00, 15.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -633,6 +642,26 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		//Sometimes stand up and look around:
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+
+			this.setAnimation(TAIL_ANIMATION);
+
+
+			this.standCooldown = 3000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

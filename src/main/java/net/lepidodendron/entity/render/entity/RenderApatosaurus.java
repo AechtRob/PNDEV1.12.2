@@ -16,7 +16,7 @@ public class RenderApatosaurus extends RenderLiving<EntityPrehistoricFloraApatos
     }
 
     public static float getScaler() {
-        return 0.9F;
+        return 1F;
     }
 
     @Override
