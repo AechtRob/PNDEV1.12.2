@@ -352,7 +352,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                             this.setAttachmentPos(sidePos);
                             this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
                             this.motionX = 0.0D;
-                            this.motionY = 0.0D;
+                            //this.motionY = 0.0D;
                             this.motionZ = 0.0D;
                         }
                     }
@@ -373,16 +373,16 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                     }
                     this.moveHelper.action = EntityMoveHelper.Action.WAIT;
                     if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                        this.posZ = this.getPosition().getZ() + (this.width / 2F);
+                        this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
                     }
                     if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                        this.posZ = this.getPosition().getZ() + 1 - (this.width / 2F);
+                        this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
                     }
                     if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                        this.posX = this.getPosition().getX() + (this.width / 2F);
+                        this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
                     }
                     if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                        this.posX = this.getPosition().getX() + 1 - (this.width / 2F);
+                        this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
                     }
                     this.setAttachmentPos(this.getPosition().offset(this.getAttachmentFacing()));
                     if (this.climbingpause < 0 && !this.getHeadCollided()) {
@@ -400,7 +400,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             }
 
             if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
-                if (checkFlyConditions()) {
+                if (checkFlyConditions() || rand.nextInt(3000) == 0) {
                     this.setFlying();
                 }
             }
@@ -515,6 +515,16 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                 this.motionZ *= f4;
             } else {
                 super.travel(strafe, vertical, forward);
+            }
+        }
+
+        if (!world.isRemote) {
+            if (this.getAttachmentPos() != null && this.climbingpause < 0 && !this.getHeadCollided()) {
+                this.motionY = this.getClimbSpeed();
+                //this.setIsMoving(true);
+            } else {
+                this.motionY = 0;
+                //this.setIsMoving(false);
             }
         }
 

@@ -354,8 +354,69 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setPNType(Type.byId(rand.nextInt(Type.values().length) + 1));
-		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		return livingdata;
+	}
+
+	@Override
+	public float getMaxWidth() {
+		Type type = Type.ANUROGNTHUS;
+		try {
+			type = this.getPNType();
+		}
+		catch (NullPointerException e) {
+			return ANUROGNTHUS_SIZE[0];
+		}
+		switch (type) {
+			case ANUROGNTHUS: default:
+				return ANUROGNTHUS_SIZE[0];
+
+			case BATRACHOGNATHUS:
+				return BATRACHOGNATHUS_SIZE[0];
+
+			case CASCOCAUDA:
+				return CASCOCAUDA_SIZE[0];
+
+			case DENDRORHYNCHOIDES:
+				return DENDRORHYNCHOIDES_SIZE[0];
+
+			case JEHOLOPTERUS:
+				return JEHOLOPTERUS_SIZE[0];
+
+			case SINOMACROPS:
+				return SINOMACROPS_SIZE[0];
+
+		}
+	}
+
+	@Override
+	public float getMaxHeight() {
+		Type type = Type.ANUROGNTHUS;
+		try {
+			type = this.getPNType();
+		}
+		catch (NullPointerException e) {
+			return ANUROGNTHUS_SIZE[1];
+		}
+		switch (this.getPNType()) {
+			case ANUROGNTHUS: default:
+				return ANUROGNTHUS_SIZE[1];
+
+			case BATRACHOGNATHUS:
+				return BATRACHOGNATHUS_SIZE[1];
+
+			case CASCOCAUDA:
+				return CASCOCAUDA_SIZE[1];
+
+			case DENDRORHYNCHOIDES:
+				return DENDRORHYNCHOIDES_SIZE[1];
+
+			case JEHOLOPTERUS:
+				return JEHOLOPTERUS_SIZE[1];
+
+			case SINOMACROPS:
+				return SINOMACROPS_SIZE[1];
+
+		}
 	}
 
 	@Override
@@ -374,20 +435,6 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	protected void setSizer(float width, float height)
-	{
-		if (width != this.width || height != this.height)
-		{
-			float f = this.width;
-			this.width = width;
-			this.height = height;
-			if (this.width != f) {
-				double d0 = (double) width / 2.0D;
-				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-			}
-		}
 	}
 
 	@Override
