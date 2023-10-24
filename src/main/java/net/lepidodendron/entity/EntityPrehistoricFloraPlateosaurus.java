@@ -626,9 +626,9 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.GLACIALISAURUS_LOOT_YOUNG;
+			return LepidodendronMod.PLATEOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.GLACIALISAURUS_LOOT;
+		return LepidodendronMod.PLATEOSAURUS_LOOT;
 	}
 
 }
