@@ -58,15 +58,67 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
-		setSize(4F, 4F);
+		setSize(3.0F, 6F);
 		minWidth = 0.8F;
-		maxWidth = 4F;
-		maxHeight = 4F;
+		maxWidth = 3.0F;
+		maxHeight = 6F;
 		maxHealthAgeable = 200.0D;
 		TAIL_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean isInWater() {
+		if (!this.world.isBlockLoaded(this.getPosition())) {
+			return false;
+		}
+		//Is in water if there are at least 5 blocks of water above it
+		if (this.world.isAirBlock(this.getPosition())) {return false;}
+		IBlockState state = this.world.getBlockState(this.getPosition());
+		IBlockState stateU1 = this.world.getBlockState(this.getPosition().up());
+		IBlockState stateU2 = this.world.getBlockState(this.getPosition().up(2));
+		IBlockState stateU3 = this.world.getBlockState(this.getPosition().up(3));
+		IBlockState stateU4 = this.world.getBlockState(this.getPosition().up(4));
+		IBlockState stateU5 = this.world.getBlockState(this.getPosition().up(5));
+		return (this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL) || state.getMaterial() == Material.WATER)
+				&& (stateU1.getMaterial() == Material.WATER)
+				&& (stateU2.getMaterial() == Material.WATER)
+				&& (stateU3.getMaterial() == Material.WATER)
+				&& (stateU4.getMaterial() == Material.WATER)
+				&& (stateU5.getMaterial() == Material.WATER);
+	}
+
+	@Override
+	public boolean isReallyInWater() { //is actually in water at all
+		return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
+	}
+
+	@Override
+	public boolean isSwimmingInWater() { //is actually in water at all
+		if (!this.world.isBlockLoaded(this.getPosition())) {
+			return false;
+		}
+		BlockPos pos = new BlockPos(this.getPosition().getX() + 0.5, this.getPosition().getY() + this.getEyeHeight(), this.getPosition().getZ() + 0.5);
+		IBlockState state = this.world.getBlockState(this.getPosition());
+		IBlockState stateU1 = this.world.getBlockState(this.getPosition().up());
+		IBlockState stateU2 = this.world.getBlockState(this.getPosition().up(2));
+		IBlockState stateU3 = this.world.getBlockState(this.getPosition().up(3));
+		IBlockState stateU4 = this.world.getBlockState(this.getPosition().up(4));
+		IBlockState stateU5 = this.world.getBlockState(this.getPosition().up(5));
+		return (this.world.getBlockState(pos).getMaterial() == Material.WATER
+				&& (state.getMaterial() == Material.WATER || state.getMaterial() == Material.CORAL)
+				&& (stateU1.getMaterial() == Material.WATER || stateU1.getMaterial() == Material.CORAL)
+				&& (stateU2.getMaterial() == Material.WATER || stateU2.getMaterial() == Material.CORAL)
+				&& (stateU3.getMaterial() == Material.WATER || stateU3.getMaterial() == Material.CORAL)
+				&& (stateU4.getMaterial() == Material.WATER || stateU4.getMaterial() == Material.CORAL)
+				&& (stateU5.getMaterial() == Material.WATER || stateU5.getMaterial() == Material.CORAL));
+
+//		return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL)
+//				|| (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
+//				&& !this.onGround)
+//		);
 	}
 
 	@Override
@@ -325,6 +377,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			//&& !this.getIsMoving()
 			&& this.DRINK_ANIMATION.getDuration() > 0
 			&& this.getAnimation() == NO_ANIMATION
+			&& this.onGround
 			&& !this.isReallyInWater()
 			&&
 			(
@@ -674,6 +727,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_APATOSAURUS;
 	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {

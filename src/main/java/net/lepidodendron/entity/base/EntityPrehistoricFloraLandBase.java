@@ -164,12 +164,13 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         
         if (this.drinksWater()) {
             boolean test = (this.getPFDrinking() <= 0
-                    && !world.isRemote
-                    && !this.getIsFast()
+                    && (!world.isRemote)
+                    && (!this.getIsFast())
                     //&& !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
-                    && !this.isReallyInWater()
+                    && this.onGround
+                    && (!this.isReallyInWater())
                     &&
                         (this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.WATER
                         || this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.WATER
@@ -204,13 +205,14 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             //Is GRAZING!
             EnumFacing facing = this.getAdjustedHorizontalFacing();
             boolean test = (this.getPFDrinking() <= 0
-                    && !world.isRemote
-                    && !this.getIsFast()
+                    && (!world.isRemote)
+                    && (!this.getIsFast())
                     //&& !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
-                    && !this.isReallyInWater()
-                    && !this.world.getBlockState(entityPos.offset(facing)).causesSuffocation()
+                    && this.onGround
+                    && (!this.isReallyInWater())
+                    && (!this.world.getBlockState(entityPos.offset(facing)).causesSuffocation())
                     && (this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GROUND
                     || this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GRASS)
             );
@@ -610,7 +612,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.world.profiler.startSection("jump");
 
         if (this.isJumping) {
-            if (this.isReallyInWater() && this.jumpTicks == 0) {
+            if (this.isInWater() && this.jumpTicks == 0) {
                 this.jump();
                 this.jumpTicks = 10;
             } else if (this.isInLava()) {
@@ -757,7 +759,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             double yy = this.posY + Math.max((this.getSwimHeight() - 0.2), 0.1);
             BlockPos posEyes = new BlockPos(this.posX, yy, this.posZ);
 
-            if (this.isReallyInWater() &&
+            if (this.isInWater() &&
                     (world.getBlockState(posEyes).getMaterial() == Material.WATER
                         || world.getBlockState(posEyes).getMaterial() == Material.LAVA
                         || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
@@ -767,7 +769,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             }
 
 
-            if (this.isReallyInWater()) { //Is in water
+            if (this.isInWater()) { //Is in water
                 //System.err.println("Is in water");
                 this.moveRelative(strafe, vertical, forward, 0.1F);
                 f4 = 0.8F;

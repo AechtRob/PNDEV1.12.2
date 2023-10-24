@@ -117,11 +117,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         SoundType soundtype = null;
         SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
         SoundEvent soundeventSnow = SoundEvents.BLOCK_SNOW_STEP;
+        SoundEvent soundeventWater = SoundEvents.ENTITY_PLAYER_SWIM;
         if (this.world.getBlockState(pos).getBlock() == Blocks.SNOW_LAYER
             || this.world.getBlockState(pos.down()).getBlock() == Blocks.SNOW)
         {
             soundtype = Blocks.SNOW_LAYER.getSoundType();
             this.getEntityWorld().playSound(null, this.getPosition(), soundeventSnow, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+        else if (this.world.getBlockState(pos).getBlock() == Blocks.WATER)
+        {
+            soundtype = Blocks.WATER.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundeventWater, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
         }
         else if (!blockIn.getDefaultState().getMaterial().isLiquid())
         {
@@ -1456,8 +1462,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             while (xct <= 4) {
                 zct = -4;
                 while (zct <= 4) {
-                    if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
-                        return false;
+                    if (world.isBlockLoaded(this.getPosition().add(xct, yct, zct))) {
+                        if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
+                            return false;
+                        }
                     }
                     zct += 1;
                 }

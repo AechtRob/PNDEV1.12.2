@@ -70,6 +70,9 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
             }
             i++;
         }
+        if (!this.entity.world.isBlockLoaded(target)) {
+            return false;
+        }
         Material material = this.entity.world.getBlockState(new BlockPos(target)).getMaterial();
         Material material1 = this.entity.world.getBlockState(new BlockPos(target).up()).getMaterial();
         return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) &&  this.entity.getAttachmentPos() == null;
@@ -104,8 +107,10 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
             while (yPos <= 4) {
                 int zPos = -16;
                 while (zPos <= 16) {
-                    if (this.entity.world.getBlockState(this.entity.getPosition().add(xPos, yPos, zPos)).getBlock().isWood(entity.world, this.entity.getPosition().add(xPos, yPos, zPos))) {
-                        blockList.add(new BlockPos(this.entity.getPosition().getX() + xPos + this.entity.getRNG().nextInt(17) - 8, this.entity.getPosition().getY() + yPos + this.entity.getRNG().nextInt(17) - 8, this.entity.getPosition().getZ() + zPos + this.entity.getRNG().nextInt(17) - 8));
+                    if (this.entity.world.isBlockLoaded(this.entity.getPosition().add(xPos, yPos, zPos))) {
+                        if (this.entity.world.getBlockState(this.entity.getPosition().add(xPos, yPos, zPos)).getBlock().isWood(entity.world, this.entity.getPosition().add(xPos, yPos, zPos))) {
+                            blockList.add(new BlockPos(this.entity.getPosition().getX() + xPos + this.entity.getRNG().nextInt(17) - 8, this.entity.getPosition().getY() + yPos + this.entity.getRNG().nextInt(17) - 8, this.entity.getPosition().getZ() + zPos + this.entity.getRNG().nextInt(17) - 8));
+                        }
                     }
                     zPos ++;
                 }

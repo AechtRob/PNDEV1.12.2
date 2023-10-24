@@ -159,16 +159,19 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
 //            double Zoffset = this.PrehistoricFloraAmphibianBase.posZ - this.entity.getPosition().getZ();
             for (int i = 0; i < 64; i++) {
                 Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2));
-                if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                    break; //This pos is not suitable
-                }
-                boolean visibility = true;
-                if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
-                    visibility = this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z));
-                }
-                if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && visibility) {
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                if (this.PrehistoricFloraAmphibianBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
+                        break; //This pos is not suitable
+                    }
+
+                    boolean visibility = true;
+                    if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
+                        visibility = this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z));
+                    }
+                    if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && visibility) {
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

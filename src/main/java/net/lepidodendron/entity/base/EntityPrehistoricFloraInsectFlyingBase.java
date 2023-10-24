@@ -1020,6 +1020,9 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             else {
                 target = EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.rand);
             }
+            if (!world.isBlockLoaded(target)) {
+                return false;
+            }
             Material material = world.getBlockState(new BlockPos(target)).getMaterial();
             Material material1 = world.getBlockState(new BlockPos(target).up()).getMaterial();
             return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) && !EntityPrehistoricFloraInsectFlyingBase.this.isSitting() && EntityPrehistoricFloraInsectFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target).add(0.5D, 0.5D, 0.5D)) && EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(4) == 0 && EntityPrehistoricFloraInsectFlyingBase.this.getAttachmentPos() == null;

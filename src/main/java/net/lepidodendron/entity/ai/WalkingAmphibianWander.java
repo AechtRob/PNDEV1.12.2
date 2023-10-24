@@ -150,28 +150,31 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
         if (this.PrehistoricFloraWalkingAmphibianBase.getAttackTarget() == null) {
             for (int i = 0; i < dist; i++) {
                 Vec3d randPos = this.PrehistoricFloraWalkingAmphibianBase.getPositionVector().add(rand.nextInt(dist) - (int) (dist/2), rand.nextInt(dist) - (int) (dist/2), rand.nextInt(dist) - (int) (dist/2));
-                //Use targets which are at the bottom:
-                if (!(randPos.y < 1 || randPos.y >= 254)) {
-                    randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
-                }
-                Vec3d randPosVar = randPos;
-                if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
-                    int ii = 0;
-                    while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                        randPosVar = randPos.add(0, -ii, 0);
-                        ii = ii + 1;
-                    }
-                    randPos = randPosVar;
-                }
+                if (this.PrehistoricFloraWalkingAmphibianBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    //Use targets which are at the bottom:
 
-                if (this.maxDepth > 0 & isTooDeep(new BlockPos(randPos))) {
-                    break; //This pos is not suitable
-                }
-                //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER) {
-                    //System.err.println("Target :" + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
                     if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                        randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                    }
+                    Vec3d randPosVar = randPos;
+                    if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
+                        int ii = 0;
+                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                            randPosVar = randPos.add(0, -ii, 0);
+                            ii = ii + 1;
+                        }
+                        randPos = randPosVar;
+                    }
+
+                    if (this.maxDepth > 0 & isTooDeep(new BlockPos(randPos))) {
+                        break; //This pos is not suitable
+                    }
+                    //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
+                    if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER) {
+                        //System.err.println("Target :" + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }
@@ -251,10 +254,12 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
             while ((yct <= distV) && (!waterCriteria)) {
                 zct = -distH;
                 while ((zct <= distH) && (!waterCriteria)) {
-                    if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int) distH,2)) && ((e.world.getBlockState(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))).getMaterial() == Material.WATER)) {
-                        waterCriteria = true;
-                        //System.err.println("start target: " + (pos.getX()) + " " +  (pos.getY()) + " " + (pos.getZ()));
-                        //System.err.println("water at: " + (pos.getX() + xct) + " " +  (pos.getY() + yct) + " " + (pos.getZ() + zct));
+                    if (e.world.isBlockLoaded(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))) {
+                        if ((Math.pow((int) Math.abs(xct), 2) + Math.pow((int) Math.abs(zct), 2) <= Math.pow((int) distH, 2)) && ((e.world.getBlockState(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))).getMaterial() == Material.WATER)) {
+                            waterCriteria = true;
+                            //System.err.println("start target: " + (pos.getX()) + " " +  (pos.getY()) + " " + (pos.getZ()));
+                            //System.err.println("water at: " + (pos.getX() + xct) + " " +  (pos.getY() + yct) + " " + (pos.getZ() + zct));
+                        }
                     }
                     zct = zct + 1;
                 }

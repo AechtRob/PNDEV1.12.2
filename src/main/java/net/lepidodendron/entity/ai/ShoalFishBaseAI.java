@@ -86,8 +86,10 @@ public class ShoalFishBaseAI extends EntityAIBase {
     public BlockPos getOffsetTarget(World world, Vec3d vec3d) {
         BlockPos blockpos = new BlockPos(vec3d);
         blockpos = blockpos.add(rand.nextInt(3) - 1, rand.nextInt(3) - 1, rand.nextInt(3) - 1);
-        if (world.getBlockState(blockpos).getMaterial() == Material.WATER && this.entity.isDirectPathBetweenPoints(this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
-            return blockpos;
+        if (world.isBlockLoaded(blockpos)) {
+            if (world.getBlockState(blockpos).getMaterial() == Material.WATER && this.entity.isDirectPathBetweenPoints(this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
+                return blockpos;
+            }
         }
         return null;
     }

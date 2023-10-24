@@ -580,22 +580,39 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
     }
 
     @Override
+    public void faceTarget(float yaw, float pitch, float rotationDivisor, AdvancedModelRenderer... boxes) {
+        //Overidden as the model is kinda twisted for some reason
+        float actualRotationDivisor = rotationDivisor * (float)boxes.length;
+        float yawAmount = yaw / 57.295776F / actualRotationDivisor;
+        float pitchAmount = pitch / 57.295776F / actualRotationDivisor;
+        AdvancedModelRenderer[] var8 = boxes;
+        int var9 = boxes.length;
+
+        for(int var10 = 0; var10 < var9; ++var10) {
+            AdvancedModelRenderer box = var8[var10];
+            box.rotateAngleZ -= yawAmount; //would normally be Y
+            box.rotateAngleY += pitchAmount; //would normally be X
+        }
+
+    }
+
+    @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
        // this.Hips.offsetY = 0.04F;
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraApatosaurus europa = (EntityPrehistoricFloraApatosaurus) e;
+        EntityPrehistoricFloraApatosaurus apato = (EntityPrehistoricFloraApatosaurus) e;
 
-        this.faceTarget(f4, f4, 6, neck1);
-        this.faceTarget(f4, f4, 6, neck2);
-        this.faceTarget(f4, f4, 6, neck3);
-        this.faceTarget(f4, f4, 4, neck4);
-        this.faceTarget(f4, f4, 4, neck5);
-        this.faceTarget(f4, f4, 4, neck6);
-       // this.faceTarget(f3, f4, 4, head);
+        this.faceTarget(f3, f4, 6, neck1);
+        this.faceTarget(f3, f4, 6, neck2);
+        this.faceTarget(f3, f4, 6, neck3);
+        this.faceTarget(f3, f4, 4, neck4);
+        this.faceTarget(f3, f4, 4, neck5);
+        this.faceTarget(f3, f4, 4, neck6);
+        this.faceTarget(f3, f4, 4, head);
 
-        boolean isBaby = europa.getJuvenile();
+        boolean isBaby = apato.getJuvenile();
 
         if (isBaby) {
             this.neck4.scaleChildren = true;
@@ -619,20 +636,20 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] ArmL = {this.leftarm, this.leftarm2, this.leftarm3};
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 
-        europa.tailBuffer.applyChainSwingBuffer(Tail);
-        float masterSpeed = europa.getTravelSpeed()/2;
+        apato.tailBuffer.applyChainSwingBuffer(Tail);
+        float masterSpeed = apato.getTravelSpeed()/2;
 
-            if (!europa.isReallyInWater()) {
+            if (!apato.isInWater()) {
 
-                if (f3 == 0.0F || !europa.getIsMoving()) {
-                    if (europa.getAnimation() != europa.EAT_ANIMATION
-                        && europa.getAnimation() != europa.DRINK_ANIMATION
-                        && europa.getAnimation() != europa.ATTACK_ANIMATION) {
+                if (f3 == 0.0F || !apato.getIsMoving()) {
+                    if (apato.getAnimation() != apato.EAT_ANIMATION
+                        && apato.getAnimation() != apato.DRINK_ANIMATION
+                        && apato.getAnimation() != apato.ATTACK_ANIMATION) {
                         this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                     }
 
-                    if (europa.getAnimation() != europa.ATTACK_ANIMATION) {
+                    if (apato.getAnimation() != apato.ATTACK_ANIMATION) {
                         this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
                         this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
                         this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
@@ -641,7 +658,7 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (europa.getIsFast()) { //Running
+                if (apato.getIsFast()) { //Running
                     float speed = masterSpeed / 2F;
                     this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
                     this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
@@ -669,7 +686,7 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraApatosaurus ee = (EntityPrehistoricFloraApatosaurus) entitylivingbaseIn;
 
-        if (!ee.isReallyInWater()) {
+        if (!ee.isInWater()) {
             if (ee.getIsMoving() && ee.getAnimation() != ee.ATTACK_ANIMATION) {
                 if (ee.getIsFast()) { //Running
                     animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);

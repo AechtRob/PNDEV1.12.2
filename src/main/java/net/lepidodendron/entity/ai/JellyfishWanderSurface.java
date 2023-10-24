@@ -95,18 +95,21 @@ public class JellyfishWanderSurface extends AnimationAINoAnimation<EntityPrehist
         if (this.PrehistoricFloraJellyfishBase.getAttackTarget() == null) {
             for (int i = 0; i < 12; i++) {
                 Vec3d randPos = this.PrehistoricFloraJellyfishBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(3) - 1, rand.nextInt(17) - 8);
-                boolean surfaceCheck = false;
-                if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(new BlockPos(randPos).up())) {
-                    surfaceCheck = true;
-                }
-                if (!surfaceCheck) {
-                    IBlockState state = this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).up());
-                    if (state.getMaterial() != Material.WATER) {
+                if (this.PrehistoricFloraJellyfishBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    boolean surfaceCheck = false;
+
+                    if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(new BlockPos(randPos).up())) {
                         surfaceCheck = true;
                     }
-                }
-                if (surfaceCheck) {
-                    return randPos;
+                    if (!surfaceCheck) {
+                        IBlockState state = this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).up());
+                        if (state.getMaterial() != Material.WATER) {
+                            surfaceCheck = true;
+                        }
+                    }
+                    if (surfaceCheck) {
+                        return randPos;
+                    }
                 }
             }
         } else {

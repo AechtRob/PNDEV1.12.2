@@ -105,24 +105,27 @@ public class NautiloidWanderSurface extends AnimationAINoAnimation<EntityPrehist
         if (this.PrehistoricFloraNautiloidBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraNautiloidBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
-                //Prefer targets which are at the top:
-                Vec3d randPosVar = randPos;
-                if (this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtTop(new BlockPos(randPos)) && Math.random() < 0.90) {
-                    int ii = 0;
-                    while ((new BlockPos(randPos).up(ii).getY() > 1) && this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos).up(ii)).getMaterial() == Material.WATER) {
-                        randPosVar = randPos.add(0, -ii,0);
-                        ii = ii + 1;
-                    }
-                    //About half the time float over the block:
-                    randPos = randPosVar;
-                    if (Math.random() > 0.5) {
-                        randPos = randPosVar.add(0,1,0);
-                    }
-                }
+                if (this.PrehistoricFloraNautiloidBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    //Prefer targets which are at the top:
 
-                if (this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraNautiloidBase.isDirectPathBetweenPoints(this.PrehistoricFloraNautiloidBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                    Vec3d randPosVar = randPos;
+                    if (this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtTop(new BlockPos(randPos)) && Math.random() < 0.90) {
+                        int ii = 0;
+                        while ((new BlockPos(randPos).up(ii).getY() > 1) && this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos).up(ii)).getMaterial() == Material.WATER) {
+                            randPosVar = randPos.add(0, -ii, 0);
+                            ii = ii + 1;
+                        }
+                        //About half the time float over the block:
+                        randPos = randPosVar;
+                        if (Math.random() > 0.5) {
+                            randPos = randPosVar.add(0, 1, 0);
+                        }
+                    }
+
+                    if (this.PrehistoricFloraNautiloidBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraNautiloidBase.isDirectPathBetweenPoints(this.PrehistoricFloraNautiloidBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

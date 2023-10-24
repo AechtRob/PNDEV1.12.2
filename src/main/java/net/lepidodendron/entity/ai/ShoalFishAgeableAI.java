@@ -94,8 +94,10 @@ public class ShoalFishAgeableAI extends EntityAIBase {
             || this.entity instanceof EntityPrehistoricFloraEurypteridBase
         ) {
             blockpos = blockpos.add(rand.nextInt(3) - 1, rand.nextInt(3) - 1, rand.nextInt(3) - 1);
-            if (world.getBlockState(blockpos).getMaterial() == Material.WATER && ShoalingHelper.isDirectPathBetweenPoints(world, this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
-                return blockpos;
+            if (world.isBlockLoaded(blockpos)) {
+                if (world.getBlockState(blockpos).getMaterial() == Material.WATER && ShoalingHelper.isDirectPathBetweenPoints(world, this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
+                    return blockpos;
+                }
             }
         }
         return null;
