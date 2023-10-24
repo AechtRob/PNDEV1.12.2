@@ -307,7 +307,7 @@ public class ModelCascocauda extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraAnurognathid ee = (EntityPrehistoricFloraAnurognathid) entitylivingbaseIn;
 
-        if (ee.getIsMoving() && ee.getFlyProgress() != 0 && ee.getAttachmentPos() == null ) {
+        if (ee.getAttachmentPos() == null ) {
             //animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
         else if (!ee.getHeadCollided() && ee.getAttachmentPos() != null) {
@@ -330,7 +330,7 @@ public class ModelCascocauda extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] tailFull = {this.tail, this.tail2, this.tail3};
 
         EntityPrehistoricFloraAnurognathid entityAnurognathid = (EntityPrehistoricFloraAnurognathid) e;
-        if (entityAnurognathid.getIsMoving() && entityAnurognathid.getFlyProgress() != 0 && entityAnurognathid.getAttachmentPos() == null) {
+        if (entityAnurognathid.getAttachmentPos() == null) {
             //flight pose
             this.setRotateAngle(main, -0.0436F, 0.0F, 0.0F);
             this.setRotateAngle(leftwing, -0.0436F, -0.3927F, 0.0436F);

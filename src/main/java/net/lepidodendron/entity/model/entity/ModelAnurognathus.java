@@ -317,7 +317,7 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraAnurognathid ee = (EntityPrehistoricFloraAnurognathid) entitylivingbaseIn;
 
-        if (ee.getIsMoving() && ee.getFlyProgress() != 0 && ee.getAttachmentPos() == null ) {
+        if (ee.getAttachmentPos() == null ) {
             //animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
         else if (!ee.getHeadCollided() && ee.getAttachmentPos() != null) {
@@ -340,7 +340,7 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] tailFull = {this.tail, this.tail2};
 
         EntityPrehistoricFloraAnurognathid entityAnurognathid = (EntityPrehistoricFloraAnurognathid) e;
-        if (entityAnurognathid.getIsMoving() && entityAnurognathid.getFlyProgress() != 0 && entityAnurognathid.getAttachmentPos() == null) {
+        if (entityAnurognathid.getAttachmentPos() == null) {
             //flight pose
             this.setRotateAngle(main, -0.2182F, 0.0F, 0.0F);
             this.setRotateAngle(upperbody, 0.2182F, 0.0F, 0.0F);

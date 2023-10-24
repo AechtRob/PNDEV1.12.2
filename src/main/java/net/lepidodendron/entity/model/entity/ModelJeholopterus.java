@@ -361,8 +361,8 @@ public class ModelJeholopterus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraAnurognathid ee = (EntityPrehistoricFloraAnurognathid) entitylivingbaseIn;
 
-        if (ee.getIsMoving() && ee.getFlyProgress() != 0 && ee.getAttachmentPos() == null ) {
-            animFlight(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        if (ee.getAttachmentPos() == null ) {
+            //animFlight(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
         else if (!ee.getHeadCollided() && ee.getAttachmentPos() != null) {
             animClimb(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
@@ -375,8 +375,16 @@ public class ModelJeholopterus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
+        AdvancedModelRenderer[] wingLeft = {this.leftwing, this.leftwing2, this.leftwing3, this.leftwing4};
+        AdvancedModelRenderer[] wingRight = {this.rightwing, this.rightwing2, this.rightwing3, this.rightwing4};
+
+        AdvancedModelRenderer[] legLeft = {this.leftleg, this.leftleg2, this.leftleg3};
+        AdvancedModelRenderer[] legRight = {this.rightleg, this.rightleg2, this.rightleg3};
+
+        AdvancedModelRenderer[] tailFull = {this.tail, this.tail2};
+
         EntityPrehistoricFloraAnurognathid entityAnurognathid = (EntityPrehistoricFloraAnurognathid) e;
-        if (entityAnurognathid.getIsMoving() && entityAnurognathid.getFlyProgress() != 0 && entityAnurognathid.getAttachmentPos() == null) {
+        if (entityAnurognathid.getAttachmentPos() == null) {
             //flight pose
             this.setRotateAngle(leftwing, -0.0873F, -0.0436F, 0.0873F);
             this.setRotateAngle(leftwing3, 0.0F, 2.8362F, 0.0F);
@@ -404,117 +412,36 @@ public class ModelJeholopterus extends AdvancedModelBaseExtended {
             this.setRotateAngle(eye2, 0.08F, -0.4243F, -0.0971F);
             this.setRotateAngle(eye, 0.08F, 0.4243F, 0.0971F);
 
-            //And then do the main anim:
+            float speed = 1.20F;
+            float fixedY = 0; //The standard offset to centre the mob
+
+            //Animations:
+            this.chainFlap(wingLeft, speed, 0.35F, 0.3F, f2, 1F);
+            this.chainFlap(wingRight, speed, -0.35F, -0.3F, f2, 1F);
+
+            this.swing(leftwing3, speed, 0.4F, false, 2.0F, 0.12F, f2, 1F);
+            this.swing(rightwing3, speed, -0.4F, false, 2.0F, -0.12F, f2, 1F);
+
+            this.swing(leftwing, speed, 0.10F, false, 2.0F, 0.08F, f2, 1F);
+            this.swing(rightwing, speed, -0.10F, false, 2.0F, -0.08F, f2, 1F);
+
+            float floatMoveZ = this.moveBoxExtended(speed * 0.3F, 0.25F, false, 4, f2, 1);
+            this.main.offsetZ = floatMoveZ;
+            float floatMoveY = this.moveBoxExtended(speed * 0.4F, 0.50F, false, 4, f2, 1);
+            this.main.offsetY = (floatMoveY) + fixedY;
+
+            this.chainWaveExtended(legLeft, speed, 0.055F, 0.1F, 0F, f2, 1F);
+            this.chainWaveExtended(legRight, speed, -0.055F, -0.1F, 3F, f2, 1F);
+            this.chainWave(tailFull, speed * 0.5F, 0.02F, 0.5F, f2, 1F);
+            this.chainSwing(tailFull, speed * 0.5F, 0.15F, 2.0F, f2, 1F);
+
         }
         else {
 
         }
 
-
         this.faceTarget(f3, f4, 8, neck);
         this.faceTarget(f3, f4, 8, head);
-    }
-
-    public void animFlight(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraAnurognathid entity = (EntityPrehistoricFloraAnurognathid) entitylivingbaseIn;
-
-        int animCycle = 160;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
-        double xx = 0;
-        double yy = 0;
-        double zz = 0;
-        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-60))*5), main.rotateAngleY + (float) Math.toRadians(0), main.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180*1.5))*5));
-        this.main.rotationPointX = this.main.rotationPointX + (float)(0);
-        this.main.rotationPointY = this.main.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+90))*-0.5);
-        this.main.rotationPointZ = this.main.rotationPointZ + (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90*1.5))*-2);
-
-
-        this.setRotateAngle(rightwing, rightwing.rotateAngleX + (float) Math.toRadians(2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+90))*20), rightwing.rotateAngleY + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+60))*-10), rightwing.rotateAngleZ + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*-30));
-        this.rightwing.rotationPointX = this.rightwing.rotationPointX + (float)(0);
-        this.rightwing.rotationPointY = this.rightwing.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*0.5);
-        this.rightwing.rotationPointZ = this.rightwing.rotationPointZ + (float)(0);
-
-
-        this.setRotateAngle(rightmembranearm, rightmembranearm.rotateAngleX + (float) Math.toRadians(0), rightmembranearm.rotateAngleY + (float) Math.toRadians(0), rightmembranearm.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(rightwing2, rightwing2.rotateAngleX + (float) Math.toRadians(0), rightwing2.rotateAngleY + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+120))*10), rightwing2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-60))*-20));
-
-
-        this.setRotateAngle(rightmembranemiddle, rightmembranemiddle.rotateAngleX + (float) Math.toRadians(0), rightmembranemiddle.rotateAngleY + (float) Math.toRadians(0), rightmembranemiddle.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(rightwing3, rightwing3.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-60))*2.5), rightwing3.rotateAngleY + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+60))*-10), rightwing3.rotateAngleZ + (float) Math.toRadians(-20+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*-30));
-
-
-        this.setRotateAngle(rightmembrane, rightmembrane.rotateAngleX + (float) Math.toRadians(0), rightmembrane.rotateAngleY + (float) Math.toRadians(0), rightmembrane.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(rightwing4, rightwing4.rotateAngleX + (float) Math.toRadians(0), rightwing4.rotateAngleY + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*-5), rightwing4.rotateAngleZ + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*20));
-
-
-        this.setRotateAngle(rightmembraneend, rightmembraneend.rotateAngleX + (float) Math.toRadians(0), rightmembraneend.rotateAngleY + (float) Math.toRadians(0), rightmembraneend.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(leftwing, leftwing.rotateAngleX + (float) Math.toRadians(2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+90))*20), leftwing.rotateAngleY + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+60))*10), leftwing.rotateAngleZ + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*30));
-        this.leftwing.rotationPointX = this.leftwing.rotationPointX + (float)(0);
-        this.leftwing.rotationPointY = this.leftwing.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*1);
-        this.leftwing.rotationPointZ = this.leftwing.rotationPointZ + (float)(0);
-
-
-        this.setRotateAngle(leftmembranearm, leftmembranearm.rotateAngleX + (float) Math.toRadians(0), leftmembranearm.rotateAngleY + (float) Math.toRadians(0), leftmembranearm.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(0), leftwing2.rotateAngleY + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+120))*-10), leftwing2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-60))*20));
-
-
-        this.setRotateAngle(leftmembranemiddle, leftmembranemiddle.rotateAngleX + (float) Math.toRadians(0), leftmembranemiddle.rotateAngleY + (float) Math.toRadians(0), leftmembranemiddle.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(leftwing3, leftwing3.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-60))*2.5), leftwing3.rotateAngleY + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+60))*10), leftwing3.rotateAngleZ + (float) Math.toRadians(20+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*30));
-
-
-        this.setRotateAngle(leftmembrane, leftmembrane.rotateAngleX + (float) Math.toRadians(0), leftmembrane.rotateAngleY + (float) Math.toRadians(0), leftmembrane.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(leftwing4, leftwing4.rotateAngleX + (float) Math.toRadians(0), leftwing4.rotateAngleY + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*5), leftwing4.rotateAngleZ + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*-20));
-
-
-        this.setRotateAngle(leftmembraneend, leftmembraneend.rotateAngleX + (float) Math.toRadians(0), leftmembraneend.rotateAngleY + (float) Math.toRadians(0), leftmembraneend.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+30))*-7.5), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180*1.5))*-2.5));
-
-
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+150))*-5), neck2.rotateAngleY + (float) Math.toRadians(0), neck2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180*1.5))*-2.5));
-
-
-        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+90))*10), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180*1.5))*2.5), jaw.rotateAngleY + (float) Math.toRadians(0), jaw.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-60))*-5), tail.rotateAngleY + (float) Math.toRadians(0), tail.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(leftleg, leftleg.rotateAngleX + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*-5), leftleg.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-150))*-10), leftleg.rotateAngleZ + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*10));
-        this.leftleg.rotationPointX = this.leftleg.rotationPointX + (float)(0);
-        this.leftleg.rotationPointY = this.leftleg.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*-0.5);
-        this.leftleg.rotationPointZ = this.leftleg.rotationPointZ + (float)(0);
-
-
-        this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+30))*5), leftleg2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*-5), leftleg2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+30))*-5));
-
-
-        this.setRotateAngle(rightleg, rightleg.rotateAngleX + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*-5), rightleg.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-150))*10), rightleg.rotateAngleZ + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5))*-10));
-        this.rightleg.rotationPointX = this.rightleg.rotationPointX + (float)(0);
-        this.rightleg.rotationPointY = this.rightleg.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*-0.5);
-        this.rightleg.rotationPointZ = this.rightleg.rotationPointZ + (float)(0);
-
-
-        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+30))*5), rightleg2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5-90))*5), rightleg2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720*1.5+30))*5));
-
     }
 
     public void animClimb(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {

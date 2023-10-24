@@ -18,11 +18,15 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
 
     public LandClimbingFlyingBaseWanderFlightAI(EntityPrehistoricFloraLandClimbingFlyingBase creatureIn) {
         this.entity = creatureIn;
-        this.setMutexBits(1);
+        this.setMutexBits(8);
     }
 
     public boolean shouldExecute() {
         if (this.entity.getEatTarget() != null) {
+            return false;
+        }
+
+        if (this.entity.getRevengeTarget() != null) {
             return false;
         }
 
@@ -68,7 +72,7 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
         }
         Material material = this.entity.world.getBlockState(new BlockPos(target)).getMaterial();
         Material material1 = this.entity.world.getBlockState(new BlockPos(target).up()).getMaterial();
-        return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) && !this.entity.isSitting() && this.entity.isDirectPathBetweenPoints(new Vec3d(target).add(0.5D, 0.5D, 0.5D)) && this.entity.getAttachmentPos() == null;
+        return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) &&  this.entity.getAttachmentPos() == null;
     }
 
     public boolean shouldContinueExecuting() {
@@ -84,7 +88,7 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
             if (!this.entity.isFlying()) {
                 this.entity.selectNavigator();
             }
-            this.entity.getMoveHelper().setMoveTo((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 0.25D);
+            this.entity.getMoveHelper().setMoveTo((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 1D);
             if (this.entity.getAttackTarget() == null) {
                 this.entity.getLookHelper().setLookPosition((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 180.0F, 20.0F);
 

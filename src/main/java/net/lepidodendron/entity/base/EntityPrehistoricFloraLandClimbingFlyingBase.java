@@ -115,6 +115,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setHeadCollided(false);
+        this.climbingpause = -99 + rand.nextInt(200);
         return livingdata;
     }
 
@@ -130,6 +131,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setHeadCollided(compound.getBoolean("headcollided"));
+        this.climbingpause = compound.getInteger("climbingpause");
         this.dataManager.set(SIT_FACE, EnumFacing.byIndex(compound.getByte("SitFace")));
         this.sitCooldown = compound.getInteger("SitCooldown");
         this.setTickOffset(compound.getInteger("TickOffset"));
@@ -147,6 +149,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
         compound.setBoolean("headcollided", this.getHeadCollided());
+        compound.setInteger("climbingpause", climbingpause);
         compound.setBoolean("Sitting", this.isSitting);
         compound.setByte("SitFace", (byte) this.dataManager.get(SIT_FACE).getIndex());
         BlockPos blockpos = this.getAttachmentPos();
@@ -414,7 +417,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                     sitProgress = 0F;
             }
 
-            if (!this.isMovementBlockedSoft() && this.getAttachmentPos() == null) {
+            if (this.getAttachmentPos() == null) {
                 //Entity eatTarget = this.getEatTarget();
                 //if (eatTarget != null) {
                 //    if (eatTarget.posY > this.posZ) {
@@ -426,7 +429,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                         || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.LAVA) {
                     this.motionY += 0.12D;
                 } else {
-                    this.motionY += 0.072D;
+                    //this.motionY += 0.022D;
                 }
                 //}
             } else {
@@ -442,6 +445,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             }
             if (this.climbingpause < -100) {
                 this.climbingpause = 100;
+            }
+        }
+
+        if (world.isRemote && this.getAttachmentPos() != null) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                rotationYaw = 180;
+            } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                rotationYaw = 270;
+            } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                rotationYaw = 0;
+            } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                rotationYaw = 90;
             }
         }
     }
@@ -460,11 +475,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     @Override
     public boolean isMovementBlocked() {
-        return isSitting();
-    }
-
-    public boolean isMovementBlockedSoft() {
-        return isMovementBlocked() ;
+        return this.getAttachmentPos() != null || this.collidedHorizontally;
     }
 
     public ResourceLocation FlightSound() {
