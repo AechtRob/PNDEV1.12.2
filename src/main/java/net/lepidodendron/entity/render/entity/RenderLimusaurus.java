@@ -16,7 +16,7 @@ public class RenderLimusaurus extends RenderLiving<EntityPrehistoricFloraLimusau
     }
 
     public static float getScaler() {
-        return 0.9F;
+        return 0.3636F;
     }
 
     @Override
