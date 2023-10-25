@@ -665,7 +665,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 	@Override
 	public AxisAlignedBB getAttackBoundingBox() {
-		return this.getEntityBoundingBox().grow(0.25F, 1.0F, 0.25F);
+		return this.getEntityBoundingBox().grow(0.5F, 2.0F, 0.5F);
 	}
 
 	@Override
