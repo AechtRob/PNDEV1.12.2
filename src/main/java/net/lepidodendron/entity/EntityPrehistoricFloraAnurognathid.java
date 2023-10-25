@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		minWidth = 0.10F;
 		maxWidth = getHitBoxSize()[0];
 		maxHeight = getHitBoxSize()[1];
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 6.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}
@@ -424,7 +424,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		super.onLivingUpdate();
 		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
@@ -572,6 +572,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(Math.floor(this.getHitBoxSize()[0] * 15F));
 		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
@@ -659,6 +661,20 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		tasks.addTask(6, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+	}
+
+	@Override
+	public AxisAlignedBB getAttackBoundingBox() {
+		return this.getEntityBoundingBox().grow(0.25F, 1.0F, 0.25F);
+	}
+
+	@Override
+	public boolean attackEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
+			//System.err.println("set attack");
+		}
+		return false;
 	}
 
 	@Override

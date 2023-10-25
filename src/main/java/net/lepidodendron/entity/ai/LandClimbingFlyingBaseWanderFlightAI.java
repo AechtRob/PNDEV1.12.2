@@ -18,7 +18,7 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
 
     public LandClimbingFlyingBaseWanderFlightAI(EntityPrehistoricFloraLandClimbingFlyingBase creatureIn) {
         this.entity = creatureIn;
-        this.setMutexBits(8);
+        this.setMutexBits(1);
     }
 
     public boolean shouldExecute() {
