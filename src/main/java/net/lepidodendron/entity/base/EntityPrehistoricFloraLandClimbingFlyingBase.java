@@ -2,7 +2,6 @@ package net.lepidodendron.entity.base;
 
 import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -10,7 +9,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -48,9 +46,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private EntityItem eatTarget;
-    public Animation ATTACK_ANIMATION;
-    public Animation LAY_ANIMATION;
     private int inPFLove;
     private int climbingpause;
 
