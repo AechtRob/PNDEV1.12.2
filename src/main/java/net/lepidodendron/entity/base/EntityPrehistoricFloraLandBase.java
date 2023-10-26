@@ -65,13 +65,19 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public EntityPrehistoricFloraLandBase(World world) {
         super(world);
         if (world != null) {
-            //this.setPathPriority(PathNodeType.WATER, -1.0F);
             if (this.isSwimmingInWater() && this.canSwim()) {
-                this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
-                this.navigator = new PathNavigateSwimmerTopLayer(this, world);
-            } else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
-                this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
-                this.navigator = new PathNavigateGroundNoWater(this, world);
+                if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.SwimmingMoveHelper))
+                        || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
+                    this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
+                    this.navigator = new PathNavigateSwimmerTopLayer(this, world);
+                }
+            }
+            else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
+                if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.WanderMoveHelper))
+                        || (!(this.navigator instanceof PathNavigateGroundNoWater))) {
+                    this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateGroundNoWater(this, world);
+                }
             }
             if (FMLCommonHandler.instance().getSide().isClient()) {
                 this.chainBuffer = new ChainBuffer();

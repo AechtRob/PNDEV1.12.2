@@ -9,7 +9,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -46,7 +46,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter {
 	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraApatosaurus.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
@@ -55,6 +55,8 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	public ChainBuffer tailBuffer;
 	public Animation TAIL_ANIMATION;
 	private int standCooldown;
+	public int ambientSoundTime;
+	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
@@ -67,58 +69,23 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		NOISE_ANIMATION = Animation.create(40);
 	}
 
 	@Override
-	public boolean isInWater() {
-		if (!this.world.isBlockLoaded(this.getPosition())) {
-			return false;
+	public int wadeDepth() {
+		return 5;
+	}
+
+	@Override
+	protected float getJumpUpwardsMotion() {
+		if (this.isInWater()) {
+			return super.getJumpUpwardsMotion() * 1.5F;
 		}
-		//Is in water if there are at least 5 blocks of water above it
-		if (this.world.isAirBlock(this.getPosition())) {return false;}
-		IBlockState state = this.world.getBlockState(this.getPosition());
-		IBlockState stateU1 = this.world.getBlockState(this.getPosition().up());
-		IBlockState stateU2 = this.world.getBlockState(this.getPosition().up(2));
-		IBlockState stateU3 = this.world.getBlockState(this.getPosition().up(3));
-		IBlockState stateU4 = this.world.getBlockState(this.getPosition().up(4));
-		IBlockState stateU5 = this.world.getBlockState(this.getPosition().up(5));
-		return (this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL) || state.getMaterial() == Material.WATER)
-				&& (stateU1.getMaterial() == Material.WATER)
-				&& (stateU2.getMaterial() == Material.WATER)
-				&& (stateU3.getMaterial() == Material.WATER)
-				&& (stateU4.getMaterial() == Material.WATER)
-				&& (stateU5.getMaterial() == Material.WATER);
-	}
-
-	@Override
-	public boolean isReallyInWater() { //is actually in water at all
-		return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER) || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
-	}
-
-	@Override
-	public boolean isSwimmingInWater() { //is actually in water at all
-		if (!this.world.isBlockLoaded(this.getPosition())) {
-			return false;
+		if (this.isReallyInWater()) {
+			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		BlockPos pos = new BlockPos(this.getPosition().getX() + 0.5, this.getPosition().getY() + this.getEyeHeight(), this.getPosition().getZ() + 0.5);
-		IBlockState state = this.world.getBlockState(this.getPosition());
-		IBlockState stateU1 = this.world.getBlockState(this.getPosition().up());
-		IBlockState stateU2 = this.world.getBlockState(this.getPosition().up(2));
-		IBlockState stateU3 = this.world.getBlockState(this.getPosition().up(3));
-		IBlockState stateU4 = this.world.getBlockState(this.getPosition().up(4));
-		IBlockState stateU5 = this.world.getBlockState(this.getPosition().up(5));
-		return (this.world.getBlockState(pos).getMaterial() == Material.WATER
-				&& (state.getMaterial() == Material.WATER || state.getMaterial() == Material.CORAL)
-				&& (stateU1.getMaterial() == Material.WATER || stateU1.getMaterial() == Material.CORAL)
-				&& (stateU2.getMaterial() == Material.WATER || stateU2.getMaterial() == Material.CORAL)
-				&& (stateU3.getMaterial() == Material.WATER || stateU3.getMaterial() == Material.CORAL)
-				&& (stateU4.getMaterial() == Material.WATER || stateU4.getMaterial() == Material.CORAL)
-				&& (stateU5.getMaterial() == Material.WATER || stateU5.getMaterial() == Material.CORAL));
-
-//		return (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL)
-//				|| (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
-//				&& !this.onGround)
-//		);
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -185,7 +152,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TAIL_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TAIL_ANIMATION};
 	}
 
 	@Override
@@ -256,11 +223,6 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public int getTalkInterval() {
-		return 80;
-	}
-
-	@Override
 	public int getAdultAge() {
 		return 128000;
 	}
@@ -284,12 +246,12 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		//tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.5D, 0, this.wadeDepth()));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this));
@@ -303,15 +265,11 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.PLANTS);
 	}
-
-
-	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
 	}
-
 
 	//TODO override to allow targeting water for drinking, currently targets grass
 	@Override
@@ -561,9 +519,23 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getTalkInterval() {
+		return 1000;
+	}
+
+	public int getAmbientTalkInterval() {
+		return 300;
+	}
+
+	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_roar"));
+	}
+
+	public SoundEvent getAmbientAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:apatosaurus_idle"));
 	}
 
 	@Override
@@ -713,6 +685,20 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		if (this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
+		}
+
+		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
+		{
+			this.ambientSoundTime = -this.getAmbientTalkInterval();
+			SoundEvent soundevent = this.getAmbientAmbientSound();
+			if (soundevent != null)
+			{
+				if (this.getAnimation() == NO_ANIMATION) {
+					this.setAnimation(NOISE_ANIMATION);
+					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
 		}
 
 	}

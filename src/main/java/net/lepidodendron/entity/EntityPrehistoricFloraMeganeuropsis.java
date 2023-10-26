@@ -335,8 +335,10 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 					}
 				}
 			}
-			if (!world.isBlockLoaded(target)) {
-				return false;
+			if (target != null) {
+				if (!world.isBlockLoaded(target)) {
+					return false;
+				}
 			}
 			target = EntityPrehistoricFloraMeganeuropsis.getPositionRelativetoGround(EntityPrehistoricFloraMeganeuropsis.this, EntityPrehistoricFloraMeganeuropsis.this.world, EntityPrehistoricFloraMeganeuropsis.this.posX + EntityPrehistoricFloraMeganeuropsis.this.rand.nextInt(17) - 8, EntityPrehistoricFloraMeganeuropsis.this.posZ + EntityPrehistoricFloraMeganeuropsis.this.rand.nextInt(17) - 8, EntityPrehistoricFloraMeganeuropsis.this.rand);
 			Material material = world.getBlockState(new BlockPos(target)).getMaterial();

@@ -70,8 +70,10 @@ public class LandClimbingFlyingBaseWanderFlightAI extends EntityAIBase {
             }
             i++;
         }
-        if (!this.entity.world.isBlockLoaded(target)) {
-            return false;
+        if (target != null) {
+            if (!this.entity.world.isBlockLoaded(target)) {
+                return false;
+            }
         }
         Material material = this.entity.world.getBlockState(new BlockPos(target)).getMaterial();
         Material material1 = this.entity.world.getBlockState(new BlockPos(target).up()).getMaterial();
