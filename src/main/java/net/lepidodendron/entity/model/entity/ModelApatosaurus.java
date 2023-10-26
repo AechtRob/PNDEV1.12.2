@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
 public class ModelApatosaurus extends AdvancedModelBaseExtended {
-    private final AdvancedModelRenderer root;
+    public final AdvancedModelRenderer root;
     private final AdvancedModelRenderer hip;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -565,11 +565,17 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        this.root.render(f);
         resetToDefaultPose();
     }
 
