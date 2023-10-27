@@ -34,10 +34,9 @@ public class EntityMateAIAgeableBase extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        //Lay eggs perhaps:
         if (this.animal instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.animal;
-            if (LandBase.isAnimationDirectionLocked(this.animal.getAnimation())) {
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 return false;
             }
         }

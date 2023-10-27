@@ -23,7 +23,7 @@ public class LandWanderFollowParent extends EntityAIBase
     {
         if (this.childAnimal instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.childAnimal;
-            if (LandBase.isAnimationDirectionLocked(this.childAnimal.getAnimation())) {
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 return false;
             }
         }

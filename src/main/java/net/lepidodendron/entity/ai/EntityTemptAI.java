@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -49,15 +48,10 @@ public class EntityTemptAI extends EntityAIBase
         if (this.temptedEntity.getEatTarget() != null) {
             return false;
         }
+
         if (this.temptedEntity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.temptedEntity;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
-                return false;
-            }
-        }
-        if (this.temptedEntity instanceof EntityPrehistoricFloraPlateosaurus) {
-            EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.temptedEntity;
-            if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
+            if (landbase.isAnimationDirectionLocked(landbase.getAnimation())) {
                 return false;
             }
         }
