@@ -85,7 +85,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		return livingdata;
 	}
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 
@@ -626,9 +626,9 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.GLACIALISAURUS_LOOT_YOUNG;
+			return LepidodendronMod.PLATEOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.GLACIALISAURUS_LOOT;
+		return LepidodendronMod.PLATEOSAURUS_LOOT;
 	}
 
 }

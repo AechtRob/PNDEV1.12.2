@@ -7703,5 +7703,156 @@
         "stream": false
       }
     ]
+  },
+
+  "anurognathid_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anurognathid_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_living07",
+        "stream": false
+      }
+    ]
+  },
+  "anurognathid_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anurognathid_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "anurognathid_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anurognathid_death",
+        "stream": false
+      }
+    ]
+  },
+  "anurognathid_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anurognathid_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_alarm04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anurognathid_alarm05",
+        "stream": false
+      }
+    ]
+  },
+  
+  "apatosaurus_idle": {
+  "sounds": [
+    {
+      "name": "lepidodendron:apatosaurus_rumble01",
+      "stream": false
+    },
+    {
+      "name": "lepidodendron:apatosaurus_rumble02",
+      "stream": false
+    },
+    {
+      "name": "lepidodendron:apatosaurus_rumble03",
+      "stream": false
+    }
+  ]
+},
+  "apatosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:apatosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "apatosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:apatosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "apatosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:apatosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_roar03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:apatosaurus_living05",
+        "stream": false
+      }
+    ]
   }
+
 }

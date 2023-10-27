@@ -215,7 +215,7 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
             }
             else
             {
-                if (pathpoint == null && p_186332_4_ > 0 && pathnodetype != PathNodeType.FENCE && pathnodetype != PathNodeType.TRAPDOOR)
+                if (pathpoint == null && p_186332_4_ > 0 && (pathnodetype != PathNodeType.FENCE || p_186332_4_ > 1) && (pathnodetype != PathNodeType.TRAPDOOR || p_186332_4_ > 1))
                 {
                     pathpoint = this.getSafePoint(x, y + 1, z, p_186332_4_ - 1, p_186332_5_, facing);
 
@@ -355,10 +355,10 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
                         pathnodetype = PathNodeType.BLOCKED;
                     }
 
-                    if (pathnodetype == PathNodeType.RAIL && !(p_193577_1_.getBlockState(p_193577_12_).getBlock() instanceof BlockRailBase) && !(p_193577_1_.getBlockState(p_193577_12_.down()).getBlock() instanceof BlockRailBase))
-                    {
-                        pathnodetype = PathNodeType.FENCE;
-                    }
+//                    if (pathnodetype == PathNodeType.RAIL && !(p_193577_1_.getBlockState(p_193577_12_).getBlock() instanceof BlockRailBase) && !(p_193577_1_.getBlockState(p_193577_12_.down()).getBlock() instanceof BlockRailBase))
+//                    {
+//                        pathnodetype = PathNodeType.FENCE;
+//                    }
 
                     if (i == 0 && j == 0 && k == 0)
                     {
@@ -539,7 +539,19 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
             }
             else
             {
-                return PathNodeType.FENCE;
+//                Edit to allow jumpers to jump on fences:
+                if (this.entity != null) {
+//                    if (this.entity.stepHeight == 2) {
+//                        Block blockUp = worldIn.getBlockState(blockpos.up()).getBlock();
+//                        return blockUp.isPassable(worldIn, blockpos.up()) ? PathNodeType.OPEN : PathNodeType.FENCE;
+//                    } else {
+                        return PathNodeType.FENCE;
+//                    }
+                }
+                else {
+                    return PathNodeType.FENCE;
+
+                }
             }
         }
         else

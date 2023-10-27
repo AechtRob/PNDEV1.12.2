@@ -11,13 +11,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class PathNavigateGroundAndShallowWater extends PathNavigate
+public class PathNavigateGroundWade extends PathNavigate
 {
     private boolean shouldAvoidSun;
 
-    public PathNavigateGroundAndShallowWater(EntityLiving entity, World worldIn)
+    public PathNavigateGroundWade(EntityLiving entitylivingIn, World worldIn)
     {
-        super(entity, worldIn);
+        super(entitylivingIn, worldIn);
     }
 
     protected PathFinder getPathFinder()
@@ -39,11 +39,17 @@ public class PathNavigateGroundAndShallowWater extends PathNavigate
 
     public Path getPathToPos(BlockPos pos)
     {
-        if (this.world.getBlockState(pos).getMaterial() == Material.AIR)
+        if (
+                (this.world.getBlockState(pos).getMaterial() == Material.AIR)
+                        || (this.world.getBlockState(pos).getMaterial() == Material.WATER)
+        )
         {
             BlockPos blockpos;
 
-            for (blockpos = pos.down(); blockpos.getY() > 0 && this.world.getBlockState(blockpos).getMaterial() == Material.AIR; blockpos = blockpos.down())
+            for (blockpos = pos.down(); blockpos.getY() > 0 &&
+                    (this.world.getBlockState(blockpos).getMaterial() == Material.AIR
+                            || this.world.getBlockState(blockpos).getMaterial() == Material.WATER)
+                    ; blockpos = blockpos.down())
             {
                 ;
             }
@@ -53,7 +59,8 @@ public class PathNavigateGroundAndShallowWater extends PathNavigate
                 return super.getPathToPos(blockpos.up());
             }
 
-            while (blockpos.getY() < this.world.getHeight() && this.world.getBlockState(blockpos).getMaterial() == Material.AIR)
+            while (blockpos.getY() < this.world.getHeight() && (this.world.getBlockState(blockpos).getMaterial() == Material.AIR
+                    || this.world.getBlockState(blockpos).getMaterial() == Material.WATER))
             {
                 blockpos = blockpos.up();
             }
@@ -235,10 +242,10 @@ public class PathNavigateGroundAndShallowWater extends PathNavigate
                     {
                         PathNodeType pathnodetype = this.nodeProcessor.getPathNodeType(this.world, k, y - 1, l, this.entity, sizeX, sizeY, sizeZ, true, true);
 
-                        if (pathnodetype == PathNodeType.WATER)
-                        {
-                            return false;
-                        }
+                        //if (pathnodetype == PathNodeType.WATER)
+                        //{
+                        //    return false;
+                        //}
 
                         if (pathnodetype == PathNodeType.LAVA)
                         {

@@ -27,6 +27,10 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.maxDistance = maxDistance;
         this.chance = 0.02F;
         this.setMutexBits(2);
+        /**
+         * nospin is set to true only for certain things which must not look around unless they are walking,
+         * typically some lizards which have to freeze in place when not moving
+         */
         this.noSpin = false;
     }
 

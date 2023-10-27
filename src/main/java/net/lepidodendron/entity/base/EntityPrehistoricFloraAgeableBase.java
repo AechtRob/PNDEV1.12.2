@@ -117,11 +117,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         SoundType soundtype = null;
         SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
         SoundEvent soundeventSnow = SoundEvents.BLOCK_SNOW_STEP;
+        SoundEvent soundeventWater = SoundEvents.ENTITY_PLAYER_SWIM;
         if (this.world.getBlockState(pos).getBlock() == Blocks.SNOW_LAYER
             || this.world.getBlockState(pos.down()).getBlock() == Blocks.SNOW)
         {
             soundtype = Blocks.SNOW_LAYER.getSoundType();
             this.getEntityWorld().playSound(null, this.getPosition(), soundeventSnow, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+        else if (this.world.getBlockState(pos).getBlock() == Blocks.WATER)
+        {
+            soundtype = Blocks.WATER.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundeventWater, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
         }
         else if (!blockIn.getDefaultState().getMaterial().isLiquid())
         {
@@ -216,7 +222,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @SideOnly(Side.CLIENT)
     public AxisAlignedBB getRenderBoundingBox()
     {
-        if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+        if (LepidodendronConfig.renderBigMobsProperly && (this.getMaxWidth() * this.getAgeScale()) > 1F) {
             return this.getEntityBoundingBox().grow(1.0, 0.25, 1.0);
         }
         return this.getEntityBoundingBox();
@@ -336,7 +342,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
-    public ResourceLocation getEggTexture() {
+    public ResourceLocation getEggTexture(@Nullable String variantIn) {
         String entityString = this.getEntityString();
         entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
         ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
@@ -346,7 +352,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return resourceLocation;
     }
 
-    public int getEggType() { //0-3
+    public int getEggType(@Nullable String variantIn) { //0-3
         return 0; //Default to small eggs
     }
 
@@ -844,7 +850,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         //System.err.println("AgeScale: " + this.getAgeScale());
         //System.err.println("width: " + (this.getAgeScale() * this.maxWidth));
         //System.err.println("height: " + (this.getAgeScale() * this.maxHeight));
-        this.setSizer(this.getAgeScale() * this.maxWidth, this.getAgeScale() * this.maxHeight);
+        this.setSizer(this.getAgeScale() * this.getMaxWidth(), this.getAgeScale() * this.getMaxHeight());
+    }
+
+    public float getMaxWidth() {
+        return this.maxWidth;
+    }
+
+    public float getMaxHeight() {
+        return this.maxHeight;
     }
 
     //Taken from the Entity class, not the EntityAgeable class
@@ -855,7 +869,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             float f = this.width;
             this.width = width;
             this.height = height;
-            if (this.width < f) {
+            if (this.width != f) {
                 double d0 = (double) width / 2.0D;
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
@@ -867,7 +881,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.getAgeTicks() >= this.getAdultAge()) {
             return 1F;
         }
-        return Math.max((this.minWidth/this.maxWidth), (step * (float)this.getAgeTicks()));
+        return Math.max((this.minWidth/this.getMaxWidth()), (step * (float)this.getAgeTicks()));
     }
 
     //@Override
@@ -1424,7 +1438,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
     }
 
-    public static String getEntityId(Entity entity) {
+    public String getEntityId(Entity entity) {
         String mobid = "";
         net.minecraftforge.fml.common.registry.EntityEntry entry =
                 net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
@@ -1448,8 +1462,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             while (xct <= 4) {
                 zct = -4;
                 while (zct <= 4) {
-                    if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
-                        return false;
+                    if (world.isBlockLoaded(this.getPosition().add(xct, yct, zct))) {
+                        if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
+                            return false;
+                        }
                     }
                     zct += 1;
                 }
@@ -1536,7 +1552,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
                     this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
-                    if (this.motionX != 0 || this.motionZ != 0) {
+                    if (this.motionX != 0 || this.motionZ != 0 ) {
                         this.setIsMoving(true);
                     }
                     else {

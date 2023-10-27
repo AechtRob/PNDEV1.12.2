@@ -105,24 +105,27 @@ public class FishWanderSurface extends AnimationAINoAnimation<EntityPrehistoricF
         if (this.PrehistoricFloraFishBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraFishBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
-                //Prefer targets which are at the top:
-                Vec3d randPosVar = randPos;
-                if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtTop(new BlockPos(randPos)) && Math.random() < 0.90) {
-                    int ii = 0;
-                    while ((new BlockPos(randPos).up(ii).getY() > 1) && this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos).up(ii)).getMaterial() == Material.WATER) {
-                        randPosVar = randPos.add(0, ii,0);
-                        ii = ii + 1;
-                    }
+                if (this.PrehistoricFloraFishBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    //Prefer targets which are at the top:
+
+                    Vec3d randPosVar = randPos;
+                    if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtTop(new BlockPos(randPos)) && Math.random() < 0.90) {
+                        int ii = 0;
+                        while ((new BlockPos(randPos).up(ii).getY() > 1) && this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos).up(ii)).getMaterial() == Material.WATER) {
+                            randPosVar = randPos.add(0, ii, 0);
+                            ii = ii + 1;
+                        }
 //                    //About half the time float over the block:
 //                    randPos = randPosVar;
 //                    if (Math.random() > 0.5) {
 //                        randPos = randPosVar.up();
 //                    }
-                }
+                    }
 
-                if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraFishBase.isDirectPathBetweenPoints(this.PrehistoricFloraFishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                    if (this.PrehistoricFloraFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraFishBase.isDirectPathBetweenPoints(this.PrehistoricFloraFishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

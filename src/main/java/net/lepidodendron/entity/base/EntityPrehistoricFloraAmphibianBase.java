@@ -429,7 +429,10 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
             while ((yct <= distV) && (!waterCriteria)) {
                 zct = -distH;
                 while ((zct <= distH) && (!waterCriteria)) {
-                    if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int) distH,2)) && ((e.world.getBlockState(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))).getMaterial() == Material.WATER)) {
+                    if (!world.isBlockLoaded(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))) {
+                        waterCriteria = true;
+                    }
+                    else if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int) distH,2)) && ((e.world.getBlockState(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))).getMaterial() == Material.WATER)) {
                         waterCriteria = true;
                     }
                     zct = zct + 1;

@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraPlacerias extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //medium
 	}
 

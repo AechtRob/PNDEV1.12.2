@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderAmmonite_Perisphinctes;
-import net.lepidodendron.entity.render.entity.RenderSteurbautichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.entities.ItemNautiloidEggsPerisphinctes;

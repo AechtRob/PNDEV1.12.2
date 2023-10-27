@@ -106,31 +106,34 @@ public class TrilobiteWanderSwimWaterColumn extends AnimationAINoAnimation<Entit
         if (this.PrehistoricFloraTrilobiteSwimBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraTrilobiteSwimBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
-                //Prefer targets which are on the bottom, or very close to it:
-                Vec3d randPosVar = randPos;
-                if (Math.random() > 0.95) { //5% chance of targeting the bottom!
-                    if (this.PrehistoricFloraTrilobiteSwimBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
-                        int ii = 0;
-                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTrilobiteSwimBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.add(0,-ii,0);
-                            ii = ii + 1;
-                        }
-                        if (Math.random() > 0.08) {
-                            randPos = randPosVar;
-                        } else {
-                            if (Math.random() > 0.33) {
-                                randPos = randPosVar.add(0,1,0);
+                if (this.PrehistoricFloraTrilobiteSwimBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    //Prefer targets which are on the bottom, or very close to it:
+
+                    Vec3d randPosVar = randPos;
+                    if (Math.random() > 0.95) { //5% chance of targeting the bottom!
+                        if (this.PrehistoricFloraTrilobiteSwimBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos))) {
+                            int ii = 0;
+                            while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTrilobiteSwimBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                                randPosVar = randPos.add(0, -ii, 0);
+                                ii = ii + 1;
+                            }
+                            if (Math.random() > 0.08) {
+                                randPos = randPosVar;
                             } else {
-                                randPos = randPosVar.add(0,2,0);
+                                if (Math.random() > 0.33) {
+                                    randPos = randPosVar.add(0, 1, 0);
+                                } else {
+                                    randPos = randPosVar.add(0, 2, 0);
+                                }
                             }
                         }
                     }
-                }
 
-                //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraTrilobiteSwimBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTrilobiteSwimBase.isDirectPathBetweenPoints(this.PrehistoricFloraTrilobiteSwimBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                    //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
+                    if (this.PrehistoricFloraTrilobiteSwimBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTrilobiteSwimBase.isDirectPathBetweenPoints(this.PrehistoricFloraTrilobiteSwimBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

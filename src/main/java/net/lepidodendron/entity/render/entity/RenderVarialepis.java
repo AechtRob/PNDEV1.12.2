@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraVachonisia;
 import net.lepidodendron.entity.EntityPrehistoricFloraVarialepis;
 import net.lepidodendron.entity.model.entity.ModelVarialepis;
 import net.minecraft.client.renderer.GlStateManager;

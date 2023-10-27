@@ -65,13 +65,19 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public EntityPrehistoricFloraLandBase(World world) {
         super(world);
         if (world != null) {
-            //this.setPathPriority(PathNodeType.WATER, -1.0F);
             if (this.isSwimmingInWater() && this.canSwim()) {
-                this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
-                this.navigator = new PathNavigateSwimmerTopLayer(this, world);
-            } else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
-                this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
-                this.navigator = new PathNavigateGroundNoWater(this, world);
+                if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.SwimmingMoveHelper))
+                        || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
+                    this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
+                    this.navigator = new PathNavigateSwimmerTopLayer(this, world);
+                }
+            }
+            else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
+                if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.WanderMoveHelper))
+                        || (!(this.navigator instanceof PathNavigateGroundNoWater))) {
+                    this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateGroundNoWater(this, world);
+                }
             }
             if (FMLCommonHandler.instance().getSide().isClient()) {
                 this.chainBuffer = new ChainBuffer();
@@ -83,8 +89,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     }
 
     public boolean isAnimationDirectionLocked(Animation animation) {
-        //If it must not rotate or change its look angle while it is happening
-        //This is used primarily to stop certain AI for pathfinding or targeting happening
+         /**
+         * If it must not pathfind, rotate or change its look angle while it is happening
+         * This is used primarily to stop certain AI for pathfinding or targeting happening
+         */
         return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION;
     }
 
@@ -164,12 +172,13 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         
         if (this.drinksWater()) {
             boolean test = (this.getPFDrinking() <= 0
-                    && !world.isRemote
-                    && !this.getIsFast()
+                    && (!world.isRemote)
+                    && (!this.getIsFast())
                     //&& !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
-                    && !this.isReallyInWater()
+                    && this.onGround
+                    && (!this.isReallyInWater())
                     &&
                         (this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.WATER
                         || this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.WATER
@@ -204,13 +213,14 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             //Is GRAZING!
             EnumFacing facing = this.getAdjustedHorizontalFacing();
             boolean test = (this.getPFDrinking() <= 0
-                    && !world.isRemote
-                    && !this.getIsFast()
+                    && (!world.isRemote)
+                    && (!this.getIsFast())
                     //&& !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
-                    && !this.isReallyInWater()
-                    && !this.world.getBlockState(entityPos.offset(facing)).causesSuffocation()
+                    && this.onGround
+                    && (!this.isReallyInWater())
+                    && (!this.world.getBlockState(entityPos.offset(facing)).causesSuffocation())
                     && (this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GROUND
                     || this.world.getBlockState(entityPos.offset(facing).down()).getMaterial() == Material.GRASS)
             );
@@ -610,7 +620,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.world.profiler.startSection("jump");
 
         if (this.isJumping) {
-            if (this.isReallyInWater() && this.jumpTicks == 0) {
+            if (this.isInWater() && this.jumpTicks == 0) {
                 this.jump();
                 this.jumpTicks = 10;
             } else if (this.isInLava()) {
@@ -757,7 +767,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             double yy = this.posY + Math.max((this.getSwimHeight() - 0.2), 0.1);
             BlockPos posEyes = new BlockPos(this.posX, yy, this.posZ);
 
-            if (this.isReallyInWater() &&
+            if (this.isInWater() &&
                     (world.getBlockState(posEyes).getMaterial() == Material.WATER
                         || world.getBlockState(posEyes).getMaterial() == Material.LAVA
                         || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
@@ -767,7 +777,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             }
 
 
-            if (this.isReallyInWater()) { //Is in water
+            if (this.isInWater()) { //Is in water
                 //System.err.println("Is in water");
                 this.moveRelative(strafe, vertical, forward, 0.1F);
                 f4 = 0.8F;
@@ -987,7 +997,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
                 float turn = (EntityBase.getMaxTurnDistancePerTick());
                 float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
-                if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION) {
+                if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION
+                        && this.EntityBase.getIsMoving()) {
                     this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
                 }
                 //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
@@ -1057,7 +1068,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION) {
+                if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION
+                    && this.EntityBase.getIsMoving()) {
                     this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 20.0F);
                 }
                 float speed = getAISpeedSwimmingLand();

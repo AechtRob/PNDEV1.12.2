@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.ai;
 
+import net.lepidodendron.entity.EntityPrehistoricFloraAnurognathid;
 import net.lepidodendron.entity.EntityPrehistoricFloraDryosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraSuminia;
 import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
@@ -48,6 +49,10 @@ public class PanicScreamAI extends EntityAIBase
                 if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
                     ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(false);
                 }
+                if (this.creature instanceof EntityPrehistoricFloraAnurognathid) {
+                    ((EntityPrehistoricFloraAnurognathid) this.creature).setScreaming(false);
+                    //((EntityPrehistoricFloraAnurognathid) this.creature).setFlying();
+                }
             }
             return false;
         }
@@ -71,6 +76,10 @@ public class PanicScreamAI extends EntityAIBase
                     }
                     if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
                         ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(true);
+                    }
+                    if (this.creature instanceof EntityPrehistoricFloraAnurognathid) {
+                        ((EntityPrehistoricFloraAnurognathid) this.creature).setScreaming(true);
+                        ((EntityPrehistoricFloraAnurognathid) this.creature).setFlying();
                     }
 
                     return true;
@@ -103,6 +112,10 @@ public class PanicScreamAI extends EntityAIBase
             }
             if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
                 ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(true);
+            }
+            if (this.creature instanceof EntityPrehistoricFloraAnurognathid) {
+                ((EntityPrehistoricFloraAnurognathid) this.creature).setScreaming(true);
+                ((EntityPrehistoricFloraAnurognathid) this.creature).setFlying();
             }
 
             return true;

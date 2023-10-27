@@ -1,7 +1,7 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockSinoherba;
 import net.lepidodendron.block.BlockSinocarpus;
+import net.lepidodendron.block.BlockSinoherba;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

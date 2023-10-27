@@ -2,6 +2,7 @@ package net.lepidodendron.entity.util;
 
 import com.google.common.collect.Sets;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -391,27 +392,35 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
             if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER
                 && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z)).getMaterial() == Material.WATER) {
                 if (entity != null) {
-                    if (entity.width > 1) {
-                        if (
-                                blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(-1, y - 1, z + 1)).getMaterial() == Material.WATER
-
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 2, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 2, z)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 2, z + 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z + 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 2, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 2, z)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(-1, y - 2, z + 1)).getMaterial() == Material.WATER
-                        ) {
+                    if (entity instanceof EntityPrehistoricFloraLandWadingBase) {
+                        EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) entity;
+                        if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z))) {
                             pathnodetype = PathNodeType.BLOCKED;
+                        }
+                    }
+                    else {
+                        if (entity.width > 1) {
+                            if (
+                                    blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(-1, y - 1, z + 1)).getMaterial() == Material.WATER
+
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 2, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 2, z)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 2, z + 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z + 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 2, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 2, z)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(-1, y - 2, z + 1)).getMaterial() == Material.WATER
+                            ) {
+                                pathnodetype = PathNodeType.BLOCKED;
+                            }
                         }
                     }
                 }

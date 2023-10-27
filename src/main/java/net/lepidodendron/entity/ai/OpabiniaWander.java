@@ -100,19 +100,22 @@ public class OpabiniaWander extends AnimationAINoAnimation<EntityPrehistoricFlor
         if (this.PrehistoricFloraOpabinia.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraOpabinia.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(12) - 6, rand.nextInt(17) - 8);
-                Vec3d randPosVar = randPos;
-                //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraOpabinia.getPosition().getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraOpabinia.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraOpabinia.isDirectPathBetweenPoints(this.PrehistoricFloraOpabinia.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                    if (this.PrehistoricFloraOpabinia.isHungry()) {
-                        int ii = 0;
-                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraOpabinia.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.add(0,-ii,0);
-                            ii = ii + 1;
+                if (this.PrehistoricFloraOpabinia.world.isBlockLoaded(new BlockPos(randPos))) {
+                    Vec3d randPosVar = randPos;
+
+                    //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraOpabinia.getPosition().getY() + " " + randPos.getZ());
+                    if (this.PrehistoricFloraOpabinia.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraOpabinia.isDirectPathBetweenPoints(this.PrehistoricFloraOpabinia.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        if (this.PrehistoricFloraOpabinia.isHungry()) {
+                            int ii = 0;
+                            while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraOpabinia.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                                randPosVar = randPos.add(0, -ii, 0);
+                                ii = ii + 1;
+                            }
+                            randPos = randPosVar;
                         }
-                        randPos = randPosVar;
-                    }
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

@@ -37,12 +37,8 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public boolean shouldExecute()
     {
-
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
-                return false;
-            }
+        if (entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
+            return false;
         }
 
         if (!(entity.getAISpeedLand() > 0)) {

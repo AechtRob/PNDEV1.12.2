@@ -6,8 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderCometicercus;
-import net.lepidodendron.entity.render.entity.RenderPricyclopyge;
 import net.lepidodendron.entity.render.entity.RenderSymphysops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
