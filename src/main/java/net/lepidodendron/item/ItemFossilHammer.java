@@ -48,7 +48,7 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
         ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:fossil_hammer", "inventory"));
     }
 
-    private static class ItemToolCustom extends ItemPickaxe {
+    public static class ItemToolCustom extends ItemPickaxe {
         protected ItemToolCustom() {
             super(ToolMaterial.IRON);
             setMaxDamage(500);

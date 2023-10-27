@@ -71,6 +71,15 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public boolean shouldExecute() {
+
+        if (entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
+            return false;
+        }
+
+        if (!(entity.getAISpeedLand() > 0)) {
+            return false;
+        }
+
         if (this.EntityPrehistoricFloraLandWadingBase.getRNG().nextFloat() < 0.5F) {
             Path path = this.EntityPrehistoricFloraLandWadingBase.getNavigator().getPath();
             if (this.EntityPrehistoricFloraLandWadingBase.getNavigator().noPath()) {
