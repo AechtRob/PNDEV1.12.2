@@ -1,6 +1,6 @@
 {
   "parent": "lepidodendron:block/eggs_large",
   "textures": {
-    "texture": "lepidodendron:entities/eggs_megalosaurus"
+    "texture": "lepidodendron:entities/eggs_allosaurus"
   }
 }
