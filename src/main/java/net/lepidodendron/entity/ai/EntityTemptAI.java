@@ -90,6 +90,13 @@ public class EntityTemptAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
+        if (this.temptedEntity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.temptedEntity;
+            if (landbase.isAnimationDirectionLocked(landbase.getAnimation())) {
+                landbase.getNavigator().clearPath();
+                return false;
+            }
+        }
         if (this.scaredByPlayerMovement)
         {
             if (this.temptedEntity.getDistanceSq(this.temptingPlayer) < 36.0D)

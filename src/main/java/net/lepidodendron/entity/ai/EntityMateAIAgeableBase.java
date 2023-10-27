@@ -54,6 +54,13 @@ public class EntityMateAIAgeableBase extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
+        if (this.animal instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.animal;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                this.animal.getNavigator().clearPath();
+                return false;
+            }
+        }
         return this.targetMate.isEntityAlive() && this.targetMate.isInLove() && this.spawnBabyDelay < 60;
     }
 

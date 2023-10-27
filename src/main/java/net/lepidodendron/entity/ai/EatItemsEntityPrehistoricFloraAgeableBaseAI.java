@@ -54,6 +54,13 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
 
     @Override
     public boolean shouldContinueExecuting() {
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                LandBase.getNavigator().clearPath();
+                return false;
+            }
+        }
         if (this.targetItem == null || !this.targetItem.isEntityAlive()) {
             return false;
         }
