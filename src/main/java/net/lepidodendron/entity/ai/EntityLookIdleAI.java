@@ -27,11 +27,17 @@ public class EntityLookIdleAI extends EntityAIBase
     {
         this.idleEntity = entitylivingIn;
         this.setMutexBits(3);
+        /**
+         * nospin is set to true only for certain things which must not look around unless they are walking,
+         * typically some lizards which have to freeze in place when not moving
+         */
         this.noSpin = nospinIn;
     }
 
     public boolean shouldExecute()
     {
+
+
         if (noSpin && this.idleEntity instanceof EntityPrehistoricFloraAgeableBase) {
             if (!((EntityPrehistoricFloraAgeableBase)this.idleEntity).getIsMoving()) {
                 return false;

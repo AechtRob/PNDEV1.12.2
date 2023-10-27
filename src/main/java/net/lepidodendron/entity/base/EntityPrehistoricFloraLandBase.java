@@ -89,8 +89,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     }
 
     public boolean isAnimationDirectionLocked(Animation animation) {
-        //If it must not rotate or change its look angle while it is happening
-        //This is used primarily to stop certain AI for pathfinding or targeting happening
+         /**
+         * If it must not pathfind, rotate or change its look angle while it is happening
+         * This is used primarily to stop certain AI for pathfinding or targeting happening
+         */
         return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION;
     }
 

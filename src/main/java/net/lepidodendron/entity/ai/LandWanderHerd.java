@@ -37,6 +37,13 @@ public class LandWanderHerd extends EntityAIBase
     {
 
         if (this.followingAnimal instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.followingAnimal;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                return false;
+            }
+        }
+
+        if (this.followingAnimal instanceof EntityPrehistoricFloraLandBase) {
             if (!(((EntityPrehistoricFloraLandBase)this.followingAnimal).getAISpeedLand() > 0)) {
                 return false;
             }
