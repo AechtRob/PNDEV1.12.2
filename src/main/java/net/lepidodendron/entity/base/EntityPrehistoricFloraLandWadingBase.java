@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateGroundWade;
 import net.minecraft.block.material.Material;
@@ -9,9 +10,13 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -26,6 +31,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     @SideOnly(Side.CLIENT)
     public ChainBuffer tailBuffer;
     private int jumpTicks;
+    private int inPFLove;
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
@@ -33,10 +39,10 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
             if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
                 this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
             }
-            if (isBlockWadable(this.world, this.getPosition())) {
+            if (isBlockWadable(this.world, this.getPosition()) && (!(this.navigator instanceof PathNavigateGroundWade))) {
                 this.navigator = new PathNavigateGroundWade(this, world);
             }
-            else {
+            else if ((!(isBlockWadable(this.world, this.getPosition()))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
                 this.navigator = new PathNavigateAmphibian(this, world);
             }
         }
@@ -47,10 +53,10 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
             this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
         }
-        if (isBlockWadable(this.world, this.getPosition())) {
+        if (isBlockWadable(this.world, this.getPosition()) && (!(this.navigator instanceof PathNavigateGroundWade))) {
             this.navigator = new PathNavigateGroundWade(this, world);
         }
-        else {
+        else if ((!(isBlockWadable(this.world, this.getPosition()))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
             this.navigator = new PathNavigateAmphibian(this, world);
         }
     }
@@ -105,6 +111,73 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
 
     @Override
     public void onLivingUpdate() {
+        if (this.getAnimation() == DRINK_ANIMATION) {
+            this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+        }
+
+        if (this.getAnimation() == GRAZE_ANIMATION) {
+            this.faceBlock(this.getGrazingFrom(), 10F, 10F);
+        }
+
+        this.renderYawOffset = this.rotationYaw;
+
+        if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
+            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+                if (!world.isRemote) {
+                    this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
+                    TileEntity te = world.getTileEntity(this.getPosition());
+                    if (te != null) {
+                        te.getTileData().setString("creature", getEntityId(this));
+                    }
+                    this.setNestLocation(this.getPosition());
+                }
+                SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            }
+
+        }
+
+        if (this.getIsMoving() && !this.isSneaking()) {
+            if (this.getIsFast()) {
+                int animCycle = this.getRunCycleLength();
+                if (animCycle > 0) {
+                    double tickAnim = (this.ticksExisted + this.getTickOffset() + this.getRunFootstepOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset() + this.getRunFootstepOffset()) / (double) animCycle) * (double) animCycle);
+                    if (this.tetrapodRunFootstepOffset() != 0) {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D
+                                || Math.floor(tickAnim) == this.tetrapodRunFootstepOffset() || Math.floor(tickAnim) == (animCycle / 2D) + this.tetrapodRunFootstepOffset()) {
+                            playStepSoundPublic();
+                        }
+                    }
+                    else {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D) {
+                            playStepSoundPublic();
+                        }
+                    }
+                }
+            }
+            else {
+                int animCycle = this.getWalkCycleLength();
+                if (animCycle > 0) {
+                    double tickAnim = (this.ticksExisted + this.getTickOffset() + this.getFootstepOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset() + this.getFootstepOffset()) / (double) animCycle) * (double) animCycle);
+                    if (this.tetrapodWalkFootstepOffset() != 0) {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D
+                                || Math.floor(tickAnim) == this.tetrapodRunFootstepOffset() || Math.floor(tickAnim) == (animCycle / 2D) + this.tetrapodRunFootstepOffset()) {
+                            playStepSoundPublic();
+                        }
+                    }
+                    else {
+                        if (Math.floor(tickAnim) == 0 || Math.floor(tickAnim) == animCycle / 2D) {
+                            playStepSoundPublic();
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!this.world.isRemote) {
+            selectNavigator();
+        }
+
         //Updated from vanilla to allow underwater jumping:
         if (this.jumpTicks > 0)
         {
@@ -198,6 +271,104 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         this.collideWithNearbyEntities();
         this.world.profiler.endSection();
 
+        //Additional:
+        if (!world.isRemote) {
+            if (this.getAttackTarget() != null) {
+                if (this.getAttackTarget().isDead) {
+                    this.setAttackTarget(null);
+                }
+            }
+            if (this.getWarnTarget() != null) {
+                if (this.getWarnTarget().isDead) {
+                    this.setWarnTarget(null);
+                }
+                if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
+                    this.setWarnTarget(null);
+                }
+            }
+            if (this.getRevengeTarget() != null) {
+                if (this.getRevengeTarget().isDead) {
+                    this.setRevengeTarget(null);
+                }
+            }
+            if (this.getEatTarget() != null) {
+                if (this.getEatTarget().isDead) {
+                    this.setEatTarget(null);
+                }
+            }
+            if (this.isSwimmingInWater()) {
+                this.setAttackTarget(null);
+                this.setEatTarget(null);
+                this.setWarnTarget(null);
+                this.setRevengeTarget(null);
+            }
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+
+            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
+                //If this is hunting and is not close enough, sneak up:
+                float distEntity = this.getDistancePrey(this.getAttackTarget());
+                if (distEntity >= this.getSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+                    this.setIsSneaking(true);
+                }
+                if (this.getIsSneaking() &&
+                        (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity <= (this.getSneakRange() * 0.5)
+                ) {
+                    this.setIsSneaking(false);
+                }
+            }
+            else {
+                this.setIsSneaking(false);
+            }
+
+            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
+                this.setSneaking(false);
+            }
+        }
+
+        if (!this.isPFAdult())
+        {
+            this.inPFLove = 0;
+        }
+
+        if (this.inPFLove > 0)
+        {
+            --this.inPFLove;
+        }
+
+        if (this.getPFDrinking() > 0)
+        {
+            this.setIsDrinking(this.getPFDrinking() - 1);
+        }
+
+        if (this.getPFGrazing() > 0)
+        {
+            this.setIsGrazing(this.getPFGrazing() - 1);
+        }
+
+        if (this.getMateable() < 0) {
+            this.setMateable(this.getMateable() + 1);
+        }
+
+        //Grapple with mates?
+        if (rand.nextInt(1000) == 0) {
+            //Are there any nearby to grapple with?
+            this.findGrappleTarget();
+        }
+
+        if (this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+            this.faceEntity(this.getGrappleTarget(), 10, 10);
+            launchGrapple();
+            if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+                EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+                grappleTarget.setGrappleTarget(null);
+                grappleTarget.willGrapple = false;
+            }
+            this.setGrappleTarget(null);
+            this.willGrapple = false;
+        }
+        else if (this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
+            this.faceEntity(this.getGrappleTarget(), 10, 10);
+        }
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

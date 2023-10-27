@@ -368,7 +368,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
@@ -497,7 +497,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 				}
 			}
 			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(3).offset(facing).offset(facing).offset(facing));
+				this.setGrazingFrom(entityPos.up(6).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
 				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 			}
 		}
