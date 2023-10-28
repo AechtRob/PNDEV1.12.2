@@ -35,7 +35,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -44,16 +44,18 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 	private int inPFLove;
 	public Animation HIDE_ANIMATION;
 	public Animation ALERT_ANIMATION;
+	public Animation TAIL_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraMymoorapelta(World world) {
+	public EntityPrehistoricFloraGargoyleosaurus(World world) {
 		super(world);
-		setSize(0.99F, 0.99F);
+		setSize(0.9F, 0.7F);
 		minWidth = 0.3F;
-		maxWidth = 0.99F;
-		maxHeight = 0.99F;
+		maxWidth = 0.9F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 28.0D;
-		ALERT_ANIMATION = Animation.create(100);
+		ALERT_ANIMATION = Animation.create(80);
+		TAIL_ANIMATION = Animation.create(50);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -75,12 +77,12 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getRoarLength() {
-		return 30;
+		return 29;
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION, ALERT_ANIMATION};
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION, ALERT_ANIMATION, TAIL_ANIMATION};
 	}
 
 
@@ -297,19 +299,19 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mymoorapelta_idle"));
+				.getObject(new ResourceLocation("lepidodendron:gargoyleosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mymoorapelta_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:gargoyleosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mymoorapelta_death"));
+				.getObject(new ResourceLocation("lepidodendron:gargoyleosaurus_death"));
 	}
 
 	@Override
@@ -354,12 +356,17 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 			//random idle animations
 			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-				this.setAnimation(ALERT_ANIMATION);
+				int next = rand.nextInt(100);
+				if (next < 50) {
+					this.setAnimation(ALERT_ANIMATION);
+				} else {
+					this.setAnimation(TAIL_ANIMATION);
+				}
 
-				this.standCooldown = 2000;
+				this.standCooldown = 4000;
 			}
 			if (this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
-				this.standCooldown = 2000;
+				this.standCooldown = 4000;
 				this.setAnimation(NO_ANIMATION);
 			}
 		}
@@ -407,15 +414,15 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.MYMOORAPELTA_LOOT_YOUNG;
+			return LepidodendronMod.GARGOYLEOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.MYMOORAPELTA_LOOT;
+		return LepidodendronMod.GARGOYLEOSAURUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_MYMOORAPELTA;
+		return ModTriggers.CLICK_GARGOYLEOSAURUS;
 	}
 
 	//Rendering taxidermy:

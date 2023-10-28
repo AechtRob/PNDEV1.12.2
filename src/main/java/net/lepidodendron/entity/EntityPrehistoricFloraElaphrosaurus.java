@@ -1,7 +1,6 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
@@ -14,7 +13,6 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,20 +32,20 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
 
-	public EntityPrehistoricFloraLimusaurus(World world) {
+	public EntityPrehistoricFloraElaphrosaurus(World world) {
 		super(world);
-		setSize(0.6F, 0.55F);
-		minWidth = 0.05F;
-		maxWidth = 0.6F;
-		maxHeight = 0.55F;
-		maxHealthAgeable = 12.0D;
+		setSize(1.8F, 1.85F);
+		minWidth = 0.3F;
+		maxWidth = 1.8F;
+		maxHeight = 1.85F;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -68,7 +66,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 0; //small
+		return 1; //small
 	}
 
 	@Override
@@ -96,11 +94,6 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public int getRoarLength() {
-		return 30;
-	}
-
-	@Override
 	public String getTexture() {
 		return this.getTexture();
 	}
@@ -116,7 +109,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.58F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -129,6 +122,10 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		return speedBase * 0.67F;
 	}
 
+	@Override
+	public int getRoarLength() {
+		return 30;
+	}
 	@Override
 	public int getTalkInterval() {
 		return 180;
@@ -200,19 +197,19 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:limusaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:elaphrosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:limusaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:elaphrosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:limusaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:elaphrosaurus_death"));
 	}
 
 	@Override
@@ -279,15 +276,15 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_LIMUSAURUS;
+		return ModTriggers.CLICK_ELAPHROSAURUS;
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.LIMUSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.ELAPHROSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.LIMUSAURUS_LOOT;
+		return LepidodendronMod.ELAPHROSAURUS_LOOT;
 	}
 
 	//Rendering taxidermy:
