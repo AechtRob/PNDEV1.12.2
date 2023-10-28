@@ -207,7 +207,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.3F;
+		float speedBase = 0.4F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -217,7 +217,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.8F;
+			speedBase = speedBase * 1.4F;
 		}
 		return speedBase;
 	}
