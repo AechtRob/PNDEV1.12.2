@@ -526,7 +526,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
             }
-
         }
 
         if (this.getIsMoving() && !this.isSneaking()) {

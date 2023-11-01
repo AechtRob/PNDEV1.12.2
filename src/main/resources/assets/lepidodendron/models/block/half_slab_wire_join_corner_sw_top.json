@@ -9,7 +9,7 @@
 			"from": [-8, 15.94, 16],
 			"to": [0, 15.94, 24],
 			"faces": {
-				"up": {"uv": [0, 8, 8, 16], "texture": "#wire"},
+				"up": {"uv": [8, 8, 0, 16], "rotation":  180, "texture": "#wire"},
 				"down": {"uv": [8, 8, 0, 16], "texture": "#wire"}
 			}
 		}

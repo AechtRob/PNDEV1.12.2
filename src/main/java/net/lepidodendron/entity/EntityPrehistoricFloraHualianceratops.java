@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderHualianceratops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IScreamer;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -33,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraHualianceratops extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraHualianceratops extends EntityPrehistoricFloraLandBase implements IScreamer {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

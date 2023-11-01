@@ -21,7 +21,7 @@
  "facing": "south"
  },
  "apply": {
- "model": "lepidodendron:wire_grid_slab", "x": 90, "y": 180
+ "model": "lepidodendron:wire_grid_slab_inverted", "x": 90, "y": 180
  }
  },
  {
@@ -29,7 +29,7 @@
  "facing": "west"
  },
  "apply": {
- "model": "lepidodendron:wire_grid_slab", "x": 90, "y": 270
+ "model": "lepidodendron:wire_grid_slab_inverted", "x": 90, "y": 270
  }
  },
  {
@@ -45,7 +45,7 @@
  "facing": "down"
  },
  "apply": {
- "model": "lepidodendron:wire_grid_slab", "x": 180
+ "model": "lepidodendron:wire_grid_slab_inverted_2", "x": 180
  }
  },
 
