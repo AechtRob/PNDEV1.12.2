@@ -540,7 +540,6 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		);
 	}
 
-
 	@Override
 	public boolean nestBlockMatch(World world, BlockPos pos) {
 		if (isLayableNest(world, pos)) {

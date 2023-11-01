@@ -2,6 +2,7 @@ package net.lepidodendron.entity.base;
 
 import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
@@ -55,6 +56,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     private int inPFLove;
     private int climbingpause;
     private BlockPos targetBlock;
+    public Animation FLY_ANIMATION;
+    public Animation UNFLY_ANIMATION;
 
     public EntityPrehistoricFloraLandClimbingFlyingWalkingBase(World world) {
         super(world);
@@ -65,7 +68,13 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+        FLY_ANIMATION = Animation.create(this.flyTransitionLength());
+        UNFLY_ANIMATION = Animation.create(this.unflyTransitionLength());
     }
+
+    public abstract int flyTransitionLength();
+
+    public abstract int unflyTransitionLength();
 
     public float headHitHeight() {
         return 0.55F;
@@ -84,8 +93,17 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     }
 
     @Override
+    public Animation[] getAnimations() {
+        return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION};
+    }
+
+    @Override
     public AxisAlignedBB getAttackBoundingBox() {
         return this.getEntityBoundingBox().grow(0.5F, 2.0F, 0.5F);
+    }
+
+    public boolean isReallyFlying() {
+        return this.isFlying() && this.getAnimation() != this.FLY_ANIMATION;
     }
 
     @Override
@@ -110,7 +128,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                 this.navigator = new PathNavigateGroundNoWater(this, world);
             }
         }
-        else if ((!this.isFlying()) && (this.isSwimmingInWater() && this.canSwim())) {
+        else if ((!this.isReallyFlying()) && (this.isSwimmingInWater() && this.canSwim())) {
             if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.SwimmingMoveHelper))
                     || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
                 this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
@@ -301,7 +319,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         if (ds == DamageSource.FALL) {
             return false;
         }
-        this.setFlying();
+        if (!this.world.isRemote && !this.isReallyFlying() && this.getAnimation() != this.FLY_ANIMATION)
+        {
+            this.setFlying();
+            this.setAnimation(FLY_ANIMATION);
+        }
         this.inPFLove = 0;
         return super.attackEntityFrom(ds, f);
     }
@@ -319,6 +341,9 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     @Override
     public boolean canBreatheUnderwater() {
+        if (this.getAttackTarget() != null) {
+            return (this.world.getBlockState(this.getAttackTarget().getPosition()).getMaterial() == Material.WATER);
+        }
         return false;
     }
 
@@ -345,11 +370,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public void onLivingUpdate() {
 
         if (this.getFlyTarget() != null) {
-            if (this.isFlying() && this.motionY < 0.0D && this.sitCooldown > 0) {
+            if (this.isReallyFlying() && this.motionY < 0.0D && this.sitCooldown > 0) {
                 this.motionY *= 0.6D;
             }
 
-            if (this.isFlying()) {
+            if (this.isReallyFlying()) {
                 float angle = (float) (Math.atan2(this.motionZ, this.motionX) * 180.0D / Math.PI) - 90.0F;
                 float rotation = MathHelper.wrapDegrees(angle - this.rotationYaw);
                 this.prevRotationYaw = this.rotationYaw;
@@ -357,9 +382,9 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                 //this.renderYawOffset = this.rotationYaw;
             }
 
-            if (this.isFlying() && getAttackTarget() == null) {
-                if (this.getFlyTarget() != null && this.isFlying()) {
-                    if (!isTargetInAir() || !this.isFlying()) {
+            if (this.isReallyFlying() && getAttackTarget() == null) {
+                if (this.getFlyTarget() != null && this.isReallyFlying()) {
+                    if (!isTargetInAir() || !this.isReallyFlying()) {
                         this.setFlyTarget(null);
                     }
                     setTargetedFlight();
@@ -412,7 +437,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             }
         }
 
-        boolean flying = isFlying();
+        boolean flying = isReallyFlying();
         if (sitCooldown > 0) {
             sitCooldown--;
         }
@@ -436,6 +461,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                         if (world.isSideSolid(this.getPosition().down(), EnumFacing.UP)) {
                             this.setAttachmentPos(this.getPosition().down());
                             this.dataManager.set(SIT_FACE, EnumFacing.UP);
+                            this.setAnimation(UNFLY_ANIMATION);
                         }
                     }
                     else if (this.canClimb()) {
@@ -505,6 +531,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
                 if (checkFlyConditions() || rand.nextInt(3000) == 0) {
                     this.setFlying();
+                    this.setAnimation(FLY_ANIMATION);
                 }
             }
             if (flying && getFlyProgress() < 20.0F) {
@@ -527,7 +554,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                 //else {
                 if (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
                         || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.LAVA) {
-                    this.motionY += 0.12D;
+                    if (this.getAttackTarget() != null) {
+                        if (this.world.getBlockState(this.getAttackTarget().getPosition()).getMaterial() != Material.WATER) {
+                            this.motionY += 0.12D;
+                        }
+                    }
+                    else {
+                        this.motionY += 0.12D;
+                    }
                 } else {
                     if ((!collided) && sitCooldown == 0 && (!(sidewaysTries > 0))) {
                         //Have we tried to land sideways first?
@@ -625,11 +659,15 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public void travel(float strafe, float vertical, float forward) {
         float f4;
         if (this.isServerWorld()) {
-            if (this.isFlying()) {
+            if (this.isReallyFlying()) {
 
                 if ((!this.canFloat()) && this.isAboveOrInWater())
                 {
-                    this.setFlying();
+                    if (this.getAttackTarget() != null) {
+                        if (this.world.getBlockState(this.getAttackTarget().getPosition()).getMaterial() != Material.WATER) {
+                            this.setFlying();
+                        }
+                    }
                 }
 
                 this.moveRelative(strafe, vertical, forward, 0.02F);
@@ -775,7 +813,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         @Override
         public boolean shouldExecute() {
             IBlockState state = flier.world.getBlockState(flier.getPosition().down());
-            if (!flier.isFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
+            if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
             ) {
                 flier.setFlyTarget(null);
                 return false;
@@ -870,7 +908,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         BlockPos ground = flier.world.getHeight(pos);
         int distFromGround = (int) flier.posY - ground.getY();
         BlockPos newPos = pos.up(distFromGround < flier.flightHeight() ? (int) Math.min(255, flier.posY + flier.rand.nextInt(25) - 8) : (int) flier.posY - flier.rand.nextInt(3) - 1);
-        if (flier.isFlying()) { //Try to make them descend
+        if (flier.isReallyFlying()) { //Try to make them descend
             if (flier.sitCooldown == 0) {
                 if (isBlockEmptyForAI(flier.world, newPos.down())) {
                     newPos = newPos.down();
@@ -903,7 +941,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public void setTargetedFlight() {
         double bbLength = this.getEntityBoundingBox().getAverageEdgeLength() * 2.5D;
         double maxDist = Math.max(6, bbLength * bbLength);
-        if (this.getFlyTarget() != null && isTargetInAir() && this.isFlying()) {
+        if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
                 double xPos = this.getFlyTarget().getX() + 0.5D - posX;
                 double yPos = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;

@@ -45,6 +45,16 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int flyTransitionLength() {
+		return 40;
+	}
+
+	@Override
+	public int unflyTransitionLength() {
+		return 40;
+	}
+
+	@Override
 	public boolean canFloat() {
 		return false;
 	}
@@ -94,11 +104,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_ANUROGNATHUS;
-	}
-
-	public float getFlySpeed() {
-		return 1.6f;
+		return ModTriggers.CLICK_PTERODACTYLUS;
 	}
 
 	@Nullable
@@ -190,7 +196,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 				return 0.3F;
 			}
 		}
-		return getFlySpeed();
+		return 1.6f; //flyspeed
 	}
 
 	@Override
