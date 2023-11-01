@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -36,9 +36,8 @@ public class PanicFindNestAI extends EntityAIBase
                 EntityPrehistoricFloraAgeableBase entity = (EntityPrehistoricFloraAgeableBase) this.creature;
                 entity.setIsFast(false);
 
-                if (this.creature instanceof EntityPrehistoricFloraDiictodon) {
-                    EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) this.creature;
-                    Diictodon.setScreaming(false);
+                if (this.creature instanceof IScreamer) {
+                    ((IScreamer)this.creature).setScreaming(false);
                 }
             }
             return false;
@@ -54,9 +53,8 @@ public class PanicFindNestAI extends EntityAIBase
                     this.randPosX = (double)blockpos.getX();
                     this.randPosY = (double)blockpos.getY();
                     this.randPosZ = (double)blockpos.getZ();
-                    if (this.creature instanceof EntityPrehistoricFloraDiictodon) {
-                        EntityPrehistoricFloraDiictodon DiictodonInstance = (EntityPrehistoricFloraDiictodon) this.creature;
-                        DiictodonInstance.setScreaming(true);
+                    if (this.creature instanceof IScreamer) {
+                        ((IScreamer)this.creature).setScreaming(true);
                     }
                     return true;
                 }
@@ -81,9 +79,8 @@ public class PanicFindNestAI extends EntityAIBase
                 this.randPosX = pathPos.getX();
                 this.randPosY = pathPos.getY();
                 this.randPosZ = pathPos.getZ();
-                if (this.creature instanceof EntityPrehistoricFloraDiictodon) {
-                    EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) this.creature;
-                    Diictodon.setScreaming(true);
+                if (this.creature instanceof IScreamer) {
+                    ((IScreamer)this.creature).setScreaming(true);
                 }
                 return true;
             }
@@ -95,9 +92,8 @@ public class PanicFindNestAI extends EntityAIBase
             this.randPosX = pos.getX();
             this.randPosY = pos.getY();
             this.randPosZ = pos.getZ();
-            if (this.creature instanceof EntityPrehistoricFloraDiictodon) {
-                EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) this.creature;
-                Diictodon.setScreaming(true);
+            if (this.creature instanceof IScreamer) {
+                ((IScreamer)this.creature).setScreaming(true);
             }
             return true;
         }
@@ -113,9 +109,8 @@ public class PanicFindNestAI extends EntityAIBase
             this.randPosX = vec3d.x;
             this.randPosY = vec3d.y;
             this.randPosZ = vec3d.z;
-            if (this.creature instanceof EntityPrehistoricFloraDiictodon) {
-                EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) this.creature;
-                Diictodon.setScreaming(true);
+            if (this.creature instanceof IScreamer) {
+                ((IScreamer)this.creature).setScreaming(true);
             }
             return true;
         }

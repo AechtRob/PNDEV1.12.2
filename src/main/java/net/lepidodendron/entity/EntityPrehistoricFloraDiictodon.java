@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDiictodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.item.ItemRoots;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
@@ -43,7 +44,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandBase implements IScreamer {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

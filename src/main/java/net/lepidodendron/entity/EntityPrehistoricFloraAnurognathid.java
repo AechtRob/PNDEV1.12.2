@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingBase;
+import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -38,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLandClimbingFlyingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLandClimbingFlyingBase implements IAdvancementGranter, IScreamerFlier {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;

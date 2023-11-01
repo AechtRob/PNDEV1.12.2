@@ -470,7 +470,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     @Override
     public boolean isMovementBlocked() {
-        return this.getAttachmentPos() != null || this.collidedHorizontally;
+        return this.getHealth() <= 0.0F || this.getAttachmentPos() != null || this.collidedHorizontally;
     }
 
     public ResourceLocation FlightSound() {

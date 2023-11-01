@@ -2092,8 +2092,11 @@ public class LepidodendronMod {
 	public static final int ENTITY_CHILESAURUS = 818;
 	public static final ResourceLocation CHILESAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus"));
 	public static final ResourceLocation CHILESAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus_young"));
+	public static final int ENTITY_PTERODACTYLUS = 819;
+	public static final ResourceLocation PTERODACTYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pterodactlyus"));
+	public static final ResourceLocation PTERODACTYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pterodactlyus_young"));
 
-  
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);
