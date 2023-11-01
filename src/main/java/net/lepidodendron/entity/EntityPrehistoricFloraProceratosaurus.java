@@ -37,25 +37,25 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
 
-	public Animation CLEAN_ANIMATION;
+	//public Animation CLEAN_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraDilophosaurus(World world) {
+	public EntityPrehistoricFloraProceratosaurus(World world) {
 		super(world);
-		setSize(0.98F, 1.9F);
+		setSize(0.7F, 0.7F);
 		minWidth = 0.50F;
-		maxWidth = 0.98F;
-		maxHeight = 1.9F;
-		maxHealthAgeable = 36.0D;
-		STAND_ANIMATION = Animation.create(120);
-		CLEAN_ANIMATION = Animation.create(65);
+		maxWidth = 0.7F;
+		maxHeight = 0.7F;
+		maxHealthAgeable = 20.0D;
+		STAND_ANIMATION = Animation.create(104);
+		//CLEAN_ANIMATION = Animation.create(65);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -63,12 +63,12 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getWalkCycleLength() {
-		return 50;
+		return 30;
 	}
 
 	@Override
 	public int getFootstepOffset() {
-		return 18;
+		return 15;
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, CLEAN_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION};
 	}
 	public static String getPeriod() {return "Jurassic";}
 
@@ -115,7 +115,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 80;
 	} //Noise
 
 	@Override
@@ -125,7 +125,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 30;
 	}
 
 	@Override
@@ -144,11 +144,11 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.45F;
+		float speedBase = 0.26F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -242,25 +242,25 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dilophosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:dilophosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:proceratosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dilophosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dilophosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_death"));
 	}
 
 	@Override
@@ -279,12 +279,8 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 		//Alert animation
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			int next = rand.nextInt(100);
-			if (next < 50) {
-				this.setAnimation(STAND_ANIMATION);
-			} else {
-				this.setAnimation(CLEAN_ANIMATION);
-			}
+
+			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
@@ -358,15 +354,15 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.DILOPHOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.PROCERATOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.DILOPHOSAURUS_LOOT;
+		return LepidodendronMod.PROCERATOSAURUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_DILOPHOSAURUS;
+		return ModTriggers.CLICK_PROCERATOSAURUS;
 	}
 	//Rendering taxidermy:
 	//--------------------
