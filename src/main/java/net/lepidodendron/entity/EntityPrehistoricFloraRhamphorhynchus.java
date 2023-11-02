@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -30,8 +29,6 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter {
-
-	//private boolean screaming;
 
 	public Animation ALERT_ANIMATION;
 	public Animation PREEN_ANIMATION;
@@ -61,17 +58,13 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public boolean canFloat() {
-		return false;
-	}
-
-	@Override
 	public boolean checkFlyConditions() {
 		return this.world.isDaytime();
 	}
 
+
 	public boolean hasAlarm() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -107,10 +100,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		return ModTriggers.CLICK_RHAMPHORHYNCHUS;
 	}
 
-	public float getFlySpeed() {
-		return 0.25f;
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
@@ -123,7 +112,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	public int getAdultAge() {
 		return 64000;
 	}
-
 
 	@Override
 	public void onLivingUpdate() {
@@ -172,7 +160,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		);
 	}
 
-
 	@Override
 	public boolean nestBlockMatch(World world, BlockPos pos) {
 		if (isLayableNest(world, pos)) {
@@ -200,7 +187,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 				return 0.3F;
 			}
 		}
-		return getFlySpeed();
+		return 0.25f; //FlySpeed
 	}
 
 	@Override
