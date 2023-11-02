@@ -48,6 +48,11 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION, ALERT_ANIMATION, PREEN_ANIMATION};
+	}
+
+	@Override
 	public int flyTransitionLength() {
 		return 0;
 	}
@@ -61,7 +66,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	public boolean checkFlyConditions() {
 		return this.world.isDaytime();
 	}
-
 
 	public boolean hasAlarm() {
 		return true;

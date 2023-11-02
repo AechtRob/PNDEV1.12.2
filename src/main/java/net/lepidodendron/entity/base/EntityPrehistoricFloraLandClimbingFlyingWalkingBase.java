@@ -106,6 +106,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return true; //default
     }
 
+    /**for use in the future for landing on water
+     *
+     * @return
+     */
     public boolean canFloat() {
         return false; //default
     }
