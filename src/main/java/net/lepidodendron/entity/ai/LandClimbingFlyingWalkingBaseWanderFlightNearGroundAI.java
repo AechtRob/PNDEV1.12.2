@@ -57,8 +57,7 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
                 target = EntityPrehistoricFloraLandClimbingFlyingWalkingBase.getPositionRelativetoGround(this.entity, this.entity.world, this.entity.posX + this.entity.getRNG().nextInt(17) - 8, this.entity.posZ + this.entity.getRNG().nextInt(17) - 8, this.entity.getRNG());
             }
             Biome biome = this.entity.world.getBiome(target);
-            if (this.avoidsSea && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH)
-                || BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))) {
+            if (this.avoidsSea && BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)) {
                 overWater = true;
             }
             if (!overWater) {

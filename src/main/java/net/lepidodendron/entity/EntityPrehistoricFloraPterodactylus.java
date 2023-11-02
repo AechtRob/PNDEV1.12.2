@@ -46,12 +46,12 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 
 	@Override
 	public int flyTransitionLength() {
-		return 15;
+		return 18;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 15;
+		return 18;
 	}
 
 	@Override
@@ -300,7 +300,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this));
+		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, true));
 		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, true, false));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));

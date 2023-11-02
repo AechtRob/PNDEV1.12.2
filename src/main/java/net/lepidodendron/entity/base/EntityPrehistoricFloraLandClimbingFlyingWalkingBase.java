@@ -28,6 +28,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.*;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -915,9 +916,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public class AgeableClimbingFlyingWalkingFlyHigh extends EntityAIBase {
 
         private final EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier;
+        protected final boolean avoidsSea;
 
-        public AgeableClimbingFlyingWalkingFlyHigh(EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier) {
+        public AgeableClimbingFlyingWalkingFlyHigh(EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier, boolean avoidsSea) {
             this.flier = flier;
+            this.avoidsSea = avoidsSea;
         }
 
         @Override
@@ -987,12 +990,20 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                     BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
                     pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
                     if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                            && seaCheck(pos)
                             && !isTargetBlocked(flier, new Vec3d(pos))) {
                         return pos;
                     }
                 }
             }
             return pos;
+        }
+
+        public boolean seaCheck(BlockPos pos) {
+            if (!this.avoidsSea) {
+                return true;
+            }
+            return !BiomeDictionary.hasType(world.getBiome(pos), BiomeDictionary.Type.OCEAN);
         }
 
     }
