@@ -114,6 +114,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return false; //default
     }
 
+    public int climbsFor() {
+        return 100;
+    }
+
+    public int pausesClimbFor() {
+        return 100;
+    }
+
     @Override
     public Animation[] getAnimations() {
         return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION};
@@ -221,7 +229,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setHeadCollided(false);
-        this.climbingpause = -99 + rand.nextInt(200);
+        this.climbingpause = -this.climbsFor() + rand.nextInt(this.climbsFor() + this.pausesClimbFor());
         return livingdata;
     }
 
@@ -586,7 +594,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                         this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
                     }
                     this.setAttachmentPos(this.getPosition().offset(this.getAttachmentFacing()));
-                    if (this.climbingpause < 0 && !this.getHeadCollided()) {
+                    if (this.climbingpause <= 0 && !this.getHeadCollided()) {
                         this.motionY = this.getClimbSpeed();
                         //this.setIsMoving(true);
                     } else {
@@ -656,11 +664,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                         .getObject(this.FlightSound()), this.getSoundVolume() * 0.5F, 1);
             }
 
-            if (this.climbingpause >= -100) {
+            if (this.climbingpause >= -this.climbsFor()) {
                 this.climbingpause = this.climbingpause - this.rand.nextInt(3);
             }
-            if (this.climbingpause < -100) {
-                this.climbingpause = 100;
+            if (this.climbingpause < -this.climbsFor()) {
+                this.climbingpause = this.pausesClimbFor();
             }
         }
 
@@ -787,7 +795,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
 
         if (!world.isRemote) {
-            if (this.getAttachmentPos() != null && this.climbingpause < 0 && !this.getHeadCollided()) {
+            if (this.getAttachmentPos() != null && this.climbingpause <= 0 && !this.getHeadCollided()) {
                 if (this.getAttachmentFacing() != EnumFacing.UP) {
                     this.motionY = this.getClimbSpeed();
                 }
