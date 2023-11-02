@@ -4899,7 +4899,14 @@ public class RenderHandler {
                 return new RenderPterodactylus(manager);
             }
         });
-        
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhamphorhynchus.class, new IRenderFactory<EntityPrehistoricFloraRhamphorhynchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhamphorhynchus> createRenderFor(RenderManager manager) {
+                return new RenderRhamphorhynchus(manager);
+            }
+        });
+
         
         
         

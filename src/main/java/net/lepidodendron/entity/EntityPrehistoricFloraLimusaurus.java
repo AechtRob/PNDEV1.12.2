@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -41,6 +42,10 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
 
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
+
+
 	public EntityPrehistoricFloraLimusaurus(World world) {
 		super(world);
 		setSize(0.6F, 0.55F);
@@ -48,6 +53,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		maxWidth = 0.6F;
 		maxHeight = 0.55F;
 		maxHealthAgeable = 12.0D;
+		STAND_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -120,13 +126,31 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 3.55F;
 		}
 		return speedBase * 0.67F;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		//Sometimes stand up and look around:
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 	}
 
 	@Override
@@ -233,6 +257,12 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}

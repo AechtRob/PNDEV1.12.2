@@ -254,6 +254,7 @@ public class ModelLimusaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -293,13 +294,12 @@ public class ModelLimusaurus extends AdvancedModelBaseExtended {
         if (entityLimusaurus.getAnimation() == entityLimusaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
-        }
-        else {
+        } else {
             if (!entityLimusaurus.isReallyInWater()) {
 
                 if (f3 == 0.0F || !entityLimusaurus.getIsMoving()) {
                     if (entityLimusaurus.getAnimation() != entityLimusaurus.EAT_ANIMATION
-                        && entityLimusaurus.getAnimation() != entityLimusaurus.DRINK_ANIMATION) {
+                            && entityLimusaurus.getAnimation() != entityLimusaurus.DRINK_ANIMATION) {
                         this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                     }
@@ -343,33 +343,33 @@ public class ModelLimusaurus extends AdvancedModelBaseExtended {
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
-        }
-        else {
+        } else {
             //Swimming pose:
             if (!ee.getIsMoving()) { //static in water
                 //
-            }
-            else {
+            } else {
                 //moving in water
                 //
             }
         }
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
+        } else if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
+        } else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
             animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.LAY_ANIMATION) {
+        } else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
+        } else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
+        else if (ee.getAnimation() == ee.STAND_ANIMATION) { //The noise anim
+            animIdle(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
 
+    }
+    public void animIdle(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
     }
 
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
