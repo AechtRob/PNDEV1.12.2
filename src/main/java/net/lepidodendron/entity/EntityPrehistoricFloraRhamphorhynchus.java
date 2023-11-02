@@ -51,6 +51,16 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public int flyTransitionLength() {
+		return 0;
+	}
+
+	@Override
+	public int unflyTransitionLength() {
+		return 0;
+	}
+
+	@Override
 	public boolean canFloat() {
 		return false;
 	}
