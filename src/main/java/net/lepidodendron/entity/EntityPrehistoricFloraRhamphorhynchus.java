@@ -52,17 +52,18 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	@Override
 	public Animation[] getAnimations() {
+		//No need for sideways transitions, but added ambient animations
 		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION, ALERT_ANIMATION, PREEN_ANIMATION};
 	}
 
 	@Override
 	public int flyTransitionLength() {
-		return 0;
+		return 20;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 0;
+		return 20;
 	}
 
 	@Override
@@ -203,10 +204,17 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		if (this.getAttachmentPos() != null) {
 			if (this.getAttachmentFacing() == EnumFacing.UP) {
 				//Walking:
-				return 0.3F;
+				if (this.getIsFast()) {
+					return 0.35f;
+				}
+				return 0.24F;
 			}
 		}
-		return 0.25f; //FlySpeed
+		//Otherwise we are flying:
+		if (this.getIsFast()) {
+			return 0.295f;
+		}
+		return 0.225f;
 	}
 
 	@Override

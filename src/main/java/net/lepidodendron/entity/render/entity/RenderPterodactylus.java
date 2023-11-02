@@ -16,7 +16,7 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
     }
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.35F;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
     @Override
     protected void applyRotations(EntityPrehistoricFloraPterodactylus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
-        float getOffset = 0.0F;
+        float getOffset = 0.37F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN: case UP:
             default:

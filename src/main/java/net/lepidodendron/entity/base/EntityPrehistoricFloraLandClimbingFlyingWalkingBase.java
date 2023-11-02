@@ -140,19 +140,26 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             }
         }
 
+        if (world.isRemote) {
+            if (this.getAttachmentPos() != null) {
+                int hhh = 1;
+            }
+
+        }
+
         if (this.getAttachmentPos() != null) {
             if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 180;
+                rotationYawHead = rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 270;
+                rotationYawHead = rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 0;
+                rotationYawHead = rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 90;
+                rotationYawHead = rotationYaw;
             }
         }
     }
@@ -366,17 +373,19 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         if (ds == DamageSource.FALL) {
             return false;
         }
-        if (!this.world.isRemote && !this.isReallyFlying() && this.getAnimation() != this.FLY_ANIMATION)
-        {
-            this.setFlying();
-            this.setAnimation(FLY_ANIMATION);
-        }
+
+        this.setFlying();
         this.inPFLove = 0;
         return super.attackEntityFrom(ds, f);
     }
 
     public void setFlying() {
         if (!world.isRemote) {
+            if (!this.isReallyFlying() && this.getAnimation() != this.FLY_ANIMATION) {
+                if (this.getAttachmentFacing() == EnumFacing.UP) {
+                    this.setAnimation(FLY_ANIMATION);
+                }
+            }
             this.setSitting(false);
             this.sitTickCt = 0;
             ticksSitted = 0;
@@ -443,7 +452,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
 
         super.onLivingUpdate();
-        this.renderYawOffset = this.rotationYaw;
 
         if (this.getLaying()) {
             this.setFlying();
@@ -524,6 +532,19 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                                 this.motionX = 0.0D;
                                 this.motionY = 0.0D;
                                 this.motionZ = 0.0D;
+                                if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                                    rotationYaw = 180;
+                                    rotationYawHead = rotationYaw;
+                                } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                                    rotationYaw = 270;
+                                    rotationYawHead = rotationYaw;
+                                } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                                    rotationYaw = 0;
+                                    rotationYawHead = rotationYaw;
+                                } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                                    rotationYaw = 90;
+                                    rotationYawHead = rotationYaw;
+                                }
                             }
                         }
                     }
@@ -541,12 +562,16 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                     sitCooldown = 150;
                     if (this.getAttachmentFacing() == EnumFacing.NORTH) {
                         rotationYaw = 180;
+                        rotationYawHead = rotationYaw;
                     } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
                         rotationYaw = 270;
+                        rotationYawHead = rotationYaw;
                     } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
                         rotationYaw = 0;
+                        rotationYawHead = rotationYaw;
                     } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
                         rotationYaw = 90;
+                        rotationYawHead = rotationYaw;
                     }
                     if (this.getAttachmentFacing() == EnumFacing.NORTH) {
                         this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
@@ -578,7 +603,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
                 if (checkFlyConditions() || rand.nextInt(3000) == 0) {
                     this.setFlying();
-                    this.setAnimation(FLY_ANIMATION);
                 }
             }
             if (flying && getFlyProgress() < 20.0F) {
@@ -642,19 +666,20 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
         if (this.getAttachmentPos() != null) {
             if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 180;
+                rotationYawHead = rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 270;
+                rotationYawHead = rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 0;
+                rotationYawHead = rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 90;
+                rotationYawHead = rotationYaw;
             }
         }
+        this.renderYawOffset = this.rotationYaw;
     }
 
     public boolean checkFlyConditions() {
@@ -684,8 +709,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             walking = this.getAttachmentFacing() == EnumFacing.UP;
         }
         return this.getHealth() <= 0.0F
-                || ((this.getAttachmentPos() != null
-                || this.collidedHorizontally) && !walking);
+                || (this.getAttachmentPos() != null && !walking);
     }
 
     public ResourceLocation FlightSound() {
@@ -793,6 +817,21 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
         this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
         this.limbSwing += this.limbSwingAmount;
+        if (this.getAttachmentPos() != null) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                rotationYaw = 180;
+                rotationYawHead = rotationYaw;
+            } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                rotationYaw = 270;
+                rotationYawHead = rotationYaw;
+            } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                rotationYaw = 0;
+                rotationYawHead = rotationYaw;
+            } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                rotationYaw = 90;
+                rotationYawHead = rotationYaw;
+            }
+        }
     }
 
 
@@ -871,6 +910,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
         @Override
         public boolean shouldExecute() {
+
+            if (flier.getAttachmentFacing() != EnumFacing.DOWN) {
+                return false;
+            }
+
             IBlockState state = flier.world.getBlockState(flier.getPosition().down());
             if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
             ) {

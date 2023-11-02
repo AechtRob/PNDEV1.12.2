@@ -46,12 +46,12 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 
 	@Override
 	public int flyTransitionLength() {
-		return 40;
+		return 15;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 40;
+		return 15;
 	}
 
 	@Override
@@ -193,10 +193,17 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		if (this.getAttachmentPos() != null) {
 			if (this.getAttachmentFacing() == EnumFacing.UP) {
 				//Walking:
-				return 0.3F;
+				if (this.getIsFast()) {
+					return 0.3F;
+				}
+				return 0.196F;
 			}
 		}
-		return 1.065f; //flyspeed
+		//Otherwise we are flying:
+		if (this.getIsFast()) {
+			return 1.065f;
+		}
+		return 0.565f;
 	}
 
 	@Override

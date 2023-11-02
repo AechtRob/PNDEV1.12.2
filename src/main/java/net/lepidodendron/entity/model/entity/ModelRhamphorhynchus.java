@@ -490,7 +490,74 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraRhamphorhynchus ee = (EntityPrehistoricFloraRhamphorhynchus) entitylivingbaseIn;
 
-        if (ee.getAttachmentPos() == null) {
+        if (ee.getAnimation() == ee.UNFLY_ANIMATION) {
+            //Special case here as we don't have the models done properly :/
+            this.setRotateAngle(chest, 0.1143F, 0.0F, 0.0421F);
+            this.setRotateAngle(body1, 0.0037F, 0.0F, -0.0309F);
+            this.setRotateAngle(tail1, -0.2963F, 0.0212F, -0.0421F);
+            this.setRotateAngle(tail2, -0.0414F, -0.0212F, 0.0113F);
+            this.setRotateAngle(tail3, -0.035F, -0.0424F, 0.0309F);
+            this.setRotateAngle(tail4, -0.0187F, 0.0F, 0.0F);
+            this.setRotateAngle(tail5, -0.035F, 0.0F, 0.0F);
+            this.setRotateAngle(upperlegright, 0.3753F, 0.2484F, 1.3667F);
+            this.setRotateAngle(lowerlegright, 0.501F, 0.0F, -0.0227F);
+            this.setRotateAngle(footright, 1.3355F, -0.4554F, -0.0094F);
+            this.setRotateAngle(legwing4, -0.0911F, 0.0F, 0.0F);
+            this.setRotateAngle(upperlegleft, 0.3753F, -0.2484F, -1.3667F);
+            this.setRotateAngle(lowerlegleft, 0.501F, 0.0F, 0.0227F);
+            this.setRotateAngle(footleft, 1.3355F, 0.4554F, 0.0094F);
+            this.setRotateAngle(legwing2, -0.0911F, 0.0F, 0.0F);
+            this.setRotateAngle(wingleft1, -0.0762F, 0.0542F, -0.5594F);
+            this.setRotateAngle(wingleft2, 0.03F, -0.0046F, -1.4427F);
+            this.setRotateAngle(wingleft3, -1.5708F, 0.001F, 0.5418F);
+            this.setRotateAngle(wingleft4, 0.203F, -0.1731F, 0.0F);
+            this.setRotateAngle(handleft, 0.0F, 0.0265F, 1.5727F);
+            this.setRotateAngle(wingright1, -0.0762F, -0.0542F, 0.5594F);
+            this.setRotateAngle(wingright2, -0.051F, 0.0724F, 1.442F);
+            this.setRotateAngle(wingright3, -1.5708F, -0.001F, -0.5418F);
+            this.setRotateAngle(wingright4, 0.203F, 0.1731F, 0.0F);
+            this.setRotateAngle(handright, 0.0F, -0.0265F, -1.5727F);
+            this.setRotateAngle(neck1, 0.0034F, 0.0F, -0.0113F);
+            this.setRotateAngle(neck2, -0.1599F, 0.0F, -0.0421F);
+            this.setRotateAngle(head, 0.3018F, 0.0F, 0.0309F);
+            this.setRotateAngle(head2, 0.1745F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r1, -0.1745F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r2, -0.3491F, 0.0F, -0.48F);
+            this.setRotateAngle(cube_r3, -0.3491F, 0.0F, 0.48F);
+            this.setRotateAngle(cube_r4, -0.1745F, 0.0F, -0.829F);
+            this.setRotateAngle(cube_r5, -0.1745F, 0.0F, 0.829F);
+            this.setRotateAngle(cube_r6, -0.1745F, 0.0F, -0.48F);
+            this.setRotateAngle(cube_r7, -0.1745F, 0.0F, 0.48F);
+            this.setRotateAngle(head3, 0.2379F, 0.0F, 0.0F);
+            this.setRotateAngle(jaw, 0.0171F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r8, -0.3272F, 0.0F, 0.0F);
+            this.setRotateAngle(jaw2, 0.1745F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r9, 0.0F, 0.0F, -2.618F);
+            this.setRotateAngle(cube_r10, 0.0F, 0.0F, 2.618F);
+            this.setRotateAngle(cube_r11, 0.0F, 0.0F, -2.618F);
+            this.setRotateAngle(cube_r12, 0.0F, 0.0F, 2.618F);
+            this.setRotateAngle(jaw3, 0.3927F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r13, -0.48F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r14, -0.5672F, 0.0F, -2.4435F);
+            this.setRotateAngle(cube_r15, -0.5672F, 0.0F, 2.4435F);
+            this.setRotateAngle(cube_r16, -0.1745F, 0.0F, -2.618F);
+            this.setRotateAngle(cube_r17, -0.1745F, 0.0F, 2.618F);
+        }
+        else if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {
+            //flight pose
+            //Already baked into the animations based on the default pose for this model
+        } else if (ee.getAttachmentPos() != null) {
+            if (ee.getAttachmentFacing() == EnumFacing.UP) {
+                //Is walking:
+                //The model is already reset to default each cycle so no need to do more here
+            }
+            else {
+                //Climb pose
+                //Rhampho does not climb
+            }
+        }
+
+        if (ee.getAttachmentPos() == null && ee.getAnimation() != ee.FLY_ANIMATION) {
             if (ee.getIsMoving()) {
                 if (ee.getIsFast()) { //Flying fast
                     animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
@@ -5174,14 +5241,112 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
 
         animator.setAnimation(e.FLY_ANIMATION);
         animator.startKeyframe(e.flyTransitionLength()); //move to this keyframe over the right length
-        //anims here
+        animator.rotate(body1, ((0.0037F)-(-0.0456F)), ((0.0F)-(0.0F)),((-0.0309F)-(0.0F)));
+        animator.rotate(chest, ((0.1143F)-(-0.0456F)), ((0.0F)-(0.0F)),((0.0421F)-(0.0F)));
+        animator.rotate(cube_r1, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(cube_r10, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((2.618F)-(2.618F)));
+        animator.rotate(cube_r11, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((-2.618F)-(-2.618F)));
+        animator.rotate(cube_r12, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((2.618F)-(2.618F)));
+        animator.rotate(cube_r13, ((-0.48F)-(-0.48F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(cube_r14, ((-0.5672F)-(-0.5672F)), ((0.0F)-(0.0F)),((-2.4435F)-(-2.4435F)));
+        animator.rotate(cube_r15, ((-0.5672F)-(-0.5672F)), ((0.0F)-(0.0F)),((2.4435F)-(2.4435F)));
+        animator.rotate(cube_r16, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((-2.618F)-(-2.618F)));
+        animator.rotate(cube_r17, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((2.618F)-(2.618F)));
+        animator.rotate(cube_r2, ((-0.3491F)-(-0.3491F)), ((0.0F)-(0.0F)),((-0.48F)-(-0.48F)));
+        animator.rotate(cube_r3, ((-0.3491F)-(-0.3491F)), ((0.0F)-(0.0F)),((0.48F)-(0.48F)));
+        animator.rotate(cube_r4, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((-0.829F)-(-0.829F)));
+        animator.rotate(cube_r5, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((0.829F)-(0.829F)));
+        animator.rotate(cube_r6, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((-0.48F)-(-0.48F)));
+        animator.rotate(cube_r7, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((0.48F)-(0.48F)));
+        animator.rotate(cube_r8, ((-0.3272F)-(-0.3272F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(cube_r9, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((-2.618F)-(-2.618F)));
+        animator.rotate(footleft, ((1.3355F)-(-0.4098F)), ((0.4554F)-(-0.5918F)),((0.0094F)-(0.2276F)));
+        animator.rotate(footright, ((1.3355F)-(-0.4098F)), ((-0.4554F)-(0.5918F)),((-0.0094F)-(-0.2276F)));
+        animator.rotate(handleft, ((0.0F)-(0.0F)), ((0.0265F)-(0.6374F)),((1.5727F)-(0.0456F)));
+        animator.rotate(handright, ((0.0F)-(0.0F)), ((-0.0265F)-(-0.6374F)),((-1.5727F)-(-0.0456F)));
+        animator.rotate(head, ((0.3018F)-(0.48F)), ((0.0F)-(0.0F)),((0.0309F)-(0.0F)));
+        animator.rotate(head2, ((0.1745F)-(0.1745F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(head3, ((0.2379F)-(0.2379F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(jaw, ((0.0171F)-(0.00F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(jaw2, ((0.1745F)-(0.1745F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(jaw3, ((0.3927F)-(0.3927F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(legwing2, ((-0.0911F)-(-0.0911F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(legwing4, ((-0.0911F)-(-0.0911F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(lowerlegleft, ((0.501F)-(0.7741F)), ((0.0F)-(0.0F)),((0.0227F)-(0.5463F)));
+        animator.rotate(lowerlegright, ((0.501F)-(0.7741F)), ((0.0F)-(0.0F)),((-0.0227F)-(-0.5463F)));
+        animator.rotate(neck1, ((0.0034F)-(-0.1309F)), ((0.0F)-(0.0F)),((-0.0113F)-(0.0F)));
+        animator.rotate(neck2, ((-0.1599F)-(-0.2618F)), ((0.0F)-(0.0F)),((-0.0421F)-(0.0F)));
+        animator.rotate(tail1, ((-0.2963F)-(-0.0456F)), ((0.0212F)-(0.0F)),((-0.0421F)-(0.0F)));
+        animator.rotate(tail2, ((-0.0414F)-(0.0456F)), ((-0.0212F)-(0.0F)),((0.0113F)-(0.0F)));
+        animator.rotate(tail3, ((-0.035F)-(0.0456F)), ((-0.0424F)-(0.0F)),((0.0309F)-(0.0F)));
+        animator.rotate(tail4, ((-0.0187F)-(0.0456F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(tail5, ((-0.035F)-(0.0456F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(upperlegleft, ((0.3753F)-(-0.3643F)), ((-0.2484F)-(0.0F)),((-1.3667F)-(-0.5009F)));
+        animator.rotate(upperlegright, ((0.3753F)-(-0.3643F)), ((0.2484F)-(0.0F)),((1.3667F)-(0.5009F)));
+        animator.rotate(wingleft1, ((-0.0762F)-(0.0F)), ((0.0542F)-(0.182F)),((-0.5594F)-(-0.0911F)));
+        animator.rotate(wingleft2, ((0.03F)-(0.0F)), ((-0.0046F)-(0.0F)),((-1.4427F)-(-0.0456F)));
+        animator.rotate(wingleft3, ((-1.5708F)-(0.0F)), ((0.001F)-(0.0F)),((0.5418F)-(0.0911F)));
+        animator.rotate(wingleft4, ((0.203F)-(1.1629F)), ((-0.1731F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(wingright1, ((-0.0762F)-(0.0F)), ((-0.0542F)-(-0.182F)),((0.5594F)-(0.0911F)));
+        animator.rotate(wingright2, ((-0.051F)-(0.0F)), ((0.0724F)-(0.0F)),((1.442F)-(0.0456F)));
+        animator.rotate(wingright3, ((-1.5708F)-(0.0F)), ((-0.001F)-(0.0F)),((-0.5418F)-(-0.0911F)));
+        animator.rotate(wingright4, ((0.203F)-(1.1629F)), ((0.1731F)-(0.0F)),((0.0F)-(0.0F)));
         animator.endKeyframe();
         animator.setStaticKeyframe(0);
         animator.resetKeyframe(0);
 
         animator.setAnimation(e.UNFLY_ANIMATION);
         animator.startKeyframe(e.unflyTransitionLength()); //move to this keyframe over the right length
-        //anims here
+        animator.rotate(body1, -((0.0037F)-(-0.0456F)), -((0.0F)-(0.0F)),-((-0.0309F)-(0.0F)));
+        animator.rotate(chest, -((0.1143F)-(-0.0456F)), -((0.0F)-(0.0F)),-((0.0421F)-(0.0F)));
+        animator.rotate(cube_r1, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(cube_r10, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((2.618F)-(2.618F)));
+        animator.rotate(cube_r11, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((-2.618F)-(-2.618F)));
+        animator.rotate(cube_r12, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((2.618F)-(2.618F)));
+        animator.rotate(cube_r13, -((-0.48F)-(-0.48F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(cube_r14, -((-0.5672F)-(-0.5672F)), -((0.0F)-(0.0F)),-((-2.4435F)-(-2.4435F)));
+        animator.rotate(cube_r15, -((-0.5672F)-(-0.5672F)), -((0.0F)-(0.0F)),-((2.4435F)-(2.4435F)));
+        animator.rotate(cube_r16, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((-2.618F)-(-2.618F)));
+        animator.rotate(cube_r17, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((2.618F)-(2.618F)));
+        animator.rotate(cube_r2, -((-0.3491F)-(-0.3491F)), -((0.0F)-(0.0F)),-((-0.48F)-(-0.48F)));
+        animator.rotate(cube_r3, -((-0.3491F)-(-0.3491F)), -((0.0F)-(0.0F)),-((0.48F)-(0.48F)));
+        animator.rotate(cube_r4, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((-0.829F)-(-0.829F)));
+        animator.rotate(cube_r5, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((0.829F)-(0.829F)));
+        animator.rotate(cube_r6, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((-0.48F)-(-0.48F)));
+        animator.rotate(cube_r7, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((0.48F)-(0.48F)));
+        animator.rotate(cube_r8, -((-0.3272F)-(-0.3272F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(cube_r9, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((-2.618F)-(-2.618F)));
+        animator.rotate(footleft, -((1.3355F)-(-0.4098F)), -((0.4554F)-(-0.5918F)),-((0.0094F)-(0.2276F)));
+        animator.rotate(footright, -((1.3355F)-(-0.4098F)), -((-0.4554F)-(0.5918F)),-((-0.0094F)-(-0.2276F)));
+        animator.rotate(handleft, -((0.0F)-(0.0F)), -((0.0265F)-(0.6374F)),-((1.5727F)-(0.0456F)));
+        animator.rotate(handright, -((0.0F)-(0.0F)), -((-0.0265F)-(-0.6374F)),-((-1.5727F)-(-0.0456F)));
+        animator.rotate(head, -((0.3018F)-(0.48F)), -((0.0F)-(0.0F)),-((0.0309F)-(0.0F)));
+        animator.rotate(head2, -((0.1745F)-(0.1745F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(head3, -((0.2379F)-(0.2379F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(jaw, -((0.0171F)-(0.00F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(jaw2, -((0.1745F)-(0.1745F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(jaw3, -((0.3927F)-(0.3927F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(legwing2, -((-0.0911F)-(-0.0911F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(legwing4, -((-0.0911F)-(-0.0911F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(lowerlegleft, -((0.501F)-(0.7741F)), -((0.0F)-(0.0F)),-((0.0227F)-(0.5463F)));
+        animator.rotate(lowerlegright, -((0.501F)-(0.7741F)), -((0.0F)-(0.0F)),-((-0.0227F)-(-0.5463F)));
+        animator.rotate(neck1, -((0.0034F)-(-0.1309F)), -((0.0F)-(0.0F)),-((-0.0113F)-(0.0F)));
+        animator.rotate(neck2, -((-0.1599F)-(-0.2618F)), -((0.0F)-(0.0F)),-((-0.0421F)-(0.0F)));
+        animator.rotate(tail1, -((-0.2963F)-(-0.0456F)), -((0.0212F)-(0.0F)),-((-0.0421F)-(0.0F)));
+        animator.rotate(tail2, -((-0.0414F)-(0.0456F)), -((-0.0212F)-(0.0F)),-((0.0113F)-(0.0F)));
+        animator.rotate(tail3, -((-0.035F)-(0.0456F)), -((-0.0424F)-(0.0F)),-((0.0309F)-(0.0F)));
+        animator.rotate(tail4, -((-0.0187F)-(0.0456F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(tail5, -((-0.035F)-(0.0456F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(upperlegleft, -((0.3753F)-(-0.3643F)), -((-0.2484F)-(0.0F)),-((-1.3667F)-(-0.5009F)));
+        animator.rotate(upperlegright, -((0.3753F)-(-0.3643F)), -((0.2484F)-(0.0F)),-((1.3667F)-(0.5009F)));
+        animator.rotate(wingleft1, -((-0.0762F)-(0.0F)), -((0.0542F)-(0.182F)),-((-0.5594F)-(-0.0911F)));
+        animator.rotate(wingleft2, -((0.03F)-(0.0F)), -((-0.0046F)-(0.0F)),-((-1.4427F)-(-0.0456F)));
+        animator.rotate(wingleft3, -((-1.5708F)-(0.0F)), -((0.001F)-(0.0F)),-((0.5418F)-(0.0911F)));
+        animator.rotate(wingleft4, -((0.203F)-(1.1629F)), -((-0.1731F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(wingright1, -((-0.0762F)-(0.0F)), -((-0.0542F)-(-0.182F)),-((0.5594F)-(0.0911F)));
+        animator.rotate(wingright2, -((-0.051F)-(0.0F)), -((0.0724F)-(0.0F)),-((1.442F)-(0.0456F)));
+        animator.rotate(wingright3, -((-1.5708F)-(0.0F)), -((-0.001F)-(0.0F)),-((-0.5418F)-(-0.0911F)));
+        animator.rotate(wingright4, -((0.203F)-(1.1629F)), -((0.1731F)-(0.0F)),-((0.0F)-(0.0F)));
         animator.endKeyframe();
         animator.setStaticKeyframe(0);
         animator.resetKeyframe(0);

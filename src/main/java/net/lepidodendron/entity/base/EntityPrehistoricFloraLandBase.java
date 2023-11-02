@@ -343,8 +343,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         this.setIsDrinking(1000);
-        if (this.getAnimation() != this.ATTACK_ANIMATION) {
-            this.setAnimation(NO_ANIMATION);
+        if (!(this instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase)) {
+            if (this.getAnimation() != this.ATTACK_ANIMATION) {
+                this.setAnimation(NO_ANIMATION);
+            }
         }
         this.getNavigator().clearPath();
         this.setDrinkingFrom(null);
