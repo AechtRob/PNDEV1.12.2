@@ -75,6 +75,11 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public boolean canClimb() {
+		return false;
+	}
+
+	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.hasAlarm()) {
@@ -101,12 +106,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	public boolean getScreaming() {
 		return this.screaming;
-	}
-
-	//how quickly the animal will climb a tree or solid block
-	@Override
-	public float getClimbSpeed() {
-		return 0.0035F;
 	}
 
 	@Override
