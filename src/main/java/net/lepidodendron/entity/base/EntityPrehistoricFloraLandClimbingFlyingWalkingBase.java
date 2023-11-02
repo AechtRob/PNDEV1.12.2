@@ -98,6 +98,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return true; //default
     }
 
+    /**if set to false, wont land on the ground
+     *
+     * @return
+     */
+    public boolean canWalk() {
+        return true; //default
+    }
+
     public boolean canFloat() {
         return false; //default
     }
@@ -475,7 +483,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                 if (collided && sitCooldown == 0) {
                     sitCooldown = 5;
                     //Are we on the ground?
-                    if (this.onGround) {
+                    if (this.onGround && this.canWalk()) {
                         if (world.isSideSolid(this.getPosition().down(), EnumFacing.UP)) {
                             this.setAttachmentPos(this.getPosition().down());
                             this.dataManager.set(SIT_FACE, EnumFacing.UP);
