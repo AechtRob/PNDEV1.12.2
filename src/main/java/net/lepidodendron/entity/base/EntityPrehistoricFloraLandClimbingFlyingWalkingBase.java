@@ -331,6 +331,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     /**
      * this override code allows us to change the eye height (red line on the hitbox)
+     * keeping it low down helps prevent the mobs glitching through blocks upwards
      * @return
      */
     @Override
