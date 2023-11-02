@@ -141,7 +141,9 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         super.onUpdate();
 
         if (!world.isRemote) {
-            if (this.motionX != 0 || this.motionZ != 0 || Math.abs(this.motionY) >= 0.1) {
+            if (this.motionX != 0 || this.motionZ != 0
+                    || (Math.abs(this.motionY) >= 0.1)
+                    || (this.motionY != 0 && this.getAttachmentFacing() != EnumFacing.UP) ){
                 this.setIsMoving(true);
             } else {
                 this.setIsMoving(false);
@@ -808,7 +810,9 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
 
         if (!world.isRemote) {
-            if (this.motionX != 0 || this.motionZ != 0 || Math.abs(this.motionY) >= 0.1) {
+            if (this.motionX != 0 || this.motionZ != 0
+                    || (Math.abs(this.motionY) >= 0.1)
+                    || (this.motionY != 0 && this.getAttachmentFacing() != EnumFacing.UP)) {
                 this.setIsMoving(true);
             } else {
                 this.setIsMoving(false);
