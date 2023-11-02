@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -38,6 +39,8 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraElaphrosaurus(World world) {
 		super(world);
@@ -46,6 +49,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 		maxWidth = 1.8F;
 		maxHeight = 1.85F;
 		maxHealthAgeable = 30.0D;
+		STAND_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -113,7 +117,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -187,6 +191,25 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		//Sometimes stand up and look around:
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+
+			this.setAnimation(STAND_ANIMATION);
+
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
+	}
+
+	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
@@ -230,6 +253,12 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}

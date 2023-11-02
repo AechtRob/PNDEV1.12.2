@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -28,18 +29,23 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter {
 
-	private boolean screaming;
-	public int screamAlarmCooldown;
+	//private boolean screaming;
 
-	public EntityPrehistoricFloraPterodactylus(World world) {
+	public Animation ALERT_ANIMATION;
+	public Animation PREEN_ANIMATION;
+	public int standCooldown;
+
+	public EntityPrehistoricFloraRhamphorhynchus(World world) {
 		super(world);
-		setSize(1, 1);
+		setSize(0.8F, 0.5F);
 		minWidth = 0.10F;
-		maxWidth = 1.0F;
-		maxHeight = 1.0F;
-		maxHealthAgeable = 6.0D;
+		maxWidth = 0.8F;
+		maxHeight = 0.5F;
+		maxHealthAgeable = 15.0D;
+		ALERT_ANIMATION = Animation.create(40);
+		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);
 		enablePersistence();
 	}
@@ -55,7 +61,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	}
 
 	public boolean hasAlarm() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -63,23 +69,16 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.hasAlarm()) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraPterodactylus> pterodactylus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraPterodactylus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraPterodactylus currentPterodactylus : pterodactylus) {
+			List<EntityPrehistoricFloraRhamphorhynchus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraRhamphorhynchus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraRhamphorhynchus currentPterodactylus : rhamphorhynchus) {
 				currentPterodactylus.setRevengeTarget(ee);
-				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
+
 				currentPterodactylus.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
 	}
 
-	public void setScreaming(boolean screaming) {
-		this.screaming = screaming;
-	}
-
-	public boolean getScreaming() {
-		return this.screaming;
-	}
 
 	//how quickly the animal will climb a tree or solid block
 	@Override
@@ -95,19 +94,19 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_PTERODACTYLUS;
+		return ModTriggers.CLICK_RHAMPHORHYNCHUS;
 	}
 
 	public float getFlySpeed() {
-		return 1.6f;
+		return 0.25f;
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.PTERODACTYLUS_LOOT_YOUNG;
+			return LepidodendronMod.RHAMPHORHYNCHUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.PTERODACTYLUS_LOOT;
+		return LepidodendronMod.RHAMPHORHYNCHUS_LOOT;
 	}
 
 	@Override
@@ -241,22 +240,22 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodactylus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodactylus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodactylus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:pterodactylus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_alarm"));
 	}
 
 	public void playAlarmSound()
@@ -267,7 +266,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		{
 			//System.err.println("playing alarm sound");
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-			this.screamAlarmCooldown = 25;
+
 		}
 	}
 
@@ -278,14 +277,13 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.BUG);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityAISwimming(this));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new PanicScreamAI(this, 1.0F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this));
@@ -304,21 +302,10 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		return false;
 	}
 
-	@Override
-	public void onEntityUpdate() {
-		if (this.screamAlarmCooldown > 0) {
-			this.screamAlarmCooldown -= 1;
-		}
-		if (this.getScreaming() && screamAlarmCooldown <= 0) {
-			this.playAlarmSound();
-		}
-
-		super.onEntityUpdate();
-	}
 
 	@Override
 	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_pterodactylus";
+		return "lepidodendron:prehistoric_flora_rhamphorhynchus";
 	}
 
 	@Override

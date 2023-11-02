@@ -47,6 +47,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     private static final DataParameter<Float> FLYPROGRESS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FLOAT);
 
     public int sitCooldown = 0;
+
+    //if it is descending, it will not land on the ground while the ticker is active
     public int sidewaysTries = 200;
     public int sitTickCt = 0;
     public float sitProgress;
@@ -71,10 +73,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return 0.55F;
     }
 
+    /**how high the mob will fly above the highest block directly below it (may be top of the terrain)
+     *
+     * @return
+     */
     public int flightHeight() {
         return 40; //default
     }
 
+    /**if set to false, wont land on the sides of trees
+     *
+     * @return
+     */
     public boolean canClimb() {
         return true; //default
     }
@@ -231,6 +241,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.dataManager.set(HEADCOLLIDED, collided);
     }
 
+    /**
+     * The speed at which the mob climbs up the side of a block
+     * @return
+     */
     public float getClimbSpeed() {
         return 0.01F;
     }
@@ -269,6 +283,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return pos.up(2 + rand.nextInt(3));
     }
 
+    /**
+     * this override code allows us to change the eye height (red line on the hitbox)
+     * @return
+     */
     @Override
     public float getEyeHeight() {
         return 0.15F;
@@ -580,6 +598,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return 1150;
     }
 
+    /**
+     * How long the mob flies for, when at 0, it tries to land
+     * @return
+     */
     public int sitCooldownSetter() {
         return 1000 + rand.nextInt(1500);
     }
