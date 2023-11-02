@@ -380,7 +380,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             this.setSitting(false);
             this.sitTickCt = 0;
             ticksSitted = 0;
-            sitCooldown = 500 + rand.nextInt(this.sitCooldownSetter());
+            sitCooldown = this.sitCooldownSetter();
             this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
             this.setAttachmentPos(null);
         }
@@ -661,6 +661,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return true;
     }
 
+    /**
+     * How long the mob stays nonflying for, when at 0, it tries to fly
+     * @return
+     */
     public int sitTickCtMax() {
         return 1150;
     }
@@ -670,7 +674,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
      * @return
      */
     public int sitCooldownSetter() {
-        return 1000 + rand.nextInt(1500);
+        return 200 + rand.nextInt(2300);
     }
 
     @Override

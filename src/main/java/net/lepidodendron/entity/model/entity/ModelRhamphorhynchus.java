@@ -516,6 +516,7 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
             else if (!ee.getHeadCollided()){
                 //Climbing
                 //animClimb(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                //Rhampho does not climb
             }
         }
 
