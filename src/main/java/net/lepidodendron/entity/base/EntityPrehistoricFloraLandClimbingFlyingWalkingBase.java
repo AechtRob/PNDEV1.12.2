@@ -133,10 +133,26 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         super.onUpdate();
 
         if (!world.isRemote) {
-            if (this.motionX != 0 || this.motionZ != 0 || this.motionY != 0) {
+            if (this.motionX != 0 || this.motionZ != 0 || Math.abs(this.motionY) >= 0.1) {
                 this.setIsMoving(true);
             } else {
                 this.setIsMoving(false);
+            }
+        }
+
+        if (this.getAttachmentPos() != null) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
+                rotationYaw = 180;
+            } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
+                rotationYaw = 270;
+            } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
+                rotationYaw = 0;
+            } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
+                rotationYaw = 90;
             }
         }
     }
@@ -623,14 +639,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             }
         }
 
-        if (world.isRemote && this.getAttachmentPos() != null) {
+        if (this.getAttachmentPos() != null) {
             if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 180;
             } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 270;
             } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 0;
             } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.faceBlock(this.getAttachmentPos(), 10, 10);
                 rotationYaw = 90;
             }
         }
@@ -751,7 +771,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
 
         if (!world.isRemote) {
-            if (this.motionX != 0 || this.motionZ != 0 || this.motionY != 0) {
+            if (this.motionX != 0 || this.motionZ != 0 || Math.abs(this.motionY) >= 0.1) {
                 this.setIsMoving(true);
             } else {
                 this.setIsMoving(false);

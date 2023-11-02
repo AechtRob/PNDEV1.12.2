@@ -16,7 +16,7 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
     }
 
     public static float getScaler() {
-        return 1F;
+        return 0.4F;
     }
 
     @Override
@@ -29,24 +29,21 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
         float getOffset = 0.0F;
         switch (entityLiving.getAttachmentFacing()) {
-            case DOWN:
+            case DOWN: case UP:
             default:
                 break;
             case EAST: case WEST: case NORTH: case SOUTH:
                 GlStateManager.translate(0.0, 0.05F, -getOffset);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
-            case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
         }
     }
-
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPterodactylus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0.35F;
     }
 
 }

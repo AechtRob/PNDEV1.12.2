@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhamphorhynchus;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
@@ -12,6 +11,7 @@ import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.EnumFacing;
 
 public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended root;
@@ -71,8 +71,6 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended cube_r17;
 
     private ModelAnimator animator;
-
-    private float scaler;
 
     public ModelRhamphorhynchus() {
 
@@ -431,6 +429,7 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -440,83 +439,46 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 
-        EntityPrehistoricFloraRhamphorhynchus flier = (EntityPrehistoricFloraRhamphorhynchus) e;
-        if (flier.isFlying()
-                //|| flier.getAnimation() == flier.UNFLY_ANIMATION
-        ) { //flight pose
-//            this.setRotateAngle(tail4, 0.04241150082346221F, 0.0F, 0.0F);
-//            this.setRotateAngle(upperlegL, 0.6368706440527309F, -0.14852751934471745F, -1.5920893436692274F);
-//            this.setRotateAngle(wing2R, 0.0F, -0.08482300164692443F, 0.06370451769779302F);
-//            this.setRotateAngle(footL, -0.06370451769779302F, 0.0F, 0.0F);
-//            this.setRotateAngle(neck1, -0.12740903539558604F, 0.0F, 0.0F);
-//            this.setRotateAngle(wing3R, 0.0F, 0.08482300164692443F, -0.06370451769779302F);
-//            this.setRotateAngle(tail3, 0.04241150082346221F, 0.0F, 0.0F);
-//            this.setRotateAngle(wing3L, 0.0F, -0.08482300164692443F, 0.06370451769779302F);
-//            this.setRotateAngle(wing4L, 0.0F, -0.02129301687433082F, 0.08482300164692443F);
-//            this.setRotateAngle(handR, -0.10611601852125524F, 0.46705010783368256F, 0.0F);
-//            this.setRotateAngle(lowerlegR, 0.7641051465231175F, -0.08482300164692443F, 0.02129301687433082F);
-//            this.setRotateAngle(upperlegR, 0.6368706440527309F, 0.14852751934471745F, 1.5920893436692274F);
-//            this.setRotateAngle(wing2L, 0.0F, 0.08482300164692443F, -0.06370451769779302F);
-//            this.setRotateAngle(wing1R, -0.02129301687433082F, 0.02129301687433082F, 0.14852751934471745F);
-//            this.setRotateAngle(chest, 0.12740903539558604F, 0.0F, 0.0F);
-//            this.setRotateAngle(footR, -0.06370451769779302F, 0.0F, 0.0F);
-//            this.setRotateAngle(handL, -0.10611601852125524F, -0.46705010783368256F, 0.0F);
-//            this.setRotateAngle(tail2, 0.12740903539558604F, 0.0F, 0.0F);
-//            this.setRotateAngle(wing1L, -0.02129301687433082F, -0.02129301687433082F, -0.14852751934471745F);
-//            this.setRotateAngle(lowerlegL, 0.7641051465231175F, 0.08482300164692443F, -0.02129301687433082F);
-//            this.setRotateAngle(head, 0.42446407408502096F, 0.0F, 0.0F);
-//            this.setRotateAngle(hips, -0.06370451769779302F, 0.0F, 0.0F);
-//            this.setRotateAngle(wing4R, 0.0F, 0.02129301687433082F, -0.08482300164692443F);
-//            this.setRotateAngle(neck2, -0.2546435378659727F, 0.0F, 0.0F);
-        } else {
-            resetToDefaultPose();
+        EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) e;
+        if (flier.isReallyFlying() || flier.getAnimation() == flier.UNFLY_ANIMATION) {
+            //flight pose
+
+        } else if (flier.getAttachmentPos() != null) {
+            if (flier.getAttachmentFacing() == EnumFacing.UP) {
+                //Is walking:
+                //The model is already reset to default each cycle so no need to do more here
+            }
+            else {
+                //Climb pose
+
+            }
         }
-        
 
         AdvancedModelRenderer[] tailFull = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
 
         float speed = 0.48F;
-        float fixedY = 0F;
-       // float fixedY = 1.1F; //The standard offset to centre the mob
 
         //Animations:
 
-        if (flier.isFlying()) {
-
+        if (flier.isReallyFlying()) { //flying
             this.faceTarget(f3, f4, 8, neck1);
             this.faceTarget(f3, f4, 8, neck2);
             this.faceTarget(f3, f4, 4, head);
 
-
-
         }
         else { //not flying
-
             if (flier.getIsFast()) {
                 speed = speed;
             }
             else {
                 speed = speed / 1.5F;
             }
-
             this.faceTarget(f3, f4, 12, neck1);
             this.faceTarget(f3, f4, 12, neck2);
             this.faceTarget(f3, f4, 8, head);
 
-            this.root.offsetY = fixedY;
-
             this.chainWave(tailFull, speed * 0.5F, 0.02F, 0.2F, f2, 1F);
             this.chainSwing(tailFull, speed * 0.5F, 0.05F, 0.5F, f2, 1F);
-
-            if (f3 == 0 || !flier.getIsMoving()
-                    //|| flier.getAnimation() == flier.FLY_ANIMATION || flier.getAnimation() == flier.UNFLY_ANIMATION
-
-            ) {
-                return;
-            }
-
-            //body walking:
-
 
         }
 
@@ -528,26 +490,35 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraRhamphorhynchus ee = (EntityPrehistoricFloraRhamphorhynchus) entitylivingbaseIn;
 
-        if (!ee.isFlying()) {
+        if (ee.getAttachmentPos() == null) {
             if (ee.getIsMoving()) {
-                if (ee.getIsFast()) { //Running
-                    animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                } else { //Walking
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                if (ee.getIsFast()) { //Flying fast
+                    animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+                else { //Flying regular
+                    animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
         }
-        else {
-            //Flying
-            if(ee.getIsFast()){
-                animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        else if (ee.getAttachmentPos() != null) {
+            if (ee.getAttachmentFacing() == EnumFacing.UP) {
+                //Is Walking:
+                if (ee.getIsMoving()) {
+                    if (ee.getIsFast()) { //Walking fast
+                        animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    }
+                    else { //Walking regular
+                        animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    }
+                }
 
-            } else {
-                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
-
-
+            else if (!ee.getHeadCollided()){
+                //Climbing
+                //animClimb(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            }
         }
+
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
@@ -557,11 +528,9 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
         else if (ee.getAnimation() == ee.PREEN_ANIMATION) { //The noise anim
             animPreen(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
         else if (ee.getAnimation() == ee.ALERT_ANIMATION) { //The noise anim
             animAlert(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
@@ -5199,8 +5168,22 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraRhamphorhynchus e = (EntityPrehistoricFloraRhamphorhynchus) entity;
+        EntityPrehistoricFloraLandClimbingFlyingWalkingBase e = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) entity;
+        animator.update(entity);
 
+        animator.setAnimation(e.FLY_ANIMATION);
+        animator.startKeyframe(e.flyTransitionLength()); //move to this keyframe over the right length
+        //anims here
+        animator.endKeyframe();
+        animator.setStaticKeyframe(0);
+        animator.resetKeyframe(0);
+
+        animator.setAnimation(e.UNFLY_ANIMATION);
+        animator.startKeyframe(e.unflyTransitionLength()); //move to this keyframe over the right length
+        //anims here
+        animator.endKeyframe();
+        animator.setStaticKeyframe(0);
+        animator.resetKeyframe(0);
 
     }
 }

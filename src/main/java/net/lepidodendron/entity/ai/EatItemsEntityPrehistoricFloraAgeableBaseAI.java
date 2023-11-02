@@ -1,9 +1,6 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingBase;
+import net.lepidodendron.entity.base.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -93,6 +90,16 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
             }
         }
         if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingBase) {
+            if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
+                if (this.targetItem != null && !this.targetItem.cannotPickup()) {
+                    this.entity.setEatTarget(null);
+                    this.entity.eatItem(this.targetItem.getItem());
+                    this.targetItem.getItem().shrink(1);
+                    this.targetItem.setPickupDelay(10);
+                }
+            }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
             if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
                 if (this.targetItem != null && !this.targetItem.cannotPickup()) {
                     this.entity.setEatTarget(null);

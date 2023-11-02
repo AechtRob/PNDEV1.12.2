@@ -12,8 +12,9 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhamphorhynchus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.3F;
+        return 0.7F * 0.4F;
     }
+
     public RenderRhamphorhynchus(RenderManager mgr) {
         super(mgr, new ModelRhamphorhynchus(), 0.15f);
     }
@@ -26,6 +27,16 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
     @Override
     protected void applyRotations(EntityPrehistoricFloraRhamphorhynchus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        float getOffset = 0.0F;
+        switch (entityLiving.getAttachmentFacing()) {
+            case DOWN: case UP:
+            default:
+                break;
+            case EAST: case WEST: case NORTH: case SOUTH:
+                GlStateManager.translate(0.0, 0.05F, -getOffset);
+                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                break;
+        }
     }
 
     @Override

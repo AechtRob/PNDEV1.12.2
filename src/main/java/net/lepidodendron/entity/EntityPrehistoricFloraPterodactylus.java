@@ -35,11 +35,11 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraPterodactylus(World world) {
 		super(world);
-		setSize(1, 1);
+		setSize(0.65F, 0.45F);
 		minWidth = 0.10F;
-		maxWidth = 1.0F;
-		maxHeight = 1.0F;
-		maxHealthAgeable = 6.0D;
+		maxWidth = 0.65F;
+		maxHeight = 0.45F;
+		maxHealthAgeable = 10.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}
@@ -196,7 +196,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 				return 0.3F;
 			}
 		}
-		return 1.6f; //flyspeed
+		return 1.065f; //flyspeed
 	}
 
 	@Override
@@ -290,7 +290,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityAISwimming(this));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new PanicScreamAI(this, 1.0F));
+		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this));

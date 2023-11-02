@@ -7853,6 +7853,143 @@
         "stream": false
       }
     ]
-  }
+  },
 
+  "pterodactylus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pterodactylus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "pterodactylus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pterodactylus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "pterodactylus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pterodactylus_death",
+        "stream": false
+      }
+    ]
+  },
+  "pterodactylus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pterodactylus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pterodactylus_alarm03",
+        "stream": false
+      }
+    ]
+  },
+
+  "rhamphorhynchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhamphorhynchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "rhamphorhynchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhamphorhynchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "rhamphorhynchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhamphorhynchus_death",
+        "stream": false
+      }
+    ]
+  },
+  "rhamphorhynchus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhamphorhynchus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhamphorhynchus_alarm04",
+        "stream": false
+      }
+    ]
+  }
+  
+  
+  
+  
 }

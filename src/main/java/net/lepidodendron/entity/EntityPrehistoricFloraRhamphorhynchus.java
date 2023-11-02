@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
+import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -28,17 +29,19 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
 
+	private boolean screaming;
+	public int screamAlarmCooldown;
 	public Animation ALERT_ANIMATION;
 	public Animation PREEN_ANIMATION;
 	public int standCooldown;
 
 	public EntityPrehistoricFloraRhamphorhynchus(World world) {
 		super(world);
-		setSize(0.8F, 0.5F);
+		setSize(0.85F, 0.5F);
 		minWidth = 0.10F;
-		maxWidth = 0.8F;
+		maxWidth = 0.85F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 15.0D;
 		ALERT_ANIMATION = Animation.create(40);
@@ -79,13 +82,20 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 			List<EntityPrehistoricFloraRhamphorhynchus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraRhamphorhynchus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraRhamphorhynchus currentPterodactylus : rhamphorhynchus) {
 				currentPterodactylus.setRevengeTarget(ee);
-
+				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
 				currentPterodactylus.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
 	}
 
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
+	}
 
 	//how quickly the animal will climb a tree or solid block
 	@Override
@@ -267,7 +277,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		{
 			//System.err.println("playing alarm sound");
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-
+			this.screamAlarmCooldown = 25;
 		}
 	}
 
@@ -285,6 +295,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityAISwimming(this));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this));
@@ -303,6 +314,17 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		return false;
 	}
 
+	@Override
+	public void onEntityUpdate() {
+		if (this.screamAlarmCooldown > 0) {
+			this.screamAlarmCooldown -= 1;
+		}
+		if (this.getScreaming() && screamAlarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
+		super.onEntityUpdate();
+	}
 
 	@Override
 	public String getEntityId(Entity entity) {
