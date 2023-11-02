@@ -89,6 +89,12 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		return super.attackEntityFrom(ds, i);
 	}
 
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION
+			|| animation == PREEN_ANIMATION || animation == ALERT_ANIMATION;
+	}
+
 	public void setScreaming(boolean screaming) {
 		this.screaming = screaming;
 	}
