@@ -45,6 +45,16 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int flyTransitionLength() {
+		return 40;
+	}
+
+	@Override
+	public int unflyTransitionLength() {
+		return 40;
+	}
+
+	@Override
 	public boolean canFloat() {
 		return false;
 	}
@@ -81,7 +91,6 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		return this.screaming;
 	}
 
-	//how quickly the animal will climb a tree or solid block
 	@Override
 	public float getClimbSpeed() {
 		return 0.0035F;
@@ -96,10 +105,6 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_PTERODACTYLUS;
-	}
-
-	public float getFlySpeed() {
-		return 1.6f;
 	}
 
 	@Nullable
@@ -191,7 +196,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 				return 0.3F;
 			}
 		}
-		return getFlySpeed();
+		return 1.6f; //flyspeed
 	}
 
 	@Override
@@ -289,7 +294,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this));
-		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
+		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, true, false));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
