@@ -7,7 +7,7 @@
             "to": [ 16, 0.01, 16 ],
             "faces": {
                 "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#wire", "cullface": "down" },
-                "up":    { "uv": [ 16, 0, 0, 16 ], "texture": "#wire" }
+                "up":    { "uv": [ 16, 0, 0, 16 ], "rotation": 180, "texture": "#wire" }
               
             }
         }

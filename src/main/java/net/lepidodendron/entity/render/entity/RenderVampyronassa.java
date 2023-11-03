@@ -24,7 +24,7 @@ public class RenderVampyronassa extends RenderLiving<EntityPrehistoricFloraVampy
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraVampyronassa entity) {
         Calendar calendar = Calendar.getInstance();
-        if (calendar.get(2) + 1 == 10 && calendar.get(5) >= 31
+        if (calendar.get(2) + 1 == 10 && calendar.get(5) >= 30
             || calendar.get(2) + 1 == 11 && calendar.get(5) <= 1 )
         {
             return RenderVampyronassa.TEXTURE_HALLOWEEN;

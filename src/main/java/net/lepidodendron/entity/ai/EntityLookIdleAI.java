@@ -1,9 +1,6 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingBase;
+import net.lepidodendron.entity.base.*;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.EnumFacing;
@@ -61,6 +58,17 @@ public class EntityLookIdleAI extends EntityAIBase
             if (flybase.getAttachmentPos() != null) {
                 if (flybase.getAttachmentFacing() != EnumFacing.UP && flybase.getAttachmentFacing() != EnumFacing.DOWN)
                 return false;
+            }
+        }
+
+        if (this.idleEntity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.idleEntity;
+            if (flybase.isReallyFlying()) {
+                return false;
+            }
+            if (flybase.getAttachmentPos() != null) {
+                if (flybase.getAttachmentFacing() != EnumFacing.UP && flybase.getAttachmentFacing() != EnumFacing.DOWN)
+                    return false;
             }
         }
 

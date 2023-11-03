@@ -74,7 +74,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 		
-		if (random.nextInt(GenChance) == 0) {
+		if (random.nextInt(GenChance * 2) == 0) {
 
 			int fossilType = random.nextInt(13);
 			IBlockState fossilOre = null;

@@ -443,7 +443,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             }
         }
 
-        if (world.isRemote && this.getAttachmentPos() != null) {
+        if (this.getAttachmentPos() != null) {
             if (this.getAttachmentFacing() == EnumFacing.NORTH) {
                 rotationYaw = 180;
             } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
@@ -470,7 +470,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     @Override
     public boolean isMovementBlocked() {
-        return this.getAttachmentPos() != null || this.collidedHorizontally;
+        return this.getHealth() <= 0.0F || this.getAttachmentPos() != null || this.collidedHorizontally;
     }
 
     public ResourceLocation FlightSound() {

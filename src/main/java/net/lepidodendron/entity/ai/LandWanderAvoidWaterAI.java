@@ -1,8 +1,11 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
+import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.Vec3d;
 
 public class LandWanderAvoidWaterAI extends EntityAIBase
@@ -39,6 +42,13 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     {
         if (entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
             return false;
+        }
+
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase ptero = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (ptero.getAttachmentFacing() != EnumFacing.UP) {
+                return false;
+            }
         }
 
         if (!(entity.getAISpeedLand() > 0)) {
@@ -104,6 +114,14 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
             if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
+                this.entity.getNavigator().clearPath();
+                return false;
+            }
+        }
+
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase ptero = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (ptero.getAttachmentFacing() != EnumFacing.UP && this.entity.getNavigator() instanceof PathNavigateGroundNoWater) {
                 this.entity.getNavigator().clearPath();
                 return false;
             }

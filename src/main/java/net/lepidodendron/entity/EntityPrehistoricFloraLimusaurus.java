@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -41,13 +42,18 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
 
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
+
+
 	public EntityPrehistoricFloraLimusaurus(World world) {
 		super(world);
-		setSize(0.425F, 0.675F);
+		setSize(0.6F, 0.55F);
 		minWidth = 0.05F;
-		maxWidth = 0.425F;
-		maxHeight = 0.675F;
-		maxHealthAgeable = 28.0D;
+		maxWidth = 0.6F;
+		maxHeight = 0.55F;
+		maxHealthAgeable = 12.0D;
+		STAND_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -78,12 +84,12 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 50;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
-	//public static String getHabitat() {return "Terrestrial Pseudosuchian";}
+	public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean hasNest() {
@@ -92,7 +98,12 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 18;
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 30;
 	}
 
 	@Override
@@ -111,17 +122,35 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.6915F;
+		float speedBase = 0.315F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.55F;
+			speedBase = speedBase * 3.55F;
 		}
 		return speedBase * 0.67F;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		//Sometimes stand up and look around:
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 	}
 
 	@Override
@@ -159,12 +188,12 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		//this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.BUG), DietString.MEAT);
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 	@Override
@@ -188,7 +217,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -228,6 +257,12 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
