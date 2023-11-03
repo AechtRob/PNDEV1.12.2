@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDasyceps extends RenderLiving<EntityPrehistoricFloraDasyceps> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dasyceps.png");
+    public static float getScaler() {
+        return 0.305F;
+    }
 
     public RenderDasyceps(RenderManager mgr) {
         super(mgr, new ModelDasyceps(), 0.3f);
@@ -27,7 +30,7 @@ public class RenderDasyceps extends RenderLiving<EntityPrehistoricFloraDasyceps>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDasyceps entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

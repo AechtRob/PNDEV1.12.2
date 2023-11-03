@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPristerognathus extends RenderLiving<EntityPrehistoricFloraPristerognathus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pristerognathus.png");
+    public static float getScaler() {
+        return 0.415f;
+    }
 
     public RenderPristerognathus(RenderManager mgr) {
         super(mgr, new ModelPristerognathus(), 0.25f);
@@ -27,7 +30,7 @@ public class RenderPristerognathus extends RenderLiving<EntityPrehistoricFloraPr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPristerognathus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.25F;
     }
