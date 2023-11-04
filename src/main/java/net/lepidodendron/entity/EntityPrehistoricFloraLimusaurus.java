@@ -9,16 +9,20 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -32,26 +36,30 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
-
 	public Animation STAND_ANIMATION;
+	public Animation CHATTER_ANIMATION;
 	private int standCooldown;
+	private boolean screaming;
+	private int alarmCooldown;
 
 
 	public EntityPrehistoricFloraLimusaurus(World world) {
 		super(world);
-		setSize(0.6F, 0.55F);
+		setSize(0.49F, 0.52F);
 		minWidth = 0.05F;
-		maxWidth = 0.6F;
-		maxHeight = 0.55F;
+		maxWidth = 0.49F;
+		maxHeight = 0.52F;
 		maxHealthAgeable = 12.0D;
-		STAND_ANIMATION = Animation.create(60);
+		STAND_ANIMATION = Animation.create(55);
+		CHATTER_ANIMATION = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -64,10 +72,11 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
 
-//		if (world.isRemote) {
-//			System.err.println(Math.sin((float)this.getTicks() / 100F));
-//		}
+	}
 
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, CHATTER_ANIMATION, STAND_ANIMATION};
 	}
 
 	@Override
@@ -101,7 +110,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getRoarLength() {
-		return 30;
+		return 20;
 	}
 
 	@Override
@@ -134,8 +143,30 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			List<EntityPrehistoricFloraLimusaurus> Limusaurus = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraLimusaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
+			for (EntityPrehistoricFloraLimusaurus currentLimusaurus : Limusaurus) {
+				currentLimusaurus.setRevengeTarget(ee);
+				currentLimusaurus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
 		//Sometimes stand up and look around:
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
@@ -149,6 +180,19 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			this.setAnimation(NO_ANIMATION);
 		}
 
+		if (this.getAnimation() == CHATTER_ANIMATION && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
+		}
+
+
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	@Override
@@ -177,13 +221,14 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
+		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getRoarLength(), this.getGrappleAnimation(), 0.25));
+		tasks.addTask(6, new LandWanderNestAI(this));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		//this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
@@ -199,7 +244,48 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		return true;
 	}
 
+	@Override
+	public int grappleChance() {
+		return 500;
+	}@Override
 	
+	public AxisAlignedBB getGrappleBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
+	}
+
+	@Override
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple) {
+			return false;
+		}
+		List<EntityPrehistoricFloraLimusaurus> Limusaurus = Functions.getEntitiesWithinAABBPN(world, EntityPrehistoricFloraLimusaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
+		for (EntityPrehistoricFloraLimusaurus currentLimusaurus : Limusaurus) {
+			if (currentLimusaurus.isPFAdult() && this.isPFAdult() && currentLimusaurus != this && (!currentLimusaurus.willGrapple) && this.canEntityBeSeen(currentLimusaurus)) {
+				this.setGrappleTarget(currentLimusaurus);
+				currentLimusaurus.willGrapple = true;
+				this.willGrapple = true;
+				currentLimusaurus.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean grappleEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(this.getGrappleAnimation());
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+
+	@Override
+	public Animation getGrappleAnimation() {
+		return this.CHATTER_ANIMATION;
+	}
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -237,6 +323,29 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	            .getObject(new ResourceLocation("lepidodendron:limusaurus_death"));
 	}
 
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:limusaurus_alarm"));
+	}
+
+	public SoundEvent getChatterSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:limusaurus_chatter"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(CHATTER_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -255,16 +364,44 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			launchAttack();
 		}
 
+		if (!this.world.isRemote) {
+			if (this.getAnimation() == CHATTER_ANIMATION) {
+				if (this.getAnimationTick() == 1) {
+					this.playSound(this.getChatterSound(), this.getSoundVolume(), 1);
+				}
+			}
+		}
+		if (this.getAnimation() == CHATTER_ANIMATION && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+			launchGrapple();
+			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+				grappleTarget.setGrappleTarget(null);
+				grappleTarget.willGrapple = false;
+			}
+			this.setGrappleTarget(null);
+			this.willGrapple = false;
+		}
+		else if (this.getAnimation() == CHATTER_ANIMATION && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+
 		if (this.standCooldown > 0) {
 			this.standCooldown -= rand.nextInt(3) + 1;
 		}
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
 
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.CHATTER_ANIMATION.getDuration() - 1;
+	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 

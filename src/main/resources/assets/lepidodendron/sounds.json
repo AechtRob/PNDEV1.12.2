@@ -8052,8 +8052,92 @@
         "stream": false
       }
     ]
+  },
+
+  "limusaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:limusaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "limusaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:limusaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "limusaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:limusaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_alarm03",
+        "stream": false
+      }
+    ]
+  },
+  "limusaurus_chatter": {
+    "sounds": [
+      {
+        "name": "lepidodendron:limusaurus_chatter02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_chatter03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_chatter04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:limusaurus_chatter05",
+        "stream": false
+      }
+    ]
+  },
+  "limusaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:limusaurus_death",
+        "stream": false
+      }
+    ]
   }
-  
   
   
   
