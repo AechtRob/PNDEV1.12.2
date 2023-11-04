@@ -319,6 +319,9 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
         this.Leftfoot.addChild(Lefttoes);
         this.Lefttoes.cubeList.add(new ModelBox(Lefttoes, 61, 5, -2.5F, -1.0F, -3.5F, 5, 2, 4, 0.0F, false));
 
+        this.root.scaleChildren = true;
+        this.root.setScale(1,1,1);
+
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
@@ -457,7 +460,7 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 18) {
+        if (tickAnim >= 0 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 0) / 18) * (2-(0)));
             yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
@@ -1144,13 +1147,11 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             zz = 1 + (((tickAnim - 38) / 22) * (1-(1)));
         }
         else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
+            xx = 1;
+            yy = 1;
+            zz = 1;
         }
-        this.Lefteye.rotationPointX = this.Lefteye.rotationPointX + (float)(xx);
-        this.Lefteye.rotationPointY = this.Lefteye.rotationPointY - (float)(yy);
-        this.Lefteye.rotationPointZ = this.Lefteye.rotationPointZ + (float)(zz);
+        this.Lefteye.setScale((float)xx, (float)yy, (float)zz);
 
 
 
@@ -1171,13 +1172,12 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             zz = 1 + (((tickAnim - 38) / 22) * (1-(1)));
         }
         else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
+            xx = 1;
+            yy = 1;
+            zz = 1;
         }
-        this.Righteye.rotationPointX = this.Righteye.rotationPointX + (float)(xx);
-        this.Righteye.rotationPointY = this.Righteye.rotationPointY - (float)(yy);
-        this.Righteye.rotationPointZ = this.Righteye.rotationPointZ + (float)(zz);
+        this.Righteye.setScale((float)xx, (float)yy, (float)zz);
+
 
 
     }
