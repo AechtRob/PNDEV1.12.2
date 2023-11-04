@@ -7987,6 +7987,71 @@
         "stream": false
       }
     ]
+  },
+
+  "elaphrosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:elaphrosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "elaphrosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:elaphrosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "elaphrosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:elaphrosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "elaphrosaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:elaphrosaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:elaphrosaurus_alarm03",
+        "stream": false
+      }
+    ]
   }
   
   

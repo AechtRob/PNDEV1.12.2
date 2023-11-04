@@ -3,6 +3,7 @@ package net.lepidodendron.entity.ai;
 import com.google.common.base.Predicate;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuropsis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.util.Functions;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.passive.EntityVillager;
@@ -52,7 +53,7 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
         }
 
 
-        List<T> list = this.taskOwner.world.<T>getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
+        List<T> list = Functions.getEntitiesWithinAABBPN(this.taskOwner.world, this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
 
         if (list.isEmpty())
         {

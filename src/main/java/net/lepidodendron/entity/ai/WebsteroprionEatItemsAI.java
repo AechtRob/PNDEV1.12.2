@@ -52,7 +52,7 @@
 //
 //    private EntityItem getNearestItem(int range) {
 //        //System.err.println("Testing: getNearestItem");
-//        List<EntityItem> Items = this.entity.world.getEntitiesWithinAABB(EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range));
+//        List<EntityItem> Items = Functions.getEntitiesWithinAABBPN(this.entity.world, EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range), EntitySelectors.NOT_SPECTATING);
 //        Items.sort(this.targetSorter);
 //        for (EntityItem currentItem : Items) {
 //            //System.err.println("Testing: testingItems");

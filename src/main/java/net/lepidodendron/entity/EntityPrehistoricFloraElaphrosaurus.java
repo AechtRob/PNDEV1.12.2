@@ -9,11 +9,13 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,21 +34,24 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
+	private boolean screaming;
+	private int alarmCooldown;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
 	public EntityPrehistoricFloraElaphrosaurus(World world) {
 		super(world);
-		setSize(1.8F, 1.85F);
-		minWidth = 0.3F;
-		maxWidth = 1.8F;
+		setSize(0.85F, 1.85F);
+		minWidth = 0.2F;
+		maxWidth = 0.85F;
 		maxHeight = 1.85F;
 		maxHealthAgeable = 30.0D;
 		STAND_ANIMATION = Animation.create(60);
@@ -89,6 +94,10 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public boolean hasNest() {
+		return true;
+	}
+
+	public boolean hasAlarm() {
 		return true;
 	}
 
@@ -156,7 +165,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
@@ -177,8 +186,6 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 	public boolean panics() {
 		return true;
 	}
-
-	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -193,6 +200,14 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
 		//Sometimes stand up and look around:
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
@@ -233,6 +248,25 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:elaphrosaurus_death"));
+	}
+
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:elaphrosaurus_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ROAR_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
 	}
 
 	@Override
@@ -295,6 +329,28 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			List<EntityPrehistoricFloraElaphrosaurus> Elaphrosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraElaphrosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraElaphrosaurus currentElaphrosaurus : Elaphrosaurus) {
+				currentElaphrosaurus.setRevengeTarget(ee);
+				currentElaphrosaurus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

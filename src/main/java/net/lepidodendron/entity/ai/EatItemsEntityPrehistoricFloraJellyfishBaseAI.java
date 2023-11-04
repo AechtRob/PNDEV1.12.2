@@ -1,9 +1,11 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
+import net.lepidodendron.util.Functions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.oredict.OreDictionary;
@@ -57,7 +59,7 @@ public class EatItemsEntityPrehistoricFloraJellyfishBaseAI extends EntityAIBase 
 
     private EntityItem getNearestItem(int range) {
         String[] oreDictList = this.entity.getFoodOreDicts();
-        List<EntityItem> Items = this.entity.world.getEntitiesWithinAABB(EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range));
+        List<EntityItem> Items = Functions.getEntitiesWithinAABBPN(this.entity.world, EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range), EntitySelectors.NOT_SPECTATING);
         Items.sort(this.targetSorter);
         for (EntityItem currentItem : Items) {
             if (!currentItem.getItem().isEmpty()) {

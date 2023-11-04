@@ -503,6 +503,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_chatter"));
 	}
+
 	public SoundEvent getLongChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_long_chatter"));

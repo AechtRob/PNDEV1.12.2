@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraSuminia;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.IScreamer;
@@ -90,7 +89,7 @@ public class PanicScreamAI extends EntityAIBase
             this.randPosY = vec3d.y;
             this.randPosZ = vec3d.z;
 
-            if (this.creature instanceof EntityPrehistoricFloraSuminia) {
+            if (this.creature instanceof IScreamer) {
                 ((IScreamer) this.creature).setScreaming(true);
             }
             if (this.creature instanceof IScreamerFlier) {
