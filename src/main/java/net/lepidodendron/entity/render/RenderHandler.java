@@ -4906,6 +4906,24 @@ public class RenderHandler {
                 return new RenderRhamphorhynchus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGuanlong.class, new IRenderFactory<EntityPrehistoricFloraGuanlong>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGuanlong> createRenderFor(RenderManager manager) {
+                return new RenderGuanlong(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCamarasaurus.class, new IRenderFactory<EntityPrehistoricFloraCamarasaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCamarasaurus> createRenderFor(RenderManager manager) {
+                return new RenderCamarasaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraChilesaurus.class, new IRenderFactory<EntityPrehistoricFloraChilesaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraChilesaurus> createRenderFor(RenderManager manager) {
+                return new RenderChilesaurus(manager);
+            }
+        });
 
         
         
