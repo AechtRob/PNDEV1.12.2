@@ -12,6 +12,10 @@ public class RenderDisplays {
     public static final ModelAnomalocaris modelAnomalocaris = new ModelAnomalocaris();
     public static final ModelAnteosaurus modelAnteosaurus = new ModelAnteosaurus();
     public static final ModelApatosaurus modelApatosaurus = new ModelApatosaurus();
+    public static final ModelCamarasaurus modelCamarasaurus = new ModelCamarasaurus();
+    public static final ModelGuanlong modelGuanlong = new ModelGuanlong();
+    public static final ModelDubreuillosaurus modelDubreuillosaurus = new ModelDubreuillosaurus();
+    public static final ModelChilesaurus modelChilesaurus = new ModelChilesaurus();
     public static final ModelCongopycnodus modelCongopycnodus = new ModelCongopycnodus();
     public static final ModelAphnelepis modelAphnelepis = new ModelAphnelepis();
     public static final ModelParacestracion modelParacestracion = new ModelParacestracion();

@@ -37,24 +37,27 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
-	public Animation SCRATCH_RIGHT_ANIMATION;
+	public Animation SCRATCH_ANIMATION;
+
+	//public Animation CLEAN_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraSinraptor(World world) {
+	public EntityPrehistoricFloraGuanlong(World world) {
 		super(world);
-		setSize(1.75F, 2F);
-		minWidth = 0.20F;
-		maxWidth = 1.5F;
-		maxHeight = 2F;
-		maxHealthAgeable = 76.0D;
+		setSize(0.9F, 0.85F);
+		minWidth = 0.50F;
+		maxWidth = 0.9F;
+		maxHeight = 0.85F;
+		maxHealthAgeable = 34.0D;
+		SCRATCH_ANIMATION = Animation.create(80);
 		STAND_ANIMATION = Animation.create(80);
-		SCRATCH_RIGHT_ANIMATION = Animation.create(80);
+		//CLEAN_ANIMATION = Animation.create(65);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -62,17 +65,17 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 
 	@Override
 	public int getWalkCycleLength() {
-		return 50;
+		return 30;
 	}
 
 	@Override
 	public int getFootstepOffset() {
-		return 25;
+		return 15;
 	}
 
 	@Override
 	public int getRunCycleLength() {
-		return 20;
+		return 15;
 	}
 
 	@Override
@@ -93,12 +96,12 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 2; //large
+		return 1; //large
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_RIGHT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION};
 	}
 	public static String getPeriod() {return "Jurassic";}
 
@@ -107,16 +110,15 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 		return 40;
 	}
 
-	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM = IDLE1 =  BOOMINGCALL, NOISE_ANIM = THREAT, IDLESCRATCH = SCRATCH
 	@Override
 	public int getRoarLength() {
 		return 80;
-	} //Idle
+	} //Warn
 
 	@Override
 	public int getNoiseLength() {
 		return 80;
-	} //Roar
+	} //Noise
 
 	@Override
 	public boolean hasNest() {
@@ -144,17 +146,23 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.35F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION || this.getAnimation() == SCRATCH_ANIMATION || this.getAnimation() == NOISE_ANIMATION || this.getAnimation() == ROAR_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase*2F;
+			speedBase = speedBase*2.3F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION
+				|| animation == SCRATCH_ANIMATION || animation == STAND_ANIMATION;
 	}
 
 	@Override
@@ -234,7 +242,7 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -242,25 +250,25 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:guanlong_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:guanlong_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:guanlong_death"));
 	}
 
 	@Override
@@ -276,20 +284,20 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Sometimes stand up and look around:
+		//Alert animation
 		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(100);
 			if (next < 50) {
 				this.setAnimation(STAND_ANIMATION);
 			} else {
-				this.setAnimation(SCRATCH_RIGHT_ANIMATION);
+				this.setAnimation(SCRATCH_ANIMATION);
 			}
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
@@ -358,17 +366,16 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.SINRAPTOR_LOOT_YOUNG;
+			return LepidodendronMod.GUANLONG_LOOT_YOUNG;
 		}
-		return LepidodendronMod.SINRAPTOR_LOOT;
+		return LepidodendronMod.GUANLONG_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_SINRAPTOR;
+		return ModTriggers.CLICK_GUANLONG;
 	}
-
 	//Rendering taxidermy:
 	//--------------------
 
