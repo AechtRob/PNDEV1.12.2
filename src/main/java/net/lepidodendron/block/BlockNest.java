@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -257,7 +258,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			if (classEntity != null) {
 				if (player != null) { //Aggro on the player
 					if (world.getDifficulty() != EnumDifficulty.PEACEFUL && !player.capabilities.isCreativeMode) {
-						List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)));
+						List<EntityPrehistoricFloraAgeableBase> Entities = Functions.getEntitiesWithinAABBPN(world, classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)), EntitySelectors.NOT_SPECTATING);
 						for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
 							if (currentEntity.isPFAdult() && !player.isInvisible()) {
 								currentEntity.setAttackTarget(player);

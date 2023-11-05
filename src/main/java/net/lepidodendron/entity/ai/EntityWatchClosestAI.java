@@ -4,11 +4,13 @@ import com.google.common.base.Predicates;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EntitySelectors;
+import net.minecraft.util.EnumFacing;
 
 public class EntityWatchClosestAI extends EntityAIBase
 {
@@ -81,6 +83,16 @@ public class EntityWatchClosestAI extends EntityAIBase
             EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.entity;
             if (flybase.isReallyFlying()) {
                 return false;
+            }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (flybase.isReallyFlying()) {
+                return false;
+            }
+            if (flybase.getAttachmentPos() != null) {
+                if (flybase.getAttachmentFacing() != EnumFacing.UP && flybase.getAttachmentFacing() != EnumFacing.DOWN)
+                    return false;
             }
         }
 

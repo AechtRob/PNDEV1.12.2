@@ -1,11 +1,9 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraAnurognathid;
-import net.lepidodendron.entity.EntityPrehistoricFloraDryosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraSuminia;
-import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.IScreamerFlier;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -40,18 +38,11 @@ public class PanicScreamAI extends EntityAIBase
                 EntityPrehistoricFloraAgeableBase entity = (EntityPrehistoricFloraAgeableBase) this.creature;
                 entity.setIsFast(false);
 
-                if (this.creature instanceof EntityPrehistoricFloraSuminia) {
-                    ((EntityPrehistoricFloraSuminia) this.creature).setScreaming(false);
+                if (this.creature instanceof IScreamer) {
+                    ((IScreamer) this.creature).setScreaming(false);
                 }
-                if (this.creature instanceof EntityPrehistoricFloraYinlong) {
-                    ((EntityPrehistoricFloraYinlong) this.creature).setScreaming(false);
-                }
-                if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
-                    ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(false);
-                }
-                if (this.creature instanceof EntityPrehistoricFloraAnurognathid) {
-                    ((EntityPrehistoricFloraAnurognathid) this.creature).setScreaming(false);
-                    //((EntityPrehistoricFloraAnurognathid) this.creature).setFlying();
+                if (this.creature instanceof IScreamerFlier) {
+                    ((IScreamerFlier) this.creature).setScreaming(false);
                 }
             }
             return false;
@@ -68,18 +59,12 @@ public class PanicScreamAI extends EntityAIBase
                     this.randPosY = (double)blockpos.getY();
                     this.randPosZ = (double)blockpos.getZ();
 
-                    if (this.creature instanceof EntityPrehistoricFloraSuminia) {
-                        ((EntityPrehistoricFloraSuminia) this.creature).setScreaming(true);
+                    if (this.creature instanceof IScreamer) {
+                        ((IScreamer) this.creature).setScreaming(true);
                     }
-                    if (this.creature instanceof EntityPrehistoricFloraYinlong) {
-                        ((EntityPrehistoricFloraYinlong) this.creature).setScreaming(true);
-                    }
-                    if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
-                        ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(true);
-                    }
-                    if (this.creature instanceof EntityPrehistoricFloraAnurognathid) {
-                        ((EntityPrehistoricFloraAnurognathid) this.creature).setScreaming(true);
-                        ((EntityPrehistoricFloraAnurognathid) this.creature).setFlying();
+                    if (this.creature instanceof IScreamerFlier) {
+                        ((IScreamerFlier) this.creature).setScreaming(true);
+                        ((IScreamerFlier) this.creature).setFlying();
                     }
 
                     return true;
@@ -104,18 +89,12 @@ public class PanicScreamAI extends EntityAIBase
             this.randPosY = vec3d.y;
             this.randPosZ = vec3d.z;
 
-            if (this.creature instanceof EntityPrehistoricFloraSuminia) {
-                ((EntityPrehistoricFloraSuminia) this.creature).setScreaming(true);
+            if (this.creature instanceof IScreamer) {
+                ((IScreamer) this.creature).setScreaming(true);
             }
-            if (this.creature instanceof EntityPrehistoricFloraYinlong) {
-                ((EntityPrehistoricFloraYinlong) this.creature).setScreaming(true);
-            }
-            if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
-                ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(true);
-            }
-            if (this.creature instanceof EntityPrehistoricFloraAnurognathid) {
-                ((EntityPrehistoricFloraAnurognathid) this.creature).setScreaming(true);
-                ((EntityPrehistoricFloraAnurognathid) this.creature).setFlying();
+            if (this.creature instanceof IScreamerFlier) {
+                ((IScreamerFlier) this.creature).setScreaming(true);
+                ((IScreamerFlier) this.creature).setFlying();
             }
 
             return true;

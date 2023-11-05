@@ -8,6 +8,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererEx
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 
 public class ModelCotylorhynchus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended main;
@@ -563,37 +564,319 @@ public class ModelCotylorhynchus extends AdvancedModelBaseExtended {
 
     }
 
+    @Override
+    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        this.resetToDefaultPose();
+        EntityPrehistoricFloraCotylorhynchus ee = (EntityPrehistoricFloraCotylorhynchus) entitylivingbaseIn;
+
+        if (!ee.isReallyInWater()) {
+            if (ee.getIsMoving()) {
+                if (ee.getIsFast()) { //Running
+                    //animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                } else { //Walking
+                    //animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+            }
+        }
+        else {
+            //Swimming pose:
+            if (!ee.getIsMoving()) { //static in water
+                //
+            }
+            else {
+                //moving in water
+                //
+            }
+        }
+        if (ee.getAnimation() == ee.EAT_ANIMATION) {
+            //animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
+            animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
+            //animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.LAY_ANIMATION) {
+            //animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
+            //animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+
+    }
+
+    public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        EntityPrehistoricFloraCotylorhynchus entity = (EntityPrehistoricFloraCotylorhynchus) entitylivingbaseIn;
+
+        int animCycle = 18;
+        double tickAnim = animTick + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+         if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (2.51033-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-1.48429-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-0.2831-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 9) {
+            xx = 2.51033 + (((tickAnim - 5) / 4) * (-4.0437-(2.51033)));
+            yy = -1.48429 + (((tickAnim - 5) / 4) * (1.56316-(-1.48429)));
+            zz = -0.2831 + (((tickAnim - 5) / 4) * (-0.65313-(-0.2831)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 18) {
+            xx = -4.0437 + (((tickAnim - 9) / 9) * (0-(-4.0437)));
+            yy = 1.56316 + (((tickAnim - 9) / 9) * (0-(1.56316)));
+            zz = -0.65313 + (((tickAnim - 9) / 9) * (0-(-0.65313)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(shoulder, shoulder.rotateAngleX + (float) Math.toRadians(xx), shoulder.rotateAngleY + (float) Math.toRadians(yy), shoulder.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(legFrontR, legFrontR.rotateAngleX + (float) Math.toRadians(xx), legFrontR.rotateAngleY + (float) Math.toRadians(yy), legFrontR.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-7.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 9) {
+            xx = -7.5 + (((tickAnim - 5) / 4) * (-0.5-(-7.5)));
+            yy = 0 + (((tickAnim - 5) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 18) {
+            xx = -0.5 + (((tickAnim - 9) / 9) * (0-(-0.5)));
+            yy = 0 + (((tickAnim - 9) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 9) / 9) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(legFrontRLower, legFrontRLower.rotateAngleX + (float) Math.toRadians(xx), legFrontRLower.rotateAngleY + (float) Math.toRadians(yy), legFrontRLower.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (2.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 18) {
+            xx = 2.5 + (((tickAnim - 5) / 13) * (0-(2.5)));
+            yy = 0 + (((tickAnim - 5) / 13) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 13) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(legFrontRFoot, legFrontRFoot.rotateAngleX + (float) Math.toRadians(xx), legFrontRFoot.rotateAngleY + (float) Math.toRadians(yy), legFrontRFoot.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (17.51365-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-2.41476-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-0.64743-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 17.51365 + (((tickAnim - 5) / 6) * (-79.10683-(17.51365)));
+            yy = -2.41476 + (((tickAnim - 5) / 6) * (-18.35778-(-2.41476)));
+            zz = -0.64743 + (((tickAnim - 5) / 6) * (-37.29642-(-0.64743)));
+        }
+        else if (tickAnim >= 11 && tickAnim < 14) {
+            xx = -79.10683 + (((tickAnim - 11) / 3) * (-66.88492-(-79.10683)));
+            yy = -18.35778 + (((tickAnim - 11) / 3) * (29.16727-(-18.35778)));
+            zz = -37.29642 + (((tickAnim - 11) / 3) * (-14.572-(-37.29642)));
+        }
+        else if (tickAnim >= 14 && tickAnim < 18) {
+            xx = -66.88492 + (((tickAnim - 14) / 4) * (0-(-66.88492)));
+            yy = 29.16727 + (((tickAnim - 14) / 4) * (0-(29.16727)));
+            zz = -14.572 + (((tickAnim - 14) / 4) * (0-(-14.572)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(legFrontL, legFrontL.rotateAngleX + (float) Math.toRadians(xx), legFrontL.rotateAngleY + (float) Math.toRadians(yy), legFrontL.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = -5 + (((tickAnim - 5) / 6) * (-8.12-(-5)));
+            yy = 0 + (((tickAnim - 5) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 11 && tickAnim < 18) {
+            xx = -8.12 + (((tickAnim - 11) / 7) * (0-(-8.12)));
+            yy = 0 + (((tickAnim - 11) / 7) * (0-(0)));
+            zz = 0 + (((tickAnim - 11) / 7) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(legFrontLLower, legFrontLLower.rotateAngleX + (float) Math.toRadians(xx), legFrontLLower.rotateAngleY + (float) Math.toRadians(yy), legFrontLLower.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-15-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = -15 + (((tickAnim - 5) / 3) * (-0.71-(-15)));
+            yy = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 11) {
+            xx = -0.71 + (((tickAnim - 8) / 3) * (40.63-(-0.71)));
+            yy = 0 + (((tickAnim - 8) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 11 && tickAnim < 14) {
+            xx = 40.63 + (((tickAnim - 11) / 3) * (40.07-(40.63)));
+            yy = 0 + (((tickAnim - 11) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 11) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 14 && tickAnim < 18) {
+            xx = 40.07 + (((tickAnim - 14) / 4) * (0-(40.07)));
+            yy = 0 + (((tickAnim - 14) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 14) / 4) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(legFrontLFoot, legFrontLFoot.rotateAngleX + (float) Math.toRadians(xx), legFrontLFoot.rotateAngleY + (float) Math.toRadians(yy), legFrontLFoot.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 9) {
+            xx = 5 + (((tickAnim - 5) / 4) * (-5-(5)));
+            yy = 0 + (((tickAnim - 5) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 12) {
+            xx = -5 + (((tickAnim - 9) / 3) * (0-(-5)));
+            yy = 0 + (((tickAnim - 9) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 9) / 3) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (10-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 10 + (((tickAnim - 5) / 3) * (0-(10)));
+            yy = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 8) / 2) * (-5-(0)));
+            yy = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 18) {
+            xx = -5 + (((tickAnim - 10) / 8) * (0-(-5)));
+            yy = 0 + (((tickAnim - 10) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 8) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 8) / 2) * (30-(0)));
+            yy = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 12) {
+            xx = 30 + (((tickAnim - 10) / 2) * (0-(30)));
+            yy = 0 + (((tickAnim - 10) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 12 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 12) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 12) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 12) / 6) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(skullJaw, skullJaw.rotateAngleX + (float) Math.toRadians(xx), skullJaw.rotateAngleY + (float) Math.toRadians(yy), skullJaw.rotateAngleZ + (float) Math.toRadians(zz));
+    }
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraCotylorhynchus e = (EntityPrehistoricFloraCotylorhynchus) entity;
         animator.update(entity);
         this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
-
-        animator.setAnimation(e.ATTACK_ANIMATION); //20 ticks
-        animator.startKeyframe(4);
-        animator.rotate(this.main, (float) Math.toRadians(-2.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.legFrontR, (float) Math.toRadians(0), (float) Math.toRadians(-50), (float) Math.toRadians(0));
-        animator.rotate(this.legFrontRLower, (float) Math.toRadians(0), (float) Math.toRadians(0), (float) Math.toRadians(-30));
-        animator.rotate(this.legFrontRFoot, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(7.5));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(1);
-        animator.startKeyframe(4);
-        animator.rotate(this.neck, (float) Math.toRadians(-2.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.main, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.main, (float) Math.toRadians(-7.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.legFrontR, (float) Math.toRadians(-25), (float) Math.toRadians(-90), (float) Math.toRadians(0));
-        animator.rotate(this.legFrontRLower, (float) Math.toRadians(0), (float) Math.toRadians(0), (float) Math.toRadians(-30));
-        animator.rotate(this.legFrontRFoot, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(7.5));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(1);
-        animator.startKeyframe(4);
-        animator.rotate(this.main, (float) Math.toRadians(-2.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.legFrontR, (float) Math.toRadians(0), (float) Math.toRadians(-50), (float) Math.toRadians(0));
-        animator.rotate(this.legFrontRLower, (float) Math.toRadians(0), (float) Math.toRadians(0), (float) Math.toRadians(-30));
-        animator.rotate(this.legFrontRFoot, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(7.5));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(1);
-        animator.resetKeyframe(5);
 
         animator.setAnimation(e.EAT_ANIMATION); //10 ticks
         animator.startKeyframe(4);

@@ -4875,6 +4875,41 @@ public class RenderHandler {
                 return new RenderLimusaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProceratosaurus.class, new IRenderFactory<EntityPrehistoricFloraProceratosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProceratosaurus> createRenderFor(RenderManager manager) {
+                return new RenderProceratosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraElaphrosaurus.class, new IRenderFactory<EntityPrehistoricFloraElaphrosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraElaphrosaurus> createRenderFor(RenderManager manager) {
+                return new RenderElaphrosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGargoyleosaurus.class, new IRenderFactory<EntityPrehistoricFloraGargoyleosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGargoyleosaurus> createRenderFor(RenderManager manager) {
+                return new RenderGargoyleosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPterodactylus.class, new IRenderFactory<EntityPrehistoricFloraPterodactylus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPterodactylus> createRenderFor(RenderManager manager) {
+                return new RenderPterodactylus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhamphorhynchus.class, new IRenderFactory<EntityPrehistoricFloraRhamphorhynchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhamphorhynchus> createRenderFor(RenderManager manager) {
+                return new RenderRhamphorhynchus(manager);
+            }
+        });
+
+        
+        
+        
         
         
         RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {

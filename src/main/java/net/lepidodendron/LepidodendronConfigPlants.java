@@ -2038,6 +2038,13 @@ public class LepidodendronConfigPlants {
     public static int minheightHermanophyton = 1;
     public static int maxheightHermanophyton = 120;
     public static double multiplierHermanophyton = 1;
+    public static boolean genMesodescolea = false;
+    public static String[] genMesodescoleaBlacklistBiomes = new String[0];
+    public static String[] genMesodescoleaOverrideBiomes = new String[0];
+    public static int[] dimMesodescolea = new int[]{0};
+    public static int minheightMesodescolea = 1;
+    public static int maxheightMesodescolea = 120;
+    public static double multiplierMesodescolea = 1;
     public static boolean genPseudoctenis = false;
     public static String[] genPseudoctenisBlacklistBiomes = new String[0];
     public static String[] genPseudoctenisOverrideBiomes = new String[0];
@@ -9901,6 +9908,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Grassy Horsetail", "multiplierGrassyHorsetail", multiplierGrassyHorsetail);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierGrassyHorsetail = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Mesodescolea", "genMesodescolea", genMesodescolea);
+        prop.setComment("Set to true to generate Mesodescolea naturally [default: false]");
+        genMesodescolea = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mesodescolea", "genMesodescoleaBlacklistBiomes", genMesodescoleaBlacklistBiomes);
+        prop.setComment("List of biomes Mesodescolea are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genMesodescoleaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mesodescolea", "genMesodescoleaOverrideBiomes", genMesodescoleaOverrideBiomes);
+        prop.setComment("List of biomes Mesodescolea are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genMesodescoleaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Mesodescolea", "dimMesodescolea", dimMesodescolea);
+        prop.setComment("List of dimension IDs Mesodescolea can generate in [default: 0]");
+        dimMesodescolea = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mesodescolea", "minheightMesodescolea", minheightMesodescolea);
+        prop.setComment("Minimum height that Mesodescolea can generate (1 to 250) [default: 1]");
+        minheightMesodescolea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mesodescolea", "maxheightMesodescolea", maxheightMesodescolea);
+        prop.setComment("Maximum height that Mesodescolea can generate (1 to 250, or set to 0 for unlimited) [default: 120]");
+        maxheightMesodescolea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mesodescolea", "multiplierMesodescolea", multiplierMesodescolea);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierMesodescolea = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Hermanophyton", "genHermanophyton", genHermanophyton);

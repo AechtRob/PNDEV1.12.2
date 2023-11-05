@@ -101,7 +101,6 @@ public class BlockHermanophyton extends ElementsLepidodendronMod.ModElement {
 					&&
 					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
 							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
 							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
 							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
 					)

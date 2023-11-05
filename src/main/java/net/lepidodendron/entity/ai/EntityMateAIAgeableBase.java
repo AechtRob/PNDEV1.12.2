@@ -2,7 +2,9 @@ package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
@@ -41,6 +43,14 @@ public class EntityMateAIAgeableBase extends EntityAIBase
             }
         }
 
+        if (this.animal instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.animal;
+            if (flybase.getAttachmentPos() != null) {
+                if (flybase.getAttachmentFacing() != EnumFacing.UP && flybase.getAttachmentFacing() != EnumFacing.DOWN)
+                    return false;
+            }
+        }
+
         if (!this.animal.isInLove())
         {
             return false;
@@ -59,6 +69,16 @@ public class EntityMateAIAgeableBase extends EntityAIBase
             if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 this.animal.getNavigator().clearPath();
                 return false;
+            }
+        }
+
+        if (this.animal instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.animal;
+            if (flybase.getAttachmentPos() != null) {
+                if (flybase.getAttachmentFacing() != EnumFacing.UP && flybase.getAttachmentFacing() != EnumFacing.DOWN) {
+                    this.animal.getNavigator().clearPath();
+                    return false;
+                }
             }
         }
         return this.targetMate.isEntityAlive() && this.targetMate.isInLove() && this.spawnBabyDelay < 60;
