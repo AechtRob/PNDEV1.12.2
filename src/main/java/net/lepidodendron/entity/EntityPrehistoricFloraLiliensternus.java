@@ -204,8 +204,6 @@ public class EntityPrehistoricFloraLiliensternus extends EntityPrehistoricFloraL
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;

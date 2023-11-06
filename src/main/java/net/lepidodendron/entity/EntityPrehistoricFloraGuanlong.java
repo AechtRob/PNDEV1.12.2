@@ -5,15 +5,10 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockNest;
-import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -37,50 +32,32 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	public int ambientSoundTime;
+	public Animation NOISE_ANIMATION;
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
-
-	//public Animation CLEAN_ANIMATION;
+	public Animation HURT_ANIMATION;
 	private int standCooldown;
 
 	public EntityPrehistoricFloraGuanlong(World world) {
 		super(world);
-		setSize(0.9F, 0.85F);
-		minWidth = 0.50F;
-		maxWidth = 0.9F;
-		maxHeight = 0.85F;
+		setSize(0.8F, 1.25F);
+		minWidth = 0.20F;
+		maxWidth = 0.8F;
+		maxHeight = 1.25F;
 		maxHealthAgeable = 34.0D;
 		SCRATCH_ANIMATION = Animation.create(80);
 		STAND_ANIMATION = Animation.create(80);
-		//CLEAN_ANIMATION = Animation.create(65);
+		HURT_ANIMATION = Animation.create(15);
+		NOISE_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public int getWalkCycleLength() {
-		return 30;
-	}
-
-	@Override
-	public int getFootstepOffset() {
-		return 15;
-	}
-
-	@Override
-	public int getRunCycleLength() {
-		return 15;
-	}
-
-	@Override
-	public int getRunFootstepOffset() {
-		return 0;
 	}
 
 	@Override
@@ -92,18 +69,66 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 	}
 
 	@Override
-	public int getEatTick() {return 12;}
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == SCRATCH_ANIMATION || animation == ROAR_ANIMATION || animation == STAND_ANIMATION
+			|| super.isAnimationDirectionLocked(animation);
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
+		{
+			this.ambientSoundTime = -this.getAmbientTalkInterval();
+			SoundEvent soundevent = this.getAmbientAmbientSound();
+			if (soundevent != null)
+			{
+				if (this.getAnimation() == NO_ANIMATION) {
+					this.setAnimation(NOISE_ANIMATION);
+					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
+
+		//Alert animation
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			int next = rand.nextInt(100);
+			if (next < 50) {
+				this.setAnimation(STAND_ANIMATION);
+			} else {
+				this.setAnimation(SCRATCH_ANIMATION);
+			}
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //large
+		return 2; //large
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION, NOISE_ANIMATION};
 	}
-	public static String getPeriod() {return "Jurassic";}
+
+	@Override
+	public int getDrinkLength() {
+		return 0;
+	}
 
 	@Override
 	public int getEatLength() {
@@ -113,12 +138,11 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 	@Override
 	public int getRoarLength() {
 		return 80;
-	} //Warn
+	}
 
-	@Override
-	public int getNoiseLength() {
-		return 80;
-	} //Noise
+	public static String getPeriod() {return "Jurassic";}
+
+	//public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
 
 	@Override
 	public boolean hasNest() {
@@ -146,72 +170,58 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.3F;
+		float speedBase = 0.360F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION || this.getAnimation() == SCRATCH_ANIMATION || this.getAnimation() == NOISE_ANIMATION || this.getAnimation() == ROAR_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION
+				|| this.getAnimation() == MAKE_NEST_ANIMATION
+				|| this.getAnimation() == ROAR_ANIMATION
+				|| this.getAnimation() == STAND_ANIMATION
+				|| this.getAnimation() == GRAZE_ANIMATION
+				|| this.getAnimation() == SCRATCH_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase*2.3F;
+			speedBase = speedBase * 3.95F;
 		}
 		return speedBase;
 	}
 
 	@Override
-	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION
-				|| animation == SCRATCH_ANIMATION || animation == STAND_ANIMATION;
-	}
-
-	@Override
 	public int getTalkInterval() {
-		return 360;
+		return 700;
 	}
 
-	//This is how many ticks it takes for a young mob to become an adult
+	public int getAmbientTalkInterval() {
+		return 200;
+	}
+
 	@Override
 	public int getAdultAge() {
-		return 128000;
+		return 64000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 1.50F * this.getAgeScale();
-		return this.getEntityBoundingBox().grow(0.5F + size, 0.2F, 0.5F + size);
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
-		}
-		return this.getEntityBoundingBox();
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
 	@Override
 	public float getEyeHeight()
 	{
-		return Math.max(super.getEyeHeight(), this.height * 0.9F);
+		return Math.max(super.getEyeHeight(), this.height * 0.95F);
 	}
 
-	@Override
-	public float getSwimHeight()
-	{
-		return this.height * 1.1F;
-	}
-
-	//define the entity's AI here
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
-		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this));
@@ -219,8 +229,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
-//		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+
 	}
 
 	@Override
@@ -228,6 +237,11 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 		return ArrayUtils.addAll(DietString.MEAT);
 	}
 
+	@Override
+	public boolean panics() {
+		return true;
+	}
+	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -244,19 +258,12 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
-	}
-
-	@Override
-	public SoundEvent getRoarSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
+	    return (SoundEvent) SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:guanlong_roar"));
 	}
 
 	@Override
@@ -271,6 +278,11 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 	            .getObject(new ResourceLocation("lepidodendron:guanlong_death"));
 	}
 
+	public SoundEvent getAmbientAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -282,45 +294,11 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 	}
 
 	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		//Alert animation
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			int next = rand.nextInt(100);
-			if (next < 50) {
-				this.setAnimation(STAND_ANIMATION);
-			} else {
-				this.setAnimation(SCRATCH_ANIMATION);
-			}
-			this.standCooldown = 2000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 3000;
-			this.setAnimation(NO_ANIMATION);
-		}
-
-	}
-
-	@Override
 	public void onLivingUpdate() {
-
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
-			if (this.getAnimationTick() == 18) {
-				double d1 = this.posX - this.getAttackTarget().posX;
-				double d0;
-				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
-				{
-					d1 = (Math.random() - Math.random()) * 0.01D;
-				}
-				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
-				this.getAttackTarget().addVelocity(0, 0.115, 0);
-				launchAttack();
-			}
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+			launchAttack();
 		}
 
 		if (this.standCooldown > 0) {
@@ -329,13 +307,11 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
-
-
-
 	}
+
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -343,8 +319,20 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 		//System.err.println("Testing laying conditions");
 		BlockPos posNest = pos;
 		if (isLayableNest(world, posNest)) {
-			TileEntity te = world.getTileEntity(pos);
-			return (((BlockNest.TileEntityNest)te).getStackInSlot(0).isEmpty());
+			String eggRenderType = new Object() {
+				public String getValue(BlockPos posNest, String tag) {
+					TileEntity tileEntity = world.getTileEntity(posNest);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos(posNest), "egg");
+
+			//System.err.println("eggRenderType " + eggRenderType);
+
+			if (eggRenderType.equals("")) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -371,11 +359,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandCa
 		return LepidodendronMod.GUANLONG_LOOT;
 	}
 
-	@Nullable
-	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_GUANLONG;
-	}
 	//Rendering taxidermy:
 	//--------------------
 

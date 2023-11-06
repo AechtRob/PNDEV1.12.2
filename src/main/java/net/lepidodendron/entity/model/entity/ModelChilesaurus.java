@@ -674,16 +674,16 @@ public class ModelChilesaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The warn anim
             animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) { //The noise anim
+        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) { //
             animGraze(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.LOOK_ANIMATION) { //The noise anim
+        else if (ee.getAnimation() == ee.LOOK_ANIMATION) { //
             animLook(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.STAND_ANIMATION) { //The noise anim
+        else if (ee.getAnimation() == ee.STAND_ANIMATION) { //
             animShake(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The noise anim

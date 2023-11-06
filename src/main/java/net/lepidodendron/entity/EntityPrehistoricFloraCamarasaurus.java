@@ -367,7 +367,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing, 6));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
@@ -550,7 +550,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 			}
 		}
 
-		if (this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);

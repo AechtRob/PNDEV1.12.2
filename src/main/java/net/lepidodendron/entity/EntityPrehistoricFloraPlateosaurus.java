@@ -581,6 +581,10 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}
+			if (this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
 		}
 
 	}

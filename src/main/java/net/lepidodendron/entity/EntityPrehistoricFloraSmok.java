@@ -159,7 +159,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 
 	@Override
 	public int getAdultAge() {
-		return 56000;
+		return 96000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
