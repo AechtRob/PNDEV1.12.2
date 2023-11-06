@@ -59,9 +59,9 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraCamarasaurus(World world) {
 		super(world);
-		setSize(3.0F, 4F);
+		setSize(2.5F, 4F);
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.5F;
 		maxHeight = 4F;
 		maxHealthAgeable = 168.0D;
 
@@ -287,34 +287,14 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
+		int x = 4;
+		int y = 6;
+		for (int xx = 0; xx < x; xx++) {
+			for (int yy = 0; yy < y; yy++) {
+				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
+					return false;
+				}
+			}
 		}
 		return true;
 	}
@@ -338,36 +318,36 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 			&& !this.isReallyInWater()
 			&&
 			(
-				(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+				(this.world.getBlockState(entityPos.north(4).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-				|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.south(4).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-				|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.east(4).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-				|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.west(4).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 			)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(4).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(4).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(4).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(4).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing, 6));
+				this.setDrinkingFrom(entityPos.offset(facing, 4));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
@@ -379,32 +359,14 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
+		int x = 5;
+		int y = 9;
+		for (int xx = 0; xx < x; xx++) {
+			for (int yy = 5; yy < y; yy++) {
+				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
+					return false;
+				}
+			}
 		}
 		return true;
 	}
@@ -428,48 +390,48 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 				&& !this.isReallyInWater()
 				&&
 				(
-					(isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))
+					(isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(9)))
 						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(9)))
 						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(9)))
 						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(9)))
 						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is grazable?
 			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))) {
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(9)))) {
 				facing = EnumFacing.NORTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(9)))) {
 				facing = EnumFacing.SOUTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(9)))) {
 				facing = EnumFacing.EAST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(9)))) {
 				facing = EnumFacing.WEST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
 					test2 = true;
 				}
 			}
 			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(6).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setGrazingFrom(entityPos.up(9).offset(facing, 5));
 				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 			}
 		}
@@ -552,6 +514,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
+			//if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);
 				float itemHealth = 0.5F; //Default minimal nutrition

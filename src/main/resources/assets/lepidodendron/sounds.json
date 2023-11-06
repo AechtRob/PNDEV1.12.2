@@ -8137,8 +8137,76 @@
         "stream": false
       }
     ]
+  },
+
+  "camarasaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camarasaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "camarasaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camarasaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "camarasaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camarasaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "camarasaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camarasaurus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camarasaurus_threat02",
+        "stream": false
+      }
+    ]
   }
-  
   
   
 }
