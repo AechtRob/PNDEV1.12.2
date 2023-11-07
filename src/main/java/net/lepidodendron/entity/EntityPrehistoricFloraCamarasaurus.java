@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int wadeDepth() {
-		return 3;
+		return (int) (3F * this.getAgeScale());
 	}
 
 	@Override

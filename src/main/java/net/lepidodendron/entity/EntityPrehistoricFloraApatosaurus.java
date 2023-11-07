@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int wadeDepth() {
-		return 5;
+		return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
