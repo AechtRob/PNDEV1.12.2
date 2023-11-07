@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:onychiopsis"},
+      {"model": "lepidodendron:onychiopsis_var1"},
+      {"model": "lepidodendron:onychiopsis_var2"}
+    ]
+  }
+}

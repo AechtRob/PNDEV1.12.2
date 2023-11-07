@@ -8206,6 +8206,67 @@
         "stream": false
       }
     ]
+  },
+
+  "dilophosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dilophosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "dilophosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dilophosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dilophosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dilophosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "dilophosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dilophosaurus_roar01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_roar02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dilophosaurus_roar03",
+        "stream": false
+      }
+    ]
   }
   
   
