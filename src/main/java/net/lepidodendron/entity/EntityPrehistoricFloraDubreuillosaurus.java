@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraDubreuillosaurus(World world) {
 		super(world);
-		setSize(1.75F, 2.2F);
+		setSize(1.5F, 1.7F);
 		minWidth = 0.20F;
-		maxWidth = 1.75F;
-		maxHeight = 2.2F;
-		maxHealthAgeable = 96.0D;
+		maxWidth = 1.5F;
+		maxHeight = 1.7F;
+		maxHealthAgeable = 63.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -134,7 +134,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.445F;
+		float speedBase = 0.33F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -143,8 +143,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
-			speedBase = speedBase / 0.75F;
-			speedBase = 1.18F;
+
 		}
 		return speedBase;
 	}
@@ -207,7 +206,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
