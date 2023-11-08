@@ -4153,6 +4153,10 @@ public class LepidodendronSorter {
     public static final int guanlong_raw = 4144;
     public static final int chilesaurus_raw = 4145;
     public static final int camarasaurus_raw = 4146;
+    public static final int adeopapposaurus_raw = 4147;
+    public static final int anchisaurus_raw = 4148;
+    public static final int eggs_adeopapposaurus = 4149;
+    public static final int eggs_anchisaurus = 4150;
 
 
 }
