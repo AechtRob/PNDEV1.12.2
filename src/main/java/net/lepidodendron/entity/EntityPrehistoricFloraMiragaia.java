@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
@@ -36,6 +37,15 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
+	public Animation IDLE_1;
+	public Animation IDLE_2;
+	public Animation IDLE_3;
+	private int standCooldown;
+
+	//data to support sideways walking:
+	private boolean isRotated;
+	private float rotationAngle;
+	private float rotationTicks = 30; //1.5 second to make the rotation fully
 
 	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thagomized", this);
 
@@ -49,6 +59,24 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		IDLE_1 = Animation.create(200);
+		IDLE_2 = Animation.create(130);
+		IDLE_3 = Animation.create(130);
+	}
+
+	@Override
+	public float getSneakRange() {
+		return 8;
+	}
+
+	@Override
+	public float getUnSneakRange() {
+		return -1;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, IDLE_1, IDLE_2, IDLE_3};
 	}
 
 	@Override
@@ -56,6 +84,67 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
+	}
+
+	public float getRotationAngle() {
+		return this.rotationAngle;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		//Managing the rotations, client-side only:
+		if (this.world.isRemote) {
+			if (this.getIsSneaking() && this.rotationAngle < 90) {
+				this.rotationAngle = this.rotationAngle + (90F / rotationTicks);
+			}
+			if (this.rotationAngle > 90) {
+				this.rotationAngle = 90;
+			}
+			if (!this.getIsSneaking() && this.rotationAngle > 0) {
+				this.rotationAngle = this.rotationAngle - (90F / rotationTicks);
+			}
+			if (this.rotationAngle < 0) {
+				this.rotationAngle = 0;
+			}
+		}
+
+		//Alert animation
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			int next = rand.nextInt(3);
+			switch (next) {
+				case 0:
+				default:
+					this.setAnimation(IDLE_1);
+					break;
+
+				case 1:
+					this.setAnimation(IDLE_2);
+					break;
+
+				case 2:
+					this.setAnimation(IDLE_3);
+					break;
+			}
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == IDLE_1 && this.getAnimationTick() == IDLE_1.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == IDLE_2 && this.getAnimationTick() == IDLE_2.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if (this.getAnimation() == IDLE_3 && this.getAnimationTick() == IDLE_3.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
 		}
 	}
 
@@ -110,6 +199,9 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
 			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
+		}
+		if (this.getIsSneaking()) {
+			speedBase = speedBase * 0.4F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.8F;
@@ -291,12 +383,21 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 			//this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+		}
+		if (this.getAnimation() == GRAZE_ANIMATION) {
+			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 16 && this.getAttackTarget() != null) {
 			launchAttack();
+		}
+
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

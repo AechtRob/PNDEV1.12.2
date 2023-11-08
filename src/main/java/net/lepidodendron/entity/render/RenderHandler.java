@@ -4924,6 +4924,12 @@ public class RenderHandler {
                 return new RenderChilesaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMiragaia.class, new IRenderFactory<EntityPrehistoricFloraMiragaia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMiragaia> createRenderFor(RenderManager manager) {
+                return new RenderMiragaia(manager);
+            }
+        });
 
         
         

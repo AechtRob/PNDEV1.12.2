@@ -281,6 +281,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
     public void onLivingUpdate() {
         super.onLivingUpdate();
         this.renderYawOffset = this.rotationYaw;
+        this.rotationYawHead = this.rotationYaw;
 
         if (this.getLaying()) {
             this.setFlying();
@@ -362,12 +363,16 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                     sitCooldown = 150;
                     if (this.getAttachmentFacing() == EnumFacing.NORTH) {
                         rotationYaw = 180;
+                        this.rotationYawHead = this.rotationYaw;
                     } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
                         rotationYaw = 270;
+                        this.rotationYawHead = this.rotationYaw;
                     } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
                         rotationYaw = 0;
+                        this.rotationYawHead = this.rotationYaw;
                     } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
                         rotationYaw = 90;
+                        this.rotationYawHead = this.rotationYaw;
                     }
                     this.moveHelper.action = EntityMoveHelper.Action.WAIT;
                     if (this.getAttachmentFacing() == EnumFacing.NORTH) {
@@ -446,12 +451,16 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         if (this.getAttachmentPos() != null) {
             if (this.getAttachmentFacing() == EnumFacing.NORTH) {
                 rotationYaw = 180;
+                this.rotationYawHead = this.rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
                 rotationYaw = 270;
+                this.rotationYawHead = this.rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
                 rotationYaw = 0;
+                this.rotationYawHead = this.rotationYaw;
             } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
                 rotationYaw = 90;
+                this.rotationYawHead = this.rotationYaw;
             }
         }
     }
