@@ -2121,6 +2121,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation ADEOPAPPOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/adeopapposaurus"));
 	public static final ResourceLocation ADEOPAPPOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/adeopapposaurus_young"));
 
+	public static final int ENTITY_MIRAGAIA = 826;
+	public static final ResourceLocation MIRAGAIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/adeopapposaurus"));
+	public static final ResourceLocation MIRAGAIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/adeopapposaurus_young"));
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);
