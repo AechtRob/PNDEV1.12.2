@@ -2113,6 +2113,14 @@ public class LepidodendronMod {
 	public static final ResourceLocation DUBREUILLOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dubreuillosaurus"));
 	public static final ResourceLocation DUBREUILLOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dubreuillosaurus_young"));
 
+	public static final int ENTITY_ANCHISAURUS = 824;
+	public static final ResourceLocation ANCHISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anchisaurus"));
+	public static final ResourceLocation ANCHISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anchisaurus_young"));
+
+	public static final int ENTITY_ADEOPAPPOSAURUS = 825;
+	public static final ResourceLocation ADEOPAPPOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/adeopapposaurus"));
+	public static final ResourceLocation ADEOPAPPOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/adeopapposaurus_young"));
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);
