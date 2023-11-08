@@ -1123,6 +1123,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightClathropteris = 90;
     public static double multiplierClathropteris = 1;
 
+    public static boolean genOnychiopsis = false;
+    public static String[] genOnychiopsisBlacklistBiomes = new String[0];
+    public static String[] genOnychiopsisOverrideBiomes = new String[0];
+    public static int[] dimOnychiopsis = new int[]{0};
+    public static int minheightOnychiopsis = 1;
+    public static int maxheightOnychiopsis = 90;
+    public static double multiplierOnychiopsis = 1;
+
     public static boolean genIschnophyton = false;
     public static String[] genIschnophytonBlacklistBiomes = new String[0];
     public static String[] genIschnophytonOverrideBiomes = new String[0];
@@ -7068,6 +7076,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Cladophlebis", "multiplierCladophlebis", multiplierCladophlebis);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierCladophlebis = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Onychiopsis", "genOnychiopsis", genOnychiopsis);
+        prop.setComment("Set to true to generate Onychiopsis naturally [default: false]");
+        genOnychiopsis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Onychiopsis", "genOnychiopsisBlacklistBiomes", genOnychiopsisBlacklistBiomes);
+        prop.setComment("List of biomes Onychiopsis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genOnychiopsisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Onychiopsis", "genOnychiopsisOverrideBiomes", genOnychiopsisOverrideBiomes);
+        prop.setComment("List of biomes Onychiopsis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genOnychiopsisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Onychiopsis", "dimOnychiopsis", dimOnychiopsis);
+        prop.setComment("List of dimension IDs Onychiopsis can generate in [default: 0]");
+        dimOnychiopsis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Onychiopsis", "minheightOnychiopsis", minheightOnychiopsis);
+        prop.setComment("Minimum height that Onychiopsis can generate (1 to 250) [default: 1]");
+        minheightOnychiopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Onychiopsis", "maxheightOnychiopsis", maxheightOnychiopsis);
+        prop.setComment("Maximum height that Onychiopsis can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightOnychiopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Onychiopsis", "multiplierOnychiopsis", multiplierOnychiopsis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierOnychiopsis = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Clathropteris", "genClathropteris", genClathropteris);

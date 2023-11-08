@@ -624,19 +624,16 @@ public class ModelGuanlong extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
-            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise anim
+            //animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
-            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The display/roar
+            animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
-        else if (ee.getAnimation() == ee.STAND_ANIMATION) { //The idle noise/anim
+        else if (ee.getAnimation() == ee.STAND_ANIMATION) {
             animAlert(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
-        else if (ee.getAnimation() == ee.SCRATCH_ANIMATION) { //The idle noise/anim
+        else if (ee.getAnimation() == ee.SCRATCH_ANIMATION) {
             animScratch(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         
@@ -3069,7 +3066,7 @@ public class ModelGuanlong extends AdvancedModelBaseExtended {
 
     }
 
-    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animDisplay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraGuanlong entity = (EntityPrehistoricFloraGuanlong) entitylivingbaseIn;
         int animCycle = 80;
         double tickAnim = animTick + partialTickTime;
@@ -6447,6 +6444,16 @@ public class ModelGuanlong extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraGuanlong e = (EntityPrehistoricFloraGuanlong) entity;
         animator.update(entity);
 
+        animator.setAnimation(e.HURT_ANIMATION);
+        animator.startKeyframe(5);
+        animator.move(this.Neckbase, (float) Math.toRadians(10),0,0);
+        animator.move(this.Neckmiddle, (float) Math.toRadians(10),0,0);
+        animator.move(this.Neckfront, (float) Math.toRadians(-10),0,0);
+        animator.rotate(this.Head, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Lowerjawback, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(5);
 
     }
 }

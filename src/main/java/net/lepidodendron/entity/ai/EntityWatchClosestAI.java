@@ -68,6 +68,12 @@ public class EntityWatchClosestAI extends EntityAIBase
 
     public boolean shouldExecute()
     {
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                return false;
+            }
+        }
         if (noSpin && this.entity instanceof EntityPrehistoricFloraAgeableBase) {
             if (!((EntityPrehistoricFloraAgeableBase)this.entity).getIsMoving()) {
                 return false;
@@ -122,6 +128,14 @@ public class EntityWatchClosestAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
+
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                return false;
+            }
+        }
+
         if (!this.closestEntity.isEntityAlive())
         {
             return false;

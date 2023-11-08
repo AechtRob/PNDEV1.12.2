@@ -389,7 +389,13 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         PathNodeType pathnodetype = this.getPathNodeTypeRaw(blockaccessIn, x, y, z);
 
         if (y >= 1) {
-            if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER
+            if (entity instanceof EntityPrehistoricFloraLandWadingBase) {
+                EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) entity;
+                if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z))) {
+                    pathnodetype = PathNodeType.BLOCKED;
+                }
+            }
+            else if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER
                 && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z)).getMaterial() == Material.WATER) {
                 if (entity != null) {
                     if (entity instanceof EntityPrehistoricFloraLandWadingBase) {
@@ -427,6 +433,9 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
                 else {
                     pathnodetype = PathNodeType.BLOCKED;
                 }
+            }
+            else {
+                pathnodetype = PathNodeType.BLOCKED;
             }
         }
         //if (blockaccessIn.getBlockState(new BlockPos(x, y , z)).getBlock() instanceof BlockPalisadePF)

@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBothriolepis extends RenderLiving<EntityPrehistoricFloraBothriolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bothriolepis.png");
+    public static float getScaler() {
+        return 0.4F;
+    }
 
     public RenderBothriolepis(RenderManager mgr) {
         super(mgr, new ModelBothriolepis(), 0.3f);
@@ -27,7 +30,7 @@ public class RenderBothriolepis extends RenderLiving<EntityPrehistoricFloraBothr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBothriolepis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.3f;

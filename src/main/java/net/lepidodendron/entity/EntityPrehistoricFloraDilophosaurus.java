@@ -292,6 +292,10 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
+		if (this.getAnimation() == CLEAN_ANIMATION && this.getAnimationTick() == CLEAN_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
 
 	}
 

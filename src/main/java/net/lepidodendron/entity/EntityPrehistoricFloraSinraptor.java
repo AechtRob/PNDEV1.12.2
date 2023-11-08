@@ -292,6 +292,10 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
+		if (this.getAnimation() == SCRATCH_RIGHT_ANIMATION && this.getAnimationTick() == SCRATCH_RIGHT_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
 
 	}
 

@@ -6,9 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
@@ -1007,6 +1005,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     }
                     else if (this instanceof EntityPrehistoricFloraPanguraptor) {
                         this.setAnimation(((EntityPrehistoricFloraPanguraptor)this).HURT_ANIMATION);
+                    }
+                    else if (this instanceof EntityPrehistoricFloraGuanlong) {
+                        this.setAnimation(((EntityPrehistoricFloraGuanlong)this).HURT_ANIMATION);
+                    }
+                    else if (this instanceof EntityPrehistoricFloraProceratosaurus) {
+                        this.setAnimation(((EntityPrehistoricFloraProceratosaurus)this).HURT_ANIMATION);
                     }
                     else {
                         this.setAnimation(ROAR_ANIMATION);

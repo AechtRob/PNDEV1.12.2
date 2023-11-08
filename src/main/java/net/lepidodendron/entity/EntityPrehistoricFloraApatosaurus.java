@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int wadeDepth() {
-		return 5;
+		return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -578,7 +578,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			}
 		}
 
-		if (this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);
