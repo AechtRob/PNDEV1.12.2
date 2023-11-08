@@ -60,6 +60,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	public EntityPrehistoricFloraCamarasaurus(World world) {
 		super(world);
 		setSize(2.5F, 4F);
+		stepHeight = 2;
 		minWidth = 0.8F;
 		maxWidth = 2.5F;
 		maxHeight = 4F;
@@ -84,7 +85,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return super.getJumpUpwardsMotion();
+		return 0.6F;
 	}
 
 	@Override
