@@ -562,7 +562,7 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraProceratosaurus EntityMegalosaurus = (EntityPrehistoricFloraProceratosaurus) e;
+        EntityPrehistoricFloraProceratosaurus EntityProceratosaurus = (EntityPrehistoricFloraProceratosaurus) e;
 
         this.faceTarget(f3, f4, 8, neck);
         this.faceTarget(f3, f4, 8, neck2);
@@ -574,16 +574,16 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] ArmL = {this.leftArm, this.leftArm2, this.leftArm3};
         AdvancedModelRenderer[] ArmR = {this.rightArm, this.rightArm2, this.rightArm3};
 
-        EntityMegalosaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        EntityProceratosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
-        if (EntityMegalosaurus.getAnimation() == EntityMegalosaurus.LAY_ANIMATION) {
+        if (EntityProceratosaurus.getAnimation() == EntityProceratosaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
-            if (!EntityMegalosaurus.isReallyInWater()) {
+            if (!EntityProceratosaurus.isReallyInWater()) {
 
-                if (f3 == 0.0F || !EntityMegalosaurus.getIsMoving()) {
+                if (f3 == 0.0F || !EntityProceratosaurus.getIsMoving()) {
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                     this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
 
@@ -602,7 +602,7 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (EntityMegalosaurus.getIsFast()) { //Running
+                if (EntityProceratosaurus.getIsFast()) { //Running
 
 
                 } else { //Walking
@@ -658,16 +658,17 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The idle noise/anim
-            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise anim
+            //animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
-            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The display/roar
+            animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-
-        else if (ee.getAnimation() == ee.STAND_ANIMATION) { //The idle noise/anim
+        else if (ee.getAnimation() == ee.STAND_ANIMATION) {
             animAlert(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.SCRATCH_ANIMATION) {
+            animScratch(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         
     }
@@ -2654,7 +2655,7 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
     }
 
 
-    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animDisplay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraProceratosaurus entity = (EntityPrehistoricFloraProceratosaurus) entitylivingbaseIn;
 
         int animCycle = 80;
@@ -3389,6 +3390,288 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
             zz = 0;
         }
         this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(xx), tail5.rotateAngleY + (float) Math.toRadians(yy), tail5.rotateAngleZ + (float) Math.toRadians(zz));
+
+    }
+    public void animScratch(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        EntityPrehistoricFloraProceratosaurus entity = (EntityPrehistoricFloraProceratosaurus) entitylivingbaseIn;
+
+        int animCycle = 82;
+        double tickAnim = animTick + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+
+        if (tickAnim >= 0 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 0) / 23) * (-102.78252-(0)));
+            yy = 0 + (((tickAnim - 0) / 23) * (-29.55548-(0)));
+            zz = 0 + (((tickAnim - 0) / 23) * (18.89343-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 26) {
+            xx = -102.78252 + (((tickAnim - 23) / 3) * (-100.78252-(-102.78252)));
+            yy = -29.55548 + (((tickAnim - 23) / 3) * (-29.55548-(-29.55548)));
+            zz = 18.89343 + (((tickAnim - 23) / 3) * (18.89343-(18.89343)));
+        }
+        else if (tickAnim >= 26 && tickAnim < 28) {
+            xx = -100.78252 + (((tickAnim - 26) / 2) * (-102.78252-(-100.78252)));
+            yy = -29.55548 + (((tickAnim - 26) / 2) * (-29.55548-(-29.55548)));
+            zz = 18.89343 + (((tickAnim - 26) / 2) * (18.89343-(18.89343)));
+        }
+        else if (tickAnim >= 28 && tickAnim < 31) {
+            xx = -102.78252 + (((tickAnim - 28) / 3) * (-100.78252-(-102.78252)));
+            yy = -29.55548 + (((tickAnim - 28) / 3) * (-29.55548-(-29.55548)));
+            zz = 18.89343 + (((tickAnim - 28) / 3) * (18.89343-(18.89343)));
+        }
+        else if (tickAnim >= 31 && tickAnim < 43) {
+            xx = -100.78252 + (((tickAnim - 31) / 12) * (-62.99988-(-100.78252)));
+            yy = -29.55548 + (((tickAnim - 31) / 12) * (-2.21464-(-29.55548)));
+            zz = 18.89343 + (((tickAnim - 31) / 12) * (-18.52671-(18.89343)));
+        }
+        else if (tickAnim >= 43 && tickAnim < 60) {
+            xx = -62.99988 + (((tickAnim - 43) / 17) * (-62.99988-(-62.99988)));
+            yy = -2.21464 + (((tickAnim - 43) / 17) * (-2.21464-(-2.21464)));
+            zz = -18.52671 + (((tickAnim - 43) / 17) * (-18.52671-(-18.52671)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 83) {
+            xx = -62.99988 + (((tickAnim - 60) / 23) * (0-(-62.99988)));
+            yy = -2.21464 + (((tickAnim - 60) / 23) * (0-(-2.21464)));
+            zz = -18.52671 + (((tickAnim - 60) / 23) * (0-(-18.52671)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftArm, leftArm.rotateAngleX + (float) Math.toRadians(xx), leftArm.rotateAngleY + (float) Math.toRadians(yy), leftArm.rotateAngleZ + (float) Math.toRadians(zz));
+
+        this.leftArm.rotationPointX = this.leftArm.rotationPointX + (float)(-0.525);
+        this.leftArm.rotationPointY = this.leftArm.rotationPointY - (float)(0);
+        this.leftArm.rotationPointZ = this.leftArm.rotationPointZ + (float)(0);
+
+
+
+        if (tickAnim >= 0 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 0) / 23) * (-20.75-(0)));
+            yy = 0 + (((tickAnim - 0) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 23) * (0-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 25) {
+            xx = -20.75 + (((tickAnim - 23) / 2) * (-20.55722-(-20.75)));
+            yy = 0 + (((tickAnim - 23) / 2) * (-2.84678-(0)));
+            zz = 0 + (((tickAnim - 23) / 2) * (-7.74647-(0)));
+        }
+        else if (tickAnim >= 25 && tickAnim < 27) {
+            xx = -20.55722 + (((tickAnim - 25) / 2) * (-20.75-(-20.55722)));
+            yy = -2.84678 + (((tickAnim - 25) / 2) * (0-(-2.84678)));
+            zz = -7.74647 + (((tickAnim - 25) / 2) * (0-(-7.74647)));
+        }
+        else if (tickAnim >= 27 && tickAnim < 29) {
+            xx = -20.75 + (((tickAnim - 27) / 2) * (-20.55722-(-20.75)));
+            yy = 0 + (((tickAnim - 27) / 2) * (-2.84678-(0)));
+            zz = 0 + (((tickAnim - 27) / 2) * (-7.74647-(0)));
+        }
+        else if (tickAnim >= 29 && tickAnim < 32) {
+            xx = -20.55722 + (((tickAnim - 29) / 3) * (-20.75-(-20.55722)));
+            yy = -2.84678 + (((tickAnim - 29) / 3) * (0-(-2.84678)));
+            zz = -7.74647 + (((tickAnim - 29) / 3) * (0-(-7.74647)));
+        }
+        else if (tickAnim >= 32 && tickAnim < 43) {
+            xx = -20.75 + (((tickAnim - 32) / 11) * (9.88784-(-20.75)));
+            yy = 0 + (((tickAnim - 32) / 11) * (-8.99432-(0)));
+            zz = 0 + (((tickAnim - 32) / 11) * (-6.36861-(0)));
+        }
+        else if (tickAnim >= 43 && tickAnim < 60) {
+            xx = 9.88784 + (((tickAnim - 43) / 17) * (9.88784-(9.88784)));
+            yy = -8.99432 + (((tickAnim - 43) / 17) * (-8.99432-(-8.99432)));
+            zz = -6.36861 + (((tickAnim - 43) / 17) * (-6.36861-(-6.36861)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 83) {
+            xx = 9.88784 + (((tickAnim - 60) / 23) * (0-(9.88784)));
+            yy = -8.99432 + (((tickAnim - 60) / 23) * (0-(-8.99432)));
+            zz = -6.36861 + (((tickAnim - 60) / 23) * (0-(-6.36861)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftArm2, leftArm2.rotateAngleX + (float) Math.toRadians(xx), leftArm2.rotateAngleY + (float) Math.toRadians(yy), leftArm2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 0) / 23) * (20.00706-(0)));
+            yy = 0 + (((tickAnim - 0) / 23) * (-21.8308-(0)));
+            zz = 0 + (((tickAnim - 0) / 23) * (9.5299-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 29) {
+            xx = 20.00706 + (((tickAnim - 23) / 6) * (20.00706-(20.00706)));
+            yy = -21.8308 + (((tickAnim - 23) / 6) * (-21.8308-(-21.8308)));
+            zz = 9.5299 + (((tickAnim - 23) / 6) * (9.5299-(9.5299)));
+        }
+        else if (tickAnim >= 29 && tickAnim < 39) {
+            xx = 20.00706 + (((tickAnim - 29) / 10) * (35.39468-(20.00706)));
+            yy = -21.8308 + (((tickAnim - 29) / 10) * (-18.1224-(-21.8308)));
+            zz = 9.5299 + (((tickAnim - 29) / 10) * (-8.40481-(9.5299)));
+        }
+        else if (tickAnim >= 39 && tickAnim < 48) {
+            xx = 35.39468 + (((tickAnim - 39) / 9) * (42.64468-(35.39468)));
+            yy = -18.1224 + (((tickAnim - 39) / 9) * (-18.1224-(-18.1224)));
+            zz = -8.40481 + (((tickAnim - 39) / 9) * (-8.40481-(-8.40481)));
+        }
+        else if (tickAnim >= 48 && tickAnim < 60) {
+            xx = 42.64468 + (((tickAnim - 48) / 12) * (42.64468-(42.64468)));
+            yy = -18.1224 + (((tickAnim - 48) / 12) * (-18.1224-(-18.1224)));
+            zz = -8.40481 + (((tickAnim - 48) / 12) * (-8.40481-(-8.40481)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 83) {
+            xx = 42.64468 + (((tickAnim - 60) / 23) * (0-(42.64468)));
+            yy = -18.1224 + (((tickAnim - 60) / 23) * (0-(-18.1224)));
+            zz = -8.40481 + (((tickAnim - 60) / 23) * (0-(-8.40481)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(xx), neck2.rotateAngleY + (float) Math.toRadians(yy), neck2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 0) / 23) * (24.7442-(0)));
+            yy = 0 + (((tickAnim - 0) / 23) * (-6.82874-(0)));
+            zz = 0 + (((tickAnim - 0) / 23) * (2.945-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 29) {
+            xx = 24.7442 + (((tickAnim - 23) / 6) * (24.7442-(24.7442)));
+            yy = -6.82874 + (((tickAnim - 23) / 6) * (-6.82874-(-6.82874)));
+            zz = 2.945 + (((tickAnim - 23) / 6) * (2.945-(2.945)));
+        }
+        else if (tickAnim >= 29 && tickAnim < 39) {
+            xx = 24.7442 + (((tickAnim - 29) / 10) * (24.43121-(24.7442)));
+            yy = -6.82874 + (((tickAnim - 29) / 10) * (-14.701-(-6.82874)));
+            zz = 2.945 + (((tickAnim - 29) / 10) * (-2.69969-(2.945)));
+        }
+        else if (tickAnim >= 39 && tickAnim < 48) {
+            xx = 24.43121 + (((tickAnim - 39) / 9) * (33.18121-(24.43121)));
+            yy = -14.701 + (((tickAnim - 39) / 9) * (-14.701-(-14.701)));
+            zz = -2.69969 + (((tickAnim - 39) / 9) * (-2.69969-(-2.69969)));
+        }
+        else if (tickAnim >= 48 && tickAnim < 60) {
+            xx = 33.18121 + (((tickAnim - 48) / 12) * (33.18121-(33.18121)));
+            yy = -14.701 + (((tickAnim - 48) / 12) * (-14.701-(-14.701)));
+            zz = -2.69969 + (((tickAnim - 48) / 12) * (-2.69969-(-2.69969)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 83) {
+            xx = 33.18121 + (((tickAnim - 60) / 23) * (0-(33.18121)));
+            yy = -14.701 + (((tickAnim - 60) / 23) * (0-(-14.701)));
+            zz = -2.69969 + (((tickAnim - 60) / 23) * (0-(-2.69969)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(xx), neck3.rotateAngleY + (float) Math.toRadians(yy), neck3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 0) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 23) * (5.25-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 29) {
+            xx = 0 + (((tickAnim - 23) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 23) / 6) * (0-(0)));
+            zz = 5.25 + (((tickAnim - 23) / 6) * (5.25-(5.25)));
+        }
+        else if (tickAnim >= 29 && tickAnim < 39) {
+            xx = 0 + (((tickAnim - 29) / 10) * (23.83015-(0)));
+            yy = 0 + (((tickAnim - 29) / 10) * (-3.58223-(0)));
+            zz = 5.25 + (((tickAnim - 29) / 10) * (10.67734-(5.25)));
+        }
+        else if (tickAnim >= 39 && tickAnim < 48) {
+            xx = 23.83015 + (((tickAnim - 39) / 9) * (23.99598-(23.83015)));
+            yy = -3.58223 + (((tickAnim - 39) / 9) * (0.55192-(-3.58223)));
+            zz = 10.67734 + (((tickAnim - 39) / 9) * (4.41609-(10.67734)));
+        }
+        else if (tickAnim >= 48 && tickAnim < 51) {
+            xx = 23.99598 + (((tickAnim - 48) / 3) * (23.95079-(23.99598)));
+            yy = 0.55192 + (((tickAnim - 48) / 3) * (-1.93094-(0.55192)));
+            zz = 4.41609 + (((tickAnim - 48) / 3) * (8.16971-(4.41609)));
+        }
+        else if (tickAnim >= 51 && tickAnim < 53) {
+            xx = 23.95079 + (((tickAnim - 51) / 2) * (23.99598-(23.95079)));
+            yy = -1.93094 + (((tickAnim - 51) / 2) * (0.55192-(-1.93094)));
+            zz = 8.16971 + (((tickAnim - 51) / 2) * (4.41609-(8.16971)));
+        }
+        else if (tickAnim >= 53 && tickAnim < 58) {
+            xx = 23.99598 + (((tickAnim - 53) / 5) * (23.95079-(23.99598)));
+            yy = 0.55192 + (((tickAnim - 53) / 5) * (-1.93094-(0.55192)));
+            zz = 4.41609 + (((tickAnim - 53) / 5) * (8.16971-(4.41609)));
+        }
+        else if (tickAnim >= 58 && tickAnim < 60) {
+            xx = 23.95079 + (((tickAnim - 58) / 2) * (23.99598-(23.95079)));
+            yy = -1.93094 + (((tickAnim - 58) / 2) * (0.55192-(-1.93094)));
+            zz = 8.16971 + (((tickAnim - 58) / 2) * (4.41609-(8.16971)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 83) {
+            xx = 23.99598 + (((tickAnim - 60) / 23) * (0-(23.99598)));
+            yy = 0.55192 + (((tickAnim - 60) / 23) * (0-(0.55192)));
+            zz = 4.41609 + (((tickAnim - 60) / 23) * (0-(4.41609)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 39 && tickAnim < 48) {
+            xx = 0 + (((tickAnim - 39) / 9) * (10-(0)));
+            yy = 0 + (((tickAnim - 39) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 39) / 9) * (0-(0)));
+        }
+        else if (tickAnim >= 48 && tickAnim < 53) {
+            xx = 10 + (((tickAnim - 48) / 5) * (0-(10)));
+            yy = 0 + (((tickAnim - 48) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 48) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 53 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 53) / 2) * (10-(0)));
+            yy = 0 + (((tickAnim - 53) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 53) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 58) {
+            xx = 10 + (((tickAnim - 55) / 3) * (0-(10)));
+            yy = 0 + (((tickAnim - 55) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 55) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 58 && tickAnim < 61) {
+            xx = 0 + (((tickAnim - 58) / 3) * (10-(0)));
+            yy = 0 + (((tickAnim - 58) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 58) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 61 && tickAnim < 64) {
+            xx = 10 + (((tickAnim - 61) / 3) * (0-(10)));
+            yy = 0 + (((tickAnim - 61) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 61) / 3) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
+
+
 
     }
 
@@ -6439,8 +6722,18 @@ public class ModelProceratosaurus extends AdvancedModelBaseExtended {
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraProceratosaurus e = (EntityPrehistoricFloraProceratosaurus) entity;
+        animator.update(entity);
 
-
+        animator.setAnimation(e.HURT_ANIMATION);
+        animator.startKeyframe(5);
+        animator.move(this.neck, (float) Math.toRadians(10),0,0);
+        animator.move(this.neck2, (float) Math.toRadians(10),0,0);
+        animator.move(this.neck3, (float) Math.toRadians(-10),0,0);
+        animator.rotate(this.head, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(5);
 
     }
 }

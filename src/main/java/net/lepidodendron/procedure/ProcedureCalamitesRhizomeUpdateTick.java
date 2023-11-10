@@ -118,6 +118,9 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 				int i = i2 + random.nextInt((spreadLimit * 2) + 1) - spreadLimit;
 				int k = k2 + random.nextInt((spreadLimit * 2) + 1) - spreadLimit;
 				int height = 255;
+				if (!world.isBlockLoaded(new BlockPos(i, 0, k))) {
+					break;
+				}
 				if (isNetherType) {
 					boolean notpassed = true;
 					while (height > 0) {

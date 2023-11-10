@@ -61,6 +61,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
 		setSize(3.0F, 6F);
+		stepHeight = 2;
 		minWidth = 0.8F;
 		maxWidth = 3.0F;
 		maxHeight = 6F;
@@ -74,7 +75,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int wadeDepth() {
-		return 5;
+		return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -85,7 +86,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return super.getJumpUpwardsMotion();
+		return 0.6F;
 	}
 
 	@Override
@@ -552,7 +553,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F;
+		return 2.0F;
 	}
 
 	@Override
@@ -578,7 +579,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			}
 		}
 
-		if (this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);

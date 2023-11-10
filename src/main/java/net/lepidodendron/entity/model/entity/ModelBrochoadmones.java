@@ -331,7 +331,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Brochoadmones.render(f5 * 0.108F);
+        this.Brochoadmones.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -352,7 +352,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Brochoadmones.offsetY = 1.25F;
+        //this.Brochoadmones.offsetY = 1.25F;
 
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5};
         float speed = 0.28F;
@@ -405,7 +405,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Brochoadmones.rotateAngleZ = (float) Math.toRadians(90);
-                this.Brochoadmones.offsetY = 1.35F;
+                this.Brochoadmones.offsetY = 1.35F -1.25F;
                 this.bob(Brochoadmones, -speed, 5F, false, f2, 1);
             }
         }

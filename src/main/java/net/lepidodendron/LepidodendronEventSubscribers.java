@@ -606,7 +606,7 @@ public class LepidodendronEventSubscribers {
 
 	}
 
-	@SideOnly(Side.CLIENT) //Tooltips for vanilla items
+	@SideOnly(Side.CLIENT) //Tooltips for vanilla items etc
 	@SubscribeEvent
 	public void onEvent(ItemTooltipEvent event) throws NoSuchMethodException {
 
@@ -709,6 +709,15 @@ public class LepidodendronEventSubscribers {
 			List<String> tt = event.getToolTip();
 			try {
 				tt.add(I18n.translateToLocal("helper.pf_latexable.name"));
+			} catch (Throwable throwable) {
+				//Do nothing - it's all good
+			}
+		}
+
+		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("lepidodendron:rubber_boots")) {
+			List<String> tt = event.getToolTip();
+			try {
+				tt.add(I18n.translateToLocal("helper.pf_rubber_boots.name"));
 			} catch (Throwable throwable) {
 				//Do nothing - it's all good
 			}

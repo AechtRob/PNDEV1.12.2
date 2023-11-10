@@ -8,9 +8,12 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -34,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -289,6 +292,10 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
+		if (this.getAnimation() == SCRATCH_RIGHT_ANIMATION && this.getAnimationTick() == SCRATCH_RIGHT_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
 
 	}
 
@@ -358,6 +365,12 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 			return LepidodendronMod.YANGCHUANOSAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.YANGCHUANOSAURUS_LOOT;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_YANGCHUANOSAURUS;
 	}
 
 	//Rendering taxidermy:

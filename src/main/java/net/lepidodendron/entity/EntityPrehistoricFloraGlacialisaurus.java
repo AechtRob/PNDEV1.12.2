@@ -575,7 +575,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 				//}
 				this.standCooldown = 2000;
 			}
-			if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			if (this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}

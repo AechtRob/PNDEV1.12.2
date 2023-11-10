@@ -6,9 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
@@ -108,6 +106,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public int warnDistance() {
         return 16;
+    }
+
+    /** Set to true if the mob needs to go into sneak AI mode if you hit it oe on a warn AI
+     * When false it only does the sneak AI when in "standard" hunting mode
+     *
+     * @return
+     */
+    public boolean sneakOnRevenge() {
+        return false;
     }
 
     public void playStepSoundPublic() {
@@ -1008,6 +1015,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     else if (this instanceof EntityPrehistoricFloraPanguraptor) {
                         this.setAnimation(((EntityPrehistoricFloraPanguraptor)this).HURT_ANIMATION);
                     }
+                    else if (this instanceof EntityPrehistoricFloraGuanlong) {
+                        this.setAnimation(((EntityPrehistoricFloraGuanlong)this).HURT_ANIMATION);
+                    }
+                    else if (this instanceof EntityPrehistoricFloraProceratosaurus) {
+                        this.setAnimation(((EntityPrehistoricFloraProceratosaurus)this).HURT_ANIMATION);
+                    }
                     else {
                         this.setAnimation(ROAR_ANIMATION);
                     }
@@ -1086,12 +1099,22 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setEatTarget(null);
                 }
             }
-            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
 
-            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
+            if (this.getSneakRange() > 0 && this.getIsFast()
+                    && (this.getAttackTarget() != null || (this.getRevengeTarget() != null && this.sneakOnRevenge()))
+                    && ((!this.getOneHit()) || this.sneakOnRevenge())
+            ) {
                 //If this is hunting and is not close enough, sneak up:
-                float distEntity = this.getDistancePrey(this.getAttackTarget());
-                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+
+                float distEntity;
+                if (this.getAttackTarget() != null) {
+                    distEntity = this.getDistancePrey(this.getAttackTarget());
+                }
+                else {
+                    distEntity = this.getDistancePrey(this.getRevengeTarget());
+                }
+                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange())) {
                     this.setIsSneaking(true);
                 }
                 if (this.getIsSneaking() &&
@@ -1104,7 +1127,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setIsSneaking(false);
             }
 
-            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
+            if ((!this.getIsFast())
+                    || (this.getAttackTarget() == this.getRevengeTarget() && !this.sneakOnRevenge())
+                    || (this.getOneHit() && !this.sneakOnRevenge())
+            ) {
                 this.setSneaking(false);
             }
 

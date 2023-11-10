@@ -396,7 +396,7 @@ public class ModelDasyceps extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Dasyceps.render(f5 * 0.305F);
+        this.Dasyceps.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -458,7 +458,7 @@ public class ModelDasyceps extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Dasyceps.offsetY = 1.03F; //72
+        //this.Dasyceps.offsetY = 1.03F; //72
 
         EntityPrehistoricFloraDasyceps DasycepsEntity = (EntityPrehistoricFloraDasyceps) e;
 

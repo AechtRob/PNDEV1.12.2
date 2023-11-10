@@ -34,6 +34,11 @@ public class ModelPlaceholderLand extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Silesaurus.render(f5);
     }
+
+    public void renderStaticBook(float f) {
+        this.Silesaurus.render(f);
+        resetToDefaultPose();
+    }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
