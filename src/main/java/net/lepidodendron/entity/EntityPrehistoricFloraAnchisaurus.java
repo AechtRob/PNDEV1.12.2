@@ -40,7 +40,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
-import java.net.SecureCacheResponse;
 import java.util.Random;
 
 public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
@@ -49,7 +48,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAnchisaurus.class, DataSerializers.BOOLEAN);
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_LEFT_ANIMATION;
 	public Animation SCRATCH_RIGHT_ANIMATION;
