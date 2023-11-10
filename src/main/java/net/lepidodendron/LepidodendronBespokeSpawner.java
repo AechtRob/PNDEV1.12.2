@@ -33,9 +33,12 @@ public class LepidodendronBespokeSpawner {
                     //System.err.println("aStr: " + aStr);
                     //System.err.println("aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName): " + aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName));
                     if (aStr.length() > 0) {
-                        if (aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName)) {
-                            spawn = true;
-                            bstrCt += 1;
+                        if (aStr.length() >= biomeName.length() + 2) {
+                            if (aStr.substring(0, biomeName.length() + 1).equalsIgnoreCase(biomeName + ":")) {
+                                spawn = true;
+                                bstrCt += 1;
+
+                            }
                         }
                     }
                 }
@@ -45,11 +48,13 @@ public class LepidodendronBespokeSpawner {
                     bstrCt = 0;
                     for (int a = 0; a < LepidodendronConfig.mobSpawnBespoke.length; a++) {
                         String aStr = LepidodendronConfig.mobSpawnBespoke[a];
-                        if (aStr.substring(0, biomeName.length()).equalsIgnoreCase(biomeName)) {
-                            //System.err.println("aStr.substring(biomeName.length() + 1): " + aStr.substring(biomeName.length() + 1));
-                            bstrCt += 1;
-                            bStr[bstrCt - 1] = aStr.substring(biomeName.length() + 1);
-                            //System.err.println("array: " + bStr[bstrCt - 1]);
+                        if (aStr.length() >= biomeName.length() + 2) {
+                            if (aStr.substring(0, biomeName.length() + 1).equalsIgnoreCase(biomeName + ":")) {
+                                //System.err.println("aStr.substring(biomeName.length() + 1): " + aStr.substring(biomeName.length() + 1));
+                                bstrCt += 1;
+                                bStr[bstrCt - 1] = aStr.substring(biomeName.length() + 1);
+                                //System.err.println("array: " + bStr[bstrCt - 1]);
+                            }
                         }
                     }
                     if (spawn) {

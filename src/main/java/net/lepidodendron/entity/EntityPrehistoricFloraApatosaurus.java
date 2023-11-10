@@ -553,7 +553,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F;
+		return 2.0F;
 	}
 
 	@Override
