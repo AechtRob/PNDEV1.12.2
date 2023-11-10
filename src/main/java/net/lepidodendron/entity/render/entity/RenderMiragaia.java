@@ -16,7 +16,7 @@ public class RenderMiragaia extends RenderLiving<EntityPrehistoricFloraMiragaia>
     }
 
     public static float getScaler() {
-        return 0.95F;
+        return 0.832F;
     }
 
     @Override
