@@ -396,7 +396,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			EnumFacing facing = null;
 			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(3)))) {
 				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
@@ -414,7 +414,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(3)))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}

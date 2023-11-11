@@ -2430,7 +2430,8 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         this.Eye = new AdvancedModelRenderer(this);
         this.Eye.setRotationPoint(0.585F, -0.0327F, -2.0662F);
         this.head.addChild(Eye);
-        this.Eye.cubeList.add(new ModelBox(Eye, 57, 37, -2.675F, -0.5F, -0.5F, 3, 1, 1, 0.01F, false));
+        this.Eye.cubeList.add(new ModelBox(Eye, 57, 37, -0.5F, -0.5F, -0.5F, 1, 1, 1, 0.01F, false));
+        this.Eye.cubeList.add(new ModelBox(Eye, 57, 37, -2.67F, -0.5F, -0.5F, 1, 1, 1, 0.01F, true));
 
         this.jaw = new AdvancedModelRenderer(this);
         this.jaw.setRotationPoint(-0.5F, 1.6158F, -0.7912F);
@@ -15214,6 +15215,7 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
+
         this.setRotateAngle(body2, body2.rotateAngleX + (float) Math.toRadians(-2.25+Math.sin((Math.PI/180)*(135/0.75-10))*2), body2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+150))*-1), body2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75+180))*1));
 
         if (tickAnim >= 0 && tickAnim < 3) {
@@ -15279,9 +15281,6 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
 
 
         this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(0), body.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*135/0.75-55))*1), body.rotateAngleZ + (float) Math.toRadians(0));
-        this.body.rotationPointX = this.body.rotationPointX + (float)(0);
-        this.body.rotationPointY = this.body.rotationPointY - (float)(0);
-        this.body.rotationPointZ = this.body.rotationPointZ + (float)(0);
 
 
 
@@ -15335,17 +15334,17 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 18 && tickAnim < 23) {
             xx = 0 + (((tickAnim - 18) / 5) * (0-(0)));
-            yy = -0.075 + (((tickAnim - 18) / 5) * (1.9-(-0.075)));
+            yy = -0.075 + (((tickAnim - 18) / 5) * (0.9-(-0.075)));
             zz = 0 + (((tickAnim - 18) / 5) * (0-(0)));
         }
         else if (tickAnim >= 23 && tickAnim < 28) {
             xx = 0 + (((tickAnim - 23) / 5) * (0-(0)));
-            yy = 1.9 + (((tickAnim - 23) / 5) * (2.7-(1.9)));
+            yy = 0.9 + (((tickAnim - 23) / 5) * (1.2-(0.9)));
             zz = 0 + (((tickAnim - 23) / 5) * (0-(0)));
         }
         else if (tickAnim >= 28 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 28) / 12) * (0-(0)));
-            yy = 2.7 + (((tickAnim - 28) / 12) * (0-(2.7)));
+            yy = 1.2 + (((tickAnim - 28) / 12) * (0-(1.2)));
             zz = 0 + (((tickAnim - 28) / 12) * (0-(0)));
         }
         else {
@@ -15553,14 +15552,19 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         this.setRotateAngle(backrightleg, backrightleg.rotateAngleX + (float) Math.toRadians(xx), backrightleg.rotateAngleY + (float) Math.toRadians(yy), backrightleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = -0.75 + (((tickAnim - 0) / 8) * (2.7-(-0.75)));
-            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 4) {
+            xx = 0 + (((tickAnim - 0) / 4) * (0-(0)));
+            yy = -0.75 + (((tickAnim - 0) / 4) * (0.9-(-0.75)));
+            zz = 0 + (((tickAnim - 0) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 4 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 4) / 4) * (0-(0)));
+            yy = 0.9 + (((tickAnim - 4) / 4) * (1.2-(0.9)));
+            zz = 0 + (((tickAnim - 4) / 4) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 8) / 10) * (0-(0)));
-            yy = 2.7 + (((tickAnim - 8) / 10) * (0-(2.7)));
+            yy = 1.2 + (((tickAnim - 8) / 10) * (0-(1.2)));
             zz = 0 + (((tickAnim - 8) / 10) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 23) {
@@ -16249,6 +16253,31 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
             zz = 1;
         }
         this.Eye.setScale((float)xx, (float)yy, (float)zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 1 + (((tickAnim - 0) / 5) * (2-(1)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 25) {
+            xx = 0 + (((tickAnim - 5) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 5) / 20) * (0-(0)));
+            zz = 2 + (((tickAnim - 5) / 20) * (-2-(2)));
+        }
+        else if (tickAnim >= 25 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 25) / 15) * (0-(0)));
+            yy = 0 + (((tickAnim - 25) / 15) * (0-(0)));
+            zz = -2 + (((tickAnim - 25) / 15) * (1-(-2)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(xx), main.rotateAngleY + (float) Math.toRadians(yy), main.rotateAngleZ + (float) Math.toRadians(zz));
 
 
     }

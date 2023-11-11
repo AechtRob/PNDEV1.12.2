@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -19,6 +20,8 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -267,7 +270,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, this.getAISpeedLand(), false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
@@ -315,8 +318,8 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 4;
-		int y = 6;
+		int x = 3;
+		int y = 1;
 		for (int xx = 0; xx < x; xx++) {
 			for (int yy = 0; yy < y; yy++) {
 				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
@@ -346,36 +349,36 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 				&& !this.isReallyInWater()
 				&&
 				(
-						(this.world.getBlockState(entityPos.north(4).down()).getMaterial() == Material.WATER
+						(this.world.getBlockState(entityPos.north(3).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-								|| (this.world.getBlockState(entityPos.south(4).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.south(3).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-								|| (this.world.getBlockState(entityPos.east(4).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.east(3).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-								|| (this.world.getBlockState(entityPos.west(4).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.west(3).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(4).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(4).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(4).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(4).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(3).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing, 4));
+				this.setDrinkingFrom(entityPos.offset(facing, 3));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
@@ -387,10 +390,10 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 5;
-		int y = 9;
+		int x = 2;
+		int y = 2;
 		for (int xx = 0; xx < x; xx++) {
-			for (int yy = 5; yy < y; yy++) {
+			for (int yy = 0; yy < y; yy++) {
 				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
 					return false;
 				}
@@ -418,48 +421,52 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 				&& !this.isReallyInWater()
 				&&
 				(
-						(isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(9)))
+						(isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(2)))
 								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(9)))
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.south(3).up(2)))
 								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(9)))
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(2)))
 								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(9)))
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(2)))
 								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is grazable?
 			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(9)))) {
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(2)))) {
 				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.2D
+					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.4D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(9)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(3).up(2)))) {
 				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.2D
+					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.4D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(9)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(2)))) {
 				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D
+					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(9)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(2)))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D
+					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
 					test2 = true;
 				}
 			}
 			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(9).offset(facing, 5));
+				this.setGrazingFrom(entityPos.up(2).offset(facing, 3));
 				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 			}
 		}
@@ -525,6 +532,19 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 		}
 		if (this.getAnimation() == GRAZE_ANIMATION) {
 			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
+		}
+
+		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
+			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
+				//if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
+				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
+				world.destroyBlock(this.getGrazingFrom(), true);
+				float itemHealth = 0.5F; //Default minimal nutrition
+				if (item.getItem() instanceof ItemFood) {
+					itemHealth = ((ItemFood) item.getItem()).getHealAmount(item);
+				}
+				this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
+			}
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 16 && this.getAttackTarget() != null) {
