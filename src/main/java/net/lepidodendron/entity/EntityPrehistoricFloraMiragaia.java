@@ -318,7 +318,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 3;
+		int x = 2;
 		int y = 1;
 		for (int xx = 0; xx < x; xx++) {
 			for (int yy = 0; yy < y; yy++) {
@@ -349,36 +349,36 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 				&& !this.isReallyInWater()
 				&&
 				(
-						(this.world.getBlockState(entityPos.north(3).down()).getMaterial() == Material.WATER
+						(this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-								|| (this.world.getBlockState(entityPos.south(3).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-								|| (this.world.getBlockState(entityPos.east(3).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-								|| (this.world.getBlockState(entityPos.west(3).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(3).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(3).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(3).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(3).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing, 3));
+				this.setDrinkingFrom(entityPos.offset(facing, 2));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
