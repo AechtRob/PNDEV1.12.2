@@ -132,7 +132,7 @@ public class EntityPrehistoricFloraTyphloesus extends EntityPrehistoricFloraAgea
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 		//this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable<>(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
