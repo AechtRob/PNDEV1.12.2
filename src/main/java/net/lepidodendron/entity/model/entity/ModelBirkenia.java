@@ -116,7 +116,7 @@ public class ModelBirkenia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Birkenia.offsetY = 1.2F;
+        this.Birkenia.offsetY = -0.3F;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
         float speed = 0.66F;
@@ -130,7 +130,7 @@ public class ModelBirkenia extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Birkenia.rotateAngleZ = (float) Math.toRadians(90);
-                this.Birkenia.offsetY = 1.20F;
+                this.Birkenia.offsetY = 0.0F;
                 this.bob(Birkenia, -speed, 5F, false, f2, 1);
             }
         }
