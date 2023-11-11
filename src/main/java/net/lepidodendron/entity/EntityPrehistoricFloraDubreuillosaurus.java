@@ -134,7 +134,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.33F;
+		float speedBase = 0.35F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
