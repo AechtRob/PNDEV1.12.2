@@ -283,7 +283,7 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		//Sometimes stand up and look around:
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int animRand = rand.nextInt(25);
 
@@ -302,15 +302,15 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if (this.getAnimation() == SNIFF_ANIMATION && this.getAnimationTick() == SNIFF_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == SNIFF_ANIMATION && this.getAnimationTick() == SNIFF_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if (this.getAnimation() == LOOKDOWNLEFT_ANIMATION && this.getAnimationTick() == LOOKDOWNLEFT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LOOKDOWNLEFT_ANIMATION && this.getAnimationTick() == LOOKDOWNLEFT_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

@@ -17,9 +17,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -45,7 +42,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraGlacialisaurus.class, DataSerializers.BOOLEAN);
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation NOISE2_ANIMATION;
@@ -213,7 +209,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
@@ -222,12 +217,10 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
 		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
@@ -292,15 +285,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		}
 
 		return true;
-	}
-
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
 	}
 
 	@Override
@@ -486,20 +470,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
-
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
@@ -566,7 +536,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		}
 		else {
 			//random idle animations
-			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				//if (next < 5) {
 					this.setAnimation(SCRATCH_ANIMATION);
@@ -575,7 +545,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 				//}
 				this.standCooldown = 2000;
 			}
-			if (this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
+			if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}

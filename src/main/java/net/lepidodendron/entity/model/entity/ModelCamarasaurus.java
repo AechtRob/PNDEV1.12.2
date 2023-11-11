@@ -398,7 +398,7 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
        // this.Hips.offsetY = 0.04F;
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraCamarasaurus apato = (EntityPrehistoricFloraCamarasaurus) e;
+        EntityPrehistoricFloraCamarasaurus camara = (EntityPrehistoricFloraCamarasaurus) e;
 
 //        this.faceTarget(f3, f4, 6, neck1);
 //        this.faceTarget(f3, f4, 6, neck2);
@@ -407,7 +407,7 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
 //        this.faceTarget(f3, f4, 4, neck5);
 //        this.faceTarget(f3, f4, 4, head);
 
-        boolean isBaby = apato.getJuvenile();
+        boolean isBaby = camara.getJuvenile();
 
         if (isBaby) {
             this.neck4.scaleChildren = true;
@@ -431,20 +431,20 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] ArmL = {this.leftarm, this.leftarm2, this.leftarm3};
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 
-        apato.tailBuffer.applyChainSwingBuffer(Tail);
-        float masterSpeed = apato.getTravelSpeed()/2;
+        camara.tailBuffer.applyChainSwingBuffer(Tail);
+        float masterSpeed = camara.getTravelSpeed()/2;
 
-            if (!apato.isInWater()) {
+            if (!camara.isInWater()) {
 
-                if (f3 == 0.0F || !apato.getIsMoving()) {
-                    if (apato.getAnimation() != apato.EAT_ANIMATION
-                        && apato.getAnimation() != apato.DRINK_ANIMATION
-                        && apato.getAnimation() != apato.ATTACK_ANIMATION) {
+                if (f3 == 0.0F || !camara.getIsMoving()) {
+                    if (camara.getAnimation() != camara.EAT_ANIMATION
+                        && camara.getAnimation() != camara.DRINK_ANIMATION
+                        && camara.getAnimation() != camara.ATTACK_ANIMATION) {
                         this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                     }
 
-                    if (apato.getAnimation() != apato.ATTACK_ANIMATION) {
+                    if (camara.getAnimation() != camara.ATTACK_ANIMATION) {
                         this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
                         this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
                         this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
@@ -453,7 +453,7 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (apato.getIsFast()) { //Running
+                if (camara.getIsFast()) { //Running
                     float speed = masterSpeed / 2F;
                     this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
                     this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);

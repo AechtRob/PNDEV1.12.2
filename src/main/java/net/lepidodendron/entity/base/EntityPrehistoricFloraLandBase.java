@@ -489,6 +489,20 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public void onLivingUpdate()
     {
 
+        if (!world.isRemote) {
+            double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
+            double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
+            double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
+            if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+                if (!this.getJuvenile()) {
+                    this.setJuvenile(true);
+                }
+            }
+            else if (this.getJuvenile()) {
+                this.setJuvenile(false);
+            }
+        }
+
         if (this.getAnimation() == DRINK_ANIMATION) {
             this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
         }

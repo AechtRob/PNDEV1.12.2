@@ -354,7 +354,7 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 			//random idle animations
-			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				int next = rand.nextInt(100);
 				if (next < 50) {
@@ -365,7 +365,11 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 
 				this.standCooldown = 4000;
 			}
-			if (this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+			if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 4000;
+				this.setAnimation(NO_ANIMATION);
+			}
+			if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 4000;
 				this.setAnimation(NO_ANIMATION);
 			}

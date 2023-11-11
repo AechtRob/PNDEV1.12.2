@@ -285,9 +285,9 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 
 		int next = rand.nextInt(10);
 		//Sometimes stand up and look around:
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			if(next < 5) {
+			if (next < 5) {
 				this.setAnimation(IDLE1_ANIMATION);
 				this.standCooldown = 2000;
 			} else {
@@ -296,11 +296,11 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 			}
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if (this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if (this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}

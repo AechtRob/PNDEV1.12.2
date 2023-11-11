@@ -20,9 +20,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -48,7 +45,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAnchisaurus.class, DataSerializers.BOOLEAN);
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_LEFT_ANIMATION;
 	public Animation SCRATCH_RIGHT_ANIMATION;
@@ -220,7 +216,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
@@ -229,12 +224,10 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
 		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
@@ -282,17 +275,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
-
-
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
-	}
-
 
 	private boolean isBlockGrazable(IBlockState state) {
 		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS);
@@ -423,20 +405,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
-
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
@@ -497,7 +465,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		}
 		else {
 			//random idle animations
-			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				if (next < 3) {
 					this.setAnimation(SCRATCH_RIGHT_ANIMATION);
@@ -508,7 +476,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 				}
 				this.standCooldown = 2000;
 			}
-			if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}

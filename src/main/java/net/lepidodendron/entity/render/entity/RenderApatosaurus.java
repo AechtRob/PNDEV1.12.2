@@ -28,6 +28,7 @@ public class RenderApatosaurus extends RenderLiving<EntityPrehistoricFloraApatos
 
     @Override
     public void doRender(EntityPrehistoricFloraApatosaurus entity, double x, double y, double z, float entityYaw, float partialTicks) {
+        @SuppressWarnings("deprecation")
         Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();

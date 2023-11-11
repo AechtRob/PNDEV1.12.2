@@ -28,6 +28,7 @@ public class RenderCamarasaurus extends RenderLiving<EntityPrehistoricFloraCamar
 
     @Override
     public void doRender(EntityPrehistoricFloraCamarasaurus entity, double x, double y, double z, float entityYaw, float partialTicks) {
+        @SuppressWarnings("deprecation")
         Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
