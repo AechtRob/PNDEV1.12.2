@@ -101,15 +101,16 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
 
     }
 
+    @Nullable
     public SoundEvent getRoarSound() { //Roar
         return (SoundEvent) SoundEvent.REGISTRY
-                .getObject(new ResourceLocation(null));
+                .getObject(new ResourceLocation(""));
     }
 
     @Override
     public SoundEvent getAmbientSound() { //Noise
         return (SoundEvent) SoundEvent.REGISTRY
-                .getObject(new ResourceLocation(null));
+                .getObject(new ResourceLocation(""));
     }
 
 }

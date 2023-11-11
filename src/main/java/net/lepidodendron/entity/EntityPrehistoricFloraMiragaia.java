@@ -7,7 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -31,7 +31,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -51,17 +51,22 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 
 	public EntityPrehistoricFloraMiragaia(World world) {
 		super(world);
-		setSize(0.9F, 1.3F);
-		minWidth = 0.12F;
-		maxWidth = 0.9F;
-		maxHeight = 1.3F;
-		maxHealthAgeable = 50.0D;
+		setSize(1.7F, 2.85F);
+		minWidth = 0.2F;
+		maxWidth = 1.7F;
+		maxHeight = 2.85F;
+		maxHealthAgeable = 65;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
 		IDLE_1 = Animation.create(200);
 		IDLE_2 = Animation.create(130);
 		IDLE_3 = Animation.create(130);
+	}
+
+	@Override
+	public int getNoiseLength() {
+		return 44;
 	}
 
 	@Override
@@ -76,7 +81,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, IDLE_1, IDLE_2, IDLE_3};
+		return new Animation[]{DRINK_ANIMATION, HURT_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, IDLE_1, IDLE_2, IDLE_3};
 	}
 
 	@Override
@@ -89,6 +94,11 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 
 	public float getRotationAngle() {
 		return this.rotationAngle;
+	}
+
+	@Override
+	public boolean sneakOnRevenge() {
+		return true;
 	}
 
 	@Override
@@ -163,17 +173,17 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public int getAttackLength() {
-		return 40;
+		return 25;
 	}
 
 	@Override
 	public int getRoarLength() {
-		return 24;
+		return 44;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 70;
 	}
 
 	@Override
@@ -189,6 +199,11 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 	@Override
 	public boolean laysEggs() {
 		return true;
+	}
+
+	@Override
+	public int warnCooldownTime() {
+		return 20; //Straight into sneak/sideways mode more or less
 	}
 
 	public float getAISpeedLand() {
@@ -242,11 +257,12 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandBa
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(6, new AgeableWarnEntity(this, EntityPlayer.class, 3));
+		tasks.addTask(7, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

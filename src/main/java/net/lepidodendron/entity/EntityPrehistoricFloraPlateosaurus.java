@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraPlateosaurus.class, DataSerializers.BOOLEAN);
 	public Animation STAND_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	public Animation NOISE2_ANIMATION;

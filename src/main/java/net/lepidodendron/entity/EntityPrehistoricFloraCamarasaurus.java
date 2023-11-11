@@ -59,11 +59,11 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraCamarasaurus(World world) {
 		super(world);
-		setSize(2.5F, 4F);
+		setSize(2.5F, 4.5F);
 		stepHeight = 2;
 		minWidth = 0.8F;
 		maxWidth = 2.5F;
-		maxHeight = 4F;
+		maxHeight = 4.5F;
 		maxHealthAgeable = 168.0D;
 
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -487,7 +487,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F;
+		return 2.0F;
 	}
 
 	@Override

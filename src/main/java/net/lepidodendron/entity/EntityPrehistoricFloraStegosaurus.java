@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.3F;
 		maxWidth = 2F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 65.0D;
+		maxHealthAgeable = 85.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
