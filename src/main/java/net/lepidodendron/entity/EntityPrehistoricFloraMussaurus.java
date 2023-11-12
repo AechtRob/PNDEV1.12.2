@@ -106,7 +106,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 
 	@Override
 	public boolean isDrinking() {
-		if (getJuvenile()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 		return super.isDrinking();

@@ -333,7 +333,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	@Override
 	public boolean isDrinking()
 	{
-		if (getJuvenile()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
@@ -405,7 +405,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	@Override
 	public boolean isGrazing()
 	{
-		if (getJuvenile() || !this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
