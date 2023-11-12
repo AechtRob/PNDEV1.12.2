@@ -40,16 +40,16 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraAmplectobelua(World world) {
 		super(world);
-		setSize(0.5F, 0.25F);
+		setSize(0.8F, 0.25F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.8F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 6.0D;
 	}
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.5;
 	}
 
 	public static String getPeriod() {return "Cambrian";}
@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return 12000;
 	} //Only adults!
 
 	@Override
@@ -190,7 +190,11 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 
 	@Override
 	public float getAgeScale() {
-		return 1;
+		float step = 1F / ((float)this.getAdultAge() + 1F);
+		if (this.getAgeTicks() >= this.getAdultAge()) {
+			return 1F;
+		}
+		return Math.max((this.minWidth/this.getMaxWidth()), (step * (float)this.getAgeTicks()));
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
