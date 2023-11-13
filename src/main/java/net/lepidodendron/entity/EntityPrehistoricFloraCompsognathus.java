@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 	private boolean screaming;
 	private int alarmCooldown;
 	private int curious;
-	private float curiosity = 0.8F; //Between 0 and 1 with 1 being most curious and 0 not at all
+	private float curiosity = 0.65F; //Between 0 and 1 with 1 being most curious and 0 not at all
 	private int nervousnessTimer;
 	private EntityLivingBase nervousnessTarget;
 	public Animation GRAPPLE_ANIMATION;
