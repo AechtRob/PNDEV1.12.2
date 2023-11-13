@@ -158,7 +158,7 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
+			speedBase = speedBase * 1.87F;
 		}
 		return speedBase;
 	}
