@@ -82,7 +82,12 @@ public class PanicWhenLookedAI extends EntityAIBase
                             //Propagate into nearby mobs too:
                             List<EntityLivingBase> nearbyEntity = this.creature.world.getEntitiesWithinAABB(this.creature.getClass(), new AxisAlignedBB(this.creature.getPosition().add(-2, -2, -2), this.creature.getPosition().add(2, 2, 2)));
                             for (EntityLivingBase currentNearbyEntity : nearbyEntity) {
-                                ((INervous)currentNearbyEntity).setNervousnessTarget(currentEntity);
+                                if (currentNearbyEntity instanceof EntityPrehistoricFloraLandBase) {
+                                    if ((!(((EntityPrehistoricFloraLandBase) currentNearbyEntity).isAnimationDirectionLocked(((EntityPrehistoricFloraLandBase) currentNearbyEntity).getAnimation())))
+                                            && (((EntityPrehistoricFloraLandBase) currentNearbyEntity).getAISpeedLand() > 0)) {
+                                        ((INervous) currentNearbyEntity).setNervousnessTarget(currentEntity);
+                                    }
+                                }
                             }
                             break;
                         }

@@ -14,10 +14,7 @@ import net.lepidodendron.entity.render.entity.RenderCiurcopterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.*;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -75,6 +72,14 @@ public class EntityPrehistoricFloraCiurcopterus extends EntityPrehistoricFloraSw
 	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SWIM_ANIMATION, UNSWIM_ANIMATION};
+	}
+
+	@Override
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	//a stricter check on if the animal is swimming, (It is not doing its transition animation)

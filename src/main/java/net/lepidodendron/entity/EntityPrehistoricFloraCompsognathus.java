@@ -289,7 +289,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		//tasks.addTask(3, new PanicScreamAI(this, 1.0));
+		tasks.addTask(3, new PanicScreamAI(this, 1.0));
 		tasks.addTask(4, new PanicWhenLookedAI(this, 1.0F));
 		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getGrappleLength(), this.getGrappleAnimation(), 0.25));
 		tasks.addTask(6, new LandWanderNestAI(this));
