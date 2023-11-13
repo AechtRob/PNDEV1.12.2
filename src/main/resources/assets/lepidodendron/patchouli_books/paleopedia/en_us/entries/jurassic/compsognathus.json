@@ -1,0 +1,46 @@
+{
+	"name": "Compsognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/compsognathus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_compsognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_compsognathus",
+			"title": "Compsognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Compsognathidae"
+		},
+		{
+			"type": "entity",
+			"name": "C. longipes",
+			"entity": "lepidodendron:prehistoric_flora_compsognathus",
+			"rotate": false
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "Compsognathus.......... notes to follow"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_compsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_compsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_compsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_compsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_compsognathus"
+		}
+	]
+}

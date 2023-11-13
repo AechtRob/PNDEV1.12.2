@@ -8267,6 +8267,75 @@
         "stream": false
       }
     ]
+  },
+
+  "compsognathus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:compsognathus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "compsognathus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:compsognathus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_hurt04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_hurt05",
+        "stream": false
+      }
+    ]
+  },
+  "compsognathus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:compsognathus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:compsognathus_alarm03",
+        "stream": false
+      }
+    ]
+  },
+  "compsognathus_chatter": {
+    "sounds": [
+      {
+        "name": "lepidodendron:compsognathus_chatter01",
+        "stream": false
+      }
+    ]
   }
   
   

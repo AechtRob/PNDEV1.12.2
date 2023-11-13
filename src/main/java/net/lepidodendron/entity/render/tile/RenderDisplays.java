@@ -13,6 +13,7 @@ public class RenderDisplays {
     public static final ModelAnteosaurus modelAnteosaurus = new ModelAnteosaurus();
     public static final ModelApatosaurus modelApatosaurus = new ModelApatosaurus();
     public static final ModelCamarasaurus modelCamarasaurus = new ModelCamarasaurus();
+    public static final ModelCompsognathus modelCompsognathus = new ModelCompsognathus();
     public static final ModelGuanlong modelGuanlong = new ModelGuanlong();
     public static final ModelDubreuillosaurus modelDubreuillosaurus = new ModelDubreuillosaurus();
     public static final ModelChilesaurus modelChilesaurus = new ModelChilesaurus();

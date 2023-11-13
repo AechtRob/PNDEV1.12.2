@@ -4951,6 +4951,13 @@ public class RenderHandler {
                 return new RenderDubreuillosaurus(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCompsognathus.class, new IRenderFactory<EntityPrehistoricFloraCompsognathus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCompsognathus> createRenderFor(RenderManager manager) {
+                return new RenderCompsognathus(manager);
+            }
+        });
         
         
         

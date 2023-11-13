@@ -5,6 +5,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
+import net.lepidodendron.entity.util.ICurious;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -115,7 +116,7 @@ public class EntityWatchClosestAI extends EntityAIBase
 
             if (this.watchedClass == EntityPlayer.class)
             {
-                this.closestEntity = this.entity.world.getClosestPlayer(this.entity.posX, this.entity.posY, this.entity.posZ, (double)this.maxDistance, Predicates.and(EntitySelectors.NOT_SPECTATING, EntitySelectors.notRiding(this.entity)));
+                this.closestEntity = this.entity.world.getClosestPlayer(this.entity.posX, this.entity.posY, this.entity.posZ, (double)this.maxDistance, Predicates.and(EntitySelectors.CAN_AI_TARGET, EntitySelectors.notRiding(this.entity)));
             }
             else
             {
@@ -162,6 +163,14 @@ public class EntityWatchClosestAI extends EntityAIBase
 
     public void updateTask()
     {
+        if (this.entity instanceof ICurious) {
+            ICurious curious = (ICurious)this.entity;
+            EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase)this.entity;
+            if (entityBase.getAnimation() == entityBase.NO_ANIMATION) {
+                entityBase.setAnimation(curious.getCuriousAnimation());
+            }
+        }
+        this.entity.faceEntity(this.closestEntity, 10F, 10F);
         this.entity.getLookHelper().setLookPosition(this.closestEntity.posX, this.closestEntity.posY + (double)this.closestEntity.getEyeHeight(), this.closestEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
         --this.lookTime;
     }
