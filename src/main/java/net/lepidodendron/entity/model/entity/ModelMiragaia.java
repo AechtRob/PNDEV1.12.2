@@ -3031,8 +3031,20 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
-    public void renderStaticFloor(float f) {
+    public void renderStaticBook(float f) {
+        this.main.offsetY = 0.1F;
+        this.main.offsetX = 0.1F;
+        this.main.rotateAngleY = (float)Math.toRadians(181);
+        this.main.rotateAngleX = (float)Math.toRadians(5);
+        this.main.rotateAngleZ = (float)Math.toRadians(-5);
+        this.main.scaleChildren = true;
+        this.main.setScale(0.825F,0.825F,0.825F);
+        this.main.render(f);
+        resetToDefaultPose();
+    }
 
+    public void renderStaticFloor(float f) {
+        renderStaticBook(f);
         resetToDefaultPose();
     }
 
