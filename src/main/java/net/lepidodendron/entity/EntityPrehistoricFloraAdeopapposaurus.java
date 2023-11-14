@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	public Animation STAND_ANIMATION;
+	//public Animation STAND_ANIMATION;
 	public Animation LOOK_ANIMATION;
 
 	private int standCooldown;
@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
 		maxHealthAgeable = 35.0D;
-		STAND_ANIMATION = Animation.create(145);
+		//STAND_ANIMATION = Animation.create(145);
 		NOISE_ANIMATION = Animation.create(20);
 		LOOK_ANIMATION = Animation.create(70);
 
@@ -65,12 +65,12 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 		}
 	}
 
-	@Override
-	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == STAND_ANIMATION
-			 	|| animation == DRINK_ANIMATION
-				|| animation == GRAZE_ANIMATION;
-	}
+//	@Override
+//	public boolean isAnimationDirectionLocked(Animation animation) {
+//		return animation == STAND_ANIMATION
+//			 	|| animation == DRINK_ANIMATION
+//				|| animation == GRAZE_ANIMATION;
+//	}
 
 	@Override
 	public void onUpdate() {
@@ -94,7 +94,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, GRAZE_ANIMATION, LOOK_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, GRAZE_ANIMATION, LOOK_ANIMATION};
 	}
 
 	@Override
@@ -239,7 +239,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
+		//this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	@Override

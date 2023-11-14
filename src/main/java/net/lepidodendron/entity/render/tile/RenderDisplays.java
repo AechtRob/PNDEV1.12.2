@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.entity.model.entity.*;
 
 public class RenderDisplays {
+    public static final ModelAcadoaradoxides modelAcadoaradoxides = new ModelAcadoaradoxides();
     public static final ModelAcanthostomatops modelAcanthostomatops = new ModelAcanthostomatops();
     public static final ModelAegirocassis modelAegirocassis = new ModelAegirocassis();
     public static final ModelAetheolepis modelAetheolepis = new ModelAetheolepis();

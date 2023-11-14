@@ -434,24 +434,24 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:glacialisaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:lufengosaur_roar"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:glacialisaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:lufengosaur_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:glacialisaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:lufengosaur_death"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:glacialisaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:lufengosaur_idle"));
 	}
 
 	@Override

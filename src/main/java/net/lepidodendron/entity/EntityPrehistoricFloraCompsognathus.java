@@ -200,7 +200,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.335F;
+		float speedBase = 1.05F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -211,7 +211,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.65F;
+			speedBase =  0.335F * 2.65F;
 		}
 		return speedBase;
 	}

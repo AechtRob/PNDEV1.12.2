@@ -20,7 +20,37 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_compsognathus",
 			"type": "text",
-			"text": "Compsognathus.......... notes to follow"
+			"text": "Compsognathus longipes is a species of Compsognathid theropod from Late Jurassic Europe. Only up to an estimated 1.4m in length, the small theropod is perhaps one of the most famous among the small sized dinosaurs in large part thanks to its media representation. Despite its status in the public eye, Compsognathus is far from being a commonly known animal in the fossil record with only two known specimens recovered, one from Germany and one from France."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "Usually depicted as tiny, most of the reconstructions seen as based solely on the German specimen, now recognized as a juvenile, while the larger French one is often forgotten. For decades Compsognathus was considered the smallest known non-avian dinosaur, title now passed down to other animals such as Microraptor; the larger French specimen of Compsognathus places its size roughly to be the same as its relative Sinosauropteryx,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "making Compsognathus not even the smallest of the Compsognathids. A bit like the unrelated Tyrannosaurids that would come after it, Compsognathus too had two clawed fingers per hand, with an additional third,  potentially vestigial, one. The small pointed teeth in the mouth were perfectly adapted for its diet of small lizards- as evidenced from preserved gut contents in the two known skeletons-, other small vertebrates and potentially insects as well."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "The presence of fuzz on Compsognathus is not known- as neither skeletons known have preserved extensive soft tissues- however some of its relatives are known from the presence of extensive fuzz on their bodies which might indicate this animal too could've been feathered. Currently only a small section of tail skin is known from Compsognathus, preserving some bumps in the skin similar to another partly fuzzy animal from the same region,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "which indicate this animal might've been at the very least partially covered in light feathering, although the extent and volume of such fuzz is not currently known. In 1870 Thomas Huxley compared the anatomy of Compsognathus and Archaeopteryx- at the time considered the first true bird- finding extensive similarities between the two, leading him to call Compsognathus the first bird-like reptile and postulating dinosaurs to have been the ancestors of modern birds,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "a theory now widely accepted among the scientific community through more than a century of discoveries and evidence towards this idea. The French specimen was at first classified as a second species of the genus, named Compsognathus corallestris, however this species has since been invalidated, making Compsognathus longipes the only valid species in the genus once more. The original specimen was collected by fossil collector Joseph Oberndorfer in Bavaria,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_compsognathus",
+			"type": "text",
+			"text": "however the exact location and time of discovery of the specimen is not known, as the collector didn't want to reveal it to avoid other people from exploiting his locality. The specimen was lent to Wagner for it to be described and, in 1859, Compsognathus received its name even though at the time it was not recognised as a dinosaur but a lizard; the animal would be described in more detail in 1861."
 		},
 		{
 			"type": "lepidodendron:diet",
