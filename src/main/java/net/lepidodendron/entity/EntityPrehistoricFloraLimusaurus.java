@@ -129,7 +129,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.318F;
+		float speedBase = 0.378F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -137,7 +137,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 3.55F;
+			speedBase = 0.318F * 3.55F;
 		}
 		return speedBase * 0.67F;
 	}

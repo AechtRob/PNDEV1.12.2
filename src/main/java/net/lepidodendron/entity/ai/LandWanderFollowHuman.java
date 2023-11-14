@@ -34,6 +34,7 @@ public class LandWanderFollowHuman extends EntityAIBase
         if (this.curiousAnimal instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.curiousAnimal;
             if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                LandBase.setIsCuriousWalking(false);
                 return false;
             }
         }
@@ -74,15 +75,18 @@ public class LandWanderFollowHuman extends EntityAIBase
 
         if (entityHumanToFollow == null)
         {
+            this.curiousAnimal.setIsCuriousWalking(false);
             return false;
         }
         else if (d0 < Math.pow(this.distanceApproached, 2))
         {
+            this.curiousAnimal.setIsCuriousWalking(false);
             return false;
         }
         else
         {
             this.humanToFollow = entityHumanToFollow;
+            this.curiousAnimal.setIsCuriousWalking(true);
             return true;
         }
     }
@@ -94,12 +98,14 @@ public class LandWanderFollowHuman extends EntityAIBase
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.curiousAnimal;
             if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 LandBase.getNavigator().clearPath();
+                this.curiousAnimal.setIsCuriousWalking(false);
                 return false;
             }
         }
         if (this.humanToFollow != null) {
             if (!this.humanToFollow.isEntityAlive())
             {
+                this.curiousAnimal.setIsCuriousWalking(false);
                 return false;
             }
             double d0 = this.curiousAnimal.getDistanceSq(this.humanToFollow);
@@ -107,9 +113,14 @@ public class LandWanderFollowHuman extends EntityAIBase
             if (!flag) {
                 this.humanToFollow = null;
                 curiousAnimal.getNavigator().clearPath();
+                this.curiousAnimal.setIsCuriousWalking(false);
+            }
+            else {
+                this.curiousAnimal.setIsCuriousWalking(true);
             }
             return flag;
         }
+        this.curiousAnimal.setIsCuriousWalking(false);
         return false;
     }
 

@@ -200,7 +200,10 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 1.05F;
+		float speedBase = 0.35F;
+		if (this.getIsCuriousWalking()) {
+			speedBase = 0.70F;
+		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -244,12 +247,12 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 
 	public boolean findGrappleTarget() {
 		//System.err.println("finding grapple target");
-		if (this.willGrapple) {
+		if (this.willGrapple || this.getIsCuriousWalking()) {
 			return false;
 		}
 		List<EntityPrehistoricFloraCompsognathus> Compsognathus = world.getEntitiesWithinAABB(EntityPrehistoricFloraCompsognathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 		for (EntityPrehistoricFloraCompsognathus currentCompsognathus : Compsognathus) {
-			if (currentCompsognathus.isPFAdult() && this.isPFAdult() && currentCompsognathus != this && (!currentCompsognathus.willGrapple) && this.canEntityBeSeen(currentCompsognathus)) {
+			if ((!currentCompsognathus.getIsCuriousWalking()) && currentCompsognathus.isPFAdult() && this.isPFAdult() && currentCompsognathus != this && (!currentCompsognathus.willGrapple) && this.canEntityBeSeen(currentCompsognathus)) {
 				this.setGrappleTarget(currentCompsognathus);
 				currentCompsognathus.willGrapple = true;
 				this.willGrapple = true;

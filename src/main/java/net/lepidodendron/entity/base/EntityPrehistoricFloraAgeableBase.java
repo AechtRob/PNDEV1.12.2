@@ -63,6 +63,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISCURIOUSWALKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
@@ -504,6 +505,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISSNEAKING, false);
+        this.dataManager.register(ISCURIOUSWALKING, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
         this.dataManager.register(JUVENILE, false);
@@ -663,6 +665,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public abstract int getAdultAge();
+
+    public boolean getIsCuriousWalking() {
+        return this.dataManager.get(ISCURIOUSWALKING);
+    }
+
+    public void setIsCuriousWalking(boolean isCurious) {
+        this.dataManager.set(ISCURIOUSWALKING, isCurious);
+    }
 
     public boolean getIsFast() {
         return this.dataManager.get(ISFAST);
