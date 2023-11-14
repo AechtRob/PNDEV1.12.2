@@ -9,6 +9,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IBluffer;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
@@ -1325,9 +1326,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
-                    this.setAttackTarget(this.getWarnTarget());
-                    this.setOneHit(true);
-                    this.setWarnCooldown(0);
+                    if (this instanceof IBluffer) { //They panic instead
+                        this.setRevengeTarget(this.getWarnTarget());
+                        this.setWarnCooldown(0);
+                    }
+                    else {
+                        this.setAttackTarget(this.getWarnTarget());
+                        this.setOneHit(true);
+                        this.setWarnCooldown(0);
+                    }
                 }
                 else {
                     this.setWarnTarget(null);

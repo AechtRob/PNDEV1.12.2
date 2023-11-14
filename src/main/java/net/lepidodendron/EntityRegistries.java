@@ -866,7 +866,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_limusaurus", EntityPrehistoricFloraLimusaurus.class, LepidodendronMod.ENTITY_LIMUSAURUS, 64,-13098224,-3031495 );
         registerEntity("prehistoric_flora_elaphrosaurus", EntityPrehistoricFloraElaphrosaurus.class, LepidodendronMod.ENTITY_ELAPHROSAURUS, 84,-2929132,-11363368);
         registerEntity("prehistoric_flora_apatosaurus", EntityPrehistoricFloraApatosaurus.class, LepidodendronMod.ENTITY_APATOSAURUS, 156,-3367287,-2437458);
-//        registerEntity("prehistoric_flora_camptosaurus", EntityPrehistoricFloraCamptosaurus.class, LepidodendronMod.ENTITY_CAMPTOSAURUS, 84,-12899290,-10118553);
+        registerEntity("prehistoric_flora_camptosaurus", EntityPrehistoricFloraCamptosaurus.class, LepidodendronMod.ENTITY_CAMPTOSAURUS, 84,-12899290,-10118553);
         registerEntity("prehistoric_flora_dubreuillosaurus", EntityPrehistoricFloraDubreuillosaurus.class, LepidodendronMod.ENTITY_DUBREUILLOSAURUS, 156,-10461358,-8927244);
         registerEntityNoEgg("prehistoric_flora_anurognathid", EntityPrehistoricFloraAnurognathid.class, LepidodendronMod.ENTITY_ANUROGNATHID, 48);
         registerEntity("prehistoric_flora_pterodactylus", EntityPrehistoricFloraPterodactylus.class, LepidodendronMod.ENTITY_PTERODACTYLUS, 82,-6381922 ,-1921792);
@@ -875,6 +875,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_anchisaurus", EntityPrehistoricFloraAnchisaurus.class, LepidodendronMod.ENTITY_ANCHISAURUS, 64,-10595033 ,-16083944);
         registerEntity("prehistoric_flora_adeopapposaurus", EntityPrehistoricFloraAdeopapposaurus.class, LepidodendronMod.ENTITY_ADEOPAPPOSAURUS, 82,-3692155 ,-12439511);
         registerEntity("prehistoric_flora_compsognathus", EntityPrehistoricFloraCompsognathus.class, LepidodendronMod.ENTITY_COMPSOGNATHUS, 64,0 ,0);
+        //registerEntity("prehistoric_flora_uteodon", EntityPrehistoricFloraUteodon.class, LepidodendronMod.ENTITY_UTEODON, 84,-0,-0);
+        //registerEntity("prehistoric_flora_cumnoria", EntityPrehistoricFloraCumnoria.class, LepidodendronMod.ENTITY_CUMNORIA, 84,-0,-0);
 
 
 

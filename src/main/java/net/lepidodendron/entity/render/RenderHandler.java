@@ -4958,6 +4958,13 @@ public class RenderHandler {
                 return new RenderCompsognathus(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCamptosaurus.class, new IRenderFactory<EntityPrehistoricFloraCamptosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCamptosaurus> createRenderFor(RenderManager manager) {
+                return new RenderCamptosaurus(manager);
+            }
+        });
         
         
         

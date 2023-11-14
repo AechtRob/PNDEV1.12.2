@@ -8572,6 +8572,87 @@
         "stream": false
       }
     ]
+  },
+
+  "camptosaurid_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camptosaurid_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_living08",
+        "stream": false
+      }
+    ]
+  },
+  "camptosaurid_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camptosaurid_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_alarm04",
+        "stream": false
+      }
+    ]
+  },
+  "camptosaurid_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camptosaurid_death",
+        "stream": false
+      }
+    ]
+  },
+  "camptosaurid_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:camptosaurid_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:camptosaurid_hurt03",
+        "stream": false
+      }
+    ]
   }
   
   
