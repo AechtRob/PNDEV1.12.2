@@ -3,8 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraCamptosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraCumnoria;
+import net.lepidodendron.entity.EntityPrehistoricFloraUteodon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -548,7 +547,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraCamptosaurus entityCamptosaurus = (EntityPrehistoricFloraCamptosaurus) e;
+        EntityPrehistoricFloraUteodon entityUteodon = (EntityPrehistoricFloraUteodon) e;
 
         this.faceTarget(f3, f4, 8, Neck3);
         this.faceTarget(f3, f4, 8, Neck2);
@@ -560,18 +559,18 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] ArmL = {this.ArmL, this.ElbowL, this.HandL};
         AdvancedModelRenderer[] ArmR = {this.ArmR, this.ElbowR, this.HandR};
 
-        entityCamptosaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        entityUteodon.tailBuffer.applyChainSwingBuffer(Tail);
 
-        if (entityCamptosaurus.getAnimation() == entityCamptosaurus.LAY_ANIMATION) {
+        if (entityUteodon.getAnimation() == entityUteodon.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
-            if (!entityCamptosaurus.isReallyInWater()) {
+            if (!entityUteodon.isReallyInWater()) {
 
-                if (f3 == 0.0F || !entityCamptosaurus.getIsMoving()) {
-                    if (entityCamptosaurus.getAnimation() != entityCamptosaurus.EAT_ANIMATION
-                        && (!entityCamptosaurus.isAnimationDirectionLocked(entityCamptosaurus.getAnimation()))) {
+                if (f3 == 0.0F || !entityUteodon.getIsMoving()) {
+                    if (entityUteodon.getAnimation() != entityUteodon.EAT_ANIMATION
+                        && (!entityUteodon.isAnimationDirectionLocked(entityUteodon.getAnimation()))) {
                         this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                     }
@@ -591,7 +590,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (entityCamptosaurus.getIsFast()) { //Running
+                if (entityUteodon.getIsFast()) { //Running
 
 
                 } else { //Walking
@@ -612,7 +611,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
-        EntityPrehistoricFloraCumnoria ee = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon ee = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
@@ -673,7 +672,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 35;
         double tickAnim = animTick + partialTickTime;
@@ -1033,7 +1032,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 15;
         double tickAnim = animTick + partialTickTime;
@@ -1491,7 +1490,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 50;
         double tickAnim = animTick + partialTickTime;
@@ -1751,7 +1750,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 50;
         double tickAnim = animTick + partialTickTime;
@@ -2383,7 +2382,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animDrink(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 60;
         double tickAnim = animTick + partialTickTime;
@@ -2705,7 +2704,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animGraze(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 60;
         double tickAnim = animTick + partialTickTime;
@@ -3088,7 +3087,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 70;
         double tickAnim = animTick + partialTickTime;
@@ -3442,7 +3441,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animRoar(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 70;
         double tickAnim = animTick + partialTickTime;
@@ -3811,7 +3810,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animIdle1(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 40;
         double tickAnim = animTick + partialTickTime;
@@ -4245,7 +4244,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animIdle2(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 70;
         double tickAnim = animTick + partialTickTime;
@@ -4574,7 +4573,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animIdle3(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 40;
         double tickAnim = animTick + partialTickTime;
@@ -5008,7 +5007,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animIdle4(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 80;
         double tickAnim = animTick + partialTickTime;
@@ -5986,7 +5985,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 15;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
@@ -6452,7 +6451,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraCumnoria entity = (EntityPrehistoricFloraCumnoria) entitylivingbaseIn;
+        EntityPrehistoricFloraUteodon entity = (EntityPrehistoricFloraUteodon) entitylivingbaseIn;
 
         int animCycle = 40;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
@@ -6909,7 +6908,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraCumnoria e = (EntityPrehistoricFloraCumnoria) entity;
+        EntityPrehistoricFloraUteodon e = (EntityPrehistoricFloraUteodon) entity;
         animator.update(entity);
 
 

@@ -14,11 +14,11 @@ public class RenderCumnoria extends RenderLiving<EntityPrehistoricFloraCumnoria>
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cumnoria.png");
 
     public static float getScaler() {
-        return 0.74f;
+        return 0.625f;
     }
 
     public RenderCumnoria(RenderManager mgr) {
-        super(mgr, new ModelCumnoria(), 0.3f);
+        super(mgr, new ModelCumnoria(), 0.80F);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class RenderCumnoria extends RenderLiving<EntityPrehistoricFloraCumnoria>
     protected void preRenderCallback(EntityPrehistoricFloraCumnoria entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.30F;
+        this.shadowSize = entity.width * scale * 0.80F;
     }
 
 }

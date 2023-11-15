@@ -50,11 +50,11 @@ public class EntityPrehistoricFloraCamptosaurus extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraCamptosaurus(World world) {
 		super(world);
-		setSize(0.9F, 1.7F);
+		setSize(0.90F, 1.50F);
 		minWidth = 0.20F;
-		maxWidth = 0.9F;
-		maxHeight = 1.7F;
-		maxHealthAgeable = 38.0D;
+		maxWidth = 0.90F;
+		maxHeight = 1.50F;
+		maxHealthAgeable = 48.0D;
 		IDLE1 = Animation.create(40);
 		IDLE2 = Animation.create(70);
 		IDLE3 = Animation.create(40);

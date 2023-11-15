@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
 public class ModelCumnoria extends AdvancedModelBaseExtended {
-    private final AdvancedModelRenderer Uteodon;
+    private final AdvancedModelRenderer Cumnoria;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer LegL;
     private final AdvancedModelRenderer cube_r1;
@@ -87,19 +87,19 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         this.textureWidth = 128;
         this.textureHeight = 128;
 
-        this.Uteodon = new AdvancedModelRenderer(this);
-        this.Uteodon.setRotationPoint(0.0F, 24.0F, 6.0F);
+        this.Cumnoria = new AdvancedModelRenderer(this);
+        this.Cumnoria.setRotationPoint(0.0F, 24.0F, 6.0F);
 
 
         this.Basin_r1 = new AdvancedModelRenderer(this);
         this.Basin_r1.setRotationPoint(0.0F, -24.6F, -10.3F);
-        this.Uteodon.addChild(Basin_r1);
+        this.Cumnoria.addChild(Basin_r1);
         this.setRotateAngle(Basin_r1, -0.0611F, 0.0F, 0.0F);
         this.Basin_r1.cubeList.add(new ModelBox(Basin_r1, 0, 0, -4.5F, -1.1F, 0.0F, 9, 13, 10, 0.0F, false));
 
         this.LegL = new AdvancedModelRenderer(this);
         this.LegL.setRotationPoint(3.5F, -21.0F, -6.0F);
-        this.Uteodon.addChild(LegL);
+        this.Cumnoria.addChild(LegL);
         this.setRotateAngle(LegL, -0.5672F, 0.0F, 0.0F);
 
 
@@ -129,7 +129,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
 
         this.LegR = new AdvancedModelRenderer(this);
         this.LegR.setRotationPoint(-3.5F, -21.0F, -6.0F);
-        this.Uteodon.addChild(LegR);
+        this.Cumnoria.addChild(LegR);
         this.setRotateAngle(LegR, -0.5672F, 0.0F, 0.0F);
 
 
@@ -159,7 +159,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
 
         this.Tail1 = new AdvancedModelRenderer(this);
         this.Tail1.setRotationPoint(0.0F, -21.6F, -0.6F);
-        this.Uteodon.addChild(Tail1);
+        this.Cumnoria.addChild(Tail1);
         this.setRotateAngle(Tail1, -0.1745F, 0.0F, 0.0F);
         this.Tail1.cubeList.add(new ModelBox(Tail1, 29, 13, -3.5F, -1.363F, -1.2406F, 7, 8, 10, 0.0F, false));
 
@@ -216,7 +216,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
 
         this.Body = new AdvancedModelRenderer(this);
         this.Body.setRotationPoint(0.0F, -19.5F, -8.2F);
-        this.Uteodon.addChild(Body);
+        this.Cumnoria.addChild(Body);
         this.Body.cubeList.add(new ModelBox(Body, 0, 23, -5.0F, -6.2F, -10.0F, 10, 13, 9, 0.0F, false));
 
         this.Chest = new AdvancedModelRenderer(this);
@@ -520,11 +520,11 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Uteodon.render(f5);
+        this.Cumnoria.render(f5);
     }
 
     public void renderStaticBook(float f) {
-        this.Uteodon.render(f);
+        this.Cumnoria.render(f);
         resetToDefaultPose();
     }
 
@@ -1058,7 +1058,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.setRotateAngle(Uteodon, Uteodon.rotateAngleX + (float) Math.toRadians(xx), Uteodon.rotateAngleY + (float) Math.toRadians(yy), Uteodon.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(Cumnoria, Cumnoria.rotateAngleX + (float) Math.toRadians(xx), Cumnoria.rotateAngleY + (float) Math.toRadians(yy), Cumnoria.rotateAngleZ + (float) Math.toRadians(zz));
 
 
         if (tickAnim >= 0 && tickAnim < 8) {
@@ -1081,9 +1081,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(xx);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(yy);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(zz);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(xx);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(yy);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(zz);
 
 
 
@@ -1780,7 +1780,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.setRotateAngle(Uteodon, Uteodon.rotateAngleX + (float) Math.toRadians(xx), Uteodon.rotateAngleY + (float) Math.toRadians(yy), Uteodon.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(Cumnoria, Cumnoria.rotateAngleX + (float) Math.toRadians(xx), Cumnoria.rotateAngleY + (float) Math.toRadians(yy), Cumnoria.rotateAngleZ + (float) Math.toRadians(zz));
 
 
         if (tickAnim >= 0 && tickAnim < 15) {
@@ -1803,9 +1803,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(xx);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(yy);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(zz);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(xx);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(yy);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(zz);
 
 
 
@@ -2715,9 +2715,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(0);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(-0.5);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(0);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(0);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(-0.5);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(0);
 
 
         if (tickAnim >= 0 && tickAnim < 11) {
@@ -3098,9 +3098,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(0);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(-0.35);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(0);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(0);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(-0.35);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(0);
 
 
 
@@ -3452,9 +3452,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(0);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(-0.35);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(0);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(0);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(-0.35);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(0);
 
 
 
@@ -3821,9 +3821,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(0);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(-0.25);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(0);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(0);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(-0.25);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(0);
 
 
 
@@ -4255,9 +4255,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(0);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(-0.5);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(0);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(0);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(-0.5);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(0);
 
 
 
@@ -4584,9 +4584,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(0);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(-0.25);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(0);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(0);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(-0.25);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(0);
 
 
 
@@ -5038,7 +5038,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.setRotateAngle(Uteodon, Uteodon.rotateAngleX + (float) Math.toRadians(xx), Uteodon.rotateAngleY + (float) Math.toRadians(yy), Uteodon.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(Cumnoria, Cumnoria.rotateAngleX + (float) Math.toRadians(xx), Cumnoria.rotateAngleY + (float) Math.toRadians(yy), Cumnoria.rotateAngleZ + (float) Math.toRadians(zz));
 
 
         if (tickAnim >= 0 && tickAnim < 26) {
@@ -5061,9 +5061,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(xx);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(yy);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(zz);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(xx);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(yy);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(zz);
 
 
 
@@ -5996,7 +5996,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.setRotateAngle(Uteodon, Uteodon.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-180))*-2.2), Uteodon.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-150))*2.5), Uteodon.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-150))*1.85));
+        this.setRotateAngle(Cumnoria, Cumnoria.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-180))*-2.2), Cumnoria.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-150))*2.5), Cumnoria.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-150))*1.85));
 
         if (tickAnim >= 0 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
@@ -6023,9 +6023,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(xx);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(yy);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(zz);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(xx);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(yy);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(zz);
 
 
 
@@ -6462,7 +6462,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         double yy = 0;
         double zz = 0;
 
-        this.setRotateAngle(Uteodon, Uteodon.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-150))*-0.85), Uteodon.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1), Uteodon.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
+        this.setRotateAngle(Cumnoria, Cumnoria.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-150))*-0.85), Cumnoria.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1), Cumnoria.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
 
         if (tickAnim >= 0 && tickAnim < 10) {
             xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
@@ -6489,9 +6489,9 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
             yy = 0;
             zz = 0;
         }
-        this.Uteodon.rotationPointX = this.Uteodon.rotationPointX + (float)(xx);
-        this.Uteodon.rotationPointY = this.Uteodon.rotationPointY - (float)(yy);
-        this.Uteodon.rotationPointZ = this.Uteodon.rotationPointZ + (float)(zz);
+        this.Cumnoria.rotationPointX = this.Cumnoria.rotationPointX + (float)(xx);
+        this.Cumnoria.rotationPointY = this.Cumnoria.rotationPointY - (float)(yy);
+        this.Cumnoria.rotationPointZ = this.Cumnoria.rotationPointZ + (float)(zz);
 
 
 

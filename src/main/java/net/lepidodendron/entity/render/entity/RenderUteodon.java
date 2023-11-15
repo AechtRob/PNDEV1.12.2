@@ -14,11 +14,11 @@ public class RenderUteodon extends RenderLiving<EntityPrehistoricFloraUteodon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uteodon.png");
 
     public static float getScaler() {
-        return 0.74f;
+        return 0.525f;
     }
 
     public RenderUteodon(RenderManager mgr) {
-        super(mgr, new ModelUteodon(), 0.3f);
+        super(mgr, new ModelUteodon(), 0.85F);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class RenderUteodon extends RenderLiving<EntityPrehistoricFloraUteodon> {
     protected void preRenderCallback(EntityPrehistoricFloraUteodon entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.30F;
+        this.shadowSize = entity.width * scale * 0.85F;
     }
 
 }

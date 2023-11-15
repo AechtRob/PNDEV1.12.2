@@ -14,11 +14,11 @@ public class RenderCamptosaurus extends RenderLiving<EntityPrehistoricFloraCampt
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/camptosaurus.png");
 
     public static float getScaler() {
-        return 0.74f;
+        return 0.65f;
     }
 
     public RenderCamptosaurus(RenderManager mgr) {
-        super(mgr, new ModelCamptosaurus(), 0.3f);
+        super(mgr, new ModelCamptosaurus(), 0.9f);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class RenderCamptosaurus extends RenderLiving<EntityPrehistoricFloraCampt
     protected void preRenderCallback(EntityPrehistoricFloraCamptosaurus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.30F;
+        this.shadowSize = entity.width * scale * 0.90F;
     }
 
 }

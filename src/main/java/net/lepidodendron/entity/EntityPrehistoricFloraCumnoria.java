@@ -50,11 +50,11 @@ public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCa
 
 	public EntityPrehistoricFloraCumnoria(World world) {
 		super(world);
-		setSize(0.9F, 1.7F);
+		setSize(0.65F, 1.1F);
 		minWidth = 0.20F;
-		maxWidth = 0.9F;
-		maxHeight = 1.7F;
-		maxHealthAgeable = 38.0D;
+		maxWidth = 0.65F;
+		maxHeight = 1.1F;
+		maxHealthAgeable = 30.0D;
 		IDLE1 = Animation.create(40);
 		IDLE2 = Animation.create(70);
 		IDLE3 = Animation.create(40);
@@ -138,7 +138,7 @@ public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.440F;
+		float speedBase = 0.320F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
