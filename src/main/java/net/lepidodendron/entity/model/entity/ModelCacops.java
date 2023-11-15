@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCacops;
+import net.lepidodendron.entity.EntityPrehistoricFloraPlatyhystrix;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -307,6 +308,41 @@ public class ModelCacops extends AdvancedModelBaseExtended {
         this.Hip.offsetZ = -0.4F;
         //this.faceTarget(f3, f4, 5, neck);
         this.faceTarget(f3, f4, 6, Head);
+
+        AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2};
+
+        EntityPrehistoricFloraCacops entitySilesaurus = (EntityPrehistoricFloraCacops) e;
+
+        if (entitySilesaurus.getAnimation() == entitySilesaurus.LAY_ANIMATION) {
+
+        }
+        else {
+            if (!entitySilesaurus.isReallyInWater()) {
+
+                if (f3 == 0.0F || !entitySilesaurus.getIsMoving()) {
+
+                    this.chainWave(Tail, (0.15F * 0.35F), 0.125F * 0.15F, 0.2F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.35F) * 4F, 0.05F * 0.35F, 0.12F, f2, 1F);
+
+
+                    return;
+                }
+
+                if (entitySilesaurus.getIsFast()) { //Running
+
+
+                } else { //Walking
+
+                }
+            } else {
+                //Swimming pose:
+                if (f3 == 0.0F) { //static in water
+                    return;
+                }
+                //moving in water
+                return;
+            }
+        }
 
     }
 
