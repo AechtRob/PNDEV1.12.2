@@ -634,7 +634,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.COMPSOGNATHUS_LOOT_YOUNG;
+			return null;
 		}
 		return LepidodendronMod.COMPSOGNATHUS_LOOT;
 	}

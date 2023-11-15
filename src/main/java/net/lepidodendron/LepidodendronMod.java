@@ -2055,7 +2055,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation MIRAGAIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/miragaia_young"));
 	public static final int ENTITY_COMPSOGNATHUS = 827;
 	public static final ResourceLocation COMPSOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/compsognathus"));
-	public static final ResourceLocation COMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/compsognathus_young"));
+	//public static final ResourceLocation COMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/compsognathus_young"));
 	public static final int ENTITY_UTEODON = 828;
 	public static final ResourceLocation UTEODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/uteodon"));
 	public static final ResourceLocation UTEODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/uteodon_young"));
