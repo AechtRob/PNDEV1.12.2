@@ -974,6 +974,13 @@ public class LepidodendronConfigPlants {
     public static int minheightBaiera = 1;
     public static int maxheightBaiera = 85;
     public static double multiplierBaiera = 1;
+    public static boolean genDoratophyllum = false;
+    public static String[] genDoratophyllumBlacklistBiomes = new String[0];
+    public static String[] genDoratophyllumOverrideBiomes = new String[0];
+    public static int[] dimDoratophyllum = new int[]{0};
+    public static int minheightDoratophyllum = 1;
+    public static int maxheightDoratophyllum = 85;
+    public static double multiplierDoratophyllum = 1;
     public static boolean genNystroemia = false;
     public static String[] genNystroemiaBlacklistBiomes = new String[0];
     public static String[] genNystroemiaOverrideBiomes = new String[0];
@@ -6512,6 +6519,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Baiera", "multiplierBaiera", multiplierBaiera);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierBaiera = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Doratophyllum", "genDoratophyllum", genDoratophyllum);
+        prop.setComment("Set to true to generate Doratophyllum naturally [default: false]");
+        genDoratophyllum = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Doratophyllum", "genDoratophyllumBlacklistBiomes", genDoratophyllumBlacklistBiomes);
+        prop.setComment("List of biomes Doratophyllum are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDoratophyllumBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Doratophyllum", "genDoratophyllumOverrideBiomes", genDoratophyllumOverrideBiomes);
+        prop.setComment("List of biomes Doratophyllum are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDoratophyllumOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Doratophyllum", "dimDoratophyllum", dimDoratophyllum);
+        prop.setComment("List of dimension IDs Doratophyllum can generate in [default: 0]");
+        dimDoratophyllum = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Doratophyllum", "minheightDoratophyllum", minheightDoratophyllum);
+        prop.setComment("Minimum height that Doratophyllum can generate (1 to 250) [default: 1]");
+        minheightDoratophyllum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Doratophyllum", "maxheightDoratophyllum", maxheightDoratophyllum);
+        prop.setComment("Maximum height that Doratophyllum can generate (1 to 250, or set to 0 for unlimited) [default: 85]");
+        maxheightDoratophyllum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Doratophyllum", "multiplierDoratophyllum", multiplierDoratophyllum);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDoratophyllum = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Dicroidium elongatum", "genDicroidiumElongatum", genDicroidiumElongatum);

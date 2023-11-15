@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "var=false": {"model": "lepidodendron:doratophyllum_top"},
+    "var=true": {"model": "lepidodendron:doratophyllum_top", "y":  90}
+  }
+}
