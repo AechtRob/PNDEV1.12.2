@@ -189,7 +189,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 2.66F;
 		}
 		//if (this.getAnimation() == STAND_ANIMATION) {
 		//	return 0.0F; //Is rearing
