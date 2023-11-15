@@ -8653,6 +8653,55 @@
         "stream": false
       }
     ]
+  },
+
+  "chilesaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chilesaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chilesaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chilesaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "chilesaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chilesaurus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chilesaurus_threat02",
+        "stream": false
+      }
+    ]
+  },
+  "chilesaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chilesaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "chilesaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chilesaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chilesaurus_hurt02",
+        "stream": false
+      }
+    ]
   }
   
   
