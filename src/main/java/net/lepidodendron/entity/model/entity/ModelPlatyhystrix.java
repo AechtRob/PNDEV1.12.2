@@ -212,7 +212,26 @@ public class ModelPlatyhystrix extends AdvancedModelBaseExtended {
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
+
+    public void renderStaticBook(float f) {
+        this.body.offsetY = 0.0F;
+        this.body.offsetX = 0.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(-60);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(-1);
+        this.body.scaleChildren = true;
+        float scale = 1.1F;
+        this.body.setScale(scale,scale,scale);
+        //Render model angles here:
+
+        //---
+        this.body.render(f);
+        this.body.setScale(1F,1F,1F);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

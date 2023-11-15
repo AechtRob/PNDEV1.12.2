@@ -261,6 +261,7 @@ public class RenderDisplays {
     public static final ModelAmmonite_Perisphinctes modelAmmonitePerisphinctes = new ModelAmmonite_Perisphinctes();
     public static final ModelPlatypeltoides modelPlatypeltoides = new ModelPlatypeltoides();
     public static final ModelPycnophlebia modelPycnophlebia = new ModelPycnophlebia();
+    public static final ModelPlatyhystrix modelPlatyhystrix = new ModelPlatyhystrix();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();

@@ -3888,6 +3888,7 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r309, -0.6545F, 0.0F, 0.0F);
 
         this.main.render(f);
+        this.main.setScale(1F,1F,1F);
         resetToDefaultPose();
     }
 
