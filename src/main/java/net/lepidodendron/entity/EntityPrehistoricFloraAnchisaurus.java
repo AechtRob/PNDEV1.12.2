@@ -352,14 +352,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
-		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-		}
-
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
 		}

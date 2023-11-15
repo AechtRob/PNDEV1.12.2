@@ -456,15 +456,15 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(2)))) {
 				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D
-					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.2D
+					&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(2)))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D
-					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.2D
+					&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
 					test2 = true;
 				}
 			}
@@ -529,13 +529,6 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {

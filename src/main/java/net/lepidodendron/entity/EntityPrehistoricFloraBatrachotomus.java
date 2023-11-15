@@ -18,7 +18,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -244,13 +243,7 @@ public class EntityPrehistoricFloraBatrachotomus extends EntityPrehistoricFloraL
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
+
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
