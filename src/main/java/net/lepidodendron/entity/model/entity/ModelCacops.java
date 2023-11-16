@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCacops;
-import net.lepidodendron.entity.EntityPrehistoricFloraPlatyhystrix;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -372,6 +371,36 @@ public class ModelCacops extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
+
+        if (tickAnim >= 0 && tickAnim < 9) {
+            xx = 0 + (((tickAnim - 0) / 9) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 9) * (0-(0)));
+            zz = -0.75 + (((tickAnim - 0) / 9) * (-1-(-0.75)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 9) / 9) * (0-(0)));
+            yy = 0 + (((tickAnim - 9) / 9) * (0-(0)));
+            zz = -1 + (((tickAnim - 9) / 9) * (-0.75-(-1)));
+        }
+        else if (tickAnim >= 18 && tickAnim < 27) {
+            xx = 0 + (((tickAnim - 18) / 9) * (0-(0)));
+            yy = 0 + (((tickAnim - 18) / 9) * (0-(0)));
+            zz = -0.75 + (((tickAnim - 18) / 9) * (0-(-0.75)));
+        }
+        else if (tickAnim >= 27 && tickAnim < 35) {
+            xx = 0 + (((tickAnim - 27) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 27) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 27) / 8) * (-0.75-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.Hip.rotationPointX = this.Hip.rotationPointX + (float)(xx);
+        this.Hip.rotationPointY = this.Hip.rotationPointY - (float)(yy);
+        this.Hip.rotationPointZ = this.Hip.rotationPointZ + (float)(zz);
+
         this.setRotateAngle(Hip, Hip.rotateAngleX + (float) Math.toRadians(0), Hip.rotateAngleY + (float) Math.toRadians(0), Hip.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/35D)*1.75D)*150/0.75-10))*-1));
 
 

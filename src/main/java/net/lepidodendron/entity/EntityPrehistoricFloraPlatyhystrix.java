@@ -47,10 +47,10 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraPlatyhystrix(World world) {
 		super(world);
-		setSize(0.7F, 0.75F);
+		setSize(0.5F, 0.465F);
 		minWidth = 0.1F;
-		maxWidth = 0.7F;
-		maxHeight = 0.75F;
+		maxWidth = 0.5F;
+		maxHeight = 0.465F;
 		maxHealthAgeable = 15.0D;
 		LOOK_ANIMATION = Animation.create(55);
 		LICK_RIGHT_ANIMATION = Animation.create(50);
@@ -98,7 +98,7 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.15F;
+		float calcSpeed = 0.13F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.36f;
 		}
