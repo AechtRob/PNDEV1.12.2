@@ -184,7 +184,7 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
             this.swing(platycaraspis, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.platycaraspis.offsetY = 1.15F;
+                //this.platycaraspis.offsetY = 1.15F;
                 this.bob(platycaraspis, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }
