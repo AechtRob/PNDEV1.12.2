@@ -14,7 +14,7 @@ public class RenderPlatyhystrix extends RenderLiving<EntityPrehistoricFloraPlaty
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platyhystrix.png");
 
     public static float getScaler() {
-        return 0.4f;
+        return 0.5f;
     }
     public RenderPlatyhystrix(RenderManager mgr) {
         super(mgr, new ModelPlatyhystrix(), 0.3f);
