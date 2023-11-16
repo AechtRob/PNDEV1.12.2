@@ -27,7 +27,7 @@ public class ProcedureSpawnAtli extends ElementsLepidodendronMod.ModElement {
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
-			if (dimID == LepidodendronConfig.dimCretaceous) {
+			if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 				dimensionCriteria = true;
 			}
 			if (dimensionCriteria && !SaplingSpawn) {
@@ -47,7 +47,7 @@ public class ProcedureSpawnAtli extends ElementsLepidodendronMod.ModElement {
 				if (matchBiome(biome, LepidodendronConfigPlants.genAtliOverrideBiomes))
 					biomeCriteria = true;
 				}
-				if (dimID == LepidodendronConfig.dimCretaceous) {
+				if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 					biomeCriteria = true;
 				}
 				if (biomeCriteria && !SaplingSpawn) {

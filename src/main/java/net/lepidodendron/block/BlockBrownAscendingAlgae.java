@@ -98,7 +98,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 			dimensionCriteria = true;
 		if (
 			dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 			|| dimID == LepidodendronConfig.dimPaleogene
 			|| dimID == LepidodendronConfig.dimNeogene
 			|| dimID == LepidodendronConfig.dimPleistocene

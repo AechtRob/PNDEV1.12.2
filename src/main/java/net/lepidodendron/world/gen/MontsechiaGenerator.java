@@ -33,7 +33,7 @@ public class MontsechiaGenerator extends WorldGenerator
     	boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMontsechia))
 			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimCretaceous)
+		if ((dimID == LepidodendronConfig.dimCretaceousEarly)
 				|| (dimID == LepidodendronConfig.dimPaleogene)
 				|| (dimID == LepidodendronConfig.dimNeogene)
 				|| (dimID == LepidodendronConfig.dimPleistocene))
@@ -45,7 +45,7 @@ public class MontsechiaGenerator extends WorldGenerator
 			return true;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimCretaceous)
+		if ((dimID == LepidodendronConfig.dimCretaceousEarly)
 			|| (dimID == LepidodendronConfig.dimPaleogene)
 			|| (dimID == LepidodendronConfig.dimNeogene)
 			|| (dimID == LepidodendronConfig.dimPleistocene))

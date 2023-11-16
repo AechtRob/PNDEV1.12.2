@@ -42,7 +42,7 @@ public class LepidodendronOreHandler {
 			}
 		}
 		if (event.getType().equals(EventType.DIRT )){ //dirt is blocked to avoid grass etc accidentally appearring
-			if (LepidodendronConfig.dimCretaceous == (int) event.getWorld().provider.getDimension()
+			if (LepidodendronConfig.dimCretaceousEarly == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimJurassic == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimTriassic == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimPermian == (int) event.getWorld().provider.getDimension()
@@ -92,7 +92,7 @@ public class LepidodendronOreHandler {
 				|| LepidodendronConfig.dimPermian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimTriassic == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimJurassic == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimCretaceous == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimCretaceousEarly == (int) event.getWorld().provider.getDimension()
 			)
 				event.setResult(Event.Result.DENY);
 		}

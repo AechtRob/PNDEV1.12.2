@@ -1,0 +1,11 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:erdtmanithecales"
+    },
+    "normal": [
+      {"model": "lepidodendron:erdtmanithecales"},
+      {"model": "lepidodendron:erdtmanithecales_var"}
+    ]
+  }
+}

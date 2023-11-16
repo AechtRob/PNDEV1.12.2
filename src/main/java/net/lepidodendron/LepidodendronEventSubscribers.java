@@ -135,7 +135,7 @@ public class LepidodendronEventSubscribers {
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene)
@@ -171,7 +171,7 @@ public class LepidodendronEventSubscribers {
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene)

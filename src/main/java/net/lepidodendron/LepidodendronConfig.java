@@ -86,11 +86,12 @@ public class LepidodendronConfig {
     public static int dimPermian = -83;
     public static int dimTriassic = -84;
     public static int dimJurassic = -85;
-    public static int dimCretaceous = -86;
+    public static int dimCretaceousEarly = -86;
     public static int dimOrdovician = -87;
     public static int dimPaleogene = -88;
     public static int dimNeogene = -89;
     public static int dimPleistocene = -90;
+    public static int dimCretaceousLate = -91;
 
     public static boolean doSpawnsPrehistoricFloraDefault = true;
     public static boolean doSpawnsFossilsArcheology = false;
@@ -589,9 +590,9 @@ public class LepidodendronConfig {
         dimJurassic = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceous);
+        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceousEarly);
         prop.setComment("Dimension number of the Cretaceous dimension. Do not change this unless you get errors [default: -86]");
-        dimCretaceous = prop.getInt();
+        dimCretaceousEarly = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "dimPaleogene", dimPaleogene);
@@ -629,9 +630,9 @@ public class LepidodendronConfig {
         dimJurassic = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceous);
+        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceousEarly);
         prop.setComment("Dimension number of the Cretaceous dimension. Do not change this unless you get errors [default: -84]");
-        dimCretaceous = prop.getInt();
+        dimCretaceousEarly = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "genFossil", genFossil);

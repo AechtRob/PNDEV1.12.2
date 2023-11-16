@@ -816,6 +816,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierWaterClover = 1;
     public static boolean spreadWaterClover = true;
 
+    public static boolean genSalvinia = false;
+    public static String[] genSalviniaBlacklistBiomes = new String[0];
+    public static String[] genSalviniaOverrideBiomes = new String[0];
+    public static int[] dimSalvinia = new int[]{0};
+    public static int minheightSalvinia = 1;
+    public static int maxheightSalvinia = 0;
+    public static double multiplierSalvinia = 1;
+    public static boolean spreadSalvinia = true;
+
     public static boolean genFoozia = false;
     public static String[] genFooziaBlacklistBiomes = new String[0];
     public static String[] genFooziaOverrideBiomes = new String[0];
@@ -1739,6 +1748,14 @@ public class LepidodendronConfigPlants {
     public static int minheightWelwitschiophyllum = 1;
     public static int maxheightWelwitschiophyllum = 0;
     public static double multiplierWelwitschiophyllum = 1;
+
+    public static boolean genErdtmanithecales = false;
+    public static String[] genErdtmanithecalesBlacklistBiomes = new String[0];
+    public static String[] genErdtmanithecalesOverrideBiomes = new String[0];
+    public static int[] dimErdtmanithecales = new int[]{0};
+    public static int minheightErdtmanithecales = 1;
+    public static int maxheightErdtmanithecales = 0;
+    public static double multiplierErdtmanithecales = 1;
     
     public static boolean genProtognetum = false;
     public static String[] genProtognetumBlacklistBiomes = new String[0];
@@ -1747,6 +1764,14 @@ public class LepidodendronConfigPlants {
     public static int minheightProtognetum = 1;
     public static int maxheightProtognetum = 0;
     public static double multiplierProtognetum = 1;
+
+    public static boolean genJianchangia = false;
+    public static String[] genJianchangiaBlacklistBiomes = new String[0];
+    public static String[] genJianchangiaOverrideBiomes = new String[0];
+    public static int[] dimJianchangia = new int[]{0};
+    public static int minheightJianchangia = 1;
+    public static int maxheightJianchangia = 0;
+    public static double multiplierJianchangia = 1;
 
     public static boolean genDrewria = false;
     public static String[] genDrewriaBlacklistBiomes = new String[0];
@@ -9280,6 +9305,64 @@ public class LepidodendronConfigPlants {
         multiplierProtognetum = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Jianchangia", "genJianchangia", genJianchangia);
+        prop.setComment("Set to true to generate Jianchangia naturally [default: false]");
+        genJianchangia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jianchangia", "genJianchangiaBlacklistBiomes", genJianchangiaBlacklistBiomes);
+        prop.setComment("List of biomes Jianchangia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genJianchangiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jianchangia", "genJianchangiaOverrideBiomes", genJianchangiaOverrideBiomes);
+        prop.setComment("List of biomes Jianchangia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genJianchangiaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jianchangia", "dimJianchangia", dimJianchangia);
+        prop.setComment("List of dimension IDs Jianchangia can generate in [default: 0]");
+        dimJianchangia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jianchangia", "minheightJianchangia", minheightJianchangia);
+        prop.setComment("Minimum height that Jianchangia can generate (1 to 250) [default: 1]");
+        minheightJianchangia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jianchangia", "maxheightJianchangia", maxheightJianchangia);
+        prop.setComment("Maximum height that Jianchangia can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightJianchangia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jianchangia", "multiplierJianchangia", multiplierJianchangia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierJianchangia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Erdtmanithecales", "genErdtmanithecales", genErdtmanithecales);
+        prop.setComment("Set to true to generate Erdtmanithecales naturally [default: false]");
+        genErdtmanithecales = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Erdtmanithecales", "genErdtmanithecalesBlacklistBiomes", genErdtmanithecalesBlacklistBiomes);
+        prop.setComment("List of biomes Erdtmanithecales are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genErdtmanithecalesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Erdtmanithecales", "genErdtmanithecalesOverrideBiomes", genErdtmanithecalesOverrideBiomes);
+        prop.setComment("List of biomes Erdtmanithecales are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genErdtmanithecalesOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Erdtmanithecales", "dimErdtmanithecales", dimErdtmanithecales);
+        prop.setComment("List of dimension IDs Erdtmanithecales can generate in [default: 0]");
+        dimErdtmanithecales = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Erdtmanithecales", "minheightErdtmanithecales", minheightErdtmanithecales);
+        prop.setComment("Minimum height that Erdtmanithecales can generate (1 to 250) [default: 1]");
+        minheightErdtmanithecales = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Erdtmanithecales", "maxheightErdtmanithecales", maxheightErdtmanithecales);
+        prop.setComment("Maximum height that Erdtmanithecales can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightErdtmanithecales = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Erdtmanithecales", "multiplierErdtmanithecales", multiplierErdtmanithecales);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierErdtmanithecales = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Guangdedendron", "genGuangdedendron", genGuangdedendron);
         prop.setComment("Set to true to generate Guangdedendron naturally [default: false]");
         genGuangdedendron = prop.getBoolean();
@@ -12207,6 +12290,38 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Rhynia", "spreadRhynia", spreadRhynia);
         prop.setComment("Set to true for Rhynia to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadRhynia = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Salvinia", "genSalvinia", genSalvinia);
+        prop.setComment("Set to true to generate Salvinia naturally [default: false]");
+        genSalvinia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Salvinia", "genSalviniaBlacklistBiomes", genSalviniaBlacklistBiomes);
+        prop.setComment("List of biomes Salvinia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSalviniaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Salvinia", "genSalviniaOverrideBiomes", genSalviniaOverrideBiomes);
+        prop.setComment("List of biomes Salvinia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSalviniaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Salvinia", "dimSalvinia", dimSalvinia);
+        prop.setComment("List of dimension IDs Salvinia can generate in [default: 0]");
+        dimSalvinia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Salvinia", "minheightSalvinia", minheightSalvinia);
+        prop.setComment("Minimum height that Salvinia can generate (1 to 250) [default: 1]");
+        minheightSalvinia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Salvinia", "maxheightSalvinia", maxheightSalvinia);
+        prop.setComment("Maximum height that Salvinia can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightSalvinia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Salvinia", "multiplierSalvinia", multiplierSalvinia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSalvinia = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Salvinia", "spreadSalvinia", spreadSalvinia);
+        prop.setComment("Set to true for Salvinia to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadSalvinia = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen WaterClover", "genWaterClover", genWaterClover);

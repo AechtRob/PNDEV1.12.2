@@ -94,7 +94,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
-				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene

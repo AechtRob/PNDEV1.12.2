@@ -47,7 +47,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 							|| (dimID == LepidodendronConfig.dimPermian)
 							|| (dimID == LepidodendronConfig.dimTriassic)
 							|| (dimID == LepidodendronConfig.dimJurassic)
-							|| (dimID == LepidodendronConfig.dimCretaceous)
+							|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 							|| (dimID == LepidodendronConfig.dimPaleogene)
 							|| (dimID == LepidodendronConfig.dimNeogene)
 							|| (dimID == LepidodendronConfig.dimPleistocene)
@@ -62,7 +62,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 			}
 			if (
 					(dimID == LepidodendronConfig.dimJurassic)
-							|| (dimID == LepidodendronConfig.dimCretaceous)
+							|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 							|| (dimID == LepidodendronConfig.dimPaleogene)
 							|| (dimID == LepidodendronConfig.dimNeogene)
 							|| (dimID == LepidodendronConfig.dimPleistocene)
@@ -76,7 +76,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 				dimensionCriteria = true;
 			}
 			if (
-					(dimID == LepidodendronConfig.dimCretaceous)
+					(dimID == LepidodendronConfig.dimCretaceousEarly)
 							|| (dimID == LepidodendronConfig.dimPaleogene)
 							|| (dimID == LepidodendronConfig.dimNeogene)
 							|| (dimID == LepidodendronConfig.dimPleistocene)
