@@ -193,7 +193,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEatLength() {
-		return 93;
+		return 95;
 	}
 
 	@Override
@@ -478,7 +478,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.5D);
 	}
 
 	@Override
