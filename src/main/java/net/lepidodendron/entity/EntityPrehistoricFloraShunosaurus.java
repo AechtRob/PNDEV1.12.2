@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 	private float rotationAngle;
 	private float rotationTicks = 18; //to make the rotation fully
 
-	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thagomized", this);
+	public final EntityDamageSource THAGOMIZED = new EntityDamageSource("thwomped", this);
 
 	public EntityPrehistoricFloraShunosaurus(World world) {
 		super(world);
