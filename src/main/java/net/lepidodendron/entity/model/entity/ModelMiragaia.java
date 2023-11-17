@@ -3908,7 +3908,9 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         EntityPrehistoricFloraMiragaia miragaia = (EntityPrehistoricFloraMiragaia) e;
-
+        if (miragaia.getIsSneaking()) {
+            this.faceTarget(f3, f4, 1, main);
+        }
         this.faceTarget(f3, f4, 14, neck);
         this.faceTarget(f3, f4, 14, neck2);
         this.faceTarget(f3, f4, 14, neck3);
