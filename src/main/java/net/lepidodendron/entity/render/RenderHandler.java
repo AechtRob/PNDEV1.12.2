@@ -4968,6 +4968,13 @@ public class RenderHandler {
                 return new RenderUteodon(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraShunosaurus.class, new IRenderFactory<EntityPrehistoricFloraShunosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraShunosaurus> createRenderFor(RenderManager manager) {
+                return new RenderShunosaurus(manager);
+            }
+        });
         
         
         

@@ -21,6 +21,7 @@ public class RenderDisplays {
     public static final ModelGuanlong modelGuanlong = new ModelGuanlong();
     public static final ModelDubreuillosaurus modelDubreuillosaurus = new ModelDubreuillosaurus();
     public static final ModelMiragaia modelMiragaia = new ModelMiragaia();
+    public static final ModelShunosaurus modelShunosaurus = new ModelShunosaurus();
     public static final ModelChilesaurus modelChilesaurus = new ModelChilesaurus();
     public static final ModelCongopycnodus modelCongopycnodus = new ModelCongopycnodus();
     public static final ModelAphnelepis modelAphnelepis = new ModelAphnelepis();
@@ -343,6 +344,9 @@ public class RenderDisplays {
     public static final ModelXuanhuaceratops modelXuanhuaceratops = new ModelXuanhuaceratops();
     public static final ModelYinlong modelYinlong = new ModelYinlong();
     public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
+    public static final ModelYunguisaurus modelYunguisaurus = new ModelYunguisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
+
+    public static final ModelGerarus modelGerarus = new ModelGerarus();
 
 }
