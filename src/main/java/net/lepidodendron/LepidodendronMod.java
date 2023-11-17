@@ -2063,6 +2063,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation CUMNORIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cumnoria"));
 	public static final ResourceLocation CUMNORIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cumnoria_young"));
 
+	public static final int ENTITY_SHUNOSAURUS = 830;
+	public static final ResourceLocation SHUNOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shunosaurus"));
+	public static final ResourceLocation SHUNOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shunosaurus_young"));
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

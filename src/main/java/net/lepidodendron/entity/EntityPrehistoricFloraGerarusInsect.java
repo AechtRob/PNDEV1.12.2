@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 
 	@Override
 	public int defaultFlyCooldown() {
-		return 3000;
+		return 5000;
 	}
 
 	@Override

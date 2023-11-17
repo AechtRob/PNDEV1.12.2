@@ -877,6 +877,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_compsognathus", EntityPrehistoricFloraCompsognathus.class, LepidodendronMod.ENTITY_COMPSOGNATHUS, 64,0 ,0);
         registerEntity("prehistoric_flora_uteodon", EntityPrehistoricFloraUteodon.class, LepidodendronMod.ENTITY_UTEODON, 84,-0,-0);
         registerEntity("prehistoric_flora_cumnoria", EntityPrehistoricFloraCumnoria.class, LepidodendronMod.ENTITY_CUMNORIA, 84,-0,-0);
+        registerEntity("prehistoric_flora_shunosaurus", EntityPrehistoricFloraShunosaurus.class, LepidodendronMod.ENTITY_SHUNOSAURUS, 156,-7838914 ,-1646631);
 
 
 
