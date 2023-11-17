@@ -36,9 +36,25 @@ public class ModelPlaceholderLand extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Silesaurus.offsetY = -0.50F;
+        this.Silesaurus.offsetX = 0.0F;
+        this.Silesaurus.rotateAngleY = (float)Math.toRadians(0);
+        this.Silesaurus.rotateAngleX = (float)Math.toRadians(-88);
+        this.Silesaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Silesaurus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Silesaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
         this.Silesaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Silesaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Silesaurus.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

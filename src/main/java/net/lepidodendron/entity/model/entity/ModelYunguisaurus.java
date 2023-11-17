@@ -366,7 +366,22 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Yunguisaurus.offsetY = -0.5F;
+        this.Yunguisaurus.offsetX = 0.075F;
+        this.Yunguisaurus.rotateAngleY = (float)Math.toRadians(-210);
+        this.Yunguisaurus.rotateAngleX = (float)Math.toRadians(20);
+        this.Yunguisaurus.rotateAngleZ = (float)Math.toRadians(5);
+        this.Yunguisaurus.scaleChildren = true;
+        float scaler = 0.48F;
+        this.Yunguisaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
         this.Yunguisaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Yunguisaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Yunguisaurus.scaleChildren = false;
         resetToDefaultPose();
     }
 

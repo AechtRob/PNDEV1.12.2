@@ -3032,14 +3032,16 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
         this.main.offsetY = 0.1F;
         this.main.offsetX = -0.2F;
         this.main.rotateAngleY = (float)Math.toRadians(255);
         this.main.rotateAngleX = (float)Math.toRadians(5);
         this.main.rotateAngleZ = (float)Math.toRadians(-10);
         this.main.scaleChildren = true;
-        this.main.setScale(0.825F,0.825F,0.825F);
-
+        float scaler = 0.825F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
         this.setRotateAngle(body, -0.1309F, 0.0F, 0.0F);
         this.setRotateAngle(leftPlate10, -0.2965F, 0.2424F, 0.2076F);
         this.setRotateAngle(cube_r1, 0.0087F, 0.0F, 0.0F);
@@ -3460,8 +3462,11 @@ public class ModelMiragaia extends AdvancedModelBaseExtended {
         this.setRotateAngle(babyskewer_r4, -0.624F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r308, -0.5629F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r309, -0.6545F, 0.0F, 0.0F);
-
+        //End of pose, now render the model:
         this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
         resetToDefaultPose();
     }
 

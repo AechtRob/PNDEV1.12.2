@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraApatosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraCamarasaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -576,7 +575,22 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.50F;
+        this.root.offsetX = 0.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(0);
+        this.root.rotateAngleX = (float)Math.toRadians(-88);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.6F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
         this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
         resetToDefaultPose();
     }
 

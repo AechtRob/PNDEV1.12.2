@@ -520,7 +520,22 @@ public class ModelCamptosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Camptosaurus.offsetY = -0.50F;
+        this.Camptosaurus.offsetX = 0.0F;
+        this.Camptosaurus.rotateAngleY = (float)Math.toRadians(0);
+        this.Camptosaurus.rotateAngleX = (float)Math.toRadians(-88);
+        this.Camptosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Camptosaurus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Camptosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
         this.Camptosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Camptosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Camptosaurus.scaleChildren = false;
         resetToDefaultPose();
     }
 

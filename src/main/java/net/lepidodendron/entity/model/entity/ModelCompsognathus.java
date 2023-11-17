@@ -476,14 +476,15 @@ public class ModelCompsognathus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
         this.Compsognathus.offsetY = -0.2F;
         this.Compsognathus.offsetX = 0.2F;
         this.Compsognathus.rotateAngleY = (float)Math.toRadians(200);
         this.Compsognathus.rotateAngleX = (float)Math.toRadians(8);
         this.Compsognathus.rotateAngleZ = (float)Math.toRadians(-8);
-        //this.Compsognathus.scaleChildren = true;
-        //this.Compsognathus.setScale(0.9F,0.9F,0.9F);
-
+        float scaler = 1.0F;
+        this.Compsognathus.setScale(scaler, scaler, scaler);
+        //Start of pose:
         this.setRotateAngle(basin_r1, -0.0698F, 0.0F, 0.0F);
         this.setRotateAngle(LegL, -1.1345F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0524F, 0.0F, 0.0F);
@@ -544,8 +545,11 @@ public class ModelCompsognathus extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r33, 0.4411F, 0.1423F, 0.0668F);
         this.setRotateAngle(cube_r34, 0.4363F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r35, 0.4363F, 0.0F, 0.0F);
-
+        //End of pose, now render the model:
         this.Compsognathus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Compsognathus.setScale(1.0F, 1.0F, 1.0F);
+        this.Compsognathus.scaleChildren = false;
         resetToDefaultPose();
     }
 
