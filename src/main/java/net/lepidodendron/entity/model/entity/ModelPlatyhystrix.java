@@ -355,13 +355,13 @@ public class ModelPlatyhystrix extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hip.offsetY = -0.50F;
-        this.Hip.offsetX = 0.0F;
-        this.Hip.rotateAngleY = (float)Math.toRadians(0);
-        this.Hip.rotateAngleX = (float)Math.toRadians(-88);
-        this.Hip.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hip.offsetY = -0.4F;
+        this.Hip.offsetX = 0.35F;
+        this.Hip.rotateAngleY = (float)Math.toRadians(-250);
+        this.Hip.rotateAngleX = (float)Math.toRadians(3);
+        this.Hip.rotateAngleZ = (float)Math.toRadians(12);
         this.Hip.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 1.2F;
         this.Hip.setScale(scaler, scaler, scaler);
         //Start of pose:
 

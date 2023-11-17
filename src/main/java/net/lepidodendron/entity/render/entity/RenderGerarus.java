@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderGerarus extends RenderLiving<EntityPrehistoricFloraGerarusInsect> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
+    public static final ResourceLocation TEXTURE_BOOK = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus_book.png");
 
     public RenderGerarus(RenderManager mgr) {
         super(mgr, new ModelGerarus(), 0.0f);
@@ -32,10 +33,7 @@ public class RenderGerarus extends RenderLiving<EntityPrehistoricFloraGerarusIns
             GlStateManager.disableCull();
             GlStateManager.enableAlpha();
             boolean flag = this.setDoRenderBrightness(entity, partialTicks);
-            if (!this.bindEntityTexture(entity))
-            {
-                return;
-            }
+            this.bindTexture(TEXTURE_BOOK);
             RenderDisplays.modelGerarus.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {

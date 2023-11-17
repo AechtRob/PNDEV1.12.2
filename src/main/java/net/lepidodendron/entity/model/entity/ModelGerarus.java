@@ -324,13 +324,13 @@ public class ModelGerarus extends AdvancedModelBase {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.gerarus.offsetY = -0.50F;
-        this.gerarus.offsetX = 0.0F;
-        this.gerarus.rotateAngleY = (float)Math.toRadians(0);
-        this.gerarus.rotateAngleX = (float)Math.toRadians(-88);
-        this.gerarus.rotateAngleZ = (float)Math.toRadians(0);
+        this.gerarus.offsetY = -1.5F;
+        this.gerarus.offsetX = -0.5F;
+        this.gerarus.rotateAngleY = (float)Math.toRadians(210);
+        this.gerarus.rotateAngleX = (float)Math.toRadians(80);
+        this.gerarus.rotateAngleZ = (float)Math.toRadians(-120);
         this.gerarus.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 3F;
         this.gerarus.setScale(scaler, scaler, scaler);
         //Start of pose:
 
