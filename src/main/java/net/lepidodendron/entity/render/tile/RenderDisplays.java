@@ -8,6 +8,8 @@ public class RenderDisplays {
     public static final ModelAegirocassis modelAegirocassis = new ModelAegirocassis();
     public static final ModelAetheolepis modelAetheolepis = new ModelAetheolepis();
     public static final ModelAkmonistion modelAkmonistion = new ModelAkmonistion();
+    public static final ModelPterodactylus modelPterodactylus = new ModelPterodactylus();
+    public static final ModelWukongopterus modelWukongopterus = new ModelWukongopterus();
     public static final ModelAmplectobelua modelAmplectobelua = new ModelAmplectobelua();
     public static final ModelGigantspinosaurus modelGigantspinosaurus = new ModelGigantspinosaurus();
     public static final ModelAnomalocaris modelAnomalocaris = new ModelAnomalocaris();

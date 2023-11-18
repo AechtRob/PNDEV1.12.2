@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraGuiyu;
 import net.lepidodendron.entity.EntityPrehistoricFloraThelodus;
 import net.lepidodendron.entity.model.entity.ModelThelodus;
 import net.minecraft.client.renderer.GlStateManager;

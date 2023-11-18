@@ -338,6 +338,65 @@ public class ModelPterodactylus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0F;
+        this.root.offsetX = 0F;
+        this.root.rotateAngleY = (float)Math.toRadians(0);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 1.0F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.0456F, 0.0F, 0.0F);
+        this.setRotateAngle(body1_r1, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.5633F, -0.0702F, -1.242F);
+        this.setRotateAngle(leftleg2, 0.4808F, -0.2184F, 0.1965F);
+        this.setRotateAngle(leftleg3, 1.2162F, 0.2407F, 0.2122F);
+        this.setRotateAngle(leftlegmembrane, -0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg_r1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.5633F, 0.0702F, 1.242F);
+        this.setRotateAngle(rightleg2, 0.4808F, 0.2184F, -0.1965F);
+        this.setRotateAngle(rightleg3, 1.2162F, -0.2407F, -0.2122F);
+        this.setRotateAngle(rightlegmembrane, -0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg_r1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -0.0892F, 0.0F, 0.0F);
+        this.setRotateAngle(chest_r1, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, -0.3044F, -0.0745F, 0.0466F);
+        this.setRotateAngle(leftwing2, -0.2245F, -0.0123F, -1.6342F);
+        this.setRotateAngle(leftwing3, -1.4832F, -0.0869F, -0.0076F);
+        this.setRotateAngle(leftwing4, 0.1685F, -0.1181F, -0.0116F);
+        this.setRotateAngle(leftwing5, 0.3065F, -0.0832F, -0.0263F);
+        this.setRotateAngle(handR2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, -0.3044F, 0.0745F, -0.0466F);
+        this.setRotateAngle(rightwing2, -0.2245F, 0.0123F, 1.6342F);
+        this.setRotateAngle(rightwing3, -1.4832F, 0.0869F, 0.0076F);
+        this.setRotateAngle(rightwing4, 0.1685F, 0.1181F, 0.0116F);
+        this.setRotateAngle(rightwing5, 0.3065F, 0.0832F, 0.0263F);
+        this.setRotateAngle(handR3, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0791F, -0.0368F, 0.4349F);
+        this.setRotateAngle(cube_r3, 0.0791F, 0.0368F, -0.4349F);
+        this.setRotateAngle(cube_r4, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0852F, 0.0189F, -0.2174F);
+        this.setRotateAngle(cube_r8, 0.0852F, -0.0189F, 0.2174F);
+        this.setRotateAngle(cube_r9, -0.3403F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
+    }
     
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

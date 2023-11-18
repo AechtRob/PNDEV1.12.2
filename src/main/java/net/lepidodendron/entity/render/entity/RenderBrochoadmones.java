@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBrochoadmones;
-import net.lepidodendron.entity.EntityPrehistoricFloraRhinopteraspis;
 import net.lepidodendron.entity.model.entity.ModelBrochoadmones;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

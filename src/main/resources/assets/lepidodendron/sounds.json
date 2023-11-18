@@ -8702,7 +8702,59 @@
         "stream": false
       }
     ]
+  },
+
+  "wukongopterus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:wukongopterus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:wukongopterus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:wukongopterus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:wukongopterus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:wukongopterus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "wukongopterus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:wukongopterus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:wukongopterus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "wukongopterus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:wukongopterus_death",
+        "stream": false
+      }
+    ]
+  },
+  "wukongopterus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:wukongopterus_hurt01",
+        "stream": false
+      }
+    ]
   }
-  
   
 }

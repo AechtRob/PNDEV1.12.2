@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraCaturus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlatycaraspis;
 import net.lepidodendron.entity.model.entity.ModelPlatycaraspis;
 import net.minecraft.client.renderer.GlStateManager;

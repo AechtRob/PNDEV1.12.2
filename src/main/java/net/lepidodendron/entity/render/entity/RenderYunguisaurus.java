@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraYunguisaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraYunguisaurus;
 import net.lepidodendron.entity.model.entity.ModelYunguisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;

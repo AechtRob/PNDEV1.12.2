@@ -15,21 +15,28 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -37,17 +44,176 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	public Animation PREEN_ANIMATION;
 	public int standCooldown;
 
-	public EntityPrehistoricFloraRhamphorhynchus(World world) {
+	private static final DataParameter<Integer> WUKONGOPTERUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraWukongopterus.class, DataSerializers.VARINT);
+	
+	public EntityPrehistoricFloraWukongopterus(World world) {
 		super(world);
-		setSize(0.85F, 0.5F);
+		setSize(0.65F, 0.45F);
 		minWidth = 0.10F;
-		maxWidth = 0.85F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 15.0D;
+		maxWidth = 0.65F;
+		maxHeight = 0.45F;
+		maxHealthAgeable = 10.0D;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(WUKONGOPTERUS_TYPE, 0);
+	}
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraWukongopterus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraWukongopterus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	public enum Type
+	{
+		MALE(1, "male"),
+		FEMALE(2, "female")
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraWukongopterus.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraWukongopterus.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraWukongopterus.Type.byId(rand.nextInt(EntityPrehistoricFloraWukongopterus.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	public void setPNType(EntityPrehistoricFloraWukongopterus.Type type)
+	{
+		this.dataManager.set(WUKONGOPTERUS_TYPE, Integer.valueOf(type.ordinal()));
+	}
+
+	public EntityPrehistoricFloraWukongopterus.Type getPNType()
+	{
+		return EntityPrehistoricFloraWukongopterus.Type.byId(((Integer)this.dataManager.get(WUKONGOPTERUS_TYPE)).intValue());
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraWukongopterus.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.WUKONGOPTERUS_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.WUKONGOPTERUS_LOOT_F_YOUNG;
+			}
+		}
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.WUKONGOPTERUS_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.WUKONGOPTERUS_LOOT_F;
+		}
 	}
 
 	@Override
@@ -58,12 +224,17 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	@Override
 	public int flyTransitionLength() {
-		return 30;
+		return 22;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 30;
+		return 22;
+	}
+
+	@Override
+	public boolean canFloat() {
+		return false;
 	}
 
 	@Override
@@ -76,20 +247,15 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public boolean canClimb() {
-		return false;
-	}
-
-	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.hasAlarm()) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraRhamphorhynchus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraRhamphorhynchus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraRhamphorhynchus currentPterodactylus : rhamphorhynchus) {
-				currentPterodactylus.setRevengeTarget(ee);
-				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
-				currentPterodactylus.setFlying();
+			List<EntityPrehistoricFloraWukongopterus> wukongopterus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraWukongopterus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraWukongopterus currentWukongopterus : wukongopterus) {
+				currentWukongopterus.setRevengeTarget(ee);
+				currentWukongopterus.screamAlarmCooldown = rand.nextInt(20);
+				currentWukongopterus.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -98,7 +264,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	@Override
 	public boolean isAnimationDirectionLocked(Animation animation) {
 		return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION
-			|| animation == PREEN_ANIMATION || animation == ALERT_ANIMATION;
+				|| animation == PREEN_ANIMATION || animation == ALERT_ANIMATION;
 	}
 
 	public void setScreaming(boolean screaming) {
@@ -110,6 +276,11 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public float getClimbSpeed() {
+		return 0.0035F;
+	}
+
+	@Override
 	public ResourceLocation FlightSound() {
 		return null;
 	}
@@ -117,21 +288,14 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_RHAMPHORHYNCHUS;
-	}
-
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.RHAMPHORHYNCHUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.RHAMPHORHYNCHUS_LOOT;
+		return ModTriggers.CLICK_WUKONGOPTERUS;
 	}
 
 	@Override
 	public int getAdultAge() {
 		return 64000;
 	}
+
 
 	@Override
 	public void onLivingUpdate() {
@@ -187,6 +351,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		);
 	}
 
+
 	@Override
 	public boolean nestBlockMatch(World world, BlockPos pos) {
 		if (isLayableNest(world, pos)) {
@@ -212,16 +377,16 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 			if (this.getAttachmentFacing() == EnumFacing.UP) {
 				//Walking:
 				if (this.getIsFast()) {
-					return 0.35f;
+					return 0.3F;
 				}
-				return 0.24F;
+				return 0.196F;
 			}
 		}
 		//Otherwise we are flying:
 		if (this.getIsFast()) {
-			return 0.295f;
+			return 1.065f;
 		}
-		return 0.225f;
+		return 0.565f;
 	}
 
 	@Override
@@ -271,22 +436,22 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:wukongopterus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:wukongopterus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:wukongopterus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:wukongopterus_alarm"));
 	}
 
 	public void playAlarmSound()
@@ -308,7 +473,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	protected void initEntityAI() {
@@ -377,7 +542,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	@Override
 	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_rhamphorhynchus";
+		return "lepidodendron:prehistoric_flora_wukongopterus";
 	}
 
 	@Override

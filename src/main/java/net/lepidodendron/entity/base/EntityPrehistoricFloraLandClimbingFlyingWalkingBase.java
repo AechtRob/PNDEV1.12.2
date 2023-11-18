@@ -80,7 +80,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public abstract int unflyTransitionLength();
 
     public float headHitHeight() {
-        return 0.55F;
+        return 0.475F;
     }
 
     /**how high the mob will fly above the highest block directly below it (may be top of the terrain)
