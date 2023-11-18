@@ -1912,6 +1912,13 @@ public class LepidodendronConfigPlants {
     public static int minheightMarattia = 1;
     public static int maxheightMarattia = 90;
     public static double multiplierMarattia = 1;
+    public static boolean genLophosoria = false;
+    public static String[] genLophosoriaBlacklistBiomes = new String[0];
+    public static String[] genLophosoriaOverrideBiomes = new String[0];
+    public static int[] dimLophosoria = new int[]{0};
+    public static int minheightLophosoria = 1;
+    public static int maxheightLophosoria = 90;
+    public static double multiplierLophosoria = 1;
     public static boolean genHydrangea = false;
     public static String[] genHydrangeaBlacklistBiomes = new String[0];
     public static String[] genHydrangeaOverrideBiomes = new String[0];
@@ -9501,6 +9508,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Hydrangea", "multiplierHydrangea", multiplierHydrangea);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierHydrangea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Lophosoria", "genLophosoria", genLophosoria);
+        prop.setComment("Set to true to generate Lophosoria naturally [default: false]");
+        genLophosoria = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lophosoria", "genLophosoriaBlacklistBiomes", genLophosoriaBlacklistBiomes);
+        prop.setComment("List of biomes Lophosoria are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genLophosoriaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lophosoria", "genLophosoriaOverrideBiomes", genLophosoriaOverrideBiomes);
+        prop.setComment("List of biomes Lophosoria are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genLophosoriaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Lophosoria", "dimLophosoria", dimLophosoria);
+        prop.setComment("List of dimension IDs Lophosoria can generate in [default: 0]");
+        dimLophosoria = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lophosoria", "minheightLophosoria", minheightLophosoria);
+        prop.setComment("Minimum height that Lophosoria can generate (1 to 250) [default: 1]");
+        minheightLophosoria = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lophosoria", "maxheightLophosoria", maxheightLophosoria);
+        prop.setComment("Maximum height that Lophosoria can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightLophosoria = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lophosoria", "multiplierLophosoria", multiplierLophosoria);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierLophosoria = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Marattia", "genMarattia", genMarattia);

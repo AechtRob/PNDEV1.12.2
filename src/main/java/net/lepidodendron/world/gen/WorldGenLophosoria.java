@@ -1,6 +1,6 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockMarattia;
+import net.lepidodendron.block.BlockLophosoria;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.util.EnumFacing;
@@ -10,7 +10,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class WorldGenMarattia extends WorldGenerator
+public class WorldGenLophosoria extends WorldGenerator
 {
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -30,8 +30,8 @@ public class WorldGenMarattia extends WorldGenerator
                 && worldIn.getBlockState(blockpos.down()).getBlockFaceShape(worldIn, blockpos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
             )
             {
-                worldIn.setBlockState(blockpos, BlockMarattia.block.getDefaultState(), 2);
-                BlockMarattia.block.onBlockAdded(worldIn, blockpos, BlockMarattia.block.getDefaultState());
+                worldIn.setBlockState(blockpos, BlockLophosoria.block.getDefaultState(), 2);
+                BlockLophosoria.block.onBlockAdded(worldIn, blockpos, BlockLophosoria.block.getDefaultState());
                 flag = true;
             }
         }
