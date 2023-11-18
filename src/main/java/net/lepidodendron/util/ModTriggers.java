@@ -307,6 +307,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
+    public static final CustomTrigger CLICK_LOPHOSORIA = new CustomTrigger("pf_book_lophosoria");
     public static final CustomTrigger CLICK_BIRDSNEST_FERN = new CustomTrigger("pf_book_birdsnest_fern");
     public static final CustomTrigger CLICK_MEDULLOSALES = new CustomTrigger("pf_book_medullosales");
     public static final CustomTrigger CLICK_NATALIGMA = new CustomTrigger("pf_book_nataligma");
@@ -1658,6 +1659,7 @@ public class ModTriggers
             CLICK_MAPLE,
             CLICK_GUNNERA,
             CLICK_MARATTIA,
+            CLICK_LOPHOSORIA,
             CLICK_BIRDSNEST_FERN,
             CLICK_MEDULLOSALES,
             CLICK_MIRABILIS,

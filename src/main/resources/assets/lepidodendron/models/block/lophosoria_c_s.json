@@ -1,0 +1,65 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"18": "lepidodendron:blocks/lophosoria_leaf_1_tip_w",
+		"19": "lepidodendron:blocks/lophosoria_leaf_1_base_e",
+		"20": "lepidodendron:blocks/lophosoria_leaf_1_base_w",
+		"21": "lepidodendron:blocks/lophosoria_leaf_1_tip_e"
+	},
+	"elements": [
+		{
+			"from": [10, 10.2, 5.6],
+			"to": [26, 10.2, 21.6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [18, 10.2, 13.6]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 0], "rotation": 180, "texture": "#19"},
+				"down": {"uv": [16, 0, 0, 16], "rotation": 180, "texture": "#19"}
+			}
+		},
+		{
+			"from": [10, 8.66934, 21.29514],
+			"to": [26, 8.66934, 29.29514],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [18, 8.66934, 25.29514]},
+			"faces": {
+				"up": {"uv": [16, 8, 0, 0], "rotation": 180, "texture": "#21"},
+				"down": {"uv": [0, 8, 16, 0], "texture": "#21"}
+			}
+		},
+		{
+			"from": [10, 4.3104, 27.8],
+			"to": [26, 4.3104, 31.8],
+			"rotation": {"angle": 45, "axis": "x", "origin": [18, 4.3104, 31.81876]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 12], "rotation": 180, "texture": "#21"},
+				"down": {"uv": [0, 16, 16, 12], "texture": "#21"}
+			}
+		},
+		{
+			"from": [-6, 10.2, 5.6],
+			"to": [10, 10.2, 21.6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 10.2, 13.6]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 0], "rotation": 180, "texture": "#20"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#20"}
+			}
+		},
+		{
+			"from": [-6, 8.66934, 21.29514],
+			"to": [10, 8.66934, 29.29514],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [2, 8.66934, 25.29514]},
+			"faces": {
+				"up": {"uv": [16, 8, 0, 0], "rotation": 180, "texture": "#18"},
+				"down": {"uv": [0, 8, 16, 0], "texture": "#18"}
+			}
+		},
+		{
+			"from": [-6, 4.3104, 27.8],
+			"to": [10, 4.3104, 31.8],
+			"rotation": {"angle": 45, "axis": "x", "origin": [2, 4.3104, 31.81876]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 12], "rotation": 180, "texture": "#18"},
+				"down": {"uv": [0, 16, 16, 12], "texture": "#18"}
+			}
+		}
+	]
+}

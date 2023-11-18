@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:lophosoria_c_b"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:lophosoria_inventory"
+    }
+  }
+}

@@ -59,9 +59,7 @@ public class RenderWukongopterus extends RenderLiving<EntityPrehistoricFloraWuko
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraWukongopterus entity) {
         String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
         if (s != null &&
-                (("Sūn Wù Kōng".equalsIgnoreCase(s))
-                        || ("Sūn WùKōng".equalsIgnoreCase(s))
-                        || ("Sun Wu Kong".equalsIgnoreCase(s))
+                (("Sun Wu Kong".equalsIgnoreCase(s))
                         || ("Sun WuKong".equalsIgnoreCase(s))
                         || ("monkey king".equalsIgnoreCase(s))
                         || ("king monkey".equalsIgnoreCase(s))
