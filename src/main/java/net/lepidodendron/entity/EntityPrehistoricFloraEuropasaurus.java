@@ -25,9 +25,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -46,7 +43,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLandBase {
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
 
@@ -103,28 +99,16 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
-	}
-
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
 	}
 
 	@Override
@@ -304,7 +288,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean isDrinking()
 	{
-		if (getJuvenile()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 		
@@ -378,7 +362,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean isGrazing()
 	{
-		if (getJuvenile() || !this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 		
@@ -412,7 +396,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			EnumFacing facing = null;
 			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(3)))) {
 				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
@@ -430,7 +414,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(3)))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}
@@ -487,20 +471,6 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
 
 		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {

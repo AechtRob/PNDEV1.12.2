@@ -1,0 +1,27 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"22": "lepidodendron:blocks/lophosoria_leaf_2_base",
+		"23": "lepidodendron:blocks/lophosoria_leaf_2_tip"
+	},
+	"elements": [
+		{
+			"from": [-0.3, 2.2, -4.4],
+			"to": [15.7, 2.2, 11.6],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [7.7, 2.2, 3.6]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 0], "texture": "#22"},
+				"down": {"uv": [0, 16, 16, 0], "rotation": 180, "texture": "#22"}
+			}
+		},
+		{
+			"from": [-0.3, -6.5181, -16],
+			"to": [15.7, -6.5181, -1],
+			"rotation": {"angle": -45, "axis": "x", "origin": [7.7, -6.5181, -9.44757]},
+			"faces": {
+				"up": {"uv": [16, 15, 0, 0], "texture": "#23"},
+				"down": {"uv": [16, 0, 0, 15], "texture": "#23"}
+			}
+		}
+	]
+}

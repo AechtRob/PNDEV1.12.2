@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMymoorapelta;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -3708,7 +3707,7 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
     }
 
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraSilesaurus entity = (EntityPrehistoricFloraSilesaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraMymoorapelta entity = (EntityPrehistoricFloraMymoorapelta) entitylivingbaseIn;
 
         int animCycle = 20;
         double tickAnim = animTick + partialTickTime;

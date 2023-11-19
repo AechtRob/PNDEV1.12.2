@@ -85,7 +85,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!LepidodendronConfigPlants.genHemp && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
-		if (LepidodendronConfig.dimCretaceous == dimID)
+		if (LepidodendronConfig.dimCretaceousEarly == dimID)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
@@ -108,7 +108,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genHempOverrideBiomes))
 			biomeCriteria = true;
-		if (LepidodendronConfig.dimCretaceous == dimID)
+		if (LepidodendronConfig.dimCretaceousEarly == dimID)
 			biomeCriteria = true;
 
 		boolean heightCheck = false;
@@ -143,7 +143,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 				GenChance = 15;
 		}
 
-		if (LepidodendronConfig.dimCretaceous == dimID) {
+		if (LepidodendronConfig.dimCretaceousEarly == dimID) {
 			GenChance = 25;
 		}
 

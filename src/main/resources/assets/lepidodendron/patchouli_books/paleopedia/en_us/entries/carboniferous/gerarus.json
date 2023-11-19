@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Archaeorthoptera$(br)>Geraridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gerarus.png"],
-			"title": "G. collaris",
-			"text": ""
+			"type": "entity",
+			"name": "G. collaris",
+			"entity": "lepidodendron:prehistoric_flora_gerarus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gerarus",

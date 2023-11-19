@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Sauropterygia$(br)>Pistosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/yunguisaurus.png"],
-			"title": "Y. liae",
-			"text": ""
+			"type": "entity",
+			"name": "Y. liae",
+			"entity": "lepidodendron:prehistoric_flora_yunguisaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",

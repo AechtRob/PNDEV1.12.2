@@ -54,7 +54,7 @@ public class BlockFossilCarboniferous extends ElementsLepidodendronMod.ModElemen
 				|| dimID == LepidodendronConfig.dimPleistocene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPaleogene
-				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 				|| dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimPermian
@@ -78,7 +78,7 @@ public class BlockFossilCarboniferous extends ElementsLepidodendronMod.ModElemen
 			dimDepth = dimDepth - 20;
 			blockCount = 6;
 		}
-		if (dimID == LepidodendronConfig.dimCretaceous) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			dimDepth = dimDepth - 16;
 			blockCount = 7;
 		}

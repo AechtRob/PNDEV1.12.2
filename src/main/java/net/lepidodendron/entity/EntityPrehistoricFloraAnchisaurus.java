@@ -20,9 +20,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -40,7 +37,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
-import java.net.SecureCacheResponse;
 import java.util.Random;
 
 public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
@@ -49,7 +45,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_LEFT_ANIMATION;
 	public Animation SCRATCH_RIGHT_ANIMATION;
@@ -156,7 +151,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		return null;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Dinosaur";}
 
@@ -194,7 +189,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 2.66F;
 		}
 		//if (this.getAnimation() == STAND_ANIMATION) {
 		//	return 0.0F; //Is rearing
@@ -221,7 +216,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
@@ -230,12 +224,10 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
 		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
@@ -284,49 +276,23 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
-
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
-	}
-
-
 	private boolean isBlockGrazable(IBlockState state) {
-		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS);
+		return (state.getMaterial() == Material.LEAVES || state.getMaterial() == Material.PLANTS);
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-
-		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
-			return false;
-		}
 		return true;
 	}
 
 	@Override
 	public boolean isGrazing()
 	{
-		if (getJuvenile() || !this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
-		boolean test2 = false;
 		boolean test = (this.getPFGrazing() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -336,52 +302,14 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 				&& !this.isReallyInWater()
 				&&
 				(
-						(isBlockGrazable(this.world.getBlockState(entityPos.north(2).down(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.south(2).down(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.east(2).down(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.west(2).down(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+						isBlockGrazable(this.world.getBlockState(entityPos.up()))
 				)
 		);
 		if (test) {
-			//Which one is grazable?
-			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(2).down(1)))) {
-				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(2).down(1)))) {
-				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(2).down(1)))) {
-				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(2).down(1)))) {
-				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
-					test2 = true;
-				}
-			}
-			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.down(1).offset(facing).offset(facing));
-				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-			}
+			this.setGrazingFrom(entityPos.up());
+
 		}
-		return test && test2;
+		return test;
 	}
 
 
@@ -423,28 +351,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
-
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
-
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
-		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -498,7 +404,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		}
 		else {
 			//random idle animations
-			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				if (next < 3) {
 					this.setAnimation(SCRATCH_RIGHT_ANIMATION);
@@ -509,7 +415,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 				}
 				this.standCooldown = 2000;
 			}
-			if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}

@@ -308,6 +308,41 @@ public class ModelCacops extends AdvancedModelBaseExtended {
         //this.faceTarget(f3, f4, 5, neck);
         this.faceTarget(f3, f4, 6, Head);
 
+        AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2};
+
+        EntityPrehistoricFloraCacops entitySilesaurus = (EntityPrehistoricFloraCacops) e;
+
+        if (entitySilesaurus.getAnimation() == entitySilesaurus.LAY_ANIMATION) {
+
+        }
+        else {
+            if (!entitySilesaurus.isReallyInWater()) {
+
+                if (f3 == 0.0F || !entitySilesaurus.getIsMoving()) {
+
+                    this.chainWave(Tail, (0.15F * 0.35F), 0.125F * 0.15F, 0.2F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.35F) * 4F, 0.05F * 0.35F, 0.12F, f2, 1F);
+
+
+                    return;
+                }
+
+                if (entitySilesaurus.getIsFast()) { //Running
+
+
+                } else { //Walking
+
+                }
+            } else {
+                //Swimming pose:
+                if (f3 == 0.0F) { //static in water
+                    return;
+                }
+                //moving in water
+                return;
+            }
+        }
+
     }
 
     @Override
@@ -336,6 +371,36 @@ public class ModelCacops extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
+
+        if (tickAnim >= 0 && tickAnim < 9) {
+            xx = 0 + (((tickAnim - 0) / 9) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 9) * (0-(0)));
+            zz = -0.75 + (((tickAnim - 0) / 9) * (-1-(-0.75)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 9) / 9) * (0-(0)));
+            yy = 0 + (((tickAnim - 9) / 9) * (0-(0)));
+            zz = -1 + (((tickAnim - 9) / 9) * (-0.75-(-1)));
+        }
+        else if (tickAnim >= 18 && tickAnim < 27) {
+            xx = 0 + (((tickAnim - 18) / 9) * (0-(0)));
+            yy = 0 + (((tickAnim - 18) / 9) * (0-(0)));
+            zz = -0.75 + (((tickAnim - 18) / 9) * (0-(-0.75)));
+        }
+        else if (tickAnim >= 27 && tickAnim < 35) {
+            xx = 0 + (((tickAnim - 27) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 27) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 27) / 8) * (-0.75-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.Hip.rotationPointX = this.Hip.rotationPointX + (float)(xx);
+        this.Hip.rotationPointY = this.Hip.rotationPointY - (float)(yy);
+        this.Hip.rotationPointZ = this.Hip.rotationPointZ + (float)(zz);
+
         this.setRotateAngle(Hip, Hip.rotateAngleX + (float) Math.toRadians(0), Hip.rotateAngleY + (float) Math.toRadians(0), Hip.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/35D)*1.75D)*150/0.75-10))*-1));
 
 

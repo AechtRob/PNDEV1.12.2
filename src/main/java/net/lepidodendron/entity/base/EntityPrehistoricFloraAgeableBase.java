@@ -9,6 +9,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IBluffer;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
@@ -63,6 +64,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISCURIOUSWALKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
@@ -503,8 +506,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISSNEAKING, false);
+        this.dataManager.register(ISCURIOUSWALKING, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
+        this.dataManager.register(JUVENILE, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
         //this.setScaleForAge(false); //REMOVED!
@@ -661,6 +666,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public abstract int getAdultAge();
+
+    public boolean getIsCuriousWalking() {
+        return this.dataManager.get(ISCURIOUSWALKING);
+    }
+
+    public void setIsCuriousWalking(boolean isCurious) {
+        this.dataManager.set(ISCURIOUSWALKING, isCurious);
+    }
 
     public boolean getIsFast() {
         return this.dataManager.get(ISFAST);
@@ -904,6 +917,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
+        compound.setBoolean("juvenile", this.getJuvenile());
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
             compound.setInteger("PosX", this.getNestLocation().getX());
@@ -924,6 +938,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.inPFLove = compound.getInteger("InPFLove");
         this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
+        this.setJuvenile(compound.getBoolean("juvenile"));
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
@@ -933,6 +948,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         } else {
             this.dataManager.set(NEST_BLOCK_POS, Optional.absent());
         }
+    }
+
+    public void setJuvenile(boolean val)
+    {
+        this.dataManager.set(JUVENILE, val);
+    }
+
+    public boolean getJuvenile() {
+        return this.dataManager.get(JUVENILE);
     }
 
     @Override
@@ -1087,6 +1111,20 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public void onLivingUpdate() {
         super.onLivingUpdate();
         this.renderYawOffset = this.rotationYaw;
+
+        if (!world.isRemote) {
+            double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
+            double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
+            double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
+            if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+                if (!this.getJuvenile()) {
+                    this.setJuvenile(true);
+                }
+            }
+            else if (this.getJuvenile()) {
+                this.setJuvenile(false);
+            }
+        }
 
         if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
@@ -1271,6 +1309,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 //            this.warnCooldown --;
 //        }
 
+//        if ((!world.isRemote) && this.getAttackTarget() != null) {
+//            this.faceEntity(this.getAttackTarget(), 10, 10);
+//        }
+//        if ((!world.isRemote) && this.getRevengeTarget() != null) {
+//            this.faceEntity(this.getRevengeTarget(), 10, 10);
+//        }
+
         if (this.getWarnTarget() != null && (!world.isRemote) && this.getAttackTarget() == null) {
             if (this.warnCooldown > 0) {
                 this.warnCooldown --;
@@ -1281,9 +1326,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
-                    this.setAttackTarget(this.getWarnTarget());
-                    this.setOneHit(true);
-                    this.setWarnCooldown(0);
+                    if (this instanceof IBluffer) { //They panic instead
+                        this.setRevengeTarget(this.getWarnTarget());
+                        this.setWarnCooldown(0);
+                    }
+                    else {
+                        this.setAttackTarget(this.getWarnTarget());
+                        this.setOneHit(true);
+                        this.setWarnCooldown(0);
+                    }
                 }
                 else {
                     this.setWarnTarget(null);

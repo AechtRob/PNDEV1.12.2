@@ -54,7 +54,7 @@ public class BlockFossilJurassic extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPleistocene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPaleogene
-				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) && LepidodendronConfig.genFossil)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
@@ -63,7 +63,7 @@ public class BlockFossilJurassic extends ElementsLepidodendronMod.ModElement {
 		int blockCount = 8;
 
 		int dimDepth = 24;
-		if (dimID == LepidodendronConfig.dimCretaceous) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			dimDepth = dimDepth - 16;
 			blockCount = 7;
 		}

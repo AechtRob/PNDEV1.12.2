@@ -1,0 +1,65 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"18": "lepidodendron:blocks/lophosoria_leaf_1_tip_w",
+		"19": "lepidodendron:blocks/lophosoria_leaf_1_base_e",
+		"20": "lepidodendron:blocks/lophosoria_leaf_1_base_w",
+		"21": "lepidodendron:blocks/lophosoria_leaf_1_tip_e"
+	},
+	"elements": [
+		{
+			"from": [-12.5, 13.7, 6.2],
+			"to": [3.5, 13.7, 22.2],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [-4.5, 13.7, 14.2]},
+			"faces": {
+				"up": {"uv": [0, 16, 16, 0], "rotation": 180, "texture": "#19"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#19"}
+			}
+		},
+		{
+			"from": [-12.5, 7.81032, 20.41914],
+			"to": [3.5, 7.81032, 28.41914],
+			"rotation": {"angle": 45, "axis": "x", "origin": [-4.5, 7.81032, 24.41914]},
+			"faces": {
+				"up": {"uv": [0, 8, 16, 0], "rotation": 180, "texture": "#21"},
+				"down": {"uv": [16, 8, 0, 0], "texture": "#21"}
+			}
+		},
+		{
+			"from": [-12.5, 2.15347, 26],
+			"to": [3.5, 2.15347, 32],
+			"rotation": {"angle": 45, "axis": "x", "origin": [-4.5, 2.15347, 30.07599]},
+			"faces": {
+				"up": {"uv": [0, 16, 16, 10], "rotation": 180, "texture": "#21"},
+				"down": {"uv": [16, 16, 0, 10], "texture": "#21"}
+			}
+		},
+		{
+			"from": [3.5, 13.7, 6.2],
+			"to": [19.5, 13.7, 22.2],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [11.5, 13.7, 14.2]},
+			"faces": {
+				"up": {"uv": [0, 16, 16, 0], "rotation": 180, "texture": "#20"},
+				"down": {"uv": [16, 16, 0, 0], "texture": "#20"}
+			}
+		},
+		{
+			"from": [3.5, 7.81032, 20.41914],
+			"to": [19.5, 7.81032, 28.41914],
+			"rotation": {"angle": 45, "axis": "x", "origin": [11.5, 7.81032, 24.41914]},
+			"faces": {
+				"up": {"uv": [0, 8, 16, 0], "rotation": 180, "texture": "#18"},
+				"down": {"uv": [16, 8, 0, 0], "texture": "#18"}
+			}
+		},
+		{
+			"from": [3.5, 2.15347, 26],
+			"to": [19.5, 2.15347, 32],
+			"rotation": {"angle": 45, "axis": "x", "origin": [11.5, 2.15347, 30.07599]},
+			"faces": {
+				"up": {"uv": [0, 16, 16, 10], "rotation": 180, "texture": "#18"},
+				"down": {"uv": [16, 16, 0, 10], "texture": "#18"}
+			}
+		}
+	]
+}

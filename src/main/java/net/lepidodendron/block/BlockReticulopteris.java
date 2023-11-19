@@ -123,7 +123,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			|| LepidodendronConfig.dimDevonian == dimID
 			|| LepidodendronConfig.dimTriassic == dimID
 			|| LepidodendronConfig.dimJurassic == dimID
-			|| LepidodendronConfig.dimCretaceous == dimID
+			|| LepidodendronConfig.dimCretaceousEarly == dimID
 			|| LepidodendronConfig.dimPaleogene == dimID
 			|| LepidodendronConfig.dimNeogene== dimID
 			|| LepidodendronConfig.dimPleistocene == dimID

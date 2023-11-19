@@ -35,17 +35,20 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
     private final double maxSize;
     private final boolean cannibal;
 
-    public HuntForDietEntityPrehistoricFloraAgeableBaseAI(EntityPrehistoricFloraAgeableBase entity, Class<T> classTarget, boolean checkSight, Predicate<? super T> targetSelector, double minSize, double maxSize, boolean cannibal) {
+    public HuntForDietEntityPrehistoricFloraAgeableBaseAI(EntityPrehistoricFloraAgeableBase entity, Class<T> classTarget, boolean checkSight, Predicate<? super T> targetSelector, double minSizeFraction, double maxSizeFraction, boolean cannibal) {
         super(entity, classTarget, 0, checkSight, true, targetSelector);
         this.entity = entity;
-        this.minSize = minSize;
-        this.maxSize = maxSize;
+        this.minSize = minSizeFraction;
+        this.maxSize = maxSizeFraction;
         this.cannibal  = cannibal;
         this.setMutexBits(1);
     }
 
     @Override
     public boolean shouldExecute() {
+
+        boolean playerChosen = false;
+        boolean villagerChosen = false;
 
         if (!this.entity.getWillHunt()) {
             //this.entity.setIsFast(false);
@@ -85,12 +88,12 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                             targetOK = false; //Eurypterids and fish don't attack players on land:
                         }
                     }
-                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
+                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.entity.getEntityBoundingBox().getAverageEdgeLength() * this.minSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
-                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
+                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.entity.getEntityBoundingBox().getAverageEdgeLength() * this.maxSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
@@ -106,6 +109,12 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
                     if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietMeat")) {
                         this.targetEntity = entityChooser;
+                        if (entityChooser instanceof EntityPlayer) {
+                            playerChosen = true;
+                        }
+                        if (entityChooser instanceof EntityVillager) {
+                            villagerChosen = true;
+                        }
                         break;
                     }
                 }
@@ -145,7 +154,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     }
                 }
 
-                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager)) {
+                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL && playerChosen) || (entityChooser instanceof EntityVillager && villagerChosen))) {
                     this.targetEntity = entityChooser;
                     break;
                 }

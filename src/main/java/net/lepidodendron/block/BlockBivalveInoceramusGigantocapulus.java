@@ -84,7 +84,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
-		if (dimID == LepidodendronConfig.dimCretaceous
+		if (dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			dimensionCriteria = true;
 		}
@@ -98,7 +98,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -194,7 +194,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		}
 		if ((dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous)
+			|| dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 3;
 		}

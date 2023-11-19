@@ -31,6 +31,7 @@ public class WorldGenMarattia extends WorldGenerator
             )
             {
                 worldIn.setBlockState(blockpos, BlockMarattia.block.getDefaultState(), 2);
+                BlockMarattia.block.onBlockAdded(worldIn, blockpos, BlockMarattia.block.getDefaultState());
                 flag = true;
             }
         }

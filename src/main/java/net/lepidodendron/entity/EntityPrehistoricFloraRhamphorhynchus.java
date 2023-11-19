@@ -141,6 +141,13 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -315,7 +322,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, true, false));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 	}
 
 	@Override
@@ -334,6 +341,35 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		}
 		if (this.getScreaming() && screamAlarmCooldown <= 0) {
 			this.playAlarmSound();
+		}
+
+		//Alert animation
+		if ((!this.world.isRemote) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0
+				&& this.getAttachmentFacing() == EnumFacing.UP) {
+			int next = rand.nextInt(2);
+			switch (next) {
+				case 0:
+				default:
+					this.setAnimation(PREEN_ANIMATION);
+					break;
+
+				case 1:
+					this.setAnimation(ALERT_ANIMATION);
+					break;
+
+			}
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
 		}
 
 		super.onEntityUpdate();

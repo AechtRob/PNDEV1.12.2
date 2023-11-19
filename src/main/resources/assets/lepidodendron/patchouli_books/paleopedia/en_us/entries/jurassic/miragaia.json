@@ -1,0 +1,71 @@
+{
+	"name": "Miragaia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/miragaia_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_miragaia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_miragaia",
+			"title": "Miragaia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Stegosauridae"
+		},
+		{
+			"type": "entity",
+			"name": "M. longicollum",
+			"entity": "lepidodendron:prehistoric_flora_miragaia",
+			"rotate": false
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miragaia",
+			"type": "text",
+			"text": "Miragaia longicollum is a species of Dacentrurine Stegosaur from the Late Jurassic of Portugal. Despite its length of 6.5 m (estimated), the animal was quite less massive than some of its more famous cousins like Stegosaurus, who had a stockier build and more massive bodies. Miragaia's most famous feature is the long neck, longest among the group; being the peak of a trend seen in other stegosaurians of elongation of their neck,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miragaia",
+			"type": "text",
+			"text": "the animal departed from the basal 9 neck vertebrae seen in basal thyreophorans and had at least seventeen cervical vertebrae, even more than the twelve-thirteen seen in animals like Stegosaurus and even more than the number seen in most Sauropods. The reason for Miragaia's long neck is still shrouded in mystery today as no definite consensus has been reached;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miragaia",
+			"type": "text",
+			"text": "some people believe it to have been due to Sexual Selection while other authors say it helped the animal browse. The Browsing hypothesis takes away credibility from the sexual selection one and, while at first it might sound like the more obvious explanation, it does come with its unanswered questions; while Miragaia didn't enter in competition with local sauropods,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miragaia",
+			"type": "text",
+			"text": "the same areas it lived in where also home to other stegosaurians such as Stegosaurus and Dacentrurus, who would've overlapped with its browsing height, also invalidating the idea of niche partitioning. Potential remains from Miragaia are known from Wyoming in the form of the Stegosaur Alcovasaurus, considered a second species of Miragaia by some authors. Miragaia takes its genus name from the locality it was found in of the same name,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miragaia",
+			"type": "text",
+			"text": "which can be further translated roughly as \"wonderful goddess of the Earth\"; the species name takes from the long neck. Miragaia was described in 2009 based on one specimen composing a partially complete anterior half of the animal that was brought to light by the construction of a road between the towns of Miragaia and Sobral, the posterior part of the skeleton was potentially destroyed by the roadwork."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_miragaia",
+			"type": "text",
+			"text": " A second specimen, collected decades prior in 1959 but only prepared between 2015 and 2017, preserved also sections of the tail and was instrumental in clearing away doubts of Miragaia being synonym of Dacentrurus, hypothesis that until then was considered a possibility given the lack of overlapping elements between the two; this last study, conducted in 2019, also was responsible for the proposal of Alcovasaurus being a second species of Miragaia."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_miragaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_miragaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_miragaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_miragaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_miragaia"
+		}
+	]
+}

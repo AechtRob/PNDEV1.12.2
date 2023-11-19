@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/acadoparadoxides.png"],
-			"title": "A. nobilis",
-			"text": ""
+			"type": "entity",
+			"name": "A. nobilis",
+			"entity": "lepidodendron:prehistoric_flora_acadoaradoxides",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acadoaradoxides",
