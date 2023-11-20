@@ -1,9 +1,11 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateGroundWade;
+import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.crash.CrashReport;
@@ -11,7 +13,6 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.NodeProcessor;
@@ -27,12 +28,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehistoricFloraLandBase {
 
     @SideOnly(Side.CLIENT)
     public ChainBuffer tailBuffer;
     private int jumpTicks;
     private int inPFLove;
+    public Animation HURT_ANIMATION;
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
@@ -47,6 +52,11 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                 this.navigator = new PathNavigateAmphibian(this, world);
             }
         }
+        HURT_ANIMATION = Animation.create(this.getHurtLength());
+    }
+
+    public int getHurtLength() {
+        return 30;
     }
     
     @Override
@@ -60,6 +70,11 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         else if ((!(isBlockWadable(this.world, this.getPosition()))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
             this.navigator = new PathNavigateAmphibian(this, world);
         }
+    }
+
+    @Override
+    public Animation[] getAnimations() {
+        return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
     }
 
     @Override
@@ -88,10 +103,18 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                         blockpos$pooledmutableblockpos2.setPos(i, j, k);
                         IBlockState iblockstate = this.world.getBlockState(blockpos$pooledmutableblockpos2);
 
-                        if (iblockstate.getBlock() == Blocks.WATERLILY) {
-                            this.world.destroyBlock(new BlockPos(i, j, k), true);
+                        boolean blockDestroyed = false;
+                        if (iblockstate.getBlock() instanceof BlockLilyPad && !this.world.isRemote) {
+                            List<AxisAlignedBB> outList = new ArrayList<AxisAlignedBB>();
+                            iblockstate.getBlock().addCollisionBoxToList(iblockstate, world, new BlockPos(i, j, k), this.getEntityBoundingBox(), outList, this, false);
+                            for (AxisAlignedBB aabb: outList) {
+                                if (aabb.getAverageEdgeLength() > 0) {
+                                    this.world.destroyBlock(new BlockPos(i, j, k), true);
+                                    blockDestroyed = true;
+                                }
+                            }
                         }
-                        else {
+                        if (!blockDestroyed) {
                             try {
                                 iblockstate.getBlock().onEntityCollision(this.world, blockpos$pooledmutableblockpos2, iblockstate, this);
                                 this.onInsideBlock(iblockstate);
