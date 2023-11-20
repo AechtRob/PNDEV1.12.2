@@ -365,7 +365,22 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.base.offsetY = -0.50F;
+        this.base.offsetX = 0.0F;
+        this.base.rotateAngleY = (float)Math.toRadians(0);
+        this.base.rotateAngleX = (float)Math.toRadians(-88);
+        this.base.rotateAngleZ = (float)Math.toRadians(0);
+        this.base.scaleChildren = true;
+        float scaler = 0.6F;
+        this.base.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
         this.base.render(f);
+        //Reset rotations, positions and sizing:
+        this.base.setScale(1.0F, 1.0F, 1.0F);
+        this.base.scaleChildren = false;
         resetToDefaultPose();
     }
 

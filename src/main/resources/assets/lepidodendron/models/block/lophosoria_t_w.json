@@ -1,0 +1,97 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"18": "lepidodendron:blocks/lophosoria_leaf_1_tip_w",
+		"19": "lepidodendron:blocks/lophosoria_leaf_1_base_e",
+		"20": "lepidodendron:blocks/lophosoria_leaf_1_base_w",
+		"21": "lepidodendron:blocks/lophosoria_leaf_1_tip_e"
+	},
+	"elements": [
+		{
+			"from": [-6, 5.7, 11.2],
+			"to": [10, 5.7, 27.2],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [10, 5.7, 19.2]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [16, 16, 0, 0], "rotation": 270, "texture": "#19"},
+				"down": {"uv": [0, 16, 16, 0], "rotation": 270, "texture": "#19"}
+			}
+		},
+		{
+			"from": [-6, 5.7, -4.8],
+			"to": [10, 5.7, 11.2],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [10, 5.7, 3.2]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [16, 16, 0, 0], "rotation": 270, "texture": "#20"},
+				"down": {"uv": [0, 16, 16, 0], "rotation": 270, "texture": "#20"}
+			}
+		},
+		{
+			"from": [-12.88778, -0.41586, 11.2],
+			"to": [-4.88778, -0.41586, 27.2],
+			"rotation": {"angle": 45, "axis": "z", "origin": [-4.82648, -0.2913, 19.2]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [16, 8, 0, 0], "rotation": 270, "texture": "#21"},
+				"down": {"uv": [0, 8, 16, 0], "rotation": 270, "texture": "#21"}
+			}
+		},
+		{
+			"from": [-15.5, -6.07957, 10.2],
+			"to": [-10.5, -6.07957, 26.2],
+			"rotation": {"angle": 45, "axis": "z", "origin": [-10.4386, -6.07957, 19.2]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [16, 16, 0, 11], "rotation": 270, "texture": "#21"},
+				"down": {"uv": [0, 16, 16, 11], "rotation": 270, "texture": "#21"}
+			}
+		},
+		{
+			"from": [-15.5, -6.07957, -5.8],
+			"to": [-10.5, -6.07957, 10.2],
+			"rotation": {"angle": 45, "axis": "z", "origin": [-10.4386, -6.07957, 19.2]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [16, 16, 0, 11], "rotation": 270, "texture": "#18"},
+				"down": {"uv": [0, 16, 16, 11], "rotation": 270, "texture": "#18"}
+			}
+		},
+		{
+			"from": [-12.88778, -0.41586, -4.8],
+			"to": [-4.88778, -0.41586, 11.2],
+			"rotation": {"angle": 45, "axis": "z", "origin": [-4.82648, -0.2913, 3.2]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 8, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [16, 8, 0, 0], "rotation": 270, "texture": "#18"},
+				"down": {"uv": [0, 8, 16, 0], "rotation": 270, "texture": "#18"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "bone6",
+			"origin": [27.4, -16.3, 12.2],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5]
+		}
+	]
+}

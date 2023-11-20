@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/platyhystrix.png"],
-			"title": "P. rugosus",
-			"text": ""
+			"type": "entity",
+			"name": "P. rugosus",
+			"entity": "lepidodendron:prehistoric_flora_platyhystrix",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_platyhystrix",

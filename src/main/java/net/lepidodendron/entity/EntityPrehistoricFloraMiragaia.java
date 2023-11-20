@@ -6,10 +6,13 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -36,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -453,15 +456,15 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(2)))) {
 				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D
-					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.2D
+					&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(2)))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.2D
-					&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.2D
+					&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.4D) {
 					test2 = true;
 				}
 			}
@@ -526,13 +529,6 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
@@ -624,6 +620,13 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 		}
 		return LepidodendronMod.MIRAGAIA_LOOT;
 	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		 return ModTriggers.CLICK_MIRAGAIA;
+	}
+
 
 	//Rendering taxidermy:
 	//--------------------

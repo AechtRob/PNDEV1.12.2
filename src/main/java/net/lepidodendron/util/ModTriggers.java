@@ -97,6 +97,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_AULACERA = new CustomTrigger("pf_book_aulacera");
     public static final CustomTrigger CLICK_AUSIA = new CustomTrigger("pf_book_ausia");
     public static final CustomTrigger CLICK_BAIERA = new CustomTrigger("pf_book_baiera");
+    public static final CustomTrigger CLICK_DORATOPHYLLUM = new CustomTrigger("pf_book_doratophyllum");
     public static final CustomTrigger CLICK_BAIKALOPHYLLUM = new CustomTrigger("pf_book_baikalophyllum");
     public static final CustomTrigger CLICK_REHEZAMITES = new CustomTrigger("pf_book_rehezamites");
     public static final CustomTrigger CLICK_BANKSIA_1 = new CustomTrigger("pf_book_banksia_1");
@@ -233,6 +234,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EMPLECTOPTERIS = new CustomTrigger("pf_book_emplectopteris");
     public static final CustomTrigger CLICK_ENCBLUE = new CustomTrigger("pf_book_encblue");
     public static final CustomTrigger CLICK_EPHEDRA = new CustomTrigger("pf_book_ephedra");
+    public static final CustomTrigger CLICK_ERDTMANITHECALES = new CustomTrigger("pf_book_erdtmanithecales");
+    public static final CustomTrigger CLICK_JIANCHANGIA = new CustomTrigger("pf_book_jianchangia");
     public static final CustomTrigger CLICK_WELWITSCHIA = new CustomTrigger("pf_book_welwitschia");
     public static final CustomTrigger CLICK_WELWITSCHIOPHYLLUM = new CustomTrigger("pf_book_welwitschiophyllum");
     public static final CustomTrigger CLICK_DREWRIA = new CustomTrigger("pf_book_drewria");
@@ -304,6 +307,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
+    public static final CustomTrigger CLICK_LOPHOSORIA = new CustomTrigger("pf_book_lophosoria");
     public static final CustomTrigger CLICK_BIRDSNEST_FERN = new CustomTrigger("pf_book_birdsnest_fern");
     public static final CustomTrigger CLICK_MEDULLOSALES = new CustomTrigger("pf_book_medullosales");
     public static final CustomTrigger CLICK_NATALIGMA = new CustomTrigger("pf_book_nataligma");
@@ -383,6 +387,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_RHACOPHYTON = new CustomTrigger("pf_book_rhacophyton");
     public static final CustomTrigger CLICK_RHYNIA = new CustomTrigger("pf_book_rhynia");
     public static final CustomTrigger CLICK_WATER_CLOVER = new CustomTrigger("pf_book_water_clover");
+    public static final CustomTrigger CLICK_SALVINIA = new CustomTrigger("pf_book_salvinia");
     public static final CustomTrigger CLICK_RUFLORIA = new CustomTrigger("pf_book_rufloria");
     public static final CustomTrigger CLICK_ACROCOMIA = new CustomTrigger("pf_book_acrocomia");
     public static final CustomTrigger CLICK_SABAL = new CustomTrigger("pf_book_sabal");
@@ -1445,6 +1450,7 @@ public class ModTriggers
             CLICK_AULACERA,
             CLICK_AUSIA,
             CLICK_BAIERA,
+            CLICK_DORATOPHYLLUM,
             CLICK_BAIKALOPHYLLUM,
             CLICK_REHEZAMITES,
             CLICK_BANKSIA_1,
@@ -1582,6 +1588,8 @@ public class ModTriggers
             CLICK_EMPLECTOPTERIS,
             CLICK_ENCBLUE,
             CLICK_EPHEDRA,
+            CLICK_ERDTMANITHECALES,
+            CLICK_JIANCHANGIA,
             CLICK_WELWITSCHIA,
             CLICK_WELWITSCHIOPHYLLUM,
             CLICK_DREWRIA,
@@ -1651,6 +1659,7 @@ public class ModTriggers
             CLICK_MAPLE,
             CLICK_GUNNERA,
             CLICK_MARATTIA,
+            CLICK_LOPHOSORIA,
             CLICK_BIRDSNEST_FERN,
             CLICK_MEDULLOSALES,
             CLICK_MIRABILIS,
@@ -1730,6 +1739,7 @@ public class ModTriggers
             CLICK_RHACOPHYTON,
             CLICK_RHYNIA,
             CLICK_WATER_CLOVER,
+            CLICK_SALVINIA,
             CLICK_RUFLORIA,
             CLICK_ACROCOMIA,
             CLICK_SABAL,

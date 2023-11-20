@@ -430,25 +430,29 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			EnumFacing facing = null;
 			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north()))) {
 				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.9D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.7D
+						&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.9D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south()))) {
 				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.9D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.7D
+						&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.9D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east()))) {
 				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.9D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.7D
+						&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.9D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west()))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.9D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.7D
+						&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.9D) {
 					test2 = true;
 				}
 			}

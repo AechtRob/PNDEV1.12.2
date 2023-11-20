@@ -9,6 +9,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IBluffer;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemNesting;
@@ -63,6 +64,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISCURIOUSWALKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
@@ -504,6 +506,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISSNEAKING, false);
+        this.dataManager.register(ISCURIOUSWALKING, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
         this.dataManager.register(JUVENILE, false);
@@ -663,6 +666,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public abstract int getAdultAge();
+
+    public boolean getIsCuriousWalking() {
+        return this.dataManager.get(ISCURIOUSWALKING);
+    }
+
+    public void setIsCuriousWalking(boolean isCurious) {
+        this.dataManager.set(ISCURIOUSWALKING, isCurious);
+    }
 
     public boolean getIsFast() {
         return this.dataManager.get(ISFAST);
@@ -1315,9 +1326,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
-                    this.setAttackTarget(this.getWarnTarget());
-                    this.setOneHit(true);
-                    this.setWarnCooldown(0);
+                    if (this instanceof IBluffer) { //They panic instead
+                        this.setRevengeTarget(this.getWarnTarget());
+                        this.setWarnCooldown(0);
+                    }
+                    else {
+                        this.setAttackTarget(this.getWarnTarget());
+                        this.setOneHit(true);
+                        this.setWarnCooldown(0);
+                    }
                 }
                 else {
                     this.setWarnTarget(null);

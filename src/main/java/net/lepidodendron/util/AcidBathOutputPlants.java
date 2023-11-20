@@ -393,7 +393,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWielandiella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGordonopterisSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockPseudoctenis.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockPseudoctenis.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDoratophyllum.block).toString()
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsTriassic);
@@ -501,7 +502,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPseudoctenis.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockTyrmia.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockDoratophyllum.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTyrmia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockErdtmanithecales.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsJurassic);
         return resLoc;
@@ -672,6 +675,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockPtilozamites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTicoaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPseudoctenis.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDoratophyllum.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWelwitschia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWelwitschiophyllum.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTreefernBurnishedSapling.block).toString(),
@@ -682,6 +686,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockTodea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMesodescolea.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockOnychiopsis.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemSalviniaItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockJianchangia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockLophosoria.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling"
@@ -808,6 +815,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockBirdsnestFern.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWelwitschia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTodea.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemSalviniaItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockLophosoria.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -933,6 +942,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockBirdsnestFern.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWelwitschia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTodea.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemSalviniaItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockLophosoria.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -1058,6 +1069,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockBirdsnestFern.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWelwitschia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTodea.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemSalviniaItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockLophosoria.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",

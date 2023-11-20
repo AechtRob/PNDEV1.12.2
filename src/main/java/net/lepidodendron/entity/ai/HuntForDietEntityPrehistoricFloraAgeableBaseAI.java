@@ -47,6 +47,9 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
     @Override
     public boolean shouldExecute() {
 
+        boolean playerChosen = false;
+        boolean villagerChosen = false;
+
         if (!this.entity.getWillHunt()) {
             //this.entity.setIsFast(false);
             return false;
@@ -106,6 +109,12 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
                     if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietMeat")) {
                         this.targetEntity = entityChooser;
+                        if (entityChooser instanceof EntityPlayer) {
+                            playerChosen = true;
+                        }
+                        if (entityChooser instanceof EntityVillager) {
+                            villagerChosen = true;
+                        }
                         break;
                     }
                 }
@@ -145,7 +154,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     }
                 }
 
-                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager)) {
+                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL && playerChosen) || (entityChooser instanceof EntityVillager && villagerChosen))) {
                     this.targetEntity = entityChooser;
                     break;
                 }

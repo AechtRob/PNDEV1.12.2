@@ -108,14 +108,14 @@ public class BlockMosacaulis extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!LepidodendronConfigPlants.genMosacaulis && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
-		if (dimID == LepidodendronConfig.dimCretaceous) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			dimensionCriteria = true;
 		}
 		if (!dimensionCriteria)
 			return;
 
 		int weight = LepidodendronConfigPlants.weightMosacaulis;
-		if (dimID == LepidodendronConfig.dimCretaceous) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			weight = 100;
 		}
 		if (weight > 100) {weight = 100;}
@@ -157,7 +157,7 @@ public class BlockMosacaulis extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if (dimID == LepidodendronConfig.dimCretaceous) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			multiplier = 10;
 		}
 

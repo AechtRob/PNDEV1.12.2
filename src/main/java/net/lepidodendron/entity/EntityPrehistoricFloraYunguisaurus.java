@@ -96,7 +96,7 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.349f;
+		float AIspeed = 0.18f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2.5F;
 		}

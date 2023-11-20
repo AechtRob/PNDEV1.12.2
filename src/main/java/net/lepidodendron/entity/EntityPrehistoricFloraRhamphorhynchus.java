@@ -141,6 +141,13 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -334,6 +341,35 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		}
 		if (this.getScreaming() && screamAlarmCooldown <= 0) {
 			this.playAlarmSound();
+		}
+
+		//Alert animation
+		if ((!this.world.isRemote) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0
+				&& this.getAttachmentFacing() == EnumFacing.UP) {
+			int next = rand.nextInt(2);
+			switch (next) {
+				case 0:
+				default:
+					this.setAnimation(PREEN_ANIMATION);
+					break;
+
+				case 1:
+					this.setAnimation(ALERT_ANIMATION);
+					break;
+
+			}
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
 		}
 
 		super.onEntityUpdate();

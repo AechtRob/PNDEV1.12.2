@@ -151,7 +151,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		return null;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Dinosaur";}
 
@@ -189,7 +189,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 2.66F;
 		}
 		//if (this.getAnimation() == STAND_ANIMATION) {
 		//	return 0.0F; //Is rearing
@@ -281,20 +281,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-
-		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
-			return false;
-		}
 		return true;
 	}
 
@@ -307,7 +293,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
-		boolean test2 = false;
 		boolean test = (this.getPFGrazing() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -317,52 +302,14 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 				&& !this.isReallyInWater()
 				&&
 				(
-						(isBlockGrazable(this.world.getBlockState(entityPos.north(1).up(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.south(1).up(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.east(1).up(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
-
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.west(1).up(1)))
-								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+						isBlockGrazable(this.world.getBlockState(entityPos.up()))
 				)
 		);
 		if (test) {
-			//Which one is grazable?
-			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(1).up(1)))) {
-				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(1).up(1)))) {
-				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(1).up(1)))) {
-				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(1).up(1)))) {
-				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(3).offset(facing).offset(facing).offset(facing));
-				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-			}
+			this.setGrazingFrom(entityPos.up());
+
 		}
-		return test && test2;
+		return test;
 	}
 
 
@@ -404,14 +351,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
-
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
-		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();

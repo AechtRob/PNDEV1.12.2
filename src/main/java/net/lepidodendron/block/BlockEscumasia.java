@@ -97,7 +97,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
-				|| (dimID == LepidodendronConfig.dimCretaceous)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				|| (dimID == LepidodendronConfig.dimPaleogene)
 				|| (dimID == LepidodendronConfig.dimNeogene)
 				|| (dimID == LepidodendronConfig.dimPleistocene)

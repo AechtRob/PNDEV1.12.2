@@ -2055,7 +2055,21 @@ public class LepidodendronMod {
 	public static final ResourceLocation MIRAGAIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/miragaia_young"));
 	public static final int ENTITY_COMPSOGNATHUS = 827;
 	public static final ResourceLocation COMPSOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/compsognathus"));
-	public static final ResourceLocation COMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/compsognathus_young"));
+	//public static final ResourceLocation COMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/compsognathus_young"));
+	public static final int ENTITY_UTEODON = 828;
+	public static final ResourceLocation UTEODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/uteodon"));
+	public static final ResourceLocation UTEODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/uteodon_young"));
+	public static final int ENTITY_CUMNORIA = 829;
+	public static final ResourceLocation CUMNORIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cumnoria"));
+	public static final ResourceLocation CUMNORIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cumnoria_young"));
+	public static final int ENTITY_SHUNOSAURUS = 830;
+	public static final ResourceLocation SHUNOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shunosaurus"));
+	public static final ResourceLocation SHUNOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shunosaurus_young"));
+	public static final int ENTITY_WUKONGOPTERUS = 831;
+	public static final ResourceLocation WUKONGOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus"));
+	public static final ResourceLocation WUKONGOPTERUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_young"));
+	public static final ResourceLocation WUKONGOPTERUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_f"));
+	public static final ResourceLocation WUKONGOPTERUS_LOOT_F_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_young_f"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

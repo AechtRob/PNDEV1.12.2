@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "lepidodendron:salvinia"
+      },
+      {
+        "model": "lepidodendron:salvinia",
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:salvinia",
+        "y": 180
+      },
+      {
+        "model": "lepidodendron:salvinia",
+        "y": 270
+      }
+    ]
+  }
+}

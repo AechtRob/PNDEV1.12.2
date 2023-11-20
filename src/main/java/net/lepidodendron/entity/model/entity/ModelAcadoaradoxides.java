@@ -297,6 +297,26 @@ public class ModelAcadoaradoxides extends AdvancedModelBase {
         this.head.render(f5 * 0.48F);
     }
 
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -0.50F;
+        this.head.offsetX = 0.0F;
+        this.head.rotateAngleY = (float)Math.toRadians(0);
+        this.head.rotateAngleX = (float)Math.toRadians(-88);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 0.6F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -306,6 +326,7 @@ public class ModelAcadoaradoxides extends AdvancedModelBase {
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

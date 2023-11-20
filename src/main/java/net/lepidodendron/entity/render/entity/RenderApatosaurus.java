@@ -66,7 +66,7 @@ public class RenderApatosaurus extends RenderLiving<EntityPrehistoricFloraApatos
     protected void preRenderCallback(EntityPrehistoricFloraApatosaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        this.shadowSize = entity.width * scale * 0.80F;
     }
 
 }

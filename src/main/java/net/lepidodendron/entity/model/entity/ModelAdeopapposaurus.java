@@ -469,7 +469,7 @@ public class ModelAdeopapposaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.LOOK_ANIMATION) { //The graze anim
+        else if (ee.getAnimation() == ee.LOOK_ANIMATION) {
             animLook(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The noise anim

@@ -1,0 +1,65 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"18": "lepidodendron:blocks/lophosoria_leaf_1_tip_w",
+		"19": "lepidodendron:blocks/lophosoria_leaf_1_base_e",
+		"20": "lepidodendron:blocks/lophosoria_leaf_1_base_w",
+		"21": "lepidodendron:blocks/lophosoria_leaf_1_tip_e"
+	},
+	"elements": [
+		{
+			"from": [5.8, 15.1, 10.9],
+			"to": [21.8, 15.1, 26.9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-3.2, -17.9, 11.9]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#19"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#19"}
+			}
+		},
+		{
+			"from": [5.8, 15.1, -5.1],
+			"to": [21.8, 15.1, 10.9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-3.2, -17.9, 11.9]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#20"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#20"}
+			}
+		},
+		{
+			"from": [21.19065, 12.03861, 10.9],
+			"to": [29.19065, 12.03861, 26.9],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [29.19065, 12.03861, 18.9]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 8], "rotation": 270, "texture": "#21"},
+				"down": {"uv": [0, 0, 16, 8], "rotation": 270, "texture": "#21"}
+			}
+		},
+		{
+			"from": [29, 12.03861, 10.9],
+			"to": [32, 12.03861, 26.9],
+			"rotation": {"angle": -45, "axis": "z", "origin": [29.19065, 12.03861, 18.9]},
+			"faces": {
+				"up": {"uv": [16, 13, 0, 16], "rotation": 270, "texture": "#21"},
+				"down": {"uv": [0, 13, 16, 16], "rotation": 270, "texture": "#21"}
+			}
+		},
+		{
+			"from": [29, 12.03861, -5.1],
+			"to": [32, 12.03861, 10.9],
+			"rotation": {"angle": -45, "axis": "z", "origin": [29.19065, 12.03861, 18.9]},
+			"faces": {
+				"up": {"uv": [16, 13, 0, 16], "rotation": 270, "texture": "#18"},
+				"down": {"uv": [0, 13, 16, 16], "rotation": 270, "texture": "#18"}
+			}
+		},
+		{
+			"from": [21.19065, 12.03861, -5.1],
+			"to": [29.19065, 12.03861, 10.9],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [29.19065, 12.03861, 2.9]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 8], "rotation": 270, "texture": "#18"},
+				"down": {"uv": [0, 0, 16, 8], "rotation": 270, "texture": "#18"}
+			}
+		}
+	]
+}

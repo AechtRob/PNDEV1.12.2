@@ -71,7 +71,7 @@ public class LepidodendronFogSubscribers {
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
@@ -163,7 +163,7 @@ public class LepidodendronFogSubscribers {
 						|| world.provider.getDimension() == LepidodendronConfig.dimPermian
 						|| world.provider.getDimension() == LepidodendronConfig.dimTriassic
 						|| world.provider.getDimension() == LepidodendronConfig.dimJurassic
-						|| world.provider.getDimension() == LepidodendronConfig.dimCretaceous
+						|| world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
 						|| world.provider.getDimension() == LepidodendronConfig.dimPaleogene
 						|| world.provider.getDimension() == LepidodendronConfig.dimNeogene
 						|| world.provider.getDimension() == LepidodendronConfig.dimPleistocene

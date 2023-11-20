@@ -148,12 +148,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                     GlStateManager.pushMatrix();
                     GlStateManager.disableCull();
                     GlStateManager.enableRescaleNormal();
-                    if (world.getBlockState(pos).getValue(BlockNest.BlockCustom.BIRD)) {
-                        GlStateManager.translate(x + 0.5F, y + 1.400F, z + 0.5F);
-                    }
-                    else {
-                        GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
-                    }
+                    GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
                     GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
 

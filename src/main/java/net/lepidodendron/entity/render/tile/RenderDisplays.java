@@ -3,18 +3,27 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.entity.model.entity.*;
 
 public class RenderDisplays {
+    public static final ModelAcadoaradoxides modelAcadoaradoxides = new ModelAcadoaradoxides();
     public static final ModelAcanthostomatops modelAcanthostomatops = new ModelAcanthostomatops();
     public static final ModelAegirocassis modelAegirocassis = new ModelAegirocassis();
     public static final ModelAetheolepis modelAetheolepis = new ModelAetheolepis();
     public static final ModelAkmonistion modelAkmonistion = new ModelAkmonistion();
+    public static final ModelPterodactylus modelPterodactylus = new ModelPterodactylus();
+    public static final ModelWukongopterus modelWukongopterus = new ModelWukongopterus();
     public static final ModelAmplectobelua modelAmplectobelua = new ModelAmplectobelua();
     public static final ModelGigantspinosaurus modelGigantspinosaurus = new ModelGigantspinosaurus();
     public static final ModelAnomalocaris modelAnomalocaris = new ModelAnomalocaris();
     public static final ModelAnteosaurus modelAnteosaurus = new ModelAnteosaurus();
     public static final ModelApatosaurus modelApatosaurus = new ModelApatosaurus();
     public static final ModelCamarasaurus modelCamarasaurus = new ModelCamarasaurus();
+    public static final ModelCumnoria modelCumnoria = new ModelCumnoria();
+    public static final ModelUteodon modelUteodon = new ModelUteodon();
+    public static final ModelCompsognathus modelCompsognathus = new ModelCompsognathus();
+    public static final ModelCamptosaurus modelCamptosaurus = new ModelCamptosaurus();
     public static final ModelGuanlong modelGuanlong = new ModelGuanlong();
     public static final ModelDubreuillosaurus modelDubreuillosaurus = new ModelDubreuillosaurus();
+    public static final ModelMiragaia modelMiragaia = new ModelMiragaia();
+    public static final ModelShunosaurus modelShunosaurus = new ModelShunosaurus();
     public static final ModelChilesaurus modelChilesaurus = new ModelChilesaurus();
     public static final ModelCongopycnodus modelCongopycnodus = new ModelCongopycnodus();
     public static final ModelAphnelepis modelAphnelepis = new ModelAphnelepis();
@@ -257,6 +266,7 @@ public class RenderDisplays {
     public static final ModelAmmonite_Perisphinctes modelAmmonitePerisphinctes = new ModelAmmonite_Perisphinctes();
     public static final ModelPlatypeltoides modelPlatypeltoides = new ModelPlatypeltoides();
     public static final ModelPycnophlebia modelPycnophlebia = new ModelPycnophlebia();
+    public static final ModelPlatyhystrix modelPlatyhystrix = new ModelPlatyhystrix();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
@@ -336,6 +346,9 @@ public class RenderDisplays {
     public static final ModelXuanhuaceratops modelXuanhuaceratops = new ModelXuanhuaceratops();
     public static final ModelYinlong modelYinlong = new ModelYinlong();
     public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
+    public static final ModelYunguisaurus modelYunguisaurus = new ModelYunguisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
+
+    public static final ModelGerarus modelGerarus = new ModelGerarus();
 
 }

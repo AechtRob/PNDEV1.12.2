@@ -103,7 +103,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
-				|| (dimID == LepidodendronConfig.dimCretaceous)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			dimensionCriteria = false;
 		}

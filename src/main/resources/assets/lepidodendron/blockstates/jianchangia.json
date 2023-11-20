@@ -1,0 +1,13 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:jianchangia"
+    },
+    "normal": [
+      {"model": "lepidodendron:jianchangia"},
+      {"model": "lepidodendron:jianchangia_var"},
+      {"model": "lepidodendron:jianchangia_flipped"},
+      {"model": "lepidodendron:jianchangia_var_flipped"}
+    ]
+  }
+}
