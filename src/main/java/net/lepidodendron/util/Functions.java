@@ -98,6 +98,10 @@ public class Functions {
                 && worldIn.getBlockState(pos.up()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER) {
                 worldIn.setBlockToAir(pos.up());
             }
+            if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
+                    && worldIn.getBlockState(pos.down()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER) {
+                worldIn.setBlockToAir(pos.down());
+            }
         }
         worldIn.setBlockState(pos, state, flags);
     }
