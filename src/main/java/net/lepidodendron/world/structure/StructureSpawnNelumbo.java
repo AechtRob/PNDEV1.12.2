@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockNelumbo;
 import net.lepidodendron.block.BlockNelumboLeaves;
 import net.lepidodendron.block.BlockNelumboStem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -212,7 +213,7 @@ public class StructureSpawnNelumbo extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
 					
-					world.setBlockState(spawnTo, BlockNelumbo.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockNelumbo.block.getDefaultState(), 3);
 					
 			    	int colWater = 1; //North
 			    	if (isWaterBlock(world, spawnTo.north())) {
@@ -220,12 +221,12 @@ public class StructureSpawnNelumbo extends ElementsLepidodendronMod.ModElement {
 				    		//Check the water column and place stems, and then leaves, accordingly:
 				    		if (isWaterBlock(world, spawnTo.north().up(colWater + 1)))
 				    		{
-				    			world.setBlockState(spawnTo.north().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
+				    			Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
 				    		}
 				    		colWater = colWater + 1;
 				    	}
 				    	if (canLeavesPlaceAt(world, spawnTo.north().up(colWater))) {
-				    		world.setBlockState(spawnTo.north().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
+				    		Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
 				    	}
 			    	}
 		
@@ -235,12 +236,12 @@ public class StructureSpawnNelumbo extends ElementsLepidodendronMod.ModElement {
 				    		//Check the water column and place stems, and then leaves, accordingly:
 				    		if (isWaterBlock(world, spawnTo.south().up(colWater + 1)))
 				    		{
-				    			world.setBlockState(spawnTo.south().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
+				    			Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
 				    		}
 				    		colWater = colWater + 1;
 				    	}
 				    	if (canLeavesPlaceAt(world, spawnTo.south().up(colWater))) {
-				    		world.setBlockState(spawnTo.south().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
+				    		Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
 				    	}
 			    	}
 		
@@ -250,12 +251,12 @@ public class StructureSpawnNelumbo extends ElementsLepidodendronMod.ModElement {
 				    		//Check the water column and place stems, and then leaves, accordingly:
 				    		if (isWaterBlock(world, spawnTo.east().up(colWater + 1)))
 				    		{
-				    			world.setBlockState(spawnTo.east().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
+				    			Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.east().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
 				    		}
 				    		colWater = colWater + 1;
 				    	}
 				    	if (canLeavesPlaceAt(world, spawnTo.east().up(colWater))) {
-				    		world.setBlockState(spawnTo.east().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
+				    		Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.east().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
 				    	}
 			    	}
 		
@@ -265,12 +266,12 @@ public class StructureSpawnNelumbo extends ElementsLepidodendronMod.ModElement {
 				    		//Check the water column and place stems, and then leaves, accordingly:
 				    		if (isWaterBlock(world, spawnTo.west().up(colWater + 1)))
 				    		{
-				    			world.setBlockState(spawnTo.west().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
+				    			Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.west().up(colWater), BlockNelumboStem.block.getDefaultState(), 3);
 				    		}
 				    		colWater = colWater + 1;
 				    	}
 				    	if (canLeavesPlaceAt(world, spawnTo.west().up(colWater))) {
-				    		world.setBlockState(spawnTo.west().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
+				    		Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.west().up(colWater), BlockNelumboLeaves.block.getDefaultState(), 3);
 				    	}
 			    	}
 					

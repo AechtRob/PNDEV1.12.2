@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -22,14 +23,14 @@ public class ProcedureNonDecayingTreeLeaf extends ElementsLepidodendronMod.ModEl
 			new BlockPos((int) x, (int) y, (int) z))
 			|| material.isReplaceable()
 		) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLeaf.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), blockLeaf.getDefaultState(), 3);
 			}
 		try {
 				IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
 				for (IProperty<?> prop : _bs.getProperties().keySet()) {
 					if (prop.getName().equals("decayable")) {
 						//System.err.println("Decaying Found");
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z),
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z),
 							_bs.withProperty((IProperty) prop, false), 3);
 					break;
 				}

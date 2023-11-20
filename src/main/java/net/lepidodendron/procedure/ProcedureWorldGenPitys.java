@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockPitysLeaves;
 import net.lepidodendron.block.BlockPitysLog;
 import net.lepidodendron.block.BlockPitysStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
@@ -174,7 +175,7 @@ public class ProcedureWorldGenPitys extends ElementsLepidodendronMod.ModElement 
 
 	public static void setStrobilus(World world, int x, int y, int z) {
 		if (Math.random() > 0.2) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockPitysStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockPitysStrobilus.block.getDefaultState(), 3);
 			if (!world.isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);

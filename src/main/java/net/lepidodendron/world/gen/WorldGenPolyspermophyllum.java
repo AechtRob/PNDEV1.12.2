@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPolyspermophyllum;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -35,7 +36,7 @@ public class WorldGenPolyspermophyllum extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockPolyspermophyllum.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPolyspermophyllum.block.getDefaultState(), 2);
                     BlockPolyspermophyllum.block.onBlockAdded(worldIn, blockpos, BlockPolyspermophyllum.block.getDefaultState());
                     flag = true;
                 }
@@ -61,7 +62,7 @@ public class WorldGenPolyspermophyllum extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockPolyspermophyllum.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPolyspermophyllum.block.getDefaultState(), 2);
                     BlockPolyspermophyllum.block.onBlockAdded(worldIn, blockpos, BlockPolyspermophyllum.block.getDefaultState());
                     flag = true;
                 }

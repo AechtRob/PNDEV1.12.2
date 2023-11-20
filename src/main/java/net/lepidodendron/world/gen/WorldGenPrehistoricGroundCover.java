@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPrehistoricGroundCoverPlants;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -20,7 +21,7 @@ public class WorldGenPrehistoricGroundCover extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrehistoricGroundCoverPlants.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                worldIn.setBlockState(blockpos, BlockPrehistoricGroundCoverPlants.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundCoverPlants.block.getDefaultState(), 2);
                 flag = true;
             }
         }

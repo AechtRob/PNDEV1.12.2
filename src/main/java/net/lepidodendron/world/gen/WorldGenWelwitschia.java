@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockWelwitschia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -35,7 +36,7 @@ public class WorldGenWelwitschia extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockWelwitschia.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockWelwitschia.block.getDefaultState(), 2);
                     BlockWelwitschia.block.onBlockAdded(worldIn, blockpos, BlockWelwitschia.block.getDefaultState());
                     flag = true;
                 }
@@ -61,7 +62,7 @@ public class WorldGenWelwitschia extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockWelwitschia.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockWelwitschia.block.getDefaultState(), 2);
                     BlockWelwitschia.block.onBlockAdded(worldIn, blockpos, BlockWelwitschia.block.getDefaultState());
                     flag = true;
                 }

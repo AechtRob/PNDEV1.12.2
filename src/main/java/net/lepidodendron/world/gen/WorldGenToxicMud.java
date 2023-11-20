@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockToxicMud;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -32,7 +33,7 @@ public class WorldGenToxicMud extends WorldGenerator
 					|| ((worldIn.getBlockState(blockpos.east())).getMaterial() == Material.WATER)
 					|| ((worldIn.getBlockState(blockpos.west())).getMaterial() == Material.WATER))
             )
-                worldIn.setBlockState(blockpos, BlockToxicMud.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockToxicMud.block.getDefaultState(), 2);
                 flag = true;
 
         }

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockSycamoreLeaves;
 import net.lepidodendron.block.BlockSycamoreLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -267,7 +268,7 @@ public class ProcedureWorldGenSycamore extends ElementsLepidodendronMod.ModEleme
                     if (state.getBlock().isAir(state, world, blockpos) || state.getBlock().isLeaves(state, world, blockpos))
                     {
                         //this.setBlockAndNotifyAdequately(world, blockpos, p_181631_3_);
-                        world.setBlockState(blockpos, p_181631_3_, 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, p_181631_3_, 3);
                         
                     }
                 }
@@ -319,7 +320,7 @@ public class ProcedureWorldGenSycamore extends ElementsLepidodendronMod.ModEleme
             BlockPos blockpos1 = p_175937_1_.add((double)(0.5F + (float)j * f), (double)(0.5F + (float)j * f1), (double)(0.5F + (float)j * f2));
             EnumFacing blocklog$enumaxis = getLogAxis(p_175937_1_, blockpos1);
             
-            world.setBlockState(blockpos1, BlockSycamoreLog.block.getDefaultState().withProperty(FACING,blocklog$enumaxis), 3);
+            Functions.setBlockStateAndCheckForDoublePlant(world,blockpos1, BlockSycamoreLog.block.getDefaultState().withProperty(FACING,blocklog$enumaxis), 3);
 			//System.err.println("limb set "  + blockpos1.getX() + " " + blockpos1.getY() + " " + blockpos1.getZ());
         }
     }

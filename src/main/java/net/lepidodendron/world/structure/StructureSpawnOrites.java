@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockOrites;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -147,7 +148,7 @@ public class StructureSpawnOrites extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo.up());
 				}
 
-				world.setBlockState(spawnTo, BlockOrites.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockOrites.block.getDefaultState(), 3);
 				BlockOrites.block.onBlockAdded(world, spawnTo, BlockOrites.block.getDefaultState());
 			}
 		}

@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockFoozia;
 import net.lepidodendron.block.BlockFooziaSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -21,9 +22,9 @@ public class WorldGenFoozia extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFoozia.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockFoozia.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockFoozia.block.getDefaultState(), 2);
 				if ((Math.random() > 0.7)) {
-					worldIn.setBlockState(blockpos, BlockFooziaSpore.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockFooziaSpore.block.getDefaultState(), 2);
 	        	}
                 flag = true;
             }

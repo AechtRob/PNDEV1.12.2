@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ public class WorldGenPuddles extends WorldGenerator
             	&& (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND ||worldIn.getBlockState(blockpos.down()).getMaterial() == Material.CLAY || worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND || worldIn.getBlockState(blockpos.down()).getMaterial() == Material.ROCK)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.FLOWING_WATER.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.FLOWING_WATER.getDefaultState(), 2);
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault && worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_pleuromeia_beds")) {
                     if (rand.nextInt(200) == 0) {
                         if (!worldIn.isRemote && worldIn.getMinecraftServer() != null) {

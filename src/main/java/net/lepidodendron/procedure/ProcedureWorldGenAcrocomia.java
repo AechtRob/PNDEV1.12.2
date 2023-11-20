@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
@@ -101,105 +102,105 @@ public class ProcedureWorldGenAcrocomia extends ElementsLepidodendronMod.ModElem
 			yy = y + TrunkHeight;
 			zz = z;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.WEST), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.WEST), 3);
 			}
 
 			xx = x + 1;
 			yy = y + TrunkHeight;
 			zz = z;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.EAST), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.EAST), 3);
 			}
 
 			xx = x;
 			yy = y + TrunkHeight;
 			zz = z + 1;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.SOUTH), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.SOUTH), 3);
 			}
 
 			xx = x;
 			yy = y + TrunkHeight;
 			zz = z - 1;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.NORTH), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.NORTH), 3);
 			}
 
 
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShoot.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShoot02.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShoot02.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShoot03.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShoot03.block.getDefaultState(), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockAcrocomiaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 		}
 	}

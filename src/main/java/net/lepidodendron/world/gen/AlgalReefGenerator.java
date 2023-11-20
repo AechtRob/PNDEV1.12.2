@@ -92,7 +92,7 @@ public class AlgalReefGenerator extends WorldGenerator
 					if (ii == 3) {
 						this.state = this.state.withProperty(BlockAlgalReef.FACING, EnumFacing.WEST);
 					}
-					worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 				}
 			}
 		}

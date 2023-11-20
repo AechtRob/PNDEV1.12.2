@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -159,50 +160,50 @@ public class StructureSpawnFrenelopsis extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockFrenelopsis.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockFrenelopsis2.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(2), BlockFrenelopsis3.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(3), BlockFrenelopsis4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockFrenelopsis.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockFrenelopsis2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockFrenelopsis3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockFrenelopsis4.block.getDefaultState(), 3);
 
-					world.setBlockState(spawnTo.north(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.east(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.west(), BlockFrenelopsisSide1.block.getDefaultState(),3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.east(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.west(), BlockFrenelopsisSide1.block.getDefaultState(),3);
 
-					world.setBlockState(spawnTo.north().east(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().west(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().east(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().west(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().east(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().west(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().east(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().west(), BlockFrenelopsisSide1.block.getDefaultState(), 3);
 
-					world.setBlockState((spawnTo.up()).north(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up()).south(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up()).east(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up()).west(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up()).north(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up()).south(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up()).east(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up()).west(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
 
-					world.setBlockState(spawnTo.up().north().east(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up().north().west(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up().south().east(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up().south().west(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up().north().east(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up().north().west(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up().south().east(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up().south().west(), BlockFrenelopsisSide2.block.getDefaultState(), 3);
 
-					world.setBlockState((spawnTo.up(2)).north(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up(2)).south(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up(2)).east(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up(2)).west(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(2)).north(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(2)).south(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(2)).east(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(2)).west(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
 
-					world.setBlockState(spawnTo.up(2).north().east(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(2).north().west(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(2).south().east(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(2).south().west(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2).north().east(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2).north().west(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2).south().east(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2).south().west(), BlockFrenelopsisSide3.block.getDefaultState(), 3);
 
-					world.setBlockState((spawnTo.up(3)).north(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up(3)).south(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up(3)).east(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
-					world.setBlockState((spawnTo.up(3)).west(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(3)).north(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(3)).south(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(3)).east(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up(3)).west(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
 
-					world.setBlockState(spawnTo.up(3).north().east(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(3).north().west(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(3).south().east(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(3).south().west(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3).north().east(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3).north().west(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3).south().east(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3).south().west(), BlockFrenelopsisSide4.block.getDefaultState(), 3);
 
 				}
 			}

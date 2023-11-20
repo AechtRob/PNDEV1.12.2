@@ -260,9 +260,9 @@ public class AlgaeGenerator extends WorldGenerator
 								&& (this.algae != BlockFenestellaGiantYellow.block) //this is preferred on the sides
 						) {
 							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block && this.algae != BlockSeaGrass.block && this.algae != BlockMosacaulis.block) {
-								worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							} else {
-								worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 							}
 							if (!upsideDown ||
 								(
@@ -328,7 +328,7 @@ public class AlgaeGenerator extends WorldGenerator
 												|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 												|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 											&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, enumfacing1) == BlockFaceShape.SOLID)) {
-										worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
+										Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
 
 										tries --;
 										return (!(tries > 0));
@@ -342,7 +342,7 @@ public class AlgaeGenerator extends WorldGenerator
 						//Can we place this under sea ice upside down?
 						if (this.algae.canPlaceBlockAt(worldIn, new BlockPos(j, worldIn.getSeaLevel() - 2, l))) {
 							if (worldIn.getBlockState(new BlockPos(j, worldIn.getSeaLevel() - 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(24) == 0) {
-								worldIn.setBlockState(new BlockPos(j, worldIn.getSeaLevel() - 2, l), this.state.withProperty(FACING, EnumFacing.DOWN), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, worldIn.getSeaLevel() - 2, l), this.state.withProperty(FACING, EnumFacing.DOWN), 2);
 								if (this.algae != BlockTawuia.block) {
 									tries --;
 									return (!(tries > 0));

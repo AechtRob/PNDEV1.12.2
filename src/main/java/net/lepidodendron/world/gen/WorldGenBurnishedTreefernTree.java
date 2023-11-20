@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockTreefernBurnishedLog;
 import net.lepidodendron.block.BlockTreefernBurnishedShoot;
 import net.lepidodendron.block.BlockTreefernBurnishedShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBurnished;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -130,14 +131,14 @@ public class WorldGenBurnishedTreefernTree extends WorldGenAbstractTree
                             $_dependencies.put("world", worldIn);
                             $_dependencies.put("SaplingSpawn", false);
                             if (rand.nextInt(2) == 0) {
-                                worldIn.setBlockState(blockpos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
                                 BlockTreefernBurnishedShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
                             }
                             else if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && blockpos.getY() + (rand.nextInt(7) - 3) > 95)) {
                                 ProcedureWorldGenTreefernBurnished.executeProcedure($_dependencies);
                             }
                             else {
-                                worldIn.setBlockState(blockpos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
                                 BlockTreefernBurnishedShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
                             }
                         }

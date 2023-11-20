@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 20;
 	}
 
 	@Override

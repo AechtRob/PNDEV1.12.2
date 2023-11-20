@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPeat;
 import net.lepidodendron.block.BlockSandBlackWavy;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -102,14 +103,14 @@ public class WorldGenOrdovicianBogLakes extends WorldGenerator
                     {
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
-                            worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
                             if (worldIn.getBlockState(position.add(l1, i4, i3)) == this.block.getDefaultState()) {
                                 if (worldIn.getBlockState(position.add(l1, i4, i3).down()).getMaterial().isSolid()) {
                                     if (rand.nextInt(3) == 0) {
-                                        worldIn.setBlockState(position.add(l1, i4, i3).down(), BlockSandBlackWavy.block.getDefaultState());
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3).down(), BlockSandBlackWavy.block.getDefaultState());
                                     }
                                     else {
-                                        worldIn.setBlockState(position.add(l1, i4, i3).down(), BlockPeat.block.getDefaultState());
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3).down(), BlockPeat.block.getDefaultState());
                                     }
                                 }
                             }
@@ -132,7 +133,7 @@ public class WorldGenOrdovicianBogLakes extends WorldGenerator
 
                             if (flag1 && (k4 < 4 || rand.nextInt(2) != 0) && worldIn.getBlockState(position.add(j2, k4, k3)).getMaterial().isSolid())
                             {
-                                worldIn.setBlockState(position.add(j2, k4, k3), Blocks.STONE.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(j2, k4, k3), Blocks.STONE.getDefaultState(), 2);
                             }
                         }
                     }
@@ -150,7 +151,7 @@ public class WorldGenOrdovicianBogLakes extends WorldGenerator
                         if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3)))
                         {
                             int flag = net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2| 16 : 2; //Forge: With bit 5 unset, it will notify neighbors and load adjacent chunks.
-                            worldIn.setBlockState(position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), flag); //Forge
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), flag); //Forge
                         }
                     }
                 }

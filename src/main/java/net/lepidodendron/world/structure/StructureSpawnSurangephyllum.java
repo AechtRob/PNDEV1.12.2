@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockSurangephyllum;
 import net.lepidodendron.block.BlockSurangephyllumTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -168,8 +169,8 @@ public class StructureSpawnSurangephyllum extends ElementsLepidodendronMod.ModEl
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockSurangephyllum.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockSurangephyllumTop.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSurangephyllum.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockSurangephyllumTop.block.getDefaultState());
 				}
 
 			}

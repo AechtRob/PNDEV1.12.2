@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockFlabellopteris;
 import net.lepidodendron.block.BlockFlabellopterisSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -22,10 +23,10 @@ public class WorldGenFlabellopteris extends WorldGenerator
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFlabellopteris.block.canPlaceBlockAt(worldIn, blockpos))
             {
             	if (Math.random() < 0.7) {
-					worldIn.setBlockState(blockpos, BlockFlabellopteris.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockFlabellopteris.block.getDefaultState(), 2);
 				}
 				else {
-					worldIn.setBlockState(blockpos, BlockFlabellopterisSpore.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockFlabellopterisSpore.block.getDefaultState(), 2);
 				}
                 flag = true;
             }

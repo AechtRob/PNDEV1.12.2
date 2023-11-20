@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,7 @@ public class WorldGenSurfaceObsidian extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.OBSIDIAN.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.OBSIDIAN.getDefaultState(), 2);
                 flag = true;
             }
         }

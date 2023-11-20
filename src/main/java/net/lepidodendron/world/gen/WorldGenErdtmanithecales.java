@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockErdtmanithecales;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -33,7 +34,7 @@ public class WorldGenErdtmanithecales extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockErdtmanithecales.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockErdtmanithecales.block.getDefaultState(), 2);
                     BlockErdtmanithecales.block.onBlockAdded(worldIn, blockpos, BlockErdtmanithecales.block.getDefaultState());
                     flag = true;
                 }
@@ -59,7 +60,7 @@ public class WorldGenErdtmanithecales extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockErdtmanithecales.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockErdtmanithecales.block.getDefaultState(), 2);
                     BlockErdtmanithecales.block.onBlockAdded(worldIn, blockpos, BlockErdtmanithecales.block.getDefaultState());
                     flag = true;
                 }

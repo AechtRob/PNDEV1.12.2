@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockMatonia;
 import net.lepidodendron.block.BlockMatoniaLarge;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -58,10 +59,10 @@ public class WorldGenMatonia extends WorldGenerator
             if (!needsWater) {
                 {
                     if (Math.random() >= 0.5) {
-                        worldIn.setBlockState(blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     flag = true;
                 }
@@ -88,10 +89,10 @@ public class WorldGenMatonia extends WorldGenerator
                 }
                 if (waterCriteria) {
                     if (Math.random() >= 0.5) {
-                        worldIn.setBlockState(blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     flag = true;
                 }

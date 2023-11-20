@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockQuadrocladus;
 import net.lepidodendron.block.BlockQuadrocladusTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -164,8 +165,8 @@ public class StructureSpawnQuadrocladus extends ElementsLepidodendronMod.ModElem
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockQuadrocladus.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockQuadrocladusTop.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockQuadrocladus.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockQuadrocladusTop.block.getDefaultState());
 				}
 
 			}

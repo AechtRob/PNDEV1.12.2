@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockAmentotaxus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenAmentotaxus extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockAmentotaxus.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAmentotaxus.block.getDefaultState(), 2);
                 BlockAmentotaxus.block.onBlockAdded(worldIn, blockpos, BlockAmentotaxus.block.getDefaultState());
 
                 flag = true;

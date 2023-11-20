@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockXihuphyllum;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -34,7 +35,7 @@ public class WorldGenXihuphyllum extends WorldGenerator
                                 || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND)
                                 || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.CLAY)
                     )) {
-                    worldIn.setBlockState(blockpos, BlockXihuphyllum.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockXihuphyllum.block.getDefaultState(), 2);
                     BlockXihuphyllum.block.onBlockAdded(worldIn, blockpos, BlockXihuphyllum.block.getDefaultState());
 
                     flag = true;
@@ -67,7 +68,7 @@ public class WorldGenXihuphyllum extends WorldGenerator
                         || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.CLAY)
                         )
                     ) {
-                        worldIn.setBlockState(blockpos, BlockXihuphyllum.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockXihuphyllum.block.getDefaultState(), 2);
                         BlockXihuphyllum.block.onBlockAdded(worldIn, blockpos, BlockXihuphyllum.block.getDefaultState());
                         flag = true;
                     }

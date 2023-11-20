@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCalycanthusFlower;
 import net.lepidodendron.block.BlockCalycanthusLeaves;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -99,7 +100,7 @@ public class ProcedureWorldGenCalycanthus extends ElementsLepidodendronMod.ModEl
 		if (world.getBlockState(pos).getBlock() == BlockCalycanthusLeaves.block && world.rand.nextInt(6) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {
-			world.setBlockState(pos.up(), BlockCalycanthusFlower.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockCalycanthusFlower.block.getDefaultState(), 3);
 			TileEntity tileEntity = world.getTileEntity(pos.up());
 			if (tileEntity instanceof BlockCalycanthusFlower.TileEntityCustom) {
 				tileEntity.getTileData().setBoolean("decayable", (true));
@@ -112,7 +113,7 @@ public class ProcedureWorldGenCalycanthus extends ElementsLepidodendronMod.ModEl
 					if (world.getBlockState(pos).getBlock() == BlockCalycanthusLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.north()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.north()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.north(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.north());
 						if (tileEntity instanceof BlockCalycanthusFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -124,7 +125,7 @@ public class ProcedureWorldGenCalycanthus extends ElementsLepidodendronMod.ModEl
 					if (world.getBlockState(pos).getBlock() == BlockCalycanthusLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.east()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.east()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.east(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.east());
 						if (tileEntity instanceof BlockCalycanthusFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -136,7 +137,7 @@ public class ProcedureWorldGenCalycanthus extends ElementsLepidodendronMod.ModEl
 					if (world.getBlockState(pos).getBlock() == BlockCalycanthusLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.south()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.south()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.south(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.south());
 						if (tileEntity instanceof BlockCalycanthusFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -148,7 +149,7 @@ public class ProcedureWorldGenCalycanthus extends ElementsLepidodendronMod.ModEl
 					if (world.getBlockState(pos).getBlock() == BlockCalycanthusLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.west()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.west()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.west(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.WEST), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockCalycanthusFlower.block.getDefaultState().withProperty(BlockCalycanthusFlower.BlockCustom.FACING, EnumFacing.WEST), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.west());
 						if (tileEntity instanceof BlockCalycanthusFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));

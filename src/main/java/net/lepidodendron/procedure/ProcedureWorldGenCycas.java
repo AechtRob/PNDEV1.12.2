@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCycasLog;
 import net.lepidodendron.block.BlockCycasShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -66,8 +67,8 @@ public class ProcedureWorldGenCycas extends ElementsLepidodendronMod.ModElement 
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockCycasShoot.block.getDefaultState(), 3);
-					//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockCycasShootTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockCycasShoot.block.getDefaultState(), 3);
+					//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockCycasShootTop.block.getDefaultState(), 3);
 				}
 			}
 		}

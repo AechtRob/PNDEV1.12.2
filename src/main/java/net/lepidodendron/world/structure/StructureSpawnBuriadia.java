@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBuriadia;
 import net.lepidodendron.block.BlockBuriadiaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -165,8 +166,8 @@ public class StructureSpawnBuriadia extends ElementsLepidodendronMod.ModElement 
 						world.setBlockToAir(spawnTo.up());
 					}
 					//System.err.println("Spawning Buriadia at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockBuriadia.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockBuriadiaTop.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBuriadia.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockBuriadiaTop.block.getDefaultState());
 				}
 
 			}

@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -86,7 +87,7 @@ public class MobSpawnGenerator extends WorldGenerator
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
-						worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 						if (variant != null) {
 							applyVariant(worldIn, new BlockPos(j, k, l), variant);
 						}
@@ -114,7 +115,7 @@ public class MobSpawnGenerator extends WorldGenerator
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
-								worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
 								if (variant != null) {
 									applyVariant(worldIn, new BlockPos(j, k, l), variant);
 								}

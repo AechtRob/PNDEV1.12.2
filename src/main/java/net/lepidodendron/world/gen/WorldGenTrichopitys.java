@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockTrichopitys;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -35,7 +36,7 @@ public class WorldGenTrichopitys extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockTrichopitys.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTrichopitys.block.getDefaultState(), 2);
                     BlockTrichopitys.block.onBlockAdded(worldIn, blockpos, BlockTrichopitys.block.getDefaultState());
                     flag = true;
                 }
@@ -61,7 +62,7 @@ public class WorldGenTrichopitys extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockTrichopitys.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTrichopitys.block.getDefaultState(), 2);
                     BlockTrichopitys.block.onBlockAdded(worldIn, blockpos, BlockTrichopitys.block.getDefaultState());
                     flag = true;
                 }

@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockSinocarpus;
 import net.lepidodendron.block.BlockSinoherba;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -24,7 +25,7 @@ public class WorldGenSinoherba extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSinocarpus.block.canPlaceBlockAt(worldIn, blockpos))
             {
-				worldIn.setBlockState(blockpos, BlockSinoherba.block.getDefaultState(), 2);
+				Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSinoherba.block.getDefaultState(), 2);
                 flag = true;
             }
         }

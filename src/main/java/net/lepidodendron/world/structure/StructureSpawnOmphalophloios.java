@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockOmphalophloiosBase;
 import net.lepidodendron.block.BlockOmphalophloiosCentre;
 import net.lepidodendron.block.BlockOmphalophloiosPlaceable;
 import net.lepidodendron.block.BlockOmphalophloiosTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -151,24 +152,24 @@ public class StructureSpawnOmphalophloios extends ElementsLepidodendronMod.ModEl
 					world.setBlockToAir(spawnTo.up());
 				}
 				
-				world.setBlockState(spawnTo, BlockOmphalophloiosBase.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockOmphalophloiosPlaceable.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockOmphalophloiosCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockOmphalophloiosBase.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockOmphalophloiosPlaceable.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockOmphalophloiosCentre.block.getDefaultState(), 3);
 				if (world.isAirBlock(spawnTo.up(4))) {
 					if (Math.random() > 0.7) {
-						world.setBlockState(spawnTo.up(3), BlockOmphalophloiosCentre.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockOmphalophloiosCentre.block.getDefaultState(), 3);
 						if (world.isAirBlock(spawnTo.up(5)))
 							if (Math.random() > 0.7) {
-								world.setBlockState(spawnTo.up(4), BlockOmphalophloiosCentre.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(5), BlockOmphalophloiosTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(4), BlockOmphalophloiosCentre.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(5), BlockOmphalophloiosTop.block.getDefaultState(), 3);
 							}
 						else {
-							world.setBlockState(spawnTo.up(4), BlockOmphalophloiosTop.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(4), BlockOmphalophloiosTop.block.getDefaultState(), 3);
 						}
 					}
 				}
 				else {
-					world.setBlockState(spawnTo.up(3), BlockOmphalophloiosTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockOmphalophloiosTop.block.getDefaultState(), 3);
 				}
 
 			}

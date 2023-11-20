@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -208,33 +209,33 @@ public class StructureSpawnSchizoneura extends ElementsLepidodendronMod.ModEleme
 					//Grow:
 					if (Math.random() > 0.7) {
 						//1,2,3
-						world.setBlockState(spawnTo, BlockSchizoneura3.block.getDefaultState(), 3);
-						world.setBlockState(spawnTo.up(), BlockSchizoneura2.block.getDefaultState(), 3);
-						world.setBlockState(spawnTo.up(2), BlockSchizoneura1.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSchizoneura3.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockSchizoneura2.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockSchizoneura1.block.getDefaultState(), 3);
 					}
 					else {
 						if (Math.random() > 0.6) {
 							//1,2,3,5
-							world.setBlockState(spawnTo, BlockSchizoneura5.block.getDefaultState(), 3);
-							world.setBlockState(spawnTo.up(), BlockSchizoneura3.block.getDefaultState(), 3);
-							world.setBlockState(spawnTo.up(2), BlockSchizoneura2.block.getDefaultState(), 3);
-							world.setBlockState(spawnTo.up(3), BlockSchizoneura1.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSchizoneura5.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockSchizoneura3.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockSchizoneura2.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockSchizoneura1.block.getDefaultState(), 3);
 						}
 						else {
 							if (Math.random() > 0.5) {
 								//1,2,3,4,5
-								world.setBlockState(spawnTo, BlockSchizoneura5.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(), BlockSchizoneura4.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(2), BlockSchizoneura3.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(3), BlockSchizoneura2.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(4), BlockSchizoneura1.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSchizoneura5.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockSchizoneura4.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockSchizoneura3.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockSchizoneura2.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(4), BlockSchizoneura1.block.getDefaultState(), 3);
 							}
 							else {
 								//1,2,3,4
-								world.setBlockState(spawnTo, BlockSchizoneura4.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(), BlockSchizoneura3.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(2), BlockSchizoneura2.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(3), BlockSchizoneura1.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSchizoneura4.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockSchizoneura3.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockSchizoneura2.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockSchizoneura1.block.getDefaultState(), 3);
 							}
 						}
 					}

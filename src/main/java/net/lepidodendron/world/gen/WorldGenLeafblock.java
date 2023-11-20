@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -34,24 +35,24 @@ public class WorldGenLeafblock extends WorldGenerator
                         && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
                 ) {
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos, logState, 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, logState, 2);
                         if (worldIn.isAirBlock(blockpos.up())) {
-                            worldIn.setBlockState(blockpos.up(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.north())) {
-                            worldIn.setBlockState(blockpos.north(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.north(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.south())) {
-                            worldIn.setBlockState(blockpos.south(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.south(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.east())) {
-                            worldIn.setBlockState(blockpos.east(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.east(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.west())) {
-                            worldIn.setBlockState(blockpos.west(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.west(), getleafstate(leafState), 2);
                         }
                     } else {
-                        worldIn.setBlockState(blockpos, getleafstate(leafState).withProperty(BlockBrachyphyllumLeaves.BlockCustom.CHECK_DECAY, false).withProperty(BlockBrachyphyllumLeaves.BlockCustom.DECAYABLE, false), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, getleafstate(leafState).withProperty(BlockBrachyphyllumLeaves.BlockCustom.CHECK_DECAY, false).withProperty(BlockBrachyphyllumLeaves.BlockCustom.DECAYABLE, false), 2);
                     }
                     flag = true;
                 }
@@ -63,24 +64,24 @@ public class WorldGenLeafblock extends WorldGenerator
                         && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
                 ) {
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos, logState, 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, logState, 2);
                         if (worldIn.isAirBlock(blockpos.up())) {
-                            worldIn.setBlockState(blockpos.up(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.north())) {
-                            worldIn.setBlockState(blockpos.north(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.north(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.south())) {
-                            worldIn.setBlockState(blockpos.south(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.south(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.east())) {
-                            worldIn.setBlockState(blockpos.east(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.east(), getleafstate(leafState), 2);
                         }
                         if (worldIn.isAirBlock(blockpos.west())) {
-                            worldIn.setBlockState(blockpos.west(), getleafstate(leafState), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.west(), getleafstate(leafState), 2);
                         }
                     } else {
-                        worldIn.setBlockState(blockpos, getleafstate(leafState).withProperty(BlockBrachyphyllumLeaves.BlockCustom.CHECK_DECAY, false).withProperty(BlockBrachyphyllumLeaves.BlockCustom.DECAYABLE, false), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, getleafstate(leafState).withProperty(BlockBrachyphyllumLeaves.BlockCustom.CHECK_DECAY, false).withProperty(BlockBrachyphyllumLeaves.BlockCustom.DECAYABLE, false), 2);
                     }
                     flag = true;
                 }

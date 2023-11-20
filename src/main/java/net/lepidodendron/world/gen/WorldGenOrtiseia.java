@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockOrtiseia;
 import net.lepidodendron.block.BlockWachtlerina;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -34,9 +35,9 @@ public class WorldGenOrtiseia extends WorldGenerator
             {
 
                 if (worldIn.getBlockState(blockpos.down()).getBlock() == Blocks.SNOW) {
-                    worldIn.setBlockState(blockpos.down(), Blocks.STONE.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getDefaultState(), 2);
                 }
-                worldIn.setBlockState(blockpos, BlockOrtiseia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockOrtiseia.block.getDefaultState(), 2);
                 //BlockWachtlerina.block.onBlockAdded(worldIn, blockpos, BlockWachtlerina.block.getDefaultState());
 
                 flag = true;

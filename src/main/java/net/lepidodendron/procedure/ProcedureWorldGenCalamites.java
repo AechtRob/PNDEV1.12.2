@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -91,7 +92,7 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 			if (world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial() == Material.WATER) {
 				//System.err.println("Water spawn: " + x + " " + y + " " + z);
 				
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockCalamitesRhizome.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockCalamitesRhizome.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -106,7 +107,7 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 				y = y + 1;
 			}
 			else {
-				world.setBlockState(new BlockPos((int) x, (int) y - 2, (int) z), BlockCalamitesRhizome.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y - 2, (int) z), BlockCalamitesRhizome.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y - 2, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -833,8 +834,8 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z)), world, new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 2, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 2, (int) z)), world, new BlockPos((int) x, (int) y + TrunkHeight + 2, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z), BlockCalamitesShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 2, (int) z), BlockCalamitesShootTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z), BlockCalamitesShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + TrunkHeight + 2, (int) z), BlockCalamitesShootTop.block.getDefaultState(), 3);
 				}
 			}
 

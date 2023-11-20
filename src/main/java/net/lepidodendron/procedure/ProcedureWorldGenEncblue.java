@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockEncblueLog;
 import net.lepidodendron.block.BlockEncblueShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -66,8 +67,8 @@ public class ProcedureWorldGenEncblue extends ElementsLepidodendronMod.ModElemen
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockEncblueShoot.block.getDefaultState(), 3);
-					//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockEncblueShootTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockEncblueShoot.block.getDefaultState(), 3);
+					//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockEncblueShootTop.block.getDefaultState(), 3);
 				}
 			}
 		}

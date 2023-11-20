@@ -610,7 +610,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 					int lights = 0;
 					BlockPos addPos = getTopBlockForDig(fencePos, world).up();
 					if (!(world.getBlockState(addPos).getMaterial() == Material.WOOD && world.getBlockState(addPos).getBlock().isFullBlock(world.getBlockState(addPos)))) {
-						world.setBlockState(addPos, BlockPandanFence.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,addPos, BlockPandanFence.block.getDefaultState());
 						generated = true;
 					}
 				}
@@ -628,7 +628,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						if (random.nextInt(4) == 0 && addPos.down(yDig + 1).getY() > 1) {
 							world.setBlockToAir(addPos.down(yDig + 1));
 							if (addPos.down(yDig + 1).getY() == digDepth) {
-								world.setBlockState(addPos.down(yDig + 2), getStoneState(world, addPos));
+								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.down(yDig + 2), getStoneState(world, addPos));
 								//Add a ladder because we are at the rock level now:
 								//which chunk are we in?
 								boolean ladderChunk1 = world.getChunk(addPos) == world.getChunk(new BlockPos(x1, 0, z1));
@@ -652,7 +652,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 											if (fenceCheck(world, fencePos)) {
 												int yLadder = 0;
 												while (ladderPos.up(yLadder).getY() <= fencePos.getY() - 1) {
-													world.setBlockState(ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.SOUTH));
+													Functions.setBlockStateAndCheckForDoublePlant(world,ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.SOUTH));
 													yLadder++;
 												}
 												world.setBlockToAir(fencePos);
@@ -681,7 +681,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 											if (fenceCheck(world, fencePos)) {
 												int yLadder = 0;
 												while (ladderPos.up(yLadder).getY() <= fencePos.getY() - 1) {
-													world.setBlockState(ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.NORTH));
+													Functions.setBlockStateAndCheckForDoublePlant(world,ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.NORTH));
 													yLadder++;
 												}
 												world.setBlockToAir(fencePos);
@@ -710,7 +710,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 											if (fenceCheck(world, fencePos)) {
 												int yLadder = 0;
 												while (ladderPos.up(yLadder).getY() <= fencePos.getY() - 1) {
-													world.setBlockState(ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.WEST));
+													Functions.setBlockStateAndCheckForDoublePlant(world,ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.WEST));
 													yLadder++;
 												}
 												world.setBlockToAir(fencePos);
@@ -739,7 +739,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 											if (fenceCheck(world, fencePos)) {
 												int yLadder = 0;
 												while (ladderPos.up(yLadder).getY() <= fencePos.getY() - 1) {
-													world.setBlockState(ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.EAST));
+													Functions.setBlockStateAndCheckForDoublePlant(world,ladderPos.up(yLadder), Blocks.LADDER.getDefaultState().withProperty(BlockLadder.FACING, EnumFacing.EAST));
 													yLadder++;
 												}
 												world.setBlockToAir(fencePos);
@@ -772,7 +772,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						generated = true;
 						world.setBlockToAir(addPos.down(yDig));
 						if (addPos.down(yDig).getY() == digDepth) {
-							world.setBlockState(addPos.down(yDig + 1), getStoneState(world, addPos));
+							Functions.setBlockStateAndCheckForDoublePlant(world,addPos.down(yDig + 1), getStoneState(world, addPos));
 						}
 						yDig++;
 					}
@@ -785,35 +785,35 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 						BlockPos addPos = getTopBlockForDig(fencePos, world).up();
 						if (lights == 0) {
 							if (Functions.decoLoaded()) {
-								world.setBlockState(addPos.up(), BlockPandanFence.block.getDefaultState());
-								world.setBlockState(addPos.up(2), BlockPandanFence.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(), BlockPandanFence.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2), BlockPandanFence.block.getDefaultState());
 								if (world.getBlockState(addPos.up(3).north()).getBlock().isReplaceable(world, addPos.up(3).north())) {
-									world.setBlockState(addPos.up(3).north(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(3).north(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
 								}
 								if (world.getBlockState(addPos.up(3).east()).getBlock().isReplaceable(world, addPos.up(3).east())) {
-									world.setBlockState(addPos.up(3).east(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(3).east(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
 								}
 								if (world.getBlockState(addPos.up(3).south()).getBlock().isReplaceable(world, addPos.up(3).south())) {
-									world.setBlockState(addPos.up(3).south(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(3).south(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
 								}
 								if (world.getBlockState(addPos.up(3).west()).getBlock().isReplaceable(world, addPos.up(3).west())) {
-									world.setBlockState(addPos.up(3).west(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(3).west(), BlockWireGridTile.block.getDefaultState().withProperty(BlockWireGridTile.BlockCustom.FACING, EnumFacing.UP));
 								}
 								if (world.getBlockState(addPos.up(2).north()).getBlock().isReplaceable(world, addPos.up(2).north())) {
-									world.setBlockState(addPos.up(2).north(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2).north(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
 								}
 								if (world.getBlockState(addPos.up(2).east()).getBlock().isReplaceable(world, addPos.up(2).east())) {
-									world.setBlockState(addPos.up(2).east(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2).east(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
 								}
 								if (world.getBlockState(addPos.up(2).south()).getBlock().isReplaceable(world, addPos.up(2).south())) {
-									world.setBlockState(addPos.up(2).south(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2).south(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
 								}
 								if (world.getBlockState(addPos.up(2).west()).getBlock().isReplaceable(world, addPos.up(2).west())) {
-									world.setBlockState(addPos.up(2).west(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
+									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2).west(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
 								}
 							}
 							else {
-								world.setBlockState(addPos.up(), Blocks.TORCH.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(), Blocks.TORCH.getDefaultState());
 							}
 						}
 					}
@@ -846,7 +846,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 					//Fossils and structures:
 					for (int yy = 0; yy <= 5; yy++) {
 						if (random.nextInt(8) == 0 && world.getBlockState(addPos.down(yy)).getBlock() == Blocks.STONE) {
-							world.setBlockState(addPos.down(yy), digFossil);
+							Functions.setBlockStateAndCheckForDoublePlant(world,addPos.down(yy), digFossil);
 							if (random.nextInt(8) == 0 && yy == 0) {
 								examinationBench = genExaminationBench(world, addPos.up(), examinationBench);
 							}
@@ -1632,20 +1632,20 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		}
 
 		//We have space:
-		world.setBlockState(pos.north().east(), BlockPandanFence.block.getDefaultState());
-		world.setBlockState(pos.north().west(), BlockPandanFence.block.getDefaultState());
-		world.setBlockState(pos.south().east(), BlockPandanFence.block.getDefaultState());
-		world.setBlockState(pos.south().west(), BlockPandanFence.block.getDefaultState());
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.north().east(), BlockPandanFence.block.getDefaultState());
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.north().west(), BlockPandanFence.block.getDefaultState());
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.south().east(), BlockPandanFence.block.getDefaultState());
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.south().west(), BlockPandanFence.block.getDefaultState());
 
-		world.setBlockState(pos.up().south().east(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().south(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().south().west(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().east(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().west(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().north().east(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().north(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
-		world.setBlockState(pos.up().north().west(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().south().east(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().south(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().south().west(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().east(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().west(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().north().east(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().north(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
+		Functions.setBlockStateAndCheckForDoublePlant(world,pos.up().north().west(), BlockZirconGlassTile.block.getDefaultState().withProperty(BlockZirconGlassTile.BlockCustom.FACING, EnumFacing.UP));
 
 		return true;
 	}
@@ -1709,7 +1709,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 
 		template.addBlocksToWorld(world, spawnTo, new StructureDigSiteProcess(spawnTo, settings, fossil), settings, 2);
 
-		//world.setBlockState(spawnTo.up(7), Blocks.COAL_BLOCK.getDefaultState());
+		//Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(7), Blocks.COAL_BLOCK.getDefaultState());
 
 		return true;
 	}

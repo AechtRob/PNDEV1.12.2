@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -47,7 +48,7 @@ public class WorldGenSandNearWater extends WorldGenerator {
                 //water is a number between 0 and 6:
                 if (water != 0) {
                     if (rand.nextInt(water + 1) == 0) {
-                        worldIn.setBlockState(blockpos.down(), Blocks.SAND.getStateFromMeta(0), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.SAND.getStateFromMeta(0), 2);
                         flag = true;
                         return flag;
                     }

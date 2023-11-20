@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockBacterialLayer;
 import net.lepidodendron.block.BlockVolcanicAsh;
 import net.lepidodendron.block.BlockVolcanicAshDark;
 import net.lepidodendron.block.BlockVolcanicAshLight;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -106,13 +107,13 @@ public class WorldGenNeoproterozoicLakes extends WorldGenerator
                     {
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
-                            worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
                             if ((this.block.getDefaultState().getMaterial() == Material.WATER && i4 < 4)
                                 && (worldIn.getBlockState(position.add(l1, i4-1, i3)).getMaterial() != Material.WATER)) {
                                 if (worldIn.getBlockState(position.add(l1, i4-2, i3)).getBlockFaceShape(
                                         worldIn, position.add(l1, i4-2, i3), EnumFacing.UP) == BlockFaceShape.SOLID) {
-                                    worldIn.setBlockState(position.add(l1, i4-1, i3), this.block.getDefaultState());
-                                    worldIn.setBlockState(position.add(l1, i4-2, i3), BlockBacterialLayer.block.getDefaultState());
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4-1, i3), this.block.getDefaultState());
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4-2, i3), BlockBacterialLayer.block.getDefaultState());
                                 }
                             }
                         }
@@ -135,18 +136,18 @@ public class WorldGenNeoproterozoicLakes extends WorldGenerator
                                 if (this.block.getDefaultState().getMaterial() == Material.LAVA) {
                                     if (Math.random() > 0.5) {
                                         if (Math.random() > 0.5) {
-                                            worldIn.setBlockState(blockpos, BlockVolcanicAshLight.block.getDefaultState(), 2);
+                                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockVolcanicAshLight.block.getDefaultState(), 2);
                                         }
                                         else {
-                                            worldIn.setBlockState(blockpos, BlockVolcanicAshDark.block.getDefaultState(), 2);
+                                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockVolcanicAshDark.block.getDefaultState(), 2);
                                         }
                                     }
                                     else {
-                                        worldIn.setBlockState(blockpos, BlockVolcanicAsh.block.getDefaultState(), 2);
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockVolcanicAsh.block.getDefaultState(), 2);
                                     }
                                 }
                                 if (this.block.getDefaultState().getMaterial() == Material.WATER) {
-                                    worldIn.setBlockState(blockpos, BlockBacterialLayer.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockBacterialLayer.block.getDefaultState(), 2);
                                 }
                             }
                         }

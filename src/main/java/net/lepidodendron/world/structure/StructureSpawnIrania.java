@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockIraniaLand;
 import net.lepidodendron.block.BlockIraniaWater;
 import net.lepidodendron.block.BlockPrimevalGrassLand;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -148,10 +149,10 @@ public class StructureSpawnIrania extends ElementsLepidodendronMod.ModElement {
 					}
 					//System.err.println("Trying to spawn: " + i + " " + (j+1) + " " + k);
 					if (canSurviveAt(world, spawnTo)) {
-						world.setBlockState(spawnTo, BlockIraniaWater.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockIraniaWater.block.getDefaultState(), 3);
 					}
 					else { //It must be the land version:
-						world.setBlockState(spawnTo, BlockIraniaLand.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockIraniaLand.block.getDefaultState(), 3);
 					}
 				}
 

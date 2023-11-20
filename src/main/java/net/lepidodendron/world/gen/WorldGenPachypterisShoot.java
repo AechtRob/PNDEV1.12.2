@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockPachypterisLog;
 import net.lepidodendron.block.BlockPachypterisShoot;
 import net.lepidodendron.block.BlockPachypterisShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenPachypterisShoot extends WorldGenerator
             
             {
                 if (rand.nextInt(3) != 0) {
-                    worldIn.setBlockState(blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
                 }
                 else {
                     if (worldIn.getBlockState(blockpos.north()).getBlock() != BlockPachypterisLog.block
@@ -45,13 +46,13 @@ public class WorldGenPachypterisShoot extends WorldGenerator
                         int ii = rand.nextInt(3);
                         int iii = 0;
                         while (iii <= ii) {
-                            worldIn.setBlockState(blockpos.up(iii), BlockPachypterisLog.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(iii), BlockPachypterisLog.block.getDefaultState(), 2);
                             iii += 1;
                         }
-                        worldIn.setBlockState(blockpos.up(iii), BlockPachypterisShoot.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(iii), BlockPachypterisShoot.block.getDefaultState(), 2);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
                     }
                 }
                 flag = true;

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -88,7 +89,7 @@ public class WorldGenTriassicIslandVolcanos extends WorldGenerator
                                         && worldIn.getBlockState(bp.south()).getMaterial() != Material.WATER
                                         && worldIn.getBlockState(bp.east()).getMaterial() != Material.WATER
                                         && worldIn.getBlockState(bp.west()).getMaterial() != Material.WATER ) {
-                                        worldIn.setBlockState(bp, Blocks.FLOWING_LAVA.getDefaultState(), 2);
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, Blocks.FLOWING_LAVA.getDefaultState(), 2);
                                     }
                                 }
                                 else {
@@ -103,37 +104,37 @@ public class WorldGenTriassicIslandVolcanos extends WorldGenerator
                                         if (Math.random() < lavaBlockChance) {
                                             if (Math.random() > 0.1) {
                                                 if (rand.nextInt(29) == 0) {
-                                                    worldIn.setBlockState(bp, BlockLavaRock.block.getDefaultState(), 2);
+                                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockLavaRock.block.getDefaultState(), 2);
                                                 }
                                                 else {
-                                                    worldIn.setBlockState(bp, BlockScorchedEarth.block.getDefaultState(), 2);
+                                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockScorchedEarth.block.getDefaultState(), 2);
                                                 }
                                             }
                                             else {
                                                 if (rand.nextInt(5) == 0) {
-                                                    worldIn.setBlockState(bp, Blocks.COBBLESTONE.getDefaultState(), 2);
+                                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, Blocks.COBBLESTONE.getDefaultState(), 2);
                                                 }
                                                 else {
-                                                    worldIn.setBlockState(bp, Blocks.STONE.getDefaultState(), 2);
+                                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, Blocks.STONE.getDefaultState(), 2);
                                                 }
                                             }
                                         }
                                         else {
                                             if (Math.random() > 0.1) {
-                                                worldIn.setBlockState(bp, BlockLavaRock.block.getDefaultState(), 2);
+                                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockLavaRock.block.getDefaultState(), 2);
                                             } else { //Ashes:
                                                 double randomiser = Math.random();
                                                 if (randomiser > 0.70) {
-                                                    worldIn.setBlockState(bp, BlockVolcanicAsh.block.getDefaultState(), 2);
+                                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockVolcanicAsh.block.getDefaultState(), 2);
                                                 } else {
                                                     if (Math.random() > 0.40) {
-                                                        worldIn.setBlockState(bp, BlockVolcanicAshLight.block.getDefaultState(), 2);
+                                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockVolcanicAshLight.block.getDefaultState(), 2);
                                                     } else {
                                                         if (Math.random() > 0.10) {
-                                                            worldIn.setBlockState(bp, BlockVolcanicAshDark.block.getDefaultState(), 2);
+                                                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockVolcanicAshDark.block.getDefaultState(), 2);
                                                         }
                                                         else {
-                                                            worldIn.setBlockState(bp, BlockSulphurOre.block.getDefaultState(), 2);
+                                                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,bp, BlockSulphurOre.block.getDefaultState(), 2);
                                                         }
                                                     }
                                                 }
@@ -189,18 +190,18 @@ public class WorldGenTriassicIslandVolcanos extends WorldGenerator
                 while (zct <= radiusLake) {
                     if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) radiusLake, 2)) {
                         if (!worldIn.isAirBlock(posLake.add(xct, yct + 29, zct))) {
-                            worldIn.setBlockState(posLake.add(xct, yct + 30, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct, yct + 30, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
                             if (worldIn.isAirBlock(posLake.add(xct + 1, yct + 30, zct))) {
-                                worldIn.setBlockState(posLake.add(xct + 1, yct + 30, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct + 1, yct + 30, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
                             }
                             if (worldIn.isAirBlock(posLake.add(xct -1, yct + 30, zct))) {
-                                worldIn.setBlockState(posLake.add(xct - 1, yct + 30, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct - 1, yct + 30, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
                             }
                             if (worldIn.isAirBlock(posLake.add(xct, yct + 30, zct + 1))) {
-                                worldIn.setBlockState(posLake.add(xct, yct + 30, zct + 1), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct, yct + 30, zct + 1), Blocks.FLOWING_LAVA.getDefaultState(), 3);
                             }
                             if (worldIn.isAirBlock(posLake.add(xct, yct + 30, zct - 1))) {
-                                worldIn.setBlockState(posLake.add(xct, yct + 30, zct - 1), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct, yct + 30, zct - 1), Blocks.FLOWING_LAVA.getDefaultState(), 3);
                             }
                         }
                     }
@@ -216,7 +217,7 @@ public class WorldGenTriassicIslandVolcanos extends WorldGenerator
                     while (zct <= (radiusLake - 3)) {
                         if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) (radiusLake - 3), 2)) {
                             if (!worldIn.isAirBlock(posLake.add(xct, yct + 28, zct))) {
-                                worldIn.setBlockState(posLake.add(xct, yct + 29, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct, yct + 29, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
                             }
                         }
                         zct += 1;
@@ -233,7 +234,7 @@ public class WorldGenTriassicIslandVolcanos extends WorldGenerator
                         if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) (radiusLake - 5), 2)) {
                             if (Math.random() > 0.8 && worldIn.getBlockState(posLake.add(xct, yct + 28, zct)).getMaterial() != Material.LAVA) {
                                 if (!worldIn.isAirBlock(posLake.add(xct, yct + 27, zct))) {
-                                    worldIn.setBlockState(posLake.add(xct, yct + 28, zct), BlockLavaRockDiamondOre.block.getDefaultState(), 3);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct, yct + 28, zct), BlockLavaRockDiamondOre.block.getDefaultState(), 3);
                                 }
                             }
                         }
@@ -250,7 +251,7 @@ public class WorldGenTriassicIslandVolcanos extends WorldGenerator
                         if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) (radiusLake - 7), 2)) {
                             if (Math.random() > 0.8 && worldIn.getBlockState(posLake.add(xct, yct + 27, zct)).getMaterial() != Material.LAVA) {
                                 if (!worldIn.isAirBlock(posLake.add(xct, yct + 26, zct))) {
-                                    worldIn.setBlockState(posLake.add(xct, yct + 27, zct), BlockLavaRockDiamondOre.block.getDefaultState(), 3);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,posLake.add(xct, yct + 27, zct), BlockLavaRockDiamondOre.block.getDefaultState(), 3);
                                 }
                             }
                         }

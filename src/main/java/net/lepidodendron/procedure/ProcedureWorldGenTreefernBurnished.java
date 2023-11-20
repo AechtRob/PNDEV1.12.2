@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockTreefernBurnishedLog;
 import net.lepidodendron.block.BlockTreefernBurnishedShoot;
 import net.lepidodendron.block.BlockTreefernBurnishedShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -63,7 +64,7 @@ public class ProcedureWorldGenTreefernBurnished extends ElementsLepidodendronMod
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockTreefernBurnishedLog.block, EnumFacing.DOWN);
 				counter = counter + 1;
 			}
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernBurnishedShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernBurnishedShoot.block.getDefaultState(), 3);
 		}
 			
 	}

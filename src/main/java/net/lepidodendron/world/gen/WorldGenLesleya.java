@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockBaiera;
 import net.lepidodendron.block.BlockLesleya;
 import net.lepidodendron.block.BlockLesleyaCone;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -32,10 +33,10 @@ public class WorldGenLesleya extends WorldGenerator
             {
 
                 if (Math.random() > 0.5) {
-                    worldIn.setBlockState(blockpos, BlockLesleya.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLesleya.block.getDefaultState(), 2);
                 }
                 else {
-                    worldIn.setBlockState(blockpos, BlockLesleyaCone.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLesleyaCone.block.getDefaultState(), 2);
                 }
 
                 flag = true;

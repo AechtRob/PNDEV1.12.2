@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
@@ -273,13 +274,13 @@ public class CharniaGenerator extends WorldGenerator
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 								&& (worldIn.getBlockState(pos).getBlock() != BlockStromatolite.block)) { //Do not generate on top of Stromatolites: they have their own different community
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 							return true;
 						}
 					} else if (upsideDown) {
 						//Can we place this here upside down?
 						if (worldIn.getBlockState(new BlockPos(j, k + 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(32) == 0) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
 							return true;
 						}
 
@@ -289,7 +290,7 @@ public class CharniaGenerator extends WorldGenerator
 					if (worldIn.getBlockState(new BlockPos(j, k - 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(16) == 0
 							&& (this.charnia.canPlaceBlockAt(worldIn, new BlockPos(j, k - 2, l))
 							&& (worldIn.getBlockState(new BlockPos(j, k - 2, l)).getBlock() == Blocks.WATER))) {
-						worldIn.setBlockState(new BlockPos(j, k - 2, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 2, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
 						return true;
 					}
 

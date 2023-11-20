@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockSchmeissneria;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class WorldGenSchmeissneria extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockSchmeissneria.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchmeissneria.block.getDefaultState(), 2);
                 BlockSchmeissneria.block.onBlockAdded(worldIn, blockpos, BlockSchmeissneria.block.getDefaultState());
 
                 flag = true;

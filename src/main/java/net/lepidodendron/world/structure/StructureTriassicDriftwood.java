@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockCrinoidTraumatocrinus;
 import net.lepidodendron.block.BlockDeadLog;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -102,7 +103,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 									&& (world.getBlockState(new BlockPos(x, (y - c), z - ll)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x, (y - c), z - ll)).getBlock() instanceof BlockLiquid)
 							)) {
-								world.setBlockState(new BlockPos(x, (y - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 								c += 1;
 							}
 						}
@@ -122,7 +123,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x, (y - 1 - c), z - ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x, (y - 1 - c), z - ll)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x, (y - 1 - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y - 1 - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -138,7 +139,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x + 1, (y - c), z - ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + 1, (y - c), z - ll)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x + 1, (y - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 1, (y - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -154,7 +155,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x - 1, (y - c), z - ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - 1, (y - c), z - ll)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x - 1, (y - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 1, (y - c), z - ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -175,7 +176,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 									&& (world.getBlockState(new BlockPos(x, (y - c), z + ll)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x, (y - c), z + ll)).getBlock() instanceof BlockLiquid)
 							)) {
-								world.setBlockState(new BlockPos(x, (y - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 								c += 1;
 							}
 						}
@@ -195,7 +196,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x, (y - 1 - c), z + ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x, (y - 1 - c), z + ll)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x, (y - 1 - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y - 1 - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -211,7 +212,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x + 1, (y - c), z + ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + 1, (y - c), z + ll)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x + 1, (y - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 1, (y - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -227,7 +228,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x - 1, (y - c), z + ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - 1, (y - c), z + ll)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x - 1, (y - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 1, (y - c), z + ll), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -250,7 +251,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 									&& (world.getBlockState(new BlockPos(x - ll, (y - c), z)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x - ll, (y - c), z)).getBlock() instanceof BlockLiquid)
 							)) {
-								world.setBlockState(new BlockPos(x - ll, (y - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - ll, (y - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
 								c += 1;
 							}
 						}
@@ -270,7 +271,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x - ll, (y - 1 - c), z)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - ll, (y - 1 - c), z)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x - ll, (y - 1 - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - ll, (y - 1 - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -286,7 +287,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x - ll, (y - c), z + 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - ll, (y - c), z + 1)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x - ll, (y - c), z + 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - ll, (y - c), z + 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -302,7 +303,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x - ll, (y - c), z - 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - ll, (y - c), z - 1)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x - ll, (y - c), z - 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - ll, (y - c), z - 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -323,7 +324,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 									&& (world.getBlockState(new BlockPos(x + ll, (y - c), z)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x + ll, (y - c), z)).getBlock() instanceof BlockLiquid)
 							)) {
-								world.setBlockState(new BlockPos(x + ll, (y - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + ll, (y - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
 								c += 1;
 							}
 						}
@@ -343,7 +344,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x + ll, (y - 1 - c), z)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + ll, (y - 1 - c), z)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x + ll, (y - 1 - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + ll, (y - 1 - c), z), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -359,7 +360,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x + ll, (y - c), z + 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + ll, (y - c), z + 1)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x + ll, (y - c), z + 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + ll, (y - c), z + 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}
@@ -375,7 +376,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 										&& (world.getBlockState(new BlockPos(x + ll, (y - c), z - 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + ll, (y - c), z - 1)).getBlock() instanceof BlockLiquid)
 								)) {
-									world.setBlockState(new BlockPos(x + ll, (y - c), z - 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + ll, (y - c), z - 1), BlockCrinoidTraumatocrinus.block.getDefaultState());
 									c += 1;
 								}
 							}

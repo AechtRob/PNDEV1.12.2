@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockOmprelostrobus;
 import net.lepidodendron.block.BlockOmprelostrobusShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,13 +31,14 @@ public class WorldGenOmprelostrobus extends WorldGenerator
 				j = Math.min(BlockOmprelostrobus.height + 1, j);
 				for (int k = 0; k <= j; ++k){
 					if (BlockOmprelostrobus.block.canPlaceBlockAt(worldIn, blockpos)) {
-						if (k != j) {worldIn.setBlockState(blockpos.up(k), BlockOmprelostrobus.block.getDefaultState(), 2);}
+						if (k != j) {
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(k), BlockOmprelostrobus.block.getDefaultState(), 2);}
 						if ((k == j) 
 							&& ((worldIn.isAirBlock(blockpos.up(k))))
 							) {
 							//System.err.println("k value: " + k);
 							if (k >= BlockOmprelostrobus.height + rand.nextInt(2) - rand.nextInt(2)) {
-								worldIn.setBlockState(blockpos.up(k), BlockOmprelostrobusShoot.block.getDefaultState(), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(k), BlockOmprelostrobusShoot.block.getDefaultState(), 2);
 								break;
 							}
 						}

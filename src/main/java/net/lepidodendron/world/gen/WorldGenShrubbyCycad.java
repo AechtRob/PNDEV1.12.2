@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockShrubbyCycad;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.util.EnumFacing;
@@ -30,7 +31,7 @@ public class WorldGenShrubbyCycad extends WorldGenerator
                 && worldIn.getBlockState(blockpos.down()).getBlockFaceShape(worldIn, blockpos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
             )
             {
-                worldIn.setBlockState(blockpos, BlockShrubbyCycad.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockShrubbyCycad.block.getDefaultState(), 2);
                 BlockShrubbyCycad.block.onBlockAdded(worldIn, blockpos, BlockShrubbyCycad.block.getDefaultState());
                 flag = true;
             }

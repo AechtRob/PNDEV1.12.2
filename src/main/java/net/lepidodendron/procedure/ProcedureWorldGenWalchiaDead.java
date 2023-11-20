@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDeadLog;
 import net.lepidodendron.block.BlockScorchedEarth;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -67,7 +68,7 @@ public class ProcedureWorldGenWalchiaDead extends ElementsLepidodendronMod.ModEl
 						zz = -3;
 						while (zz <= 3) {
 							if ((Math.pow(xx, 2) + Math.pow(zz, 2) <= Math.pow(3.5, 2))) {
-								world.setBlockState(new BlockPos(x + xx, y - i, z + zz), BlockScorchedEarth.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xx, y - i, z + zz), BlockScorchedEarth.block.getDefaultState());
 							}
 							zz += 1;
 						}
@@ -334,7 +335,7 @@ public class ProcedureWorldGenWalchiaDead extends ElementsLepidodendronMod.ModEl
 						zz = -2;
 						while (zz <= 2) {
 							if ((Math.pow(xx, 2) + Math.pow(zz, 2) <= Math.pow(2.5, 2))) {
-								world.setBlockState(new BlockPos(x + xx, y - i, z + zz), BlockScorchedEarth.block.getDefaultState());
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xx, y - i, z + zz), BlockScorchedEarth.block.getDefaultState());
 							}
 							zz += 1;
 						}

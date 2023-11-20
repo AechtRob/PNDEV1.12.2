@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLavaRock;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -86,7 +87,7 @@ public class WorldGenIgneous extends WorldGenerator
                         	if (Math.random() > 0.85) { //Diorite
                                 blockIn = Blocks.STONE.getStateFromMeta(3).getBlock();
                             }
-                            worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 4);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
                         }
                     }
 

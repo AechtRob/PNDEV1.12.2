@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockEmplectopterisLog;
 import net.lepidodendron.block.BlockEmplectopterisShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -48,16 +49,16 @@ public class ProcedureWorldGenEmplectopteris extends ElementsLepidodendronMod.Mo
 			ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z, world, BlockEmplectopterisLog.block, EnumFacing.DOWN);
 			Block block = world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z)), world, new BlockPos((int) x, (int) y + 1, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + 1, (int) z), BlockEmplectopterisShoot.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 1, (int) z), BlockEmplectopterisShoot.block.getDefaultState(), 3);
 			}
 			if (Math.random() > 0.7) {
 				block = world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z)), world, new BlockPos((int) x, (int) y + 2, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + 2, (int) z), BlockEmplectopterisShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 2, (int) z), BlockEmplectopterisShoot.block.getDefaultState(), 3);
 					if (Math.random() > 0.7) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + 3, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 3, (int) z)), world, new BlockPos((int) x, (int) y + 3, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + 3, (int) z), BlockEmplectopterisShoot.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 3, (int) z), BlockEmplectopterisShoot.block.getDefaultState(), 3);
 						}
 					}
 				}

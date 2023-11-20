@@ -6,6 +6,7 @@ import net.lepidodendron.block.BlockZamitesLeaves;
 import net.lepidodendron.block.BlockZamitesLog;
 import net.lepidodendron.block.BlockZamitesShoot;
 import net.lepidodendron.block.BlockZamitesShootTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -63,7 +64,7 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 			while (counter < TrunkHeight) {
 				Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockZamitesLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockZamitesLog.block.getDefaultState(), 3);
 				}
 
 				//possible sideshoots and flowers, more likely higher than lower:
@@ -73,20 +74,20 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 					if (Math.random()>0.65) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z - 1), BlockZamitesLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z - 1), BlockZamitesLog.block.getDefaultState(), 3);
 						}
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z - 1)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter + 1, (int) z - 1))) {
 							block = world.getBlockState(new BlockPos((int) x, (int) y + counter + 2, (int) z - 1)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 2, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter + 2, (int) z - 1))) {
-								world.setBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z - 1), BlockZamitesShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) x, (int) y + counter + 2, (int) z - 1), BlockZamitesShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 1, (int) z - 1), BlockZamitesShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 2, (int) z - 1), BlockZamitesShootTop.block.getDefaultState(), 3);
 							}
 						}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.NORTH), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.NORTH), 3);
 							}
 					}
 				}
@@ -97,20 +98,20 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 					if (Math.random()>0.65) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z + 1), BlockZamitesLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z + 1), BlockZamitesLog.block.getDefaultState(), 3);
 						}
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z + 1)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter + 1, (int) z + 1))) {
 							block = world.getBlockState(new BlockPos((int) x, (int) y + counter + 2, (int) z + 1)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 2, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter + 2, (int) z + 1))) {
-								world.setBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z + 1), BlockZamitesShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) x, (int) y + counter + 2, (int) z + 1), BlockZamitesShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 1, (int) z + 1), BlockZamitesShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 2, (int) z + 1), BlockZamitesShootTop.block.getDefaultState(), 3);
 							}
 						}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.SOUTH), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.SOUTH), 3);
 							}
 					}
 				}
@@ -121,20 +122,20 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 					if (Math.random()>0.65) {
 						block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x + 1, (int) y + counter , (int) z), BlockZamitesLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter , (int) z), BlockZamitesLog.block.getDefaultState(), 3);
 						}
 						block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter + 1, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter + 1, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter + 1, (int) z))) {
 							block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter + 2, (int) z)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter + 2, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter + 2, (int) z))) {
-								world.setBlockState(new BlockPos((int) x + 1, (int) y + counter + 1, (int) z), BlockZamitesShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) x + 1, (int) y + counter + 2, (int) z), BlockZamitesShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter + 1, (int) z), BlockZamitesShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter + 2, (int) z), BlockZamitesShootTop.block.getDefaultState(), 3);
 							}
 						}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.EAST), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.EAST), 3);
 							}
 					}
 				}
@@ -145,20 +146,20 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 					if (Math.random()>0.65) {
 						block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x - 1, (int) y + counter , (int) z), BlockZamitesLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter , (int) z), BlockZamitesLog.block.getDefaultState(), 3);
 						}
 						block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter + 1, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter + 1, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter + 1, (int) z))) {
 							block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter + 2, (int) z)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter + 2, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter + 2, (int) z))) {
-								world.setBlockState(new BlockPos((int) x - 1, (int) y + counter + 1, (int) z), BlockZamitesShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) x - 1, (int) y + counter + 2, (int) z), BlockZamitesShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter + 1, (int) z), BlockZamitesShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter + 2, (int) z), BlockZamitesShootTop.block.getDefaultState(), 3);
 							}
 						}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.WEST), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockZamitesLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.WEST), 3);
 							}
 					}
 				}
@@ -172,8 +173,8 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z)), world, new BlockPos((int) x, (int) y + counter + 1, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockZamitesShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z), BlockZamitesShootTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockZamitesShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 1, (int) z), BlockZamitesShootTop.block.getDefaultState(), 3);
 				}
 			}
 		}

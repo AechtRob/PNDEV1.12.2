@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockFigBanyanRoot;
 import net.lepidodendron.block.BlockFigLeavesBanyan;
 import net.lepidodendron.block.BlockFigLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -2011,7 +2012,7 @@ public class ProcedureWorldGenFigBanyan extends ElementsLepidodendronMod.ModElem
                     || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.PLANTS)
                     || (world.getBlockState(topPos.down(propCounter)).getMaterial() == Material.LEAVES))
             ) {
-                world.setBlockState(topPos.down(propCounter), BlockFigBanyanRoot.block.getDefaultState());
+                Functions.setBlockStateAndCheckForDoublePlant(world,topPos.down(propCounter), BlockFigBanyanRoot.block.getDefaultState());
             }
             propCounter = propCounter + 1;
         }

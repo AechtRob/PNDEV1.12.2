@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockMarattia;
 import net.lepidodendron.block.BlockMarattiaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -183,8 +184,8 @@ public class StructureSpawnMarattia extends ElementsLepidodendronMod.ModElement 
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y), (int) z)), world, new BlockPos((int) x, (int) (y), (int) z))) {
 							block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)), world, new BlockPos((int) x, (int) (y + 1), (int) z))) {
-								world.setBlockState(new BlockPos((int) x, (int) (y), (int) z), BlockMarattia.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), BlockMarattiaTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y), (int) z), BlockMarattia.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockMarattiaTop.block.getDefaultState(), 3);
 							}
 						}
 					}

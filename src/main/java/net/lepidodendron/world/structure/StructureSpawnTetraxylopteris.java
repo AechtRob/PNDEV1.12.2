@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockTetraxylopteris;
 import net.lepidodendron.block.BlockTetraxylopterisSpore;
 import net.lepidodendron.block.BlockTetraxylopterisTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -152,10 +153,10 @@ public class StructureSpawnTetraxylopteris extends ElementsLepidodendronMod.ModE
 					world.setBlockToAir(spawnTo.up());
 				}
 				
-            	world.setBlockState(spawnTo, BlockTetraxylopteris.block.getDefaultState(), 2);
-				world.setBlockState(spawnTo.up(), BlockTetraxylopterisTop.block.getDefaultState(), 2);
+            	Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockTetraxylopteris.block.getDefaultState(), 2);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockTetraxylopterisTop.block.getDefaultState(), 2);
             	if (Math.random() > 0.75) {
-					world.setBlockState(spawnTo.up(2), BlockTetraxylopterisSpore.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockTetraxylopterisSpore.block.getDefaultState(), 2);
 				}
 			}
 		}

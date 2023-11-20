@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockNystroemia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +30,7 @@ public class WorldGenNystroemia extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockNystroemia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockNystroemia.block.getDefaultState(), 2);
                 BlockNystroemia.block.onBlockAdded(worldIn, blockpos, BlockNystroemia.block.getDefaultState());
 
                 flag = true;

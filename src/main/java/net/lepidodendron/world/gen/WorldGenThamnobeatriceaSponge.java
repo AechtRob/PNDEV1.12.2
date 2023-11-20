@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockThamnobeatricea;
 import net.lepidodendron.procedure.ProcedureWorldGenThamnobeatricea;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
@@ -48,7 +49,7 @@ public class WorldGenThamnobeatriceaSponge extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.north().up(2)).getBlock() != BlockThamnobeatricea.block)
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockThamnobeatricea.block)
                 ) {
-                    worldIn.setBlockState(position, BlockThamnobeatricea.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,position, BlockThamnobeatricea.block.getDefaultState(), 2);
                     HashMap<String, Object> $_dependencies = new HashMap<>();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());

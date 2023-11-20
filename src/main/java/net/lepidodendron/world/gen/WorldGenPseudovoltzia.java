@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPseudovoltzia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenPseudovoltzia extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockPseudovoltzia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPseudovoltzia.block.getDefaultState(), 2);
                 BlockPseudovoltzia.block.onBlockAdded(worldIn, blockpos, BlockPseudovoltzia.block.getDefaultState());
 
                 flag = true;

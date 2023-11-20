@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockDechellyia;
 import net.lepidodendron.block.BlockDechellyia2;
 import net.lepidodendron.block.BlockDechellyia3;
 import net.lepidodendron.block.BlockDechellyia4;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -163,10 +164,10 @@ public class StructureSpawnDechellyia extends ElementsLepidodendronMod.ModElemen
 						world.setBlockToAir(spawnTo.up(3));
 					}
 					//System.err.println("Spawning BlockDechellyia at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockDechellyia.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockDechellyia2.block.getDefaultState());
-					world.setBlockState(spawnTo.up(2), BlockDechellyia3.block.getDefaultState());
-					world.setBlockState(spawnTo.up(3), BlockDechellyia4.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockDechellyia.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockDechellyia2.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockDechellyia3.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockDechellyia4.block.getDefaultState());
 				}
 
 			}

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLavaCobble;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,20 +30,20 @@ public class WorldGenCobbleLava extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), BlockLavaCobble.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockLavaCobble.block.getDefaultState(), 2);
                 if (rand.nextInt(10) == 0) {
-                    worldIn.setBlockState(blockpos, BlockLavaCobble.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLavaCobble.block.getDefaultState(), 2);
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().north(), BlockLavaCobble.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().north(), BlockLavaCobble.block.getDefaultState(), 2);
                     }
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().south(), BlockLavaCobble.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().south(), BlockLavaCobble.block.getDefaultState(), 2);
                     }
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().east(), BlockLavaCobble.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().east(), BlockLavaCobble.block.getDefaultState(), 2);
                     }
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().west(), BlockLavaCobble.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().west(), BlockLavaCobble.block.getDefaultState(), 2);
                     }
                 }
                 flag = true;

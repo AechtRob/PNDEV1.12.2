@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,7 @@ public class WorldGenWaterfall extends WorldGenerator
             && worldIn.canBlockSeeSky(blockpos.north())
         )
         {
-            worldIn.setBlockState(blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
+            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
             flag = true;
         }
 
@@ -45,7 +46,7 @@ public class WorldGenWaterfall extends WorldGenerator
                 && worldIn.canBlockSeeSky(blockpos.south())
         )
         {
-            worldIn.setBlockState(blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
+            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
             flag = true;
         }
 
@@ -61,7 +62,7 @@ public class WorldGenWaterfall extends WorldGenerator
                 && worldIn.canBlockSeeSky(blockpos.east())
         )
         {
-            worldIn.setBlockState(blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
+            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
             flag = true;
         }
 
@@ -77,7 +78,7 @@ public class WorldGenWaterfall extends WorldGenerator
                 && worldIn.canBlockSeeSky(blockpos.west())
         )
         {
-            worldIn.setBlockState(blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
+            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.FLOWING_WATER.getDefaultState(), 2);
             flag = true;
         }
 

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockHermanophyton;
 import net.lepidodendron.block.BlockHermanophytonCone;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -173,10 +174,10 @@ public class StructureSpawnHermanophyton extends ElementsLepidodendronMod.ModEle
 					}
 					int ii = random.nextInt(6);
 					if (ii == 0) {
-						world.setBlockState(spawnTo, BlockHermanophytonCone.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockHermanophytonCone.block.getDefaultState());
 					}
 					else {
-						world.setBlockState(spawnTo, BlockHermanophyton.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockHermanophyton.block.getDefaultState());
 					}
 				}
 

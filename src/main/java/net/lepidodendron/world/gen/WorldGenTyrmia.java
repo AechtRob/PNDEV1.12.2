@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockTyrmia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class WorldGenTyrmia extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockTyrmia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTyrmia.block.getDefaultState(), 2);
                 BlockTyrmia.block.onBlockAdded(worldIn, blockpos, BlockTyrmia.block.getDefaultState());
 
                 flag = true;
