@@ -82,6 +82,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
     public Animation MAKE_NEST_ANIMATION;
+    public static Animation HIDE_ANIMATION;
     private Animation currentAnimation;
     private EntityPrehistoricFloraAgeableBase shoalLeader;
     private int inPFLove;

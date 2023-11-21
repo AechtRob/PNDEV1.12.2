@@ -345,13 +345,18 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.setIsDrinking(1000);
         if (!(this instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase)) {
             if (this.getAnimation() != this.ATTACK_ANIMATION) {
-                this.setAnimation(NO_ANIMATION);
+                if (this.getAnimation() != this.HIDE_ANIMATION) {
+                    this.setAnimation(NO_ANIMATION);
+                }
             }
         }
         this.getNavigator().clearPath();
         this.setDrinkingFrom(null);
         this.setGrazingFrom(null);
-        return super.attackEntityFrom(ds, i);
+        if (this.getAnimation() != this.HIDE_ANIMATION) {
+            return super.attackEntityFrom(ds, i);
+        }
+        return false;
     }
 
     public float getTravelSpeed() {

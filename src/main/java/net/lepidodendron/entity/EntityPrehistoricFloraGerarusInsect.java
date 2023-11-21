@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -32,6 +33,8 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	public ChainBuffer chainBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
+
+	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
 
 	public EntityPrehistoricFloraGerarusInsect(World world) {
 		super(world);
@@ -66,7 +69,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if (entityIn instanceof EntityPlayer) {
-			entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 	}
 
@@ -77,7 +80,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 
 		if (itemstack.isEmpty())
 		{
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 
 		return super.processInteract(player, hand);
@@ -87,7 +90,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source.getImmediateSource() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) source.getImmediateSource();
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 
 		return super.attackEntityFrom(source, amount);

@@ -227,6 +227,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_docodon", EntityPrehistoricFloraDocodon.class, LepidodendronMod.ENTITY_DOCODON, 48,-10664659,-5014987);
         registerEntity("prehistoric_flora_dollocaris", EntityPrehistoricFloraDollocaris.class, LepidodendronMod.ENTITY_DOLLOCARIS, 48,-4889795,-6408921);
         registerEntity("prehistoric_flora_doryaspis", EntityPrehistoricFloraDoryaspis.class, LepidodendronMod.ENTITY_DORYASPIS, 48,-2976943,-8757953);
+        registerEntity("prehistoric_flora_dorygnathus", EntityPrehistoricFloraDorygnathus.class, LepidodendronMod.ENTITY_DORYGNATHUS, 82,-0 ,-0);
         registerEntity("prehistoric_flora_dorypterus", EntityPrehistoricFloraDorypterus.class, LepidodendronMod.ENTITY_DORYPTERUS, 48,-1541368,-16410907);
         registerEntity("prehistoric_flora_draconichthys", EntityPrehistoricFloraDraconichthys.class, LepidodendronMod.ENTITY_DRACONICHTHYS, 48,-16120057,-8949905);
         registerEntity("prehistoric_flora_dracopristis", EntityPrehistoricFloraDracopristis.class, LepidodendronMod.ENTITY_DRACOPRISTIS, 64,-7902386,-2575990);

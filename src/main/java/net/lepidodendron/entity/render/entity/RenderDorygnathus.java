@@ -1,31 +1,31 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraRhamphorhynchus;
-import net.lepidodendron.entity.model.entity.ModelRhamphorhynchus;
+import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
+import net.lepidodendron.entity.model.entity.ModelDorygnathus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRhamphorhynchus> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhamphorhynchus.png");
+public class RenderDorygnathus extends RenderLiving<EntityPrehistoricFloraDorygnathus> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dorygnathus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.45F;
+        return 0.2F;
     }
 
-    public RenderRhamphorhynchus(RenderManager mgr) {
-        super(mgr, new ModelRhamphorhynchus(), 0.15f);
-    }
-
-    @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraRhamphorhynchus entity) {
-        return RenderRhamphorhynchus.TEXTURE;
+    public RenderDorygnathus(RenderManager mgr) {
+        super(mgr, new ModelDorygnathus(), 0.15f);
     }
 
     @Override
-    protected void applyRotations(EntityPrehistoricFloraRhamphorhynchus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraDorygnathus entity) {
+        return RenderDorygnathus.TEXTURE;
+    }
+
+    @Override
+    protected void applyRotations(EntityPrehistoricFloraDorygnathus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
         float getOffset = 0.0F;
         switch (entityLiving.getAttachmentFacing()) {
@@ -40,7 +40,7 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
     }
 
     @Override
-    protected void preRenderCallback(EntityPrehistoricFloraRhamphorhynchus entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraDorygnathus entity, float f) {
         float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
