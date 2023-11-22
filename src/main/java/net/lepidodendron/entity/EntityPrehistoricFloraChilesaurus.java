@@ -76,6 +76,11 @@ public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int warnDistance() {
+		return 6;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
