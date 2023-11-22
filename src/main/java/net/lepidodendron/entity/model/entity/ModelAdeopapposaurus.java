@@ -5028,16 +5028,16 @@ public class ModelAdeopapposaurus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraAdeopapposaurus e = (EntityPrehistoricFloraAdeopapposaurus) entity;
         animator.update(entity);
 
-//        animator.setAnimation(e.EAT_ANIMATION); //10 ticks
-//        animator.startKeyframe(4);
-//        animator.rotate(this.upperbody2, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.upperbody, (float) Math.toRadians(7.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.neck, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-//        animator.endKeyframe();
-//        animator.setStaticKeyframe(3);
-//        animator.resetKeyframe(3);
+        animator.setAnimation(e.ROAR_ANIMATION); //20 ticks
+        animator.startKeyframe(5);
+        animator.rotate(this.Neck, (float) Math.toRadians(-7.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck2, (float) Math.toRadians(5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(10);
 
     }
 }

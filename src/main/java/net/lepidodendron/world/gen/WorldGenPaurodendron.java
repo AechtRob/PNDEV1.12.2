@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPaurodendron;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -20,7 +21,7 @@ public class WorldGenPaurodendron extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPaurodendron.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                worldIn.setBlockState(blockpos, BlockPaurodendron.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPaurodendron.block.getDefaultState(), 2);
                 flag = true;
             }
         }

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockWielandiella;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class WorldGenWielandiella extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockWielandiella.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockWielandiella.block.getDefaultState(), 2);
                 BlockWielandiella.block.onBlockAdded(worldIn, blockpos, BlockWielandiella.block.getDefaultState());
 
                 flag = true;

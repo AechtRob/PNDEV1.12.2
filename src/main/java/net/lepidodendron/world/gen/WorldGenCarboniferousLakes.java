@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCarboniferousMud;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -102,7 +103,7 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
                             if (i4 >= 4) {
-                                worldIn.setBlockState(position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
                                     //fix for floating plants and half-plants:
@@ -110,17 +111,17 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
                                 }
                             }
                             else {
-                                worldIn.setBlockState(position.add(l1, i4, i3), this.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), this.block.getDefaultState(), 2);
                             }
-                            //worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            //Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
 
                             if (Math.random() > 0.4 && worldIn.getBlockState(position.add(l1, i4-1, i3)).getBlock() != this.block && worldIn.getBlockState(position.add(l1, i4-1, i3)).getBlock() != Blocks.AIR) {
-                                //worldIn.setBlockState(position.add(l1, i4, i3), BlockCarboniferousMud.block.getDefaultState());
+                                //Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), BlockCarboniferousMud.block.getDefaultState());
                                 if (Math.random() > 0.75) {
-                                    worldIn.setBlockState(position.add(l1, i4, i3), BlockCarboniferousMud.block.getDefaultState());
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), BlockCarboniferousMud.block.getDefaultState());
                                 }
                                 else {
-                                    worldIn.setBlockState(position.add(l1, i4, i3), Blocks.DIRT.getStateFromMeta(1));
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), Blocks.DIRT.getStateFromMeta(1));
                                 }
                             }
                         }
@@ -143,10 +144,10 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
                                 //Biome biome = worldIn.getBiome(blockpos);
                                 //String checkBiome = "lepidodendron:devonian_floodplain";
                                 //if (!checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-								//	worldIn.setBlockState(blockpos, BlockPrehistoricGroundCoverBasic.block.getDefaultState(), 2);
+								//	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundCoverBasic.block.getDefaultState(), 2);
                                 //}
                                 //else {
-                                	worldIn.setBlockState(blockpos, BlockCarboniferousMud.block.getDefaultState(), 2);
+                                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCarboniferousMud.block.getDefaultState(), 2);
                                 //}
                             }
                         }
@@ -166,7 +167,7 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
 
                             if (flag1 && (k4 < 4 || rand.nextInt(2) != 0) && worldIn.getBlockState(position.add(j2, k4, k3)).getMaterial().isSolid())
                             {
-                                worldIn.setBlockState(position.add(j2, k4, k3), Blocks.STONE.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(j2, k4, k3), Blocks.STONE.getDefaultState(), 2);
                             }
                         }
                     }
@@ -184,7 +185,7 @@ public class WorldGenCarboniferousLakes extends WorldGenerator
                         if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3)))
                         {
                             int flag = net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2| 16 : 2; //Forge: With bit 5 unset, it will notify neighbors and load adjacent chunks.
-                            worldIn.setBlockState(position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), flag); //Forge
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), flag); //Forge
                         }
                     }
                 }

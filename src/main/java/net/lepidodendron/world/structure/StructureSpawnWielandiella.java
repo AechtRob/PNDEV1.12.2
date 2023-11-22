@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockWielandiella;
 import net.lepidodendron.block.BlockWielandiellaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -150,8 +151,8 @@ public class StructureSpawnWielandiella extends ElementsLepidodendronMod.ModElem
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockWielandiella.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockWielandiellaTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockWielandiella.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockWielandiellaTop.block.getDefaultState(), 3);
 			}
 		}
 	}

@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockSahnioxylonSapling;
 import net.lepidodendron.block.BlockSahnioxylonShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenSahnioxylon;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -38,7 +39,7 @@ public class WorldGenSahnioxylon extends WorldGenerator
 
                     //Grow:
                     if (Math.random() > 0.3) {
-                        worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                     }
                     else {
                         HashMap<String, Object> $_dependencies = new HashMap<>();
@@ -76,7 +77,7 @@ public class WorldGenSahnioxylon extends WorldGenerator
                             && worldIn.isAirBlock(blockpos.up()) && worldIn.isAirBlock((blockpos.up(2))) && worldIn.isAirBlock((blockpos.up(3))) && worldIn.isAirBlock((blockpos.up(4)))) {
 
                         if (Math.random() > 0.3) {
-                            worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                         }
                         else {
                             HashMap<String, Object> $_dependencies = new HashMap<>();

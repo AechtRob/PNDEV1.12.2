@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCooksonia;
 import net.lepidodendron.block.BlockCooksoniaSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -21,9 +22,9 @@ public class WorldGenCooksonia extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCooksonia.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockCooksonia.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCooksonia.block.getDefaultState(), 2);
 				if ((Math.random() > 0.7)) {
-					worldIn.setBlockState(blockpos, BlockCooksoniaSpore.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCooksoniaSpore.block.getDefaultState(), 2);
 	        	}
                 flag = true;
             }

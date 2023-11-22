@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockEdwardsiphyton;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
@@ -33,35 +34,35 @@ public class WorldGenEdwardsiphyton extends WorldGenerator
             	int orientation = rand.nextInt(6);
             	if (orientation == 0) { //North
             		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.NORTH)) {
-	                	worldIn.setBlockState(blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
+	                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
 	                	flag = true;
             		}
             	}
             	else {
             		if (orientation == 1) { //South
 	            		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.SOUTH)) {
-		                	worldIn.setBlockState(blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
+		                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
 		                	flag = true;
 	            		}
 	            	}
 	            	else {
 	            		if (orientation == 2) { //West
 		            		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.WEST)) {
-			                	worldIn.setBlockState(blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
+			                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
 			                	flag = true;
 		            		}
 		            	}
 		            	else {
 		            		if (orientation == 3) { //East
 			            		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.EAST)) {
-				                	worldIn.setBlockState(blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
+				                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
 				                	flag = true;
 			            		}
 			            	}
 			            	else {
 			            		if (orientation == 4) { //Up
 				            		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-					                	worldIn.setBlockState(blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
+					                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 										PlaceEggs(rand, worldIn, blockpos);
 										flag = true;
 				            		}
@@ -69,7 +70,7 @@ public class WorldGenEdwardsiphyton extends WorldGenerator
 				            	else {
 				            		if (orientation == 5) { //Down
 					            		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.DOWN)) {
-						                	worldIn.setBlockState(blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
+						                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
 						                	flag = true;
 					            		}
 					            	}

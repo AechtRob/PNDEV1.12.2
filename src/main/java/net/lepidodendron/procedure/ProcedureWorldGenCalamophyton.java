@@ -4,6 +4,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCalamophytonLog;
 import net.lepidodendron.block.BlockCalamophytonShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -50,7 +51,7 @@ public class ProcedureWorldGenCalamophyton extends ElementsLepidodendronMod.ModE
 			while (counter < TrunkHeight) {
 				Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockCalamophytonLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockCalamophytonLog.block.getDefaultState(), 3);
 				}
 				counter = counter + 1;
 			}
@@ -59,7 +60,7 @@ public class ProcedureWorldGenCalamophyton extends ElementsLepidodendronMod.ModE
 			Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world,
 				new BlockPos((int) x, (int) y + counter, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockCalamophytonShoot.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockCalamophytonShoot.block.getDefaultState(), 3);
 				}
 		}
 	}

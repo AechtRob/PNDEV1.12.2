@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -20,7 +21,7 @@ public class ProcedureTreeLeaf extends ElementsLepidodendronMod.ModElement {
 				new BlockPos((int) x, (int) y, (int) z))
 				|| material.isReplaceable()
 		) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLeaf.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), blockLeaf.getDefaultState(), 3);
 		}
 
 	}
@@ -30,7 +31,7 @@ public class ProcedureTreeLeaf extends ElementsLepidodendronMod.ModElement {
 		Block block = world.getBlockState(pos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(pos), world,
 				pos)) {
-			world.setBlockState(pos, blockLeaf.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos, blockLeaf.getDefaultState(), 3);
 		}
 	}
 }

@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBrasilodendron;
 import net.lepidodendron.block.BlockBrasilodendronCentre;
 import net.lepidodendron.block.BlockBrasilodendronTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -169,9 +170,9 @@ public class StructureSpawnBrasilodendron extends ElementsLepidodendronMod.ModEl
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockBrasilodendron.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockBrasilodendronCentre.block.getDefaultState());
-					world.setBlockState(spawnTo.up(2), BlockBrasilodendronTop.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBrasilodendron.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockBrasilodendronCentre.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockBrasilodendronTop.block.getDefaultState());
 				}
 
 			}

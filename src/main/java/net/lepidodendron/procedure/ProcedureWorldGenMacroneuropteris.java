@@ -6,6 +6,7 @@ import net.lepidodendron.block.BlockMacroneuropterisLeaves;
 import net.lepidodendron.block.BlockMacroneuropterisLeaves1;
 import net.lepidodendron.block.BlockMacroneuropterisLog;
 import net.lepidodendron.block.BlockMacroneuropterisStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -328,7 +329,7 @@ public class ProcedureWorldGenMacroneuropteris extends ElementsLepidodendronMod.
 		if ((world.getBlockState(pos).getBlock() == BlockMacroneuropterisLeaves.block
 			|| world.getBlockState(pos).getBlock() == BlockMacroneuropterisLeaves1.block)
 			&& world.isAirBlock(pos.down()) && Math.random() > 0.33D) {
-			world.setBlockState(pos.down(), BlockMacroneuropterisStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.down(), BlockMacroneuropterisStrobilus.block.getDefaultState(), 3);
 			if (!world.isRemote) {
 				TileEntity _tileEntity = world.getTileEntity(pos.down());
 				IBlockState _bs = world.getBlockState(pos.down());

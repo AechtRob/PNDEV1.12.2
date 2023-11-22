@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockUtrechtiaLeavesPlaceable;
 import net.lepidodendron.block.BlockUtrechtiaLeavesSmallPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -36,10 +37,10 @@ public class WorldGenUtrechtiaShoot extends WorldGenerator
             
             {
                 if (rand.nextInt(2) == 0) {
-                    worldIn.setBlockState(blockpos, BlockUtrechtiaLeavesPlaceable.block.getDefaultState().withProperty(BlockUtrechtiaLeavesPlaceable.BlockCustom.FACING, EnumFacing.UP), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockUtrechtiaLeavesPlaceable.block.getDefaultState().withProperty(BlockUtrechtiaLeavesPlaceable.BlockCustom.FACING, EnumFacing.UP), 2);
                 }
                 else {
-                    worldIn.setBlockState(blockpos, BlockUtrechtiaLeavesSmallPlaceable.block.getDefaultState().withProperty(BlockUtrechtiaLeavesPlaceable.BlockCustom.FACING, EnumFacing.UP), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockUtrechtiaLeavesSmallPlaceable.block.getDefaultState().withProperty(BlockUtrechtiaLeavesPlaceable.BlockCustom.FACING, EnumFacing.UP), 2);
                 }
                 flag = true;
             }

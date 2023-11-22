@@ -42,6 +42,8 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	private int inPFLove;
 	public Animation HIDE_ANIMATION;
 
+	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
+	
 	public EntityPrehistoricFloraYuxisaurus(World world) {
 		super(world);
 		setSize(1.5F, 1F);
@@ -81,14 +83,14 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if (entityIn instanceof EntityPlayer) {
-			entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 	}
 
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
 		if (player.getHeldItem(hand).isEmpty()) {
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 		return super.processInteract(player, hand);
 	}
@@ -103,16 +105,18 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 		else {
 			result = super.attackEntityFrom(ds, i);
 		}
-		if (result && ds.getTrueSource() instanceof EntityLivingBase) {
+		if (result && ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() != HIDE_ANIMATION) {
 			this.setAnimation(HIDE_ANIMATION);
 		}
 
 		if (entityIn instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entityIn;
 			if (player.getHeldItem(getActiveHand()).isEmpty()) {
-				entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-				this.setAnimation(HIDE_ANIMATION);
+				entityIn.attackEntityFrom(SPIKY, (float) 2);
 			}
+		}
+		if (ds.getTrueSource() instanceof EntityLivingBase && !(entityIn instanceof EntityPlayer)) {
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 
 		return result;

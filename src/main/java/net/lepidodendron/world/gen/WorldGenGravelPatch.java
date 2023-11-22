@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -43,7 +44,7 @@ public class WorldGenGravelPatch extends WorldGenerator
                             if ((material == Material.SAND || material == Material.ROCK || material == Material.GROUND)
                                 && worldIn.getBlockState(blockpos) != Blocks.BEDROCK.getDefaultState())
                             {
-                                worldIn.setBlockState(blockpos, this.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, this.block.getDefaultState(), 2);
                             }
                         }
                     }

@@ -2070,6 +2070,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation WUKONGOPTERUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_young"));
 	public static final ResourceLocation WUKONGOPTERUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_f"));
 	public static final ResourceLocation WUKONGOPTERUS_LOOT_F_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_young_f"));
+	public static final int ENTITY_DORYGNATHUS = 832;
+	public static final ResourceLocation DORYGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dorygnathus"));
+	public static final ResourceLocation DORYGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dorygnathus_young"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockMesodescolea;
 import net.lepidodendron.block.BlockMesodescoleaCone;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -173,10 +174,10 @@ public class StructureSpawnMesodescolea extends ElementsLepidodendronMod.ModElem
 					}
 					int ii = random.nextInt(6);
 					if (ii == 0) {
-						world.setBlockState(spawnTo, BlockMesodescoleaCone.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockMesodescoleaCone.block.getDefaultState());
 					}
 					else {
-						world.setBlockState(spawnTo, BlockMesodescolea.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockMesodescolea.block.getDefaultState());
 					}
 				}
 

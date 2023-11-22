@@ -8755,6 +8755,78 @@
         "stream": false
       }
     ]
+  },
+
+  "dorygnathus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dorygnathus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_living06",
+        "stream": false
+      }
+    ]
+  },
+  "dorygnathus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dorygnathus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dorygnathus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dorygnathus_death",
+        "stream": false
+      }
+    ]
+  },
+  "dorygnathus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dorygnathus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dorygnathus_alarm04",
+        "stream": false
+      }
+    ]
   }
-  
 }

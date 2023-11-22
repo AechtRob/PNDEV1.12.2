@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -102,7 +103,7 @@ public class OesiaGenerator extends WorldGenerator
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD)))
 					{
-						worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 						//Assign a variant at random - not needed for sideways rendering but is co-opted for varying height attachments
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {

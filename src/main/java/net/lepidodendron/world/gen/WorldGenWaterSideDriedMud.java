@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockDriedMud;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -40,7 +41,7 @@ public class WorldGenWaterSideDriedMud extends WorldGenerator
                     || ((worldIn.getBlockState(blockpos.west(2))).getMaterial() == Material.WATER)))
                 )
             )
-                worldIn.setBlockState(blockpos, BlockDriedMud.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDriedMud.block.getDefaultState(), 2);
                 flag = true;
 
         }

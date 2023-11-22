@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ public class WorldGenStone extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.STONE.getStateFromMeta(0), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(0), 2);
                 flag = true;
             }
         }

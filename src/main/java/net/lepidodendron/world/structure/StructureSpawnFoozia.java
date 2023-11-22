@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockFoozia;
 import net.lepidodendron.block.BlockFooziaSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -137,10 +138,10 @@ public class StructureSpawnFoozia extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockFoozia.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockFoozia.block.getDefaultState(), 3);
 				if ((Math.random() > 0.7)) {
 					if ((Math.random() > 0.7)) {
-						world.setBlockState(spawnTo, BlockFooziaSpore.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockFooziaSpore.block.getDefaultState(), 3);
 					}
 	        	}
 			}

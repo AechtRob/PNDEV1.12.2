@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockPachypteris;
 import net.lepidodendron.block.BlockPachypterisStem;
 import net.lepidodendron.block.BlockPachypterisTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -31,31 +32,31 @@ public class WorldGenPachypteris extends WorldGenerator
                 if (isWaterBlock(worldIn, pos.up()) && isWaterBlock(worldIn, pos) && isWaterBlock(worldIn, pos.up(2))
                         && (worldIn.isAirBlock(pos.up(3)))
                 ) {
-                    worldIn.setBlockState(pos, BlockPachypteris.block.getDefaultState().withProperty(BlockPachypteris.DEEP, true));
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, BlockPachypteris.block.getDefaultState().withProperty(BlockPachypteris.DEEP, true));
                 }
                 else {
-                    worldIn.setBlockState(pos, BlockPachypteris.block.getDefaultState().withProperty(BlockPachypteris.DEEP, false));
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, BlockPachypteris.block.getDefaultState().withProperty(BlockPachypteris.DEEP, false));
                 }
                 if (isWaterBlock(worldIn, pos.up()) && isWaterBlock(worldIn, pos) && isWaterBlock(worldIn, pos.up(2))
                         && (worldIn.isAirBlock(pos.up(3)))
                 ) { //Vary the heights:
                     //System.err.println("Large");
                     if (Math.random() > 0.66) {
-                        worldIn.setBlockState(pos.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
                     }
                     else {
                         if ((Math.random() > 0.5) && (worldIn.isAirBlock(pos.up(4)))) {
-                            worldIn.setBlockState(pos.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
-                            worldIn.setBlockState(pos.up(4), BlockPachypterisTop.block.getDefaultState(), 3);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(4), BlockPachypterisTop.block.getDefaultState(), 3);
                         }
                         else {
                             if ((worldIn.isAirBlock(pos.up(5))) && (worldIn.isAirBlock(pos.up(4)))) {
-                                worldIn.setBlockState(pos.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
-                                worldIn.setBlockState(pos.up(4), BlockPachypterisStem.block.getDefaultState(), 3);
-                                worldIn.setBlockState(pos.up(5), BlockPachypterisTop.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(4), BlockPachypterisStem.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(5), BlockPachypterisTop.block.getDefaultState(), 3);
                             }
                             else {
-                                worldIn.setBlockState(pos.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
                             }
                         }
                     }
@@ -65,21 +66,21 @@ public class WorldGenPachypteris extends WorldGenerator
                         && (worldIn.isAirBlock(pos.up(2)))
                 ) { //Vary the heights:
                     if (Math.random() > 0.66) {
-                        worldIn.setBlockState(pos.up(2), BlockPachypterisTop.block.getDefaultState(), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), BlockPachypterisTop.block.getDefaultState(), 3);
                     }
                     else {
                         if ((Math.random() > 0.5) && (worldIn.isAirBlock(pos.up(3)))) {
-                            worldIn.setBlockState(pos.up(2), BlockPachypterisStem.block.getDefaultState(), 3);
-                            worldIn.setBlockState(pos.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), BlockPachypterisStem.block.getDefaultState(), 3);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
                         }
                         else {
                             if ((worldIn.isAirBlock(pos.up(4))) && (worldIn.isAirBlock(pos.up(3)))) {
-                                worldIn.setBlockState(pos.up(2), BlockPachypterisStem.block.getDefaultState(), 3);
-                                worldIn.setBlockState(pos.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
-                                worldIn.setBlockState(pos.up(4), BlockPachypterisTop.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), BlockPachypterisStem.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(4), BlockPachypterisTop.block.getDefaultState(), 3);
                             }
                             else {
-                                worldIn.setBlockState(pos.up(2), BlockPachypterisTop.block.getDefaultState(), 3);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), BlockPachypterisTop.block.getDefaultState(), 3);
                             }
                         }
                     }

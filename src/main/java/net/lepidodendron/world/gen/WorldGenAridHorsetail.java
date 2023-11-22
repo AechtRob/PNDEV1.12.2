@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockAridHorsetail;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -41,7 +42,7 @@ public class WorldGenAridHorsetail extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockAridHorsetail.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAridHorsetail.block.getDefaultState(), 2);
                     flag = true;
                 }
             }

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockFrenelopsis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenFrenelopsis extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockFrenelopsis.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockFrenelopsis.block.getDefaultState(), 2);
                 BlockFrenelopsis.block.onBlockAdded(worldIn, blockpos, BlockFrenelopsis.block.getDefaultState());
 
                 flag = true;

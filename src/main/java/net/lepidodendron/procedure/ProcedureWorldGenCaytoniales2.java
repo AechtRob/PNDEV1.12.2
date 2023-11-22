@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCaytoniales2;
 import net.lepidodendron.block.BlockCaytonialesTop2;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -52,8 +53,8 @@ public class ProcedureWorldGenCaytoniales2 extends ElementsLepidodendronMod.ModE
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y), (int) z)), world, new BlockPos((int) x, (int) (y), (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)), world, new BlockPos((int) x, (int) (y + 1), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y), (int) z), BlockCaytoniales2.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), BlockCaytonialesTop2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y), (int) z), BlockCaytoniales2.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockCaytonialesTop2.block.getDefaultState(), 3);
 				}
 			}
 		}

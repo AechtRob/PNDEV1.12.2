@@ -98,6 +98,11 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
+                    if (entityChooser instanceof EntityPrehistoricFloraAgeableBase) {
+                        if (((EntityPrehistoricFloraAgeableBase)entityChooser).getAnimation() == EntityPrehistoricFloraAgeableBase.HIDE_ANIMATION) {
+                            targetOK = false;
+                        }
+                    }
                     if ((!this.cannibal) && (entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
                     ) { //Disallow cannibalism!
                         //this.entity.setIsFast(false);

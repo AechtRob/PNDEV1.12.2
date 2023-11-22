@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPolyspermophyllum;
 import net.lepidodendron.block.BlockPolyspermophyllumCentre;
 import net.lepidodendron.block.BlockPolyspermophyllumTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -149,9 +150,9 @@ public class StructureSpawnPolyspermophyllum extends ElementsLepidodendronMod.Mo
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockPolyspermophyllum.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockPolyspermophyllumCentre.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockPolyspermophyllumTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPolyspermophyllum.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockPolyspermophyllumCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockPolyspermophyllumTop.block.getDefaultState(), 3);
 			}
 		}
 	}

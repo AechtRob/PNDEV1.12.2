@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockPrehistoricGroundCoverPlantsSandy;
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,7 +24,7 @@ public class WorldGenPrehistoricGroundSandy extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrehistoricGroundCoverPlantsSandy.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                //worldIn.setBlockState(blockpos, BlockPrehistoricGroundCoverPlantsSandy.block.getDefaultState(), 2);
+                //Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundCoverPlantsSandy.block.getDefaultState(), 2);
 
                 boolean waterCriteria = false;
                 int waterDist = LepidodendronConfig.waterSandHorizontal;
@@ -53,7 +54,7 @@ public class WorldGenPrehistoricGroundSandy extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria){
-                    worldIn.setBlockState(blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
                 }
 
                 flag = true;

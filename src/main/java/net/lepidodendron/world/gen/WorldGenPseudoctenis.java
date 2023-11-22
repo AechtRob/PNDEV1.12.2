@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPseudoctenis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -37,7 +38,7 @@ public class WorldGenPseudoctenis extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockPseudoctenis.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPseudoctenis.block.getDefaultState(), 2);
                     BlockPseudoctenis.block.onBlockAdded(worldIn, blockpos, BlockPseudoctenis.block.getDefaultState());
                     flag = true;
                 }
@@ -63,7 +64,7 @@ public class WorldGenPseudoctenis extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockPseudoctenis.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPseudoctenis.block.getDefaultState(), 2);
                     BlockPseudoctenis.block.onBlockAdded(worldIn, blockpos, BlockPseudoctenis.block.getDefaultState());
                     flag = true;
                 }

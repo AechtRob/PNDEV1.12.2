@@ -4,6 +4,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCycadeoideaLeaves;
 import net.lepidodendron.block.BlockCycadeoideaLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -59,7 +60,7 @@ public class ProcedureWorldGenCycadeoidea extends ElementsLepidodendronMod.ModEl
 			while (counter < TrunkHeight) {
 				Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockCycadeoideaLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockCycadeoideaLog.block.getDefaultState(), 3);
 				}
 				counter = counter + 1;
 			}
@@ -68,7 +69,7 @@ public class ProcedureWorldGenCycadeoidea extends ElementsLepidodendronMod.ModEl
 			Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world,
 				new BlockPos((int) x, (int) y + counter, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockCycadeoideaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockCycadeoideaLeaves.block.getDefaultState(), 3);
 				}
 		}
 	}

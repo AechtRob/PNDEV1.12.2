@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockPtilophyllumLeaves;
 import net.lepidodendron.block.BlockPtilophyllumLog;
 import net.lepidodendron.block.BlockPtilophyllumShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -68,7 +69,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 				//Just trunk up:
 				block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 					AddLeaves(world, new BlockPos((int) x, (int) y + counter , (int) z), false);
 				}
 			}
@@ -78,7 +79,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 					if (world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z)).getBlock() == BlockPtilophyllumLog.block) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockPtilophyllumShoot.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockPtilophyllumShoot.block.getDefaultState(), 3);
 						}
 					}
 					break;
@@ -88,7 +89,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 						//Just trunk up:
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 							AddLeaves(world, new BlockPos((int) x, (int) y + counter , (int) z), false);
 						}
 						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
@@ -106,7 +107,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 						AddLeaves(world, new BlockPos((int) x, (int) y + counter-1, (int) z), true);
 						//Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-						//	world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
+						//	Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
 						//}
 						//Which way?
 						if (Math.random() > 0.5) {
@@ -122,12 +123,12 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 											&& (world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock() != BlockPtilophyllumLog.block)
 							)
 							{
-								world.setBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
 								AddLeaves(world, new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), false);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-									world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
 									AddLeaves(world, new BlockPos((int) x, (int) y + counter, (int) z - 1), false);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x);
@@ -153,12 +154,12 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 							{
 
 								//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter - 1, (int) z + 1))) {
-								world.setBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
 								AddLeaves(world, new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), false);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-									world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockPtilophyllumLog.block.getDefaultState(), 3);
 									AddLeaves(world, new BlockPos((int) x, (int) y + counter, (int) z + 1), false);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x);
@@ -186,12 +187,12 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 							{
 
 								//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter - 1, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter - 1, (int) z))) {
-								world.setBlockState(new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 								AddLeaves(world, new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), false);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z ))) {
-									world.setBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 									AddLeaves(world, new BlockPos((int) x - 1, (int) y + counter, (int) z), false);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x - 1);
@@ -215,12 +216,12 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 							)
 							{
 								//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter - 1, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter - 1, (int) z))) {
-								world.setBlockState(new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 								AddLeaves(world, new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), false);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z ))) {
-									world.setBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 									AddLeaves(world, new BlockPos((int) x + 1, (int) y + counter, (int) z), false);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x + 1);
@@ -245,7 +246,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 		if (world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z)).getBlock() == BlockPtilophyllumLog.block) {
 			block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockPtilophyllumShoot.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockPtilophyllumShoot.block.getDefaultState(), 3);
 			}
 		}
 	}
@@ -260,7 +261,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 					block1 = world.getBlockState(pos.down()).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(pos.up()), world, pos.up())
 						&& block1 == BlockPtilophyllumLog.block) {
-						world.setBlockState(pos.up(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.UP));
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.UP));
 					}
 				}
 			}
@@ -270,7 +271,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 					block1 = world.getBlockState(pos.south()).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(pos.north()), world, pos.north())
 						&& block1 == BlockPtilophyllumLog.block) {
-						world.setBlockState(pos.north(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.NORTH));
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.NORTH));
 					}
 				}
 				if (Math.random() > 0.9) { //South
@@ -278,7 +279,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 					block1 = world.getBlockState(pos.north()).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(pos.south()), world, pos.south())
 						&& block1 == BlockPtilophyllumLog.block) {
-						world.setBlockState(pos.south(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.SOUTH));
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.SOUTH));
 					}
 				}
 				if (Math.random() > 0.9) { //East
@@ -286,7 +287,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 					block1 = world.getBlockState(pos.west()).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(pos.east()), world, pos.east())
 						&& block1 == BlockPtilophyllumLog.block) {
-						world.setBlockState(pos.east(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.EAST));
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.EAST));
 					}
 				}
 				if (Math.random() > 0.9) { //West
@@ -294,7 +295,7 @@ public class ProcedureWorldGenPtilophyllumBranch extends ElementsLepidodendronMo
 					block1 = world.getBlockState(pos.east()).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(pos.west()), world, pos.west())
 						&& block1 == BlockPtilophyllumLog.block) {
-						world.setBlockState(pos.west(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.WEST));
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockPtilophyllumLeaves.block.getDefaultState().withProperty(BlockPtilophyllumLeaves.BlockCustom.FACING, EnumFacing.WEST));
 					}
 				}
 			}

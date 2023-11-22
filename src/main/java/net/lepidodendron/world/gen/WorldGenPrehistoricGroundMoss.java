@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPrehistoricGroundMossy;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,7 +29,7 @@ public class WorldGenPrehistoricGroundMoss extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), BlockPrehistoricGroundMossy.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockPrehistoricGroundMossy.block.getDefaultState(), 2);
                 flag = true;
             }
         }

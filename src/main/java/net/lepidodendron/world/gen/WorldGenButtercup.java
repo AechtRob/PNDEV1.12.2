@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockButtercup;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -33,7 +34,7 @@ public class WorldGenButtercup extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockButtercup.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockButtercup.block.getDefaultState(), 2);
                     BlockButtercup.block.onBlockAdded(worldIn, blockpos, BlockButtercup.block.getDefaultState());
                     flag = true;
                 }
@@ -59,7 +60,7 @@ public class WorldGenButtercup extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockButtercup.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockButtercup.block.getDefaultState(), 2);
                     BlockButtercup.block.onBlockAdded(worldIn, blockpos, BlockButtercup.block.getDefaultState());
                     flag = true;
                 }

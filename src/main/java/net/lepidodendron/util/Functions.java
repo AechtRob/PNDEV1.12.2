@@ -4,6 +4,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -90,6 +91,27 @@ public class Functions {
         }
     }
 
+    public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state, int flags) {
+        if (worldIn.getBlockState(pos).getBlock() instanceof BlockDoublePlant) {
+            if (worldIn.getBlockState(pos.up()).getBlock() instanceof BlockDoublePlant) {
+                if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER
+                        && worldIn.getBlockState(pos.up()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER) {
+                    worldIn.setBlockToAir(pos.up());
+                }
+            }
+            if (worldIn.getBlockState(pos.down()).getBlock() instanceof BlockDoublePlant) {
+                if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
+                        && worldIn.getBlockState(pos.down()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER) {
+                    worldIn.setBlockToAir(pos.down());
+                }
+            }
+        }
+        worldIn.setBlockState(pos, state, flags);
+    }
+
+    public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state) {
+        setBlockStateAndCheckForDoublePlant(worldIn, pos, state, 3);
+    }
 
     public static boolean decoLoaded() {
         return true;

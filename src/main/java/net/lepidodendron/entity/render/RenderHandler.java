@@ -4980,6 +4980,12 @@ public class RenderHandler {
                 return new RenderWukongopterus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDorygnathus.class, new IRenderFactory<EntityPrehistoricFloraDorygnathus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDorygnathus> createRenderFor(RenderManager manager) {
+                return new RenderDorygnathus(manager);
+            }
+        });
         
         
         

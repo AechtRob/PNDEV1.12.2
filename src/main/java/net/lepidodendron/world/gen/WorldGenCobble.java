@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -28,20 +29,20 @@ public class WorldGenCobble extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.COBBLESTONE.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.COBBLESTONE.getDefaultState(), 2);
                 if (rand.nextInt(10) == 0) {
-                    worldIn.setBlockState(blockpos, Blocks.COBBLESTONE.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.COBBLESTONE.getDefaultState(), 2);
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().north(), Blocks.COBBLESTONE.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().north(), Blocks.COBBLESTONE.getDefaultState(), 2);
                     }
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().south(), Blocks.COBBLESTONE.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().south(), Blocks.COBBLESTONE.getDefaultState(), 2);
                     }
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().east(), Blocks.COBBLESTONE.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().east(), Blocks.COBBLESTONE.getDefaultState(), 2);
                     }
                     if (rand.nextInt(4) == 0) {
-                        worldIn.setBlockState(blockpos.down().west(), Blocks.COBBLESTONE.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().west(), Blocks.COBBLESTONE.getDefaultState(), 2);
                     }
                 }
                 flag = true;

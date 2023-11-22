@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,7 +27,7 @@ public class WorldGenFern extends WorldGenerator
                 && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                 && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2)))
             {
-                worldIn.setBlockState(blockpos, Blocks.TALLGRASS.getStateFromMeta(2), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.TALLGRASS.getStateFromMeta(2), 2);
                 flag = true;
             }
         }

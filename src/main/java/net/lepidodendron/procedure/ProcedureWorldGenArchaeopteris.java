@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -460,7 +461,7 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 			//All trees have a shoot at the top:
 			Block block = world.getBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z)), world, new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z), BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z), BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 3);
 			}
 
 			ProcedureSpawnXenocladia.executeProcedure(x, (int) dependencies.get("y"), z, world, LepidodendronConfigPlants.genXenocladiaArchaeopteris, SaplingSpawn);
@@ -475,7 +476,7 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 			if (
 				world.getBlockState(pos).getBlock().canBeReplacedByLeaves(world.getBlockState(pos), world, pos)
 			) {
-				world.setBlockState(pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
 			}
 		}
 
@@ -486,10 +487,10 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 				&& world.getBlockState(pos.north(2)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.north(2)), world, pos)
 				&& world.getBlockState(pos.north(3)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.north(3)), world, pos)
 			) {
-				world.setBlockState(pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.north(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.north(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.north(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
 			}
 		}
 
@@ -500,10 +501,10 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 				&& world.getBlockState(pos.south()).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.south(2)), world, pos)
 				&& world.getBlockState(pos.south()).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.south(3)), world, pos)
 			) {
-				world.setBlockState(pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.south(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.south(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.south(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
 			}
 		}
 
@@ -514,10 +515,10 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 				&& world.getBlockState(pos.east(2)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.east(2)), world, pos)
 				&& world.getBlockState(pos.east(3)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.east(3)), world, pos)
 			) {
-				world.setBlockState(pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.east(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.east(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.east(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
 			}
 		}
 
@@ -528,10 +529,10 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 				&& world.getBlockState(pos.west(2)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.west(2)), world, pos)
 				&& world.getBlockState(pos.west(3)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.west(3)), world, pos)
 			) {
-				world.setBlockState(pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.west(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.west(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
-				world.setBlockState(pos.west(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockArchaeopterisLeaves2.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(2), BlockArchaeopterisLeaves3.block.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(3), BlockArchaeopterisLeaves4.block.getDefaultState().withProperty(FACING,facing), 3);
 			}
 		}
 
@@ -540,7 +541,7 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 	public static void LeavesSmall(int x, int y, int z, World world, EnumFacing facing) {
 		BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
 		if (world.getBlockState(pos).getBlock().canBeReplacedByLeaves(world.getBlockState(pos), world, pos)) {
-			world.setBlockState(pos, BlockArchaeopterisLeavesSmall.block.getDefaultState().withProperty(FACING,facing), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockArchaeopterisLeavesSmall.block.getDefaultState().withProperty(FACING,facing), 3);
 		}
 	}
 	

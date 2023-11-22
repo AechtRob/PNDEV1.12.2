@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBaragwanathia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -157,7 +158,7 @@ public class StructureSpawnBaragwanathia extends ElementsLepidodendronMod.ModEle
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockBaragwanathia.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBaragwanathia.block.getDefaultState(), 3);
 					//System.err.println("Spawned " + i + " " + j + " " + k);
 				}
 

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockThucydia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenThucydia extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockThucydia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockThucydia.block.getDefaultState(), 2);
                 BlockThucydia.block.onBlockAdded(worldIn, blockpos, BlockThucydia.block.getDefaultState());
 
                 flag = true;

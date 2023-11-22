@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockMatonia;
 import net.lepidodendron.block.BlockMatoniaLarge;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -195,10 +196,10 @@ public class StructureSpawnMatonia extends ElementsLepidodendronMod.ModElement {
 					}
 
 					if (Math.random() >= 0.5) {
-						world.setBlockState(spawnTo, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
 					}
 					else {
-						world.setBlockState(spawnTo, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
 					}
 				}
 

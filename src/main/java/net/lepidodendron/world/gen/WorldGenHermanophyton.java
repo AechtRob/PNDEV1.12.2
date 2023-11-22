@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockHermanophyton;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -36,7 +37,7 @@ public class WorldGenHermanophyton extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockHermanophyton.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockHermanophyton.block.getDefaultState(), 2);
                     BlockHermanophyton.block.onBlockAdded(worldIn, blockpos, BlockHermanophyton.block.getDefaultState());
                     flag = true;
                 }
@@ -62,7 +63,7 @@ public class WorldGenHermanophyton extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockHermanophyton.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockHermanophyton.block.getDefaultState(), 2);
                     BlockHermanophyton.block.onBlockAdded(worldIn, blockpos, BlockHermanophyton.block.getDefaultState());
                     flag = true;
                 }

@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPalaeostachyaBottom;
 import net.lepidodendron.block.BlockPalaeostachyaStem;
 import net.lepidodendron.block.BlockPalaeostachyaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -201,15 +202,15 @@ public class StructureSpawnPalaeostachya extends ElementsLepidodendronMod.ModEle
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockPalaeostachyaStem.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPalaeostachyaStem.block.getDefaultState(), 3);
 					if (Math.random() > 0.6) {
-						world.setBlockState(spawnTo.up(), BlockPalaeostachyaStem.block.getDefaultState(), 3);
-						world.setBlockState(spawnTo.up(2), BlockPalaeostachyaBottom.block.getDefaultState(), 3);
-						world.setBlockState(spawnTo.up(3), BlockPalaeostachyaTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockPalaeostachyaStem.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockPalaeostachyaBottom.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockPalaeostachyaTop.block.getDefaultState(), 3);
 					}
 					else {
-						world.setBlockState(spawnTo.up(), BlockPalaeostachyaBottom.block.getDefaultState(), 3);
-						world.setBlockState(spawnTo.up(2), BlockPalaeostachyaTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockPalaeostachyaBottom.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockPalaeostachyaTop.block.getDefaultState(), 3);
 					}
 				}
 			}

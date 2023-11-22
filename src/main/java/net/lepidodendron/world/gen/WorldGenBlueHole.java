@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockRugosa5;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -65,7 +66,7 @@ public class WorldGenBlueHole extends WorldGenerator
                     if ((Math.pow(Math.abs(xct),2)) + (Math.pow(Math.abs(zct),2)) <= (Math.pow(Math.abs(layerRadius),2))) {
                         if ((Math.pow(Math.abs(xct),2)) + (Math.pow(Math.abs(zct),2)) == (Math.pow(Math.abs(layerRadius),2))) {
                             if (Math.random() > 0.5) {
-                                worldIn.setBlockState(pos1, Blocks.WATER.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1, Blocks.WATER.getDefaultState());
                                 //Rugosa coral round the edge:
                                 if ((pos.getY() < (worldIn.getSeaLevel()-15))
                                     && (worldIn.provider.getDimension() == LepidodendronConfig.dimDevonian)) {
@@ -90,7 +91,7 @@ public class WorldGenBlueHole extends WorldGenerator
                                                 || (worldIn.getBlockState(pos2).getMaterial() == Material.GLASS)
                                                 || (worldIn.getBlockState(pos2).getMaterial() == Material.IRON)
                                                 || (worldIn.getBlockState(pos2).getMaterial() == Material.WOOD))) {
-                                            worldIn.setBlockState(pos1.up(), BlockRugosa5.block.getDefaultState().withProperty(BlockRugosa5.BlockCustom.FACING, enumfacing1), 2);
+                                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1.up(), BlockRugosa5.block.getDefaultState().withProperty(BlockRugosa5.BlockCustom.FACING, enumfacing1), 2);
                                             break;
                                         }
                                     }
@@ -98,7 +99,7 @@ public class WorldGenBlueHole extends WorldGenerator
                             }
                         }
                         else {
-                            worldIn.setBlockState(pos1, Blocks.WATER.getDefaultState());
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1, Blocks.WATER.getDefaultState());
                         }
                     }
                     zct += 1;
@@ -122,10 +123,10 @@ public class WorldGenBlueHole extends WorldGenerator
             while (zct <= layerRadius) {
                 BlockPos pos1 = pos.add(xct, 0, zct);
                 if ((Math.pow(Math.abs(xct), 2)) + (Math.pow(Math.abs(zct), 2)) <= (Math.pow(Math.abs(layerRadius), 2))) {
-                    worldIn.setBlockState(pos1, Blocks.SAND.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1, Blocks.SAND.getDefaultState());
                     if (Math.random() > 0.85 && worldIn.getBlockState(pos1.up()).getMaterial() == Material.WATER
                         && worldIn.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                        worldIn.setBlockState(pos1.up(), BlockRugosa5.block.getDefaultState().withProperty(BlockRugosa5.BlockCustom.FACING, EnumFacing.UP));
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1.up(), BlockRugosa5.block.getDefaultState().withProperty(BlockRugosa5.BlockCustom.FACING, EnumFacing.UP));
                     }
                 }
                 zct += 1;

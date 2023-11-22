@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockScytophyllum;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class WorldGenScytophyllum extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockScytophyllum.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockScytophyllum.block.getDefaultState(), 2);
                 BlockScytophyllum.block.onBlockAdded(worldIn, blockpos, BlockScytophyllum.block.getDefaultState());
 
                 flag = true;

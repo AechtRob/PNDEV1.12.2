@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockOnychiopsis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -175,7 +176,7 @@ public class StructureSpawnOnychiopsis extends ElementsLepidodendronMod.ModEleme
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockOnychiopsis.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockOnychiopsis.block.getDefaultState(), 3);
 				BlockOnychiopsis.block.onBlockAdded(world, spawnTo, BlockOnychiopsis.block.getDefaultState());
 
 			}

@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockThamnobeatricea;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -70,7 +71,7 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 				block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				//System.err.println("X " + x + " Y " + (y + counter) + " Z " + z);
 				if (BlockThamnobeatricea.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + counter , (int) z)) && canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 					//System.err.println("Set stage 1");
 				}
 			}
@@ -84,7 +85,7 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 						//Just trunk up:
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						if (BlockThamnobeatricea.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + counter , (int) z)) && canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 						}
 						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 						$_dependencies.put("x", (int) x);
@@ -100,7 +101,7 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 						//Branch here:
 						//Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						//if (canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-						//	world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
+						//	Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
 						//}
 						//Which way?
 						if (Math.random() > 0.5) {
@@ -115,11 +116,11 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 								&& (world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock() != BlockThamnobeatricea.block)
 								)
 							{
-								world.setBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), BlockThamnobeatricea.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), BlockThamnobeatricea.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock();
 								if (BlockThamnobeatricea.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + counter , (int) z - 1)) && canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-									world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockThamnobeatricea.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockThamnobeatricea.block.getDefaultState(), 3);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x);
 									$_dependencies.put("y", (int) y);
@@ -143,11 +144,11 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 							{
 							
 							//if (canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter - 1, (int) z + 1))) {
-								world.setBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), BlockThamnobeatricea.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), BlockThamnobeatricea.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)).getBlock();
 								if (BlockThamnobeatricea.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + counter , (int) z + 1)) && canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-									world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockThamnobeatricea.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockThamnobeatricea.block.getDefaultState(), 3);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x);
 									$_dependencies.put("y", (int) y);
@@ -173,11 +174,11 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 							{
 							
 							//if (canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter - 1, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter - 1, (int) z))) {
-								world.setBlockState(new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)).getBlock();
 								if (BlockThamnobeatricea.block.canPlaceBlockAt(world, new BlockPos((int) x - 1, (int) y + counter , (int) z)) && canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z ))) {
-									world.setBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x - 1);
 									$_dependencies.put("y", (int) y);
@@ -199,11 +200,11 @@ public class ProcedureWorldGenThamnobeatriceaBranch extends ElementsLepidodendro
 								)
 							{
 							//if (canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter - 1, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter - 1, (int) z))) {
-								world.setBlockState(new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)).getBlock();
 								if (BlockThamnobeatricea.block.canPlaceBlockAt(world, new BlockPos((int) x + 1, (int) y + counter , (int) z)) && canBeReplacedByThamnobeatricea(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z ))) {
-									world.setBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x + 1);
 									$_dependencies.put("y", (int) y);

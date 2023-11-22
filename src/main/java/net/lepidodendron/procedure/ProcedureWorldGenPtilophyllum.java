@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockPtilophyllumLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -53,7 +54,7 @@ public class ProcedureWorldGenPtilophyllum extends ElementsLepidodendronMod.ModE
 			//Tree height: 3-8 blocks
 			TreeHeight = 3 + Math.round(Math.random() * 5);
 
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockPtilophyllumLog.block.getDefaultState(), 3);
 
 			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 			$_dependencies.put("x", x);

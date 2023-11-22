@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockCobbania;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -147,7 +148,7 @@ public class StructureSpawnCobbania extends ElementsLepidodendronMod.ModElement 
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
 					
-					world.setBlockState(spawnTo, BlockCobbania.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockCobbania.block.getDefaultState(), 3);
 					//System.err.println("Spawned " + i + " " + j + " " + k);
 				}
 

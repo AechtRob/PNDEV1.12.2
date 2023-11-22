@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -33,7 +34,7 @@ public class WorldGenWaterSideSandyPrehistoricGround extends WorldGenerator
 					|| ((worldIn.getBlockState(blockpos.east())).getMaterial() == Material.WATER)
 					|| ((worldIn.getBlockState(blockpos.west())).getMaterial() == Material.WATER))
             )
-                worldIn.setBlockState(blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
                 flag = true;
 
         }

@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -76,7 +77,7 @@ public class WorldGenIcebergs extends WorldGenerator {
                         if (blockpos.getY() <= worldIn.getSeaLevel()) {
                             blockIn = Blocks.PACKED_ICE;
                         }
-                        worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 2);
                     }
                 }
 

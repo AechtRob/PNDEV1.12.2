@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBaiera;
 import net.lepidodendron.block.BlockBaieraCentre;
 import net.lepidodendron.block.BlockBaieraTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -149,9 +150,9 @@ public class StructureSpawnBaiera extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockBaiera.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockBaieraCentre.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockBaieraTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBaiera.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockBaieraCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockBaieraTop.block.getDefaultState(), 3);
 			}
 		}
 	}

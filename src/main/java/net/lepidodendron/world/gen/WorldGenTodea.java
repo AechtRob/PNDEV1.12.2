@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockTodea;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -33,7 +34,7 @@ public class WorldGenTodea extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockTodea.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTodea.block.getDefaultState(), 2);
                 BlockTodea.block.onBlockAdded(worldIn, blockpos, BlockTodea.block.getDefaultState());
 
                 flag = true;

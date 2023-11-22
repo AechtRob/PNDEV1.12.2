@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockIraniaLand;
 import net.lepidodendron.block.BlockIraniaWater;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -24,7 +25,7 @@ public class WorldGenIrania extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockIraniaLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockIraniaLand.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockIraniaLand.block.getDefaultState(), 2);
                 BlockIraniaLand.BlockCustom.onBlockAddedWorldgen(worldIn, blockpos, BlockIraniaLand.block.getDefaultState());
                 flag = true;
             }
@@ -41,7 +42,7 @@ public class WorldGenIrania extends WorldGenerator
                             && worldIn.isAirBlock(blockpos1.up(3))
                 )
                 ) {
-                    worldIn.setBlockState(blockpos1, BlockIraniaWater.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, BlockIraniaWater.block.getDefaultState(), 2);
                     BlockIraniaWater.BlockCustom.onBlockAddedWorldgen(worldIn, blockpos1, BlockIraniaWater.block.getDefaultState());
                     flag = true;
                 }

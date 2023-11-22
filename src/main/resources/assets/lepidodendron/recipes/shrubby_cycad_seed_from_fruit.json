@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:shrubby_cycad_cone"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:shrubby_cycad_seed",
+    "count": 1
+  }
+}

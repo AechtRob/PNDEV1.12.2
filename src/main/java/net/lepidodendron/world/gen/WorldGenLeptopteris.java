@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockClaytosmunda;
 import net.lepidodendron.block.BlockLeptopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -34,7 +35,7 @@ public class WorldGenLeptopteris extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockLeptopteris.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLeptopteris.block.getDefaultState(), 2);
                     BlockLeptopteris.block.onBlockAdded(worldIn, blockpos, BlockLeptopteris.block.getDefaultState());
                     flag = true;
                 }
@@ -60,7 +61,7 @@ public class WorldGenLeptopteris extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockLeptopteris.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLeptopteris.block.getDefaultState(), 2);
                     BlockLeptopteris.block.onBlockAdded(worldIn, blockpos, BlockLeptopteris.block.getDefaultState());
                     flag = true;
                 }

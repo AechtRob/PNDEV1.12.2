@@ -12,7 +12,7 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhamphorhynchus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.4F;
+        return 0.7F * 0.45F;
     }
 
     public RenderRhamphorhynchus(RenderManager mgr) {

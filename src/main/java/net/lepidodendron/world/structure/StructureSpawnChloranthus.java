@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockChloranthus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -167,7 +168,7 @@ public class StructureSpawnChloranthus extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo.up(4));
 					}
 					//System.err.println("Spawning BlockChloranthus at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockChloranthus.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockChloranthus.block.getDefaultState());
 					//BlockChloranthus.block.onBlockAdded(world, spawnTo, BlockChloranthus.block.getDefaultState());
 				}
 

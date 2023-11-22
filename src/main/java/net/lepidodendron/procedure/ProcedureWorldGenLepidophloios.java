@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockLepidophloiosLeaves;
 import net.lepidodendron.block.BlockLepidophloiosLog;
 import net.lepidodendron.block.BlockLepidophloiosStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -68,7 +69,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 			(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
 			 && (world.canSeeSky(new BlockPos((int) x, (int) y + 1, (int) z))))) {	
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			
 			Block block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)), world,
@@ -79,7 +80,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), world,
@@ -90,7 +91,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2))), world,
@@ -101,12 +102,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 2)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 2)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2)));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 2)),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 2)),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 							break;
 						}
@@ -123,12 +124,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 3)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 3)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 3)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 3)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 3)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 3)));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 3)),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 3)),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 							break;
 						}
@@ -147,7 +148,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2))), world,
@@ -158,12 +159,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 2)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 2)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2)));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 2)),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 2)),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 							break;
 						}
@@ -180,12 +181,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 3)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 3)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 3)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 3)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 3)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 3)));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 3)),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 3)),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 							break;
 						}
@@ -203,7 +204,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z)), world,
@@ -214,12 +215,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x + 2), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) (x + 2), (int) y, (int) z),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) y, (int) z),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 							break;
 						}
@@ -236,12 +237,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) y, (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) y, (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x + 3), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 3), (int) y, (int) z));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) (x + 3), (int) y, (int) z),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) y, (int) z),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 							break;
 						}
@@ -260,7 +261,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z)), world,
@@ -271,12 +272,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x - 2), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) (x - 2), (int) y, (int) z),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) y, (int) z),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 							break;
 						}
@@ -293,12 +294,12 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) y, (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) y, (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x - 3), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) y, (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 3), (int) y, (int) z));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
 						if (prop.getName().equals("facing")) {
-							world.setBlockState(new BlockPos((int) (x - 3), (int) y, (int) z),
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) y, (int) z),
 									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 							break;
 						}
@@ -318,7 +319,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) (y + 1), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z)), world,
@@ -329,7 +330,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) (y + 1), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))), world,
@@ -340,7 +341,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))), world,
@@ -351,7 +352,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getMaterial() == Material.WATER)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getMaterial() == Material.PLANTS)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getMaterial() == Material.LEAVES)) {
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), BlockLepidophloiosLog.block.getDefaultState(), 3);
 			}
 			
 			height = (double) (14) + Math.round((Math.random() * 8) / 2) + Math.round((Math.random() * 8) / 2)
@@ -361,7 +362,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 				block = world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)), world,
 						new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z), BlockLepidophloiosLog.block.getDefaultState(), 3);
 				}
 				counter = (double) ((counter) + 1);
 			}
@@ -1038,7 +1039,7 @@ public class ProcedureWorldGenLepidophloios extends ElementsLepidodendronMod.Mod
 	public static void setStrobilus(World world, BlockPos pos) {
 		//Random flowers here:
 		if ((Math.random() > 0.4) && (world.isAirBlock(pos.down()))) {
-			world.setBlockState(pos.down(), BlockLepidophloiosStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.down(), BlockLepidophloiosStrobilus.block.getDefaultState(), 3);
 			if (!world.isRemote) {
 				TileEntity _tileEntity = world.getTileEntity(pos.down());
 				IBlockState _bs = world.getBlockState(pos.down());
