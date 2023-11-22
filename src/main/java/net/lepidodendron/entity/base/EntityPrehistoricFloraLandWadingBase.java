@@ -2,10 +2,10 @@ package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateGroundWade;
-import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.crash.CrashReport;
@@ -27,9 +27,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehistoricFloraLandBase {
 
@@ -85,6 +82,19 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     public abstract int wadeDepth();
 
     @Override
+    protected float getJumpUpwardsMotion()
+    {
+        if (this.isReallyInWater()) {
+            //Assists to jump out of water:
+            if (this.getIsFast()) {
+                return 0.55F;
+            }
+            return 0.52F;
+        }
+        return super.getJumpUpwardsMotion();
+    }
+
+    @Override
     protected void doBlockCollisions() {
         //Bespoke so these can destroy waterlilies!
         AxisAlignedBB axisalignedbb = this.getEntityBoundingBox();
@@ -104,12 +114,14 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                         IBlockState iblockstate = this.world.getBlockState(blockpos$pooledmutableblockpos2);
 
                         boolean blockDestroyed = false;
-                        if (iblockstate.getBlock() instanceof BlockLilyPad && !this.world.isRemote) {
-                            List<AxisAlignedBB> outList = new ArrayList<AxisAlignedBB>();
-                            iblockstate.getBlock().addCollisionBoxToList(iblockstate, world, new BlockPos(i, j, k), this.getEntityBoundingBox(), outList, this, false);
-                            for (AxisAlignedBB aabb: outList) {
-                                if (aabb.getAverageEdgeLength() > 0) {
-                                    this.world.destroyBlock(new BlockPos(i, j, k), true);
+                        if (!this.world.isRemote) {
+                            if (matchBlock(iblockstate.getBlock().getRegistryName().toString())) {
+                                this.world.destroyBlock(new BlockPos(i, j, k), true);
+                                blockDestroyed = true;
+                            }
+                            if (this.isJumping) {
+                                if (matchBlock( this.world.getBlockState(new BlockPos(i, j + 1, k)).getBlock().getRegistryName().toString())) {
+                                    this.world.destroyBlock(new BlockPos(i, j + 1, k), true);
                                     blockDestroyed = true;
                                 }
                             }
@@ -135,13 +147,28 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         blockpos$pooledmutableblockpos2.release();
     }
 
+    public static boolean matchBlock(String blockName) {
+
+        String[] var2 = LepidodendronConfig.genWadeableBreaks;
+        int var3 = var2.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            String checkBlock = var2[var4];
+            if (checkBlock.equalsIgnoreCase(blockName)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public boolean isBlockWadable(IBlockAccess world, BlockPos pos) {
         if (world instanceof World)
         if (!((World)world).isBlockLoaded(pos)) {
             return false;
         }
         boolean flag = false;
-        for (int i = 0; i < this.wadeDepth() ; i++) {
+        for (int i = 1; i <= this.wadeDepth() ; i++) {
             IBlockState state = world.getBlockState(pos.up(i));
             if (state.getMaterial() != Material.WATER
                     && state.getMaterial() != Material.LAVA

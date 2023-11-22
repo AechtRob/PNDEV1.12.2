@@ -4431,7 +4431,7 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         EntityPrehistoricFloraDubreuillosaurus ee = (EntityPrehistoricFloraDubreuillosaurus) entitylivingbaseIn;
 
-        if (!ee.isReallyInWater()) {
+//        if (!ee.isInWater()) {
             if (ee.getIsMoving()) {
                 if (ee.getIsFast()) { //Running
                     animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
@@ -4440,15 +4440,15 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
-        }
-        else {
-            //Swimming pose:
-            if (!ee.getIsMoving()) { //static in water
-                //
-            }
-            //moving in water
-            //
-        }
+//        }
+//        else {
+//            //Swimming pose:
+//            if (!ee.getIsMoving()) { //static in water
+//                //
+//            }
+//            //moving in water
+//            //
+//        }
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
@@ -4461,10 +4461,7 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //Warn/roar
-            animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //Ambient
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //Ambient
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         
@@ -4476,11 +4473,11 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
 
         animator.setAnimation(e.HURT_ANIMATION);
         animator.startKeyframe(10);
-        animator.rotate(this.Neck1, (float) Math.toRadians(-10),0,0);
-        animator.rotate(this.Neck2, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neck3, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Neck4, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Headbase, (float) Math.toRadians(-55), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck1, (float) Math.toRadians(-5),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck4, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Headbase, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.Lowerjaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(10);

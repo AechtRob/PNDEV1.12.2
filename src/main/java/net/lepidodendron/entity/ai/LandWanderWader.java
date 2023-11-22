@@ -125,7 +125,7 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public boolean shouldContinueExecuting() {
-        return false;
+        return !this.entity.getNavigator().noPath();
     }
 
     public boolean isAtBottom(BlockPos blockpos) {
@@ -142,12 +142,12 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
         //System.err.println("Find Water Target");
         Random rand = this.EntityPrehistoricFloraLandWadingBase.getRNG();
         if (this.EntityPrehistoricFloraLandWadingBase.getAttackTarget() == null) {
-            for (int i = 0; i < dist; i++) {
+            for (int i = 0; i < dist * 2; i++) {
                 Vec3d randPos = this.EntityPrehistoricFloraLandWadingBase.getPositionVector().add(rand.nextInt(dist + 1) - (int) (dist/2), rand.nextInt(dist + 1) - (int) (dist/2), rand.nextInt(dist + 1) - (int) (dist/2));
                 if (this.EntityPrehistoricFloraLandWadingBase.world.isBlockLoaded(new BlockPos(randPos))) {
                     //Use targets which are at the bottom:
                     if (this.EntityPrehistoricFloraLandWadingBase.world.getBlockState(new BlockPos(randPos)).getMaterial() != Material.WATER) {
-                        break;
+                        continue;
                     }
                     if (!(randPos.y < 1 || randPos.y >= 254)) {
                         randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
