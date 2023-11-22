@@ -191,7 +191,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new LandWanderNestAI(this));
 		tasks.addTask(4, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(5, new LandWanderWader(this, NO_ANIMATION, 0.90D, 30, this.wadeDepth()));
+		tasks.addTask(5, new LandWanderWader(this, NO_ANIMATION, 0.8D, 30, this.wadeDepth()));
 		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));

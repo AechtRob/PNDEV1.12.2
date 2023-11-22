@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
@@ -36,6 +37,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -65,6 +67,13 @@ public class LepidodendronEventSubscribers {
 		if ((event.getEntity() instanceof EntityPlayerMP)) {
 			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
 		}
+	}
+
+	@SubscribeEvent //Default to standard attack behaviour
+	public void attackTargetSet(LivingSetAttackTargetEvent event) {
+		  if (event.getEntity() instanceof EntityPrehistoricFloraAgeableBase) {
+			  ((EntityPrehistoricFloraAgeableBase)event.getEntity()).wasWarning = false;
+		  }
 	}
 
 	@SubscribeEvent //Some instructions for use of rideables

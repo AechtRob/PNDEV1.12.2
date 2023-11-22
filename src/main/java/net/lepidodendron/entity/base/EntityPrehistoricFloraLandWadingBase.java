@@ -38,6 +38,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
+        this.setPathPriority(PathNodeType.WATER, 10F);
         if (world != null) {
             if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
                 this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
@@ -163,9 +164,13 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     }
 
     public boolean isBlockWadable(IBlockAccess world, BlockPos pos) {
-        if (world instanceof World)
-        if (!((World)world).isBlockLoaded(pos)) {
-            return false;
+        if (world instanceof World) {
+            if (!((World) world).isBlockLoaded(pos)) {
+                return false;
+            }
+        }
+        if (world.getBlockState(pos).getMaterial() != Material.WATER) {
+            return true;
         }
         boolean flag = false;
         for (int i = 1; i <= this.wadeDepth() ; i++) {
