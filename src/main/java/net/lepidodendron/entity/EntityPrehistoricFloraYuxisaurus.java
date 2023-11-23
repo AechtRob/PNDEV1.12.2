@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.3F;
 		maxWidth = 1.5F;
 		maxHeight = 1F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 50.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

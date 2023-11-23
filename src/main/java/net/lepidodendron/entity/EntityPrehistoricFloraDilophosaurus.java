@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 		minWidth = 0.50F;
 		maxWidth = 0.98F;
 		maxHeight = 1.9F;
-		maxHealthAgeable = 36.0D;
+		maxHealthAgeable = 70.0D;
 		STAND_ANIMATION = Animation.create(120);
 		CLEAN_ANIMATION = Animation.create(65);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -234,7 +234,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
