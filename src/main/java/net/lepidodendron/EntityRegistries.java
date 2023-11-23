@@ -297,6 +297,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_gantarostrataspis", EntityPrehistoricFloraGantarostrataspis.class, LepidodendronMod.ENTITY_GANTAROSTRATASPIS, 48,-9882,-3687269);
         registerEntity("prehistoric_flora_gargoyleosaurus", EntityPrehistoricFloraGargoyleosaurus.class, LepidodendronMod.ENTITY_GARGOYLEOSAURUS, 84,-4934476,-13683656);
         registerEntity("prehistoric_flora_gasosaurus", EntityPrehistoricFloraGasosaurus.class, LepidodendronMod.ENTITY_GASOSAURUS, 156,-10652884,-14341605);
+        registerEntityNoEgg("prehistoric_flora_guano_ball", EntityPrehistoricFloraGuanoBall.class, LepidodendronMod.ENTITY_GUANO_BALL, 64);
         registerEntity("prehistoric_flora_gemmactena", EntityPrehistoricFloraGemmactena.class, LepidodendronMod.ENTITY_GEMMACTENA, 48,-10006873,-1);
         registerEntity("prehistoric_flora_gemuendina", EntityPrehistoricFloraGemuendina.class, LepidodendronMod.ENTITY_GEMUENDINA, 48,-6449279,-2702206);
         registerEntity("prehistoric_flora_geosaurus", EntityPrehistoricFloraGeosaurus.class, LepidodendronMod.ENTITY_GEOSAURUS, 84,-11315125,-11579582);
