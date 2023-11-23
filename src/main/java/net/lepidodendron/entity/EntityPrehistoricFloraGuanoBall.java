@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
             if (blockHit == BlockGuano.block) { //Add to layers
                 int i = ((Integer) iblockstate.getValue(BlockSnow.LAYERS)).intValue();
 
-                if (i < 8) {
+                if (i < 8 && !this.world.isRemote) {
                     IBlockState iblockstate1 = iblockstate.withProperty(BlockSnow.LAYERS, Integer.valueOf(i + 1));
                     AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(this.world, blockpos);
 
