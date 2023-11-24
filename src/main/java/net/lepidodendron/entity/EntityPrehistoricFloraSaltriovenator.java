@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
 		maxHeight = 2.2F;
-		maxHealthAgeable = 96.0D;
+		maxHealthAgeable = 85.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

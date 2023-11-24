@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.20F;
 		maxWidth = 0.95F;
 		maxHeight = 0.95F;
-		maxHealthAgeable = 33.0D;
+		maxHealthAgeable = 30.0D;
 		STAND_ANIMATION = Animation.create(50);
 		LOOK_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -245,7 +245,7 @@ public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

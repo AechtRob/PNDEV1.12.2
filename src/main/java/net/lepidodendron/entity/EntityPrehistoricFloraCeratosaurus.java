@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
 		maxHeight = 2.2F;
-		maxHealthAgeable = 90.0D;
+		maxHealthAgeable = 75.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -223,7 +223,7 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}

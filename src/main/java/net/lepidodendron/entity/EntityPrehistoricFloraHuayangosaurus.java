@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 		minWidth = 0.3F;
 		maxWidth = 1.8F;
 		maxHeight = 1.5F;
-		maxHealthAgeable = 32.0D;
+		maxHealthAgeable = 55.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -257,7 +257,7 @@ public class EntityPrehistoricFloraHuayangosaurus extends EntityPrehistoricFlora
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(28.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(18.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}

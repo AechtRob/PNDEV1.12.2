@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 1.5F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 65.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -221,7 +221,7 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(9.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}

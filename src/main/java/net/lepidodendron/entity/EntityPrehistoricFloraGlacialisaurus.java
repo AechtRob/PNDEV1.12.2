@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		minWidth = 0.18F;
 		maxWidth = 0.9F;
 		maxHeight = 1.8F;
-		maxHealthAgeable = 70.0D;
+		maxHealthAgeable = 60.0D;
 		STAND_ANIMATION = Animation.create(145);
 		NOISE_ANIMATION = Animation.create(20);
 		SCRATCH_ANIMATION = Animation.create(105);
@@ -264,7 +264,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}

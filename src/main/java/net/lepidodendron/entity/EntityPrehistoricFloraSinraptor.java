@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 2F;
-		maxHealthAgeable = 76.0D;
+		maxHealthAgeable = 90.0D;
 		STAND_ANIMATION = Animation.create(80);
 		SCRATCH_RIGHT_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -234,7 +234,7 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(13.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
