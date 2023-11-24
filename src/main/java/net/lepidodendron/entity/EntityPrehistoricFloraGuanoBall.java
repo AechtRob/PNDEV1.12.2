@@ -1,6 +1,8 @@
 package net.lepidodendron.entity;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGuano;
+import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.util.ParticleGuano;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSnow;
@@ -8,7 +10,11 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
@@ -22,6 +28,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
 {
+    private boolean isFromMob;
+
     public EntityPrehistoricFloraGuanoBall(World worldIn)
     {
         super(worldIn);
@@ -42,6 +50,17 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
         EntityThrowable.registerFixesThrowable(fixer, "Snowball");
     }
 
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("isFromMob", this.isFromMob);
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.isFromMob = compound.getBoolean("isFromMob");
+    }
+
     @SideOnly(Side.CLIENT)
     public void handleStatusUpdate(byte id)
     {
@@ -54,10 +73,17 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
         }
     }
 
+    public void setFromMob(Boolean bool) {
+        this.isFromMob = bool;
+    }
+
     protected void onImpact(RayTraceResult result)
     {
         if (result.entityHit != null)
         {
+            if (this.isFromMob && (!(result.entityHit instanceof EntityPlayer))) {
+                return;
+            }
             int i = 1;
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
         }
@@ -76,19 +102,38 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
             }
 
             boolean added = false;
+            boolean blockable = (world.getGameRules().getBoolean("mobGriefing") && LepidodendronConfig.doGuanoGriefing);
 
             if (blockHit == BlockGuano.block) { //Add to layers
                 int i = ((Integer) iblockstate.getValue(BlockSnow.LAYERS)).intValue();
 
-                if (i < 8 && !this.world.isRemote) {
-                    IBlockState iblockstate1 = iblockstate.withProperty(BlockSnow.LAYERS, Integer.valueOf(i + 1));
-                    AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(this.world, blockpos);
+                if (i < 8 && blockable) {
+                    if (!this.world.isRemote) {
+                        IBlockState iblockstate1 = iblockstate.withProperty(BlockSnow.LAYERS, Integer.valueOf(i + 1));
+                        AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(this.world, blockpos);
 
-                    if (axisalignedbb != Block.NULL_AABB && this.world.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && this.world.setBlockState(blockpos, iblockstate1, 10)) {
-                        SoundType soundtype = BlockGuano.block.getSoundType(iblockstate1, this.world, blockpos, null);
-                        this.world.playSound(null, blockpos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                        if (axisalignedbb != Block.NULL_AABB && this.world.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && this.world.setBlockState(blockpos, iblockstate1, 10)) {
+                            SoundType soundtype = BlockGuano.block.getSoundType(iblockstate1, this.world, blockpos, null);
+                            this.world.playSound(null, blockpos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                        }
                     }
 
+                    added = true;
+                }
+                else if (i < 8 && (!blockable)) {
+                    if (!this.world.isRemote) {
+                        EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemGuanoBall.block, (int) (1)));
+                        entityToSpawn.setPickupDelay(10);
+                        world.spawnEntity(entityToSpawn);
+                    }
+                    added = true;
+                }
+                else if (i >= 8 && (this.isFromMob)) {
+                    if (!this.world.isRemote) {
+                        EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemGuanoBall.block, (int) (1)));
+                        entityToSpawn.setPickupDelay(10);
+                        world.spawnEntity(entityToSpawn);
+                    }
                     added = true;
                 }
             }
@@ -97,7 +142,14 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
                 if (!blockHit.isReplaceable(this.world, blockpos)) {
                     blockpos = blockpos.offset(facing);
                 }
-                if (this.world.mayPlace(BlockGuano.block, blockpos, false, facing, null)) {
+                if (!blockable) {
+                    if (!this.world.isRemote) {
+                        EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemGuanoBall.block, (int) (1)));
+                        entityToSpawn.setPickupDelay(10);
+                        world.spawnEntity(entityToSpawn);
+                    }
+                }
+                else if (this.world.mayPlace(BlockGuano.block, blockpos, false, facing, null)) {
                     IBlockState iblockstate1 = BlockGuano.block.getDefaultState().withProperty(BlockSnow.LAYERS, Integer.valueOf(1));
                     AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(this.world, blockpos);
 
