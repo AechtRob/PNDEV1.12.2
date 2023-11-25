@@ -353,8 +353,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public ResourceLocation getEggTexture(@Nullable String variantIn) {
         String entityString = this.getEntityString();
+        ResourceLocation resourceLocation;
         entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-        ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        if (variantIn == null) {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        }
+        else {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
+        }
         if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
             return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
         }
