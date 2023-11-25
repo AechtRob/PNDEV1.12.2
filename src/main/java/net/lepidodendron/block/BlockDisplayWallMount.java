@@ -2,9 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -17,16 +15,11 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -40,7 +33,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -50,7 +42,6 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
@@ -64,7 +55,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockDisplayWallMount.BlockCustom().setRegistryName("display_wall_mount"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
+		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -75,8 +66,8 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:display_wall_mount", "inventory"));
+//		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+//				new ModelResourceLocation("lepidodendron:display_wall_mount", "inventory"));
 	}
 
 	public static class BlockCustom extends Block implements ITileEntityProvider {
@@ -91,18 +82,9 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.1F);
 			setResistance(0F);
 			setLightOpacity(0);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(null);
 
 			this.setDefaultState(this.blockState.getBaseState().withProperty(ISFLOOR, Boolean.valueOf(false)));
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Place Taxidermy kits into the display");
-				super.addInformation(stack, player, tooltip, advanced);
-			}
 		}
 
 		@Override
@@ -181,35 +163,11 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 							}
 							return true;
 						}
-						if (!stack.isEmpty()) {
-							//if (stack.getItem() == Items.SPAWN_EGG) {
-							//	return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-							//}
-							//tee.setInventorySlotContents(0, stack);
-							ItemStack setStack = stack.copy();
-							setStack.setCount(1);
-							tee.getItems().set(0, setStack);
-							//tee.markDirty();
-							if (!worldIn.isRemote) {
-								SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_ADD_ITEM;
-								((WorldServer) playerIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-							}
-							if (!playerIn.isCreative()) {
-								stack.shrink(1);
-							}
-							worldIn.markBlockRangeForRenderUpdate(pos, pos);
-						}
 					}
 				}
 				return true;
 			}
 			return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-		}
-
-		@Override
-		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-			//System.err.println("Placed by: " + placer);
-			return this.getDefaultState().withProperty(FACING, facing);
 		}
 
 		@Override
@@ -376,7 +334,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		protected NonNullList<ItemStack> getItems() {
+		public NonNullList<ItemStack> getItems() {
 			return this.stacks;
 		}
 

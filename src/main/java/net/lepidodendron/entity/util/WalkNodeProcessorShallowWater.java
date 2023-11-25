@@ -511,7 +511,12 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
             if (landBase.canSpawnOnLeaves())
                 isTree = true;
         }
-
+        if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
+            EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
+            if (!wader.isBlockWadable(worldIn, blockpos)) {
+                return PathNodeType.BLOCKED;
+            }
+        }
         PathNodeType type = block.getAiPathNodeType(iblockstate, worldIn, blockpos, this.currentEntity);
         if (type != null) return type;
 
