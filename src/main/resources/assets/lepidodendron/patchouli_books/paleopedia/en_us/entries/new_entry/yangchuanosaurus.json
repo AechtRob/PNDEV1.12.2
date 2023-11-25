@@ -1,0 +1,47 @@
+{
+	"name": "Yangchuanosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/yangchuanosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_yangchuanosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yangchuanosaurus",
+			"title": "Yangchuanosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Metriacanthosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. shangyouensis",
+            "entity": "lepidodendron:prehistoric_flora_yangchuanosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yangchuanosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		}
+	]
+}
