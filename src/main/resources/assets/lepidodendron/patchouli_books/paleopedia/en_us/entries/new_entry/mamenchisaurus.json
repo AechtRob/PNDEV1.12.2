@@ -1,0 +1,47 @@
+{
+	"name": "Mamenchisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/mamenchisaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_mamenchisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mamenchisaurus",
+			"title": "Mamenchisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Mamenchisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. youngi",
+            "entity": "lepidodendron:prehistoric_flora_mamenchisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mamenchisaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		}
+	]
+}
