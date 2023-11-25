@@ -32,7 +32,7 @@ public class WorldGenNestExtra extends WorldGenerator
         if (blockpos.getY() >= minHeight && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNest.block.canPlaceBlockAt(worldIn, blockpos))
         {
             Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockNest.block.getDefaultState(), 2);
-            if (entitiyIn != null && rand.nextInt(3) == 0) {
+            if (entitiyIn != null && rand.nextInt(3) != 0) {
                 //Place some eggs too:
                 TileEntity te = worldIn.getTileEntity(blockpos);
                 te.getTileData().setString("creature", entitiyIn.getEntityId(entitiyIn));
