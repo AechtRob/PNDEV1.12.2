@@ -305,29 +305,30 @@ public class LepidodendronEventSubscribers {
 					}
 				}
 			}
-		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
-				&& event.getHand() == EnumHand.MAIN_HAND) {
-			TileEntity te = event.getWorld().getTileEntity(event.getPos());
-			if (te != null) {
-				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
-					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
-					if (tee.hasItem()) {
-						if (!(event.getWorld().isRemote)) {
-							ItemStack itemstack = tee.getStackInSlot(0);
-							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-
-							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
-							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-							event.getEntityPlayer().swingArm(event.getHand());
-						}
-						tee.setDisplay(ItemStack.EMPTY);
-						//return;
-						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
-						event.setCanceled(true);
-					}
-				}
-			}
 		}
+//		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
+//				&& event.getHand() == EnumHand.MAIN_HAND) {
+//			TileEntity te = event.getWorld().getTileEntity(event.getPos());
+//			if (te != null) {
+//				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
+//					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
+//					if (tee.hasItem()) {
+//						if (!(event.getWorld().isRemote)) {
+//							ItemStack itemstack = tee.getStackInSlot(0);
+//							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
+//
+//							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
+//							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+//							event.getEntityPlayer().swingArm(event.getHand());
+//						}
+//						tee.setDisplay(ItemStack.EMPTY);
+//						//return;
+//						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
+//						event.setCanceled(true);
+//					}
+//				}
+//			}
+//		}
 		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTaxidermyTable.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			TileEntity te = event.getWorld().getTileEntity(event.getPos());
