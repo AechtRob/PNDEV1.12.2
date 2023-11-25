@@ -19,7 +19,7 @@ public class WorldGenGuano extends WorldGenerator
     public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
-        return generate(worldIn, rand, position, worldIn.getSeaLevel());
+        return generate(worldIn, rand, position, worldIn.getSeaLevel() - 1);
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight) {

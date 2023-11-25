@@ -5191,6 +5191,7 @@ item.pf_submarine_boat_item_battery.name=Submarine (powered)
 item.pf_submarine_boat_item_no_battery.name=Submarine (no battery)
 item.pf_sulphur.name=Sulphur
 item.pf_rubber.name=Rubber
+item.rubber_boots.name=Rubber Boots
 item.pf_suminia_raw.name=Raw Suminia
 item.pf_swamp_horsetail_item.name=Swamp Horsetail
 item.pf_sycamore_boat_item.name=Sycamore Boat

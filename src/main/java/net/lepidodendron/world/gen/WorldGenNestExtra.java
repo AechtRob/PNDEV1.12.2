@@ -16,7 +16,7 @@ public class WorldGenNestExtra extends WorldGenerator
 {
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
-        return generate(worldIn, rand, position, worldIn.getSeaLevel());
+        return generate(worldIn, rand, position, worldIn.getSeaLevel() - 1);
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight) {
