@@ -169,6 +169,17 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                 return false;
             }
         }
+        //First we need to go downwards and start from the bottom as mobs sink:
+        int yy = 0;
+        while (pos.add(0, -yy,0).getY() > 0) {
+            if (world.getBlockState(pos.add(0, -yy,0)).getMaterial().blocksMovement()) {
+                break;
+            }
+            yy++;
+        }
+        if (yy > 0) {
+            pos = pos.add(0, -(yy - 1), 0);
+        }
         if (world.getBlockState(pos).getMaterial() != Material.WATER) {
             return true;
         }
