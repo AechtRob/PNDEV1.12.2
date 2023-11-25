@@ -4,7 +4,7 @@
       "model": "lepidodendron:baltic_amber_slab"
     },
     "half=top,variant=default": {
-      "model": "lepidodendron:baltic_amber_slab"
+      "model": "lepidodendron:baltic_amber_slab_top"
     }
   }
 }

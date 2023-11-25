@@ -71,8 +71,10 @@ public class BlockBalticAmberSlab extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(state);
 			this.useNeighborBrightness = !this.isDouble();
 		}
+
 		public static final PropertyEnum<BlockCustom.Variant> VARIANT = PropertyEnum.<BlockCustom.Variant>create("variant",
 				BlockCustom.Variant.class);
+
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return Item.getItemFromBlock(block);
