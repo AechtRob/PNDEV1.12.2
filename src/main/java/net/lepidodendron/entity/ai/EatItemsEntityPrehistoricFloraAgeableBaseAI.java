@@ -134,8 +134,13 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
     }
 
     public boolean cantReachItem(Entity item) {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+        if (this.entity instanceof EntityPrehistoricFloraLandBase && (!(this.entity instanceof EntityPrehistoricFloraLandWadingBase))) {
             if (item.isInWater()) {
+                return true;
+            }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
+            if (item.isInWater() && !(((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, item.getPosition()))) {
                 return true;
             }
         }

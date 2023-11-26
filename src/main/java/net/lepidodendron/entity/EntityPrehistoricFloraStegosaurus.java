@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.3F;
 		maxWidth = 2F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 85.0D;
+		maxHealthAgeable = 110.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -312,7 +312,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(30.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(26.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}

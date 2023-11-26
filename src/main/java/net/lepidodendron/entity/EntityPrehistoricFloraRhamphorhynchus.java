@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
+import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -29,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, IGuano {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -43,7 +44,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		minWidth = 0.10F;
 		maxWidth = 0.85F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 10.0D;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);
@@ -233,7 +234,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6);
 		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
@@ -383,17 +384,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3
 		return 0; //Small eggs
-	}
-
-	@Override
-	public ResourceLocation getEggTexture(@Nullable String variantIn) {
-		String entityString = this.getEntityString();
-		entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-		ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
-		if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
-			return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
-		}
-		return resourceLocation;
 	}
 
 	//Rendering taxidermy:

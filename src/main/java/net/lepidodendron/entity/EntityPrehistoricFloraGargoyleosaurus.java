@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 		minWidth = 0.3F;
 		maxWidth = 0.9F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 40.0D;
 		ALERT_ANIMATION = Animation.create(80);
 		TAIL_ANIMATION = Animation.create(50);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());

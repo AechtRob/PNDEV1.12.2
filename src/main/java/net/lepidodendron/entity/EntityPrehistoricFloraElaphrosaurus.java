@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 		minWidth = 0.2F;
 		maxWidth = 0.85F;
 		maxHeight = 1.85F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 55.0D;
 		STAND_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -228,7 +228,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(9.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

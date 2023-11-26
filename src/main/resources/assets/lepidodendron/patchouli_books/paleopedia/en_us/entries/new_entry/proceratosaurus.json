@@ -1,0 +1,47 @@
+{
+	"name": "Proceratosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/proceratosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_proceratosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_proceratosaurus",
+			"title": "Proceratosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Proceratosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. bradleyi",
+            "entity": "lepidodendron:prehistoric_flora_proceratosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proceratosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_proceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_proceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_proceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_proceratosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_proceratosaurus"
+		}
+	]
+}

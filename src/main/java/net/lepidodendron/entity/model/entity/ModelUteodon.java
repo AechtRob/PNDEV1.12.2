@@ -6536,31 +6536,6 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         this.setRotateAngle(LegL, LegL.rotateAngleX + (float) Math.toRadians(xx), LegL.rotateAngleY + (float) Math.toRadians(yy), LegL.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-            yy = 0.9 + (((tickAnim - 0) / 10) * (1.03-(0.9)));
-            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 10 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
-            yy = 1.03 + (((tickAnim - 10) / 10) * (-0.85-(1.03)));
-            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 20) / 20) * (0-(0)));
-            yy = -0.85 + (((tickAnim - 20) / 20) * (0.9-(-0.85)));
-            zz = 0 + (((tickAnim - 20) / 20) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.LegL.rotationPointX = this.LegL.rotationPointX + (float)(xx);
-        this.LegL.rotationPointY = this.LegL.rotationPointY - (float)(yy);
-        this.LegL.rotationPointZ = this.LegL.rotationPointZ + (float)(zz);
-
-
 
 
         if (tickAnim >= 0 && tickAnim < 4) {
@@ -6716,31 +6691,6 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         this.setRotateAngle(LegR, LegR.rotateAngleX + (float) Math.toRadians(xx), LegR.rotateAngleY + (float) Math.toRadians(yy), LegR.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = -0.85 + (((tickAnim - 0) / 20) * (0.9-(-0.85)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 20) / 10) * (0-(0)));
-            yy = 0.9 + (((tickAnim - 20) / 10) * (1.03-(0.9)));
-            zz = 0 + (((tickAnim - 20) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 30) / 10) * (0-(0)));
-            yy = 1.03 + (((tickAnim - 30) / 10) * (-0.85-(1.03)));
-            zz = 0 + (((tickAnim - 30) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.LegR.rotationPointX = this.LegR.rotationPointX + (float)(xx);
-        this.LegR.rotationPointY = this.LegR.rotationPointY - (float)(yy);
-        this.LegR.rotationPointZ = this.LegR.rotationPointZ + (float)(zz);
-
-
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
@@ -6888,21 +6838,6 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         this.setRotateAngle(Chest, Chest.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-150))*1.89), Chest.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+50))*1.2), Chest.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
 
 
-        this.setRotateAngle(Neck3, Neck3.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-250))*0.25), Neck3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-50))*1.5), Neck3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
-
-
-        this.setRotateAngle(Neck2, Neck2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-100))*0.35), Neck2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-50))*1.2), Neck2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1.5));
-
-
-        this.setRotateAngle(Neck1, Neck1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360+150))*0.45), Neck1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+150))*1.2), Neck1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
-
-
-        this.setRotateAngle(Head, Head.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-180))*0.85), Head.rotateAngleY + (float) Math.toRadians(0), Head.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(Jaw, Jaw.rotateAngleX + (float) Math.toRadians(0), Jaw.rotateAngleY + (float) Math.toRadians(0), Jaw.rotateAngleZ + (float) Math.toRadians(0));
-
-
         this.setRotateAngle(ArmL, ArmL.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-50))*-3), ArmL.rotateAngleY + (float) Math.toRadians(0), ArmL.rotateAngleZ + (float) Math.toRadians(0));
 
 
@@ -6919,6 +6854,21 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
 
 
         this.setRotateAngle(HandR, HandR.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-150))*2), HandR.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*-0.5), HandR.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(Neck3, Neck3.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-250))*0.25), Neck3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-50))*1.5), Neck3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
+
+
+        this.setRotateAngle(Neck2, Neck2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-100))*0.35), Neck2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-50))*1.2), Neck2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1.5));
+
+
+        this.setRotateAngle(Neck1, Neck1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360+150))*0.45), Neck1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+150))*1.2), Neck1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-150))*1));
+
+
+        this.setRotateAngle(Head, Head.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-180))*0.85), Head.rotateAngleY + (float) Math.toRadians(0), Head.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(Jaw, Jaw.rotateAngleX + (float) Math.toRadians(0), Jaw.rotateAngleY + (float) Math.toRadians(0), Jaw.rotateAngleZ + (float) Math.toRadians(0));
 
     }
 

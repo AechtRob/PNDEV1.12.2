@@ -1,0 +1,47 @@
+{
+	"name": "Apatosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/apatosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_apatosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_apatosaurus",
+			"title": "Apatosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocidae $(br)>Apatosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. louisae",
+            "entity": "lepidodendron:prehistoric_flora_apatosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_apatosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_apatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_apatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_apatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_apatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_apatosaurus"
+		}
+	]
+}

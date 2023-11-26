@@ -389,17 +389,17 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         PathNodeType pathnodetype = this.getPathNodeTypeRaw(blockaccessIn, x, y, z);
 
         if (y >= 1) {
-            if (entity instanceof EntityPrehistoricFloraLandWadingBase) {
-                EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) entity;
+            if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
+                EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
                 if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z))) {
                     pathnodetype = PathNodeType.BLOCKED;
                 }
             }
             else if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER
                 && blockaccessIn.getBlockState(new BlockPos(x, y - 2, z)).getMaterial() == Material.WATER) {
-                if (entity != null) {
-                    if (entity instanceof EntityPrehistoricFloraLandWadingBase) {
-                        EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) entity;
+                if (this.currentEntity != null) {
+                    if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
+                        EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
                         if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z))) {
                             pathnodetype = PathNodeType.BLOCKED;
                         }
@@ -511,7 +511,12 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
             if (landBase.canSpawnOnLeaves())
                 isTree = true;
         }
-
+        if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
+            EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
+            if (!wader.isBlockWadable(worldIn, blockpos)) {
+                return PathNodeType.BLOCKED;
+            }
+        }
         PathNodeType type = block.getAiPathNodeType(iblockstate, worldIn, blockpos, this.currentEntity);
         if (type != null) return type;
 

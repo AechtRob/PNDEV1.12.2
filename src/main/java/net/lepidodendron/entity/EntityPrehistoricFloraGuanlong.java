@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 		minWidth = 0.20F;
 		maxWidth = 0.8F;
 		maxHeight = 1.25F;
-		maxHealthAgeable = 34.0D;
+		maxHealthAgeable = 32.0D;
 		SCRATCH_ANIMATION = Animation.create(80);
 		STAND_ANIMATION = Animation.create(80);
 		HURT_ANIMATION = Animation.create(15);
@@ -256,7 +256,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

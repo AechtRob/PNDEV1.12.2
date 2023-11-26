@@ -15,6 +15,7 @@ public class LepidodendronConfig {
     public static Configuration cfg;
     public static LepidodendronConfig instance = new LepidodendronConfig();
     public static String[] genGlobalBlacklist = new String[0];
+    public static String[] genWadeableBreaks = new String[]{"minecraft:waterlily", "lepidodendron:microvictoria_leaves", "lepidodendron:nelumbo_leaves", "lepidodendron:nuphar_leaves"};
     public static String[] genLogResin = new String[]{"minecraft:log:1", "lepidodendron:hymenaea_log", "lepidodendron:agathis_log", "lepidodendron:araucarioxylon_log", "lepidodendron:bunya_log", "lepidodendron:columnaris_log", "lepidodendron:cunninghamia_log", "lepidodendron:monkeypuzzle_log", "lepidodendron:sciadopitys_log", "lepidodendron:wollemi_log", "biomesoplenty:log_2:6", "biomesoplenty:log_0:7", "jurassicraft:araucaria_log", "wildnature:cedar_log", "wildnature:fir_log", "wildnature:pine_log", "lepidodendron:bristlecone_log", "lepidodendron:mirabilis_log", "lepidodendron:monkey_puzzle_araucaria_log", "lepidodendron:hoop_araucaria_log", "lepidodendron:cunninghamia_log", "lepidodendron:scrubby_pine_log"};
     public static String[] genLogLatex = new String[]{"lepidodendron:fig_log"};
     public static String[] genPlantPrehistoric = new String[]{"fossil:bennettitales_large", "fossil:bennettitales_small", "fossil:calamites_leaves", "fossil:calamites_sapling", "fossil:cordaites_leaves", "fossil:cordaites_sapling", "fossil:crataegus", "fossil:cyathea", "fossil:dictyophyllum", "fossil:dillhoffia_flower", "fossil:dipteris", "fossil:duisbergia", "fossil:ependra", "fossil:fern_block", "fossil:florissantia", "fossil:foozia", "fossil:fossil_sapling_calamites", "fossil:fossil_sapling_cordaites", "fossil:fossil_sapling_palae", "fossil:fossil_sapling_sigillaria", "fossil:horsetail_small", "fossil:licopodiophyta", "fossil:osmunda", "fossil:palm_leaves", "fossil:palm_sapling", "fossil:sagenopteris", "fossil:sarracenia", "fossil:sigillaria_leaves", "fossil:sigillaria_sapling", "fossil:tempskya", "fossil:vaccinium", "fossil:welwitschia", "fossil:zamites", "jurassicraft:ajuginucula_smithii", "jurassicraft:ajuginucula_smithii_leaves", "jurassicraft:araucaria_leaves", "jurassicraft:araucaria_sapling", "jurassicraft:bennettitalean_cycadeoidea", "jurassicraft:bristle_fern", "jurassicraft:calamites_leaves", "jurassicraft:calamites_sapling", "jurassicraft:cinnamon_fern", "jurassicraft:cry_pansy", "jurassicraft:cycad_zamites", "jurassicraft:dicksonia", "jurassicraft:dicroidium_zuberi", "jurassicraft:dictyophyllum", "jurassicraft:encephalartos", "jurassicraft:ginkgo_leaves", "jurassicraft:ginkgo_sapling", "jurassicraft:gracilaria_seaweed", "jurassicraft:graminidites_bambusoides", "jurassicraft:heliconia", "jurassicraft:ladinia_simplex", "jurassicraft:moss", "jurassicraft:orontium_mackii", "jurassicraft:paleo_bale_cycad", "jurassicraft:paleo_bale_cycadeoidea", "jurassicraft:paleo_bale_fern", "jurassicraft:paleo_bale_leaves", "jurassicraft:paleo_bale_other", "jurassicraft:phoenix_leaves", "jurassicraft:phoenix_sapling", "jurassicraft:psaronius_leaves", "jurassicraft:psaronius_sapling", "jurassicraft:raphaelia", "jurassicraft:rhacophyton", "jurassicraft:rhamnus_salicifolius", "jurassicraft:scaly_tree_fern", "jurassicraft:serenna_veriformans", "jurassicraft:small_chain_fern", "jurassicraft:small_cycad", "jurassicraft:small_royal_fern", "jurassicraft:tempskya", "jurassicraft:umaltolepis", "jurassicraft:west_indian_lilac", "jurassicraft:woolly_stalked_begonia", "rebornmod:ajuginucula_smithii", "rebornmod:ajuginucula_smithii_leaves", "rebornmod:araucaria_leaves", "rebornmod:araucaria_sapling", "rebornmod:bennettitalean_cycadeoidea", "rebornmod:bristle_fern", "rebornmod:calamites_leaves", "rebornmod:calamites_sapling", "rebornmod:cinnamon_fern", "rebornmod:cry_pansy", "rebornmod:cycad_zamites", "rebornmod:dicksonia", "rebornmod:dicroidium_zuberi", "rebornmod:dictyophyllum", "rebornmod:encephalartos", "rebornmod:ginkgo_leaves", "rebornmod:ginkgo_sapling", "rebornmod:gracilaria_seaweed", "rebornmod:graminidites_bambusoides", "rebornmod:heliconia", "rebornmod:ladinia_simplex", "rebornmod:moss", "rebornmod:orontium_mackii", "rebornmod:paleo_bale_cycad", "rebornmod:paleo_bale_cycadeoidea", "rebornmod:paleo_bale_fern", "rebornmod:paleo_bale_leaves", "rebornmod:paleo_bale_other", "rebornmod:phoenix_leaves", "rebornmod:phoenix_sapling", "rebornmod:psaronius_leaves", "rebornmod:psaronius_sapling", "rebornmod:raphaelia", "rebornmod:rhacophyton", "rebornmod:rhamnus_salicifolius", "rebornmod:scaly_tree_fern", "rebornmod:serenna_veriformans", "rebornmod:small_chain_fern", "rebornmod:small_cycad", "rebornmod:small_royal_fern", "rebornmod:tempskya", "rebornmod:umaltolepis", "rebornmod:west_indian_lilac", "rebornmod:woolly_stalked_begonia"};
@@ -59,6 +60,7 @@ public class LepidodendronConfig {
     public static boolean blockMobsFAExceptions = true;
     public static boolean doMeteorites = true;
     public static boolean doMeteoritesGriefing = true;
+    public static boolean doGuanoGriefing = true;
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
@@ -415,6 +417,11 @@ public class LepidodendronConfig {
         revStaticsPleistocene = prop.getStringList();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Global World-Gen", "genWadeableBreaks", genWadeableBreaks);
+        prop.setComment("List of blocks which are destroyed by wading animals (to avoid getting stuck on them): modid:blockid:meta [default: \"minecraft:waterlily\", \"lepidodendron:microvictoria_leaves\", \"lepidodendron:nelumbo_leaves\", \"lepidodendron:nuphar_leaves\"]");
+        genWadeableBreaks = prop.getStringList();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("Global World-Gen", "genLogResin", genLogResin);
         prop.setComment("List of log blocks which produce resin, in the format: modid:blockid:meta [default: \"minecraft:log:1\", \"lepidodendron:hymenaea_log\", \"lepidodendron:agathis_log\", \"lepidodendron:araucarioxylon_log\", \"lepidodendron:bunya_log\", \"lepidodendron:columnaris_log\", \"lepidodendron:monkeypuzzle_log\", \"lepidodendron:sciadopitys_log\", \"lepidodendron:walchia_log\", \"lepidodendron:wollemi_log\", \"biomesoplenty:log_2:6\", \"biomesoplenty:log_0:7\", \"jurassicraft:araucaria_log\", \"wildnature:cedar_log\", \"wildnature:fir_log\", \"wildnature:pine_log\", \"lepidodendron:bristlecone_log\", \"lepidodendron:mirabilis_log\", \"lepidodendron:monkey_puzzle_araucaria_log\", \"lepidodendron:hoop_araucaria_log\", \"lepidodendron:cunninghamia_log\", \"lepidodendron:scrubby_pine_log\"]");
         genLogResin = prop.getStringList();
@@ -461,6 +468,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doMeteoritesGriefing", doMeteoritesGriefing);
         prop.setComment("Make meteorites cause craters and fire, and leave iron ore (note that meteorite griefing is also tied to the more general mobGriefing gamerule) [default: true]");
         doMeteoritesGriefing = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doGuanoGriefing", doGuanoGriefing);
+        prop.setComment("Make some appropriate flying creatures drop guano ambiently, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
+        doGuanoGriefing = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doReSpawner", doReSpawner);

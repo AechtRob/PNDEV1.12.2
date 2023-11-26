@@ -1,0 +1,47 @@
+{
+	"name": "Elaphrosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/elaphrosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_elaphrosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_elaphrosaurus",
+			"title": "Elaphrosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Noasauridae $(br)>Elaphrosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. bambergi",
+            "entity": "lepidodendron:prehistoric_flora_elaphrosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elaphrosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		}
+	]
+}

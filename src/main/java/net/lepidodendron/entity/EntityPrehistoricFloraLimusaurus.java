@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.05F;
 		maxWidth = 0.49F;
 		maxHeight = 0.52F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 14.0D;
 		STAND_ANIMATION = Animation.create(55);
 		CHATTER_ANIMATION = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -301,7 +301,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

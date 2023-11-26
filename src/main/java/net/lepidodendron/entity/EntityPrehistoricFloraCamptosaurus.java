@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraCamptosaurus extends EntityPrehistoricFloraLa
 		minWidth = 0.20F;
 		maxWidth = 0.90F;
 		maxHeight = 1.50F;
-		maxHealthAgeable = 48.0D;
+		maxHealthAgeable = 60.0D;
 		IDLE1 = Animation.create(40);
 		IDLE2 = Animation.create(70);
 		IDLE3 = Animation.create(40);
@@ -417,7 +417,7 @@ public class EntityPrehistoricFloraCamptosaurus extends EntityPrehistoricFloraLa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

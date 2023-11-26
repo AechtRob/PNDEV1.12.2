@@ -7,9 +7,12 @@ import net.lepidodendron.entity.boats.EntityPNBoat;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
+import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -5006,6 +5009,12 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraBuoy> createRenderFor(RenderManager manager) {
                 return new RenderBuoy(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGuanoBall.class, new IRenderFactory<EntityPrehistoricFloraGuanoBall>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGuanoBall> createRenderFor(RenderManager manager) {
+                return new RenderSnowball(manager, ItemGuanoBall.block, Minecraft.getMinecraft().getRenderItem());
             }
         });
 

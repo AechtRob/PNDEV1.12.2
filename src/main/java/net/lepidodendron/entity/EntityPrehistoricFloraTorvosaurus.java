@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.20F;
 		maxWidth = 1.8F;
 		maxHeight = 3.2F;
-		maxHealthAgeable = 112.0D;
+		maxHealthAgeable = 120.0D;
 		IDLE1_ANIMATION = Animation.create(103);
 		IDLE2_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -240,7 +240,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(16.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
