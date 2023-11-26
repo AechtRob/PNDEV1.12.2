@@ -1438,7 +1438,13 @@ public class ModelPterodactylus extends AdvancedModelBaseExtended {
         }
         this.setRotateAngle(leftleg3, leftleg3.rotateAngleX + (float) Math.toRadians(xx), leftleg3.rotateAngleY + (float) Math.toRadians(yy), leftleg3.rotateAngleZ + (float) Math.toRadians(zz));
 
+        animFly2(tickAnim); //Divided code into two as it's too long!
+    }
 
+    public void animFly2(double tickAnim) {
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
 
 
         if (tickAnim >= 0 && tickAnim < 50) {
