@@ -60,6 +60,11 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public float headHitHeight() {
+		return 0.425F;
+	}
+
+	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(WUKONGOPTERUS_TYPE, 0);
