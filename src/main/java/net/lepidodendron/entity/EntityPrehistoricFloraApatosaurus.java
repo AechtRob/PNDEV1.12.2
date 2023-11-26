@@ -70,6 +70,14 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 0.5F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public int wadeDepth() {
 		return (int) (5F * this.getAgeScale());
 	}

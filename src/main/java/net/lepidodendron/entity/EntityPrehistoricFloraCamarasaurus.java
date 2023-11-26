@@ -69,6 +69,14 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 0.5F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public int wadeDepth() {
 		return (int) (3F * this.getAgeScale());
 	}
