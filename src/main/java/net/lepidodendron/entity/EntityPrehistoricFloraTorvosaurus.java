@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 	@Override
 	public float getMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 4.0F;
+			return 15.0F;
 		}
 		return super.getMaxTurnDistancePerTick();
 	}

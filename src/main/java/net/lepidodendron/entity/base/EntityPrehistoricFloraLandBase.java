@@ -416,7 +416,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     }
 
     public float getMaxTurnDistancePerTick() {
-        return 20;
+        return 20.0F;
     }
 
     public boolean isNotColliding() {
