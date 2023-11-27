@@ -244,12 +244,6 @@ public class ModelHenodus extends AdvancedModelBaseExtended {
         this.henodus.render(f5);
     }
 
-    public void renderStaticPlinth(float f) {
-        this.henodus.offsetZ = -0.F;
-        this.henodus.render(0.01F);
-        resetToDefaultPose();
-    }
-
     public void renderStaticFloor(float f) {
         this.henodus.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(shell, 0.2382F, -0.1096F, 0.4232F);

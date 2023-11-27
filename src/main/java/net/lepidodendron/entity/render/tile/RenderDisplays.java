@@ -27,6 +27,7 @@ public class RenderDisplays {
     public static final ModelChilesaurus modelChilesaurus = new ModelChilesaurus();
     public static final ModelCongopycnodus modelCongopycnodus = new ModelCongopycnodus();
     public static final ModelAphnelepis modelAphnelepis = new ModelAphnelepis();
+    public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
     public static final ModelParacestracion modelParacestracion = new ModelParacestracion();
     public static final ModelParadapedium modelParadapedium = new ModelParadapedium();
     public static final ModelLigulella modelLigulella = new ModelLigulella();

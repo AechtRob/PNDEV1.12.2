@@ -29,6 +29,7 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -85,6 +86,20 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(null);
 
 			this.setDefaultState(this.blockState.getBaseState().withProperty(ISFLOOR, Boolean.valueOf(false)));
+		}
+
+		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			TileEntity te = world.getTileEntity(pos);
+			if (te != null && !world.isRemote) {
+				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
+					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
+					if (tee.hasItem()) {
+						return tee.getStackInSlot(0);
+					}
+				}
+			}
+			return super.getPickBlock(state, target, world, pos, player);
 		}
 
 		@Override

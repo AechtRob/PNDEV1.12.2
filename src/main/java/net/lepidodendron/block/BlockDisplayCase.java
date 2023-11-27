@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -165,10 +166,9 @@ public class BlockDisplayCase extends ElementsLepidodendronMod.ModElement {
 							return true;
 						}
 						if (!stack.isEmpty()) {
-							//if (stack.getItem() == Items.SPAWN_EGG) {
-							//	return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-							//}
-							//tee.setInventorySlotContents(0, stack);
+							if (!(stack.getItem() instanceof ItemGlassCaseDisplayItem)) {
+								return false;
+							}
 							ItemStack setStack = stack.copy();
 							setStack.setCount(1);
 							tee.getItems().set(0, setStack);
@@ -373,7 +373,7 @@ public class BlockDisplayCase extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
-			return true;
+			return stack.getItem() instanceof ItemGlassCaseDisplayItem;
 		}
 
 		@Override
