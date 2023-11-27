@@ -153,7 +153,7 @@ public class ModelAcanthodes extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.1F;
+        //this.Bodyfront.offsetY = 1.1F;
 
         if (e instanceof EntityLiving) {
             if (((EntityLiving)e).isAIDisabled()) {
@@ -181,7 +181,7 @@ public class ModelAcanthodes extends AdvancedModelBase {
             this.swing(Rightpectoralfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodyfront.offsetY = 1.25F;
+                this.Bodyfront.offsetY = 0.50F;
                 this.bob(Bodyfront, -speed, 5F, false, f2, 1);
             }
         }
