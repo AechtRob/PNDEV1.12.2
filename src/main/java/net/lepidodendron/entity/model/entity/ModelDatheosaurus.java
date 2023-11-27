@@ -222,19 +222,7 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Datheosaurus.render(f5);
     }
-    public void renderStaticPlinth(float f) {
-        this.Datheosaurus.offsetX = 0.06F;
-        this.Datheosaurus.offsetZ = -0.02F;
-        this.jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.upperbody.rotateAngleY = (float) Math.toRadians(22.4);
-        this.body.rotateAngleY = (float) Math.toRadians(24.7);
-        this.tail.rotateAngleY = (float) Math.toRadians(-29.9);
-        this.tail2.rotateAngleY = (float) Math.toRadians(-27.4);
-        this.tail3.rotateAngleY = (float) Math.toRadians(-29.9);
-        this.tail4.rotateAngleY = (float) Math.toRadians(-44);
-        this.Datheosaurus.render(0.01F);
-        resetToDefaultPose();
-    }
+
     public void renderStaticFloor(float f) {
         this.Datheosaurus.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(body2, -0.1745F, 0.0F, 0.0F);

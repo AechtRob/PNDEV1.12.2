@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcanthodes;
 import net.lepidodendron.entity.model.entity.ModelAcanthodes;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -14,6 +15,8 @@ public class RenderAcanthodes extends RenderLiving<EntityPrehistoricFloraAcantho
         super(mgr, new ModelAcanthodes(), 0.0f);
     }
 
+    public static float getScaler() {return 0.15F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcanthodes entity) {
         return RenderAcanthodes.TEXTURE;
@@ -24,4 +27,9 @@ public class RenderAcanthodes extends RenderLiving<EntityPrehistoricFloraAcantho
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraAcanthodes entity, float f) {
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
+    }
 }

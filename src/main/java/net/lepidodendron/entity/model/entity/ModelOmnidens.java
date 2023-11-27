@@ -616,23 +616,7 @@ public class ModelOmnidens extends AdvancedModelBase {
         //this.head.render(f5 * 0.2F);
         this.body6.render(f5);
     }
-    public void renderStaticPlinth(float f) {
-        this.body5.rotateAngleX = (float) Math.toRadians(-27.5);
-        this.body4.rotateAngleX = (float) Math.toRadians(-15);
-        this.body3.rotateAngleX = (float) Math.toRadians(-10);
-        this.body2.rotateAngleX = (float) Math.toRadians(-5);
-        this.body1.rotateAngleX = (float) Math.toRadians(5);
-        this.head.rotateAngleX = (float) Math.toRadians(15);
-        this.body5.rotateAngleY = (float) Math.toRadians(-2.5);
-        this.body4.rotateAngleY = (float) Math.toRadians(-2.5);
-        this.body3.rotateAngleY = (float) Math.toRadians(-2.5);
-        this.body2.rotateAngleY = (float) Math.toRadians(-2.5);
-        this.body1.rotateAngleY = (float) Math.toRadians(-2.5);
-        this.head.rotateAngleY = (float) Math.toRadians(-7.5);
-        this.body6.offsetZ = -0.25F;
-        this.body6.render(0.01F);
-        resetToDefaultPose();
-    }
+
     public void renderStaticFloor(float f) {
         this.body5.rotateAngleX = (float) Math.toRadians(-27.5);
         this.body4.rotateAngleX = (float) Math.toRadians(-15);

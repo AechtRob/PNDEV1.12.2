@@ -91,7 +91,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 			TileEntity te = world.getTileEntity(pos);
-			if (te != null && !world.isRemote) {
+			if (te != null) {
 				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
 					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
 					if (tee.hasItem()) {
